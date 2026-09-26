@@ -162,6 +162,15 @@ notes:
   - >-
     editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite
     or cut anything in readsMachineWritten, and update editorialPass.
+  - >-
+    Fact check 2026-09-26 (live pages fetched with curl; live /indiademo/ returns 404, so the live
+    /kenyademo/ is the model): the third pain block fix and the reports module said revenue by doctor,
+    collections against billing, no-shows and pending claims. No live product page or confirmed fact
+    states those as report figures or gives a per-doctor split (only the /healthcare-dashboard-software/
+    blog lists them, as generic KPI advice and an anonymous case study). The fix now follows live
+    /kenyademo/ ("One clinic or fifteen ... Revenue, stock, claims, follow-ups. One screen"), and the
+    module says revenue and claim status (live /features/ "Claim Status Tracking Dashboard", live
+    /kenyademo/ "One morning view"), matching /features/reports-and-dashboards/.
 sections:
   - discriminant: demoForm
     value:
@@ -199,8 +208,8 @@ sections:
             With one clinic you can see everything from the doctor's chair. Add a pharmacy counter or a
             branch across town, and you hear about Tuesday from a phone call on Wednesday.
           fix: >-
-            One clinic or fifteen, you get the same morning view: revenue by doctor, collections against
-            billing, stock and pending claims. Decisions come from the numbers instead of a feeling.
+            One clinic or fifteen, you get the same morning view, with revenue, stock, claims and follow-ups
+            on one screen. Decisions come from the numbers instead of a feeling.
   - discriminant: moduleGrid
     value:
       heading: Eight modules on one patient record
@@ -236,7 +245,7 @@ sections:
           icon: flask-conical
           href: /features/lab/
         - title: Reports and dashboards
-          outcome: Revenue by doctor, collections against billing, no-shows and pending claims in one morning view.
+          outcome: Revenue and the status of every claim, for one branch or all of them, in one morning view.
           icon: layout-dashboard
           href: /features/reports-and-dashboards/
         - title: Cura AI

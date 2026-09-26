@@ -113,7 +113,7 @@ sections:
           body: The reminder for the next visit and the lab report reach the patient on WhatsApp, sent by the clinic software on a schedule.
           href: /features/whatsapp/
         - label: Report
-          body: At the end of the day the owner sees revenue, collections, no-shows and pending claims on one dashboard, by doctor or by branch.
+          body: At the end of the day the owner reads the day-end financial report, for one branch or all of them, and sees on the claims dashboard where each claim stands.
           href: /features/reports-and-dashboards/
 
   - discriminant: moduleGrid
@@ -352,3 +352,4 @@ notes:
   - 'Hero rating strip shows the two ratings without review counts until facts capterraReviews and googleReviews are supplied (spec 2.4 asks for the count).'
   - 'Directory pages (/doctors/, /clinics/) are out of scope and not linked from this page.'
   - 'Meta description opens with the head keyword; 152 characters as written, 142 after token expansion.'
+  - 'Fact check 2026-09-26 (live pages fetched with curl): the journey step "Report" said the owner sees revenue, collections, no-shows and pending claims on one dashboard, by doctor or by branch. No live product page or confirmed fact states collections, no-shows or pending claims as report figures, or any per-doctor split (only the /healthcare-dashboard-software/ blog lists no-show rate and revenue per clinician, as generic KPI advice and an anonymous case study). It now says what live /ceo-landing-page/ (end-of-day financial reports "clinic and organization wide") and live /features/ (daily financial reports; "Claim Status Tracking Dashboard") state, matching /features/reports-and-dashboards/. The Growth card line "morning numbers for every branch on one screen" stays: live /kenyademo/ says "One clinic or fifteen ... One screen" and "Every location. One morning view".'

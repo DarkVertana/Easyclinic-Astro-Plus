@@ -63,7 +63,7 @@ sections:
           body: The reminder for the next visit and the lab report reach the patient on WhatsApp, sent by the software rather than from a personal phone.
           href: /features/whatsapp/
         - label: Report
-          body: Each morning the owner sees revenue, collections, no-shows and pending claims on one dashboard, by doctor or by branch.
+          body: Each morning the owner sees revenue and the status of every claim on one screen, for one branch or all of them.
           href: /features/reports-and-dashboards/
 
   - discriminant: hubGrid
@@ -124,8 +124,8 @@ sections:
               description: Patients book and read their reports in the app, and a recall goes out when their review is due.
               icon: heart-handshake
             - href: /features/reports-and-dashboards/
-              label: The owner's morning view of every doctor and branch
-              description: Revenue, collections against billing, no-shows and pending claims, on one dashboard you can check before the first patient.
+              label: The owner's morning view of every branch
+              description: Revenue and claim status on one screen, which you can check before the first patient walks in.
               icon: chart-column
             - href: /features/multi-location/
               label: One login for every branch, with central price lists
@@ -266,3 +266,4 @@ notes:
   - 'Secondary keywords exclude "practice management software" (owned by /, spec 4.1) and "EMR software" terms (owned by /features/emr/), per spec 2.1 (one page, one query cluster).'
   - 'Sticky sub-navigation (section 11 UX 6) can use the section ids: patient-journey, modules, plans, integrations, ratings.'
   - 'Author is Subhashish Saha, Head of customer success, per the page-writing rules. Spec 2.7 prefers the product lead for product pages; switch if one is named.'
+  - 'Fact check 2026-09-26 (live pages fetched with curl): the journey step "Report" and the reports card said the owner sees revenue, collections (against billing), no-shows and pending claims on one dashboard, by doctor or by branch, and the card label said "every doctor and branch". No live product page or confirmed fact states collections, no-shows or pending claims as report figures, or any per-doctor split (only the /healthcare-dashboard-software/ blog lists them, as generic KPI advice and an anonymous case study). Both now say only what live /kenyademo/ states ("One clinic or fifteen ... Revenue, stock, claims, follow-ups. One screen ... before the first patient walks in"), with claim status as live /features/ names it ("Claim Status Tracking Dashboard"), matching /features/reports-and-dashboards/.'

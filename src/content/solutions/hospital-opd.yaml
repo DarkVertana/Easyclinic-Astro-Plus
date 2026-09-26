@@ -106,7 +106,7 @@ sections:
         - label: Submit
           body: The claim pack is built from the visit and the invoice, and the billing desk submits it to the payer.
         - label: Reconcile
-          body: When the payer pays, the payment is matched against the claim, and the pending claims report shows who still owes what.
+          body: When the payer pays, the payment is matched against the claim, and the claims dashboard shows where each claim stands.
       examples:
         - country: India
           body: TPAs acting for insurers, and corporate panels where the employer settles the bill.
@@ -220,7 +220,7 @@ links:
       description: Tests ordered from the chart, with results back in the patient's record.
     - href: /features/reports-and-dashboards/
       label: Reports and dashboards
-      description: Revenue by doctor and pending claims, in the view the owner opens each morning.
+      description: Revenue and claim status, in the view the owner opens each morning.
     - href: /pricing/
       label: Pricing
       description: Per doctor per month from {price:usd.professional.annual}, and what Enterprise adds.
@@ -255,7 +255,7 @@ notes:
   - 'heroMedia left out: no screenshots exist yet. Spec 5.8 and section 11 ask for a queue and token board screenshot in the hero.'
   - 'Opening answer says inpatient is out of scope. Spec 5.8 allows "out of scope or partner-served"; no inpatient partner is confirmed, so the page does not mention one. Add the partner name if one is confirmed.'
   - 'Token display and token numbering are not described (spec 5.8 FAQ "token display" and the 4.2 meta "Token queues" were left out) because no confirmed fact says what the token screen does. The queue is described only as walk-ins beside booked appointments on one calendar (plans.yaml "Appointment scheduling and walk-ins"; spec 5.11 scheduling promise).'
-  - 'FAQ "doctor productivity reports" (spec 5.8 item 8) left out: whether patients per doctor per hour is live in reports is not confirmed. Related link description uses only revenue by doctor and pending claims, as published on home.'
+  - 'FAQ "doctor productivity reports" (spec 5.8 item 8) left out: whether patients per doctor per hour is live in reports is not confirmed. The related link description now names only revenue and claim status (see the fact-check note below).'
   - 'Flow diagram examples name payers only as spec 5.11 does, with no integration state. SLADE, SHA e-claims, DHA eClaimLink, HMO claim packs and NHIA status are all null in src/data (regulators and countries). Do not add "integrated with" wording until each has a state and date.'
   - 'Spec 5.8 section 5 is "Departments and HR access". Written as "Departments and staff access" because no HR module (attendance, payroll, rosters) is confirmed; it covers role logins, the reception licence rule and the Enterprise workflow rules and central control.'
   - 'ScopeBox note does not name any inpatient system EasyClinic has run beside, or what data passes between them: both unknown (also listed as missing on home). Add named systems once confirmed.'
@@ -267,3 +267,4 @@ notes:
   - 'Spec 2.9 asks every solution page to link one specialty page and one country page; related links follow the brief (three feature pages, reports and pricing). Add /clinic-management-software-india/ or /hospital-management-software-nigeria/ and a specialty page if the link budget allows.'
   - 'Both CTAs go to /contact-us/#book-a-demo, as the Enterprise CTAs on home and pricing do. Point "Get an Enterprise quote" at a dedicated quote form if one is built.'
   - 'editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite or cut anything in readsMachineWritten, and update editorialPass.'
+  - 'Fact check 2026-09-26 (live pages fetched with curl): the Reconcile step named a "pending claims report" and the reports related link said "Revenue by doctor and pending claims". No live product page or confirmed fact states a pending claims report or a per-doctor revenue split (only the /healthcare-dashboard-software/ blog mentions revenue per clinician, as generic KPI advice and an anonymous case study). The step now names the claims dashboard, as live /features/ and /hospital-opd-nursing-home-software/ do ("Claim Status Tracking Dashboard"), with reconciliation from plans.yaml (claims add-on); the link says revenue and claim status, as live /kenyademo/ does ("Revenue, claims, diagnoses and stock visible before the first patient walks in"), matching /features/reports-and-dashboards/.'

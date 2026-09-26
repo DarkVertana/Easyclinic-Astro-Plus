@@ -214,32 +214,40 @@ sections:
         - What it asks of a clinic, in general
       rows:
         - - '[India](/clinic-management-software-india/)'
-          - Digital Personal Data Protection Act, 2023 (DPDP)
+          - '[Digital Personal Data Protection Act, 2023 (DPDP)](https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf)'
           - >-
-            A notice telling the patient what their data will be used for, and consent for that purpose,
-            which the patient can withdraw as easily as they gave it. The clinic keeps consent records and
-            names a contact for grievances.
+            A notice telling the patient which personal data the clinic will use and for what purpose, and
+            consent for that purpose, which the patient can withdraw as easily as they gave it. The clinic
+            must be able to prove both, and publishes a contact who answers questions about the data. The
+            [DPDP Rules, 2025](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf),
+            notified in November 2025, bring these duties into force in May 2027.
         - - '[Kenya](/emr-software-in-kenya/)'
-          - Data Protection Act, 2019
+          - '[Data Protection Act, 2019](https://www.odpc.go.ke/data-protection-laws-kenya/)'
           - >-
             Health data is sensitive personal data. Using a patient's details for marketing needs their
-            consent and a simple way to opt out, and the clinic registers with the Office of the Data
-            Protection Commissioner as a data controller.
+            express consent, and every marketing message must tell the patient they can opt out. The
+            [2021 registration regulations](https://www.odpc.go.ke/wp-content/uploads/2024/03/THE-DATA-PROTECTION-REGISTRATION-OF-DATA-CONTROLLERS-AND-DATA-PROCESSORS-REGULATIONS-2021.pdf)
+            list patient care among the purposes that must register with the Office of the Data
+            Protection Commissioner.
         - - '[UAE](/clinic-management-software-uae/)'
-          - Personal Data Protection Law, 2021 (PDPL), and Federal Law No. 2 of 2019 on health data
+          - '[Personal Data Protection Law, 2021 (PDPL)](https://u.ae/en/about-the-uae/digital-uae/data/data-protection-laws), and [Federal Law No. 2 of 2019](https://u.ae/en/about-the-uae/digital-uae/whole-of-government-approach/digital-health/ict-in-the-health-sector) on ICT in health'
           - >-
-            The PDPL lets a person object to their personal data being used for direct marketing. Health
-            data is governed by Federal Law No. 2 of 2019, which keeps it inside the UAE unless an
-            exemption applies.
+            The PDPL lets a patient object to their personal data being used for direct marketing, but it
+            does not apply to health data that has its own law. Federal Law No. 2 of 2019 requires health
+            providers to keep health data confidential and to hold it inside the UAE unless an exemption
+            applies.
         - - '[Nigeria](/hospital-management-software-nigeria/)'
-          - Nigeria Data Protection Act, 2023 (NDPA)
+          - '[Nigeria Data Protection Act, 2023 (NDPA)](https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf)'
           - >-
-            Health data is sensitive personal data, and consent to use it must be specific and freely
-            given; the patient can withdraw it, or object to direct marketing, at any time. A clinic above
-            the Nigeria Data Protection Commission's threshold registers with it.
+            Health data is sensitive personal data. Consent must be freely given for a specific purpose, and
+            the patient can withdraw it as easily as they gave it, or object to direct marketing at any time.
+            The Nigeria Data Protection Commission's
+            [2024 registration notice](https://ndpc.gov.ng/wp-content/uploads/2025/07/Updated-Guidance-Notice-on-Registtration-2024.pdf)
+            names health among the sectors whose data controllers register with it.
       note: >-
-        This table describes each law in general terms and is not legal advice. WhatsApp's own opt-in
-        rules are on the [WhatsApp page](/features/whatsapp/).
+        This table describes each law in general terms and is not legal advice. Each law's name links to
+        its official text or the government's page on it. WhatsApp's own opt-in rules are on the
+        [WhatsApp page](/features/whatsapp/).
 
   - discriminant: scopeBox
     value:
@@ -291,11 +299,11 @@ faq:
       follow-up, that is a reason to book the next visit rather than let it slide.
   - question: Do we need patients' consent before sending recall messages?
     answer: >-
-      In general, yes: the data protection laws of India, Kenya, the UAE and Nigeria each expect a
-      patient to be told what their contact details will be used for, and each lets a patient stop
-      marketing messages. Ask at registration and record the answer. The duty sits with your clinic, as
-      the holder of the data; the table above sets out what each law asks in general terms, and it is not
-      legal advice.
+      In general, yes: the data protection laws of Kenya, the UAE and Nigeria expect a patient to be told
+      what their contact details will be used for and let a patient stop marketing messages, and India's
+      DPDP Act asks the same once its Rules bring those duties into force in May 2027. Ask at registration
+      and record the answer. The duty sits with your clinic, as the holder of the data; the table above
+      sets out what each law asks in general terms, and it is not legal advice.
   - question: How many more patients will come back?
     answer: >-
       We cannot give you a number, because we have no measured revisit rate from a clinic to publish.
@@ -364,6 +372,7 @@ notes:
   - 'Spec 5.11 FAQ items not answerable with public facts and left out: cost per message (also owned by /features/whatsapp/ per 4.5 rule 3), branded app, multi-branch campaigns, feedback to Google. Replaced with the plan question, patients without the app, and the revisit-rate question answered honestly.'
   - 'Directory booking channel (spec 5.11) omitted: the directory is out of scope.'
   - 'Consent table describes the laws in general terms from src/data/regulators (in-dpdp, ke-dpa, ae-pdpl, ng-ndpa) plus the text of each law (DPDP withdrawal as easy as giving; Kenya direct-marketing consent and opt-out under the Act and the 2021 General Regulations; UAE PDPL right to object to direct marketing and Federal Law No. 2 of 2019 data localisation; NDPA withdrawal and right to object). No status column and no EasyClinic compliance claim: every regulator state is null. The /trust/ pointers ("where EasyClinic stands is kept on the trust page") were removed from the table note and the consent FAQ, and the /trust/ related link replaced with /features/emr/, because /trust/ is a draft and no status exists to point to. Needs a compliance read before a lawyer-facing use.'
+  - 'Consent table fact-checked 2026-09-26 against official texts, each fetched that day, and each law name now links to its source. India: DPDP Act s5(1) notice, s6(4) withdrawal as easy as giving, s6(10) the fiduciary proves notice and consent (replaces "keeps consent records"), s8(9) published contact for questions (replaces "names a contact for grievances"); G.S.R. 843(E) and Rule 1(4) of the DPDP Rules 2025 (G.S.R. 846(E), 13 November 2025, both on meity.gov.in) bring these sections into force 18 months after publication, so the row now says May 2027. Kenya (ODPC copies): Act s2 health status is sensitive data, s37(1) express consent for commercial use; General Regulations 2021 reg 15 and 17 (opt-out statement in each direct-marketing message); Registration Regulations 2021 Third Schedule item 5 (patient care must register), which replaces the unsourced "registers as a data controller". UAE: PDPL Art. 2(2)(e) excludes health data that has its own law and Art. 17(1) gives the right to object to direct marketing (Arabic text on u.ae; uaelegislation.gov.ae blocked fetching); Federal Law No. 2 of 2019 Art. 13 (DHA-hosted copy, dha.gov.ae/uploads/112021/8af22f1c-ebe4-4e20-b157-743ac93bb20b.pdf) bars storing or transferring health data outside the State except by exemption, and u.ae states the confidentiality duty; "on health data" in the law column became "on ICT in health" (its title). Nigeria (ndpc.gov.ng copy): NDPA s65 health status is sensitive data and consent is freely given and specific, s35(2) withdrawal as easy as giving, s36(3) objection to direct marketing; NDPC Guidance Notice on registration (19 December 2024) designates health-sector controllers as of major importance, who register under s44 (replaces "above the threshold").'
   - 'WhatsApp appears as one channel (4.5 rule 3). Templates, message charges and opt-in mechanics are only pointed to /features/whatsapp/, which explains how Meta charges but gives no per-message figure, so this page no longer says that page gives "what each message costs".'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the patient app (booking, reports, messages, phone frame) as hero and the diabetes recall campaign with its sent list to the recall section.'
   - 'No testimonial: none is about the patient app or engagement, and all are placed elsewhere. Proof is the ratings badge block (review counts are unknown, so no count is shown).'
