@@ -5,7 +5,8 @@
  *
  * Usage: node scripts/posts-manifest.ts
  */
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { parseCsv } from './lib/csv.ts';
 
 const md = readFileSync('migration/research/sitemap.md', 'utf8');
 const section = (title: string) => {
@@ -20,61 +21,79 @@ const classes: Array<[string, string]> = [
   ['UNSURE', 'unsure'],
 ];
 
-/** Owning landing page by topic (spec 3.6: each kept post is owned by a landing page). */
-const OWNERS: Array<[RegExp, string]> = [
-  [/whatsapp/, '/features/whatsapp/'],
-  [/no-show|appointment|scheduling|booking/, '/features/appointment-scheduling/'],
-  [/billing|invoice|cash-flow|fraud|gst/, '/features/billing/'],
-  [/claim|payor|insurance|tpa/, '/features/insurance-claims/'],
-  [/revenue|leak|break-even|financial/, '/features/revenue-management/'],
-  [/pharmac|inventory|stock/, '/features/pharmacy-and-inventory/'],
-  [/lab|patholog/, '/features/lab/'],
-  [/telemedicine|teleconsult|telehealth|virtual/, '/features/telehealth/'],
-  [/engagement|retention|recall|feedback|referral/, '/features/patient-engagement/'],
-  [/dashboard|report|kpi|analytics/, '/features/reports-and-dashboards/'],
-  [/chain|multi-location|branch/, '/solutions/clinic-chain/'],
-  [/compliance|abdm|privacy|legal|hipaa|dpdp/, '/trust/'],
-  [/emr|paperless|records|prescription/, '/features/emr/'],
-  [/kenya|nairobi|kmpdc|sha/, '/emr-software-in-kenya/'],
-  [/nigeria|lagos/, '/hospital-management-software-nigeria/'],
-  [/dubai|uae/, '/clinic-management-software-uae/'],
-  [/india|mumbai|delhi|tier-2/, '/clinic-management-software-india/'],
-  [/clinic-setup|start|profitable|opening|launch/, '/start-a-clinic/'],
-  [/\bai\b|ai-|artificial/, '/ai/'],
+/**
+ * Slug matching works on whole words (the slug split on "-" and "/"), each pattern a list of word prefixes.
+ * Substring regexes misfired: "ent-" matched "management-", "skin" matched "asking", "sha" matched "share".
+ */
+const words = (path: string) => path.split(/[/-]+/).filter(Boolean);
+/** A pattern with a hyphen is a phrase of whole words ("no-show", "multi-location"); otherwise a word prefix. */
+const matches = (path: string, patterns: string[]) =>
+  patterns.some((p) => (p.includes('-') ? `-${words(path).join('-')}-`.includes(`-${p}-`) : words(path).some((w) => w.startsWith(p))));
+
+/** Owning landing page by topic (spec 3.6: each kept post is owned by a landing page). First match wins. */
+const OWNERS: Array<[string[], string]> = [
+  [['whatsapp'], '/features/whatsapp/'],
+  [['no-show', 'no-shows', 'noshow', 'appointment', 'scheduling', 'booking'], '/features/appointment-scheduling/'],
+  [['billing', 'invoice', 'cash', 'fraud', 'gst'], '/features/billing/'],
+  [['claim', 'payor', 'insurance', 'tpa', 'nhif'], '/features/insurance-claims/'],
+  [['revenue', 'leak', 'break', 'financial', 'rcm'], '/features/revenue-management/'],
+  [['pharmac', 'inventory', 'stock', 'expiry'], '/features/pharmacy-and-inventory/'],
+  [['lab', 'patholog'], '/features/lab/'],
+  [['telemedicine', 'teleconsult', 'telehealth', 'virtual'], '/features/telehealth/'],
+  [['engagement', 'retention', 'recall', 'feedback', 'referral', 'portal'], '/features/patient-engagement/'],
+  [['dashboard', 'report', 'kpi', 'analytics'], '/features/reports-and-dashboards/'],
+  [['chain', 'branch', 'multi-location', 'multiple-clinic', 'multi-site', 'multi-clinic', 'multiple-locations'], '/solutions/clinic-chain/'],
+  [['compliance', 'abdm', 'ndhm', 'privacy', 'legal', 'hipaa', 'dpdp', 'pdpa'], '/trust/'],
+  [['emr', 'paperless', 'records', 'prescription'], '/features/emr/'],
+  [['kenya', 'nairobi', 'kmpdc', 'sha'], '/emr-software-in-kenya/'],
+  [['nigeria', 'lagos'], '/hospital-management-software-nigeria/'],
+  [['dubai', 'uae'], '/clinic-management-software-uae/'],
+  [['india', 'mumbai', 'delhi', 'tier'], '/clinic-management-software-india/'],
+  [['setup', 'start', 'profitable', 'opening', 'launch'], '/start-a-clinic/'],
+  [['ai', 'artificial'], '/ai/'],
 ];
 /** Specialty-software posts compete with the specialty pages (research note): merge into them. */
-const SPECIALTY: Array<[RegExp, string]> = [
-  [/dental|dentist|orthodont/, '/dental-emr-software/'],
-  [/dermat|skin|cosmet|aesthetic|trich/, '/dermatology-emr-software/'],
-  [/paediat|pediat|child/, '/pediatric-emr/'],
-  [/cardio/, '/cardiology-emr/'],
-  [/psychiat|mental|psycholog/, '/mental-health/'],
-  [/ophthal|eye/, '/ophthalmology-emr/'],
-  [/ortho/, '/orthopedic-emr/'],
-  [/gynae|gyne|obgyn|obstet/, '/obgyn-emr-software/'],
-  [/ivf|fertility/, '/ivf-emr/'],
-  [/physio/, '/physiotherapy-clinic-management-software/'],
-  [/ayurved/, '/ayurveda-clinic-management-software/'],
-  [/ent-|otolaryng/, '/ent-emr-software/'],
-  [/neuro/, '/neurology-emr/'],
+const SPECIALTY: Array<[string[], string]> = [
+  [['dental', 'dentist', 'orthodont'], '/dental-emr-software/'],
+  [['dermat', 'skin', 'cosmet', 'aesthetic', 'trich'], '/dermatology-emr-software/'],
+  [['paediat', 'pediat', 'child'], '/pediatric-emr/'],
+  [['cardio'], '/cardiology-emr/'],
+  [['psychiat', 'mental', 'psycholog'], '/mental-health/'],
+  [['ophthal', 'eye'], '/ophthalmology-emr/'],
+  [['orthop'], '/orthopedic-emr/'],
+  [['gynae', 'gyne', 'obgyn', 'obstet'], '/obgyn-emr-software/'],
+  [['ivf', 'fertility'], '/ivf-emr/'],
+  [['physio'], '/physiotherapy-clinic-management-software/'],
+  [['ayurved'], '/ayurveda-clinic-management-software/'],
+  [['ent', 'otolaryng'], '/ent-emr-software/'],
+  [['neuro'], '/neurology-emr/'],
 ];
-const imported = new Set(['/the-ultimate-guide-to-starting-a-clinic-in-kenya/', '/how-do-i-get-approval-from-the-kmpdc-in-kenya/', '/how-much-does-it-cost-to-open-a-clinic-in-nairobi/', '/clinic-in-uganda/', '/clinic-in-india/', '/how-much-does-it-cost-to-open-a-clinic-in-mumbai/', '/clinic-in-nigeria/', '/clinic-in-ethiopia/', '/how-to-get-approval-from-the-medical-practitioners-and-dentists-council-in-india-nmc-dci/', '/patient-data-privacy-laws-in-india/']);
+/** Legacy URLs that are already pages in src/content (guides, comparisons, specialty pages kept at their slugs). */
+const PAGE_SLUGS = new Set(
+  ['guides', 'comparisons', 'specialties', 'listicles']
+    .filter((dir) => existsSync(`src/content/${dir}`))
+    .flatMap((dir) => readdirSync(`src/content/${dir}`).map((f) => `/${f.replace(/\.(ya?ml|mdx)$/, '')}/`)),
+);
 const comparisonPages = new Set(['/easyclinic-vs-practo/', '/easyclinic-vs-healthplix/', '/easyclinic-vs-kenyaemr/', '/easyclinic-emr-vs-traditional-emr/']);
+/** Marketing's confirmations survive a regeneration: carried over by path. */
+const previous = existsSync('migration/posts-manifest.csv') ? parseCsv(readFileSync('migration/posts-manifest.csv', 'utf8')) : [];
+const confirmedCol = previous[0]?.indexOf('confirmed') ?? -1;
+const confirmedByPath = new Map(confirmedCol >= 0 ? previous.slice(1).map((r) => [r[0], r[confirmedCol] ?? '']) : []);
 
-const rows = [['path', 'research_class', 'proposed_decision', 'target', 'owner_page', 'reason']];
+const rows = [['path', 'research_class', 'proposed_decision', 'target', 'owner_page', 'reason', 'confirmed']];
 for (const [title, cls] of classes) {
   for (const path of section(title)) {
-    const specialty = SPECIALTY.find(([re]) => re.test(path) && /software|clinic-management|emr|system|automation/.test(path));
-    const owner = OWNERS.find(([re]) => re.test(path))?.[1] ?? '/blog/';
+    const specialty = SPECIALTY.find(([prefixes]) => matches(path, prefixes) && matches(path, ['software', 'management', 'emr', 'system', 'automation']));
+    const owner = OWNERS.find(([prefixes]) => matches(path, prefixes))?.[1] ?? '/blog/';
     let decision = cls;
     let target = path;
     let reason = '';
-    if (imported.has(path)) {
-      decision = 'keep';
-      reason = 'Imported as a start-a-clinic guide';
-    } else if (comparisonPages.has(path)) {
+    if (comparisonPages.has(path)) {
       decision = 'keep';
       reason = 'Rebuilt as a comparison page';
+    } else if (PAGE_SLUGS.has(path)) {
+      decision = 'keep';
+      reason = 'Already a page at this slug (guide, specialty or listicle)';
     } else if (cls === 'keep' && specialty) {
       decision = 'merge';
       target = specialty[1];
@@ -91,7 +110,7 @@ for (const [title, cls] of classes) {
       decision = 'review';
       reason = 'Needs a human decision with Search Console data';
     }
-    rows.push([path, title, decision, target, decision === 'keep' ? owner : '', reason]);
+    rows.push([path, title, decision, target, decision === 'keep' ? owner : '', reason, confirmedByPath.get(path) ?? '']);
   }
 }
 const csv = rows.map((r) => r.map((c) => (/[",]/.test(c) ? `"${c.replace(/"/g, '""')}"` : c)).join(',')).join('\n');
