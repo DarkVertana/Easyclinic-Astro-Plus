@@ -1,0 +1,430 @@
+status: draft
+headKeyword: EasyClinic Nigeria demo
+secondaryKeywords:
+  - EasyClinic Nigeria
+  - clinic management software demo Nigeria
+  - hospital management software demo Nigeria
+  - EMR software demo Nigeria
+  - book EasyClinic demo Nigeria
+title: 'Book an EasyClinic Demo in Nigeria: 20 Minutes'
+metaDescription: >-
+  A 20-minute EasyClinic demo in Nigeria, from the invoice in naira to the HMO claim with its capitation
+  detail. Live in as little as {fact:goLiveDays} days.
+h1: You care for your patients. Leave everything else to us.
+linkLabel: Book a demo in Nigeria
+eyebrow: For clinics in Nigeria
+openingAnswer: >-
+  The EasyClinic demo in Nigeria takes 20 minutes and follows one patient through a clinic set up like
+  yours, from the booking and the prescription to the invoice in naira and the claim to the patient's
+  HMO. After the demo, a clinic can be live in {fact:goLiveDays} days at the fastest.
+summary: >-
+  A 20-minute demo that follows your clinic's patient flow from the booking to the HMO claim, then a
+  go-live in as little as {fact:goLiveDays} days.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book my 20-minute demo
+    href: /nigeriademo/#book-a-demo
+  secondary:
+    label: See prices in naira
+    href: /pricing/nigeria/
+  whatsapp: Hi, I was reading the EasyClinic Nigeria demo page and would like to book a 20-minute demo for my clinic.
+faqHeading: Questions before you book
+faq:
+  - question: How long is the demo?
+    answer: >-
+      The demo takes 20 minutes and follows one patient from the booking and the prescription to the
+      invoice in naira and the HMO claim. If HMO claims or the pharmacy matter most to your clinic, say so
+      when we call and the demo spends its time there. [Whether the demo runs on a video call only, or
+      also in person in Lagos or Abuja].
+  - question: Can my receptionist join the demo?
+    answer: >-
+      Yes, and it helps, because your receptionist is the person who books the patients and takes the
+      card and bank transfer payments all day. Every plan includes a reception login at no extra cost;
+      reception staff can book and bill but cannot open the EMR or write prescriptions.
+  - question: Do I need to install anything?
+    answer: >-
+      No, EasyClinic is cloud software that runs in a web browser, so there is nothing to install: your
+      clinic needs a browser and an internet connection. It does not run fully offline today, and what a
+      power cut or a dropped line does in the middle of a consult is on the [Nigeria
+      page](/hospital-management-software-nigeria/#power-internet-whatsapp).
+  - question: What will EasyClinic cost after the demo?
+    answer: >-
+      Professional costs {price:ngn.professional.annual} per doctor per month billed annually, and every
+      plan includes a reception login. The [Nigeria pricing page](/pricing/nigeria/) lists each plan in
+      naira, billed annually or quarterly, with the add-ons.
+  - question: Which HMOs can I send claims to?
+    answer: >-
+      [HMOs whose claim forms are set up for Nigerian clinics today, with the date]. Each HMO is set up
+      once with its plans and price list, and the claim is built from the visit and the bill with its
+      capitation or fee-for-service detail, so what the HMO pays can be set against what you claimed.
+      [How a claim reaches each HMO, for example a portal upload, an email or a printed claim pack]. HMO
+      claims come with the Enterprise plan, or as an add-on on Professional and Premium.
+  - question: Can patients pay by card or bank transfer?
+    answer: >-
+      Yes, the invoice is in naira and a card or bank transfer payment is recorded against the patient's
+      bill, so the balance shows what is still owed. Online payments start on Premium, and the Paystack
+      and Flutterwave rows in the payments table on this page give the status of each gateway.
+  - question: Is there a free trial?
+    answer: >-
+      [Whether clinics in Nigeria can try EasyClinic free before paying, and for how long]. The demo
+      itself costs nothing, and if you go ahead there is no binding contract and no setup fee, so you use
+      EasyClinic for as long as you are happy with it.
+  - question: What happens after I submit the form?
+    answer: >-
+      [The team that calls Nigerian clinics, whether a Nigerian contact, a partner or the India team]
+      calls you on the number you gave, within [call-back window in West Africa Time], to fix a time for
+      the demo and ask how your clinic runs. If you would rather not wait, call {contact:ng.phone} or
+      write to {contact:ng.email}; clinics in Nigeria can also call or WhatsApp the India number,
+      {contact:in.phone}.
+links:
+  hub: /hospital-management-software-nigeria/
+  related:
+    - href: /hospital-management-software-nigeria/
+      label: Clinic and hospital software in Nigeria
+      description: How a Nigerian clinic's day runs on EasyClinic, from registration to the HMO claim and the naira invoice.
+    - href: /pricing/nigeria/
+      label: EasyClinic prices in Nigeria
+      description: Per doctor per month in naira, from {price:ngn.professional.annual} on the Professional plan.
+    - href: /best-clinic-management-software-nigeria/
+      label: Best clinic management software in Nigeria
+      description: The options for a private clinic or hospital OPD in Nigeria compared side by side, EasyClinic included.
+    - href: /features/insurance-claims/
+      label: Insurance and HMO claims
+      description: How a claim is built from the visit and the bill, and set against what the payer sends.
+    - href: /trust/
+      label: Security and compliance
+      description: Where patient data is stored and how access to it is controlled.
+closing:
+  heading: Twenty minutes on a clinic set up like yours
+  body: Send the form and we call you to fix a time around your clinic hours, or call {contact:ng.phone} now.
+  primary:
+    label: Book my 20-minute demo
+    href: /nigeriademo/#book-a-demo
+country: ng
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The HMO claim built from the bill with its capitation or fee-for-service detail, and the month-end
+    HMO payment that falls short of what was claimed, are specific to a clinic in Nigeria, but nothing on
+    the page yet comes from a named Nigerian contact or client, or from a number measured in Nigeria.
+  readsMachineWritten: >-
+    The three problems and the eight module outcomes follow the Kenya page almost line for line and share
+    one rhythm, so they may read as templated to a Nigerian doctor, and with the price, contact, gateway
+    and regulator facts still in brackets the page cannot pass spec 6.5 (no named person, no local
+    measured number) until the company fills them.
+notes:
+  - >-
+    STRUCTURE. Follows the live /kenyademo/ page and kenyademo.yaml (spec 5.13 country demo pages, spec 6
+    intro): H1, demo form, three problems, eight modules, Nigerian payments and HMOs, local compliance,
+    proof, demo to live. There is no live Nigeria demo page to carry over: https://www.easyclinic.io/nigeriademo/
+    returned HTTP 404 on 2026-09-26 (checked again in review). The page stays status draft until the
+    facts below are supplied.
+  - >-
+    CANNIBALISATION (review, 2026-09-26; spec 2.1 and 4.5 rule 4). This page owns conversion intent
+    ("EasyClinic Nigeria demo"); /hospital-management-software-nigeria/ owns product and compliance
+    intent and /pricing/nigeria/ owns cost intent. The draft's FAQ repeated six of the country page's
+    questions with the same placeholders (HMO claims, NDPA, power and internet, cost, Paystack and
+    Flutterwave, training on site), so the NDPA, outage and on-site training questions were cut, the
+    full NGN price list became one "cost after the demo" answer that links to /pricing/nigeria/, and the
+    receptionist, install and free-trial questions (the /kenyademo/ set) were added. The NDPA and NHIA
+    explainer in the compliance intro was cut too: spec 4.5 has the regulator explainer written once, on
+    the country page, so the intro links to its #compliance-in-nigeria section. The VAT, hosting,
+    outage, self-hosting and on-site training placeholders now sit only on the country and pricing
+    pages; do not add them back here. FAQ 3 and the compliance intro link to the country page anchors
+    #power-internet-whatsapp and #compliance-in-nigeria, so keep those section ids.
+  - >-
+    PUBLIC FACTS USED, from https://www.easyclinic.io/emr-software-in-nigeria/ (retrieved 2026-09-26 and
+    each quote checked again in review). (1) HMO claims prepared "with the right capitation and tariff
+    detail" and "capitation and fee-for-service detail", reconciling "what each HMO actually pays": FAQ
+    5, pain block 2, the claims module and the HMO row. (2) "Invoice in naira and accept card, bank
+    transfer and online payment": FAQ 2 (receptionist), FAQ 6, the billing module and the desk row. (3)
+    "Plans are priced in naira" and "Book a free demo": the naira wording in the form promise and FAQ 4
+    (the amounts are unknown), and "the demo itself costs nothing" in FAQ 7. (4) "One dashboard shows
+    revenue, HMO receivables and patient flow": pain block 3 and the reports module. (5) "WhatsApp,
+    Email, SMS Integrations": the WhatsApp row (WhatsApp is on Premium per plans.yaml). (6)
+    "30-Second Prescriptions": the records module (the live /kenyademo/ caption says "in under 30
+    seconds"). (7) "Contact support at hello@easyclinic.io": {contact:ng.email} in FAQ 8, through
+    countries/ng.yaml, where its owner set it with a source comment. Other sources: /contact-us/
+    (published, this repo: "Clinics in every other country, including ... Nigeria, can call or WhatsApp
+    the India number") for FAQ 8; /features/insurance-claims/ for the payer profile wording;
+    migration/research/facts.md for the reception licence rule, no binding contract, no setup fee and
+    "does not run fully offline today"; the live /pricing/ FAQ for the four-day training, the support
+    channels and "2 hours / 10 patient records"; the live /kenyademo/ for the three-problem framework.
+    The HMO share of a Nigerian clinic's income ("HMOs control much of the income" on the live page) is
+    not stated as a figure, because it is unmeasured.
+  - >-
+    NOT CARRIED OVER from the live Nigeria page: "Best EMR Software in Nigeria 2026", "proven results",
+    "one of the world's largest AI clinical pilots", "Clinics Trust Us. The Industry Awards Us.",
+    "Audit-ready records under the NDPA 2023", "audit trails ready for an NDPC review", the FAQ answer
+    "Yes." to NDPA support and "aligned with the NDPA 2023 and Nigeria Data Protection Commission rules"
+    (all state or imply a compliance status while regulators/ng-ndpa.yaml state is null); "Pharmacy stock
+    ... with automatic reorder"; Ibadan and Port Harcourt (the live page says it "works for clinics"
+    there, which is not a client list; countries/ng.yaml cities are Lagos and Abuja); and the six
+    testimonials, none of them from Nigeria.
+  - >-
+    REGULATOR NAMES AND LINKS (review, 2026-09-26). The page names the NDPA, the NDPC and the NHIA only
+    through the regulatorTable rows and gives no regulator URL of its own. Checked on the regulators' own
+    sites: https://ndpc.gov.ng/ ("The Nigeria Data Protection Commission (NDPC), established under the
+    Nigeria Data Protection Act 2023"), and the Act itself from ndpc.gov.ng/resources/
+    (Nigeria_Data_Protection_Act_2023.pdf), titled "Nigeria Data Protection Act, 2023", which lists health
+    status as sensitive personal data (s.65), requires a Data Protection Officer of a data controller of
+    major importance (s.32), a breach notice to the Commission within 72 hours (s.40), rules for transfers
+    out of Nigeria (Part VIII) and registration by data controllers and processors of major importance
+    (s.44); https://www.nhia.gov.ng/about-us/ ("The National Health Insurance Authority (NHIA) was
+    established under the National Health Insurance Act which was signed into law on 19 May 2022,
+    replacing the National Health Insurance Scheme Act of 1999"), which lists accredited HMOs and
+    accredited health care providers. The links in regulators/ng-ndpa.yaml and ng-nhia.yaml both
+    resolve. For the owner of those files: ng-ndpa clinicMustDo says "above the threshold", while the
+    Act's test is "data controller or data processor of major importance", with the thresholds set in
+    NDPC guidance, so check that wording in the legal review.
+  - >-
+    OWNER NIGERIA SALES OR COUNTRY LEAD. (a) countries/ng.yaml contact: name, publishName, role, phone,
+    whatsapp, hours and callbackWindow are null; email is hello@easyclinic.io, the company-wide address
+    from the live Nigeria page, not a Nigerian contact. The hero ContactCard renders "Or call us
+    directly" with a [Nigeria contact phone] placeholder beside that address; the DemoForm aside prints
+    its "Or call [name] directly: [number]" line only once contact.phone is set, and uses the name only
+    when publishName is true. FAQ 8 and the closing band use {contact:ng.phone}, which renders a
+    placeholder until then. (b) Who calls Nigerian clinics back and within what window (FAQ 8). (c)
+    Whether the demo is a video call only or also in person, and in which cities (FAQ 1 on demo length).
+    (d) Whether training can be given on site in Lagos or Abuja, and at what cost (training step; the
+    question itself is asked on the country page). (e) Office or partner address in Nigeria (ng.yaml
+    office is null). (f) A named Lagos or Abuja client (ng.yaml clients is empty). (g) A Nigerian
+    testimonial with name, clinic, city and specialty and consent on file: every testimonial in
+    src/data/testimonials is placed on another page, so the proof block is the badges variant with a
+    placeholder in its intro; replace it with a testimonialRow once the quote exists. (h) Demo length:
+    the live /kenyademo/ says 30 minutes, the rebuild and the DemoForm button say 20; this page uses 20.
+    (i) Confirm the illustrative details in the pain blocks read true to a Nigerian clinic: HMO
+    authorisation codes in the register margin, transfer alerts on the receptionist's phone, the
+    fee-for-service shortfall at month end.
+  - >-
+    OWNER PRICING AND FINANCE. prices/ngn.yaml plans are null, so the form promise, FAQ 4 and the
+    related-link description use {price:ngn.professional.annual}, which renders a placeholder until the
+    amounts and asOf are set. VAT (taxNote), add-on prices and paymentMethods are asked on /pricing/nigeria/,
+    which this page links to instead of repeating them.
+  - >-
+    OWNER PRODUCT AND INTEGRATIONS. (a) Paystack and Flutterwave state and asOf in ng.yaml payments, and
+    what each does at the clinic (two table rows; FAQ 6 points to them), plus whether the Premium
+    "online payments" inclusion means either gateway in Nigeria. (b) Which HMOs are set up today (ng.yaml
+    insurers is empty; no HMO is named anywhere on the page) and how a claim reaches each one (FAQ 5, HMO
+    row). (c) Any other Nigerian connection, such as a lab network or accounting software, with its
+    status (the placeholder table row; delete the row if there is none). (d) Outage behaviour,
+    self-hosting and the hosting country are asked on the country page and /trust/; FAQ 3 links there.
+  - >-
+    OWNER COMPLIANCE AND LEGAL. regulators/ng-ndpa.yaml, ng-nhia.yaml and ng-hmo-claims.yaml have state
+    and asOf null, so the regulatorTable (countries ng) renders a status placeholder on every row.
+    ng-nhia and ng-hmo-claims have no clinicMustDo, so those cells render a dash; add what the clinic must
+    do. The regulatorTable is used because this is a draft: page-writing-rules.md forbids it on pages
+    meant to publish while statuses are unknown, so if the page must go live before the three states are
+    set, remove the block.
+  - >-
+    OWNER CUSTOMER SUCCESS AND SUPPORT. Support hours in West Africa Time and the number Nigerian clinics
+    call for support (support step). How long migration takes and whether it is included in the price
+    (migration step). The typical go-live time for a clinic group or hospital OPD (step list note):
+    goLiveDays (3) is phrased only as the fastest case because the live Kenya listicle says "2 to 4 week
+    setup". Process claims to confirm: the call back on the number given, the questions about the clinic
+    before the demo, and the demo spending its time on HMO claims or pharmacy when asked.
+  - >-
+    OWNER MARKETING AND WEB. (a) Free trial: the live Nigeria page's footer says "try Easy Clinic
+    absolutely free - no strings attached", while /kenyademo/ and /indiademo/ say there is no free trial.
+    FAQ 7 answers with [Whether clinics in Nigeria can try EasyClinic free before paying, and for how
+    long]; if the answer is no, use the /kenyademo/ wording, and fix the live footer either way. The live
+    page's clinic-chain card names Port Louis and Curepipe (copied from the Mauritius page). (b) Capterra
+    and Google review counts are null (facts.yaml capterraReviews, googleReviews), so each badge shows an
+    optional count placeholder in preview. (c) No heroMedia or module media until the spec 12
+    screenshots exist; the natural pair here is a naira invoice with its HMO claim and a claim
+    reconciliation screen. (d) ng.yaml contact.whatsapp is null, so the WhatsApp button routes to the
+    India number in site.yaml with a Nigeria-specific prefilled message. (e) heroStrip is left off
+    because the proof block already shows the same two ratings. (f) /hospital-management-software-nigeria/
+    and /pricing/nigeria/ exist in src/content as drafts; /best-clinic-management-software-nigeria/ does
+    not exist yet but is listed in countries/ng.yaml pages. All three are hidden in production until
+    published.
+  - >-
+    CuraPilot's plan availability is not in plans.yaml, so the AI module names clinical decision support
+    without a plan; only Cura AI note drafting is said to come with every plan. The Penda Health study is
+    not cited and nothing links the studied tool (AI Consult) to Cura AI or CuraPilot.
+  - >-
+    editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite
+    or cut anything in readsMachineWritten, and update editorialPass.
+sections:
+  - discriminant: demoForm
+    value:
+      id: book-a-demo
+      heading: Book a 20-minute demo
+      country: ng
+      promise: |-
+        In 20 minutes we take one patient through a clinic set up like yours: the booking, the consult and the prescription, the invoice in naira and the claim to the patient's HMO. Before the demo we ask how your clinic runs, so it follows your patient flow and your practice type.
+
+        You leave knowing which plan fits your clinic and what it costs in naira, from {price:ngn.professional.annual} per doctor per month.
+  - discriminant: painBlocks
+    value:
+      heading: What EasyClinic fixes first
+      intro: If your clinic runs on a paper register and the receptionist's phone, these will sound familiar.
+      items:
+        - heading: Your clinic works. But it is exhausting you.
+          body: >-
+            The register is a paper book at reception, with the HMO authorisation codes written in its
+            margin, and the bank transfer alerts land on the receptionist's own phone. The notes get
+            finished after the last patient has gone, and when an HMO asks for a patient's record from last
+            year, someone spends the morning looking for it.
+          fix: >-
+            One system, and everyone on it, from reception to the doctor, the pharmacy and the lab. The note
+            and the prescription are done before the patient leaves the room, so the day ends with the
+            medicine done instead of the paperwork.
+        - heading: You are providing services you are not being paid for.
+          body: >-
+            The injection given at the end of a busy afternoon never reaches the bill. At month end the
+            HMO's payment falls short of what you claimed, and nobody can say which fee-for-service items it
+            left out, because the claims were typed up by hand from the register.
+          fix: >-
+            Every order in the chart lands on the bill, so the injection is charged before the patient
+            reaches the desk. The HMO claim is built from the same bill with its capitation or
+            fee-for-service detail, and what each HMO pays is set against what you claimed, so the losses
+            become visible, and then they stop.
+        - heading: The bigger you grow, the less you can see.
+          body: >-
+            With one clinic you can see everything from the consulting room. Open a second branch across
+            Lagos or a pharmacy next door, and you hear about Tuesday's takings in a phone call on
+            Wednesday.
+          fix: >-
+            One clinic or fifteen, you see every branch from one login, down to the day's takings and the
+            HMO receivables still unpaid. Decisions come from the numbers instead of a feeling.
+  - discriminant: moduleGrid
+    value:
+      heading: Eight modules on one patient record
+      intro: >-
+        Every module works on the same record, so the prescription reaches the pharmacy and the bill without
+        anyone typing it twice. Appointments, records, billing, reports and Cura AI come with every plan;
+        lab reports and WhatsApp messages start on Premium, and pharmacy and HMO claims come with
+        Enterprise or as add-ons.
+      columns: 4
+      items:
+        - title: Appointments
+          outcome: Walk-ins and booked patients on one list, with reminders by SMS, or on WhatsApp from Premium.
+          icon: calendar-clock
+          href: /features/appointment-scheduling/
+        - title: Medical records
+          outcome: The note and the prescription on the same record as every past visit, with a prescription written in under 30 seconds.
+          icon: notebook-pen
+          href: /features/emr/
+        - title: Billing and payments
+          outcome: Orders from the consult land on the invoice in naira, and the payment is recorded against it, by card or by bank transfer.
+          icon: receipt
+          href: /features/billing/
+        - title: Insurance and HMO claims
+          outcome: Each visit becomes an HMO claim with its capitation or fee-for-service detail, set against what the HMO pays.
+          icon: file-check
+          href: /features/insurance-claims/
+        - title: Inventory and pharmacy
+          outcome: Dispense from the prescription on screen, with batch and expiry tracked as medicines leave the counter.
+          icon: pill
+          href: /features/pharmacy-and-inventory/
+        - title: Lab reports
+          outcome: Order tests from the chart, and the results come back into the patient's record.
+          icon: flask-conical
+          href: /features/lab/
+        - title: Reports and dashboards
+          outcome: Revenue by doctor and by branch, and the HMO receivables still unpaid, in one morning view.
+          icon: layout-dashboard
+          href: /features/reports-and-dashboards/
+        - title: AI and automation
+          outcome: Dictate the note and Cura AI drafts it for you to sign, with clinical decision support during the consult.
+          icon: sparkles
+          href: /ai/
+          links:
+            - label: Cura AI note drafting
+              href: /ai/
+            - label: CuraPilot decision support
+              href: /curapilot/
+  - discriminant: dataTable
+    value:
+      id: payments-and-hmos
+      heading: Built for how a Nigerian clinic gets paid
+      intro: >-
+        At a Nigerian clinic the money comes in from HMOs as well as by card or bank transfer at the desk.
+        This is what EasyClinic does with each, as the demo shows it.
+      caption: How EasyClinic handles HMO claims, naira payments, payment gateways and WhatsApp reminders for a clinic in Nigeria
+      columns:
+        - At your clinic
+        - What EasyClinic does
+      rows:
+        - - HMO claims
+          - >-
+            Each HMO is set up once with its plans and price list. The claim is built from the visit and
+            the bill with its capitation or fee-for-service detail, and what the HMO pays is set against
+            what you claimed. [HMOs whose claim forms are set up for Nigerian clinics today, with the date].
+        - - Card and bank transfer at the desk
+          - The invoice is in naira and the payment is recorded against the patient's bill, so the balance shows what is still owed.
+        - - Paystack
+          - '[Paystack integration status as of date, and what it does at the clinic]'
+        - - Flutterwave
+          - '[Flutterwave integration status as of date, and what it does at the clinic]'
+        - - WhatsApp reminders
+          - Appointment reminders and follow-up messages reach the patient on WhatsApp, sent from the clinic software instead of a receptionist's own phone.
+        - - '[Other Nigerian connection, such as a lab network or accounting software]'
+          - '[What it does at the clinic, and its status as of date]'
+      note: >-
+        Insurance and HMO claims come with the Enterprise plan or as an add-on on Professional and Premium,
+        and WhatsApp messages and online payments start on Premium. The [Nigeria pricing
+        page](/pricing/nigeria/) lists what each plan includes.
+  - discriminant: regulatorTable
+    value:
+      id: compliance-in-nigeria
+      heading: Nigerian rules and HMO claim packs, with EasyClinic's status
+      intro: >-
+        Each row gives EasyClinic's status in Nigeria and the date it was last checked. What each law and
+        payer asks of your clinic is explained on the [Nigeria
+        page](/hospital-management-software-nigeria/#compliance-in-nigeria).
+      countries:
+        - ng
+      showClinicMustDo: true
+      trustLink: true
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        EasyClinic's ratings on Capterra and Google, which are not specific to Nigeria. [A Nigerian
+        client's testimonial, with the doctor's name, clinic, city and specialty, and consent on file]
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+  - discriminant: stepList
+    value:
+      heading: From demo to live in as little as {fact:goLiveDays} days
+      steps:
+        - title: Live demo
+          meta: 20 minutes
+          body: >-
+            One patient through a clinic set up like yours, from the booking and the prescription to the
+            invoice in naira and the HMO claim. You leave knowing which plan fits your clinic and what it
+            costs in naira.
+        - title: Staff training
+          meta: '{fact:trainingDays} sessions, about two hours in all'
+          body: >-
+            Day 1 is basic training (40 minutes), day 2 is EMR scenarios (40 minutes), day 3 is practice
+            exercises (20 minutes) and day 4 is the road to expertise (20 minutes). The sessions are for you
+            and your clinic staff. [Whether sessions are given in person in Lagos or Abuja, or on a video
+            call].
+        - title: Data migration
+          body: >-
+            Your existing patient records come across before go-live, so the first morning does not start
+            from an empty screen. If your clinic writes on paper, there is nothing to import: give us 2 hours
+            or 10 patient records, and we promise to make your prescription writing faster. [How long
+            migration takes, and whether it is included in the price].
+        - title: Support
+          meta: Unlimited, on every plan
+          body: >-
+            Support and training are included in every plan at no extra charge. You reach support by phone,
+            email, chat or the written guides in the [help centre](https://help.easyclinic.io/), and Premium
+            and Enterprise clinics also get a named account manager. [Support hours in West Africa Time, and
+            the number Nigerian clinics call for support].
+      note: >-
+        {fact:goLiveDays} days is the fastest time from demo to live, and not every clinic moves that
+        fast. [Typical go-live time for a Nigerian clinic group or hospital OPD].

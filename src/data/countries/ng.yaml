@@ -4,7 +4,10 @@ currency: NGN
 dialCode: '+234'
 timezone: Africa/Lagos
 flagship: true
-contact: { name: null, publishName: null, role: null, phone: null, whatsapp: null, email: null, hours: null, callbackWindow: null }
+# contact.email: "Contact support at hello@easyclinic.io" on https://www.easyclinic.io/emr-software-in-nigeria/
+# (fetched 2026-09-26). It is the company-wide support address, not a Nigeria-based contact; replace it when
+# one exists. Everything else in contact is unknown: the live Nigeria page gives no name, phone or hours.
+contact: { name: null, publishName: null, role: null, phone: null, whatsapp: null, email: hello@easyclinic.io, hours: null, callbackWindow: null }
 office: null
 pages:
   country: /hospital-management-software-nigeria/
@@ -12,6 +15,10 @@ pages:
   pricing: /pricing/nigeria/
   listicle: /best-clinic-management-software-nigeria/
   privacy: /privacy/nigeria/
+# cities: Lagos and Abuja are named on https://www.easyclinic.io/emr-software-in-nigeria/ (fetched 2026-09-26):
+# "Cloud access for clinics in Lagos, Abuja and Port Harcourt" and the FAQ "works for clinics ... in Lagos,
+# Abuja, Ibadan, Port Harcourt". That is coverage wording, not named clients; the Nigeria lead should confirm
+# the cities where EasyClinic has Nigerian clinics before a page publishes this list as local proof.
 cities: [Lagos, Abuja]
 clients: []
 payments:

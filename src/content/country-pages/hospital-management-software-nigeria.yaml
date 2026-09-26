@@ -1,0 +1,388 @@
+# /hospital-management-software-nigeria/ (spec 4.2 Nigeria row, 5.13 Nigeria). Nigeria uses "hospital" phrasing (4.2).
+# Draft: spec 5.13 does not publish a country page until blocks 2, 3 and 7 are filled. Nigeria has no local
+# contact, office, client or testimonial on file, every ng-* regulator status is null, and prices/ngn.yaml is null.
+# /emr-software-in-nigeria/ already 301s here from src/data/redirects.yaml, so there is no redirectFrom.
+status: draft
+country: ng
+headKeyword: hospital management software in Nigeria
+secondaryKeywords:
+  - clinic management software Nigeria
+  - EMR software Nigeria
+  - HMO claims software
+  - NDPA compliant
+title: 'Clinic and Hospital Software in Nigeria: EasyClinic'
+metaDescription: >-
+  Hospital management software in Nigeria for clinics and hospital OPDs, from
+  {price:ngn.professional.annual} per doctor a month, with HMO claims built from the bill.
+h1: Clinic and hospital OPD software for Nigeria
+linkLabel: Clinic and hospital software in Nigeria
+eyebrow: Nigeria
+openingAnswer: >-
+  EasyClinic is hospital management software for the outpatient side of Nigerian clinics and hospitals,
+  from {price:ngn.professional.annual} per doctor per month, and its claims module builds each HMO claim
+  from the visit and the bill with the capitation or fee-for-service detail that HMO pays on. It runs in
+  the browser and does not run fully offline today, so the question is what happens in the minute before
+  the generator comes on: [what is saved and what still works when the power or the internet drops mid-consult].
+summary: >-
+  What EasyClinic costs in naira, how an HMO claim comes from the visit and the bill, the status and
+  date of NHIA and NDPA work, and what happens when the power goes.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  needed: 'Invoice from an HMO patient''s visit in naira: the HMO share and the patient share split on one bill, with a bank transfer recorded against the patient share. New capture; spec 12 lists INR and KES invoices only.'
+  alt: An EasyClinic invoice for a clinic visit in Nigerian naira, with the HMO's share and the patient's share split and a bank transfer recorded
+  caption: One bill from the visit in naira, with the HMO's share split from the patient's and the patient's bank transfer recorded.
+  frame: browser
+heroStrip:
+  regulators: [ng-nhia, ng-hmo-claims, ng-ndpa]
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo in Nigeria
+    href: /nigeriademo/
+  secondary:
+    label: See prices in naira
+    href: /pricing/nigeria/
+  whatsapp: Hi, I was reading the EasyClinic page on hospital management software in Nigeria and would like a demo for my clinic.
+
+sections:
+  # Block 2: local proof strip. The template puts the bare contact card in the hero; this section renders
+  # the office, cities and named clients from src/data/countries/ng.yaml (office and clients are empty today).
+  - discriminant: contactCard
+    value:
+      id: nigeria-contact
+      heading: Who to call, and where EasyClinic works in Nigeria
+      intro: >-
+        To book a demo, or to ask a question before you book one, call {contact:ng.phone} or write to
+        {contact:ng.email}. [Name and role of the Nigeria contact, and the city they work from]. After the
+        demo, training is {fact:trainingDays} short sessions, about two hours in total, for you and your
+        staff, and a clinic can be live in as little as {fact:goLiveDays} days.
+      country: ng
+      showClients: true
+
+  # Block 3: regulatory deep-dive. Status and dates render from src/data/regulators/ng-*.yaml (all null today).
+  - discriminant: regulatorTable
+    value:
+      id: compliance-in-nigeria
+      heading: What Nigeria's health insurance and data protection rules ask of your clinic
+      intro: |
+        **NHIA.** The National Health Insurance Authority replaced the NHIS when the NHIA Act was signed on 19 May 2022. It accredits the health care facilities that treat patients under its schemes, and accreditation is the facility's own application, whatever software it runs.
+
+        **HMOs.** A private clinic in Nigeria that treats insured patients is paid by their HMOs, and each HMO has its own claim forms. What the clinic is paid for a service depends on the HMO and the enrollee's plan, and HMOs pay in two ways: capitation, a fixed sum each month for every enrollee registered with the clinic, or fee-for-service, a claim for each visit or service. The NHIA accredits HMOs too, and lists them on [its HMO page](https://www.nhia.gov.ng/hmo/).
+
+        **NDPA.** The Nigeria Data Protection Act, 2023 treats health status as sensitive personal data, and the Nigeria Data Protection Commission (NDPC) enforces it. The Act sets rules on consent, breach notification, sending patient data outside Nigeria and registration with the Commission. The NDPC's registration notice of December 2024 counts an organisation in the health sector that keeps a filing system of personal data, on paper or on a computer, as a data controller of major importance, and the same goes for any organisation that handles the personal data of more than 200 people in six months. A data controller of major importance registers with the NDPC and, under section 32 of the Act, names a Data Protection Officer, who can be on the staff or engaged by contract.
+
+        Each row below gives EasyClinic's status (Live, In certification, Planned or Not applicable) and the date it was last checked. If anything else on this page seems to claim more than the table, go by the table. How EasyClinic itself handles personal data in Nigeria is on the [Nigeria privacy page](/privacy/nigeria/), and the same table for every country is on the [trust page](/trust/). Opening a new clinic first? The [guide to starting a clinic in Nigeria](/clinic-in-nigeria/) covers the licences and the costs before the first patient.
+      countries: [ng]
+      showClinicMustDo: true
+      trustLink: true
+
+  # Block 4: money. Prices from src/data/prices/ngn.yaml (null today); Paystack, Flutterwave and tax invoicing
+  # from countries/ng.yaml (states null).
+  - discriminant: countryMoney
+    value:
+      id: prices-in-naira
+      heading: Prices in naira, and how Nigerian patients pay
+      intro: >-
+        Every price is per doctor per month, and the price includes a reception login. There is no setup
+        fee and no contract. Bills are in naira, and a card or bank transfer payment at the desk is
+        recorded against the patient's bill, so the bill shows what has been paid and what is still owed.
+      country: ng
+      currency: ngn
+      payersNote: >-
+        HMO claims come with the Enterprise plan, or with the claims add-on on Professional and Premium.
+        Each HMO is set up once with its plans and tariff, and its claims carry the capitation or
+        fee-for-service detail that HMO pays on. HMOs whose claim formats are built today: [list of
+        Nigerian HMOs whose claim packs EasyClinic produces, as of date].
+
+  # Block 4, continued: the HMO claim journey (spec 5.13 Nigeria "HMO claim packs and encounter forms").
+  - discriminant: stepList
+    value:
+      id: hmo-visit
+      heading: An HMO patient's visit, from the front desk to the paid claim
+      intro: >-
+        This is the claims module, which comes with Enterprise and can be added to Professional or
+        Premium. The steps are the same for every HMO, and the forms each HMO wants at the end differ.
+      steps:
+        - title: Registration
+          meta: Front desk
+          body: >-
+            The receptionist links the patient to their HMO and plan, so every bill from the visit follows
+            that HMO's tariff instead of what the receptionist remembers. [Whether EasyClinic checks an
+            enrollee's eligibility with the HMO online, as of date].
+        - title: Authorisation
+          meta: Before the service
+          body: >-
+            Where the HMO has to approve a service first, the authorisation code it gives is recorded
+            against the visit before the bill is built, so a missing code is caught at the desk instead of
+            on the returned claim.
+        - title: The bill
+          meta: At the counter
+          body: >-
+            The bill is built from what was ordered in the consult, at that HMO's own tariff, and the
+            patient's share is split from the HMO's and paid at the desk in naira.
+        - title: The claim
+          meta: Billing desk
+          body: >-
+            The claim is built from the visit and the bill, with the capitation or fee-for-service detail
+            that HMO pays on, and the billing desk submits it one at a time or in a batch. Claim packs and
+            encounter forms in each HMO's own format: [HMO claim pack status as of date].
+        - title: Reconciliation
+          meta: When the HMO pays
+          body: >-
+            When the HMO pays, the payment is settled against its claims, and the claims it has not paid
+            stay open, so the billing desk sees which HMO still owes for which visits.
+      note: >-
+        A finished claim reaches the HMO by [how a claim reaches each HMO: portal upload, email, print or a
+        direct connection, as of date]. The same steps for every payer are on the
+        [insurance claims page](/features/insurance-claims/).
+
+  # Block 5: connectivity and language. The live site says it does not run fully offline today.
+  - discriminant: prose
+    value:
+      id: power-internet-whatsapp
+      heading: Power cuts, slow internet, phones and WhatsApp
+      body: |
+        **Power and internet.** EasyClinic runs in the browser over the internet, and it does not run fully offline today. When the power cuts before the generator comes on, or the line drops in the middle of a consult, [what is saved and what is lost when the power or the internet drops mid-consult]. Put the reception computer and the router on an inverter or a UPS, and keep a mobile data hotspot as a second line. A hospital that cannot depend on one connection can ask about the self-hosted option, where EasyClinic runs on the hospital's own server: [self-hosted option for Nigerian clinics: which plans, what it costs and what still needs the internet].
+
+        **Slow connections.** [How EasyClinic behaves on a slow mobile data connection, and how much data a day of clinic use takes].
+
+        **Phone and tablet.** On the Enterprise plan, patients get their own app and portal. For the doctor away from the desk: [doctor app: which phone platforms, and which screens work on a phone].
+
+        **WhatsApp.** On Premium and Enterprise, appointment reminders and messages reach the patient on WhatsApp, sent from the clinic software instead of the receptionist's own phone. On Professional, reminders go by SMS and email. [WhatsApp sender for Nigerian clinics: the clinic's own number or EasyClinic's, and who pays the message charges].
+
+        **Prescription language.** Prescriptions print in English. [Whether prescriptions can also print in Hausa, Yoruba, Igbo or Pidgin].
+      aside: >-
+        **Where it stops.** EasyClinic does not run fully offline today. A clinic that loses its line for
+        hours at a time needs a second connection, or a paper register at the front desk for those hours.
+      width: measure
+
+  # Block 6: the four clinic types. No Nigerian client is on file, so every example is a placeholder.
+  - discriminant: clinicTypes
+    value:
+      id: clinic-types
+      heading: Solo clinics to hospital OPDs in Nigeria
+      intro: Pick the one closest to yours. Each card links to the page written for that kind of clinic.
+      items:
+        - persona: solo
+          title: Solo doctor clinics
+          body: >-
+            One doctor and a receptionist, with no IT staff to call when the printer stops talking to the
+            system. The thirty-second prescription comes from saved shortcuts and the bill comes from the
+            visit, so the evening is not spent matching bank transfer alerts to patient names.
+          example: '[Nigerian solo doctor clinic on EasyClinic: doctor, specialty and city, with consent to be named]'
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: Polyclinics and specialist centres
+          body: >-
+            One record for every specialist the patient sees, with shared rooms and slots. Roles decide who
+            sees what: the reception login books and bills, but it cannot open the EMR or write a
+            prescription.
+          example: '[Nigerian polyclinic or specialist centre on EasyClinic: name and city, with consent to be named]'
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: Clinic groups with branches
+          body: >-
+            Central price lists, standard SOPs, stock moved between branches and a morning view of each
+            branch's KPIs. Clinical SOP tracking shows adherence branch by branch, so drift turns up as a
+            number on the owner's dashboard.
+          example: '[Nigerian clinic group on EasyClinic: name, cities and number of branches, with consent to be named]'
+          href: /solutions/clinic-chain/
+        - persona: hospital-opd
+          title: Hospital OPDs
+          body: >-
+            Token queues and doctor schedules at the front desk, pharmacy and lab turnaround behind it, HMO
+            claims from the same bill and a daily view of throughput. EasyClinic runs the outpatient side
+            and is not a full hospital information system, so wards and theatres stay on a separate system.
+          example: '[Nigerian hospital OPD on EasyClinic: name and city, with consent to be named]'
+          href: /solutions/hospital-opd/
+
+  # Admissions of limits (spec 6.1, 6.5). Every item is a confirmed limit or a placeholder.
+  - discriminant: scopeBox
+    value:
+      id: where-it-stops
+      heading: Where EasyClinic stops in a Nigerian clinic today
+      variant: limits
+      items:
+        - '**It does not run fully offline.** It needs an internet connection, so the power and the line at reception matter as much as the software.'
+        - '**It does not run inpatient wards.** Admissions, bed management, theatres and the ICU need their own system, and EasyClinic runs the OPD beside it.'
+        - '**It does not make your clinic NDPA compliant on its own.** Registering with the NDPC and naming a Data Protection Officer, where the Act asks for them, stay with the clinic whatever software it uses.'
+        - '**Setting up an HMO is not a connection to it.** Any HMO can be set up as a payer with its plans and tariff, which is billing setup, and [which HMOs, if any, receive EasyClinic claims electronically, as of date].'
+
+  # Block 7: no Nigerian testimonial exists, and every testimonial in src/data is placed on another page.
+  # Proof is the public ratings, with the missing testimonial as a placeholder in the intro.
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        We do not yet have a Nigerian clinic owner's own words to put on this page: [Nigerian client
+        testimonial: name, clinic, city and consent on file]. These are EasyClinic's public ratings, from
+        clinics of every kind.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions Nigerian clinic owners ask
+faq:
+  - question: Can EasyClinic prepare HMO claims for my clinic?
+    answer: >-
+      Yes, on the Enterprise plan or with the claims add-on on Professional and Premium: each HMO is set
+      up once with its plans and tariff, and the claim is built from the visit and the bill with the
+      capitation or fee-for-service detail that HMO pays on. Claim packs in each HMO's own format are
+      [HMO claim pack status as of date], the same as the HMO row in the table on this page, and the HMOs
+      set up today are [list of Nigerian HMOs whose claim packs EasyClinic produces]. When an HMO pays,
+      the payment is settled against its claims, and the unpaid ones stay open.
+  - question: Is EasyClinic compliant with the NDPA?
+    answer: >-
+      EasyClinic's standing under the Nigeria Data Protection Act, 2023 is [NDPA status as of date], the
+      same as the NDPA row in the table on this page, and no software makes a clinic compliant on its
+      own. Your clinic is the data controller and EasyClinic processes patient data on its behalf, so
+      registering with the NDPC and naming a Data Protection Officer stay with you: the NDPC's
+      registration notice counts a health-sector organisation that keeps patient files, or any
+      organisation handling the personal data of more than 200 people in six months, as a data
+      controller of major importance, and section 32 of the Act asks such a controller for a Data
+      Protection Officer, on the staff or engaged by contract. Patient data for Nigerian clinics is
+      hosted in [hosting region and provider for Nigerian clinics].
+      The records belong to your clinic, and if you leave, [what data a clinic gets back on leaving, in
+      what format, and how long EasyClinic keeps a copy].
+  - question: What happens when the power or the internet goes?
+    answer: >-
+      EasyClinic does not run fully offline today, because it runs in the browser over the internet.
+      [What still works without internet, and what is saved when the power or the line drops
+      mid-consult]. Keep the reception computer and the router on an inverter or a UPS with a mobile
+      data hotspot as a second line, and a hospital that loses its connection for hours at a time can ask
+      about the self-hosted option: [self-hosted option for Nigerian clinics: which plans, what it costs
+      and what still needs the internet].
+  - question: Can EasyClinic send appointment reminders on WhatsApp?
+    answer: >-
+      Yes, on Premium and Enterprise the appointment reminder and other messages reach the patient on
+      WhatsApp, sent from the clinic software; on Professional, reminders go by SMS and email. [WhatsApp
+      sender for Nigerian clinics: the clinic's own number or EasyClinic's, and who pays the message
+      charges].
+  - question: Can one system run my branches in Lagos and Abuja?
+    answer: >-
+      Yes, Premium and Enterprise both cover more than one location, and Professional covers one. On
+      Enterprise the owner has central control of every branch, with stock moved between branches and
+      clinical SOPs tracked across them. [What a second branch adds to the monthly bill in Nigeria].
+  - question: How much does EasyClinic cost in Nigeria?
+    answer: >-
+      Professional costs {price:ngn.professional.annual} and Premium {price:ngn.premium.annual} per
+      doctor per month when paid annually, or {price:ngn.professional.quarterly} and
+      {price:ngn.premium.quarterly} when paid quarterly. Enterprise, for hospital OPDs and clinic groups,
+      is priced on quote. A reception login is included and there is no setup fee. [Whether VAT is
+      included in naira prices or added], and the [Nigeria pricing page](/pricing/nigeria/) lists every
+      add-on.
+  - question: Does EasyClinic help with NHIA accreditation?
+    answer: >-
+      What EasyClinic provides toward NHIA accreditation is [NHIA accreditation documentation status as
+      of date], the same as the NHIA row in the table on this page, and the accreditation itself is the
+      facility's own application whatever software it runs. The NHIA replaced the NHIS in May 2022 and
+      accredits the facilities that treat patients under its schemes. [Which NHIA accreditation documents
+      EasyClinic produces from the patient record, as of date].
+  - question: Can patients pay through Paystack or Flutterwave?
+    answer: >-
+      Paystack payments through EasyClinic are [Paystack status as of date], and Flutterwave payments are
+      [Flutterwave status as of date]. A card or bank transfer payment at the desk is recorded against the
+      patient's bill in naira, so the bill shows what is paid and what is still owed, and online payments
+      start on the Premium plan.
+  - question: How is EasyClinic different from AjirMed?
+    answer: >-
+      [The main difference between EasyClinic and AjirMed for a private Nigerian clinic, with a source and
+      a date for each point]. The [Nigeria comparison page](/best-clinic-management-software-nigeria/)
+      puts the options for a private clinic in Nigeria side by side, EasyClinic included, with a source
+      and a date for every cell.
+  - question: Will someone train my staff on site in Nigeria?
+    answer: >-
+      [Whether EasyClinic trains Nigerian clinics on site, remotely or both, and what an on-site visit
+      costs]. Training runs over {fact:trainingDays} days and takes about two hours in total: 40 minutes
+      on the first day, 40 on the second, then 20 and 20. Unlimited support and training come with every
+      plan, and a clinic can be live in as little as {fact:goLiveDays} days from the demo.
+
+links:
+  hub: /countries/
+  relatedHeading: Where Nigerian clinic owners go next
+  related:
+    - href: /best-clinic-management-software-nigeria/
+      label: Best clinic management software in Nigeria
+      description: A ranked comparison of the options for a private clinic in Nigeria, EasyClinic included, with prices and NHIA status checked and dated.
+    - href: /pricing/nigeria/
+      label: EasyClinic prices in naira
+      description: Every plan and add-on in Nigerian naira, per doctor per month.
+    - href: /nigeriademo/
+      label: Book a demo in Nigeria
+      description: A 20-minute call that follows one HMO patient from the front desk to the claim.
+    - href: /features/insurance-claims/
+      label: TPA and HMO claims
+      description: How a claim is built from the visit and the bill, and settled when the payer pays.
+    - href: /clinic-in-nigeria/
+      label: Starting a clinic in Nigeria
+      description: What opening a private clinic in Nigeria costs, and the licences to get before the first patient.
+    - href: /privacy/nigeria/
+      label: Privacy in Nigeria
+      description: How EasyClinic collects and uses personal data in Nigeria, under the Nigeria Data Protection Act, 2023.
+    - href: /trust/
+      label: Security and compliance
+      description: EasyClinic's status and the date it was checked for every regulator, country by country.
+
+closing:
+  heading: See EasyClinic run a day at your clinic
+  body: >-
+    Book 20 minutes, or call {contact:ng.phone}. Bring what your front desk does on a busy morning, from
+    the HMO patient's authorisation code to the bank transfer at the counter, and we will show each step
+    in EasyClinic, including where it stops.
+  primary:
+    label: Book a 20-minute demo in Nigeria
+    href: /nigeriademo/
+  secondary:
+    label: See prices in naira
+    href: /pricing/nigeria/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    Very little yet: the HMO visit in capitation and fee-for-service terms, the NDPC's 200-people
+    registration rule and the generator-and-inverter advice are Nigerian, but with no named Nigerian
+    contact, client, testimonial or measured local number, nothing here could only have come from someone
+    who has run a clinic in Lagos.
+  readsMachineWritten: >-
+    The run of bracketed placeholders, and four clinic-type cards with no Nigerian example between them,
+    read as a template until the company fills them; a human has not yet read the page aloud.
+
+notes:
+  # Public facts used, each with its source (live pages fetched 2026-09-26).
+  - 'Source, https://www.easyclinic.io/emr-software-in-nigeria/ (fetched 2026-09-26): "HMO Claims and Reconciliation" and "Capitation and Fee-for-Service Billing" (feature list); FAQ "EasyClinic prepares HMO claims with capitation and fee-for-service detail, and reconciles what each HMO pays"; "Each visit becomes an HMO claim with the right capitation and tariff". Used in the opener, the payers note, the HMO step list and the HMO FAQ, as a description of the claims module. The per-HMO claim pack status stays a placeholder because ng-hmo-claims state is null.'
+  - 'Source, https://www.easyclinic.io/emr-software-in-nigeria/: "Invoice in naira and accept card, bank transfer and online payment through the gateways clinics already use" and FAQ "it bills in naira with online and bank payment" and "Plans are priced in naira". Used as: bills are in naira, and card or bank transfer payments are recorded against the bill. No gateway is named on the live page, so Paystack and Flutterwave stay placeholders (countries/ng.yaml payments state null).'
+  - 'Source, https://www.easyclinic.io/emr-software-in-nigeria/: "The Nigeria Data Protection Act 2023 treats health data as sensitive, with the Nigeria Data Protection Commission as the supervisor" and "The records belong to your clinic, and only your clinic". Used in the regulator intro and the NDPA FAQ. The live claims "Role-based access, consent and audit trails aligned with the NDPA 2023" and the FAQ answer "Yes" to NDPA support are NOT carried over: they state a compliance status, and ng-ndpa state is null.'
+  - 'Source, https://www.easyclinic.io/emr-software-in-nigeria/: "Contact support at hello@easyclinic.io" is on the page, so countries/ng.yaml contact.email is now hello@easyclinic.io (with a source comment) and {contact:ng.email} renders it. It is the company-wide address, not a Nigeria contact; replace it when a Nigeria address exists.'
+  - 'Source, https://www.easyclinic.io/emr-software-in-nigeria/: "30-Second Prescriptions" (the solo card''s thirty-second prescription, also spec 2.8 vocabulary). The FAQ city list "Lagos, Abuja, Ibadan, Port Harcourt" says EasyClinic "works for" clinics there, which is not evidence of clients, so countries/ng.yaml cities were not extended. The branch FAQ names Lagos and Abuja only as the two cities already in ng.yaml.'
+  - '/nigeriademo/ returns 404 on the live site (checked 2026-09-26), so no Nigeria demo facts exist. It is linked because countries/ng.yaml pages.demo lists it; the page must be built before this one publishes.'
+  - 'Not carried over from the live Nigeria page: the meta "Sign up for a free trial today" (there is no free trial, spec 12); "Port Louis, Curepipe" in the clinic chains card (a Mauritius template leftover); "Best EMR Software in Nigeria 2026", "proven results", "one of the world''s largest AI clinical pilots" and other unmeasured claims; the comparison table against "traditional EHR software".'
+  - 'Other confirmed facts: plans, inclusions, conditions and the claims add-on from src/data/plans.yaml; "does not run fully offline today" and the self-hosted option from the live Kenya listicle (migration/research/facts.md section 7); the reception login rule and the second-branch rule from /pricing/ (content/pricing/main.yaml); inpatient out of scope from /solutions/hospital-opd/; the claim journey wording from /features/insurance-claims/; the training breakdown (40, 40, 20, 20 minutes) from the live /pricing/ FAQ.'
+  - 'Regulator facts checked on the regulators'' own sites (fetched 2026-09-26). NHIA: https://www.nhia.gov.ng/ says the Authority "was established under the National Health Insurance Act which was signed into law on 19 May 2022, replacing the National Health Insurance Scheme Act"; it publishes "Stepwise procedures for HCFs accreditation" (https://www.nhia.gov.ng/download/stepwise-procedures-for-hcfs-accreditation/) and "NHIA Accredited Health Maintenance Organizations" (https://www.nhia.gov.ng/hmo/). NDPA: the Act text on the NDPC site (https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf) has s.26 consent, s.30 and s.65 (health status is sensitive personal data), s.32(1) and (2) (a data controller of major importance designates a Data Protection Officer, who may be an employee or engaged by a service contract), s.40 breaches, Part VIII cross-border transfers and s.44 registration. NDPC Guidance Notice NDPC/HQ/GN/VOL.03/B/24, dated 19 December 2024 (https://ndpc.gov.ng/wp-content/uploads/2025/07/Updated-Guidance-Notice-on-Registtration-2024.pdf), para 1(1): an organisation that keeps a filing system of personal data, analogue or digital, is of major importance if it processes the personal data of more than 200 data subjects in six months or processes personal data in one of the listed sectors, which include Health; para 3 puts hospitals giving secondary or tertiary care in the Extra-High level and primary health centres in the Ordinary-High level. Names and URLs in ng-nhia.yaml and ng-ndpa.yaml are correct (https://www.nhia.gov.ng/ and https://ndpc.gov.ng/ both resolve).'
+  - 'Still general knowledge, not verified on a regulator site, for the legal read: HMOs pay by capitation per registered enrollee or by fee-for-service; HMOs issue authorisation codes for services they must approve first (the NHIA operational guidelines PDF linked from https://www.nhia.gov.ng/operational-guideline/ returned 404 on 2026-09-26); "Your clinic is the data controller and EasyClinic processes patient data on its behalf". Suggest to the owner of src/data/regulators/ng-ndpa.yaml (not edited here): clinicMustDo "Register with the NDPC if the clinic processes data above the threshold" understates the notice, since health-sector organisations are designated whatever their size; consider "Register with the NDPC as a data controller of major importance and name a Data Protection Officer (NDPA s.32 and s.44; NDPC guidance notice of 19 December 2024)".'
+  # Facts still needed, by owner.
+  - 'OWNER Finance and pricing: NGN Professional and Premium prices, annual and quarterly, and an asOf date (src/data/prices/ngn.yaml); NGN add-on prices; whether VAT is included in naira prices (ngn.yaml taxNote); tax invoicing on patient bills (countries/ng.yaml taxInvoicing); what a second branch adds to the monthly bill; cost of an on-site training visit, if any.'
+  - 'OWNER Nigeria sales or country lead: a named Nigeria contact with consent to publish, role, direct phone, WhatsApp number and hours (countries/ng.yaml contact); a Nigeria office or partner address (office); named Nigerian clients (clients) and one per clinic type (solo, polyclinic, clinic group, hospital OPD); a Nigerian testimonial with name, clinic, city and consent on file (spec 5.13 block 7); whether training is on site, remote or both; the cities where EasyClinic has Nigerian clinics (countries/ng.yaml cities lists Lagos and Abuja, which the live Nigeria page names only as places it serves). Spec 5.13 block 2 wants the "Or call [first name] directly" pattern once a contact is cleared. Until a Nigerian number exists, the published /contact-us/ page sends clinics in Nigeria to the India line ({contact:in.phone}); if that is the intended route, decide whether this page should say so too, rather than leave {contact:ng.phone} as a placeholder. The 20-minute demo is the spec 7.9 CTA wording, not a Nigeria fact to supply.'
+  - 'OWNER Compliance: state and asOf date for ng-nhia, ng-hmo-claims and ng-ndpa (src/data/regulators); which NHIA accreditation documents EasyClinic produces; which HMOs have claim packs built and which, if any, receive claims electronically; how a finished claim reaches each HMO; whether an enrollee eligibility check with any HMO exists; Paystack and Flutterwave state and date (countries/ng.yaml payments).'
+  - 'OWNER Legal: confirm the reading of the NDPC registration notice on this page (a private clinic of any size counts as a health-sector data controller of major importance, so it registers and names a Data Protection Officer), which level a typical clinic falls into, and the general HMO descriptions (capitation, fee-for-service, authorisation codes) listed above as not verified on a regulator site.'
+  - 'OWNER Product and engineering: what is saved and what still works when the power or the internet drops mid-consult; behaviour on a slow mobile data connection and data used per day; the self-hosted option for Nigerian clinics (plans, cost, what still needs the internet); the doctor app (platforms, which screens work on a phone); the WhatsApp sender for Nigerian clinics and who pays message charges; prescription languages besides English; hosting region and provider for Nigerian clinics; what a clinic gets back on leaving, in what format, and how long a copy is kept.'
+  - 'OWNER Marketing and content: the AjirMed verdict for the FAQ, from the Nigeria listicle (/best-clinic-management-software-nigeria/, not built yet; spec 5.14 puts Nigeria in phase 3); /pricing/nigeria/ and /nigeriademo/ exist in src/content as drafts and must publish with or before this page, and /privacy/nigeria/ (listed in countries/ng.yaml pages) does not exist in src/content yet; Capterra and Google review counts (facts.yaml capterraReviews, googleReviews); the NGN invoice screenshot for heroMedia (add it to the spec 12 list); consider adding startAClinic: /clinic-in-nigeria/ to countries/ng.yaml pages, as Kenya has.'
+  # Editorial decisions.
+  - 'Title is the spec 4.2 row exactly (51 characters) and states no status. H1 follows the 4.2 row; spec 5.13 block 1 asks for the regulator in the H1, so add NHIA or NDPA to it only once that row is Live with a date.'
+  - 'Meta description rewritten from the 4.2 row ("HMO claim packs, NDPA compliance and a system that keeps working through power and internet outages"): NDPA compliance is a status (ng-ndpa null), and the live site says EasyClinic does not run fully offline, so both are cut. It leads with the head keyword and carries the NGN price token (the linter counts a token as 7 characters).'
+  - 'Secondary keyword "NDPA compliant" is kept from the 4.2 row as metadata only. No copy says EasyClinic is NDPA compliant; the scope box and the NDPA FAQ say the opposite of an assumption. Do not add the phrase until ng-ndpa is Live with a date.'
+  - 'Opener: two sentences (spec 2.2). Sentence one carries the head keyword, the NGN price token and the HMO capitation and fee-for-service detail from the live page; sentence two is the offline behaviour spec 5.13 asks for, with the power-cut behaviour as a placeholder. HMO claims come with Enterprise or the claims add-on, which the money block and the FAQ say; "plans from" keeps the price from reading as the claims price.'
+  - 'Compliance panel: heroStrip.regulators shows the NHIA, HMO claims and NDPA chips (linking to their /trust/ rows), and the regulatorTable renders all three ng-* rows with the clinic-must-do column. Both render placeholders until each state is set. The table intro links /privacy/nigeria/ and /trust/. On a page meant to publish before those states exist, remove heroStrip.regulators and the regulatorTable (page-writing rules).'
+  - 'Block 5 heading "Power cuts, slow internet, phones and WhatsApp" names four topics (spec 5.13 Nigeria: offline and low-bandwidth mode, WhatsApp Business flows, power-outage behaviour, plus mobile) to follow the no-groups-of-three rule. The inverter, UPS and hotspot advice is general practice, not a product claim.'
+  - 'FAQ follows the ten spec 5.13 Nigeria topics in order of what a prospect asks first: HMO claims, NDPA, unreliable internet, WhatsApp, branches, NGN cost, NHIA, Paystack, AjirMed comparison, training on site. The NDPA answer also carries hosting and data on leaving (spec 2.5 uncomfortable questions). No comparison page for Nigeria exists in the spec site tree, so the AjirMed answer points to the listicle.'
+  - 'Proof: no testimonial is used (every testimonial in src/data/testimonials is placed on another page), so the proof block is the Capterra and Google badges, with the missing Nigerian testimonial as a placeholder in its intro. Replace it with a testimonialRow once a Nigerian testimonial with consent exists.'
+  - 'Author: spec 2.7 prefers a named country lead; Subhashish Saha (Head of customer success) is the author until a Nigeria lead is on file.'
+  - 'Review 2026-09-26 (adversarial pass): regulator intro and NDPA FAQ now state the NDPC registration rule and the s.32 DPO duty from the regulator''s own documents, replacing the vague "above the threshold" line and the DPO placeholder; NHIA date made exact (19 May 2022) and the NHIA list of accredited HMOs linked; the unmeasured "a large share of the income arrives through HMOs" and "each HMO sets its own tariff" cut; the /privacy/nigeria/ link text fixed (it is EasyClinic''s own privacy notice, not what the Act asks of a clinic); table heading rewritten to drop the NHIA, HMOs and NDPA group of three; the prose aside no longer defers the offline answer to a call; the authorisation step and the clinic-group card no longer promise fewer returned HMO claims; contact-card heading now matches what the block renders in the country template (cities, office and clients); "online payments start on Premium" (Premium and Enterprise, plans.yaml).'

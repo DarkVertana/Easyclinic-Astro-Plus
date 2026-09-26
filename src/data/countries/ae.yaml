@@ -4,7 +4,18 @@ currency: AED
 dialCode: '+971'
 timezone: Asia/Dubai
 flagship: true
-contact: { name: null, publishName: null, role: null, phone: null, whatsapp: null, email: null, hours: null, callbackWindow: null }
+contact:
+  name: null
+  publishName: null
+  role: null
+  phone: null
+  whatsapp: null
+  # Source: https://www.easyclinic.io/emr-software-in-uae/ ("Contact support at hello@easyclinic.io"),
+  # read 2026-09-26. It is the company-wide support address (in.yaml and ng.yaml use it too), not a
+  # UAE-based contact; replace it when one exists. The live UAE page gives no UAE phone, name or office.
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
 office: null
 pages:
   country: /clinic-management-software-uae/

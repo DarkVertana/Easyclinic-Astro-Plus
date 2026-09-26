@@ -1,0 +1,343 @@
+# /pricing/nigeria/ (spec 5.12 country pricing page, 4.5 rule 4: the country pricing page owns cost intent).
+# Draft: NGN prices are unknown (src/data/prices/ngn.yaml is all null), so every price token renders a placeholder.
+status: draft
+headKeyword: clinic software cost in Nigeria
+secondaryKeywords:
+  - EasyClinic price in Nigeria
+  - hospital management software price in Nigeria
+  - EMR software cost in Nigeria
+  - clinic management software price in naira
+title: 'Clinic Software Cost in Nigeria: EasyClinic Pricing in NGN'
+metaDescription: 'Clinic software cost in Nigeria: EasyClinic from {price:ngn.professional.annual} per doctor a month billed yearly, with no setup fee or contract.'
+h1: "Clinic software cost in Nigeria: EasyClinic's price per doctor per month in naira"
+linkLabel: Nigeria pricing
+eyebrow: Pricing in Nigeria
+openingAnswer: >-
+  In Nigeria, EasyClinic costs {price:ngn.professional.annual} per doctor per month on the Professional
+  plan and {price:ngn.premium.annual} on Premium, priced in naira and billed annually, with the
+  reception login included and no setup fee. Billed quarterly, Professional is {price:ngn.professional.quarterly} and
+  Premium is {price:ngn.premium.quarterly}, and Enterprise, for clinic chains and hospital OPDs, is
+  priced on a quote.
+summary: EasyClinic's price in naira per doctor per month, with worked monthly totals for Nigerian clinics and what VAT and HMO claims mean for your costs.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+heroStrip:
+  ratings: false
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo in Nigeria
+    href: /nigeriademo/
+  secondary:
+    label: Call {contact:ng.phone}
+    href: 'tel:{contact:ng.phone}'
+    event: call_nigeria_pricing
+  whatsapp: Hi, I am on the EasyClinic Nigeria pricing page and would like the monthly cost for my clinic.
+
+sections:
+  - discriminant: pricingCards
+    value:
+      id: plans
+      heading: EasyClinic plans in naira
+      intro: >-
+        Every price is per doctor per month. The reception login comes with every plan, and Enterprise is
+        priced on a quote.
+      currency: ngn
+      switcher: false
+      showConditions: true
+      planCta:
+        label: Book a 20-minute demo
+        href: /nigeriademo/
+        event: pricing_nigeria_plan_demo
+      enterpriseCta:
+        label: Talk to sales about Enterprise
+        href: /nigeriademo/
+        event: pricing_nigeria_enterprise
+
+  - discriminant: costExamples
+    value:
+      id: what-clinics-pay
+      heading: What a Nigerian clinic pays each month
+      intro: >-
+        These totals use the annual price and count doctors only, because the reception login is already
+        included. Add-ons are not in these figures. [Whether NGN plan prices include VAT, or VAT is added
+        to EasyClinic's invoice, and at what rate]. Paying quarterly, each doctor costs
+        {price:ngn.professional.quarterly} on Professional or {price:ngn.premium.quarterly} on Premium.
+      currency: ngn
+      period: annual
+      examples:
+        - title: A GP running their own clinic
+          doctors: 1
+          locations: 1
+          plan: professional
+          note: >-
+            One doctor and one receptionist, and that is the whole subscription. It runs in the cloud, so
+            there is no server in the clinic, but it does not run fully offline, so budget for a backup
+            internet connection beside it. WhatsApp reminders need Premium; SMS and email reminders are
+            on Professional.
+        - title: A five-doctor clinic or private hospital OPD
+          doctors: 5
+          locations: 1
+          plan: premium
+          note: >-
+            Five doctors share one patient record and one front desk. Premium adds specialty templates and
+            WhatsApp reminders. A pharmacy and HMO claims are add-ons on Premium, and both are part of
+            Enterprise.
+        - title: A three-branch group in Lagos and Abuja
+          doctors: 9
+          locations: 3
+          plan: enterprise
+          note: >-
+            Chains standardise price lists and SOPs from the centre and move stock between branches, both
+            part of Enterprise, which is priced on a quote. The largest chain on EasyClinic runs
+            {fact:largestChain} locations.
+
+  - discriminant: dataTable
+    value:
+      id: included
+      heading: What the price includes and what costs extra
+      intro: >-
+        You pay for each doctor who writes notes or prescriptions in the EMR. This table shows what that
+        price covers and what you pay for separately.
+      caption: What is included in the per-doctor price in Nigeria, and what is charged separately
+      columns:
+        - Item
+        - Included or extra
+        - What to know
+      rows:
+        - - Reception login
+          - Included on every plan
+          - A licence for your reception comes with the price. Reception cannot open the EMR or write prescriptions.
+        - - Locum doctors
+          - '[How a locum doctor who covers some shifts is charged]'
+          - If locum doctors cover shifts at your clinic or hospital and write notes or prescriptions, this decides how many licences you count.
+        - - Other staff logins, such as a nurse or pharmacist
+          - Included on every plan
+          - Staff logins are part of Professional, and every higher plan includes everything in Professional.
+        - - Setup
+          - No fee
+          - No setup fee on any plan, and no contract to sign.
+        - - Training and support
+          - Included on every plan
+          - The four-day training path further down this page, and unlimited support after it.
+        - - Payments at the desk
+          - Included on every plan
+          - Billing and payments are part of Professional, so your bills to patients are in naira, and a payment by card or bank transfer is recorded against the patient's bill and the balance shows what is still owed.
+        - - Online payments
+          - Included on Premium and Enterprise
+          - '[Whether online payments go through Paystack or Flutterwave in EasyClinic, as of date].'
+        - - Customisation options in the software
+          - No extra charge
+          - Hundreds of customisation options, at no charge. Your own clinical forms and print layouts are part of Premium.
+        - - SMS and email reminders
+          - Included on every plan
+          - Part of Professional, so a one-doctor clinic has them too. WhatsApp reminders need Premium.
+        - - WhatsApp reminders and messages
+          - Included on Premium and Enterprise
+          - How the reminders work is on the [WhatsApp page](/features/whatsapp/).
+        - - Pharmacy and lab modules
+          - Included on Enterprise
+          - Add-ons on Professional and Premium, described in the next section.
+        - - HMO claims
+          - Included on Enterprise
+          - An add-on on Professional and Premium. It prepares HMO claims with capitation and fee-for-service detail from each visit, and reconciles what each HMO pays.
+        - - Integrations and custom development
+          - Included on Enterprise
+          - An add-on on Professional and Premium, scoped per project, for example a connection to your lab machines or an existing HIS.
+
+  - discriminant: addOns
+    value:
+      id: add-ons
+      heading: Add-ons for Professional and Premium
+      intro: >-
+        Enterprise already includes these modules. On Professional and Premium you add only the ones your
+        clinic runs, such as HMO claims once your first HMO enrollees start coming to the desk.
+      currency: ngn
+
+  - discriminant: prose
+    value:
+      id: vat-invoices-and-payment
+      heading: VAT and payments in naira
+      body: |-
+        **What you pay us.** Plans are priced in naira, per doctor, and you pay once a year or once a quarter; paying for the year costs less each month. Your subscription is invoiced by [which company invoices Nigerian clinics: Novel Medicare Solutions Pvt Ltd in Kolkata or a Nigerian company], and you pay it by [how Nigerian clinics pay the subscription, for example bank transfer in naira or card]. [Whether and how often NGN prices are reviewed, for example when the naira moves against the dollar, and how much notice clinics get].
+
+        **VAT on the subscription.** [Whether NGN plan prices include VAT, or VAT is added to EasyClinic's invoice, and at what rate]. Ask your accountant whether your clinic can recover any VAT on the subscription.
+
+        **What your patients pay you.** Billing and payments come with every plan, so your bills to patients are in naira, and a payment at the desk by card or bank transfer goes on the patient's bill, where the balance shows what is still owed. Premium adds online payments. Whether online payments go through Paystack or Flutterwave: [Paystack and Flutterwave status in EasyClinic, as of date]. When an HMO covers the visit, the claims add-on, which Enterprise includes, prepares the HMO claim from the visit with its capitation or fee-for-service detail. Which HMOs' claim packs and encounter forms EasyClinic produces today: [HMO claim pack status in EasyClinic, as of date].
+
+        **VAT on your own bills.** [How Nigerian VAT applies to a clinic's own bills, for consultations, medicines and cosmetic procedures, from the company's Nigerian tax adviser].
+      aside: >-
+        Ask your accountant which of your services and sales carry VAT. How billing works inside
+        EasyClinic is on the [billing page](/features/billing/).
+      width: measure
+
+  - discriminant: planMatrix
+    value:
+      id: compare-plans
+      heading: Every feature, plan by plan
+      intro: >-
+        Open a group to see which plan includes each feature. Pharmacy and lab management are Enterprise
+        features that Professional and Premium can add as add-ons.
+      open: false
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over four days, and it is included in every plan. Each session is 20 to 40
+        minutes, short enough to fit around the day's patients, so nobody closes the clinic for a day to
+        learn it.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens your front desk and your doctors use every day. Bring your receptionist to this one,
+            since their login is part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            Doctors work through the kinds of consult they see most, from a new patient to a follow-up with
+            lab tests ordered.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You work through exercises on your own, then bring back the questions that came up.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: >-
+            The shortcuts that make each prescription quicker, once the basics have become habit.
+      note: >-
+        If you write prescriptions by hand today, give us 2 hours or 10 patient records, and we promise to
+        make your prescription writing faster.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        The ratings below are EasyClinic's overall scores on Capterra and Google, from reviewers in any
+        country. [A Nigerian doctor or clinic owner quoted on price, support or training, with their name,
+        clinic and city].
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions Nigerian clinic owners ask about cost
+faq:
+  - question: How much does EasyClinic cost in Nigeria?
+    answer: >-
+      EasyClinic costs {price:ngn.professional.annual} per doctor per month on Professional and
+      {price:ngn.premium.annual} on Premium, priced in naira and billed annually, and Enterprise, for
+      clinic chains and hospital OPDs, is priced on a quote. A reception login is included on every plan and there is
+      no setup fee.
+  - question: Is VAT included in the price?
+    answer: >-
+      [Whether NGN plan prices include VAT, or VAT is added to EasyClinic's invoice, and at what rate].
+      Whether your clinic can recover any VAT on the subscription depends on how your own services are
+      taxed, so ask your accountant before you budget for it.
+  - question: Can I pay the subscription by bank transfer in naira?
+    answer: >-
+      [How Nigerian clinics pay the subscription, for example bank transfer in naira or card]. Your
+      patients' payments are a separate matter: your bills to patients are in naira, and a payment by
+      card or bank transfer is recorded against the patient's bill. Premium adds online payments.
+  - question: Is it cheaper to pay annually or quarterly?
+    answer: >-
+      Annual is cheaper, because Premium is {price:ngn.premium.annual} per doctor per month billed
+      annually against {price:ngn.premium.quarterly} billed quarterly, and Professional is
+      {price:ngn.professional.annual} against {price:ngn.professional.quarterly}. Annual billing means
+      paying for twelve months at once, so the quarterly plan suits a clinic that wants three months on
+      real patients before committing a year's budget.
+  - question: Are HMO claims included on the Professional plan?
+    answer: >-
+      No, HMO claims are an add-on on Professional and Premium, and Enterprise includes them. The add-on
+      prepares HMO claims with capitation and fee-for-service detail from each visit, and reconciles what
+      each HMO pays. Which HMOs' claim packs and encounter forms it produces today: [HMO claim pack
+      status in EasyClinic, as of date].
+  - question: Do I need to budget for a server or a backup internet line?
+    answer: >-
+      You do not need a server, because EasyClinic runs in the cloud, but you should budget for a backup
+      internet connection, because EasyClinic does not run fully offline today. A second connection on a
+      different network from your main line, such as a mobile data router, keeps the front desk working
+      when the main line drops.
+  - question: What happens to my plan if I open a second branch?
+    answer: >-
+      You move to Premium or Enterprise, because Professional covers one location and Premium is the
+      first plan that covers more than one, at {price:ngn.premium.annual} per doctor per month billed
+      annually. Enterprise adds central control of every branch and stock transfers between them. There
+      is no contract holding you to the plan you started on, so you can move up when the second branch
+      opens.
+  - question: Am I locked into any contracts?
+    answer: >-
+      No, EasyClinic has no binding contract on any plan, and no setup fee to lose if you stop. You pay a
+      year or a quarter at a time, so the shortest commitment is one quarter, at
+      {price:ngn.professional.quarterly} or {price:ngn.premium.quarterly} per doctor per month. There is
+      no free trial; a 20-minute demo shows you EasyClinic on a clinic set up like yours first.
+
+links:
+  hub: /pricing/
+  relatedHeading: Where Nigerian clinic owners go next
+  related:
+    - href: /hospital-management-software-nigeria/
+      label: Clinic and hospital software in Nigeria
+      description: What EasyClinic does in a Nigerian clinic or hospital OPD, from naira billing to HMO claims.
+    - href: /nigeriademo/
+      label: Book a demo in Nigeria
+      description: A 20-minute demo on a clinic set up like yours, from the booking to the HMO claim.
+    - href: /best-clinic-management-software-nigeria/
+      label: Best clinic management software in Nigeria
+      description: The options for a private clinic or hospital in Nigeria compared side by side, EasyClinic included.
+    - href: /features/insurance-claims/
+      label: Insurance and HMO claims
+      description: How a claim goes from the bill your front desk raised to the HMO, and how payments are reconciled.
+
+closing:
+  heading: Get the monthly cost for your own clinic
+  body: >-
+    Tell us how many doctors and branches you have. On a 20-minute demo we show EasyClinic on a clinic set
+    up like yours and work out the monthly cost in naira with you.
+  primary:
+    label: Book a 20-minute demo in Nigeria
+    href: /nigeriademo/
+  secondary:
+    label: Call {contact:ng.phone}
+    href: 'tel:{contact:ng.phone}'
+    event: call_nigeria_pricing_closing
+
+country: ng
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    HMO claims with capitation and fee-for-service detail as a separate add-on, the locum doctor licence
+    question and the advice to budget for a backup internet line because EasyClinic does not run fully
+    offline are specific to Nigeria, but nothing on the page comes from a Nigerian clinic that runs
+    EasyClinic.
+  readsMachineWritten: >-
+    Every price, the VAT treatment, the payment method, the payment gateway and the HMO claim pack
+    answers are still placeholders, so a Nigerian clinic owner will read the page as unfinished, and the
+    table rows that restate plan inclusions read like a spec sheet.
+
+notes:
+  - Draft because NGN prices are unknown (prices/ngn.yaml plans, addons, taxNote, paymentMethods and asOf are null). Every {price:ngn...} token renders a placeholder; the plan cards, cost totals and add-on cards render placeholders from the same file. Publish when ngn.yaml has prices and an asOf date and the bracketed placeholders below are filled or cut. Same structure as /pricing/kenya/ and /pricing/uae/; keep the three in step.
+  - Head keyword "clinic software cost in Nigeria" is owned here (spec 4.5 rule 4, cost intent), with "hospital management software price in Nigeria" as a secondary because Nigerian searches use hospital phrasing (spec 4.2). /hospital-management-software-nigeria/ owns "hospital management software in Nigeria", NHIA, NDPA and the offline explainer; keep NGN cost questions there short and link here.
+  - 'FOUNDERS (prices/ngn.yaml): NGN annual and quarterly prices for Professional and Premium, with an asOf date; NGN add-on prices for pharmacy, lab, claims and integrations (spec 5.12 item 4); an indicative Enterprise range per doctor; whether the NGN prices keep the annual discount ("Annual is cheaper" and "paying for the year costs less each month" follow the USD and INR prices and the live "Billed Annually (Save 20%)" toggle); whether and how often NGN prices are reviewed when the naira moves, and how much notice clinics get (prose). A Nigerian owner will ask about exchange-rate changes; once the review policy is known, add it to FAQ 4 (review 2026-09-26 cut FAQ 4''s line that paying for the year "settles the naira amount for those twelve months", because it sold price stability on a policy nobody has stated).'
+  - 'FINANCE AND THE COMPANY''S NIGERIAN TAX ADVISER: whether NGN prices include VAT or VAT is added, and at what rate (costExamples intro, prose, FAQ 2; the same wording in each so the facts report groups them); which company invoices Nigerian clinics (prose; this decides how VAT applies to the subscription); how Nigerian clinics pay the subscription (prose, FAQ 3; prices/ngn.yaml paymentMethods is null); how Nigerian VAT applies to a clinic''s own bills for consultations, medicines and cosmetic procedures (prose). No Nigerian VAT rate or exemption is stated as fact on the page, per the brief (taxes are placeholders unless the live site states them); have the tax adviser write or read the "VAT on your own bills" paragraph and FAQ 2, including any change from the 2025 tax reform laws.'
+  - 'PRODUCT AND COMPLIANCE (regulators/ng-*.yaml, countries/ng.yaml): Paystack and Flutterwave status with a date (dataTable, prose; countries/ng.yaml payments states are null); which HMOs'' claim packs and encounter forms EasyClinic produces today, with a date (prose, FAQ 5; regulators/ng-hmo-claims.yaml state is null); how a locum doctor who covers some shifts is charged (dataTable; spec 5.12 item 5). NHIA and the NDPA are not mentioned: their regulator states are null and they belong to the country page. No regulatorStrip, regulatorTable or heroStrip.regulators.'
+  - 'COUNTRY TEAM AND MARKETING (countries/ng.yaml contact is all null): a Nigerian phone number for the hero and closing "Call" buttons. Both labels and both hrefs use {contact:ng.phone} (href tel:{contact:ng.phone}), so the registry reports the missing number as an unknown fact on ctas.secondary.href and closing.secondary.href as well as the labels, and the href fills itself when contact.phone is set. Review fix 2026-09-26: the hrefs were the literal tel:[Nigeria phone number], which no check reads (lint skips href) and which would have gone live broken. When the number is filled, check that the rendered tel: link dials (write contact.phone with no spaces, or replace the href with the digits as /pricing/kenya/ does). countries/ng.yaml contact.whatsapp is null, so the WhatsApp button routes to the India number in site.yaml with a Nigeria-specific prefilled message. No local contact name is used.'
+  - 'COUNTRY TEAM AND MARKETING (proof): no Nigerian testimonial or client exists (countries/ng.yaml clients is empty), and every testimonial in src/data/testimonials is placed on another page, so the proof block is the Capterra {fact:capterraRating} and Google {fact:googleRating} badges, with review counts left out (facts capterraReviews and googleReviews are null). The intro says they are overall scores and carries the placeholder [A Nigerian doctor or clinic owner quoted on price, support or training, with their name, clinic and city]; replace the badges, or add a testimonialRow, when a Lagos or Abuja client agrees to be quoted with consent (spec 5.12 item 9, 5.13 Nigeria proof). heroStrip.ratings is off so the two ratings do not appear twice.'
+  - 'Left out until the company supplies them (India, Kenya and /pricing/ make the same omissions): data migration included or priced (spec 5.12 item 7); any per-location fee and how a doctor at two branches is counted; refunds on unused months and the export of patient records on leaving (spec 2.5; restore a cancel FAQ once known and /privacy/nigeria/ is written); who pays WhatsApp message charges; any monthly SMS limit; NGO pricing; on-site training in Nigeria (spec 5.13 FAQ list).'
+  - 'Public facts used, checked on 2026-09-26 at https://www.easyclinic.io/emr-software-in-nigeria/: "Plans are priced in naira" (FAQ "How can clinics get started, and what does it cost?"), used for "priced in naira and billed annually" (opener, FAQ 1) and "Plans are priced in naira, per doctor" (prose; review 2026-09-26 changed "billed ... in naira" and "You pay ... in naira" to "priced in naira", which is what the live page says, because which company invoices and in what currency the subscription is paid are still placeholders); "Invoice in naira and accept card, bank transfer and online payment" (Naira Billing and Online Payments) and "it bills in naira with online and bank payment" (FAQ), used for bills to patients in naira and a card or bank transfer recorded against the bill; "EasyClinic prepares HMO claims with capitation and fee-for-service detail, and reconciles what each HMO pays" (FAQ), and "Each visit becomes an HMO claim with the right capitation and tariff" (section heading list), used in the HMO claims row, the prose and FAQ 5 ("from each visit"). The claims add-on scope otherwise follows plans.yaml. Re-fetched and checked on 2026-09-26 by the reviewer.'
+  - 'Not carried over from https://www.easyclinic.io/emr-software-in-nigeria/: "aligned with the NDPA 2023" and the FAQ "Yes" on NDPA support (a compliance status, which the brief rules out); "through the gateways clinics already use" (implies a gateway integration, while Paystack and Flutterwave states are null); "cutting the manual work", "Audit-ready records" and "keep records that stand up to a Nigeria Data Protection Commission audit" (unmeasured or compliance claims); "works for clinics ... in Lagos, Abuja, Ibadan, Port Harcourt" (positioning; the Lagos and Abuja cost example uses countries/ng.yaml cities as an illustrative shape); "try Easy Clinic absolutely free - no strings attached" (conflicts with the 23 September decision of no free trial, spec 1.2). Copy defect for the country page team: the live Nigeria page says "clinic groups across Port Louis, Curepipe and beyond", Mauritius text left from a template.'
+  - '"Does not run fully offline today" is a confirmed plain statement in the brief, from the live https://www.easyclinic.io/best-clinic-management-software-kenya/ FAQ ("It does not run fully offline today."). The backup-line advice in FAQ 6 and the GP example is general advice to budget for, not a claim about how EasyClinic behaves during an outage. The same FAQ says a self-hosted option exists; it is left out because plans.yaml lists only "Private cloud hosting on request" on Enterprise.'
+  - 'Links: /nigeriademo/ (src/content/country-demos/nigeriademo.yaml) and /hospital-management-software-nigeria/ (src/content/country-pages/hospital-management-software-nigeria.yaml) now exist as drafts, so preview shows the demo buttons and links; production hides them until those pages are published. /best-clinic-management-software-nigeria/ is listed in countries/ng.yaml pages but has no content file yet (spec 5.14 puts it in phase 3). /features/insurance-claims/, /features/whatsapp/ and /features/billing/ exist. The 20-minute demo length matches /nigeriademo/ in the rebuild; https://www.easyclinic.io/nigeriademo/ returned 404 on 2026-09-26.'
+  - 'The three cost-example shapes (1 doctor; 5 doctors; 9 doctors across 3 branches in Lagos and Abuja) are illustrative clinic shapes, not customers, and match /pricing/india/ and /pricing/kenya/. Totals are computed by the component from prices/ngn.yaml. "Locum doctors" is a licence-counting question, not a statement about any client.'
+  - 'Training steps follow the live /pricing/ FAQ (Day 1 basic training 40 min, Day 2 EMR scenario training 40 min, Day 3 practice exercises 20 min, Day 4 road to expertise 20 min) with the Kenya wording. Support channels (phone, email and chat on the live /pricing/ FAQ) are not listed, to avoid a list of three; the table says "unlimited support".'
+  - 'REVIEW 2026-09-26, claims wording: FAQ 5 used to answer "Can I send HMO claims on the Professional plan?" with "Yes", and the prose said the claim "is prepared from the same bill". The live page says EasyClinic prepares HMO claims; nothing public says how a claim reaches each HMO, and regulators/ng-hmo-claims.yaml has no state. FAQ 5 now asks whether HMO claims are included on Professional (a cost question, answered no, from plans.yaml), and the row, prose and FAQ use the live page''s "prepares" and "each visit". How a finished claim reaches each HMO stays with the country page (its OWNER Compliance note).'
+  - 'REVIEW 2026-09-26, sibling consistency: /hospital-management-software-nigeria/ and /nigeriademo/ agree with this page on naira pricing, card and bank transfer at the desk, Paystack and Flutterwave as placeholders and "does not run fully offline today". The guide /clinic-in-nigeria/ (src/content/guides/clinic-in-nigeria/index.mdx) says "EasyClinic does not publish prices in naira" and links to /pricing/; once NGN prices are filled, that line conflicts with this page and the live "Plans are priced in naira", so its owner should link /pricing/nigeria/ instead. No regulator or law is named on this page (NHIA and the NDPA belong to the country page), so there was no regulator URL to check. The meta description ("billed yearly, with no setup fee or contract") and the section heading "VAT and payments in naira" were reworded here and on /pricing/uae/ to drop a list of three; /pricing/kenya/ still has both and should follow.'
+  - 'The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions, ideally someone who has sold EasyClinic to Nigerian clinics. The page has no named person yet (spec 6.5 passing bar) because no Nigerian contact or client is known.'
+  - No heroMedia. Add a naira invoice screenshot only once the VAT treatment and the HMO claim pack status are known, since the invoice would show or omit a VAT line and an HMO share.
