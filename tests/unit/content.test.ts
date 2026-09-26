@@ -88,6 +88,13 @@ describe('markPlaceholders', () => {
     expect(count).toBe(2);
     expect(html.match(/<mark/g)).toHaveLength(2);
   });
+  it('is not derailed by "<" inside inline CSS or scripts', () => {
+    const html = `<style>@media (width<40rem){.a{b:c}}</style><script>if(a<b){}</script><p>Costs ${O}$79${C} and [x].</p>`;
+    const { html: out, count } = markPlaceholders(html, true);
+    expect(count).toBe(2);
+    expect(out).toContain('@media (width<40rem)');
+    expect(out).toContain('<p>Costs <mark');
+  });
   it('only strips in production', () => {
     const { html, count } = markPlaceholders(`<p>${O}$79${C}</p>`, false);
     expect(html).toBe('<p>$79</p>');

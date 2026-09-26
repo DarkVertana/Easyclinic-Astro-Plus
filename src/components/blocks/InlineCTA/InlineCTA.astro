@@ -1,0 +1,70 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Button from '../../ui/Button.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'inlineCta'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, body, primary, secondary, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+
+const registry = await getRegistry();
+
+// Spec 5.18: a mid-article CTA card ("Setting up? Get the software sorted before the first patient.").
+// A CTA whose internal target is not rendered in this stage is left out (Button renders nothing for it);
+// with no action left the card has no job, so the block renders nothing. When only the secondary
+// survives it takes the primary style, being the one action on the card.
+const actions = [primary, secondary].flatMap((cta) =>
+  cta && (!cta.href.startsWith('/') || registry.urlFor(cta.href)) ? [cta] : [],
+);
+
+// Inside long-form reading pages the card sits between the article's own h2 sections, so its heading
+// stays an h2 in the outline but is set smaller, reading as an aside rather than a new chapter.
+const LONG_FORM = ['guide', 'post', 'listicle', 'comparison', 'legal'];
+const longForm = LONG_FORM.includes(ctx.family);
+const headingId = heading && id ? `${id}-heading` : undefined;
+const hasHeader = Boolean(eyebrow || heading || intro);
+---
+
+{
+  actions.length > 0 && (
+    <Section id={id} tone={sectionTone} width="measure">
+      <div
+        class:list={[
+          'inline-cta rounded-card border border-line border-l-4 border-l-journey p-6 text-ink sm:p-8',
+          sectionTone === 'plain' ? 'bg-surface-alt' : 'bg-surface',
+        ]}
+      >
+        {eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
+        {heading && (
+          <h2 id={headingId} class:list={[longForm ? 'font-sans text-lg font-semibold leading-snug' : 'text-xl leading-tight md:text-2xl']}>
+            {heading}
+          </h2>
+        )}
+        {intro && <Md text={intro} class:list={[(eyebrow || heading) && 'mt-3']} />}
+        <Md text={body} class:list={[hasHeader && 'mt-3']} />
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          {actions.map((cta, i) => (
+            <Button href={cta.href} label={cta.label} event={cta.event} variant={i === 0 ? 'cta' : 'outline'} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )
+}
+
+<style>
+  /* The card keeps a light background even in an inverse section, so markdown links and bold text in
+     it keep their normal colours rather than the inverse section's white. */
+  .inline-cta :global(.prose-md a) {
+    color: var(--link);
+  }
+  .inline-cta :global(.prose-md a:hover) {
+    color: var(--link-hover);
+  }
+  .inline-cta :global(.prose-md strong) {
+    color: var(--ink-heading);
+  }
+</style>

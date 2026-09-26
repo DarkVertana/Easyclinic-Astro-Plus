@@ -3,7 +3,7 @@ import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
 import { BILLING_PERIODS, CURRENCIES, type BillingPeriod, type PlanId } from '../../../schemas/constants';
 import { getRegistry } from '../../../lib/content/registry';
-import { need, unconfirmed } from '../../../lib/content/need';
+import { need, optional, unconfirmed } from '../../../lib/content/need';
 import { isProduction } from '../../../lib/content/stage';
 import { annualSaving, formatMoney } from '../../../lib/format/money';
 import Section from '../../ui/Section.astro';
@@ -84,7 +84,7 @@ const cards = plans.plans.map((plan) => {
 const taxNotes = currencies.map((p) => ({
   currency: p.currency,
   isDefault: p.currency === base.currency,
-  text: need(Astro, `${p.currency} tax note`, p.taxNote),
+  text: optional(`${p.currency} tax note`, p.taxNote),
 }));
 
 // Switcher extras: links to the static country pricing pages, and the time-zone map the script uses
@@ -254,7 +254,7 @@ const zones = Object.fromEntries(
     </ul>
 
     {
-      taxNotes.map((t) => (
+      taxNotes.filter((t) => t.text).map((t) => (
         <p data-cur={t.currency} data-cur-default={t.isDefault ? '' : undefined} class:list={['mt-6 text-sm', muted]}>
           {t.text}
         </p>

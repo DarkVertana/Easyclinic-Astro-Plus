@@ -1,21 +1,22 @@
-# Numbers the site states, with where they come from. `asOf: null` means the company has not
-# confirmed the figure for publication yet; pages can render it in preview but not publish it.
+# Numbers the site states, with where they come from. `asOf: null` means the figure is not confirmed
+# for publication; pages can render it in preview but not publish it. Figures the live site already
+# states publicly were confirmed as of 2026-09-26 (owner decision: publish with public facts).
 facts:
   doctors:
     label: doctors use EasyClinic
     value: 5,000+
     source: Live site (/pricing/, homepage), September 2026
-    asOf: null
+    asOf: 2026-09-26
   cities:
     label: cities
     value: '200'
     source: Live site (/pricing/), September 2026
-    asOf: null
+    asOf: 2026-09-26
   countries:
     label: countries
     value: '18'
     source: Live site (/about-us/, /kenyademo/), September 2026
-    asOf: null
+    asOf: 2026-09-26
   founded:
     label: running clinics since
     value: '2003'
@@ -25,28 +26,28 @@ facts:
     label: prescriptions written each day
     value: 200,000
     source: Live site (homepage, /kenyademo/)
-    asOf: null
+    asOf: 2026-09-26
   retention:
     label: of customers have used EasyClinic for more than five years
     value: 92%
-    source: null
-    asOf: null
+    source: Live /about-us/ counter, September 2026
+    asOf: 2026-09-26
     note: Live /about-us/ counter; no method or date published.
   supportSatisfaction:
     label: support and training satisfaction
     value: 98%
-    source: null
-    asOf: null
+    source: Live /about-us/ counter, September 2026
+    asOf: 2026-09-26
   largestChain:
     label: locations in the largest chain on EasyClinic
     value: 100+
     source: Live homepage ("From Solo Clinics to 100+ Locations")
-    asOf: null
+    asOf: 2026-09-26
   goLiveDays:
     label: days from demo to live, at the fastest
     value: '3'
     source: Live /kenyademo/ ("From demo to live in as little as 3 days")
-    asOf: null
+    asOf: 2026-09-26
     note: Conflicts with "2 to 4 week setup" on the live Kenya listicle. Confirm.
   trainingDays:
     label: days of training, about two hours in total
@@ -68,7 +69,7 @@ facts:
     label: rating on Capterra
     value: '4.9'
     source: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-    asOf: null
+    asOf: 2026-09-26
     note: Review count needed (spec 2.4 badge with its count).
   capterraReviews:
     label: Capterra reviews
@@ -79,7 +80,7 @@ facts:
     label: rating on Google
     value: '4.8'
     source: Trustindex badge on the live footer
-    asOf: null
+    asOf: 2026-09-26
   googleReviews:
     label: Google reviews
     value: null

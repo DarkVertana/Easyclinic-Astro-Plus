@@ -1,0 +1,302 @@
+# EMR and e-prescriptions feature page (spec 5.11 "/features/emr", keyword row in 4.1, cannibalisation rule 4.5.6).
+status: published
+headKeyword: EMR software for clinics
+secondaryKeywords:
+  - electronic medical records software for doctors
+  - e-prescription software
+  - EHR for small practice
+title: 'EMR and E-Prescription Software for Clinics: EasyClinic'
+metaDescription: 'EMR software for clinics: write the note and the prescription on one patient record, then print it or send it on WhatsApp. Works on any device.'
+h1: EMR and e-prescription software for clinics
+linkLabel: EMR and e-prescriptions
+eyebrow: EMR and e-prescriptions
+openingAnswer: >-
+  EasyClinic is EMR and e-prescription software for clinics: the visit note and the prescription go on
+  one patient record, and the prescription is printed for the patient or, on the Premium plan, sent on
+  WhatsApp. The EMR and e-prescriptions come with every plan, from {price:usd.professional.annual} per
+  doctor per month billed annually, and doctors on EasyClinic write {fact:prescriptionsDaily}
+  prescriptions a day between them.
+summary: >-
+  The EMR and e-prescriptions come with every plan: the note and the prescription on one patient record,
+  with Cura AI to draft the note.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic EMR page and would like to see the prescription screen in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-the-evening-goes
+      heading: Where a doctor's evening goes
+      intro: >-
+        Most doctors who move to an EMR are trying to fix one of these. The software is judged by whether
+        it fixes them in the first week.
+      items:
+        - heading: The notes get finished at 9pm
+          body: >-
+            The last patient leaves at eight. The afternoon's notes are half in your head and half on the
+            back of the prescription pad, so you type them up at home, and by Thursday the notes are
+            thinner than they were on Monday.
+          fix: >-
+            Cura AI (documentation), included in every plan, drafts the note beside the consult. You
+            correct it and sign it in the consulting room, so the note is done when the visit is.
+          href: /ai/
+          linkLabel: How Cura AI drafts a note
+        - heading: The pharmacy calls about your handwriting
+          body: >-
+            A handwritten prescription gets a phone call from the pharmacist asking whether that says 25 or
+            250. A patient on four regular medicines gets the same list copied out by hand at every visit,
+            and every copy is a fresh chance to slip.
+          fix: >-
+            A typed prescription reads the same at every pharmacy. The last visit's medicines are on the
+            same record, and shortcuts set up for the way you prescribe cut down the typing.
+        - heading: Last year's report is somewhere in a file
+          body: >-
+            The patient arrives with a plastic bag of old reports, and last year's visit is in a paper
+            register that nobody can search. The first minutes of the consult go on rebuilding a history
+            the clinic already had.
+          fix: >-
+            Every visit and prescription sits on one patient record, and scanned reports attach to it, so
+            the history is on the screen before the patient sits down.
+
+  - discriminant: featureRows
+    value:
+      id: how-it-works
+      heading: How the note and the prescription get written
+      intro: >-
+        What happens on screen from the moment the patient sits down. Where a part needs the Premium plan,
+        the row says so.
+      items:
+        - heading: A prescription written from your own shortcuts
+          body: >-
+            The prescription is written on the patient's record, using shortcuts set up for the way you
+            prescribe. A pulmonologist who has used EasyClinic for years wrote: "Provision of short-cuts is
+            aptly useful for my style of prescription and I am able to type the entire prescription within
+            a half minute."
+          bullets:
+            - Printed for the patient, or sent on WhatsApp on the Premium plan
+            - Bilingual prescriptions in English and Swahili for clinics in Kenya
+          plan: professional
+        - heading: Templates for your specialty
+          body: >-
+            On Premium the chart comes with specialty EMR templates. Your clinic can also have its own
+            clinical forms and print layouts, and the customisation comes without charges. Professional
+            includes the EMR and e-prescriptions, without the specialty templates.
+          plan: premium
+          link:
+            label: Compare what each plan includes
+            href: /pricing/
+        - heading: A warning when two medicines interact
+          body: >-
+            When two medicines on the prescription interact, the prescription screen warns you while you
+            are still writing it. The change gets made in the consulting room, before the prescription
+            reaches the pharmacy.
+        - heading: Cura AI drafts the note
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts a SOAP note beside the consult,
+            and the draft stays a draft until you review it and sign. It is optional, so a doctor who would
+            rather write every note writes it in the same chart without the AI.
+          plan: professional
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+        - heading: Scanned reports and images on the record
+          body: >-
+            Scanned reports and images attach to the patient's record and sit beside the visits written in
+            EasyClinic, so an old discharge summary or an X-ray is on the same record as today's note. On
+            Premium, lab reports come into the chart as well.
+        - heading: Who can open the chart, and who wrote in it
+          body: >-
+            Logins for your staff come with every plan. The reception login included in the price is not
+            allowed into the EMR and cannot issue prescriptions, and an audit log shows who made each entry
+            on a patient's record.
+        - heading: On your phone
+          body: >-
+            EasyClinic works on any device, so the chart and the prescription open on a phone as well as on
+            the consulting-room computer. It is cloud software and does not run fully offline today.
+
+  - discriminant: testimonialRow
+    value:
+      id: customer
+      heading: A psychiatrist who gave up the prescription pad
+      items:
+        - nrp-chandra-balaji
+      layout: single
+
+  - discriminant: dataTable
+    value:
+      id: country-rules
+      heading: E-prescription rules by country
+      intro: >-
+        Each country has its own body that registers doctors and sets rules for how they prescribe. This is
+        who that is in India, Kenya, the UAE and Nigeria, and what each asks for in general terms. Each
+        country page covers the detail.
+      caption: Who sets the prescribing rules in each country, and what they ask for
+      columns:
+        - Country
+        - Who sets the rules
+        - What they ask for, in general
+      rows:
+        - - '[India](/clinic-management-software-india/)'
+          - National Medical Commission (NMC), through its Telemedicine Practice Guidelines
+          - >-
+            Rules for prescriptions issued after a teleconsult: the patient is identified and gives
+            consent, and remote prescribing is limited to the medicine lists set for first and follow-up
+            consults.
+        - - '[Kenya](/emr-software-in-kenya/)'
+          - Kenya Medical Practitioners and Dentists Council (KMPDC)
+          - >-
+            Registers the doctors and dentists who prescribe and licenses the facilities they work in. Its
+            inspections ask to see the facility's records and registers when a licence is issued or renewed.
+        - - '[UAE](/clinic-management-software-uae/)'
+          - Dubai Health Authority (DHA), for Dubai
+          - >-
+            Licenses doctors and facilities in Dubai, and DHA-licensed facilities must share patient
+            encounters with NABIDH, Dubai's health information exchange. Abu Dhabi's Department of Health
+            and Emirates Health Services in the Northern Emirates set their own rules.
+        - - '[Nigeria](/hospital-management-software-nigeria/)'
+          - Medical and Dental Council of Nigeria (MDCN)
+          - >-
+            Registers and licenses the doctors and dentists who prescribe. The patient data on a
+            prescription also falls under the Nigeria Data Protection Act, 2023.
+      note: >-
+        This table describes the rules and says nothing about where EasyClinic stands on them. That is kept
+        on the [trust page](/trust/), not on this page.
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: 'Training takes {fact:trainingDays} days, about two hours in all'
+      intro: >-
+        The training is set up for you and your clinic staff, and day 2 is the one spent on the EMR. After
+        it, support stays unlimited on every plan.
+      steps:
+        - title: Basic training
+          meta: Day 1, 40 minutes
+          body: Finding your way around EasyClinic, for you and the staff who will use it.
+        - title: EMR scenario training
+          meta: Day 2, 40 minutes
+          body: The chart and the prescription, worked through as clinical scenarios.
+        - title: Practice exercises
+          meta: Day 3, 20 minutes
+          body: Exercises to practise on, so the first real patient is not your first attempt.
+        - title: Road to expertise
+          meta: Day 4, 20 minutes
+          body: The faster ways of working, once the basics are routine.
+
+faqHeading: Questions doctors ask about the EMR
+faq:
+  - question: Can I have templates for my specialty and my own print layout?
+    answer: >-
+      Yes, on the Premium plan, which includes specialty EMR templates and your own print layouts, and the
+      customisation itself comes without charges. Premium costs {price:usd.premium.annual} per doctor per
+      month billed annually ({price:inr.premium.annual} in India). The Professional plan, at
+      {price:usd.professional.annual}, includes the EMR and e-prescriptions without the specialty
+      templates.
+  - question: Is an e-prescription valid in India?
+    answer: >-
+      Yes, within the rules the National Medical Commission sets in its Telemedicine Practice Guidelines.
+      For a prescription issued after a teleconsult, the patient is identified and gives consent, and
+      remote prescribing is limited to the medicine lists for first and follow-up consults. Following the
+      medicine lists is the doctor's responsibility, and where EasyClinic stands on the guidelines is kept
+      on the [trust page](/trust/).
+  - question: Can patients in Kenya get the prescription in Swahili?
+    answer: >-
+      Yes, clinics in Kenya can issue bilingual prescriptions in English and Swahili, so the patient takes
+      home instructions they can read.
+  - question: I write prescriptions by hand. Will typing slow me down?
+    answer: >-
+      It may for the first few patients. Our promise to doctors who write on paper is that if you give
+      EasyClinic about two hours, or ten patient records, your prescription writing gets faster, and day 2
+      of the {fact:trainingDays}-day training is 40 minutes on the EMR.
+  - question: Does the EMR work offline?
+    answer: >-
+      Not fully: EasyClinic is cloud software and does not run fully offline today. If the line at your
+      clinic drops often, arrange a backup connection for the consulting room, such as a mobile hotspot,
+      before you go live.
+  - question: Can I add a patient's old paper records?
+    answer: >-
+      Yes, as scanned files: scan the old pages and attach them to the patient's record, where they sit
+      beside the visits written in EasyClinic. If the old records are in another clinic system instead,
+      moving them is the data migration step of going live.
+  - question: Can my receptionist read the medical notes?
+    answer: >-
+      Not on the reception login that comes with every plan, which is not allowed into the EMR and cannot
+      issue prescriptions. The audit log shows who made each entry on a patient's record.
+  - question: What does ABDM ask of my clinic's EMR?
+    answer: >-
+      ABDM's first milestone asks the clinic's software to create or verify each patient's ABHA number at
+      registration, once the clinic is on the Health Facility Registry and each doctor on the Healthcare
+      Professionals Registry. The later milestones link each visit's records to the patient's ABHA and,
+      with consent, fetch records from other ABDM-linked facilities. Where EasyClinic stands on each
+      milestone is kept on the [trust page](/trust/).
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist, on the Professional plan, with no IT staff to call.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: One record shared by every specialist, with roles that decide who sees what.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: One central chart across every branch, with clinical SOPs tracked branch by branch.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD on one patient record, from the registration queue to the pharmacy.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /ai/
+      label: Cura AI
+      description: What each AI feature does, and which plan includes it.
+    - href: /trust/
+      label: Trust and compliance
+      description: Where EasyClinic stands on ABDM and on each country's prescribing rules.
+
+closing:
+  heading: See the prescription screen before you decide
+  body: >-
+    Book a 20-minute demo to see the patient record and the prescription screen for yourself. If a call is
+    too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The reception-login rule, the four-day training schedule with its minutes, the English and Swahili
+    prescription for Kenya and the verbatim words of a pulmonologist and a psychiatrist who have used
+    EasyClinic for years come from EasyClinic's own customers and live pages.
+  readsMachineWritten: >-
+    The pain-block scenes (notes at 9pm, the pharmacist's phone call) could sit on any EMR page and need a
+    clinician's read-aloud, and the thirty-second promise rests on one customer quote because no timed
+    screenshot exists yet.
+
+notes:
+  - 'Title 55 characters; meta 143 characters (no tokens). Meta rewritten from the spec 4.1 wording ("Write the note, print or WhatsApp the prescription and keep every visit on one record") to lead with the head keyword and avoid a group of three.'
+  - 'Secondary keyword "ABDM ready EMR" (spec 4.1) left off on purpose: 4.5 rule 6 gives ABDM-compliant EMR terms to /trust/. ABDM appears once, in the last FAQ, describing the milestones from src/data/regulators (in-abdm-m1..m3) and pointing to /trust/ with no status.'
+  - 'No heroMedia and no media objects: screenshots do not exist yet (page-writing rules). When the spec 12 captures exist, add the thirty-second prescription screen (Rx mid-entry with an interaction warning, phone too) as hero and the Cura AI note draft to the Cura AI row.'
+  - 'The thirty-second prescription is referenced only through the pulmonologist quote (testimonial premanand-raya, verbatim), not as a product claim. His testimonial id is placed on /pricing/ (pricing/main.yaml), so it is quoted in body text without the name; the Premanand/Premananda spelling is unresolved (facts.md section 2).'
+  - 'Testimonial nrp-chandra-balaji is placed only on this page (pricing/india.yaml mentions it in its notes but uses sanjay-teotia in its testimonialRow). Its city is null.'
+  - 'Drug interaction checks are stated in spec 5.4, 5.11 and 12; which plan includes them and the database behind them are not known, so the row names no plan and no source, and the FAQ on the interaction database source (spec 5.11) is left out.'
+  - 'Prescription languages: only English and Swahili (Kenya, facts.md) are confirmed. The spec 12 screenshot brief mentions a Hindi print option, but no language list is confirmed, so the page names no other language.'
+  - 'Spec 5.11 FAQ items not answerable with public facts and left out: how long a custom template takes, the interaction database source, data export. Replaced with the pen-and-paper and reception-login questions, both answered from facts.md.'
+  - 'Offline wording follows facts.md ("does not run fully offline today") and /kenyademo/ ("Cloud-based"); the page does not say what, if anything, works offline.'
+  - 'Country table names the rule-maker per spec 5.11 and describes each in general terms from src/data/regulators (in-nmc-telemedicine, ke-kmpdc, ae-nabidh, ae-malaffi, ae-riayati, ng-ndpa). No status column: every regulator state is null. MDCN and DHA licensing descriptions are general and need a compliance read. /trust/ is not built yet; the links follow spec 2.6 (the trust page holds the master status table).'
+  - 'Pen-and-paper FAQ uses the live /pricing/ promise ("give us just 2 hours / 10 patient records, we promise to make your prescription writing faster"), per facts.md.'
+  - 'Secondary CTA becomes "See the product in 6 minutes" when the tour ships (spec 12).'

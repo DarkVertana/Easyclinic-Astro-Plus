@@ -55,6 +55,14 @@ const CLAIMS = /peer[- ]reviewed|\bNature (?:Medicine|Health)\b|\bproven\b|39,?8
 
 export const LIMITS = { title: 60, meta: 155, metaMin: 70, faqAnswerWords: 12 };
 
+/**
+ * Length as rendered. Unresolved tokens count as 7 characters, the width of their longest typical value
+ * ("₹1,999", "5,000+", "39,849"); the registry re-checks the exact length after resolving tokens.
+ */
+export function renderedLength(text: string): number {
+  return text.replace(/\{(?:price|fact|fig|contact):[^}]+\}/g, 'XXXXXXX').length;
+}
+
 interface Entryish {
   status?: string;
   title?: string;
@@ -104,10 +112,11 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
   }
 
   if (typeof data.title === 'string') {
-    if (data.title.length > LIMITS.title) err('length', 'title', `Title is ${data.title.length} characters; the limit is ${LIMITS.title}`);
+    const n = renderedLength(data.title);
+    if (n > LIMITS.title) err('length', 'title', `Title is ${n} characters; the limit is ${LIMITS.title}`);
   }
   if (typeof data.metaDescription === 'string') {
-    const n = data.metaDescription.length;
+    const n = renderedLength(data.metaDescription);
     if (n > LIMITS.meta) err('length', 'metaDescription', `Meta description is ${n} characters; the limit is ${LIMITS.meta}`);
     else if (n < LIMITS.metaMin) warn('length', 'metaDescription', `Meta description is only ${n} characters`);
   }
@@ -150,4 +159,22 @@ export function errorsOf(issues: Issue[]): Issue[] {
 
 export function formatIssues(issues: Issue[]): string {
   return issues.map((i) => `  [${i.rule}] ${i.path}: ${i.message}${i.excerpt ? `\n      "${i.excerpt}"` : ''}`).join('\n');
+}
+
+/**
+ * Lints a Markdown/MDX body line by line with the same text rules (guides and posts). Code fences,
+ * import/export lines and JSX component lines are skipped; headings get the heading rules.
+ */
+export function auditBody(body: string): Issue[] {
+  const issues: Issue[] = [];
+  let inFence = false;
+  body.split('\n').forEach((line, i) => {
+    if (/^\s*```/.test(line)) inFence = !inFence;
+    if (inFence || /^\s*(import|export)\s/.test(line) || /^\s*<\/?[A-Z]/.test(line) || !line.trim()) return;
+    const heading = /^#{1,6}\s/.test(line);
+    const text = line.replace(/^#{1,6}\s+/, '').replace(/^\s*[-*]\s+/, '').replace(/^\s*\d+\.\s+/, '');
+    for (const issue of checkText(text, { path: `body:${i + 1}`, key: heading ? 'heading' : 'body', verbatim: false, isCtaLabel: false })) issues.push(issue);
+    if (/^#\s/.test(line)) issues.push({ rule: 'h1', severity: 'error', path: `body:${i + 1}`, message: 'The body cannot contain an H1; the template renders the page H1' });
+  });
+  return issues;
 }

@@ -1,0 +1,324 @@
+# Solo doctor clinic (spec 5.5; keyword row 4.2; persona vocabulary 2.8; pains after-text 6.3).
+status: published
+headKeyword: clinic management software for small clinics
+secondaryKeywords:
+  - single doctor clinic software
+  - solo practice management software
+  - small clinic EMR
+title: Clinic Software for Solo and Single-Doctor Practices
+metaDescription: >-
+  Appointments, notes, bills and reminders for one-doctor clinics, no IT staff. Four days of training,
+  from {price:usd.professional.annual} a doctor a month.
+h1: Clinic software built for one doctor
+linkLabel: Solo doctor clinic
+eyebrow: For solo and single-doctor clinics
+openingAnswer: >-
+  EasyClinic is clinic software for a small clinic with one doctor: it finishes the note and the
+  prescription with the visit and raises the bill from the same screen, so your evenings are not spent
+  catching up. It costs {price:usd.professional.annual} per doctor per month on the Professional plan,
+  billed annually, with the reception licence included.
+summary: >-
+  One doctor and a receptionist, with no IT staff: the note finished with the visit and the bill raised
+  from the consult, from {price:usd.professional.annual} per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See solo pricing
+    href: /pricing/
+  whatsapp: Hi, I run a one-doctor clinic and was reading the EasyClinic solo clinic page. I would like to book a 20-minute demo.
+
+sections:
+  - discriminant: dayTimeline
+    value:
+      id: a-tuesday
+      heading: A Tuesday with and without EasyClinic
+      intro: >-
+        Same clinic, same patients. What changes is where the paperwork goes, and whether it follows
+        you home.
+      entries:
+        - time: '09:00'
+          title: A walk-in arrives
+          before: >-
+            Two booked patients are already waiting. The receptionist writes the walk-in's name in the
+            register, then goes looking for last year's file in the cupboard.
+          after: >-
+            The walk-in joins the same list as the booked patients, and last year's visit is on the chart
+            before you call them in.
+          href: /features/appointment-scheduling/
+        - time: '09:12'
+          title: The prescription
+          before: >-
+            You write the prescription by hand and copy the gist into the file. The proper note waits for
+            the evening.
+          after: >-
+            Shortcuts fill in the medicines you prescribe most, so a routine prescription is typed in about
+            thirty seconds while the patient is still in the chair. The note is finished on the same
+            screen.
+          href: /features/emr/
+        - time: '13:00'
+          title: Reminders for tomorrow
+          before: >-
+            Over lunch the receptionist phones tomorrow's patients from their own mobile, and the calls stop
+            whenever someone walks in.
+          after: >-
+            Tomorrow's patients get their reminder by SMS, or on WhatsApp if you are on the Premium plan,
+            and nobody spends lunch on the phone.
+          href: /features/whatsapp/
+        - time: '18:30'
+          title: The till is closed
+          before: >-
+            The receptionist counts the drawer against the receipt book and the totals do not match. The
+            afternoon's notes are still waiting to be written up at home.
+          after: >-
+            Every bill was raised from the consult and each payment recorded against it, so the day's report
+            shows what was billed next to what came in. The notes were finished with each visit, and the
+            evening is yours.
+          href: /features/billing/
+
+  - discriminant: painBlocks
+    value:
+      id: three-pains
+      heading: What EasyClinic fixes first
+      intro: >-
+        If you run your own clinic you already know where the day goes. The notes get finished at 9pm.
+        Three of the 4pm patients did not turn up and nobody called them. The receipt book and the bank
+        balance disagree by a few hundred rupees and nobody knows why. EasyClinic fixes those three things
+        first, and the rest of the product can wait until you want it.
+      items:
+        - heading: Why charting takes your evenings
+          body: >-
+            When the note is written after the patient leaves, it waits until the queue is empty, and in a
+            busy clinic that is late at night. The handwritten prescription then gets copied into the file a
+            second time.
+          fix: >-
+            You write the note and the prescription together during the consult, with your usual medicines
+            on shortcuts. Cura AI, part of the Professional plan, can draft the note for you to review and
+            sign.
+          href: /features/emr/
+          linkLabel: How the EMR and e-prescriptions work
+        - heading: Why patients do not turn up
+          body: >-
+            The appointment was booked two weeks ago and the patient forgot. The slot sits empty while a
+            walk-in waits, and a reminder call only happens when the desk has a spare minute.
+          fix: >-
+            EasyClinic reminds booked patients by SMS or email before the visit, and on WhatsApp on the
+            Premium plan. The day's list shows everyone who was booked, so the desk can call anyone who has
+            not come in the same afternoon.
+          href: /features/appointment-scheduling/
+          linkLabel: How scheduling and reminders work
+        - heading: Why billing is done after the fact
+          body: >-
+            The consultation fee goes in the receipt book, and the dressing you did at 5pm never reaches it.
+            Nobody finds out until the month's takings come up short, and by then the gap is too small to
+            chase.
+          fix: >-
+            What you record in the consult goes on the bill before the patient reaches the desk, and the
+            day-end close shows what came in against what was billed.
+          href: /features/billing/
+          linkLabel: How billing and the day-end close work
+
+  - discriminant: featureRows
+    value:
+      id: day-one
+      heading: What you get on day one
+      intro: >-
+        Everything below is in the Professional plan, at {price:usd.professional.annual} per doctor per
+        month billed annually or {price:usd.professional.quarterly} billed quarterly. There is no setup fee
+        and no contract.
+      items:
+        - heading: The chart and the prescription
+          plan: professional
+          body: >-
+            The patient's record and the e-prescription sit side by side, and Cura AI drafts the note while
+            you see the patient. You review the draft and sign it.
+          bullets:
+            - Patient records and the EMR
+            - E-prescriptions
+            - Cura AI (documentation)
+          link:
+            label: See how the EMR works
+            href: /features/emr/
+        - heading: The appointment book and reminders
+          plan: professional
+          body: >-
+            Walk-ins and booked patients on one list for the day, with reminders sent to patients by SMS and
+            email before they are due.
+          bullets:
+            - Appointment scheduling and walk-ins
+            - SMS and email reminders
+          link:
+            label: See how scheduling works
+            href: /features/appointment-scheduling/
+        - heading: Billing and the day's numbers
+          plan: professional
+          body: >-
+            Bills raised from the consult with payments recorded against them, and the day's takings on a
+            dashboard you can check before you lock up.
+          bullets:
+            - Billing and payments
+            - Dashboards and reports
+          link:
+            label: See how billing works
+            href: /features/billing/
+        - heading: A login for your receptionist, and people to call
+          plan: professional
+          body: >-
+            The reception licence is included in the price. Your receptionist books patients and takes
+            payments, but cannot open the EMR or write a prescription. When something does not work, you can
+            call or write to support as often as you need, at no extra cost.
+          bullets:
+            - Logins for your staff
+            - Unlimited support and training
+
+  - discriminant: prose
+    value:
+      id: when-you-grow
+      heading: When you grow
+      body: |-
+        When a second doctor joins, you add a licence at the same per-doctor price and they work on the same patient records from their first morning. Nothing is migrated and the clinic does not change systems.
+
+        A second consulting room in the same clinic does not change the plan either. You pay per doctor, and it is still one location.
+
+        A second location is where the plan changes. Professional covers one location. Premium, at {price:usd.premium.annual} per doctor per month billed annually, covers more than one, and adds WhatsApp reminders and your own prescription layouts. You move up a plan on the same system with the same records, and there is no contract to break on the way.
+      aside: >-
+        Planning more than a few branches? The [clinic chain page](/solutions/clinic-chain/) covers central
+        control of every location on the Enterprise plan.
+
+  - discriminant: testimonialRow
+    value:
+      id: customer
+      heading: From a paper clinic to a paperless one
+      items:
+        - tl-prabhu
+      layout: single
+
+  - discriminant: stepList
+    value:
+      id: learning-path
+      heading: Four days to learn it, about two hours in all
+      intro: >-
+        Training is a personalised programme for you and your clinic staff, spread over
+        {fact:trainingDays} days so the clinic keeps seeing patients while you learn.
+      steps:
+        - title: Basic training
+          meta: Day 1, 40 minutes
+          body: You and your receptionist learn the screens you each use every day, at the desk and in the consulting room.
+        - title: EMR scenario training
+          meta: Day 2, 40 minutes
+          body: You work through the chart and the prescription on the kinds of cases your clinic sees.
+        - title: Practice exercises
+          meta: Day 3, 20 minutes
+          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
+        - title: Road to expertise
+          meta: Day 4, 20 minutes
+          body: The last session moves you from the basics to the shortcuts that make prescribing quicker.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days. A clinic bringing years
+        of records across from another system takes longer.
+
+faq:
+  - question: Is EasyClinic overkill for a solo doctor clinic?
+    answer: >-
+      No, the Professional plan is the one built for a doctor running their own clinic with a receptionist,
+      and you can start with the chart and the appointment book and leave the rest until you want it. If
+      your clinic is one doctor with no staff and no plans to grow, a free EMR may be enough, and we will
+      tell you so.
+  - question: How much does EasyClinic cost for one doctor?
+    answer: >-
+      One doctor on the Professional plan pays {price:usd.professional.annual} a month billed annually,
+      or {price:usd.professional.quarterly} billed quarterly, and the reception licence is included, so a
+      doctor with one receptionist pays for one licence. In India the same plan is
+      {price:inr.professional.annual} a month billed annually. There is no setup fee, and support and
+      training cost nothing extra.
+  - question: Is there a free trial?
+    answer: >-
+      No, EasyClinic does not offer a free trial. The demo runs on your own patient flow instead, following
+      one patient from the walk-in to the bill the way your clinic works. If you go ahead, there is no
+      binding contract, so you are not locked in while you find out whether it suits you.
+  - question: Do I need IT staff to set it up?
+    answer: >-
+      No, EasyClinic is cloud-based, so there is no server in the clinic to install or look after. Our team
+      trains you and your receptionist in a personalised programme over {fact:trainingDays} days, and after
+      that support is unlimited, by phone or in writing, at no extra cost.
+  - question: Does EasyClinic work without the internet?
+    answer: >-
+      No, EasyClinic is cloud-based and does not run fully offline today, so the clinic needs an internet
+      connection. If your line drops often, that is a real limit to weigh before you choose it, and a
+      second connection, even a phone hotspot, is worth keeping for the days it goes down.
+  - question: Does it work if I later open a second location?
+    answer: >-
+      Yes, a second location runs on the same system with the records you already have, but it needs the
+      Premium plan, at {price:usd.premium.annual} per doctor per month billed annually. Professional
+      covers one location, so opening a branch means moving up a plan rather than changing software.
+  - question: Can I use my own prescription layout?
+    answer: >-
+      Yes, on the Premium plan, which includes your own clinical forms and print layouts; Professional
+      does not include them. The customisation options already inside EasyClinic cost nothing extra on
+      either plan.
+  - question: Can I take my data with me if I leave?
+    answer: >-
+      Yes, you can take your data with you if you stop using EasyClinic, and there is no binding contract
+      to wait out first. We never sell your data or disclose it to anyone.
+
+links:
+  hub: /solutions/
+  related:
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: The chart and the thirty-second prescription, with Cura AI drafting the note.
+    - href: /features/appointment-scheduling/
+      label: Appointment scheduling
+      description: Walk-ins and booked patients on one list, with reminders sent before the visit.
+    - href: /features/whatsapp/
+      label: WhatsApp reminders
+      description: Reminders and messages on WhatsApp, on the Premium plan.
+    - href: /specialties/
+      label: Software by specialty
+      description: What changes for a dental or an eye clinic, one specialty at a time.
+    - href: /clinic-management-software-india/
+      label: Clinic software in India
+      description: Prices in rupees, and what a clinic in India needs from its software.
+
+closing:
+  heading: See a day like yours on EasyClinic
+  body: >-
+    In 20 minutes we follow one patient through a one-doctor clinic, from the walk-in to the evening close.
+    If a call is too much today, send us a WhatsApp message from this page instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See solo pricing
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The Tuesday timeline and the three pains describe a one-doctor clinic in India as it runs, from the
+    receptionist phoning patients over lunch to the dressing that never reaches the receipt book, and the
+    quote is Dr T. L. Prabhu's own account of taking Prashanthi Clinic paperless.
+  readsMachineWritten: >-
+    The before-and-after pairs in the timeline are tidy and parallel and the day-one rows restate
+    plans.yaml, and the only measured number on the page is the six months in Dr Prabhu's quote, so the
+    read-aloud pass should check the page sounds like a clinic owner talking and not a brochure.
+
+notes:
+  - 'Hero screenshot (spec 5.5 item 1: single screen with today''s list, chart and invoice) is left out: no screenshots exist yet. Add heroMedia from the spec 12 Today view and thirty-second prescription captures when they are taken.'
+  - 'Spec 5.5 CTA "See the product in 6 minutes" is left out until the tour ships (spec 12, The tour). Add it as the secondary hero CTA then, and link it from the free-trial FAQ.'
+  - 'Opening answer changed from spec 5.5: "reminds patients on WhatsApp" is not true at the $79 price, because WhatsApp reminders are Premium only in plans.yaml (Professional has SMS and email). The group of three was also cut. "Raises the bill from the same screen" rests on the spec 5.5 hero (today''s list, chart and invoice on one screen) and the spec 5.11 billing page (invoice from EMR orders).'
+  - 'Meta description changed from spec 4.2: "Set up in four days" is the four-day training, not go-live, and "$79 a month" is per doctor and billed annually, hence "from". The spec''s "appointments, prescriptions and billing" group of three became four items. Go-live uses {fact:goLiveDays} in the step list note only.'
+  - 'PainBlocks: spec 5.5 asks for a number on each pain ([measured no-show reduction]). No no-show, minutes-per-note or billing-leak figure exists (facts.yaml noShowReduction and minutesPerNote are null), so none is stated. Add the no-show figure to the second pain when it is measured. The intro is the spec 6.3 after-text verbatim.'
+  - 'Timeline 09:12 says "about thirty seconds" per spec 2.8, 5.5 and 5.11 (EMR promise), the live /kenyademo/ ("under 30 seconds") and Dr Premanand Raya''s quote ("within a half minute", shortcuts). It is a product claim, not a measured study figure. "Day-end close" and billing from the consult follow the spec 5.11 billing page; no cash or card split is claimed.'
+  - 'Cura AI drafting during the consult with review and sign follows spec 4.1 (/ai row), spec 12 (draft SOAP note in a "review and sign" state) and plans.yaml (Cura AI note drafting on Professional).'
+  - '"When you grow": a second consulting room is stated only as not changing the plan (pricing is per doctor, and Professional covers one location). Whether Professional schedules rooms separately is not confirmed, so room scheduling is not claimed. Per-location fees and whether a doctor working at two branches needs a second licence are unknown and not stated.'
+  - 'Testimonial tl-prabhu has city null; it renders without a city in production. Add the city (spec 5.5 item 6 asks for specialty and city).'
+  - 'FAQ left out for lack of a confirmed fact: mobile app for the doctor, e-prescription legality by country, data export format and timing on leaving, refund of unused months on annual billing, and how long a custom prescription layout takes to build. The data answer says only that you can take your data (no format, no ownership wording) and quotes the live privacy line ("never misuse, sell or in any way disclose"). The setup question was reworded to "Do I need IT staff to set it up?" because who performs setup beyond training and support is not confirmed.'
+  - 'Offline FAQ follows the live site ("does not run fully offline today"). The self-hosted option mentioned on the live Kenya listicle is not offered here because it is unconfirmed and not a solo-clinic plan.'
+  - 'Step list note: goLiveDays (3, "in as little as 3 days" on /kenyademo/) conflicts with the "2 to 4 week setup" on the live Kenya listicle (facts.yaml note). Typical go-live time with data migration is unknown, so the note says only that it takes longer. Day 3 and day 4 step bodies describe only the session names from the live /pricing/ FAQ.'
+  - 'Related links follow spec 5.5 item 9. The buyer''s country page is fixed to India until a geo-selected link exists; /features/billing/ is linked from the timeline, pains and day-one rows.'
+  - 'The old URL /doctor-clinic-software/ already redirects here in src/data/redirects.yaml, so it is not repeated in redirectFrom.'

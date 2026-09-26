@@ -1,0 +1,268 @@
+# Features hub (spec 5.4; keyword from the brief, as spec 4.1 has no row for /features/; spec 2.9: links down to all twelve feature pages).
+status: published
+path: /features/
+headKeyword: clinic management software features
+secondaryKeywords:
+  - clinic software modules
+  - clinic management system modules
+title: 'Clinic Management Software Features: EasyClinic'
+metaDescription: >-
+  Clinic management software features in twelve modules: scheduling, EMR, billing, pharmacy, lab,
+  claims, WhatsApp and reports, with what each plan includes.
+h1: Clinic management software features, from the first booking to the owner's report
+linkLabel: All features
+eyebrow: Twelve modules on one patient record
+openingAnswer: >-
+  EasyClinic's features come as twelve modules that follow a patient through the clinic, from the
+  booking and the thirty-second prescription to the claim and the owner's report, all on one patient
+  record. Appointments, the EMR, billing, dashboards and Cura AI note drafting come
+  with every plan from {price:usd.professional.annual} per doctor per month billed annually, and
+  pharmacy, lab management, insurance claims and integrations come with Enterprise or as add-ons.
+summary: >-
+  Twelve modules in the order a patient moves through the clinic, from the booking and the prescription
+  to the claim and the owner's report, with the plan that includes each.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See pricing
+    href: /pricing/
+  whatsapp: Hi, I was on the EasyClinic features page and would like to book a 20-minute demo for my clinic.
+
+sections:
+  - discriminant: journeyDiagram
+    value:
+      id: patient-journey
+      heading: One patient, from the booking to the owner's report
+      intro: >-
+        Follow one patient through the clinic. Each step below opens the module that runs it, and every
+        step writes to the same record, so nobody types a name or an amount twice.
+      steps:
+        - label: Book
+          body: The desk books the patient into a slot, and walk-ins join the same list, so the clinic keeps one register for the day.
+          href: /features/appointment-scheduling/
+        - label: Arrive
+          body: Reception registers the patient once. For an insured patient, the payer's plan and coverage are checked here, before the consult.
+          href: /features/insurance-claims/
+        - label: Consult
+          body: Past visits and lab results sit on one chart. Tests ordered from it come back into the same chart, with abnormal values flagged.
+          href: /features/lab/
+        - label: Prescribe
+          body: A prescription takes about thirty seconds, with a drug-interaction check as you write. Cura AI can draft the note, and you confirm it.
+          href: /features/emr/
+        - label: Pay
+          body: The invoice is built from what was ordered in the consult, part payments included, and the receipt can go to the patient on WhatsApp.
+          href: /features/billing/
+        - label: Dispense
+          body: The pharmacist dispenses from the prescription on screen, with batch and expiry recorded, so the stock count falls as medicines leave the counter.
+          href: /features/pharmacy-and-inventory/
+        - label: Follow up
+          body: The reminder for the next visit and the lab report reach the patient on WhatsApp, sent by the software rather than from a personal phone.
+          href: /features/whatsapp/
+        - label: Report
+          body: Each morning the owner sees revenue, collections, no-shows and pending claims on one dashboard, by doctor or by branch.
+          href: /features/reports-and-dashboards/
+
+  - discriminant: hubGrid
+    value:
+      id: modules
+      heading: Twelve modules, grouped the way a clinic runs
+      intro: >-
+        The front desk, the chart, the money and growth. Every module writes to the same patient record,
+        so the name typed at reception is the name on the bill and on the claim.
+      columns: 3
+      groups:
+        - title: Front desk
+          items:
+            - href: /features/appointment-scheduling/
+              label: Walk-ins and booked slots on one calendar
+              description: The desk works from one list for the whole day, and reminders reach patients by SMS or email without a phone call.
+              icon: calendar-clock
+            - href: /features/whatsapp/
+              label: Reminders and prescriptions sent on WhatsApp by the software
+              description: Reminders, prescriptions, reports and feedback requests go out on approved templates, so nobody at the desk uses a personal phone.
+              icon: message-circle
+            - href: /features/telehealth/
+              label: Video consults that end with the prescription in the chart
+              description: The patient pays before the call, and the video visit sits on the same record as every clinic visit.
+              icon: video
+        - title: Chart
+          items:
+            - href: /features/emr/
+              label: Thirty-second prescriptions with drug-interaction checks
+              description: The note is finished when the visit ends, and earlier visits and lab reports are on the same record.
+              icon: notebook-pen
+            - href: /features/lab/
+              label: Lab orders from the chart, results back into the record
+              description: An abnormal result comes back flagged on the chart the doctor already has open, and the report can go to the patient on WhatsApp.
+              icon: flask-conical
+            - href: /features/pharmacy-and-inventory/
+              label: Dispensing from the prescription, with batch and expiry tracked
+              description: Stock falls as each prescription is dispensed, so you reorder before a medicine runs out.
+              icon: pill
+        - title: Money
+          items:
+            - href: /features/billing/
+              label: Invoices that build themselves from the consult
+              description: Each order in the chart lands on the bill, so the till closes clean at the end of the day.
+              icon: receipt
+            - href: /features/insurance-claims/
+              label: Coverage checked at registration, before the claim is built
+              description: The payer's price list applies at the desk, and each claim is reconciled when the payer's money arrives.
+              icon: shield-check
+            - href: /features/revenue-management/
+              label: Unbilled visits and denied claims, found before month end
+              description: The owner sees work that was done but never billed, and where the cash drawer and the bills disagree.
+              icon: trending-up
+        - title: Growth
+          items:
+            - href: /features/patient-engagement/
+              label: Recall messages and a patient app that write back to the chart
+              description: Patients book and read their reports in the app, and a recall goes out when their review is due.
+              icon: heart-handshake
+            - href: /features/reports-and-dashboards/
+              label: The owner's morning view of every doctor and branch
+              description: Revenue, collections against billing, no-shows and pending claims, on one dashboard you can check before the first patient.
+              icon: chart-column
+            - href: /features/multi-location/
+              label: One login for every branch, with central price lists
+              description: Head office sets prices and SOPs once, and each branch's numbers sit side by side.
+              icon: network
+
+  - discriminant: planMatrix
+    value:
+      id: plans
+      heading: What each plan includes
+      intro: >-
+        Professional is {price:usd.professional.annual} and Premium is {price:usd.premium.annual} per
+        doctor per month, billed annually, and Enterprise is priced on a quote. Pharmacy, lab
+        management, insurance claims and integrations come with Enterprise, and on Professional or
+        Premium you can add them one at a time. Prices in rupees, and the quarterly prices, are on the
+        [pricing page](/pricing/).
+
+  - discriminant: prose
+    value:
+      id: integrations
+      heading: Integrations
+      body: >-
+        A clinic rarely runs on one system alone. The [integrations page](/integrations/) lists, country
+        by country, the connections clinics ask us about: payment gateways and mobile money, lab machines,
+        accounting software, WhatsApp and national health systems.
+
+
+        A connection to your own lab machines or to an existing hospital system is scoped per project.
+        It comes with Enterprise, and on Professional or Premium it is an add-on.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How EasyClinic is rated on Capterra and Google
+      intro: >-
+        The Capterra link opens the reviews themselves, so you can read what reviewers wrote before you
+        book a demo.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faq:
+  - question: Can I change the EMR to fit the way I write notes?
+    answer: >-
+      Yes, every plan lets you change the EMR through the product's own customisation options at no
+      extra charge, and Premium and Enterprise add specialty EMR templates and your own clinical forms
+      and print layouts. Professional has the same EMR and e-prescriptions without those two. A feature
+      built only for your clinic is custom development, scoped per project: it comes with Enterprise and
+      is an add-on on Professional and Premium.
+  - question: Can I buy a single module, such as pharmacy, without moving to Enterprise?
+    answer: >-
+      Yes, for four modules: pharmacy and inventory, lab management, insurance and payer claims, and
+      integrations with custom development can each be added to Professional or Premium on its own.
+      Enterprise includes all four. The other modules come with a plan rather than one at a time:
+      WhatsApp messages, video consultations, lab reports in the chart and more than one location start
+      on Premium, and the patient portal and app come only with Enterprise.
+  - question: Which plan includes pharmacy and lab management?
+    answer: >-
+      Enterprise includes both, along with inventory and stock transfers between branches. On
+      Professional or Premium you can add pharmacy and inventory, or lab management, one at
+      a time. Premium already brings lab reports into the patient's chart, and lab management adds
+      orders from the chart and sample tracking.
+  - question: Are video consultations and the patient app included?
+    answer: >-
+      Video consultations are included from Premium, at {price:usd.premium.annual} per doctor per month
+      billed annually, and the patient portal and app come with Enterprise. On Professional, patients
+      hear from the clinic through SMS and email reminders, and WhatsApp messages start on Premium.
+  - question: Is EasyClinic a full hospital system with inpatient wards?
+    answer: >-
+      No, EasyClinic does not run inpatient wards or operating theatres. It covers outpatient care, from
+      a one-doctor clinic to a hospital OPD and day care, so a hospital that admits patients needs a
+      separate system for its wards and can run EasyClinic in its OPD.
+  - question: Does EasyClinic include a fundraising or donor CRM for NGO clinics?
+    answer: >-
+      No, EasyClinic has no fundraising or donor CRM, so donor records and grant tracking stay in the
+      tool you use for them now. What it gives an NGO or mission clinic is the patient record and the
+      reports built from it, such as visits by programme and the stock used each month. Clinics in Kenya
+      also get the MOH 705 and DHIS2 reports from the same records.
+
+links:
+  relatedHeading: The same modules, set up for your kind of clinic
+  related:
+    - href: /solutions/solo-clinic/
+      label: Solo doctor clinic
+      description: One doctor and a receptionist, on the Professional plan from {price:usd.professional.annual} per doctor per month.
+    - href: /solutions/polyclinic/
+      label: Polyclinic
+      description: Specialists who share rooms and one patient record, with roles that decide who sees what.
+    - href: /solutions/clinic-chain/
+      label: Clinic chain
+      description: One chart and one set of SOPs across every branch; the largest chain on EasyClinic has {fact:largestChain} locations.
+    - href: /solutions/hospital-opd/
+      label: Hospital OPD and nursing home
+      description: Queues, pharmacy, lab and claims for a busy outpatient department.
+    - href: /solutions/ngo-clinics/
+      label: NGO and mission clinics
+      description: Visit and stock reports by programme, for the donors who fund the clinic.
+
+closing:
+  heading: See the modules your clinic would use
+  body: >-
+    Tell us how your clinic runs, and in 20 minutes we show you the modules you would use and the plan
+    that includes them, before you choose one. If a call is too much today, send us a WhatsApp message
+    instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See pricing
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The plan boundaries as EasyClinic sells them (WhatsApp and video consults from Premium, pharmacy and
+    lab management with Enterprise or as add-ons), the Kenyan MOH 705 and DHIS2 reports, and the plain
+    admissions that EasyClinic runs no inpatient wards and keeps no donor records come from how the
+    product is actually sold and used.
+  readsMachineWritten: >-
+    The twelve module cards all follow one pattern, a benefit label and one outcome line, which can read
+    as a template to a doctor, and the page has no named person or measured outcome, so it leans on plan
+    facts and two ratings.
+
+notes:
+  - 'Spec 5.4 promise and sections; spec 4.1 has no /features/ row, so the head keyword "clinic management software features" comes from the page brief. Title is 47 characters and carries the head keyword; the brief example "Clinic Software Features: Every EasyClinic Module" (49) is the alternative if the editor prefers it.'
+  - 'Spec 5.4 section 2 asks for a ModuleGrid with a screenshot per module. The hub uses hubGrid (the brief), with no media, because screenshots do not exist yet (page-writing rules). Add one captioned screenshot per module (spec 12 list) when they arrive; the journey steps take the same eight screens as the home page.'
+  - 'Hub grid groups follow src/data/nav.yaml exactly (Front desk, Chart, Money, Growth). Labels are benefit-and-mechanism names (spec 5.4); descriptions render as plain text, so they carry no markdown (tokens still resolve, as the registry expands them in every string).'
+  - 'Left out for lack of a confirmed fact: the measured no-show reduction (facts noShowReduction is null), so no card says reminders "cut no-shows" as spec 5.4 suggests; minutes per note with Cura AI; the eight morning KPIs named as "all live" (spec 5.11); GST, VAT and eTIMS invoice formats (every tax regulator state is null); any integration by name or status (integration states unknown).'
+  - 'Proof: spec 5.4 asks for one testimonial per pillar; the brief says no testimonials, so the proof block is the Capterra and Google rating badges. Both lack review counts (facts capterraReviews and googleReviews are null) and the Google badge has no public review URL. Add both when known. Badge ratings use the {fact:capterraRating} and {fact:googleRating} tokens, which the registry resolves before rendering.'
+  - 'CTAs: spec 5.4 asks for "Watch a 6-minute product tour" and "Book a demo". The tour does not exist yet, so the secondary CTA is "See pricing". Switch it to "See the product in 6 minutes" when the tour ships (spec 12).'
+  - 'FAQ follows spec 5.4 item 5, split into six: EMR customisation; buying one module (add-ons per plans.yaml); pharmacy, inventory and lab by plan; telehealth and the patient app by plan; inpatient wards (spec 5.8 scope); fundraising CRM (spec 5.10). Open to-dos: how long a custom prescription template takes and who builds it (spec 6.4 question); add-on prices in every currency; which inpatient systems EasyClinic has run beside and what they exchange; whether nursing homes with beds are in scope (spec 5.8 says nursing homes are covered, and inpatient is out of scope).'
+  - 'Integrations prose names categories only (the spec 5.17 directory categories), never a status (page-writing rules), and the custom-connection paragraph follows the plans.yaml integrations add-on. /integrations/ has no content entry yet, so in production its link renders as plain text until that page publishes. When src/data/integrations has states and dates, the hub can name the live ones per country.'
+  - 'Secondary keywords exclude "practice management software" (owned by /, spec 4.1) and "EMR software" terms (owned by /features/emr/), per spec 2.1 (one page, one query cluster).'
+  - 'Sticky sub-navigation (section 11 UX 6) can use the section ids: patient-journey, modules, plans, integrations, ratings.'
+  - 'Author is Subhashish Saha, Head of customer success, per the page-writing rules. Spec 2.7 prefers the product lead for product pages; switch if one is named.'

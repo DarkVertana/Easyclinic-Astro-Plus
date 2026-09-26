@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { need, requireConfirmed } from '../../lib/content/need';
+import { optional, requireConfirmed } from '../../lib/content/need';
 import Icon from './Icon.astro';
 
 interface Props {
@@ -14,7 +14,7 @@ const { testimonial, pull = true, size = 'card' } = Astro.props;
 const t = testimonial.data;
 const text = pull && t.pullQuote ? t.pullQuote : t.quote;
 const consent = requireConfirmed(Astro, `consent on file for ${t.name}'s testimonial`, t.consentOnFile);
-const city = need(Astro, `${t.name}'s city`, t.city);
+const city = optional(`${t.name}'s city`, t.city);
 const place = [t.clinic, city].filter(Boolean).join(', ');
 ---
 

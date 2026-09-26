@@ -1,0 +1,26 @@
+---
+import Button from '../ui/Button.astro';
+
+/**
+ * Mid-article CTA card for MDX guides (spec 5.18: "Setting up? Get the software sorted before the first
+ * patient."), placed after the licensing section. Usage in MDX:
+ *   <InlineCta heading="..." href="/kenyademo/" label="Book a 20-minute demo">One or two sentences.</InlineCta>
+ */
+interface Props {
+  heading: string;
+  href: string;
+  label: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+const { heading, href, label, secondaryHref, secondaryLabel } = Astro.props;
+---
+
+<aside class="not-prose my-10 rounded-card border border-line border-l-4 border-l-teal-500 bg-surface-alt p-6" aria-label={heading}>
+  <p class="font-display text-xl font-semibold text-ink-heading">{heading}</p>
+  <div class="mt-2 text-ink"><slot /></div>
+  <div class="mt-4 flex flex-col gap-3 sm:flex-row">
+    <Button href={href} label={label} variant="cta" event={`inline cta: ${label}`} />
+    {secondaryHref && secondaryLabel && <Button href={secondaryHref} label={secondaryLabel} variant="outline" />}
+  </div>
+</aside>

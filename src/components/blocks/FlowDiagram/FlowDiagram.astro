@@ -1,0 +1,266 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'flowDiagram'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, steps, examples, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+/*
+ * A process drawn as connected steps (spec 5.8 item 4, the 5.11 claim journey), in the journey-line
+ * device of section 11. The steps are an ordered list; the connectors are decoration (a teal line in
+ * CSS with an SVG arrowhead), hidden from assistive tech, and never move.
+ *
+ * Below lg the steps stack and each marker points down to the next. On lg the steps run left to right,
+ * at most five to a row; longer flows wrap into balanced rows (8 steps: 4 and 4), and the line leaves
+ * the end of each row, runs back along the row gap and enters the first step of the next row.
+ */
+const MAX_PER_ROW = 5;
+const count = steps.length;
+const rows = Math.ceil(count / MAX_PER_ROW);
+const perRow = Math.ceil(count / rows);
+
+const items = steps.map((step, i) => {
+  const last = i === count - 1;
+  const rowEnd = (i + 1) % perRow === 0;
+  return {
+    ...step,
+    number: i + 1,
+    // lg connector from this step: an arrow to its right-hand neighbour, or the bend round the row end.
+    link: last ? undefined : rowEnd ? 'turn' : 'next',
+    // The first step of a later row receives the line coming back along the row gap.
+    enter: i > 0 && i % perRow === 0,
+  };
+});
+
+const exampleColumns =
+  examples.length === 1 ? 'max-w-[36rem]' : examples.length === 3 ? 'md:grid-cols-3' : examples.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-4';
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <ol class="flow" role="list" data-cols={perRow} data-wrap={rows > 1 ? '' : undefined}>
+    {
+      items.map((step) => (
+        <li class="flow-step" data-link={step.link}>
+          <span class="flow-marker font-sans" aria-hidden="true">
+            {step.number}
+          </span>
+          <div class="flow-text">
+            <h3 class:list={['font-sans text-lg font-semibold leading-snug', inverse && 'text-white']}>{step.label}</h3>
+            {step.body && <Md text={step.body} minHeading={4} class:list={['mt-1', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+            {step.check && (
+              <p
+                class:list={[
+                  'mt-3 inline-flex items-start gap-1.5 rounded-control border px-2.5 py-1 text-sm font-medium',
+                  inverse ? 'border-white/25 bg-white/10 text-white' : 'border-teal-500/50 bg-teal-50 text-teal-700',
+                ]}
+              >
+                <Icon name="shield-check" size={16} class="mt-0.5" />
+                <span>{step.check}</span>
+              </p>
+            )}
+          </div>
+          {step.link && (
+            <span class="flow-link" aria-hidden="true">
+              <svg class="flow-head" viewBox="0 0 12 12" width="12" height="12" focusable="false">
+                <path d="M1 1 11 6 1 11Z" fill="currentColor" />
+              </svg>
+            </span>
+          )}
+          {step.link === 'turn' && <span class="flow-run" aria-hidden="true" />}
+          {step.enter && (
+            <span class="flow-enter" aria-hidden="true">
+              <svg class="flow-head" viewBox="0 0 12 12" width="12" height="12" focusable="false">
+                <path d="M1 1 11 6 1 11Z" fill="currentColor" />
+              </svg>
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+
+  {
+    examples.length > 0 && (
+      <div class="mt-12 md:mt-16">
+        <h3 class:list={['font-sans text-lg font-semibold', inverse && 'text-white']}>Examples by country</h3>
+        <ul class:list={['mt-5 grid gap-5', exampleColumns]}>
+          {examples.map((example) => (
+            <li class:list={['rounded-card border p-6', inverse ? 'border-white/15 bg-white/5' : 'border-line bg-surface text-ink']}>
+              <h4 class:list={['font-sans text-base font-semibold', inverse && 'text-white']}>{example.country}</h4>
+              <Md text={example.body} minHeading={5} class:list={['mt-2', inverse && 'text-ink-inverse-muted']} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</Section>
+
+<style>
+  .flow {
+    --m: 2.75rem; /* marker diameter, also the 44px grid */
+    --gx: 3rem; /* column gap on wide screens: room for the arrow between markers */
+    --gy: 4rem; /* row gap on wide screens; the return line runs along its middle */
+    --o: 1.5rem; /* how far the return line reaches past the first and last columns */
+    --r: 1rem; /* radius of the line's bends */
+    --inset: 0.375rem; /* space between a connector and a marker */
+    position: relative;
+    isolation: isolate;
+  }
+  .flow[data-cols='2'] {
+    --cols: 2;
+  }
+  .flow[data-cols='3'] {
+    --cols: 3;
+  }
+  .flow[data-cols='4'] {
+    --cols: 4;
+  }
+  .flow[data-cols='5'] {
+    --cols: 5;
+  }
+
+  /* Phones and tablets: marker on the left, text beside it, an arrow down to the next marker. */
+  .flow-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--m) minmax(0, 1fr);
+    column-gap: 1rem;
+    max-width: 46rem;
+    padding-bottom: 2.5rem;
+  }
+  .flow-step:last-child {
+    padding-bottom: 0;
+  }
+  .flow-marker {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--m);
+    height: var(--m);
+    border: 2px solid var(--journey);
+    border-radius: 9999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .flow-text {
+    min-width: 0;
+    padding-top: 0.5rem;
+  }
+
+  .flow-link,
+  .flow-run,
+  .flow-enter {
+    position: absolute;
+    z-index: 0;
+    border: 0 solid var(--journey);
+    color: var(--journey);
+    pointer-events: none;
+  }
+  .flow-run,
+  .flow-enter {
+    display: none;
+  }
+  .flow-head {
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    max-width: none;
+  }
+
+  .flow-link {
+    top: calc(var(--m) + var(--inset));
+    bottom: var(--inset);
+    left: calc(var(--m) / 2 - 1px);
+    border-left-width: 2px;
+  }
+  .flow-link .flow-head {
+    bottom: -2px;
+    left: -7px;
+    transform: rotate(90deg);
+  }
+
+  /* Wide screens: steps in a row (or balanced rows), arrows running marker to marker. */
+  @media (width >= 75rem) {
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+      column-gap: var(--gx);
+      row-gap: var(--gy);
+    }
+    .flow[data-wrap] {
+      padding-inline: var(--o);
+    }
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      max-width: none;
+      padding-bottom: 0;
+    }
+    .flow-text {
+      padding-top: 0;
+      margin-top: 1rem;
+    }
+
+    /* To the right-hand neighbour: from this marker to the next, arrowhead at the end. */
+    .flow-link {
+      top: calc(var(--m) / 2 - 1px);
+      bottom: auto;
+      left: calc(var(--m) + var(--inset));
+      right: calc(var(--inset) - var(--gx));
+      border-width: 2px 0 0;
+    }
+    .flow-link .flow-head {
+      top: -7px;
+      right: -1px;
+      bottom: auto;
+      left: auto;
+      transform: none;
+    }
+
+    /* Row end: right from the marker, round the end of the row and back into the middle of the row gap. */
+    .flow-step[data-link='turn'] .flow-link {
+      right: calc(-1 * var(--o));
+      bottom: calc(var(--gy) / -2 - 1px);
+      border-width: 2px 2px 2px 0;
+      border-radius: 0 var(--r) var(--r) 0;
+    }
+    .flow-step[data-link='turn'] .flow-link .flow-head {
+      display: none;
+    }
+
+    /* Back along the row gap, from under this row end to where the line bends down into the next row. */
+    .flow-run {
+      display: block;
+      top: calc(100% + var(--gy) / 2 - 1px);
+      left: calc(var(--r) - var(--o) - (var(--cols) - 1) * (100% + var(--gx)));
+      right: 0;
+      border-top-width: 2px;
+    }
+
+    /* First step of a later row: down from the row gap and right into the marker. */
+    .flow-enter {
+      display: block;
+      top: calc(var(--gy) / -2 - 1px);
+      left: calc(-1 * var(--o));
+      width: calc(var(--o) - var(--inset));
+      height: calc(var(--gy) / 2 + var(--m) / 2 + 2px);
+      border-width: 2px 0 2px 2px;
+      border-radius: var(--r) 0 0 var(--r);
+    }
+    .flow-enter .flow-head {
+      right: -1px;
+      bottom: -7px;
+    }
+  }
+</style>

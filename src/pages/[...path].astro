@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import { getRegistry, type PageRecord } from '../lib/content/registry';
 import LandingPage from '../templates/LandingPage.astro';
+import GuidePage from '../templates/GuidePage.astro';
 
 /**
  * Every content-backed page. The registry derives paths, checks collisions and publish rules, and
@@ -20,4 +21,4 @@ const record = registry.get(Astro.props.path) as PageRecord;
 Astro.locals.page = { path: record.path, status: record.status, family: record.family, country: record.data.country?.id, title: record.data.title };
 ---
 
-<LandingPage record={record} />
+{record.family === 'guide' || record.family === 'post' ? <GuidePage record={record} /> : <LandingPage record={record} />}

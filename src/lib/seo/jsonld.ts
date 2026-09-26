@@ -172,6 +172,38 @@ export function faqPage(pageUrl: string, faq: Array<{ question: string; answer: 
   };
 }
 
+/** Article for guides, posts, listicles and comparisons (spec 2.10), with a named author and dateModified. */
+export function article(
+  site: SiteData,
+  page: { url: string; headline: string; description: string; dateModified?: Date | null; author?: { name: string; role: string; linkedin?: string | null } | null },
+): Node {
+  return {
+    '@type': 'Article',
+    '@id': `${page.url}#article`,
+    headline: plain(page.headline).slice(0, 110),
+    description: plain(page.description),
+    mainEntityOfPage: { '@id': `${page.url}#webpage` },
+    publisher: { '@id': id(site, 'organization') },
+    ...(page.dateModified ? { dateModified: page.dateModified.toISOString().slice(0, 10) } : {}),
+    ...(page.author ? { author: { '@type': 'Person', name: page.author.name, jobTitle: page.author.role, ...(page.author.linkedin ? { sameAs: [page.author.linkedin] } : {}) } } : {}),
+  } as Node;
+}
+
+/** A citation for a study page (spec 2.10); preprints are marked as such in the name. */
+export function scholarlyArticle(p: { title: string; authors: string; venue: string; url: string; published: Date; identifier: string; peerReviewed: boolean }): Node {
+  return {
+    '@type': 'ScholarlyArticle',
+    headline: p.title,
+    name: p.title,
+    author: p.authors,
+    datePublished: p.published.toISOString().slice(0, 10),
+    url: p.url,
+    identifier: p.identifier,
+    publisher: p.venue,
+    ...(p.peerReviewed ? {} : { creativeWorkStatus: 'Preprint' }),
+  } as Node;
+}
+
 export function localBusiness(site: SiteData): Node {
   return {
     '@type': 'LocalBusiness',

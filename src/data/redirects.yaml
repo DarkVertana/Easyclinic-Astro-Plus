@@ -134,3 +134,9 @@
 - { from: /newsletter/, to: /blog/, note: confirm }
 - { from: /siliconindia/, to: /about-us/, note: press page; confirm }
 - { from: /jarico/, to: /, note: unknown utility page; confirm }
+
+# --- Guides (live 404 with search history; spec 4.4) ---
+- { from: /how-to-setup-clinic-legally-in-india-compliance-guide/, to: /clinic-in-india/, note: 404 on the live site since 2026; had 48K impressions }
+# Duplicate guide pairs merge into the better-ranking slug (spec 4.4): activates when the target publishes.
+- { from: /your-essential-guide-to-launching-a-clinic-in-uganda/, to: /clinic-in-uganda/ }
+- { from: /your-complete-guide-to-starting-a-clinic-in-india/, to: /clinic-in-india/ }

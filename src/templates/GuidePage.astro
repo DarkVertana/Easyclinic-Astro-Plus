@@ -1,0 +1,122 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/frame/Breadcrumbs.astro';
+import AuthorByline from '../components/frame/AuthorByline.astro';
+import FAQ from '../components/frame/FAQ.astro';
+import RelatedLinks from '../components/frame/RelatedLinks.astro';
+import CTABand from '../components/frame/CTABand.astro';
+import Sections from '../components/blocks/Sections.astro';
+import Md from '../components/ui/Md.astro';
+import Button from '../components/ui/Button.astro';
+import InlineCta from '../components/mdx/InlineCta.astro';
+import Link from '../components/mdx/Link.astro';
+import { getRegistry, type PageRecord } from '../lib/content/registry';
+import { breadcrumbTrail } from '../lib/seo/breadcrumbs';
+import { pageGraph } from '../lib/seo/page-graph';
+
+/** Long-form template (spec 7.4 GuidePage): byline, table of contents, body, FAQ, curated links. */
+interface Props {
+  record: PageRecord;
+}
+const { record } = Astro.props;
+const registry = await getRegistry();
+const d = record.data;
+const trail = breadcrumbTrail(record, registry);
+const jsonLd = await pageGraph(record, trail);
+const { Content, headings } = await render(record.entry as never);
+const toc = headings.filter((h) => h.depth === 2);
+const countryId = d.country?.id;
+const site = (await getEntry('site', 'site'))!.data;
+const countryData = countryId ? (await getEntry('countries', countryId))?.data : undefined;
+const whatsappText = d.ctas.whatsapp ?? `Hi, I was reading EasyClinic's guide "${record.label}" and would like a demo.`;
+const whatsappHref = `https://wa.me/${countryData?.contact.whatsapp ?? site.whatsapp}?text=${encodeURIComponent(whatsappText)}`;
+const words = (record.entry.body ?? '').split(/\s+/).filter(Boolean).length;
+const minutes = Math.max(1, Math.round(words / 220));
+---
+
+<BaseLayout
+  title={d.title}
+  description={d.metaDescription}
+  path={record.path}
+  canonical={d.canonical}
+  indexable={record.indexable}
+  jsonLd={jsonLd}
+  ogType="article"
+  modifiedTime={d.lastUpdated}
+  country={countryId}
+  family={record.family}
+  whatsappText={whatsappText}
+  preview={{ status: record.status, issues: record.issues }}
+>
+  <Breadcrumbs trail={trail} />
+  <article>
+    <header class="border-b border-line bg-gradient-to-b from-blue-50 to-surface">
+      <div class="container-measure py-10 md:py-14">
+        {d.eyebrow && <p class="eyebrow mb-3">{d.eyebrow}</p>}
+        <h1>{d.h1}</h1>
+        <Md text={d.openingAnswer} class="lede mt-5" />
+        <AuthorByline author={d.author} reviewedBy={d.reviewedBy} lastUpdated={d.lastUpdated} class="mt-6" />
+        <p class="mt-1 text-sm text-ink-muted">{minutes} minute read</p>
+        <div class="mt-6"><Button {...d.ctas.primary} variant="cta" /></div>
+      </div>
+    </header>
+
+    <div class="container-measure py-10 md:py-14">
+      {
+        toc.length > 2 && (
+          <nav aria-labelledby="toc-heading" class="card mb-10 p-5">
+            <h2 id="toc-heading" class="font-sans text-base font-semibold">On this page</h2>
+            <ol class="mt-3 list-decimal space-y-1.5 pl-5 text-sm">
+              {toc.map((h) => (
+                <li>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )
+      }
+      <div class="guide-body prose-md text-lg leading-relaxed">
+        <Content components={{ InlineCta, a: Link }} />
+      </div>
+    </div>
+  </article>
+  <Sections sections={d.sections} ctx={{ path: record.path, family: record.family, status: record.status, country: countryId, pageLabel: record.label, whatsappHref }} />
+  <FAQ heading={d.faqHeading} items={d.faq} tone="wash" />
+  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} />
+  {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}
+</BaseLayout>
+
+<style>
+  .guide-body :global(h2) {
+    margin-top: 2.5rem;
+    font-size: var(--text-2xl);
+    scroll-margin-top: 5rem;
+  }
+  .guide-body :global(h3) {
+    margin-top: 1.75rem;
+    font-size: var(--text-xl);
+  }
+  .guide-body :global(table) {
+    width: 100%;
+    font-size: var(--text-sm);
+    border: 1px solid var(--border);
+  }
+  .guide-body :global(th),
+  .guide-body :global(td) {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .guide-body :global(th) {
+    background: var(--surface-muted);
+  }
+  @media (width < 40rem) {
+    .guide-body :global(table) {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+</style>

@@ -1,0 +1,334 @@
+# /pricing/kenya/ (spec 5.12 country pricing page, 4.5 rule 4: the country pricing page owns cost intent).
+# Draft: KES prices are unknown (src/data/prices/kes.yaml is all null), so every price token renders a placeholder.
+status: draft
+headKeyword: clinic software cost in Kenya
+secondaryKeywords:
+  - EasyClinic price in Kenya
+  - EMR software cost in Kenya
+  - clinic management software price in shillings
+  - VAT on clinic software in Kenya
+title: 'Clinic Software Cost in Kenya: EasyClinic Pricing in KES'
+metaDescription: 'Clinic software cost in Kenya: EasyClinic from {price:kes.professional.annual} per doctor a month, billed yearly, no setup fee or contract.'
+h1: "Clinic software cost in Kenya: EasyClinic's price per doctor per month in shillings"
+linkLabel: Kenya pricing
+eyebrow: Pricing in Kenya
+openingAnswer: >-
+  In Kenya, EasyClinic costs {price:kes.professional.annual} per doctor per month on the Professional
+  plan and {price:kes.premium.annual} on Premium, billed annually, with the reception login included
+  and no setup fee. Billed quarterly, Professional is {price:kes.professional.quarterly} and Premium is
+  {price:kes.premium.quarterly}, and Enterprise, for clinic chains and hospital OPDs, is priced on a quote.
+summary: EasyClinic's price in Kenyan shillings per doctor per month, with worked monthly totals for Kenyan clinics and what VAT and eTIMS mean for your invoices.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+heroStrip:
+  ratings: false
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo in Kenya
+    href: /kenyademo/
+  secondary:
+    label: Call {contact:ke.phone}
+    href: tel:+254750184357
+    event: call_kenya_pricing
+  whatsapp: Hi, I am on the EasyClinic Kenya pricing page and would like the monthly cost for my clinic.
+
+sections:
+  - discriminant: pricingCards
+    value:
+      id: plans
+      heading: EasyClinic plans in Kenyan shillings
+      intro: >-
+        Every price is per doctor per month. The reception login comes with every plan, and Enterprise is
+        priced on a quote.
+      currency: kes
+      switcher: false
+      showConditions: true
+      planCta:
+        label: Book a 20-minute demo
+        href: /kenyademo/
+        event: pricing_kenya_plan_demo
+      enterpriseCta:
+        label: Talk to sales about Enterprise
+        href: /kenyademo/
+        event: pricing_kenya_enterprise
+
+  - discriminant: costExamples
+    value:
+      id: what-clinics-pay
+      heading: What a Kenyan clinic pays each month
+      intro: >-
+        These totals use the annual price and count doctors only, because the reception login is already
+        included. Add-ons are not in these figures. [Whether KES plan prices include VAT, or VAT is added
+        to EasyClinic's invoice, and at what rate]. Paying quarterly, each doctor costs
+        {price:kes.professional.quarterly} on Professional or {price:kes.premium.quarterly} on Premium.
+      currency: kes
+      period: annual
+      examples:
+        - title: A GP running their own clinic
+          doctors: 1
+          locations: 1
+          plan: professional
+          note: >-
+            One doctor and one receptionist taking cash and M-Pesa at the desk, and that is the whole
+            subscription. It runs in the cloud, so there is no server in the clinic and no IT staff to
+            hire. WhatsApp reminders need Premium; SMS and email reminders are on Professional.
+        - title: A five-doctor polyclinic
+          doctors: 5
+          locations: 1
+          plan: premium
+          note: >-
+            Five doctors share one patient record and one front desk. Premium adds specialty templates and
+            WhatsApp reminders. A pharmacy counter and claims to insurers such as Jubilee and AAR through
+            SLADE are add-ons on Premium, and both are part of Enterprise.
+        - title: A three-branch chain
+          doctors: 9
+          locations: 3
+          plan: enterprise
+          note: >-
+            Chains standardise price lists and SOPs from the centre and move stock between branches, both
+            part of Enterprise, which is priced on a quote. The largest chain on EasyClinic runs
+            {fact:largestChain} locations.
+
+  - discriminant: dataTable
+    value:
+      id: included
+      heading: What the price includes and what costs extra
+      intro: >-
+        You pay for each doctor who writes notes or prescriptions in the EMR. This table shows what that
+        price covers and what you pay for separately.
+      caption: What is included in the per-doctor price in Kenya, and what is charged separately
+      columns:
+        - Item
+        - Included or extra
+        - What to know
+      rows:
+        - - Reception login
+          - Included on every plan
+          - A licence for your reception comes with the price. Reception cannot open the EMR or write prescriptions.
+        - - Clinical officers who see patients
+          - '[Whether a clinical officer who writes notes and prescriptions needs a doctor licence]'
+          - If a clinical officer sees patients and writes prescriptions at your clinic, this decides how many licences you count.
+        - - Other staff logins, such as a nurse or pharmacist
+          - Included on every plan
+          - Staff logins are part of Professional, and every higher plan includes everything in Professional.
+        - - Setup
+          - No fee
+          - No setup fee on any plan, and no contract to sign.
+        - - Training and support
+          - Included on every plan
+          - The four-day training path further down this page, and unlimited support after it.
+        - - Cash and M-Pesa payments at the desk
+          - Included on every plan
+          - Billing and payments are part of Professional, so a payment taken at the desk is recorded against the patient's bill and the balance shows what is still owed.
+        - - Customisation options in the software
+          - No extra charge
+          - Hundreds of customisation options, at no charge. Your own clinical forms and print layouts are part of Premium.
+        - - SMS and email reminders
+          - Included on every plan
+          - Part of Professional, so a one-doctor clinic has them too. WhatsApp reminders need Premium.
+        - - WhatsApp reminders and messages
+          - Included on Premium and Enterprise
+          - How the reminders work is on the [WhatsApp page](/features/whatsapp/).
+        - - Pharmacy and lab modules
+          - Included on Enterprise
+          - Add-ons on Professional and Premium, described in the next section.
+        - - Insurer claims through SLADE
+          - Included on Enterprise
+          - An add-on on Professional and Premium. Claims to Jubilee, AAR, CIC, Britam and Resolution go through SLADE from the same bill.
+        - - Integrations and custom development
+          - Included on Enterprise
+          - An add-on on Professional and Premium, scoped per project, for example a connection to your lab machines or an existing HIS.
+
+  - discriminant: addOns
+    value:
+      id: add-ons
+      heading: Add-ons for Professional and Premium
+      intro: >-
+        Enterprise already includes these modules. On Professional and Premium you add only the ones your
+        clinic runs, such as insurer claims once your first corporate patients arrive with Jubilee or AAR
+        cover.
+      currency: kes
+
+  - discriminant: prose
+    value:
+      id: vat-etims-and-payment
+      heading: VAT, eTIMS invoices and how you pay
+      body: |-
+        **What you pay us.** You pay per doctor, once a year or once a quarter, and paying for the year costs less each month. Your subscription is invoiced by [which company invoices Kenyan clinics: Novel Medicare Solutions Pvt Ltd in Kolkata or a Kenyan company], and you pay it by [how Kenyan clinics pay the subscription, for example M-Pesa or bank transfer].
+
+        **VAT on the subscription.** [Whether KES plan prices include VAT, or VAT is added to EasyClinic's invoice, and at what rate]. Ask your accountant whether your clinic can claim back any VAT on the subscription.
+
+        **What your patients pay you.** Billing and payments come with every plan, so what a patient pays at the desk, in cash or by M-Pesa, goes on their bill in EasyClinic and the balance shows what is still owed. Premium adds online payments. When an insurer covers part of the visit, the claim goes to the insurer through SLADE from the same bill, on Enterprise or with the claims add-on.
+
+        **eTIMS on your own invoices.** eTIMS is the Kenya Revenue Authority's electronic tax invoice system. With eTIMS, each invoice is sent to KRA and the receipt carries the eTIMS reference, and registering for eTIMS with KRA is the clinic's job. Whether EasyClinic sends your clinic's invoices to eTIMS: [eTIMS status in EasyClinic, as of date].
+      aside: >-
+        Ask your accountant which of your services and sales carry VAT, and which of your invoices must go
+        through eTIMS. How billing works inside EasyClinic is on the [billing page](/features/billing/).
+      width: measure
+
+  - discriminant: planMatrix
+    value:
+      id: compare-plans
+      heading: Every feature, plan by plan
+      intro: >-
+        Open a group to see which plan includes each feature. Pharmacy and lab management are Enterprise
+        features that Professional and Premium can add as add-ons.
+      open: false
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over four days, and it is included in every plan. Each session is 20 to 40
+        minutes, short enough to fit around the day's patients, so nobody closes the clinic for a day to
+        learn it.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens your front desk and your doctors use every day. Bring your receptionist to this one,
+            since their login is part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            Doctors work through the kinds of consult they see most, from a new patient to a follow-up with
+            lab tests ordered.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You work through exercises on your own, then bring back the questions that came up.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: >-
+            The shortcuts that make each prescription quicker, once the basics have become habit.
+      note: >-
+        If you write prescriptions by hand today, give us 2 hours or 10 patient records, and we promise to
+        make your prescription writing faster.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        Penda Health in Nairobi has used EasyClinic as its EMR since 2017. The ratings below are
+        EasyClinic's overall scores on Capterra and Google, from reviewers in any country.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions Kenyan clinic owners ask about cost
+faq:
+  - question: How much does EasyClinic cost in Kenya?
+    answer: >-
+      EasyClinic costs {price:kes.professional.annual} per doctor per month on Professional and
+      {price:kes.premium.annual} on Premium, billed annually, and Enterprise, for clinic chains and
+      hospital OPDs, is priced on a quote. A reception login is included on every plan and there is no
+      setup fee.
+  - question: Is VAT included in the price?
+    answer: >-
+      [Whether KES plan prices include VAT, or VAT is added to EasyClinic's invoice, and at what rate].
+      Whether your clinic can claim back any VAT on the subscription depends on how your own services are
+      taxed, so ask your accountant before you budget for it.
+  - question: Can I pay the subscription by M-Pesa?
+    answer: >-
+      [How Kenyan clinics pay the subscription, for example M-Pesa or bank transfer]. Your
+      patients' M-Pesa payments at the desk are a separate matter: they are recorded against the patient's
+      bill in EasyClinic, so the balance shows what is still owed.
+  - question: Is it cheaper to pay annually or quarterly?
+    answer: >-
+      Annual is cheaper, because Premium is {price:kes.premium.annual} per doctor per month billed
+      annually against {price:kes.premium.quarterly} billed quarterly, and Professional is
+      {price:kes.professional.annual} against {price:kes.professional.quarterly}. Annual billing means
+      paying for twelve months at once, so the quarterly plan suits a clinic that wants three months on
+      real patients before committing a year's budget.
+  - question: Can I send claims to Jubilee or AAR on the Professional plan?
+    answer: >-
+      Yes, with the insurance claims add-on, which Professional and Premium can add and Enterprise
+      already includes. Claims to Jubilee, AAR, CIC, Britam and Resolution go through SLADE from the same
+      bill your front desk raised, and the add-on covers payer price lists, coverage checks at
+      registration, claim packs and reconciliation.
+  - question: What happens to my plan if I open a second branch?
+    answer: >-
+      You move to Premium or Enterprise, because Professional covers one location and Premium is the
+      first plan that covers more than one, at {price:kes.premium.annual} per doctor per month billed
+      annually. Enterprise adds central control of every branch and stock transfers between them. There is
+      no contract holding you to the plan you started on, so you can move up when the second branch opens.
+  - question: Is there a free trial of EasyClinic in Kenya?
+    answer: >-
+      No, EasyClinic does not offer a free trial, in Kenya or anywhere else. You can book a 20-minute demo
+      on a clinic set up like yours, and if you want to test it on real patients, pay for one quarter;
+      there is no contract to break if you stop.
+  - question: Am I locked into any contracts?
+    answer: >-
+      No, EasyClinic has no binding contract on any plan, and no setup fee to lose if you stop. You pay a
+      year or a quarter at a time, so the shortest commitment is one quarter, at
+      {price:kes.professional.quarterly} or {price:kes.premium.quarterly} per doctor per month.
+
+links:
+  hub: /pricing/
+  relatedHeading: Where Kenyan clinic owners go next
+  related:
+    - href: /emr-software-in-kenya/
+      label: Clinic management software in Kenya
+      description: What EasyClinic does in a Kenyan clinic, from M-Pesa at the desk to insurer claims through SLADE.
+    - href: /kenyademo/
+      label: Book a demo in Kenya
+      description: A 20-minute demo on a clinic set up like yours, from the booking to the M-Pesa payment.
+    - href: /best-clinic-management-software-kenya/
+      label: Best clinic management software in Kenya
+      description: The options for a private clinic in Kenya compared side by side, EasyClinic included.
+    - href: /easyclinic-vs-kenyaemr/
+      label: EasyClinic vs KenyaEMR
+      description: How the two compare for a private clinic in Kenya, including how each one is priced.
+
+closing:
+  heading: Get the monthly cost for your own clinic
+  body: >-
+    Tell us how many doctors and branches you have. On a 20-minute demo we show EasyClinic on a clinic set
+    up like yours and work out the monthly cost in shillings with you.
+  primary:
+    label: Book a 20-minute demo in Kenya
+    href: /kenyademo/
+  secondary:
+    label: Call {contact:ke.phone}
+    href: tel:+254750184357
+    event: call_kenya_pricing_closing
+
+country: ke
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The M-Pesa payment at the desk landing on the patient's bill, insurer claims to Jubilee or AAR through
+    SLADE as a separate add-on, the eTIMS reference on a Kenyan clinic's receipts and the clinical officer
+    licence question are specific to a clinic in Kenya.
+  readsMachineWritten: >-
+    Every price is still a placeholder, so a Kenyan doctor will read the page as unfinished; the table
+    cells that restate plan inclusions read like a spec sheet, and the VAT paragraph says almost nothing
+    until the VAT treatment is known.
+
+notes:
+  - Draft because KES prices are unknown (prices/kes.yaml plans, addons, taxNote, paymentMethods and asOf are null). Every {price:kes...} token renders a placeholder; the plan cards, cost totals and add-on cards render placeholders from the same file. Publish when kes.yaml has prices and an asOf date and the bracketed placeholders below are filled or cut.
+  - Head keyword "clinic software cost in Kenya" is owned here (spec 4.5 rule 4, cost intent). /emr-software-in-kenya/ owns "clinic management software in Kenya"; keep KES cost questions there short and link here.
+  - 'Placeholders to fill (fact sheet): whether KES prices include VAT and at what rate (costExamples intro, prose, FAQ 2; the same wording in each so the facts report groups them); how Kenyan clinics pay the subscription (prose, FAQ 3; the brief notes M-Pesa is named on /kenyademo/ only for patient payments at the desk); which company invoices Kenyan clinics (prose; this decides how VAT and eTIMS apply to the subscription); eTIMS status in EasyClinic with a date (prose; regulators/ke-etims.yaml state is null); whether a clinical officer who writes notes and prescriptions needs a doctor licence (dataTable).'
+  - 'Left out until the company supplies them (India and /pricing/ make the same omissions): add-on prices in KES (spec 5.12 item 4; the AddOns block renders placeholders from kes.yaml); an indicative Enterprise range per doctor; data migration included or priced (spec 5.12 item 7); any per-location fee and how a doctor at two branches is counted; refunds on unused months and the export of patient records on leaving (spec 2.5; restore in the cancel FAQ once known and /privacy/kenya/ is written); who pays WhatsApp message charges; any monthly SMS limit; NGO pricing.'
+  - 'M-Pesa: countries/ke.yaml M-Pesa (Daraja, Till and Paybill) state is null, so the page says only that a desk payment is recorded against the bill (as /kenyademo/ does) and says nothing about Daraja, a Till or Paybill number, automatic reconciliation or any charge for the connection. Add a sentence to the dataTable M-Pesa row once confirmed.'
+  - 'SLADE and M-Pesa wording checked against the live /kenyademo/ on 2026-09-26: "Integrated with Jubilee, AAR, CIC, Britam and Resolution through SLADE. M-Pesa handles cash." and the screen caption "SLADE submitted to Jubilee Health. M-Pesa received. eTIMS compliant. Balance zero." The page repeats only what those lines say a clinic does (claims through SLADE from the bill, an M-Pesa payment recorded against the bill) and follows the published /kenyademo/ rebuild; it gives no integration state, date or certification. eTIMS stays a placeholder because the live Kenya pages conflict ("eTIMS compliant" vs "Soon").'
+  - 'SHA and SHIF are left out entirely: regulators/ke-sha.yaml state is null and the live site conflicts ("Not yet" vs listed as an integration). A Kenyan owner will ask whether SHA claims are in the claims add-on; add that FAQ with the status and a date once known (the FAQ is at the pricing maximum of 8, so it replaces the free-trial question). No regulatorStrip, regulatorTable or heroStrip.regulators.'
+  - 'VAT: no Kenyan VAT rate or exemption is stated as fact, per the brief; the aside and FAQ send the reader to their accountant. When the VAT treatment is confirmed, have the company''s Kenyan tax adviser read the prose section and FAQ 2, and consider a "What your patients pay VAT on" paragraph like the India GST one.'
+  - 'Annual vs quarterly: "Annual is cheaper" and "paying for the year costs less each month" follow the USD and INR prices and the live "Billed Annually (Save 20%)" toggle. Check that the KES prices keep the annual discount when they are set.'
+  - 'Proof: no Kenyan testimonial is available for this page (robert-korom-reliability is on /kenyademo/, robert-korom-partner on /curapilot/, jj-thakkar and the rest are placed elsewhere), so the proof block is the Capterra 4.9 and Google 4.8 badges. Review counts are unknown (facts capterraReviews and googleReviews are null) and left out. The ratings use {fact:capterraRating} and {fact:googleRating}, which the registry resolves like every other string, so they follow facts.yaml. The intro says they are overall scores, so they are not read as Kenyan ratings. heroStrip.ratings is off so the same two ratings do not appear twice on the page. Replace the badges with a Kenyan doctor or clinic owner quoted on price, support or training when one is recruited.'
+  - 'Penda Health since 2017 is from the arXiv 2507.16947 paper ("Penda''s EMR has been Easy Clinic since 2017"). The page does not cite the study, so nothing here links the studied tool (AI Consult) to Cura AI or CuraPilot.'
+  - 'The three cost-example shapes (1 doctor; 5 doctors; 9 doctors across 3 branches) are illustrative clinic shapes, not customers, and match /pricing/india/. Totals are computed by the component from prices/kes.yaml.'
+  - 'Demo length is 20 minutes, following /kenyademo/ in the rebuild; the live /kenyademo/ says 30. Same conflict as the kenyademo note.'
+  - 'countries/ke.yaml contact.whatsapp is null, so the WhatsApp button routes to the India number in site.yaml with a Kenya-specific prefilled message. The phone CTA uses {contact:ke.phone} and never names the Kenya contact person (contact.publishName is null).'
+  - 'Training steps follow the live /pricing/ FAQ (Day 1 basic training 40 min, Day 2 EMR scenario training 40 min, Day 3 practice exercises 20 min, Day 4 road to expertise 20 min) with the India wording. The earlier Kenyan details in the step bodies (an M-Pesa payment on Day 1, printing an English and Swahili prescription on Day 2) were cut: nothing public says what each session covers.'
+  - 'Support channels (phone, email and chat on the live /pricing/ FAQ) are not listed, to avoid a list of three; the table says "unlimited support".'
+  - 'The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions, ideally someone who has sold EasyClinic to Kenyan clinics.'
+  - No heroMedia. The spec 12 "currency-localised pricing cards" screen duplicates the live cards on this page; add a KES invoice screenshot only once eTIMS has a status, since the invoice would show or omit the eTIMS reference.

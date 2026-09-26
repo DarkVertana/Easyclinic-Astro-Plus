@@ -3,7 +3,7 @@ import { getEntry } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
 import { LOCATION_BANDS, PRACTICE_TYPES } from '../../../schemas/constants';
 import { DEMO_COUNTRIES, DIAL_CODES } from '../../../lib/crm/schema';
-import { need, unconfirmed } from '../../../lib/content/need';
+import { optional, optionalConfirmed } from '../../../lib/content/need';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
 import Icon from '../../ui/Icon.astro';
@@ -18,7 +18,7 @@ const contact = countryData?.contact;
 const defaultDial = countryData?.dialCode ?? '+91';
 const defaultCountry = countryData?.name ?? '';
 // "Or call Walter directly" (spec 6, the live Kenya demo page's voice) only with a confirmed name.
-const callName = contact?.name ? unconfirmed(Astro, `${countryData?.name} contact name consent`, contact.name, contact.publishName === true) : null;
+const callName = optionalConfirmed(`${countryData?.name} contact name`, contact?.name, contact?.publishName === true);
 const callPhone = contact?.phone ?? null;
 const f = (name: string) => ({ id: `demo-${name}`, error: `demo-${name}-error` });
 ---
@@ -119,7 +119,7 @@ const f = (name: string) => ({ id: `demo-${name}`, error: `demo-${name}-error` }
               <a href={`tel:${callPhone.replace(/\s/g, '')}`} class="font-semibold" data-track="cta_click" data-label="call local contact">
                 {callPhone}
               </a>
-              {contact?.hours ? <span class="block text-sm text-ink-muted">{contact.hours}</span> : <span class="block text-sm text-ink-muted">{need(Astro, `${countryData?.name ?? 'local'} contact hours`, null)}</span>}
+              {optional(`${countryData?.name ?? 'local'} contact hours`, contact?.hours) && <span class="block text-sm text-ink-muted">{optional(`${countryData?.name ?? 'local'} contact hours`, contact?.hours)}</span>}
             </span>
           </p>
         )

@@ -3,11 +3,11 @@ label: Indian rupees
 country: in
 locale: en-IN
 plans:
-  professional: { annual: 1499, quarterly: null }
+  professional: { annual: 1499, quarterly: 1899 }
   premium: { annual: 1999, quarterly: 2499 }
 addons: { pharmacy: null, lab: null, claims: null, integrations: null }
 taxNote: null
 paymentMethods: null
 source: Live /pricing/ (September 2026)
-asOf: null
-note: Professional quarterly is 1,899 on the live site and 1,875 on staging. Confirm one. Confirm whether prices include 18% GST.
+asOf: 2026-09-26
+note: Professional quarterly uses the live site's 1,899 (staging showed 1,875). Whether prices include 18% GST is not yet confirmed.

@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
 import { getRegistry } from '../../../lib/content/registry';
-import { need, unconfirmed } from '../../../lib/content/need';
+import { optional, unconfirmed } from '../../../lib/content/need';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
 import Quote from '../../ui/Quote.astro';
@@ -92,7 +92,7 @@ const citations = [...new Map(figureRows.filter((f) => f.citation).map((f) => [f
               <span class="block font-semibold text-ink-heading">
                 {b.rating} on {b.label}
               </span>
-              <span class="block text-sm text-ink-muted">{need(Astro, `${b.label} review count`, b.count)} reviews</span>
+              {optional(`${b.label} review count`, b.count) && <span class="block text-sm text-ink-muted">{optional(`${b.label} review count`, b.count)} reviews</span>}
             </span>
             {b.href && (
               <a href={b.href} rel="noopener" class="ml-2 text-sm">

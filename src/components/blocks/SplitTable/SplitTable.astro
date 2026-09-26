@@ -1,0 +1,52 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'splitTable'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, left, right, note, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+/*
+ * Spec 5.7, "Central control, local flexibility": what head office locks against what a branch
+ * adjusts, or any two-sided comparison. The sides do not pair item by item, so each is its own list
+ * under its own h3 rather than a table. Side by side from 640px, stacked below. The two accent
+ * colours only tell the panels apart; the titles carry the meaning.
+ */
+const sides = [
+  { ...left, accent: 'border-t-blue-700', badge: 'bg-blue-50 text-blue-700', marker: 'bg-blue-700' },
+  { ...right, accent: 'border-t-journey', badge: 'bg-teal-50 text-teal-700', marker: 'bg-teal-700' },
+];
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <div class="grid gap-5 sm:grid-cols-2">
+    {
+      sides.map((side) => (
+        <div class:list={['card flex flex-col overflow-hidden border-t-4 text-ink', side.accent]}>
+          <h3 class="flex items-center gap-3 px-5 pt-5 pb-4 font-sans text-lg font-semibold leading-snug sm:px-6">
+            {side.icon && (
+              <span class:list={['flex size-10 shrink-0 items-center justify-center rounded-full', side.badge]}>
+                <Icon name={side.icon} size={20} />
+              </span>
+            )}
+            <span>{side.title}</span>
+          </h3>
+          {/* role="list" keeps list semantics in Safari, which drops them when list-style is none. */}
+          <ul role="list" class="border-t border-line">
+            {side.items.map((item) => (
+              <li class="flex gap-3 border-b border-line px-5 py-3 last:border-b-0 sm:px-6">
+                <span class:list={['mt-2.5 size-1.5 shrink-0 rounded-full', side.marker]} aria-hidden="true"></span>
+                <Md text={item} inline class="min-w-0 flex-1" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+  {note && <Md text={note} class:list={['mt-6 max-w-[46rem] text-sm', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+</Section>

@@ -1,4 +1,5 @@
 import { defineConfig, envField, fontProviders } from 'astro/config';
+import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import vercelRoutes from './integrations/vercel-routes.ts';
@@ -15,7 +16,7 @@ export default defineConfig({
   build: { inlineStylesheets: 'always' },
   adapter: vercel(),
   // Redirects are not configured here: see integrations/vercel-routes.ts (withastro/astro#18073).
-  integrations: [vercelRoutes()],
+  integrations: [mdx(), vercelRoutes()],
   vite: { plugins: [tailwindcss()] },
   image: { layout: 'constrained', responsiveStyles: true },
   fonts: [

@@ -1,0 +1,272 @@
+# /solutions/ hub (spec 3.1 Solutions tree, 3.3 navigation, 2.9 hub links down to all leaves, audit note
+# "Hub is fine as a router; add NGO card"). The doctors selector (spec 5.9) is out of scope and not linked.
+status: published
+path: /solutions/
+headKeyword: clinic software by practice type
+secondaryKeywords:
+  - clinic software by clinic type
+  - clinic software by practice size
+  - which clinic software plan do I need
+title: 'Clinic Software by Practice Type and Specialty: EasyClinic'
+metaDescription: >-
+  Clinic software by practice type: solo clinics, polyclinics, chains, hospital OPDs and NGO clinics,
+  with the plan that fits your clinic and what it costs.
+h1: Clinic software by practice type and specialty
+linkLabel: Solutions
+eyebrow: Solutions
+openingAnswer: >-
+  EasyClinic runs a one-doctor clinic and a chain of {fact:largestChain} locations on the same system,
+  and the plan is what changes: Professional at {price:usd.professional.annual} per doctor per month
+  billed annually for a doctor running their own clinic, Premium at {price:usd.premium.annual} for
+  specialists and group practices. Clinic chains and hospital OPDs are quoted on Enterprise, and in
+  India Professional is {price:inr.professional.annual} and Premium {price:inr.premium.annual} per doctor
+  per month billed annually.
+summary: >-
+  EasyClinic by clinic type and by specialty, with the plan each kind of practice usually needs and
+  what it costs per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare the three plans
+    href: /pricing/#compare
+  whatsapp: Hi, I was on the EasyClinic solutions page and would like to know which plan fits my clinic.
+
+sections:
+  - discriminant: personaRouter
+    value:
+      id: by-clinic-type
+      heading: By clinic type
+      intro: >-
+        Five kinds of practice, from one doctor with a receptionist to a hospital outpatient department.
+        Pick the one that sounds like yours.
+      items:
+        - persona: solo
+          title: I run my own clinic
+          body: >-
+            One doctor and a receptionist, and no IT staff to call when the printer stops talking to the
+            system. Professional is {price:usd.professional.annual} per doctor per month billed annually,
+            and the receptionist's login is included in the price.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: We share one front door
+          body: >-
+            Specialists sharing rooms and one reception desk, all writing on the same patient record.
+            Premium, at {price:usd.premium.annual} per doctor per month billed annually, adds specialty
+            EMR templates.
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: We run many branches
+          body: >-
+            Enterprise gives head office central control of every location and tracks clinical SOPs
+            branch by branch. The largest chain on EasyClinic has {fact:largestChain} locations.
+          href: /solutions/clinic-chain/
+        - persona: hospital-opd
+          title: We run a hospital OPD
+          body: >-
+            A busy OPD where the pharmacy and the lab have to keep pace with the queue. EasyClinic runs
+            the OPD and day care of a hospital or nursing home, and inpatient wards are out of scope.
+          href: /solutions/hospital-opd/
+        - persona: ngo
+          title: We run an NGO or mission clinic
+          body: >-
+            Programme clinics and mission hospitals working on low budgets and low bandwidth. EasyClinic
+            does not run fully offline today.
+          href: /solutions/ngo-clinics/
+
+  - discriminant: hubGrid
+    value:
+      id: by-specialty
+      heading: By specialty
+      intro: >-
+        Specialty EMR templates come with Premium, at {price:usd.premium.annual} per doctor per month
+        billed annually or {price:inr.premium.annual} in India. A dental chain or a group of eye clinics
+        reads both lists: the clinic type sets the plan, and the specialty page covers the chart.
+      columns: 3
+      groups:
+        - items:
+            - label: Dental
+              href: /dental-emr-software/
+              description: Charting and billing for dental clinics.
+            - label: Dermatology
+              href: /dermatology-emr-software/
+              description: Charting and billing for dermatology and skin clinics.
+            - label: Paediatrics
+              href: /pediatric-emr/
+              description: The chart and the prescription for paediatric clinics.
+            - label: Cardiology
+              href: /cardiology-emr/
+              description: The EMR for cardiology clinics.
+            - label: Mental health
+              href: /mental-health/
+              description: Notes and prescriptions for psychiatry and mental health practices.
+            - label: Ophthalmology
+              href: /ophthalmology-emr/
+              description: The EMR for eye clinics.
+            - label: Orthopaedics
+              href: /orthopedic-emr/
+              description: The EMR for orthopaedic clinics.
+            - label: OB-GYN
+              href: /obgyn-emr-software/
+              description: The EMR for OB-GYN and gynaecology clinics.
+            - label: IVF and fertility
+              href: /ivf-emr/
+              description: Software for IVF and fertility clinics.
+            - label: Physiotherapy
+              href: /physiotherapy-clinic-management-software/
+              description: Charting and billing for physiotherapy clinics.
+            - label: Ayurveda
+              href: /ayurveda-clinic-management-software/
+              description: Software for ayurveda clinics.
+            - label: All specialties
+              href: /specialties/
+              description: Every specialty page on one list.
+
+  - discriminant: dataTable
+    value:
+      id: which-plan
+      heading: Which plan fits which clinic
+      intro: >-
+        Every price is per doctor per month. The plan follows how the practice is run, from one doctor
+        at one desk to a head office running the branches.
+      caption: EasyClinic plans by kind of clinic
+      columns:
+        - Your clinic
+        - Plan
+        - Price per doctor per month
+        - What decides it
+      rows:
+        - - A doctor running their own clinic, with a receptionist
+          - Professional
+          - '{price:usd.professional.annual} billed annually ({price:inr.professional.annual} in India)'
+          - One location, with the receptionist's login included in the price.
+        - - A specialist in their own practice
+          - Premium
+          - '{price:usd.premium.annual} billed annually ({price:inr.premium.annual} in India)'
+          - Specialty EMR templates, and your own clinical forms and print layouts.
+        - - A group practice that shares one front door
+          - Premium
+          - '{price:usd.premium.annual} billed annually ({price:inr.premium.annual} in India)'
+          - Specialty EMR templates for the specialists, and a named account manager.
+        - - A clinic that has opened a second branch
+          - Premium
+          - '{price:usd.premium.annual} billed annually ({price:inr.premium.annual} in India)'
+          - Premium covers more than one location. Professional covers one.
+        - - A clinic chain run from head office
+          - Enterprise
+          - Quoted for your network
+          - Central control of every location, and clinical SOP tracking across branches.
+        - - A hospital OPD or nursing home
+          - Enterprise
+          - Quoted for your hospital
+          - Pharmacy and lab management are part of the plan, where Professional and Premium add them as modules.
+      note: >-
+        Billed quarterly, Professional is {price:usd.professional.quarterly} and Premium
+        {price:usd.premium.quarterly} per doctor per month ({price:inr.professional.quarterly} and
+        {price:inr.premium.quarterly} in India). Every plan includes a reception login, and no plan has a
+        setup fee or a contract. There is no published NGO price, so NGO and mission clinics are left out
+        of this table.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How EasyClinic is rated
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faq:
+  - question: I run a single-doctor clinic. Where do I start?
+    answer: >-
+      Start with Professional, at {price:usd.professional.annual} per doctor per month billed annually
+      or {price:inr.professional.annual} in India, which covers one location and includes a login for
+      your receptionist. After the demo a clinic can go live in as little as {fact:goLiveDays} days, and
+      training for you and your staff runs over {fact:trainingDays} days of short sessions, about two
+      hours in all. The [solo clinic page](/solutions/solo-clinic/) is the one to read next.
+  - question: Can a polyclinic start on Premium and move to Enterprise later?
+    answer: >-
+      Yes, and because no plan has a contract, nothing holds a polyclinic on Premium once it needs more.
+      Premium is the plan for group practices that share one front door, and Enterprise, priced on a
+      quote, includes everything in Premium plus modules such as financial accounting or the patient
+      portal and app. Pharmacy and lab management do not force the move on their own, because a clinic
+      on Premium can add either one as a module.
+  - question: Does a clinic chain need Enterprise?
+    answer: >-
+      Not for a second branch alone: Premium covers more than one location, at
+      {price:usd.premium.annual} per doctor per month billed annually. Enterprise is for the chain that
+      wants head office in charge, with central control of every location and clinical SOP tracking
+      across branches, and each chain gets its own quote.
+  - question: Do specialty clinics pay more?
+    answer: >-
+      Yes, if you want specialty EMR templates, which come with Premium at {price:usd.premium.annual}
+      per doctor per month billed annually against {price:usd.professional.annual} on Professional. In
+      India the two are {price:inr.premium.annual} and {price:inr.professional.annual}. The templates are
+      included in the Premium price, with no separate charge listed for each specialty, and a general
+      practitioner who needs none of them can stay on Professional.
+  - question: Is there a free trial?
+    answer: >-
+      No, EasyClinic does not offer a free trial. The 20-minute demo follows your own clinic's patient
+      flow on a demo clinic set up like yours, and if you go ahead there is no contract to sign.
+  - question: Can EasyClinic run a whole hospital, or only the OPD?
+    answer: >-
+      Only the outpatient side: EasyClinic runs the OPD and day care of a hospital or nursing home, and
+      inpatient wards and operating theatres are out of scope. A hospital with beds keeps a separate
+      inpatient system beside EasyClinic, and connecting the two is an integration scoped per project.
+      The [hospital OPD page](/solutions/hospital-opd/) sets out where the line falls.
+
+links:
+  related:
+    - href: /pricing/
+      label: Pricing
+      description: Every plan per doctor per month, with what a 5-doctor polyclinic pays.
+    - href: /features/
+      label: Every module
+      description: Twelve modules in the order a patient moves through the clinic.
+    - href: /contact-us/
+      label: Contact us
+      description: Call or WhatsApp our team, or book a 20-minute demo.
+
+closing:
+  heading: Not sure which of these is your clinic?
+  body: >-
+    Tell us how many doctors and branches you run. In a 20-minute demo we show EasyClinic on a clinic
+    set up like yours and say which plan fits.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See pricing
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The plan table maps each kind of practice to EasyClinic's own plans and per-doctor prices in dollars
+    and rupees, and the page admits that EasyClinic does not run inpatient wards or fully offline, though
+    it names no person and nothing on it is specific to one country.
+  readsMachineWritten: >-
+    The eleven one-line specialty descriptions follow one pattern and say little beyond the specialty's
+    name, and the ratings block has no review counts, so a doctor may read both as filler.
+
+notes:
+  - 'Published 2026-09-26 with confirmed facts only (owner decision). No heroMedia, no screenshots, no regulator blocks, no testimonials.'
+  - 'Audit note (staging audit 2026-09-23, /solutions/ row): "Hub is fine as a router; add NGO card and the two-question selector; remove stat line." The NGO card is added and there is no stat line. The two-question doctors selector (spec 5.9) is out of scope for this build and is never linked.'
+  - 'Specialty hrefs follow src/data/nav.yaml (Solutions, By specialty) and redirects.yaml, which differ from spec 4.3 for four pages: /mental-health/ (spec /mental-health-emr/), /obgyn-emr-software/ (spec /obgyn-emr/), /physiotherapy-clinic-management-software/ (spec /physiotherapy-software/), /ayurveda-clinic-management-software/ (spec /ayurveda-software/). Keep this list in step with nav.yaml if the slugs change.'
+  - 'Specialty descriptions are deliberately generic (EMR, prescriptions and billing are in every plan). The specialty-specific objects in spec 5.15 (odontogram, growth charts, refraction and so on) are not confirmed product facts. When each specialty page is published, delete the description here and HubGrid falls back to that page''s own summary.'
+  - 'Left out for lack of a confirmed fact: NGO pricing (spec 5.10 "[decide before launch]"), so there is no NGO row in the plan table and no NGO pricing FAQ; a "Can I switch plans later?" FAQ, because moving down a plan, whether records carry over on a plan change, and what happens to the unused part of an annual payment are not confirmed (the polyclinic FAQ covers moving up only, from plans.yaml "Everything in Premium, plus" and the no-contract condition); what a second branch adds to the bill (per doctor, per location or both); add-on prices; which specialty templates exist; review counts for the badges (capterraReviews and googleReviews are null); a Google reviews URL (the 4.8 comes from the Trustindex badge on the live footer, so the Google badge has no link).'
+  - 'NGO card uses the spec 5.10 promise words ("low budgets and low bandwidth") and states the live-site limit ("does not run fully offline today", facts.md). It does not mention the self-hosted option, whose offline behaviour is not confirmed, and makes no donor-reporting claim.'
+  - 'Hospital card and FAQ use the scope in spec 5.8 and the published /solutions/hospital-opd/ page: OPD, day care and nursing homes, not inpatient wards or operating theatres. The HIS connection line comes from the plans.yaml integrations add-on ("an existing HIS, scoped per project").'
+  - 'No free trial per spec 1.2 (decided 23 September). The demo wording ("on a demo clinic set up like yours") matches /indiademo/, which says the demo uses none of the clinic''s real records. The trial answer no longer says a clinic "stops paying", because refunds on an annual payment are not confirmed.'
+  - 'Chain card and FAQ use plans.yaml Enterprise lines only ("Central control of every location", "Clinical SOP tracking across branches"). Spec 5.7 figures for stockouts and denied claims are not used: they have no public source.'
+  - 'Plan table "What decides it" cells use plans.yaml inclusions only. The hospital row says pharmacy and lab are included on Enterprise rather than implying they need it, because plans.yaml lists both as add-ons for Professional and Premium.'
+  - 'Secondary keyword "clinic software by specialty" replaced with "clinic software by practice size" so specialty terms stay with the /specialties/ hub and the specialty pages (spec 4.5 rule 5).'
+  - 'Meta description is 154 characters, opens with the head keyword and carries no tokens (the lint measures the raw string, so a price token would count at its token length).'
+  - 'Title (58 characters) carries the head keyword; spec section 4 has no row for this hub. Head keyword "clinic software by practice type" does not collide with any other page as of 2026-09-26.'

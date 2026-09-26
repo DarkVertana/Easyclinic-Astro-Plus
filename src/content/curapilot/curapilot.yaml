@@ -1,0 +1,295 @@
+# CuraPilot (spec 5.3; keyword map 4.1; cannibalisation rule 4.5.1: this page owns copilot and decision-support terms).
+status: published
+headKeyword: AI copilot for doctors
+secondaryKeywords:
+  - clinical decision support software
+  - AI clinical assistant
+  - point-of-care decision support
+title: 'CuraPilot, the AI Copilot for Doctors: EasyClinic'
+metaDescription: >-
+  CuraPilot is an AI copilot for doctors: it reads past visits and checks the prescription during the
+  consult. Every flag is advice; the clinician decides.
+h1: An AI copilot for doctors that reads past visits during the consult
+linkLabel: CuraPilot
+eyebrow: CuraPilot, the clinical copilot from EasyClinic
+openingAnswer: >-
+  CuraPilot is EasyClinic's AI copilot for doctors: during the consult it reads the patient's past
+  visits and checks the prescription before it is finalised, and the clinician decides what to do with
+  each flag. In a 2025 preprint by Penda Health and OpenAI covering {fig:visits} visits at 15 Nairobi
+  clinics that run on EasyClinic, clinicians who had AI Consult, a copilot inside that record, made
+  {fig:diagnostic-errors} fewer diagnostic errors, though the paper does not name CuraPilot.
+summary: >-
+  EasyClinic's AI copilot for doctors, and what the Penda Health study of {fig:visits} visits in Nairobi
+  did and did not measure.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Start a 90-day proof of concept
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Read the study
+    href: https://arxiv.org/abs/2507.16947
+  whatsapp: Hi, I was reading the EasyClinic CuraPilot page and would like to talk about a 90-day proof of concept.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: three-leaks
+      eyebrow: Why AI, why now
+      heading: Three leaks hiding inside clinic operations
+      intro: >-
+        The information that would catch each of these is usually already in the record, spread across
+        visits and sites.
+      items:
+        - heading: 'Clinical: blind spots across visits'
+          body: >-
+            No single visit holds enough information. A diagnosis can stay hidden across months of
+            visits, sometimes at more than one facility, unless someone reads the record as one story.
+          fix: >-
+            CuraPilot reads the patient's past visits during the consult and flags patterns that no single
+            visit shows. In the Penda Health preprint, clinicians who had AI Consult, a copilot inside their
+            EasyClinic record, made {fig:diagnostic-errors} fewer diagnostic errors. The paper does not name
+            CuraPilot.
+        - heading: 'Operations: stockouts found too late'
+          body: >-
+            A medicine shortage usually shows up when the patient is already at the counter, not weeks
+            before. The signal is there in what each store dispenses, but it is scattered across sites.
+          fix: >-
+            Forecasting from what each store dispenses shows a shortage while there is still time to
+            reorder. We have no published measurement of how far this cuts stockouts, so this page gives no
+            figure.
+        - heading: 'Revenue: claims lost at the prescription'
+          body: >-
+            Treatments get written without anyone checking what the patient's plan covers. The denial is
+            decided in the consulting room, weeks before billing sees it.
+          fix: >-
+            Each claim is checked against the payer's rules before it leaves the facility, so an error is
+            found while it can still be fixed. As with stock, we have no published measurement of the
+            effect, so this page gives no figure.
+
+  - discriminant: featureRows
+    value:
+      id: intelligence-layer
+      eyebrow: What it does
+      heading: One intelligence layer, working everywhere your clinic does
+      intro: >-
+        CuraPilot reads from the same live record the clinic already works in. The prescription the doctor
+        signs is the same line the claim is checked against and the pharmacy reorders from.
+      items:
+        - heading: Clinical intelligence
+          body: >-
+            Guidance at the point of care, drawn from the patient in front of you rather than a generic
+            checklist.
+          bullets:
+            - Protocol-based decision support during the consult, using this patient's own record
+            - Drug interaction and allergy checks before a prescription is finalised
+            - A flag on any dose that looks wrong before the prescription goes out
+            - Pattern recognition across visits, connecting symptoms that no single encounter would reveal
+            - Lab and radiology results in the consult, with abnormal findings flagged
+        - heading: Operational intelligence
+          body: The pharmacy shelf and every branch dashboard, reading from the same record.
+          bullets:
+            - Consumption-based forecasting that shows a shortage before it reaches the dispensing counter
+            - Live dashboards across every facility, showing what is happening now rather than last month
+        - heading: Financial intelligence
+          body: Claims checked before they leave, and a view of the whole network for leadership.
+          bullets:
+            - Every claim checked against the payer's rules before it leaves the facility
+            - Network-wide performance for leadership, with facility comparisons and trends
+
+  - discriminant: flowDiagram
+    value:
+      id: consult
+      heading: What changes for the clinician during a consult
+      intro: >-
+        The consult runs as before, in the record the clinician already uses. What changes is the flags
+        CuraPilot raises along the way, and the clinician decides what to do with each one.
+      steps:
+        - label: Open the visit
+          body: >-
+            The clinician opens the visit as usual. CuraPilot reads the same record, including past visits
+            and lab results.
+        - label: A pattern is flagged
+          body: >-
+            If something runs across earlier visits, CuraPilot raises it as an alert. For example, fatigue,
+            weight gain, headaches and blurred vision noted again and again over months of visits, which no
+            single visit would connect.
+          check: Advisory by design
+        - label: The prescription is checked
+          body: >-
+            Before the prescription is finalised, CuraPilot checks it against the patient's allergies and
+            other medicines. A dose that looks wrong is flagged too.
+        - label: The clinician decides
+          body: >-
+            Every flag is advice. The clinician acts on it or dismisses it, and the visit carries on.
+          check: Clinician decides
+        - label: The claim goes out checked
+          body: >-
+            When the visit is billed, the claim is checked against the payer's rules before it leaves the
+            facility.
+
+  - discriminant: studyCard
+    value:
+      id: study
+      eyebrow: The Penda Health study
+      heading: What the Penda Health study measured
+      intro: >-
+        The study measured AI Consult, a copilot that Penda Health and OpenAI ran inside Penda's EasyClinic
+        record. The paper does not name CuraPilot. EasyClinic built the record the study took place in, and
+        Penda has run on it since 2017.
+      publication: korom-2025
+      figures:
+        - visits
+        - diagnostic-errors
+        - treatment-errors
+        - history-errors
+      method: >-
+        Penda Health and OpenAI ran AI Consult, a copilot embedded in Penda's EasyClinic record, during real
+        patient visits. Then 108 independent physicians rated visit records for errors, comparing visits
+        where the clinician had AI Consult with visits where the clinician did not.
+      sites: >-
+        15 Penda Health clinics in Nairobi, Kenya, all running on EasyClinic, the record Penda has used
+        since 2017.
+      limits: >-
+        The paper is a preprint on arXiv and has not yet been through a journal's review. Its figures are
+        error rates that physicians judged from the visit records, not measures of how patients fared
+        afterwards. It studied AI Consult and does not name CuraPilot.
+
+  - discriminant: testimonialRow
+    value:
+      id: penda-health
+      heading: Penda Health on working with EasyClinic
+      intro: Dr Robert Korom is chief medical officer at Penda Health, which has run on EasyClinic since 2017.
+      items:
+        - robert-korom-partner
+      layout: single
+      usePullQuote: false
+
+  - discriminant: prose
+    value:
+      id: where-it-runs
+      heading: Where CuraPilot runs
+      body: >-
+        CuraPilot sits on EasyClinic, or on top of an existing hospital information system, connecting
+        through HL7 FHIR and open APIs. On EasyClinic it reads the record your clinicians already write in,
+        so there is no second system to keep up to date.
+
+
+        This page gives the approach, not a list of named systems. If your clinics run another system, name
+        it when you ask for a proof of concept.
+
+  - discriminant: stepList
+    value:
+      id: proof-of-concept
+      heading: How a 90-day proof of concept runs
+      intro: >-
+        A proof of concept runs for 90 days in four stages on your own clinics' data, and ends with results
+        measured against your baseline.
+      steps:
+        - title: Understand
+          meta: Weeks 1 to 3
+          body: >-
+            We learn how your clinics work today and record the baseline that the rest of the proof of
+            concept is measured against.
+        - title: Deploy
+          meta: Weeks 4 to 6
+          body: CuraPilot goes live for your clinicians, on EasyClinic or on your existing hospital information system.
+        - title: Measure
+          meta: Weeks 7 to 10
+          body: The results are measured on your own data, against the baseline from the first stage.
+        - title: Decide
+          meta: Week 11 onwards
+          body: With your own numbers in front of you, you decide whether to keep CuraPilot.
+      note: >-
+        CuraPilot is not part of any plan on the [price list](/pricing/), and this page does not publish its
+        price or the price of a proof of concept.
+
+faq:
+  - question: Does CuraPilot replace our EMR?
+    answer: >-
+      No, CuraPilot works inside the record you already keep. On EasyClinic it reads the same patient
+      record the clinician writes in, and on another hospital information system it connects through HL7
+      FHIR and open APIs, so notes and prescriptions stay in that system.
+  - question: What did the Penda Health study show?
+    answer: >-
+      The 2025 preprint by Penda Health and OpenAI found that clinicians who had AI Consult made
+      {fig:diagnostic-errors} fewer diagnostic errors and {fig:treatment-errors} fewer treatment errors
+      than clinicians without it, across {fig:visits} visits at 15 clinics in Nairobi. The biggest drop
+      was in history-taking errors, {fig:history-errors} fewer, as rated by 108 independent physicians.
+  - question: Did the study test CuraPilot?
+    answer: >-
+      Not by name: the paper studied AI Consult, a copilot inside Penda's EasyClinic record, and does not
+      name CuraPilot. EasyClinic built that record, and Penda Health has used it since 2017.
+  - question: Does the clinician stay in control?
+    answer: >-
+      Yes, CuraPilot is advisory by design. It raises a flag during the consult, and the clinician decides
+      whether to act on it, so the diagnosis and the prescription stay the clinician's.
+  - question: What happens when the clinician disagrees with a flag?
+    answer: >-
+      The clinician dismisses it and carries on with the visit as they judge best. A flag is a second
+      opinion to weigh, and the decision stays with the clinician.
+  - question: Does CuraPilot work with the EMR we already use?
+    answer: >-
+      CuraPilot is built to sit on EasyClinic or on top of an existing hospital information system,
+      connecting through HL7 FHIR and open APIs. This page does not list named systems, so name yours when
+      you ask for a proof of concept.
+  - question: Has the study been published in a journal?
+    answer: >-
+      No, the {fig:visits}-visit study is a preprint that has not yet been through a journal's review. It
+      was posted on arXiv (2507.16947) in July 2025, and its figures measure errors as physicians judged
+      them from visit records rather than how patients fared afterwards.
+  - question: How long does a proof of concept take?
+    answer: >-
+      A proof of concept takes 90 days in four stages: Understand in weeks 1 to 3, Deploy in weeks 4 to 6,
+      Measure in weeks 7 to 10, and Decide from week 11. The results are measured on your own clinics'
+      data, against your own baseline.
+
+links:
+  related:
+    - href: /ai/
+      label: Cura AI
+      description: The AI scribe that writes the note while you see the patient, and the other Cura AI features.
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: The patient record and prescription that CuraPilot works inside.
+    - href: /solutions/clinic-chain/
+      label: Software for clinic chains
+      description: One record and one set of SOPs across every branch.
+    - href: /emr-software-in-kenya/
+      label: EasyClinic in Kenya
+      description: Clinic software for Kenya, where Penda Health runs on EasyClinic.
+
+closing:
+  heading: Try CuraPilot on your own clinics for 90 days
+  body: >-
+    A proof of concept runs for 90 days in four stages and ends with your own numbers, measured against your
+    own baseline. Tell us how many clinics you run and which system they use today.
+  primary:
+    label: Start a 90-day proof of concept
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Read the study
+    href: https://arxiv.org/abs/2507.16947
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: 'EasyClinic has been Penda Health''s record since 2017, so this page can say exactly where AI Consult ran, quote Penda''s chief medical officer and admit that the paper names AI Consult and not CuraPilot.'
+  readsMachineWritten: 'The three leaks and the three intelligence rows keep the old page''s template shape, the consult walkthrough describes an alert a doctor cannot yet see in a screenshot, and the "does not name CuraPilot" caveat repeats in several places.'
+
+notes:
+  - 'Title changed from spec 4.1 ("CuraPilot: AI Clinical Copilot Proven on 39,849 Visits"): "proven" is banned and the study did not measure CuraPilot by name. H1 changed from "The AI copilot studied on 39,849 patient visits" for the same reason.'
+  - 'Spec 5.3 promise ("the only clinic AI whose outcomes were measured on real visits and peer-reviewed") is not used: the 39,849-visit study is a preprint (korom-2025, peerReviewed false), it measured AI Consult, and "the only" has no source.'
+  - 'Study honesty: the paper names AI Consult, embedded in Penda''s Easy Clinic EMR since 2017. It does not name CuraPilot (study.yaml note: confirm whether CuraPilot is AI Consult). If product confirms they are the same system, the opening answer, painBlocks clinical fix, studyCard intro and limits, and the "Did the study test CuraPilot?" FAQ can be rewritten.'
+  - '"108 independent physicians" is written as text from the paper (verified in page-writing-rules); there is no fig token for it. "10% fewer investigation errors" is verified but left out because it has no fig token; add an investigation-errors figure to study.yaml to use it. The study FAQ splits its figures across two sentences rather than listing three in a row (spec 6.2).'
+  - 'Removed for lack of a source: 67% fewer stockouts, 34% fewer denied claims, 45-day early warning, "28 organisations", "23% to under 4%" rejections, 99.97% uptime (spec 5.3 moves uptime to /trust), "100% clinician satisfaction", "22+ years". The Nature Health and Nature Medicine papers are separate studies and are not cited.'
+  - 'Integration note names only the approach (EasyClinic, or an existing HIS through HL7 FHIR and open APIs). The live list (KenyaEMR, OpenMRS, M-Pesa, eTIMS, SMART e-claiming, SLADE, SHA, DHIS2) is left out: integration status is unconfirmed, and live Kenya pages say SHA and eTIMS are not yet supported. Restore an honest per-system list with states from src/data/integrations when confirmed.'
+  - 'Cost: CuraPilot and the proof of concept have no published price, so spec 5.3 "What it costs" and the FAQ "How is it priced?" are left out. The stepList note says only that CuraPilot is not part of any plan on the price list (true of plans.yaml, which has no CuraPilot line).'
+  - 'FAQs left out for lack of a confirmed fact: "Is it available in Kenya, India, UAE and Nigeria?", "How is it priced?", "What data leaves the clinic?". Replaced with "Did the study test CuraPilot?" and "Has the study been published in a journal?" (the plain form of "Is the study peer reviewed?", which the claims lint blocks as text).'
+  - 'Walkthrough ("What changed for the clinician") has no screenshot: spec 12 asks for a live alert capture. Add media to the flowDiagram step "A pattern is flagged" when it exists. The example symptoms come from the mock alert on the live page and are illustrative.'
+  - 'Operational and financial features (consumption forecasting, claim checks) are written without naming a product, because spec 1.2 and the /ai/ page put stock prediction and AI billing under Cura AI while the live CuraPilot page claims them. The rows stay because spec 5.3 says to keep this section; product should decide which name owns them.'
+  - 'Staging "intelligence layer" bullets for voice commands, telemedicine and patient engagement are dropped: they overlap Cura AI and feature pages. The staging "drug interaction, allergy and dose" bullet is split in two to avoid a group of three.'
+  - 'CTA "Download the study summary" (gated PDF) replaced with "Read the study" linking to arXiv, because no PDF exists yet. Dr Korom video (spec proof, VideoObject schema) left out: none exists.'
+  - 'links.hub not set: /ai/ now has a content entry (ai.yaml), but the site tree (spec 3.1) lists /ai and /curapilot as siblings under AI. Set hub: /ai/ if the breadcrumb should run Cura AI > CuraPilot.'
+  - 'Old URL /curapilot-ai/ already 301s here through src/data/redirects.yaml (spec 3.4), so redirectFrom is not set.'

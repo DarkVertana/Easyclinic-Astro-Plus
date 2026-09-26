@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
 import { getRegistry } from '../../../lib/content/registry';
-import { need, unconfirmed } from '../../../lib/content/need';
+import { need, optional, optionalConfirmed } from '../../../lib/content/need';
 import { stripSentinels } from '../../../lib/content/sentinel';
 import Section from '../../ui/Section.astro';
 import Button from '../../ui/Button.astro';
@@ -29,20 +29,22 @@ const proofOnly = inSection && ctx.index >= 0 && (ctx.family === 'country' || ct
 // Named contact: shown only with consent on file (publishName), otherwise a publish blocker.
 const consent = contact.publishName === true;
 const nameLabel = `${country.name} contact name`;
-const fullName = contact.name ? unconfirmed(Astro, `${nameLabel} consent`, contact.name, consent) : need(Astro, nameLabel, null);
+// Optional details: shown when known (and, for the name, cleared to publish); left out of published pages otherwise.
+const fullName = optionalConfirmed(nameLabel, contact.name, consent) ?? `EasyClinic ${country.name} team`;
 /** "Or call Walter directly": the first name, keeping an honorific ("Dr Amina") so it still reads as a name. */
 function callName(name: string): string {
   const parts = name.trim().split(/\s+/);
   return /^(dr|mr|mrs|ms|prof)\.?$/i.test(parts[0]) && parts.length > 1 ? parts.slice(0, 2).join(' ') : parts[0];
 }
-const firstName = contact.name ? unconfirmed(Astro, `${nameLabel} consent`, callName(contact.name), consent) : need(Astro, nameLabel, null);
-const role = need(Astro, `${country.name} contact role`, contact.role);
+const firstName = optionalConfirmed(nameLabel, contact.name ? callName(contact.name) : null, consent);
+const role = optional(`${country.name} contact role`, contact.role);
 const phone = need(Astro, `${country.name} contact phone`, contact.phone);
 const telHref = contact.phone ? `tel:${contact.phone.replace(/[^\d+]/g, '')}` : null;
-const hours = need(Astro, `${country.name} contact hours`, contact.hours);
-const office = need(Astro, `${country.name} office or partner address`, country.office);
-const cities = country.cities.length ? country.cities.join(', ') : need(Astro, `${country.name} cities`, null);
-const clients = showClients ? (country.clients.length ? country.clients : [need(Astro, `${country.name} named client`, null)]) : [];
+const hours = optional(`${country.name} contact hours`, contact.hours);
+const office = optional(`${country.name} office or partner address`, country.office);
+const cities = optional(`${country.name} cities`, country.cities.join(', '));
+const clientPlaceholder = optional(`${country.name} named client`, null);
+const clients = showClients ? (country.clients.length ? country.clients : clientPlaceholder ? [clientPlaceholder] : []) : [];
 
 // Click-to-chat routed to the country contact, prefilled with the page name (spec 7.9).
 const prefill = `Hi, I was reading the EasyClinic page "${stripSentinels(ctx.pageLabel)}" and would like a demo.`;
@@ -50,7 +52,8 @@ const whatsappHref = contact.whatsapp ? `https://wa.me/${contact.whatsapp}?text=
 
 const demoPath = country.pages.demo;
 const demoHref = demoPath && demoPath !== ctx.path ? registry.urlFor(demoPath) : null;
-const demoLabel = `Book a demo with ${firstName}`;
+const demoLabel = firstName ? `Book a demo with ${firstName}` : `Book a demo in ${country.name}`;
+const callWho = firstName ? `Or call ${firstName} directly:` : 'Or call us directly:';
 ---
 
 {
@@ -64,7 +67,7 @@ const demoLabel = `Book a demo with ${firstName}`;
             </span>
             <div>
               <p class="text-lg font-semibold leading-snug text-ink-heading">{fullName}</p>
-              <p class="text-sm text-ink-muted">{role}</p>
+              {role && <p class="text-sm text-ink-muted">{role}</p>}
             </div>
           </div>
           {demoHref && (
@@ -73,7 +76,7 @@ const demoLabel = `Book a demo with ${firstName}`;
             </div>
           )}
           <p class="mt-4">
-            Or call {firstName} directly:{' '}
+            {callWho}{' '}
             {telHref ? (
               <a href={telHref} class="inline-flex min-h-11 items-center whitespace-nowrap font-semibold" data-track="cta_click" data-label="contact card phone">
                 {phone}
@@ -86,7 +89,7 @@ const demoLabel = `Book a demo with ${firstName}`;
             {whatsappHref && (
               <a href={whatsappHref} class="btn border-line-strong bg-surface text-ink-heading hover:bg-surface-muted hover:text-ink-heading" data-track="whatsapp_click" data-label="contact card" rel="noopener">
                 <Icon name="brand-whatsapp" size={18} class="text-whatsapp" />
-                <span>Message {firstName} on WhatsApp</span>
+                <span>{firstName ? `Message ${firstName} on WhatsApp` : 'Message us on WhatsApp'}</span>
               </a>
             )}
             {contact.email && (
@@ -99,22 +102,28 @@ const demoLabel = `Book a demo with ${firstName}`;
         </div>)}
 
         <dl class:list={['grid gap-4 text-sm', proofOnly ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2']}>
-          <div>
-            <dt class="font-semibold text-ink-heading">Hours</dt>
-            <dd class="mt-0.5 text-ink-muted">
-              {hours}
-              {contact.callbackWindow && <span class="block">Calls back within {contact.callbackWindow}</span>}
-            </dd>
-          </div>
-          <div>
-            <dt class="font-semibold text-ink-heading">Office</dt>
-            <dd class="mt-0.5 text-ink-muted">{office}</dd>
-          </div>
-          <div>
-            <dt class="font-semibold text-ink-heading">Cities</dt>
-            <dd class="mt-0.5 text-ink-muted">{cities}</dd>
-          </div>
-          {showClients && (
+          {hours && (
+            <div>
+              <dt class="font-semibold text-ink-heading">Hours</dt>
+              <dd class="mt-0.5 text-ink-muted">
+                {hours}
+                {contact.callbackWindow && <span class="block">Calls back within {contact.callbackWindow}</span>}
+              </dd>
+            </div>
+          )}
+          {office && (
+            <div>
+              <dt class="font-semibold text-ink-heading">Office</dt>
+              <dd class="mt-0.5 text-ink-muted">{office}</dd>
+            </div>
+          )}
+          {cities && (
+            <div>
+              <dt class="font-semibold text-ink-heading">Cities</dt>
+              <dd class="mt-0.5 text-ink-muted">{cities}</dd>
+            </div>
+          )}
+          {showClients && clients.length > 0 && (
             <div>
               <dt class="font-semibold text-ink-heading">Clients include</dt>
               <dd class="mt-0.5 text-ink-muted">
@@ -138,11 +147,11 @@ const demoLabel = `Book a demo with ${firstName}`;
         </span>
         <div>
           <p class="font-semibold leading-snug text-ink-heading">{fullName}</p>
-          <p class="text-sm text-ink-muted">{role}</p>
+          {role && <p class="text-sm text-ink-muted">{role}</p>}
         </div>
       </div>
       <p class="mt-3">
-        Or call {firstName} directly:{' '}
+        {callWho}{' '}
         {telHref ? (
           <a href={telHref} class="inline-flex min-h-11 items-center whitespace-nowrap font-semibold" data-track="cta_click" data-label="contact card phone">
             {phone}
@@ -156,7 +165,7 @@ const demoLabel = `Book a demo with ${firstName}`;
           {whatsappHref && (
             <a href={whatsappHref} class="btn border-line-strong bg-surface !px-3 text-sm text-ink-heading hover:bg-surface-muted hover:text-ink-heading" data-track="whatsapp_click" data-label="contact card" rel="noopener">
               <Icon name="brand-whatsapp" size={18} class="text-whatsapp" />
-              <span>WhatsApp {firstName}</span>
+              <span>{firstName ? `WhatsApp ${firstName}` : 'WhatsApp us'}</span>
             </a>
           )}
           {contact.email && (
@@ -168,16 +177,28 @@ const demoLabel = `Book a demo with ${firstName}`;
         </div>
       )}
       <dl class="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 border-t border-line pt-3 text-sm">
-        <dt class="font-semibold text-ink-heading">Hours</dt>
-        <dd class="text-ink-muted">
-          {hours}
-          {contact.callbackWindow && <>, calls back within {contact.callbackWindow}</>}
-        </dd>
-        <dt class="font-semibold text-ink-heading">Office</dt>
-        <dd class="text-ink-muted">{office}</dd>
-        <dt class="font-semibold text-ink-heading">Cities</dt>
-        <dd class="text-ink-muted">{cities}</dd>
-        {showClients && (
+        {hours && (
+          <>
+            <dt class="font-semibold text-ink-heading">Hours</dt>
+            <dd class="text-ink-muted">
+              {hours}
+              {contact.callbackWindow && <>, calls back within {contact.callbackWindow}</>}
+            </dd>
+          </>
+        )}
+        {office && (
+          <>
+            <dt class="font-semibold text-ink-heading">Office</dt>
+            <dd class="text-ink-muted">{office}</dd>
+          </>
+        )}
+        {cities && (
+          <>
+            <dt class="font-semibold text-ink-heading">Cities</dt>
+            <dd class="text-ink-muted">{cities}</dd>
+          </>
+        )}
+        {showClients && clients.length > 0 && (
           <>
             <dt class="font-semibold text-ink-heading">Clients include</dt>
             <dd class="text-ink-muted">{clients.join(', ')}</dd>

@@ -1,4 +1,4 @@
-status: draft
+status: published
 headKeyword: contact EasyClinic
 secondaryKeywords:
   - EasyClinic phone number
@@ -7,13 +7,13 @@ secondaryKeywords:
   - EasyClinic support
   - EasyClinic Kolkata office
 title: 'Contact EasyClinic: Book a Demo or Call Us'
-metaDescription: Contact EasyClinic by phone or WhatsApp on {contact:in.phone}, email hello@easyclinic.io, or book a 20-minute demo. Our office is in Kolkata.
+metaDescription: Call or WhatsApp EasyClinic on {contact:in.phone} or email hello@easyclinic.io. Book a 20-minute demo, or visit our office in Kolkata.
 h1: Contact EasyClinic
 linkLabel: Contact us
 openingAnswer: |
   The quickest way to reach EasyClinic is to call or WhatsApp {contact:in.phone}, or to email hello@easyclinic.io. Our office is at 30 Circus Avenue, Kolkata 700017, and the form below books a 20-minute demo.
-summary: The EasyClinic phone and WhatsApp number, the Kolkata office address, local contacts by country, and a form to book a 20-minute demo.
-author: null
+summary: The EasyClinic phone and WhatsApp number, the Kenya number, the Kolkata office address and a form to book a 20-minute demo.
+author: subhashish-saha
 lastUpdated: 2026-09-26
 ctas:
   primary:
@@ -27,19 +27,22 @@ faqHeading: Questions people ask before they get in touch
 faq:
   - question: I already use EasyClinic and something is not working. Who do I contact?
     answer: |
-      Existing customers should start at the help centre, [help.easyclinic.io](https://help.easyclinic.io/), and call [support line and hours for existing customers] for anything the articles do not answer. Support and training are included in every plan at no extra charge, and Premium and Enterprise clinics can also go to their named account manager. Please do not use the demo form on this page for support, because it books demos and does not open a support request.
-  - question: How quickly will someone call me after I book a demo?
+      Start at the help centre, [help.easyclinic.io](https://help.easyclinic.io/), and for anything the articles do not answer, call {contact:in.phone} or email hello@easyclinic.io with your clinic's name. Support is included in every plan at no extra charge, and Premium and Enterprise clinics also have a named account manager to go to. Please do not use the demo form on this page for support, because it books demos and does not open a support request.
+  - question: Will I be tied into a contract if I go ahead after the demo?
     answer: |
-      We call you within [call-back window] of your request, on the number you gave, to fix a time for the 20-minute demo. If you would rather not wait, call the number for your country in the table above, or pick a slot in the booking calendar yourself.
-  - question: Can the demo be in a language other than English, such as Hindi or Swahili?
+      No, there is no binding contract and no setup fee, so you can use EasyClinic for as long as you are happy with it. Professional and Premium are priced per doctor per month and billed annually or quarterly: in India, Professional is {price:inr.professional.annual} per doctor per month on annual billing or {price:inr.professional.quarterly} on quarterly billing. A login for your receptionist is included in that price, though the receptionist cannot open the EMR or write prescriptions.
+  - question: How soon could my clinic be running on EasyClinic after the demo?
     answer: |
-      Demos are given in [demo languages by country], so tell us your language in your WhatsApp message or when we call, and we will say on that call whether we can do it. Prescriptions are a separate question: they can print in two languages, such as English and Swahili, and the full list is [prescription languages].
-  - question: Do you visit clinics in person?
+      Clinics can go live in as little as {fact:goLiveDays} days after the demo. Training for you and your clinic staff takes {fact:trainingDays} days and two hours in all: 40 minutes of basic training on day 1, 40 minutes of EMR scenario training on day 2, 20 minutes of practice exercises on day 3 and 20 minutes on the road to expertise on day 4. There is no charge for the training.
+  - question: We still write prescriptions on paper. Is a demo worth our time?
     answer: |
-      We visit clinics in person in [cities where the team visits clinics in person], and everywhere else the demo is a 20-minute video call. If you are outside those cities and want someone on site for training or go-live, ask on that first call and we will tell you then whether we can send someone.
+      Yes, and clinics on paper get a specific promise from us: give us 2 hours and 10 patient records, and we will make your prescription writing faster. The demo itself takes 20 minutes, and there is no binding contract, so you decide after it whether those 2 hours are worth giving.
+  - question: Does EasyClinic work without an internet connection?
+    answer: |
+      No, EasyClinic does not run fully offline today, so your clinic needs a working internet connection to use it. You and your staff sign in at [app.easyclinic.io](https://app.easyclinic.io/), so if your line drops often, mobile data on a spare phone or a dongle is worth keeping as a backup.
   - question: I want to partner with EasyClinic or resell it. Who do I talk to?
     answer: |
-      Partners and resellers should start at the [partner programme page](/partner-with-ec/), which sets out the partner tiers and the margin you earn. The demo form here is set up for clinics, so if you would rather write, email hello@easyclinic.io with your company name and the countries you cover.
+      Email hello@easyclinic.io with your company name and the countries you cover, and say whether you want to [partner with EasyClinic](/partner-with-ec/) or resell it. Please use email rather than the demo form, because the form is set up for clinics booking a demo.
 links:
   relatedHeading: Read before your demo
   related:
@@ -48,10 +51,10 @@ links:
       description: Professional is {price:usd.professional.annual} and Premium {price:usd.premium.annual} per doctor per month on annual billing, with no setup fee.
     - href: /trust/
       label: Security and compliance
-      description: Where patient data is stored, and the status of ABDM, SHA, NABIDH and NDPA support with dates.
+      description: How EasyClinic handles patient data, and what ABDM, SHA, NABIDH and NDPA ask of a clinic's software.
     - href: /switch/
       label: Switching to EasyClinic
-      description: What we import from your current system or paper records, and how long the move takes.
+      description: Moving from paper or another system, and going live in as little as {fact:goLiveDays} days.
 closing:
   heading: See EasyClinic set up for a clinic like yours
   body: The demo takes 20 minutes and is set up around your practice type and number of locations. If you would rather write first, email hello@easyclinic.io with your clinic's name and country.
@@ -61,18 +64,24 @@ closing:
   secondary:
     label: Email hello@easyclinic.io
     href: mailto:hello@easyclinic.io
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: The Kolkata office at 30 Circus Avenue with the India and Kenya lines side by side, and the promise of faster prescribing to clinics on paper in exchange for 2 hours and 10 patient records, are specific to how EasyClinic works with clinics in India and Kenya.
+  readsMachineWritten: With no named person to call, no hours and no call-back time, the contact table and the demo form promise can read like a switchboard, and the FAQ answers are all much the same length.
 notes:
   - 'Spec 5.19 /contact-us/, 7.9 (demo form) and section 11 UX 3. LocalBusiness schema is added automatically for this page (spec 2.10).'
+  - 'Published 2026-09-26 with confirmed facts only (owner decision). Taken out until the fact sheet answers them: the call-back window, contact names and hours, demo and prescription languages, the cities the team visits in person, and the booking calendar. Each can come back as a line or an FAQ once confirmed.'
   - No heroMedia. Spec 12 lists no screen for the contact page, and the demo form is the page's main visual. Add one only if the team wants a Kolkata reception photo (generated environmental image, never presented as our office).
-  - 'Country table: names, phones and hours come from src/data/countries/*.yaml through contact tokens. Walter Brian Maguke (Kenya) renders only once countries/ke.yaml sets publishName: true. India, UAE and Nigeria have no named contact yet; UAE and Nigeria have no local number.'
-  - 'Spec 6.5 named person: the only named person on the page is the Kenya contact in the table, gated on publishName. If consent does not come through, the author byline is the only name left; consider naming the India contact once countries/in.yaml has one.'
-  - Hours in the table must be written in each country's local time (the table intro says so).
+  - 'Country table shows only the confirmed phone and email for India and Kenya. When a contact name is cleared (countries/<code>.yaml publishName: true) or hours are known, add Who to call and Hours columns back with contact tokens, hours in local time. UAE and Nigeria have no local number yet, so the table intro sends them to the India line.'
+  - 'Spec 6.5 named person: the only named person on the page is the author byline. Name the Kenya contact in the table once countries/ke.yaml sets publishName: true.'
   - 'Spec asks for a country selector. A dataTable stands in until a selector exists; each country row could also become a contactCard block.'
-  - 'Booking calendar tool not chosen yet. Replace [booking calendar embed] with the embed (needs a component or an iframe block), or delete the "Book a time directly" section and the calendar mention in FAQ 2.'
+  - 'Spec asks for a booking calendar embed. No tool is chosen, so the "Book a time directly" section was removed; add it back (needs a component or an iframe block) when one is.'
+  - 'Call-back window: when known, add it to the demo form promise; if it differs by country, fill countries/<code>.yaml contact.callbackWindow for the confirmation page.'
   - 'Secondary CTA points at https://wa.me/919147770277 (site.yaml whatsapp). The persistent WhatsApp button uses ctas.whatsapp as the prefilled message.'
-  - 'Author: suggest Subhashish Saha (Head of customer success), since this page serves existing customers as well as new clinics. Needs sign-off.'
-  - Confirm whether existing-customer support uses the same number as sales (+91 91477 70277 in site.yaml); FAQ 1 and the aside assume a separate support line until told otherwise.
-  - '[call-back window] appears in the demo form promise and FAQ 2. If one window applies everywhere, write it once in both; if it differs by country, fill countries/<code>.yaml contact.callbackWindow for the confirmation page.'
+  - FAQ 1 and the aside send existing customers to the main number and hello@easyclinic.io. If support has its own line, put it in both places.
+  - 'Country demo links: /indiademo/ (published) is named in the table note; /kenyademo/ sits on the Kenya row and /uaedemo/ and /nigeriademo/ on the country names in the table intro, so each reads correctly as plain text while its page is unpublished. When those pages go live, consider a note naming all four.'
+  - 'FAQ 3 and the /switch/ link use goLiveDays ("in as little as 3 days"), which conflicts with the "2 to 4 week setup" on the live Kenya listicle (see the facts.yaml note).'
 sections:
   - discriminant: demoForm
     value:
@@ -80,48 +89,27 @@ sections:
       heading: Book a 20-minute demo
       intro: Tell us your type of practice and how many locations you run, and we will set the demo up around a clinic like yours.
       promise: |
-        **What happens after you send this.** We call you within [call-back window] on the number you gave, and where your country has a named contact in the table below, that person makes the call.
+        **What happens after you send this.** We call you back on the number you gave.
 
         On that call we ask how your clinic runs today and fix a time for the 20-minute demo.
   - discriminant: dataTable
     value:
       id: local-contacts
-      heading: Talk to someone in your country
-      intro: If you would rather talk now than fill in a form, call the person for your country. Hours are in local time.
+      heading: Call us in India or Kenya
+      intro: If you would rather talk now than fill in a form, call the number for your country. Clinics in every other country, including [the UAE](/uaedemo/) and [Nigeria](/nigeriademo/), can call or WhatsApp the India number.
       columns:
         - Country
-        - Who to call
         - Phone
-        - Hours
+        - Email
       rows:
         - - India
-          - '{contact:in.name}'
-          - '{contact:in.phone}'
-          - '{contact:in.hours}'
-        - - Kenya
-          - '{contact:ke.name}'
+          - '{contact:in.phone}, or [WhatsApp](https://wa.me/{contact:in.whatsapp})'
+          - '{contact:in.email}'
+        - - '[Kenya](/kenyademo/)'
           - '{contact:ke.phone}'
-          - '{contact:ke.hours}'
-        - - UAE
-          - '{contact:ae.name}'
-          - '{contact:ae.phone}'
-          - '{contact:ae.hours}'
-        - - Nigeria
-          - '{contact:ng.name}'
-          - '{contact:ng.phone}'
-          - '{contact:ng.hours}'
+          - '{contact:ke.email}'
       note: |
-        Clinics in any other country can call or WhatsApp {contact:in.phone}, or email hello@easyclinic.io. Each of the four countries above also has its own demo page: [India](/indiademo/), [Kenya](/kenyademo/), [UAE](/uaedemo/) and [Nigeria](/nigeriademo/).
-  - discriminant: prose
-    value:
-      id: book-a-time
-      heading: Book a time directly
-      body: |
-        Pick a 20-minute slot below and the demo is booked, with no call first to arrange it.
-
-        [booking calendar embed]
-
-        If none of the times fit around your clinic hours, send the form above or a WhatsApp message and we will find one that does.
+        If you want to read before you call, the [India demo page](/indiademo/) sets out what the 20-minute demo covers.
   - discriminant: prose
     value:
       id: visit-or-write
@@ -133,4 +121,4 @@ sections:
       aside: |
         **Already a customer?**
 
-        Sign in to the software at [app.easyclinic.io](https://app.easyclinic.io/). How-to articles are at [help.easyclinic.io](https://help.easyclinic.io/), and for anything they do not answer, call [support line and hours for existing customers].
+        Sign in to the software at [app.easyclinic.io](https://app.easyclinic.io/). How-to articles are at [help.easyclinic.io](https://help.easyclinic.io/), and for anything they do not answer, call {contact:in.phone} or email hello@easyclinic.io.

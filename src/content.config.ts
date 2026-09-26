@@ -15,7 +15,22 @@ import {
   studySchema,
   testimonialSchema,
 } from './schemas/data';
-import { companySchema, countryDemoSchema, countrySchema, homeSchema, kitchenSinkSchema, pricingSchema } from './schemas/families';
+import {
+  aiSchema,
+  companySchema,
+  countryDemoSchema,
+  countrySchema,
+  curapilotSchema,
+  featureSchema,
+  guideSchema,
+  homeSchema,
+  hubSchema,
+  kitchenSinkSchema,
+  pricingSchema,
+  solutionSchema,
+  specialtySchema,
+  trustSchema,
+} from './schemas/families';
 
 /* ---------- Page collections: one per family; one YAML file per page. ---------- */
 
@@ -27,6 +42,18 @@ const countryPages = defineCollection({ loader: pages('country-pages'), schema: 
 const countryDemos = defineCollection({ loader: pages('country-demos'), schema: countryDemoSchema });
 const company = defineCollection({ loader: pages('company'), schema: companySchema });
 const kitchenSink = defineCollection({ loader: pages('kitchen-sink'), schema: kitchenSinkSchema });
+const hubs = defineCollection({ loader: pages('hubs'), schema: hubSchema });
+const features = defineCollection({ loader: pages('features'), schema: featureSchema });
+const solutions = defineCollection({ loader: pages('solutions'), schema: solutionSchema });
+const ai = defineCollection({ loader: pages('ai'), schema: aiSchema });
+const curapilot = defineCollection({ loader: pages('curapilot'), schema: curapilotSchema });
+const trust = defineCollection({ loader: pages('trust'), schema: trustSchema });
+const specialties = defineCollection({ loader: pages('specialties'), schema: specialtySchema });
+// Guides are MDX, one folder per guide (images sit beside it); the folder name is the URL slug.
+const guides = defineCollection({
+  loader: glob({ base: './src/content/guides', pattern: '*/index.mdx', generateId: ({ entry }) => entry.replace(/\/index\.mdx$/, '') }),
+  schema: guideSchema,
+});
 
 /* ---------- Shared facts (src/data). ---------- */
 
@@ -101,4 +128,12 @@ export const collections = {
   countryDemos,
   company,
   kitchenSink,
+  hubs,
+  features,
+  solutions,
+  ai,
+  curapilot,
+  trust,
+  specialties,
+  guides,
 };

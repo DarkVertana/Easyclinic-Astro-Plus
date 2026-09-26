@@ -1,6 +1,6 @@
 # Facts still needed
 
-Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
+Generated 2026-09-26 by `pnpm facts:report`. 340 open items.
 
 ## Authors (13)
 
@@ -70,35 +70,23 @@ Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
 | src/data/countries/ng.yaml | payments[1].asOf | unknown (null) |
 | src/data/countries/ng.yaml | taxInvoicing | unknown (null) |
 
-## Measured numbers and ratings (23)
+## Measured numbers and ratings (11)
 
 | File | Field | Needed |
 | --- | --- | --- |
-| src/data/facts.yaml | facts.doctors.asOf | unknown (null) |
-| src/data/facts.yaml | facts.cities.asOf | unknown (null) |
-| src/data/facts.yaml | facts.countries.asOf | unknown (null) |
-| src/data/facts.yaml | facts.prescriptionsDaily.asOf | unknown (null) |
-| src/data/facts.yaml | facts.retention.source | unknown (null) |
-| src/data/facts.yaml | facts.retention.asOf | unknown (null) |
-| src/data/facts.yaml | facts.supportSatisfaction.source | unknown (null) |
-| src/data/facts.yaml | facts.supportSatisfaction.asOf | unknown (null) |
-| src/data/facts.yaml | facts.largestChain.asOf | unknown (null) |
-| src/data/facts.yaml | facts.goLiveDays.asOf | unknown (null) |
 | src/data/facts.yaml | facts.noShowReduction.value | unknown (null) |
 | src/data/facts.yaml | facts.noShowReduction.source | unknown (null) |
 | src/data/facts.yaml | facts.noShowReduction.asOf | unknown (null) |
 | src/data/facts.yaml | facts.minutesPerNote.value | unknown (null) |
 | src/data/facts.yaml | facts.minutesPerNote.source | unknown (null) |
 | src/data/facts.yaml | facts.minutesPerNote.asOf | unknown (null) |
-| src/data/facts.yaml | facts.capterraRating.asOf | unknown (null) |
 | src/data/facts.yaml | facts.capterraReviews.value | unknown (null) |
 | src/data/facts.yaml | facts.capterraReviews.asOf | unknown (null) |
-| src/data/facts.yaml | facts.googleRating.asOf | unknown (null) |
 | src/data/facts.yaml | facts.googleReviews.value | unknown (null) |
 | src/data/facts.yaml | facts.googleReviews.source | unknown (null) |
 | src/data/facts.yaml | facts.googleReviews.asOf | unknown (null) |
 
-## Prices (founders) (46)
+## Prices (founders) (43)
 
 | File | Field | Needed |
 | --- | --- | --- |
@@ -113,14 +101,12 @@ Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
 | src/data/prices/aed.yaml | taxNote | unknown (null) |
 | src/data/prices/aed.yaml | paymentMethods | unknown (null) |
 | src/data/prices/aed.yaml | asOf | unknown (null) |
-| src/data/prices/inr.yaml | plans.professional.quarterly | unknown (null) |
 | src/data/prices/inr.yaml | addons.pharmacy | unknown (null) |
 | src/data/prices/inr.yaml | addons.lab | unknown (null) |
 | src/data/prices/inr.yaml | addons.claims | unknown (null) |
 | src/data/prices/inr.yaml | addons.integrations | unknown (null) |
 | src/data/prices/inr.yaml | taxNote | unknown (null) |
 | src/data/prices/inr.yaml | paymentMethods | unknown (null) |
-| src/data/prices/inr.yaml | asOf | unknown (null) |
 | src/data/prices/kes.yaml | plans.professional.annual | unknown (null) |
 | src/data/prices/kes.yaml | plans.professional.quarterly | unknown (null) |
 | src/data/prices/kes.yaml | plans.premium.annual | unknown (null) |
@@ -147,7 +133,6 @@ Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
 | src/data/prices/usd.yaml | addons.lab | unknown (null) |
 | src/data/prices/usd.yaml | addons.claims | unknown (null) |
 | src/data/prices/usd.yaml | addons.integrations | unknown (null) |
-| src/data/prices/usd.yaml | asOf | unknown (null) |
 
 ## Compliance status and dates (product and compliance) (44)
 
@@ -198,12 +183,10 @@ Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
 | src/data/regulators/ng-nhia.yaml | state | unknown (null) |
 | src/data/regulators/ng-nhia.yaml | asOf | unknown (null) |
 
-## Study claims and citations (22)
+## Study claims and citations (20)
 
 | File | Field | Needed |
 | --- | --- | --- |
-| src/data/study.yaml | publications[0].easyclinicRole | unknown (null) |
-| src/data/study.yaml | publications[0].verifiedOn | unknown (null) |
 | src/data/study.yaml | publications[1].authors | [Authors to verify] |
 | src/data/study.yaml | publications[1].easyclinicRole | unknown (null) |
 | src/data/study.yaml | publications[1].verifiedOn | unknown (null) |
@@ -225,88 +208,42 @@ Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
 | src/data/study.yaml | figures[7].internalSource | unknown (null) |
 | src/data/study.yaml | approvedWording.approvedBy | unknown (null) |
 
-## Testimonials (consent and details) (44)
+## Testimonials (consent and details) (27)
 
 | File | Field | Needed |
 | --- | --- | --- |
 | src/data/testimonials/chao-rochek-buragohain.yaml | city | unknown (null) |
 | src/data/testimonials/chao-rochek-buragohain.yaml | outcome | unknown (null) |
-| src/data/testimonials/chao-rochek-buragohain.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/foster-akaketwa.yaml | city | unknown (null) |
 | src/data/testimonials/foster-akaketwa.yaml | outcome | unknown (null) |
-| src/data/testimonials/foster-akaketwa.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/hisham-ismail.yaml | city | unknown (null) |
 | src/data/testimonials/hisham-ismail.yaml | outcome | unknown (null) |
-| src/data/testimonials/hisham-ismail.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/jj-thakkar.yaml | outcome | unknown (null) |
-| src/data/testimonials/jj-thakkar.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/manish-bhatia.yaml | outcome | unknown (null) |
-| src/data/testimonials/manish-bhatia.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/nrp-chandra-balaji.yaml | city | unknown (null) |
 | src/data/testimonials/nrp-chandra-balaji.yaml | outcome | unknown (null) |
-| src/data/testimonials/nrp-chandra-balaji.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/prantar-chakrabarti.yaml | city | unknown (null) |
 | src/data/testimonials/prantar-chakrabarti.yaml | outcome | unknown (null) |
-| src/data/testimonials/prantar-chakrabarti.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/premanand-raya.yaml | city | unknown (null) |
 | src/data/testimonials/premanand-raya.yaml | outcome | unknown (null) |
-| src/data/testimonials/premanand-raya.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/robert-korom-partner.yaml | outcome | unknown (null) |
-| src/data/testimonials/robert-korom-partner.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/robert-korom-reliability.yaml | outcome | unknown (null) |
-| src/data/testimonials/robert-korom-reliability.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/sanjay-teotia.yaml | city | unknown (null) |
 | src/data/testimonials/sanjay-teotia.yaml | outcome | unknown (null) |
-| src/data/testimonials/sanjay-teotia.yaml | consentOnFile | unknown (null) |
-| src/data/testimonials/seetha-lakshmi-kolanakuduru.yaml | role | [Role to confirm] |
 | src/data/testimonials/seetha-lakshmi-kolanakuduru.yaml | outcome | unknown (null) |
-| src/data/testimonials/seetha-lakshmi-kolanakuduru.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/siddhartha-ghosh.yaml | city | unknown (null) |
 | src/data/testimonials/siddhartha-ghosh.yaml | outcome | unknown (null) |
-| src/data/testimonials/siddhartha-ghosh.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/srinivasa-teja.yaml | city | unknown (null) |
 | src/data/testimonials/srinivasa-teja.yaml | outcome | unknown (null) |
-| src/data/testimonials/srinivasa-teja.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/tarun-mishra.yaml | city | unknown (null) |
 | src/data/testimonials/tarun-mishra.yaml | outcome | unknown (null) |
-| src/data/testimonials/tarun-mishra.yaml | consentOnFile | unknown (null) |
 | src/data/testimonials/tl-prabhu.yaml | city | unknown (null) |
 | src/data/testimonials/tl-prabhu.yaml | outcome | unknown (null) |
-| src/data/testimonials/tl-prabhu.yaml | consentOnFile | unknown (null) |
 
-## Page content (152)
+## Page content (137)
 
 | File | Field | Needed |
 | --- | --- | --- |
-| src/content/company/contact-us.yaml | author | unknown (null) |
-| src/content/company/contact-us.yaml | faq[0].answer | [support line and hours for existing customers] |
-| src/content/company/contact-us.yaml | faq[1].answer | [call-back window] |
-| src/content/company/contact-us.yaml | faq[2].answer | [demo languages by country] |
-| src/content/company/contact-us.yaml | faq[2].answer | [prescription languages] |
-| src/content/company/contact-us.yaml | faq[3].answer | [cities where the team visits clinics in person] |
-| src/content/company/contact-us.yaml | sections[0].value.promise | [call-back window] |
-| src/content/company/contact-us.yaml | sections[2].value.body | [booking calendar embed] |
-| src/content/company/contact-us.yaml | sections[3].value.aside | [support line and hours for existing customers] |
-| src/content/company/contact-us.yaml | author | named author |
-| src/content/country-demos/indiademo.yaml | author | unknown (null) |
-| src/content/country-demos/indiademo.yaml | heroMedia | screenshot needed: Invoice from an encounter with GST lines and a part payment, INR version (spec 12 screenshot list: billing, revenue, country pages). Desktop capture from the seeded demo tenant. |
-| src/content/country-demos/indiademo.yaml | faq[3].answer | [inclusive of or plus 18% GST] |
-| src/content/country-demos/indiademo.yaml | faq[4].answer | [typical go-live time for clinic groups and hospital OPDs] |
-| src/content/country-demos/indiademo.yaml | faq[6].answer | [what happens to unused months on an annual plan] |
-| src/content/country-demos/indiademo.yaml | faq[6].answer | [data export format on leaving] |
-| src/content/country-demos/indiademo.yaml | faq[7].answer | [India contact name] |
-| src/content/country-demos/indiademo.yaml | faq[7].answer | [call-back window for India] |
-| src/content/country-demos/indiademo.yaml | sections[3].value.rows[0][2] | [UPI status as of date] |
-| src/content/country-demos/indiademo.yaml | sections[3].value.rows[1][2] | [Razorpay status as of date] |
-| src/content/country-demos/indiademo.yaml | sections[3].value.rows[2][2] | [PayU status as of date] |
-| src/content/country-demos/indiademo.yaml | sections[3].value.rows[3][2] | [Tally export status as of date] |
-| src/content/country-demos/indiademo.yaml | sections[3].value.rows[4][2] | [WhatsApp status as of date] |
-| src/content/country-demos/indiademo.yaml | sections[3].value.rows[5][1] | [TPAs and insurers EasyClinic submits claims to] |
-| src/content/country-demos/indiademo.yaml | sections[3].value.rows[5][2] | [TPA and insurer connection status as of date] |
-| src/content/country-demos/indiademo.yaml | sections[6].value.steps[2].meta | [migration time for a typical clinic] |
-| src/content/country-demos/indiademo.yaml | sections[6].value.steps[2].body | [What is imported from each source, and whether migration is included in the plan price] |
-| src/content/country-demos/indiademo.yaml | sections[6].value.steps[3].body | [support line and hours in India] |
-| src/content/country-demos/indiademo.yaml | author | named author |
 | src/content/country-pages/clinic-management-software-india.yaml | author | unknown (null) |
 | src/content/country-pages/clinic-management-software-india.yaml | heroMedia | screenshot needed: Invoice from an encounter with GST lines and a part payment: INR invoice, seeded demo tenant (spec 12) |
 | src/content/country-pages/clinic-management-software-india.yaml | sections[1].value.intro | [what help EasyClinic gives Indian clinics with HFR and HPR registration] |
@@ -347,27 +284,27 @@ Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
 | src/content/country-pages/clinic-management-software-india.yaml | faq[9].answer | [data migration time for an Indian clinic] |
 | src/content/country-pages/clinic-management-software-india.yaml | faq[9].answer | [go-live time for a multi-branch chain] |
 | src/content/country-pages/clinic-management-software-india.yaml | author | named author |
-| src/content/home/home.yaml | author | unknown (null) |
-| src/content/home/home.yaml | heroMedia | screenshot needed: Today view: appointment list with walk-ins, fixed slots and a teleconsult. Seed 14 appointments, two walk-ins, one video consult and one no-show marked. Phone capture too (spec 12). |
-| src/content/home/home.yaml | sections[1].value.old.media | screenshot needed: Old way generated environment image (spec 12, file oldway-desk-01.webp): cluttered clinic reception desk with a paper appointment register, a stack of patient files with handwritten labels, a personal smartphone showing notification badges, a calculator and receipt book, overhead fluorescent light, no readable text. |
-| src/content/home/home.yaml | sections[2].value.steps[0].media | screenshot needed: Patient app: booking screen (spec 12, phone capture) |
-| src/content/home/home.yaml | sections[2].value.steps[1].media | screenshot needed: Payor setup and coverage check at registration: two insurers, one TPA, a coverage validation result (spec 12) |
-| src/content/home/home.yaml | sections[2].value.steps[2].media | screenshot needed: Lab order from the chart and result back with a flag: one abnormal value (spec 12) |
-| src/content/home/home.yaml | sections[2].value.steps[3].media | screenshot needed: Thirty-second prescription: the Rx screen mid-entry with a drug interaction warning, two drugs, one interaction flagged, Hindi print option visible (spec 12) |
-| src/content/home/home.yaml | sections[2].value.steps[4].media | screenshot needed: Invoice from an encounter with GST lines and a part payment, in INR (spec 12) |
-| src/content/home/home.yaml | sections[2].value.steps[5].media | screenshot needed: Pharmacy dispensing from a prescription with batch and expiry, one expiring batch flagged (spec 12) |
-| src/content/home/home.yaml | sections[2].value.steps[6].media | screenshot needed: WhatsApp reminder thread as the patient sees it: reminder, confirmation reply, prescription PDF, report PDF (spec 12, phone capture) |
-| src/content/home/home.yaml | sections[2].value.steps[7].media | screenshot needed: Owner dashboard: the eight morning numbers (revenue by branch, collections vs billed, no-show rate, patients per doctor per hour, average ticket, stock days, claims pending, feedback score) (spec 12) |
-| src/content/home/home.yaml | faq[1].answer | [inpatient systems EasyClinic has connected to, and what the two exchange] |
-| src/content/home/home.yaml | faq[2].answer | [add-on prices per currency] |
-| src/content/home/home.yaml | faq[3].answer | [what keeps working when the connection drops, and what syncs when it returns] |
-| src/content/home/home.yaml | faq[3].answer | [self-hosted option: plans and cost] |
-| src/content/home/home.yaml | faq[4].answer | [export format and what the export includes] |
-| src/content/home/home.yaml | faq[4].answer | [notice period, refunds and any export fee on leaving] |
-| src/content/home/home.yaml | faq[5].answer | [how Cura AI is switched on or off, per doctor or per clinic] |
-| src/content/home/home.yaml | faq[6].answer | [what a second branch adds to the bill: per doctor, per location or both] |
-| src/content/home/home.yaml | faq[7].answer | [typical go-live time with data migration] |
-| src/content/home/home.yaml | author | named author |
+| src/content/country-pages/emr-software-in-kenya.yaml | openingAnswer | [SHA e-claims status as of date] |
+| src/content/country-pages/emr-software-in-kenya.yaml | heroMedia | screenshot needed: Invoice from an encounter with a part payment: second capture in KES with M-Pesa, seeded demo tenant (spec 12). No eTIMS line until eTIMS has a status. |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[2].value.payersNote | [SHA e-claims status as of date] |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[2].value.payersNote | [SMART status as of date] |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[3].value.body | [what is saved and what is lost when the connection drops mid-consult] |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[3].value.body | [self-hosted option for Kenyan clinics: plans and cost, and what still needs the internet] |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[3].value.body | [doctor app: which phone platforms, and which screens work on a phone] |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[3].value.body | [How the Swahili text is produced: saved templates or translation] |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[4].value.items[1].example | [Kenyan polyclinic or specialist centre on EasyClinic: name and town] |
+| src/content/country-pages/emr-software-in-kenya.yaml | sections[4].value.items[3].example | [Kenyan hospital OPD or nursing home on EasyClinic: name and town] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[0].answer | [SHA e-claims status as of date] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[1].answer | [Whether EasyClinic receives M-Pesa through Daraja, a Till or a Paybill number, and whether it matches payments to bills automatically, as of date] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[2].answer | [The main difference between KenyaEMR and EasyClinic for a private clinic, from the comparison page verdict] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[3].answer | [eTIMS status as of date] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[4].answer | [What still works without internet, and what is saved when the connection drops mid-consult] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[4].answer | [self-hosted option for Kenyan clinics: plans and cost, and what still needs the internet] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[5].answer | [data migration time for a Kenyan clinic, and which systems EasyClinic imports from] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[5].answer | [go-live time for a multi-branch group in Kenya] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[8].answer | [Whether EasyClinic submits the figures to DHIS2 directly or the clinic uploads them, as of date] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[9].answer | [hosting region and provider for Kenyan clinics] |
+| src/content/country-pages/emr-software-in-kenya.yaml | faq[9].answer | [what data a clinic gets back on leaving and in what format, and how long EasyClinic keeps a copy] |
 | src/content/kitchen-sink/kitchen-sink.yaml | author | unknown (null) |
 | src/content/kitchen-sink/kitchen-sink.yaml | heroMedia | screenshot needed: Today view: 14 appointments, two walk-ins, one video, one no-show marked |
 | src/content/kitchen-sink/kitchen-sink.yaml | sections[0].value.body | [a fact the company must supply] |
@@ -379,54 +316,68 @@ Generated 2026-09-26 by `pnpm facts:report`. 389 open items.
 | src/content/kitchen-sink/kitchen-sink.yaml | sections[18].value.rows[1][2] | [export format] |
 | src/content/kitchen-sink/kitchen-sink.yaml | sections[22].value.items[0].media | screenshot needed: Rx screen mid-entry with an interaction warning |
 | src/content/kitchen-sink/kitchen-sink.yaml | author | named author |
-| src/content/pricing/india.yaml | openingAnswer | [inclusive of or plus 18% GST] |
-| src/content/pricing/india.yaml | author | unknown (null) |
-| src/content/pricing/india.yaml | sections[1].value.intro | [inclusive of or plus 18% GST] |
-| src/content/pricing/india.yaml | sections[2].value.rows[1][2] | [Any limit on the number of staff logins, and the price of extra ones] |
-| src/content/pricing/india.yaml | sections[2].value.rows[2][1] | [How a part-time or visiting doctor is charged] |
-| src/content/pricing/india.yaml | sections[2].value.rows[5][1] | [Data migration: included, or the price in INR] |
-| src/content/pricing/india.yaml | sections[2].value.rows[6][2] | [Any monthly SMS limit, and the charge beyond it] |
-| src/content/pricing/india.yaml | sections[2].value.rows[7][2] | [Who pays WhatsApp message charges in India] |
-| src/content/pricing/india.yaml | sections[2].value.rows[11][1] | [Inclusive of or plus 18% GST] |
-| src/content/pricing/india.yaml | sections[3].value.intro | [per clinic or per doctor, per month] |
-| src/content/pricing/india.yaml | sections[4].value.body | [inclusive of or plus 18% GST] |
-| src/content/pricing/india.yaml | sections[4].value.body | [payment methods accepted for the subscription in India] |
-| src/content/pricing/india.yaml | sections[4].value.body | [UPI, Razorpay and PayU status as of date] |
-| src/content/pricing/india.yaml | sections[4].value.body | [GST invoicing status as of date] |
-| src/content/pricing/india.yaml | sections[4].value.body | [Tally export status and format] |
-| src/content/pricing/india.yaml | sections[4].value.body | [Whether a GST sales register can be exported for filing] |
-| src/content/pricing/india.yaml | faq[0].answer | [inclusive of or plus 18% GST] |
-| src/content/pricing/india.yaml | faq[1].answer | [GST invoicing status as of date] |
-| src/content/pricing/india.yaml | faq[2].answer | [UPI, Razorpay and PayU status as of date] |
-| src/content/pricing/india.yaml | faq[2].answer | [payment methods accepted for the subscription in India] |
-| src/content/pricing/india.yaml | faq[6].answer | [any per-location fee, if one applies] |
-| src/content/pricing/india.yaml | faq[6].answer | [counted once, or once per branch] |
-| src/content/pricing/india.yaml | faq[7].answer | [export format on leaving] |
-| src/content/pricing/india.yaml | faq[7].answer | [Refund terms for unused months on an annual plan] |
-| src/content/pricing/india.yaml | faq[7].answer | [Whether the export on leaving is charged] |
-| src/content/pricing/india.yaml | faq[7].answer | [How long data is kept after you leave, and when it is deleted] |
-| src/content/pricing/india.yaml | closing.body | [inclusive of or plus 18% GST] |
-| src/content/pricing/india.yaml | author | named author |
-| src/content/pricing/main.yaml | author | unknown (null) |
-| src/content/pricing/main.yaml | heroMedia | screenshot needed: Currency-localised pricing cards in INR, KES, AED and NGN (spec 12 screenshot list), desktop plus a 390 by 844 phone capture |
-| src/content/pricing/main.yaml | faq[0].answer | [Support hours and the time zones covered] |
-| src/content/pricing/main.yaml | faq[1].answer | [refund policy for unused months on annual billing] |
-| src/content/pricing/main.yaml | faq[1].answer | [how you get your patient records back, and in what format] |
-| src/content/pricing/main.yaml | faq[1].answer | [how long data is kept after cancelling, and when it is deleted] |
-| src/content/pricing/main.yaml | faq[2].answer | [Number of reception logins included per clinic, and the licence rule for nurses and pharmacists] |
-| src/content/pricing/main.yaml | faq[3].answer | [per-location fee, or confirmation that there is none] |
-| src/content/pricing/main.yaml | faq[3].answer | [Whether a doctor who works at both branches needs a second licence] |
-| src/content/pricing/main.yaml | faq[5].answer | [time to build a prescription template, and who builds it] |
-| src/content/pricing/main.yaml | faq[5].answer | [what a Professional clinic can change on the printed prescription] |
-| src/content/pricing/main.yaml | faq[6].answer | [whether INR prices include GST] |
-| src/content/pricing/main.yaml | faq[6].answer | [KES, AED and NGN prices per plan] |
-| src/content/pricing/main.yaml | faq[7].answer | [NGO discount or NGO plan price] |
-| src/content/pricing/main.yaml | sections[4].value.body | [how visiting and part-time doctors are counted] |
-| src/content/pricing/main.yaml | sections[4].value.body | [Number of reception logins included per clinic] |
-| src/content/pricing/main.yaml | sections[4].value.body | [Licence rule for nurses and pharmacists] |
-| src/content/pricing/main.yaml | sections[4].value.body | [what EasyClinic counts as a location, for example a separate address or front desk] |
-| src/content/pricing/main.yaml | sections[4].value.body | [per-location fee, or confirmation that there is none] |
-| src/content/pricing/main.yaml | sections[4].value.aside | [licence rule for nurses and pharmacists] |
-| src/content/pricing/main.yaml | sections[6].value.rows[5][2] | [per-message WhatsApp charges, if any] |
-| src/content/pricing/main.yaml | sections[6].value.rows[6][2] | [Export format, and how long data is kept after cancelling] |
-| src/content/pricing/main.yaml | author | named author |
+| src/content/pricing/kenya.yaml | sections[1].value.intro | [Whether KES plan prices include VAT, or VAT is added to EasyClinic's invoice, and at what rate] |
+| src/content/pricing/kenya.yaml | sections[2].value.rows[1][1] | [Whether a clinical officer who writes notes and prescriptions needs a doctor licence] |
+| src/content/pricing/kenya.yaml | sections[4].value.body | [which company invoices Kenyan clinics: Novel Medicare Solutions Pvt Ltd in Kolkata or a Kenyan company] |
+| src/content/pricing/kenya.yaml | sections[4].value.body | [how Kenyan clinics pay the subscription, for example M-Pesa or bank transfer] |
+| src/content/pricing/kenya.yaml | sections[4].value.body | [Whether KES plan prices include VAT, or VAT is added to EasyClinic's invoice, and at what rate] |
+| src/content/pricing/kenya.yaml | sections[4].value.body | [eTIMS status in EasyClinic, as of date] |
+| src/content/pricing/kenya.yaml | faq[1].answer | [Whether KES plan prices include VAT, or VAT is added to EasyClinic's invoice, and at what rate] |
+| src/content/pricing/kenya.yaml | faq[2].answer | [How Kenyan clinics pay the subscription, for example M-Pesa or bank transfer] |
+| src/content/trust/trust.yaml | openingAnswer | [ABDM M1 status as of date] |
+| src/content/trust/trust.yaml | openingAnswer | [ABDM M2 status as of date] |
+| src/content/trust/trust.yaml | openingAnswer | [ABDM M3 status as of date] |
+| src/content/trust/trust.yaml | sections[1].value.rows[0][1] | [Hosting region and provider for Indian clinics] |
+| src/content/trust/trust.yaml | sections[1].value.rows[0][2] | [Backup region for Indian clinics] |
+| src/content/trust/trust.yaml | sections[1].value.rows[1][1] | [Hosting region and provider for Kenyan clinics] |
+| src/content/trust/trust.yaml | sections[1].value.rows[1][2] | [Backup region for Kenyan clinics] |
+| src/content/trust/trust.yaml | sections[1].value.rows[2][1] | [Hosting region and provider for UAE clinics] |
+| src/content/trust/trust.yaml | sections[1].value.rows[2][2] | [Backup region for UAE clinics] |
+| src/content/trust/trust.yaml | sections[1].value.rows[3][1] | [Hosting region and provider for Nigerian clinics] |
+| src/content/trust/trust.yaml | sections[1].value.rows[3][2] | [Backup region for Nigerian clinics] |
+| src/content/trust/trust.yaml | sections[2].value.items[0].body | [How data is encrypted between your browser and EasyClinic: protocol and version] |
+| src/content/trust/trust.yaml | sections[2].value.items[0].body | [How stored patient records are encrypted, and who holds the keys] |
+| src/content/trust/trust.yaml | sections[2].value.items[0].body | [Whether attachments such as scanned reports and X-rays are encrypted the same way] |
+| src/content/trust/trust.yaml | sections[2].value.items[1].body | [How often EasyClinic backs up clinic data, and how long each backup is kept] |
+| src/content/trust/trust.yaml | sections[2].value.items[1].body | [Where backups are stored, and whether apart from the main servers] |
+| src/content/trust/trust.yaml | sections[2].value.items[1].body | [Whether restores are tested, and the date of the last test] |
+| src/content/trust/trust.yaml | sections[2].value.items[1].body | [Whether a clinic can get a deleted record back, how it asks, and how long it takes] |
+| src/content/trust/trust.yaml | sections[2].value.items[2].body | [Other roles a clinic can set, such as pharmacist or branch manager, and what each can see] |
+| src/content/trust/trust.yaml | sections[2].value.items[2].body | [Whether two-step sign-in is available, and on which plans] |
+| src/content/trust/trust.yaml | sections[2].value.items[3].body | [What the log records for each entry, how long it is kept, and who at the clinic can read it] |
+| src/content/trust/trust.yaml | sections[2].value.items[4].body | [Which EasyClinic staff can open a clinic's data, for what reason, and whether the clinic is told each time] |
+| src/content/trust/trust.yaml | sections[2].value.items[5].body | [measured uptime and period] |
+| src/content/trust/trust.yaml | sections[2].value.items[5].body | [How uptime is measured, and whether the figure is published] |
+| src/content/trust/trust.yaml | sections[2].value.items[5].body | [When planned maintenance runs in each country, and how clinics are told] |
+| src/content/trust/trust.yaml | sections[3].value.body | [data processing agreement: whether EasyClinic signs one with every clinic, and in which countries] |
+| src/content/trust/trust.yaml | sections[3].value.body | [Notice period and refunds on cancelling] |
+| src/content/trust/trust.yaml | sections[3].value.body | [what a leaving clinic gets back: patient records, prescriptions, bills and attachments] |
+| src/content/trust/trust.yaml | sections[3].value.body | [export format] |
+| src/content/trust/trust.yaml | sections[3].value.body | [days to deliver the export] |
+| src/content/trust/trust.yaml | sections[3].value.body | [Export fee, if any] |
+| src/content/trust/trust.yaml | sections[3].value.body | [Whether and when EasyClinic deletes its copy after the export, and when the backups that hold it expire] |
+| src/content/trust/trust.yaml | sections[3].value.aside | [Whether the customer contract says the same, and in which clause] |
+| src/content/trust/trust.yaml | sections[5].value.body | [security contact email] |
+| src/content/trust/trust.yaml | sections[5].value.body | [How soon EasyClinic acknowledges a report, and whether it runs a disclosure programme] |
+| src/content/trust/trust.yaml | sections[5].value.body | [Whether EasyClinic tells a clinic when a breach touches its data, and within how many hours] |
+| src/content/trust/trust.yaml | sections[5].value.body | [Contact for clinics in the UAE and Nigeria] |
+| src/content/trust/trust.yaml | faq[0].answer | [data processing agreement: whether EasyClinic signs one with every clinic, and in which countries] |
+| src/content/trust/trust.yaml | faq[1].answer | [hosting region and provider for Indian clinics] |
+| src/content/trust/trust.yaml | faq[1].answer | [hosting region and provider for Kenyan clinics] |
+| src/content/trust/trust.yaml | faq[1].answer | [hosting region and provider for UAE clinics] |
+| src/content/trust/trust.yaml | faq[1].answer | [hosting region and provider for Nigerian clinics] |
+| src/content/trust/trust.yaml | faq[2].answer | [what a leaving clinic gets back: patient records, prescriptions, bills and attachments] |
+| src/content/trust/trust.yaml | faq[2].answer | [export format] |
+| src/content/trust/trust.yaml | faq[2].answer | [days to deliver the export] |
+| src/content/trust/trust.yaml | faq[2].answer | [notice period and refunds on cancelling] |
+| src/content/trust/trust.yaml | faq[2].answer | [Whether and when EasyClinic deletes its copy after the export] |
+| src/content/trust/trust.yaml | faq[3].answer | [ABDM M1 status as of date] |
+| src/content/trust/trust.yaml | faq[3].answer | [ABDM M2 status as of date] |
+| src/content/trust/trust.yaml | faq[3].answer | [ABDM M3 status as of date] |
+| src/content/trust/trust.yaml | faq[4].answer | [what patient data leaves EasyClinic for the AI model, which provider processes it and in which country] |
+| src/content/trust/trust.yaml | faq[5].answer | [ISO 27001, SOC 2 or other security certification EasyClinic holds, with the certifying body and date, or none] |
+| src/content/trust/trust.yaml | faq[6].answer | [measured uptime and period] |
+| src/content/trust/trust.yaml | faq[6].answer | [How uptime is measured, and whether the figure is published] |
+| src/content/trust/trust.yaml | faq[6].answer | [When planned maintenance runs in each country, and how clinics are told] |
+| src/content/trust/trust.yaml | faq[7].answer | [sub-processors, such as hosting, SMS, WhatsApp, email, payment and AI providers, with the country where each processes data] |
+| src/content/trust/trust.yaml | faq[7].answer | [How clinics are told before a new sub-processor is added, and whether they can object] |

@@ -1,0 +1,271 @@
+# Physiotherapy (spec 5.15 specialty template and must-have row; keyword row 4.3). The spec slug
+# /physiotherapy-software was not used: this live URL ranks (position 16) and has more clicks.
+# /physiotherapy-emr-software/ and /physiotherapy-emr/ redirect here through src/data/redirects.yaml.
+# Grounding: capability statements the live /physiotherapy-emr-software/ and
+# /physiotherapy-clinic-management-software/ pages make plainly (re-fetched 2026-09-26), and plans.yaml.
+status: published
+headKeyword: physiotherapy practice management software
+secondaryKeywords:
+  - physiotherapy clinic software
+  - physiotherapy clinic management software
+  - physiotherapy EMR software
+title: 'Physiotherapy Practice Management Software: EasyClinic'
+metaDescription: >-
+  Physiotherapy practice management software with session-wise treatment plans, and courses billed as
+  packages on Premium from {price:usd.premium.annual} per doctor a month.
+h1: Software for physiotherapy clinics
+linkLabel: Physiotherapy
+eyebrow: For physiotherapy clinics
+openingAnswer: >-
+  EasyClinic is physiotherapy practice management software that keeps each patient's session-wise
+  treatment plan and progress against goals on one record, and on its Premium plan bills a whole course of
+  sessions as one package. Premium costs {price:usd.premium.annual} per doctor per month billed annually,
+  or {price:inr.premium.annual} in India, with the reception login included and no setup fee.
+summary: >-
+  Session-wise treatment plans and progress against goals on one record, with courses of sessions billed
+  as packages on the Premium plan at {price:usd.premium.annual} per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic physiotherapy page and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-it-slips
+      heading: Where a physiotherapy clinic loses track
+      intro: >-
+        Physiotherapy is often paid for as a course and delivered in sessions, and most of what goes
+        missing falls between one session and the next.
+      items:
+        - heading: The package card at the front desk
+          body: >-
+            A patient pays for ten sessions in advance and gets a card that the desk ticks at each visit. By
+            the seventh visit the card has stayed at home, and the receipt book shows two part payments
+            that nobody has matched to the course.
+          fix: >-
+            On Premium the course is billed as one package treatment, with the advance and any part payment
+            recorded against it, and each visit is written against the patient's session-wise treatment
+            plan.
+          href: /features/billing/
+          linkLabel: Read how billing works
+        - heading: The exercise sheet goes home and does not come back
+          body: >-
+            The home programme is written on a sheet the patient folds into a pocket. When a colleague
+            takes the patient on the day you are away, the only copy of what was prescribed is in that
+            pocket.
+          fix: >-
+            The exercise plan is created and stored on the patient's record, so whoever sees the patient
+            next opens the whole visit history, exercises included, on one screen.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The patient who stops after session four
+          body: >-
+            The pain eases after the fourth session and the patient stops coming, halfway through the plan.
+            Nobody calls, because the follow-up list is a page in the register that gets read when someone
+            has time.
+          fix: >-
+            Book the rest of the course as recurring sessions at the first visit, and each booked session
+            gets an automated reminder. SMS and email reminders come with every plan, and Premium adds
+            WhatsApp.
+          href: /features/whatsapp/
+          linkLabel: Read how WhatsApp reminders work
+        - heading: Two therapists, one machine at 11am
+          body: >-
+            Two therapists book patients who both need the same piece of equipment at 11am. The clash shows
+            up when the second patient is already changed and waiting.
+          fix: >-
+            Equipment and assistants are booked inside the appointment slot, and the calendar shows each
+            resource's bookings, so the desk sees the machine is taken at 11am before it offers that time
+            to a second patient.
+          href: /features/appointment-scheduling/
+          linkLabel: Read how booking works
+
+  - discriminant: featureRows
+    value:
+      id: course-of-treatment
+      heading: Built around the course of treatment
+      intro: >-
+        A course of physiotherapy runs over weeks, so the record follows the course and each session is
+        written against it. Premium, the plan for specialists, includes every row below, and the rows
+        marked Premium are not on Professional.
+      items:
+        - heading: Session-wise treatment plans
+          body: >-
+            Set up a therapy programme for the condition in front of you, such as rehabilitation after
+            surgery or a sports injury, and manage it session by session, with the patient's progress
+            through the course on the same record.
+        - heading: Goals and progress over time
+          body: >-
+            Record the patient's goals, such as less pain or better mobility, and monitor their progress
+            against those goals over time. If you score pain or function on a paper form today, Premium
+            lets you rebuild that form as a digital one with the form builder, and the therapist fills it
+            in on the record at each session.
+        - heading: Exercise plans on the record
+          body: >-
+            Therapists create and store a structured exercise plan for each patient, on the same record as
+            the session notes. A colleague covering your list opens the record and sees the exercises the
+            patient was given.
+        - heading: Packages for a course of sessions
+          plan: premium
+          body: >-
+            Package treatments are part of Premium. The course is billed as one package, and an advance or
+            a part payment is recorded against the bill it belongs to, so the desk sees the balance
+            straight away. Receipts and invoices can go to the patient on WhatsApp.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Recurring sessions and reminders
+          body: >-
+            Book the recurring sessions of a course in one go, alongside fixed-time appointments and
+            walk-ins. Each session gets an automated reminder, and Premium adds WhatsApp to the SMS and
+            email reminders every plan has.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: Video sessions for patients who cannot travel
+          plan: premium
+          body: >-
+            On Premium, a video session is booked through the appointment screen and the fee can be
+            collected online at booking. The therapist and the patient both join from a web browser on a
+            computer or a phone, with no other software to install.
+        - heading: Cura AI drafts the session note
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the session note for the
+            therapist to review and sign.
+          link:
+            label: Read how Cura AI works
+            href: /ai/
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        We do not yet have a physiotherapist's own words to put on this page. These are EasyClinic's
+        public ratings, from clinics of every kind.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, short enough to fit between the morning and evening lists, so the
+        clinic keeps treating patients while the team learns.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the therapists use every day. Bring your receptionist, whose
+            login is part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            You work through the chart on the kinds of case your clinic sees, from a first assessment to a
+            follow-up session.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You work through exercises on your own, then bring back the questions that came up.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions physiotherapy clinic owners ask
+faq:
+  - question: What does EasyClinic cost for a physiotherapy clinic?
+    answer: >-
+      Premium, the plan with package treatments and specialty templates, costs {price:inr.premium.annual}
+      per doctor per month billed annually in India, or {price:usd.premium.annual} in US dollars.
+      Professional, at {price:inr.professional.annual} or {price:usd.professional.annual}, has the chart
+      and billing but no package treatments and no WhatsApp messages. Both include a reception login, and
+      there is no binding contract on either.
+  - question: Can I sell a package of sessions and see what the patient has paid?
+    answer: >-
+      Yes, on Premium, where package treatments are part of the plan: the course is billed as one
+      package, and an advance or a part payment is recorded against that bill, so the balance shows at
+      the desk. Professional does not include package treatments.
+  - question: Can I track a patient's progress against their goals?
+    answer: >-
+      Yes, you record goals such as pain reduction or mobility improvement and monitor the patient's
+      progress against them over time, on the same record as the treatment plan. If you already use a
+      scoring form on paper, Premium lets you rebuild it as a digital form in your clinic's own layout.
+  - question: Can I book a patient's whole course of sessions in advance?
+    answer: >-
+      Yes, the recurring sessions of a course can be booked together, with the equipment or assistant
+      each one needs booked inside the same slot. Each session gets an automated reminder by SMS and
+      email, and by WhatsApp on Premium.
+  - question: Can I see patients by video?
+    answer: >-
+      Yes, on Premium, which includes video consultations: the therapist and the patient join from a web
+      browser on a computer or a phone, with nothing to install. The fee can be collected online when the
+      session is booked.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
+      system runs on the clinic's own server rather than in EasyClinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where physiotherapy clinic owners go next
+  related:
+    - href: /solutions/solo-clinic/
+      description: For a therapist running their own clinic with a receptionist.
+    - href: /solutions/clinic-chain/
+      description: For physiotherapy groups with several branches, run from one centre.
+    - href: /features/appointment-scheduling/
+      description: Recurring sessions and the equipment they need, on one calendar.
+    - href: /pricing/
+      description: The price per doctor per month, and what Premium adds for specialists.
+
+closing:
+  heading: See a course of sessions on EasyClinic
+  body: >-
+    In 20 minutes we follow one patient from the first assessment through a package of sessions, on a demo
+    clinic set up like yours. If a call is too much today, send us a WhatsApp message from this page
+    instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The ticked package card and the exercise sheet that leaves in the patient's pocket are physiotherapy
+    problems, and every capability comes from EasyClinic's own physiotherapy pages, with a plan named only
+    where plans.yaml names one; nothing on the page is specific to one country beyond the rupee price.
+  readsMachineWritten: >-
+    The page has no named physiotherapist, no screenshot and no number measured in a physiotherapy
+    clinic, so the feature rows read like a capability list, and a physiotherapist will notice that no
+    outcome measure is named and that sending home exercises to the patient on WhatsApp is not mentioned.
+
+notes:
+  - 'Recruit a physiotherapist testimonial (spec 2.4 and 5.15 item 9): a named physiotherapist or physiotherapy clinic owner on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no physiotherapist quote exists yet. Capterra and Google review counts are null in facts.yaml, so the badges show no count.'
+  - 'Spec 5.15 must-have "home-exercise sharing on WhatsApp" is left out: neither live physiotherapy page says the exercise plan can be sent to the patient on WhatsApp (the live EMR page says only that prescriptions can be shared by print, WhatsApp, SMS or email, and that therapists can create and store exercise plans). Company to confirm whether the exercise plan goes to the patient on WhatsApp, with pictures or videos or as text only, and on which plan (WhatsApp messages are Premium in plans.yaml). Then add a feature row and a FAQ.'
+  - 'Spec 5.15 must-have "outcome scores": the live page says only "Track patient goals (e.g., pain reduction, mobility improvement) and monitor their progress over time". Company to confirm which named outcome measures (for example VAS or NPRS for pain, ODI, NDI, LEFS) exist as ready physiotherapy templates, and whether a score is charted as a trend across sessions (the live page lists "Growth & Progress charts" without detail). The spec 12 screenshot "Physiotherapy session plan with outcome score" (six sessions, one score) depends on it. Until then the goals row offers only the Premium form builder for a clinic''s own paper scoring form.'
+  - 'Company to confirm: how physiotherapists and physiotherapy assistants are licensed under per-doctor pricing (the page keeps the price list wording "per doctor per month" and adds no FAQ on it); whether a package shows sessions used and remaining; whether session-wise treatment plans, goal tracking, exercise plans and recurring-session booking are on Professional or need Premium (the live page lists them in the general EMR and scheduling sections, so the page gives them no plan badge, and the featureRows intro says only that Premium includes every row, not that unbadged rows are on Professional; specialty templates and your own forms are Premium per plans.yaml); what Cura AI drafts for a physiotherapy session, with one example note (spec 5.15 item 8); any devices or integrations used in physiotherapy (spec 5.15 item 6, section left out).'
+  - 'Not carried over from the live pages: the /physiotherapy-emr-software/ "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" (other published pages say there is no free trial; resolve before anything about trials goes on this page); its "Inventory for equipment & supplies built-in" (plans.yaml puts inventory in Enterprise or as an add-on); the competitor comparison tables with unsourced cells; "over 100 graphical dashboards"; "invoices ready in less than 10 seconds"; "Reduces no-shows" (no measured figure; noShowReduction is null); AI diagnostic support. From the /physiotherapy-clinic-management-software/ blog: ABHA-compatible identity mapping (compliance status is unknown), predictive analytics, posture and gait analysis, flagging overdue follow-ups, and the three unnamed case studies.'
+  - 'Editor pass 2026-09-26: the opening answer and summary now tie only packages to Premium (the earlier "EasyClinic does this on its Premium plan" implied treatment plans and goals need Premium); the Cura AI row uses the site wording "drafts the note for review and sign" and no longer says it drafts "from the consultation"; the offline FAQ uses the home page wording (self-hosted option exists) instead of Enterprise private cloud hosting, which does not help a clinic without internet; the unsourced "a clinic bringing years of records across takes longer" was cut from the step note, as on the home page; the related-link and cost FAQ triads were cut to pairs.'
+  - 'No heroMedia and no media: screenshots do not exist yet. Hero when captured: the session-wise treatment plan with a score over six sessions (spec 12 list). The four pains are illustrative physiotherapy clinic situations, not customers, and "ten sessions" and "11am" are examples.'
+  - 'Title 54 characters; meta description 148 characters with the token resolved. The spec 4.3 H1 "Software for physiotherapy clinics" is used rather than the spec 5.15 template form. Spec 5.15 item 11 asks for links to the two most relevant country pages as well; links.related follows the brief (solo clinic, clinic chain, scheduling, pricing). Add /clinic-management-software-india/ when the physiotherapy customer base by country is known.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits in the offline and package FAQs) until the testimonial arrives.

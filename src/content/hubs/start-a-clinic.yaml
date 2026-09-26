@@ -1,0 +1,66 @@
+status: published
+path: /start-a-clinic/
+headKeyword: how to start a clinic
+secondaryKeywords: [clinic licence guides, clinic setup cost]
+title: 'Start a Clinic: Licences, Costs and Setup by Country'
+metaDescription: Step-by-step guides to opening a clinic in Kenya, India and Uganda, with licensing, setup costs and choosing software before your first patient.
+h1: Start a clinic, country by country
+linkLabel: Start a clinic
+openingAnswer: These guides take you from the licence application to the first patient, one country at a time. Each one covers registration, what a clinic costs to set up, and when to put software in place so the front desk works on day one.
+summary: Licensing, setup costs and software choices for opening a clinic in Kenya, India and Uganda.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary: { label: Book a 20-minute demo, href: /contact-us/#book-a-demo }
+  secondary: { label: See pricing, href: /pricing/ }
+  whatsapp: Hi, I am opening a clinic and would like to see EasyClinic before the first patient.
+links:
+  related:
+    - { href: /solutions/solo-clinic/, description: What a one-doctor clinic needs from software on day one. }
+    - { href: /pricing/, description: What EasyClinic costs per doctor per month. }
+    - { href: /contact-us/, description: Book a demo or call the team in Kolkata. }
+sections:
+  - discriminant: hubGrid
+    value:
+      heading: Kenya
+      groups:
+        - items:
+            - { href: /the-ultimate-guide-to-starting-a-clinic-in-kenya/, label: Starting a clinic in Kenya, description: 'The full route, from the business plan to the licence and the first patient.' }
+            - { href: /how-do-i-get-approval-from-the-kmpdc-in-kenya/, label: KMPDC approval for a clinic, description: What the council asks for and how the approval works. }
+            - { href: /how-much-does-it-cost-to-open-a-clinic-in-nairobi/, label: What a clinic in Nairobi costs to open, description: 'Rent, equipment, licences and staff, line by line.' }
+  - discriminant: hubGrid
+    value:
+      heading: India
+      groups:
+        - items:
+            - { href: /clinic-in-india/, label: Starting a clinic in India, description: 'Planning, registration and compliance for a private clinic.' }
+            - { href: /how-much-does-it-cost-to-open-a-clinic-in-mumbai/, label: What a clinic in Mumbai costs to open, description: 'Space, equipment, licences and staff costs in rupees.' }
+  - discriminant: hubGrid
+    value:
+      heading: Uganda
+      groups:
+        - items:
+            - { href: /clinic-in-uganda/, label: Starting a clinic in Uganda, description: 'Registration, licensing and setup for a private clinic in Uganda.' }
+  - discriminant: proofBlock
+    value:
+      heading: Clinics that started on EasyClinic
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '4.9', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '4.8' }
+faq:
+  - question: When should a new clinic choose its software?
+    answer: Before the first patient walks in, because registration, the appointment book and billing all start on day one, and moving a running clinic off paper later takes longer than starting on software.
+  - question: How long does it take to get EasyClinic running in a new clinic?
+    answer: Training runs over {fact:trainingDays} short sessions of about two hours in total, and the fastest clinics go live in as little as {fact:goLiveDays} days after the demo.
+  - question: What does EasyClinic cost for a clinic with one doctor?
+    answer: The Professional plan is {price:usd.professional.annual} per doctor per month billed annually, or {price:inr.professional.annual} in India, and a login for your receptionist is included.
+  - question: Do I need any IT staff to run clinic software?
+    answer: No, EasyClinic runs in the cloud in a web browser, so there is no server to buy, and support and training are included in every plan at no extra charge.
+  - question: Can I start small and add doctors or branches later?
+    answer: Yes, you pay per doctor, so a second doctor adds one licence, and the Premium plan covers more than one location on the same patient record.
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: 'The hub groups the guides by the three markets where EasyClinic has written local setup guides, and ties each to software choices for opening day.'
+  readsMachineWritten: 'The card descriptions are short and functional; an editor may want one line of first-hand advice from someone who has opened a clinic.'

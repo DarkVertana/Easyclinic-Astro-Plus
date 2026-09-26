@@ -1,0 +1,269 @@
+# Hospital OPD and nursing homes (spec 5.8; keyword row 4.2; persona vocabulary 2.8; claim journey 5.11).
+status: published
+headKeyword: OPD management software
+secondaryKeywords:
+  - hospital OPD software
+  - OPD queue management system
+  - nursing home software India
+title: OPD Management Software for Hospitals and Nursing Homes
+metaDescription: >-
+  OPD management software for hospitals and nursing homes: the queue, pharmacy, lab and insurance
+  claims on one record. Inpatient wards are out of scope.
+h1: OPD software for hospitals and nursing homes
+linkLabel: Hospital OPD and nursing homes
+eyebrow: For hospital OPDs and nursing homes
+openingAnswer: >-
+  EasyClinic is OPD management software for hospitals and nursing homes: it runs the OPD and day care
+  from the registration queue to the insurance claim, with the pharmacy and the lab working from the
+  same patient record, and doctors on EasyClinic write {fact:prescriptionsDaily} prescriptions a day
+  between them. Inpatient care is out of scope, so a hospital with beds keeps a separate system for
+  wards, bed management, operating theatres and the ICU, and runs EasyClinic in the OPD.
+summary: >-
+  The OPD and day care of a hospital or nursing home on one record: the registration queue, pharmacy,
+  lab and insurance claims. Inpatient wards are out of scope.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book an OPD walkthrough
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Get an Enterprise quote
+    href: /contact-us/#book-a-demo
+  whatsapp: Hi, I was reading the EasyClinic hospital OPD page and would like to book an OPD walkthrough for our hospital.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-opd-breaks
+      heading: Where OPD volume breaks software
+      intro: >-
+        A clinic with two doctors can run on a register and a good receptionist. An OPD where several
+        departments share one registration desk and one pharmacy counter cannot.
+      items:
+        - heading: The front desk sets the pace for the whole OPD
+          body: >-
+            OPD throughput is decided at the registration counter before any doctor sees a patient. At
+            ten in the morning the queue mixes walk-ins with patients who booked and expect to go first.
+            Every name typed at the desk is typed again at billing, and insured patients reach the doctor
+            before anyone has checked their plan.
+          fix: >-
+            Walk-ins sit beside booked appointments on one calendar that the desk and the doctors share.
+            Reception registers each patient once and checks the insurer or TPA plan before the consult.
+            Billing then works from the same record.
+          href: /features/appointment-scheduling/
+          linkLabel: Appointments and walk-ins
+        - heading: The prescription reaches the pharmacy and the lab late
+          body: >-
+            The patient walks a handwritten prescription to the pharmacy counter, and the pharmacist
+            either reads it or phones the consulting room. The lab starts its clock when the paper slip
+            arrives, whenever that is, and by the follow-up visit the report is in the patient's bag or
+            lost.
+          fix: >-
+            The pharmacy dispenses from the prescription on its screen, with batch and expiry tracked and
+            a reorder point before a medicine runs out. Tests are ordered from the chart and samples
+            tracked in the lab, so the result comes back into the record the doctor opens at the
+            follow-up.
+          href: /features/pharmacy-and-inventory/
+          linkLabel: Pharmacy and inventory
+        - heading: Claims die after the consult
+          body: >-
+            The claim is put together at the billing counter, often days later, by someone who was not in
+            the consulting room. By then nobody can fix a wrong plan picked at registration or a
+            pre-authorisation that was never attached, and the TPA or HMO sends the claim back.
+          fix: >-
+            The claim starts at registration, when the plan is linked and coverage checked, and the
+            prescription and the pre-authorisation add to it on the way. The claim pack is built from the
+            visit and the invoice, and reconciliation shows which payer still owes what.
+          href: /features/insurance-claims/
+          linkLabel: Insurance claims
+
+  - discriminant: flowDiagram
+    value:
+      id: claims-flow
+      heading: From registration to claim submission
+      intro: >-
+        Each step writes to the same claim, so the billing desk finishes a claim that started at the
+        registration counter instead of building one from paper at the end of the week. The payers change
+        from country to country and the steps stay the same. The examples below name who pays in each
+        country; they are payer examples, not a list of EasyClinic connections.
+      steps:
+        - label: Register
+          body: Reception registers the patient once, and walk-ins and booked patients join the same OPD list.
+        - label: Link the plan
+          body: The patient's payer is linked to the record at the desk, with that payer's own price list.
+          check: Catches the wrong plan
+        - label: Check coverage
+          body: Coverage is checked while the patient is still at the desk, before the consult.
+        - label: Prescribe within formulary
+          body: The doctor prescribes and orders tests from the chart against what the plan covers, so an uncovered item is caught in the consulting room instead of at billing.
+          check: Catches items the plan does not cover
+        - label: Pre-authorise
+          body: Where the payer asks for pre-authorisation, it is attached to the claim at this step, not searched for at the billing counter.
+          check: Catches a missing pre-authorisation
+        - label: Invoice
+          body: The invoice builds from what was ordered in the consult, priced from that payer's price list.
+        - label: Submit
+          body: The claim pack is built from the visit and the invoice, and the billing desk submits it to the payer.
+        - label: Reconcile
+          body: When the payer pays, the payment is matched against the claim, and the pending claims report shows who still owes what.
+      examples:
+        - country: India
+          body: TPAs acting for insurers, and corporate panels where the employer settles the bill.
+        - country: Kenya
+          body: SHA, and private insurers such as Jubilee, AAR, CIC, Britam and Resolution.
+        - country: UAE
+          body: >-
+            Insurers, which in Dubai receive claims and prior authorisations through DHA eClaimLink, the
+            Dubai Health Authority's electronic claims system.
+        - country: Nigeria
+          body: HMOs, and the NHIA (National Health Insurance Authority).
+
+  - discriminant: prose
+    value:
+      id: departments
+      heading: Departments and staff access
+      body: |-
+        A hospital OPD is several clinics sharing one registration desk. Every department on EasyClinic writes on the same patient record, so the physician sees what orthopaedics prescribed last month, and a patient sent from one department to another is not registered twice. On Premium and Enterprise each department keeps its own specialty templates.
+
+        Each member of staff has their own login, and the role decides which screens they see. A reception login comes with every plan, and reception cannot open the EMR or write a prescription.
+
+        Enterprise adds workflow rules and central control of every location, for a hospital that runs OPDs in more than one place. It also adds financial accounting and a reporting server with custom analytics.
+
+  - discriminant: scopeBox
+    value:
+      id: not-in-scope
+      heading: What EasyClinic does not run in a hospital
+      intro: >-
+        EasyClinic stops at the ward door. If your hospital or nursing home admits patients, the inpatient
+        side needs its own system, and EasyClinic runs the OPD and day care beside it.
+      variant: isNot
+      items:
+        - '**Inpatient wards.** Admissions, bed management, ward rounds and nursing charts are out of scope.'
+        - '**Operating theatres.** Theatre scheduling and the theatre''s own records are out of scope.'
+        - '**Intensive care.** ICU charting and monitoring are out of scope.'
+        - '**A full hospital information system.** EasyClinic does not replace an HIS. It covers the outpatient side, with pharmacy, lab, billing and insurance claims.'
+      note: >-
+        Connecting EasyClinic to the inpatient system you already run is an integration project, scoped for
+        your hospital and that system. Integrations come with Enterprise, or as an add-on on Professional
+        and Premium.
+
+  - discriminant: testimonialRow
+    value:
+      id: customer
+      heading: Dr Prantar Chakrabarti, on EasyClinic since 2008
+      intro: A haematologist at the Institute of Hematology and Transfusion Medicine, on the features he likes most.
+      items:
+        - prantar-chakrabarti
+      layout: single
+      usePullQuote: true
+
+faqHeading: Questions hospital and nursing home owners ask
+faq:
+  - question: Is EasyClinic a full hospital information system (HIS)?
+    answer: >-
+      No, EasyClinic is not a full HIS. It runs the outpatient side of a hospital or nursing home, the OPD
+      and day care with their pharmacy, lab, billing and insurance claims, and it does not run inpatient
+      wards, bed management, operating theatres or the ICU. A hospital that needs those keeps a separate
+      inpatient system and runs EasyClinic in the OPD.
+  - question: Does EasyClinic include pharmacy and lab?
+    answer: >-
+      Yes, pharmacy and lab management both come with Enterprise, and a hospital on Professional or
+      Premium can add them to its plan. The pharmacy dispenses from the doctor's prescription with batch
+      and expiry tracked, and lab tests are ordered from the chart with the results coming back into the
+      patient's record. Premium on its own shows lab reports in the chart but does not include lab
+      management.
+  - question: Can EasyClinic handle insurance billing in the OPD?
+    answer: >-
+      Yes, Enterprise includes claims to insurers as well as to TPAs and HMOs, and a hospital on
+      Professional or Premium can add payer claims to its plan. Each payer gets its own price list and
+      coverage is checked at registration. EasyClinic builds the claim pack from the visit and the invoice,
+      and payments are reconciled against the claim when they arrive.
+  - question: Can one EasyClinic system run several OPD departments?
+    answer: >-
+      Yes, every department works on the same patient record, so a patient referred from medicine to
+      orthopaedics is not registered twice. Each department can keep its own specialty templates on
+      Premium and Enterprise, and each staff login sees only the screens its role needs. Enterprise adds
+      workflow rules and central control across locations.
+  - question: Does EasyClinic do bed management?
+    answer: >-
+      No, bed management is part of inpatient care, which is out of scope for EasyClinic. Admissions and
+      bed allocation stay on your inpatient system, and EasyClinic runs the OPD and day care beside it.
+  - question: Can EasyClinic connect to the HIS we already run?
+    answer: >-
+      Yes, as an integration project scoped for your hospital and the HIS you run. Integrations and custom
+      features come with Enterprise, and Professional and Premium can add them. What passes between the
+      two systems is agreed as part of that scope, before the work starts.
+  - question: Can we host EasyClinic on a private cloud?
+    answer: >-
+      Yes, private cloud hosting is available on request on the Enterprise plan, and EasyClinic also offers
+      a self-hosted option on the hospital's own server. The standard cloud version does not run fully
+      offline today, which matters in an OPD where the internet connection drops.
+  - question: How is EasyClinic priced for a hospital OPD?
+    answer: >-
+      Professional and Premium are priced per doctor per month, and Enterprise, the plan built for
+      hospital OPDs and nursing homes, is quoted for your hospital. For comparison, Premium costs
+      {price:inr.premium.annual} per doctor per month billed annually in India, or
+      {price:usd.premium.annual} in US dollars. There is no setup fee on any plan and no binding contract.
+
+links:
+  hub: /solutions/
+  related:
+    - href: /features/insurance-claims/
+      label: Insurance claims
+      description: The claim journey step by step, from the plan linked at registration to reconciliation.
+    - href: /features/pharmacy-and-inventory/
+      label: Pharmacy and inventory
+      description: Dispensing from the prescription, with batch and expiry tracked.
+    - href: /features/lab/
+      label: Lab
+      description: Tests ordered from the chart, with results back in the patient's record.
+    - href: /features/reports-and-dashboards/
+      label: Reports and dashboards
+      description: Revenue by doctor and pending claims, in the view the owner opens each morning.
+    - href: /pricing/
+      label: Pricing
+      description: Per doctor per month from {price:usd.professional.annual}, and what Enterprise adds.
+
+closing:
+  heading: Walk one patient through your OPD on EasyClinic
+  body: >-
+    Tell us how your busiest registration hour runs and which payers you bill, and we walk one patient
+    through EasyClinic from the queue to a reconciled claim.
+  primary:
+    label: Book an OPD walkthrough
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Get an Enterprise quote
+    href: /contact-us/#book-a-demo
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The claim flow names the payers an OPD bills in each market, down to Jubilee and AAR in Kenya and DHA
+    eClaimLink in Dubai, and the page says plainly that inpatient care is out of scope, with a named
+    haematologist who has used EasyClinic since 2008 as the proof.
+  readsMachineWritten: >-
+    Without a measured throughput number or a named hospital OPD customer, the pain blocks describe a
+    generic busy OPD and several FAQ answers read like the price list rather than a hospital's own
+    experience.
+
+notes:
+  - 'Published 2026-09-26 with confirmed facts only (owner decision). Sources: plans.yaml (Enterprise inclusions, add-ons and conditions), spec 5.8 and 5.11 (scope statement, claim journey steps, payer names), facts.md (reception licence rule, no binding contract, no full offline, self-hosted option), facts.yaml (prescriptionsDaily).'
+  - 'Spec 5.8 item 2 (throughput with a measured number: patients per doctor per hour, or minutes from registration to consult) is left out: no measured figure exists. Add a section after the hero once one is supplied.'
+  - 'heroMedia left out: no screenshots exist yet. Spec 5.8 and section 11 ask for a queue and token board screenshot in the hero.'
+  - 'Opening answer says inpatient is out of scope. Spec 5.8 allows "out of scope or partner-served"; no inpatient partner is confirmed, so the page does not mention one. Add the partner name if one is confirmed.'
+  - 'Token display and token numbering are not described (spec 5.8 FAQ "token display" and the 4.2 meta "Token queues" were left out) because no confirmed fact says what the token screen does. The queue is described only as walk-ins beside booked appointments on one calendar (plans.yaml "Appointment scheduling and walk-ins"; spec 5.11 scheduling promise).'
+  - 'FAQ "doctor productivity reports" (spec 5.8 item 8) left out: whether patients per doctor per hour is live in reports is not confirmed. Related link description uses only revenue by doctor and pending claims, as published on home.'
+  - 'Flow diagram examples name payers only as spec 5.11 does, with no integration state. SLADE, SHA e-claims, DHA eClaimLink, HMO claim packs and NHIA status are all null in src/data (regulators and countries). Do not add "integrated with" wording until each has a state and date.'
+  - 'Spec 5.8 section 5 is "Departments and HR access". Written as "Departments and staff access" because no HR module (attendance, payroll, rosters) is confirmed; it covers role logins, the reception licence rule and the Enterprise workflow rules and central control.'
+  - 'ScopeBox note does not name any inpatient system EasyClinic has run beside, or what data passes between them: both unknown (also listed as missing on home). Add named systems once confirmed.'
+  - 'Pricing FAQ gives Premium as a reference price because Enterprise is quoted; KES, AED and NGN prices are unknown. What drives the Enterprise quote (doctors, departments, locations) is not stated because it is not confirmed.'
+  - 'Self-hosted option is from the live Kenya listicle (facts.md section 7). Its plans, cost and whether it works without internet are unknown and not stated.'
+  - 'No redirectFrom: /hospital-opd-nursing-home-software/ already redirects here in src/data/redirects.yaml.'
+  - 'Testimonial prantar-chakrabarti is assigned to this page by spec 5.8 item 7 (personas: hospital-opd) and no other content entry uses it (checked 2026-09-26). City is null in testimonial data, so the page gives no city.'
+  - 'Editor pass 2026-09-26: corporate panels appear only as an India payer example, never as a capability, because corporate and PSU credit billing status is a placeholder on the India page. The Submit step says the billing desk submits the claim pack, so no electronic submission to any payer is implied. Pharmacy, lab, payer claims and HIS integration are described only as plans.yaml inclusions and add-ons.'
+  - 'Spec 2.9 asks every solution page to link one specialty page and one country page; related links follow the brief (three feature pages, reports and pricing). Add /clinic-management-software-india/ or /hospital-management-software-nigeria/ and a specialty page if the link budget allows.'
+  - 'Both CTAs go to /contact-us/#book-a-demo, as the Enterprise CTAs on home and pricing do. Point "Get an Enterprise quote" at a dedicated quote form if one is built.'
+  - 'editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite or cut anything in readsMachineWritten, and update editorialPass.'

@@ -1,0 +1,239 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { need } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'rolesMatrix'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, roles, rows, note, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+/*
+ * Spec 5.6: roles by permission. One row per permission (row header), one column per role (column
+ * header). A cell is allowed (check), not allowed (minus) or a short qualifier ("Own patients only");
+ * the two marks differ in shape and carry visually hidden text, so nothing rests on colour.
+ *
+ * With up to seven roles the table needs about 900px, so below 960px (md) it becomes one card per
+ * permission listing each role and its value, two cards across from 640px. Explicit roles keep the
+ * table semantics when the cells are display:block (Safari drops them otherwise). Never a sideways scroll.
+ */
+
+// The permission column is wider with few roles and narrower with six or seven, so each role column
+// of the fixed-layout table keeps room for a word like "Pharmacist" at 960px.
+const density = roles.length <= 3 ? 'few' : roles.length >= 6 ? 'many' : undefined;
+
+// Accessible name: the section heading (by reference when it has an id), else a caption.
+const labelledBy = heading && id ? `${id}-heading` : undefined;
+const label = heading && !id ? heading : undefined;
+
+type Cell = { role: string; kind: 'allowed' } | { role: string; kind: 'denied' } | { role: string; kind: 'text'; text: string };
+const body = rows.map((row) => ({
+  permission: row.permission,
+  cells: roles.map((role, i): Cell => {
+    const value = row.cells[i];
+    if (typeof value === 'boolean') return value ? { role, kind: 'allowed' } : { role, kind: 'denied' };
+    // An empty qualifier is a gap in the matrix, not a "no": it holds publishing until written.
+    return { role, kind: 'text', text: need(Astro, `${role} access to "${row.permission}"`, value?.trim()) };
+  }),
+}));
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <div class:list={['rm-wrap', roles.length <= 3 && 'max-w-[48rem]']}>
+    <table class="rm" role="table" aria-labelledby={labelledBy} aria-label={label} data-roles={density}>
+      {!heading && <caption class="sr-only">Permissions by role</caption>}
+      <thead role="rowgroup">
+        <tr role="row">
+          <th scope="col" role="columnheader">Permission</th>
+          {
+            roles.map((role) => (
+              <th scope="col" role="columnheader">
+                {role}
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        {
+          body.map((row) => (
+            <tr role="row">
+              <th scope="row" role="rowheader">
+                {row.permission}
+              </th>
+              {row.cells.map((cell) => (
+                <td role="cell" data-label={cell.role}>
+                  {cell.kind === 'allowed' ? (
+                    <span class="rm-mark text-success">
+                      <Icon name="check" size={22} />
+                      <span class="sr-only">Allowed</span>
+                    </span>
+                  ) : cell.kind === 'denied' ? (
+                    <span class="rm-mark text-ink-muted">
+                      <Icon name="minus" size={22} />
+                      <span class="sr-only">Not allowed</span>
+                    </span>
+                  ) : (
+                    <span class="rm-text">{cell.text}</span>
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  {note && <Md text={note} class:list={['mt-4 max-w-[46rem] text-sm', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+</Section>
+
+<style>
+  /* Wide screens: a bordered table on a surface card, so it reads on any section tone. */
+  .rm-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+  .rm {
+    width: 100%;
+    border-collapse: collapse;
+    /* Equal role columns, whatever the qualifiers say. */
+    table-layout: fixed;
+    color: var(--ink);
+  }
+  .rm th,
+  .rm td {
+    padding: 0.625rem 0.5rem;
+    border-top: 1px solid var(--border);
+    vertical-align: middle;
+    overflow-wrap: break-word;
+  }
+  .rm thead th {
+    border-top: 0;
+    background: var(--surface-muted);
+    color: var(--ink-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    vertical-align: bottom;
+    /* A long role name breaks with a hyphen rather than mid-word. */
+    hyphens: auto;
+  }
+  .rm th:first-child {
+    text-align: left;
+    hyphens: manual;
+  }
+  .rm tbody th {
+    color: var(--ink-heading);
+    font-weight: 600;
+  }
+  .rm tbody td {
+    text-align: center;
+  }
+  .rm-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+  .rm-text {
+    display: inline-block;
+    font-size: var(--text-sm);
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+
+  /* Below 960px each permission becomes a card listing every role; the column labels come from data-label. */
+  @media (width < 60rem) {
+    .rm-wrap {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .rm,
+    .rm tbody,
+    .rm tr,
+    .rm th,
+    .rm td {
+      display: block;
+      width: auto;
+    }
+    .rm thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .rm tbody {
+      display: grid;
+      gap: 1rem;
+    }
+    .rm tbody tr {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+    .rm tbody th {
+      padding: 0.875rem 1rem;
+      border-top: 0;
+      background: var(--surface-muted);
+      font-family: var(--font-sans);
+      line-height: 1.35;
+    }
+    .rm tbody td {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 2.75rem;
+      padding: 0.5rem 1rem;
+      text-align: right;
+    }
+    .rm tbody td::before {
+      content: attr(data-label);
+      /* Empty alt text: screen readers already announce the column header. */
+      content: attr(data-label) / '';
+      flex: none;
+      max-width: 55%;
+      color: var(--ink);
+      font-weight: 500;
+      text-align: left;
+    }
+    .rm-text {
+      text-wrap: pretty;
+    }
+  }
+
+  /* Table layout only: column sizing, and a hover that follows the row across a wide matrix. */
+  @media (width >= 60rem) {
+    .rm th:first-child {
+      width: 28%;
+      padding-inline: 1.25rem 0.75rem;
+    }
+    .rm[data-roles='few'] th:first-child {
+      width: 40%;
+    }
+    .rm[data-roles='many'] th:first-child {
+      width: 24%;
+    }
+    .rm tbody tr:hover > * {
+      background: var(--surface-alt);
+    }
+  }
+
+  @media (40rem <= width < 60rem) {
+    .rm tbody {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

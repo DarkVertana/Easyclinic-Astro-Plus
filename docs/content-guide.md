@@ -19,6 +19,22 @@ work in practice on this site.
 | Authors | `src/data/authors/<name>.yaml` |
 | Old URLs that move | `src/data/redirects.yaml`, or `redirectFrom` on the page itself |
 
+## Guides and posts (MDX)
+
+Start-a-clinic guides live in `src/content/guides/<slug>/index.mdx`, where the folder name is the URL, with any
+images beside the file. The frontmatter uses the same page fields as every other page; the body is Markdown. Two
+things differ from YAML pages: tokens such as `{price:...}` only work in the frontmatter (write plain values in the
+body), and a literal `{` or `}` in the body must be written `\{` or `\}`. Put one call to action after the licensing
+section:
+
+```mdx
+<InlineCta heading="Setting up? Get the software sorted before the first patient." href="/kenyademo/" label="Book a 20-minute demo">
+One or two sentences.
+</InlineCta>
+```
+
+`node scripts/import-wp.ts <slug>` imports a post from the live WordPress site as a draft guide.
+
 ## A page's status
 
 Every page has `status: draft`, `review` or `published`.
@@ -79,3 +95,4 @@ Quotes in `quote` fields are exempt from the vocabulary rules because they are v
 | `pnpm lint:content` | Checks every page against the writing rules in about a second |
 | `pnpm facts:report` | Lists every missing fact, grouped by who must supply it |
 | `pnpm build` | Full preview build with the post-build checks |
+| `pnpm build:prod` | Production build: published pages only, every rule strict |

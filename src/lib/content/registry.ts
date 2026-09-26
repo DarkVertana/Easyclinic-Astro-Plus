@@ -12,7 +12,7 @@
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { matchesRule } from '../../../integrations/routes-core.ts';
-import { auditEntry, errorsOf, formatIssues, type Issue } from '../rules/audit.ts';
+import { auditBody, auditEntry, errorsOf, formatIssues, type Issue } from '../rules/audit.ts';
 import type { Family, Status } from '../../schemas/constants';
 import type { PageFields } from '../../schemas/base';
 import { isProduction, STAGE } from './stage.ts';
@@ -25,6 +25,17 @@ export const PAGE_COLLECTIONS = [
   { name: 'countryDemos', prefix: '/' },
   { name: 'company', prefix: '/' },
   { name: 'kitchenSink', prefix: '/' },
+  // Hubs set an explicit `path` (/features/, /solutions/).
+  { name: 'hubs', prefix: '/' },
+  { name: 'features', prefix: '/features/' },
+  { name: 'solutions', prefix: '/solutions/' },
+  // Single pages at the root: /ai/, /curapilot/, /trust/ (file name = slug).
+  { name: 'ai', prefix: '/' },
+  { name: 'curapilot', prefix: '/' },
+  { name: 'trust', prefix: '/' },
+  { name: 'specialties', prefix: '/' },
+  // Start-a-clinic guides keep their ranking root slugs (spec 3.2, 4.4).
+  { name: 'guides', prefix: '/' },
 ] as const;
 
 export type PageCollection = (typeof PAGE_COLLECTIONS)[number]['name'];
@@ -136,7 +147,11 @@ async function build(): Promise<Registry> {
       }
 
       const { value: data, issues: tokenIssues } = resolveDeep<PageFields>(raw, tokenData);
-      const issues = [...auditEntry(data as never, raw.family), ...tokenIssues];
+      // Re-audit after tokens resolve (exact lengths), except the claims rule: it must see the raw text,
+      // where a figure written via {fig:...} is still a token. The schema refinement checks raw data.
+      const issues = [...auditEntry(data as never, raw.family).filter((i) => i.rule !== 'claims'), ...auditEntry(raw as never, raw.family).filter((i) => i.rule === 'claims'), ...tokenIssues];
+      // MDX bodies (guides, posts) get the same text rules, line by line.
+      if (typeof entry.body === 'string' && entry.body.trim()) issues.push(...auditBody(entry.body));
       const visible = !isProduction || raw.status === 'published';
       const record: PageRecord = {
         path,

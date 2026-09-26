@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
-import { need } from '../../../lib/content/need';
+import { optional } from '../../../lib/content/need';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
 import { toneFor, type BlockContext } from '../types';
@@ -22,7 +22,7 @@ const addons = plans.addons.map((addon) => {
   return {
     ...addon,
     known: value !== null,
-    price: need(Astro, `${price.currency} ${addon.name} add-on price`, value),
+    price: optional(`${price.currency} ${addon.name} add-on price`, value),
     availableOn: addon.availableOn.map((id) => planName.get(id) ?? id).join(', '),
   };
 });
@@ -34,7 +34,7 @@ const addons = plans.addons.map((addon) => {
       addons.map((a) => (
         <li class="card flex flex-col p-6 text-ink">
           <h3 class="font-sans text-lg font-semibold">{a.name}</h3>
-          <p class:list={['mt-3', a.known ? 'font-display text-xl font-semibold text-ink-heading' : 'text-base']}>{a.price}</p>
+          {a.price && <p class:list={['mt-3', a.known ? 'font-display text-xl font-semibold text-ink-heading' : 'text-base']}>{a.price}</p>}
           <Md text={a.body} class="mt-3 text-ink-muted" />
           <p class="mt-auto pt-5 text-sm text-ink-muted">
             <span class="font-semibold text-ink-heading">Available on:</span> {a.availableOn}

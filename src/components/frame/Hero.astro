@@ -2,7 +2,7 @@
 import { getEntries, getEntry, type ReferenceDataEntry } from 'astro:content';
 import type { MediaProps } from '../ui/Screenshot.astro';
 import { getRegistry } from '../../lib/content/registry';
-import { need, unconfirmed } from '../../lib/content/need';
+import { need, optional, unconfirmed } from '../../lib/content/need';
 import Button from '../ui/Button.astro';
 import Md from '../ui/Md.astro';
 import Screenshot from '../ui/Screenshot.astro';
@@ -30,7 +30,7 @@ function rating(ratingId: string, countId: string, platform: string) {
   const r = facts![ratingId];
   const c = facts![countId];
   const value = need(Astro, `${platform} rating`, r?.value);
-  const count = need(Astro, `${platform} review count`, c?.value);
+  const count = optional(`${platform} review count`, c?.value);
   return { value: unconfirmed(Astro, `${platform} rating as-of date`, value, Boolean(r?.asOf)), count, platform };
 }
 const ratings = facts ? [rating('capterraRating', 'capterraReviews', 'Capterra'), rating('googleRating', 'googleReviews', 'Google')] : [];
@@ -79,7 +79,7 @@ const studyHref = registry.urlFor('/curapilot/');
                 <Icon name="star" size={16} class="fill-star text-star" />
                 <span class="font-semibold text-ink-heading">{r.value}</span>
                 <span class="text-ink-muted">
-                  on {r.platform} ({r.count} reviews)
+                  on {r.platform}{r.count && ` (${r.count} reviews)`}
                 </span>
               </li>
             ))}

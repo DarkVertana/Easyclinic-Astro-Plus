@@ -1,0 +1,301 @@
+# /emr-software-in-kenya/ (spec 4.2 row, 5.13 Kenya). Slug kept: the live page ranks at position 5.
+# Draft: spec 5.13 does not publish a country page until blocks 2, 3 and 7 are filled, and every
+# Kenyan regulator status in src/data/regulators/ke-*.yaml is still null.
+status: draft
+country: ke
+headKeyword: clinic management software in Kenya
+secondaryKeywords:
+  - EMR software Kenya
+  - SHA compliant clinic software
+  - hospital management system Nairobi
+title: Clinic Management Software in Kenya, SHA Ready
+metaDescription: >-
+  Clinic management software in Kenya at {price:kes.professional.annual} per doctor per month, with
+  M-Pesa at the desk and claims to Jubilee and AAR through SLADE.
+h1: Clinic software for clinics in Kenya
+linkLabel: Clinic software in Kenya
+eyebrow: Kenya
+openingAnswer: >-
+  EasyClinic is clinic management software built for how a Kenyan clinic gets paid, with M-Pesa at the
+  desk and the claim to Jubilee or AAR sent through SLADE from the same bill, while SHA e-claims are
+  [SHA e-claims status as of date]. It costs {price:kes.professional.annual} per doctor per month, and
+  Penda Health has run its Nairobi clinics on it since 2017, where an AI tool inside the record was
+  studied across {fig:visits} patient visits.
+summary: >-
+  What EasyClinic costs in shillings, how M-Pesa and SLADE claims sit on one bill, the status and date
+  of SHA and eTIMS, and who to call in Kenya.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  needed: 'Invoice from an encounter with a part payment: second capture in KES with M-Pesa, seeded demo tenant (spec 12). No eTIMS line until eTIMS has a status.'
+  alt: An EasyClinic invoice for a clinic visit in Kenyan shillings, with an M-Pesa payment recorded against it and the balance still owed
+  caption: One bill from the visit in shillings, with the M-Pesa payment recorded and the balance still owed.
+  frame: browser
+heroStrip:
+  regulators: [ke-sha, ke-etims]
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo in Kenya
+    href: /kenyademo/
+  secondary:
+    label: See prices in shillings
+    href: /pricing/kenya/
+  whatsapp: Hi, I was reading the EasyClinic page on clinic management software in Kenya and would like a demo for my clinic.
+
+sections:
+  # Block 2: local proof strip. The template also puts the bare contact card in the hero; this section
+  # renders the rest (office, cities, named clients) from src/data/countries/ke.yaml.
+  - discriminant: contactCard
+    value:
+      id: kenya-team
+      heading: EasyClinic in Nairobi, and how to reach the Kenya team
+      intro: >-
+        Call the Kenya team on {contact:ke.phone} or write to {contact:ke.email} to book a demo, or with
+        a question before you book one. After the demo, training is {fact:trainingDays} short sessions,
+        about two hours in total, for you and your staff, and a clinic can be live in as little as
+        {fact:goLiveDays} days.
+      country: ke
+      showClients: true
+
+  # Block 3: regulatory deep-dive. Status and dates render from src/data/regulators/ke-*.yaml (all null today).
+  - discriminant: regulatorTable
+    value:
+      id: compliance-in-kenya
+      heading: Kenyan regulators and what each one asks of your clinic
+      intro: |
+        **SHA and SHIF.** SHA, the Social Health Authority, took over from NHIF on 1 October 2024 and runs the Social Health Insurance Fund (SHIF). For the clinic, an SHA claim means checking the patient's eligibility at registration and sending the claim electronically from the invoice, and only a contracted SHA facility with a valid facility code can claim.
+
+        **eTIMS.** KRA's electronic tax invoice system receives each invoice the clinic issues, and the receipt the patient takes home carries the eTIMS reference. The clinic registers for eTIMS with KRA itself, whatever software it uses.
+
+        **Digital Health Act, 2023.** The Act sets how health data is stored and shared, and requires digital health systems to be registered with the Digital Health Agency it created.
+
+        **Data Protection Act, 2019.** Health data is sensitive personal data under the Act, with its own rules on patient consent and on moving data outside Kenya, and your clinic registers with the Office of the Data Protection Commissioner as a data controller.
+
+        The table also carries the MOH 705 report for DHIS2 and the documents a KMPDC inspection asks for. Registering with the council before you open is covered in the [KMPDC registration guide](/how-do-i-get-approval-from-the-kmpdc-in-kenya/). Each row gives EasyClinic's status (Live, In certification, Planned or Not applicable) and the date it was last checked. If anything else on this page seems to claim more than the table, go by the table. The same table for every country is on the [trust page](/trust/).
+      countries: [ke]
+      showClinicMustDo: true
+      trustLink: true
+
+  # Block 4: money. Prices from src/data/prices/kes.yaml (null today); M-Pesa, insurers and tax invoicing from countries/ke.yaml.
+  - discriminant: countryMoney
+    value:
+      id: prices-in-shillings
+      heading: Prices in shillings, and how Kenyan patients pay
+      intro: >-
+        Every price is per doctor per month, and the price includes a reception login. There is no setup
+        fee and no contract. At a Kenyan clinic much of the money arrives by M-Pesa or from an insurer, and
+        EasyClinic records both on the same bill, so the balance shows what the patient still owes.
+      country: ke
+      currency: kes
+      payersNote: >-
+        Claims to Jubilee, AAR, CIC, Britam and Resolution go through SLADE, from the same bill the front
+        desk raised. Insurance claims come with the Enterprise plan, or with the claims add-on on
+        Professional and Premium. SHA e-claims: [SHA e-claims status as of date]. SMART, the member card
+        check some insurers use at the desk: [SMART status as of date].
+
+  # Block 5: connectivity and language. The live site says it does not run fully offline today.
+  - discriminant: prose
+    value:
+      id: offline-mobile-swahili
+      heading: Offline, mobile, WhatsApp and Swahili
+      body: |
+        **Internet.** EasyClinic runs in the browser over the internet, and it does not run fully offline today. If the line drops in the middle of a consult, [what is saved and what is lost when the connection drops mid-consult]. Keep a mobile data hotspot beside the reception computer as a second line. A county clinic that loses its connection for hours at a time can ask about the self-hosted option, where EasyClinic runs on the clinic's own server: [self-hosted option for Kenyan clinics: plans and cost, and what still needs the internet].
+
+        **Phone and tablet.** On the Enterprise plan, patients get their own app and portal. For the doctor and the staff away from the desk: [doctor app: which phone platforms, and which screens work on a phone].
+
+        **Swahili.** Prescriptions print in English and Swahili, so the patient reads the dosage and the advice in the language they use at home. The whole bilingual prescription takes a doctor under 30 seconds to write. [How the Swahili text is produced: saved templates or translation].
+
+        **WhatsApp.** On Premium and Enterprise, the appointment reminder and the follow-up message reach the patient on WhatsApp, sent from the clinic software instead of the receptionist's own phone. On Professional, reminders go by SMS and email.
+      aside: >-
+        **Where it stops.** EasyClinic does not run fully offline today. If your clinic loses its line for
+        hours at a time, tell us before you buy, and we will show you what the screen does when the
+        connection goes.
+      width: measure
+
+  # Block 6: the four clinic types. Examples from src/data only; the rest are placeholders.
+  - discriminant: clinicTypes
+    value:
+      id: clinic-types
+      heading: Solo clinics to hospital OPDs in Kenya
+      intro: Pick the one closest to yours. Each card links to the page written for that kind of clinic.
+      items:
+        - persona: solo
+          title: Solo doctor clinics
+          body: >-
+            One doctor and a receptionist, with no IT staff to call when the printer stops talking to the
+            system. The prescription comes from saved shortcuts in about thirty seconds, and the
+            receptionist enters the M-Pesa payment on the patient's bill at the desk, so the evening is not
+            spent matching M-Pesa messages to names.
+          example: Dr J. J. Thakkar runs his urology clinic, the Laser Stone and Endoscopy Centre in Nairobi, on EasyClinic.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: Polyclinics and specialist centres
+          body: >-
+            One record for every specialist the patient sees, with shared rooms and slots. Roles decide who
+            sees what: the reception login books and bills, but it cannot open the EMR or write a
+            prescription.
+          example: '[Kenyan polyclinic or specialist centre on EasyClinic: name and town]'
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: Clinic chains
+          body: >-
+            Central price lists, standard SOPs, stock moved between branches and a morning view of each
+            branch's KPIs. Branch drift shows up in the numbers before it shows up in patient complaints.
+          example: Penda Health has run its clinics in Nairobi on EasyClinic since 2017, and 15 of them took part in the 2025 study below.
+          href: /solutions/clinic-chain/
+        - persona: hospital-opd
+          title: Hospital OPDs and nursing homes
+          body: >-
+            Token queues and doctor schedules at the front desk, pharmacy and lab turnaround behind it,
+            insurer claims from the same bill and a daily view of throughput. EasyClinic runs the outpatient
+            side and is not a full hospital information system.
+          example: '[Kenyan hospital OPD or nursing home on EasyClinic: name and town]'
+          href: /solutions/hospital-opd/
+
+  # Block 7: local testimonial (assigned to this page only).
+  - discriminant: testimonialRow
+    value:
+      id: nairobi-clinic
+      heading: A Nairobi urologist on the support after go-live
+      items: [jj-thakkar]
+      layout: single
+      usePullQuote: true
+
+  # Proof: the Penda Health study, from study.yaml. Preprint, AI Consult; never "peer reviewed" or CuraPilot.
+  - discriminant: proofBlock
+    value:
+      id: penda-health-study
+      eyebrow: The Penda Health study
+      heading: What the Penda Health study measured in Nairobi
+      variant: study
+      figures: [visits, diagnostic-errors]
+      body: >-
+        In a 2025 preprint written with OpenAI, Penda Health studied {fig:visits} patient visits at 15 of
+        its clinics in Nairobi, all of them run on EasyClinic, the record Penda has used since 2017. The
+        tool studied was AI Consult, a safety net inside that record that flagged possible documentation
+        and clinical errors while the clinician worked. Independent physicians rated the visits, and
+        clinicians with AI Consult made fewer errors, including 10% fewer investigation errors. The study
+        measured clinical errors, not the front desk or the claims.
+
+faqHeading: Questions Kenyan clinic owners ask
+faq:
+  - question: Can EasyClinic send SHA claims today?
+    answer: >-
+      SHA e-claims from EasyClinic are [SHA e-claims status as of date], and the SHA row in the table on
+      this page carries the same status and date. If that row does not show Live with a date, plan your
+      clinic's SHA claims outside EasyClinic. Whatever software you use, only a contracted SHA facility
+      with a valid facility code can claim.
+  - question: How are M-Pesa payments matched to patient bills?
+    answer: >-
+      The M-Pesa payment is recorded against the patient's bill at the desk, so the bill shows what is
+      paid and what is still owed. [Whether EasyClinic receives M-Pesa through Daraja, a Till or a
+      Paybill number, and whether it matches payments to bills automatically, as of date]. At day end the
+      cash close shows M-Pesa as its own total beside cash, with any variance on a separate line.
+  - question: What is the difference between KenyaEMR and EasyClinic?
+    answer: >-
+      [The main difference between KenyaEMR and EasyClinic for a private clinic, from the comparison page
+      verdict]. The [EasyClinic vs KenyaEMR](/easyclinic-vs-kenyaemr/) page compares the two on
+      published price, AI documentation, billing and multi-branch support, with a source and a date for
+      every cell, and says what moving your records across involves.
+  - question: Does EasyClinic send invoices to KRA through eTIMS?
+    answer: >-
+      eTIMS e-invoicing from EasyClinic is [eTIMS status as of date], the same as the eTIMS row in the
+      table on this page. With eTIMS, each invoice goes to KRA and the patient's receipt carries the eTIMS
+      reference. The clinic registers for eTIMS with KRA itself, whatever software it uses, and if that
+      row does not show Live with a date, plan to issue your eTIMS invoices outside EasyClinic.
+  - question: What happens when the internet goes down?
+    answer: >-
+      EasyClinic does not run fully offline today, because the cloud version needs an internet
+      connection. [What still works without internet, and what is saved when the connection drops
+      mid-consult]. Keep a mobile data hotspot as a second line, and a clinic that loses its connection
+      for hours at a time can ask about the self-hosted option, where EasyClinic runs on the clinic's own
+      server: [self-hosted option for Kenyan clinics: plans and cost, and what still needs the internet].
+  - question: How long does it take to move from another system?
+    answer: >-
+      A clinic can be live in as little as {fact:goLiveDays} days from the demo, and moving records
+      across from another system takes [data migration time for a Kenyan clinic, and which systems
+      EasyClinic imports from]. Training runs over {fact:trainingDays} days and takes about two hours in total: 40 minutes on
+      the first day, 40 on the second, then 20 and 20. A clinic group with several branches takes [go-live
+      time for a multi-branch group in Kenya].
+  - question: How much does EasyClinic cost in Kenya?
+    answer: >-
+      Professional costs {price:kes.professional.annual} and Premium {price:kes.premium.annual} per
+      doctor per month when paid annually, or {price:kes.professional.quarterly} and
+      {price:kes.premium.quarterly} when paid quarterly. Enterprise, for clinic chains and hospital OPDs,
+      is priced on quote. A reception login is included and there is no setup fee, and the [Kenya pricing
+      page](/pricing/kenya/) lists every add-on.
+  - question: Which insurers can I send claims to?
+    answer: >-
+      Claims to Jubilee, AAR, CIC, Britam and Resolution go through SLADE, an e-claims platform,
+      from the same bill your front desk raised. Insurance claims come with the Enterprise plan,
+      or with the claims add-on on Professional and Premium. SHA claims are a separate route, with their
+      own row in the table on this page.
+  - question: Does EasyClinic produce the MOH 705 report?
+    answer: >-
+      The monthly MOH 705 outpatient summary comes from the visits already recorded in EasyClinic, ready
+      for DHIS2, so nobody tallies the paper register at month end. [Whether EasyClinic submits the
+      figures to DHIS2 directly or the clinic uploads them, as of date].
+  - question: Where is patient data stored, and what does the Data Protection Act ask of my clinic?
+    answer: >-
+      Patient data for Kenyan clinics is hosted in [hosting region and provider for Kenyan clinics]. Under
+      the Data Protection Act, 2019, health data is sensitive personal data, and your clinic registers
+      with the Office of the Data Protection Commissioner as a data controller. If you leave EasyClinic,
+      [what data a clinic gets back on leaving and in what format, and how long EasyClinic keeps a copy].
+
+links:
+  hub: /countries/
+  relatedHeading: Where Kenyan clinic owners go next
+  related:
+    - href: /best-clinic-management-software-kenya/
+      label: Best clinic management software in Kenya
+      description: A ranked comparison of the options for a private clinic in Kenya, EasyClinic included, with prices and SHA status checked and dated.
+    - href: /easyclinic-vs-kenyaemr/
+      label: EasyClinic vs KenyaEMR
+      description: How the two compare for a private clinic in Kenya, and what moves across if you switch.
+    - href: /pricing/kenya/
+      label: EasyClinic prices in shillings
+      description: Every plan and add-on in Kenyan shillings, and what a five-doctor polyclinic pays each month.
+    - href: /kenyademo/
+      label: Book a demo in Kenya
+      description: A 20-minute call with the Kenya team that follows one patient from the booking to the M-Pesa payment.
+    - href: /trust/
+      label: Security and compliance
+      description: EasyClinic's status and the date it was checked for every regulator, country by country.
+
+closing:
+  heading: See EasyClinic run a day at your clinic
+  body: >-
+    Book 20 minutes with the Kenya team, or call {contact:ke.phone}. Bring what your front desk does on a
+    busy morning, from the M-Pesa payment to the SLADE claim, and we will show each step in EasyClinic,
+    including where it stops.
+  primary:
+    label: Book a 20-minute demo in Kenya
+    href: /kenyademo/
+  secondary:
+    label: See prices in shillings
+    href: /pricing/kenya/
+
+notes:
+  - 'Title claim: "SHA Ready" comes from the spec 4.2 row. Before publishing it must match the SHA status in src/data/regulators/ke-sha.yaml. If SHA e-claims are not Live with a date, retitle, e.g. "Clinic Management Software in Kenya: EasyClinic".'
+  - 'H1 follows the 4.2 row. Spec 5.13 block 1 asks for the regulator in the H1; add SHA to the H1 only once ke-sha is Live.'
+  - 'Meta description rewritten from the 4.2 row ("M-Pesa billing, eTIMS, SHA e-claims and WhatsApp reminders. Peer reviewed in Nairobi with Penda Health"): it states no SHA or eTIMS status, and the 39,849-visit study is an arXiv preprint, so "peer reviewed" is not used. It carries the KES price token, which renders a placeholder until prices/kes.yaml is filled. The linter counts each token as 7 characters (137 by that count); with a price such as "KES 2,400" it is 139 characters, and the build re-checks the exact length after expansion.'
+  - 'Secondary keyword "SHA compliant clinic software" is kept from the 4.2 row as metadata only. No copy on the page says EasyClinic is SHA compliant; do not add that phrase until ke-sha is Live with a date.'
+  - 'Opener: two sentences (spec 2.2). The SHA status from the 6.3 after-version is folded into sentence one as a placeholder, as a contrast clause, so the payment list stays at two items (M-Pesa and SLADE); rewrite that clause when ke-sha has a state and date. Sentence two carries the KES price token and the Penda Health study (spec 5.13). eTIMS from the 6.3 after-version is left out of the opener because its status is unknown. The 6.3 wording "run on it for nine years" is written as "since 2017" (the preprint date), and "the AI copilot" as "an AI tool inside the record" so it is not read as CuraPilot.'
+  - 'The Kenya contact is not cleared to publish (countries/ke.yaml contact.publishName is null), so no contact name appears anywhere in this file, notes included. The hero ContactCard falls back to "EasyClinic Kenya team" and "Or call us directly". {contact:ke.email} renders a personal address that carries the contact''s first name; decide whether a role address replaces it. Restore the spec 5.13 block 2 "Or call [first name] directly" pattern once publishName is true.'
+  - 'Block 2 still needs: consent to name the Kenya contact, the contact role and hours, a Kenya WhatsApp number (contact.whatsapp is null, so the WhatsApp button routes to the India number in site.yaml), and a Kenya office or partner address (countries/ke.yaml office is null). On country pages this section renders only the office, cities and clients (the name and phone sit in the hero card), so its heading names the city and the team rather than a person.'
+  - 'Block 3: every ke-* regulator row has state and asOf null, so the table renders placeholders. The live site contradicts itself (the Kenya FAQ says SHA and eTIMS are "Not yet", /kenyademo/ lists both as integrations and says "eTIMS compliant"); nothing here states a status. "DHA Certified" and "Kenya Registered" from the live /kenyademo/ are not carried over. "SHA took over from NHIF on 1 October 2024" is from the live comparison page (migration/research/facts.md section 7).'
+  - 'Block 4: prices/kes.yaml plans, taxNote and paymentMethods are null; countries/ke.yaml taxInvoicing and the M-Pesa row state (Daraja, Till and Paybill) are null. Insurer count conflict: /kenyademo/ names five insurers through SLADE, its modules card names four, and the live /emr-software-in-kenya/ says "50+ insurers"; this page names the five. SMART is named on the live /kenyademo/ integration strip with no status.'
+  - 'Block 5 heading is "Offline, mobile, WhatsApp and Swahili" (the four topics of spec 5.13 block 5, including WhatsApp-first flows) rather than the three-item brief wording "Offline, mobile and Swahili", to follow the no-groups-of-three rule. "Does not run fully offline today" and "a self-hosted option exists" are from the live Kenya listicle. "Under 30 seconds" is from the live /kenyademo/ ("Smart bilingual prescription in under 30 seconds", re-fetched 2026-09-26). The patient app and portal are the Enterprise inclusion in plans.yaml; the earlier "for booking and reports" was unsourced and is cut.'
+  - 'Block 6 examples use real data only: Dr J. J. Thakkar and the Laser Stone and Endoscopy Centre (testimonials/jj-thakkar.yaml, persona solo) and Penda Health (countries/ke.yaml clients; the preprint). The polyclinic and hospital OPD examples are missing. Confirm that Penda Health and Dr Thakkar agree to be named as examples. The solo card says the receptionist enters the M-Pesa payment on the bill, because whether M-Pesa payments reach the bill automatically (Daraja, Till, Paybill) is unknown.'
+  - 'Block 7: jj-thakkar is placed on this page only (consentOnFile true). The two Dr Korom quotes stay on /kenyademo/ (robert-korom-reliability) and /curapilot/ (robert-korom-partner).'
+  - 'Proof: study figures visits and diagnostic-errors come from study.yaml (korom-2025, verified 2026-09-26). The copy says "preprint" and "AI Consult" and never "peer reviewed", "Nature", "proven", Cura AI or CuraPilot (study.yaml note: confirm whether CuraPilot is AI Consult). 15 clinics, independent physicians and 10% fewer investigation errors are verified from the paper. "A safety net ... that flagged possible documentation and clinical errors" paraphrases the arXiv abstract (re-fetched 2026-09-26).'
+  - 'FAQ: spec 5.13 also lists "Helium vs EasyClinic". It is left out because no EasyClinic vs Helium Health page is in the spec site tree; add it (with a link) if one is built. The KenyaEMR answer needs the comparison page verdict, and describes only the columns spec 5.16 gives the comparison table (no SHA column).'
+  - 'FAQ M-Pesa answer: the day-end cash close with an M-Pesa total and a variance line is from the spec 12 screenshot list ("Cash, card, UPI or M-Pesa totals with a variance line"). Whether reconciliation is automatic is unknown. The SHA and eTIMS answers say "if that row does not show Live with a date" rather than "until", so they do not presuppose a status.'
+  - 'Go-live: {fact:goLiveDays} (3 days) conflicts with "2 to 4 week setup" on the live Kenya listicle (facts.yaml note), so it is written as the fastest case. The training breakdown (40, 40, 20, 20 minutes) is from the live /pricing/ FAQ.'
+  - 'Demo length: this page says 20 minutes, like /kenyademo/ in the rebuild; the live /kenyademo/ says 30. Confirm with the Kenya team.'
+  - 'Author: spec 2.7 prefers a named country lead; the Kenya contact would qualify once cleared to publish. Subhashish Saha (Head of customer success) is the author until then.'
+  - 'heroMedia is the spec 12 KES invoice with M-Pesa; it does not exist yet. heroStrip.regulators shows the SHA and eTIMS chips (spec 11), which render placeholders until their state is set.'
+  - 'No editorialPass yet. A human editor reads the page aloud (spec 6.5) once blocks 2, 3 and 7 are filled.'

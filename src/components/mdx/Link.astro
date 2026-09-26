@@ -1,0 +1,19 @@
+---
+import { getRegistry } from '../../lib/content/registry';
+
+/**
+ * Links inside MDX bodies go through the registry like every other internal link: an internal target
+ * that is not rendered in this stage becomes plain text instead of a broken link.
+ */
+interface Props {
+  href?: string;
+  title?: string;
+}
+const { href = '', title } = Astro.props;
+const registry = await getRegistry();
+const internal = href.startsWith('/');
+const resolved = internal ? registry.urlFor(href) : href;
+const external = /^https?:\/\//.test(href);
+---
+
+{resolved ? <a href={resolved} title={title} rel={external ? 'noopener' : undefined}><slot /></a> : <slot />}

@@ -1,7 +1,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { PageRecord } from '../content/registry.ts';
 import type { Crumb } from './breadcrumbs.ts';
-import { breadcrumbList, faqPage, graph, localBusiness, offers, organization, softwareApplication, webPage, website, type PriceData } from './jsonld.ts';
+import { article, breadcrumbList, faqPage, graph, localBusiness, offers, organization, scholarlyArticle, softwareApplication, webPage, website, type PriceData } from './jsonld.ts';
 
 /** Picks the JSON-LD nodes for a page by family (spec 2.10, with the plan's corrections). */
 export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Record<string, unknown>> {
@@ -23,7 +23,18 @@ export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Rec
   }
 
   const type = record.path === '/contact-us/' ? 'ContactPage' : record.path === '/about-us/' ? 'AboutPage' : 'WebPage';
-  nodes.push(webPage(site, { url, title: d.title, description: d.metaDescription, dateModified: d.lastUpdated, hasBreadcrumb, type }));
+  const page = webPage(site, { url, title: d.title, description: d.metaDescription, dateModified: d.lastUpdated, hasBreadcrumb, type }) as unknown as Record<string, unknown>;
+  // Spec 2.10: ScholarlyArticle citation on /curapilot/, only for publications verified in study.yaml.
+  if (record.family === 'curapilot' || record.family === 'ai') {
+    const study = (await getEntry('study', 'study'))!.data;
+    const cited = study.publications.filter((p) => p.verifiedOn && !p.title.startsWith('['));
+    if (cited.length) page.citation = cited.map((p) => scholarlyArticle(p));
+  }
+  nodes.push(page);
+  if (['guide', 'post', 'listicle', 'comparison'].includes(record.family)) {
+    const author = d.author ? (await getEntry(d.author))?.data : null;
+    nodes.push(article(site, { url, headline: d.h1, description: d.metaDescription, dateModified: d.lastUpdated, author }));
+  }
   if (hasBreadcrumb) nodes.push(breadcrumbList(site, url, trail));
   if (d.faq.length) nodes.push(faqPage(url, d.faq));
   if (record.path === '/contact-us/') nodes.push(localBusiness(site));

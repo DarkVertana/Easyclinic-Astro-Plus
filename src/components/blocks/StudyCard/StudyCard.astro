@@ -1,0 +1,147 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { unconfirmed } from '../../../lib/content/need';
+import { formatDate, isoDate } from '../../../lib/format/date';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'studyCard'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, publication, figures, method, sites, limits, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+/*
+ * One publication from src/data/study.yaml (spec 5.3): citation, the figures it reports, method, sites
+ * and what it did not measure. The card says plainly when the paper is a preprint (research finding 2:
+ * the 39,849-visit study is not peer reviewed). Every publication is re-verified (verifiedOn) before a
+ * page citing it is published, so an unverified one shows highlighted in preview and fails production.
+ */
+const study = (await getEntry('study', 'study'))?.data;
+if (!study) throw new Error(`studyCard on ${ctx.path}: src/data/study.yaml did not load`);
+
+const pub = study.publications.find((p) => p.id === publication);
+if (!pub) {
+  throw new Error(
+    `studyCard on ${ctx.path}: publication "${publication}" is not in study.yaml (known: ${study.publications.map((p) => p.id).join(', ')})`,
+  );
+}
+const verified = Boolean(pub.verifiedOn);
+const title = unconfirmed(Astro, `re-verification of ${pub.identifier} (verifiedOn in study.yaml)`, pub.title, verified);
+
+// Only this publication's own figures: an internal measurement or another paper's number would borrow its credibility.
+const figureRows = figures.map((figId) => {
+  const f = study.figures.find((x) => x.id === figId);
+  if (!f) throw new Error(`studyCard on ${ctx.path}: figure "${figId}" is not in study.yaml`);
+  if (f.source !== pub.id) {
+    throw new Error(
+      `studyCard on ${ctx.path}: figure "${figId}" is ${f.source ? `from publication "${f.source}"` : 'not from a publication (it needs an internal source)'}, not from "${pub.id}"; a study card shows only its own publication's figures`,
+    );
+  }
+  return {
+    value: unconfirmed(Astro, `source for "${f.value} ${f.label}"`, f.value, verified),
+    label: f.label,
+    context: f.context,
+  };
+});
+const hasFigures = figureRows.length > 0;
+
+const muted = inverse ? 'text-ink-inverse-muted' : 'text-ink-muted';
+const rule = inverse ? 'border-white/15' : 'border-line';
+const subheading = ['font-sans text-base font-semibold', inverse && 'text-white'];
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <article class:list={['overflow-hidden rounded-card border', inverse ? 'border-white/15 bg-white/5' : 'border-line bg-surface text-ink']}>
+    <header class:list={['border-b p-6 md:p-8', rule]}>
+      {
+        pub.peerReviewed ? (
+          <p class="inline-flex items-center gap-1.5 rounded-full border border-success/30 bg-success-bg px-3 py-1 text-sm font-semibold text-success">
+            <Icon name="badge-check" size={16} />
+            <span>Peer reviewed</span>
+          </p>
+        ) : (
+          <p class="inline-flex items-center gap-1.5 rounded-full border border-warning/40 bg-warning-bg px-3 py-1 text-sm font-semibold text-warning">
+            <Icon name="triangle-alert" size={16} />
+            <span>Preprint, not yet peer reviewed</span>
+          </p>
+        )
+      }
+      <h3 class:list={['mt-4 max-w-[48rem]', inverse && 'text-white']}>{title}</h3>
+      <p class:list={['mt-2', muted]}>{pub.authors}</p>
+      <dl class="mt-5 flex flex-wrap gap-x-10 gap-y-4 text-sm">
+        <div>
+          <dt class={muted}>Published in</dt>
+          <dd class:list={['font-medium', inverse ? 'text-white' : 'text-ink-heading']}>{pub.venue}</dd>
+        </div>
+        <div>
+          <dt class={muted}>Date</dt>
+          <dd class:list={['font-medium', inverse ? 'text-white' : 'text-ink-heading']}>
+            <time datetime={isoDate(pub.published)}>{formatDate(pub.published)}</time>
+          </dd>
+        </div>
+        <div>
+          <dt class={muted}>Identifier</dt>
+          <dd>
+            <a
+              href={pub.url}
+              rel="noopener"
+              class:list={['-my-3 inline-flex items-center gap-1 py-3 font-medium underline', inverse && 'text-white hover:text-blue-200']}
+            >
+              <span>{pub.identifier}</span>
+              <Icon name="external-link" size={14} />
+            </a>
+          </dd>
+        </div>
+        {
+          pub.verifiedOn && (
+            <div>
+              <dt class={muted}>Citation checked</dt>
+              <dd class:list={['font-medium', inverse ? 'text-white' : 'text-ink-heading']}>
+                <time datetime={isoDate(pub.verifiedOn)}>{formatDate(pub.verifiedOn)}</time>
+              </dd>
+            </div>
+          )
+        }
+      </dl>
+    </header>
+
+    <div class:list={['grid', hasFigures && 'lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]']}>
+      {
+        hasFigures && (
+          <div class:list={['border-b p-6 md:p-8 lg:border-r lg:border-b-0', rule, inverse ? 'bg-white/5' : 'bg-surface-muted']}>
+            <h4 class:list={subheading}>Key figures</h4>
+            <dl class="mt-5 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-1">
+              {figureRows.map((f) => (
+                <div class="flex flex-col">
+                  <dt class:list={['order-2 mt-2 font-semibold', inverse ? 'text-white' : 'text-ink-heading']}>{f.label}</dt>
+                  <dd class:list={['order-1 font-display text-4xl leading-none font-semibold', inverse ? 'text-white' : 'text-blue-700']}>{f.value}</dd>
+                  <dd class:list={['order-3 mt-1 text-sm', muted]}>{f.context}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )
+      }
+      <div class:list={['p-6 md:p-8', !hasFigures && 'max-w-[48rem]']}>
+        <h4 class:list={subheading}>Method</h4>
+        <Md text={method} minHeading={5} class:list={['mt-2', inverse && 'text-ink-inverse-muted']} />
+        <h4 class:list={[subheading, 'mt-6']}>Sites</h4>
+        <Md text={sites} minHeading={5} class:list={['mt-2', inverse && 'text-ink-inverse-muted']} />
+        {
+          limits && (
+            <div class:list={['mt-8 rounded-control border p-5', inverse ? 'border-white/25 bg-white/5' : 'border-line-strong bg-surface-muted']}>
+              <h4 class:list={[subheading, 'flex items-start gap-2']}>
+                <Icon name="info" size={18} class:list={['mt-px', inverse ? 'text-white' : 'text-ink-muted']} />
+                What the study did not measure
+              </h4>
+              <Md text={limits} minHeading={5} class:list={['mt-2', inverse && 'text-ink-inverse-muted']} />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </article>
+</Section>

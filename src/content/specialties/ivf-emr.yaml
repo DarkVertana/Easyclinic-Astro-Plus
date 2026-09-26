@@ -1,0 +1,261 @@
+# /ivf-emr/ (spec 5.15 SpecialtyPage, keyword row 4.3). Live URL at position 20 with 22K impressions: rewrite early.
+# Grounding: capability statements the live /ivf-emr/ page makes plainly (retrieved 2026-09-26), plans.yaml, and
+# the spec's IVF list. No template counts, device integrations or outcomes.
+status: published
+headKeyword: IVF clinic management software
+secondaryKeywords:
+  - fertility clinic EMR
+  - IVF EMR software
+title: 'IVF Clinic Management Software: EasyClinic'
+metaDescription: >-
+  IVF clinic management software: each cycle tracked from stimulation to embryo transfer and billed as one
+  package, on Premium at {price:inr.premium.annual} per doctor a month.
+h1: Software for IVF and fertility clinics
+linkLabel: IVF and fertility
+eyebrow: For IVF and fertility clinics
+openingAnswer: >-
+  EasyClinic keeps an IVF patient's cycle on one record, from the stimulation protocol to embryo transfer,
+  with every dose adjustment recorded against the medication. Its Premium plan for specialists adds
+  package treatments, so the cycle is billed as one package paid in parts, at {price:inr.premium.annual}
+  per doctor per month in India or {price:usd.premium.annual} in US dollars, billed annually.
+summary: >-
+  Each IVF cycle on one record, from stimulation to embryo transfer, and the treatment billed as one
+  package paid in parts on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+heroStrip:
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book an IVF clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for IVF clinics and would like to book a demo for our fertility centre.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-ivf-clinics-lose-time
+      heading: Where an IVF clinic loses track
+      intro: >-
+        A fertility centre runs on dates, and most of what goes wrong happens between visits, when the
+        record of one cycle is split between the nurses' station and the lab.
+      items:
+        - heading: The stimulation sheet lives on paper
+          body: >-
+            Through a stimulation cycle the patient comes back every few days for a follicle scan and a dose
+            change. The dose sheet sits in a file at the nurses' station and the scan report in the
+            sonographer's folder, so on the morning the doctor decides on the trigger, she is reading both
+            from a phone photo.
+          fix: >-
+            The stimulation protocol and each follicle-tracking visit sit on the patient's record, with every
+            dose change beside them, through to egg retrieval and embryo transfer. The doctor opens one screen
+            before the patient sits down.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The embryology lab keeps its own book
+          body: >-
+            The embryologist writes up the retrieval and what became of each egg in the lab's register.
+            Months later the couple come back to plan a frozen embryo transfer, and the consult waits while
+            someone walks to the lab to find the right page.
+          fix: >-
+            Embryo-related data and lab records are stored and managed in EasyClinic, the same system the
+            doctor charts in, so the consult does not wait on the lab's register. Each person logs in as
+            themselves, and the role on that login decides which screens they can open.
+        - heading: The package is paid in parts and tracked in a spreadsheet
+          body: >-
+            An IVF cycle is sold as a package and paid in parts, with an advance when stimulation starts and
+            the balance before egg retrieval. The accounts desk keeps the balances in a spreadsheet, and when
+            a cycle is cancelled after the scans, nobody is sure what was paid or what is owed back.
+          fix: >-
+            On Premium the cycle is billed as one package treatment, and every part payment and advance is
+            recorded against it. The front desk sees the balance on the bill, and a refund goes through only
+            with authorisation.
+          href: /pricing/
+          linkLabel: See what Premium includes
+
+  - discriminant: featureRows
+    value:
+      id: built-around-the-cycle
+      heading: Built around the IVF cycle
+      intro: >-
+        Package billing and lab reports in the chart come with Premium, EasyClinic's plan for specialists.
+      items:
+        - heading: Cycle tracking, from stimulation to embryo transfer
+          body: >-
+            Record the stimulation protocol and track follicular development visit by visit, up to the
+            milestones of egg retrieval and embryo transfer on the same record. Medications such as
+            gonadotropins and antagonists are recorded with each dose adjustment, and hormone levels are kept
+            in the patient record beside them.
+          bullets:
+            - Stimulation protocol and follicle tracking
+            - Egg retrieval and embryo transfer as milestones
+            - Each dose adjustment recorded with the medication
+            - Hormone and other lab values charted over time
+        - heading: Embryology and lab records in EasyClinic
+          body: >-
+            Embryo-related data and the lab's records are stored and managed in EasyClinic, the system the
+            doctor writes the chart in, so the embryology work is there when the couple come back for their
+            next consult. Ultrasound and other diagnostic reports are uploaded to the patient's record, and
+            the facesheet puts the patient's key data on one screen.
+          bullets:
+            - Embryo-related data and lab records in one system
+            - Ultrasound and diagnostic reports uploaded to the record
+            - Case notes shared across the care team
+            - A role on every login that decides who sees what
+        - heading: Package billing, paid in parts
+          plan: premium
+          body: >-
+            On Premium an IVF cycle is billed as one package treatment, and the payment is spread over the
+            course of the treatment. Part payments and advances are recorded against the package, and a
+            refund or a voided invoice goes through only with authorisation.
+          bullets:
+            - Part payments and advances recorded against the package
+            - Refunds and discounts only with authorisation
+            - Taxable and non-taxable items kept apart on the bill
+            - Receipts and invoices sent to the patient on WhatsApp
+        - heading: Lab reports in the chart
+          plan: premium
+          body: >-
+            On Premium, lab reports come into the patient's chart and the values can be charted visit by
+            visit, so the hormone trend is on one screen when the doctor changes a dose. Full lab management,
+            with orders from the chart and sample tracking, comes with Enterprise or as a module added to
+            Professional or Premium.
+        - heading: Cura AI drafts the note
+          plan: professional
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the doctor to review.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: testimonialRow
+    value:
+      id: fertility-clinic-hyderabad
+      heading: A fertility clinic in Hyderabad, on EasyClinic since 2012
+      intro: >-
+        Dr Seetha Lakshmi Kolanakuduru is a doctor at Aditya Women and Infertility Clinic in Hyderabad, an
+        obstetrics and fertility clinic that has used EasyClinic since 2012.
+      items:
+        - seetha-lakshmi-kolanakuduru
+      layout: single
+
+  - discriminant: stepList
+    value:
+      id: learning-path
+      heading: '{fact:trainingDays} days of training, about two hours in all'
+      intro: >-
+        Training is a personalised programme for the doctors and the clinic staff who will use EasyClinic,
+        in short sessions spread over {fact:trainingDays} days, so the clinic keeps seeing patients while
+        you learn.
+      steps:
+        - title: Basic training
+          meta: Day 1, 40 minutes
+          body: >-
+            Doctors and the front desk learn the screens they each use every day: the appointment book and
+            the bill at the desk, the chart and the prescription in the consulting room.
+        - title: EMR scenario training
+          meta: Day 2, 40 minutes
+          body: >-
+            You work through the chart and the prescription on the kinds of cases your clinic sees.
+        - title: Practice exercises
+          meta: Day 3, 20 minutes
+          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
+        - title: Road to expertise
+          meta: Day 4, 20 minutes
+          body: The last session moves you from the basics to the shortcuts that make the daily work quicker.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days. Moving old records across
+        from another system adds time to that.
+
+faqHeading: Questions IVF clinic owners ask
+faq:
+  - question: Which EasyClinic plan does an IVF clinic need, and what does it cost?
+    answer: >-
+      Premium, the plan for specialists, because package treatments start on it: {price:inr.premium.annual}
+      per doctor per month billed annually in India or {price:inr.premium.quarterly} billed quarterly, and
+      {price:usd.premium.annual} or {price:usd.premium.quarterly} in US dollars. It also includes the specialty EMR templates and lab
+      reports in the chart. The price includes a reception
+      login, and there is no setup fee.
+  - question: Can EasyClinic track each stage of an IVF cycle?
+    answer: >-
+      Yes, the cycle sits on the patient's record from the stimulation protocol and follicle tracking
+      through to egg retrieval and embryo transfer, with each dose adjustment recorded against the
+      medication. Hormone levels are kept in the same record, and on Premium you can turn your own paper
+      cycle sheet into a form with the form builder.
+  - question: Where do the embryology records go, and who can see them?
+    answer: >-
+      Embryo-related data and lab records are stored and managed in EasyClinic, the same system as the
+      doctor's chart, so nobody has to fetch a register from the lab. Each person logs in as themselves and the role on
+      their login decides which screens they can open; the reception login, included in the price, cannot
+      open the EMR or issue a prescription.
+  - question: How are IVF packages billed when the patient pays in instalments?
+    answer: >-
+      On Premium the cycle is billed as one package treatment, and each part payment or advance is recorded
+      against it, so the front desk sees the balance before taking the next payment. The payment can be
+      spread over the course of treatment, and a refund for a cycle cancelled partway goes through only with
+      authorisation.
+  - question: How do scan and lab reports get into the patient's record?
+    answer: >-
+      Ultrasound and other diagnostic reports are uploaded to the patient's record as files, and on Premium
+      lab reports come into the chart. A direct connection to a lab machine is custom integration work: it is
+      included in Enterprise or added to Professional and Premium, and it is scoped per project.
+  - question: Does EasyClinic run the clinic pharmacy and the stock of lab supplies?
+    answer: >-
+      Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
+      Professional and Premium as a module. With the module, the pharmacist dispenses from the doctor's
+      prescription and tracks each batch to its expiry date.
+
+links:
+  hub: /specialties/
+  related:
+    - href: /solutions/polyclinic/
+      label: Polyclinic software
+      description: >-
+        For a fertility centre with several doctors: one patient record for every specialist, and one
+        calendar for doctors and shared rooms.
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /features/emr/
+      label: The EMR and e-prescriptions
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See an IVF cycle on EasyClinic, from stimulation to embryo transfer
+  body: >-
+    Book a demo and ask to see a cycle record and a package bill paid in parts, or compare what Premium
+    includes, plan by plan, on the pricing page.
+  primary:
+    label: Book an IVF clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    Aditya Women and Infertility Clinic in Hyderabad, on EasyClinic since 2012, and the plan split a
+    fertility centre actually meets: package treatments and lab reports on Premium, the pharmacy and lab
+    stock on Enterprise or as a module.
+  readsMachineWritten: >-
+    The three pain scenarios are composites rather than a named clinic's day, and the page names no IVF
+    template or embryology field because none is confirmed, so an IVF specialist may find the cycle rows
+    general.
+
+notes:
+  - 'Grounding: cycle management (stimulation protocols, follicular development, egg retrieval and embryo transfer milestones), hormonal treatment tracking with dose adjustments, embryo and lab record storage, ultrasound and diagnostic report storage, facesheets, vitals and lab charts, role-based access, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments, discount authorisation and taxable item handling are all stated plainly on the live /ivf-emr/ page (retrieved 2026-09-26). Plan placement follows plans.yaml.'
+  - 'Dropped from the live page: the "Easy Clinic vs Other EMR" comparison tables (unsourced competitor cells), "over 100 graphical dashboards", "invoices ready in less than 10 seconds", "prescriptions in 30 seconds" and "three clicks" (unmeasured here), "track success rates", AI diagnostic support and ADR alerts (CuraPilot claims), consent form management, resource booking inside the appointment slot, patient self check-in (plan unclear), and the "14-Day Free Trial, 30-Day Money Back Guarantee" line, which conflicts with /indiademo/ ("EasyClinic does not offer a free trial"). Settle the trial question.'
+  - 'Facts needed for the full spec 5.15 template: which plan carries the IVF cycle and embryology screens (the live page does not tie them to a plan, so the cycle and embryology rows carry no plan tag and the plan FAQ recommends Premium for package treatments only); the IVF templates and forms by name and count; embryology fields (oocyte and embryo grading, cryostorage inventory, witnessing, donor and surrogate records); a timed walkthrough of the most common IVF visit; ultrasound and lab device integrations with status; which IVF note types Cura AI drafts, with an example; consent form handling; whether embryologists and nurses need a paid licence; ART Act 2021 and National ART and Surrogacy Registry reporting (describe only, no status claims until confirmed).'
+  - 'Editor review 2026-09-26: the live page says embryo-related data and lab records are stored and managed in EasyClinic but not where they sit, so the page no longer says "on the patient''s own record" for embryo data. Removed: "the draft stays a draft until the doctor has signed" (Cura AI limited to "drafts the note for the doctor to review"), the IVF-specific training scenario, the import of old cycle records, and a demo "set up for a fertility clinic" (no seeded demo tenant yet).'
+  - 'Screenshots left out (no heroMedia or media on published pages). When the seeded demo tenant exists: the IVF cycle chart (stimulation protocol with follicle-tracking rows and dose changes) as hero, the embryo record on the patient record, and the package bill with part payments.'
+  - 'Testimonial seetha-lakshmi-kolanakuduru is placed only on this page (the draft India country page mentions it in its notes only). Her quote praises support rather than an IVF feature; recruit a second fertility quote about the cycle chart or package billing if one exists.'
+  - '/clinic-management-software-india/ is still a draft; the related link will resolve once it publishes. Spec 2.9 asks for two country pages; add /clinic-management-software-kenya/ or another when a fertility client there is confirmed.'

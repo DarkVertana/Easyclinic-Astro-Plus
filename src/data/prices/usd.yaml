@@ -7,5 +7,5 @@ plans:
 addons: { pharmacy: null, lab: null, claims: null, integrations: null }
 taxNote: Local taxes are added where they apply.
 paymentMethods: [Card, Bank transfer]
-source: Staging /pricing/ data and spec 5.12 (September 2026)
-asOf: null
+source: Handoff spec 5.12 and the staging /pricing/ data (September 2026)
+asOf: 2026-09-26

@@ -1,0 +1,334 @@
+status: published
+headKeyword: EasyClinic Kenya demo
+secondaryKeywords:
+  - EasyClinic Kenya
+  - clinic management software demo Kenya
+  - EMR software demo Kenya
+  - book EasyClinic demo Kenya
+  - clinic software free demo Kenya
+title: 'Book an EasyClinic Demo in Kenya: 20 Minutes'
+metaDescription: >-
+  A 20-minute EasyClinic demo in Kenya, from a prescription in English and Swahili to M-Pesa
+  at the desk. Live in as little as {fact:goLiveDays} days.
+h1: You care for your patients. Leave everything else to us.
+linkLabel: Book a demo in Kenya
+eyebrow: Made for Kenyan clinics
+openingAnswer: >-
+  The EasyClinic demo in Kenya takes 20 minutes and follows one patient through a clinic set up like
+  yours, from the booking and a prescription in English and Swahili to the M-Pesa payment and the
+  insurer claim through SLADE. After the demo, a clinic can be live in {fact:goLiveDays} days at the
+  fastest.
+summary: >-
+  A 20-minute demo that follows your clinic's patient flow from the booking to the M-Pesa payment, then
+  a go-live in as little as {fact:goLiveDays} days.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+heroStrip:
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book my 20-minute demo
+    href: /kenyademo/#book-a-demo
+  secondary:
+    label: Call the Kenya team
+    href: tel:+254750184357
+  whatsapp: Hi, I was reading the EasyClinic Kenya demo page and would like to book a 20-minute demo for my clinic.
+faqHeading: Questions before you book
+faq:
+  - question: How long is the demo?
+    answer: >-
+      The demo takes 20 minutes and follows one patient from the booking and the prescription to the
+      M-Pesa payment and the SLADE claim. If insurance claims or the pharmacy matter most to your clinic,
+      say so when we call and the demo spends its time there.
+  - question: Will the demo follow my own clinic's patient flow?
+    answer: >-
+      Yes, the demo is set up for your practice type and number of locations, so it follows the kind of
+      patient day your clinic has, but it runs on a demo clinic with illustrative names and none of your
+      real patient records. Your data comes across only after you decide to go ahead, during migration.
+  - question: Do I need to install anything?
+    answer: >-
+      No, EasyClinic is cloud software that runs in a web browser, so there is nothing to install for the
+      demo or for daily use, and upgrades arrive every month. It needs an internet connection and does
+      not run fully offline today.
+  - question: Can my receptionist join the demo?
+    answer: >-
+      Yes, and it helps, because your receptionist is the person who books patients and takes M-Pesa
+      payments all day. Every plan includes a reception login at no extra cost; reception staff can book
+      and bill but cannot open the EMR or write prescriptions.
+  - question: Is there a free trial?
+    answer: >-
+      No, EasyClinic does not offer a free trial, so the 20-minute demo is where you see the product on a
+      clinic set up like yours. If you go ahead, there is no binding contract and no setup fee: you use
+      EasyClinic for as long as you are happy with it.
+  - question: What happens after I submit the form?
+    answer: >-
+      We call you on the number you gave, to fix a time for the demo and ask how your clinic runs, so the
+      demo follows your patient flow. If you would rather not wait, call {contact:ke.phone} or write to
+      {contact:ke.email}.
+  - question: Which insurers can I send claims to?
+    answer: >-
+      Claims to Jubilee, AAR, CIC, Britam and Resolution go through SLADE, the insurer e-claims platform,
+      from the same bill your front desk raised. Insurance claims come with the Enterprise plan, or as an
+      add-on on Professional and Premium.
+  - question: Can patients pay by M-Pesa?
+    answer: >-
+      Yes, patients can pay by M-Pesa at the desk, and the payment is recorded against their bill beside
+      any claim sent to the insurer, so the balance shows what is still owed.
+links:
+  hub: /emr-software-in-kenya/
+  related:
+    - href: /emr-software-in-kenya/
+      label: Clinic management software in Kenya
+      description: How a Kenyan clinic's day runs on EasyClinic, from registration at the desk to the insurer's payment.
+    - href: /best-clinic-management-software-kenya/
+      label: Best clinic management software in Kenya
+      description: The options for a private clinic in Kenya compared side by side, EasyClinic included.
+    - href: /easyclinic-vs-kenyaemr/
+      label: EasyClinic vs KenyaEMR
+      description: How the two compare for a private clinic in Kenya, and what moves across if you switch.
+    - href: /curapilot/
+      label: CuraPilot
+      description: EasyClinic's AI clinical copilot, for decision support during the consult.
+closing:
+  heading: Twenty minutes on a clinic set up like yours
+  body: Send the form and we call you to fix a time around your clinic hours, or call {contact:ke.phone} now.
+  primary:
+    label: Book my 20-minute demo
+    href: /kenyademo/#book-a-demo
+  secondary:
+    label: Call the Kenya team
+    href: tel:+254750184357
+country: ke
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The M-Pesa payment sitting on the same bill as a SLADE claim to Jubilee or AAR, the prescription in
+    English and Swahili, the MOH 705 report built from recorded visits instead of a month-end tally of the
+    register, and Penda Health's chief medical officer on nine years of unplanned downtime measured in
+    hours are specific to a clinic in Kenya.
+  readsMachineWritten: >-
+    The eight module outcomes share one length and rhythm and may read as templated to a doctor; the page
+    cannot name the Kenya contact the live page's voice relies on or give a KES price; it says nothing
+    about SHA or eTIMS, which a Kenyan clinic owner will ask about first; and the three timings side by
+    side (operational within 24 hours of training, live in 3 days at the fastest, training over 4 days)
+    may read as stitched together rather than lived.
+notes:
+  - >-
+    Structure follows the live /kenyademo/ page (spec 5.13 country demo pages, spec 6 intro): H1, demo
+    form, three problems, eight modules, Kenya connections and insurers, local testimonial, demo to live.
+    The URL is the live, ranking /kenyademo/ and is kept. The spec's "local compliance" block is left out
+    (see the SHA and eTIMS note).
+  - >-
+    Demo length conflict: the live /kenyademo/ page and its meta offer a 30-minute demo ("30 minutes. No
+    commitment."); the rebuild, /indiademo/, /contact-us/, the home page and the DemoForm submit button say
+    20 minutes. This page uses 20 throughout. Confirm with the Kenya team which length they run.
+  - >-
+    The Kenya contact's name is not cleared to publish (countries/ke.yaml contact.publishName is null), so
+    no person is named anywhere on the page, including the notes. The hero ContactCard and the DemoForm
+    aside fall back to "Or call us directly" with {contact:ke.phone}. Note that {contact:ke.email} renders
+    an address built from the contact's first name (the hero ContactCard shows the same address); decide
+    whether a role address should replace it. Restore the spec 6 "Or call [name] directly" line once
+    publishName is true.
+  - >-
+    SHA and eTIMS left out entirely: the live /kenyademo/ lists both as integrations and says "eTIMS
+    compliant", while the live Kenya FAQ says "Not yet" and the comparison table says "Soon"
+    (migration/research/facts.md section 7), and regulators/ke-sha.yaml and ke-etims.yaml have state null.
+    No integration row, no status sentence, no regulatorStrip, regulatorTable or heroStrip.regulators.
+    SMART e-claiming and the "DHA Certified" and "Kenya Registered" badges are also not carried over. Add
+    a Kenya compliance block with state and date once confirmed.
+  - >-
+    Kenya connections named as the live demo page states them, with no status column: M-Pesa, SLADE to
+    the five insurers, WhatsApp, and MOH 705 and DHIS2 reports. countries/ke.yaml M-Pesa state is null,
+    so the page does not say whether it uses Daraja, a Till or a Paybill number, or whether reconciliation
+    is automatic. Insurer count conflict: /kenyademo/ names five through SLADE, its modules card names
+    four, and /emr-software-in-kenya/ says "50+ insurers"; this page names the five.
+  - >-
+    KES prices are unknown (prices/kes.yaml is null), so the form promise, the step list and the FAQ give
+    no price and there is no cost FAQ. Add a "What does EasyClinic cost in Kenya?" FAQ with price tokens
+    and a link to /pricing/kenya/ once prices are set (the FAQ is at the countryDemo maximum of 8, so
+    replace the free-trial or install question).
+  - >-
+    goLiveDays (3) is phrased "in as little as 3 days" or as the fastest case, because the live Kenya
+    listicle says "2 to 4 week setup". The step list note says only that not every clinic moves that fast:
+    no source gives the typical time or says what makes a clinic slower, so the earlier "a clinic group or
+    a hospital with years of records takes longer" was cut. "Most clinics fully operational within 24
+    hours" is from the live /kenyademo/ training step; this page anchors it to the first training session
+    so it does not contradict the 3-day go-live and the four-day training path from the live /pricing/
+    FAQ. The Kenya team should confirm that reading and that both figures still hold.
+  - >-
+    Data migration step: the migration time, the sources imported and whether migration is included in
+    the price are unknown, so the step states none of them. Support step gives the channels from the live
+    /pricing/ FAQ only; whether the Kenya number handles support is unknown, so it is not given as a
+    support line.
+  - >-
+    Process claims for the Kenya team to confirm: the call back on the number given, questions about the
+    clinic before the demo, and the demo spending its time on claims or pharmacy when asked. The earlier
+    "two or three questions" had no source and was cut. The
+    no-free-trial answer follows /indiademo/ and the live site (no trial is offered anywhere); change it
+    if a trial or the six-minute tour launches.
+  - >-
+    countries/ke.yaml contact.whatsapp is null, so the page's WhatsApp button routes to the India number in
+    site.yaml with a Kenya-specific prefilled message. Add the Kenya WhatsApp number once known.
+  - >-
+    Proof: robert-korom-reliability (the /kenyademo/ version of the quote) is placed only here;
+    robert-korom-partner belongs to /curapilot/. The Penda Health study is not cited on this page and
+    heroStrip.study is off, so nothing here links the studied tool (AI Consult) to Cura AI or CuraPilot.
+    The live hero's study line ("... in Nairobi"), "22+ years", "8+ years average client relationship" and
+    the unnamed award badges on the live page are not carried over.
+  - >-
+    CuraPilot's plan availability is not in plans.yaml, so the AI module names clinical decision support
+    without a plan; only Cura AI is said to come with every plan.
+  - >-
+    heroMedia and module media are left out until the spec 12 screenshots exist (the live page's
+    bilingual prescription and "SLADE submitted, M-Pesa received, balance zero" screens are the obvious
+    pair; the eTIMS line on that screen must not be shown until eTIMS has a status).
+  - >-
+    editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite
+    or cut anything in readsMachineWritten, and update editorialPass.
+sections:
+  - discriminant: demoForm
+    value:
+      id: book-a-demo
+      heading: Book a 20-minute demo
+      country: ke
+      promise: |-
+        In 20 minutes we take one patient through a clinic set up like yours: the booking, the consult and a prescription in English and Swahili, the M-Pesa payment at the desk and the claim to the insurer through SLADE. Before the demo we ask how your clinic runs, so it follows your patient flow and your practice type.
+
+        You leave knowing which plan fits your clinic and how soon it could be live, in as little as {fact:goLiveDays} days.
+  - discriminant: painBlocks
+    value:
+      heading: What EasyClinic fixes first
+      intro: If your clinic runs on a paper register and the receptionist's phone, these will sound familiar.
+      items:
+        - heading: Your clinic works. But it is exhausting you.
+          body: >-
+            The register is a paper book at reception, and the M-Pesa messages land on the receptionist's
+            own phone. The notes get finished after the last patient has gone, and when a patient asks for
+            last year's lab result, someone spends the morning looking for it.
+          fix: >-
+            One system, and everyone on it, from reception to the doctor, the pharmacy and the lab. The note
+            and the prescription are done before the patient leaves the room, so the day ends with the
+            medicine done instead of the paperwork.
+        - heading: You are providing services you are not being paid for.
+          body: >-
+            The dressing done at the end of a busy afternoon never reaches the bill. Then an insurer sends
+            a claim back because nobody checked the patient's cover at registration.
+          fix: >-
+            Every order in the chart lands on the bill, so the dressing is charged before the patient
+            reaches the desk. Cover is checked at registration and the claim goes to the insurer through
+            SLADE from the same bill, so the losses become visible, and then they stop.
+        - heading: The bigger you grow, the less you can see.
+          body: >-
+            With one clinic you can see everything from the consulting room. Open a second branch across
+            Nairobi or a pharmacy counter next door, and you hear about Tuesday's takings in a phone call on
+            Wednesday.
+          fix: >-
+            One clinic or fifteen, you see every branch from one login, down to the day's takings and the
+            claims still waiting on an insurer. Decisions come from the numbers instead of a feeling.
+  - discriminant: moduleGrid
+    value:
+      heading: Eight modules on one patient record
+      intro: >-
+        Every module works on the same record, so the prescription reaches the pharmacy and the bill without
+        anyone typing it twice. Appointments, records, billing, reports and Cura AI come with every plan;
+        lab reports and WhatsApp messages start on Premium, and pharmacy and insurance claims come with
+        Enterprise or as add-ons.
+      columns: 4
+      items:
+        - title: Appointments
+          outcome: Walk-ins and booked patients on one list, with reminders by SMS, or on WhatsApp from Premium.
+          icon: calendar-clock
+          href: /features/appointment-scheduling/
+        - title: Medical records
+          outcome: A bilingual prescription in English and Swahili in under 30 seconds, on the same record as every past visit.
+          icon: notebook-pen
+          href: /features/emr/
+        - title: Billing and payments
+          outcome: Orders from the consult land on the bill, and the patient pays by M-Pesa or cash at the desk.
+          icon: receipt
+          href: /features/billing/
+        - title: Insurance and claims
+          outcome: Claims to Jubilee, AAR, CIC, Britam and Resolution go through SLADE from the same bill.
+          icon: file-check
+          href: /features/insurance-claims/
+        - title: Inventory and pharmacy
+          outcome: Dispense from the prescription on screen, with batch and expiry tracked as medicines leave the counter.
+          icon: pill
+          href: /features/pharmacy-and-inventory/
+        - title: Lab reports
+          outcome: Order tests from the chart, and the results come back into the patient's record.
+          icon: flask-conical
+          href: /features/lab/
+        - title: MOH reports and dashboards
+          outcome: MOH 705 and DHIS2 reports come from the visits already recorded, with no month-end tally of the register.
+          icon: clipboard-list
+          href: /features/reports-and-dashboards/
+        - title: AI and automation
+          outcome: Dictate the note and Cura AI drafts it for you to sign, with clinical decision support during the consult.
+          icon: sparkles
+          href: /ai/
+          links:
+            - label: Cura AI note drafting
+              href: /ai/
+            - label: CuraPilot decision support
+              href: /curapilot/
+  - discriminant: dataTable
+    value:
+      heading: Built for how a Kenyan clinic gets paid
+      intro: >-
+        At a Kenyan clinic much of the money arrives by M-Pesa or from an insurer, and the month ends with
+        the MOH 705 report. This is what EasyClinic does with each, as the demo shows it.
+      caption: How EasyClinic handles M-Pesa, insurer claims, WhatsApp reminders and Ministry of Health reports for a clinic in Kenya
+      columns:
+        - At your clinic
+        - What EasyClinic does
+      rows:
+        - - M-Pesa at the desk
+          - The patient pays by M-Pesa at reception and the payment is recorded against their bill, so the balance shows what is still owed.
+        - - Insurer claims through SLADE
+          - Claims for patients covered by Jubilee, AAR, CIC, Britam and Resolution go to the insurer through SLADE, from the same bill the desk raised.
+        - - WhatsApp reminders
+          - Appointment reminders and follow-up messages reach the patient on WhatsApp, sent from the clinic software instead of a receptionist's own phone.
+        - - MOH 705 and DHIS2 reports
+          - The monthly MOH 705 outpatient summary and the DHIS2 figures come from the visits already recorded, instead of a tally of the paper register.
+      note: >-
+        Insurance claims come with the Enterprise plan or as an add-on on Professional and Premium, and
+        WhatsApp messages start on Premium. The [pricing page](/pricing/) lists what each plan includes.
+  - discriminant: testimonialRow
+    value:
+      heading: Penda Health in Nairobi, on EasyClinic since 2017
+      items:
+        - robert-korom-reliability
+      layout: single
+  - discriminant: stepList
+    value:
+      heading: From demo to live in as little as {fact:goLiveDays} days
+      steps:
+        - title: Live demo
+          meta: 20 minutes
+          body: >-
+            One patient through a clinic set up like yours, from the booking and the prescription to the
+            M-Pesa payment and the SLADE claim. You leave knowing which plan fits your clinic.
+        - title: Staff training
+          meta: '{fact:trainingDays} sessions, about two hours in all'
+          body: >-
+            Most clinics are fully operational within 24 hours of the first session. Training runs over
+            {fact:trainingDays} days for you and your staff: basic training on day 1 (40 minutes), EMR
+            scenarios on day 2 (40 minutes), practice exercises on day 3 (20 minutes) and the road to
+            expertise on day 4 (20 minutes).
+        - title: Data migration
+          body: >-
+            Your existing patient records come across before go-live, so the first morning does not start
+            from an empty screen. If your clinic writes on paper, there is nothing to import: give us 2 hours
+            or 10 patient records, and we promise to make your prescription writing faster.
+        - title: Support
+          meta: Unlimited, on every plan
+          body: >-
+            Support and training are included in every plan at no extra charge. You reach support by phone,
+            email, chat or the written guides in the [help centre](https://help.easyclinic.io/), and Premium
+            and Enterprise clinics also get a named account manager.
+      note: >-
+        {fact:goLiveDays} days is the fastest time from demo to live, and not every clinic moves that
+        fast.

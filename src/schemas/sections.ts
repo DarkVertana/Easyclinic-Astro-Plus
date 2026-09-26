@@ -1,5 +1,12 @@
 import type { SchemaContext } from 'astro:content';
 import { z } from 'astro/zod';
+import { schema as dayTimeline } from '../components/blocks/DayTimeline/schema';
+import { schema as flowDiagram } from '../components/blocks/FlowDiagram/schema';
+import { schema as hubGrid } from '../components/blocks/HubGrid/schema';
+import { schema as inlineCta } from '../components/blocks/InlineCTA/schema';
+import { schema as rolesMatrix } from '../components/blocks/RolesMatrix/schema';
+import { schema as splitTable } from '../components/blocks/SplitTable/schema';
+import { schema as studyCard } from '../components/blocks/StudyCard/schema';
 import { schema as addOns } from '../components/blocks/AddOns/schema';
 import { schema as clinicTypes } from '../components/blocks/ClinicTypes/schema';
 import { schema as contactCard } from '../components/blocks/ContactCard/schema';
@@ -27,6 +34,13 @@ import { schema as testimonialRow } from '../components/blocks/TestimonialRow/sc
 /** Every section type, keyed by its discriminant. blocks/registry.ts maps the same keys to components. */
 export const BLOCK_SCHEMAS = {
   addOns,
+  dayTimeline,
+  flowDiagram,
+  hubGrid,
+  inlineCta,
+  rolesMatrix,
+  splitTable,
+  studyCard,
   clinicTypes,
   contactCard,
   contentCards,

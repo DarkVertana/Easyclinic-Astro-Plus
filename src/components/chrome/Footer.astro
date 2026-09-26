@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { getCollection, getEntry } from 'astro:content';
 import logo from '../../assets/logo/easyclinic-logo-white.png';
 import { getRegistry } from '../../lib/content/registry';
-import { need, unconfirmed } from '../../lib/content/need';
+import { optionalConfirmed } from '../../lib/content/need';
 import { isProduction } from '../../lib/content/stage';
 import Icon from '../ui/Icon.astro';
 
@@ -23,9 +23,8 @@ const contacts = countries.map((c) => {
   const contact = c.data.contact;
   return {
     country: c.data.name,
-    name: contact.name ? unconfirmed(Astro, `${c.data.name} contact name consent`, contact.name, contact.publishName === true) : need(Astro, `${c.data.name} contact name`, null),
+    name: optionalConfirmed(`${c.data.name} contact name`, contact.name, contact.publishName === true),
     phone: contact.phone,
-    phoneLabel: need(Astro, `${c.data.name} phone`, contact.phone),
   };
 });
 const SOCIAL: Record<string, string> = { linkedin: 'LinkedIn', youtube: 'YouTube', facebook: 'Facebook', instagram: 'Instagram', x: 'X' };
@@ -81,17 +80,14 @@ const year = new Date().getFullYear();
 
     <div class="mt-12 grid gap-4 border-t border-white/15 pt-8 sm:grid-cols-2 lg:grid-cols-4">
       {
-        contacts.map((c) => (
+        // Only countries with a published number are listed; names appear once cleared to publish.
+        contacts.filter((c) => c.phone).map((c) => (
           <div class="text-sm">
             <p class="font-semibold text-white">{c.country}</p>
-            <p>{c.name}</p>
-            {c.phone ? (
-              <a href={`tel:${c.phone.replace(/\s/g, '')}`} class="text-white">
-                {c.phone}
-              </a>
-            ) : (
-              <p>{c.phoneLabel}</p>
-            )}
+            {c.name && <p>{c.name}</p>}
+            <a href={`tel:${c.phone!.replace(/\s/g, '')}`} class="text-white">
+              {c.phone}
+            </a>
           </div>
         ))
       }

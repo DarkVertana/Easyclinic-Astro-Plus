@@ -6,7 +6,14 @@ import ContentCards from './ContentCards/ContentCards.astro';
 import CostExamples from './CostExamples/CostExamples.astro';
 import CountryMoney from './CountryMoney/CountryMoney.astro';
 import DataTable from './DataTable/DataTable.astro';
+import DayTimeline from './DayTimeline/DayTimeline.astro';
 import DemoForm from './DemoForm/DemoForm.astro';
+import FlowDiagram from './FlowDiagram/FlowDiagram.astro';
+import HubGrid from './HubGrid/HubGrid.astro';
+import InlineCTA from './InlineCTA/InlineCTA.astro';
+import RolesMatrix from './RolesMatrix/RolesMatrix.astro';
+import SplitTable from './SplitTable/SplitTable.astro';
+import StudyCard from './StudyCard/StudyCard.astro';
 import FeatureRows from './FeatureRows/FeatureRows.astro';
 import JourneyDiagram from './JourneyDiagram/JourneyDiagram.astro';
 import ModuleGrid from './ModuleGrid/ModuleGrid.astro';
@@ -32,6 +39,13 @@ export const BLOCKS = {
   costExamples: CostExamples,
   countryMoney: CountryMoney,
   dataTable: DataTable,
+  dayTimeline: DayTimeline,
+  flowDiagram: FlowDiagram,
+  hubGrid: HubGrid,
+  inlineCta: InlineCTA,
+  rolesMatrix: RolesMatrix,
+  splitTable: SplitTable,
+  studyCard: StudyCard,
   demoForm: DemoForm,
   featureRows: FeatureRows,
   journeyDiagram: JourneyDiagram,

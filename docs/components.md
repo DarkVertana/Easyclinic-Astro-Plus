@@ -42,6 +42,17 @@ const { id, eyebrow, heading, intro, tone, steps, ctx } = Astro.props;
 
 `src/components/blocks/Prose`, `StepList`, `TestimonialRow` and `ProofBlock` are the reference blocks.
 
+The 30 blocks, by use: page body (`prose`, `featureRows`, `painBlocks`, `moduleGrid`, `dataTable`, `scopeBox`,
+`splitTable`, `rolesMatrix`, `dayTimeline`, `flowDiagram`, `journeyDiagram`, `oldWayNewWay`, `personaRouter`,
+`clinicTypes`, `hubGrid`, `contentCards`, `inlineCta`, `stepList`); proof (`proofBlock`, `testimonialRow`, `studyCard`);
+money (`pricingCards`, `planMatrix`, `addOns`, `costExamples`, `countryMoney`); country and compliance (`contactCard`,
+`regulatorTable`, `regulatorStrip`); conversion (`demoForm`). Which families may use which blocks is set in
+`src/schemas/families.ts`.
+
+**Optional versus required facts.** `need()` is for a fact the page cannot honestly go without (a price, a regulator
+status): it blocks publishing. `optional()` is for a detail that can be left out (a testimonial's city, a review
+count, office hours): preview shows a placeholder, production omits it.
+
 ## Building blocks to reuse
 
 | Import | Use |

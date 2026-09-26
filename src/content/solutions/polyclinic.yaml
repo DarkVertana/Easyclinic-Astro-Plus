@@ -1,0 +1,300 @@
+# Polyclinic (spec 5.6; keyword row 4.2; persona vocabulary 2.8: one record, shared rooms, roles, who sees what).
+status: published
+headKeyword: polyclinic management software
+secondaryKeywords:
+  - multi-specialty clinic software
+  - polyclinic EMR
+  - polyclinic software India
+title: 'Polyclinic Management Software: EasyClinic'
+metaDescription: >-
+  Polyclinic management software with one record for every specialist and one calendar for shared
+  rooms, from {price:usd.premium.annual} per doctor a month.
+h1: Software for polyclinics and multi-specialty centres
+linkLabel: Polyclinic
+eyebrow: For polyclinics and group practices
+openingAnswer: >-
+  Polyclinic management software puts every specialist on one shared patient chart and books doctors and
+  shared rooms on one resource calendar, with the pharmacy and the lab working from the same visit and a
+  role on every login that decides who sees what. EasyClinic's plan for group practices is Premium, at
+  {price:usd.premium.annual} per doctor per month billed annually or {price:inr.premium.annual} in India,
+  with the reception login included and the pharmacy added as a module when you run one.
+summary: >-
+  One patient record for every specialist and one calendar for doctors and shared rooms, on the Premium
+  plan at {price:usd.premium.annual} per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a polyclinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic polyclinic page and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-it-breaks
+      heading: Where group practices lose the thread
+      intro: >-
+        In a polyclinic, the time goes missing between the doctors: in the chart one specialist cannot
+        see, and in the room two of them booked for the same hour.
+      items:
+        - heading: Each specialist keeps their own notes
+          body: >-
+            The gynaecologist keeps her notes in one system and the skin specialist writes on paper, and
+            neither has seen the other's. A patient who sees two of them in the same
+            month tells her history twice, and the second doctor prescribes without knowing what the first
+            one gave.
+          fix: >-
+            Every specialist writes on one patient chart, so the second doctor opens the visit with the
+            first doctor's notes and prescriptions already there. On Premium, lab reports come into the
+            same chart.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The shared room gets booked twice
+          body: >-
+            Two consultants share the procedure room on Thursday afternoons, and each keeps a diary. At 3pm
+            both patients arrive for the same room, one of them after fasting since morning, and the front
+            desk finds out when the second one sits down in the corridor.
+          fix: >-
+            One resource calendar shows doctors and shared rooms side by side in columns. The front desk
+            sees that the procedure room is taken at 3pm before it offers the slot to anyone else.
+          href: /features/appointment-scheduling/
+          linkLabel: Read how the calendar works
+        - heading: The pharmacy lags behind the visit
+          body: >-
+            The patient reaches the counter with a slip the pharmacist has to read twice, and the stock book
+            is brought up to date on Saturday, if at all. On Tuesday the strip the doctor has just prescribed
+            turns out to be gone.
+          fix: >-
+            With the pharmacy module, the pharmacist dispenses from the prescription on screen and tracks
+            batch and expiry, so the reorder goes out before the shelf is empty. Pharmacy is included in
+            Enterprise, or added to Premium as a module.
+          href: /features/pharmacy-and-inventory/
+          linkLabel: Read how dispensing works
+
+  - discriminant: featureRows
+    value:
+      id: one-record
+      heading: One record, many workflows
+      intro: >-
+        Each specialty keeps its own way of writing, on the same chart as everyone else. The patient has
+        one history, whichever specialists they see.
+      items:
+        - heading: Specialty templates on one chart
+          plan: premium
+          body: >-
+            On Premium, specialists write in specialty EMR templates, and every template writes to the same
+            patient chart. The dermatologist's notes and the physician's prescriptions sit in one history,
+            and the next doctor opens it before the patient sits down.
+        - heading: Your own forms and print layouts
+          plan: premium
+          body: >-
+            Where a department needs a form of its own, Premium includes your clinic's own clinical forms
+            and print layouts, so the prescription and the report come out the way your clinic sets them.
+            Changes made with the product's own customisation options carry no charge.
+        - heading: Lab reports in the same chart
+          plan: premium
+          body: >-
+            Lab reports come into the patient's chart on Premium, so every specialist who opens the chart
+            reads the same result. Full lab management, with orders from the chart and sample tracking, is
+            part of Enterprise or a module you add to Premium.
+        - heading: Doctors and shared rooms on one calendar
+          body: >-
+            The resource calendar puts each doctor and each shared room in its own column. Whoever books the
+            procedure room sees every slot already taken in it, on the same screen as the doctors' lists.
+
+  - discriminant: rolesMatrix
+    value:
+      id: who-sees-what
+      heading: Who sees what
+      intro: >-
+        Each person in the clinic logs in as themselves, and the role on that login decides what they can
+        open. Doctors are licensed one by one, and the front desk works on a reception login that comes
+        with the plan.
+      roles:
+        - Owner
+        - Doctor
+        - Nurse
+        - Reception
+        - Pharmacist
+        - Accountant
+      rows:
+        - permission: Has a login of their own
+          cells:
+            - true
+            - 'Yes, one licence each'
+            - true
+            - 'Yes, included in the price'
+            - true
+            - true
+        - permission: Issues prescriptions
+          cells:
+            - 'Only if also a doctor'
+            - true
+            - false
+            - false
+            - false
+            - false
+      note: >-
+        The reception login is included in every plan, and it cannot open the EMR or issue a
+        prescription. Prescriptions are written on a doctor's login.
+
+  - discriminant: prose
+    value:
+      id: billing
+      heading: Shared billing and package treatments
+      body: |
+        One front desk takes payments for every specialist in the building, so the patient who saw the physician and then the dentist pays at one counter. Orders written in the chart become lines on the invoice, and a part payment is recorded against the bill it belongs to.
+
+        On Premium the receipt can go to the patient on WhatsApp, and the bill can be paid online. Billing can be kept department-wise, so each specialty's bills sit under its own department.
+
+        Package treatments come with Premium. A course of treatment spread over several visits, such as a set of physiotherapy sessions or a dental treatment plan, is billed as one package instead of visit by visit.
+      aside: |
+        **On Premium**
+
+        - Package treatments
+        - Online payments
+        - Receipts and reminders on WhatsApp
+        - Lab reports in the chart
+
+  - discriminant: splitTable
+    value:
+      id: plans
+      heading: What Premium covers, and what a polyclinic adds
+      intro: >-
+        Premium is the plan for group practices that share one front door. The bigger modules come with
+        Enterprise, or can be added to Premium one at a time when the clinic starts to need them.
+      left:
+        title: Included in Premium
+        items:
+          - Specialty EMR templates
+          - Your own clinical forms and print layouts
+          - Package treatments
+          - Lab reports in the chart
+          - WhatsApp reminders and messages
+          - Online payments
+          - More than one location
+          - A named account manager
+      right:
+        title: Added as a module, or included in Enterprise
+        items:
+          - 'Pharmacy and inventory: dispense from the prescription, with batch and expiry tracked'
+          - 'Lab management: orders from the chart and sample tracking'
+          - Insurance and payer claims
+          - Integrations and custom development
+      note: >-
+        Enterprise includes all four and adds central control of every location. It is priced on a quote
+        for your clinic.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        {fact:retention} of EasyClinic's customers have used it for more than five years. These are its
+        public ratings.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '4.9'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '4.8'
+
+faqHeading: Questions polyclinic owners ask
+faq:
+  - question: Can each specialist keep their own way of writing notes?
+    answer: >-
+      Yes, on Premium: specialists write in specialty EMR templates on the same patient chart, and your
+      clinic's own clinical forms and print layouts are part of the plan, so a specialty without a
+      ready template can use a form of its own. Changes made with the product's own customisation options
+      cost nothing extra, and a feature built only for your clinic is scoped per project as custom
+      development. Professional does not include specialty templates.
+  - question: Do the pharmacy and the lab work from the same record?
+    answer: >-
+      The lab does on Premium, where lab reports come into the patient's chart, and the pharmacy does
+      once you add the pharmacy module, which lets the pharmacist dispense from the doctor's prescription
+      and track batch and expiry. Pharmacy and full lab management, with orders from the chart and sample
+      tracking, are both included in Enterprise.
+  - question: Who sees what in the patient record?
+    answer: >-
+      Each person logs in as themselves, and the role on their login decides which screens they can open.
+      The front desk works on the reception login, which is included in the price and cannot open the EMR
+      or issue a prescription, so the receptionist books and bills without reading the clinical notes.
+  - question: How does a referral from one department to another work?
+    answer: >-
+      The referring doctor's notes stay on the one patient chart, so when the front desk books the patient
+      with the second specialist, that specialist opens a chart that already holds the first visit's notes
+      and prescriptions. Nobody copies a letter across or asks the patient to bring the file, and on
+      Premium any lab reports are there too.
+  - question: Can one front desk run the appointments for every doctor?
+    answer: >-
+      Yes. The front desk books every doctor and every shared room from one resource calendar, and takes
+      payments for all of them on the reception login, which is included in the price.
+  - question: How is a polyclinic priced?
+    answer: >-
+      Per doctor: Premium costs {price:usd.premium.annual} per doctor per month billed annually or
+      {price:usd.premium.quarterly} billed quarterly, and in India {price:inr.premium.annual} or
+      {price:inr.premium.quarterly}. A five-doctor polyclinic pays for five licences, and the reception
+      login is included. There is no setup fee and no contract. Enterprise, which includes pharmacy and
+      lab management, is priced on a quote.
+  - question: What happens when we open a second branch?
+    answer: >-
+      Premium already covers more than one location, so a second branch does not mean a new plan or a
+      second system. Enterprise adds central control of every location and clinical SOP tracking across
+      branches, and is priced on a quote.
+
+links:
+  hub: /solutions/
+  related:
+    - href: /features/patient-engagement/
+      label: Patient engagement
+      description: Reminders and follow-ups on WhatsApp, with the patient portal and app on Enterprise.
+    - href: /features/insurance-claims/
+      label: Insurance claims
+      description: Payer price lists, coverage checks at registration, claim packs and reconciliation.
+    - href: /features/reports-and-dashboards/
+      label: Reports and dashboards
+      description: The owner's morning numbers, with dashboards and reports on every plan.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See the shared chart and the calendar on a polyclinic like yours
+  body: >-
+    Book a demo for your polyclinic, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a polyclinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The reception rule from EasyClinic's own price list (the included reception login cannot open the EMR
+    or issue a prescription) and the split between what Premium includes for a polyclinic and what it adds
+    as a module.
+  readsMachineWritten: >-
+    The pain scenarios are composites rather than a named customer's clinic, and with no polyclinic
+    testimonial yet the page rests on ratings; a doctor may also find the two-row roles matrix thin.
+
+notes:
+  - 'Recruit a polyclinic testimonial (spec 5.6 names Dr Kolanakuduru, now placed on the IVF page). Until then the proof block is the Capterra and Google badges, and the page has no named person (spec 6.5 pass test).'
+  - 'Hero screenshot left out (no heroMedia on published pages): spec 12 "Resource calendar: doctors, rooms and devices in columns", 4 doctors, 3 rooms, one device. Add it when the screen exists.'
+  - 'Spec 5.6 item 3 asks for a dental and a dermatology screenshot in "One record, many workflows". Left out; add as media on the first feature row when the screens exist.'
+  - 'Roles matrix shows only two rows. The reception rule is from the live /pricing/ FAQ; the six roles come from spec 5.6 and the spec 12 screen list, and staff logins from plans.yaml ("Logins for your staff"). In the prescription row, the nurse, pharmacist and accountant "no" cells and the owner "Only if also a doctor" cell are conservative generic defaults, not confirmed product settings. Rows for booking, opening the chart, dispensing and seeing reports are left out until product confirms the default permissions of the owner, nurse, pharmacist and accountant roles, and whether a clinic can change them. Add the spec 12 "Roles and permissions matrix" screenshot too.'
+  - 'FAQ left out for lack of facts: "revenue split by doctor" (needs whether reports show revenue per doctor and whether EasyClinic calculates a consultant''s share) and "migration from two systems" (needs what is imported from which systems, how long it takes and what it costs).'
+  - 'Unknown and not stated: the licence rule for visiting or part-time doctors, nurses, pharmacists and accountants; how many reception logins a clinic gets; what a second location costs; add-on prices for pharmacy and lab; which specialty templates exist (a named, countable list, spec 5.11); which plan includes the rooms and devices columns in the resource calendar.'
+  - 'Conflict to settle: live /pricing/ says Enterprise is best for "multi-location clinic chains, polyclinics and nursing homes"; plans.yaml says Premium is for group practices that share one front door, and the spec CTA is "See Premium pricing". This page follows plans.yaml.'
+  - 'Badge ratings are written as text (4.9, 4.8) because ProofBlock renders badge ratings without token expansion. Review counts are unknown (facts capterraReviews and googleReviews are null) and are left out.'
+  - 'Meta description departs from spec 4.2 ("One record across every specialist, shared rooms and slots, department-wise billing"), which is a group of three. Devices are left out of the calendar wording for the same reason.'
+  - 'Spec 2.9 asks every solution page to link one specialty page and one country page; the related list follows the brief (three feature pages and /pricing/). Consider adding /dental-emr-software/ and /clinic-management-software-india/.'
+  - 'The old /polyclinic-software/ URL already redirects here in src/data/redirects.yaml, so there is no redirectFrom on this page.'
+  - 'Fact check (2026-09-26): the resource calendar with doctors and rooms in columns rests on spec 5.6, 5.11 (appointment scheduling promise) and the spec 12 screen list; receipts on WhatsApp, invoices from chart orders and part payments rest on spec 5.11 (billing) and spec 12; department-wise billing rests on the spec 4.2 meta description. Removed in this pass: "most of the lost time" (unsourced share), "print on your letterhead" and "sees the clash" (implied features not in any source).'

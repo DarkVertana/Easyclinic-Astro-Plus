@@ -1,0 +1,118 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import { isProduction } from '../../../lib/content/stage';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'hubGrid'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, groups, columns, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+
+const registry = await getRegistry();
+
+interface Card {
+  href: string;
+  label: string;
+  description?: string;
+  icon?: string;
+  /** The target page has no content entry yet (preview only). */
+  missing: boolean;
+  /** Id of the "Not built yet" note, so the link's accessible description carries it too. */
+  noteId?: string;
+}
+
+// Headings stay in order: group titles sit one level under the section heading (h3, or h2 when the
+// block has no heading of its own); card titles sit under their group title, or at h3 when the group
+// has none.
+const GroupHeading = (heading ? 'h3' : 'h2') as 'h2' | 'h3';
+const prefix = id ?? `hub-grid-${ctx.index}`;
+
+// Spec 2.9: every hub links down to all its leaves. Label and description default to the target page's
+// own link label and summary, so the hub stays in step with its pages. A leaf that is not rendered in
+// this stage (a draft, or a page that does not exist, in production) drops out; in preview a leaf with
+// no entry yet shows as a dashed card with a "Not built yet" note.
+const visibleGroups = groups
+  .map((group, g) => ({
+    title: group.title,
+    titleId: `${prefix}-group-${g + 1}`,
+    CardHeading: (group.title && heading ? 'h4' : 'h3') as 'h3' | 'h4',
+    cards: group.items.flatMap((item, i): Card[] => {
+      const href = registry.urlFor(item.href);
+      if (!href) return [];
+      const target = registry.get(item.href.split('#')[0]);
+      const missing = !target && !isProduction;
+      return [
+        {
+          href,
+          label: item.label ?? target?.label ?? href,
+          description: item.description ?? target?.data.summary,
+          icon: item.icon,
+          missing,
+          noteId: missing ? `${prefix}-${g + 1}-${i + 1}-status` : undefined,
+        },
+      ];
+    }),
+  }))
+  .filter((group) => group.cards.length > 0);
+
+// One column on phones, two from sm, then the requested count from lg.
+const GRID = {
+  2: 'sm:grid-cols-2',
+  3: 'sm:grid-cols-2 lg:grid-cols-3',
+  4: 'sm:grid-cols-2 lg:grid-cols-4',
+}[columns];
+---
+
+{
+  visibleGroups.length > 0 && (
+    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+      <div class="grid gap-10 md:gap-12">
+        {visibleGroups.map(({ title, titleId, CardHeading, cards }) => (
+          <div>
+            {title && (
+              <GroupHeading id={titleId} class:list={['mb-4 text-xl leading-tight', sectionTone === 'inverse' && 'text-white']}>
+                {title}
+              </GroupHeading>
+            )}
+            <ul class:list={['grid gap-4', GRID]} aria-labelledby={title ? titleId : undefined}>
+              {cards.map((card) => (
+                <li
+                  class:list={[
+                    'card group relative flex h-full flex-col p-6 text-ink transition-colors hover:border-blue-500 focus-within:border-blue-500',
+                    card.missing && 'border-dashed border-line-strong',
+                  ]}
+                >
+                  {card.icon && (
+                    <span class="mb-4 flex size-11 items-center justify-center rounded-control bg-blue-50 text-blue-700">
+                      <Icon name={card.icon} size={22} />
+                    </span>
+                  )}
+                  <CardHeading class="font-sans text-lg font-semibold leading-snug">
+                    {/* The link's ::after covers the card, so the whole card is one tap target. */}
+                    <a
+                      href={card.href}
+                      class="link-plain flex items-start justify-between gap-3 after:absolute after:inset-0 after:rounded-card hover:no-underline"
+                      aria-describedby={card.noteId}
+                    >
+                      <span class="min-w-0 group-hover:underline">{card.label}</span>
+                      <Icon name="arrow-right" size={18} class="mt-1 text-link transition-transform group-hover:translate-x-0.5" />
+                    </a>
+                  </CardHeading>
+                  {card.description && <p class="mt-2 text-ink-muted">{card.description}</p>}
+                  {card.missing && (
+                    <p id={card.noteId} class="mt-auto flex items-center gap-1.5 pt-4 text-sm font-medium text-warning">
+                      <Icon name="circle-dashed" size={16} />
+                      <span>Not built yet</span>
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )
+}

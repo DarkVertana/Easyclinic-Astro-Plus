@@ -1,4 +1,4 @@
-status: draft
+status: published
 headKeyword: clinic software cost in India
 secondaryKeywords:
   - EasyClinic price in India
@@ -6,21 +6,19 @@ secondaryKeywords:
   - clinic management software price in rupees
   - GST on clinic software
 title: 'Clinic Software Cost in India: EasyClinic Pricing in INR'
-metaDescription: 'EasyClinic in India: from {price:inr.professional.annual} per doctor per month, billed yearly, no setup fee. See what a polyclinic pays and how GST works.'
+metaDescription: 'EasyClinic in India: from {price:inr.professional.annual} per doctor per month, billed yearly, with no setup fee or contract. See what a polyclinic pays.'
 h1: "Clinic software cost in India: EasyClinic's price per doctor per month in rupees"
 linkLabel: India pricing
 eyebrow: Pricing in India
 openingAnswer: >-
   EasyClinic costs {price:inr.professional.annual} per doctor per month on the Professional plan and
   {price:inr.premium.annual} on Premium, billed annually, with the reception login included and no setup
-  fee. Enterprise, for chains and hospital OPDs, is priced on a quote, and every price on this page is
-  [inclusive of or plus 18% GST].
-summary: EasyClinic's price in rupees per doctor per month, with worked monthly totals for Indian clinics and what GST does to the bill.
-author: null
+  fee. Billed quarterly, Professional is {price:inr.professional.quarterly} and Premium is
+  {price:inr.premium.quarterly}, and Enterprise, for chains and hospital OPDs, is priced on a quote.
+summary: EasyClinic's price in rupees per doctor per month, with worked monthly totals for Indian clinics and what GST means for a clinic.
+author: subhashish-saha
 lastUpdated: 2026-09-26
 heroStrip:
-  regulators:
-    - in-gst
   ratings: true
   study: false
 ctas:
@@ -59,7 +57,8 @@ sections:
       heading: What an Indian clinic pays each month
       intro: >-
         These totals use the annual price and count doctors only, because the reception login is already
-        included. Add-ons are not in these figures, and the figures are [inclusive of or plus 18% GST].
+        included. Add-ons are not in these figures. Paying quarterly, each doctor costs
+        {price:inr.professional.quarterly} on Professional or {price:inr.premium.quarterly} on Premium.
       currency: inr
       period: annual
       examples:
@@ -77,16 +76,16 @@ sections:
           plan: premium
           note: >-
             Five doctors share one patient record and one front desk. Premium adds specialty templates and
-            WhatsApp reminders. A pharmacy counter or an in-house lab costs extra on Premium, at the add-on
-            prices further down this page.
+            WhatsApp reminders. A pharmacy counter or an in-house lab is an add-on on Premium, and part of
+            Enterprise.
         - title: A three-branch chain
           doctors: 9
           locations: 3
           plan: enterprise
           note: >-
             Chains standardise price lists and SOPs from the centre and move stock between branches, both
-            part of Enterprise, which is priced on a quote. As a guide, Enterprise costs [indicative
-            Enterprise range per doctor per month in INR].
+            part of Enterprise, which is priced on a quote. The largest chain on EasyClinic runs
+            {fact:largestChain} locations.
 
   - discriminant: dataTable
     value:
@@ -106,64 +105,56 @@ sections:
           - A licence for your reception comes with the price. Reception cannot open the EMR or write prescriptions.
         - - Other staff logins, such as a nurse or pharmacist
           - Included on every plan
-          - '[Any limit on the number of staff logins, and the price of extra ones]'
-        - - A visiting consultant who sits two evenings a week
-          - '[How a part-time or visiting doctor is charged]'
-          - Common in Indian polyclinics, and it changes the monthly total.
+          - Staff logins are part of Professional, and every higher plan includes everything in Professional.
         - - Setup
           - No fee
           - No setup fee on any plan, and no contract to sign.
         - - Training and support
           - Included on every plan
           - The four-day training path further down this page, and unlimited support after it.
-        - - Moving your old records
-          - '[Data migration: included, or the price in INR]'
-          - From another clinic software or from Excel sheets.
+        - - Customisation options in the software
+          - No extra charge
+          - Hundreds of customisation options, at no charge. Your own clinical forms and print layouts are part of Premium.
         - - SMS and email reminders
           - Included on every plan
-          - '[Any monthly SMS limit, and the charge beyond it]'
+          - Part of Professional, so a one-doctor clinic has them too. WhatsApp reminders need Premium.
         - - WhatsApp reminders and messages
           - Included on Premium and Enterprise
-          - '[Who pays WhatsApp message charges in India]. How WhatsApp messages are charged is explained on the [WhatsApp page](/features/whatsapp/).'
+          - How the reminders work is on the [WhatsApp page](/features/whatsapp/).
         - - Pharmacy and lab modules
           - Included on Enterprise
-          - Add-ons on Professional and Premium, priced in the next section.
+          - Add-ons on Professional and Premium, described in the next section.
         - - Insurance and TPA claims
           - Included on Enterprise
           - An add-on on Professional and Premium.
         - - Integrations and custom development
           - Included on Enterprise
           - An add-on on Professional and Premium, scoped per project, for example a connection to your lab machines or an existing HIS.
-        - - GST
-          - '[Inclusive of or plus 18% GST]'
-          - The GST section below explains what you pay and what you charge patients.
 
   - discriminant: addOns
     value:
       id: add-ons
-      heading: Add-ons, priced in rupees
+      heading: Add-ons for Professional and Premium
       intro: >-
         Enterprise already includes these modules. On Professional and Premium you add only the ones your
-        clinic runs, priced [per clinic or per doctor, per month].
+        clinic runs.
       currency: inr
 
   - discriminant: prose
     value:
       id: gst-and-payment
-      heading: GST invoices and how you pay
+      heading: GST and how you pay
       body: |-
-        **What you pay us.** Every price on this page is [inclusive of or plus 18% GST], and your invoice comes from Novel Medicare Solutions Pvt Ltd in Kolkata. You pay the subscription by [payment methods accepted for the subscription in India], once a year or once a quarter.
+        **What you pay us.** You pay per doctor, once a year or once a quarter, and paying for the year costs less each month. Your subscription is with Novel Medicare Solutions Pvt Ltd, 30 Circus Avenue, Kolkata, the company that makes EasyClinic.
 
-        **What GST costs you.** Consultations and treatment at a clinic are exempt from GST, so most clinics cannot claim back the GST they pay on software as input tax credit. Budget for it as a cost. If your clinic also sells taxable items, ask your CA whether part of it can be claimed.
+        **What GST costs you.** Healthcare services by a clinical establishment or an authorised medical practitioner are exempt from GST, so most clinics cannot claim back the GST they pay on software as input tax credit. Budget for it as a cost. If your clinic also sells taxable items, ask your CA whether part of it can be claimed.
 
-        **What your patients pay you.** Cash and card payments at the desk go on the bill today. Collecting UPI inside EasyClinic, through Razorpay or PayU, is [UPI, Razorpay and PayU status as of date].
+        **What your patients pay you.** Billing and payments come with every plan, so what a patient pays at the desk goes on their bill in EasyClinic. Premium adds online payments.
 
-        **GST on your own bills.** Medicines sold over your pharmacy counter and cosmetic procedures are taxable, even though the consultation is not. EasyClinic's GST invoicing, with HSN and SAC codes on each line, is [GST invoicing status as of date]. The full India compliance table, ABDM included, is on the [India page](/clinic-management-software-india/).
-
-        **Handing the month to your CA.** Export to Tally is [Tally export status and format]. [Whether a GST sales register can be exported for filing].
+        **GST on your own bills.** Medicines sold over your pharmacy counter and cosmetic procedures are taxable, even though the consultation is not, so a clinic with a pharmacy often issues both kinds of bill.
       aside: >-
-        Ask your CA which of your services are taxable. How bills and GST invoices work inside EasyClinic is
-        on the [billing page](/features/billing/).
+        Ask your CA which of your services are taxable. How billing works inside EasyClinic is on the
+        [billing page](/features/billing/).
       width: measure
 
   - discriminant: planMatrix
@@ -202,54 +193,52 @@ sections:
           body: >-
             The shortcuts that make each prescription quicker, once the basics have become habit.
       note: >-
-        Moving your old records from another software or from Excel is [data migration: included, or the
-        price in INR].
+        If you write prescriptions by hand today, give us 2 hours or 10 patient records, and we promise to
+        make your prescription writing faster.
 
   - discriminant: testimonialRow
     value:
       id: doctors
-      heading: Ten years on EasyClinic, in their own words
+      heading: Ten years on EasyClinic, in a physician's own words
       intro: >-
-        A general physician and a psychiatrist in India, each with ten years on EasyClinic. One writes about
-        how easy the prescription is to write, the other about how quickly support answers.
+        A general physician in India, writing after ten years on EasyClinic, on how easy the prescription
+        is to write.
       items:
         - sanjay-teotia
-        - nrp-chandra-balaji
-      layout: row
+      layout: single
       usePullQuote: true
 
 faqHeading: Questions Indian clinic owners ask about cost
 faq:
-  - question: Is GST charged on top of EasyClinic's prices?
+  - question: Do I pay extra for my receptionist's login?
     answer: >-
-      The prices on this page are [inclusive of or plus 18% GST], and your GST invoice comes from Novel
-      Medicare Solutions Pvt Ltd. If your clinic only provides healthcare services, which are exempt from
-      GST, you generally cannot claim that GST back as input tax credit, so treat it as a cost. Your CA can
-      tell you whether any part of it is claimable for your clinic.
+      No, a licence for your reception is included in the price of every plan. The reception login cannot
+      open the EMR or issue prescriptions, so each doctor who writes notes or prescriptions has their own
+      licence, from {price:inr.professional.annual} a month on Professional billed annually.
   - question: Do I have to charge my patients GST on consultations?
     answer: >-
       Usually not, because healthcare services by a clinical establishment or an authorised medical
       practitioner are exempt from GST. Medicines sold over your pharmacy counter and cosmetic procedures
-      are taxable, so a clinic with a pharmacy often issues both kinds of bill. EasyClinic's GST invoicing,
-      with HSN and SAC codes on each line, is [GST invoicing status as of date].
-  - question: Can my patients pay by UPI, and can I pay EasyClinic by UPI?
-    answer: >-
-      Collecting UPI from patients inside EasyClinic, through Razorpay or PayU, is [UPI, Razorpay and PayU
-      status as of date]; cash and card payments at the desk are recorded on the bill today. You pay
-      EasyClinic's own subscription by [payment methods accepted for the subscription in India].
+      are taxable, so a clinic with a pharmacy often issues both kinds of bill. Your CA can tell you which
+      of your own services are taxable.
   - question: Is it cheaper to pay annually or quarterly?
     answer: >-
-      Annual is cheaper. Premium is {price:inr.premium.annual} per doctor per month billed annually against
-      {price:inr.premium.quarterly} billed quarterly, and Professional is {price:inr.professional.annual}
-      against {price:inr.professional.quarterly}. Annual billing means paying for twelve months at once, so
+      Annual is cheaper, because Premium is {price:inr.premium.annual} per doctor per month billed annually
+      against {price:inr.premium.quarterly} billed quarterly, and Professional is
+      {price:inr.professional.annual} against {price:inr.professional.quarterly}. Annual billing means paying for twelve months at once, so
       the quarterly plan suits a clinic that wants three months on real patients before committing a year's
       budget. The plan cards at the top of this page show the saving as a percentage.
   - question: Is there a free trial of EasyClinic in India?
     answer: >-
-      No, EasyClinic does not offer a free trial, in India or anywhere else. You can watch the six-minute
-      product tour without filling in a form, or book a 20-minute demo where we show the system on your own
-      patient flow. If you want to test it on real patients, pay for one quarter; there is no contract to
-      break if you stop.
+      No, EasyClinic does not offer a free trial, in India or anywhere else. You can book a 20-minute demo
+      where we show the system on your own patient flow. If you want to test it on real patients, pay for
+      one quarter; there is no contract to break if you stop.
+  - question: Why pay for EasyClinic when there are free EMRs?
+    answer: >-
+      Free EMRs are free until you need the second doctor, or someone to answer the phone when the printer
+      will not talk to the system. Every EasyClinic plan includes unlimited training and support, by phone
+      as well as email. If you are one doctor with no staff and no plans to grow, a
+      free EMR may be enough.
   - question: Is EasyClinic cheaper than Practo Ray or HealthPlix?
     answer: >-
       We do not claim it is, because the answer depends on the quote each vendor gives for your number of
@@ -257,19 +246,17 @@ faq:
       Ray](/easyclinic-vs-practo/) and [EasyClinic vs HealthPlix](/easyclinic-vs-healthplix/) pages set out
       each vendor's pricing model and any price it publishes, with the source and the date it was checked.
       When you compare, ask each vendor for the monthly price per doctor and what extra staff logins cost.
-  - question: What does a second branch cost?
+  - question: Does EasyClinic work if I later open a second location?
     answer: >-
-      On Premium, which covers more than one location, you pay per doctor, so a second branch costs
-      {price:inr.premium.annual} a month for each doctor who works there, plus [any per-location fee, if one
-      applies]. A doctor who works at both branches is [counted once, or once per branch]. Professional
-      covers one location, so a second branch means moving to Premium. Central price lists and stock
-      transfers between branches come with Enterprise.
-  - question: What happens if I cancel, and can I take my data with me?
+      Yes, once you move to Premium or Enterprise, because Professional covers one location and Premium is
+      the first plan that covers more than one. Enterprise adds central control of every location and stock
+      transfers between branches. There is no contract holding you to the plan you started on, so you can move up when the
+      second branch opens.
+  - question: Am I locked into a contract?
     answer: >-
-      There is no contract, so you can stop at the end of the period you have paid for, and your patient
-      records and bills can be exported as [export format on leaving] before you go. [Refund terms for
-      unused months on an annual plan]. [Whether the export on leaving is charged]. [How long data is kept
-      after you leave, and when it is deleted].
+      No, EasyClinic has no binding contract on any plan, and no setup fee to lose if you stop. You pay a
+      year or a quarter at a time, so the shortest commitment is one quarter, at
+      {price:inr.professional.quarterly} or {price:inr.premium.quarterly} per doctor per month.
 
 links:
   hub: /pricing/
@@ -277,13 +264,13 @@ links:
   related:
     - href: /clinic-management-software-india/
       label: Clinic management software in India
-      description: ABDM milestones and GST invoicing in India, each with a status and a date.
+      description: What EasyClinic does in an Indian clinic, and how to reach the team in Kolkata.
     - href: /indiademo/
       label: Book a demo in India
       description: A 20-minute demo on your own patient flow.
     - href: /best-clinic-management-software-india/
       label: Best clinic management software in India
-      description: The Indian options compared on ABDM status and published pricing, with sources.
+      description: The Indian options compared on published pricing, with sources.
     - href: /easyclinic-vs-practo/
       label: EasyClinic vs Practo Ray
       description: Pricing model and AI documentation side by side, with dated sources.
@@ -295,7 +282,7 @@ closing:
   heading: Get the monthly cost for your own clinic
   body: >-
     Tell us how many doctors and branches you have. On a 20-minute demo we show EasyClinic on your own
-    patient flow and work out the monthly cost with you, [inclusive of or plus 18% GST].
+    patient flow and work out the monthly cost with you.
   primary:
     label: Book a 20-minute demo in India
     href: /indiademo/
@@ -306,16 +293,28 @@ closing:
 
 country: in
 
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The rupee price per doctor with worked monthly totals for an Indian GP clinic and a polyclinic, and the
+    GST point that consultations are exempt while pharmacy counter sales are taxable, are specific to
+    clinics in India.
+  readsMachineWritten: >-
+    The table cells that restate plan inclusions still read like a spec sheet, and a doctor will notice that
+    the page does not say whether the prices include GST or what the add-ons cost.
+
 notes:
   - Head keyword "clinic software cost in India" is owned here (spec 4.5 rule 4, cost intent). Spec 4.1 lists "clinic software cost India" as a secondary keyword of /pricing/; drop it there so the two pages do not compete.
-  - prices/inr.yaml has asOf null, so every price token renders as unconfirmed until the founders sign the INR prices (spec 5.12). Professional quarterly is null because the live site says 1,899 and staging 1,875; the annual-vs-quarterly FAQ uses the token and fills itself once the price is set.
-  - prices/inr.yaml taxNote and paymentMethods are null. Fill them, then replace every "[inclusive of or plus 18% GST]" and "[payment methods accepted for the subscription in India]" placeholder with the same wording.
-  - UPI, Razorpay and PayU states are null in countries/in.yaml; the GST regulator (in-gst) state is null. The hero strip renders the GST chip from data; prose only uses placeholders.
+  - Published on 2026-09-26 with confirmed facts only. prices/inr.yaml taxNote and paymentMethods are null, so the page does not say whether prices include 18% GST or how the subscription is paid. When both are confirmed, add one sentence each to the opening answer, the cost-examples intro, the GST section and the closing, and bring back the FAQ "Is GST charged on top of EasyClinic's prices?".
+  - 'Removed until the company supplies them, each to be added back with the fact: add-on prices in INR (spec 5.12 item 4 wants indicative prices or ranges, and the add-ons heading can then say "priced in rupees" again); an indicative Enterprise range per doctor; any limit on staff logins; how a part-time or visiting doctor is charged (the table row was deleted); data migration included or priced (spec 5.12 item 7; the table row and the training note were changed); any monthly SMS limit; who pays WhatsApp message charges; any per-location fee and how a doctor at two branches is counted.'
+  - 'Also removed until confirmed, and to be added back only with a status and a date: UPI, Razorpay and PayU (countries/in.yaml states are null), GST invoicing with HSN and SAC codes, Tally export and a GST sales register export. Regulator status is unknown, so the hero strip carries no regulator chip and nothing on the page states or implies a compliance status.'
+  - FAQ changes for publication. "Is GST charged on top" became the reception-licence question; the UPI question became the free-EMR question (spec 6.3); "What does a second branch cost?" became "Does EasyClinic work if I later open a second location?" (spec 6.4 keep list); the cancel-and-data question became "Am I locked into a contract?". Spec 2.5 wants what happens to data on leaving; restore that question when the export format, refund terms, export charge and data retention are known and /privacy/india/ is written.
   - The three cost-example shapes (1 doctor; 5 doctors; 9 doctors across 3 branches) are illustrative clinic shapes, not customers. Totals are computed by the component from prices/inr.yaml.
-  - The GST exemption statements (healthcare services by a clinical establishment exempt; pharmacy counter sales and cosmetic procedures taxable; input tax credit generally unavailable for exempt supplies) are general Indian tax law. Have the company's CA read the GST section and the two GST FAQs before publishing.
-  - The free-trial FAQ refers to the six-minute product tour (spec 1.2, 12). It must be live before this page is published. When the tour has a URL, make "See the product in 6 minutes" the secondary hero CTA in place of the phone call.
-  - No heroMedia. The spec 12 "currency-localised pricing cards" screen duplicates the live cards on this page; add a hero screenshot only if design wants one (the INR invoice with GST lines is the other candidate, once GST invoicing has a status).
-  - Testimonials sanjay-teotia and nrp-chandra-balaji have city null and consentOnFile null. The "ten years" heading repeats their own words; confirm the tenure is still accurate as of publication.
-  - Needs a named author (India country lead or product lead) per spec 2.7, and the editor's two-question pass (spec 6.5).
-  - Secondary keyword "price per doctor per month India" was removed because /pricing/ owns "price per doctor per month" (spec 4.1). The meta description uses one price token because the length rule counts the raw token text (154 raw, 129 rendered).
-  - The integrations row follows plans.yaml (included on Enterprise, an add-on on Professional and Premium). The FAQ on leaving no longer points to /privacy/india/ for data retention, since that page's content is not written; the retention rule is a placeholder until it is.
+  - The GST exemption statements (healthcare services by a clinical establishment exempt; pharmacy counter sales and cosmetic procedures taxable; input tax credit generally unavailable for exempt supplies) are general Indian tax law, not claims about EasyClinic. Have the company's CA read the GST section and the GST FAQ.
+  - When the six-minute product tour is live (spec 1.2, 12), mention it in the free-trial FAQ and make "See the product in 6 minutes" the secondary hero CTA in place of the phone call.
+  - No heroMedia. The spec 12 "currency-localised pricing cards" screen duplicates the live cards on this page; add a hero screenshot only if design wants one.
+  - Testimonials sanjay-teotia and nrp-chandra-balaji have city null, so no city shows. The intro says each wrote after ten years on EasyClinic, which matches their own words.
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions.
+  - Secondary keyword "price per doctor per month India" was removed because /pricing/ owns "price per doctor per month" (spec 4.1). The meta description uses one price token because the length rule counts the raw token text.
+  - The integrations row follows plans.yaml (included on Enterprise, an add-on on Professional and Premium). The customisation row uses the live FAQ ("hundreds of customisation options... without any charges"); custom development stays an add-on.

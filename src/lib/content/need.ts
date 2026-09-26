@@ -35,3 +35,20 @@ export function requireConfirmed(astro: AstroGlobal, label: string, ok: boolean 
   guard(astro, label);
   return wrap(`[${label}]`);
 }
+
+/**
+ * An optional detail (a testimonial's city, a review count, office hours). Known values render; an
+ * unknown one shows as a placeholder in preview and is simply left out in production, so it never
+ * blocks publishing. Use `need()` instead for facts a page cannot honestly go without.
+ */
+export function optional(label: string, value: string | number | null | undefined): string | null {
+  if (value !== null && value !== undefined && value !== '') return String(value);
+  return isProduction ? null : wrap(`[${label}]`);
+}
+
+/** Like `optional()`, for a value that exists but may not be cleared for publication (a contact's name). */
+export function optionalConfirmed(label: string, value: string | null | undefined, confirmed: boolean): string | null {
+  if (!value) return optional(label, null);
+  if (confirmed) return value;
+  return isProduction ? null : wrap(value);
+}

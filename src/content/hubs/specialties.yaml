@@ -1,0 +1,67 @@
+status: published
+path: /specialties/
+headKeyword: specialty EMR software
+secondaryKeywords: [EMR by specialty, specialty clinic software]
+title: 'Specialty EMR Software for Clinics: EasyClinic'
+metaDescription: 'EasyClinic by specialty: templates, packages and records for IVF, physiotherapy, dental, dermatology, paediatric and other clinics.'
+h1: EasyClinic for your specialty
+linkLabel: Specialties
+openingAnswer: 'EasyClinic''s Premium plan adds specialty EMR templates, your own clinical forms and package treatments, priced at {price:usd.premium.annual} per doctor per month billed annually. Each specialty page shows what a clinic in that field uses most.'
+summary: Specialty templates, forms and packages, with a page for each specialty.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary: { label: Book a 20-minute demo, href: /specialties/#book-a-demo }
+  secondary: { label: See Premium pricing, href: /pricing/ }
+  whatsapp: Hi, I run a specialty clinic and would like to see EasyClinic.
+links:
+  hub: /solutions/
+  related:
+    - { href: /solutions/, description: Software by clinic type and size. }
+    - { href: /features/emr/, description: The EMR and e-prescriptions every specialty uses. }
+    - { href: /pricing/, description: What Premium includes for specialists. }
+sections:
+  - discriminant: hubGrid
+    value:
+      heading: Specialties
+      groups:
+        - items:
+            - { href: /ivf-emr/, label: IVF and fertility, icon: baby }
+            - { href: /physiotherapy-clinic-management-software/, label: Physiotherapy, icon: activity }
+            - { href: /dental-emr-software/, label: Dental, icon: stethoscope }
+            - { href: /dermatology-emr-software/, label: Dermatology, icon: stethoscope }
+            - { href: /pediatric-emr/, label: Paediatrics, icon: baby }
+            - { href: /cardiology-emr/, label: Cardiology, icon: heart }
+            - { href: /mental-health/, label: Mental health, icon: brain }
+            - { href: /ophthalmology-emr/, label: Ophthalmology, icon: eye }
+            - { href: /orthopedic-emr/, label: Orthopaedics, icon: bone }
+            - { href: /obgyn-emr-software/, label: OB-GYN, icon: heart }
+            - { href: /ayurveda-clinic-management-software/, label: Ayurveda, icon: pill }
+  - discriminant: proofBlock
+    value:
+      heading: Rated by the doctors who use it
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '4.9', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '4.8' }
+  - discriminant: demoForm
+    value:
+      id: book-a-demo
+      heading: Your specialty is not listed
+      intro: Tell us what you practise. Premium includes your own clinical forms and print layouts, so the demo can show a chart built for your specialty.
+faq:
+  - question: Which plan includes specialty templates?
+    answer: Specialty EMR templates come with the Premium plan, at {price:usd.premium.annual} per doctor per month billed annually, along with your own clinical forms and print layouts.
+  - question: Can I build my own forms for my specialty?
+    answer: Yes, Premium includes your own clinical forms and print layouts, and the customisation options in the product come without extra charges.
+  - question: Can a polyclinic use different templates for each specialist?
+    answer: Yes, each specialist can work in their own templates while the whole clinic shares one patient record, which is how polyclinics run on EasyClinic.
+  - question: Do specialty packages such as treatment courses work in billing?
+    answer: Yes, Premium includes package treatments, so a course of sessions or a treatment plan is billed as one package rather than visit by visit.
+  - question: My specialty is not on the list. Can EasyClinic still work for my clinic?
+    answer: Yes, the EMR and billing work for any outpatient specialty, and the form below books a demo set up around the way your clinic practises.
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: 'The page ties specialty work to what Premium actually includes: templates, custom forms and package treatments.'
+  readsMachineWritten: 'The FAQ answers are plan-level; each specialty page carries the specifics.'

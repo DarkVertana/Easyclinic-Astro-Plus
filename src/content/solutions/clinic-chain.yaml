@@ -1,0 +1,314 @@
+# Clinic chain solution page (spec 5.7; keyword row 4.2; chain vocabulary from spec 2.8).
+status: published
+headKeyword: clinic chain management software
+secondaryKeywords:
+  - multi-branch clinic software
+  - clinic chain EMR
+  - franchise clinic software
+title: Clinic Chain Software for Multi-Branch Practices
+metaDescription: >-
+  Clinic chain software with one central chart, SOP tracking, stock transfers and a branch-by-branch
+  dashboard, for 2 to {fact:largestChain} locations.
+h1: Run every branch like one clinic
+linkLabel: Clinic chains
+eyebrow: For clinic chains and franchise networks
+openingAnswer: >-
+  EasyClinic gives a clinic chain one central patient chart, clinical SOP tracking by branch, stock
+  transfers between branches and a KPI dashboard the owner opens every morning. It scales from a chain of
+  2 branches to the largest chain on EasyClinic, which has {fact:largestChain} locations.
+summary: >-
+  One central chart, SOP tracking by branch, stock transfers and a morning KPI dashboard, for chains of
+  2 to {fact:largestChain} locations.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Map your network with us
+    href: /contact-us/#book-a-demo
+    event: clinic-chain-map-network
+  secondary:
+    label: Get an Enterprise quote
+    href: /contact-us/#book-a-demo
+    event: clinic-chain-enterprise-quote
+  whatsapp: Hi, I run a clinic chain and was reading the EasyClinic clinic chain page. I would like to map our branches with your team.
+faq:
+  - question: Can franchised and owned branches run on the same EMR?
+    answer: >-
+      Yes. EasyClinic treats a franchised branch and an owned branch alike, as locations under central
+      control, so both share one patient record and work from the SOPs, price lists, formulary and
+      templates head office sets. A franchisee adjusts what any branch adjusts, such as appointment slots
+      or local promotions.
+  - question: How do we standardise care across branches in different cities?
+    answer: >-
+      Write the SOP once at head office and every branch works from it, with the same note templates and
+      the same formulary. Clinical SOP tracking, on the Enterprise plan, then shows adherence branch by
+      branch, so you can see which city follows the protocol and which has drifted, and walk into that
+      branch with the numbers.
+  - question: Does EasyClinic make sense for a chain of only two branches?
+    answer: >-
+      Yes. Two branches can run on Premium, which covers more than one location and costs
+      {price:usd.premium.annual} per doctor per month on annual billing, or {price:inr.premium.annual} in
+      India. Enterprise adds clinical SOP tracking, insurance claims, stock transfers and central control
+      of every location, and the largest chain on EasyClinic has {fact:largestChain} locations, so you do
+      not change systems as the chain grows.
+  - question: Do we pay per branch?
+    answer: >-
+      Not on Premium, which is priced per doctor per month and covers more than one location. Enterprise,
+      the plan with SOP tracking and central control of every location, has no list price, and each chain
+      gets its own quote.
+  - question: Which branch should go live first?
+    answer: >-
+      Start with one branch that head office can watch closely, and settle the SOPs and price lists there
+      before the next branch goes live on them. Each branch's staff then take the same four-day training,
+      and the rest of the network follows in whatever order suits you.
+  - question: Can a doctor who works at two branches use one login?
+    answer: >-
+      Yes. A doctor who moves between branches signs in with one login and sees the same patient record
+      at each, so a patient seen on Monday at one branch and on Thursday at another has one chart.
+      Central control of every location comes with the Enterprise plan.
+  - question: What happens at a branch when the internet goes down?
+    answer: >-
+      EasyClinic does not run fully offline today, so plan for a working internet connection at every
+      branch. A backup connection, such as mobile data on a dongle, is worth keeping for the day the main
+      line drops.
+  - question: Are we tied in if the first branches do not work out?
+    answer: >-
+      No. EasyClinic has no binding contracts, so after the first branches go live you decide whether the
+      rest of the network follows.
+links:
+  hub: /solutions/
+  related:
+    - href: /features/multi-location/
+      label: Multi-location clinic software
+      description: One login for every branch, and one patient record shared across all of them.
+    - href: /features/reports-and-dashboards/
+      label: Reports and dashboards
+      description: The owner's morning numbers, with every branch side by side.
+    - href: /features/pharmacy-and-inventory/
+      label: Pharmacy and inventory
+      description: Dispensing from the prescription and moving stock between branches, with batch and expiry tracked.
+    - href: /features/revenue-management/
+      label: Revenue management
+      description: Where money leaks between the chart and the bank, and the control for each leak.
+    - href: /features/insurance-claims/
+      label: Insurance claims
+      description: Coverage checked at registration, and claims that are clean before they leave the branch.
+    - href: /pricing/
+      label: Pricing and the Enterprise plan
+      description: Per doctor per month from {price:usd.professional.annual}, with Enterprise quoted for clinic chains.
+closing:
+  heading: Bring your branch list
+  body: >-
+    Tell us how many branches you run and what each one uses today, and we walk through how your network
+    would sit on one EasyClinic record: what head office holds and what each branch keeps.
+  primary:
+    label: Map your network with us
+    href: /contact-us/#book-a-demo
+    event: clinic-chain-map-network-closing
+  secondary:
+    label: Get an Enterprise quote
+    href: /contact-us/#book-a-demo
+    event: clinic-chain-enterprise-quote-closing
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The four-day training path each branch's staff take and Penda Health running its Nairobi clinics on
+    EasyClinic since 2017 come from EasyClinic's own record; the head office and branch split follows spec
+    5.7 rather than a named chain's set-up.
+  readsMachineWritten: >-
+    The pain examples (the diabetes review, the short Friday till) are illustrative rather than taken from
+    a named chain, and the page has no measured chain outcome yet; replace them when a chain customer
+    supplies a real case and a number.
+notes:
+  - >-
+    Spec 5.7 asks for the 67% stockout and 45-day prediction figures (cross-branch inventory) and the 34%
+    denied-claims figure (revenue leakage). None has a public source (facts.md section 4), so both rows
+    run without them. Add them only as study.yaml fig tokens once each carries an approved source.
+  - >-
+    Franchise onboarding: spec 5.7 wants "a new branch goes live in [X] days". No confirmed figure exists
+    for a branch joining an existing network ({fact:goLiveDays} is the single-clinic fastest case), so the
+    row says the branch goes live on the same record, with no day count.
+  - >-
+    FAQs left out for lack of a confirmed fact: data segregation between branches (who at one branch can
+    see another branch's patients and money), Power BI or warehouse export, and consolidated GST or VAT
+    invoicing across branches. The spec 5.11 multi-location row also mentions sharing the patient record
+    across branches "with consent"; how consent works is not stated here.
+  - >-
+    Enterprise pricing structure (per doctor, per branch or per network) is not public; the per-branch FAQ
+    answers for Premium only (Professional does not include more than one location).
+  - >-
+    No heroMedia on publish (spec 12 screenshots do not exist yet). When taken, the hero is the
+    branch-by-branch KPI comparison (five branches); the SOP adherence by branch screen and the stock
+    transfer with reorder alert screen belong on the pain and feature rows.
+  - >-
+    Clients line uses only names in migration/research/facts.md section 3 and countries/in.yaml. It does not
+    say any of them is a chain. CIMAS Health's branch count and Foster Akaketwa's city are unknown
+    (testimonials/foster-akaketwa.yaml city: null), so the testimonial renders without a city.
+  - >-
+    Spec 2.9 asks every solution page to link one specialty page and one country page as well; the related
+    list follows the orchestrator's six links. Add both once those pages exist.
+  - >-
+    Editor pass 2026-09-26: the "only for big chains" FAQ is asked as a two-branch question (spec 6.4 drops
+    leading "only for large clinics" questions). Price lists are described as set by head office for each
+    branch and payer, not "the same at every counter", because spec 5.11 has price lists by location. Which
+    plan carries one login across branches is not stated separately from central control (Enterprise).
+    Revenue per doctor per branch is left out (spec 6.4 poses it as a question, not a confirmed report);
+    the per-doctor bullet uses patients per doctor per hour from the eight morning numbers (spec 5.11).
+sections:
+  - discriminant: painBlocks
+    value:
+      id: what-breaks
+      heading: What breaks when clinics multiply
+      intro: >-
+        With one clinic the owner sees everything from the consulting room. From the second branch on, head
+        office runs the chain on phone calls and spreadsheets, and these are the first things to slip.
+      items:
+        - heading: Care drifts from branch to branch
+          body: >-
+            The protocol written at head office is followed to the letter at the flagship and loosely three
+            branches away. One branch's diabetes review includes the foot check and the HbA1c; another's is a
+            repeat prescription. Nobody at head office knows which until a patient complains.
+          fix: >-
+            Head office writes the SOP once and every branch works from the same template and checklist.
+            Clinical SOP tracking shows adherence as a percentage for each branch, so drift turns up as a
+            number before it turns up as a complaint.
+        - heading: Head office hears about Tuesday on Wednesday
+          body: >-
+            Each branch manager sends the day's figures after closing, on WhatsApp or in a spreadsheet laid
+            out their own way. By the time someone at head office has added them up, the short till and the
+            empty shelf are a day old, and no two branches count a visit the same way.
+          fix: >-
+            Every branch bills and dispenses in the same EasyClinic system, so head office reads the figures
+            each branch entered, counted the same way everywhere, without waiting for the evening message or
+            retyping a spreadsheet. The KPI dashboard puts the branches side by side.
+          href: /features/reports-and-dashboards/
+          linkLabel: See the morning numbers by branch
+        - heading: The patient starts again at every door
+          body: >-
+            A patient seen at your north branch walks into the south branch with the same complaint and none
+            of the history. The doctor takes the history again and repeats the blood test done last month,
+            and the patient wonders what the chain is for.
+          fix: >-
+            One central chart serves every branch. The notes and lab reports from the north branch are on the
+            same record at the south branch, so the second doctor starts from last month's visit.
+          href: /features/multi-location/
+          linkLabel: How one record works across branches
+  - discriminant: splitTable
+    value:
+      id: central-and-local
+      heading: Central control, local flexibility
+      intro: >-
+        Head office holds what has to be the same at every branch. The branch keeps what depends on its own
+        doctors and its own neighbourhood.
+      left:
+        title: Head office sets
+        items:
+          - Clinical SOPs, and the tracking that shows which branches follow them
+          - Price lists for every branch and every payer
+          - The formulary each branch pharmacy dispenses from
+          - Note and prescription templates
+      right:
+        title: Each branch adjusts
+        items:
+          - Appointment slots
+          - Doctor timings
+          - Staff and shifts
+          - Local promotions
+      note: SOP tracking and central control of every location come with the Enterprise plan.
+  - discriminant: featureRows
+    value:
+      id: one-record
+      heading: What head office gets from one record
+      items:
+        - heading: Every branch on one morning screen
+          body: >-
+            The owner's dashboard puts the branches side by side: revenue by branch, collections against
+            billing, stock days left and claims pending. When one branch's collections fall behind what it
+            billed, you see it on the same screen as the branches that are on track.
+          bullets:
+            - Patients per doctor per hour at each branch
+            - Custom analytics on a reporting server, on Enterprise
+          link:
+            label: See the reports and dashboards
+            href: /features/reports-and-dashboards/
+        - heading: Stock that moves between branches
+          body: >-
+            Each branch pharmacy dispenses from the prescription and tracks every batch and its expiry. When
+            one branch runs short of an antibiotic that another holds in quantity, the stock moves on a
+            transfer that takes it off one branch's count and onto the other's. Reorder alerts flag an item
+            before the shelf is empty.
+          bullets:
+            - Batch and expiry tracked at every branch
+            - Transfers recorded at the sending and the receiving branch
+          plan: enterprise
+          link:
+            label: See pharmacy and inventory
+            href: /features/pharmacy-and-inventory/
+        - heading: A new branch goes live on the same record
+          body: >-
+            Whether you own the new branch or a franchisee does, it opens on the SOPs, price lists, formulary
+            and templates head office has already set, so nobody sets them up again for the new branch. Its
+            staff take the same four-day training as every other branch, and the branch appears on the
+            owner's dashboard beside the rest.
+          bullets:
+            - Head office settings in place before the first patient
+            - The same four-day training at every branch
+          plan: enterprise
+          link:
+            label: See how branches share one record
+            href: /features/multi-location/
+        - heading: Revenue that leaks between the chart and the bank
+          body: >-
+            In a chain, money goes missing where one person hands work to the next. A dressing ordered in the
+            chart never reaches the bill. One branch charges last year's price for a scan. A claim comes back
+            denied and waits in a tray, and the till at one branch closes a little short every Friday without
+            anyone at head office seeing the pattern.
+          bullets:
+            - Orders in the chart carried through to the bill
+            - Price lists set by head office for every branch
+            - Coverage checked at registration, with ageing and denial reports
+            - A day-end cash close at each branch, with the variance shown
+          plan: enterprise
+          link:
+            label: See revenue management
+            href: /features/revenue-management/
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: A health group in Zimbabwe on building its operations around EasyClinic
+      intro: >-
+        Clinics and hospitals on EasyClinic include Premier Hospital, Ross Clinics, Seth GS KEM Hospital,
+        German Osteo and Caring Minds. In Nairobi, Penda Health has run its clinics on EasyClinic since
+        2017.
+      items:
+        - foster-akaketwa
+      layout: single
+  - discriminant: stepList
+    value:
+      id: roll-out
+      heading: How a chain moves onto EasyClinic
+      intro: >-
+        Branches go live in the order you choose, and each one joins the same record as the branches before
+        it.
+      steps:
+        - title: Demo for head office
+          body: >-
+            Head office sees the central chart and the branch dashboard, and brings the questions its own
+            network raises, such as how franchise branches fit in or which payers each branch bills.
+        - title: Map the branches
+          body: >-
+            Together we list every branch, owned or franchised, and decide setting by setting what head office
+            holds and what each branch keeps. The SOPs, price lists, formulary and templates are then set once,
+            at the centre.
+        - title: Train each branch
+          meta: '{fact:trainingDays} days, about two hours in all'
+          body: >-
+            Each branch's staff take the four-day path: basic training on day 1 (40 minutes), EMR scenarios on
+            day 2 (40 minutes), practice exercises on day 3 (20 minutes) and the road to expertise on day 4 (20
+            minutes). Training is included at no extra charge.
+        - title: Go live, branch by branch
+          body: >-
+            Each branch goes live on the same record as the others and joins the owner's dashboard beside
+            them. Support is included on every plan at no extra charge, and Premium and Enterprise include a
+            named account manager.

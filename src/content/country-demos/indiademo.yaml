@@ -1,4 +1,4 @@
-status: draft
+status: published
 headKeyword: EasyClinic India demo
 secondaryKeywords:
   - clinic management software demo India
@@ -14,28 +14,15 @@ linkLabel: Book a demo in India
 eyebrow: Made for clinics in India
 openingAnswer: >-
   The EasyClinic demo in India takes 20 minutes and follows one patient along your clinic's own flow,
-  from the booking and the prescription to the bill and the WhatsApp follow-up. After it, the fastest
-  clinics go live in {fact:goLiveDays} days, with {fact:trainingDays} short training sessions for you and
-  your staff.
+  from the booking and the prescription to the bill and the WhatsApp follow-up. After it, a clinic can
+  go live in as little as {fact:goLiveDays} days, with {fact:trainingDays} short training sessions for
+  you and your staff.
 summary: >-
   A 20-minute demo that follows your clinic's own patient flow, then {fact:trainingDays} training sessions
   and a go-live in as little as {fact:goLiveDays} days.
-author: null
+author: subhashish-saha
 lastUpdated: 2026-09-26
-heroMedia:
-  kind: screenshot
-  needed: >-
-    Invoice from an encounter with GST lines and a part payment, INR version (spec 12 screenshot list:
-    billing, revenue, country pages). Desktop capture from the seeded demo tenant.
-  alt: >-
-    EasyClinic invoice screen for one clinic visit in rupees, listing a consultation and two medicines
-    with their GST lines, and a part payment.
-  caption: One visit, one bill in rupees, with GST on the medicine lines and the part payment recorded against it.
-  frame: browser
 heroStrip:
-  regulators:
-    - in-abdm-m1
-    - in-abdm-m2
   ratings: true
   study: false
 ctas:
@@ -60,23 +47,21 @@ faq:
       to go ahead, during migration.
   - question: Do I need to install anything?
     answer: >-
-      No, EasyClinic runs in a web browser on a computer or a tablet, so there is nothing to install for
-      the demo or for daily use. It needs an internet connection and does not run fully offline today.
-      Clinics that want the system on a private server can ask about private cloud hosting on the
-      Enterprise plan.
+      No, EasyClinic runs in a web browser, so there is nothing to install for the demo or for daily use.
+      It needs an internet connection and does not run fully offline today. On the Enterprise plan, a
+      clinic can ask for private cloud hosting.
   - question: What does EasyClinic cost after the demo?
     answer: >-
-      Professional costs {price:inr.professional.annual} per doctor per month and Premium costs
-      {price:inr.premium.annual}, both billed annually; Premium billed quarterly is
-      {price:inr.premium.quarterly}. Enterprise, for clinic chains and hospital OPDs, is priced on a
-      quote. There is no setup fee and a reception login is included. The prices are [inclusive of or plus
-      18% GST], and the demo itself costs nothing.
+      Professional costs {price:inr.professional.annual} per doctor per month billed annually, or
+      {price:inr.professional.quarterly} billed quarterly. Premium costs {price:inr.premium.annual} per
+      doctor per month billed annually, or {price:inr.premium.quarterly} billed quarterly, and
+      Enterprise, for clinic chains and hospital OPDs, is priced on a quote. There is no setup fee and a
+      reception login is included. The demo itself costs nothing.
   - question: How long does it take to go live after the demo?
     answer: >-
-      The fastest clinics go live {fact:goLiveDays} days after the demo, and training runs over
-      {fact:trainingDays} days in sessions of 20 to 40 minutes. A clinic group or a hospital OPD with
-      years of records to move takes longer, typically [typical go-live time for clinic groups and
-      hospital OPDs].
+      A clinic can go live in as little as {fact:goLiveDays} days after the demo, with training over
+      {fact:trainingDays} days in sessions of 20 to 40 minutes. That is the fastest case; a clinic group
+      or a hospital OPD with years of records to move takes longer.
   - question: Can my receptionist join the demo?
     answer: >-
       Yes, and it helps, because your receptionist is the person who books and bills all day. Every plan
@@ -84,21 +69,20 @@ faq:
       EMR or write prescriptions.
   - question: Is there a free trial?
     answer: >-
-      No, EasyClinic does not offer a free trial. The six-minute product tour shows the product without
-      asking you to fill in a form, and if you go ahead after the demo there is no contract to sign. If
-      you later stop, [what happens to unused months on an annual plan], and your records come back to you
-      as [data export format on leaving].
+      No, EasyClinic does not offer a free trial, so the 20-minute demo is where you see the product on a
+      clinic set up like yours. If you go ahead, there is no binding contract and no setup fee: you use
+      EasyClinic for as long as you are happy with it.
   - question: What happens after I submit the form?
     answer: >-
-      [India contact name] calls you on the number you gave, within [call-back window for India], to fix
-      a time for the demo and ask two or three questions about how your clinic runs. We use your details
-      only to arrange the demo, and if you would rather not wait, call {contact:in.phone}.
+      Someone from our team in India calls you on the number you gave, to fix a time for the demo and ask
+      two or three questions about how your clinic runs. If you would rather not wait, call
+      {contact:in.phone} or write to {contact:in.email}.
 links:
   hub: /clinic-management-software-india/
   related:
     - href: /clinic-management-software-india/
       label: Clinic management software in India
-      description: What ABDM and the DPDP Act ask of your clinic, and how EasyClinic handles each.
+      description: What ABDM and the DPDP Act ask of your clinic, and how an Indian clinic's day runs on EasyClinic.
     - href: /pricing/india/
       label: EasyClinic prices in India
       description: Per doctor per month in rupees, from {price:inr.professional.annual} on the Professional plan.
@@ -107,7 +91,7 @@ links:
       description: Where the two differ for a clinic in India, and what moves across if you switch.
     - href: /trust/
       label: Security and compliance
-      description: Where patient data lives, and the dated status of every regulator EasyClinic works with in India.
+      description: Where patient data is stored and how access to it is controlled.
 closing:
   heading: Twenty minutes, on a clinic set up like yours
   body: Send the form and we call you to fix a time around your OPD hours, or message us on WhatsApp from this page.
@@ -115,43 +99,69 @@ closing:
     label: Book my 20-minute demo
     href: /indiademo/#book-a-demo
 country: in
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The rupee prices per doctor per month, the TPA claim sent back because the pre-authorisation was not
+    attached, the receipt book that disagrees with the UPI statement by a few hundred rupees and the
+    dressing done at the end of a crowded OPD that never reaches the bill are specific to a clinic in
+    India, and the proof is an Indian psychiatrist who keeps patient records on EasyClinic.
+  readsMachineWritten: >-
+    The eight module outcomes share one length and rhythm and the connections table lists plan features
+    rather than Indian payment rails, so both may read as templated to a doctor, and the page has no named
+    India contact or measured clinic outcome, which the live Kenya page's voice relies on.
 notes:
   - >-
     Structure follows the live /kenyademo/ page (spec 5.13 and 6): demo form, three problems, eight
-    modules, integrations and payers, compliance, local testimonial, demo to live. Kenya-specific facts
-    (M-Pesa, SLADE, eTIMS, MOH 705, Walter) are not carried over.
+    modules, connections by plan, local testimonial, demo to live. The compliance block was removed for
+    publishing (see the regulator note). Kenya-specific facts (M-Pesa, SLADE, eTIMS, MOH 705, Walter) are
+    not carried over.
   - >-
-    "Or call [name] directly" is rendered by the DemoForm and the hero ContactCard from countries/in.yaml.
-    contact.name, publishName, hours and callbackWindow are null there, so both show "Or call us
-    directly" with +91 91477 70277 until the India contact is confirmed.
+    countries/in.yaml contact name, publishName, role, hours and callbackWindow are null (names are not
+    cleared to publish, hours unknown). The DemoForm and hero ContactCard therefore show "Or call us
+    directly" with +91 91477 70277, and FAQ 8 names no person and no call-back window. Add both once
+    confirmed.
   - >-
     Kenya's live page says a 30-minute demo; the rebuild and the confirmation page say 20 minutes. This
     page uses 20. The page does not say whether the demo is a video call or in person, because
     /contact-us/ offers both and the in-person cities are still a placeholder there.
   - >-
-    goLiveDays (3) has no asOf in facts.yaml and conflicts with the "2 to 4 week setup" on the live Kenya
-    listicle. Confirm before publishing; the opening answer, meta, step list and FAQ all depend on it.
+    goLiveDays (3) is always phrased as "in as little as 3 days" or as the fastest case, because the live
+    Kenya listicle says "2 to 4 week setup". The typical go-live time for clinic groups and hospital OPDs
+    is unknown, so FAQ 5 and the step list note say only that they take longer; add the figure once known.
   - >-
-    INR Professional quarterly is null in prices/inr.yaml (1,899 live vs 1,875 staging), so the cost FAQ
-    quotes both annual prices and Premium quarterly only.
+    The connections table lists plan inclusions from plans.yaml only. The UPI, Razorpay, PayU, Tally and
+    named TPA or insurer rows were removed because their state and date are unknown (countries/in.yaml
+    payments are null, insurers is empty); restore them with a status and date. GST invoicing (in-gst) is
+    unknown too, so no GST capability is described. Whether INR prices include 18% GST (prices/inr.yaml
+    taxNote) is unknown, so the cost FAQ says nothing about GST; add the same wording as /pricing/india/
+    once it is filled.
   - >-
-    GST invoicing (in-gst) and UPI (countries/in.yaml payments) have null states, so the prose describes
-    no GST or UPI capability as working: the GST chip, the integrations table and the hero screenshot carry
-    them. Restore "with GST on taxable lines" and "UPI in the day-end close" wording once both have a
-    state and date, matching /clinic-management-software-india/ and /pricing/india/.
+    Every India regulator status is unknown, so the regulatorStrip block (in-abdm-m1, in-abdm-m2, in-dpdp,
+    in-gst) and heroStrip.regulators were removed, and module 7 is reports and dashboards rather than
+    Kenya's compliance and reporting. Restore the strip once each regulator has a state and date.
   - >-
-    Support step uses [support line and hours in India] because /contact-us/ has not confirmed whether
-    existing-customer support shares the sales number (+91 91477 70277).
+    heroMedia was removed until the spec 12 screenshot exists: an invoice from an encounter with GST lines
+    and a part payment, INR version, desktop capture from the seeded demo tenant. Restore it only once GST
+    invoicing has a status, since the screenshot shows GST lines.
   - >-
-    Module 7 replaces Kenya's "Compliance and reporting" with reports and dashboards, because every India
-    regulator state is null; compliance appears only as status chips (RegulatorStrip), never in prose.
+    Data migration step: the migration time, what is imported from each source and whether migration is
+    included in the plan price are unknown, so the step states none of them. Support step: the India
+    support line and hours are unknown (and /contact-us/ has not confirmed whether support shares the
+    sales number), so it gives only the channels from the live /pricing/ FAQ.
   - >-
-    The free-trial FAQ mentions the six-minute tour (spec 12, phase 1). Add a link once the tour page
-    exists. FAQ 1 (say so when we call and the demo spends its time on claims or pharmacy) and FAQ 8 (two or
-    three questions on the call, as on /contact-us/) are process claims for the India team to confirm.
+    The free-trial FAQ no longer mentions the six-minute tour, because the tour page does not exist yet;
+    add it back with a link once it does. What happens to unused months on an annual plan, and the export
+    format on leaving, are unknown and not stated. FAQ 1 (say so when we call and the demo spends its time
+    on claims or pharmacy), FAQ 8 and the demo form promise (two or three questions on the call, as on
+    /contact-us/) are process claims for the India team to confirm.
   - >-
-    Dr Prantar Chakrabarti's testimonial has city: null and consentOnFile: null in testimonials data.
-    Needs both before publishing. Author needs to be the India country lead or the product lead.
+    Dr Srinivasa Teja's testimonial has city: null in testimonials data (spec 2.4 asks for the city). Add
+    it when confirmed. (Dr Chakrabarti moved to /solutions/hospital-opd/, which spec 5.8 names him for.)
+  - >-
+    editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite
+    or cut anything in readsMachineWritten, and update editorialPass.
 sections:
   - discriminant: demoForm
     value:
@@ -235,52 +245,36 @@ sections:
           href: /ai/
   - discriminant: dataTable
     value:
-      heading: Integrations and payers in India
-      caption: Payment, accounting, messaging and payer connections for clinics in India
+      heading: Connections and claims, by plan
+      caption: Messaging, payment, claims and integration options on each EasyClinic plan in India
       columns:
         - Connection
         - What it does at your clinic
-        - Status
+        - Plans
       rows:
-        - - UPI
-          - Payments recorded against the bill and counted in the day-end close
-          - '[UPI status as of date]'
-        - - Razorpay
-          - Payment links sent to the patient, on the Premium plan
-          - '[Razorpay status as of date]'
-        - - PayU
-          - The same payment links, for clinics that already have a PayU account
-          - '[PayU status as of date]'
-        - - Tally
-          - The day's invoices and receipts exported for your accountant
-          - '[Tally export status as of date]'
-        - - WhatsApp
-          - Reminders and messages to patients, prescriptions and reports included, on the Premium plan
-          - '[WhatsApp status as of date]'
-        - - TPAs and insurers
-          - 'Claim packs with the pre-authorisation attached, reconciled when the payment arrives. [TPAs and insurers EasyClinic submits claims to]'
-          - '[TPA and insurer connection status as of date]'
+        - - SMS and email reminders
+          - Appointment reminders sent to the patient's phone and inbox
+          - Every plan
+        - - WhatsApp reminders and messages
+          - Reminders and messages sent to patients on WhatsApp
+          - Premium and Enterprise
+        - - Online payments
+          - Patients pay the clinic's bill online
+          - Premium and Enterprise
+        - - Insurance and TPA claims
+          - Payer price lists and coverage checks at registration, then claim packs and reconciliation when the payment arrives
+          - Enterprise, or an add-on on Professional and Premium
+        - - Integrations and custom development
+          - Your lab machines or accounting software connected to EasyClinic, scoped per project
+          - Enterprise, or an add-on on Professional and Premium
       note: >-
-        Each status carries the date it was last checked. Every connection in every country is listed on
-        the [integrations page](/integrations/).
-  - discriminant: regulatorStrip
-    value:
-      heading: Compliance in India
-      intro: >-
-        Each chip shows the current status and the date it was last checked, and opens the trust page with
-        the detail. What each rule asks of your clinic, from Health Facility Registry sign-up to a DPDP
-        privacy notice, is explained on the [India page](/clinic-management-software-india/).
-      regulators:
-        - in-abdm-m1
-        - in-abdm-m2
-        - in-dpdp
-        - in-gst
-      link: /trust/
+        The [India pricing page](/pricing/india/) lists what each plan includes, and the
+        [integrations page](/integrations/) has the full list of connections.
   - discriminant: testimonialRow
     value:
-      heading: A haematologist on EasyClinic since 2008
+      heading: A psychiatrist in India on EasyClinic
       items:
-        - prantar-chakrabarti
+        - srinivasa-teja
       layout: single
   - discriminant: stepList
     value:
@@ -298,17 +292,16 @@ sections:
             exercises (20 minutes) and day 4 is the road to expertise (20 minutes). The sessions are for you
             and your clinic staff.
         - title: Data migration
-          meta: '[migration time for a typical clinic]'
           body: >-
-            We bring your patient list and history across from your current software or spreadsheets, so
-            the first morning does not start from an empty screen. [What is imported from each source, and
-            whether migration is included in the plan price]
+            We move your existing data into EasyClinic, so the first morning does not start from an empty
+            screen. If your clinic is on paper, give us 2 hours and 10
+            patient records, and we promise to make your prescription writing faster.
         - title: Support
           meta: Unlimited, on every plan
           body: >-
-            Support and training are included in every plan at no extra charge, on [support line and hours
-            in India]. Premium and Enterprise clinics also get a named account manager, and the
-            [help centre](https://help.easyclinic.io/) has written guides for the common questions.
+            Support and training are included in every plan at no extra charge. You reach support by phone,
+            email or chat, or through the written guides in the [help centre](https://help.easyclinic.io/).
+            Premium and Enterprise clinics also get a named account manager.
       note: >-
-        {fact:goLiveDays} days is the fastest time from demo to live. A clinic group or a hospital OPD with
-        years of records to move takes longer: [typical go-live time for clinic groups and hospital OPDs].
+        Going live in as little as {fact:goLiveDays} days is the fastest case. A clinic group or a hospital
+        OPD with years of records to move takes longer.

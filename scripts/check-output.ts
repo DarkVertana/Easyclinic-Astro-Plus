@@ -36,6 +36,7 @@ const BUDGET = { jsGzip: 150 * 1024, jsTarget: 15 * 1024, cssGzip: 40 * 1024, ht
 const REQUIRED_TYPES: Record<string, string[]> = {
   home: ['Organization', 'WebSite', 'SoftwareApplication', 'WebPage'],
   pricing: ['SoftwareApplication', 'WebPage'],
+  guide: ['Article', 'WebPage'],
 };
 
 let errors = 0;
@@ -94,9 +95,17 @@ for (const page of manifest.pages.filter((p) => p.collection !== 'static')) {
   const robots = root.querySelector('meta[name="robots"]')?.getAttribute('content') ?? '';
   if (page.indexable === robots.includes('noindex')) report('error', page.path, `robots meta "${robots}" does not match indexable=${page.indexable}`);
 
+  // Placeholders can also come from shared data (a testimonial role, an author field) that page lint does
+  // not see; in production any bracketed text in the page body of a published page is an error.
+  const mainClone = parse(root.querySelector('main')?.toString() ?? '');
+  for (const node of mainClone.querySelectorAll('script, style')) node.remove();
+  const bodyText = mainClone.text;
+  const literal = bodyText.match(/(?<!\])\[(?!\s*\])[^[\]\n]{2,160}\](?![([:])/g) ?? [];
+  if (strict && published && literal.length) report('error', page.path, `bracketed placeholder text in a published page: ${literal.slice(0, 3).join(', ')}`);
   const marks = root.querySelectorAll('mark[data-placeholder]').length;
   if (marks) contentIssue(page.path, `${marks} placeholders visible on the page`);
-  if (published && marks) report('error', page.path, 'a published page renders placeholders');
+  // Published pages may show optional-detail placeholders in preview (production omits them); the
+  // production run's literal-bracket check above is the hard gate.
 
   // JSON-LD
   const types = new Set<string>();
