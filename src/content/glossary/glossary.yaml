@@ -1,0 +1,648 @@
+# /glossary/ (spec 5.19 glossary; section 2 site-wide rules; section 6 writing guide). Glossary family: glossaryList
+# and prose only, no FAQ, no proof block required. Every regulator, law and scheme term was checked against the
+# source in its `source` field on 26 September 2026; see notes for the few official pages that could not be read.
+status: published
+headKeyword: clinic software glossary
+secondaryKeywords:
+  - EMR vs EHR
+  - healthcare software terms
+  - ABDM meaning
+  - TPA meaning in health insurance
+title: 'Clinic Software Glossary: EMR, ABDM, SHA, TPA and More'
+metaDescription: >-
+  Forty terms clinic owners meet when buying software, from EMR vs EHR to ABDM, SHA, eTIMS, NABIDH and HMO,
+  each defined in plain words with its source.
+h1: Clinic software glossary
+linkLabel: Clinic software glossary
+eyebrow: Glossary
+openingAnswer: >-
+  This glossary defines 40 terms a clinic owner meets when buying software in India, Kenya, the UAE and
+  Nigeria, from EMR and EHR to ABDM, SHA, NABIDH and NHIA. Each definition says what the term is and what
+  it asks of a clinic, with a link to the official source for every law or scheme and to the page on this
+  site that goes deeper.
+summary: >-
+  Forty terms clinic owners meet when buying software, from EMR vs EHR to ABDM, SHA, NABIDH and HMO, each
+  defined in under 100 words with its official source.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See every feature
+    href: /features/
+  whatsapp: Hi, I was reading the EasyClinic clinic software glossary and would like to book a 20-minute demo.
+
+sections:
+  - discriminant: glossaryList
+    value:
+      id: terms
+      heading: Terms from A to Z
+      intro: >-
+        Laws and schemes change. Each law and scheme below was checked against the official source linked
+        under it on 26 September 2026, and if a rule has changed since then, the source is right and this page
+        is out of date.
+      terms:
+        - id: abdm
+          term: ABDM
+          aka: Ayushman Bharat Digital Mission
+          definition: >-
+            India's national digital health programme, launched nationwide on 27 September 2021 and run by
+            the National Health Authority. It offers each patient a health ID, the ABHA, and lets records move
+            between doctors and facilities only with the patient's consent. Joining is voluntary for private
+            clinics. For software, ABDM work is counted in milestones: M1 creates or verifies the patient's
+            ABHA at registration, M2 links each visit's records to it, and M3 brings in the patient's records
+            from other facilities once the patient consents.
+          href: /trust/
+          hrefLabel: What ABDM compliant EMR software means
+          source: https://abdm.gov.in/strapicms/uploads/ABDM_Building_Blocks_v8_3_External_Version_eabbc5c0f3_4_a96f40c645_5716a684de_b344369144.pdf
+
+        - id: abha
+          term: ABHA
+          aka: Ayushman Bharat Health Account
+          definition: >-
+            A 14-digit health number a patient in India can choose to create under ABDM, earlier called the
+            Health ID. It comes with an ABHA address, an easy-to-remember handle such as name@abdm, used to
+            sign in to health record apps. At a clinic the front desk can create or verify a patient's ABHA at
+            registration, and with the patient's consent each visit's prescription and reports can be linked to
+            it, so the patient sees them in their own health records app on the phone.
+          href: /clinic-management-software-india/
+          hrefLabel: ABDM milestones for clinics in India
+          source: https://abdm.gov.in/strapicms/uploads/ABDM_Building_Blocks_v8_3_External_Version_eabbc5c0f3_4_a96f40c645_5716a684de_b344369144.pdf
+
+        - id: claim-denial
+          term: Claim denial
+          aka: claim rejection
+          definition: >-
+            When an insurer, a TPA, an HMO or a public scheme refuses to pay part or all of a claim. The causes
+            are usually dull: the patient's cover had lapsed, a service needed pre-authorisation that nobody
+            requested, a diagnosis or procedure code did not match the bill, a document was missing, or the
+            claim went in after the deadline. Some denials can be corrected and resubmitted; the rest are
+            written off. Counting denials each month by payer and by reason shows the front desk and the
+            billing team what to fix first.
+          href: /features/revenue-management/
+          hrefLabel: Denied claims and revenue leakage
+
+        - id: clinic-management-software
+          term: Clinic management software
+          aka: practice management software
+          definition: >-
+            Software that runs the front desk and the consulting room of an outpatient clinic in one system:
+            appointments and the queue, patient records and prescriptions, billing and payments, and the
+            reports the owner reads. Larger clinics add pharmacy stock, lab orders, insurance claims and more
+            than one branch. Older products split this into practice management, meaning scheduling and
+            billing, and a separate EMR; many products sold to clinics today combine the two. Before buying,
+            ask what it costs per doctor and how you get your data back if you leave.
+          href: /features/
+          hrefLabel: Every part of the system, one page each
+
+        - id: dha
+          term: DHA
+          aka: Dubai Health Authority
+          definition: >-
+            The Dubai government body that licenses health facilities and health professionals in Dubai and
+            writes the emirate's health regulations, including its rules on patient records and data sharing.
+            A new clinic applies through DHA's Sheryan licensing system, and before the facility licence is
+            activated DHA inspects it and asks for proof that its EMR meets the NABIDH data and connectivity
+            standards. In Kenya the same letters stand for the Digital Health Agency, created by the Digital
+            Health Act 2023, so check which DHA a document or a vendor means.
+          href: /clinic-management-software-uae/
+          hrefLabel: Clinic software in the UAE
+          source: https://www.dha.gov.ae/uploads/122024/Manual%20for%20Licesning%20Health%20Facility-202420241233143.pdf
+
+        - id: dhis2
+          term: DHIS2
+          aka: District Health Information Software 2
+          definition: >-
+            Free, open-source software for collecting and reporting health data, developed by the HISP Centre
+            at the University of Oslo and used as the government health data system in more than 80 low and
+            middle-income countries. Facilities or districts enter monthly totals, such as outpatient cases by
+            diagnosis, and the ministry reads them on dashboards. Kenya's national system, KHIS, runs on DHIS2,
+            and it is where a facility's MOH 705 figures end up. A clinic system that produces those totals from
+            visit records spares someone from tallying registers by hand each month.
+          href: /emr-software-in-kenya/
+          hrefLabel: Clinic software in Kenya
+          source: https://dhis2.org/about/
+
+        - id: digital-health-act-kenya
+          term: Digital Health Act (Kenya)
+          aka: Digital Health Act, No. 15 of 2023
+          definition: >-
+            Kenya's law for health data and digital health services, which created the Digital Health Agency.
+            The Agency runs the national integrated health information system, keeps registries of clients,
+            health facilities, healthcare providers and health products, promotes standards for data
+            exchange and certifies digital health solutions. Regulations made under the Act in April 2025 add
+            procedures for health information management and for data exchange. For a clinic, the practical
+            effect is that its patient record system is expected to meet the Agency's standards, and for the 2026
+            to 2028 contracting cycle SHA requires a system the Agency has certified.
+          href: /emr-software-in-kenya/
+          hrefLabel: Clinic software in Kenya
+          source: https://new.kenyalaw.org/akn/ke/act/2023/15/eng@2023-11-24
+
+        - id: dpdp-act
+          term: DPDP Act
+          aka: Digital Personal Data Protection Act, 2023
+          definition: >-
+            India's data protection law, enacted on 11 August 2023, with Rules notified on 14 November 2025 that
+            phase its duties in. A clinic that decides why and how patient data is used is
+            a data fiduciary, and a software vendor that processes the data for it is a data processor. The
+            clinic must give patients a notice, keep reasonable security safeguards, report breaches to the
+            Data Protection Board of India and the patients affected, publish a contact for data
+            questions and answer access or correction requests within 90 days. Failing to keep safeguards can
+            cost up to ₹250 crore.
+          href: /patient-data-privacy-laws-in-india/
+          hrefLabel: Patient data privacy laws in India
+          source: https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf
+
+        - id: e-prescription
+          term: E-prescription
+          aka: eRx
+          definition: >-
+            A prescription created and signed electronically instead of written on paper, then printed, shared
+            with the patient by SMS or WhatsApp, or sent straight to a pharmacy. In India, the NMC Telemedicine
+            Practice Guidelines let a registered doctor send a signed or electronic prescription after a
+            teleconsultation, within the medicine lists the guidelines allow. In Dubai, DHA-licensed doctors
+            create an eRx reference on eClaimLink for each outpatient prescription, whether the patient is
+            insured or paying cash. A typed prescription also ends arguments about handwriting at the pharmacy
+            counter.
+          href: /features/emr/
+          hrefLabel: EMR and e-prescriptions
+
+        - id: eclaimlink
+          term: eClaimLink
+          aka: DHA eClaimLink
+          definition: >-
+            Dubai's electronic health insurance platform, launched by the Dubai Health Authority in 2012 and
+            used for insurance transactions under the emirate's Health Insurance Law No. 11 of 2013. Providers send prior authorisation requests and claims
+            through it in a set XML format and receive the insurer's remittance advice back, so a clinic's
+            billing system has to produce files that match the eClaimLink schema. It also carries Dubai's
+            e-prescription cycle: a DHA-licensed doctor creates an eRx reference for each outpatient
+            prescription, and the pharmacy uses that reference to request approval when dispensing.
+          href: /features/insurance-claims/
+          hrefLabel: Insurance claims
+          source: https://www.eclaimlink.ae/
+
+        - id: ehr
+          term: EHR
+          aka: electronic health record
+          definition: >-
+            A patient's health record designed to be shared across the providers who treat them, so the
+            information follows the patient from the clinic to the specialist or the hospital. The line between
+            EHR and EMR is blurry in sales material. In practice a record works as an EHR when it can exchange
+            data with other systems, usually through a national or regional exchange such as ABDM in India,
+            NABIDH in Dubai, Malaffi in Abu Dhabi or Riayati in the Northern Emirates, using standards like HL7
+            FHIR. A clinic can run a good EMR without joining any exchange.
+          href: /features/emr/
+          hrefLabel: EMR and e-prescriptions
+          source: https://www.healthit.gov/buzz-blog/electronic-health-and-medical-records/emr-vs-ehr-difference
+
+        - id: emr
+          term: EMR
+          aka: electronic medical record
+          definition: >-
+            The digital version of the chart a clinic keeps for each patient, with history, examination notes,
+            diagnoses, prescriptions, lab results and follow-up plans, used by the doctors and staff inside that
+            practice. A good EMR pays for itself on repeat visits, because last year's notes and the current
+            medicines are on screen before the patient sits down. People often use EMR and EHR as if they meant
+            the same thing. Strictly, an EMR stays inside one practice, while an EHR is built to share the
+            record with other providers.
+          href: /features/emr/
+          hrefLabel: EMR and e-prescriptions
+          source: https://www.healthit.gov/buzz-blog/electronic-health-and-medical-records/emr-vs-ehr-difference
+
+        - id: etims
+          term: eTIMS
+          aka: electronic Tax Invoice Management System
+          definition: >-
+            The Kenya Revenue Authority's electronic invoicing system. Since 1 September 2023 every business in
+            Kenya, registered for VAT or not, must generate its invoices through eTIMS so each one reaches KRA,
+            and from 1 January 2024 a business expense without an eTIMS invoice cannot be deducted for tax. KRA
+            offers simple eTIMS tools for small businesses and system-to-system integration for businesses that
+            bill from their own software. A clinic registers for eTIMS with KRA itself, whichever software it
+            uses.
+          href: /features/billing/
+          hrefLabel: Billing and invoicing
+          source: https://www.kra.go.ke/business/etims-electronic-tax-invoice-management-system/learn-about-etims/what-is-etims
+
+        - id: gst-invoice
+          term: GST invoice
+          aka: tax invoice
+          definition: >-
+            The invoice a GST-registered business in India issues for taxable supplies, showing its GSTIN, a
+            serial number, the HSN or SAC code, the taxable value and the tax on each line. Health care
+            services from a clinical establishment or an authorised medical practitioner are exempt from GST,
+            so consultations and treatment usually go on a bill of supply instead. Taxable items still need a
+            proper tax invoice, for example medicines sold over the counter from a clinic's pharmacy, or
+            cosmetic procedures such as hair transplants, which the exemption leaves out.
+          href: /features/billing/
+          hrefLabel: Billing and invoicing
+          source: https://cbic-gst.gov.in/pdf/circularno-32-cgst.pdf
+
+        - id: hfr
+          term: HFR
+          aka: Health Facility Registry
+          definition: >-
+            ABDM's national register of health facilities in India, public and private, across modern and
+            traditional systems of medicine: hospitals, clinics, diagnostic labs and imaging centres, pharmacies
+            and more. A registered facility gets an HFR ID, which it needs before it can join the ABDM network
+            and link patient records to ABHA numbers. Registration is voluntary, and each facility's details
+            show as verified or self-declared. HFR and the Healthcare Professionals Registry now sit together on
+            one portal, the National Healthcare Providers Registry.
+          href: /clinic-management-software-india/
+          hrefLabel: ABDM milestones for clinics in India
+          source: https://nhpr.abdm.gov.in/
+
+        - id: hl7-fhir
+          term: HL7 FHIR
+          aka: Fast Healthcare Interoperability Resources
+          definition: >-
+            A standard from HL7 for exchanging health data between systems. It breaks a record into small
+            defined pieces called resources, such as a patient, an encounter, a medication or an observation,
+            exchanged as JSON or XML, often over a web API. National programmes build on it: ABDM's health
+            record formats, including prescriptions, OP consultation notes, discharge summaries and invoices,
+            are FHIR R4 profiles, and Dubai's NABIDH standards ask systems to support FHIR alongside older HL7
+            version 2 messages. When a vendor says it supports FHIR, ask which version and which profiles.
+          href: /trust/
+          hrefLabel: Security and compliance
+          source: https://hl7.org/fhir/overview.html
+
+        - id: hmo
+          term: HMO
+          aka: health maintenance organisation
+          definition: >-
+            In Nigeria, a company that manages health plans for employers and individuals, including plans
+            under the National Health Insurance Authority, and pays the clinics and hospitals its enrollees use.
+            The NHIA accredits HMOs and publishes the list. Under NHIA arrangements a primary care clinic is
+            usually paid a fixed capitation per enrolled patient, while secondary and tertiary care is paid
+            fee-for-service, typically after the HMO issues an authorisation code for the referral. A clinic
+            that works with several HMOs has to track each one's tariffs and claim rules separately.
+          href: /features/insurance-claims/
+          hrefLabel: Insurance claims
+          source: https://www.nhia.gov.ng/hmo/
+
+        - id: hpr
+          term: HPR
+          aka: Healthcare Professionals Registry
+          definition: >-
+            ABDM's national register of verified healthcare professionals in India, covering doctors of modern
+            medicine, dentistry, Ayurveda, Unani, Siddha, Sowa-Rigpa and homoeopathy, and nurses. A doctor
+            enrols once and gets an HPR ID, their identifier inside ABDM. Enrolment is voluntary and free, and
+            it does not replace registration with the medical or dental council, which remains a legal
+            requirement to practise. A doctor who is not enrolled cannot see patient records through ABDM, and
+            a private facility that joins ABDM needs its doctors on the registry.
+          href: /how-to-get-approval-from-the-medical-practitioners-and-dentists-council-in-india-nmc-dci/
+          hrefLabel: NMC registration for clinics in India
+          source: https://abdm.gov.in/strapicms/uploads/ABDM_Building_Blocks_v8_3_External_Version_eabbc5c0f3_4_a96f40c645_5716a684de_b344369144.pdf
+
+        - id: kenya-data-protection-act
+          term: Kenya Data Protection Act
+          aka: Data Protection Act, No. 24 of 2019
+          definition: >-
+            Kenya's data protection law, enforced by the Office of the Data Protection Commissioner (ODPC). It
+            treats health data as sensitive personal data, which may be processed only by or under the
+            responsibility of a health care provider or someone bound by confidentiality, for a lawful purpose.
+            Every clinic, hospital, lab or pharmacy must register with the ODPC, whatever its size or turnover.
+            A breach must be reported to the ODPC within 72 hours of the clinic becoming aware of it, and
+            patients affected by unauthorised access must be told in writing.
+          href: /trust/
+          hrefLabel: Security and compliance
+          source: https://www.odpc.go.ke/wp-content/uploads/2024/02/ODPC-Guidance-Note-on-Processing-of-Health-Data.pdf
+
+        - id: kmpdc
+          term: KMPDC
+          aka: Kenya Medical Practitioners and Dentists Council
+          definition: >-
+            The statutory body that registers and licenses medical and dental practitioners in Kenya and
+            licenses health facilities, under the Medical Practitioners and Dentists Act (Cap. 253). It inspects
+            facilities for compliance, and it renews each practitioner's licence every year once their
+            continuing professional development points are in order. Opening a private clinic means two KMPDC
+            steps: the doctor's own licence, then the facility licence after an inspection. A bill before the
+            Senate in September 2026 would give facility licensing and inspection to a new Quality Healthcare
+            and Patient Safety Authority, so check which body licenses facilities when you apply.
+          href: /how-do-i-get-approval-from-the-kmpdc-in-kenya/
+          hrefLabel: KMPDC registration for clinics
+          source: https://kmpdc.go.ke/
+
+        - id: m-pesa
+          term: M-Pesa
+          definition: >-
+            Safaricom's mobile money service, which many patients in Kenya use to pay at the clinic desk. A
+            clinic collects through a Lipa na M-Pesa Buy Goods till or a Paybill number. With Safaricom's Daraja
+            API, a clinic system can send an M-Pesa Express prompt to the patient's phone, where they enter
+            their PIN to pay the exact amount on the bill. The hard part for a clinic is reconciliation: matching
+            each M-Pesa confirmation to the right invoice, so the day's till report agrees with the M-Pesa
+            statement.
+          href: /features/billing/
+          hrefLabel: Billing and invoicing
+          source: https://www.safaricom.co.ke/lipa-na-m-pesa
+
+        - id: malaffi
+          term: Malaffi
+          aka: Abu Dhabi Health Information Exchange
+          definition: >-
+            Abu Dhabi's health information exchange, Arabic for "my file", launched in 2019. It is operated by
+            Abu Dhabi Health Data Services as a public-private partnership with the Department of Health, Abu
+            Dhabi, and gathers each patient's consultations, emergency visits, lab tests and radiology images
+            from public and private providers into one record that treating clinicians can view. The Department
+            of Health's data standards require healthcare providers to send their data through Malaffi, and
+            Malaffi exchanges records with Dubai's NABIDH and the federal Riayati platform.
+          href: /clinic-management-software-uae/
+          hrefLabel: Clinic software in the UAE
+          source: https://www.doh.gov.ae/en/featured/malaffi
+
+        - id: moh-705
+          term: MOH 705
+          aka: outpatient morbidity summary
+          definition: >-
+            The Kenya Ministry of Health's outpatient morbidity summary. MOH 705A covers children under five and
+            MOH 705B covers patients aged five and over; each counts new outpatient cases by diagnosis through
+            the month, from malaria and diarrhoea to notifiable diseases. Facilities submit the monthly totals to
+            the Kenya Health Information System, KHIS, which runs on DHIS2. Done by hand it means tallying the
+            register line by line, while a clinic system that records a coded diagnosis at each visit can count
+            the totals for you.
+          href: /emr-software-in-kenya/
+          hrefLabel: Clinic software in Kenya
+          source: https://hiskenya.org/
+
+        - id: nabh
+          term: NABH
+          aka: National Accreditation Board for Hospitals and Healthcare Providers
+          definition: >-
+            A constituent board of the Quality Council of India that sets quality and patient-safety standards
+            for Indian healthcare and accredits organisations against them. It runs separate programmes for
+            hospitals, small healthcare organisations, allopathic clinics, dental clinics, eye care
+            organisations and Ayush centres, plus an entry-level certification. NABH accreditation is voluntary.
+            Assessors look for written processes that staff actually follow, and they check the evidence on
+            paper or on screen: consent forms, medication records, infection-control logs and the medical record
+            itself.
+          href: /clinic-management-software-india/
+          hrefLabel: Clinic software in India
+          source: https://nabh.co/
+
+        - id: nabidh
+          term: NABIDH
+          aka: Network and Analysis Backbone for Integrated Dubai Health
+          definition: >-
+            The Dubai Health Authority's health information exchange, which connects public and private
+            facilities in Dubai so each patient has one record across providers. Its standards apply to every
+            DHA-licensed facility: before a new facility licence is activated, DHA asks for evidence that the
+            clinic's EMR complies with the NABIDH minimum data set and connectivity requirements, and for DHA's
+            email approving a tested connection. Data is sent mainly as HL7 version 2 messages, the recommended
+            standard, and systems are expected to support FHIR as well. NABIDH connectivity is the first thing to check when choosing an
+            EMR in Dubai.
+          href: /clinic-management-software-uae/
+          hrefLabel: Clinic software in the UAE
+          source: https://dha.gov.ae/uploads/102022/NABIDH%20Policies%20&%20Standards%20-%20Interoperability%20and%20Data%20Exchange%20Standards2022100429.pdf
+
+        - id: ndpa
+          term: NDPA
+          aka: Nigeria Data Protection Act, 2023
+          definition: >-
+            Nigeria's data protection law, signed on 12 June 2023 and enforced by the Nigeria Data Protection
+            Commission (NDPC). It treats health data as sensitive personal data with stricter conditions for
+            processing it. NDPC guidance designates organisations that process personal data in the health
+            sector, or data about more than 200 people in six months, as data controllers of major importance,
+            which must register with the Commission and appoint a data protection officer. A breach likely to
+            put people at risk must be reported to the NDPC within 72 hours.
+          href: /trust/
+          hrefLabel: Security and compliance
+          source: https://ndpc.gov.ng/wp-content/uploads/2025/07/Updated-Guidance-Notice-on-Registtration-2024.pdf
+
+        - id: nhia
+          term: NHIA
+          aka: National Health Insurance Authority
+          definition: >-
+            Nigeria's federal health insurance regulator, established by the National Health Insurance Authority
+            Act signed on 19 May 2022, which replaced the NHIS Act of 1999 and made health insurance mandatory
+            for all Nigerians and legal residents. The NHIA accredits healthcare providers and HMOs and sets the
+            guidelines and tariffs for its programmes, which include a Vulnerable Group Fund for people who
+            cannot pay. A clinic that wants NHIA enrollees must be accredited, then keep encounter records and
+            claim documents in the form the NHIA and each HMO require.
+          href: /hospital-management-software-nigeria/
+          hrefLabel: Clinic and hospital software in Nigeria
+          source: https://www.nhia.gov.ng/about-us/
+
+        - id: nmc-telemedicine-guidelines
+          term: NMC Telemedicine Practice Guidelines
+          definition: >-
+            India's rules for teleconsultation by registered medical practitioners, issued in March 2020 as
+            Appendix 5 to the professional conduct regulations. They set out how to identify the patient and
+            record consent, and sort medicines into lists: List O, safe over any mode, such as paracetamol; List
+            A, which can be prescribed on a first video consult; List B, only on follow-up, added to what was
+            prescribed in person; and a prohibited list, including Schedule X drugs and narcotics, never
+            prescribed remotely. The doctor shares a signed or electronic prescription in the usual format.
+          href: /features/telehealth/
+          hrefLabel: Telehealth
+          source: https://esanjeevani.mohfw.gov.in/assets/guidelines/Telemedicine_Practice_Guidelines.pdf
+
+        - id: no-show
+          term: No-show
+          definition: >-
+            A patient who books an appointment and neither arrives nor cancels. Each one leaves an empty slot
+            that a walk-in or a waiting patient could have used, and in a busy clinic the lost fees add up over a
+            month. The usual fixes are reminders the day before and on the morning of the visit, with an easy
+            way to cancel or rebook from the reminder, and a record of repeat no-shows so the front desk can ask
+            those patients to confirm. Measure the no-show rate before and after any change, or you will not
+            know whether it worked.
+          href: /features/appointment-scheduling/
+          hrefLabel: Appointment scheduling
+
+        - id: opd
+          term: OPD
+          aka: outpatient department
+          definition: >-
+            The part of a hospital or clinic that sees patients who go home the same day: consultations,
+            follow-ups, minor procedures, and the lab and pharmacy visits that come with them. Its counterpart
+            is the IPD, the inpatient department, for patients admitted to a bed. In India both terms are
+            everyday usage, as in OPD billing or OPD timings. Running an OPD well is mostly queue management:
+            registration, a token or appointment, vitals, consultation, then billing and the pharmacy or lab,
+            with each handoff a place where patients wait.
+          href: /solutions/hospital-opd/
+          hrefLabel: Hospital OPD and nursing homes
+
+        - id: pre-authorisation
+          term: Pre-authorisation
+          aka: prior authorisation
+          definition: >-
+            Approval a provider must get from the payer before a planned service, so the patient's cover is
+            confirmed before the cost is incurred. In India, IRDAI requires insurers to decide on a cashless
+            authorisation request within one hour and to give final discharge authorisation within three hours
+            of the hospital's request. Kenya's SHA regulations require pre-authorisation for specified services
+            in its benefit package, Dubai's prior authorisation requests go through eClaimLink, and Nigerian HMOs
+            issue an authorisation code before a referral to secondary care. A missing pre-authorisation is a
+            common reason for a claim to be denied.
+          href: /features/insurance-claims/
+          hrefLabel: Insurance claims
+          source: https://irdai.gov.in/documents/37343/365525/%e0%a4%b8%e0%a5%8d%e0%a4%b5%e0%a4%be%e0%a4%b8%e0%a5%8d%e0%a4%a5%e0%a5%8d%e0%a4%af+%e0%a4%ac%e0%a5%80%e0%a4%ae%e0%a4%be+%e0%a4%b5%e0%a5%8d%e0%a4%af%e0%a4%b5%e0%a4%b8%e0%a4%be%e0%a4%af+%e0%a4%aa%e0%a4%b0+%e0%a4%ae%e0%a4%be%e0%a4%b8%e0%a5%8d%e0%a4%9f%e0%a4%b0+%e0%a4%aa%e0%a4%b0%e0%a4%bf%e0%a4%aa%e0%a4%a4%e0%a5%8d%e0%a4%b0+_+Master+Circular++on+Health++Insurance+Business++29052024.pdf/5e707a91-b5de-1ec1-cf18-b66273a6839d?t=1716962621002&version=1.0
+
+        - id: revenue-leakage
+          term: Revenue leakage
+          definition: >-
+            Money a clinic earned but never collected. It usually leaks in four places: services given but never
+            billed, such as a dressing or a lab test ordered in the chart; the wrong price list applied to a
+            patient or payer; cash that does not match the day's receipts; and insurance claims that are denied
+            or never resubmitted. Each leak is small on a single visit and large over a year. Finding it means
+            comparing what the chart says was done with what the bill says was charged, visit by visit.
+          href: /features/revenue-management/
+          hrefLabel: Revenue management
+
+        - id: riayati
+          term: Riayati
+          aka: National Unified Medical Record
+          definition: >-
+            The UAE's National Unified Medical Record platform, run by the Ministry of Health and Prevention. It
+            links public and private hospitals, clinics, day care centres and diagnostic centres so a patient's
+            record is available across facilities, and it is the exchange used by facilities outside Dubai and
+            Abu Dhabi, mainly in the Northern Emirates. In January 2023 the three health authorities announced
+            that Riayati was linked with NABIDH in Dubai and Malaffi in Abu Dhabi, so between them the three
+            platforms cover the country. A clinic outside Dubai and Abu Dhabi should ask its EMR vendor about
+            Riayati first.
+          href: /clinic-management-software-uae/
+          hrefLabel: Clinic software in the UAE
+          source: https://www.doh.gov.ae/en/news/uae-health-authorities-announce-successful-integration-between-riayati-malaffi-and-nabidh
+
+        - id: sha
+          term: SHA
+          aka: Social Health Authority
+          definition: >-
+            Kenya's public health insurer under the Social Health Insurance Act, 2023. It replaced the National
+            Hospital Insurance Fund (NHIF) on 1 October 2024 and pays for care through three funds: the Primary
+            Healthcare Fund, the Social Health Insurance Fund (SHIF), and the Emergency, Chronic and Critical
+            Illness Fund. Apart from emergency treatment, it pays only facilities it has empanelled and
+            contracted, at its benefit package tariffs. For the 2026 to 2028 contracting cycle, facilities must
+            send claims from their own system, certified by Kenya's Digital Health Agency, instead of the SHA
+            Provider Portal, by 30 September 2026.
+          href: /features/insurance-claims/
+          hrefLabel: Insurance claims
+          source: https://sha.go.ke/
+
+        - id: shif
+          term: SHIF
+          aka: Social Health Insurance Fund
+          definition: >-
+            The contributory fund at the centre of Kenya's Social Health Authority scheme. Households with
+            salaried income pay 2.75% of gross salary each month, and other households pay 2.75% of income as
+            assessed by a means test, with a minimum of KES 300 a month. Being a SHIF member gives a person
+            primary care at level 2 and 3 facilities, which SHA pays for from the separate Primary Healthcare
+            Fund, and the services in the SHIF benefit package at contracted facilities. People often say SHIF
+            when they mean the whole SHA scheme.
+          href: /emr-software-in-kenya/
+          hrefLabel: Clinic software in Kenya
+          source: https://health.go.ke/sites/default/files/2024-11/Social%20Health%20Insurance%20(General)%20Regulations,%202024_0.pdf
+
+        - id: slade
+          term: SLADE
+          aka: Slade360
+          definition: >-
+            An electronic claims platform in Kenya, Slade360 from Savannah Informatics, that connects healthcare
+            providers with private insurers. Instead of printing an invoice and a claim form and waiting for a
+            courier, the provider submits the claim on the platform and follows it through the insurer's review
+            to payment. A number of Kenyan private insurers and thousands of providers use it.
+            A clinic's billing system either connects to it directly, or someone at the desk types each claim
+            into the Slade360 portal a second time.
+          href: /features/insurance-claims/
+          hrefLabel: Insurance claims
+          source: https://www.savannahinformatics.com/slade360edi
+
+        - id: token-system
+          term: Token system
+          definition: >-
+            A queue in which each arriving patient gets a numbered token and is called in that order, common in
+            outpatient clinics in India. Tokens can be issued at the desk or booked in advance, with walk-ins
+            slotted between booked patients. A display screen or an SMS tells patients when their number is
+            close, so they can wait outside instead of crowding reception. At the end of the day the token list
+            is also a record of who came and in what order, which helps when the receptionist and the doctor
+            disagree about how busy the morning was.
+          href: /features/appointment-scheduling/
+          hrefLabel: Appointment scheduling
+
+        - id: tpa
+          term: TPA
+          aka: third-party administrator
+          definition: >-
+            In Indian health insurance, a company registered with IRDAI and engaged by an insurer to administer
+            its health policies, mainly cashless authorisations and claims. When an insured patient is treated at
+            a network hospital, the hospital sends the pre-authorisation request and later the claim to the TPA,
+            which processes it on the insurer's behalf. Under IRDAI's 2024 master circular the insurer or TPA
+            collects claim documents from the hospital, not the patient, and insurers are asked to bring
+            hospitals onto the National Health Claims Exchange.
+          href: /features/insurance-claims/
+          hrefLabel: Insurance claims
+          source: https://irdai.gov.in/documents/37343/365525/%e0%a4%b8%e0%a5%8d%e0%a4%b5%e0%a4%be%e0%a4%b8%e0%a5%8d%e0%a4%a5%e0%a5%8d%e0%a4%af+%e0%a4%ac%e0%a5%80%e0%a4%ae%e0%a4%be+%e0%a4%b5%e0%a5%8d%e0%a4%af%e0%a4%b5%e0%a4%b8%e0%a4%be%e0%a4%af+%e0%a4%aa%e0%a4%b0+%e0%a4%ae%e0%a4%be%e0%a4%b8%e0%a5%8d%e0%a4%9f%e0%a4%b0+%e0%a4%aa%e0%a4%b0%e0%a4%bf%e0%a4%aa%e0%a4%a4%e0%a5%8d%e0%a4%b0+_+Master+Circular++on+Health++Insurance+Business++29052024.pdf/5e707a91-b5de-1ec1-cf18-b66273a6839d?t=1716962621002&version=1.0
+
+        - id: uae-pdpl
+          term: UAE PDPL
+          aka: Federal Decree-Law No. 45 of 2021
+          definition: >-
+            The UAE's general personal data protection law. It bars processing personal data without the
+            owner's consent except in listed cases, and gives people the right to have inaccurate data
+            corrected. It leaves in place the laws that already regulate health data, so a clinic's patient
+            records fall mainly under Federal Law No. 2 of 2019 on the use of ICT in health fields. That law
+            bars storing or processing health data outside the UAE unless an exemption applies, and requires
+            records to be kept for at least 25 years after the patient's last treatment.
+          href: /trust/
+          hrefLabel: Security and compliance
+          source: https://u.ae/en/about-the-uae/digital-uae/data/data-protection-laws
+
+        - id: whatsapp-business-platform
+          term: WhatsApp Business Platform
+          aka: WhatsApp Business API
+          definition: >-
+            Meta's service for businesses that send WhatsApp messages from their own software, often called the
+            WhatsApp Business API, as distinct from the free WhatsApp Business app on a phone. Messages a
+            business starts, such as appointment reminders, must use a template approved in advance. Since 1
+            July 2025 Meta charges for each delivered template message, at rates that depend on the template's
+            category and the recipient's country. Free-form replies within 24 hours of the patient's last
+            message cost nothing, and so do utility templates sent inside that window.
+          href: /features/whatsapp/
+          hrefLabel: WhatsApp reminders and messages
+          source: https://developers.facebook.com/docs/whatsapp/pricing/
+
+links:
+  related:
+    - href: /features/
+      label: All features
+      description: Every part of EasyClinic, from the front desk to the claim, with a page for each.
+    - href: /trust/
+      label: Security and compliance
+      description: Where patient data is hosted, and the status and date EasyClinic gives for each regulator.
+    - href: /start-a-clinic/
+      label: Start a clinic
+      description: Licensing and opening costs for a new clinic, country by country.
+
+closing:
+  heading: See how the terms fit a working clinic
+  body: >-
+    In 20 minutes we walk one patient through EasyClinic, from the front desk to the bill, and answer your
+    questions about how it fits your clinic and your country's rules.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The definitions put the four countries EasyClinic sells in side by side in a clinic's own terms: the two
+    meanings of DHA in Dubai and Kenya, the bill of supply that GST-exempt consultations need, the NABIDH
+    connection DHA checks before a Dubai licence is activated, and the ODPC registration every Kenyan clinic
+    owes whatever its size. Little of it rests on EasyClinic's own experience.
+  readsMachineWritten: >-
+    Forty definitions of similar length that open with what the term is and close with what it means for a
+    clinic will read as generated, so the read-aloud pass should vary the endings and check that no
+    definition drifts into describing EasyClinic.
+
+notes:
+  - 'Spec 5.19 asks for forty definitions of 60 to 100 words with an anchor each and a link to the deeper page; there are exactly 40, each with an id (the anchor), an href, and a source for every regulator, law, scheme, platform and standard. Descriptive terms (claim denial, clinic management software, e-prescription, no-show, OPD, revenue leakage, token system) carry no source.'
+  - 'Terms trimmed from the brief''s list: practice management is the aka of clinic management software; IPD is defined inside OPD; recall campaign was dropped. "Revenue cycle" became "Revenue leakage" because spec 4.5 rule 2 says the phrase "revenue cycle management" appears only on /features/revenue-management/.'
+  - 'No definition states or implies EasyClinic''s status with any regulator, exchange or integration (all unknown). The Kenya insurer names on /kenyademo/ (Jubilee, AAR, CIC, Britam, Resolution via SLADE) are left out of the SLADE entry because they describe EasyClinic''s integration claims, not SLADE itself.'
+  - 'Link targets follow spec 4.5: TPA, HMO, SHA, SLADE, eClaimLink and pre-authorisation go to /features/insurance-claims/ (rule 2); GST, eTIMS and M-Pesa go to /features/billing/; denials and leakage go to /features/revenue-management/; ABDM goes to /trust/ (rule 6); WhatsApp API and templates go to /features/whatsapp/ (rule 3). /clinic-management-software-uae/ is planned as a draft; until it publishes, production drops those four links (registry urlFor returns null) and the terms render with the official source link only.'
+  - 'Sources re-fetched and checked 26 Sep 2026 by an adversarial fact-check pass. ABDM, ABHA, HPR: NHA "brief guide on ABDM and its building blocks" on abdm.gov.in (14-digit ABHA, earlier Health ID, PHR address xyz@abdm, voluntary participation, HPR covers doctors of modern medicine, dentistry and the Ayush systems with nurses and others to follow, HPR does not replace council registration, no HPR fee, only ABDM-enrolled doctors access records from other providers, a private facility joining ABDM needs its professionals on HPR); launch 27 Sep 2021 from PIB (PRID 1758502). M1 (ABHA creation and verification), M2 (HIP, linking records) and M3 (HIU, consent-based fetch) checked on sandbox.abdm.gov.in milestone docs. HFR: hfr and hpr portals both redirect to nhpr.abdm.gov.in (National Healthcare Providers Registry); facility types, voluntary enrolment and verified or self-declared status from the building-blocks guide. HPR source moved from the NHPR portal (a script-only page) to the building-blocks guide, which holds every HPR claim. ABDM FHIR R4 profiles: nrces.in FHIR IG for ABDM.'
+  - 'DPDP: PIB explainer of 17 Nov 2025 (Act 11 Aug 2023; Rules notified 14 Nov 2025; 18-month phased compliance; 90-day response to rights requests; penalties up to ₹250 crore for security safeguards). The end date of the phase-in is not given because a proposal to shorten it (reported Jan 2026) has no located amending instrument.'
+  - 'NMC Telemedicine Practice Guidelines: source changed from the nmc.org.in home page (no telemedicine document reachable; its document links return 404) to the MoHFW eSanjeevani copy of the Board of Governors document dated 25 March 2020, "Appendix 5 of the Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulation, 2002", which holds Lists O, A, B and the prohibited list (Schedule X and NDPS drugs) and the signed or e-prescription rule.'
+  - 'GST: CBIC Circular 32/06/2018 (health care services by a clinical establishment, authorised medical practitioner or para-medics exempt, Sl. 74 of Notification 12/2017-CT(Rate)); cosmetic and plastic surgery exclusion from the same notification; bill of supply for exempt supplies is section 31(3)(c) of the CGST Act (not fetched, standard law). NABH: nabh.co (QCI constituent, programme list, "NABH accreditation is voluntary"). TPA and pre-authorisation: IRDAI Master Circular on Health Insurance Business, 29 May 2024 (cashless decision within one hour, discharge authorisation within three hours, documents collected from hospitals, NHCX onboarding).'
+  - 'Kenya: SHA launch 1 Oct 2024 (health.go.ke press release); three funds (sha.go.ke menu); 2.75% and KES 300 minimum, PHC access at level 2 and 3, empanelment and emergency exception, pre-authorisation definition (Social Health Insurance (General) Regulations 2024 PDF on health.go.ke). SHA HMIS rule: SHA notice of 1 Sep 2026 as reported by Kenyans.co.ke, The Star, Capital FM and The Standard (a DHA-certified HMIS able to exchange data with SHA, replacing reliance on the Provider Portal, required for the 2026/28 contracting cycle, deadline extended from 1 Sep to 30 Sep 2026); the notice itself is not posted on sha.go.ke, so the SHA source stays the home page; re-check after 30 Sep 2026. The seven-day claim deadline in the regulations PDF is left out because the copy is unnumbered and may differ from the gazetted text. eTIMS: KRA public notices (all businesses from 1 Sep 2023; expenses without eTIMS invoices not deductible from 1 Jan 2024) and "What is eTIMS". ODPC: Guidance Note on Processing of Health Data (health data sensitive, processing by or under a provider or person bound by secrecy, mandatory registration for the health sector, 72-hour breach report, written notice to affected patients). KMPDC: kmpdc.go.ke (registers and licenses practitioners and health facilities, annual licence, CPD compliance). The Quality Healthcare and Patient Safety Bill 2025 passed the National Assembly on 2 Jun 2026 and was read in the Senate on 15 Jul 2026 (The Star; Mzalendo tracker shows no assent as of 20 Sep 2026); it would create an Authority to license and inspect facilities, so the KMPDC entry says so and must be updated if it is enacted. Digital Health Act: Agency functions (s.6) checked in the Kenya Law PDF of Act 15 of 2023; kenyalaw.org returns 403 to fetches; LN 76 and 77 of 2025 commenced 11 Apr 2025. "Sets interoperability standards" was softened to "promotes standards for data exchange" because s.6 says the Agency promotes and supports standards. MOH 705A (under five) and 705B (five and over) monthly summaries reported in KHIS; hiskenya.org is the KHIS DHIS2 login page; no single official MOH 705 page was found. SLADE: Savannah Informatics Slade360 EDI page (claims submission, payer review and approval, payment tracking, 6 payers and 3,000+ providers); the earlier "validates against cover in real time" was not on the page and was removed. M-Pesa: Safaricom Lipa na M-Pesa page (Buy Goods till, Paybill; WebFetch gets 403, a browser fetch works) and Daraja.'
+  - 'UAE: DHA entry now cites the DHA Manual for Licensing Health Facility (Nov 2024), which holds its mandate (licensure and inspection of facilities and professionals, regulations), Sheryan-only applications, the inspection and the NABIDH EMR evidence and tested-connectivity approval email before activation. NABIDH entry now cites the DHA Standards for Interoperability and Data Exchange (issue 2, effective 2 Jul 2025, served at the 2022 upload URL), which defines NABIDH, applies to DHA-licensed facilities, names HL7 v2 as the recommended standard and asks systems to support FHIR; the two sources were swapped so each entry rests mainly on its own citation. Malaffi: doh.gov.ae featured page (launched 2019, "my file", ADHDS PPP, integrated with Riayati and NABIDH) and the DoH HIE standards page (minimum data set sent from EMRs to Malaffi). Riayati: mohap.gov.ae resets the connection, so the source is now the DoH news release of 31 Jan 2023 (Riayati is the NUMR under MoHAP; integration with Malaffi and NABIDH announced); facility types (public and private hospitals, clinics, day care centres, diagnostic centres) come from MOHAP page listings in search results. "Pharmacies" was removed from the Riayati entry because no fetched source lists them. eClaimLink: eclaimlink.ae (registration opened April 2012), eClaimLink General Circular 04/2018 (eRx reference for insured and cash patients, DHA and DHCC licensed) and the DHIC data governance directive. PDPL: u.ae data protection page (Decree-Law 45 of 2021; consent except listed cases; correction right; ICT Health Law No. 2 of 2019 covers health ICT); the health-data carve-out and the ICT Health Law rules (Article 13 localisation, Article 20 25-year retention) come from legal summaries because uaelegislation.gov.ae returns 403.'
+  - 'Nigeria: NHIA about page (Act signed 19 May 2022, replaced NHIS Act 1999, Vulnerable Group Fund), NHIA accredited HMO list; capitation for primary and fee-for-service for secondary care and HMO authorisation codes for referrals come from NHIA operational guideline summaries and a federal hospital NHIS page, not a single NHIA document. NDPA: NDPC registration guidance notice (health sector designation, 200 data subjects in six months); 72-hour breach report is section 40(2) as quoted by NDPC materials; signing date 12 Jun 2023. Re-checked 26 Sep 2026: the NHIA about page confirms the 19 May 2022 signing and the NHIS Act 1999 repeal; the mandatory cover for citizens and legal residents is sections 3(b) and 14(1) of the Act as summarised by WHO AFRO and legal commentary; the NHIA HMO page is the accredited HMO list (no count given here because the about page and the list disagree, 82 against 94). NDPA signing date, section 32 (DPO for controllers of major importance) and section 40(2) (72 hours) checked in the gazetted Act text. The pre-authorisation entry now also names HMO authorisation codes before a referral, on the same basis as the HMO entry.'
+  - 'Facts left out as unconfirmed or changeable: the number of ABHA accounts and registered facilities, NHIA HMO and provider counts, Malaffi and Riayati facility counts, SHIF benefit tariffs, WhatsApp per-message rates, DPDP phase-in end date, whether DHA Kenya certification exists for any vendor, and HFR registration fees.'
