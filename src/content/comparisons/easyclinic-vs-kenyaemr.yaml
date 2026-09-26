@@ -1,0 +1,496 @@
+# /easyclinic-vs-kenyaemr/ (spec 4.3 row, 5.16 "Keep, refresh the date, apply the table rules", section 11
+# "Adopt Healthie's structure exactly"). Slug kept: the live page ranks. Every KenyaEMR fact was re-sourced on
+# 2026-09-26 from Palladium Kenya's KenyaHMIS site and documents, the KenyaEMR GitHub repositories, the OpenMRS
+# wiki and Palladium's own article; EasyClinic facts come only from docs/briefs/page-writing-rules.md.
+status: published
+headKeyword: KenyaEMR vs private EMR
+secondaryKeywords:
+  - KenyaEMR alternative
+  - private clinic EMR Kenya
+title: 'EasyClinic vs KenyaEMR: Which EMR for a Kenyan Clinic?'
+metaDescription: >-
+  KenyaEMR is the national open-source EMR at 2,200+ Kenyan sites, with no licence fee. EasyClinic is
+  paid cloud software for private clinics. Facts dated.
+h1: EasyClinic vs KenyaEMR
+linkLabel: EasyClinic vs KenyaEMR
+eyebrow: Kenya comparison
+openingAnswer: >-
+  If your facility is in Kenya's national rollout and reports on HIV or TB programmes, KenyaEMR is built
+  for that job and has no licence fee, and it already runs at more than 2,200 sites. If you run a private
+  clinic that wants its software hosted and supported for it, with M-Pesa and SLADE insurer claims on one
+  bill, EasyClinic fits better, from {price:usd.professional.annual} per doctor per month.
+summary: >-
+  KenyaEMR and EasyClinic compared for a Kenyan clinic: who each is for, a sourced side-by-side table,
+  four desk tests to run on both, and what each costs a private clinic.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+country: ke
+ctas:
+  primary:
+    label: Book a demo in Kenya
+    href: /kenyademo/
+  secondary:
+    label: See EasyClinic prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic vs KenyaEMR page and would like a demo for my clinic in Kenya.
+
+sections:
+  # Healthie structure, step 1 after the TL;DR (the openingAnswer): what each product is.
+  - discriminant: prose
+    value:
+      id: two-systems
+      heading: What KenyaEMR is, and what EasyClinic is
+      body: |
+        **KenyaEMR** is Kenya's national, open-source electronic medical record. It is a distribution of OpenMRS, first built by I-TECH to the Ministry of Health's 2011 Kenya EMR Standards and Guidelines, and now led by Palladium Kenya, which rolls it out with more than 30 implementing partners. Palladium's KenyaHMIS site counts more than 2,200 active KenyaEMR sites. Palladium's support is funded through KeHMIS III, a PEPFAR cooperative agreement between CDC Kenya and Palladium Kenya that runs from 30 September 2021 to 29 September 2026, and whose scope includes sustaining these systems beyond PEPFAR support.
+
+        KenyaEMR began in HIV clinics. The current version, TaifaCare KenyaEMR, covers the whole facility: registration and queues, outpatient and inpatient care, maternity, lab and pharmacy, billing with M-Pesa, and SHA e-claims sent through the national Health Information Exchange, with the patient verified by fingerprint or a one-time code. Palladium's setup guide installs it on an Ubuntu server, and Palladium describes it as optimised for low-connectivity settings. The latest release, 19.4.4, came out in September 2026.
+
+        **EasyClinic** is paid clinic management software and EMR for private clinics, made by Novel Medicare Solutions in Kolkata and running clinics since {fact:founded}. {fact:doctors} doctors use it in {fact:countries} countries, from one-doctor clinics to a chain with {fact:largestChain} locations. In Nairobi, Penda Health has run its clinics on EasyClinic since 2017.
+
+        EasyClinic runs in the browser, hosted by us and upgraded every month. A Kenyan clinic uses it for M-Pesa at the desk, claims to Jubilee, AAR, CIC, Britam and Resolution through SLADE from the same bill, prescriptions printed in English and Swahili, and the MOH 705 report built from the visits it recorded.
+      width: measure
+
+  # Healthie step 2: who each is for. The KenyaEMR option carries as many substantive reasons as ours.
+  - discriminant: decisionMatrix
+    value:
+      id: who-each-is-for
+      heading: Who each one is for
+      intro: >-
+        The two were built for different jobs. KenyaEMR was built for the national health programmes and the
+        facilities that report to them; EasyClinic was built for private clinics that live on patient and
+        insurer payments.
+      options:
+        - title: Choose KenyaEMR if
+          us: false
+          items:
+            - >-
+              Your facility is in the national rollout, where Palladium Kenya's implementing partners put
+              KenyaEMR in and the KenyaHMIS service desk supports it free of charge.
+            - >-
+              You run HIV, TB, PrEP or maternal and child health services and report them to the National Data
+              Warehouse and to KHIS.
+            - >-
+              You need inpatient wards and a mortuary in the same system as the outpatient clinic.
+            - >-
+              Your internet line is weak and you want the record on a server inside the building.
+            - >-
+              You want software with no licence fee, whose code you can read and change under the Mozilla
+              Public License 2.0.
+            - >-
+              You have a technical person, or a partner, to look after the server and apply each release.
+        - title: Choose EasyClinic if
+          us: true
+          items:
+            - >-
+              You run a private clinic and would rather not own a server: EasyClinic is hosted for you and
+              upgraded every month.
+            - >-
+              Much of your income comes from Jubilee, AAR, CIC, Britam or Resolution, and you want those claims
+              sent through SLADE from the same bill as the M-Pesa payment.
+            - >-
+              You want appointment reminders and follow-ups on WhatsApp, on Premium and Enterprise, as well as
+              SMS and email.
+            - You want Cura AI to draft the consultation note, which it does on every plan.
+            - >-
+              You run, or plan to open, more than one branch and want them in one system, from Premium up.
+            - >-
+              You want to be live in as little as {fact:goLiveDays} days after the demo, with training spread
+              over {fact:trainingDays} days.
+
+  # Healthie step 3: the table. Every KenyaEMR cell has a source URL and checkedOn (schema superRefine).
+  # Rows where EasyClinic's answer is unconfirmed (SHA, eTIMS, review counts) are left out; see notes.
+  - discriminant: comparisonTable
+    value:
+      id: side-by-side
+      heading: KenyaEMR and EasyClinic side by side
+      intro: >-
+        EasyClinic publishes this page. Each KenyaEMR cell links to the page it came from, checked on 26
+        September 2026. Where KenyaEMR's own pages say nothing on a point, the cell says "Not published"
+        rather than guessing.
+      columns:
+        - name: EasyClinic
+          us: true
+        - name: KenyaEMR
+      rows:
+        - label: What it is
+          cells:
+            - value: Clinic management software and EMR for private clinics, from one doctor to a chain with {fact:largestChain} locations
+            - value: An OpenMRS distribution for Kenya, led by Palladium Kenya and rolled out with 30+ implementing partners
+              source: https://openmrs.atlassian.net/wiki/spaces/docs/pages/308478000/Palladium+Kenya
+              checkedOn: 2026-09-26
+        - label: Where it is used
+          cells:
+            - value: '{fact:doctors} doctors in {fact:countries} countries, including Penda Health in Nairobi since 2017'
+            - value: 2,200+ active KenyaEMR sites in Kenya
+              source: https://kenyahmis.org/
+              checkedOn: 2026-09-26
+        - label: Where it runs
+          cells:
+            - value: In the browser, hosted by EasyClinic. It needs the internet and does not run fully offline today; a self-hosted option exists
+            - value: Installed by script on an Ubuntu 20.04 machine with Tomcat and MySQL, following a technical guide for developers and HIS staff
+              source: https://kenyahmis.org/wp-content/uploads/2024/04/KenyaEMR3.x_BareMetal_Setup-Mar-2024-Final.pdf
+              checkedOn: 2026-09-26
+        - label: Upgrades
+          cells:
+            - value: Monthly, applied by EasyClinic in the cloud
+            - value: Each release is applied by running an upgrade script, and the release notes require user training before upgrading
+              source: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.4
+              checkedOn: 2026-09-26
+        - label: Price
+          cells:
+            - value: '{price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, billed annually. No setup fee, no contract'
+            - value: No licence fee, as open source under the Mozilla Public License 2.0. A price for installing and supporting it at a private clinic is not published (checked 26 September 2026)
+              source: https://github.com/palladiumkenya/openmrs-module-kenyaemr/blob/master/LICENSE
+              checkedOn: 2026-09-26
+        - label: Front desk
+          cells:
+            - value: Appointments and walk-ins. A reception login is included that books and bills but cannot open the EMR
+            - value: Registration, service queues with priority, appointments, and triage with an early warning system
+              source: https://kenyahmis.org/taifacare/
+              checkedOn: 2026-09-26
+        - label: Payments at the desk
+          cells:
+            - value: M-Pesa recorded against the patient's bill at the desk
+            - value: An M-Pesa STK push sent from the bill to the phone that is paying, as well as cash payments
+              source: https://kenyahmis.org/wp-content/uploads/2025/09/SOP_Billing-workflow-User-Guide_Final_Aug-2025.pdf
+              checkedOn: 2026-09-26
+        - label: Claims to private insurers
+          cells:
+            - value: Jubilee, AAR, CIC, Britam and Resolution through SLADE, from the same bill. On Enterprise, or as an add-on on Professional and Premium
+            - value: Not published for private insurers such as Jubilee or AAR (checked 26 September 2026)
+              source: https://kenyahmis.org/kenyaemr-3-x-content/
+              checkedOn: 2026-09-26
+        - label: Reminders
+          cells:
+            - value: SMS and email on every plan; WhatsApp on Premium and Enterprise
+            - value: SMS appointment reminders through Ushauri for patients who consent. WhatsApp reminders are not published (checked 26 September 2026)
+              source: https://kenyahmis.org/wp-content/uploads/2026/07/KeHMIS-III-Project-Perfomance-Evaluation-Report.pdf
+              checkedOn: 2026-09-26
+        - label: Clinical scope
+          cells:
+            - value: Outpatient EMR and e-prescriptions, with specialty templates on Premium. Not a full hospital information system
+            - value: Outpatient and inpatient care, maternity and child health, HIV and TB programmes, and a mortuary module
+              source: https://kenyahmis.org/kenyaemr-3-x-content/
+              checkedOn: 2026-09-26
+        - label: Lab and pharmacy
+          cells:
+            - value: Lab reports in the chart from Premium. Lab management and a pharmacy with stock control on Enterprise, or as add-ons
+            - value: Lab requests and results, and inventory management with dispensing
+              source: https://kenyahmis.org/taifacare/
+              checkedOn: 2026-09-26
+        - label: MOH reporting
+          cells:
+            - value: MOH 705 and DHIS2 reports built from the visits recorded
+            - value: MOH 705 A and B aligned to KHIS for automated indicator reporting in the July 2026 release
+              source: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.2
+              checkedOn: 2026-09-26
+        - label: AI in the record
+          cells:
+            - value: Cura AI drafts clinical notes, on every plan
+            - value: Machine-learning risk alerts, such as the HIV treatment interruption alert. AI note drafting is not published (checked 26 September 2026)
+              source: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.1
+              checkedOn: 2026-09-26
+        - label: More than one branch
+          cells:
+            - value: More than one location from Premium; central control of every location on Enterprise
+            - value: The September 2026 release notes list multitenancy fixes, but running a private group of clinics on one system is not published (checked 26 September 2026)
+              source: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.4
+              checkedOn: 2026-09-26
+        - label: Support
+          cells:
+            - value: 'Unlimited support and training on every plan, and a Kenya line on {contact:ke.phone}'
+            - value: A KenyaHMIS helpdesk with a toll-free line and an email address, listed in the release notes
+              source: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.4
+              checkedOn: 2026-09-26
+      note: >-
+        SHA e-claims and eTIMS are not compared in this table. KenyaEMR's SHA claims workflow is described
+        above, from its own guides.
+
+  # Healthie step 4: workflow comparison. The four clinic tests carried over from the current Practo page
+  # (migration/research/staging.md), which the live KenyaEMR page also used as its "week realities".
+  - discriminant: stepList
+    value:
+      id: four-tests
+      heading: Four tests to run on both, on a real clinic day
+      intro: >-
+        Feature lists look alike. The difference shows on a Monday morning with a full waiting room, so run
+        the same four tests on both systems with your own receptionist at the keyboard.
+      steps:
+        - title: The front desk test
+          meta: Check-in and payment
+          body: >-
+            Check in a walk-in and take the payment without opening a second tool. In TaifaCare
+            KenyaEMR, check-in creates the bill for the service chosen and puts the patient in a service queue,
+            and the cashier can then send an M-Pesa STK push from that bill to the paying phone. In EasyClinic, the receptionist's
+            login, included in the price, books the patient and records the M-Pesa payment on the bill, but
+            cannot open the EMR.
+        - title: The doctor context test
+          meta: What is on screen when the patient sits down
+          body: >-
+            The last prescription and the lab results should already be on screen. KenyaEMR shows
+            the clinical chart with lab results, and in HIV care it adds viral load results sent from national
+            reference labs and a machine-learning alert for patients at risk of stopping treatment. EasyClinic
+            shows the record and past prescriptions, puts lab reports in the chart from Premium, has Cura AI
+            draft the note, and prints the prescription in English and Swahili.
+        - title: The follow-up test
+          meta: Reminders without a personal phone
+          body: >-
+            The reminder should reach the patient without the receptionist using their own phone. KenyaEMR
+            passes appointments to Ushauri, which sends SMS reminders to patients who have consented. EasyClinic
+            sends SMS and email reminders on every plan, and WhatsApp reminders and messages on Premium and
+            Enterprise.
+        - title: The owner visibility test
+          meta: Today's numbers in one minute
+          body: >-
+            At 7pm the owner should see what came in today and what is still owed. TaifaCare's
+            billing dashboard shows today's total, paid, pending and exempted bills, and its transaction history
+            downloads to Excel. EasyClinic has dashboards and reports on every plan, and a Kenyan clinic gets the
+            MOH 705 report from the visits it recorded.
+      note: >-
+        KenyaHMIS publishes a training instance of TaifaCare that anyone can log into, linked from its
+        [training resources page](https://kenyahmis.org/kenyaemr-3-x-content/). Run the four tests there,
+        then in an EasyClinic demo, and compare what your receptionist says afterwards.
+
+  # Healthie step 5: pricing.
+  - discriminant: prose
+    value:
+      id: cost
+      heading: What each one costs a private clinic
+      body: |
+        **EasyClinic** costs {price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, billed annually, or {price:usd.professional.quarterly} and {price:usd.premium.quarterly} billed quarterly. Enterprise, for clinic chains and hospital OPDs, is priced on a quote. Every plan includes a reception login and unlimited support and training, with no setup fee and no binding contract. Insurance claims, pharmacy, stock control and lab management come with Enterprise, or as add-ons on Professional and Premium. EasyClinic lists its prices in US dollars and does not publish a price in shillings.
+
+        **KenyaEMR** has no licence fee: its code is published under the Mozilla Public License 2.0, and each release is on GitHub. For a private clinic, the cost is in the server, the installation, the upgrades and the support. At sites in the national rollout, implementing partners install it and the KenyaHMIS service desk supports it free of charge. Neither kenyahmis.org nor the release notes publish what a private clinic outside the rollout would pay for installation or support (checked 26 September 2026).
+      width: measure
+
+  - discriminant: scopeBox
+    value:
+      id: limits
+      heading: Where EasyClinic falls short of KenyaEMR
+      variant: limits
+      items:
+        - >-
+          EasyClinic needs an internet connection and does not run fully offline today. KenyaEMR can run on a
+          server inside the facility.
+        - >-
+          EasyClinic runs the outpatient side of a facility and is not a full hospital information system.
+          TaifaCare KenyaEMR documents inpatient wards and a mortuary module.
+        - EasyClinic charges per doctor per month. KenyaEMR's licence costs nothing.
+        - EasyClinic's prices are in US dollars, with no published price in shillings.
+      note: If one of these rules EasyClinic out for your clinic, tell us before you book and we will say so.
+
+  # Proof (spec 2.4): no Kenyan testimonial is free for this page (Kenyan quotes are placed elsewhere) and
+  # review counts are unknown, so the proof is Penda Health's Nairobi clinics on EasyClinic, with the one
+  # study figure that describes scale. Error figures are left out: they measured AI Consult, not Cura AI.
+  - discriminant: proofBlock
+    value:
+      id: penda-health
+      heading: A Nairobi clinic network that runs on EasyClinic
+      variant: study
+      figures: [visits]
+      body: >-
+        Penda Health, a network of primary care clinics in Nairobi, has used EasyClinic as its record since
+        2017. In a 2025 preprint written with OpenAI, Penda studied {fig:visits} patient visits at 15 of
+        those clinics, rated by 108 independent physicians. The tool studied was AI Consult, a safety net
+        inside the EasyClinic record that flagged possible errors while the clinician worked. The study
+        measured clinical errors, not the front desk or the claims.
+
+  - discriminant: sourceList
+    value:
+      id: sources
+      heading: Sources
+      intro: Every page below was read on 26 September 2026.
+      items:
+        - label: KenyaHMIS (Palladium Kenya), home page with active KenyaEMR sites, services and support
+          url: https://kenyahmis.org/
+          accessed: 2026-09-26
+        - label: KenyaHMIS, TaifaCare functions list
+          url: https://kenyahmis.org/taifacare/
+          accessed: 2026-09-26
+        - label: KenyaHMIS, TaifaCare and KenyaEMR 3.x training resources and module guides
+          url: https://kenyahmis.org/kenyaemr-3-x-content/
+          accessed: 2026-09-26
+        - label: TaifaCare billing workflow guide (last updated November 2025)
+          url: https://kenyahmis.org/wp-content/uploads/2025/09/SOP_Billing-workflow-User-Guide_Final_Aug-2025.pdf
+          accessed: 2026-09-26
+        - label: TaifaCare e-claims workflow for PHC outpatient services (July 2026)
+          url: https://kenyahmis.org/wp-content/uploads/2026/09/SOP_e-Claims-Workflow_PHC-Outpatient-Services-in-Taifacare-KenyaEMR_July-2026.pdf
+          accessed: 2026-09-26
+        - label: KenyaEMR 3.x bare metal setup guide (October 2024)
+          url: https://kenyahmis.org/wp-content/uploads/2024/04/KenyaEMR3.x_BareMetal_Setup-Mar-2024-Final.pdf
+          accessed: 2026-09-26
+        - label: KeHMIS III project performance evaluation report (June 2026)
+          url: https://kenyahmis.org/wp-content/uploads/2026/07/KeHMIS-III-Project-Perfomance-Evaluation-Report.pdf
+          accessed: 2026-09-26
+        - label: TaifaCare KenyaEMR 19.4.4 release notes (September 2026)
+          url: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.4
+          accessed: 2026-09-26
+        - label: TaifaCare KenyaEMR 19.4.2 release notes (July 2026)
+          url: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.2
+          accessed: 2026-09-26
+        - label: TaifaCare KenyaEMR 19.4.1 release notes (June 2026)
+          url: https://github.com/Palladium-hub/kenyaemr-releases/releases/tag/19.4.1
+          accessed: 2026-09-26
+        - label: KenyaEMR source code licence (Mozilla Public License 2.0)
+          url: https://github.com/palladiumkenya/openmrs-module-kenyaemr/blob/master/LICENSE
+          accessed: 2026-09-26
+        - label: OpenMRS wiki, KenyaEMR Distribution
+          url: https://openmrs.atlassian.net/wiki/spaces/docs/pages/25475417/KenyaEMR+Distribution
+          accessed: 2026-09-26
+        - label: OpenMRS wiki, Palladium Kenya
+          url: https://openmrs.atlassian.net/wiki/spaces/docs/pages/308478000/Palladium+Kenya
+          accessed: 2026-09-26
+        - label: Palladium, Building a New Era for Digital Health in Africa (16 October 2025)
+          url: https://thepalladiumgroup.com/news/Building-a-New-Era-for-Digital-Health-in-Africa
+          accessed: 2026-09-26
+        - label: Korom et al., AI-based clinical decision support for primary care, arXiv preprint 2507.16947 (2025)
+          url: https://arxiv.org/abs/2507.16947
+          accessed: 2026-09-26
+        - label: EasyClinic Kenya demo page (M-Pesa, SLADE insurers, Swahili prescriptions, MOH 705)
+          url: https://www.easyclinic.io/kenyademo/
+          accessed: 2026-09-26
+
+faqHeading: Questions Kenyan clinic owners ask
+faq:
+  - question: Why pay for EasyClinic when KenyaEMR is free?
+    answer: >-
+      Because the licence is the smaller part of what an EMR costs a private clinic. KenyaEMR has no licence
+      fee, but it runs on a server you provide and look after, and each release is an upgrade script that
+      someone must run after the users are trained; what installation and support cost a private clinic is
+      not published. EasyClinic's {price:usd.professional.annual} per doctor per month on the annual
+      Professional plan covers hosting, monthly upgrades, a reception login and unlimited support and
+      training. If your facility is in the national rollout, where partners install KenyaEMR and the
+      KenyaHMIS service desk supports it free of charge, KenyaEMR is the sensible choice.
+  - question: Can a private clinic use KenyaEMR?
+    answer: >-
+      Yes, the code is open source under the Mozilla Public License 2.0 and each release is published on
+      GitHub, so any clinic can install it on its own server. The national rollout runs through Palladium
+      Kenya and more than 30 implementing partners, and kenyahmis.org does not publish support terms or
+      prices for a private clinic outside it (checked 26 September 2026). KenyaHMIS does publish a training instance you can log into and
+      try before you decide.
+  - question: Does EasyClinic work when the internet goes down?
+    answer: >-
+      No, EasyClinic runs in the browser over the internet and does not run fully offline today. A
+      self-hosted option exists for larger clinics and groups that want their data on their own
+      infrastructure. KenyaEMR can be installed on a server inside the facility, and Palladium describes it
+      as optimised for low-connectivity settings; if your line is weak, that is a real point in KenyaEMR's
+      favour.
+  - question: Can patients pay by M-Pesa on either system?
+    answer: >-
+      Yes, both handle M-Pesa. TaifaCare KenyaEMR's billing guide sends an M-Pesa STK push from the bill to
+      the phone that is paying, beside cash payments. In EasyClinic the M-Pesa payment is recorded against
+      the patient's bill at the desk, on the same bill as any claim to Jubilee, AAR, CIC, Britam or
+      Resolution through SLADE, so the balance shows what the patient still owes.
+  - question: Which one suits HIV, TB and maternal health programmes?
+    answer: >-
+      KenyaEMR, because that is the work it was built for: it began in HIV clinics and carries the HIV,
+      PrEP, TB, antenatal, delivery and child welfare forms, with programme data going to the National Data
+      Warehouse and MOH reports to KHIS. EasyClinic is a general outpatient EMR for private clinics, with
+      specialty templates on Premium, and a programme-supported HIV site in the national rollout is better
+      off staying on KenyaEMR.
+  - question: What is the biggest adoption risk with either system?
+    answer: >-
+      The biggest risk is the front desk working around the system, because once the receptionist keeps a
+      paper register beside it, the records and the bills stop matching. With KenyaEMR the second risk is
+      upkeep: someone has to look after the server, and each release asks for user training before the
+      upgrade. With EasyClinic it is the internet line, since it does not run fully offline today, while
+      training is short, about two hours spread over {fact:trainingDays} days.
+  - question: How long does it take to go live?
+    answer: >-
+      EasyClinic can be live in as little as {fact:goLiveDays} days after the demo, with staff training and
+      data migration in between. For KenyaEMR at a private clinic, a go-live time is not published; the
+      setup guide is written for a technical person, who runs an installation script on an Ubuntu 20.04
+      server before anyone logs in.
+
+links:
+  hub: /compare/
+  related:
+    - href: /emr-software-in-kenya/
+      label: Clinic management software in Kenya
+      description: How a Kenyan clinic's day runs on EasyClinic, from the desk to the insurer's payment.
+    - href: /kenyademo/
+      label: Book a demo in Kenya
+      description: A demo that follows one patient from the booking to the M-Pesa payment and the SLADE claim.
+    - href: /best-clinic-management-software-kenya/
+      label: Best clinic management software in Kenya
+      description: The options for a private clinic in Kenya compared side by side, EasyClinic included.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: What each plan costs per doctor per month, and what every plan includes.
+
+closing:
+  heading: Run the four tests on your own clinic day
+  body: >-
+    Bring your receptionist to an EasyClinic demo and start with the front desk test. Or call the Kenya
+    team on {contact:ke.phone}.
+  primary:
+    label: Book a demo in Kenya
+    href: /kenyademo/
+  secondary:
+    label: Call the Kenya team
+    href: tel:+254750184357
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The comparison of how a Kenyan clinic takes money on each system, M-Pesa STK push from a TaifaCare bill
+    against M-Pesa and a SLADE claim to Jubilee on one EasyClinic bill, the MOH 705 report on both, and
+    Penda Health's Nairobi clinics running on EasyClinic since 2017, come from knowing how a private clinic in
+    Kenya gets paid and reports.
+  readsMachineWritten: >-
+    The two decision lists are the same length and rhythm and may read as templated; the page names no
+    Kenyan person and no customer beyond Penda Health; and it cannot give a shilling price or compare SHA and
+    eTIMS, the first two things a Kenyan clinic owner will ask about, so the table note that sets them aside
+    may read as evasive.
+
+notes:
+  - >-
+    Research, 2026-09-26: every KenyaEMR fact was fetched today from kenyahmis.org (home, /taifacare/,
+    /kenyaemr-3-x-content/ and the billing, e-claims, bare metal and KeHMIS III evaluation PDFs), the
+    Palladium-hub/kenyaemr-releases GitHub release notes (19.4.1, 19.4.2, 19.4.4), the
+    palladiumkenya/openmrs-module-kenyaemr LICENSE (MPL 2.0 with the OpenMRS healthcare disclaimer), the
+    OpenMRS wiki (KenyaEMR Distribution, last edited 2022-01-13, used only for I-TECH and the 2011 standards;
+    Palladium Kenya, last edited 2025-08-21, for the 30+ implementing partners) and Palladium's 16 October 2025
+    article (low-connectivity, began in HIV clinics). Local copies were read in full, not summarised.
+  - >-
+    The live page (Akshay Chandel, 2 March 2026) was a blog-style article with an unsourced table. Kept: the
+    four "week realities" (front desk, doctor time, follow-ups, owner visibility, now the four clinic tests
+    from the Practo page), the "If your clinic needs, consider" lens (now the decisionMatrix) and the FAQ on
+    the biggest adoption risk. Dropped: its KenyaEMR cells ("limited AI-driven automation", billing "primarily
+    focused on clinical data", "requires configuration"), which today's sources contradict: TaifaCare has
+    billing with M-Pesa STK push, SHA e-claims, and machine-learning alerts.
+  - >-
+    Rows left out because EasyClinic's answer is not confirmed: SHA/SHIF e-claims and eTIMS (the live page
+    says "Soon"; regulators/ke-sha.yaml and ke-etims.yaml are null), review score with count (counts unknown
+    for EasyClinic; KenyaEMR is not listed on Capterra or G2 as far as searched), data migration from a
+    KenyaEMR database (what is imported and how long is unknown). KenyaEMR's SHA e-claims are described in
+    the prose from its own July 2026 SOP, as a fact about KenyaEMR only; the table note says SHA and eTIMS are
+    not compared. Add an SHA row with EasyClinic's status and date once confirmed.
+  - >-
+    Not used: a 1 July 2026 The Star article on SHA moving Level 4 public hospital claims to "Taifa Care HMIS",
+    because it does not say that system is KenyaEMR and it bears on SHA status. The KenyaEMR demo login
+    published on kenyahmis.org is not repeated here; the page links to the resources page instead.
+  - >-
+    Facts not found published for KenyaEMR (cells say "Not published"): claims to private insurers such as
+    Jubilee or AAR through SLADE; WhatsApp reminders; AI note drafting; a view across a private group's
+    branches; installation or support price and go-live time for a private clinic outside the national
+    rollout; what follows KeHMIS III after 29 September 2026.
+  - >-
+    Fact check, 2026-09-26: every cited URL re-fetched (kenyahmis.org home, /taifacare/, /kenyaemr-3-x-content/,
+    the billing, PHC e-claims, bare metal and KeHMIS III PDFs, GitHub releases 19.4.1, 19.4.2 and 19.4.4, still
+    the latest tag, the MPL 2.0 LICENSE, both OpenMRS wiki pages via the Confluence API, the Palladium article
+    and /kenyademo/). Changed: "installed on a server at the facility" to what the setup guide says (an
+    Ubuntu server) and "runs on" to "can run on" a server in the facility, since 19.4.4 also mentions
+    multitenancy and KenyaHMIS documents a Kisumu data centre integration; setup guide audience ("SI, Dev,
+    M&E, HIS", not "system integrators"); "early warning score" to "early warning system" (TEWS); the STK
+    push goes to "the phone making the payment", not necessarily the patient's; the branch row now cites the
+    19.4.4 multitenancy line instead of an NDW claim the home page does not tie to branches; the self-hosted
+    option is described as the live Kenya listicle does ("larger clinics and groups that prefer to keep data
+    on their own infrastructure"), not as an offline fix. Replaced: the ratings proofBlock and its Capterra
+    source, because review counts are unknown (facts.yaml capterraReviews and googleReviews are null) and
+    the Google badge had no link; the proof is now the Penda Health study block (visits only, AI Consult
+    named), and the study sentence moved out of the opening prose. Restore badges once counts are confirmed. Fairness: the table intro now says
+    EasyClinic publishes the page. Groups of three rewritten (front desk test, doctor context test, add-ons).
+  - >-
+    Price sentence "does not publish a price in shillings" must change when src/data/prices/kes.yaml gets
+    prices; switch the tokens to {price:kes...} then.
