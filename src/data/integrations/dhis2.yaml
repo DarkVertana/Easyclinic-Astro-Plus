@@ -1,0 +1,10 @@
+# Source: https://www.easyclinic.io/kenyademo/ (Compliance and Reporting module: "MOH 705 and DHIS2 done automatically")
+# and https://www.easyclinic.io/curapilot/ (integration list: DHIS2). Fetched 2026-09-26. Description follows
+# src/data/regulators/ke-moh-reporting.yaml whatItDoes; state and asOf must match that file once supplied.
+# Status unknown: state and asOf stay null.
+name: DHIS2 and MOH 705 reports
+category: national-health
+countries: [ke]
+state: null
+asOf: null
+description: Builds the monthly MOH 705 outpatient summary from the visits already recorded, for the clinic's report to the Ministry of Health through DHIS2.

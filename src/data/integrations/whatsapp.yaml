@@ -1,0 +1,13 @@
+# Source: https://www.easyclinic.io/kenyademo/ ("Kenya Integrations" strip: WhatsApp), https://www.easyclinic.io/
+# (module list: "WhatsApp, Email, SMS Integrations"), https://www.easyclinic.io/pricing/ (Premium: "WhatsApp Communication")
+# and https://www.easyclinic.io/pathology-emr/ ("Integrated with WhatsApp, SMS, and Email to digitally send payment receipts
+# and invoices"). The live https://www.easyclinic.io/emr-software-in-india/ , /emr-software-in-uae/ and /emr-software-in-nigeria/
+# carry the same "WhatsApp, Email, SMS Integrations" module line. Fetched 2026-09-26. Every country because plans.yaml is
+# shared by every currency (Premium and Enterprise) and every country page names it.
+# Meta-approved templates follow src/content/features/whatsapp.yaml. Status unknown: state and asOf stay null.
+name: WhatsApp
+category: messaging
+countries: []
+state: null
+asOf: null
+description: Sends appointment reminders, prescriptions, reports and receipts to patients on WhatsApp from the clinic software, on message templates approved by Meta.

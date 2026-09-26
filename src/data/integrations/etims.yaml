@@ -1,0 +1,11 @@
+# Source: https://www.easyclinic.io/kenyademo/ ("Kenya Integrations" strip: eTIMS), also https://www.easyclinic.io/curapilot/
+# (integration list). Fetched 2026-09-26. Description follows src/data/regulators/ke-etims.yaml whatItDoes; state and asOf
+# must match that file once supplied. Status unknown: /kenyademo/ says "eTIMS compliant" while the comparison table and FAQ
+# on https://www.easyclinic.io/best-clinic-management-software-kenya/ say "Soon" and "Not yet", so nothing is inferred and
+# state and asOf stay null.
+name: eTIMS
+category: accounting
+countries: [ke]
+state: null
+asOf: null
+description: Sends each invoice to the Kenya Revenue Authority's eTIMS tax invoice system and prints the eTIMS reference on the receipt.

@@ -1,0 +1,10 @@
+# Source: https://www.easyclinic.io/kenyademo/ ("Kenya Integrations" strip: SMART) and https://www.easyclinic.io/curapilot/
+# (integration list: "SMART e-claiming"). Fetched 2026-09-26. No live page says what the SMART connection does beyond
+# "e-claiming", so the description covers the claim only; a cover check on the SMART member card is not claimed until
+# product says the connection does one. Status unknown: state and asOf stay null.
+name: SMART
+category: insurance
+countries: [ke]
+state: null
+asOf: null
+description: Sends the claim for an insured patient's visit electronically through SMART, the e-claiming system some Kenyan insurers use for their members.

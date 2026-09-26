@@ -1,0 +1,10 @@
+# Source: https://www.easyclinic.io/pricing/ (Premium: "Online Payment Integration") and https://www.easyclinic.io/pathology-emr/
+# ("Online Appointment and Payment Integration"); https://www.easyclinic.io/emr-software-in-nigeria/ says "accept card,
+# bank transfer and online payment through the gateways clinics already use". Fetched 2026-09-26. No gateway is named on the
+# live site for any country, so the entry names none. Status unknown: state and asOf stay null.
+name: Online payment gateway
+category: payments
+countries: []
+state: null
+asOf: null
+description: Lets a patient pay online for a booking or a bill, and records the payment in EasyClinic against that bill.

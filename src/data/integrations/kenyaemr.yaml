@@ -1,0 +1,9 @@
+# Source: https://www.easyclinic.io/curapilot/ (Integration section, "Already Have Systems Running? Easy Clinic connects to
+# what is working ... Your existing investment is preserved", list: KenyaEMR). Fetched 2026-09-26. "National open-source
+# EMR" follows src/content/comparisons/easyclinic-vs-kenyaemr.yaml. Status unknown: state and asOf stay null.
+name: KenyaEMR
+category: emr
+countries: [ke]
+state: null
+asOf: null
+description: Connects EasyClinic to a facility that already keeps its records in KenyaEMR, Kenya's national open-source EMR, so the facility does not have to replace it.

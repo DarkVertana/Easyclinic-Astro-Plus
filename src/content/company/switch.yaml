@@ -159,8 +159,8 @@ links:
       label: EMR and e-prescriptions
       description: The chart and the prescription your clinic moves onto, with shortcuts set up for the way you prescribe.
     - href: /easyclinic-emr-vs-traditional-emr/
-      label: EasyClinic against a traditional EMR
-      description: How EasyClinic compares with an older EMR built mainly to keep records.
+      label: EMR vs paper records
+      description: What changes at the front desk, in the consult and at billing when a clinic moves off paper.
     - href: /contact-us/
       label: Contact EasyClinic
       description: Call or WhatsApp {contact:in.phone}, or book a 20-minute demo.
@@ -207,4 +207,4 @@ notes:
   - 'Spreadsheet billing paragraph follows the spec 5.11 billing page and the solo clinic page (bill raised from the visit, payments recorded against it, day report). No cash or card split is claimed.'
   - 'Offline FAQ follows the live site ("does not run fully offline today"). The self-hosted option on the live Kenya listicle is not offered here because it is unconfirmed.'
   - 'Spec 6.5 named person: the only named people are the author byline (Subhashish Saha, head of customer success) and Dr Prabhu. The author byline does not make him the migration lead; name one when the company confirms who runs migrations.'
-  - 'Related links: /easyclinic-emr-vs-traditional-emr/ (a kept live slug, spec 3.2) is not built yet in this repo. No heroMedia: no screenshots exist yet (spec 12).'
+  - 'Related links: /easyclinic-emr-vs-traditional-emr/ (a kept live slug, spec 3.2) is now the EMR vs paper records guide (published 2026-09-26); the link label follows it. No heroMedia: no screenshots exist yet (spec 12).'

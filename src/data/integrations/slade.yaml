@@ -1,0 +1,11 @@
+# Source: https://www.easyclinic.io/kenyademo/ ("Kenya Integrations" strip: SLADE; "Integrated with Jubilee, AAR, CIC,
+# Britam and Resolution through SLADE"), also https://www.easyclinic.io/curapilot/ (integration list). Fetched 2026-09-26.
+# The insurer names are the confirmed list in docs/briefs/page-writing-rules.md. The live
+# https://www.easyclinic.io/emr-software-in-kenya/ says "e-claims directly to 50+ insurers with hassle-free SLADE
+# integration"; that count is not used (country lead to confirm). Status unknown: state and asOf stay null.
+name: SLADE
+category: insurance
+countries: [ke]
+state: null
+asOf: null
+description: Sends the claim for an insured patient from the clinic's bill through SLADE, the e-claims platform, to insurers such as Jubilee, AAR, CIC, Britam and Resolution.

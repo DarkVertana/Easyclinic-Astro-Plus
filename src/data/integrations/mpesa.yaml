@@ -1,0 +1,12 @@
+# Source: https://www.easyclinic.io/kenyademo/ ("Kenya Integrations" strip: M-Pesa; "M-Pesa handles cash";
+# "M-Pesa received ... Balance zero"), also https://www.easyclinic.io/curapilot/ (integration list) and
+# https://www.easyclinic.io/emr-software-in-kenya/ ("Instant MPesa Payments: Collect patient payments ... through secure,
+# built-in MPesa integration"). Fetched 2026-09-26. "Built-in" here and "M-Pesa ... live today" on
+# https://www.easyclinic.io/best-clinic-management-software-kenya/ are marketing wording, not a dated status.
+# Status unknown: state and asOf stay null until product supplies them (never inferred from marketing wording).
+name: M-Pesa
+category: payments
+countries: [ke]
+state: null
+asOf: null
+description: Takes a patient's M-Pesa payment at the desk and records it against their bill, so the balance shows what is still owed.

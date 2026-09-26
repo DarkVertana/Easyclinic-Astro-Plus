@@ -16,13 +16,16 @@ h1: Best clinic management software in Kenya
 linkLabel: Best clinic software in Kenya
 eyebrow: Kenya, 2026
 openingAnswer: >-
-  EasyClinic publishes this page and ranks itself first of the eight systems compared here for a
-  private clinic in Kenya, followed by Clinicea and Helium Health, which both publish a Nairobi address.
-  For a county or programme-funded facility, KenyaEMR is the better choice: it is Kenya's national
-  open-source EMR, with more than 2,200 active sites.
+  Clinicea ranks first of the seven systems we ranked for a private clinic in Kenya, as the only one of them
+  that publishes both a presence in Kenya and a price, and Helium Health is second and suits a hospital that
+  wants mobile money payments from the same company; for a county or programme-funded facility, KenyaEMR,
+  Kenya's national open-source EMR at more than 2,200 active sites, is the better choice. EasyClinic, which
+  publishes this page, is left unranked, because its shilling
+  price is not yet published and the order within its tie with Helium Health would be our own judgment of
+  ourselves.
 summary: >-
-  Eight clinic systems compared for a private clinic in Kenya, with every competitor fact linked to the
-  vendor's own page and the SHA certification rule explained.
+  Seven clinic systems ranked for a private clinic in Kenya, plus EasyClinic unranked, with every competitor
+  fact linked to the vendor's own page and the SHA certification rule explained.
 author: subhashish-saha
 lastUpdated: 2026-09-26
 ctas:
@@ -40,11 +43,12 @@ sections:
       id: verdict
       heading: The verdict by clinic type
       body: >-
-        For a private clinic of one to a few doctors that takes M-Pesa at the desk and claims from
-        insurers, choose EasyClinic if you want AI note drafting and WhatsApp reminders, or Clinicea if
-        you want a free trial and custom forms first. For a hospital or group that wants inpatient wards,
-        mobile money payments, facility loans and AI note drafting from one company, Helium Health is the
-        stronger fit, provided you are ready to ask for a quote. For a county or programme-funded
+        For a private clinic of one to a few doctors, Clinicea ranks first here and suits a clinic that wants
+        a free trial and custom forms, though it names no M-Pesa integration, while EasyClinic, unranked
+        here, suits a clinic that takes M-Pesa at the desk and wants AI note drafting, once you have
+        its shilling price, which is not yet published. For a hospital or group that wants inpatient wards,
+        mobile money payments, facility loans and AI note drafting from one company, Helium Health, second
+        here, is the stronger fit, provided you are ready to ask for a quote. For a county or programme-funded
         facility, KenyaEMR is the national system, and an organisation with its own developers can build
         on OpenMRS.
       width: measure
@@ -54,37 +58,38 @@ sections:
       id: how-we-compared
       heading: How we compared
       body: |-
-        **Who wrote this.** EasyClinic publishes this page, and it ranks EasyClinic first. Judge that against the sources: every fact about the other seven systems links to the page it came from.
+        **Who wrote this.** EasyClinic publishes this page. We rank the seven other systems and leave EasyClinic unranked, at the end of the table and the list, for the reason given under "How we ranked" and "Ties" below. Every fact about the other seven systems links to the page it came from.
 
         **When and where.** We read each vendor's own website on 26 September 2026. Review scores come from Capterra, with the number of reviews, except ClinikEHR's, which is the figure on its own homepage; HospitalOS facts come from its SourceForge page and its developer's site, and KenyaEMR facts from Kenya HMIS (the Palladium Kenya project site) and the OpenMRS wiki. Where a vendor's pages did not say, the cell reads "Not published" with the date.
 
         **What we compared.** A Kenya presence the vendor publishes, the pricing model and any published price, WhatsApp messages to patients, running more than one branch, AI note drafting, M-Pesa or mobile money at the desk, and a review score with its count.
 
-        **How we ranked.** For a private, fee-paying clinic in Kenya we weighed a Kenya presence and a published price first, and the four daily features above next; independent reviews broke ties. ClinikEHR sits above KenyaEMR because a private clinic can sign up to ClinikEHR from a public price list today, while none of the KenyaEMR pages we read offers a private clinic support or a price.
+        **How we ranked.** For a private, fee-paying clinic in Kenya we weighed two checks first, a Kenya presence the vendor publishes and a published price, then the four daily features above; an independent review score with its count broke ties. Clinicea is the only system that meets both of the first two checks, so it ranks first. EasyClinic meets the Kenya presence check and all four daily features, and misses the price check, because the shilling price a Kenyan clinic would pay is not yet published. ClinikEHR's pricing page is in dollars, and Clinicea's Kenya page gives $59 without saying per what, yet both meet the check, because we take each competitor's published price as it stands and hold our own dollar list to a stricter test. ClinikEHR and KenyaEMR each meet one of the first two checks, a published price for ClinikEHR and a Kenya presence for KenyaEMR, and ClinikEHR sits above because it has two of the daily features, more than one branch and AI note drafting, where KenyaEMR has M-Pesa alone. We chose the checks, and the four daily features suit EasyClinic: a clinic that puts a Nairobi office or a free trial first should read Helium Health and Clinicea before us.
 
-        **What this page leaves out.** EasyClinic's own cells come from its published plans and prices. The page gives EasyClinic's Capterra rating without a review count, and it does not state EasyClinic's SHA or Digital Health Agency status. The eight systems are the ones on the earlier version of this page; Kenyan-built systems are not covered in this edition.
+        **Ties.** Helium Health and EasyClinic are level on everything we weighed: each publishes a Kenya presence and all four daily features, and neither publishes a price for Kenya. A review score with its count is the tie-break, and neither has one on this page: EasyClinic's Capterra score appears without the review count we ask of every other vendor, and Helium Health has no review page we could find. With the tie unbroken, the order within it would be our own judgment of ourselves, so EasyClinic has no rank and Helium Health is second. Lower down, OpenMRS and Streamline Health meet neither of the first two checks and one daily feature each, and OpenMRS sits above because it has independent reviews, 4.7 on Capterra from 3 reviews, and Streamline Health has none we could find.
+
+        **What this page leaves out.** EasyClinic's own cells come from its published plans and its US dollar price list, and its shilling price is not yet published. The page gives EasyClinic's Capterra rating without a review count, and it does not state EasyClinic's SHA or Digital Health Agency status. The eight systems are the ones on the earlier version of this page; Kenyan-built systems are not covered in this edition.
       width: measure
 
   - discriminant: comparisonTable
     value:
       id: comparison-table
-      heading: The eight systems side by side, ranked
+      heading: The eight systems side by side
       intro: >-
-        Ranked for a private clinic in Kenya, from left to right. Each competitor cell links to the page it
-        came from, read on 26 September 2026.
+        The seven ranked systems from left to right, for a private clinic in Kenya, then EasyClinic, unranked.
+        Each competitor cell links to the page it came from, read on 26 September 2026.
       columns:
-        - { name: EasyClinic, us: true }
         - { name: Clinicea }
         - { name: Helium Health }
         - { name: ClinikEHR }
         - { name: KenyaEMR }
-        - { name: Streamline Health }
         - { name: OpenMRS }
+        - { name: Streamline Health }
         - { name: HospitalOS }
+        - { name: EasyClinic, us: true }
       rows:
         - label: Best for
           cells:
-            - value: Private clinics from one doctor to a chain, paid by M-Pesa and insurers
             - value: Growing private clinics and clinic chains
               source: https://clinicea.com/
               checkedOn: 2026-09-26
@@ -97,18 +102,18 @@ sections:
             - value: Public and programme-funded facilities, first built for HIV and TB care
               source: https://kenyahmis.org/kenyas-journey-to-universal-health-coverage/
               checkedOn: 2026-09-26
-            - value: Hospitals and clinics in Uganda, including community insurance schemes
-              source: https://streamlinehealth.org/
-              checkedOn: 2026-09-26
             - value: Organisations with developers or an implementing partner
               source: https://openmrs.org/faq/
+              checkedOn: 2026-09-26
+            - value: Hospitals and clinics in Uganda, including community insurance schemes
+              source: https://streamlinehealth.org/
               checkedOn: 2026-09-26
             - value: Small hospitals in Thailand, 100 beds or fewer
               source: https://sourceforge.net/projects/hospitalos/
               checkedOn: 2026-09-26
+            - value: Private clinics from one doctor to a chain, paid by M-Pesa and insurers
         - label: Kenya presence, as published
           cells:
-            - value: A Kenya phone line, {contact:ke.phone}, and Penda Health's Nairobi clinics on EasyClinic since 2017
             - value: A Nairobi postal address, P.O. Box 7112, and a Kenyan phone number on its [Kenya page](https://clinicea.com/kenya1)
               source: https://clinicea.com/contactus
               checkedOn: 2026-09-26
@@ -121,18 +126,18 @@ sections:
             - value: More than 2,200 active KenyaEMR sites, and described as Kenya's national open-source EMR on the [TaifaCare page](https://kenyahmis.org/taifacare/)
               source: https://kenyahmis.org/
               checkedOn: 2026-09-26
-            - value: Not published. Offices are listed in Kampala and Mbarara, Uganda
-              source: https://streamlinehealth.org/contact/
-              checkedOn: 2026-09-26
             - value: A global open-source project; KenyaEMR is built on it
               source: https://openmrs.atlassian.net/wiki/spaces/docs/pages/25475417/KenyaEMR+Distribution
+              checkedOn: 2026-09-26
+            - value: Not published. Offices are listed in Kampala and Mbarara, Uganda
+              source: https://streamlinehealth.org/contact/
               checkedOn: 2026-09-26
             - value: Not published. The developer's offices are in Bangkok and Phuket, Thailand
               source: https://opensource-technology.com/
               checkedOn: 2026-09-26
+            - value: A Kenya phone line, {contact:ke.phone}, and Penda Health's Nairobi clinics on EasyClinic since 2017
         - label: Pricing model and published price
           cells:
-            - value: Per doctor per month, from {price:usd.professional.annual} billed annually; no shilling price published
             - value: Starts at $59 on its Kenya page, which does not say per what; its [pricing page](https://clinicea.com/pricing) lists INR 1,999 to 3,999 per practitioner per month
               source: https://clinicea.com/kenya1
               checkedOn: 2026-09-26
@@ -143,18 +148,18 @@ sections:
             - value: Not published for private clinics; KenyaEMR is open source
               source: https://kenyahmis.org/taifacare/
               checkedOn: 2026-09-26
-            - value: Five plans, each priced on request
-              source: https://streamlinehealth.org/pricing/
-              checkedOn: 2026-09-26
             - value: No licence fee; you budget for setup, training, upkeep and hosting
               source: https://openmrs.org/faq/
+              checkedOn: 2026-09-26
+            - value: Five plans, each priced on request
+              source: https://streamlinehealth.org/pricing/
               checkedOn: 2026-09-26
             - value: Free under the GNU GPL v2 on SourceForge; no price published for Hospital OS Enterprise on [its developer's site](https://opensource-technology.com/)
               source: https://sourceforge.net/projects/hospitalos/
               checkedOn: 2026-09-26
+            - value: Per doctor per month; the shilling price is not yet published. The US dollar list on the [pricing page](/pricing/) starts at {price:usd.professional.annual} billed annually
         - label: WhatsApp messages to patients
           cells:
-            - value: Reminders and messages on Premium; SMS and email on Professional
             - value: Prescriptions shared by SMS, WhatsApp or email
               source: https://clinicea.com/emr
               checkedOn: 2026-09-26
@@ -170,9 +175,9 @@ sections:
             - value: Not published (26 September 2026)
             - value: Not published (26 September 2026)
             - value: Not published (26 September 2026)
+            - value: Reminders and messages on Premium; SMS and email on Professional
         - label: More than one branch
           cells:
-            - value: From Premium; the largest chain on EasyClinic has {fact:largestChain} locations
             - value: A clinic-chain control panel that sets up tens of clinics from head office
               source: https://clinicea.com/clinic-chain-software
               checkedOn: 2026-09-26
@@ -183,14 +188,14 @@ sections:
               source: https://clinikehr.com/pricing
               checkedOn: 2026-09-26
             - value: Not published (26 September 2026)
-            - value: Not published (26 September 2026)
             - value: Bookings in one location or across multiple sites
               source: https://openmrs.org/product/
               checkedOn: 2026-09-26
             - value: Not published (26 September 2026)
+            - value: Not published (26 September 2026)
+            - value: From Premium; the largest chain on EasyClinic has {fact:largestChain} locations
         - label: AI documentation
           cells:
-            - value: Cura AI drafts the note from dictation, on every plan
             - value: Not published (no AI note drafting on the pages we read, 26 September 2026)
             - value: HeliumScribe drafts clinical notes from speech in real time
               source: https://heliumhealth.com/helium-os/
@@ -201,14 +206,14 @@ sections:
             - value: Not published. The TaifaCare page lists machine-learning early warning alerts, not note drafting
               source: https://kenyahmis.org/taifacare/
               checkedOn: 2026-09-26
+            - value: Not published (26 September 2026)
             - value: Not published. Its SNAP analytics engine is described as powered by artificial intelligence
               source: https://streamlinehealth.org/what-we-do/
               checkedOn: 2026-09-26
             - value: Not published (26 September 2026)
-            - value: Not published (26 September 2026)
+            - value: Cura AI drafts the note from dictation, on every plan
         - label: M-Pesa or mobile money at the desk
           cells:
-            - value: The patient pays by M-Pesa at reception and the payment is recorded against the bill
             - value: Not published. Its payment integrations include Flutterwave and Stripe
               source: https://clinicea.com/
               checkedOn: 2026-09-26
@@ -218,17 +223,17 @@ sections:
             - value: Not published. Online payments go through the clinic's Stripe or Paystack accounts
               source: https://clinikehr.com/pricing
               checkedOn: 2026-09-26
-            - value: Not published. A billing, finance and cashier module is listed
-              source: https://kenyahmis.org/taifacare/
+            - value: The TaifaCare cashier can send an M-Pesa STK push from the bill to the paying phone
+              source: https://kenyahmis.org/wp-content/uploads/2025/09/SOP_Billing-workflow-User-Guide_Final_Aug-2025.pdf
               checkedOn: 2026-09-26
+            - value: Not published (26 September 2026)
             - value: Its payments product takes Mobile Money and VISA
               source: https://streamlinehealth.org/pay/
               checkedOn: 2026-09-26
             - value: Not published (26 September 2026)
-            - value: Not published (26 September 2026)
+            - value: The patient pays by M-Pesa at reception and the payment is recorded against the bill
         - label: Review score, with count
           cells:
-            - value: '{fact:capterraRating} on [Capterra](https://www.capterra.com/p/10026882/Easy-Clinic/reviews/); this page does not give the count, which the linked page shows'
             - value: 4.8 on Capterra from 43 reviews
               source: https://www.capterra.com/p/131430/Clinicea/reviews/
               checkedOn: 2026-09-26
@@ -237,17 +242,19 @@ sections:
               source: https://clinikehr.com/
               checkedOn: 2026-09-26
             - value: Not published (no directory reviews found, 26 September 2026)
-            - value: Not published (no directory reviews found, 26 September 2026)
             - value: 4.7 on Capterra from 3 reviews
               source: https://www.capterra.com/p/162059/OpenMRS-2/reviews/
               checkedOn: 2026-09-26
+            - value: Not published (no directory reviews found, 26 September 2026)
             - value: Not published (no reviews on its SourceForge page, 26 September 2026)
               source: https://sourceforge.net/projects/hospitalos/
               checkedOn: 2026-09-26
+            - value: '{fact:capterraRating} on [Capterra](https://www.capterra.com/p/10026882/Easy-Clinic/reviews/); this page does not give the count, which the linked page shows'
       note: >-
         "Not published" means the vendor's own pages did not say on 26 September 2026. EasyClinic's cells
-        come from its published plans: WhatsApp messages and more than one location start on Premium
-        ({price:usd.premium.annual} per doctor per month billed annually). Regulator statements are in the
+        come from its published plans: WhatsApp messages and more than one location start on the Premium
+        plan, whose shilling price is not yet published; the US dollar list is on the [pricing
+        page](/pricing/). Regulator statements are in the
         next section instead of this table, because this page does not state EasyClinic's own status.
 
   - discriminant: dataTable
@@ -282,12 +289,12 @@ sections:
         - - KenyaEMR
           - Built to the Ministry of Health's 2011 Kenya EMR Standards and Guidelines, and reports to KHIS, Kenya's DHIS2.
           - '[OpenMRS wiki](https://openmrs.atlassian.net/wiki/spaces/docs/pages/25475417/KenyaEMR+Distribution) and [Kenya HMIS](https://kenyahmis.org/documentation/summary-clinical-care-solutions/)'
-        - - Streamline Health
-          - Says its EMR complies with HIPAA and HITECH and produces Uganda Ministry of Health HMIS reports. No Kenyan regulator named.
-          - '[EMR page](https://streamlinehealth.org/stremline-emr/) and [blog](https://streamlinehealth.org/best-emr-platform/)'
         - - OpenMRS
           - Says it is FHIR-compliant, which is a data exchange standard. No regulator named.
           - '[OpenMRS product page](https://openmrs.org/product/)'
+        - - Streamline Health
+          - Says its EMR complies with HIPAA and HITECH and produces Uganda Ministry of Health HMIS reports. No Kenyan regulator named.
+          - '[EMR page](https://streamlinehealth.org/stremline-emr/) and [blog](https://streamlinehealth.org/best-emr-platform/)'
         - - HospitalOS
           - The developer lists ISO/IEC 29110 software process certification, renewed on 8 March 2022. No Kenyan regulator named.
           - '[Open Source Technology](https://opensource-technology.com/)'
@@ -296,38 +303,13 @@ sections:
     value:
       id: vendors
       heading: The eight systems, one by one
-      intro: Ranked for a private clinic in Kenya. Each section gives what the vendor's own pages say, then what we would weigh.
+      intro: >-
+        The seven others in ranked order for a private clinic in Kenya, then EasyClinic, unranked, in the same
+        format. Each section gives what the vendor's own pages say, then what we would weigh.
       vendors:
-        - id: easyclinic
-          name: EasyClinic
-          rank: 1
-          us: true
-          bestFor: Private clinics from one doctor to a chain, paid by M-Pesa and insurers
-          url: https://www.easyclinic.io/
-          body: >-
-            EasyClinic has run clinics since {fact:founded}, and Penda Health's Nairobi clinics have used it
-            since 2017. The patient's M-Pesa payment is recorded against the bill at reception, and claims to
-            Jubilee, AAR, CIC, Britam and Resolution go through SLADE from the same bill, on Enterprise or as
-            an add-on. Prescriptions print in English and Swahili, and the MOH 705 and DHIS2 reports come
-            from the visits already recorded. Cura AI drafts the note from dictation on every plan, and a
-            clinic can be live in as little as {fact:goLiveDays} days.
-          pros:
-            - A published price per doctor, no setup fee and no binding contract
-            - M-Pesa and SLADE claims on the same bill
-            - Cura AI note drafting on every plan
-          cons:
-            - No price in shillings is published
-            - Does not run fully offline today
-            - WhatsApp messages and a second branch need Premium
-          facts:
-            - label: Price
-              value: '{price:usd.professional.annual} per doctor per month, billed annually'
-            - label: Kenya line
-              value: '{contact:ke.phone}'
-
         - id: clinicea
           name: Clinicea
-          rank: 2
+          rank: 1
           bestFor: Growing private clinics and clinic chains
           url: https://clinicea.com/
           body: >-
@@ -360,7 +342,7 @@ sections:
 
         - id: helium-health
           name: Helium Health
-          rank: 3
+          rank: 2
           bestFor: Hospitals and facilities of any size that also want payment tools
           url: https://heliumhealth.com/
           body: >-
@@ -391,7 +373,7 @@ sections:
 
         - id: clinikehr
           name: ClinikEHR
-          rank: 4
+          rank: 3
           bestFor: Solo practitioners and small clinics
           url: https://clinikehr.com/
           body: >-
@@ -421,7 +403,7 @@ sections:
 
         - id: kenyaemr
           name: KenyaEMR
-          rank: 5
+          rank: 4
           bestFor: Public and programme-funded facilities in Kenya
           url: https://kenyahmis.org/
           body: >-
@@ -429,7 +411,8 @@ sections:
             Health's 2011 Kenya EMR Standards and Guidelines and supported by Palladium Kenya under the
             PEPFAR-funded KeHMIS project. Kenya HMIS counts more than 2,200 active KenyaEMR sites. It began in
             HIV and TB care and now covers antenatal and postnatal care, lab and pharmacy; under TaifaCare it
-            lists billing, a cashier module, inventory and dispensing, and it reports to KHIS. Patients get
+            lists billing, a cashier module that can send an M-Pesa STK push from the bill, inventory and
+            dispensing, and it reports to KHIS. Patients get
             SMS reminders through Ushauri. The OpenMRS wiki says it can be installed from a release or built
             from source, but none of the pages we read offers a private clinic support or a price.
           pros:
@@ -447,6 +430,31 @@ sections:
             - label: TaifaCare
               value: 718 live facilities in 4 counties
               source: https://kenyahmis.org/taifacare/
+              checkedOn: 2026-09-26
+
+        - id: openmrs
+          name: OpenMRS
+          rank: 5
+          bestFor: Organisations with developers or an implementing partner
+          url: https://openmrs.org/
+          body: >-
+            OpenMRS is the open-source EMR that KenyaEMR is built on, made by a global community, and its
+            homepage counts more than 8,000 facilities. There is no licence fee, but its FAQ says to budget
+            for implementation, training, maintenance and infrastructure, and that implementation usually
+            needs systems analysis skills and technical support. It handles bookings across multiple sites,
+            billing, stock and dispensing, and connects to DHIS2 and national systems through REST and FHIR
+            APIs. It suits an organisation with its own developers.
+          pros:
+            - No licence fee and no vendor lock-in
+            - Configurable forms and translation, with FHIR and DHIS2 connections
+            - 4.7 on Capterra, though from only 3 reviews
+          cons:
+            - Needs a technical team or partner to install and maintain
+            - No WhatsApp or AI note drafting on its product pages
+          facts:
+            - label: Cost
+              value: Free and open source; budget for implementation, training, maintenance and infrastructure
+              source: https://openmrs.org/faq/
               checkedOn: 2026-09-26
 
         - id: streamline-health
@@ -478,34 +486,9 @@ sections:
               source: https://streamlinehealth.org/best-emr-platform/
               checkedOn: 2026-09-26
 
-        - id: openmrs
-          name: OpenMRS
-          rank: 7
-          bestFor: Organisations with developers or an implementing partner
-          url: https://openmrs.org/
-          body: >-
-            OpenMRS is the open-source EMR that KenyaEMR is built on, made by a global community, and its
-            homepage counts more than 8,000 facilities. There is no licence fee, but its FAQ says to budget
-            for implementation, training, maintenance and infrastructure, and that implementation usually
-            needs systems analysis skills and technical support. It handles bookings across multiple sites,
-            billing, stock and dispensing, and connects to DHIS2 and national systems through REST and FHIR
-            APIs. It suits an organisation with its own developers.
-          pros:
-            - No licence fee and no vendor lock-in
-            - Configurable forms and translation, with FHIR and DHIS2 connections
-            - 4.7 on Capterra, though from only 3 reviews
-          cons:
-            - Needs a technical team or partner to install and maintain
-            - No WhatsApp or AI note drafting on its product pages
-          facts:
-            - label: Cost
-              value: Free and open source; budget for implementation, training, maintenance and infrastructure
-              source: https://openmrs.org/faq/
-              checkedOn: 2026-09-26
-
         - id: hospitalos
           name: HospitalOS
-          rank: 8
+          rank: 7
           bestFor: Small hospitals in Thailand
           url: https://sourceforge.net/projects/hospitalos/
           body: >-
@@ -528,6 +511,37 @@ sections:
               source: https://sourceforge.net/projects/hospitalos/
               checkedOn: 2026-09-26
 
+        - id: easyclinic
+          name: EasyClinic
+          us: true
+          bestFor: Private clinics from one doctor to a chain, paid by M-Pesa and insurers
+          url: https://www.easyclinic.io/
+          body: >-
+            EasyClinic has run clinics since {fact:founded}, and Penda Health's Nairobi clinics have used it
+            since 2017. The patient's M-Pesa payment is recorded against the bill at reception, and claims to
+            Jubilee, AAR, CIC, Britam and Resolution go through SLADE from the same bill, on Enterprise or as
+            an add-on. Prescriptions print in English and Swahili, and the MOH 705 and DHIS2 reports come
+            from the visits already recorded. Cura AI drafts the note from dictation on every plan, and a
+            clinic can be live in as little as {fact:goLiveDays} days. The limits matter in Kenya. The
+            shilling price is not yet published, so this page gives no EasyClinic price for Kenya and leaves
+            it unranked; the US dollar list is on the [pricing page](/pricing/). It also does not run fully
+            offline, so plan a second internet line.
+          pros:
+            - Priced per doctor, with no setup fee and no binding contract
+            - M-Pesa and SLADE claims on the same bill
+            - Cura AI note drafting on every plan
+          cons:
+            - The shilling price is not yet published
+            - Does not run fully offline today
+            - WhatsApp messages and a second branch need Premium
+          facts:
+            - label: Price in Kenya
+              value: Shilling price not yet published
+            - label: US dollar list
+              value: From {price:usd.professional.annual} per doctor per month billed annually, on the [pricing page](/pricing/)
+            - label: Kenya line
+              value: '{contact:ke.phone}'
+
   - discriminant: stepList
     value:
       id: workflow-tests
@@ -539,8 +553,9 @@ sections:
         - title: Front desk test
           body: >-
             With a queue waiting, book a walk-in and take an M-Pesa payment. On EasyClinic
-            the payment is recorded against the patient's bill at reception. Ask the others to show the
-            M-Pesa payment itself, since none of them names M-Pesa on its site.
+            the payment is recorded against the patient's bill at reception, and KenyaEMR's TaifaCare guide
+            shows an M-Pesa STK push from the bill. Ask the others to show the M-Pesa payment itself, since
+            none of them names M-Pesa on its site.
         - title: Doctor context test
           body: >-
             Open a returning patient and look for the last prescription and lab results on the same screen as
@@ -564,7 +579,9 @@ sections:
       id: what-they-cost
       heading: What each one costs
       body: |-
-        Three vendors publish a price. EasyClinic is {price:usd.professional.annual} per doctor per month billed annually, or {price:usd.professional.quarterly} billed quarterly, with a reception login, unlimited support and training, no setup fee and no binding contract; Premium is {price:usd.premium.annual} billed annually. Clinicea's pricing page lists INR 1,999 to 3,999 per practitioner per month, its Kenya page says $59, and it offers a 14-day free trial with no exit fee ([pricing](https://clinicea.com/pricing)). ClinikEHR has a free plan, then $80 or $200 a month billed annually, or $99.90 a month for Essential billed monthly, with no long-term contract ([pricing](https://clinikehr.com/pricing)).
+        Two competitors publish a price. Clinicea's pricing page lists INR 1,999 to 3,999 per practitioner per month, its Kenya page says $59, and it offers a 14-day free trial with no exit fee ([pricing](https://clinicea.com/pricing)). ClinikEHR has a free plan, then $80 or $200 a month billed annually, or $99.90 a month for Essential billed monthly, with no long-term contract ([pricing](https://clinikehr.com/pricing)).
+
+        EasyClinic's shilling price is not yet published, so this page gives no EasyClinic price for Kenya. Its US dollar list on the [pricing page](/pricing/) is {price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, both billed annually. Every plan includes a reception login and unlimited support and training, with no setup fee and no binding contract.
 
         Helium Health and Streamline Health quote on request. KenyaEMR, OpenMRS and the SourceForge edition of HospitalOS carry no licence fee, but OpenMRS tells you to budget for implementation, training, maintenance and infrastructure ([FAQ](https://openmrs.org/faq/)).
 
@@ -576,14 +593,6 @@ sections:
       id: when-to-choose-which
       heading: When to choose which
       options:
-        - title: Choose EasyClinic if
-          us: true
-          items:
-            - You run a private clinic, from one doctor to several branches, and most of your money comes by M-Pesa and from insurers such as Jubilee or AAR.
-            - You want a published price per doctor, a reception login included, no setup fee and no binding contract.
-            - Your doctors want Cura AI to draft the note from dictation.
-            - Your patients read WhatsApp more than SMS, and you are ready for Premium.
-            - You want prescriptions in English and Swahili, and MOH 705 reports from recorded visits.
         - title: Choose Clinicea if
           items:
             - You run or plan a chain and want head office to set prices and discount limits for every branch.
@@ -604,6 +613,14 @@ sections:
             - You have developers or an implementing partner and want no licence fee, which is what OpenMRS offers.
             - You are a solo practitioner testing software, and ClinikEHR's free plan for two staff and 50 client records is enough.
             - You accept hosting, upkeep and support as your own job, or your partner's.
+        - title: Choose EasyClinic if
+          us: true
+          items:
+            - You run a private clinic, from one doctor to several branches, and most of your money comes by M-Pesa and from insurers such as Jubilee or AAR.
+            - You will get the shilling price per doctor in writing before you sign, since it is not yet published, and you want a reception login included with no setup fee and no binding contract.
+            - Your doctors want Cura AI to draft the note from dictation.
+            - Your patients read WhatsApp more than SMS, and you are ready for Premium.
+            - You want prescriptions in English and Swahili, and MOH 705 reports from recorded visits.
 
   - discriminant: proofBlock
     value:
@@ -644,6 +661,7 @@ sections:
         - { label: 'ClinikEHR: features and coding', url: 'https://clinikehr.com/features', accessed: 2026-09-26 }
         - { label: 'Kenya HMIS: homepage and KeHMIS III', url: 'https://kenyahmis.org/', accessed: 2026-09-26 }
         - { label: 'Kenya HMIS: TaifaCare', url: 'https://kenyahmis.org/taifacare/', accessed: 2026-09-26 }
+        - { label: 'Kenya HMIS: TaifaCare KenyaEMR billing workflow user guide (August 2025)', url: 'https://kenyahmis.org/wp-content/uploads/2025/09/SOP_Billing-workflow-User-Guide_Final_Aug-2025.pdf', accessed: 2026-09-26 }
         - { label: 'Kenya HMIS: clinical care solutions', url: 'https://kenyahmis.org/documentation/summary-clinical-care-solutions/', accessed: 2026-09-26 }
         - { label: "Kenya HMIS: Kenya's journey to universal health coverage", url: 'https://kenyahmis.org/kenyas-journey-to-universal-health-coverage/', accessed: 2026-09-26 }
         - { label: 'OpenMRS wiki: KenyaEMR distribution', url: 'https://openmrs.atlassian.net/wiki/spaces/docs/pages/25475417/KenyaEMR+Distribution', accessed: 2026-09-26 }
@@ -667,11 +685,12 @@ sections:
 faq:
   - question: Is this ranking biased, since EasyClinic publishes it?
     answer: >-
-      It could be, so we made it checkable: EasyClinic publishes this page and ranks itself first, and
-      every fact about the other seven links to the vendor's own page or a review site, read on 26
-      September 2026. The verdict also names where others fit better: Helium Health for hospitals that want
-      inpatient care and payments from one company, KenyaEMR for county and programme facilities, Clinicea
-      if you want a free trial first, and OpenMRS for an organisation with its own developers.
+      It could be, so we made it checkable and left EasyClinic out of the ranking: every fact about the
+      other seven links to the vendor's own page or a review site, read on 26 September 2026. EasyClinic
+      misses the price check because its shilling price is not yet published, which leaves it level with
+      Helium Health on everything we weighed, so placing it within that tie would mean judging ourselves.
+      Clinicea ranks first and Helium Health second, and KenyaEMR fits a county or programme facility
+      better than any other system here.
   - question: Do I need a DHA-certified system to claim from SHA?
     answer: >-
       Yes, if your clinic wants to claim from SHA in the 2026/28 contracting cycle: SHA requires contracted
@@ -688,11 +707,11 @@ faq:
       a licence fee.
   - question: What does EasyClinic cost, and is there a price in shillings?
     answer: >-
-      EasyClinic costs {price:usd.professional.annual} per doctor per month on Professional billed
-      annually, or {price:usd.professional.quarterly} billed quarterly, and a price in shillings is not
-      published. Premium, which adds WhatsApp messages and more than one location, is
-      {price:usd.premium.annual} billed annually. Every plan includes a reception login and unlimited
-      support and training, with no setup fee and no binding contract.
+      EasyClinic's shilling price is not yet published, so this page cannot tell you what a clinic in
+      Kenya would pay. The [pricing page](/pricing/) has the US dollar list, which starts at
+      {price:usd.professional.annual} per doctor per month on Professional billed annually. Premium adds
+      WhatsApp messages and more than one location, and every plan includes a reception login and
+      unlimited support and training, with no setup fee and no binding contract.
   - question: Which of these send WhatsApp reminders to patients?
     answer: >-
       EasyClinic and Helium Health both publish WhatsApp messages to patients, EasyClinic on the Premium
@@ -708,8 +727,9 @@ faq:
       does when the connection drops.
   - question: Which systems take M-Pesa at the desk?
     answer: >-
-      EasyClinic records a patient's M-Pesa payment against their bill at reception, and none of the other
-      seven names M-Pesa on the pages we read. Helium Health's HeliumWallet and Streamline Health's payments
+      EasyClinic records a patient's M-Pesa payment against their bill at reception, and KenyaEMR's
+      TaifaCare billing guide shows the cashier sending an M-Pesa STK push from the bill; none of the other
+      six names M-Pesa on the pages we read. Helium Health's HeliumWallet and Streamline Health's payments
       product say they take mobile money. Clinicea names payment gateways such as Flutterwave and Stripe,
       and ClinikEHR takes online payments through the clinic's Stripe or Paystack accounts.
   - question: How long does it take to switch?
@@ -756,15 +776,17 @@ editorialPass:
     than 2,200 sites, and Penda Health's Nairobi clinics on EasyClinic since 2017 are specific to a clinic
     owner in Kenya.
   readsMachineWritten: >-
-    The eight vendor sections share one shape and rhythm, the table repeats "Not published" in many cells,
-    and the page cannot give EasyClinic's SHA or DHA status, a shilling price or a Capterra review count,
-    which a Kenyan owner will notice first.
+    The eight vendor sections share one shape and rhythm and the table repeats "Not published" in many
+    cells, and a Kenyan owner will notice first that EasyClinic sits unranked with no shilling price on the
+    page, while the page also cannot give its SHA or DHA status or a Capterra review count.
 
 notes:
+  - 'Correction 2026-09-26: KenyaEMR (TaifaCare) M-Pesa support changed from "Not published" to the STK push its billing guide documents (https://kenyahmis.org/wp-content/uploads/2025/09/SOP_Billing-workflow-User-Guide_Final_Aug-2025.pdf: "Click on Mpesa Payment to settle by Mpesa STK and prompt for payment"), matching /easyclinic-vs-kenyaemr/. Front desk test and the M-Pesa FAQ updated to match.'
   - >-
     Structure: spec 5.14 (byline and date from the template; verdict by clinic type; how we compared with
-    criteria, date, sources and a disclosure; ranked comparisonTable; one vendor section each with pros and
-    cons; decisionMatrix; FAQ 8; sourceList) with the section 11 Healthie order (TL;DR in openingAnswer, who
+    criteria, date, sources and a disclosure; ranked comparisonTable with EasyClinic unranked and last, see
+    Ranking below; one vendor section each with pros and cons; decisionMatrix; FAQ 8; sourceList) with the
+    section 11 Healthie order (TL;DR in openingAnswer, who
     each is for in the Best for row, table, workflow tests, pricing, FAQ). The live page
     (https://www.easyclinic.io/best-clinic-management-software-kenya/, read 2026-09-26) had no outbound
     sources, so no fact was carried over from it; its eight-vendor shortlist is kept. Its unsourced claims
@@ -800,7 +822,9 @@ notes:
     Banned-word note: "Streamline" is allowlisted only as "Streamline Health", so Streamline Pay, EMR,
     Ubuntu and SNAP are written as "its payments product", "its EMR" and so on.
   - >-
-    EasyClinic facts used: USD price tokens (KES unknown), plans.yaml (WhatsApp and more than one location
+    EasyClinic facts used: USD price tokens, only as the US dollar list on /pricing/ and never as the price
+    for Kenya (src/data/prices/kes.yaml all null; /pricing/ says local prices for Kenya are not set, and
+    /pricing/kenya/ is a draft; every price mention says the shilling price is not yet published), plans.yaml (WhatsApp and more than one location
     from Premium, Cura AI on every plan, no setup fee, reception login), Kenya contact token, M-Pesa at the
     desk and SLADE to five insurers as worded on the published /kenyademo/, English and Swahili
     prescriptions, MOH 705 and DHIS2 reports, not fully offline today, goLiveDays, trainingDays, founded,
@@ -808,8 +832,31 @@ notes:
     cited here. No free-trial claim for EasyClinic: the live listicle footer says "try Easy Clinic
     absolutely free" while /kenyademo/ says there is no trial.
   - >-
-    Ranking rule is stated on the page. Re-read every source and refresh lastUpdated and each checkedOn
-    before republishing; SHA's deadline sentence dates quickly after 30 September 2026.
+    Ranking, re-scored 2026-09-26 to the Nigeria standard: the rule on the page (a Kenya presence and a
+    published price first, then the four daily features WhatsApp, more than one branch, AI note drafting and
+    M-Pesa or mobile money; an independent review score with its count breaks ties) was re-applied with EasyClinic's price check NOT
+    met, because the price a Kenyan clinic would pay is not published (kes.yaml null; /pricing/ says the
+    local prices are not yet published). Competitor prices are taken as they stand (ClinikEHR's USD list and
+    Clinicea's "$59" on /kenya1 meet the check); How we ranked states this asymmetry on the page. Scores as
+    read (first two checks / daily four): Clinicea 2/2 (no AI, no M-Pesa; 4.8 from 43 on Capterra);
+    EasyClinic 1/4 (no Kenyan price); Helium Health 1/4 (no price; no review page); ClinikEHR 1/2 (no Kenya
+    presence; no WhatsApp to patients, no M-Pesa); KenyaEMR 1/1 (M-Pesa only; no price for a private clinic);
+    OpenMRS 0/1 (branches; 4.7 from 3 on Capterra; "no licence fee" and "built on by KenyaEMR" not counted as
+    a price or a Kenya presence, as before); Streamline Health 0/1 (mobile money; no reviews); HospitalOS 0/0.
+    EasyClinic had been ranked first on 2/4. Now EasyClinic and Helium Health tie exactly on both weighted
+    tiers; the tie-break (a review score with its count) does not separate them, because EasyClinic's Capterra
+    score is printed without its count (review counts are not on the confirmed-facts list) and Helium Health
+    has no review page, so any order would be EasyClinic judging a tie in its own favour. EasyClinic is therefore UNRANKED (no rank field) and LAST in the table columns, the vendor list
+    and the decision matrix, as on the Nigeria and UAE listicles (page-graph.ts puts it at ItemList position
+    8). Ranked: 1 Clinicea, 2 Helium Health, 3 ClinikEHR, 4 KenyaEMR, 5 OpenMRS, 6 Streamline Health,
+    7 HospitalOS. OpenMRS and Streamline Health were swapped (previously 7 and 6): they tie on the weighted
+    checks and the stated tie-break puts OpenMRS first; no competitor fact changed. The SHA regulator
+    table rows follow the same order. ClinikEHR (1/2) sits above KenyaEMR (1/1) on the daily features, which
+    How we ranked now says in place of the earlier price-list reason.
+    Once a shilling price is published in kes.yaml, EasyClinic scores 2/4 and should be ranked on the same
+    rules (it would be first), with the opener, verdict, How we ranked, Ties, FAQ, matrix and column order
+    revisited. Re-read every source and refresh lastUpdated and each checkedOn before republishing; SHA's
+    deadline sentence dates quickly after 30 September 2026.
   - >-
     Fact check, 2026-09-26 (every cited URL re-fetched; Capterra and SourceForge via WebFetch because curl
     gets 403). Changed: "Four tests" heading to "Five tests" (the list has five); Clinicea price cell no
