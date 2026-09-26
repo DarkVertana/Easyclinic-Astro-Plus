@@ -1,14 +1,20 @@
 ---
-status: draft
-headKeyword: patient self-appointment booking
-title: "Patient Self-Appointment Booking: Convert Website Visitors into Visits with Self-Appointment Booking"
-metaDescription: Most clinics invest heavily in websites, SEO, and digital marketing to attract patients. But traffic alone does not create visits.
-h1: "Patient Self-Appointment Booking: Convert Website Visitors into Visits with Self-Appointment Booking"
-linkLabel: Patient Self-Appointment Booking
-openingAnswer: Most clinics invest heavily in websites, SEO, and digital marketing to attract patients. But traffic alone does not create visits.
-summary: Most clinics invest heavily in websites, SEO, and digital marketing to attract patients. But traffic alone does not create visits. The critical moment is when a potential patient decides whether to act.
-author: null
-lastUpdated: 2026-07-12
+status: published
+headKeyword: patient self-scheduling
+title: 'Patient Self-Scheduling: When Online Booking Pays Off'
+metaDescription: 'Patient self-scheduling lets patients book their own slot online. When it pays off for a clinic, and what to count in the first month to find out.'
+h1: 'Patient self-scheduling: when online booking pays off'
+linkLabel: Patient self-scheduling
+openingAnswer: >-
+  Patient self-scheduling lets patients pick an open slot and book it themselves online, without phoning
+  the front desk. It pays off when a clinic is losing bookings to a busy phone line or to patients who want
+  to book after hours, and a month of counting where each booking came from, and how many booked patients
+  did not turn up, will show whether that is your clinic.
+summary: >-
+  Where phone booking loses patients and where self-booking does not help, with a way to try it on one
+  doctor's calendar before the whole clinic.
+author: subhashish-saha
+lastUpdated: 2026-09-26
 originallyPublished: 2026-01-07
 topic: patient-engagement
 owner: /features/appointment-scheduling/
@@ -16,282 +22,140 @@ ctas:
   primary:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
+  secondary:
+    label: See how the appointment calendar works
+    href: /features/appointment-scheduling/
+  whatsapp: Hi, I was reading the EasyClinic post on patient self-scheduling and would like to see how online bookings reach the calendar.
+faqHeading: Questions clinics ask about self-scheduling
+faq:
+  - question: Will older patients book their own appointments online?
+    answer: >-
+      Some will and some will not, so keep taking bookings by phone and at the counter on the same calendar
+      while self-booking runs. After a month, look at who booked online before you decide to cut phone
+      hours.
+  - question: Can online bookings cause double bookings?
+    answer: >-
+      Only if the online slots come from a different calendar from the one the desk books into. On
+      EasyClinic, bookings made in the patient portal and app go into the same calendar as the phone
+      bookings and the walk-ins, so the desk books from one list.
+  - question: Which EasyClinic plan lets patients book their own appointments?
+    answer: >-
+      The Enterprise plan, through the patient portal and app, and Enterprise is priced for each clinic
+      rather than from a list price. The appointment calendar and SMS and email reminders come with every
+      plan, from {price:usd.professional.annual} per doctor per month billed annually
+      ({price:inr.professional.annual} in India).
+  - question: Does self-booking reduce no-shows?
+    answer: >-
+      We cannot give you a figure, because EasyClinic has not published a measured change in no-shows for
+      patients who book themselves. Compare the no-show rate of online and phone bookings in your own
+      calendar over the same month, and send every booked patient a reminder either way.
+  - question: Should we take a deposit when patients book online?
+    answer: >-
+      Only for slots where an empty chair costs you a lot, such as a long procedure, and only if you tell
+      the patient before they pay what happens to the money when they cancel. For a routine follow-up, a
+      reminder is a smaller thing to ask of a patient than a payment.
+  - question: How long should we try self-booking before deciding?
+    answer: >-
+      Try it for a month on one doctor's calendar, which is long enough to see whether patients use it and
+      whether any bookings arrive after hours. Count the same numbers for the month before, so you have
+      something to compare against.
 links:
   hub: /blog/
-  related: []
+  related:
+    - href: /features/appointment-scheduling/
+      label: Appointment scheduling
+      description: Walk-ins and booked slots on one calendar, with SMS and email reminders on every plan.
+    - href: /features/patient-engagement/
+      label: Patient portal and app
+      description: Where patients book appointments and open their records, on the Enterprise plan.
+    - href: /pricing/
+      label: Prices per doctor
+      description: What each plan costs per doctor per month, and which one adds the patient portal and app.
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    Only the EasyClinic section draws on what we know directly: self-booking through the Enterprise
+    portal and app, bookings landing in the calendar the desk already uses, and the plan split for
+    reminders. The rest is front-desk advice any clinic manager could write.
+  readsMachineWritten: >-
+    The friction list and the checklist are generic and could sit on any scheduling vendor's blog, and
+    there is no named clinic or measured result, because the two case studies in the import were invented
+    and have been cut. A front-desk manager should read the counting table aloud to check it matches what a
+    desk can actually count.
 notes:
-  - Imported from https://www.easyclinic.io/online-appointment-booking-system/ (published 2026-01-07, modified 2026-07-12). Needs the spec 5.18/5.19 refresh before publishing.
+  - 'Imported from https://www.easyclinic.io/online-appointment-booking-system/ (published 2026-01-07, modified 2026-07-12). Refreshed on 2026-09-26 to the triage decision: head keyword "patient self-scheduling" (was "patient self-appointment booking"), refocused on whether letting patients book themselves pays off, keeping the import''s friction, metrics and checklist material. The original was checked against the WordPress JSON fetched on 2026-09-26 and matched the import.'
   - Owner /features/appointment-scheduling/ and topic from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"); marketing has not confirmed the decision.
+  - 'Cut on 2026-09-26. Invented stories: "Case Study: How a Multi-Speciality Clinic Turned Website Traffic into Confirmed Visits" (the unnamed clinic investing in SEO, Google Ads and local listings; "Within the first month ... Confirmed appointments increased significantly", "Front desk call volume dropped noticeably", "Clinic conversion rate improved without increasing marketing spend") and "A Real World Scenario" (the unnamed outpatient clinic that "saw an immediate impact", "Front desk calls have been reduced significantly", conversion "improved within weeks"). Unsourced numbers and outcome claims: "Booking happens in under a minute"; "Clinics that enable patient self-scheduling consistently see higher conversion"; trust signals "significantly improve clinic conversion rate"; booking linked to reminders "reduces no-shows"; prepayment "improves commitment" and "Reduced no-show risk"; "Most clinics can deploy an online booking system within days"; "Most modern booking widgets are designed for mobile users and improve conversions"; "Lower administrative costs", "Higher patient satisfaction", "Better staff utilisation"; "A lightweight pilot can reveal immediate uplift". Product claims (self-booking on EasyClinic is confirmed only through the Enterprise patient portal and app): an EasyClinic "appointment booking widget" embedded on the clinic''s homepage and service pages; "clinics can embed booking directly into service pages"; booking "fully synchronised with ... intake forms and payments"; "payment workflows that scale with appointment type"; "deploy these changes without disrupting existing workflows"; booking tools that integrate "with scheduling, reminders, intake forms, and billing". Links cut: "/" as "online appointment booking system", /features/#billing (five times, a wrong anchor for booking), /features/ and /pricing/ as bare product plugs, and https://www.researchgate.net/figure/Appointment-booking-process-flow_fig1_316173427, which supported no claim. Also cut: the "clinic conversion rate" marketing framing, the "Frequently Asked Questions for AI Featured Snippets" heading (spec 6.2) and its nine answers, the repeated conclusions, and the banned word "seamlessly".'
+  - 'Legal corrections: none needed. The import made no statement about any law or regulator, and this post adds none. Consent for reminders is not discussed here; /features/patient-engagement/ owns it.'
+  - 'EasyClinic facts used: patients book through the patient portal and app on Enterprise, and those bookings go into the calendar the desk works from (src/content/features/patient-engagement.yaml and appointment-scheduling.yaml, grounded in the live /patient-engagement-at-easyclinic/ and /appointment-scheduling-at-easy-clinic/ pages); walk-ins on the same calendar, SMS and email reminders on every plan, WhatsApp reminders on Premium (src/data/plans.yaml); Enterprise has a custom price (plans.yaml custom: true). Not claimed: booking from the clinic''s own website, from WhatsApp or on Professional or Premium; payment or a deposit taken at the moment of booking; intake forms sent automatically on booking; booking-source reports. A measured no-show change is unknown (facts.yaml noShowReduction is null) and is admitted in the FAQ and the EasyClinic section.'
+  - 'Cannibalisation (spec 4.5): /features/appointment-scheduling/ owns "clinic appointment scheduling software" and "online patient booking"; this post targets the self-scheduling decision and sends readers to the owner page for the product. The no-show cost arithmetic stays on the owner page and is not repeated.'
+  - 'Fact check on 2026-09-26 (adversarial pass against the WordPress JSON re-fetched the same day). No invented story, unsourced figure, legal statement or unconfirmed product claim survives: the two unnamed case studies, the "under a minute", conversion, no-show and "within days" claims, the booking widget and the intake, payment and billing sync are all gone. EasyClinic claims re-checked against src/data/plans.yaml (portal and app on Enterprise, custom price; calendar, walk-ins and SMS and email reminders on every plan; WhatsApp from Premium) and src/content/features/patient-engagement.yaml and appointment-scheduling.yaml (portal and app bookings land in the calendar the desk works from). Changed: "a self-booked patient forgets as easily as anyone else" asserted a comparison nobody has measured, now "can forget the visit like anyone else"; a group of three removed from the patient engagement link description. The opening scene ("Say a patient decides to book at ten at night") is framed as a hypothetical and names no clinic or patient, so it stays.'
+  - 'Spec 6.5: no named person beyond the byline and no measured number (none exists for this topic); limits admitted are self-booking on Enterprise only, no no-show figure, and the cases where self-booking does not help.'
 ---
 
-## The Moment of Decision Happens Online
+Say a patient decides to book at ten at night, once the house is quiet. The clinic's number rings out, and by morning the patient has booked somewhere else or decided the cough can wait. Patient self-scheduling is the answer to that moment. The question for a clinic is whether that moment costs it enough patients to be worth changing how bookings are taken.
 
-Most clinics invest heavily in websites, SEO, and digital marketing to attract patients. But traffic alone does not create visits. The critical moment is when a potential patient decides whether to act.
+## Where phone booking loses patients
 
-Many patients search for care late at night, early morning, or between work commitments. If your website asks them to call during business hours, the intent often disappears. This is where an [**online appointment booking system**](/) becomes a growth lever.
+Phone booking asks the patient to act on the clinic's timetable, and each step can lose them.
 
-Immediate booking captures intent in the moment. Instead of hoping patients remember to call later, clinics enable action when motivation is highest.
+- The line is engaged at the busiest hour of the morning, when the receptionist is also checking patients in.
+- Nobody answers after closing time, which is when some patients have their first free minute.
+- The receptionist checks the doctor's diary by hand while the patient waits on the line.
+- Two people book the same slot, one by phone and one at the counter, and one of them finds out on the day.
 
-## Why Clinics Lose Patients Without Patient Self-Scheduling
+None of these shows up in a report. The patient who gave up never appears in the appointment book, so the clinic cannot count what it lost.
 
-Phone-based booking introduces friction at every step.
+## What changes when patients book themselves
 
-- Patients wait on hold.
-- Calls go unanswered during peak hours.
-- Staff manually checks availability.
-- Errors and double bookings occur.
+The patient picks an open slot and gets a confirmation, at whatever hour suits them. The booking should land in the calendar the desk works from, beside the phone bookings and the walk-ins, and the patient should get a reminder before the visit like everyone else. Every booking made online is a call the desk did not have to take.
 
-Each delay lowers the **clinic conversion rate** from website visitor to confirmed appointment.
+Walk-ins still come, and some patients will always phone. A self-booked patient can forget the visit like anyone else, so the reminder still matters.
 
-By contrast, patient self-scheduling allows visitors to book instantly, without staff involvement, improving efficiency and satisfaction simultaneously.
+<InlineCta heading="See how a self-booked visit lands on the desk's calendar." href="/features/appointment-scheduling/" label="See how the appointment calendar works">On EasyClinic, patients book through the patient portal and app on the Enterprise plan, and each booking goes into the same calendar the front desk works from, beside the walk-ins.</InlineCta>
 
-## What Is an Online Appointment Booking System
+## Where self-scheduling does not help
 
-An **online appointment booking system** allows patients to view real-time availability and book appointments directly through a clinic website or landing page.
+- **A clinic that runs mostly on walk-ins or tokens.** The queue is the booking, and an online slot adds little.
+- **Visits that need a conversation first.** A new complaint that needs triage, or a procedure that needs preparation, is better booked by someone who can ask questions.
+- **Patients who prefer to phone.** Keep the phone line and the counter open for them, on the same calendar.
+- **Doctors whose hours change week to week.** Online slots are only as good as the schedule behind them. If the desk moves the doctor's hours by hand every Monday, fix that before you open the calendar to patients.
 
-When implemented using platforms like [**EasyClinic clinic management software**](/features/#billing), booking is fully synchronised with clinic schedules, reminders, and patient records.
+## What to open for self-booking first
 
-### Core Capabilities
+Start with the visits that need no questions: follow-ups for patients the doctor already knows, with one doctor. Keep new complaints and procedures with the desk until you see how patients use it.
 
-- Live availability display
-- Patient self-scheduling without phone calls
-- Automated confirmations and reminders
-- Integration with intake forms and payments
+Ask only what you need to hold the slot, the patient's name and phone number, and collect the rest at the visit. Every extra field on a booking form is one more place for a patient on a phone to give up.
 
-This turns a static website into an active booking channel.
+If you ask for payment when a patient books a long procedure slot, say before they pay what happens to the money if they cancel, and how late they can cancel.
 
-## Case Study: How a Multi-Speciality Clinic Turned Website Traffic into Confirmed Visits with Online Appointment Booking
+## How to tell whether it pays off
 
-A fast-growing multi-speciality clinic was investing consistently in SEO, Google Ads, and local listings. Website traffic was strong, especially during evenings and weekends. However, appointment volumes did not reflect this interest. The clinic suspected demand existed, but was failing to convert at the right moment.
+Count the same things for the month before and the month after you open self-booking.
 
-### The Problem: High Website Traffic but Low Clinic Conversion Rate
+| What to count | Where to find it | What it tells you |
+| --- | --- | --- |
+| Bookings made online, as a share of all bookings | The appointment book | Whether patients use it at all |
+| Online bookings made after closing time | The time each online booking was made | The bookings the phone line could not have taken |
+| Booking calls to the desk each day | A tally sheet by the phone, kept for a week in each month | Whether the desk's load moved |
+| No-shows among online bookings and among phone bookings | The appointment book | Whether self-booked patients turn up as reliably |
+| Empty slots at the end of the day | The appointment book | Whether the extra bookings filled the diary |
 
-Most patients visiting the website were searching outside regular business hours. The only call-to-action available was a phone number with instructions to call during clinic hours. As a result, many visitors left the site without taking action.
+If online bookings are a small share and almost none arrive after hours, the phone line was not your problem, and self-booking is a convenience rather than a source of new visits. If a fair share arrive after closing, those are patients the phone line could not have booked.
 
-The front desk team also faced heavy call volumes during the day, leading to long wait times and missed calls. This created two parallel issues:  
-Low clinic conversion rate from website traffic  
-High phone dependency is increasing staff workload
+## Self-booking on EasyClinic
 
-Despite interest, the clinic was losing potential patients at the moment of decision.
+On EasyClinic, patients book their own appointments through the patient portal and app, which come with the Enterprise plan. Each booking goes into the same calendar the front desk works from, beside the phone bookings and the walk-ins. Booked patients get reminders by SMS and email on every plan, and on WhatsApp from the Premium plan.
 
-### The Solution: Implementing an Online Appointment Booking System
+EasyClinic has not published a measured change in bookings or no-shows for patients who book themselves, so this post gives none. The counting table above is how you would find your own.
 
-The clinic introduced an **online appointment booking system** using [**EasyClinic clinic management software**](/features/#billing), embedding an appointment booking widget directly on the homepage and service pages.
+## A checklist before you switch it on
 
-Patients could view real-time availability and book instantly through patient self-scheduling. The booking flow was intentionally simple, capturing only essential details upfront. Once confirmed, bookings were automatically linked to reminders and digital intake forms.
-
-To further reduce friction, the clinic enabled mobile-friendly booking and added clear cancellation policies and trust signals near the widget.
-
-This approach shifted scheduling from phone calls to self-service, helping reduce phone traffic while improving accessibility.
-
-### The Outcome: Higher Bookings, Lower Phone Load, Better Utilisation
-
-Within the first month of implementation, the clinic saw clear results.
-
-- Confirmed appointments increased significantly from existing website traffic.
-- Bookings occurred consistently outside office hours.
-- Front desk call volume dropped noticeably.
-- Clinic conversion rate improved without increasing marketing spend
-
-Patients appreciated the ability to book instantly, while staff regained time previously spent answering scheduling calls. Most importantly, appointment slots were utilised more efficiently, turning passive website visits into reliable clinic visits.
-
-### Why This Case Study Matters for Growing Clinics
-
-This case demonstrates that many clinics do not have a demand problem. They have an access problem. By enabling patient self-scheduling through an online appointment booking system, clinics remove friction at the exact moment patients are ready to act.
-
-Clinics using [**EasyClinic clinic management software**](/features/#billing) benefit from booking tools that integrate seamlessly with schedules, reminders, and intake workflows. When implemented correctly, online booking becomes a consistent growth channel rather than just a convenience feature.
-
-## How Patient Self-Scheduling Improves Clinic Conversion Rate
-
-Patient self-scheduling removes barriers that prevent action.
-
-- Patients choose a time that fits their schedule.
-- Booking happens in under a minute.
-- No need to wait for staff confirmation
-
-Clinics that enable patient self-scheduling consistently see higher conversion from web traffic to visits.
-
-Using [**EasyClinic features**](/features/), clinics can embed booking directly into service pages, ensuring the call to action appears at the moment of interest.
-
-## Key Features That Matter in an Online Appointment Booking System
-
-### Real Time Availability
-
-An effective **online appointment booking system** must show live slots. Static calendars frustrate users and create trust issues.
-
-Real-time availability  
-Automatic schedule updates  
-Protection against double bookings
-
-This reliability builds confidence and improves the clinic conversion rate.
-
-### Simple Booking Flow That Reduces Drop Off
-
-Complex forms reduce completion rates. The goal is speed.
-
-Ask only essential details.  
-Confirm booking instantly  
-Capture additional information later.
-
-An optimised **appointment booking widget** focuses on completion first, not data collection.
-
-### Integration With Reminders and Intake Forms
-
-Booking should not exist in isolation.
-
-A connected **online appointment booking system** links bookings to reminders and digital intake.
-
-Patients receive confirmations automatically.  
-Previsit forms are sent instantly.  
-Clinicians receive complete information.
-
-This reduces no-shows and improves preparedness while helping **reduce phone traffic** at the front desk.
-
-### Payment and Co-Pay Capture When Appropriate
-
-For high-value visits or speciality clinics, optional prepayment improves commitment.
-
-- Deposit or co-pay capture
-- Clear cancellation policies
-- Reduced no-show risk
-
-Clinics using [**EasyClinic pricing**](/pricing/) can enable payment workflows that scale with appointment type.
-
-## Increase Conversions With Trust Signals
-
-Even with strong intent, patients need reassurance.
-
-### Trust Elements That Improve Booking Completion
-
-Short patient testimonials  
-Clear cancellation policies  
-Visible contact information  
-Secure booking indicators
-
-Trust signals near the **appointment booking widget** significantly improve clinic conversion rate, especially for first-time visitors.
-
-## How Online Booking Helps Reduce Phone Traffic
-
-Front desks often spend hours answering repetitive booking calls.
-
-By enabling an **online appointment booking system**, clinics shift routine scheduling away from phones.
-
-- Fewer inbound calls
-- Lower staff workload
-- Faster response for urgent cases
-
-This helps reduce phone traffic while improving patient experience.
-
-## A Real World Scenario: From Website Visits to Confirmed Appointments
-
-A growing outpatient clinic received steady website traffic but saw limited appointment growth. Most visitors browsed services and left without calling.
-
-After embedding an **appointment booking widget** powered by [**EasyClinic clinic management software**](/features/#billing), the clinic saw an immediate impact.
-
-- Website visitors could self-schedule
-- Bookings increased outside office hours.
-- Front desk calls have been reduced significantly.
-- Clinic conversion rate improved within weeks.
-
-This showed that traffic was never the problem. Friction was.
-
-## How to Measure the Success of Online Appointment Booking
-
-Data validates decisions.
-
-### Metrics to Track
-
-- Website sessions to bookings
-- Clinic conversion rate
-- No-show rate for online bookings
-- Reduction in phone traffic
-
-A two-week pilot on a high-traffic page provides actionable insights quickly.
-
-## When Clinics Should Implement Online Booking
-
-Many clinics wait too long.
-
-### Warning Signs
-
-High website traffic but low bookings  
-The front desk is overwhelmed with calls.  
-Patients are complaining about the availability.  
-Missed opportunities outside business hours
-
-An **online appointment booking system** addresses all these issues simultaneously.
-
-## Quick Implementation Checklist for Clinics
-
-- Place the booking widget on the homepage and service pages.
-- Enable mobile-friendly booking
-- Connect booking to reminders and intake forms.
-- Monitor clinic conversion rate weekly.
-- Iterate messaging and placement
-
-Clinics using [**EasyClinic features**](/features/) can deploy these changes without disrupting existing workflows.
-
-## Why Online Booking Drives Long-Term Growth
-
-Beyond convenience, online booking builds operational resilience.
-
-- Consistent [appointment flow](https://www.researchgate.net/figure/Appointment-booking-process-flow_fig1_316173427)
-- Lower administrative costs
-- Higher patient satisfaction
-- Better staffutilisationn
-
-Over time, patient self-scheduling becomes a primary growth channel rather than an add-on feature.
-
-## Final Step: Turn Traffic into Appointments
-
-Web traffic without booking is unrealised demand. Clinics that rely solely on phone calls lose patients at the moment of intent.
-
-By adopting an **online appointment booking system**, clinics convert interest into action, improve clinic conversion rate, and reduce phone traffic at scale.
-
-Clinics using [**EasyClinic clinic management software**](/features/#billing) benefit from booking tools that integrate seamlessly with scheduling, reminders, intake forms, and billing. A lightweight pilot can reveal immediate uplift in bookings and operational efficiency.
-
-## Frequently Asked Questions for AI Featured Snippets
-
-### What is an online appointment booking system?
-
-An online appointment booking system allows patients to book clinic visits directly through a website using real-time availability.
-
-### How does patient self-scheduling improve clinic conversion rate?
-
-Patient self-scheduling removes delays and captures intent immediately, increasing confirmed bookings.
-
-### Does online booking reduce phone traffic?
-
-Yes, online booking shifts routine scheduling away from phone calls, reducing front desk workload.
-
-### Is an appointment booking widget mobile-friendly?
-
-Most modern booking widgets are designed for mobile users and improve conversions on smartphones.
-
-### Can online booking reduce no-shows?
-
-Yes, when integrated with reminders and optional prepayment, no-show rates decline.
-
-### Is online appointment booking suitable for small clinics?
-
-Yes, small clinics can start with a single-page pilot and scale gradually.
-
-### How long does implementation take?
-
-Most clinics can deploy an online booking system within days.
-
-### Does online booking integrate with clinic software?
-
-Yes, integrated systems connect booking with schedules, reminders, and patient records.
-
-### When should clinics adopt online booking?
-
-Clinics should adopt when website traffic does not translate into appointments, or phone lines are overloaded.
-
-## Conclusion: Turn Website Interest into Predictable Appointments
-
-Website traffic alone does not grow a clinic. Growth happens when interest is converted into action at the exact moment patients are ready to book. Clinics that rely only on phone-based scheduling miss this opportunity and lose potential visits outside business hours.
-
-An online appointment booking system removes this friction. Patient self-scheduling, real-time availability, and a simple appointment booking widget help improve clinic conversion rate while reducing phone traffic for front desk teams. When booking is connected to reminders and intake forms, clinics also see better preparedness and fewer no-shows.
-
-Clinics using [**EasyClinic clinic management software**](/features/#billing) can turn their websites into active booking channels rather than static information pages. With the right online appointment booking system in place, clinics create a consistent, scalable source of appointments and ensure that every interested visitor has a clear path to becoming a patient.
+1. Pick one doctor, and the visit types patients may book themselves, such as follow-ups.
+2. Make sure online bookings land in the calendar the desk books from, so nobody books the same slot twice.
+3. Keep the booking to the patient's name and phone number.
+4. Send a confirmation at once and a reminder before the visit.
+5. Tell patients how to cancel or move a booking.
+6. Tell the front desk what is changing, and who checks the online bookings each morning.
+7. Count the numbers in the table above for a month, then decide whether to open more calendars.

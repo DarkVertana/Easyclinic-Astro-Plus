@@ -1,172 +1,161 @@
 ---
-status: draft
-headKeyword: securing your clinic
-title: "Securing Your Clinic: User Access Control Simplified"
-metaDescription: In today’s healthcare environment, where data protection is as critical as clinical outcomes, securing your practice with precise clinic access control…
-h1: "Securing Your Clinic: User Access Control Simplified"
-linkLabel: Securing Your Clinic
-openingAnswer: In today’s healthcare environment, where data protection is as critical as clinical outcomes, securing your practice with precise clinic access control is no longer optional—it’s essential.
-summary: In today’s healthcare environment, where data protection is as critical as clinical outcomes, securing your practice with precise clinic access control is no longer optional—it’s essential.
-author: null
-lastUpdated: 2025-05-22
+status: published
+headKeyword: role-based access control for clinics
+title: 'Role-Based Access Control for Clinics: Who Sees What'
+metaDescription: 'Role-based access control for clinics: which staff should open which records, and why each person needs a login of their own that closes when they leave.'
+h1: 'Role-based access control for clinics: who should see what'
+linkLabel: Role-based access control for clinics
+openingAnswer: 'Role-based access control means each person in the clinic logs in as themselves, and the role on that login decides which screens they can open, so the receptionist can book and bill without reading the clinical notes. In practice it comes down to four rules: one login per person, access set by job, sensitive notes kept to a smaller circle, and a login closed on the day the person leaves.'
+summary: 'A starting table of which staff need which screens, and what rule 6 of India''s DPDP Rules 2025 will ask of clinics on access control and access logs.'
+author: subhashish-saha
+lastUpdated: 2026-09-26
 originallyPublished: 2025-05-22
 topic: running-a-clinic
-owner: /blog/
+owner: /solutions/polyclinic/
 ctas:
   primary:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
+  secondary:
+    label: See how roles work in a polyclinic
+    href: /solutions/polyclinic/
+faq:
+  - question: Should my receptionist be able to read patients' clinical notes?
+    answer: >-
+      No, the front desk needs the appointment list and the bills, not the notes. On EasyClinic the
+      reception login included in the price is not allowed into the EMR and cannot issue prescriptions, so
+      the receptionist books and bills without opening the chart.
+  - question: Can two receptionists share one login at a busy desk?
+    answer: >-
+      They should not, because the audit log records the login and not the person, so nobody can tell
+      afterwards which of them changed an appointment or took a payment. A shared password also has to be
+      changed for everyone on the day one of them leaves.
+  - question: What should we do when a member of staff leaves?
+    answer: >-
+      Close their login on their last working day, before they leave the building, and change any clinic
+      password they knew, such as the clinic's email account. Once a quarter, go through the list of active
+      logins and close any that belong to people who have gone.
+  - question: Does an audit log stop staff looking at records they should not?
+    answer: >-
+      No, an audit log does not stop anyone opening a record their role allows; it records what each user
+      did, so you can check afterwards. It deters only when staff know it exists and know that someone reads
+      it. EasyClinic keeps audit logs for each user.
+  - question: What will India's DPDP Rules ask of a clinic on access control?
+    answer: >-
+      [Rule 6 of the Digital Personal Data Protection Rules, 2025](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf)
+      asks for measures to control access to the computer resources used to process personal data, and
+      for logs of who accessed it, kept for a year. As notified, rule 6 comes into force eighteen months
+      after the Rules were published on 13 November 2025, and it covers data a software vendor handles on
+      the clinic's behalf as well as the clinic's own.
+  - question: Who should be able to read psychiatric or HIV notes?
+    answer: >-
+      Only the clinicians who need them to treat the patient, which is usually a smaller group than
+      everyone who shares the chart. Decide which notes count as sensitive and who may read them, then check
+      what a "confidential" setting in your software actually hides before you rely on it.
 links:
   hub: /blog/
-  related: []
+  related:
+    - href: /solutions/polyclinic/
+      label: Software for polyclinics
+      description: One chart for every specialist, with a role on every login that decides who sees what.
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: Who can open the chart and write a prescription, with the audit log behind both.
+    - href: /features/multi-location/
+      label: More than one location
+      description: One login for each person at whichever branch they work, with access set branch by branch.
+    - href: /mental-health/
+      label: Mental health and psychiatry EHR
+      description: Access by role and by department for a psychiatry or counselling practice.
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: 'The reception login rule from EasyClinic''s own price list and the one login a doctor keeps across branches, with access set location by location, come from EasyClinic; the table of who needs what is general practice that any clinic manager would recognise.'
+  readsMachineWritten: 'The who-needs-what table is a generic starting point rather than EasyClinic''s default permissions, which are not confirmed, and no named clinic or person appears in the post. The habits section reads like a security checklist from anywhere and would gain from one real clinic''s story.'
 notes:
-  - Imported from https://www.easyclinic.io/securing-your-clinic-user-access-control-simplified/ (published 2025-05-22, modified 2025-05-22). Needs the spec 5.18/5.19 refresh before publishing.
-  - Owner /blog/ from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"); marketing has not confirmed the decision. /blog/ cannot own a post, so the topic running-a-clinic was chosen from the slug and title (TOPIC_BY_KEYWORD in scripts/lib/wp-convert.ts) and is provisional until a landing page owns the post.
+  - 'Imported from https://www.easyclinic.io/securing-your-clinic-user-access-control-simplified/ (published 2025-05-22, modified 2025-05-22; WordPress API re-fetched 2026-09-26). Refreshed on 2026-09-26 to the post standard. Owner /solutions/polyclinic/ and topic running-a-clinic from the blog triage (the import had owner /blog/ with a provisional topic); head keyword "role-based access control for clinics" from triage. Marketing has not confirmed the keep decision in migration/posts-manifest.csv.'
+  - 'Cut from the import. Stories: none (the import told no clinic, doctor or patient anecdote). Numbers: none (the import stated no statistic, percentage or outcome). Compliance claims, cut because compliance status is unknown everywhere (page-writing-rules.md): "EasyClinic supports international compliance standards such as HIPAA and MTCS, enabling your clinic to stay audit-ready"; the whole "Compliance with global data security standards" section (HIPAA, MTCS described as Singapore''s Multi-Tier Cloud Security Standard, "GDPR-like data protection principles", "future-proofs your clinic from regulatory burdens"); "ensures regulatory compliance"; the link "Discover our EMR compliance standards". Unconfirmed product claims: multi-factor authentication by OTP or email; password complexity policies; session timeouts and device restriction controls; IP address whitelisting, login restricted to verified devices and blocking of geographic regions; behaviour alerts (failed logins, out-of-hours access to sensitive data, permission changes without approval) and "alerts for suspicious access patterns"; automatic provisioning from HR and access "revoked instantly across devices and modules"; tagging sensitive fields such as psychiatric or infectious disease history, field-level restriction, override access for senior staff; read-only access for interns or visiting consultants; limits on editing or deletion rights; "timestamped user access history", logs per session of view, edit and delete actions, and "logs every interaction in the EMR" (the confirmed wording is audit logs of what each user did); nurses updating vitals but not altering prescriptions and doctors having full access to billing, given as EasyClinic role defaults (default permissions beyond the reception rule are not confirmed); consolidated audit logs for multi-site compliance tracking; "EasyClinic helps train your staff on" phishing and secure login habits; automatic logout during EMR idle time, face-sheet visibility controls, navigation limited by role; "best-in-class EMR security", "enterprise-grade access security", "secure architecture". Also cut: banned words and padding (empowers, robust, seamless, elevate, streamlined), the "Conclusion" heading, H4 and bold headings, and links to old posts (/faqs-on-emr-medical-software/, /doctor-clinic-software/, /how-ai-for-doctors-is-transforming-clinical-practice/) and the home page.'
+  - 'Legal. The import''s legal content was the HIPAA, MTCS and GDPR compliance claims above (cut, not corrected, because compliance status is unknown) and the lines that access control "ensures regulatory compliance" and that the audit logs "help clinics remain compliant". Those two lines are replaced by what one law asks, each point read on the official source and linked in its sentence: rule 6 of the Digital Personal Data Protection Rules, 2025 (reasonable security safeguards, including (b) measures to control access to the computer resources used by the data fiduciary or data processor, (c) visibility on access through logs, monitoring and review, for detecting unauthorised access, (e) retention of such logs for one year unless another law requires otherwise; rule 6(1) covers processing "undertaken by it or on its behalf by a Data Processor"), rule 1(4) (rules 3, 5 to 16, 22 and 23 come into force eighteen months after publication) and the Gazette date of 13 November 2025 (G.S.R. 846(E)), all in https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf (re-fetched 2026-09-26); the definition of a data fiduciary in section 2(i) of the DPDP Act, 2023, in https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf (fetched 2026-09-26). "Usually the clinic" applies that definition; it is not a quoted rule. "As notified" stays on the commencement date because secondary sources report a January 2026 MeitY consultation on shortening the 18-month period; no gazetted amendment was found on an official source, so re-check the date before relying on it. No other country''s law is stated.'
+  - 'Fact check 2026-09-26 (adversarial pass). The FAQ "Does Indian law require access controls in clinic software?", answered "It will", was reworded to "What will India''s DPDP Rules ask of a clinic on access control?", because "It will" implied no current duty while the site''s own guide (/patient-data-privacy-laws-in-india/) says the SPDI Rules 2011 already treat medical records as sensitive personal data; the post now says only what rule 6 will ask. The data fiduciary gloss was linked to the Rules PDF but comes from the Act, so it now links section 2(i) of the Act. "Computer systems that hold the data" became "computer resources used to process the data", closer to rule 6(1)(b). "The data fiduciary is the clinic" became "usually the clinic". The triage decision named in the task brief was not supplied to the checker, so topic, owner and head keyword are checked only against the manifest and the pages index (no clash found).'
+  - 'EasyClinic facts used, with sources: each person logs in as themselves and the role decides which screens they can open (/solutions/polyclinic/, /mental-health/); logins for your staff on every plan (plans.yaml); reception login included in the price, not allowed into the EMR, cannot issue prescriptions (live /pricing/ FAQ via facts.md); prescriptions written on a doctor''s login and doctors licensed one by one (/solutions/polyclinic/); access by role and by department (/mental-health/, /features/reports-and-dashboards/, live /features/); audit logs of what each user did, with audit trails of their own for the cash till and stock adjustments (/features/reports-and-dashboards/, live /features/); one login at every branch and a role''s access set location by location (/features/multi-location/, live /clinic-chain-software/); different access levels for owned clinics and franchisees (/features/reports-and-dashboards/); more than one location on Premium (plans.yaml). The EMR''s "confidential notes" are named on /mental-health/ but what they hide is unknown, so the post does not describe them.'
+  - 'Unknown and not stated: whether EasyClinic offers two-factor login, password rules, session timeouts or IP and device restrictions; the default permissions of the nurse, pharmacist, accountant and owner roles and whether a clinic can edit them; whether a login can be deactivated by the clinic itself; what the audit log shows per entry (time, record, action). The FAQ on leaving staff and the habits section are written as advice for any system. Add a product line to each once product confirms. No proof block (post family); no named person (spec 6.5 pass test not met).'
 ---
 
-In today’s healthcare environment, where data protection is as critical as clinical outcomes, securing your practice with precise **clinic access control** is no longer optional—it’s essential. Clinics handle large volumes of sensitive patient data every day, and safeguarding this information through role-based access, user permissions, and security protocols ensures regulatory compliance and builds patient trust.
+On paper, anyone who can reach the file shelf can read the file. Clinic software can do better than that, but only if the clinic sets it up. A system where the whole front desk shares one password is a file shelf with a lock that nobody uses.
 
-EasyClinic’s secure architecture empowers clinics to manage **healthcare user roles**, control Electronic Medical Records (EMR) visibility, and implement robust protocols for **EMR security** with minimal administrative burden.
+This post is about who in a clinic should open what, and the habits that keep it that way after the first week.
 
-## The Importance of Access Control in Clinic Settings
+## What role-based access means in a clinic
 
-Data breaches and unauthorized data access can cripple a clinic’s reputation and lead to significant legal liabilities. A secure **clinic access control** system prevents:
+Every person who uses the system gets a login of their own, and each login carries a role, such as doctor, nurse, receptionist or pharmacist. The role decides which screens the login can open. You decide the access once for each job, and each new person gets the role for their job, so a new receptionist starts on day one with the same access as the last one.
 
-- Unauthorized access to patient files
-- Internal data misuse or mishandling
-- Human errors leading to security lapses
+The principle is need to know. The receptionist books appointments and takes payments. The pharmacist dispenses what the doctor prescribed. Neither needs the consultation notes to do the job, and a login that cannot open the notes cannot leak them.
 
-EasyClinic supports international compliance standards such as HIPAA and MTCS, enabling your clinic to stay audit-ready while focusing on care delivery. [Discover our EMR compliance standards](/faqs-on-emr-medical-software/).
+## Who needs to see what
 
-### Role-Based Access Control: Defining Healthcare User Roles
+This table is a starting point for a small clinic or a polyclinic, not a rule. Adjust it to how your clinic works and write down what you decide, so the next manager does not have to guess.
 
-EasyClinic implements **healthcare user roles** through Role-Based Access Control (RBAC), enabling you to assign permissions based on job functions:
+| Role | Needs to open | Does not need |
+| --- | --- | --- |
+| Receptionist | Registration, appointments, bills and payments | Clinical notes and prescriptions |
+| Nurse | Vitals and the notes of the patients in their care | The till and the financial reports |
+| Doctor | The full chart of the patients they see, and prescribing | The day's accounts, unless they own the clinic |
+| Pharmacist | The prescriptions to dispense, and the stock | Consultation notes beyond the prescription |
+| Accountant | The bills and the financial reports | Clinical notes |
+| Owner | Reports across the clinic | Clinical notes, unless they also treat patients |
 
-- Receptionists can manage appointments but not view medical history
-- Nurses can update vitals but not alter prescriptions
-- Doctors have full access to patient charts, prescriptions, and billing
+The receptionist row matters most, because the front desk sees every patient who walks in. On EasyClinic the reception login comes with the price. It is not allowed into the EMR and cannot issue prescriptions. Prescriptions are written on a doctor's login, and each doctor has a licence of their own.
 
-This separation of responsibilities keeps data exposure to a minimum and maintains clinical integrity.
+<InlineCta heading="See who sees what on a polyclinic's logins." href="/solutions/polyclinic/" label="See how roles work in a polyclinic">Each person logs in as themselves, and the role on that login decides which screens they can open. The reception login comes with every plan and cannot open the EMR.</InlineCta>
 
-[Explore our doctor-focused software modules](/doctor-clinic-software/).
+## One login for each person
 
-### Granular Permissions for Better EMR Security
+A shared login undoes everything above. It starts for a sensible reason: the desk is busy, and logging out and in again between patients feels slow. Then an appointment disappears or a payment is recorded twice, and the log says only that "reception" did it.
 
-Granularity matters. With EasyClinic’s**EMR security** features, you can:
+A shared login breaks two things. The audit log records the login, not the person, so it cannot tell you which receptionist made the change. And when one of them leaves, the password has to change for everyone, which is easy to put off.
 
-- Restrict specific fields within the EMR
-- Allow read-only access for interns or visiting consultants
-- Limit editing or deletion rights on critical records
+The same goes for a doctor's login. If a nurse prints the prescriptions on the doctor's login to save time, the doctor's name is on prescriptions the doctor did not write. Visiting consultants and locums should get logins of their own too, closed when the arrangement ends.
 
-Such fine-tuned permissions ensure that each staff member only sees or edits what they are meant to.
+On EasyClinic, logins for your staff come with every plan.
 
-### Two-Factor Authentication and Password Security
+## Keep sensitive notes to a smaller circle
 
-Beyond role-based access, EasyClinic also provides strong account security with:
+Some notes need a tighter circle than the rest of the chart: psychiatric history, HIV status, sexual health, a disclosure of violence at home. A patient who tells the counsellor expects the counsellor to keep it, not the dermatologist down the corridor who shares the same record.
 
-- Multi-Factor Authentication (MFA) via OTP or email verification
-- Configurable password complexity policies
-- Session timeout rules and device restriction controls
+Decide which kinds of note your clinic treats as sensitive, and write down which roles may read them. If your software has a setting called confidential notes, ask exactly which roles can still read a confidential note before you rely on it. The [mental health page](/mental-health/) covers how access works for a psychiatry or counselling practice on EasyClinic.
 
-These features prevent unauthorized account access even in the event of compromised credentials.
+## Keep a record of who did what
 
-### Visual Audit Trails and Activity Logs
+An audit log is the record of what each user did in the system. EasyClinic keeps audit logs for each user, and the cash till and stock adjustments carry audit trails of their own.
 
-Accountability is key. EasyClinic logs every interaction in the EMR, giving administrators:
+An audit log does not stop anyone opening a record their role allows. It tells you afterwards, and only if someone looks. Pick a day each month to read it. If your log shows who opened which record, start with records opened by people who were not involved in that patient's care. Tell your staff that the log exists and that it is read.
 
-- Timestamped user access history
-- Logs of actions taken per session (view, edit, delete)
-- Alerts for suspicious access patterns
+## When staff come and go
 
-These logs are accessible through the admin panel and help clinics remain compliant.
+Settings are the easy part. Access drifts as the staff list changes.
 
-### Streamlined User Onboarding and Exit Protocols
+- **Joining:** create the login on the first day, with the role for the job. Nobody starts work on a colleague's login while theirs is being set up.
+- **Changing job:** when a nurse moves to the front desk, change the role. Do not add the new role on top of the old one.
+- **Leaving:** close the login on the last working day, before the person leaves the building, and change any clinic password they knew, such as the clinic's email account.
+- **Every quarter:** go through the list of active logins and close any that belong to people who have gone.
 
-EasyClinic automates user provisioning and deprovisioning:
+## If you run more than one branch
 
-- HR adds a new staff member → access is granted automatically based on their role
-- Staff exit → access is revoked instantly across devices and modules
+With two branches, the question becomes which branch a person can see as well as which screens. On EasyClinic a doctor who works at two branches signs in with the same login at both, and a role's access can be set location by location. A chain can also give its owned clinics and its franchisees different levels of access. More than one location comes with the Premium plan, and the [multi-location page](/features/multi-location/) covers how branches share one patient record.
 
-This removes the risk of lingering accounts, a common security vulnerability.
+## What the law asks, with India as an example
 
-#### Visual Health Record Protection by Staff Level
+In India, [rule 6 of the Digital Personal Data Protection Rules, 2025](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf) lists the minimum security safeguards a data fiduciary must take for the personal data in its possession or under its control. They include measures to control access to the computer resources used to process the data, and logs that show who accessed it, monitored and reviewed so that unauthorised access is found. The logs are kept for one year unless another law requires otherwise.
 
-Sensitive data needs layered visibility. EasyClinic allows you to:
+A data fiduciary is whoever decides the purpose and means of processing personal data, under [section 2(i) of the Digital Personal Data Protection Act, 2023](https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf). For patient records that is usually the clinic, and rule 6 also covers data that a software vendor handles on the clinic's behalf. As notified, rule 6 comes into force eighteen months after the Rules were published on 13 November 2025, under [rule 1 of the same Rules](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf). Our [guide to patient data privacy laws in India](/patient-data-privacy-laws-in-india/) covers the rest of the law. Other countries have their own data protection laws, so ask a lawyer which apply to your clinic.
 
-- Tag sensitive health fields (e.g., psychiatric, infectious disease history)
-- Limit access to such fields by staff role
-- Set override access only to senior medical personnel
+## Habits that matter as much as the settings
 
-This feature protects patient privacy and aligns with ethical data-sharing practices.
+The settings do not help if the habits at the desk undo them.
 
-[Learn how AI helps protect and enhance patient records](/how-ai-for-doctors-is-transforming-clinical-practice/).
+- Lock the screen when you walk away from the computer, even for a minute.
+- Keep passwords off sticky notes on the monitor and out of the WhatsApp group.
+- If your system offers a second step at login, such as a code sent to a phone, turn it on for the doctors and the owner first.
+- Show every new member of staff what their role can and cannot open, on their first day.
 
-### IP-Based Access and Device Controls
-
-For enhanced **EMR security**, clinics can:
-
-- Whitelist IP addresses for internal staff use only
-- Restrict login to verified devices for key personnel
-- Block geographic access from untrusted regions
-
-This multi-layer defense prevents threats from both external intrusions and unauthorized internal use.
-
-### Custom Alerts for Suspicious Behavior
-
-EasyClinic enables behavior-based security alerts for:
-
-- Multiple failed login attempts
-- Access to sensitive data outside working hours
-- Changes to user permissions without admin approval
-
-These alerts keep security proactive, not reactive.
-
-### Secure EMR for Multi-Location Clinics
-
-Chain clinics often face coordination issues around data access. EasyClinic offers:
-
-- Centralized admin control with location-specific roles
-- Shared patient records with restricted access by branch
-- Consolidated audit logs for multi-site compliance tracking
-
-[Contact us](/contact-us/) to implement enterprise-grade access security.
-
-### Staff Training and Data Handling Education
-
-EasyClinic helps train your staff on:
-
-- Secure login and logout habits
-- Recognizing phishing and social engineering threats
-- Responsible EMR use within role boundaries
-
-Educated users are the first line of defense in any clinic’s access control strategy.
-
-### Compliance with Global Data Security Standards
-
-EasyClinic aligns with:
-
-- HIPAA (U.S. Healthcare Data Compliance)
-- MTCS (Singapore’s Multi-Tier Cloud Security Standard)
-- GDPR-like data protection principles for sensitive personal data
-
-This future-proofs your clinic from regulatory burdens and builds credibility with patients.
-
-### Integration with EMR Features for Seamless Experience
-
-EasyClinic’s access control features are tightly woven into the broader EMR suite:
-
-- Automatic logout during EMR idle time
-- Face-sheet visibility controls for interns vs consultants
-- Smart navigation limited by user role permissions
-
-All of this happens in the background, ensuring that your team remains productive without compromising security.
-
-### Conclusion:
-
-### Elevate Clinic Safety with Smart Access Control
-
-Robust **clinic access control** is no longer a feature for large hospitals—it’s a necessity for every clinic, regardless of size. With EasyClinic, you get best-in-class **EMR security** that adapts to your operations and scales with your growth.
-
-Whether you’re managing a single practice or a chain of clinics, our system simplifies **healthcare user roles** and security administration, so your team stays productive and your patient data stays protected.
-
-Discover how EasyClinic brings simplicity and strength to clinic data security. [Start your secure EMR journey today](/).
+If you want to see how the reception login and staff roles look on a clinic like yours, [book a 20-minute demo](/contact-us/#book-a-demo).

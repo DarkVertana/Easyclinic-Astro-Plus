@@ -1,14 +1,20 @@
 ---
-status: draft
-headKeyword: leveraging sms and whatsapp for patient engagement
-title: Leveraging SMS and WhatsApp for Patient Engagement
-metaDescription: In an era of instant communication and mobile-first behavior, clinics and doctors must adapt their patient engagement strategies to meet patients where…
-h1: Leveraging SMS and WhatsApp for Patient Engagement
-linkLabel: Leveraging SMS and WhatsApp for Patient
-openingAnswer: In an era of instant communication and mobile-first behavior, clinics and doctors must adapt their patient engagement strategies to meet patients where they are. Patient communication is no longer limited to phone calls and emails.
-summary: In an era of instant communication and mobile-first behavior, clinics and doctors must adapt their patient engagement strategies to meet patients where they are.
-author: null
-lastUpdated: 2025-05-12
+status: published
+headKeyword: sms vs whatsapp for clinics
+title: 'SMS vs WhatsApp for Clinics: Which Message Goes Where'
+metaDescription: 'SMS vs WhatsApp for clinics: the patient messages that belong on each channel, and what each channel''s rules ask of a clinic before it sends.'
+h1: 'SMS vs WhatsApp for clinics: which message goes where'
+linkLabel: SMS vs WhatsApp for clinics
+openingAnswer: >-
+  Send by SMS the messages every patient must get, such as appointment reminders and a change to clinic
+  hours, because an SMS reaches any mobile phone that can receive a text, including a basic phone with no
+  internet. Use WhatsApp for messages that need more room or a reply, such as a lab report or a request to
+  move an appointment, and only for patients who have agreed to hear from the clinic there.
+summary: >-
+  Which clinic messages belong on SMS and which on WhatsApp, with the rules each channel sets and the
+  EasyClinic plan that sends each one.
+author: subhashish-saha
+lastUpdated: 2026-09-26
 originallyPublished: 2025-05-12
 topic: patient-engagement
 owner: /features/whatsapp/
@@ -16,120 +22,161 @@ ctas:
   primary:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
+  secondary:
+    label: See how WhatsApp messages are sent
+    href: /features/whatsapp/
+  whatsapp: Hi, I was reading the EasyClinic post on SMS vs WhatsApp and would like to see the patient reminders in a demo.
+faqHeading: Questions clinics ask about SMS and WhatsApp
+faq:
+  - question: Is WhatsApp cheaper than SMS for appointment reminders?
+    answer: >-
+      It depends on your country, so compare the two rate cards before you move reminders from one channel
+      to the other. Meta charges for the WhatsApp template messages it delivers, at a rate set by the kind
+      of message and the country code of the patient's number, while SMS is priced by the telecom operator
+      or the SMS provider. From 1 October 2026, Meta's
+      [pricing page](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing)
+      says it also charges for the free-form replies a business sends in the 24 hours after a patient
+      writes, once a business number has sent 1,000 of them in the month.
+  - question: Can patients reply to an SMS reminder?
+    answer: >-
+      Usually not when the SMS comes from a named sender, such as the clinic's short name, so put the
+      clinic's phone number in every SMS. On WhatsApp the patient can reply in the same chat, and someone
+      at the clinic has to read and answer those replies.
+  - question: Which EasyClinic plan sends WhatsApp reminders?
+    answer: >-
+      The Premium plan, at {price:usd.premium.annual} per doctor per month billed annually
+      ({price:inr.premium.annual} in India), and the Enterprise plan. The Professional plan, at
+      {price:usd.professional.annual} per doctor per month billed annually ({price:inr.professional.annual}
+      in India), sends reminders by SMS and email.
+  - question: Do we need the patient's permission to message them on WhatsApp?
+    answer: >-
+      Yes: WhatsApp's business policy lets a clinic message a patient only after the patient has given the
+      clinic their number and agreed to receive its messages. Ask at registration, and keep visit messages
+      apart from greetings and offers. Stop as soon as a patient asks you to.
+  - question: What about patients who only have a basic phone?
+    answer: >-
+      Send them SMS, which reaches any mobile phone that can receive a text, and SMS and email reminders
+      come with every EasyClinic plan. Hand over their prescription and reports on paper at the desk, as
+      before.
+  - question: Can we send lab reports to patients on WhatsApp?
+    answer: >-
+      Yes, on the Premium plan EasyClinic sends the report to the patient on WhatsApp once it is on the
+      patient's record. Check your country's rules first, because WhatsApp's business policy says not to
+      send health information on WhatsApp where the law requires a system held to a higher standard for it.
 links:
   hub: /blog/
-  related: []
+  related:
+    - href: /features/whatsapp/
+      label: WhatsApp reminders and messages
+      description: What EasyClinic sends on WhatsApp from the Premium plan, and how Meta approves templates and charges for them.
+    - href: /features/patient-engagement/
+      label: Patient engagement
+      description: Recall campaigns between visits, and the consent rules for India, Kenya, the UAE and Nigeria.
+    - href: /features/appointment-scheduling/
+      label: Appointment scheduling
+      description: The calendar the reminders go out from, with SMS and email reminders on every plan.
+    - href: /pricing/
+      label: Prices per doctor
+      description: What each plan costs per doctor per month, and which one adds WhatsApp.
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The plan split (SMS and email reminders on every plan, WhatsApp from Premium) and the lab report sent
+    on WhatsApp come from EasyClinic's own price list and feature pages; the channel rules come from TRAI's
+    regulations and Meta's policy, which any writer could have read.
+  readsMachineWritten: >-
+    The two message lists are tidier than a real front desk's day, and the post has no named clinic, no
+    real reminder thread and no measured number, so it needs a receptionist's read-aloud. The comparison
+    table's short cells may read like a vendor chart to a doctor.
 notes:
-  - Imported from https://www.easyclinic.io/leveraging-sms-and-whatsapp-for-patient-engagement/ (published 2025-05-12, modified 2025-05-12). Needs the spec 5.18/5.19 refresh before publishing.
+  - 'Imported from https://www.easyclinic.io/leveraging-sms-and-whatsapp-for-patient-engagement/ (published 2025-05-12, modified 2025-05-12). Refreshed on 2026-09-26 to the triage decision: refocused from a general list of messaging uses onto which clinic messages go by SMS and which on WhatsApp (head keyword "sms vs whatsapp for clinics"); new title, H1, opening answer, summary and FAQ. The original was checked against the WordPress JSON fetched on 2026-09-26 and matched the import.'
   - Owner /features/whatsapp/ and topic from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"); marketing has not confirmed the decision.
+  - 'Cut on 2026-09-26. Invented stories: none were in the import. Unsourced numbers and outcome claims: "Patient surveys through messaging are more likely to be completed than email-based ones", SMS reminders "reduce missed appointments", messaging "support[s] better outcomes", "improve response times, and increase satisfaction". Product claims: "EasyClinic''s AI-powered tools make WhatsApp automation easy and compliant"; "Platforms like EasyClinic offer compliant tools for safe healthcare communication"; "Modern clinic software platforms integrate SMS features"; quick rescheduling "through reply options"; alerts triggered "automatically based on visit patterns or conditions" from the EMR; "Preventive care suggestions based on patient history"; personalised education "using AI in health analytics"; broadcast messaging; "Conduct quick symptom checks before a visit" by message (also cut because of WhatsApp''s health-information rule below). Generic sections cut: health tips, emergency broadcasts, inventory notices, the "Final Thoughts" close. Links cut: /doctor-clinic-software/, /easy-clinic-patient-engagement-with-ai-smart-healthcare-solutions/ (twice), /how-ai-powered-emr-software-is-transforming-clinic-management/, /ai-in-health-data-analytics-smarter-insights-for-clinics/, /faqs-on-emr-medical-software/ (old WordPress paths, not pages on this site) and two links to /. Banned words cut: leveraging, elevate, empower, streamline, seamless, "modern clinic software".'
+  - 'Legal and policy corrections. The import told clinics to make sure their messaging was "HIPAA or equivalent compliance certified" and "End-to-end encrypted", and implied EasyClinic was compliant: both cut. EasyClinic''s compliance status is unknown (docs/briefs/page-writing-rules.md), and no HHS page could be fetched (403), so the post makes no statement about HIPAA or encryption at all. Added in place, each fetched on 2026-09-26 and linked in the sentence: (1) India SMS rules from TRAI''s Telecom Commercial Communications Customer Preference Regulations, 2018, https://www.trai.gov.in/sites/default/files/2024-09/RegulationUcc19072018.pdf (definition of Header, "alphanumeric string of maximum eleven characters"; content template registration; regulation 9 on preferences and consent) and the Second Amendment Regulations of 12 February 2025, https://trai.gov.in/sites/default/files/2025-02/Regulation_12022025.pdf (substituted regulation 3: commercial communication only through registered headers, and no commercial communication by an unregistered sender; clause (au): opt-out in the same message for promotional messages, and promotional content mixed into a transactional or service message makes it promotional). (2) WhatsApp Business Messaging Policy, https://whatsappbusiness.com/policy/ (last updated 23 September 2026): opt-in after the person gives their number; honour opt-out requests on or off WhatsApp; approved templates for business-initiated messages and the 24-hour customer service window; escalation paths when replies are automated; no health information where regulations require heightened systems; no full card, account or ID numbers; no buying, selling or promoting prescription drugs; best practice of separate opt-in by message category. (3) Meta pricing, https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing (updated 10 September 2026): charged per delivered template message by category and recipient country calling code; rate changes only on the first day of a quarter; "Effective October 1, 2026 – Meta will charge on a per-message basis for service messages" (non-template replies inside the 24-hour customer service window), with "one shared free tier of 1,000 delivered service messages per month" per business phone number. (4) Template categorisation, https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization: mixed utility and promotional content is categorised as marketing. Consent under data protection law is not restated here; the post links /features/patient-engagement/#consent-by-country, which carries the sourced table.'
+  - 'Not sourced to a fetched page, stated as general telecom behaviour: an SMS reaches any phone that can receive a text, and a business SMS sent under a named (alphanumeric) sender usually cannot be answered by replying. The FAQ says "Usually not". WhatsApp messages need the app on that number and arrive when the phone is next online.'
+  - 'EasyClinic facts used: SMS and email reminders on every plan, WhatsApp reminders and messages on Premium and Enterprise, lab reports on Premium (src/data/plans.yaml); prescriptions and lab reports sent to the patient on WhatsApp, registration link and feedback request by WhatsApp from Premium, messages from the clinic software rather than a desk phone (src/content/features/whatsapp.yaml, grounded in the live /features/ page); reminder timing set by the clinic, days or hours before (src/content/features/appointment-scheduling.yaml). Prices appear only as tokens in the FAQ. No per-message price and no no-show figure is given: both are unknown.'
+  - 'Cannibalisation (spec 4.5 rule 3): template approval, the Business Platform and message costs are owned by /features/whatsapp/; this post mentions them in one sentence each and links there. Consent by country is owned by /features/patient-engagement/.'
+  - 'Fact check on 2026-09-26 (adversarial pass; every source above re-fetched). Corrected: the FAQ said free-form WhatsApp replies inside the 24-hour window "are not charged"; Meta''s pricing page (updated 10 September 2026) says service messages are charged from 1 October 2026 after a free tier of 1,000 a month per business number, so the FAQ and the pricing sentence in the body now say so, linked. Softened: "which rules out sharing anything personal in a patient group" read more into the policy than it says (the policy bars passing information from one customer''s chat to another customer); the group point now rests on every member seeing what is posted. "Every one of these invites the patient to write back" was untrue of the prescription and report messages; now "A patient can answer any of these". "Meta''s own advice" on separate opt-ins is now attributed to the policy''s best practices and linked. Groups of three removed from one FAQ answer and two related-link descriptions. Confirmed unchanged: TRAI header definition (maximum eleven characters), content template registration (regulation 8 and Schedule-I item 6 of the 2018 regulations), registration of senders (substituted regulation 3, 2025), mixed-content and opt-out provisos (substituted clause (au), 2025; not in the 2018 definition, so "Since the February 2025 amendment" holds); WhatsApp policy opt-in, opt-out on or off WhatsApp, templates and 24-hour window, escalation paths, health information, card and ID numbers, customer-to-customer sharing, prescription drugs (section 4; section 5 exceptions cover over-the-counter drugs only); template categorisation mixed-content rule and the birthday and Diwali marketing examples.'
+  - 'Spec 6.5: no named person beyond the byline; local fact is India''s TRAI header and template rules; limits admitted are the one-way SMS, the opt-in requirement, WhatsApp on Premium only and no per-message price. No measured number exists for this topic.'
 ---
 
-## Strengthening Healthcare Messaging Through Digital Communication
+If the front desk decides message by message whether a patient gets an SMS or a WhatsApp, some patients get both and some get neither. It works better to decide once, by the kind of message, and to ask each patient at registration which channel they want. This post sorts the messages a clinic sends into the two channels, and sets out what each channel's rules ask of you.
 
-In an era of instant communication and mobile-first behavior, clinics and doctors must adapt their patient engagement strategies to meet patients where they are. **Patient communication** is no longer limited to phone calls and emails. Instead, SMS and WhatsApp have emerged as powerful tools in **healthcare messaging**, enabling faster, more efficient, and personalized interactions that enhance the overall care experience.
+## How SMS and WhatsApp differ at a clinic
 
-Whether you’re a solo practitioner or managing a multi-specialty clinic, incorporating messaging platforms into your **clinic management software** can transform how you communicate with patients, improve response times, and increase satisfaction. This blog explores how SMS and WhatsApp messaging can elevate your clinic’s communication efforts and support better outcomes.
+| At the clinic | SMS | WhatsApp |
+| --- | --- | --- |
+| Which patients it reaches | Anyone whose phone can receive a text, including a basic phone with no internet | Patients who use WhatsApp on that number; the message arrives when the phone is next online |
+| What it can carry | Text. A link works only if the phone can open it | Text, and files such as a PDF of a lab report or a prescription |
+| Whether the patient can reply | Usually not, when it comes from a named sender, so the message needs a number to call | Yes, in the same chat, and the clinic can answer in its own words for 24 hours after the patient writes |
+| What you need before the first message | In India, a registered sender header and registered message templates | The patient's agreement, and a template Meta has approved for any message the clinic starts |
+| Who sets the price per message | The telecom operator or the SMS provider | Meta, by the kind of message and the country code of the patient's number |
+| On EasyClinic | SMS and email reminders on every plan | WhatsApp reminders and messages from the Premium plan |
 
-## 1\. Using SMS for Appointment Management
+The short version: SMS is the channel that reaches everyone, and WhatsApp is the channel patients can answer. This post quotes no price per message, because rates depend on the country and the provider, and Meta can change its WhatsApp rates on the first day of each quarter.
 
-### Reduce Missed Appointments and Improve Scheduling
+<InlineCta heading="Reminders by SMS on every plan, and on WhatsApp from Premium." href="/features/whatsapp/" label="See how WhatsApp messages are sent">EasyClinic sends appointment reminders by SMS and email on every plan. On the Premium plan, reminders and lab reports also go to patients on WhatsApp, from the clinic software rather than a phone on the front desk.</InlineCta>
 
-Missed appointments can strain clinic resources and affect patient outcomes. SMS reminders can help:
+## Which messages to send by SMS
 
-- Send automated appointment confirmations and reminders
-- Allow quick rescheduling through reply options
-- Provide links for forms or teleconsultation access
+Send by SMS the messages that must reach every patient, whatever phone they carry.
 
-Modern [**clinic software**](/doctor-clinic-software/) platforms integrate SMS features to streamline scheduling and improve punctuality.
+- **The appointment reminder.** A reminder sent only on WhatsApp misses the patients on basic phones, and the patients who never agreed to WhatsApp messages from you.
+- **A change everyone must hear about.** The clinic is closed on Friday, or the doctor's Tuesday evening session is cancelled.
+- **The first message to a new number.** Until you know whether the patient uses WhatsApp on that number, SMS is the channel you can count on.
+- **Every message to a patient who said no to WhatsApp.** Their reminders and notices go by SMS, or by email if they gave you an address.
 
-## 2\. WhatsApp for Real-Time Patient Support
+Write each SMS so it stands alone. Put the clinic's name and the appointment time in the first line, and end with a phone number to call, because the patient probably cannot reply to it.
 
-### Enhance Engagement with Two-Way Messaging
+## Which messages to send on WhatsApp
 
-WhatsApp supports rich, real-time communication that improves trust and clarity:
+Send on WhatsApp the messages that carry a file or invite a reply, and only to the patients who chose WhatsApp.
 
-- Offer appointment confirmations, follow-ups, and file sharing (lab reports, prescriptions)
-- Address patient concerns via chat without phone wait times
-- Share health education videos and personalized treatment information
+- **The prescription after the consult.** The dosage instructions are on the patient's phone when they reach the pharmacy counter.
+- **The lab report when it is ready.** The report itself, rather than a photo of a printout taken at the desk.
+- **A reminder the patient can answer.** Ask the patient to reply if they cannot come, so the desk can offer the slot to someone else.
+- **A question after the visit.** A feedback request, or a check-in two days after a procedure.
+- **The registration form before a first visit.** A link the patient fills in on their own phone, so nobody types it in at the desk.
 
-[**EasyClinic’s AI-powered tools**](/easy-clinic-patient-engagement-with-ai-smart-healthcare-solutions/) make WhatsApp automation easy and compliant.
+A patient can answer any of these in the same chat, so someone at the clinic has to read the replies the same day. If replies are answered automatically, WhatsApp's policy asks the business to give the patient a clear way to reach a person, such as a phone number or a handover to staff.
 
-## 3\. Personalized Health Alerts and Medication Reminders
+## What to keep out of both
 
-### Drive Treatment Adherence with Timely Nudges
+- **Diagnoses and test values in the message text.** A phone can be read by whoever picks it up. WhatsApp's [Business Messaging Policy](https://whatsappbusiness.com/policy/) also says not to send or ask for health information on WhatsApp where the law requires a system held to a higher standard for it, so check your country's rules before a report or a result goes out.
+- **Card numbers and ID numbers.** The same policy says not to ask people to share full card numbers or ID card numbers, and an SMS is no safer a place for them.
+- **One patient's details in front of another.** WhatsApp's policy does not allow a business to pass information from one customer's chat to another customer. A patient group is no place for anything personal either, because every member sees what is posted there.
+- **Offers on medicines.** WhatsApp's policy does not allow a business to sell or promote prescription drugs on WhatsApp, so a refill message is about booking the doctor's review, never about a price.
 
-Healthcare messaging can support chronic care and ongoing treatments through:
+## The rules each channel sets
 
-- Daily or weekly medication reminders
-- Alerts for routine screenings or check-ups
-- Preventive care suggestions based on patient history
+### SMS in India
 
-Integrate this with your [**EMR software**](/how-ai-powered-emr-software-is-transforming-clinic-management/) to trigger alerts automatically based on visit patterns or conditions.
+In India, business SMS fall under TRAI's [Telecom Commercial Communications Customer Preference Regulations, 2018](https://www.trai.gov.in/sites/default/files/2024-09/RegulationUcc19072018.pdf). A business has to register as a sender with a telecom operator before it sends commercial messages. The messages go out under a registered header, the sender name of up to eleven characters that the patient sees, and the wording is registered as a content template. Since the [February 2025 amendment](https://trai.gov.in/sites/default/files/2025-02/Regulation_12022025.pdf), a message that mixes promotion into a service or transactional message counts as promotional, and a promotional message has to carry a way to opt out in the same message.
 
-## 4\. Promoting Preventive Care and Health Education
+For a clinic, that means a reminder with an offer tacked on is treated as a promotional message. If you send SMS through clinic software or an SMS provider, ask whose registered header and templates your messages go out under.
 
-### Deliver Proactive Information to Empower Patients
+### WhatsApp, in every country
 
-SMS and WhatsApp are effective for sharing:
+WhatsApp's [Business Messaging Policy](https://whatsappbusiness.com/policy/) lets a business message a person only after the person has given it their number and agreed to receive its messages, and the business must honour every request to stop, whether it arrives on WhatsApp or across the desk. On the WhatsApp Business Platform, which clinic software such as EasyClinic sends through, any message the clinic starts goes out on a template Meta has approved. A reply to a patient who wrote in the last 24 hours can be written freely.
 
-- Health tips tailored to age or medical history
-- Seasonal care (e.g., flu prevention, hydration during summer)
-- Lifestyle changes (diet, exercise, mental health support)
+Meta also puts each template in a category, and a message that mixes a visit update with a promotion counts as marketing under its [template guidelines](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization). Meta charges for the template messages it delivers, at a rate set by the category and the patient's country code, and its [pricing page](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing) says that from 1 October 2026 it also charges for free-form replies inside the 24 hours, after the first 1,000 a month on each business number. How templates get approved, and what that means for a clinic, is on the [WhatsApp page](/features/whatsapp/).
 
-Using [**AI in health analytics**](/ai-in-health-data-analytics-smarter-insights-for-clinics/), clinics can personalize education for better retention.
+### Data protection law, for both
 
-## 5\. Collecting Patient Feedback via Messaging
+Both channels use the patient's phone number, so your country's data protection law applies whichever you choose. The [patient engagement page](/features/patient-engagement/#consent-by-country) sets out, in general terms, what the laws of India, Kenya, the UAE and Nigeria ask of a clinic that messages its patients.
 
-### Close the Loop with Surveys and Ratings
+## How to ask each patient
 
-Gathering insights is crucial for continuous improvement:
+Ask at registration, while the patient is at the desk anyway.
 
-- Send short surveys post-visit
-- Ask for feedback on wait times, care quality, and follow-ups
-- Respond quickly to issues or thank patients for positive reviews
+1. Do you use WhatsApp on this number, and may we send you messages about your visits there, such as reminders and reports?
+2. Separately, would you like greetings or news from the clinic?
 
-Patient surveys through messaging are more likely to be completed than email-based ones.
+The best practices in WhatsApp's [Business Messaging Policy](https://whatsappbusiness.com/policy/) advise a separate opt-in for each kind of message. Asking this way lets a patient say yes to reminders and no to everything else. Write the answers where the desk will see them at the next visit. A patient who says no to WhatsApp, or has a basic phone, gets SMS.
 
-## 6\. Enable Remote Consultations and Support
+## What EasyClinic sends on each channel
 
-### Expand Access and Comfort through Messaging
+On every plan, EasyClinic sends appointment reminders by SMS and email, days or hours before the visit at the times the clinic sets. On the Premium plan, reminders and other messages also go out on WhatsApp from the clinic software, including the prescription after the consult and the lab report once it is on the record. A patient without WhatsApp, or one who has asked you to stop, can still get SMS or email reminders if they agreed to those.
 
-Use WhatsApp or SMS to:
-
-- Conduct quick symptom checks before a visit
-- Send post-consultation summaries and care instructions
-- Answer queries in follow-up windows without needing a full appointment
-
-Messaging allows a seamless bridge between in-person and virtual care.
-
-## 7\. Emergency Broadcasts and Service Announcements
-
-### Keep Patients Informed During Critical Times
-
-During emergencies or service changes:
-
-- Alert patients about clinic closures, holiday hours, or doctor availability
-- Send vaccination drives or health camp announcements
-- Notify about inventory changes (e.g., flu shots, test kits)
-
-[**Healthcare software**](/) with broadcast messaging helps keep patients in the loop.
-
-## 8\. Compliance and Security in Healthcare Messaging
-
-### Protect Patient Privacy While Communicating Effectively
-
-Ensure that your SMS and WhatsApp systems are:
-
-- End-to-end encrypted
-- HIPAA or equivalent compliance certified
-- Integrated with [**clinic EMR**](/faqs-on-emr-medical-software/) for secure data capture
-
-Platforms like [**EasyClinic**](/) offer compliant tools for safe healthcare communication.
-
-## Final Thoughts: Healthcare Messaging that Builds Trust
-
-Effective **patient communication** is the foundation of strong relationships, better adherence, and improved care outcomes. By leveraging the immediacy of SMS and the versatility of WhatsApp, clinics can reach patients in ways that are convenient, respectful, and efficient.
-
-Incorporating these platforms into your **clinic management software** not only simplifies workflows but also makes care more accessible. From reminders to real-time chat, messaging is no longer a luxury—it’s a necessity.
-
-To build deeper engagement and improve outcomes, explore [**EasyClinic’s patient engagement features**](/easy-clinic-patient-engagement-with-ai-smart-healthcare-solutions/) that connect seamlessly with your day-to-day communication needs.
+EasyClinic has not published a measured change in missed appointments from its reminders, so this post gives no figure. The [pricing page](/pricing/) lists what each plan includes.

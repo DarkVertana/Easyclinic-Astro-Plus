@@ -1,294 +1,193 @@
 ---
-status: draft
-headKeyword: anti-pilferage & stock control stop losing revenue to stock theft
-title: "Anti-Pilferage & Stock Control Stop Losing Revenue to Stock Theft: Practical Inventory Controls for Clinic Chains"
-metaDescription: Inventory loss rarely shows up as a single alarming event. In most clinic chains, it builds quietly over time. Small discrepancies in stock counts.
-h1: "Anti-Pilferage & Stock Control Stop Losing Revenue to Stock Theft: Practical Inventory Controls for Clinic Chains"
-linkLabel: Anti-Pilferage & Stock Control Stop Losing
-openingAnswer: Inventory loss rarely shows up as a single alarming event. In most clinic chains, it builds quietly over time.
-summary: Inventory loss rarely shows up as a single alarming event. In most clinic chains, it builds quietly over time. Small discrepancies in stock counts. Unrecorded usage. Expired medicines written off.
-author: null
-lastUpdated: 2026-01-09
+status: published
+headKeyword: medicine pilferage in clinics
+secondaryKeywords:
+  - stock theft in a clinic pharmacy
+title: 'Medicine Pilferage in Clinics: How to Find and Stop It'
+metaDescription: 'How to tell medicine pilferage from expiry and counting errors in a clinic or chain, and the four stock controls that trace every movement to a person.'
+h1: Medicine pilferage in clinics
+linkLabel: Medicine pilferage in clinics
+openingAnswer: >-
+  Medicine pilferage in a clinic is stock that leaves the shelf with no patient and no bill behind it,
+  and it hides among expiry write-offs and stock-book errors until the clinic can tell them apart. Four
+  controls tell them apart: every stock movement made under a named login, an approval for every
+  adjustment, the batch nearest its expiry dispensed first, and a weekly count of the costly items
+  against what was dispensed.
+summary: >-
+  For owners and chain managers who suspect stock is walking out: how to separate theft from honest
+  losses, and a one-month check to run on one category before changing anything else.
+author: subhashish-saha
+lastUpdated: 2026-09-26
 originallyPublished: 2026-01-09
-topic: running-a-clinic
+topic: running-a-chain
 owner: /features/pharmacy-and-inventory/
 ctas:
   primary:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
+  secondary:
+    label: See how dispensing and stock counts work
+    href: /features/pharmacy-and-inventory/
+  whatsapp: Hi, I was reading the EasyClinic post on medicine pilferage and would like to see stock adjustments and the audit log in a demo.
+faq:
+  - question: How do I tell theft from medicines that simply expired?
+    answer: >-
+      Track expiry by batch, so an expiry write-off names the batch and its date, and treat any shortfall
+      that no expired or damaged batch explains as the part to investigate. Counting one costly category
+      against its dispensing record for a month shows how large that unexplained part is.
+  - question: How often should a clinic count its medicine stock?
+    answer: >-
+      Count the costly and most-taken items every week and the rest on a monthly rotation, instead of
+      relying on one stocktake a year. A weekly count finds a gap while the staff still remember the week
+      it happened.
+  - question: Will these controls make my pharmacist feel accused?
+    answer: >-
+      They should not, if you explain them before you start: a movement made under a named login protects
+      an honest pharmacist, because a shortfall can be traced to a shift instead of being blamed on
+      whoever was on duty when it was found. Say plainly that the weekly review looks at patterns across
+      the pharmacy, and ask before drawing any conclusion.
+  - question: Does a small clinic with one dispensary need these controls?
+    answer: >-
+      Yes, in a lighter form: one login per person and a monthly count of the few items worth taking are
+      enough to start with. Approvals matter more once someone other than the owner can adjust the stock.
+  - question: Can software stop pilferage on its own?
+    answer: >-
+      No, software records who moved what and when, but a person still has to count the shelf and ask
+      about the gaps. Stock that never enters the system, such as free samples that
+      were not booked in, leaves nothing to compare against.
+  - question: Which EasyClinic plan includes the pharmacy and stock controls?
+    answer: >-
+      Pharmacy and inventory come with the Enterprise plan, and a clinic on Professional or Premium can add
+      them as a module. Enterprise also includes stock transfers between branches, and it is priced on a
+      quote.
 links:
   hub: /blog/
-  related: []
+  related:
+    - href: /features/pharmacy-and-inventory/
+      label: Pharmacy and inventory
+      description: Dispensing from the prescription, with each batch tracked to its expiry and every stock adjustment authorised.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: Central control of every branch on Enterprise, with stock moved between branches on a tracked transfer.
+    - href: /features/multi-location/
+      label: More than one location
+      description: Every branch as a location in one account, with one patient record and one login per person.
+    - href: /features/revenue-management/
+      label: Revenue management
+      description: The four places a clinic's revenue leaks, such as unbilled orders and cash variance, and the control for each.
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The EasyClinic lines (dispensing from the prescription on screen, authorised adjustments with an audit
+    log, the nearest-expiry batch put forward at the counter, transfers tracked until the receiving branch
+    books them in, and the admission that the counter does not run fully offline) come from EasyClinic's
+    own product pages and plans, while the controls themselves would fit any clinic pharmacy guide.
+  readsMachineWritten: >-
+    No pharmacist or chain is named and no measured loss figure is given, because the import's two case
+    studies were invented and there is no sourced number to replace them. The control sections each end on
+    an EasyClinic paragraph, which a pharmacist reading aloud may hear as a template.
 notes:
-  - Imported from https://www.easyclinic.io/clinic-inventory-management-system/ (published 2026-01-09, modified 2026-01-09). Needs the spec 5.18/5.19 refresh before publishing.
-  - Owner /features/pharmacy-and-inventory/ and topic from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"); marketing has not confirmed the decision.
+  - Imported from https://www.easyclinic.io/clinic-inventory-management-system/ (published 2026-01-09, modified 2026-01-09) with scripts/import-wp.ts. Refreshed to spec 5.19 on 2026-09-26.
+  - 'Owner /features/pharmacy-and-inventory/ from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"), kept by the 2026-09-26 triage, which set the topic to running-a-chain and the head keyword to "medicine pilferage in clinics"; marketing has not confirmed the decision. The post no longer targets "clinic inventory management system" (the import bolded it 15 times), because "clinic inventory management software" is a secondary keyword of the owner page (spec 4.5); it links to the owner page for the product side.'
+  - 'Cut from the import. Invented stories: the "Executive Case Study" about an unnamed "rapidly expanding clinic chain" and its outcomes ("Within the first quarter", "Inventory write-offs have reduced significantly", "Expiry-related losses dropped", "Supplier disputes declined", "Finance gained predictable inventory forecasting", "The system delivered ROI"); the "Real World Scenario" about an unnamed multi-location chain ("Inventory write-offs dropped significantly", "The system paid for itself"). Unsourced claims: "In most clinic chains, it builds quietly", "Many clinic operators only become aware of the problem during financial audits", "Expiry-related losses are often mistaken for theft. In reality, poor processes are usually responsible", "Most clinics are surprised by how quickly savings add up", the FAQ answers "Most clinics notice reduced discrepancies within the first month" and "real-time visibility and accountability significantly reduce unauthorised usage". Unconfirmed product claims: EasyClinic alerts "for unusual consumption patterns by user, item, or location"; FIFO "enforced automatically"; "Blocked usage of expired items"; "consolidated dashboards that showed inventory value, consumption trends, expiry risk, and variance across clinics in real time"; "Transfers and disposals require a digital sign-off"; usage "linked to patient encounters" as an automatic control; "inventory controls that scale seamlessly"; EasyClinic pricing lets chains scale "without heavy upfront investment". Also cut: the Investopedia link (https://www.investopedia.com/terms/i/inventory-management.asp) split across the anchor "c[linic inventory management system]", which supported no claim; links from the keyword to the home page and /features/, and a bare IP address (143.198.231.228); "robust", "seamlessly" and "modern" (banned); the "Frequently Asked Questions for AI Featured Snippets" heading and its eight one-line answers (rewritten as six frontmatter FAQs); the "Why Inventory Control Is Both a Finance and Operations Issue" section and the conclusion, which repeated the post.'
+  - 'Corrected: the import said "FIFO" for medicines. The post now gives first expired, first out (FEFO), attributed and linked in the sentence to WHO Technical Report Series 1025, Annex 7, "Good storage and distribution practices for medical products" (https://www.who.int/publications/m/item/trs-1025-annex-7, fetched 2026-09-26; the annex PDF at https://cdn.who.int/media/docs/default-source/medicines/norms-and-standards/guidelines/distribution/trs1025-annex7-(1).pdf defines FEFO as "A distribution procedure that ensures that the stock with the earliest expiry date is distributed and/or used before an identical stock item with a later expiry date" and says at 12.30 "The first expired/first out (FEFO) principle should be followed"). This is WHO guidance, not a law, and the post does not call it a legal requirement. The writer first tried the older TRS 908 Annex 9 PDF, which returned 404. EasyClinic is not said to "do FEFO"; the product line is the owner page''s wording (the batch closest to its date is put forward to dispense first).'
+  - 'Fact check 2026-09-26: "Expiry reports list what is due to expire" narrowed to "The module also has expiry reports", because the live /features/ page says only "expiry reports and warnings at the time of sale"; the offline paragraph no longer says an outage means dispensing "has to be written on paper", because facts.md says only that EasyClinic "does not run fully offline today" (what still works offline is not stated), so the paper record is now given as advice.'
+  - 'Law and regulation: the import named no law or regulator (only "essential for compliance", cut as vague). No legal statement is made and no legal correction was needed. One external link: the WHO storage guidance above.'
+  - 'Kept from the import and reworked: the causes of loss, person-wise accountability, multi-level approvals with audit trails, expiry tracking by batch, cycle counts for costly items instead of an annual count, the one-category one-month check, the warning signs and the phased start. Added: the transfer control for chains (spec 2.8 chain vocabulary) and the limits section.'
+  - 'Sources for EasyClinic facts: plans.yaml (Enterprise includes Pharmacy, and Inventory and stock transfers, priced on a quote; the pharmacy add-on on Professional and Premium "Dispense from the prescription, track batch and expiry, and reorder before you run out"; Logins for your staff); src/content/features/pharmacy-and-inventory.yaml, grounded in the live /features/ page (prescription reaches the pharmacy screen; dispensed medicines go on the bill and come off the stock count; staff roles decide what each person can do in the inventory; every stock transaction in an audit log; adjustments for shortfalls, excess, expired and damaged products need authorisation; approval steps with more than one level; batch expiry, warning at the time of sale, batch nearest its date put forward first, expiry reports; stock count quick or full, repeatable before the variance is finalised; transfers tracked until the other store books them in, with an audit log for each step); migration/research/facts.md ("does not run fully offline today").'
+  - 'No figures are used: the post has no statistic, market size or outcome claim, and no study figure. The "ten costliest items" and "weekly" counts are advice, not measurements. No heroMedia or media: screenshots do not exist yet. No proof block (posts carry none).'
 ---
 
-## The Silent Problem of Inventory Leakage in Clinics
+A clinic rarely finds pilferage as a single event. The count of an antibiotic is a few strips short one month and a box of injections is missing the next, and each shortfall is written off as an adjustment. By the end of the year the write-offs look like the cost of running a pharmacy, and nobody can say how much of it walked out of the door.
 
-Inventory loss rarely shows up as a single alarming event. In most clinic chains, it builds quietly over time. Small discrepancies in stock counts. Unrecorded usage. Expired medicines written off. Supplier quantity mismatches. Individually, these issues seem manageable. Collectively, they erode margins month after month.
+This post is for the owner of a clinic with its own dispensary and for the manager of a chain with a pharmacy at every branch. It sets out the controls that make every stock movement traceable, and a one-month check you can run on one category before you change anything else.
 
-Many clinic operators only become aware of the problem during financial audits or when inventory write-offs spike unexpectedly. By then, the losses are already baked into operating costs.
+## Where pilferage hides
 
-This is why a structured [**clinic inventory management system**](/) is no longer optional for growing clinic chains. It transforms inventory from a blind spot into a controlled, measurable asset.
+Pilferage sits on the books beside losses that have honest causes:
 
-## Why Stock Theft and Leakage Go Undetected
+- A batch that expired on the shelf and was written off at the stocktake.
+- A delivery that came in short of the invoice and was booked in without a count.
+- Medicines dispensed to a patient and never billed, or billed as a cheaper item.
+- A sale or a return entered late, or not at all.
 
-Inventory leakage is rarely caused by a single factor. It is usually the result of weak controls combined with manual processes.
+Each of these leaves the same gap between the stock book and the shelf. Until a clinic can tell them apart, every shortfall becomes an adjustment, and an adjustment with no reason is where theft hides. The controls below put a name and a reason against every movement, so the gap that is left is small enough to ask about.
 
-### Common Causes of Inventory Loss
+Start with the items that are costly and fit in a pocket. They are where a small loss each week adds up.
 
-- Lack of person-wise accountability
-- Manual stock registers and delayed entries
-- No linkage between usage and patient encounters
-- Poor expiry tracking
-- Infrequent inventory auditing
+<InlineCta heading="See every stock movement against a login." href="/features/pharmacy-and-inventory/" label="See how the pharmacy module works">In EasyClinic, the pharmacist dispenses from the doctor's prescription on screen, and every stock transaction goes into an audit log.</InlineCta>
 
-Without a reliable **clinic inventory management system**, these gaps make it difficult to identify whether losses are due to pilferage, process failure, or forecasting errors.
+## Tie every stock movement to one person
 
-## What Is a Clinic Inventory Management System
+The first control is accountability by name. Every delivery booked in, every medicine dispensed, every transfer and every adjustment is made under the login of the person who did it. A shared login at the pharmacy counter defeats this, because a shortfall then belongs to "the pharmacy" and to nobody in it.
 
-A **clinic inventory management system** centralises purchasing, stock movement, consumption, and reconciliation into a single workflow. It provides real-time visibility across locations and users.
+The second half is tying what leaves the shelf to a patient. When a medicine is dispensed against a prescription and goes on a bill, the stock count has a patient and a doctor behind it. A medicine that leaves with neither is the exception to look for.
 
-When implemented within [**EasyClinic clinic management software**](/features/), inventory controls are directly linked to billing, patient encounters, and staff actions. This visibility is critical for preventing leakage.
+Tell the staff why before you start. Named movements protect an honest pharmacist, because a shortfall can be traced to a shift instead of being blamed on whoever is on duty when it is found.
 
-### Core Objectives
+In EasyClinic, the prescription the doctor writes in the EMR reaches the pharmacy screen, and what the pharmacist dispenses goes on the patient's bill and comes off the stock count. Staff roles decide what each person can do in the inventory.
 
-- Prevent unauthorised stock movement.
-- Enable anti-pilferage controls
-- Support accurate inventory auditing.
-- Reduce expiry-related losses
-- Improve stock control for clinics.
+## Approve every adjustment
 
-## Core Anti-Pilferage Practices Every Clinic Chain Needs
+An adjustment is the one entry that changes the count without a patient or a supplier behind it, so it is where a loss is easiest to hide. Two rules keep it honest. The person who counts the shelf is not the person who approves the adjustment. And every adjustment carries a reason in words: expired, damaged, short on delivery or not found.
 
-Strong controls are built on process first, then supported by technology.
+"Not found" is the reason to watch. A branch that records a few every month is telling you something, and so is a branch that never records one.
 
-### Person-Wise Accountability
+Read the list of adjustments once a week, by item and by the person who asked for them. The same item going missing on the same shift is a pattern worth a conversation. A single shortfall usually is not.
 
-Assigning clear ownership is the foundation of any anti-pilferage system.
+In EasyClinic, adjustments for shortfalls, excess stock, expired products and damaged products need authorisation and leave an audit log. You can add approval steps with more than one level where you want them.
 
-- Each stock movement is tagged to a specific user.
-- Transfers and disposals require a digital sign-off
-- Usage is linked to patient encounters.
+## Dispense the batch nearest its expiry first
 
-This accountability discourages misuse and makes irregular activity immediately visible in a **clinic inventory management system**.
+Expiry losses and theft get mistaken for each other in both directions. A box that expired at the back of the shelf can look like a theft at the stocktake, and a theft can be written off as expiry if nobody checks which batch it was.
 
-### Multi-Level Approvals With Audit Trails
+The World Health Organization's [good storage and distribution practices for medical products](https://www.who.int/publications/m/item/trs-1025-annex-7) say stock should follow the first expired, first out (FEFO) principle: the stock with the earliest expiry date is used before the same item with a later date. That means the batch nearest its date goes out first, whichever batch arrived first. First in, first out works only when every delivery expires later than the one before it, and deliveries do not always arrive that way.
 
-High-value items and adjustments should never be handled by a single person.
+Track expiry by batch. An expiry write-off then names the batch and its date, and it can be checked against the delivery that brought it in. A write-off marked as expired that names no batch is a question to ask.
 
-- Manager approval for adjustments
-- Audit trails for every change
-- Time-stamped records for accountability
+In EasyClinic each batch is tracked with its expiry date. The counter is warned at the time of sale when a batch is near its date, and the batch closest to its date is put forward to dispense first. The module also has expiry reports.
 
-These controls ensure transparency and are essential for compliance and inventory auditing.
+## Count the costly items every week
 
-### FIFO and Expiry Tracking to Prevent Wastage
+An annual stocktake finds a gap months after it opened, when nobody remembers the week it happened. A cycle count finds it while they still do. Count the costly and most-taken items every week and the rest on a monthly rotation, so every item is counted several times a year instead of once.
 
-Expiry-related losses are often mistaken for theft. In reality, poor processes are usually responsible.
+Two habits make the counts worth doing. Count without looking at the figure the system expects, so the count is not nudged towards it. And count before the day's dispensing starts or after it ends, so nothing moves while you count.
 
-An effective **clinic inventory management system** enforces FIFO automatically.
+In EasyClinic a stock count can be quick or full, and it can be repeated before any difference is finalised.
 
-- Expiry dates are tracked at the batch level.
-- Alerts for near-expiry stock
-- Blocked usage of expired items
+## Run a one-month check on one category
 
-This reduces write-offs and supports safer patient care while improving stock control for clinics.
+Before changing everything, measure one category. It gives you a starting figure, and it shows the staff what the controls are for.
 
-### Regular Cycle Counts Instead of Annual Surprises
+1. Choose one category, such as the injectables or the ten costliest items on your shelf.
+2. Count it on the first day of the month and write the count down.
+3. Through the month, count every delivery in against its invoice, and make sure everything dispensed goes on a bill.
+4. Count again on the last day. The expected stock is the opening count plus what was received, minus what was dispensed and minus what expired or was damaged. The difference between that figure and the shelf is the unexplained loss.
 
-Annual inventory counts are disruptive and often too late.
+Then compare what was dispensed with the prescriptions and counter sales billed for those items. If the pharmacy dispensed more than the bills account for, the gap is at the counter. If the shelf is short of what the records say is there, the gap is behind it.
 
-- High-value categories should be counted daily or weekly.
-- Medium value categories can follow biweekly cycles.
+## In a chain, watch the transfers
 
-Frequent cycle counts supported by inventory auditing reveal discrepancies early and reduce operational shock.
+A chain adds one more place for stock to disappear: between branches. A transfer sent from one branch and never booked in at the other is a loss with two people who can each say it was the other's.
 
-## Technology That Makes Anti-Pilferage Sustainable
+Record every transfer at both ends, and chase any transfer that has been sent but not received by the end of the day. Compare the same item's unexplained losses across branches. When one branch loses far more of an item than branches with a similar number of patients, that branch gets the next unannounced count.
 
-Process alone is not enough at scale. Technology ensures consistency.
+On EasyClinic's Enterprise plan, stock moves between branches on a transfer that takes it off one branch's count and puts it on the other's. The transfer is tracked from the moment it leaves one store until the other books it in, with an audit log for each step. The [clinic chain page](/solutions/clinic-chain/) covers what else head office controls across branches.
 
-- A robust **clinic inventory management system** integrates.
-- Purchasing and supplier receipts
-- Consumption at the point of care
-- Billing and patient records
+## Signs to act now
 
-When stock usage is tied to real patient encounters, unauthorised consumption becomes visible.
+- Write-offs are rising while patient numbers hold steady.
+- The same items are short at every count.
+- Arguments with suppliers about what was delivered keep coming up.
+- Adjustments are entered with no reason, or always with the same one.
 
-Using [**EasyClinic features**](/features/), clinic chains can set alerts for unusual consumption patterns by user, item, or location. This turns inventory monitoring from reactive to proactive.
+## What the controls cannot catch
 
-## Executive Case Study: How a Clinic Chain Stopped Inventory Leakage and Protected Margins
+Stock that never enters the system leaves nothing to count against. Free samples that are not booked in, and deliveries received without a count, can go missing without a gap on any report. Book everything in at the door.
 
-A rapidly expanding clinic chain operating across multiple locations began noticing a steady increase in medicine costs despite stable patient volumes. Monthly financial reviews showed rising inventory write-offs, frequent stock adjustments, and recurring supplier disputes. However, no single incident pointed clearly to theft or misuse.
+Two people who approve each other's adjustments can defeat any approval rule. The person who approves should work outside the pharmacy, and in a chain the weekly list should go to someone outside the branch.
 
-### The Problem: Invisible Losses and No Accountability
+EasyClinic does not run fully offline today, so plan for the day the pharmacy counter loses its connection. Keep a paper record of what is dispensed until the line is back and enter it the same day, because a late entry is where a count goes wrong. A backup connection, such as mobile data on a spare phone, keeps the counter on the system.
 
-At the executive level, inventory was treated as an operational issue rather than a strategic one. Stock registers were maintained manually at each location, and inventory audits were conducted infrequently. Usage was not consistently linked to patient encounters, making it difficult to distinguish between legitimate consumption, expiry losses, and pilferage.
-
-**Key challenges included**
-
-- Lack of real-time visibility into stock movement
-- No person-wise accountability across locations
-- Delayed inventory auditing surfaced issues too late.
-- Growing expiry-related write-offs are mistaken for supplier issues
-
-Leadership recognised that without a centralised system, inventory leakage would continue to erode margins silently.
-
-### The Solution: Centralised Clinic Inventory Management with Executive Visibility
-
-The clinic chain implemented a centralised **c[linic inventory management system](https://www.investopedia.com/terms/i/inventory-management.asp)** using [**EasyClinic clinic management software**](/features/), standardising stock control processes across all locations.
-
-Key controls introduced included
-
-- Person-wise accountability for every stock movement
-- Mandatory approvals for high-value adjustments with audit trails
-- FIFO enforcement and batch-level expiry tracking
-- Regular cycle counts for high-value categoriesSystem alerts for unusual consumption patterns.
-
-Inventory usage was linked directly to patient encounters and billing, making unauthorised or unexplained consumption immediately visible to management.
-
-Executives gained access to consolidated dashboards that showed inventory value, consumption trends, expiry risk, and variance across clinics in real time using **EasyClinic features**.
-
-### The Outcome: Margin Protection and Operational Discipline
-
-Within the first quarter of implementation, the impact was measurable at the leadership level.
-
-Inventory write-offs have reduced significantly across locations.  
-Expiry-related losses dropped due to proactive expiry tracking.  
-Supplier disputes declined with accurate receipt reconciliation.  
-Accountability improved across clinical and pharmacy teams.  
-Finance gained predictable inventory forecasting.
-
-Most importantly, leadership moved from reactive audits to proactive control. Inventory was no longer reviewed only during financial close. It became a managed asset monitored continuously.
-
-The system delivered ROI by recovering previously hidden losses and creating long-term operational discipline across the chain.
-
-### Why This Case Study Matters to Executives
-
-This case highlights a critical insight for leadership teams. Inventory leakage is rarely dramatic, but it is persistent. Without real-time controls, losses accumulate quietly and become normalised as operating costs.
-
-By implementing a structured **clinic inventory management system**, executives gained visibility, accountability, and control without increasing administrative burden. The combination of process discipline and technology transformed inventory from a blind spot into a strategic lever.
-
-Clinic chains using [**EasyClinic clinic management software**](/features/) benefit from inventory controls that scale seamlessly across locations, users, and categories.
-
-## Real World Scenario: How a Clinic Chain Reduced Stock Leakage
-
-A multi-location clinic chain noticed rising medicine costs despite stable patient volumes. Manual registers showed no obvious issue. However, finance flagged abnormal write-offs during quarterly reviews.
-
-### The Problem
-
-No real-time visibility into stock usage  
-No person-wise accountability  
-Expiry tracking is done manually.  
-Delayed inventory auditing
-
-Losses were discovered weeks after they occurred.
-
-### The Solution
-
-The chain implemented a **clinic inventory management system** within the **EasyClinic clinic management software**.
-
-Stock movements were linked to users and patient encounters. FIFO and expiry tracking were enforced automatically. High-value adjustments required approval. Cycle counts were performed weekly for critical categories.
-
-### The Outcome
-
-Inventory write-offs dropped significantly.  
-Expiry-related losses reduced  
-Unauthorised usage became traceable.  
-Stock control for clinics improved across locations
-
-The system paid for itself by recovering previously hidden losses.
-
-## How to Measure the Impact of Better Inventory Controls
-
-Measuring impact builds internal buy-in.
-
-### Simple Measurement Approach
-
-Select one high-value category.  
-Run a one-month audit.  
-Compare expected usage based on patient volume.  
-Identify variance
-
-Use this data to estimate savings from stronger anti-pilferage systems and better inventory auditing.
-
-Most clinics are surprised by how quickly savings add up.
-
-## When Clinic Chains Should Act
-
-Waiting increases risk.
-
-### Warning Signs
-
-Rising inventory write-offs  
-Frequent supplier disputes  
-Expired stock accumulation  
-Manual reconciliation delays
-
-At this stage, a **clinic inventory management system** becomes a financial necessity, not an operational luxury.
-
-## Getting Started Without Disrupting Operations
-
-A phased rollout works best.
-
-Begin with one category.  
-Implement person-wise accountability  
-Enable FIFO and expiry tracking.  
-Perform cycle counts for 30 days.  
-Add alerts and approvals gradually.
-
-Platforms like [**EasyClinic pricing**](/pricing/) allow clinic chains to scale inventory controls without heavy upfront investment.
-
-## Why Inventory Control Is Both a Finance and Operations Issue
-
-Inventory sits at the intersection of clinical care and financial performance.
-
-Weak controls affect margins.  
-Stockouts disrupt patient care.  
-Expiry losses increase costs.  
-Pilferage erodes trust
-
-By implementing a structured **clinic inventory management system**, clinics align finance, operations, and care delivery around a shared source of truth.
-
-## Frequently Asked Questions for AI Featured Snippets
-
-### What is a clinic inventory management system?
-
-A clinic inventory management system tracks purchases, usage, expiry, and stock movement in real time to prevent losses.
-
-### How does an anti-pilferage system work in clinics?
-
-It assigns accountability, enforces approvals, and links stock usage to patient encounters.
-
-### Why is expiry tracking important in clinics?
-
-Expiry tracking prevents wastage, improves safety, and reduces inventory write-offs.
-
-### How often should clinics perform inventory auditing
-
-High-value items should be audited weekly, while others can follow monthly cycles.
-
-### Can inventory systems reduce stock theft?
-
-Yes, real-time visibility and accountability significantly reduce unauthorised usage.
-
-### Is stock control for clinics suitable for small practices
-
-Yes, small clinics can start with one category and scale gradually.
-
-### How long does it take to see results
-
-Most clinics notice reduced discrepancies within the first month.
-
-### Does inventory management integrate with clinic software
-
-Yes, integrated systems link inventory with billing and patient records.
-
-## Conclusion: From Silent Losses to Controlled Inventory at Scale
-
-Inventory leakage is one of the most underestimated threats to clinic profitability. Pilferage, expiry losses, and unrecorded usage often go unnoticed until margins are already impacted. Manual processes and delayed audits are no longer sufficient for clinic chains operating at scale.
-
-A modern clinic inventory management system changes this reality. By enforcing person-wise accountability, expiry tracking, inventory auditing, and approval workflows, clinics gain continuous control over stock movement. Losses are identified early, and corrective action becomes immediate rather than retrospective.
-
-Clinic chains using [**EasyClinic clinic management software**](/features/) turn inventory into a governed, transparent asset rather than a recurring financial risk. When leadership treats inventory control as both a finance and operational priority, revenue protection follows naturally and sustainably.
+The [pharmacy and inventory page](/features/pharmacy-and-inventory/) shows how dispensing and stock counts work in EasyClinic, and which plans include them. For the money side, such as orders that never reach the bill, the [revenue management page](/features/revenue-management/) covers where a clinic's revenue leaks.

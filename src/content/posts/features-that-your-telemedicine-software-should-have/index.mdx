@@ -1,14 +1,21 @@
 ---
-status: draft
-headKeyword: features that your telemedicine software should have
-title: Features that your Telemedicine Software Should Have
-metaDescription: In today’s world, it has become important for doctors to offer online consultation along with in-clinic consultation.
-h1: Features that your Telemedicine Software Should Have
-linkLabel: Features that your Telemedicine Software Should
-openingAnswer: In today’s world, it has become important for doctors to offer online consultation along with in-clinic consultation. Online consultations not only help in improving patient engagement but also attract new patients.
-summary: In today’s world, it has become important for doctors to offer online consultation along with in-clinic consultation. Online consultations not only help in improving patient engagement but also attract new patients.
-author: null
-lastUpdated: 2026-07-12
+status: published
+headKeyword: how to choose telemedicine software
+title: 'How to Choose Telemedicine Software: A Clinic Checklist'
+metaDescription: 'How to choose telemedicine software for a clinic: test the video call, the prescription, the fee and the follow-up booking before you pay for it.'
+h1: How to choose telemedicine software for your clinic
+linkLabel: How to choose telemedicine software
+openingAnswer: >-
+  To choose telemedicine software, run one video consult through each option from booking to follow-up
+  and check four things: the video call, the prescription, the fee and the next appointment. If any of
+  the four happens outside the software, on your own phone, as a photo of the prescription pad, as a
+  payment you chase by message or as a follow-up nobody books, the consult leaves no usable record at the
+  clinic.
+summary: >-
+  A buyer's checklist for telemedicine software, written for any vendor, with the questions to ask about
+  each part of a video consult and the local rules to read before you choose.
+author: subhashish-saha
+lastUpdated: 2026-09-26
 originallyPublished: 2023-12-13
 topic: patient-engagement
 owner: /features/telehealth/
@@ -16,38 +23,130 @@ ctas:
   primary:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
+  secondary:
+    label: See how a video consult runs on EasyClinic
+    href: /features/telehealth/
+  whatsapp: Hi, I was reading the EasyClinic checklist on choosing telemedicine software and would like to see a video consult in a demo.
+faqHeading: Questions doctors ask before choosing telemedicine software
+faq:
+  - question: What features should telemedicine software have?
+    answer: >-
+      At the least, it needs video the patient can join easily, a prescription written on the patient's
+      record, a way to collect the fee and a calendar that books the follow-up. Beyond those four, check
+      how the prescription reaches the patient and whether the video consult sits on the same record as
+      clinic visits.
+  - question: Does the patient need to download an app for a video consult?
+    answer: >-
+      It depends on the software, because some need an app and others run in the phone's web browser. On
+      EasyClinic the patient and the doctor both join from a web browser on a phone or a computer, so
+      neither installs anything.
+  - question: Can I use WhatsApp video calls instead of telemedicine software?
+    answer: >-
+      You can hold the call, but nothing from it reaches the clinic's records unless someone types it in
+      afterwards, and the fee and the prescription are left to separate messages. WhatsApp is still useful
+      for sending the prescription and the reminder, which clinic software can do from the patient's
+      record.
+  - question: Should patients pay before or after a video consult?
+    answer: >-
+      Before is simpler, because a fee paid at booking does not need chasing after the call. Choose
+      software that takes the payment when the consult is booked and records it on the patient's bill; on
+      EasyClinic that needs the Premium plan, which includes online payments.
+  - question: What happens if the internet drops during a video consult?
+    answer: >-
+      The call stops until the connection comes back, so agree with the patient before you start how you
+      will reach them if it drops, such as a phone call to their number. EasyClinic does not run fully
+      offline today, so both the doctor and the patient need a working connection.
+  - question: How much does telemedicine software cost?
+    answer: >-
+      Vendors price it differently, so compare the price per doctor per month with video included rather
+      than the entry price. On EasyClinic, video consults come with Premium, at {price:usd.premium.annual}
+      per doctor per month billed annually ({price:inr.premium.annual} in India), which also includes
+      online payments and WhatsApp messages.
 links:
   hub: /blog/
-  related: []
+  related:
+    - href: /features/telehealth/
+      label: Telehealth
+      description: How a video consult runs on EasyClinic, from booking to the prescription on the patient's record.
+    - href: /features/appointment-scheduling/
+      label: Appointment scheduling
+      description: One calendar for walk-ins and booked slots, video consults included, with a reminder before each visit.
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: The patient record and the prescription that a video consult writes to, the same as a clinic visit.
+    - href: /pricing/
+      label: EasyClinic prices
+      description: What each plan costs per doctor per month. Video consults and online payments start on Premium.
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: The EasyClinic section rests on EasyClinic's own telehealth and pricing facts (the browser join, the remote-consult line on the prescription, video and online payments on Premium), and the Uganda example paraphrases the medical council's own licensing requirements.
+  readsMachineWritten: A checklist of questions under numbered headings reads like many vendor buying guides, and the advice to test on a cheap phone over mobile data is common sense rather than something we measured. There is no named clinic, no quote from a doctor who runs video consults and no measured figure, so a doctor who does video follow-ups should read it aloud before it is treated as final.
 notes:
-  - Imported from https://www.easyclinic.io/features-that-your-telemedicine-software-should-have/ (published 2023-12-13, modified 2026-07-12). Needs the spec 5.18/5.19 refresh before publishing.
-  - Owner /features/telehealth/ and topic from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"); marketing has not confirmed the decision.
+  - Imported from https://www.easyclinic.io/features-that-your-telemedicine-software-should-have/ (published 2023-12-13, modified 2026-07-12). Refreshed to spec 5.19 on 2026-09-26 as a vendor-neutral buyer checklist (the spec 9.3 checklist-post pattern).
+  - 'Owner /features/telehealth/, topic patient-engagement and head keyword "how to choose telemedicine software" from the blog triage of 2026-09-26. The post does not target the telehealth page''s head keyword "telemedicine software for doctors" and sends readers there for the product side. Marketing has not yet confirmed the keep decision in migration/posts-manifest.csv.'
+  - 'Cut from the import. Product claims: "you can set up your virtual clinic within a minute"; "all-in-one-solution"; "It can also be integrated with third parties" and "integrated with radiology and diagnostic lab partners so that reports can be directly uploaded" (integration status is unknown); "built on a robust and secure technology platform. Patient information ... is safe. It is not misused or sold" (no confirmed security detail, and the privacy policy''s clause on de-identified data is open with legal, so the post makes no "never sold" promise); "Custom EMR templates for different kinds of practice" (specialty templates are a Premium item in plans.yaml but not needed for a video consult); "simplifies billing", "prepare financial reports with ease"; "leaving staff for more important work" and "reducing the workload of your staff" (unmeasured). Unsourced claims: "Face-to-face interaction instils more confidence in patients", "it will improve the quality of diagnosis", "After the pandemic, telehealth consultations have become quite popular" and "patients now prefer online appointments instead of offline". Also cut: the "In today''s world" opener, the "Easy Clinic" spelling, the em dash, "robust", links with the anchor "telemedicine software" to the home page, the /features/ link and the old post /questions-to-ask-your-clinic-emr-software-provider/. The import had no statistics, anecdotes or study figures.'
+  - 'Kept from the import, reworked as buyer questions: audio and video calls; prescriptions shared on WhatsApp or printed; online fees collected before or after the consult, with no excess commission and prompt transfer to the bank; scheduling with online booking and automatic reminders.'
+  - 'Legal: the Uganda example (telemedicine licensed only as part of a clinic the UMDPC licenses, for patients seen in person within the previous 12 months) was checked against the UMDPC "Requirements for different categories of registration and licensure", section 23, https://umdpc.go.ug/downloads/requirements/requirements.pdf, fetched 2026-09-26, and is linked in the sentence. No Indian rule is stated: the NMC Telemedicine Practice Guidelines PDFs on nmc.org.in returned 404 and https://www.mohfw.gov.in/pdf/Telemedicine.pdf returned an HTML page on 2026-09-26, so the post only points to /features/telehealth/, which summarises the guidelines. The import made no legal statement to correct.'
+  - 'Sources for EasyClinic facts: src/content/features/telehealth.yaml and its notes (video consult booked through the appointment module, built-in video and chat, doctor and patient join from a web browser with nothing to install, prescription on the patient record with a line saying the consult was remote, sent on WhatsApp as the consult ends or by SMS or email, online fee payment at booking); src/data/plans.yaml (video consultations, online payments and WhatsApp on Premium; SMS and email reminders on every plan; portal and app on Enterprise); migration/research/facts.md (does not run fully offline today). Body prices ($99, ₹1,999) are plain text because tokens do not work in MDX bodies; update them by hand if the Premium price changes.'
+  - 'Fact-check pass 2026-09-26 (original re-fetched from the WordPress API; UMDPC requirements PDF and live https://www.easyclinic.io/patient-engagement-at-easyclinic/ re-fetched). The Uganda sentence now says patients seen in person "by the same practice" within the previous 12 months, because section 23 scope (c) ties the in-person consultation to the practitioner "or another practitioner in the same practice", not to any clinic. The editorial pass now says the Uganda example paraphrases the Council''s requirements rather than quoting them. Every EasyClinic statement in the body matches the live teleconsultation block (in-built video and chat; consults created through the appointment module with online fee payment; web browser on a computer or phone with no additional software; prescription sent via WhatsApp, SMS or email with a remote-consult disclaimer) and plans.yaml.'
+  - 'Left out as unknown: call recording, video behaviour on a weak connection, named payment gateways and their charges, refund handling, how the patient receives the join link, whether patients can book a video slot themselves on Premium, data hosting regions and export format.'
 ---
 
-In today’s world, it has become important for doctors to offer online consultation along with in-clinic consultation. Online consultations not only help in improving patient engagement but also attract new patients. If you are a doctor planning to use **telemedicine software** at your clinic, you may find it hard to decide which features to choose. Here we share with you some important features that [**telemedicine software**](/) should have:
+If you have tried video consults on your own phone, you know it works for a while. The trouble starts when the clinic needs a record of the call or a copy of the prescription. This checklist is what to test before you pay for telemedicine software. It applies to any vendor, EasyClinic included.
 
-## 1\. Audio and video-enabled conferencing
+## Read your country's rules first
 
-Most **telemedicine software** offer interactive audio and video conferencing facilities that help you to remotely see your patients. Face-to-face interaction instils more confidence in patients. Moreover, it will improve the quality of diagnosis as you can visually interpret the patient and communicate the treatment effectively.
+The rules decide which consults you may hold by video, and so which features you need. In Uganda, for example, the [Uganda Medical and Dental Practitioners Council](https://umdpc.go.ug/downloads/requirements/requirements.pdf) allows telemedicine only as part of a clinic it has licensed, and only for patients seen in person by the same practice within the previous 12 months. Our post on [telemedicine in Uganda](/healthcare-in-uganda/) sets out those rules, and for India the [telehealth page](/features/telehealth/) summarises the telemedicine practice guidelines. Check what your own rules say a remote prescription must carry before you look at any software.
 
-## 2\. Prescription generation
+## 1. The video call
 
-A good **telemedicine software** will let you take clinical notes and share digital prescriptions via email or instant messenger like WhatsApp. You can also directly take a printout.
+- Does the patient have to install an app, or can they join from a browser on their phone? An app to install is one more step for the patient before the call starts.
+- Test it from the patient's side, on a cheap phone using mobile data, rather than on the clinic's Wi-Fi.
+- What happens when the line drops? Can the patient rejoin the same consult, or do you start again?
+- Does the call run inside the software, or does the software hand you off to a separate video app whose history the clinic does not keep?
 
-## 3\. Online fees collection
+<InlineCta heading="See one video consult from booking to prescription." href="/features/telehealth/" label="Read how video consults work on EasyClinic">On EasyClinic's Premium plan, a video consult is booked on the same calendar as clinic visits, and the patient joins from a web browser with nothing to install. The prescription is written on the patient's record.</InlineCta>
 
-A good telemedicine solution should allow you to collect fees online before or after the consultation, depending on your own preference. Furthermore, you should not be charged any excess commissions on these online transactions and the fees collected should be transferred into your bank account promptly.
+## 2. The prescription
 
-## 4\. Remote scheduling and appointments
+- Is the prescription written on the same patient record as clinic visits, so it is on screen at the next visit?
+- Does it show that the consult was held remotely, and does it carry what your rules ask of a prescription?
+- How does it reach the patient? A typed prescription on WhatsApp is easier for the pharmacist to read than a photo of the pad.
+- Does the clinic keep a copy, and can the patient print it or show it at any pharmacy?
 
-After the pandemic, telehealth consultations have become quite popular. For routine and familiar health issues and for follow-ups, patients now prefer online appointments instead of offline. To help you manage the high volume of patient bookings, the **telemedicine software** should have features to allow you to plan and schedule appointments. Therefore, the scheduling feature should be a priority. It will help you and your medical staff to manage appointments efficiently. It should also allow your patients to book appointments online. Good [**telemedicine software**](/) also has the feature of sending automatic reminders to patients, reducing the workload of your staff.
+## 3. The fee
 
-## Looking for a telemedicine software for your clinic?
+- Can the patient pay when they book, or only after the call? Chasing a fee after the call is a conversation nobody at the clinic wants, so paying at booking is simpler.
+- What does each payment cost? Ask for the payment gateway's charge and any commission the vendor adds on top, in writing.
+- How soon does the money reach your bank account, and who handles the refund when the doctor has to cancel?
+- Does the payment land on the patient's bill in the software, with a receipt, so the day's accounts match?
 
-With [Easy Clinic](/features/), you can set up your virtual clinic within a minute. You will not only get all the above-mentioned telehealth features of video consultations, you will also get the necessary tools to manage your practice completely. Our software is an all-in-one-solution that you need — it has features of **telemedicine software**, [**EMR software**](/questions-to-ask-your-clinic-emr-software-provider/) systems, appointment software, and billing software. It can also be integrated with third parties. Some of the benefits offered by Easy Clinic are:
+## 4. Scheduling and the follow-up
 
-- **Data security:** Our software is built on a robust and secure technology platform. Patient information (whether sensitive or not) is safe. It is not misused or sold.
-- **Custom EMR templates:** Our software comes with custom templates for different kinds of practice. EMR templates can be customised as per the workflow of your clinic.
-- **Scheduling appointments:** The software makes it easy for patients to book appointments. It also automates patient reminders, leaving staff for more important work.
-- **Third-party integration:** The software can be integrated with radiology and diagnostic lab partners so that reports can be directly uploaded and patients and doctors can access them easily.
-- **Billing:** It also simplifies billing by collecting online payments. You can also prepare financial reports with ease.
+- Are video consults on the same calendar as clinic visits, so nobody books a video patient into a slot where the doctor is with someone in the room?
+- Does the patient get a reminder before the call, and on which channel?
+- Can the desk book the follow-up before the call ends, as a clinic visit or another video consult?
+- Can patients book a video slot themselves, and if so, from where?
+
+## 5. The record and the data
+
+- Do the notes and the prescription from a video consult sit on the patient's record, next to their clinic visits?
+- Who at the clinic can open the notes from a video consult?
+- In which country is the data hosted, and can you take a full export if you leave?
+- Does your country restrict storing health data abroad? If it does, the hosting answer decides which approvals you need before you start.
+
+## 6. The price and the plan
+
+Video is sometimes sold as part of a higher plan rather than on its own. Compare the price per doctor per month with video included, rather than the entry price. Ask whether online payments and WhatsApp messages come in the same plan, because you will probably want the fee paid online and the prescription sent on WhatsApp.
+
+## Where EasyClinic fits
+
+On EasyClinic, video consults come with the Premium plan, at $99 per doctor per month billed annually (₹1,999 in India). Against the checklist:
+
+- The call is booked through the appointment calendar, beside clinic visits, and runs on EasyClinic's built-in video and chat. The doctor and the patient join from a web browser on a phone or a computer, with nothing to install.
+- The prescription is written on the patient's record with a line saying the consult was held remotely. It goes to the patient on WhatsApp as soon as the consult ends, or by SMS or email instead.
+- The fee can be paid online when the consult is booked, because Premium includes online payments.
+- The follow-up goes on the same calendar, as a clinic visit or another video consult. The reminder before it goes by SMS and email on every plan, and on WhatsApp on Premium.
+
+Two limits. EasyClinic is cloud software and does not run fully offline today, so both ends of the call need an internet connection. We have not published how the video behaves on a weak connection, so when you see the demo, ask to join a test call from a phone on mobile data.
