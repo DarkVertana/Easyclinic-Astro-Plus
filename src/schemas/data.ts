@@ -257,6 +257,8 @@ export const integrationSchema = z.object({
   countries: z.array(z.string()).default([]),
   state: unknown(z.enum(INTEGRATION_STATES)),
   asOf: unknown(isoDate),
+  /** When a planned or beta connection is expected to go live, as the company states it (e.g. "Q1 2027"). */
+  expected: z.string().nullable().default(null),
   description: md,
 });
 

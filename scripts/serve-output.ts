@@ -2,30 +2,20 @@
  * Serves `.vercel/output` with a local emulation of Vercel's Build Output API routing, so redirects,
  * 410s, host-conditional headers and on-demand routes can be tested without a deploy.
  *
- * Emulated: routes before `handle: filesystem` (src, has/missing host, headers, status, dest,
- * continue, $n substitution), static file lookup (`/x/` -> `/x/index.html`), then the routes after
- * `handle: filesystem`, with `dest: "_render"` invoking the bundled Astro function's `fetch` handler.
- * Not emulated: edge caching, `check`, `methods`, locale routes. Verify on a real preview with
- * `pnpm smoke` before launch.
+ * The routing itself lives in scripts/lib/vercel-router.ts (shared with scripts/check-coverage.ts):
+ * routes before `handle: filesystem`, static file lookup (`/x/` -> `/x/index.html`), then the routes after
+ * `handle: filesystem`, with `dest: "_render"` invoking the bundled Astro function's `fetch` handler and a
+ * static `dest` (the adapter's `/404.html`) served from disk. Not emulated: edge caching, `check`,
+ * `methods`, locale routes. Verify on a real preview with `pnpm smoke` before launch.
  *
  * Usage: node scripts/serve-output.ts [--port 4322]
  */
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { brotliCompressSync, constants } from 'node:zlib';
-
-interface Route {
-  src?: string;
-  dest?: string;
-  headers?: Record<string, string>;
-  status?: number;
-  continue?: boolean;
-  handle?: string;
-  has?: Array<{ type: string; value: string }>;
-  missing?: Array<{ type: string; value: string }>;
-}
+import { createRouter, listStaticFiles, staticLookup, type Route } from './lib/vercel-router.ts';
 
 const root = join(process.cwd(), '.vercel/output');
 const portArg = process.argv.indexOf('--port');
@@ -49,9 +39,8 @@ const MIME: Record<string, string> = {
 };
 
 const config = JSON.parse(await readFile(join(root, 'config.json'), 'utf8')) as { routes: Route[] };
-const filesystemIndex = config.routes.findIndex((r) => r.handle === 'filesystem');
-const beforeFs = config.routes.slice(0, filesystemIndex);
-const afterFs = config.routes.slice(filesystemIndex + 1).filter((r) => !r.handle);
+// The output does not change while serving, so the static file list is read once.
+const router = createRouter(config.routes, staticLookup(listStaticFiles(join(root, 'static'))));
 
 // The handler path is relative to the function directory and depends on dependency tracing.
 const fnDir = join(root, 'functions/_render.func');
@@ -60,35 +49,17 @@ const fn = (await import(pathToFileURL(join(fnDir, vcConfig.handler)).href)).def
   fetch: (request: Request) => Promise<Response>;
 };
 
-function hostMatches(route: Route, host: string): boolean {
-  const bare = host.replace(/:\d+$/, '');
-  for (const cond of route.has ?? []) if (cond.type === 'host' && cond.value !== bare) return false;
-  for (const cond of route.missing ?? []) if (cond.type === 'host' && cond.value === bare) return false;
-  return true;
-}
-
-function substitute(value: string, match: RegExpMatchArray): string {
-  return value.replace(/\$(\d+)/g, (_, n) => match[Number(n)] ?? '');
-}
-
-async function staticFile(pathname: string): Promise<string | null> {
-  const decoded = decodeURIComponent(pathname);
-  if (decoded.split('/').includes('..')) return null;
-  const candidates = decoded.endsWith('/') ? [join(root, 'static', decoded, 'index.html')] : [join(root, 'static', decoded)];
-  for (const file of candidates) {
-    try {
-      if ((await stat(file)).isFile()) return file;
-    } catch {
-      // not found
-    }
-  }
-  return null;
-}
-
+/**
+ * Route headers first, then the function's own headers replace any of the same name, case-insensitively.
+ * That is what `vercel dev` does (route headers are set on the response, then the proxied function response
+ * overwrites them), so /demo/confirmation/ carries Astro's CSP header rather than the route-level one.
+ * Production may differ: scripts/smoke.ts checks which policy a deployed confirmation page really sends.
+ */
 async function toNodeResponse(res: ServerResponse, response: Response, extraHeaders: Record<string, string>, method: string) {
-  const headers: Record<string, string> = { ...extraHeaders };
+  const headers: Record<string, string> = {};
+  for (const [key, value] of Object.entries(extraHeaders)) headers[key.toLowerCase()] = value;
   response.headers.forEach((value, key) => {
-    headers[key] = value;
+    headers[key.toLowerCase()] = value;
   });
   res.writeHead(response.status, headers);
   if (method === 'HEAD') return res.end();
@@ -105,55 +76,38 @@ async function readBody(req: IncomingMessage): Promise<Buffer | undefined> {
 async function handle(req: IncomingMessage, res: ServerResponse) {
   const host = req.headers.host ?? `localhost:${port}`;
   const url = new URL(req.url ?? '/', `http://${host}`);
-  let pathname = url.pathname;
-  let statusOverride: number | undefined;
-  const headers: Record<string, string> = {};
+  const method = req.method ?? 'GET';
+  const result = router.resolve({ pathname: url.pathname, host, search: url.search, method });
 
-  for (const route of beforeFs) {
-    if (!route.src || !hostMatches(route, host)) continue;
-    const match = pathname.match(new RegExp(route.src));
-    if (!match) continue;
-    for (const [key, value] of Object.entries(route.headers ?? {})) headers[key] = substitute(value, match);
-    if (route.status && headers.Location && !route.dest) {
-      const location = headers.Location + (url.search && !headers.Location.includes('?') ? url.search : '');
-      res.writeHead(route.status, { ...headers, Location: location });
-      return res.end();
-    }
-    if (route.dest) pathname = substitute(route.dest, match).split('?')[0];
-    if (route.status) statusOverride = route.status;
-    if (!route.continue) break;
+  if (result.kind === 'redirect') {
+    res.writeHead(result.status, { ...result.headers, Location: result.location });
+    return res.end();
   }
 
-  const file = await staticFile(pathname);
-  if (file && (req.method === 'GET' || req.method === 'HEAD')) {
+  if (result.kind === 'static') {
+    const file = join(root, 'static', result.file);
     let body = await readFile(file);
     const type = MIME[extname(file)] ?? 'application/octet-stream';
     // Compress text like Vercel's edge does, so Lighthouse numbers are realistic.
     const compress = /text|javascript|json|xml|svg/.test(type) && /\bbr\b/.test(String(req.headers['accept-encoding'] ?? ''));
     if (compress) body = brotliCompressSync(body, { params: { [constants.BROTLI_PARAM_QUALITY]: 9 } });
-    res.writeHead(statusOverride ?? 200, { 'content-type': type, ...(compress ? { 'content-encoding': 'br', vary: 'accept-encoding' } : {}), ...headers });
-    return res.end(req.method === 'HEAD' ? undefined : body);
+    res.writeHead(result.status, { 'content-type': type, ...(compress ? { 'content-encoding': 'br', vary: 'accept-encoding' } : {}), ...result.headers });
+    return res.end(method === 'HEAD' ? undefined : body);
   }
 
-  for (const route of afterFs) {
-    if (!route.src || !hostMatches(route, host)) continue;
-    const match = pathname.match(new RegExp(route.src));
-    if (!match) continue;
-    if (route.dest === '_render') {
-      const body = await readBody(req);
-      const request = new Request(new URL(pathname + url.search, url), {
-        method: req.method,
-        headers: Object.entries(req.headers).flatMap(([k, v]) => (v === undefined ? [] : [[k, String(v)]])) as [string, string][],
-        body: body ? new Uint8Array(body) : undefined,
-      });
-      const response = await fn.fetch(request);
-      const status = route.status ?? statusOverride;
-      const final = status && response.status === 200 ? new Response(response.body, { status, headers: response.headers }) : response;
-      return toNodeResponse(res, final, headers, req.method ?? 'GET');
-    }
+  if (result.kind === 'function') {
+    const body = await readBody(req);
+    const request = new Request(new URL(result.pathname + url.search, url), {
+      method,
+      headers: Object.entries(req.headers).flatMap(([k, v]) => (v === undefined ? [] : [[k, String(v)]])) as [string, string][],
+      body: body ? new Uint8Array(body) : undefined,
+    });
+    const response = await fn.fetch(request);
+    const final = result.status && response.status === 200 ? new Response(response.body, { status: result.status, headers: response.headers }) : response;
+    return toNodeResponse(res, final, result.headers, method);
   }
 
-  res.writeHead(404, { 'content-type': 'text/plain', ...headers });
+  res.writeHead(404, { 'content-type': 'text/plain', ...result.headers });
   res.end('Not found');
 }
 

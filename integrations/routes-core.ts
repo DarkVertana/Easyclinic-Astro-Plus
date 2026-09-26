@@ -55,8 +55,19 @@ export interface BuildRoutesInput {
 
 export const GONE_DEST = '/gone/index.html';
 
-const SECURITY_HEADERS: Record<string, string> = {
+/**
+ * The header half of the Content-Security-Policy. Astro (`security.csp` in astro.config.ts) writes the
+ * per-page half into a `<meta http-equiv>`: script-src and style-src with hashes, plus the fetch
+ * directives. A `<meta>` policy cannot carry `frame-ancestors`, so it lives here. Browsers enforce every
+ * policy they receive, so this one must never restrict scripts or styles (no default-src, script-src or
+ * style-src): it would block the inline code the meta policy allows by hash, and the on-demand
+ * /demo/submit/ fallback page, which has no meta policy.
+ */
+export const HEADER_CSP = "frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'";
+
+export const SECURITY_HEADERS: Record<string, string> = {
   'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
+  'Content-Security-Policy': HEADER_CSP,
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
@@ -179,6 +190,17 @@ export function resolveRules(
   } catch (error) {
     errors.push((error as Error).message);
     return { active, skipped, errors };
+  }
+
+  // A path that both redirects and returns 410 would silently take the redirect (redirect routes come
+  // first); make the data say which one it means.
+  for (const rule of redirects) {
+    if ((rule.match ?? 'exact') !== 'exact' || isExternal(rule.from)) continue;
+    for (const g of gone) {
+      if (matchesRule(normalizePath(rule.from), g.path, g.match)) {
+        errors.push(`Redirect source ${rule.from} is also gone (${g.path}, ${g.match ?? 'exact'}); keep one of the two rows`);
+      }
+    }
   }
 
   for (const page of builtPages) {

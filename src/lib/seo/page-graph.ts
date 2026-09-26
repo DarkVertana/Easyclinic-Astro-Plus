@@ -33,7 +33,11 @@ export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Rec
   nodes.push(page);
   if (['guide', 'post', 'listicle', 'comparison'].includes(record.family)) {
     const author = d.author ? (await getEntry(d.author))?.data : null;
-    nodes.push(article(site, { url, headline: d.h1, description: d.metaDescription, dateModified: d.lastUpdated, author }));
+    const node = article(site, { url, headline: d.h1, description: d.metaDescription, dateModified: d.lastUpdated, author }) as Record<string, unknown>;
+    // Imported posts keep the date they first went live on the old site.
+    const published = (d as { originallyPublished?: Date }).originallyPublished;
+    if (record.family === 'post' && published) node.datePublished = published.toISOString().slice(0, 10);
+    nodes.push(node as never);
   }
   // Spec 5.14: listicles carry the ranked vendors as an ItemList (names and their own sites only; no ratings).
   const vendors = d.sections.find((s) => s.discriminant === 'vendorList') as { value: { vendors: Array<{ name: string; rank?: number; url?: string }> } } | undefined;

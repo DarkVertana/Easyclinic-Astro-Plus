@@ -34,6 +34,7 @@ const FAMILY_BY_DIR: Record<string, string> = {
   trust: 'trust',
   specialties: 'specialty',
   guides: 'guide',
+  posts: 'post',
   comparisons: 'comparison',
   listicles: 'listicle',
   alternatives: 'listicle',

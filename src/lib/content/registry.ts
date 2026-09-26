@@ -36,6 +36,8 @@ export const PAGE_COLLECTIONS = [
   { name: 'specialties', prefix: '/' },
   // Start-a-clinic guides keep their ranking root slugs (spec 3.2, 4.4).
   { name: 'guides', prefix: '/' },
+  // Blog posts keep their live WordPress root slugs (plan research finding 4).
+  { name: 'posts', prefix: '/' },
   // Comparison and listicle pages keep their ranking root slugs; alternatives live under /compare/.
   { name: 'comparisons', prefix: '/' },
   { name: 'listicles', prefix: '/' },
@@ -148,7 +150,7 @@ async function build(): Promise<Registry> {
         if (path.startsWith(reserved)) structural.push(`${where}: path ${path} is reserved for a route file`);
       }
       for (const r of redirects) {
-        if (matchesRule(path, r.data.from, r.data.match)) structural.push(`${where}: ${path} is also a redirect source in redirects.yaml (${r.data.from}); remove the redirect row when publishing the page`);
+        if (matchesRule(path, r.data.from, r.data.match)) structural.push(`${where}: ${path} is also a redirect source in ${r.filePath ?? 'src/data/redirects.yaml'} (${r.data.from}); remove the redirect row when publishing the page`);
       }
       for (const g of gone) {
         if (matchesRule(path, g.data.path, g.data.match)) structural.push(`${where}: ${path} matches gone pattern ${g.data.path}`);
@@ -215,6 +217,9 @@ async function build(): Promise<Registry> {
     }
     const links: Array<{ path: string; href: string }> = [];
     internalLinks(record.data, links);
+    // A post links to the landing page that owns it (spec 3.6, 5.19), so the owner gets the same check.
+    const owner = (record.data as { owner?: unknown }).owner;
+    if (record.family === 'post' && typeof owner === 'string') links.push({ path: 'owner', href: owner.split('#')[0] });
     for (const link of links) {
       const target = byPath.get(link.href);
       if (!target) {

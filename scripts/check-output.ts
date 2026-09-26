@@ -37,6 +37,7 @@ const REQUIRED_TYPES: Record<string, string[]> = {
   home: ['Organization', 'WebSite', 'SoftwareApplication', 'WebPage'],
   pricing: ['SoftwareApplication', 'WebPage'],
   guide: ['Article', 'WebPage'],
+  post: ['Article', 'WebPage'],
   listicle: ['Article', 'ItemList', 'WebPage'],
   comparison: ['Article', 'WebPage'],
 };

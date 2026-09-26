@@ -9,6 +9,8 @@ export interface BuildManifest {
   pages: Array<{ path: string; collection: string; id: string; status: string; indexable: boolean; title: string }>;
   redirects: RedirectRule[];
   gone: GoneRule[];
+  /** Entries not rendered in this stage (drafts and review pages in production). */
+  hidden?: Array<{ path: string; collection: string; id: string; status: string }>;
 }
 
 export const MANIFEST_FILE = 'build-manifest.json';

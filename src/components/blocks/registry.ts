@@ -7,6 +7,7 @@ import CostExamples from './CostExamples/CostExamples.astro';
 import CountryMoney from './CountryMoney/CountryMoney.astro';
 import DataTable from './DataTable/DataTable.astro';
 import GlossaryList from './GlossaryList/GlossaryList.astro';
+import PostIndex from './PostIndex/PostIndex.astro';
 import ComparisonTable from './ComparisonTable/ComparisonTable.astro';
 import DayTimeline from './DayTimeline/DayTimeline.astro';
 import DecisionMatrix from './DecisionMatrix/DecisionMatrix.astro';
@@ -41,6 +42,7 @@ import TestimonialRow from './TestimonialRow/TestimonialRow.astro';
 export const BLOCKS = {
   addOns: AddOns,
   glossaryList: GlossaryList,
+  postIndex: PostIndex,
   comparisonTable: ComparisonTable,
   decisionMatrix: DecisionMatrix,
   sourceList: SourceList,

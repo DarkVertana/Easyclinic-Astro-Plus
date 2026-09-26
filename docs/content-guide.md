@@ -35,6 +35,44 @@ One or two sentences.
 
 `node scripts/import-wp.ts <slug>` imports a post from the live WordPress site as a draft guide.
 
+### Blog posts
+
+Posts live in `src/content/posts/<slug>/index.mdx` and keep their WordPress URL at the root of the site
+(`/clinic-cash-flow/`). They work like guides, with three extra frontmatter fields:
+
+| Field | What it holds |
+| --- | --- |
+| `topic` | Where `/blog/` lists the post: `switching-to-emr`, `running-a-chain`, `compliance-by-country`, `cura-ai`, `billing-and-claims`, `patient-engagement`, `start-a-clinic` (spec 5.19), or `running-a-clinic` for day-to-day operations (pharmacy, lab, reports) |
+| `owner` | The landing page the post feeds, as a path (`/features/billing/`). Required: every post is owned by a landing page (spec 3.6). `/blog/` lists posts but cannot own one; a post owned by `/blog/` cannot be published. |
+| `originallyPublished` | The date the post first went live on WordPress (imported posts only); it becomes `datePublished` in the Article markup |
+
+Set `links.hub: /blog/` for the breadcrumb. The page shows the topic above the H1, the author, the last-updated
+date and the reading time (about 200 words a minute, rounded up), the `summary` in an "In short" box when it adds
+something to the opening answer, and a labelled link to the owner page once that page is live. A post carries an
+FAQ only when it has real questions: three to eight, or none.
+
+**The blog index.** `/blog/` (`src/content/hubs/blog.yaml`) lists every post and every start-a-clinic guide
+(guides whose hub is `/start-a-clinic/`) by topic, newest first by last-updated date, with the summary and reading
+time. The list is built from the pages, so publishing a post adds it; nobody edits the list. Only published entries
+appear on the live site, and a topic with nothing published is left out. `/rss.xml` carries the newest 50
+published posts and guides: the entries `/blog/` lists, plus any guide it does not (such as the EMR-versus-paper
+guide under `/compare/`, filed under "Guides"). The old WordPress feed `/feed/` redirects there.
+
+**Importing the kept posts.** `node scripts/import-wp.ts --from-manifest` imports every row of
+`migration/posts-manifest.csv` whose `proposed_decision` is `keep` as a draft post: no author, the owner from
+`owner_page`, the topic from the owner (the mapping is at `TOPIC_BY_OWNER` in `scripts/lib/wp-convert.ts`), and a
+note that the post needs the spec 5.18/5.19 refresh. A post the manifest gives to `/blog/` has no landing page to
+take a topic from, so its topic comes from its slug and title (`TOPIC_BY_KEYWORD`, same file) and its note says the
+topic is provisional; check it when marketing names the owner. It skips paths that are already pages (the start-a-clinic
+guides and comparison pages), paths that `redirects.yaml`, `gone.yaml` or a page's `redirectFrom` claim, and posts
+already imported, then prints what it imported, skipped and could not fetch. Add `--dry-run` to see the list
+first. One post: `node scripts/import-wp.ts <slug> --collection posts`. The manifest's decisions are proposals
+until marketing confirms them.
+
+**Before publishing an imported post**, refresh it: a named author, a current `lastUpdated`, an opening answer that
+answers the post's question in two sentences, a summary that is not the first paragraph again, a real `headKeyword`,
+a title under 60 characters, the banned words out, an FAQ only if it has true questions, and the editor's pass.
+
 ## A page's status
 
 Every page has `status: draft`, `review` or `published`.

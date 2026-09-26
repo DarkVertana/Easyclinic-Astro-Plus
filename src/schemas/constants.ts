@@ -57,6 +57,33 @@ export const FAMILIES = [
 ] as const;
 export type Family = (typeof FAMILIES)[number];
 
+/**
+ * Spec 5.19 /blog/ topics, in the order the hub lists them, plus `running-a-clinic` for general operations
+ * posts (pharmacy, lab, reports, day-to-day running) that fit none of the spec's seven.
+ */
+export const POST_TOPICS = [
+  'switching-to-emr',
+  'running-a-chain',
+  'compliance-by-country',
+  'cura-ai',
+  'billing-and-claims',
+  'patient-engagement',
+  'start-a-clinic',
+  'running-a-clinic',
+] as const;
+export type PostTopic = (typeof POST_TOPICS)[number];
+
+export const POST_TOPIC_LABELS: Record<PostTopic, string> = {
+  'switching-to-emr': 'Switching to EMR',
+  'running-a-chain': 'Running a chain',
+  'compliance-by-country': 'Compliance by country',
+  'cura-ai': 'Cura AI',
+  'billing-and-claims': 'Billing and claims',
+  'patient-engagement': 'Patient engagement',
+  'start-a-clinic': 'Start a clinic',
+  'running-a-clinic': 'Running a clinic',
+};
+
 /** Spec 2.8 persona ladder, used to tag testimonials, proof and routing cards. */
 export const PERSONAS = ['solo', 'polyclinic', 'chain', 'hospital-opd', 'ngo'] as const;
 export type Persona = (typeof PERSONAS)[number];

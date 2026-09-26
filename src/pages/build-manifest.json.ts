@@ -10,13 +10,16 @@ import { INDEXING_ENABLED, STAGE } from '../lib/content/stage';
 export const GET: APIRoute = async () => {
   const registry = await getRegistry();
   const site = (await getEntry('site', 'site'))!.data;
+  // Includes the rows generated from the posts manifest (src/data/redirects-posts.yaml, gone-posts.yaml):
+  // the collections load both files (src/lib/content/routing-loader.ts).
   const redirects = (await getCollection('redirects')).map((e) => e.data);
   // Each page's redirectFrom list becomes 301s to that page.
   for (const record of registry.visible) {
     for (const from of record.data.redirectFrom) redirects.push({ from, to: record.path, match: 'exact', status: 301 });
   }
   const gone = (await getCollection('gone')).map((e) => e.data);
-  const staticPages = ['/gone/'];
+  // Route files that redirects may target: /feed/ (the WordPress feed) 301s to /rss.xml.
+  const staticPages = ['/gone/', '/rss.xml'];
   return Response.json({
     stage: STAGE,
     indexingEnabled: INDEXING_ENABLED && STAGE === 'production',
@@ -27,5 +30,8 @@ export const GET: APIRoute = async () => {
     ],
     redirects,
     gone,
+    // Entries this stage does not render (drafts and review pages in production), so post-build checks such
+    // as scripts/check-coverage.ts can say why a legacy URL is not served yet.
+    hidden: registry.pages.filter((r) => !r.visible).map((r) => ({ path: r.path, collection: r.collection, id: r.id, status: r.status })),
   });
 };

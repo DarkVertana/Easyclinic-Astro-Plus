@@ -42,9 +42,9 @@ const { id, eyebrow, heading, intro, tone, steps, ctx } = Astro.props;
 
 `src/components/blocks/Prose`, `StepList`, `TestimonialRow` and `ProofBlock` are the reference blocks.
 
-The 36 blocks, by use: page body (`prose`, `featureRows`, `painBlocks`, `moduleGrid`, `dataTable`, `scopeBox`,
+The blocks, by use: page body (`prose`, `featureRows`, `painBlocks`, `moduleGrid`, `dataTable`, `scopeBox`,
 `splitTable`, `rolesMatrix`, `dayTimeline`, `flowDiagram`, `journeyDiagram`, `oldWayNewWay`, `personaRouter`,
-`clinicTypes`, `hubGrid`, `contentCards`, `inlineCta`, `stepList`, `glossaryList`); proof (`proofBlock`,
+`clinicTypes`, `hubGrid`, `contentCards`, `inlineCta`, `stepList`, `glossaryList`, `postIndex`); proof (`proofBlock`,
 `testimonialRow`, `studyCard`, `testimonialGrid`); money (`pricingCards`, `planMatrix`, `addOns`, `costExamples`,
 `countryMoney`); country and compliance (`contactCard`, `regulatorTable`, `regulatorStrip`); comparison
 (`comparisonTable`, `decisionMatrix`, `vendorList`, `sourceList`); conversion (`demoForm`). Which families may use which
@@ -54,6 +54,14 @@ Comparison blocks carry their evidence: every competitor cell in `comparisonTabl
 `vendorList` needs a `source` URL and a `checkedOn` date (or reads "Not published"), and "Check" is not an answer. `sourceList` renders the
 sources at the foot of the page. `testimonialGrid` filters by clinic type and country with CSS only (radio inputs and
 `:has()`), so every card stays in the HTML.
+
+`postIndex` (hub family; used on `/blog/`) takes no list of links: it reads the registry and lists every post and
+start-a-clinic guide rendered in the stage, grouped by topic and newest first, with title, summary, last-updated date
+and reading time (helpers in `src/lib/content/posts.ts`). Content sets only an optional heading and intro per topic
+(`topics[]`) and `jumpLinksFrom`, the number of topic groups at which a row of "jump to a topic" links appears.
+Topics with nothing to show are left out, so in production it shows only what is published. Topic headings are h2
+(h3 when the block has its own heading) and entry titles one level below; each row is one tap target through the
+title link's `::after`. No JavaScript. Drafts in preview carry a "Draft" or "In review" label.
 
 **Optional versus required facts.** `need()` is for a fact the page cannot honestly go without (a price, a regulator
 status): it blocks publishing. `optional()` is for a detail that can be left out (a testimonial's city, a review
@@ -106,6 +114,8 @@ Shared data: `getEntry('countries', id)`, `getEntry('prices', 'inr')`, `getEntry
 3. **Tables stack into cards below 640px.** Use `<table>` with `data-label` on cells and CSS that turns
    rows into cards under `sm`, keeping `role` attributes so screen readers still read a table. Never a
    horizontal scroll, except the plan matrix, which gets a labelled, focusable scroll region and a visible hint.
+   Markdown tables in blog posts stack the same way: `src/components/mdx/PostTable.astro` adds the roles and
+   gives each body cell its column header as `data-label` (`src/lib/content/post-table.ts`).
 4. **Accessibility (WCAG 2.2 AA).** Labels on every control, visible focus (global), 44px tap targets,
    status carries text not just colour, headings in order (blocks use h2 via `Section`, then h3).
 5. **No invented facts.** Anything from shared data that can be `null` goes through `need()` or

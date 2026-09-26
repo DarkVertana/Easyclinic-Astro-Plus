@@ -1,0 +1,37 @@
+name: Smoke
+
+# Real-network checks (scripts/smoke.ts) against every deployment Vercel reports as ready: one-hop
+# redirects from both slash forms, 410 bodies, noindex off www, robots.txt, the trailing-slash 308, the CSP
+# headers and the demo endpoint. The local emulator cannot prove Vercel's routing; this can.
+#
+# Needs the Vercel GitHub integration (it sends deployment_status events) and, while Deployment
+# Protection is on, the repository secret VERCEL_AUTOMATION_BYPASS_SECRET (Vercel project settings >
+# Deployment Protection > Protection Bypass for Automation).
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    # Only Vercel's own deployment statuses: any other app that creates one must not receive the bypass secret.
+    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.creator.login == 'vercel[bot]'
+    runs-on: ubuntu-latest
+    env:
+      SMOKE_BASE_URL: ${{ github.event.deployment_status.environment_url || github.event.deployment_status.target_url }}
+      VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+      # smoke.ts reads the build manifest, so build the deployed commit at the deployed stage.
+      CONTENT_STAGE: ${{ startsWith(github.event.deployment.environment, 'Production') && 'production' || 'preview' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable && corepack prepare pnpm@12.5.1 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec astro build
+      - run: pnpm smoke --base "$SMOKE_BASE_URL"

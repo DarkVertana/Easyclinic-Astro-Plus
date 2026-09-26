@@ -1,8 +1,13 @@
 /**
  * Real-network checks against a deployed preview or production URL (the local emulator cannot prove
- * Vercel's routing). Run after every preview deploy:
+ * Vercel's routing). Reads .vercel/output/build-manifest.json, so build the deployed commit at the
+ * deployed stage first (the Smoke workflow does this on every successful Vercel deployment):
  *
- *   node scripts/smoke.ts --base https://<preview>.vercel.app [--bypass <VERCEL_AUTOMATION_BYPASS_SECRET>]
+ *   git checkout <deployed sha> && pnpm build:prod && pnpm smoke --base https://www.easyclinic.io
+ *   git checkout <deployed sha> && pnpm build && pnpm smoke --base https://<preview>.vercel.app --bypass <secret>
+ *
+ * The bypass secret (--bypass or VERCEL_AUTOMATION_BYPASS_SECRET) is sent only to *.vercel.app and
+ * easyclinic.io hosts; any other non-local host is refused rather than handed the secret.
  */
 import { readFileSync } from 'node:fs';
 
@@ -12,10 +17,21 @@ const arg = (name: string) => {
 };
 const base = (arg('base') ?? process.env.SMOKE_BASE_URL ?? '').replace(/\/$/, '');
 if (!base) throw new Error('Pass --base https://<deployment>');
+const hostname = new URL(base).hostname;
+const isWww = hostname === 'www.easyclinic.io';
+const isVercelHost = hostname.endsWith('.vercel.app') || hostname === 'easyclinic.io' || hostname.endsWith('.easyclinic.io');
+const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '[::1]';
 const bypass = arg('bypass') ?? process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
-const headers: Record<string, string> = bypass ? { 'x-vercel-protection-bypass': bypass } : {};
+if (bypass && !isVercelHost && !isLocal) {
+  throw new Error(`Refusing to send the Vercel bypass secret to ${hostname}: only *.vercel.app and easyclinic.io hosts get it`);
+}
+const headers: Record<string, string> = bypass && isVercelHost ? { 'x-vercel-protection-bypass': bypass } : {};
 const manifest = JSON.parse(readFileSync('.vercel/output/build-manifest.json', 'utf8'));
-const isWww = new URL(base).hostname === 'www.easyclinic.io';
+// A preview-stage manifest lists drafts and redirects to drafts, which www does not serve: false failures.
+if (isWww && manifest.stage !== 'production') {
+  throw new Error(`.vercel/output is a ${manifest.stage}-stage build. For www: git checkout <deployed sha> && pnpm build:prod, then run this again`);
+}
+console.log(`Smoke checks on ${base} against a ${manifest.stage}-stage build manifest`);
 
 let failures = 0;
 const check = (ok: boolean, message: string) => {
@@ -47,6 +63,24 @@ for (const page of manifest.pages.slice(0, 50) as Array<{ path: string }>) {
   check(res.status === 200, `${page.path} -> ${res.status}`);
   if (!isWww) check((res.headers.get('x-robots-tag') ?? '').includes('noindex'), `${page.path} carries X-Robots-Tag noindex off www`);
 }
+// Content-Security-Policy: the header half (frame-ancestors) on every response, the per-page half in a <meta>.
+const home = await get('/');
+check(/frame-ancestors 'self'/.test(home.headers.get('content-security-policy') ?? ''), `/ sends a Content-Security-Policy header with frame-ancestors`);
+check(/<meta[^>]+http-equiv="content-security-policy"[^>]+script-src/i.test(await home.text()), `/ carries the per-page CSP <meta> with script-src`);
+// The on-demand confirmation page gets Astro's policy as a response header of the same name as the route-level
+// one above. Whichever Vercel keeps (or both), Astro's hashed script-src must survive, and the page must still
+// refuse framing by another site (frame-ancestors, or X-Frame-Options if Astro's policy replaced ours).
+const confirmation = await get('/demo/confirmation/?c=in');
+const confirmationCsp = confirmation.headers.get('content-security-policy') ?? '';
+const hasScriptSrc = /script-src[^;,]*'sha256-/.test(confirmationCsp);
+const hasFrameAncestors = /frame-ancestors 'self'/.test(confirmationCsp);
+check(confirmation.status === 200, `/demo/confirmation/ -> ${confirmation.status}`);
+check(hasScriptSrc, `/demo/confirmation/ keeps Astro's CSP header with hashed script-src (script-src: ${hasScriptSrc ? 'yes' : 'no'}, frame-ancestors: ${hasFrameAncestors ? 'yes' : 'no'})`);
+check(
+  hasFrameAncestors || (confirmation.headers.get('x-frame-options') ?? '').toUpperCase() === 'SAMEORIGIN',
+  `/demo/confirmation/ refuses framing by other sites (frame-ancestors or X-Frame-Options)`,
+);
+
 const robots = await (await get('/robots.txt')).text();
 check(isWww ? true : robots.includes('Disallow: /'), `robots.txt disallows crawling on ${new URL(base).hostname}`);
 

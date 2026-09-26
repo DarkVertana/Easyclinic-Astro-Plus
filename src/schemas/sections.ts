@@ -1,6 +1,7 @@
 import type { SchemaContext } from 'astro:content';
 import { z } from 'astro/zod';
 import { schema as glossaryList } from '../components/blocks/GlossaryList/schema';
+import { schema as postIndex } from '../components/blocks/PostIndex/schema';
 import { schema as comparisonTable } from '../components/blocks/ComparisonTable/schema';
 import { schema as decisionMatrix } from '../components/blocks/DecisionMatrix/schema';
 import { schema as sourceList } from '../components/blocks/SourceList/schema';
@@ -42,6 +43,7 @@ import { schema as testimonialRow } from '../components/blocks/TestimonialRow/sc
 export const BLOCK_SCHEMAS = {
   addOns,
   glossaryList,
+  postIndex,
   comparisonTable,
   decisionMatrix,
   sourceList,

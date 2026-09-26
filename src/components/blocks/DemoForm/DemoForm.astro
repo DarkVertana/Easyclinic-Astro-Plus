@@ -47,7 +47,8 @@ const f = (name: string) => ({ id: `demo-${name}`, error: `demo-${name}-error` }
             {DIAL_CODES.map((d) => <option value={d.code} selected={d.code === defaultDial}>{d.label}</option>)}
           </select>
           <label for={f('phone').id} class="sr-only">Phone number without the country code</label>
-          <input id={f('phone').id} name="phone" type="tel" required inputmode="tel" autocomplete="tel-national" pattern="[\d\s()\-]{6,20}" class="field" aria-describedby={f('phone').error} />
+          {/* Browsers compile `pattern` with the RegExp v flag, where ( ) and - must be escaped inside [ ]. */}
+          <input id={f('phone').id} name="phone" type="tel" required inputmode="tel" autocomplete="tel-national" pattern="[\d\s\(\)\-]{6,20}" class="field" aria-describedby={f('phone').error} />
         </div>
         <p id={f('phone').error} data-error-for="phone" class="field-error" hidden></p>
       </fieldset>

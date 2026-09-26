@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
-import { file, glob } from 'astro/loaders';
+import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { parse as parseYaml } from 'yaml';
+import { routingLists } from './lib/content/routing-loader';
 import {
   authorSchema,
   countrySchema as countryDataSchema,
@@ -28,6 +28,7 @@ import {
   featureSchema,
   glossarySchema,
   guideSchema,
+  postSchema,
   homeSchema,
   hubSchema,
   kitchenSinkSchema,
@@ -59,6 +60,11 @@ const guides = defineCollection({
   loader: glob({ base: './src/content/guides', pattern: '*/index.mdx', generateId: ({ entry }) => entry.replace(/\/index\.mdx$/, '') }),
   schema: guideSchema,
 });
+// Blog posts: MDX like guides, one folder per post at a root slug (the live WordPress URLs are kept).
+const posts = defineCollection({
+  loader: glob({ base: './src/content/posts', pattern: '*/index.mdx', generateId: ({ entry }) => entry.replace(/\/index\.mdx$/, '') }),
+  schema: postSchema,
+});
 
 /* ---------- Shared facts (src/data). ---------- */
 
@@ -79,17 +85,12 @@ const integrations = defineCollection({ loader: data('*.yaml', 'integrations'), 
 
 /* ---------- Routing data. ---------- */
 
-/** Parses a YAML list and gives every row an id, as the file() loader requires. */
-const listById = (key: string) => (text: string) =>
-  (parseYaml(text) as Array<Record<string, unknown>>).map((row) => ({
-    id: `${String(row.match ?? 'exact')}:${String(row[key])}`,
-    ...row,
-  }));
-
+// Hand-written rows plus the rows scripts/posts-redirects.ts generates from the posts manifest (only for
+// rows marketing has confirmed). One collection each, so every consumer sees both files.
 const matchMode = z.enum(['exact', 'prefix', 'children']);
 
 const redirects = defineCollection({
-  loader: file('src/data/redirects.yaml', { parser: listById('from') }),
+  loader: routingLists('from', ['src/data/redirects.yaml', 'src/data/redirects-posts.yaml']),
   schema: z.strictObject({
     id: z.string().optional(),
     from: z.string().startsWith('/'),
@@ -102,7 +103,7 @@ const redirects = defineCollection({
 });
 
 const gone = defineCollection({
-  loader: file('src/data/gone.yaml', { parser: listById('path') }),
+  loader: routingLists('path', ['src/data/gone.yaml', 'src/data/gone-posts.yaml']),
   schema: z.strictObject({
     id: z.string().optional(),
     path: z.string().startsWith('/'),
@@ -149,6 +150,7 @@ export const collections = {
   trust,
   specialties,
   guides,
+  posts,
   comparisons,
   listicles,
   alternatives,

@@ -1,0 +1,69 @@
+status: published
+path: /blog/
+headKeyword: clinic management blog
+secondaryKeywords: [guides for clinic owners, clinic setup guides]
+title: 'EasyClinic Blog: Guides for Clinic Owners'
+metaDescription: Guides for doctors who run a clinic or are opening one, by topic and newest first, starting with licences and setup costs in five countries.
+h1: Guides for clinic owners
+linkLabel: Blog
+openingAnswer: >-
+  Guides for doctors and owners who run a clinic or are about to open one, grouped by topic with the
+  newest first. The start-a-clinic guides cover licences and setup costs in Kenya, India, Uganda, Nigeria
+  and Ethiopia, and every article names its author and the date it was last updated.
+summary: Guides for clinic owners, grouped by topic and newest first, starting with licences and setup costs in five countries.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary: { label: Book a 20-minute demo, href: /contact-us/#book-a-demo }
+  secondary: { label: See pricing, href: /pricing/ }
+  whatsapp: Hi, I was reading the EasyClinic blog and would like to see the software.
+links:
+  related:
+    - { href: /start-a-clinic/ }
+    - { href: /switch/ }
+    - { href: /glossary/ }
+sections:
+  # Lists every post and start-a-clinic guide rendered in this stage, grouped by topic. The list comes
+  # from the registry; these intros only show for topics that have something published.
+  - discriminant: postIndex
+    value:
+      id: topics
+      topics:
+        - topic: start-a-clinic
+          intro: Licences, registration and what it costs to open, one country at a time.
+        - topic: switching-to-emr
+          intro: Moving a clinic off paper or an old system, and what changes at the desk and in the consultation.
+        - topic: running-a-chain
+          intro: Running more than one branch on one patient record, with every branch working the same way.
+        - topic: compliance-by-country
+          intro: What the law in each country asks of a clinic that keeps patient records, and how to check a software vendor against it.
+        - topic: cura-ai
+          intro: What Cura AI and CuraPilot do in a consultation, and what they leave to the doctor.
+        - topic: billing-and-claims
+          intro: Getting paid for work the clinic has already done, from the receipt at the desk to the insurance claim.
+        - topic: patient-engagement
+          intro: Reaching patients between visits with reminders, WhatsApp messages, follow-ups and video consultations.
+        - topic: running-a-clinic
+          intro: The rest of the working day, from pharmacy stock and lab results to the reports an owner reads.
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How EasyClinic is rated on Capterra and Google
+      intro: >-
+        If a guide here leads you to look at EasyClinic itself, read what reviewers wrote first. The Capterra
+        link opens the reviews.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: 'The opening names the five countries the published start-a-clinic guides cover, and the topic list follows the spec 5.19 persona topics. The list itself is built from the pages, so it cannot drift from what is published.'
+  readsMachineWritten: 'The topic intros are one plain line each and could be tightened once each topic has posts. No FAQ: spec 2.5 asks for questions prospects have actually asked, and none are on record for the blog itself.'
+notes:
+  - 'No FAQ on purpose: the hub rules allow five to eight or none, and spec 2.5 leaves the section out when there are no true questions.'
+  - 'In production the index lists only published entries: today the ten start-a-clinic guides. Imported posts are drafts until the spec 5.18/5.19 refresh (src/content/posts).'

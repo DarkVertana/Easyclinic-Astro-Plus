@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  HEADER_CSP,
   buildRoutes,
   collapseRedirects,
   injectRoutes,
@@ -96,10 +97,17 @@ describe('resolveRules', () => {
       [{ path: '/archive/', match: 'prefix' }],
       built,
     );
-    expect(errors).toHaveLength(2);
+    expect(errors.filter((e) => /matches built page/.test(e))).toHaveLength(2);
+    // The same path is also both redirected and gone.
+    expect(errors.filter((e) => /also gone/.test(e))).toHaveLength(1);
   });
   it('accepts a children gone rule alongside its parent page', () => {
     expect(resolveRules([], [{ path: '/archive/', match: 'children' }], built).errors).toEqual([]);
+  });
+  it('rejects a path that is both redirected and gone', () => {
+    const { errors } = resolveRules([{ from: '/robotic-surgery/', to: '/' }], [{ path: '/robotic-surgery/' }], built);
+    expect(errors.join()).toMatch(/also gone/);
+    expect(resolveRules([{ from: '/wp-admin-guide/', to: '/' }], [{ path: '/wp-admin/', match: 'prefix' }], built).errors).toEqual([]);
   });
   it('flags duplicate sources', () => {
     const { errors } = resolveRules([{ from: '/a/', to: '/' }, { from: '/a', to: '/' }], [], built);
@@ -139,6 +147,16 @@ describe('buildRoutes and injectRoutes', () => {
     expect(redirectIndex).toBeLessThan(slashIndex);
     expect(goneIndex).toBeLessThan(slashIndex);
     expect(() => injectRoutes(merged, ours)).toThrow(/already injected/);
+  });
+  it('sends the header half of the CSP on every path, without restricting scripts or styles', () => {
+    const routes = buildRoutes({ redirects: [], gone: [], canonicalHost: 'www.easyclinic.io', indexingEnabled: false });
+    expect(routes[0].headers?.['Content-Security-Policy']).toBe(HEADER_CSP);
+    expect(HEADER_CSP).toMatch(/frame-ancestors 'self'/);
+    expect(HEADER_CSP).toMatch(/object-src 'none'/);
+    expect(HEADER_CSP).toMatch(/base-uri 'self'/);
+    expect(HEADER_CSP).toMatch(/form-action 'self'/);
+    // A second policy with these would block the inline code the per-page <meta> policy allows by hash.
+    expect(HEADER_CSP).not.toMatch(/default-src|script-src|style-src/);
   });
   it('fails loudly if the adapter output changes shape', () => {
     expect(() => injectRoutes([{ handle: 'filesystem' }], [])).toThrow(/trailing-slash/);

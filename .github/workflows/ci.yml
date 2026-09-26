@@ -18,12 +18,23 @@ jobs:
       - run: pnpm check
       - run: pnpm test
       - run: pnpm lint:content
+      # src/data/redirects-posts.yaml and gone-posts.yaml must match the posts manifest's confirmed rows.
+      - run: node scripts/posts-redirects.ts --check
       # Preview stage: renders drafts with placeholders; structural checks are errors.
       - run: pnpm build
       - run: pnpm test:output
       # Production stage: renders published pages only; every publish rule is an error.
       - run: pnpm build:prod
       - run: pnpm test:output
+      # Legacy URL coverage against the production build. Report only here; the launch gate is
+      # `pnpm coverage --strict` (docs/launch-checklist.md).
+      - run: pnpm coverage
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: |
+            reports/coverage.md
+            reports/coverage.json
       - run: pnpm facts:report
       - uses: actions/upload-artifact@v4
         with:

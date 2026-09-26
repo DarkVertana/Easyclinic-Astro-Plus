@@ -19,6 +19,7 @@
     "lint:content": "node scripts/lint-content.ts",
     "facts:report": "node scripts/report-facts.ts",
     "smoke": "node scripts/smoke.ts",
+    "coverage": "node scripts/check-coverage.ts",
     "lh": "node scripts/lighthouse.ts"
   },
   "dependencies": {

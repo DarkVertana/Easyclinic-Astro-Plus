@@ -1,5 +1,8 @@
 import { reference } from 'astro:content';
+import { z } from 'astro/zod';
 import { definePage } from './base';
+import { POST_TOPICS } from './constants';
+import { internalPath, isoDate } from './fields';
 import { BLOCK_NAMES, type BlockName } from './sections';
 
 /** Section types each page family may use (spec 7.4 templates). */
@@ -12,7 +15,7 @@ const COMPANY: BlockName[] = ['prose', 'demoForm', 'contactCard', 'dataTable', '
 const CORE: BlockName[] = ['prose', 'featureRows', 'painBlocks', 'moduleGrid', 'proofBlock', 'testimonialRow', 'stepList', 'dataTable', 'scopeBox', 'contentCards', 'flowDiagram', 'splitTable', 'inlineCta'];
 const FEATURE: BlockName[] = [...CORE, 'regulatorStrip', 'regulatorTable', 'rolesMatrix'];
 const SOLUTION: BlockName[] = [...CORE, 'dayTimeline', 'rolesMatrix', 'regulatorStrip', 'pricingCards', 'clinicTypes'];
-const HUB: BlockName[] = ['hubGrid', 'demoForm', 'journeyDiagram', 'moduleGrid', 'prose', 'proofBlock', 'testimonialRow', 'planMatrix', 'dataTable', 'personaRouter', 'featureRows', 'inlineCta'];
+const HUB: BlockName[] = ['hubGrid', 'demoForm', 'journeyDiagram', 'moduleGrid', 'prose', 'proofBlock', 'testimonialRow', 'planMatrix', 'dataTable', 'personaRouter', 'featureRows', 'inlineCta', 'postIndex'];
 const AI: BlockName[] = [...CORE, 'studyCard', 'regulatorStrip'];
 const TRUST: BlockName[] = [...CORE, 'regulatorTable', 'regulatorStrip', 'studyCard', 'integrationDirectory', 'demoForm'];
 const SPECIALTY: BlockName[] = [...CORE, 'dayTimeline'];
@@ -31,7 +34,14 @@ export const aiSchema = definePage('ai', AI);
 export const curapilotSchema = definePage('curapilot', AI);
 export const trustSchema = definePage('trust', TRUST);
 export const specialtySchema = definePage('specialty', SPECIALTY);
-export const guideSchema = definePage('guide', ['inlineCta', 'dataTable', 'stepList', 'prose']);
+const GUIDE: BlockName[] = ['inlineCta', 'dataTable', 'stepList', 'prose'];
+export const guideSchema = definePage('guide', GUIDE);
+/** Blog posts (spec 3.6, 5.19): guide blocks, plus the /blog/ topic and the landing page that owns the post. */
+export const postSchema = definePage('post', GUIDE, () => ({
+  topic: z.enum(POST_TOPICS),
+  owner: internalPath,
+  originallyPublished: isoDate.optional(),
+}));
 export const comparisonSchema = definePage('comparison', COMPARISON);
 export const listicleSchema = definePage('listicle', COMPARISON);
 export const customersSchema = definePage('customers', CUSTOMERS);

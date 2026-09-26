@@ -151,6 +151,11 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
     err('editorial-pass', 'editorialPass', "Record the editor's two-question pass before publishing (spec 6.5)");
   }
 
+  // Spec 3.6: every post is owned by a landing page. /blog/ lists posts; it does not own them.
+  if (family === 'post' && typeof data.owner === 'string' && data.owner.startsWith('/blog/')) {
+    err('owner', 'owner', 'Name the landing page that owns this post (spec 3.6); /blog/ lists posts but owns none');
+  }
+
   return issues;
 }
 
