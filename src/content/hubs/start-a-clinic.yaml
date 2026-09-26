@@ -3,11 +3,11 @@ path: /start-a-clinic/
 headKeyword: how to start a clinic
 secondaryKeywords: [clinic licence guides, clinic setup cost]
 title: 'Start a Clinic: Licences, Costs and Setup by Country'
-metaDescription: Step-by-step guides to opening a clinic in Kenya, India and Uganda, with licensing, setup costs and choosing software before your first patient.
+metaDescription: Guides to opening a clinic in Kenya, India, Uganda, Nigeria and Ethiopia, with licensing, setup costs and choosing software before the first patient.
 h1: Start a clinic, country by country
 linkLabel: Start a clinic
 openingAnswer: These guides take you from the licence application to the first patient, one country at a time. Each one covers registration, what a clinic costs to set up, and when to put software in place so the front desk works on day one.
-summary: Licensing, setup costs and software choices for opening a clinic in Kenya, India and Uganda.
+summary: Licensing, setup costs and software choices for opening a clinic in Kenya, India, Uganda, Nigeria and Ethiopia.
 author: subhashish-saha
 lastUpdated: 2026-09-26
 ctas:
@@ -35,12 +35,26 @@ sections:
         - items:
             - { href: /clinic-in-india/, label: Starting a clinic in India, description: 'Planning, registration and compliance for a private clinic.' }
             - { href: /how-much-does-it-cost-to-open-a-clinic-in-mumbai/, label: What a clinic in Mumbai costs to open, description: 'Space, equipment, licences and staff costs in rupees.' }
+            - { href: /how-to-get-approval-from-the-medical-practitioners-and-dentists-council-in-india-nmc-dci/, label: NMC registration for doctors and dentists, description: 'How doctors and dentists register before the clinic opens, and who registers the clinic itself.' }
+            - { href: /patient-data-privacy-laws-in-india/, label: Patient data privacy laws in India, description: 'What the law asks of a clinic that keeps patient records, and what to ask any software vendor.' }
   - discriminant: hubGrid
     value:
       heading: Uganda
       groups:
         - items:
             - { href: /clinic-in-uganda/, label: Starting a clinic in Uganda, description: 'Registration, licensing and setup for a private clinic in Uganda.' }
+  - discriminant: hubGrid
+    value:
+      heading: Nigeria
+      groups:
+        - items:
+            - { href: /clinic-in-nigeria/, label: Starting a clinic in Nigeria, description: 'Business registration, state licensing, doctors and costs in naira.' }
+  - discriminant: hubGrid
+    value:
+      heading: Ethiopia
+      groups:
+        - items:
+            - { href: /clinic-in-ethiopia/, label: Starting a clinic in Ethiopia, description: 'Ministry of Health registration, the permits and setup costs in birr.' }
   - discriminant: proofBlock
     value:
       heading: Clinics that started on EasyClinic

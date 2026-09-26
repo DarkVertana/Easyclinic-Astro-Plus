@@ -35,6 +35,19 @@ export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Rec
     const author = d.author ? (await getEntry(d.author))?.data : null;
     nodes.push(article(site, { url, headline: d.h1, description: d.metaDescription, dateModified: d.lastUpdated, author }));
   }
+  // Spec 5.14: listicles carry the ranked vendors as an ItemList (names and their own sites only; no ratings).
+  const vendors = d.sections.find((s) => s.discriminant === 'vendorList') as { value: { vendors: Array<{ name: string; rank?: number; url?: string }> } } | undefined;
+  if (record.family === 'listicle' && vendors) {
+    const ranked = vendors.value.vendors.map((v, i) => ({ ...v, order: v.rank ?? i + 1 })).sort((a, b) => a.order - b.order);
+    nodes.push({
+      '@type': 'ItemList',
+      '@id': `${url}#vendors`,
+      name: d.h1,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: ranked.length,
+      itemListElement: ranked.map((v, i) => ({ '@type': 'ListItem', position: i + 1, name: v.name, ...(v.url ? { url: v.url } : {}) })),
+    });
+  }
   // Glossary terms as a DefinedTermSet (plan D.2).
   const glossary = d.sections.find((s) => s.discriminant === 'glossaryList') as { value: { terms: Array<{ id: string; term: string; definition: string }> } } | undefined;
   if (glossary) {
