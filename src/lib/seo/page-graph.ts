@@ -1,7 +1,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { PageRecord } from '../content/registry.ts';
 import type { Crumb } from './breadcrumbs.ts';
-import { article, breadcrumbList, faqPage, graph, localBusiness, offers, organization, scholarlyArticle, softwareApplication, webPage, website, type PriceData } from './jsonld.ts';
+import { article, plain, breadcrumbList, faqPage, graph, localBusiness, offers, organization, scholarlyArticle, softwareApplication, webPage, website, type PriceData } from './jsonld.ts';
 
 /** Picks the JSON-LD nodes for a page by family (spec 2.10, with the plan's corrections). */
 export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Record<string, unknown>> {
@@ -35,9 +35,22 @@ export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Rec
     const author = d.author ? (await getEntry(d.author))?.data : null;
     nodes.push(article(site, { url, headline: d.h1, description: d.metaDescription, dateModified: d.lastUpdated, author }));
   }
+  // Glossary terms as a DefinedTermSet (plan D.2).
+  const glossary = d.sections.find((s) => s.discriminant === 'glossaryList') as { value: { terms: Array<{ id: string; term: string; definition: string }> } } | undefined;
+  if (glossary) {
+    nodes.push({
+      '@type': 'DefinedTermSet',
+      '@id': `${url}#terms`,
+      name: d.h1,
+      hasDefinedTerm: glossary.value.terms.map((t) => ({ '@type': 'DefinedTerm', '@id': `${url}#${t.id}`, name: t.term, description: plain(t.definition) })),
+    });
+  }
   if (hasBreadcrumb) nodes.push(breadcrumbList(site, url, trail));
   if (d.faq.length) nodes.push(faqPage(url, d.faq));
   if (record.path === '/contact-us/') nodes.push(localBusiness(site));
-  if (record.path === '/about-us/') nodes.push(organization(site));
+  if (record.path === '/about-us/') {
+    const founders = (await getCollection('authors')).filter((a) => /founder/i.test(a.data.role)).map((a) => a.data.name);
+    nodes.push(organization(site, founders));
+  }
   return graph(nodes);
 }

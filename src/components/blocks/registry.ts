@@ -6,7 +6,13 @@ import ContentCards from './ContentCards/ContentCards.astro';
 import CostExamples from './CostExamples/CostExamples.astro';
 import CountryMoney from './CountryMoney/CountryMoney.astro';
 import DataTable from './DataTable/DataTable.astro';
+import GlossaryList from './GlossaryList/GlossaryList.astro';
+import ComparisonTable from './ComparisonTable/ComparisonTable.astro';
 import DayTimeline from './DayTimeline/DayTimeline.astro';
+import DecisionMatrix from './DecisionMatrix/DecisionMatrix.astro';
+import SourceList from './SourceList/SourceList.astro';
+import TestimonialGrid from './TestimonialGrid/TestimonialGrid.astro';
+import VendorList from './VendorList/VendorList.astro';
 import DemoForm from './DemoForm/DemoForm.astro';
 import FlowDiagram from './FlowDiagram/FlowDiagram.astro';
 import HubGrid from './HubGrid/HubGrid.astro';
@@ -33,6 +39,12 @@ import TestimonialRow from './TestimonialRow/TestimonialRow.astro';
 /** One component per section discriminant; the `satisfies` keeps it in step with src/schemas/sections.ts. */
 export const BLOCKS = {
   addOns: AddOns,
+  glossaryList: GlossaryList,
+  comparisonTable: ComparisonTable,
+  decisionMatrix: DecisionMatrix,
+  sourceList: SourceList,
+  testimonialGrid: TestimonialGrid,
+  vendorList: VendorList,
   clinicTypes: ClinicTypes,
   contactCard: ContactCard,
   contentCards: ContentCards,

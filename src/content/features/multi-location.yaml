@@ -1,0 +1,353 @@
+# Multi-location feature page (spec 5.11 "/features/multi-location", keyword row 4.1, cannibalisation rules 4.5).
+status: published
+headKeyword: multi-location clinic management software
+secondaryKeywords:
+  - multi-clinic software
+  - multi-site practice management software
+title: 'Multi-Location Clinic Software: EasyClinic'
+metaDescription: 'Multi-location clinic management software: one login and one patient record for every branch, and on Enterprise, price lists and SOPs set at head office.'
+h1: One system for every clinic location
+linkLabel: Multi-location clinic software
+eyebrow: Multi-location
+openingAnswer: >-
+  EasyClinic is multi-location clinic management software: every branch is a location in one account,
+  from a second clinic to a chain of {fact:largestChain} locations, so each patient has one record and
+  each doctor one login wherever they work. More than one location comes with the Premium plan, at
+  {price:usd.premium.annual} per doctor per month billed annually, and Enterprise adds central control of
+  every location, with head office setting price lists and SOPs once for all of them.
+summary: >-
+  Every branch as a location in one account, with one patient record and one login per person. More
+  than one location comes with Premium, and central control with Enterprise.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic multi-location page and would like to see how our branches would sit in one account.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: second-branch
+      heading: Where a second branch goes wrong
+      intro: >-
+        A second branch is often opened on whatever is quickest to set up there, a copy of the first
+        clinic's software or a paper register. These are the first things to go wrong. The patient and
+        the doctors below are illustrations, not a named clinic.
+      items:
+        - heading: The same patient is registered twice
+          body: >-
+            A patient who has come to the main clinic for six years walks into the new branch and is
+            registered as new. Her blood pressure readings and her last prescriptions are across town, so
+            the doctor starts from what she remembers.
+          fix: >-
+            Every branch is a location in the same EasyClinic account, so she has one record. The doctor
+            at the new branch opens the chart the main clinic has been writing in.
+        - heading: The new branch charges last year's fee
+          body: >-
+            The fee list at the new branch is a printout from the month it opened. The main clinic raised
+            its consultation fee in April and the new branch never heard. Nobody notices until someone
+            compares the takings at the end of the quarter.
+          fix: >-
+            On Enterprise, head office keeps the price lists for every branch and the bill picks the price
+            for the branch where the patient pays, so a fee change is made once.
+        - heading: The doctor who covers both branches keeps two logins
+          body: >-
+            The paediatrician sees patients at the main clinic in the mornings and at the new branch on
+            Thursday evenings. On two systems she has two passwords and two patient lists, and on Thursday
+            she cannot see what she wrote on Monday.
+          fix: >-
+            She signs in with one login at both branches and writes on the same patient record, in the
+            same templates.
+
+  - discriminant: featureRows
+    value:
+      id: how-it-works
+      heading: How one account holds every branch
+      intro: >-
+        What changes when the second clinic opens, in the order you meet it. A second location needs
+        Premium or Enterprise, and moving stock between branches needs Enterprise.
+      items:
+        - heading: Each branch is a location in one account
+          body: >-
+            A new branch is added as a location in the account your first clinic already uses, with its
+            own appointment book and its own takings. Every branch works from the same patient list, and
+            head office can look at one branch on its own or at all of them together.
+          plan: premium
+          link:
+            label: Compare what each plan includes
+            href: /pricing/
+        - heading: One patient, one record, at every branch
+          body: >-
+            A patient registered at one branch is the same patient at the next. Everything written at the
+            main clinic, from the visit notes to the scanned reports, is on the chart the second branch's
+            doctor opens, so the history is not taken twice and last month's blood test is not repeated by
+            mistake.
+          link:
+            label: Read how the patient record works
+            href: /features/emr/
+        - heading: One login for each person, at whichever branch they work
+          body: >-
+            A doctor who works at two branches signs in with the same login at both. Each login carries a
+            role, such as doctor or pharmacist, which decides what it can open, and a role's access can be
+            set location by location. The reception login, included in the price, cannot open the EMR or
+            issue a prescription.
+        - heading: Appointments for every branch from one desk
+          body: >-
+            Appointments can be booked centrally across locations, so a central phone line or call centre
+            books a patient into whichever branch's calendar suits them. Each branch still runs its own
+            slots and its own walk-ins.
+          link:
+            label: See how appointments work
+            href: /features/appointment-scheduling/
+        - heading: Reports for one branch, or every branch side by side
+          body: >-
+            Dashboards and reports come with every plan. With more than one location, a report runs for a
+            single branch or across all of them, and only the logins allowed to see a report can open it.
+            Reports export to Excel and PDF.
+          bullets:
+            - A reporting server and custom analytics for large chains, on Enterprise
+          link:
+            label: See the reports and dashboards
+            href: /features/reports-and-dashboards/
+        - heading: Stock moved between branches
+          body: >-
+            Stock moves from one branch to another, or from a central store out to the clinics, on a
+            transfer that is tracked from the day it leaves one branch until the other receives it. A
+            branch that runs short of an antibiotic takes it from a branch that holds plenty, instead of
+            buying it from the chemist next door.
+          plan: enterprise
+          link:
+            label: See pharmacy and inventory
+            href: /features/pharmacy-and-inventory/
+
+  - discriminant: dataTable
+    value:
+      id: head-office-and-branch
+      heading: What head office sets and what each branch keeps
+      intro: >-
+        Premium runs more than one location in one account. Central control of every location comes with
+        Enterprise, and this is how it divides the work between head office and the branches.
+      caption: Who sets what in a group of clinics on the Enterprise plan
+      columns:
+        - What
+        - Who sets it
+        - What happens at the branch
+      rows:
+        - - Clinical SOPs
+          - Head office
+          - Every branch works from the same SOPs, and SOP tracking lets the chief medical officer see how closely each branch follows them.
+        - - Price lists
+          - Head office
+          - The bill picks the price for the branch, from one list for the whole group or a list of the branch's own.
+        - - Note templates and clinical forms
+          - Head office
+          - Doctors at every branch write in the same templates, so a note from one branch reads like a note from any other.
+        - - Access for each type of clinic
+          - Head office
+          - Owned branches, franchise clinics, mobile medical units and associate clinics are each given their own access to data and features.
+        - - Discounts above the limit
+          - Head office sets the limit
+          - A larger discount waits for approval from the person head office names, as one of Enterprise's workflow rules.
+        - - Appointment slots and doctor timings
+          - The branch
+          - Set around the branch's own doctors and opening hours.
+        - - Staff and shifts
+          - The branch
+          - Each branch organises its own staff and their shifts.
+      note: Specialty EMR templates and your own clinical forms are also part of Premium.
+
+  - discriminant: stepList
+    value:
+      id: new-branch
+      heading: Opening a new branch on EasyClinic
+      intro: >-
+        The steps are the same for the second branch and the twentieth. How long each takes depends on the
+        branch, so this list gives the order rather than a date.
+      steps:
+        - title: Tell us about the branch
+          body: >-
+            Who will work there, and whether its patients are on paper or on another system today. If a
+            franchisee will run it, say so, because a franchise can be given different access from an
+            owned branch.
+        - title: Add the location
+          body: >-
+            The branch is added as a new location in the account your clinics already use. A clinic on
+            Professional, which covers one location, moves to Premium at this step.
+        - title: Put head office settings in place
+          body: >-
+            On Enterprise, head office's price lists and SOPs are set for the new branch before its first
+            patient, and its doctors write in the same templates as everyone else. The branch sets its own
+            appointment slots and doctor timings.
+        - title: Give everyone a login
+          body: >-
+            Each member of staff gets a login with a role. A doctor who already works at another branch
+            keeps the login she has, and the reception login is included in the price.
+        - title: Bring the records across
+          body: >-
+            If the branch has patients on another system, their records are moved across in a data
+            migration. Old paper notes can be scanned and attached to each patient's record.
+        - title: Train the branch staff
+          meta: Four short sessions, about two hours in all
+          body: >-
+            Training is unlimited on every plan, so the new branch's staff get the same path as the first
+            branch: basic training (40 minutes), EMR scenarios (40 minutes), practice exercises (20
+            minutes) and the road to expertise (20 minutes).
+        - title: Go live beside the other branches
+          body: >-
+            From its first patient, the branch's visits and takings appear in the reports next to the other
+            branches. Support stays unlimited, and Premium and Enterprise include a named account manager.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        The largest chain on EasyClinic has {fact:largestChain} locations. These are EasyClinic's public
+        ratings.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: dataTable
+    value:
+      id: plans
+      heading: What more than one location costs
+      intro: >-
+        EasyClinic is priced per doctor per month, and the plan decides whether you can run more than one
+        location. The reception login is included on every plan, and there is no contract.
+      caption: Locations and prices by plan, per doctor per month on annual billing
+      columns:
+        - Plan
+        - Locations
+        - Price per doctor per month
+        - What it adds for a group of clinics
+      rows:
+        - - Professional
+          - One
+          - '{price:usd.professional.annual} billed annually, {price:inr.professional.annual} in India'
+          - A single clinic. A second branch means moving to Premium.
+        - - Premium
+          - More than one
+          - '{price:usd.premium.annual} billed annually, {price:inr.premium.annual} in India'
+          - More than one location, specialty EMR templates, your own clinical forms and a named account manager
+        - - Enterprise
+          - More than one, under central control
+          - Quoted for your group
+          - Central control of every location, clinical SOP tracking across branches, stock transfers and a reporting server with custom analytics
+      note: >-
+        Quarterly billing costs more: {price:usd.premium.quarterly} per doctor per month on Premium, or
+        {price:inr.premium.quarterly} in India. [See every plan side by side](/pricing/).
+
+faqHeading: Questions owners ask before opening a second branch
+faq:
+  - question: We run one clinic today. Do we change systems when we open a second?
+    answer: >-
+      No: the second branch is added as a new location in the account you already use, so its doctors
+      open the same patient records from the first day. Professional covers one location, so a clinic on
+      Professional moves to Premium, which covers more than one, at {price:usd.premium.annual} per doctor
+      per month billed annually or {price:inr.premium.annual} in India. EasyClinic's published prices are
+      per doctor, with no separate line for a branch; Enterprise has no list price and is quoted for each
+      group.
+  - question: When does a group of clinics need Enterprise rather than Premium?
+    answer: >-
+      When head office wants to control the branches as well as run them in one account. Enterprise adds
+      central control of every location, clinical SOP tracking across branches, stock transfers between
+      branches and workflow rules, such as approval for a discount above the limit. Premium runs more than
+      one location without those.
+  - question: Does a patient have to register again at the second branch?
+    answer: >-
+      No: a patient registered at one branch is the same patient at every branch, so the doctor at the
+      second branch opens the record the first branch has been writing in, with every visit note and
+      scanned report on it.
+  - question: Can one call centre book appointments for every branch?
+    answer: >-
+      Yes, appointments can be booked centrally across locations, so one phone line books a patient into
+      whichever branch suits them. Each branch keeps its own slots and walk-ins, and the patient arrives at
+      a branch that already has her record.
+  - question: Does each branch need its own server?
+    answer: >-
+      No: EasyClinic is cloud software, so every branch works in the same account over the internet, and
+      Enterprise offers private cloud hosting on request. It does not run fully offline today, so each
+      branch needs a working connection, and a backup such as a mobile hotspot is worth keeping for the day
+      the main line drops.
+  - question: Who trains the staff at a new branch?
+    answer: >-
+      We do, on every plan: training and support are unlimited, so each new branch's staff take the same
+      four short sessions as the first branch, about two hours in all. Premium and Enterprise also include
+      a named account manager.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor on the Professional plan, with a second branch added later in the same account.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: One record shared by every specialist, with roles that decide who sees what.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: SOP tracking and stock transfers across branches, for chains of 2 to {fact:largestChain} locations.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD on one patient record, from the registration queue to the pharmacy.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /pricing/
+      label: Pricing and the Enterprise plan
+      description: Per doctor per month, with Premium covering more than one location and Enterprise quoted for each group.
+    - href: /features/reports-and-dashboards/
+      label: Reports and dashboards
+      description: The owner's morning numbers, with every branch side by side.
+    - href: /features/pharmacy-and-inventory/
+      label: Pharmacy and inventory
+      description: Dispensing from the prescription, and stock moved between branches on Enterprise.
+
+closing:
+  heading: See your branches in one account before you decide
+  body: >-
+    Book a 20-minute demo and bring your branch list, and we show how your locations would sit in one
+    account and what head office would set for all of them. If a call is too much today, send us a
+    WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    How EasyClinic's price list splits locations between plans, and the four clinic types head office can
+    give their own access (owned, franchise, mobile medical unit, associate), come from EasyClinic's own
+    price list and live chain page.
+  readsMachineWritten: >-
+    The pain scenes are labelled illustrations rather than a named customer's story, and the page has no
+    named person or measured multi-location outcome, so replace them when a group customer supplies a real
+    case.
+
+notes:
+  - 'Title is the spec 4.1 wording (42 characters). Meta rewritten to lead with the head keyword and avoid the group of three in the spec wording ("One login for every branch, central price lists and SOPs, per-branch reports"); head office price lists and SOPs are scoped to Enterprise, as on the rest of the page; 153 characters, no tokens. H1 is the spec 4.1 wording.'
+  - 'Architecture ("one tenant, many branches", spec 5.11) is described in plain words as "each branch is a location in one account". No technical claims (database, isolation, sync) are made; the only hosting claim is Enterprise private cloud hosting on request, from plans.yaml.'
+  - 'Plans: Professional one location, Premium "More than one location", Enterprise "Central control of every location", "Clinical SOP tracking across branches", "Inventory and stock transfers", "Workflow rules", "A reporting server and custom analytics" and "Private cloud hosting on request" (plans.yaml). Head office control (price lists by branch, access by clinic type, SOPs) is attributed to Enterprise because plans.yaml puts central control there; which of these Premium also allows is not known, so the page does not claim it for Premium.'
+  - 'Grounding: live /clinic-chain-software/ (read 2026-09-26) states plainly: owned clinics, franchisees, mobile medical units and associate clinics with access levels to data and features for each type; "One Patient One Record" and central access to patient records across locations; centralised multi-location scheduling and a centralised call centre; roles (Administrator, Doctor, Pharmacist) with multi-location access settings and an audit trail; price lists by payor, location, customer type, clinician and visit type with automated price selection; discount approval through the Workflow Manager; cross-location analytics, access-controlled reports and Excel and PDF export; stock transfers between locations or from a central warehouse, tracked through transit; SOP adherence overseen by chief medical officers.'
+  - 'Left out from that page: "5 or 500 clinics" and "over 100 graphical dashboards" (marketing numbers); HIPAA, PCI-DSS, GDPR, ABHA, HL7, FHIR, DICOM and coding standards (compliance and integration status unknown); Power BI and Azure Data Factory (integration status unknown); data warehouse beyond the plans.yaml reporting server; roster, attendance and incentive plans (HR module, plan unknown); patient portal family accounts across branches (Enterprise, and owned by /features/patient-engagement/).'
+  - 'Left out for lack of a confirmed fact: how long a new branch takes to go live (no day count; {fact:goLiveDays} is the fastest single-clinic case); how consent works when a patient record is shared across branches (spec 5.11 says "with consent"; the page describes only the shared record); whether staff at one branch can be kept from another branch''s patients (data segregation beyond "access for each type of clinic"); whether a doctor who works at two branches needs one licence or two; whether any per-location fee exists (live /pricing/ is per doctor, the live Kenya listicle says "per user and per location"; the FAQ states only what the published price list says); which plan includes central booking and location price lists; consolidated invoicing across branches (billing owns invoices and GST, rule 4.5.2); data export on leaving.'
+  - 'FAQ (editor pass, 26 September 2026): six questions, as spec 5.11 asks. The franchise question and the separate "per branch or per doctor" question were dropped because /solutions/clinic-chain/ carries both (it owns "franchise clinic software", spec 4.2); the per-doctor pricing answer is folded into the first FAQ, which answers what the second branch costs (spec 2.5). "Price lists by location" is not a FAQ here because /features/revenue-management/ owns it (spec 5.11). Added "Does a patient have to register again at the second branch?", answered from the shared record only (consent handling unknown).'
+  - 'Editor pass removals: "counted the same way at each" on the reports row (not stated on the live page); "usually the chief medical officer" (the live page says CMOs oversee SOP adherence, not that they usually set SOPs); the featureRows intro no longer says each row names its plan, because the plan for central booking and cross-location reports is unknown; the pain intro now says the patient and doctors are illustrations; the clinic-chain related description lost its group of three.'
+  - 'Cannibalisation (4.5): no GST, invoice or claim mechanics; no leakage, denial or ageing language (the fee and discount scenes are framed as control, not revenue cycle); WhatsApp appears nowhere as infrastructure. Reports, stock transfers and appointment booking are one row each, linking to their own feature pages.'
+  - 'Proof block is the badges variant with fact tokens (the registry resolves tokens in badge ratings). Review counts are unknown (capterraReviews and googleReviews null) and are left out. No testimonial: all are placed on other pages.'
+  - 'No heroMedia and no media objects: screenshots do not exist yet. When spec 12 captures exist, the hero is the branch-by-branch KPI comparison (five branches), and the stock transfer screen belongs on the stock row.'
+  - 'Related links: all five solution pages (spec 2.9), /pricing/ for the Enterprise plan (spec 5.11), plus /features/reports-and-dashboards/ and /features/pharmacy-and-inventory/ (8 in total).'

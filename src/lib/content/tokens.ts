@@ -87,6 +87,9 @@ export function resolveTokens(input: string, data: TokenData, path: string): Res
   return { text, issues };
 }
 
+/** Editor-only fields: never rendered, so tokens written there (to discuss a fact) are left as text. */
+const UNRENDERED = new Set(['notes']);
+
 /** Resolves tokens in every string of an entry's data, returning a copy and the issues found. */
 export function resolveDeep<T>(value: T, data: TokenData, path = ''): { value: T; issues: Issue[] } {
   const issues: Issue[] = [];
@@ -100,7 +103,7 @@ export function resolveDeep<T>(value: T, data: TokenData, path = ''): { value: T
     if (Array.isArray(v)) return v.map((item, i) => visit(item, `${p}[${i}]`));
     if (v && typeof v === 'object' && !(v instanceof Date) && Object.getPrototypeOf(v) === Object.prototype) {
       const out: Record<string, unknown> = {};
-      for (const [k, item] of Object.entries(v)) out[k] = visit(item, p ? `${p}.${k}` : k);
+      for (const [k, item] of Object.entries(v)) out[k] = UNRENDERED.has(k) ? item : visit(item, p ? `${p}.${k}` : k);
       return out;
     }
     return v;

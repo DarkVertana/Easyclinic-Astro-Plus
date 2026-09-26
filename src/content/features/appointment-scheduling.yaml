@@ -1,0 +1,369 @@
+# Appointment scheduling feature page (spec 5.11 "/features/appointment-scheduling", keyword row 4.1, cannibalisation 4.5).
+# Replaces the live /appointment-scheduling-at-easy-clinic/ (redirect already in src/data/redirects.yaml).
+status: published
+headKeyword: clinic appointment scheduling software
+secondaryKeywords:
+  - patient appointment software
+  - doctor appointment booking software
+  - online patient booking
+title: 'Clinic Appointment Scheduling Software: EasyClinic'
+metaDescription: 'Clinic appointment scheduling software with walk-ins and booked slots on one calendar. Reminders go by SMS and email, and on WhatsApp from Premium.'
+h1: Appointment scheduling that cuts no-shows
+linkLabel: Appointment scheduling
+eyebrow: Appointment scheduling
+openingAnswer: >-
+  EasyClinic's appointment scheduling puts booked slots and walk-ins on one calendar for your doctors and
+  consulting rooms, and sends booked patients a reminder by SMS and email before the visit, with WhatsApp
+  added on the Premium plan. The calendar and the SMS and email reminders come with every plan, from
+  {price:usd.professional.annual} per doctor per month billed annually, or {price:inr.professional.annual}
+  in India.
+summary: >-
+  Booked slots and walk-ins on one calendar, with SMS and email reminders on every plan and WhatsApp
+  reminders on Premium.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic appointment scheduling page and would like to see the calendar and the reminders in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-the-desk-loses-the-day
+      heading: Where the front desk loses the day
+      intro: >-
+        The appointment book is the first screen a clinic opens in the morning and the last one it closes.
+        These are the moments it usually goes wrong.
+      items:
+        - heading: The 4pm patient forgot
+          body: >-
+            She booked a fortnight ago for a follow-up, and at 4pm her slot sits empty. Nobody at the desk
+            had a spare minute to ring round the afternoon list, and the walk-in who asked for that time at
+            noon was told the book was full.
+          fix: >-
+            Booked patients get a reminder by SMS and email, sent days or hours before the visit as the
+            clinic chooses, and on WhatsApp as well on the Premium plan. The desk can see who has
+            acknowledged the reminder and ring only the rest.
+          href: /features/whatsapp/
+          linkLabel: How WhatsApp reminders are sent
+        - heading: Booked patients and walk-ins in one corridor
+          body: >-
+            At ten in the morning a patient with a 10:15 booking is sitting beside four walk-ins who came
+            at nine. Everyone thinks they are next, and the receptionist settles it by memory and by
+            whoever complains loudest.
+          fix: >-
+            Walk-ins join the same calendar as the booked appointments, so the desk works from one list. A
+            patient who needs to be seen sooner can be moved up the queue, and waiting patients are told
+            automatically when their wait changes.
+        - heading: Two doctors, two diaries
+          body: >-
+            The physician works mornings and the surgeon comes in on Tuesday and Friday evenings, each
+            with a separate diary. A patient is booked into the surgeon's Wednesday, which does not exist,
+            and finds out at the door.
+          fix: >-
+            Each doctor's schedule comes from a template built on the clinic's opening hours and that
+            doctor's preferences. The surgeon's two evenings sit on the same calendar as the physician's
+            mornings, so the desk books from one view of who is in when.
+        - heading: Nobody knows who is still waiting
+          body: >-
+            The doctor calls out for the next patient, and reception has to check the register and then
+            the waiting room to work out who arrived first. The bill for the patient who just left is
+            written up later from memory.
+          fix: >-
+            The appointment screen shows each patient's status through the visit, from check-in until they
+            leave, and the bill is raised from that same screen in one click.
+
+  - discriminant: dataTable
+    value:
+      id: what-no-shows-cost
+      heading: How much do no-shows cost a clinic?
+      intro: >-
+        Take an example clinic with 20 booked slots a day and a 15% no-show rate: three slots sit empty
+        every day. With a ₹500 consult fee that is ₹1,500 of fees lost a day, or ₹36,000 over a 24-day
+        month, and each of those patients who turns up instead wins back ₹500. The numbers are for
+        illustration, and the table sets out the arithmetic with a Kenyan fee beside the Indian one.
+      caption: 'An illustration, not a measured result: what no-shows cost at 20 booked slots a day'
+      columns:
+        - The arithmetic
+        - In rupees
+        - In shillings
+      rows:
+        - - Booked slots in a day
+          - '20'
+          - '20'
+        - - No-show rate, for the example
+          - 15%
+          - 15%
+        - - Empty slots in a day (20 × 15%)
+          - '3'
+          - '3'
+        - - Consult fee, for the example
+          - ₹500
+          - KES 1,500
+        - - Fees lost in a day (3 × the fee)
+          - ₹1,500
+          - KES 4,500
+        - - Fees lost over 24 working days (six days a week for four weeks)
+          - ₹36,000
+          - KES 108,000
+        - - Won back over the month if one of the three turns up each day (24 × the fee)
+          - ₹12,000
+          - KES 36,000
+      note: >-
+        This is an illustration with round numbers, not a measured result. The 15% rate and the two fees
+        were chosen to make the arithmetic easy to follow, so put in your own numbers. EasyClinic has not
+        published a measured no-show reduction from its customers, and this page does not claim one.
+
+  - discriminant: featureRows
+    value:
+      id: how-it-works
+      heading: How the calendar works, from the booking to the bill
+      intro: >-
+        What the front desk works from all day. The calendar and its walk-ins come with every plan, and a
+        row tagged with a higher plan needs that plan. The full list per plan is on the
+        [pricing page](/pricing/).
+      items:
+        - heading: Doctors and consulting rooms on one calendar
+          body: >-
+            Each doctor's hours come from a schedule template set to the clinic's opening hours and that
+            doctor's preferences, so the full-time physician and the Tuesday-evening surgeon sit side by
+            side. Consulting rooms and other resources are scheduled on the same screen as the
+            appointments, and a change made at the desk shows on the calendar straight away.
+        - heading: Walk-ins beside booked slots
+          body: >-
+            Walk-ins join the same calendar as booked appointments, so the day runs from one list. When a
+            patient needs to be seen sooner, the desk can move them up the queue by need or by appointment
+            type.
+          plan: professional
+        - heading: Reminders by SMS and email on every plan
+          body: >-
+            Reminders go out automatically, days or hours before the visit, at the times the clinic sets.
+            EasyClinic tracks which patients have acknowledged their reminder, so the desk spends its calls
+            on the patients who have not.
+          plan: professional
+          link:
+            label: Read the sample reminders
+            href: /features/appointment-scheduling/#reminder-samples
+        - heading: Reminders on WhatsApp
+          body: >-
+            On Premium, reminders also reach the patient on WhatsApp, sent from the clinic software instead
+            of from the receptionist's own phone.
+          plan: premium
+          link:
+            label: Read how WhatsApp messages are sent
+            href: /features/whatsapp/
+        - heading: The waiting room, as it stands
+          body: >-
+            The appointment screen shows where each patient is in the visit, from check-in until they
+            leave, so the desk knows who is still waiting. When the doctor runs late, waiting patients are
+            told of the change to their wait automatically, instead of queueing at the counter to ask.
+        - heading: From the appointment to the bill
+          body: >-
+            When the consult ends, the bill and the payment are done from the appointment screen in one
+            click. Day-end reports give the owner a summary of the day.
+          plan: professional
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Patients who book themselves
+          body: >-
+            Patients book their own appointments online through the patient portal and app, which come with
+            Enterprise, so the desk no longer takes every booking by phone.
+          plan: enterprise
+          link:
+            label: Read what the patient portal does
+            href: /features/patient-engagement/
+        - heading: Every branch's calendar from one place
+          body: >-
+            With more than one branch, you can see and manage the appointments at every branch from one
+            place and keep the same scheduling rules at each. Resources can also be shared between
+            locations. A second location needs Premium, and central control of every location comes with
+            Enterprise.
+          plan: premium
+          link:
+            label: Read how multi-location works
+            href: /features/multi-location/
+
+  - discriminant: dataTable
+    value:
+      id: reminder-samples
+      heading: What a reminder can say
+      intro: >-
+        Two sample reminders, written for this page with made-up names and times. The clinic chooses how
+        long before the visit its reminders go out.
+      caption: Sample reminder messages, one for India and one for Kenya
+      columns:
+        - Sample
+        - When it goes
+        - Message
+      rows:
+        - - India, by SMS (every plan)
+          - The evening before
+          - >-
+            Reminder from Dr Anita Rao's clinic: your appointment is tomorrow, Thursday, at 4:30pm. If you
+            cannot come, please call the clinic so the slot can go to another patient.
+        - - Kenya, on WhatsApp (Premium)
+          - Two hours before
+          - >-
+            Hello Mary, this is a reminder from Dr Otieno's clinic. Your appointment is today at 11:00am.
+            If you are running late or cannot come, please let the front desk know.
+      note: >-
+        These are samples written for this page, not EasyClinic's own wording, and the doctors and the
+        patient are made up. How WhatsApp messages are sent from the clinic software is on the
+        [WhatsApp page](/features/whatsapp/).
+
+  - discriminant: prose
+    value:
+      id: teleconsults
+      heading: Teleconsults on the same calendar
+      body: >-
+        On Premium, a video consult is booked through the same appointment screen as a clinic visit, so it
+        takes its slot on the doctor's calendar, with the option of collecting the fee online. The doctor
+        and the patient both join from a web browser on a computer or a phone, with no other software to
+        install. How the consult itself runs, from the call to the prescription, is on the
+        [telehealth page](/features/telehealth/).
+
+  - discriminant: scopeBox
+    value:
+      id: limits
+      heading: What to know before you book a demo
+      variant: limits
+      items:
+        - >-
+          EasyClinic is cloud software and does not run fully offline today. If the line at your clinic
+          drops often, arrange a backup connection for the front desk, such as a mobile hotspot, before you
+          go live.
+        - >-
+          WhatsApp reminders are not on the Professional plan. Professional sends reminders by SMS and
+          email, and WhatsApp starts on Premium.
+        - >-
+          Patients book themselves through the patient portal and app, which come with Enterprise. Video
+          consults need Premium.
+        - >-
+          This page quotes no figure for fewer no-shows, because EasyClinic has not published a measured
+          one.
+      note: >-
+        Each plan's full list is on the [pricing page](/pricing/).
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: What clinics rate EasyClinic
+      body: >-
+        These are EasyClinic's public ratings, and the Capterra reviews behind the first one are open to
+        read before you book a demo.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions front desks and clinic owners ask
+faq:
+  - question: Can walk-ins and booked patients share one list?
+    answer: >-
+      Yes, on every plan walk-ins join the same calendar as booked appointments, so the desk works from
+      one list for the day. A patient who needs to be seen sooner can be moved up the queue by need or by
+      appointment type.
+  - question: Are WhatsApp reminders included in every plan?
+    answer: >-
+      No, WhatsApp reminders start on Premium, at {price:usd.premium.annual} per doctor per month billed
+      annually ({price:inr.premium.annual} in India). The Professional plan, at
+      {price:usd.professional.annual}, sends reminders by SMS and email.
+  - question: Can patients book their own appointments online?
+    answer: >-
+      Yes, through the patient portal and app, which come with the Enterprise plan. Patients pick a slot
+      online themselves, so the desk spends less of the day taking bookings by phone.
+  - question: Can I see which patients have acknowledged their reminder?
+    answer: >-
+      Yes, EasyClinic tracks which patients have acknowledged their reminder, so the desk can call the
+      ones who have not before their slot comes round. The clinic also sets when reminders go out, days
+      or hours before the visit.
+  - question: What about patients who do not have a smartphone?
+    answer: >-
+      They still get SMS reminders, which reach any mobile phone that can receive a text, and SMS and
+      email reminders are part of every plan. A patient who would rather book at the counter is booked
+      there, on the same calendar.
+  - question: Does the calendar work if the internet goes down?
+    answer: >-
+      Not fully: EasyClinic is cloud software and does not run fully offline today. If the line at your
+      clinic drops often, arrange a backup connection for the front desk, such as a mobile hotspot, before
+      you go live.
+  - question: Can my receptionist book appointments without seeing the medical notes?
+    answer: >-
+      Yes, the reception login included in the price of every plan is made for this: your receptionist
+      books appointments but cannot open the EMR or issue prescriptions.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist, with the appointment book and SMS reminders on the Professional plan.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: Specialists and shared consulting rooms on one calendar.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: Every branch's appointments seen from one place, with the same scheduling rules at each.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: Walk-ins and booked patients in one OPD queue, with patients moved up by need.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Patient records and the donor-ready reports NGO clinics are asked for.
+    - href: /features/whatsapp/
+      label: WhatsApp reminders and messages
+      description: How reminders and other messages reach patients on WhatsApp, from Premium.
+    - href: /features/telehealth/
+      label: Telehealth
+      description: Video consults with the prescription on the same record as clinic visits.
+    - href: /features/multi-location/
+      label: Multi-location
+      description: One system for every branch, with per-branch reports.
+
+closing:
+  heading: See your front desk's day on the calendar
+  body: >-
+    Book a 20-minute demo to see booked patients and walk-ins side by side, and the reminder a patient
+    receives before the visit. If a call is too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The plan split for reminders (SMS and email on Professional, WhatsApp from Premium) and the
+    acknowledgement tracking come from EasyClinic's own pricing and live scheduling pages, and the worked
+    no-show example is priced in rupees and shillings for the two markets the page is written for.
+  readsMachineWritten: >-
+    The pain-block scenes and the sample reminders are invented and need a front-desk manager's read-aloud,
+    and beyond the ratings the page has no named customer or measured number of its own, because there is
+    no no-show figure or front-desk quote yet, and no calendar screenshot.
+
+notes:
+  - 'Title 50 characters (spec 4.1 wording). Meta 147 characters, rewritten from the spec 4.1 wording ("Book, reschedule and remind patients on WhatsApp and SMS...") to avoid a group of three and to put WhatsApp on Premium, per plans.yaml.'
+  - 'H1 kept from spec 4.1 ("Appointment scheduling that cuts no-shows"); the live page itself says "Automated Patient Reminders to Reduce No-Shows". No measured figure backs it: facts.yaml noShowReduction is null, so the opening answer carries the plan price as its number instead of the spec 5.11 "measured no-show reduction", and the worked-example note and the limits box say no figure is published. When a real percentage is supplied, add it to the opening answer as {fact:noShowReduction} and consider a study-style proof.'
+  - 'Worked no-show example (spec 5.11): 20 slots, 15% no-show, fees of ₹500 and KES 1,500 chosen for round arithmetic, labelled as an illustration in the intro, the caption, the row labels and the note. 24 working days = six days a week for four weeks. The fees are not a survey of what clinics charge.'
+  - 'Token screen left out: the live /appointment-scheduling-at-easy-clinic/ page (re-fetched 2026-09-26) does not mention tokens. Add a token row once the company says what the token screen shows.'
+  - 'Grounding: live /appointment-scheduling-at-easy-clinic/ (re-fetched 2026-09-26): "Appointment & Resource Scheduling", resources on the central dashboard, schedule templates by operating hours and doctor preference, real-time updates, SMS and email reminders scheduled days or hours ahead, patient acknowledgement tracking, real-time queue status, automatic wait-time updates to patients, queue prioritisation by patient need or appointment type, online appointment booking, visit status from check-in to discharge, 1-click billing and payments from the appointment screen, day-end reports, cross-location visibility with consistent scheduling standards and shared resources, teleconsults created through the appointment module with online fee payment in a web browser. Walk-ins on all plans: plans.yaml matrix "Appointment scheduling and walk-ins". Rooms on the calendar: spec 5.11 promise ("one calendar for doctors, rooms and teleconsults") plus the live resource-scheduling lines.'
+  - 'Fact-check pass 2026-09-26 removed claims not on the live scheduling page, plans.yaml, the spec or facts.md: first come, first served running beside fixed slots and multi-session booking (both only on other live solution pages; the multi-session FAQ was cut, leaving 7), equipment booked inside the slot, "the desk can only offer a time the doctor is in", "takes payments" for the reception login (facts.md only says the reception licence cannot use the EMR or prescribe), and "each clinic sets its own wording" for reminders (the live page only says the timing is customisable).'
+  - 'Plans: calendar, walk-ins and SMS and email reminders on every plan; billing and day-end reports on every plan (Billing and payments, Dashboards and reports on Professional); WhatsApp, video consults, online payments and more than one location on Premium; central control of every location and the patient portal and app on Enterprise (plans.yaml). Self-booking is tied to the Enterprise portal and app (spec 4.1 patient-engagement meta: "A portal and app for booking"). The multi-location row says a second location needs Premium and central control is Enterprise, without saying which plan each cross-location capability sits on. The waiting-room row carries no plan tag because the plan for patient wait-time updates (and their channel) is not stated. Pre-visit intake forms and remote check-in are on the live page but their plan is not stated anywhere, so the fact-check pass removed them rather than tie them to Enterprise by inference. Whether patients can book online on Professional or Premium is not confirmed; the page does not say either way.'
+  - 'Left out of the live page: "in-app notifications" as a reminder channel (depends on the Enterprise app; not stated), "AI-Powered Wait Time Management" (marked "Coming soon" on the live page), the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" line (conflicts with other published pages), "Reduces no-shows" without a figure, in-built chat for teleconsults (left to /features/telehealth/).'
+  - 'Spec 5.11 items left out for lack of a confirmed fact: self-booking from WhatsApp and from the clinic website; two-way confirmation by reply (only acknowledgement tracking is stated, not how a patient acknowledges); consent notes per country (consent per country belongs to /features/patient-engagement/ in spec 5.11); no-show marking and follow-up handling; FAQ items on reminder cost per message (unknown, and message costs belong to /features/whatsapp/ per spec 4.5 rule 3), recurring appointments (not on the live scheduling page), doctor leave (not stated) and Google Calendar sync (unknown). Proof items left out: the no-show number, a front-desk quote (none on file; every testimonial is placed) and the reminder thread screenshot (no screenshots yet).'
+  - 'Sample reminders use made-up doctors (Dr Anita Rao, Dr Otieno) and a made-up patient (Mary), with no clinic names, no neighbourhood and no phone numbers, and are labelled as samples in the intro, the note and the row labels.'
+  - 'Cannibalisation (spec 4.5): billing gets one row linking /features/billing/ with no invoice or GST detail; WhatsApp templates, API and message costs are left to /features/whatsapp/; teleconsults are one paragraph linking /features/telehealth/ (spec 5.11).'
+  - 'Redirect from /appointment-scheduling-at-easy-clinic/ already exists in src/data/redirects.yaml, so redirectFrom is not set here.'
+  - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the Today view (booked patients, two walk-ins, one video consult, one no-show) as hero and the WhatsApp reminder thread to the WhatsApp row.'

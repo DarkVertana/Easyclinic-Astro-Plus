@@ -1,0 +1,161 @@
+# Customers (spec 5.19 /customers, from /testimonials; spec 2.4 proof; spec 2.10 schema). Replaces the live /testimonials/.
+status: published
+headKeyword: EasyClinic reviews
+secondaryKeywords:
+  - EasyClinic customers
+  - EasyClinic testimonials
+  - EasyClinic customer stories
+title: EasyClinic Reviews and Customer Stories
+metaDescription: >-
+  EasyClinic reviews from doctors and health groups in India, Kenya, Malaysia and Zimbabwe, in their
+  own words. Rated {fact:capterraRating} on Capterra, {fact:googleRating} on Google.
+h1: What clinics say about EasyClinic
+linkLabel: Customers
+eyebrow: Customers
+openingAnswer: >-
+  EasyClinic is rated {fact:capterraRating} out of 5 on Capterra and {fact:googleRating} on Google. The
+  quotes below come from doctors and healthcare groups in India, Kenya, Malaysia and Zimbabwe, printed as
+  each customer wrote them.
+summary: >-
+  Reviews from EasyClinic customers in their own words, from doctors in India to Penda Health in Nairobi,
+  with the Capterra and Google ratings.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See prices per doctor
+    href: /pricing/
+  whatsapp: Hi, I was reading the customer reviews on the EasyClinic website and would like to book a 20-minute demo.
+
+sections:
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: Ratings on Capterra and Google
+      intro: >-
+        The Capterra link opens the reviews behind the score, so you can read what each reviewer wrote
+        before you rely on the number. The Google figure is the one on our Trustindex badge, which is
+        based on reviews collected on Google over the past 12 months.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: testimonialGrid
+    value:
+      id: in-their-words
+      heading: In customers' own words
+      intro: >-
+        Each quote is printed as the customer wrote it, with their consent. They range from a psychiatrist
+        and a pulmonologist writing about how they prescribe to the group CIOs of Qualitas Health in
+        Malaysia and CIMAS Health in Zimbabwe. Filter by clinic type or country to find a clinic like yours.
+      filters: true
+
+  - discriminant: prose
+    value:
+      id: videos
+      heading: Watch clinics talk about EasyClinic
+      body: |-
+        Three of our customers talk about EasyClinic in short videos on our YouTube channel, each between one and two minutes long.
+
+        - [Dr Piya Ray](https://youtu.be/EhGn45zbOoU)
+        - [Dr Abhijit Bhattacharya](https://youtu.be/c2trQPH9rcM)
+        - [Dr Amit Kumar Agarwal](https://youtu.be/l4Y5DT20F6M)
+        - [Every video on the EasyClinic YouTube channel](https://www.youtube.com/@EasyClinicSoftware)
+
+        None of the three has a written quote on this page, so they do not appear in the grid above.
+
+  - discriminant: prose
+    value:
+      id: measured
+      heading: What customers have put a number on
+      body: |-
+        Two of the customers quoted here give a figure. Dr T. L. Prabhu took Prashanthi Clinic from paper records to a completely paperless setup in about six months. Dr Premanand Raya, a pulmonologist, types a whole prescription within half a minute, using shortcuts that suit the way he prescribes.
+
+        The largest measurement comes from Penda Health in Nairobi, which has run on EasyClinic since 2017. In a 2025 preprint by Penda Health and OpenAI covering {fig:visits} visits at 15 Penda clinics, clinicians who had AI Consult, a copilot inside Penda's EasyClinic record, made {fig:diagnostic-errors} fewer diagnostic errors, as rated by independent physicians. [Read how the Penda Health study was run](/curapilot/#study).
+
+        We have not yet written a case study that sets one clinic's numbers before EasyClinic against its numbers after, so this page makes no before-and-after claims.
+
+faq:
+  - question: How many clinics use EasyClinic?
+    answer: >-
+      We publish a count of doctors rather than clinics: {fact:doctors} doctors in {fact:cities} cities use
+      EasyClinic. They work in everything from solo clinics to a chain with {fact:largestChain} locations,
+      across {fact:countries} countries.
+  - question: How long do customers stay with EasyClinic?
+    answer: >-
+      {fact:retention} of our customers have used EasyClinic for more than five years, and there is no
+      binding contract holding any of them. Dr Prantar Chakrabarti, a haematologist, has used it since
+      2008, and Penda Health in Nairobi since 2017. The {fact:retention} is our own count, and we have not
+      published how it is measured.
+  - question: Where can I read reviews of EasyClinic?
+    answer: >-
+      On [Capterra](https://www.capterra.com/p/10026882/Easy-Clinic/reviews/), where EasyClinic is rated
+      {fact:capterraRating}, and on Google, where it is rated {fact:googleRating}. The Google figure comes
+      from our Trustindex badge, which is based on reviews collected on Google over the past 12 months.
+  - question: Which countries are these customers from?
+    answer: >-
+      The customers quoted on this page are in India, Kenya, Malaysia and Zimbabwe, and most of them are in
+      India. EasyClinic is used in {fact:countries} countries, but we do not have a quote from a clinic in
+      the UAE or Nigeria to show you.
+  - question: Are the quotes on this page edited?
+    answer: >-
+      No. Each quote is printed as the customer wrote it, and every customer quoted agreed to have it shown
+      here. We have not corrected the spelling or the grammar, which is why most of them write our name as
+      two words.
+
+links:
+  related:
+    - href: /about-us/
+      label: About EasyClinic
+      description: Running clinics since {fact:founded}, and the people behind the software.
+    - href: /pricing/
+      label: Pricing
+      description: What each plan costs per doctor per month, with no setup fee and no contract.
+    - href: /contact-us/
+      label: Contact us
+      description: Book a demo, or call or write to the team in Kolkata.
+
+closing:
+  heading: See the software these clinics run on
+  body: >-
+    In 20 minutes we follow one patient through a clinic like yours, from booking to the bill. If you would
+    rather ask something first, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See prices per doctor
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The page says who has stayed and for how long, from Dr Prantar Chakrabarti since 2008 to Penda Health
+    in Nairobi since 2017, gives Dr Prabhu's six months to go paperless, and admits that no before-and-after
+    case study exists and that no clinic in the UAE or Nigeria is quoted.
+  readsMachineWritten: >-
+    The two ratings appear in the opening, the ratings section and the reviews FAQ, and the video section is
+    a bare list of names and links, so the read-aloud pass should check the page does not repeat itself or
+    read as a list of links.
+
+notes:
+  - 'Spec 5.19 three written case studies (solo, chain, OPD) with before-and-after numbers are omitted: none exist. The "What customers have put a number on" section says so. When they are written, add them as a contentCards section (or featureRows) above the videos and update that paragraph and the editorial pass.'
+  - 'Spec 5.19 asks each testimonial to show name, specialty, clinic, city, tenure and one measured outcome; the grid renders these from src/data/testimonials through Quote.astro. outcome is null on all 16 records. city is known on 5 (jj-thakkar and both robert-korom records Nairobi, manish-bhatia Jaipur, seetha-lakshmi-kolanakuduru Hyderabad). customerSince is set on 4 (prantar-chakrabarti 2008, seetha-lakshmi-kolanakuduru 2012, both robert-korom 2017); several quotes state tenure in words ("more than 10 years", "last 5 years") that could become customerSince once dated. Unknowns are left out in production by optional().'
+  - 'Filters: TestimonialGrid.astro offers clinic type (personas) and country filters only. Spec 5.19 also asks for a specialty filter, which the component does not have; specialty is also missing on foster-akaketwa, hisham-ismail, robert-korom (both) and tarun-mishra. The grid intro therefore names only clinic type and country.'
+  - 'The grid uses no "only" list, so both Dr Robert Korom records (robert-korom-partner and robert-korom-reliability) show as two cards; TestimonialGrid.astro does not merge records with the same name.'
+  - 'Google badge has no href: the live site shows only the Trustindex badge ("4.8 Top Rated Service 2026 verified by Trustindex ... based on reviews collected on Google over the past 12 months") and links no Google reviews page. The ratings intro and the reviews FAQ say where the figure comes from. Add the Google Business profile URL when supplied. Review counts (facts.yaml capterraReviews, googleReviews) are null, so the badges show no count; spec 2.4 asks for a badge with its count.'
+  - 'Videos: the three YouTube links are the embeds on the live /testimonials/ (facts.md section 2). The names in the link text are the video titles as published by the Easy Clinic YouTube channel (YouTube oEmbed, 26 September 2026) and the VideoObject names on the live /testimonials/: Dr Piya Ray (EhGn45zbOoU, 1:14), Dr Abhijit Bhattacharya (c2trQPH9rcM, 1:01), Dr Amit Kumar Agarwal (l4Y5DT20F6M, 1:47). The live page describes them only as "what our client''s have to say about us", so the page gives no specialty, clinic or city for them. None has a record in src/data/testimonials; add records with consent, specialty and city to show them in the grid or as proofBlock media of kind video with videoUrl.'
+  - 'Schema: no Review or AggregateRating. The ratings are third-party scores, and the site does not mark them up (spec 2.10 and the page brief).'
+  - 'FAQ "Can I speak to a customer?" is left out: no reference-call arrangement is confirmed anywhere. Spec 5.19 also asks to recruit a UAE and a Nigerian story before the country pages relaunch; the countries FAQ says there is none.'
+  - 'Retention FAQ: facts.yaml notes that the {fact:retention} counter on the live /about-us/ has no published method or date, so the answer says so. The "for more than five years" wording follows the facts.yaml label. The retention figure is kept out of the opening so it appears once.'
+  - 'Not carried over from the live /testimonials/: the Trustindex certificate wording beyond the source of the Google figure, the feature list, the "try Easy Clinic absolutely free" line (other pages say there is no free trial), and the "Ready to rethink medical software" boilerplate. Dr V Ramanathan (Australia) and Dr S. B. Bhattacharyya (Noida), quoted in abridged form on the live homepage, have no testimonial records, so they are not shown.'
+  - 'Penda Health study wording follows docs/briefs/page-writing-rules.md and the /curapilot/ page: a 2025 preprint, AI Consult, independent physicians as raters, 15 clinics. The tool is not called Cura AI or CuraPilot, and the page does not say "peer reviewed". The link goes to the studyCard (id study) on /curapilot/.'
+  - 'The old URL /testimonials/ already redirects here in src/data/redirects.yaml, so it is not repeated in redirectFrom. There is no customers hub, so links.hub is not set.'

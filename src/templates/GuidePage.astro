@@ -14,6 +14,7 @@ import Link from '../components/mdx/Link.astro';
 import { getRegistry, type PageRecord } from '../lib/content/registry';
 import { breadcrumbTrail } from '../lib/seo/breadcrumbs';
 import { pageGraph } from '../lib/seo/page-graph';
+import { formatDate } from '../lib/format/date';
 
 /** Long-form template (spec 7.4 GuidePage): byline, table of contents, body, FAQ, curated links. */
 interface Props {
@@ -56,9 +57,19 @@ const minutes = Math.max(1, Math.round(words / 220));
         {d.eyebrow && <p class="eyebrow mb-3">{d.eyebrow}</p>}
         <h1>{d.h1}</h1>
         <Md text={d.openingAnswer} class="lede mt-5" />
-        <AuthorByline author={d.author} reviewedBy={d.reviewedBy} lastUpdated={d.lastUpdated} class="mt-6" />
-        <p class="mt-1 text-sm text-ink-muted">{minutes} minute read</p>
-        <div class="mt-6"><Button {...d.ctas.primary} variant="cta" /></div>
+        {
+          record.family === 'legal' ? (
+            <p class="mt-6 text-sm text-ink-muted">
+              Last reviewed <time datetime={d.lastUpdated?.toISOString().slice(0, 10)}>{d.lastUpdated && formatDate(d.lastUpdated)}</time>
+            </p>
+          ) : (
+            <>
+              <AuthorByline author={d.author} reviewedBy={d.reviewedBy} lastUpdated={d.lastUpdated} class="mt-6" />
+              <p class="mt-1 text-sm text-ink-muted">{minutes} minute read</p>
+              <div class="mt-6"><Button {...d.ctas.primary} variant="cta" /></div>
+            </>
+          )
+        }
       </div>
     </header>
 

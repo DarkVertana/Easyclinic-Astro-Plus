@@ -1,0 +1,210 @@
+# Switching to EasyClinic (spec 5.17 /switch/; keyword row 4.1; company family).
+status: published
+headKeyword: EMR data migration
+secondaryKeywords:
+  - switching EMR systems
+  - paper to EMR
+  - moving clinic records to new software
+title: 'Switching to EasyClinic: Data Migration'
+metaDescription: >-
+  The four steps from the demo to go-live, in as little as {fact:goLiveDays} days, and what changes for a
+  clinic moving from paper or from other software.
+h1: Switching to EasyClinic from paper or another system
+linkLabel: Switching to EasyClinic
+eyebrow: For clinics on paper or other software
+openingAnswer: >-
+  Switching to EasyClinic takes four steps: a demo on your own workflow, training for you and your staff,
+  moving your patient list across, and support from your first day. A clinic can be live in as little as
+  {fact:goLiveDays} days after the demo, and the training takes about two hours spread over
+  {fact:trainingDays} days.
+summary: >-
+  The four steps from the demo to your first day, and the two hours of training spread over four days.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See prices per doctor
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic page on switching and would like to talk about moving my clinic across.
+
+sections:
+  - discriminant: stepList
+    value:
+      id: the-steps
+      heading: Four steps from the demo to your first day
+      steps:
+        - title: A demo on your own workflow
+          meta: 20 minutes
+          body: >-
+            We show you EasyClinic working the way your clinic works today, before you commit to anything.
+            Bring the question that matters most to you, such as how a walk-in is registered or how the day's
+            takings are closed.
+        - title: Training for you and your staff
+          meta: '{fact:trainingDays} days, about two hours in all'
+          body: >-
+            A personalised programme for you and your clinic staff, in four short sessions at times that suit
+            the clinic. The table below sets out each session.
+        - title: Your patient list moved across
+          body: >-
+            We move your patient list into EasyClinic, so a returning patient is found by name at the desk
+            instead of being registered again. Records beyond the patient list, such as older visit notes and
+            bills, are covered under moving from another system below.
+        - title: Support from your first day
+          meta: At no extra cost
+          body: >-
+            Once you are live, you can call our support team or write to them as often as you need, at no extra
+            cost on any plan. Premium and Enterprise clinics also have a named account manager.
+      note: >-
+        A clinic can be live in as little as {fact:goLiveDays} days from the demo. That is the quickest case,
+        and yours may take longer.
+
+  - discriminant: dataTable
+    value:
+      id: training
+      heading: Two hours of training, spread over four days
+      intro: >-
+        A change in the way you work takes time to become normal, and no EMR company can honestly promise
+        that you will be an expert on the first day. So the learning is split into four short sessions for
+        you and your clinic staff, at times that suit the clinic.
+      columns:
+        - Day
+        - Session
+        - Length
+      rows:
+        - - Day 1
+          - Basic training
+          - 40 minutes
+        - - Day 2
+          - EMR scenario training
+          - 40 minutes
+        - - Day 3
+          - Practice exercises
+          - 20 minutes
+        - - Day 4
+          - Road to expertise
+          - 20 minutes
+      note: >-
+        Training is part of every plan at no extra cost, and support carries on after day 4, by phone or in
+        writing.
+
+  - discriminant: prose
+    value:
+      id: from-paper
+      heading: Moving from paper
+      body: |-
+        For a doctor on paper, the prescription is the part of the day that changes most. A handwritten prescription is flexible: you write, draw, scribble and correct as you go. A good EMR lets you do all of that too, and getting there takes a little practice.
+
+        We make clinics on paper a promise: give us 2 hours, or 10 patient records, and we will make your prescription writing faster than pen and paper. Shortcuts set up for the way you prescribe cut down the typing, so a routine prescription takes about thirty seconds while the patient is still in the chair.
+
+        The desk changes as well. Your receptionist gets a login that is included in the price, and uses it to register patients, book appointments, raise bills and take payments, but cannot open the EMR or write a prescription. A nurse or clinical assistant can be given a role that completes parts of the record for you.
+
+        Going fully paperless can take longer than going live. At Prashanthi Clinic, Dr T. L. Prabhu moved from a paper-based clinic to a completely paperless one in about six months.
+
+  - discriminant: prose
+    value:
+      id: from-another-system
+      heading: Moving from another system
+      body: |-
+        If your clinic already runs on software, the move has two halves: the records, and the habits your staff have built around the old screens.
+
+        The records first. Your patient list is moved across as one of the four steps above. We do not list here what else comes across, such as older visit notes, bills, lab results or scanned reports. If you need any of it in EasyClinic, agree in writing what will come across before you sign up, and keep access to your old system until you have checked what arrived.
+
+        Then the habits. Staff who know one system well are quick in it, and slower for a while in a new one. The biggest risk with any clinic software is that staff feel it adds steps, and stop using it. That is why day 2 of the training is spent on EMR scenarios, and why our support team helps you set EasyClinic up to fit your clinic, using the customisation options in the product, without charging for it.
+
+        If your bills and day-end totals live in a spreadsheet today, that habit changes too. In EasyClinic the bill is raised from the visit and each payment is recorded against it, so the day-end close happens in the same system as the bill.
+
+faq:
+  - question: How long does it take to switch to EasyClinic?
+    answer: >-
+      A clinic can be live in as little as {fact:goLiveDays} days after the demo, which is the quickest case,
+      and yours may take longer. Training is four sessions over {fact:trainingDays} days, about two hours in
+      all, at times that suit your clinic.
+  - question: Do we have to stop seeing patients while we switch?
+    answer: >-
+      No, the training is four sessions of 40, 40, 20 and 20 minutes on four separate days, fixed at times
+      that suit your clinic, so the clinic keeps running while you learn. Expect the first days on
+      EasyClinic to feel slower than your old way of working, until the shortcuts become habit.
+  - question: Who does the work of moving our clinic across?
+    answer: >-
+      The EasyClinic team does: we run the demo, train you and your staff, move your patient list across and
+      support you from the first day. You can call our support team or write to them, and they help you set
+      EasyClinic up to fit your clinic without charging for it. Premium and Enterprise clinics also have a
+      named account manager.
+  - question: Is there a contract to sign when we switch?
+    answer: >-
+      No, there is no binding contract, so you can use EasyClinic for as long as it works for your clinic.
+      There is no setup fee either, and Professional and Premium are priced per
+      doctor per month, billed annually or quarterly.
+  - question: Will writing prescriptions on a screen be slower than on paper?
+    answer: >-
+      At first it can be, and our promise to clinics on paper is that if you give us 2 hours, or 10 patient
+      records, we will make your prescription writing faster than pen and paper. Shortcuts set up for the
+      way you prescribe cut down the typing.
+  - question: Our current software works without the internet. Will EasyClinic?
+    answer: >-
+      No, EasyClinic is cloud software and does not run fully offline today, so your clinic needs a working
+      internet connection. If your line drops often, keep a second connection, even a phone hotspot, for the
+      days it goes down.
+
+links:
+  relatedHeading: Before you decide to switch
+  related:
+    - href: /pricing/
+      label: Pricing, per doctor per month
+      description: Professional is {price:usd.professional.annual} per doctor per month billed annually, with no setup fee and no contract.
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: The chart and the prescription your clinic moves onto, with shortcuts set up for the way you prescribe.
+    - href: /easyclinic-emr-vs-traditional-emr/
+      label: EasyClinic against a traditional EMR
+      description: How EasyClinic compares with an older EMR built mainly to keep records.
+    - href: /contact-us/
+      label: Contact EasyClinic
+      description: Call or WhatsApp {contact:in.phone}, or book a 20-minute demo.
+
+closing:
+  heading: See your own clinic on EasyClinic before you switch
+  body: >-
+    In 20 minutes we show you EasyClinic working the way your clinic works today, before you commit to
+    anything. If a call is too much for now, send us a WhatsApp message from this page instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See prices per doctor
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The training sessions of 40, 40, 20 and 20 minutes and the promise to clinics on paper of faster
+    prescribing for 2 hours or 10 patient records are how EasyClinic takes a clinic on, and Dr T. L.
+    Prabhu's six months from paper to paperless at Prashanthi Clinic sets a real expectation next to the
+    3-day go-live.
+  readsMachineWritten: >-
+    With only the patient list confirmed as moving across, the section on moving from another system says
+    plainly that nothing else is listed and gives advice instead, where a doctor on other software wants to
+    read what comes across from their system, so the read-aloud pass should check that part does not sound
+    evasive.
+
+notes:
+  - 'Spec 5.17 /switch/ and keyword row 4.1. Published 2026-09-26 with confirmed facts only (owner decision). The company family needs no proof block (src/lib/rules/audit.ts), and none is added: all 16 testimonials are already placed on other pages. When a customer who moved from another system is recruited, add a testimonialRow here.'
+  - 'H1 changed from spec 4.1 "Switch without losing a single record" to a plain H1. The only confirmed migration fact is the patient list (live /kenyademo/ step 3, "Your patient list moved across cleanly. Nothing left behind."), so the page does not promise that every record survives the move, and "Nothing left behind" is not repeated. Restore the spec H1 only when what is imported, and from which systems, is confirmed.'
+  - 'Meta description changed from spec 4.1 ("What we import from your current system, how long it takes, and what happens on day one"): what is imported beyond the patient list is unknown, and the spec line is a group of three.'
+  - 'Left out as unknown (spec 5.17): what is imported from Practo Ray, HealthPlix, KenyaEMR or Excel (none of them is named, and the spec secondary keyword "migrate from Practo Ray" is dropped until it can be answered); whether visit notes, bills, lab results or scanned reports come across from any system; whether a paper register is typed in as the patient list; what the clinic does with its paper files; downtime during the move; a checklist download; a named migration lead; and whether data migration is charged. No FAQ on migration cost or keeping paper records for the same reason. "No setup fee" in the contract answer comes from plans.yaml conditions and is not a statement about migration charges.'
+  - 'Editorial review 2026-09-26 (adversarial pass): removed claims not stated on the live site or in src/data. Cut: the step list intro saying every clinic, from a paper register or other software, goes through the same steps (whether a paper register becomes the patient list is unknown), with no intro in its place; step 3 meta "Before your first day" (inferred from the live step order, not stated); the reasons a clinic takes longer than 3 days ("more staff to train, or years of records") in the step note and FAQ 1; "nobody stops seeing patients" from the training intro (the FAQ keeps the brief-approved answer); "stop when it does not" from the contract answer (annual billing makes stopping at any time an unstated promise); "installed" from the traditional EMR link description (the live page says "built mainly to record information", not installed); "scenarios like your clinic''s own" (the live Day 2 is "EMR scenario Training"); "the habit that changes most" and "what was billed next to what came in" in the spreadsheet paragraph (now the spec 5.11 day-end close). "Shortcuts for the medicines you prescribe most" became "shortcuts set up for the way you prescribe", matching /features/emr/. Meta description and summary rewritten: the old meta implied a paper clinic gets its patient list moved across, and the summary was a group of three.'
+  - 'Open tension, not resolved on the page: go-live "in as little as 3 days" (live /kenyademo/) sits next to the four-day training (live /pricing/). Both are stated as live-site facts; a reader may ask how a clinic is live before day 4 of training. Confirm whether the later sessions run after go-live, and say so on the page once confirmed.'
+  - 'Steps follow live /kenyademo/ ("From demo to live in as little as 3 days": Live Demo, Staff Training, Data Migration, Support). Dropped from that section: "Most clinics fully operational within 24 hours" (unsourced, and it conflicts with goLiveDays and the "2 to 4 week setup" on the live Kenya listicle, see the facts.yaml note), "Simple enough to learn in a day" (conflicts with the four-day training) and "8+ years average client relationship" (not in facts.yaml). The demo is 20 minutes to match the rebuild CTAs; the live /kenyademo/ says 30.'
+  - 'Training table and intro follow the live /pricing/ FAQ: the four sessions, "a personalised training program for you (and your clinic staff)", "at your convenient times" and "No EMR provider can claim that you will become an expert on day 1". The paper paragraph paraphrases the same page ("A handwritten prescription is extremely flexible ... It only takes a little practice") and its promise "give us just 2 hours / 10 patient records". The slash is rendered "2 hours, or 10 patient records"; /contact-us/ renders it "2 hours and 10 patient records". Align both pages once the meaning is confirmed. "and more comprehensive" is dropped (banned word).'
+  - 'Dr T. L. Prabhu is named in the paper paragraph from testimonials/tl-prabhu.yaml ("We have moved from a paper based clinic to a completely paperless setup in about 6 months"). The testimonial id stays on /solutions/solo-clinic/ and is not used here. If each customer should appear on one page only, cut the last paragraph of "Moving from paper".'
+  - 'Thirty-second prescription follows spec 2.8 and 5.5, the live /kenyademo/ ("under 30 seconds") and the solo clinic page; it is a product claim, not a measured figure.'
+  - 'Nurse or clinical assistant role: live /pricing/ reception FAQ ("You can choose to have a clinical assistant or nurse role as a user who can complete some of your EMR records"). Whether that login costs a licence is unknown and not stated.'
+  - 'Adoption risk line: live /easyclinic-vs-practo/ FAQ 7 ("If staff feel it adds steps rather than removes friction, adoption drops"). Setup around the clinic without charge: live /pricing/ customisation FAQ ("Our support team will help you set it up to your needs without any charges"). Support channels (phone, email and chat on live /pricing/) are written "call or write" to avoid a group of three. Named account manager on Premium and Enterprise: plans.yaml. Step 3 has no timing meta: the live order (training "before day one", migration, then support "from day one") suggests migration before go-live but does not say so.'
+  - 'Spreadsheet billing paragraph follows the spec 5.11 billing page and the solo clinic page (bill raised from the visit, payments recorded against it, day report). No cash or card split is claimed.'
+  - 'Offline FAQ follows the live site ("does not run fully offline today"). The self-hosted option on the live Kenya listicle is not offered here because it is unconfirmed.'
+  - 'Spec 6.5 named person: the only named people are the author byline (Subhashish Saha, head of customer success) and Dr Prabhu. The author byline does not make him the migration lead; name one when the company confirms who runs migrations.'
+  - 'Related links: /easyclinic-emr-vs-traditional-emr/ (a kept live slug, spec 3.2) is not built yet in this repo. No heroMedia: no screenshots exist yet (spec 12).'

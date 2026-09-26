@@ -1,0 +1,356 @@
+# Revenue management feature page (spec 5.11 "/features/revenue-management", keyword row in 4.1, cannibalisation rule 4.5.2).
+status: published
+headKeyword: clinic revenue cycle management
+secondaryKeywords:
+  - revenue leakage in clinics
+  - claims denial management
+  - RCM software for clinics
+title: 'Clinic Revenue Cycle Management: EasyClinic'
+metaDescription: 'Clinic revenue cycle management in EasyClinic: find unbilled orders, wrong prices, cash variance and denied claims before the month closes.'
+h1: Stop revenue leakage before it reaches your books
+linkLabel: Revenue management
+eyebrow: Revenue management
+openingAnswer: >-
+  EasyClinic's revenue cycle management (RCM) puts a control on each of the four places a clinic's
+  revenue leaks: lab orders and procedures become invoice lines as they are done, each bill takes its
+  price from the price list that applies, every cash register closes the day with its own end-of-day
+  report, and denied claims are listed on a denial report. Billing comes with every plan from
+  {price:usd.professional.annual} per doctor per month billed annually, and the claim reports need
+  insurance claims, which is part of Enterprise and an add-on on Professional or Premium.
+summary: >-
+  Four leaks found before month end, each with its own control: unbilled orders, wrong price lists,
+  cash variance and denied claims.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic revenue management page and would like to see the day-end cash close and the denial report in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: four-leaks
+      heading: Where does a clinic's revenue leak?
+      intro: >-
+        In four places between the consult and the bank: orders that never reach a bill, prices taken
+        from the wrong list, a cash drawer that does not match its register, and claims the payer
+        denies. None of them shows on a single day's takings. They show at month end, when the total is
+        lower than the waiting room suggested. The scenes below are illustrations of how each leak
+        happens, not cases from a named clinic.
+      items:
+        - heading: Why do orders from the consult go unbilled?
+          body: >-
+            At the end of the consult the doctor asks for a dressing and a blood sugar test. The nurse
+            does both while the patient pays for the consult at the desk. The patient goes home, and the
+            dressing is on no bill. Nobody decided not to charge for it. The order was in the doctor's
+            note and never reached the person writing the bill.
+          fix: >-
+            Lab orders and procedures become lines on the patient's invoice as they are done, without
+            anyone carrying the order to the desk. The visits with no bill against them are on a report
+            the owner can check on any day of the month.
+          href: /features/billing/
+          linkLabel: How orders become invoice lines
+        - heading: How does a bill end up at the wrong price?
+          body: >-
+            The consultation fee went up in April, and one receptionist still types the old one. A
+            patient whose employer pays is billed at the walk-in rate. Each bill looks right to the
+            person who wrote it, and the difference only shows when someone compares a month of bills
+            with the price list.
+          fix: >-
+            Each bill takes its price from the price list that applies to the patient and the branch,
+            so the desk does not have to remember it. When the owner
+            changes a price on the list, the next bill carries it.
+        - heading: Why does the cash drawer not match the day's bills?
+          body: >-
+            At closing time the drawer is short by a few hundred rupees. Perhaps a refund was handed back
+            without a slip, or a UPI payment went into the book as cash. By the next morning nobody
+            remembers which. When the same counter is short every Friday, the owner hears about it at
+            month end, if at all.
+          fix: >-
+            Each cash register records the cash that comes in and goes out through it, and closes the
+            day with an end-of-day report of its own transactions. Count the drawer against that report
+            and a gap shows the same evening, and because access to each register is set by role, the
+            gap points to one counter and the staff allowed to use it.
+          href: /features/billing/
+          linkLabel: How the day-end close works
+        - heading: What happens to a claim after the payer denies it?
+          body: >-
+            The denial arrives weeks after the visit with a reason code nobody at the desk recognises,
+            and it goes into a tray to be dealt with later. By the time anyone looks, the window to
+            resubmit may have closed, and the claim is written off without anyone deciding to write it
+            off.
+          fix: >-
+            Denied claims are listed on the denial report, and the ageing report shows the claims still
+            unpaid and how long each has waited. Both are there before month end, so the claims worth
+            resubmitting are found while there is still time.
+          href: /features/insurance-claims/
+          linkLabel: How claims are checked before they leave
+
+  - discriminant: featureRows
+    value:
+      id: price-lists
+      heading: Price lists by location, payer, package and patient category
+      intro: >-
+        A price typed at the desk is only as right as the memory of whoever types it. In EasyClinic the
+        bill takes its price from the list that applies to that patient. Where a list needs a particular
+        plan, the row says so.
+      items:
+        - heading: A price list for each location
+          body: >-
+            Each branch can have its own price list, so a scan costs what that branch charges and not
+            what the first clinic charged when the system was set up. Running more than one location
+            needs Premium or Enterprise, and Enterprise adds central control of every location from
+            head office.
+          link:
+            label: See how one system runs every branch
+            href: /features/multi-location/
+        - heading: A price list for each payer
+          body: >-
+            A corporate client or an insurer can have its own rates, applied once the patient's payer is
+            linked to the record at registration, so the employer's patient is not billed at the walk-in
+            rate. Payer price lists come with insurance claims, which is part of Enterprise and an add-on
+            on Professional or Premium.
+          plan: enterprise
+          link:
+            label: Read how payer plans are set up
+            href: /features/insurance-claims/
+        - heading: A price for each package
+          body: >-
+            A package of treatment has its own price on the list, so the patient is billed the package
+            price the clinic set rather than one worked out at the desk. Package treatments come with
+            Premium and Enterprise.
+          plan: premium
+        - heading: Prices and discounts for a category of patient
+          body: >-
+            Prices and discounts can be set for a category of patients, such as your own staff or the
+            members of a scheme you run, so the desk applies the discount the owner decided on. A price
+            changed on any list shows on the next bill.
+
+  - discriminant: featureRows
+    value:
+      id: reports
+      heading: The reports an owner checks before month end
+      intro: >-
+        Denial management starts with knowing which claims were denied. The ageing and denial reports
+        work on payer claims, so they need insurance claims, which is part of Enterprise and an add-on
+        on Professional or Premium.
+      items:
+        - heading: Visits with no bill against them
+          body: >-
+            A visit where the patient was seen and nothing was billed shows up before month end, so the
+            desk can raise the missing bill while the patient is still easy to reach. Each line on it is
+            money for work the clinic has already done.
+        - heading: The day-end close for every cash register
+          body: >-
+            Each register closes the day with its own end-of-day report of the cash taken and paid out,
+            and the end-of-day report also runs for the whole clinic or, with more than one location,
+            across the organisation. A drawer that does not match its register is found the same
+            evening.
+        - heading: Claims the payer turned down
+          body: >-
+            The denial report lists the claims payers have turned down, so someone can work through them
+            while a resubmission is still possible and write off the rest on purpose rather than by
+            default. Counting them each month gives your own denial rate, which is the number to watch.
+          plan: enterprise
+        - heading: What each payer owes, and for how long
+          body: >-
+            The ageing report sorts unpaid claims by how long each has waited for payment, so the oldest
+            money is chased first and a slow payer shows up before month end.
+          plan: enterprise
+        - heading: Who can see the money
+          body: >-
+            Access to the financial reports and to each cash register is set by role. The clinic's
+            revenue can stay with the owner and the accountant while the front desk still takes payments.
+        - heading: Reports that arrive without being run
+          body: >-
+            Reports can be generated and sent out automatically, so the day-end totals reach the owner
+            without anyone running them by hand.
+          link:
+            label: Read about reports and dashboards
+            href: /features/reports-and-dashboards/
+
+  - discriminant: prose
+    value:
+      id: billing-and-claims
+      heading: Where billing and claims fit
+      body: >-
+        Every control on this page rests on billing: the bill built from the visit, and the payment
+        taken against it at the counter. Billing and payments come with every plan, and the [billing
+        page](/features/billing/) covers how invoices are built and how the counter takes payment.
+
+
+        Claims are where the fourth leak starts. How the patient's payer is linked at registration and
+        how each claim is built and sent are on the [insurance claims page](/features/insurance-claims/).
+        This page picks up once the payer answers: the denied claim, and the payment that has not
+        arrived.
+
+  - discriminant: stepList
+    value:
+      id: leakage-audit
+      heading: A leakage audit you can run on last month's figures
+      intro: >-
+        You can run these four checks before you choose any software, from the registers and the receipt
+        book if that is what you have. Each step says where the same check sits in EasyClinic.
+      steps:
+        - title: Match orders to bills
+          meta: Unbilled orders
+          body: >-
+            Take every lab test and procedure ordered last month and find the bill it went on. Anything
+            without one is revenue the clinic earned and never asked for. In EasyClinic, the visits with
+            no bill against them are already on a report.
+        - title: Check prices against the list
+          meta: Wrong price list
+          body: >-
+            Pick twenty bills from different days and check each price against the list for that branch
+            and that payer. In EasyClinic the check moves to the price lists themselves, because each
+            bill takes its price from them.
+        - title: Add up the day-end differences
+          meta: Cash variance
+          body: >-
+            Add up the gap between cash counted and cash billed for each counter, day by day. A single
+            short day is usually a mistake, and the same counter short every week is worth a
+            conversation. In EasyClinic, each register has its own end-of-day report to count the drawer
+            against.
+        - title: List denied and unpaid claims
+          meta: Denied claims
+          body: >-
+            List every claim denied last month, and every claim still unpaid after your payers' usual
+            payment time. Each one is money for work already done. In EasyClinic, the denial and ageing
+            reports hold both lists.
+      note: >-
+        This page gives no figure for what an audit usually finds, because EasyClinic has not published
+        a measured leakage rate across the clinics that use it.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How EasyClinic is rated on Capterra and Google
+      intro: >-
+        The Capterra link opens the reviews themselves, so you can read what reviewers wrote about
+        EasyClinic before you book a demo.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions owners ask about revenue management
+faq:
+  - question: Can each of my clinics charge different prices?
+    answer: >-
+      Yes, each location can have its own price list, and running more than one location needs Premium
+      or Enterprise. Enterprise adds central control of every location from head office, and a price
+      changed on a list shows on the next bill.
+  - question: Can I see which visits were never billed?
+    answer: >-
+      Yes, the visits where a patient was seen and nothing was billed show up before month end, so the
+      desk can raise the missing bill while the patient is still easy to reach. Lab orders and
+      procedures also become invoice lines as they are done, so fewer go missing in the first place.
+  - question: How do I find out why the cash drawer is short?
+    answer: >-
+      Each cash register keeps its own record of the cash in and out and closes the day with its own
+      end-of-day report, so a short drawer is traced to one counter on the evening it happens rather
+      than at month end. Because access to each register is set by role, the staff allowed to use that
+      counter are known too.
+  - question: How much will EasyClinic cut our denied claims?
+    answer: >-
+      We do not publish a percentage for that, because we have no measured figure across our clinics
+      that we can source. What changes is when the problems are found: coverage is checked against the
+      patient's payer plan at the time of care, and the denial report lists the denied claims, so you
+      can measure your own denial rate from the first month and see whether it falls.
+  - question: Does EasyClinic do our month-end accounts?
+    answer: >-
+      Only on Enterprise, which includes financial accounting; Professional and Premium do not. On
+      those plans EasyClinic holds the bills and payments, and your accountant keeps the books in the
+      software they use now. A connection to your accounting system can be scoped as a project under
+      the integrations add-on.
+  - question: Which plan do I need for revenue management?
+    answer: >-
+      Every plan includes billing, payments, dashboards and reports, from
+      {price:usd.professional.annual} per doctor per month billed annually
+      ({price:inr.professional.annual} in India). Premium, at {price:usd.premium.annual} on the same
+      terms, adds package treatments and more than one location. Payer price lists and the ageing and
+      denial reports need insurance claims, which is part of Enterprise and an add-on on Professional or
+      Premium, and Enterprise is priced on a quote.
+  - question: Can I stop the front desk seeing our revenue?
+    answer: >-
+      Yes, access to the financial reports and to each cash register is set by role, so the front desk
+      can take payments without seeing the clinic's revenue reports. The owner decides which roles see
+      which reports.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist on the Professional plan, with billing included and no IT staff to call.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: Several specialists billing from one front desk, on one patient record.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: Central control of every branch, with a price list for each location.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD on one patient record, from the registration queue to the payer's claim.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /features/billing/
+      label: Billing
+      description: Invoices built from the visit, and the cash counter's day-end close.
+    - href: /features/insurance-claims/
+      label: Insurance claims
+      description: Patients linked to their payer at registration, and claims that are clean before they leave.
+    - href: /features/reports-and-dashboards/
+      label: Reports and dashboards
+      description: The owner's morning numbers, with every branch side by side.
+
+closing:
+  heading: Bring last month's figures to the demo
+  body: >-
+    Book a 20-minute demo to see the day-end cash close and the denial report on screen, and bring the
+    results of the audit above if you have run it. If a call is too much today, send us a WhatsApp
+    message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    Every control on the page comes from EasyClinic's own live revenue page or the spec, such as lab and
+    procedure orders becoming invoice lines and each cash register closing with its own end-of-day
+    report, and every plan boundary comes from EasyClinic's own price list.
+  readsMachineWritten: >-
+    The leak scenes, such as the April fee change and the drawer short every Friday, are labelled
+    illustrations rather than a named clinic's story, and with no named person and no measured leakage or
+    denial figure the page falls short of the spec 6.5 bar until a clinic owner reads it aloud and one
+    real customer case is added.
+
+notes:
+  - 'Title 43 characters. Meta 139 characters, rewritten from the spec 4.1 wording ("See unbilled visits, denied claims and cash variance before month end.") to lead with the head keyword, name all four leaks and avoid a group of three.'
+  - '"Revenue cycle management" appears only on this page (spec 4.5 rule 2): in the title, meta and opening answer.'
+  - 'Cannibalisation (4.5 rule 2): invoice formats, GST and the till mechanics stay on /features/billing/; payer linking at registration, subscription categories, coverage and claim submission (TPA, HMO, SHA) stay on /features/insurance-claims/. Each gets one paragraph here (prose "billing-and-claims") plus a link. This page keeps leakage, denials and ageing.'
+  - 'Leakage audit blog link left out: spec 4.1 says an EasyClinic post already ranks but names no URL, and spec 9.3 item 7 ("Where clinics lose revenue: a leakage audit you can run in one afternoon") is a planned post, not a published one. The audit is written as a stepList instead; link the post from its intro once the spec names it.'
+  - 'Capabilities taken from the live /revenue-management/ page (re-fetched 2026-09-26): lab and procedure work orders becoming invoice lines as they are processed; price lists by payer, location and customer category; discounts for patient segments; new prices reflected in billing at once; cash registers that track cash in and out for daily reconciliation, with role-based access and end-of-day reports of cash transactions; end-of-day financial reports clinic- and organisation-wide; role-based access to reports; automated generation and distribution of reports; coverage validated at the time of care. Ageing and denial reports, unbilled visits and price lists by package come from spec 4.1 and 5.11.'
+  - 'Editor pass 2026-09-26 removed claims the sources do not make: that the denial report shows each claim''s reason (no source says a denial reason is captured); that the end-of-day report itself shows the cash variance (the live page says it snapshots cash transactions, so the page now says the drawer is counted against it); that head office controls every branch''s price lists on Enterprise (plans.yaml says "Central control of every location", so that wording is used); "on a schedule" for reports (the live page says automated generation and distribution); "ordered in the chart" (the live page says lab orders and procedures, not where they are ordered).'
+  - 'Plan tags only where plans.yaml is explicit or the dependency is certain: payer price lists (claims add-on body in plans.yaml), package treatments (Premium), and the ageing and denial reports, tagged Enterprise because they report on payer claims, which need insurance claims (Enterprise, add-on on Professional and Premium). Which plan carries location price lists, patient-category pricing, the unbilled-visits report, cash registers and automated reports is not stated, so those rows carry no tag.'
+  - 'The month-end FAQ mentions the integrations add-on only as plans.yaml words it (connections to an accounting system, scoped per project, on Professional and Premium); no named accounting integration or its status is stated.'
+  - 'Left out for lack of a confirmed fact: a measured number for any of the four leaks (spec 5.11 asks for one "where measured"); the 34% denied-claims and 23% to under 4% rejection figures (no public source, facts.md section 4); the spec 5.11 FAQ on revenue per doctor (no confirmed report; also left out of clinic-chain.yaml); report columns and ageing buckets; denial reason capture; how package sessions are tracked (open question on the physiotherapy page); whether EasyClinic works denied claims on the clinic''s behalf; Tally or accounting export (integration status unknown).'
+  - 'Left out from the live page as unsourced marketing: "faster reimbursement cycles", "revenue impact analysis", "significantly reducing claim rejections", and the "14-Day Free Trial" / "30-Day Money Back Guarantee" line on the live dashboards page (not in the confirmed facts).'
+  - 'Orders-inventory integration (product usage reflected on the invoice) is on the live page but needs inventory, which is Enterprise or an add-on; left for /features/pharmacy-and-inventory/.'
+  - 'No testimonials (all placed elsewhere). Proof is the ratings badge block; review counts are unknown (facts.yaml capterraReviews and googleReviews are null), so no count is shown.'
+  - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, the hero is the day-end cash close for one register, and the claim status list with denials goes on the denial report row.'
+  - 'The redirect from /revenue-management/ is already in src/data/redirects.yaml, so no redirectFrom is set here.'

@@ -1,0 +1,312 @@
+# /pediatric-emr/ (spec 5.15 SpecialtyPage, keyword row 4.3). The live slug is kept; /pediatric/ 301s here
+# through src/data/redirects.yaml, so redirectFrom is not set.
+# Grounding: capability statements the live /pediatric-emr/ page makes plainly (retrieved 2026-09-26) and
+# plans.yaml. No named growth standard, no named national schedule, no dose calculator.
+status: published
+headKeyword: pediatric EMR software
+secondaryKeywords:
+  - pediatric clinic software
+  - vaccination tracking software
+title: 'Pediatric EMR Software: EasyClinic'
+metaDescription: >-
+  Pediatric EMR software: growth charts and vaccine schedules on one record, with WhatsApp reminders to
+  parents on Premium at {price:usd.premium.annual} a doctor a month.
+h1: 'EMR for paediatric clinics: growth charts and vaccine schedules on the child''s record'
+linkLabel: Paediatrics
+eyebrow: For paediatric clinics
+openingAnswer: >-
+  Paediatric EMR software has to carry two things a general EMR is not built around: a growth chart that
+  tracks height, weight, BMI and head circumference against growth standards, and a vaccine schedule set
+  by the child's age and local guidelines, with alerts for vaccines that are coming up or overdue.
+  EasyClinic keeps both on the child's record, and its Premium plan for specialists adds specialty EMR
+  templates and WhatsApp reminders to parents at {price:inr.premium.annual} per doctor per month in India,
+  or {price:usd.premium.annual} in US dollars, billed annually.
+summary: >-
+  Growth tracked against growth standards and a vaccine schedule set by the child's age, on one record,
+  with WhatsApp reminders to parents on Premium at {price:usd.premium.annual} per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a paediatric clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for paediatric clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-paediatric-clinic-loses-track
+      heading: Where a paediatric clinic loses track
+      intro: >-
+        A child comes back to the same clinic for years, for vaccines on a fixed timetable and for a weight
+        and a height at almost every visit. Most of what goes wrong happens between those visits.
+      items:
+        - heading: The vaccination card goes home with the parent
+          body: >-
+            The only full record of which vaccines a child has had is the card in the parent's bag. On the
+            day the card stays at home, the doctor asks the parent to remember whether the second dose was
+            given, and the clinic's own copy is a line in last year's register.
+          fix: >-
+            The child's vaccination record and schedule sit in EasyClinic, with alerts for vaccines that are
+            coming up or overdue, so the next dose is on screen whether or not the card came along.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The weight is in the register and the trend is nowhere
+          body: >-
+            The nurse weighs the child and writes the number in the register, and the doctor copies it into
+            the notes. Whether the child has stopped gaining weight since last winter shows only if someone
+            lays last year's weights out by hand, and in a full waiting room nobody does.
+          fix: >-
+            The child's record keeps a growth chart against growth standards, so the trend is on the screen
+            when the doctor opens the chart.
+        - heading: The next vaccine visit that nobody reminds the parent about
+          body: >-
+            The date of the next dose is written on the card, weeks ahead. The receptionist means to call
+            the parents the day before, but the list is in a notebook and the calls get made when the desk
+            is quiet, which on a Monday morning it never is.
+          fix: >-
+            Book the next vaccine visit before the family leaves, and the booked visit gets an automated
+            reminder. SMS and email reminders come with every plan, and Premium adds WhatsApp, sent from the
+            clinic software rather than the receptionist's own phone.
+          href: /features/whatsapp/
+          linkLabel: Read how WhatsApp reminders work
+        - heading: The vaccine fridge runs out on a clinic day
+          body: >-
+            Stock is counted from the boxes when someone thinks of it. A vial past its expiry date turns up
+            at the back of the fridge, and the week's supply of one vaccine runs out with three babies booked
+            for it.
+          fix: >-
+            With the pharmacy and inventory module, vaccine and medicine stock is tracked by batch and expiry
+            date, so the clinic reorders before the fridge runs out. The module is included in Enterprise, or
+            added to Professional or Premium.
+          href: /features/pharmacy-and-inventory/
+          linkLabel: Read how stock is tracked
+
+  - discriminant: featureRows
+    value:
+      id: built-around-the-childs-record
+      heading: Built around the child's record
+      intro: >-
+        A child's chart is read across years of visits, so it keeps the measurements and the vaccines where
+        the doctor can see the trend. Specialty templates and your own forms come with Premium, EasyClinic's
+        plan for specialists.
+      items:
+        - heading: Growth charts against growth standards
+          body: >-
+            Height, weight, BMI and head circumference are tracked against growth standards, so each new
+            measurement is seen against the standard rather than as a number on its own. Developmental
+            milestones are monitored on the same record, and vitals show as charts across visits.
+          bullets:
+            - Height, weight and BMI
+            - Head circumference
+            - Developmental milestones on the same record
+            - Vitals charted across visits
+        - heading: Vaccine schedules set by age
+          body: >-
+            Each child's vaccine schedule is set automatically from their age and local guidelines, and the
+            record carries alerts for vaccines that are coming up or overdue. The vaccines already given are
+            part of the child's history and show on the face sheet, so the doctor sees what has been given
+            before deciding what is due.
+          bullets:
+            - Schedule from the child's age and local guidelines
+            - Alerts for upcoming and overdue vaccines
+        - heading: The child's history on one face sheet
+          body: >-
+            The intake form records the child's family history and past immunisations, and both come
+            through to the face sheet. At a follow-up, an auto-generated summary gives the doctor the case
+            history at a glance, and earlier visits can be read side by side.
+        - heading: Specialty templates and your own forms
+          plan: premium
+          body: >-
+            On Premium the chart comes with specialty EMR templates, and your clinic can have its own clinical
+            forms and print layouts. If you run well-baby checks on a paper form today, it can be rebuilt
+            in the form builder as a digital form that the doctor fills in on the child's record.
+          link:
+            label: See what Premium includes
+            href: /pricing/
+        - heading: Cura AI drafts the note
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the doctor to review,
+            and it is optional, so a doctor who would rather write every note writes it in the same chart.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: featureRows
+    value:
+      id: the-visit
+      heading: A paediatric visit, from the intake to the follow-up
+      intro: >-
+        What happens around the consult, in the order the day runs. Where a row needs a particular plan, it
+        says so.
+      items:
+        - heading: The nurse takes the intake
+          body: >-
+            A nurse or clinical assistant does the intake and triage before the child goes in to the doctor,
+            logged in as themselves. Logins for your staff come with every plan, and the reception login
+            included in the price cannot open the EMR or issue a prescription.
+        - heading: The prescription, printed or sent to the parent
+          body: >-
+            The prescription is written on the child's record, with a drug interaction check, then printed or
+            sent to the parent by SMS or email, and on Premium by WhatsApp.
+          link:
+            label: Read how prescriptions work
+            href: /features/emr/
+        - heading: Video follow-ups
+          plan: premium
+          body: >-
+            On Premium a follow-up can be a video consult, booked through the appointment screen, with the
+            parent joining from a web browser on a phone and nothing to install. The prescription from the
+            call goes to the parent with a note that the consultation was held remotely.
+        - heading: Vaccination packages, paid in parts
+          plan: premium
+          body: >-
+            If the clinic sells a child's first-year vaccines as one package, Premium bills it as a package
+            treatment. An advance or a part payment is recorded against the package, so the desk sees the
+            balance at each visit, and receipts can go to the parent on WhatsApp.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        We do not yet have a paediatrician's own words to put on this page. These are EasyClinic's public
+        ratings, from clinics of every kind.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, short enough to fit between the morning and evening clinics, so the
+        clinic keeps seeing children while the team learns.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the consulting room use every day. Bring your receptionist, whose
+            login is part of the plan, and the nurse who does the intake.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            You work through the chart and the prescription on the kinds of case your clinic sees.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You work through exercises on your own, then bring back the questions that came up.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions paediatric clinic owners ask
+faq:
+  - question: What does EasyClinic cost for a paediatric clinic?
+    answer: >-
+      Premium, the plan with specialty EMR templates and WhatsApp reminders for parents, costs
+      {price:inr.premium.annual} per doctor per month billed annually in India, or {price:usd.premium.annual}
+      in US dollars. Professional, at {price:inr.professional.annual} or {price:usd.professional.annual}, has
+      the EMR and billing, with reminders by SMS and email but not WhatsApp. Both include a reception login.
+      Neither has a setup fee or a binding contract.
+  - question: Does EasyClinic chart head circumference as well as height and weight?
+    answer: >-
+      Yes, height, weight, BMI and head circumference are all tracked against growth standards on the
+      child's record and shown as growth charts. Developmental milestones are monitored on the same record.
+  - question: Can the doctor see which vaccine is due if the parent forgets the vaccination card?
+    answer: >-
+      Yes, the child's vaccination record and schedule are kept in EasyClinic, with the schedule set
+      automatically from the child's age and local guidelines and alerts for vaccines that are coming up
+      or overdue. Vaccines recorded at intake show on the face sheet.
+  - question: Will parents get a reminder before the next vaccine visit?
+    answer: >-
+      Yes, once the visit is booked: a booked appointment gets an automated reminder, by SMS and email on
+      every plan and by WhatsApp on Premium. WhatsApp messages go out from the clinic software, so the
+      reminders do not depend on the receptionist's own phone.
+  - question: Can we sell a vaccination package that parents pay for in parts?
+    answer: >-
+      Yes, on Premium, where package treatments are part of the plan: the package is billed once, and each
+      advance or part payment is recorded against it, so the desk sees the balance. Professional does not
+      include package treatments.
+  - question: Can EasyClinic manage our vaccine stock?
+    answer: >-
+      Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
+      Professional and Premium as a module. With the module, vaccine and medicine stock is tracked by batch
+      and expiry date, so you reorder before a vaccine runs out.
+  - question: Can the receptionist open a child's chart?
+    answer: >-
+      No, the reception login included in the price is not allowed into the EMR and cannot issue
+      prescriptions. Doctors and clinical staff log in as themselves with access set by role, and the system
+      keeps audit logs.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so the
+      clinic needs a working line while it sees patients. A self-hosted option also exists, where the system
+      runs on the clinic's own server rather than in EasyClinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where paediatric clinic owners go next
+  related:
+    - href: /solutions/solo-clinic/
+      description: For a paediatrician running their own clinic with a receptionist and a nurse.
+    - href: /clinic-management-software-india/
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      description: EasyClinic for clinics in Kenya, with M-Pesa at the desk and prescriptions in English and Swahili.
+    - href: /features/emr/
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /features/whatsapp/
+      description: Reminders and prescriptions sent to parents on WhatsApp, on the Premium plan.
+    - href: /pricing/
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See a child's record on EasyClinic, with the growth chart and the vaccine schedule
+  body: >-
+    Book a demo and ask to see one child's record with the growth chart and the vaccine schedule on it. If
+    a call is too much today, send us a WhatsApp message from this page instead.
+  primary:
+    label: Book a paediatric clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The vaccination card left at home and the vaccine fridge that runs short with babies booked are
+    paediatric clinic problems, and each capability answering them is one EasyClinic's own paediatric page
+    states plainly, with a plan named only where plans.yaml names one.
+  readsMachineWritten: >-
+    A paediatrician will find the growth and vaccine rows general, because the page names no growth
+    standard, no national immunisation schedule and no paediatrician, and says nothing about weight-based
+    dosing.
+
+notes:
+  - 'Grounding: immunisation tracking ("Automated vaccine schedules based on age and local guidelines. Alerts for overdue or upcoming vaccines"), growth charts ("Integration with growth standards to track height, weight, BMI, and head circumference"), developmental milestones (live FAQ), visual charts for vitals and lab reports, auto-generated summaries and facesheets, intake forms capturing family history and immunisations into the face sheet, side-by-side past records, clinical assistant or nurse intake and triage, "Drug interaction check" (listed only, so the page says no more than that the prescription has one), prescriptions shared by print, WhatsApp, SMS or email, video consults with the remote-consultation disclaimer on the prescription, part and advance payments and package treatments, role-based access and "Audit Logs" (listed only; the page does not say what the log records), the form builder for paper forms, and inventory "for vaccines and clinic supplies" (live FAQ) are all stated plainly on the live /pediatric-emr/ page (re-fetched 2026-09-26 in the editorial pass). Plan placement follows plans.yaml: specialty templates, own forms, package treatments, WhatsApp and video on Premium; pharmacy and inventory on Enterprise or as a module, described only in the add-on body wording (batch, expiry, reorder before you run out), not as a reorder-level alert. Cura AI drafting and "optional" follow /ai/ and plans.yaml; reception login and offline answers follow migration/research/facts.md.'
+  - 'Recruit a named paediatric testimonial (spec 5.15 item 9): a named paediatrician or paediatric clinic owner on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no paediatrician quote exists yet. Capterra and Google review counts are null in facts.yaml, so the badges show no count.'
+  - 'Spec 5.15 must-have "WHO growth charts": the live page says only "growth standards". Company to confirm which standards are built in (WHO 2006 under five, WHO 2007 five to nineteen, IAP 2015, CDC or others), whether centiles and z-scores are plotted, and whether weight and height taken at the nurse intake plot on the growth chart by themselves. The page names no standard and does not link the intake to the chart until then.'
+  - 'Spec 5.15 must-have "national immunisation schedules (India UIP, Kenya KEPI, Nigeria NPI)": the live page says "based on age and local guidelines" and names no schedule. Company to confirm which schedules are built in (UIP, IAP, KEPI, NPI or others), whether the clinic can edit a schedule, and whether the vaccine batch number given to a child is recorded on the immunisation record. No schedule is named on the page.'
+  - 'Spec 5.15 must-have "weight-based dosing" is left out: the live page lists "Medical calculators" without naming any and says nothing about dosing by weight. Company to confirm whether a weight-based (mg/kg) dose calculator exists in the prescription screen, with maximum-dose checks, and on which plan. Then add a row to the visit block and a FAQ.'
+  - 'Spec 5.15 must-have "parent WhatsApp reminders" is covered only as appointment reminders for a booked visit (automated reminders on the live page; WhatsApp on Premium per plans.yaml and /features/whatsapp/). The live "Alerts for overdue or upcoming vaccines" does not say who receives them. Company to confirm whether a vaccine falling due sends a reminder to the parent by itself, without a booked visit, and on which channel and plan. Also confirm whether a child''s record holds the parent or guardian as the contact, and whether siblings are linked as one family.'
+  - 'Spec 5.15 must-have "well-baby templates": the live page lists "Pediatric consultation templates" only in its unsourced comparison table and names no template. The page offers the Premium form builder for a clinic''s own paper well-baby form, not ready templates. Company to confirm the paediatric templates by name and count (well-baby or well-child check, newborn visit, developmental screening, adolescent visit) for the spec 5.15 item 5 dataTable.'
+  - 'Other spec 5.15 items missing: a timed walkthrough of the most common paediatric visit (item 4); devices such as weighing scales or stadiometers and their integration status (item 6); which paediatric note types Cura AI drafts, with an example (item 8); which plan carries growth charts, the immunisation schedule and milestone tracking (the live page does not tie them to a plan, so those rows carry no plan tag and the cost FAQ ties only templates and WhatsApp to Premium); whether a nurse doing the intake needs a paid licence under per-doctor pricing.'
+  - 'Dropped from the live page: both comparison tables ("Other EMR Software", "Generic EMR Software": unsourced competitor cells, and "Inventory for vaccines & medicines Built-in", which conflicts with plans.yaml), "prescriptions in just 30 seconds" and "three clicks" (unmeasured here), prescriptions "in any language" (only English and Swahili are confirmed), AI diagnostic support and ADR alerts (CuraPilot claims), "Reduces no-shows" (noShowReduction is null), "invoices ready in less than 10 seconds", "over 100 graphical dashboards", the data warehouse, Power BI and AI two-way messaging lines, patient self check-in and booking on the phone (plan unclear), the "14-Day Free Trial, 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial), the "5000+ doctors" stat line, and the four testimonials on the live page, none of them from a paediatrician.'
+  - 'Illustrative scenes: the vaccination card, the register weights, the Monday morning calls and the "three babies" booked for one vaccine are composite paediatric clinic situations, not customers. The vaccination-package row and FAQ apply Premium package treatments to vaccines; the live page does not name a vaccination package.'
+  - 'Editorial pass, 2026-09-26 (adversarial re-check against the live page): removed the implication that growth charts plot centiles (pain body said "crossed down a centile line"; centiles and z-scores are unconfirmed); removed "lab values" from the growth row, since lab reports in the chart are Premium in plans.yaml and the row carries no plan; cut the drug interaction timing ("warns while the prescription is still being written") and the audit-log detail ("who made each entry"), which the live page does not state; replaced the reorder-level alert with the plans.yaml add-on wording; removed the visit rows for reminders and vaccine stock, which repeated the pain block and FAQ word for word; rewrote the growth and vaccine FAQs as questions a paediatrician asks (head circumference, the forgotten card) and removed three-item lists from the face-sheet row, cost FAQ and closing.'
+  - 'Screenshots left out (no heroMedia or media on published pages). When the seeded demo tenant exists: the child''s growth chart with height, weight and head circumference as hero, the vaccine schedule with an overdue alert, and a parent''s WhatsApp reminder for the next vaccine visit.'
+  - 'Title 34 characters. Meta description 145 characters with the price token resolved ($99). H1 follows spec 4.3 ("EMR for paediatric clinics") with the spec 5.15 item 1 pattern after the colon, naming only the two objects the live page states. /clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts; the related links resolve once they publish. /solutions/solo-clinic/ is the practice-size link (spec 2.9).'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits in the vaccine stock, receptionist and offline FAQs) until the testimonial arrives.

@@ -1,0 +1,256 @@
+# /partner-with-ec/ (spec 5.19 company pages; section 6 voice). Draft: spec 5.19 requires the commission or
+# margin range, partner tiers, enablement (training hours, demo environment, co-marketing) and two named
+# partners, and none of them is confirmed. Everything outside the brackets is a live or confirmed fact.
+status: draft
+headKeyword: EasyClinic partner program
+secondaryKeywords:
+  - EasyClinic reseller
+  - clinic software partner program
+  - EMR software reseller program
+  - healthcare software distributor
+title: EasyClinic Partner Program for Consultants and Distributors
+metaDescription: >-
+  The EasyClinic partner program pays a recurring [commission or margin range] on each clinic you
+  introduce. We set up and support the clinic for you.
+h1: Bring clinics to EasyClinic and earn a share of what they pay
+linkLabel: Partner program
+eyebrow: For people who already sell to clinics or advise them
+openingAnswer: >-
+  The EasyClinic partner program pays you a recurring [commission or margin range] on every clinic you
+  introduce, paid [how often, and for how long]. You make the introduction, and we implement the
+  software and support the clinic afterwards, including {fact:trainingDays} days of staff training, so
+  you need no support desk of your own.
+summary: >-
+  What partners earn, how the tiers differ, the training and demo environment you get, and who sets up
+  and supports the clinics you bring to EasyClinic.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Email us about partnering
+    href: mailto:hello@easyclinic.io?subject=EasyClinic%20partner%20program
+  secondary:
+    label: Call {contact:in.phone}
+    href: tel:+919147770277
+  whatsapp: Hi, I was reading the EasyClinic partner program page and would like to talk about introducing clinics to EasyClinic.
+
+sections:
+  - discriminant: prose
+    value:
+      id: who-it-is-for
+      heading: Who the program is for
+      body: |-
+        The program is for people clinic owners already listen to. A consultant who advises clinics knows which owners still write prescriptions on paper and which are fighting the software they have. A distributor, or an IT firm that looks after a clinic's computers, is already in the building when the printer stops talking to the system. Either way, the owner trusts you, and the program pays you for the introduction.
+
+        You do not need to build or support anything. You introduce the clinic, and EasyClinic handles the rest, from implementation to support. Our support team answers the clinic's questions by phone or in writing for as long as it is a customer, at no extra cost to the clinic.
+      aside: >-
+        **Running a clinic yourself?** This page is for partners. To see EasyClinic for your own clinic,
+        [book a 20-minute demo](/contact-us/#book-a-demo).
+
+  - discriminant: stepList
+    value:
+      id: how-it-works
+      heading: How the partner program works
+      intro: >-
+        Between your first email and your first payment, most of the work is ours.
+      steps:
+        - title: Write to us
+          meta: One email
+          body: >-
+            Email hello@easyclinic.io with your company name and the countries you cover, and tell us
+            about the clinics you already sell to or advise.
+        - title: Learn the product
+          meta: '[Training hours]'
+          body: >-
+            We train you on how EasyClinic works, so you can show a clinic owner the chart and the bill
+            yourself. [Training format, and who runs it.]
+        - title: Introduce a clinic
+          body: >-
+            Show the clinic EasyClinic on a partner demo environment, or bring the owner to our 20-minute
+            demo and we run it. The clinic pays per doctor per month, with no binding contract.
+        - title: We set the clinic up
+          meta: In as little as {fact:goLiveDays} days
+          body: >-
+            We implement the software and train the clinic's staff over {fact:trainingDays} days, about
+            two hours in all. From then on, the clinic's questions come to our support team.
+        - title: You are paid
+          meta: '[How often]'
+          body: >-
+            Your share of what the clinic pays reaches you [payment method and schedule, and for how long
+            the share is paid].
+      note: >-
+        {fact:goLiveDays} days is the fastest a clinic goes live. [How long most clinics take, and how much
+        longer a clinic moving its records from another system takes.]
+
+  - discriminant: dataTable
+    value:
+      id: partner-tiers
+      heading: What you earn at each tier
+      intro: >-
+        Every clinic you introduce earns you a recurring share of what it pays EasyClinic. Clinics pay per
+        doctor per month, so when a clinic you introduced adds a doctor, your share grows with it.
+        [Whether partners earn a commission on what EasyClinic invoices, or buy at a partner price and
+        resell at a margin.]
+      columns:
+        - Tier
+        - Who it suits
+        - Your share
+        - What comes with it
+      rows:
+        - - '[Tier 1 name]'
+          - '[Who it suits]'
+          - '[Commission or margin range]'
+          - '[Training, demo environment and co-marketing at this tier]'
+        - - '[Tier 2 name]'
+          - '[Who it suits]'
+          - '[Commission or margin range]'
+          - '[Training, demo environment and co-marketing at this tier]'
+      note: >-
+        [What moves a partner from one tier to the next, and whether a partner can move back down.]
+
+  - discriminant: featureRows
+    value:
+      id: enablement
+      heading: What we give you to sell with
+      intro: >-
+        Training and a demo environment are for you. Support is for the clinics you bring, and it comes
+        with their own plan.
+      items:
+        - heading: Product training
+          body: >-
+            You get [training hours] of training on EasyClinic before you introduce your first clinic,
+            [format, and who runs it]. The clinics you bring get their own {fact:trainingDays}-day staff
+            training from us after they sign up.
+        - heading: A demo environment
+          body: >-
+            You get a demo environment, [what it contains, and how long access lasts], so you can show a
+            clinic owner EasyClinic without booking a call with us first.
+        - heading: Co-marketing
+          body: >-
+            [Co-marketing: which co-branded material and customer stories partners get, and at which
+            tier.]
+        - heading: Support for every clinic you bring
+          body: >-
+            When a clinic you introduced has a question, it calls or writes to our support team, so you
+            need no support desk of your own. Support and training are unlimited on every plan at no extra
+            charge, and Premium and Enterprise clinics also have a named account manager.
+
+  - discriminant: prose
+    value:
+      id: what-to-tell-clinics
+      heading: What to tell a clinic owner
+      body: |-
+        Start with the price. Professional is {price:inr.professional.annual} per doctor per month in India on annual billing, and Premium is {price:inr.premium.annual}. In US dollars they are {price:usd.professional.annual} and {price:usd.premium.annual}. Enterprise, for clinic chains and hospital OPDs, is priced on a quote. There is no setup fee and no binding contract.
+
+        Then tell them who else uses it. EasyClinic has been running clinics since {fact:founded}, and Penda Health has run its clinics in Nairobi on it since 2017. Qualitas Health in Malaysia has used it too. {fact:retention} of EasyClinic's customers have used it for more than five years.
+
+        Tell them the limits as well, because they will find them anyway. EasyClinic is cloud software and does not run fully offline today, so a clinic whose line drops often needs a backup connection. Professional covers one location, and a clinic that opens a second branch moves up to Premium.
+      aside: >-
+        The [pricing page](/pricing/) sets out what each plan includes, and [about EasyClinic](/about-us/)
+        has the company's story from {fact:founded}.
+
+  - discriminant: dataTable
+    value:
+      id: current-partners
+      heading: Partners who sell EasyClinic today
+      intro: >-
+        [One line on the two partners below, once both have agreed to be named.]
+      columns:
+        - Partner
+        - Where they work
+        - What they do
+        - Partner since
+      rows:
+        - - '[Partner 1 name]'
+          - '[Country]'
+          - '[What they do, and the kind of clinics they bring]'
+          - '[Year]'
+        - - '[Partner 2 name]'
+          - '[Country]'
+          - '[What they do, and the kind of clinics they bring]'
+          - '[Year]'
+
+faqHeading: Questions partners ask
+faq:
+  - question: How much does an EasyClinic partner earn?
+    answer: >-
+      You earn [commission or margin range] of what each clinic you introduce pays EasyClinic, paid [how
+      often, and for how long]. Clinics pay per doctor per month, so a clinic that adds doctors pays more
+      and your share grows with it. On the Professional plan in India, a clinic pays
+      {price:inr.professional.annual} per doctor per month on annual billing.
+  - question: What is the difference between the partner tiers?
+    answer: >-
+      The tiers differ in [what each tier pays, and what it asks of the partner], and you move up when
+      [what moves a partner from one tier to the next]. Whatever your tier, the clinics you bring get the
+      support that comes with their own plan, because they call our support team directly.
+  - question: Do I have to implement and support the clinics myself?
+    answer: >-
+      No, EasyClinic implements every clinic you introduce and trains its staff over {fact:trainingDays}
+      days, about two hours in all, at no charge to the clinic. After that the clinic calls or writes to
+      our support team, and support is unlimited on every plan, so you do not need a support desk of your
+      own.
+  - question: What does a clinic pay for EasyClinic?
+    answer: >-
+      A clinic pays per doctor per month: in India, Professional is {price:inr.professional.annual} and
+      Premium {price:inr.premium.annual} on annual billing, or {price:inr.professional.quarterly} and
+      {price:inr.premium.quarterly} billed quarterly. In US dollars, Professional is
+      {price:usd.professional.annual} and Premium {price:usd.premium.annual} on annual billing, and
+      Enterprise is priced on a quote. There is no setup fee, and a login for the receptionist is included
+      in the price.
+  - question: What happens to my share if a clinic I introduced leaves?
+    answer: >-
+      [What happens to the partner's share when a clinic cancels, and whether any of it is paid back.] A
+      clinic can leave whenever it chooses, because EasyClinic has no binding contracts, though
+      {fact:retention} of EasyClinic's customers have used it for more than five years.
+  - question: How are partners trained, and can I run my own demos?
+    answer: >-
+      Partners get [training hours] of product training before their first introduction, [format, and who
+      runs it], and a demo environment, [what it contains, and how long access lasts]. If you would rather
+      not run the demo yourself, bring the clinic owner to our 20-minute demo and we will run it for you.
+
+links:
+  relatedHeading: Before you write to us
+  related:
+    - href: /about-us/
+      label: About EasyClinic
+      description: The company behind the program, running clinics since {fact:founded}, with its office in Kolkata.
+    - href: /contact-us/
+      label: Contact EasyClinic
+      description: Phone and email for India and Kenya, and the address of the Kolkata office.
+
+closing:
+  heading: Tell us about the clinics you work with
+  body: >-
+    Email hello@easyclinic.io with your company name and the countries you cover. If you would rather talk
+    first, call {contact:in.phone}.
+  primary:
+    label: Email us about partnering
+    href: mailto:hello@easyclinic.io?subject=EasyClinic%20partner%20program
+  secondary:
+    label: Call {contact:in.phone}
+    href: tel:+919147770277
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    What a partner can tell a clinic owner is specific to EasyClinic: the per-doctor prices in rupees and
+    dollars with no setup fee or binding contract, the four days of staff training we run for the clinic,
+    Penda Health's clinics in Nairobi on EasyClinic since 2017, and the admission that it does not run
+    fully offline, but nothing yet about the program itself.
+  readsMachineWritten: >-
+    With the share, the tiers, the partner training and both partners still in brackets, the two tables
+    and half the FAQ read as an empty template, and the clinic prices appear in both the owner section
+    and the FAQ.
+
+notes:
+  - 'Draft until the fact sheet answers spec 5.19: the commission or margin range and whether partners earn a commission or resell at a margin; how often and for how long the share is paid, and what happens to it when a clinic cancels; the partner tiers (names, who each suits, what moves a partner up or down; the table has two rows only as a frame, so add or remove rows to match); training hours and format; what the demo environment contains, how long access lasts and whether each partner gets one of their own; what co-marketing partners get; two named partners with their country, what they do and the year they joined, with consent to be named; and how long most clinics take to go live beyond the 3-day fastest case.'
+  - 'Grounding: live https://www.easyclinic.io/partner-with-ec/ (re-fetched 2026-09-26). Kept as plain facts: partners are consultants, distributors and IT service providers; "consistent recurring income"; a revenue-sharing model ("Earn from every clinic you introduce to Easy Clinic. The bigger they grow, the more you earn."); sign up, learn the product, introduce clinics (EasyClinic handles the rest, from implementation to support); partners are trained on the product; "when your clients have questions, our support team has their back"; the live page names co-branded materials, success stories and demo environments (details unknown, so bracketed); the sign-up form asks for name, email, company name or website, country, phone and a note. Clinic prices, no setup fee, no binding contract, reception login, unlimited support and training, the named account manager on Premium and Enterprise, and the four-day training come from plans.yaml, the price files and the live /pricing/ FAQ; the 20-minute demo is the spec 7.9 CTA (live /kenyademo/ says 30).'
+  - 'Dropped from the live page as boilerplate or unsourced: the H1 "Partner with Easy Clinic" and H2 "Empower clinics. Drive growth. Earn together.", "transforming healthcare operations worldwide", "cutting-edge tools", "unmatched features", "seamless payor management", "pitch it like a pro", "Let''s build a healthier future together", the claim that payor rules "reduce claim rejection rates" (no public figure) and "AI generates intelligent EMR prescriptions in minutes" (no minutes-per-note figure).'
+  - 'Penda Health and Qualitas Health appear only as customers (live page: "From Qualitas Health in Malaysia to Penda Health in Kenya"; Penda on EasyClinic since 2017 per arXiv 2507.16947). Qualitas is written "has used it" because its testimonial is in the past tense, matching /about-us/. They are not channel partners and must not fill the partners table. Dr Korom calls EasyClinic an "innovation partner", which is a different sense of the word, so his quotes are not used here.'
+  - 'Editorial fixes on 2026-09-26: the go-live note no longer says how long a clinic with records to migrate takes (no source; now a placeholder); "a demo environment of your own" became "a demo environment" because the live page does not say each partner gets one; "Owners ask about the price first" and "Then they ask who else uses it" were rewritten as advice, not unsourced claims about owners; "moves up to Premium on the same system" lost "on the same system"; the partners table intro no longer states that two partners exist; prices were taken out of the tiers note because the owner section and the FAQ carry them.'
+  - 'No demoForm: the contact page FAQ sends partners to email because the demo form is set up for clinics. If a partner application form is built (the live page has one: name, email, company or website, country, phone, note), add it and point the primary CTA at it. The mailto subject line is a convenience; change it if partner email goes to a separate inbox.'
+  - 'Spec 6.5 named person: no one is named as the partner contact because who handles partners is not confirmed. Name the partner contact (for example the director of business growth and strategy) only once the company confirms it.'
+  - 'Company family needs no proof block. Once the two partners are named, a quote from one of them (verbatim, consent on file, in src/data/testimonials/) would be the page''s proof; add it as a testimonialRow with layout single.'
+  - 'editorialPass records the AI review only; a human editor must read the page aloud and redo both answers once the brackets are filled, before status moves to published. Related links follow the brief (/about-us/, /contact-us/); /about-us/ now exists in src/content/company/ but does not yet link here.'
+  - 'Prices: the clinic-facing prices are EasyClinic''s list prices. If partners resell at a margin and may set their own price, the "What does a clinic pay" FAQ and the What to tell a clinic owner section need a line saying so.'

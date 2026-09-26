@@ -1,0 +1,325 @@
+# Lab feature page (spec 5.11 "/features/lab", keyword row in 4.1). Replaces the live /pathology-emr/
+# (301 in src/data/redirects.yaml).
+status: published
+headKeyword: lab management software for clinics
+secondaryKeywords:
+  - laboratory information system
+  - LIS software
+  - pathology lab software
+title: 'Lab Management Software for Clinics: EasyClinic'
+metaDescription: 'Lab management software for clinics: order tests from the chart and get results back into the record, with reports sent on WhatsApp.'
+h1: Lab orders and results, inside the EMR
+linkLabel: Lab orders and results
+eyebrow: Lab
+openingAnswer: >-
+  EasyClinic is lab management software for clinics: the doctor orders the test from the chart, and the
+  result comes back into the same patient record with abnormal values flagged. Lab reports in the chart
+  come with the Premium plan, from {price:usd.premium.annual} per doctor per month billed annually
+  ({price:inr.premium.annual} in India), and lab management, with orders from the chart and sample
+  tracking, comes with Enterprise or as an add-on on Professional and Premium.
+summary: >-
+  Tests ordered from the chart come back as results on the same patient record. Lab reports come with
+  Premium, and lab management with Enterprise or as an add-on.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic lab page and would like to see a test ordered from the chart and the result coming back in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-results-go-missing
+      heading: Where a clinic's lab results go missing
+      intro: >-
+        A clinic with a lab of its own, or a lab it sends samples to, will know these four. Each one
+        costs the doctor time in the consult or the patient a second trip.
+      items:
+        - heading: The lab cannot read the slip
+          body: >-
+            The doctor writes CBC, LFT, TSH and a lipid profile on a paper slip, and the patient carries it
+            down the corridor. The technician reads the handwriting as best they can, and a test that was
+            asked for is missed until the doctor notices at the follow-up.
+          fix: >-
+            With lab management, the doctor picks the tests from the lab's test catalog on the patient's
+            chart, and the lab sees the order as it was written. Nobody has to read anyone's handwriting.
+        - heading: A tube swapped at the counter
+          body: >-
+            Tubes labelled by hand at a busy collection counter get swapped, and the first sign is a result
+            that makes no sense for the patient. By then the only fix is a second needle and an apology.
+          fix: >-
+            With lab management, each sample is tracked with a barcode or QR code label, so the tube stays
+            matched to the patient and the test from collection to result.
+        - heading: The report is in the patient's bag
+          body: >-
+            The paper report goes home with the patient, and by the follow-up it is in a drawer
+            somewhere. The doctor phones the lab for a copy while the next patient waits.
+          fix: >-
+            When your own lab runs the test, the result comes back into the patient's record with abnormal
+            values flagged, so it is on the chart when the doctor opens it. A report from an outside lab
+            can be uploaded to the same record as a file. On Premium and Enterprise the report can also go
+            to the patient on WhatsApp.
+        - heading: Last year's HbA1c is on another sheet
+          body: >-
+            To see whether a diabetic patient's HbA1c has come down, the doctor lays out paper reports
+            from several visits and reads the numbers across. The trend gets worked out in the doctor's
+            head, in the middle of a consult.
+          fix: >-
+            Lab values stay on the patient's record visit after visit, and EasyClinic draws them as lab
+            charts beside the vitals, so the trend is on one screen.
+
+  - discriminant: flowDiagram
+    value:
+      id: order-to-report
+      heading: From the order to the report
+      intro: >-
+        What happens to one test, from the consulting room to the patient's phone. Ordering from the chart
+        and tracking the sample are lab management, which comes with Enterprise or as an add-on on
+        Professional and Premium. Sending the report on WhatsApp needs Premium or Enterprise.
+      steps:
+        - label: Order from the chart
+          body: The doctor picks single tests or a health check-up package from the test catalog on the patient's chart.
+        - label: Bill at the desk
+          body: The tests ordered go on the patient's bill, so the desk does not type them in again.
+        - label: Collect and label
+          body: The sample is collected and labelled with a barcode or QR code that ties it to the patient and the test.
+          check: Guards against a swapped tube
+        - label: Process
+          body: Sample tracking follows each sample from collection to the result, so the lab can tell where a sample is.
+        - label: Report
+          body: The technician enters the values on the test's report template, and the report is generated from it.
+        - label: Back in the chart
+          body: The result lands on the patient's record with abnormal values flagged, ready for the doctor at the follow-up.
+          check: Flags an abnormal value
+        - label: To the patient
+          body: On Premium and Enterprise, the report can go to the patient on WhatsApp.
+
+  - discriminant: featureRows
+    value:
+      id: how-it-works
+      heading: What the lab and the doctor each get
+      intro: >-
+        The lab's side and the doctor's side work on the same patient record. A row tagged with a plan
+        needs that plan, or the add-on the row names.
+      items:
+        - heading: A test catalog with your own packages
+          body: >-
+            Your lab's tests sit in one catalog, from a blood count to an X-ray, whether the lab runs
+            pathology tests only or imaging as well. The catalog can also hold health check-up packages
+            that you put together, and the doctor orders from it on the chart. The catalog is part of lab
+            management, an add-on on Professional and Premium.
+          plan: enterprise
+        - heading: Samples tracked by barcode or QR code
+          body: >-
+            Each sample gets a barcode or QR code label when it is collected, and the label ties the tube
+            to the patient and the test. Tracking follows the sample from collection to the result, so it
+            is not mixed up with another patient's tube on the way. Sample tracking is part of lab
+            management, an add-on on Professional and Premium.
+          plan: enterprise
+        - heading: Results in the chart, with abnormal values flagged
+          body: >-
+            Lab reports come into the patient's chart, and abnormal values are flagged on the chart the
+            doctor already has open. Lab values are drawn as charts beside the vitals, visit after visit,
+            so a trend is one look instead of a pile of paper.
+          plan: premium
+        - heading: Reports built from templates
+          body: >-
+            Lab reports are generated from built-in templates, so the technician enters the values on a
+            set layout for each test instead of typing the report. Every report from your lab then reads
+            the same way, whoever was on the bench that day.
+        - heading: The report on the patient's phone
+          body: >-
+            The report can go to the patient on WhatsApp from EasyClinic, so the patient has it at the
+            follow-up and at any other doctor they see. How the messages are set up is covered on the
+            WhatsApp page.
+          plan: premium
+          link:
+            label: Read how WhatsApp messages work
+            href: /features/whatsapp/
+        - heading: Tests sent to an outside lab
+          body: >-
+            A report from an outside lab can be scanned and uploaded to the patient's record as a file,
+            where it sits beside the results from your own lab. A direct feed from an outside lab's own
+            system into EasyClinic would be integration work, scoped as a project, and this page does not
+            name any outside lab as connected. The [integrations page](/integrations/) covers connections
+            country by country.
+        - heading: Your lab machines, connected by project
+          body: >-
+            A connection between EasyClinic and your lab analysers is integration work, scoped for your
+            machines as a project. It comes with Enterprise, under integrations and custom features, or as
+            an add-on on Professional and Premium. Which machines can be connected, and how long the work
+            takes, is worked out in that scoping.
+          plan: enterprise
+        - heading: Billing the tests
+          body: >-
+            Tests ordered from the chart go on the patient's bill, and billing and payments come with every
+            plan. Invoices and receipts are covered on the billing page.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+
+  - discriminant: dataTable
+    value:
+      id: plans
+      heading: Which plan includes what for the lab
+      intro: >-
+        The lab is split across the plans, and each row here follows the plan list on the pricing
+        page.
+      caption: Lab features by plan
+      columns:
+        - What the lab needs
+        - Professional
+        - Premium
+        - Enterprise
+      rows:
+        - - Lab reports in the chart
+          - Not included
+          - Included
+          - Included
+        - - 'Lab management: orders from the chart and sample tracking'
+          - Add-on
+          - Add-on
+          - Included
+        - - Reports to patients on WhatsApp
+          - Not included
+          - Included
+          - Included
+        - - Connections to lab machines
+          - Add-on, scoped per project
+          - Add-on, scoped per project
+          - Included, scoped per project
+        - - Stock of reagents and lab supplies
+          - Add-on, with pharmacy and inventory
+          - Add-on, with pharmacy and inventory
+          - Included
+        - - Billing and payments
+          - Included
+          - Included
+          - Included
+      note: >-
+        Professional costs {price:usd.professional.annual} and Premium {price:usd.premium.annual} per
+        doctor per month billed annually ({price:inr.professional.annual} and {price:inr.premium.annual}
+        in India). Enterprise is priced on a quote. On Professional, a lab report can still be scanned
+        and attached to the patient's record as a file. [Compare every plan](/pricing/).
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        These are EasyClinic's public ratings on Capterra and Google, for the whole product rather than
+        the lab alone. We do not yet have a quote from a clinic lab's own staff to put on this page.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions clinics ask about the lab
+faq:
+  - question: Can we use it for tests we run in-house and tests we send out?
+    answer: >-
+      Yes: tests your own lab runs go through lab management, from the order on the chart to the result,
+      and a report from an outside lab can be scanned and uploaded to the patient's record beside them. A
+      direct feed from an outside lab's own system would be integration work, scoped as a project, and
+      this page does not name any outside lab as connected.
+  - question: Can EasyClinic connect to our lab analysers?
+    answer: >-
+      Connecting your analysers is integration work, scoped for your machines as a project, and it comes
+      with Enterprise or as an add-on on Professional and Premium. Which analysers can be connected, and
+      how long the work takes, is worked out for each project, so bring the make and model of each machine
+      to the scoping.
+  - question: Do lab reports come from templates, or does the technician type each one?
+    answer: >-
+      They come from templates: lab reports are generated from built-in templates, so each report has a
+      set structure and the technician enters the values. That is what keeps every report from your lab
+      in the same layout, whoever was on the bench that day.
+  - question: Can we order X-rays and scans the same way as blood tests?
+    answer: >-
+      Yes, with lab management imaging tests can sit in the same test catalog as blood tests, so an X-ray
+      or a scan is ordered from the chart like any other test. The imaging report and the images can be
+      uploaded to the patient's record as files, beside the visits and the lab results.
+  - question: Do I need Enterprise to use the lab features?
+    answer: >-
+      No: Premium, at {price:usd.premium.annual} per doctor per month billed annually
+      ({price:inr.premium.annual} in India), includes lab reports in the chart and sending them on
+      WhatsApp. Lab management, with orders from the chart and sample tracking, comes with Enterprise or
+      as an add-on on Professional and Premium, so a clinic on Premium can add it without changing plan.
+  - question: Can the lab keep stock of its reagents?
+    answer: >-
+      Yes, reagents and lab supplies can be kept in EasyClinic's inventory, which comes with Enterprise
+      or as part of the pharmacy and inventory add-on on Professional and Premium. How batches and
+      reorders work is covered on the [pharmacy and inventory page](/features/pharmacy-and-inventory/).
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist, on the Professional plan, with no IT staff to call.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: Every specialist reads the same lab report on one shared chart.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: One central chart across every branch, with clinical SOPs tracked branch by branch.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD on one patient record, with the pharmacy and the lab working from the consult.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: The chart the tests are ordered from and the results come back to.
+    - href: /features/pharmacy-and-inventory/
+      label: Pharmacy and inventory
+      description: Dispensing from the prescription, and the stock the lab's reagents sit in.
+    - href: /features/billing/
+      label: Billing
+      description: How the tests ordered from the chart become an invoice and a receipt.
+
+closing:
+  heading: See a test go from the chart to the report
+  body: >-
+    Book a 20-minute demo to watch a test ordered on the chart come back as a flagged result on the
+    patient's record. If a call is too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    Only the plan split for the lab (reports in the chart on Premium, lab management on Enterprise or as
+    an add-on) and the barcode or QR sample labels come from EasyClinic's own pricing and pathology
+    pages, and nothing on the page is local to one country, because no outside lab connection has a
+    confirmed status to name.
+  readsMachineWritten: >-
+    The pain-block scenes (the unreadable slip and the swapped tube) could sit on any lab software page
+    and need a lab technician's read-aloud, and the page has no named person or measured number, nor a
+    quote or screenshot from a clinic lab, so it does not yet meet the spec 6.5 test on either.
+
+notes:
+  - 'Title 47 characters. Meta is the spec 4.1 wording with the head keyword put in front (see length check in the lint run). H1 is the spec 4.1 H1.'
+  - 'Grounding: the live /pathology-emr/ (fetched 2026-09-26) states the test catalog with health check-up packages and imaging among the tests, barcode or QR code sample tracking "to prevent mix-ups", workflow from sample collection to result generation, built-in report templates, vitals and lab charts, and multi-user access for technicians. Its marketing numbers ("100+ dashboards", "invoices in less than 10 seconds"), its comparison tables against "other EMR software", "optimised for high-volume" and "integration readiness (lab devices): supported" were left out.'
+  - 'Plan statements follow src/data/plans.yaml: Premium includes "Lab reports" (matrix: lab reports in the chart) and WhatsApp; Enterprise includes lab management, integrations and custom features, and inventory; the lab, integrations and pharmacy add-ons are available on Professional and Premium. Add-on prices are null in src/data/prices, so no add-on price is stated.'
+  - 'Which plan includes the report templates, the flags on abnormal values and the lab charts is not known. Flags are placed with lab reports in the chart (Premium row) as spec 5.11 and the features hub describe them; the templates row carries no plan tag.'
+  - 'External lab integrations by country (spec 5.11 asks for them named with status): integration status is unknown, so no outside lab is named, the page says so, and a direct feed from an outside lab is written as "would be integration work" (plans.yaml names lab machines, accounting and an existing HIS for the integrations add-on, not outside labs). The integrations pointer says only that the page covers connections by country, as the features hub does, and never implies that any lab connection is live. /integrations/ has no content entry yet; the link renders as plain text in production until it publishes.'
+  - 'Machine interfaces are described only as the plans.yaml integrations add-on ("connections to your lab machines, scoped per project"). No analyser makes, protocols (HL7, ASTM) or timelines are stated.'
+  - 'Spec 5.11 FAQ items left out for lack of a confirmed fact: turnaround reporting (no confirmed turnaround-time report) and accreditation documents (NABL or similar status unknown). Radiology is answered only as far as the live page goes (imaging tests in the catalog, "image upload" and "document upload" in the EMR list); PACS, DICOM viewing and radiology equipment connections are not stated. Replaced with the plan question and the reagent stock question.'
+  - 'Lab billing is one row linking to /features/billing/ (spec 4.5 rule 2: billing owns invoices and GST). WhatsApp is described only as report delivery; templates, costs and the API stay on /features/whatsapp/ (rule 3). Nothing about unbilled tests or leakage (revenue-management).'
+  - 'Proof: badges variant (Capterra and Google). No testimonial: all are placed, and none is from a lab. No heroMedia or media: screenshots do not exist yet. When they exist, add the spec 12 capture "Lab order from the chart and result back with a flag" (one abnormal value) as hero.'
+  - 'Not stated for lack of a fact: whether lab technicians need a paid login, add-on prices, lab turnaround figures, any measured error or time saving, whether the lab works offline beyond the site-wide "does not run fully offline today".'
+  - 'Fact-check pass 2026-09-26: removed "the part most clinics ask about before the demo" and "from clinics of every kind" (unsourced); removed the FAQ claim that a lab''s paper report format can be kept through Premium print layouts at no charge (plans.yaml print layouts and the facts.md customisation line do not say lab reports); the analyser FAQ no longer opens with an unqualified "Yes"; the pain-block intro no longer claims every pain ends in a phone call or a wasted trip; the sample-tracking steps no longer claim a pending-samples view (the live page says tracking "to prevent mix-ups" and workflow "for sample collection, processing, and result generation", nothing more); WhatsApp delivery is written as Premium and Enterprise, not Premium alone; the catalog and sample rows say lab management is an add-on on Professional and Premium, since their plan tag reads "Included in Enterprise".'

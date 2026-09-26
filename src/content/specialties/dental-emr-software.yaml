@@ -1,0 +1,344 @@
+# /dental-emr-software/ (spec 5.15 SpecialtyPage and dental must-have row; keyword row 4.3). Slug kept: the live URL.
+# Grounding: capability statements the live /dental-emr-software/ page makes plainly (retrieved 2026-09-26),
+# plans.yaml and facts.md. No template counts, periodontal fields, device integrations or outcomes.
+status: published
+headKeyword: dental clinic software
+secondaryKeywords:
+  - dental practice management software
+  - dental EMR
+  - dental clinic management system
+title: 'Dental Clinic Management Software: EasyClinic'
+metaDescription: >-
+  Dental clinic software with a tooth chart and multi-visit treatment plans. Premium bills implants and
+  braces as packages, from {price:usd.premium.annual} per doctor a month.
+h1: 'Dental EMR software: tooth charting and treatment plans on one record'
+linkLabel: Dental
+eyebrow: For dental clinics
+openingAnswer: >-
+  A dental clinic needs two things a general EMR leaves out: a visual chart that records the condition of
+  each tooth, and a treatment plan for a root canal or an implant that runs over several visits.
+  EasyClinic keeps both on the patient's record, and its Premium plan bills an implant or a course of
+  braces as one package paid in parts, at {price:inr.premium.annual} per doctor per month in India or
+  {price:usd.premium.annual} in US dollars, billed annually.
+summary: >-
+  A visual chart of each tooth and treatment plans that run over several visits, with implants and
+  orthodontic courses billed as packages on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a dental clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for dental clinics and would like to book a demo for our practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-dental-clinics-lose-track
+      heading: Where a dental clinic loses track
+      intro: >-
+        Dental work is done tooth by tooth and often over several sittings, and most of what goes missing
+        falls between one sitting and the next.
+      items:
+        - heading: The tooth chart is a sketch in the case file
+          body: >-
+            At the first visit the dentist sketches the teeth on the case paper and marks the missing molar
+            and the two cavities. The X-ray sits on the computer beside the sensor in the next room, so six
+            months later the dentist is reading a faded drawing and asking the assistant to find the image.
+          fix: >-
+            The dental chart records each tooth's condition visually on the patient's record, and the
+            procedures done are recorded there too. X-rays and other images are uploaded as files to the
+            same record, so at the next visit the dentist opens them there instead of asking the assistant
+            to find them.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The root canal that never gets its crown
+          body: >-
+            The root canal is started and the pain goes, so the patient does not come back for the second
+            sitting. Months later the tooth cracks, and the case paper shows a treatment that stopped
+            halfway without anyone calling to ask why.
+          fix: >-
+            The treatment plan sits on the patient's record, with each visit and follow-up tracked against
+            it. The sittings can be booked together at the first visit, and each booked sitting gets an
+            automated reminder by SMS and email on every plan, and by WhatsApp on Premium.
+          href: /features/whatsapp/
+          linkLabel: Read how WhatsApp reminders work
+        - heading: The braces paid in instalments, tracked in a notebook
+          body: >-
+            A course of braces or an implant is agreed at one price and paid in parts over months. The
+            instalments go into a notebook at the front desk, and when the patient asks what is still owed,
+            the answer waits for the accountant.
+          fix: >-
+            On Premium the treatment is billed as one package, and every advance and part payment is
+            recorded against it, so the desk sees the balance on the bill. A refund or a voided invoice
+            goes through only with authorisation.
+          href: /features/billing/
+          linkLabel: Read how part payments and packages work
+        - heading: Two dentists, one chair at 5pm
+          body: >-
+            The desk books a scaling into chair two at 5pm without seeing that the other dentist has an
+            extraction there, with the only assistant. The clash shows up when both patients are sitting in
+            the waiting room.
+          fix: >-
+            Chairs and assistants are booked inside the appointment slot, and the calendar shows each one's
+            bookings, so the desk sees chair two is taken at 5pm before it offers that time.
+          href: /features/appointment-scheduling/
+          linkLabel: Read how booking works
+
+  - discriminant: featureRows
+    value:
+      id: built-around-the-dental-chart
+      heading: Built around the dental chart
+      intro: >-
+        What the dentist works with in the chair, from the first examination to the last sitting of a
+        treatment plan.
+      items:
+        - heading: A visual chart, tooth by tooth
+          body: >-
+            The dental chart documents each patient's condition visually, such as a missing tooth or a
+            cavity, and findings are recorded tooth by tooth. The procedures done are recorded on the same
+            patient record, so at the next visit the dentist sees what was found and what was done.
+          bullets:
+            - Visual charting of each tooth's condition
+            - Tooth-wise findings and procedures recorded
+            - Past visits side by side with today's
+            - The patient's whole visit history on one screen
+        - heading: Treatment plans that run over several visits
+          body: >-
+            Create a treatment plan for fillings, root canals, crowns, orthodontics or implants, and track
+            the visits and follow-ups it takes on the patient's record. When a patient comes back after a
+            gap of months, the plan and the procedures already done are on the same record.
+        - heading: X-rays and images on the patient's record
+          body: >-
+            X-rays and other images are uploaded to the patient's record as files, so they open from the
+            same record as the chart. The facesheet, generated automatically, sums up the patient's key
+            data before the patient sits down.
+        - heading: The medical history, read before an extraction
+          body: >-
+            Intake forms capture the patient's medical history in as much or as little detail as you want,
+            including chronic illnesses and substance use, and it all goes onto the facesheet. Before an
+            extraction the dentist reads it at a glance instead of asking again with the patient in the
+            chair.
+        - heading: Your own forms and print layouts
+          plan: premium
+          body: >-
+            On Premium, a paper examination form your clinic already uses is rebuilt as a digital form
+            with the form builder, and the prescription prints in your own layout. Premium also includes
+            specialty EMR templates, and the customisation comes without charges.
+        - heading: Cura AI drafts the note
+          plan: professional
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the dentist to review, and
+            it is optional, so a dentist who would rather write every note writes it in the same chart.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: featureRows
+    value:
+      id: from-the-chair-to-the-front-desk
+      heading: From the chair to the front desk
+      intro: >-
+        Package treatments come with Premium. Inventory for dental supplies comes with Enterprise, or as a
+        module added to Professional or Premium.
+      items:
+        - heading: Chairs and assistants booked with the appointment
+          body: >-
+            Book the chair and the assistant a procedure needs inside the appointment slot, and see each
+            one's bookings on the calendar. The appointment book takes fixed-time appointments and
+            walk-ins, and the sittings of one treatment can be booked together.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: Procedures billed from your own price list
+          plan: professional
+          body: >-
+            Billing comes with every plan. Each procedure goes on the bill from the clinic's service list,
+            which can carry more than one price level, and a price can be adjusted without redoing the
+            bill.
+          bullets:
+            - Discounts only with authorisation
+            - Taxable and non-taxable items kept apart on the bill
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Implants and orthodontics billed as packages
+          plan: premium
+          body: >-
+            On Premium an implant or a course of braces is billed as one package treatment, and the payment
+            is spread over the course of the treatment. Advances and part payments are recorded against the
+            package, and refunds and voided invoices go through only with authorisation.
+          bullets:
+            - Advances and part payments recorded against one package
+            - Receipts and invoices sent to the patient on WhatsApp
+        - heading: Stock of dental supplies and medicines
+          plan: enterprise
+          body: >-
+            Inventory for dental supplies and medicines comes with Enterprise, or as the pharmacy and
+            inventory module added to Professional or Premium. With it, each batch is tracked to its expiry
+            date, and the clinic reorders before it runs out.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        No dentist has yet given us a quote for this page. These are EasyClinic's overall public
+        ratings, not ratings from dental clinics alone.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, and each person learns the screens their own role uses.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the dentists use every day: the appointment book and the bill at
+            the desk, the chart and the prescription at the chair.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            You work through the chart and the prescription on the kinds of cases your clinic sees.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions dental clinic owners ask
+faq:
+  - question: Which EasyClinic plan does a dental clinic need, and what does it cost?
+    answer: >-
+      A dental clinic that bills implants or braces as packages needs Premium, the plan for specialists:
+      {price:inr.premium.annual} per doctor per month billed annually in India or
+      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
+      {price:usd.premium.quarterly} in US dollars. Premium also adds specialty EMR templates and your own
+      forms and print layouts. Professional, at {price:inr.professional.annual} or
+      {price:usd.professional.annual} billed annually, has the EMR and billing but not package treatments
+      or specialty EMR templates. Neither plan has a setup fee or a binding contract.
+  - question: Can I chart each tooth and record what was done to it?
+    answer: >-
+      Yes, the dental chart records each patient's condition visually, such as a missing tooth or a
+      cavity, and documentation is tooth-wise, with the procedures done recorded on the patient's record.
+      Past visits open side by side with today's, so the dentist compares them on one screen.
+  - question: How do X-rays get into the patient's record?
+    answer: >-
+      They are uploaded to the patient's record as image files, alongside other images, so the dentist
+      opens them from the same record as the chart. A scanned report from another clinic goes in the
+      same way.
+  - question: How are implants and braces billed when the patient pays in instalments?
+    answer: >-
+      On Premium the treatment is billed as one package, and each advance or part payment is recorded
+      against it, so the front desk sees the balance before taking the next payment. The payment can be
+      spread over the course of treatment, and a refund for a treatment stopped partway goes through only
+      with authorisation. Professional does not include package treatments.
+  - question: Can the front desk book chairs and assistants, not only the dentist?
+    answer: >-
+      Yes, chairs and assistants are booked inside the appointment slot, and the calendar shows each
+      one's bookings. The sittings of one treatment can be booked together, and each gets an automated
+      reminder by SMS and email, or by WhatsApp on Premium.
+  - question: Does EasyClinic keep stock of dental supplies?
+    answer: >-
+      Yes, but not on Professional or Premium alone: inventory for dental supplies and medicines comes
+      with Enterprise, or as the pharmacy and inventory module added to Professional or Premium. With the
+      module, each batch is tracked to its expiry date.
+  - question: Can my assistants and the front desk use EasyClinic?
+    answer: >-
+      Yes, logins for your staff come with every plan, and the role on each login decides which screens
+      it can open. The reception login is included in the price, and it cannot open the EMR or issue a
+      prescription.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
+      system runs on the clinic's own server rather than in EasyClinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where dental clinic owners go next
+  related:
+    - href: /solutions/solo-clinic/
+      label: Solo doctor clinic
+      description: For a dentist running their own practice with a receptionist.
+    - href: /solutions/polyclinic/
+      label: Polyclinic software
+      description: >-
+        For a practice with several dentists, or a dental wing in a polyclinic: one patient record for
+        every specialist, and shared rooms on one calendar.
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      label: Clinic software in Kenya
+      description: EasyClinic for clinics in Kenya, where Penda Health has used it as its EMR since 2017.
+    - href: /features/emr/
+      label: The EMR and e-prescriptions
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /features/pharmacy-and-inventory/
+      label: Pharmacy and inventory
+      description: Stock of supplies and medicines, each batch tracked to its expiry date.
+    - href: /features/billing/
+      label: Billing and payments
+      description: Bills built from the price list, with part payments and packages paid over several visits.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: >-
+        Premium at {price:usd.premium.annual} per doctor per month billed annually, and what each plan
+        includes.
+
+closing:
+  heading: See a dental treatment plan on EasyClinic
+  body: >-
+    Book a demo and ask to see the tooth chart and a package bill paid in parts, or compare what Premium
+    includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a dental clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The root canal that never gets its crown and the braces paid off in a notebook are dental problems,
+    and every dental capability comes from EasyClinic's own dental page, with a plan named only where
+    plans.yaml names one: package treatments for implants and braces on Premium, and the stock of dental
+    supplies on Enterprise or as a module.
+  readsMachineWritten: >-
+    The page has no named dentist and no number measured in a dental clinic, and a dentist will notice
+    that it names no periodontal chart, no tooth numbering system and no recall list for the six-monthly
+    scaling, and that the four pain scenarios are composites rather than one clinic's day.
+
+notes:
+  - 'Grounding: visual dental charting of patient conditions (e.g. missing teeth, cavities, crowns), tooth-wise documentation and procedure recording, treatment plans for fillings, root canals, crowns, orthodontics and implants, tracking of multiple visits, procedures and follow-ups, storage of X-rays, images and reports in patient records (image and document upload), side-by-side past records, visit history on a single screen, facesheets, customisable intake forms for medical history (chronic illnesses, substance use and more), appointment and chair scheduling, resource booking (equipment or assistants) within the appointment slot, multi-session booking, fixed-time appointments and walk-ins, automated reminders and follow-up, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments, a service list with flexible and multi-level pricing, discount authorisation, taxable and non-taxable items, receipts on WhatsApp, SMS and email, the form builder for paper forms, personalised print formats, role-based access, and inventory for dental supplies and medicines are all stated plainly on the live /dental-emr-software/ page (retrieved 2026-09-26). Plan placement follows plans.yaml; staff logins, the reception rule, customisation without charges and the offline answer follow facts.md. Penda Health on EasyClinic since 2017 is from the verified study facts.'
+  - 'Recruit a named dental testimonial (spec 5.15 item 9): a named dentist or dental clinic owner on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no dentist quote exists yet. Review counts are null in facts.yaml, so the badges show no count. The four testimonials on the live dental page (two psychiatrists, a general physician, an ophthalmologist) are not about dentistry and are not used here.'
+  - 'Spec 5.15 dental must-haves left out, company to-do: (1) periodontal chart: the live page does not mention pocket depths, bleeding on probing, mobility or recession; confirm whether a periodontal chart exists and on which plan. (2) Odontogram detail: the live page says "visual dental charting" and "tooth-wise documentation", so the page says "visual chart" and never "odontogram"; confirm the numbering system (FDI, Universal or Palmer), whether surfaces can be marked, and whether planned and completed work show differently. (3) Treatment plan phases and estimates: the live page says treatment plans are created and tracked over visits, not that a plan has phases or produces a cost estimate for the patient; confirm both. (4) Imaging: the page states file upload only, as the live page does; confirm whether DICOM images can be viewed and whether any RVG sensor, OPG machine or intraoral camera connects directly, with status. (5) Dental lab orders: not on the live page (plans.yaml lab management is pathology orders, not crowns or dentures sent to a dental lab); confirm whether lab work can be ordered and tracked with a due date. (6) Hygiene recall: the live page states automated follow-up and reminders only; confirm a recall list or a recall interval (for example six-monthly scaling). Add a feature row and a FAQ for each once confirmed.'
+  - 'Spec 5.15 template items also left out for lack of facts: named and countable dental templates and forms (item 5, so no dataTable; the live page names none); a timed walkthrough of the most common dental visit (item 4); dental devices and integrations (item 6); which dental note types Cura AI drafts, with an example note (item 8). Also confirm which plan carries the dental chart and treatment plans (the live page does not tie them to a plan, so those rows carry no plan tag and the plan FAQ recommends Premium for package treatments), how a visiting orthodontist or a hygienist is licensed under per-doctor pricing, and whether billing templates can be customised on Professional.'
+  - 'Dropped from the live page: both comparison tables ("Easy Clinic vs Other EMR Software" and "EMR Software Comparison for Dental Clinics", unsourced competitor cells); "prescriptions in 30 seconds" and "invoices ready in less than 10 seconds" (unmeasured here); "over 100 graphical dashboards"; "Reduces no-shows" (noShowReduction is null); AI-powered diagnostic support and ADR alerts (CuraPilot claims); AI-powered wait-time management and AI two-way messaging; patient self-service booking and check-in (plan unclear; the patient portal is Enterprise); the data warehouse, Power BI and Azure Data Factory lines (integration status unknown); HR, roster and incentive plans (not dental-specific); "fully cloud-based and accessible from anywhere" (replaced by the offline FAQ); prescriptions "in any language"; and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial).'
+  - 'H1: the brief asks for the spec 5.15 item 1 form rather than the spec 4.3 H1 ("Software for dental clinics"). The spec example "charting, treatment plans and billing on one screen" is cut to two items: it is a group of three, and the live page does not say the bill sits on the chart screen. The spec 5.15 item 2 opener asks for three needs; the opening answer names two for the same reason.'
+  - 'No heroMedia and no media: screenshots do not exist yet. Hero when captured: the dental chart with a treatment plan (spec 11: "the odontogram on dental"), then the package bill with part payments and the chair calendar. The four pains are illustrative dental clinic situations, not customers; "5pm", "chair two" and "six months" are examples.'
+  - 'Title 45 characters; meta description 150 characters with the token resolved (154 as the linter counts an unresolved token); "from" because $99 is the annual-billing price. /clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts; the related links resolve once they publish. /features/billing/ is now published, so the package pain, the price-list row and a related link point to it.'
+  - 'Fact-check pass 2026-09-26 (live page re-fetched): removed "open beside the chart" (the live page states upload and storage in the record, not a side-by-side image view), "on one screen" for the facesheet (the live page says auto-generated facesheets only), "run on the same list" for walk-ins, "from clinics of every specialty" on the ratings, and the training outcome "so the chairs stay busy". The discount and tax bullets moved from the Premium package row to the every-plan billing row, since the live page lists them as billing features and nothing ties them to packages. The plan FAQ now says Professional lacks specialty EMR templates, since plans.yaml puts them on Premium and the live page does not say which plan carries the dental chart.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price and the Penda Health link, and admissions of limits in the stock and offline FAQs) until the testimonial arrives.

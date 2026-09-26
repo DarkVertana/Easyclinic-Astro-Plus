@@ -1,0 +1,369 @@
+# Patient engagement feature page (spec 5.11 "/features/patient-engagement", keyword row in 4.1, cannibalisation rule 4.5.3).
+status: published
+headKeyword: patient engagement software
+secondaryKeywords:
+  - patient portal software
+  - patient app for clinics
+  - patient retention software
+title: 'Patient Engagement and Portal Software: EasyClinic'
+metaDescription: 'Patient engagement software for clinics: a portal and app where patients book and see their records, plus recall campaigns by condition.'
+h1: Keep patients coming back between visits
+linkLabel: Patient engagement
+eyebrow: Patient engagement
+openingAnswer: >-
+  EasyClinic's patient engagement software keeps in touch with patients through five loops that run
+  from the patient record: onboard with a registration form sent as a link, remind before the visit,
+  follow up when a review is due, ask how the visit went and reward the patients who keep coming. SMS
+  and email reminders come with every plan, from {price:usd.professional.annual} per doctor per month
+  billed annually, and the patient portal and app come with the Enterprise plan.
+summary: >-
+  Five loops run from the patient record between visits: a registration form by link, reminders,
+  recalls by condition, feedback and loyalty, with the portal and app on Enterprise.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic patient engagement page and would like to see the patient app and a recall campaign in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-patients-drift
+      heading: Where patients drift away
+      intro: >-
+        Patient retention slips between visits, quietly, and nobody at the desk notices until the
+        appointment book looks thin. These are the four places it usually happens.
+      items:
+        - heading: The three-month review that never happens
+          body: >-
+            A patient with diabetes is told to come back in three months. Nobody at the desk has a list
+            of who is due, so nobody calls, and the patient turns up nine months later with a sugar that
+            has crept up, or goes to another clinic.
+          fix: >-
+            A recall campaign picks the patients whose chart records diabetes and sends each of them a
+            message asking them to book a review, so the recall no longer depends on someone at the desk
+            remembering.
+        - heading: The clipboard in the waiting room
+          body: >-
+            A new patient fills in a paper form on a clipboard while the queue grows. The receptionist
+            types it in again later, guessing at the handwriting, and the allergy on line nine never
+            reaches the chart.
+          fix: >-
+            The clinic sends an enrolment link by SMS or WhatsApp before the first visit. The patient
+            fills in the clinic's own form on their phone, and the answers go on the patient record, so
+            nobody types them twice.
+        - heading: The phone call for a repeat prescription
+          body: >-
+            A patient on regular medicines phones to ask for a refill, then phones again for last
+            month's report. Each call means someone at the desk hunts for the file and waits for the
+            doctor before calling back.
+          fix: >-
+            On the Enterprise plan the patient has a portal and an app, where they open their records,
+            book the next visit, pay and ask for a refill without phoning.
+        - heading: The complaint you hear about from someone else
+          body: >-
+            A patient who waited ninety minutes says nothing at the desk and tells the neighbours
+            instead. The clinic finds out months later, if it finds out at all.
+          fix: >-
+            A feedback survey after the visit asks the patient to rate it, so a patient unhappy about the
+            wait has somewhere to say so, and the clinic can call them back.
+
+  - discriminant: flowDiagram
+    value:
+      id: five-loops
+      heading: Five loops, each one run from the patient record
+      intro: >-
+        Each loop starts from the patient record, and what the patient sends back is written to the same
+        record. The channel a loop uses depends on the plan, and the next section says which.
+      steps:
+        - label: Onboard
+          body: >-
+            Before the first visit, the clinic sends an enrolment link by SMS or WhatsApp, and the patient
+            fills in the clinic's own registration form on their phone.
+        - label: Remind
+          body: >-
+            Before each appointment the patient gets a reminder. SMS and email reminders come with every
+            plan, and WhatsApp reminders need the Premium plan.
+        - label: Follow up
+          body: >-
+            When reviews fall due, the clinic runs a recall campaign that messages the patients whose
+            chart records the condition, diabetes or hypertension for example, and asks them to book.
+        - label: Ask
+          body: >-
+            After the visit, a survey asks the patient to rate it, and the ratings come back to the clinic
+            to act on.
+        - label: Reward
+          body: >-
+            A loyalty programme gives reward points or discounts for regular visits and for keeping to a
+            treatment plan.
+
+  - discriminant: featureRows
+    value:
+      id: what-the-patient-sees
+      heading: What the patient sees, and which plan it needs
+      intro: >-
+        The portal and the app are where a patient deals with the clinic without phoning it. Messages
+        reach every patient, app or no app, on the channels your plan includes. Rows for the portal and app,
+        and for each message channel, name the plan they need.
+      items:
+        - heading: Booking the next visit from the portal or app
+          body: >-
+            Patients book appointments through your clinic's patient portal or app, and the booking goes
+            into the same calendar the desk works from.
+          plan: enterprise
+          link:
+            label: See how the appointment calendar works
+            href: /features/appointment-scheduling/
+        - heading: Records and treatment plans on the patient's phone
+          body: >-
+            The patient opens their own health records and treatment plan at any hour, so the question
+            about last month's report does not need a call to the desk.
+          plan: enterprise
+        - heading: Refill requests and payments without a phone call
+          body: >-
+            Patients message the clinic through the portal or app to ask for a prescription refill, and
+            pay or order their medicines online.
+          plan: enterprise
+        - heading: A registration form the patient fills in at home
+          body: >-
+            You set up the registration form your clinic needs and send it as an enrolment link by SMS or
+            WhatsApp. The patient fills it in on their phone before the visit, and the answers go on the
+            patient record instead of being typed in again at the desk.
+          bullets:
+            - Sending the link on WhatsApp needs the Premium plan
+        - heading: Reminders by SMS and email
+          body: >-
+            Every plan sends SMS and email reminders, so a patient without a smartphone still hears from
+            the clinic before the visit.
+          plan: professional
+        - heading: Messages on WhatsApp
+          body: >-
+            From the Premium plan, reminders and messages also go out on WhatsApp. How message templates
+            are approved, and how Meta charges for each message, are on the WhatsApp page.
+          plan: premium
+          link:
+            label: Read how WhatsApp messaging works
+            href: /features/whatsapp/
+
+  - discriminant: stepList
+    value:
+      id: recall-campaigns
+      heading: Recall campaigns by condition, with a sample
+      intro: >-
+        A recall campaign turns "come back in three months" into a list the clinic can act on. The
+        sample below is an illustration, not a result: Dr Kulkarni's clinic in Pune and its 40 patients
+        are invented.
+      steps:
+        - title: Pick the condition
+          meta: 'Sample: diabetes review'
+          body: >-
+            The clinic picks its patients by a condition recorded on their chart. In the sample, Dr
+            Kulkarni's diabetes clinic in Pune picks the patients whose chart records type 2 diabetes,
+            and 40 patients make the list.
+        - title: Write the message
+          meta: Sample message
+          body: >-
+            The clinic writes the message in its own words; on WhatsApp the wording first goes through
+            Meta's template approval. The sample reads: "Namaste Mr Joshi, this is Dr Kulkarni's clinic.
+            Your three-monthly diabetes review is due. Please call the clinic to book a time this week."
+        - title: Send it
+          meta: 'Sample: 40 messages'
+          body: >-
+            The message goes to every patient on the list, on the message channels the clinic's plan
+            includes.
+        - title: Check the list against the calendar
+          body: >-
+            The sent list stays with the campaign. A patient who books appears in the calendar like any
+            other appointment, so checking one against the other shows the desk whom to call next.
+      note: >-
+        Which patients to recall, and in what words, is the clinic's decision. So is asking for the
+        patient's consent first; the table further down sets out what each country's law asks.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        These are EasyClinic's public ratings on Capterra and Google. They rate the whole product, not
+        the patient app on its own.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: dataTable
+    value:
+      id: consent-by-country
+      heading: Consent and opt-out rules by country
+      intro: >-
+        Every message a clinic sends uses a patient's phone number, and a recall by condition uses their
+        diagnosis as well, so the country's data protection law applies. This is what the law asks in
+        India, Kenya, the UAE and Nigeria, in general terms.
+      caption: What each country's data protection law asks of a clinic that messages its patients
+      columns:
+        - Country
+        - The law
+        - What it asks of a clinic, in general
+      rows:
+        - - '[India](/clinic-management-software-india/)'
+          - Digital Personal Data Protection Act, 2023 (DPDP)
+          - >-
+            A notice telling the patient what their data will be used for, and consent for that purpose,
+            which the patient can withdraw as easily as they gave it. The clinic keeps consent records and
+            names a contact for grievances.
+        - - '[Kenya](/emr-software-in-kenya/)'
+          - Data Protection Act, 2019
+          - >-
+            Health data is sensitive personal data. Using a patient's details for marketing needs their
+            consent and a simple way to opt out, and the clinic registers with the Office of the Data
+            Protection Commissioner as a data controller.
+        - - '[UAE](/clinic-management-software-uae/)'
+          - Personal Data Protection Law, 2021 (PDPL), and Federal Law No. 2 of 2019 on health data
+          - >-
+            The PDPL lets a person object to their personal data being used for direct marketing. Health
+            data is governed by Federal Law No. 2 of 2019, which keeps it inside the UAE unless an
+            exemption applies.
+        - - '[Nigeria](/hospital-management-software-nigeria/)'
+          - Nigeria Data Protection Act, 2023 (NDPA)
+          - >-
+            Health data is sensitive personal data, and consent to use it must be specific and freely
+            given; the patient can withdraw it, or object to direct marketing, at any time. A clinic above
+            the Nigeria Data Protection Commission's threshold registers with it.
+      note: >-
+        This table describes each law in general terms and is not legal advice. WhatsApp's own opt-in
+        rules are on the [WhatsApp page](/features/whatsapp/).
+
+  - discriminant: scopeBox
+    value:
+      id: limits
+      heading: What this page does not promise
+      variant: limits
+      items:
+        - >-
+          **No revisit figure.** We have no measured rate of patients coming back to a clinic on
+          EasyClinic to publish, so this page gives none.
+        - >-
+          **The portal and app are Enterprise only.** On Professional and Premium, patients hear from the
+          clinic by message but have no login of their own.
+        - >-
+          **Consent is the clinic's to collect.** EasyClinic sends the messages your clinic sets up, and
+          the laws in the table above put the duty to ask the patient on the clinic, as the holder of the
+          data.
+        - >-
+          **It does not run fully offline.** EasyClinic is cloud software, so the desk needs a connection
+          to run a recall campaign or see a booking made in the app.
+
+faqHeading: Questions clinic owners ask about patient engagement
+faq:
+  - question: Which plan includes the patient portal and app?
+    answer: >-
+      The Enterprise plan, which has a custom price for each clinic rather than a list price. SMS and
+      email reminders come with every plan, from {price:usd.professional.annual} per doctor per month
+      billed annually ({price:inr.professional.annual} in India). WhatsApp messages start on Premium, at
+      {price:usd.premium.annual} per doctor per month billed annually ({price:inr.premium.annual} in
+      India).
+  - question: What can a patient do in the portal and app?
+    answer: >-
+      A patient can book appointments, open their health records and treatment plan, pay online, order
+      medicines and message the clinic to ask for a prescription refill. Each of these would otherwise
+      mean a call or a visit to your desk.
+  - question: What about patients who will never install an app?
+    answer: >-
+      They still hear from the clinic: SMS and email reminders reach them on every plan, and WhatsApp
+      messages on Premium. The registration form reaches them as a link they open on their phone.
+  - question: Can new patients fill in the registration form before they arrive?
+    answer: >-
+      Yes: you send an enrolment link by SMS or WhatsApp, and the patient fills in your clinic's own form
+      on their phone before the visit. The answers go on the patient record, so the receptionist does not
+      type them in again. Sending the link on WhatsApp needs the Premium plan.
+  - question: How does a loyalty programme work?
+    answer: >-
+      It rewards patients with reward points or discounts for regular visits and for keeping to their
+      treatment plan. For a patient on a long course of care, such as physiotherapy or diabetes
+      follow-up, that is a reason to book the next visit rather than let it slide.
+  - question: Do we need patients' consent before sending recall messages?
+    answer: >-
+      In general, yes: the data protection laws of India, Kenya, the UAE and Nigeria each expect a
+      patient to be told what their contact details will be used for, and each lets a patient stop
+      marketing messages. Ask at registration and record the answer. The duty sits with your clinic, as
+      the holder of the data; the table above sets out what each law asks in general terms, and it is not
+      legal advice.
+  - question: How many more patients will come back?
+    answer: >-
+      We cannot give you a number, because we have no measured revisit rate from a clinic to publish.
+      What changes is that reminders go out on their own and recalls go to a list drawn from the chart,
+      rather than depending on someone at the desk remembering to call.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist on the Professional plan, with SMS and email reminders included.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: Every specialist on one patient record, with WhatsApp messages from the Premium plan.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: Every branch on one system, with the patient portal and app on the Enterprise plan.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD queue and its follow-ups on one patient record.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /features/whatsapp/
+      label: WhatsApp messaging
+      description: Message templates and how Meta charges for each message, for clinics that message patients on WhatsApp.
+    - href: /features/appointment-scheduling/
+      label: Appointment scheduling
+      description: The calendar that portal bookings and reminders run from, with walk-ins beside fixed slots.
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: The patient record every loop on this page reads from and writes back to.
+
+closing:
+  heading: See the patient app and a recall campaign before you decide
+  body: >-
+    Book a 20-minute demo to see what your patients would see on their phone and how a recall list is
+    drawn from the chart. If a call is too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The plan split for each channel and the enrolment link sent by SMS or WhatsApp come from EasyClinic's
+    own price list and live engagement page, and the consent table names the four laws a clinic in India,
+    Kenya, the UAE or Nigeria answers to when it messages patients.
+  readsMachineWritten: >-
+    The pain-block scenes (the clipboard, the ninety-minute wait) and the invented Pune recall sample
+    could sit on any vendor's page and need a clinic owner's read-aloud, and with no named customer and no
+    measured revisit figure the only proof is the public rating badges.
+
+notes:
+  - 'Title 50 characters (spec 4.1 wording). Meta 136 characters, rewritten from the spec 4.1 wording ("A portal and app for booking, reports and messages, plus recall campaigns that bring patients back") to lead with the head keyword, avoid a group of three and drop the unmeasured "bring patients back" outcome.'
+  - 'Grounding: live /patient-engagement-at-easyclinic/ fetched 2026-09-26. Used from it: portal and app give patients 24/7 access to health records and treatment plans, booking through the portal or app, payments and medication orders online, refill requests by direct message; customisable patient forms and enrolment links sent by SMS and WhatsApp, completed on the patient''s phone; a feedback system using surveys, ratings and forms; communication by WhatsApp, email and SMS; loyalty programmes with discounts or reward points for regular visits and keeping to a treatment plan. Dropped: the "14-Day Free Trial, 30-Day Money Back Guarantee" line (spec 12 records no free trial), "minimizes no-shows" and "higher retention" as unmeasured outcomes, and the teleconsult block (owned by /features/telehealth/).'
+  - 'Plan tags follow plans.yaml only: portal and app Enterprise, WhatsApp reminders and messages Premium, SMS and email reminders Professional. Which plan includes recall campaigns, enrolment forms, feedback surveys and loyalty programmes is not in plans.yaml (the live /pricing/ lists "Patient Engagement, Patient Portal & App" under Enterprise, which plans.yaml condenses to the portal and app), so those rows and steps carry no plan tag, and the copy avoids implying they come with every plan (the featureRows intro says only the portal and app rows and the channel rows name a plan; the recall send step says "on the message channels the clinic''s plan includes"). Confirm and tag them.'
+  - 'Measured revisit rate (spec 5.11 opening answer) is unknown: omitted from the opening answer and the proof block, and admitted only as a limit in the scope box and the last FAQ.'
+  - 'Recall campaigns by condition come from spec 5.11 and the spec 12 screenshot brief ("Diabetes review recall, 40 patients", "with the sent list"). The sample (Dr Kulkarni, Pune, Mr Joshi, 40 patients) is invented and labelled in the intro as an illustration, not a result, with "Sample" on each step. No filter beyond condition, no due-date selection, no list editing, no automatic tracking of who booked and no automatic opt-out handling is claimed, because none is confirmed; the last step describes the desk checking the sent list against the calendar.'
+  - 'Google review capture (spec 5.11) left out: the live page names feedback surveys, ratings and forms but nothing about Google reviews. The spec FAQ "feedback to Google" is dropped for the same reason.'
+  - 'Spec 5.11 FAQ items not answerable with public facts and left out: cost per message (also owned by /features/whatsapp/ per 4.5 rule 3), branded app, multi-branch campaigns, feedback to Google. Replaced with the plan question, patients without the app, and the revisit-rate question answered honestly.'
+  - 'Directory booking channel (spec 5.11) omitted: the directory is out of scope.'
+  - 'Consent table describes the laws in general terms from src/data/regulators (in-dpdp, ke-dpa, ae-pdpl, ng-ndpa) plus the text of each law (DPDP withdrawal as easy as giving; Kenya direct-marketing consent and opt-out under the Act and the 2021 General Regulations; UAE PDPL right to object to direct marketing and Federal Law No. 2 of 2019 data localisation; NDPA withdrawal and right to object). No status column and no EasyClinic compliance claim: every regulator state is null. The /trust/ pointers ("where EasyClinic stands is kept on the trust page") were removed from the table note and the consent FAQ, and the /trust/ related link replaced with /features/emr/, because /trust/ is a draft and no status exists to point to. Needs a compliance read before a lawyer-facing use.'
+  - 'WhatsApp appears as one channel (4.5 rule 3). Templates, message charges and opt-in mechanics are only pointed to /features/whatsapp/, which explains how Meta charges but gives no per-message figure, so this page no longer says that page gives "what each message costs".'
+  - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the patient app (booking, reports, messages, phone frame) as hero and the diabetes recall campaign with its sent list to the recall section.'
+  - 'No testimonial: none is about the patient app or engagement, and all are placed elsewhere. Proof is the ratings badge block (review counts are unknown, so no count is shown).'

@@ -1,0 +1,64 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'glossaryList'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, terms, ctx } = Astro.props;
+const registry = await getRegistry();
+const sorted = [...terms].sort((a, b) => a.term.localeCompare(b.term, 'en', { sensitivity: 'base' }));
+const letters = [...new Set(sorted.map((t) => t.term[0].toUpperCase()))];
+const letterOf = (t: { term: string }) => t.term[0].toUpperCase();
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width="measure">
+  <nav aria-label="Glossary index" class="mb-8 flex flex-wrap gap-1.5">
+    {letters.map((l) => <a href={`#letter-${l.toLowerCase()}`} class="flex size-11 items-center justify-center rounded-control border border-line font-semibold no-underline hover:border-blue-700">{l}</a>)}
+  </nav>
+  <div class="space-y-10">
+    {
+      letters.map((l) => (
+        <section aria-labelledby={`letter-${l.toLowerCase()}`}>
+          <h3 id={`letter-${l.toLowerCase()}`} class="border-b border-line pb-2 text-2xl">{l}</h3>
+          <dl class="mt-4 space-y-6">
+            {sorted
+              .filter((t) => letterOf(t) === l)
+              .map((t) => {
+                const href = t.href ? registry.urlFor(t.href) : null;
+                const target = t.href ? registry.get(t.href.split('#')[0]) : undefined;
+                return (
+                  <div id={t.id} class="scroll-mt-24">
+                    <dt class="font-sans text-lg font-semibold text-ink-heading">
+                      <a href={`#${t.id}`} class="link-plain">{t.term}</a>
+                      {t.aka && <span class="font-normal text-ink-muted"> ({t.aka})</span>}
+                    </dt>
+                    <dd class="mt-1.5">
+                      <Md text={t.definition} />
+                      {(href || t.source) && (
+                        <p class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                          {href && (
+                            <a href={href} class="inline-flex min-h-11 items-center gap-1 font-semibold">
+                              {t.hrefLabel ?? target?.label ?? 'Read more'}
+                              <Icon name="arrow-right" size={16} />
+                            </a>
+                          )}
+                          {t.source && (
+                            <a href={t.source} rel="noopener" class="inline-flex min-h-11 items-center gap-1 text-ink-muted">
+                              Official source <Icon name="external-link" size={14} />
+                            </a>
+                          )}
+                        </p>
+                      )}
+                    </dd>
+                  </div>
+                );
+              })}
+          </dl>
+        </section>
+      ))
+    }
+  </div>
+</Section>

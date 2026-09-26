@@ -29,9 +29,11 @@ const KEYWORDS: Record<string, string> = {
   'how-much-does-it-cost-to-open-a-clinic-in-mumbai': 'clinic setup cost in Mumbai',
   'how-to-get-approval-from-the-medical-practitioners-and-dentists-council-in-india-nmc-dci': 'NMC registration for clinics',
   'patient-data-privacy-laws-in-india': 'patient data privacy laws India',
+  'clinic-in-nigeria': 'how to start a clinic in Nigeria',
+  'clinic-in-ethiopia': 'how to start a clinic in Ethiopia',
 };
 /** Country for links and the demo CTA. */
-const COUNTRY: Record<string, string> = { kenya: 'ke', nairobi: 'ke', kmpdc: 'ke', india: 'in', mumbai: 'in', nmc: 'in', uganda: 'ug' };
+const COUNTRY: Record<string, string> = { kenya: 'ke', nairobi: 'ke', kmpdc: 'ke', india: 'in', mumbai: 'in', nmc: 'in', uganda: 'ug', nigeria: 'ng', ethiopia: 'et' };
 
 const decode = (s: string) =>
   s

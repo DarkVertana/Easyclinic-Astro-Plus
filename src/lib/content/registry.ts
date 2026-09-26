@@ -36,6 +36,14 @@ export const PAGE_COLLECTIONS = [
   { name: 'specialties', prefix: '/' },
   // Start-a-clinic guides keep their ranking root slugs (spec 3.2, 4.4).
   { name: 'guides', prefix: '/' },
+  // Comparison and listicle pages keep their ranking root slugs; alternatives live under /compare/.
+  { name: 'comparisons', prefix: '/' },
+  { name: 'listicles', prefix: '/' },
+  { name: 'alternatives', prefix: '/compare/' },
+  { name: 'customers', prefix: '/' },
+  // Legal pages set an explicit path.
+  { name: 'legal', prefix: '/' },
+  { name: 'glossary', prefix: '/' },
 ] as const;
 
 export type PageCollection = (typeof PAGE_COLLECTIONS)[number]['name'];
@@ -151,7 +159,8 @@ async function build(): Promise<Registry> {
       // where a figure written via {fig:...} is still a token. The schema refinement checks raw data.
       const issues = [...auditEntry(data as never, raw.family).filter((i) => i.rule !== 'claims'), ...auditEntry(raw as never, raw.family).filter((i) => i.rule === 'claims'), ...tokenIssues];
       // MDX bodies (guides, posts) get the same text rules, line by line.
-      if (typeof entry.body === 'string' && entry.body.trim()) issues.push(...auditBody(entry.body));
+      // Legal text is kept as written, so only guides and posts get the body copy rules.
+      if (typeof entry.body === 'string' && entry.body.trim() && raw.family !== 'legal') issues.push(...auditBody(entry.body));
       const visible = !isProduction || raw.status === 'published';
       const record: PageRecord = {
         path,

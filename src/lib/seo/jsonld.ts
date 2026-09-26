@@ -61,7 +61,8 @@ function postalAddress(site: SiteData) {
   };
 }
 
-export function organization(site: SiteData): Obj<Organization> {
+/** `founders`: names whose published role says founder (spec 5.19 adds them on /about-us/ only). */
+export function organization(site: SiteData, founders: string[] = []): Obj<Organization> {
   return {
     '@type': 'Organization',
     '@id': id(site, 'organization'),
@@ -74,6 +75,7 @@ export function organization(site: SiteData): Obj<Organization> {
     foundingDate: String(site.foundingYear),
     sameAs: Object.values(site.social),
     address: postalAddress(site),
+    ...(founders.length ? { founder: founders.map((name) => ({ '@type': 'Person' as const, name })) } : {}),
   };
 }
 

@@ -1,0 +1,325 @@
+# Telehealth feature page (spec 5.11 "/features/telehealth", keyword row in 4.1, cannibalisation rules 4.5.2 and 4.5.3).
+status: published
+headKeyword: telemedicine software for doctors
+secondaryKeywords:
+  - teleconsultation software
+  - video consultation software for clinics
+  - telemedicine software India
+title: 'Telemedicine Software for Doctors: EasyClinic'
+metaDescription: 'Telemedicine software for doctors: video consults on the same calendar and patient record as clinic visits, with the fee payable online before the call.'
+h1: Teleconsultations beside your clinic visits
+linkLabel: Telehealth
+eyebrow: Telehealth and video consults
+openingAnswer: >-
+  EasyClinic is telemedicine software for doctors that books video consults on the same calendar as your
+  clinic visits and keeps their prescriptions on the same patient record. Video consultations come with
+  the Premium plan, at {price:usd.premium.annual} per doctor per month billed annually
+  ({price:inr.premium.annual} in India), and the patient joins from a web browser on a phone or computer
+  with nothing to install.
+summary: >-
+  Video consults on the same calendar and patient record as your clinic visits, with the fee payable
+  online at booking. On the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic telehealth page and would like to see a video consult in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-phone-consults-go-wrong
+      heading: Where a video consult on your own phone goes wrong
+      intro: >-
+        A video call on the doctor's own phone works until the clinic needs a record of it or a fee for
+        it. These are the places it breaks.
+      items:
+        - heading: The call leaves nothing on the record
+          body: >-
+            A patient video-calls your own number, and in ten minutes you advise a change of dose. None of
+            it reaches the clinic's records, so at the next visit nobody can see what was said or what was
+            prescribed.
+          fix: >-
+            The video consult is booked in EasyClinic and runs on its built-in video, so the visit and its
+            prescription sit on the patient's record beside the clinic visits.
+        - heading: The fee arrives late, or never
+          body: >-
+            The patient said they would send the fee after the call. A week later the reminder is still
+            unanswered, and chasing a patient for a consult fee is a conversation nobody at the clinic
+            wants to have.
+          fix: >-
+            On Premium, the fee can be paid online when the consult is booked, so it can be settled before
+            the call starts.
+        - heading: The prescription is a photo of the pad
+          body: >-
+            After the call you write on the pad, photograph it and send the picture from your phone. The
+            pharmacist struggles to read it, and the clinic keeps no copy.
+          fix: >-
+            The prescription is typed on the patient's record, the same way as in the clinic, and sent from
+            EasyClinic with a line saying the consult was held remotely.
+          href: /features/emr/
+          linkLabel: How the prescription screen works
+        - heading: The follow-up never gets booked
+          body: >-
+            You ask the patient to check in again in a week. Nobody writes it down, the patient forgets,
+            and the next call comes when the symptoms are back.
+          fix: >-
+            The follow-up goes on the same calendar as any appointment, as a clinic visit or another video
+            consult, and the patient gets a reminder before it.
+
+  - discriminant: flowDiagram
+    value:
+      id: booking-to-follow-up
+      heading: One video consult, from booking to follow-up
+      intro: >-
+        What happens on each side of the call. Video consultations and online payments are both part of
+        the Premium plan.
+      steps:
+        - label: Booked on the calendar
+          body: The desk books a video consult through the appointment module, on the same calendar as clinic visits.
+        - label: Online payment
+          body: The fee can be paid online at booking, before the call starts.
+        - label: Joined from a browser
+          body: Doctor and patient each join from a web browser on a computer or a phone, with no other software.
+        - label: Seen by video
+          body: The consult runs on EasyClinic's built-in video and chat.
+        - label: Prescribed on the record
+          body: The prescription is written on the patient's record and says the consult was held remotely.
+        - label: Sent to the patient
+          body: It can go to the patient on WhatsApp as soon as the consult ends, or by SMS or email.
+        - label: Follow-up booked
+          body: The next visit goes on the same calendar, in the clinic or by video, with a reminder before it.
+
+  - discriminant: featureRows
+    value:
+      id: how-it-works
+      heading: What each part of a video consult needs
+      intro: >-
+        The EMR and the prescription come with every plan, and seeing the patient by video starts on
+        Premium. Where a part needs the Premium plan, the row says so.
+      items:
+        - heading: Video consults on the clinic calendar
+          body: >-
+            A video consult is booked through the appointment module like any other appointment, so the
+            day's list shows the clinic patients and the video patients together. The call itself runs on
+            EasyClinic's built-in video and chat.
+          plan: premium
+          link:
+            label: Read how the appointment calendar works
+            href: /features/appointment-scheduling/
+        - heading: The fee, payable before the call
+          body: >-
+            Premium includes online payments, so the clinic can offer online payment of the consult fee
+            when the video consult is booked, and the fee can be settled before the call. Billing for a
+            video consult starts from the appointment, as it does for a clinic visit.
+          plan: premium
+          link:
+            label: Read how clinic billing works
+            href: /features/billing/
+        - heading: Nothing for the patient to install
+          body: >-
+            The patient opens the consult in a web browser on a phone or a computer, and so does the
+            doctor, so neither needs a separate video app. EasyClinic's patient portal and app come with the
+            Enterprise plan, and a video consult does not need them.
+        - heading: The prescription goes on the same record
+          body: >-
+            The prescription from a video consult is written on the patient's record, the same way as a
+            clinic prescription. It carries a line saying the consult was held remotely, and it stays on the
+            record beside every clinic visit.
+          link:
+            label: Read how the EMR and prescriptions work
+            href: /features/emr/
+        - heading: Sent on WhatsApp at the end of the call
+          body: >-
+            Premium includes WhatsApp messages, so the prescription can go to the patient's WhatsApp as soon
+            as the consult ends, and SMS or email can carry it instead. The pharmacist reads a typed
+            prescription rather than a photo of the pad.
+          plan: premium
+          link:
+            label: Read how WhatsApp messages work
+            href: /features/whatsapp/
+        - heading: The follow-up on the same calendar
+          body: >-
+            The next visit is booked on the same calendar, as a clinic visit or another video consult. The
+            reminder before it goes by SMS and email on every plan, and on WhatsApp on Premium. In India the
+            follow-up also changes what can be prescribed remotely, as the next section explains.
+
+  - discriminant: dataTable
+    value:
+      id: nmc-guidelines
+      heading: What India's telemedicine guidelines ask of a doctor
+      intro: >-
+        In India, video consults are governed by the Telemedicine Practice Guidelines, issued in 2020 and
+        now under the [National Medical Commission](https://www.nmc.org.in/) (NMC). This is what they ask
+        of the doctor, in general terms.
+      caption: What the NMC Telemedicine Practice Guidelines ask of the doctor
+      columns:
+        - The question
+        - What the guidelines ask
+      rows:
+        - - Is a video consult enough?
+          - >-
+            The doctor judges whether the problem can be handled on a teleconsult or the patient needs to
+            be seen in person.
+        - - Who is the patient, and who is the doctor?
+          - >-
+            The doctor confirms the patient's identity from details such as name and age, and shows their
+            own registration number on the prescription.
+        - - Consent
+          - >-
+            When the patient starts the teleconsult, consent is implied. When the doctor or a health worker
+            starts it, the patient's explicit consent is needed, and it can be given in a message.
+        - - Which medicines
+          - >-
+            The guidelines sort medicines into lists. List O can be prescribed on any teleconsult, and List
+            A on a first consult held by video or as a refill at follow-up. List B is only for a follow-up,
+            added to medicines already prescribed in person for the same condition. Medicines in Schedule
+            X, and narcotic and psychotropic substances under the NDPS Act, cannot be prescribed on a
+            teleconsult.
+        - - Records
+          - >-
+            The doctor keeps a log of the teleconsult and the reports used in it, and keeps any
+            prescription on record as for a clinic visit.
+        - - Fees
+          - >-
+            A teleconsult is treated like a clinic visit for fees: the doctor may charge an appropriate fee
+            and should give a receipt or invoice for it.
+      note: >-
+        This table describes the guidelines only and makes no claim about EasyClinic's status under them.
+        Following the medicine lists is the doctor's responsibility. The table covers India only.
+
+  - discriminant: scopeBox
+    value:
+      id: limits
+      heading: Before you plan video consults on EasyClinic
+      variant: limits
+      items:
+        - >-
+          Video consultations and online payments start on Premium. On Professional, the calendar and the
+          EMR work for clinic visits, without video.
+        - >-
+          A video consult needs an internet connection at both ends. EasyClinic is cloud software and does
+          not run fully offline today.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: EasyClinic's ratings on Capterra and Google
+      intro: >-
+        We have no customer quote about video consults yet, so these are EasyClinic's overall public
+        ratings. The Capterra link opens the reviews themselves.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions doctors ask about video consults
+faq:
+  - question: Is it legal to see patients by video in India?
+    answer: >-
+      Yes, registered doctors in India may consult by video under the Telemedicine Practice Guidelines,
+      issued in 2020 and now under the [National Medical Commission](https://www.nmc.org.in/). The
+      guidelines set how the patient gives consent and which medicines can be prescribed on a
+      teleconsult. Following them is the doctor's responsibility, and the table above sets out what they
+      ask.
+  - question: Does the patient need to download an app?
+    answer: >-
+      No, the patient joins the video consult from a web browser on a phone or a computer, and the doctor
+      does the same, so neither installs anything. EasyClinic's patient portal and app come with the
+      Enterprise plan, and a video consult does not need them.
+  - question: Can the patient pay before the call?
+    answer: >-
+      Yes, on the Premium plan, which includes online payments: the fee can be paid online when the video
+      consult is booked, so it can be settled before the call. In India the telemedicine guidelines treat
+      a teleconsult like a clinic visit for fees, so you may charge for it and should give the patient a
+      receipt.
+  - question: How does the patient get the prescription?
+    answer: >-
+      On WhatsApp, as soon as the consult ends, because WhatsApp messages come with the Premium plan along
+      with video consultations. It can go by SMS or email instead. However it is sent, it carries a line
+      saying the consult was held remotely, and it stays on the patient's record.
+  - question: Which plan do I need for video consults?
+    answer: >-
+      Premium, at {price:usd.premium.annual} per doctor per month billed annually
+      ({price:inr.premium.annual} in India), or Enterprise. Premium also brings the online payments and
+      WhatsApp messages a video consult uses. Professional, at {price:usd.professional.annual} per doctor
+      per month billed annually, covers clinic visits with the calendar and the EMR, without video
+      consultations.
+  - question: Can the follow-up be another video consult?
+    answer: >-
+      Yes, the follow-up is booked on the same calendar as any appointment, as a clinic visit or another
+      video consult, and the patient gets a reminder before it. In India the follow-up matters for
+      prescribing too, because some medicines on the guidelines' lists can be prescribed remotely only at
+      a follow-up for a condition already treated in person.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist, with video follow-ups on the same calendar as the clinic list.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: One record shared by every specialist, whether the patient came in or was seen by video.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: One central chart across every branch, with clinical SOPs tracked branch by branch.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD on one patient record, from the registration queue to the pharmacy.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /features/appointment-scheduling/
+      label: Appointment scheduling
+      description: One calendar for walk-ins, booked slots and video consults.
+    - href: /features/emr/
+      label: EMR and e-prescriptions
+      description: The note and the prescription on one patient record, for clinic visits and video consults alike.
+    - href: /features/whatsapp/
+      label: WhatsApp for clinics
+      description: How prescriptions and reminders reach patients on WhatsApp from the clinic software.
+
+closing:
+  heading: See a video consult from booking to prescription
+  body: >-
+    Book a 20-minute demo to see a video consult booked on the calendar and its prescription written on
+    the patient's record. If a call is too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The plan boundary (video consults and online payments on Premium, the patient app only on
+    Enterprise), the browser-only join and the remote-consult line on the prescription come from
+    EasyClinic's own pricing and live feature pages, and the NMC table is written for an Indian doctor.
+  readsMachineWritten: >-
+    The four pain scenes (the call to a personal number, the unpaid fee, the photographed pad, the
+    forgotten follow-up) could sit on any telehealth page and need a doctor's read-aloud, and the page
+    still has no named customer or measured number about video consults, and no screenshot.
+
+notes:
+  - 'Title 45 characters (spec 4.1 wording). Meta 152 characters, rewritten from the spec 4.1 wording: "NMC guideline aware" dropped because it implies a compliance status, which is unknown, and the three-item list ("video consults, e-prescriptions and payment before the call") cut to two. The meta says the fee is "payable" online, following the live "options for online fee payment", not that the patient always pays.'
+  - 'Grounding: live /patient-engagement-at-easyclinic/ and /appointment-scheduling-at-easy-clinic/ (re-fetched 2026-09-26) carry the same "Teleconsultation, Video consult & Online fees collection" block: in-built video and chat; video consults created through the appointment module "with options for online fee payment"; doctors and patients "use a web browser on a computer or phone", with no additional software; and (engagement page only) prescriptions from the teleconsult sent "instantly" via WhatsApp, SMS or email with a disclaimer that the consult was remote. The live phrase "ensuring clarity and compliance" is dropped. "Chat alongside the video" was cut to "built-in video and chat", as the live page does not say chat runs during the call.'
+  - 'Plans from src/data/plans.yaml: video consultations, online payments and WhatsApp messages on Premium; the patient portal and app on Enterprise only; SMS and email reminders on every plan. Billing from the appointment screen is from the live scheduling page ("1-Click billing and payments straight from appointment screen").'
+  - 'Payment wording follows the live "options for online fee payment": the page says the fee can be paid online at booking, and does not say the patient is blocked from joining until it is paid.'
+  - 'Left out for lack of a confirmed fact: call recording (spec 5.11 "recordings and consent") and any consent capture inside EasyClinic; behaviour on a low-bandwidth connection and video quality (spec FAQ skipped); how the patient receives the join link; named payment gateways (integration status unknown); whether EasyClinic checks a prescription against the NMC medicine lists; cross-border consults (spec FAQ skipped); the telemedicine rules of Kenya, the UAE and Nigeria (no record in src/data/regulators covers them, so the table note says it covers India only rather than asserting what those countries require).'
+  - 'NMC table describes the 2020 Telemedicine Practice Guidelines in general terms, from src/data/regulators/in-nmc-telemedicine.yaml (state null) and the guideline text: professional judgement on whether a teleconsult suits, patient identity and the registration number on prescriptions, implied and explicit consent, List O (any teleconsult), List A (first consult by video, refills at follow-up), List B (add-ons at follow-up after an in-person consult for the same condition) and the prohibited list (Schedule X, NDPS), records, and fees with a receipt. No status column and no EasyClinic status anywhere on the page; the earlier "where EasyClinic stands is kept on the trust page" lines were removed because they implied a published status that does not exist (/trust/ is a draft with placeholders). Needs a compliance read.'
+  - 'Drug interaction warning removed from the prescription row and the EMR related-link description: it is an EMR claim owned by /features/emr/, its plan and database are unknown, and it is not needed to explain a video consult.'
+  - 'Cannibalisation (spec 4.5): receipts and invoices link to /features/billing/, WhatsApp mechanics (templates, message costs) to /features/whatsapp/, and calendar mechanics to /features/appointment-scheduling/, whose teleconsult paragraph (spec 5.11) links here.'
+  - 'No testimonial: none of the testimonials in src/data/testimonials mentions video consults, and all are placed. Proof is the badges variant; add the review count when capterraReviews is confirmed.'
+  - 'No heroMedia and no media objects: screenshots do not exist yet (page-writing rules). When captured, add the video consult screen with the patient record beside it as hero, and the WhatsApp prescription message on a phone to the WhatsApp row (spec 12).'

@@ -17,11 +17,16 @@ import {
 } from './schemas/data';
 import {
   aiSchema,
+  comparisonSchema,
+  customersSchema,
+  legalSchema,
+  listicleSchema,
   companySchema,
   countryDemoSchema,
   countrySchema,
   curapilotSchema,
   featureSchema,
+  glossarySchema,
   guideSchema,
   homeSchema,
   hubSchema,
@@ -108,6 +113,14 @@ const gone = defineCollection({
 
 // Order matters: references are validated while loading, so data collections come before the pages
 // that reference them.
+const comparisons = defineCollection({ loader: pages('comparisons'), schema: comparisonSchema });
+const listicles = defineCollection({ loader: pages('listicles'), schema: listicleSchema });
+const alternatives = defineCollection({ loader: pages('alternatives'), schema: listicleSchema });
+const glossary = defineCollection({ loader: pages('glossary'), schema: glossarySchema });
+const customers = defineCollection({ loader: pages('customers'), schema: customersSchema });
+// Legal pages are MDX with an explicit `path` (/privacy/, /privacy/india/, /terms/).
+const legal = defineCollection({ loader: glob({ base: './src/content/legal', pattern: '**/*.mdx' }), schema: legalSchema });
+
 export const collections = {
   site,
   facts,
@@ -136,4 +149,10 @@ export const collections = {
   trust,
   specialties,
   guides,
+  comparisons,
+  listicles,
+  alternatives,
+  customers,
+  legal,
+  glossary,
 };

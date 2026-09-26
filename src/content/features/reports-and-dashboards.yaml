@@ -1,0 +1,375 @@
+# Reports and dashboards feature page (spec 5.11 "/features/reports-and-dashboards", keyword row in 4.1, cannibalisation rules 4.5.2 and 4.5.7).
+status: published
+headKeyword: clinic dashboard software
+secondaryKeywords:
+  - clinic KPI dashboard
+  - healthcare dashboard software
+  - hospital MIS reports
+  - doctor productivity report
+title: 'Clinic Dashboard and Reports Software: EasyClinic'
+metaDescription: "Clinic dashboard software for the owner's morning numbers: revenue by branch, the day's appointments, stock and claim status, with reports for each role."
+h1: One dashboard for the numbers a clinic owner checks daily
+linkLabel: Reports and dashboards
+eyebrow: Reports and dashboards
+openingAnswer: >-
+  EasyClinic's clinic dashboard software shows the owner's morning numbers live, from the system the
+  desk and the doctors already work in: revenue for each branch and for the group, the day's
+  appointments with each visit's status, and, where the clinic runs those modules, stock levels and the
+  status of every insurance claim. Dashboards and reports come with every plan, from
+  {price:usd.professional.annual} per doctor per month billed annually; a second branch needs Premium,
+  and Enterprise adds a reporting server with custom analytics.
+summary: >-
+  Live dashboards for revenue by branch, the day's appointments, stock and claims, with reports for each
+  role and a data warehouse on Enterprise.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic reports and dashboards page and would like to see the owner's dashboard in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-the-numbers-hide
+      heading: Where an owner's numbers come from today
+      intro: >-
+        Most owners who go looking for healthcare dashboard software already have the numbers somewhere.
+        The trouble is when they arrive, and who had to put them together.
+      items:
+        - heading: The branch total arrives at 10pm
+          body: >-
+            Each branch manager adds up the day after closing and sends the total on WhatsApp. One forgets
+            and another sends the cash but not the card payments. You hear about Tuesday's problem on
+            Wednesday afternoon.
+          fix: >-
+            On Premium and Enterprise every branch bills in the same EasyClinic system, so revenue for each
+            branch and for the whole group is on the dashboard as the bills are raised. Nobody sends a
+            total, because nobody has to add one up.
+          href: /features/multi-location/
+          linkLabel: How one system runs every branch
+        - heading: The accountant rebuilds the month from the receipt book
+          body: >-
+            The first week of every month goes on typing receipts into a spreadsheet so the books can be
+            balanced, and the profit and loss for March is ready somewhere in the middle of April.
+          fix: >-
+            Financial reports are built for balancing the books daily, weekly, monthly and quarterly, from
+            the bills the desk has already raised. They export to Excel and PDF, so the accountant starts
+            from the figures instead of the receipt book.
+        - heading: The evening list is a guess until the desk closes
+          body: >-
+            The appointment book shows who booked. At six in the evening it cannot tell you which of those
+            patients have been seen and which visits have been billed, so the desk works it out at closing
+            from memory and the receipt book.
+          fix: >-
+            The appointment dashboard shows each visit's status and its billing while the day is running,
+            so the desk closes on a list everyone could already see.
+          href: /features/appointment-scheduling/
+          linkLabel: See how scheduling works
+
+  - discriminant: featureRows
+    value:
+      id: morning-view
+      heading: The numbers on the owner's morning screen
+      intro: >-
+        What the clinic KPI dashboard shows, row by row. The dashboards show data in real time, so the
+        figures move as the desk bills and the doctors see patients. Where a number needs a particular
+        plan or module, the row says so.
+      items:
+        - heading: Revenue for each branch and for the group
+          body: >-
+            Reports run across locations and across departments, so each branch's revenue reads beside the
+            others and beside the group's total, updated as the bills are raised. A clinic with one location
+            runs the same reports across its departments.
+          bullets:
+            - A day-end financial report for each clinic and for the whole organisation, covering every transaction
+          plan: premium
+          link:
+            label: Read how multi-location clinics work
+            href: /features/multi-location/
+        - heading: The day's appointments, visit by visit
+          body: >-
+            The appointment dashboard lists the day's appointments with the status of each visit and whether
+            it has been billed, updated as the day runs. At closing, the day-end report sums the day up for
+            the record and for staff analysis.
+          plan: professional
+          link:
+            label: See how scheduling and reminders work
+            href: /features/appointment-scheduling/
+        - heading: Staff performance and incentive plans
+          body: >-
+            Performance reports track staff productivity. If you pay an incentive or a commission, the plan
+            is set up for each user in EasyClinic, doctors included, so the payout rules and the reports that
+            track the work sit in the same system.
+        - heading: The books, from the day to the quarter
+          body: >-
+            Financial reports come in formats for balancing the books daily, weekly, monthly and quarterly,
+            with profit and loss analysis and the cash balance. Financial accounting comes with Enterprise.
+            Finding the money that never reached a bill is the job of revenue management.
+          link:
+            label: Find unbilled orders and cash variance
+            href: /features/revenue-management/
+        - heading: Stock, where the clinic runs a pharmacy
+          body: >-
+            The inventory dashboard shows current stock levels, stock movement, cost of goods sold and the
+            items that move fast or slowly, along with seasonal trends. Expiry reports show what is close to
+            expiry. It comes with pharmacy and inventory, part of Enterprise or a module added to
+            Professional or Premium.
+          link:
+            label: See how the pharmacy counts stock
+            href: /features/pharmacy-and-inventory/
+        - heading: Claim status, where the clinic bills insurers
+          body: >-
+            The claims dashboard shows the status of every claim across all your locations, updated as each
+            claim moves. It comes with insurance claims, part of Enterprise or a module added to
+            Professional or Premium, and the insurance claims page covers how a claim is built and sent.
+          link:
+            label: Read how a claim is built and sent
+            href: /features/insurance-claims/
+        - heading: Clinical cases across every branch
+          body: >-
+            For chains, a bird's-eye dashboard follows clinical cases across locations, and chief medical
+            officers can oversee how the clinical SOPs are followed. Clinical SOP tracking across branches
+            comes with Enterprise.
+          plan: enterprise
+          link:
+            label: See how a clinic chain runs on EasyClinic
+            href: /solutions/clinic-chain/
+
+  - discriminant: dataTable
+    value:
+      id: report-library
+      heading: The report library, by who opens it
+      intro: >-
+        The dashboards and reports cover clinical, administrative, inventory and financial data. This is
+        the library grouped by the person who reads each report, with the plan or module it comes from.
+      caption: EasyClinic reports and dashboards by role, with the plan or module each comes from
+      columns:
+        - Who opens it
+        - What they read
+        - Where it comes from
+      rows:
+        - - Owner or director
+          - Revenue across branches and departments, patient statistics, the day's appointments and the day-end financial report for each clinic and for the whole organisation
+          - Dashboards and reports, on every plan; more than one branch from Premium
+        - - Doctor
+          - The patient's vitals and lab results drawn as trend charts, and the auto-generated patient summary
+          - The EMR, with lab reports in the chart from Premium
+        - - Front desk
+          - The day's appointments with each visit's status and billing, and the day-end appointment report
+          - Appointment scheduling, on every plan
+        - - Pharmacist
+          - Stock levels and stock movement, fast- and slow-moving items, cost of goods sold and expiry reports
+          - Pharmacy and inventory, part of Enterprise or a module on Professional or Premium
+        - - Accountant
+          - Financial reports for book balancing from the day to the quarter, profit and loss analysis, the cash balance and exports to Excel and PDF
+          - Finance and billing reports; financial accounting with Enterprise
+        - - Chief medical officer of a chain
+          - Clinical cases across locations, and adherence to the clinical SOPs
+          - Clinical SOP tracking, on Enterprise
+      note: >-
+        Reports are access-controlled: each login sees only the reports its role allows. The reception
+        login that comes with every plan cannot open the EMR.
+
+  - discriminant: featureRows
+    value:
+      id: getting-reports-out
+      heading: Getting the numbers to the people who need them
+      items:
+        - heading: Reports that go out by themselves
+          body: >-
+            Reports can be generated and distributed automatically, so the people who read them have the
+            latest figures without anyone compiling them by hand.
+        - heading: Filters, and reports of your own
+          body: >-
+            Dashboards can be set to the metrics that matter most to your clinic, and reports take filters
+            and search parameters of your own, so they show what you need to see. Where the library does not
+            have the report you need, a custom report can be created for it.
+        - heading: Excel and PDF
+          body: >-
+            Reports export to Excel and PDF, for the accountant who works in a spreadsheet and for keeping a
+            copy of each month's figures after the month has closed.
+        - heading: Who sees which report
+          body: >-
+            Each login sees the reports its role allows, and access can be narrowed further by department.
+            A chain can give its owned clinics, franchisees, mobile medical units and associate clinics
+            different levels of access, and audit logs keep a record of what each user did.
+        - heading: On your phone
+          body: >-
+            The dashboards open on a phone or a tablet as well as the office computer. EasyClinic is cloud
+            software and does not run fully offline today, so the phone needs a connection to show the
+            day's figures.
+
+  - discriminant: prose
+    value:
+      id: data-warehouse
+      heading: On Enterprise, a data warehouse that Power BI can read
+      body: >-
+        Enterprise includes a dedicated reporting server with custom business analytics, and a data
+        warehouse meant for large clinic chains. Data from EasyClinic, and from other sources such as
+        databases, files, web services or APIs, is moved into the warehouse or a data lake through Azure
+        Data Factory pipelines and SQL-based ETL (extract, transform, load). Which data moves, and how
+        often, is set in the ETL processes defined for your organisation.
+
+
+        Once the data is in the warehouse, you can connect Power BI to it, build your own dashboards and
+        reports, and share them with the people who make the decisions. On Professional and Premium, the
+        reports and dashboards are the ones inside EasyClinic, and they export to Excel or PDF when you
+        need the figures somewhere else.
+
+  - discriminant: scopeBox
+    value:
+      id: limits
+      heading: What to know before you rely on the dashboards
+      variant: limits
+      items:
+        - >-
+          **More than one branch needs Premium.** Professional covers one location, so revenue by branch
+          starts on Premium, and central control of every location comes with Enterprise.
+        - >-
+          **Stock and claims need their modules.** The inventory and claims dashboards come with pharmacy
+          and inventory and with insurance claims, each part of Enterprise or added to Professional or
+          Premium as a module.
+        - >-
+          **The warehouse and Power BI are Enterprise only.** On Professional and Premium, figures leave
+          EasyClinic as Excel or PDF exports.
+        - >-
+          **It needs a connection.** EasyClinic is cloud software and does not run fully offline today, so
+          the dashboard needs a working connection to show the day's figures.
+        - >-
+          **No measured time saving.** We have not published a measured figure for the hours the reports
+          save an owner or an accountant, so we do not quote one.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      body: >-
+        These are EasyClinic's public ratings. One customer, a haematologist who has used EasyClinic since
+        2008, wrote about the reporting side: "The features I like the most are: Data handling and
+        analytical tools available to generate information from the patient's data." His full testimonial
+        is on the [hospital OPD page](/solutions/hospital-opd/).
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions clinic owners ask about reports
+faq:
+  - question: Can I see last month's revenue for each branch?
+    answer: >-
+      Yes, on Premium or Enterprise, where every branch bills in the same EasyClinic system and reports run
+      across locations and departments. Filters and search parameters of your own narrow a report to the
+      period you need, and a clinic with one location on Professional runs the same reports across its
+      departments.
+  - question: Do I need the Enterprise plan to get dashboards?
+    answer: >-
+      No. Dashboards and reports come with every plan, from {price:usd.professional.annual} per doctor per
+      month billed annually ({price:inr.professional.annual} in India). Enterprise adds a dedicated
+      reporting server with custom analytics and the data warehouse, and it is priced on a quote.
+  - question: Can I use Power BI with EasyClinic?
+    answer: >-
+      Yes, on Enterprise, through the data warehouse. Azure Data Factory pipelines move the data into the
+      warehouse, and Power BI connects to the warehouse so you can build dashboards and reports and share
+      them with the people who make the decisions. On Professional and Premium, export the reports to
+      Excel instead.
+  - question: Are the numbers on the dashboard real time?
+    answer: >-
+      Yes, the dashboards inside EasyClinic show data in real time, so the figures change as the desk
+      bills and the doctors record visits. On Enterprise, how often data moves into the warehouse, and so
+      into Power BI, is set in the ETL processes defined for your organisation.
+  - question: Can I build reports of my own?
+    answer: >-
+      Yes, you can set dashboards to the metrics that matter to your clinic and narrow reports with
+      filters and search parameters of your own. Where the library does not have the report you need, a
+      custom report can be created for it, and Enterprise adds a dedicated reporting server with custom
+      business analytics.
+  - question: Can I export reports to Excel?
+    answer: >-
+      Yes, reports export to Excel and to PDF. The accountant can work on the figures in a spreadsheet
+      without retyping them, and a PDF copy of each month's reports can be kept as the record.
+  - question: Is there an audit trail of who did what?
+    answer: >-
+      Yes, EasyClinic keeps audit logs for each user and an audit trail for all key transactions. The cash
+      till and stock adjustments carry audit trails of their own, and on Enterprise the workflow manager
+      records which user completed each step, with the date and time.
+  - question: Can I check the dashboard on my phone?
+    answer: >-
+      Yes, the dashboards open on a phone or a tablet as well as a computer. EasyClinic is cloud software
+      and does not run fully offline today, so the phone needs a mobile data or Wi-Fi connection to show
+      the day's figures.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist, with the day's revenue and appointments on the Professional plan.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: Several specialists on one record, with reports that run across departments.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: Reports across every branch, with central control and SOP tracking on Enterprise.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD's pharmacy and claims on one record, with hospital MIS reports drawn from it.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /features/multi-location/
+      label: More than one location
+      description: One system for every branch, with reports for each branch and for the group.
+    - href: /features/revenue-management/
+      label: Revenue management
+      description: Unbilled orders, wrong prices, cash variance and denied claims, found before the month closes.
+    - href: /pricing/
+      label: Plans and prices
+      description: What each plan includes, from {price:usd.professional.annual} per doctor per month.
+
+closing:
+  heading: See the owner's dashboard before you decide
+  body: >-
+    Book a 20-minute demo to see the morning numbers and the report library for yourself. If a call is
+    too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The report library and its plan rules come from EasyClinic's own live pages and pricing, down to the
+    Azure Data Factory pipelines behind the Enterprise warehouse and the separate access levels a chain
+    sets for its owned, franchised, mobile and associate clinics.
+  readsMachineWritten: >-
+    The pain-block scenes (the 10pm branch total, the accountant's first week of the month, the evening
+    list) could sit on any dashboard page and need an owner's read-aloud, and the page has no dashboard
+    screenshot, no owner's quote of its own and fewer than half of the spec's eight morning numbers.
+
+notes:
+  - 'Title 49 characters (spec 4.1 title kept); meta 153 characters. Meta rewritten from the spec 4.1 wording: "no-shows", "doctor productivity" and "in one morning view" were dropped because no live page states a no-show figure, a per-doctor revenue report or a single screen holding every number. H1 kept from spec 4.1.'
+  - 'Editor pass 2026-09-26 (fact check against live pages re-fetched with curl the same day): removed "revenue by doctor" (opening answer, summary, morning-view row, report table, FAQ, polyclinic link description) and "no-show rate" (opening answer, pain block, morning-view row, report table). Neither is stated plainly on a live product page; the only source was the /healthcare-dashboard-software/ blog, whose KPI lists are generic advice and an anonymous case study, and sibling pages (clinic-chain.yaml, revenue-management.yaml, polyclinic.yaml, hospital-opd.yaml notes) already treat revenue per doctor as unconfirmed. The spec 5.11 FAQ "revenue per doctor per branch" is asked here as "last month''s revenue for each branch", which the live pages support; the doctor split is left out until product confirms it.'
+  - 'Also tightened in that pass: "on one screen" removed from the opening answer (the live pages describe several dashboards: appointment, inventory, claims, bird''s-eye); "every report takes filters ... to the branch and the dates" cut to "reports take filters and search parameters of your own" (live wording); the audit FAQ no longer says the log shows who made each entry on a patient''s record (not on a live page) and ties workflow step records to Enterprise (plans.yaml "Workflow rules"); "Full financial accounting" became "Financial accounting" (live says "Advanced Financial Accounting", plans.yaml says "Financial accounting"); the CMO row says chief medical officers oversee SOP adherence (live) rather than per-branch adherence; the head-office central-access bullet was cut from the Premium-tagged row because central control is Enterprise; the report table column is now "Where it comes from" so trend charts, P&L and custom reports are not given a plan the pricing page does not state.'
+  - 'Grounding (fetched 2026-09-26): live /reports-and-dashboards/ (real-time visualisation of patient statistics, financial reports and operational metrics; customisable dashboards; automated generation and distribution of reports; reports from patient demographics to revenue streams; ETL through Azure data pipelines and Azure Data Factory into a data warehouse, data lake or cloud platform, with the flexibility to define own ETL processes; Power BI connected to the warehouse for dashboards and reports shared with stakeholders; access from desktop, tablet or mobile). Live /features/ "Reports, Dashboards and Business Analytics" (library covering clinical, administrative, inventory and financial data; access-controlled reports; export to Excel and PDF; filters and user-defined search parameters; custom report creation; cross-location and cross-department analytics; dedicated data warehouse and reporting for large chains; tags Data Warehouse, Power BI integration, Azure Data Factory), plus its appointment dashboard (daily appointments, visit status, billing updates), inventory reporting and dashboard, expiry reports, claim status tracking dashboard, bird''s-eye dashboard of clinical cases across locations and SOP adherence for chief medical officers, financial reports for daily to quarterly book balancing and P&L, Cash Balance tag, performance reports with incentive and commission plans for users, access by role, department and level, audit logs, audit trail for key transactions, till audit trail, stock adjustment audit logs, workflow audit logs, visual health trend analysis and patient summary. /clinic-chain-software/ (central access to reports across locations; claim status for all locations; access levels for owned clinics, franchisees, mobile medical units and associate clinics). /ceo-landing-page/ and /cfo-landing-page/ (end-of-day financial reports clinic- and organisation-wide covering all transactions; revenue tracked in real time across locations). Live /appointment-scheduling-at-easy-clinic/ (Day-End Reports: end-of-day summaries for record-keeping and staff analysis).'
+  - 'Spec 5.11 eight morning numbers: described only where a live page or plans.yaml grounds them. Used: revenue by branch (cross-location analytics; Premium for more than one location), stock (as stock levels and movement, not days left), claims (as claim status, not a pending count), plus the day''s appointments with visit status. Left out for lack of a confirmed fact: collections against billed, no-show rate, patients per doctor per hour, average ticket, stock days left and a patient feedback score. The opening answer does not say "all are live" (spec 5.11) because that is not confirmed.'
+  - 'Consistency flag for the editor: home (journey step "Report": revenue, collections, no-shows and pending claims by doctor or by branch), the features hub (same line), /indiademo/ (revenue by doctor, collections against billing, no-shows, pending claims) and /solutions/hospital-opd/ (related-link description "Revenue by doctor") state numbers this page no longer claims. None is stated on a live product page; align those pages with this one or confirm the numbers with product.'
+  - 'Scheduled email and WhatsApp summaries (spec 5.11) left out: the live pages say only that reports are generated and distributed automatically, with no channel or schedule named. Alerts and anomaly detection (sudden drops in bookings, spikes in denials) appear only in the blog''s anonymous case study and are left out.'
+  - 'Warehouse and Power BI: Enterprise per plans.yaml ("A reporting server and custom analytics"), live /pricing/ ("Dedicated Reporting Server & Custom Business Analytics"), live /features/ ("for large clinic chains ... a dedicated Data Warehouse") and spec 5.11 ("Enterprise only"). Power BI is described as the live /reports-and-dashboards/ page describes it (Power BI reads the warehouse); it is given no integration status, which belongs on /integrations/ (spec 4.1) and is null in src/data. What is exported and how often is not published; the page says it is set in the ETL processes defined for the organisation.'
+  - 'Plan uncertainty: which plan includes custom report creation, performance and incentive reports, visual health trend charts, profit and loss analysis, customisable dashboards and the chain access levels for franchisees and associate clinics is not stated anywhere. These carry no plan tag; the report table names the module each comes from. Confirm with product before tagging.'
+  - 'Left out of the live pages: "over 100 graphical dashboards" and "100+ views" (unsourced counts; replaced by the report library by role), "30 Second Insights", "AI-Powered Analysis", "encrypted reporting tools" and the HIPAA, GDPR and PCI-DSS compliance claims (compliance status unknown), "Real-time Compliance Tracking", "integrates seamlessly with your existing EMR", the Qualitas Health success story (unmeasured, and Hisham Ismail''s testimonial is in the past tense and placed on home), the blog''s anonymous C-suite case study and its outcomes, "close your month-end in one click", "settlements in hours, not days", "launch new clinics in under an hour", "migrate your data within a week", CMO marketing-campaign analytics (patient engagement territory) and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" line (conflicts with other published pages).'
+  - 'Cannibalisation (spec 4.5): ageing, denials and leakage are left to /features/revenue-management/, claim mechanics to /features/insurance-claims/, till close and invoices to /features/billing/. This page owns "healthcare dashboard software" (rule 7), used in the pain-block intro; "hospital MIS reports" appears in the hospital OPD related-link description.'
+  - 'Proof is the badges variant: every testimonial is placed. The haematologist quote is Dr Prantar Chakrabarti''s (testimonial prantar-chakrabarti, verbatim pullQuote), placed on /solutions/hospital-opd/; it is quoted in body text without the name and links to that page, following the /features/emr/ precedent for a placed testimonial. It is the only one of the 16 testimonials that speaks to reporting. Replace with an owner''s quote about the dashboard when one is collected.'
+  - 'No redirectFrom: /reports-and-dashboards/, /healthcare-dashboard-software/ and the CMO, CFO and CEO landing pages already redirect here in src/data/redirects.yaml.'
+  - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the owner dashboard (desktop and phone) as hero, and one capture per morning-view row.'

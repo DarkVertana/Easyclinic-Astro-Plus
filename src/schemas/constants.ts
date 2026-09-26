@@ -48,6 +48,7 @@ export const FAMILIES = [
   'legal',
   'guide',
   'post',
+  'glossary',
   'kitchenSink',
 ] as const;
 export type Family = (typeof FAMILIES)[number];

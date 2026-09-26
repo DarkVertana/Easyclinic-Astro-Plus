@@ -1,0 +1,302 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { PERSONAS, type Persona } from '../../../schemas/constants';
+import { need } from '../../../lib/content/need';
+import { isProduction } from '../../../lib/content/stage';
+import Section from '../../ui/Section.astro';
+import Quote from '../../ui/Quote.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'testimonialGrid'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, filters, only, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+/** Radio group names and ids; unique per section so two grids on one page do not share state. */
+const uid = id ?? `testimonial-grid-${ctx.index}`;
+
+type Testimonial = CollectionEntry<'testimonials'>;
+
+// Every testimonial, or the ones listed in `only`. A listed id that does not exist is a content error.
+// With no list, production leaves out testimonials whose consent is not on file, so one pending consent
+// does not block the whole page; a listed one still fails the build through Quote.
+const all = await getCollection('testimonials');
+const byId = new Map(all.map((t) => [t.id, t]));
+const missing = only.filter((tid) => !byId.has(tid));
+if (missing.length) {
+  throw new Error(`testimonialGrid on ${ctx.path}: no testimonial ${missing.map((m) => `"${m}"`).join(', ')} in src/data/testimonials`);
+}
+const picked: Testimonial[] = only.length
+  ? [...new Set(only)].map((tid) => byId.get(tid)!)
+  : all.filter((t) => !isProduction || t.data.consentOnFile === true);
+
+// Longest-standing customers first; testimonials with no start year after them; then by name.
+const items = picked.sort(
+  (a, b) =>
+    (a.data.customerSince ?? Infinity) - (b.data.customerSince ?? Infinity) ||
+    a.data.name.localeCompare(b.data.name) ||
+    a.id.localeCompare(b.id),
+);
+
+const PERSONA_LABELS: Record<Persona, { label: string; phrase: string }> = {
+  solo: { label: 'Solo doctor', phrase: 'a solo doctor' },
+  polyclinic: { label: 'Polyclinic', phrase: 'a polyclinic' },
+  chain: { label: 'Clinic group', phrase: 'a clinic group' },
+  'hospital-opd': { label: 'Hospital or OPD', phrase: 'a hospital or OPD' },
+  ngo: { label: 'NGO', phrase: 'an NGO' },
+};
+/** Personas with a show/hide rule in the <style> block below; add a rule there with any new persona. */
+const STYLED_PERSONAS: string[] = ['solo', 'polyclinic', 'chain', 'hospital-opd', 'ngo'];
+const unstyled = PERSONAS.filter((p) => !STYLED_PERSONAS.includes(p));
+if (unstyled.length) throw new Error(`testimonialGrid: add a :has() rule for ${unstyled.join(', ')} in TestimonialGrid.astro`);
+
+const COUNTRY_NAMES: Record<string, string> = { in: 'India', ke: 'Kenya', my: 'Malaysia', zw: 'Zimbabwe' };
+const countryRecords = new Map((await getCollection('countries')).map((c) => [c.id, c.data.name]));
+const countryName = (code: string) => countryRecords.get(code) ?? COUNTRY_NAMES[code] ?? code.toUpperCase();
+
+// Clinic type options: every persona present, in ladder order, with how many testimonials carry it.
+const personaOptions = PERSONAS.map((p) => ({
+  value: p,
+  ...PERSONA_LABELS[p],
+  count: items.filter((t) => t.data.personas.includes(p)).length,
+})).filter((o) => o.count > 0);
+
+// Countries are an open list, so each present country gets a numbered slot and the CSS has one rule per
+// slot (up to SLOTS). Radios and cards carry the slot; cards also carry the country code.
+const SLOTS = 12;
+const countryOptions = [...new Set(items.map((t) => t.data.country))]
+  .map((code) => ({ code, name: countryName(code), count: items.filter((t) => t.data.country === code).length }))
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .map((o, i) => ({ ...o, slot: i + 1 }));
+if (countryOptions.length > SLOTS) {
+  throw new Error(`testimonialGrid on ${ctx.path}: ${countryOptions.length} countries; add slot rules past ${SLOTS} in TestimonialGrid.astro`);
+}
+const slotOf = new Map(countryOptions.map((o) => [o.code, o.slot]));
+
+// A filter is only offered when choosing one of its options would change what shows.
+const showPersona = filters && personaOptions.some((o) => o.count < items.length);
+const showCountry = filters && countryOptions.length > 1;
+const filtering = showPersona || showCountry;
+
+// Combinations of a clinic type and a country with no testimonial: each gets a message that shows only
+// when exactly that pair is chosen, so the grid never goes blank without saying why.
+const empties =
+  showPersona && showCountry
+    ? personaOptions.flatMap((p) =>
+        countryOptions
+          .filter((c) => !items.some((t) => t.data.country === c.code && t.data.personas.includes(p.value)))
+          .map((c) => ({ persona: p.value, slot: c.slot, code: c.code, text: `No testimonials from ${p.phrase} in ${c.name} yet.` })),
+      )
+    : [];
+
+// A grid with nothing to show cannot be published.
+const none = items.length === 0 ? need(Astro, 'testimonials for this grid', null) : null;
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <div class:list={['tg', filtering && 'tg-filtering']}>
+    {
+      filtering && (
+        <div class="tg-filters flex flex-col gap-6 md:flex-row md:flex-wrap md:gap-x-10">
+          {showPersona && (
+            <fieldset class="min-w-0">
+              <legend class="text-sm font-semibold">Clinic type</legend>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <label class="relative">
+                  <input type="radio" class="sr-only" name={`${uid}-persona`} value="all" data-persona-input="all" checked />
+                  <span class="tg-chip">
+                    <span class="tg-chip-check">
+                      <Icon name="check" size={16} />
+                    </span>
+                    <span>All</span>
+                  </span>
+                </label>
+                {personaOptions.map((o) => (
+                  <label class="relative">
+                    <input type="radio" class="sr-only" name={`${uid}-persona`} value={o.value} data-persona-input={o.value} />
+                    <span class="tg-chip">
+                      <span class="tg-chip-check">
+                        <Icon name="check" size={16} />
+                      </span>
+                      <span>{o.label}</span>
+                      <span class="tg-chip-count">({o.count})</span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          )}
+          {showCountry && (
+            <fieldset class="min-w-0">
+              <legend class="text-sm font-semibold">Country</legend>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <label class="relative">
+                  <input type="radio" class="sr-only" name={`${uid}-country`} value="all" data-slot-input="all" checked />
+                  <span class="tg-chip">
+                    <span class="tg-chip-check">
+                      <Icon name="check" size={16} />
+                    </span>
+                    <span>All</span>
+                  </span>
+                </label>
+                {countryOptions.map((o) => (
+                  <label class="relative">
+                    <input type="radio" class="sr-only" name={`${uid}-country`} value={o.code} data-slot-input={String(o.slot)} />
+                    <span class="tg-chip">
+                      <span class="tg-chip-check">
+                        <Icon name="check" size={16} />
+                      </span>
+                      <span>{o.name}</span>
+                      <span class="tg-chip-count">({o.count})</span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          )}
+        </div>
+      )
+    }
+
+    {
+      none ? (
+        <p class="card p-6 text-ink">{none}</p>
+      ) : (
+        <ul class="tg-list grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((t) => (
+            <li class="tg-item" data-personas={t.data.personas.join(' ')} data-country={t.data.country} data-slot={slotOf.get(t.data.country)}>
+              <Quote testimonial={t} pull={false} />
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    {
+      filtering && (
+        <div class="tg-status">
+          {/* The number is a CSS counter of the cards that are showing; the static total is the no-CSS fallback. */}
+          <p class:list={['text-sm font-medium', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']}>
+            Showing{' '}
+            <span class="tg-shown">
+              <span class="tg-shown-static">{items.length}</span>
+            </span>{' '}
+            of {items.length} testimonials
+          </p>
+          {empties.map((e) => (
+            <p class="tg-item tg-empty card mt-4 p-6 text-ink" data-personas={e.persona} data-country={e.code} data-slot={e.slot}>
+              {e.text} Choose All under clinic type or country to see more.
+            </p>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</Section>
+
+<style>
+  /* Radio chips: the native radio stays focusable (visually hidden); the chip shows checked state and focus. */
+  .tg-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+  .tg-chip:hover {
+    border-color: var(--color-blue-700);
+  }
+  .tg-chip-count {
+    font-weight: 400;
+  }
+  .tg-chip-check {
+    display: none;
+  }
+  input:checked + .tg-chip {
+    background: var(--btn-bg);
+    border-color: var(--btn-bg);
+    color: var(--btn-ink);
+  }
+  input:checked + .tg-chip .tg-chip-check {
+    display: inline-flex;
+  }
+  input:focus-visible + .tg-chip {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  /*
+   * Filters are CSS only (spec 7.1: every testimonial is in the HTML). Without :has() the controls,
+   * the count and the empty messages stay hidden and every testimonial shows.
+   */
+  .tg-filters,
+  .tg-status,
+  .tg-empty,
+  .tg-shown-static {
+    display: none;
+  }
+
+  @supports selector(:has(*)) {
+    .tg-filtering {
+      display: flex;
+      flex-direction: column;
+      counter-reset: tg-shown;
+    }
+    .tg-filters {
+      display: flex;
+      order: 1;
+    }
+    /* The count follows the cards in the source, where the counter is complete, and shows above them. */
+    .tg-status {
+      display: block;
+      order: 2;
+      margin-top: 1.5rem;
+    }
+    .tg-filtering .tg-list {
+      order: 3;
+      margin-top: 1rem;
+    }
+    .tg-list > .tg-item {
+      counter-increment: tg-shown;
+    }
+    .tg-shown::before {
+      content: counter(tg-shown);
+    }
+    .tg-empty {
+      display: block;
+    }
+
+    /* An empty-combination message shows only when a clinic type and a country are both chosen. */
+    .tg:has([data-persona-input='all']:checked) .tg-empty,
+    .tg:has([data-slot-input='all']:checked) .tg-empty,
+    /* Clinic type: PERSONAS in schemas/constants.ts is a closed list, so each value has a rule. */
+    .tg:has([data-persona-input='solo']:checked) .tg-item:not([data-personas~='solo']),
+    .tg:has([data-persona-input='polyclinic']:checked) .tg-item:not([data-personas~='polyclinic']),
+    .tg:has([data-persona-input='chain']:checked) .tg-item:not([data-personas~='chain']),
+    .tg:has([data-persona-input='hospital-opd']:checked) .tg-item:not([data-personas~='hospital-opd']),
+    .tg:has([data-persona-input='ngo']:checked) .tg-item:not([data-personas~='ngo']),
+    /* Country: one rule per slot (SLOTS in the frontmatter). */
+    .tg:has([data-slot-input='1']:checked) .tg-item:not([data-slot='1']),
+    .tg:has([data-slot-input='2']:checked) .tg-item:not([data-slot='2']),
+    .tg:has([data-slot-input='3']:checked) .tg-item:not([data-slot='3']),
+    .tg:has([data-slot-input='4']:checked) .tg-item:not([data-slot='4']),
+    .tg:has([data-slot-input='5']:checked) .tg-item:not([data-slot='5']),
+    .tg:has([data-slot-input='6']:checked) .tg-item:not([data-slot='6']),
+    .tg:has([data-slot-input='7']:checked) .tg-item:not([data-slot='7']),
+    .tg:has([data-slot-input='8']:checked) .tg-item:not([data-slot='8']),
+    .tg:has([data-slot-input='9']:checked) .tg-item:not([data-slot='9']),
+    .tg:has([data-slot-input='10']:checked) .tg-item:not([data-slot='10']),
+    .tg:has([data-slot-input='11']:checked) .tg-item:not([data-slot='11']),
+    .tg:has([data-slot-input='12']:checked) .tg-item:not([data-slot='12']) {
+      display: none;
+    }
+  }
+</style>

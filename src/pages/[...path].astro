@@ -21,4 +21,4 @@ const record = registry.get(Astro.props.path) as PageRecord;
 Astro.locals.page = { path: record.path, status: record.status, family: record.family, country: record.data.country?.id, title: record.data.title };
 ---
 
-{record.family === 'guide' || record.family === 'post' ? <GuidePage record={record} /> : <LandingPage record={record} />}
+{['guide', 'post', 'legal'].includes(record.family) ? <GuidePage record={record} /> : <LandingPage record={record} />}

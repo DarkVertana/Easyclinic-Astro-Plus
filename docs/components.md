@@ -42,12 +42,18 @@ const { id, eyebrow, heading, intro, tone, steps, ctx } = Astro.props;
 
 `src/components/blocks/Prose`, `StepList`, `TestimonialRow` and `ProofBlock` are the reference blocks.
 
-The 30 blocks, by use: page body (`prose`, `featureRows`, `painBlocks`, `moduleGrid`, `dataTable`, `scopeBox`,
+The 36 blocks, by use: page body (`prose`, `featureRows`, `painBlocks`, `moduleGrid`, `dataTable`, `scopeBox`,
 `splitTable`, `rolesMatrix`, `dayTimeline`, `flowDiagram`, `journeyDiagram`, `oldWayNewWay`, `personaRouter`,
-`clinicTypes`, `hubGrid`, `contentCards`, `inlineCta`, `stepList`); proof (`proofBlock`, `testimonialRow`, `studyCard`);
-money (`pricingCards`, `planMatrix`, `addOns`, `costExamples`, `countryMoney`); country and compliance (`contactCard`,
-`regulatorTable`, `regulatorStrip`); conversion (`demoForm`). Which families may use which blocks is set in
-`src/schemas/families.ts`.
+`clinicTypes`, `hubGrid`, `contentCards`, `inlineCta`, `stepList`, `glossaryList`); proof (`proofBlock`,
+`testimonialRow`, `studyCard`, `testimonialGrid`); money (`pricingCards`, `planMatrix`, `addOns`, `costExamples`,
+`countryMoney`); country and compliance (`contactCard`, `regulatorTable`, `regulatorStrip`); comparison
+(`comparisonTable`, `decisionMatrix`, `vendorList`, `sourceList`); conversion (`demoForm`). Which families may use which
+blocks is set in `src/schemas/families.ts`.
+
+Comparison blocks carry their evidence: every competitor cell in `comparisonTable` and every competitor fact in
+`vendorList` needs a `source` URL and a `checkedOn` date (or reads "Not published"), and "Check" is not an answer. `sourceList` renders the
+sources at the foot of the page. `testimonialGrid` filters by clinic type and country with CSS only (radio inputs and
+`:has()`), so every card stays in the HTML.
 
 **Optional versus required facts.** `need()` is for a fact the page cannot honestly go without (a price, a regulator
 status): it blocks publishing. `optional()` is for a detail that can be left out (a testimonial's city, a review

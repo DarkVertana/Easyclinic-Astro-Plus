@@ -1,0 +1,424 @@
+# Billing feature page (spec 5.11 "/features/billing", keyword row in 4.1, cannibalisation rule 4.5.2).
+status: published
+headKeyword: medical billing software for clinics
+secondaryKeywords:
+  - clinic billing software
+  - GST billing software for doctors
+  - OPD billing software
+title: 'Medical Billing Software for Clinics: EasyClinic'
+metaDescription: 'Medical billing software for clinics: bills built from the doctor''s orders, part payments and refunds, receipts by SMS or WhatsApp and a day-end report.'
+h1: Billing and invoicing for your clinic
+linkLabel: Billing
+eyebrow: Billing and payments
+openingAnswer: >-
+  EasyClinic is medical billing software for clinics: the lab tests and procedures a doctor orders become
+  lines on the patient's invoice, and the desk takes full or part payment and sends the receipt to the
+  patient's phone. Billing and payments come with every plan, from {price:usd.professional.annual} per
+  doctor per month billed annually ({price:inr.professional.annual} in India), and the till closes the
+  day with an end-of-day report.
+summary: >-
+  Bills built from the doctor's orders, part payments and refunds at the desk, receipts on the patient's
+  phone and an end-of-day report when the till closes.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic billing page and would like to see a bill made from a consult and the end-of-day report in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: at-the-counter
+      heading: Where the billing desk loses its time
+      intro: >-
+        These scenes are illustrations rather than one clinic's records, and each one starts at the
+        counter.
+      items:
+        - heading: The patient waits while the bill is written
+          body: >-
+            The consult ends at 11:40 and the patient comes out with a prescription and two test slips.
+            The receptionist finds each test on the rate card taped to the counter and writes the bill by
+            hand, while three more patients wait behind.
+          fix: >-
+            The desk bills and takes payment from the appointment screen in one click. The tests the
+            doctor ordered arrive on the invoice as lines, each at its price on the service list.
+        - heading: Half paid today, the rest next Tuesday
+          body: >-
+            A patient booked for a ₹6,000 procedure pays ₹2,000 as an advance. The balance goes into a
+            diary at the desk, and when the patient comes back a different receptionist is on duty and
+            nobody can find the page.
+          fix: >-
+            EasyClinic records the advance and each part payment, and whoever is at the desk sees the
+            balance on screen as soon as the patient's bill is opened.
+        - heading: A discount nobody approved
+          body: >-
+            A regular patient asks for something off, and the receptionist takes 20% off to keep them
+            happy. Later a bill is cancelled because the patient changed their mind about a test. Each
+            decision was small, and neither was written down anywhere the owner would see.
+          fix: >-
+            Discounts and voided bills go through authorisation in EasyClinic, and the till keeps an audit
+            trail of every transaction, so the owner can see both decisions later.
+        - heading: The patient needs last month's receipt
+          body: >-
+            The patient's employer wants the receipt before paying them back, and the receipt is lost.
+            The receptionist spends ten minutes in a carbon-copy receipt book writing out a duplicate.
+          fix: >-
+            The receipt and the invoice can go to the patient by SMS or email, or on WhatsApp with
+            Premium, so the patient already has a copy.
+          href: /features/whatsapp/
+          linkLabel: How messages reach patients on WhatsApp
+
+  - discriminant: flowDiagram
+    value:
+      id: consult-to-close
+      heading: From the consult to the end of the day
+      intro: >-
+        One visit, followed through the desk. The steps with a check are where a mistake at the counter
+        gets caught.
+      steps:
+        - label: Order
+          body: >-
+            The doctor orders the tests and procedures in EasyClinic. Nothing goes to the desk on a slip
+            to be copied.
+        - label: Bill
+          body: >-
+            The bill opens from the appointment screen with the orders on it as lines, each priced from
+            the service list, and the tax you defined is applied to the items marked taxable.
+          check: No price typed from memory
+        - label: Pay
+          body: >-
+            The patient pays in full or in part, and in Kenya can pay by M-Pesa at the desk. The balance
+            shows on screen straight away.
+          check: No balance kept in a diary
+        - label: Receipt
+          body: The receipt goes to the patient by SMS or email, or on WhatsApp with Premium.
+        - label: Close
+          body: >-
+            At closing time the till is balanced across payment modes, and the end-of-day report gives a
+            snapshot of the day's cash transactions to count the drawer against.
+          check: Cash reconciled every day
+
+  - discriminant: featureRows
+    value:
+      id: how-the-bill-is-built
+      heading: How the bill gets built
+      intro: >-
+        Where each line on the bill comes from. Where a part needs a particular plan, the row says so.
+      items:
+        - heading: One click from the appointment screen
+          body: >-
+            When the consult ends, the bill and the payment are done from the appointment screen in one
+            click, so the receptionist does not open a separate billing program. The reception login
+            included in the price can bill and take payments, and it cannot use the EMR.
+          plan: professional
+        - heading: The doctor's orders arrive on the bill
+          body: >-
+            Lab orders and procedures become lines on the patient's invoice as they are processed, so
+            nothing is copied from the prescription. With lab management, part of Enterprise and an
+            add-on on Professional or Premium, a test can be set to go on the invoice when the sample is
+            collected.
+          link:
+            label: Read how lab orders work
+            href: /features/lab/
+        - heading: Medicines from your own dispensary
+          body: >-
+            Where the clinic dispenses on EasyClinic, the medicines dispensed from the prescription go on
+            the patient's bill and come off the stock count. The pharmacist can also add over-the-counter
+            items at the time of dispensing. Pharmacy comes with Enterprise, or as an add-on on
+            Professional and Premium.
+          plan: enterprise
+          link:
+            label: Read how dispensing works
+            href: /features/pharmacy-and-inventory/
+        - heading: Prices from the service list
+          body: >-
+            Each service and item has its price on the service list, so the desk picks a line instead of
+            typing an amount. A changed price shows in billing straight away, and the billing records
+            already made do not have to be generated again.
+          link:
+            label: Read about price lists by branch and payer
+            href: /features/revenue-management/
+        - heading: Tax on the items you mark taxable
+          body: >-
+            Each service and item is marked taxable or non-taxable, and the tax you define is applied to
+            the taxable ones on the bill. For example, a dermatology clinic's bill can carry a
+            consultation with no tax and a tube of sunscreen from the clinic's shelf with tax.
+        - heading: Every department billed the same way
+          body: >-
+            Consultations, procedures, vaccinations, lab tests, pharmacy sales and video consults are
+            billed through workflows the clinic can set up and change. A hospital OPD can use them to
+            bill several departments from one system, without a different routine at each counter.
+
+  - discriminant: featureRows
+    value:
+      id: taking-payment
+      heading: Taking payment at the desk
+      intro: >-
+        A bill paid in full at the counter is the easy case. These are the others.
+      items:
+        - heading: Part payments and advances
+          body: >-
+            A patient can pay part of a bill now and the rest at the next visit, or pay an advance before
+            a procedure. EasyClinic records each payment and shows the balance at the desk straight away.
+        - heading: Refunds and voided bills, with authorisation
+          body: >-
+            Refunds and voided invoices go through with authorisation, and discounts and write-offs are
+            controlled the same way. Every transaction stays on the till's audit trail.
+        - heading: Packages paid over several visits
+          body: >-
+            A course of treatment can be set up as a package of several items at a package price, billed
+            in one visit or across several, with its payment spread over the visits. Package treatments
+            come with Premium and Enterprise.
+          plan: premium
+        - heading: Online payments
+          body: >-
+            Premium adds online payments, so a patient can pay without coming to the counter, for example
+            when a video consult is booked. This page does not name the payment gateway behind online
+            payments in any country.
+          plan: premium
+        - heading: M-Pesa at the desk in Kenya
+          body: >-
+            In Kenya, a patient can pay at the desk by M-Pesa or in cash, and the payment is recorded on
+            their bill, which shows what is still owed.
+          link:
+            label: See the Kenya demo
+            href: /kenyademo/
+        - heading: Receipts on the patient's phone
+          body: >-
+            The receipt and the invoice can go to the patient by SMS or email, and on WhatsApp with
+            Premium. A patient claiming the money back from an employer has the copy without asking the
+            desk for one.
+          link:
+            label: Read how WhatsApp messages are sent
+            href: /features/whatsapp/
+        - heading: When an insurer pays part of the bill
+          body: >-
+            A visit can be billed to more than one payer: the patient pays their share at the desk and the
+            rest goes on the claim. Insurance claims come with Enterprise, or as an add-on on Professional
+            and Premium.
+          plan: enterprise
+          link:
+            label: Read how claims are built
+            href: /features/insurance-claims/
+
+  - discriminant: featureRows
+    value:
+      id: day-end-close
+      heading: Cash registers and the day-end close
+      intro: >-
+        The cash in the drawer and the bills in the system should agree when the desk closes. These are
+        the parts of EasyClinic that help them agree.
+      items:
+        - heading: Who can use the cash register
+          body: >-
+            Access to the cash register is set by role, so only the staff you allow can take money on it.
+        - heading: Cash in and out, tracked through the day
+          body: >-
+            Cash coming in and going out is tracked as it happens, which cuts the time the daily
+            reconciliation takes. The till is balanced across payment modes, such as cash and online
+            payments, with an audit trail of every transaction on it.
+        - heading: The end-of-day report
+          body: >-
+            The end-of-day report gives a snapshot of the day's cash transactions, and end-of-day
+            financial reports run for the whole clinic or, with more than one location, across the
+            organisation. Reports can be generated and sent out automatically, so nobody has to remember
+            to run them.
+          link:
+            label: Read how a cash variance is traced
+            href: /features/revenue-management/
+        - heading: Figures your accountant can use
+          body: >-
+            Financial reports are ready for daily, weekly, monthly and quarterly book balancing and for
+            profit and loss. Access to them is set by role, so the accountant can read them while the
+            front desk cannot.
+
+  - discriminant: dataTable
+    value:
+      id: tax-rules
+      heading: Tax on a clinic's bills in India and Kenya
+      intro: >-
+        The tax authority in each country, and what its rules mean for a clinic's bills in general terms.
+        Your CA or tax adviser decides how they apply to your own services.
+      caption: The tax authority for a clinic's bills in India and Kenya, and what its rules mean in general
+      columns:
+        - Country
+        - Tax authority
+        - What it means for your bills
+      rows:
+        - - India
+          - Central Board of Indirect Taxes and Customs (CBIC), for GST
+          - >-
+            Healthcare services by a clinical establishment or an authorised medical practitioner are
+            exempt from GST, so a consultation carries none. Medicines sold over your pharmacy counter and
+            cosmetic procedures are taxable, so a clinic with a pharmacy counter can end up issuing both
+            kinds of bill.
+        - - Kenya
+          - Kenya Revenue Authority (KRA), through eTIMS
+          - >-
+            eTIMS is KRA's electronic tax invoice system. Each invoice is sent to KRA and the receipt
+            carries the eTIMS reference, and registering for eTIMS with KRA is the clinic's own step.
+      note: >-
+        The table describes each country's rules. It makes no claim about EasyClinic's GST or eTIMS
+        status.
+
+  - discriminant: scopeBox
+    value:
+      id: limits
+      heading: Before you move the billing desk onto EasyClinic
+      variant: limits
+      items:
+        - >-
+          **The books stay with your accountant on Professional and Premium.** Financial accounting comes
+          with Enterprise. On the other plans EasyClinic holds the bills and the day-end close, and your
+          accountant keeps the books in the software they use now.
+        - >-
+          **Packages and online payments start on Premium.** Professional, at
+          {price:usd.professional.annual} per doctor per month billed annually, bills and takes payment at
+          the desk without them.
+        - >-
+          **Claims to insurers need the claims module.** It comes with Enterprise, or as an add-on on
+          Professional and Premium.
+        - >-
+          **Your CA checks the tax on your bills.** EasyClinic applies the tax you define to the items you
+          mark taxable. This page makes no claim that its bills meet GST, VAT or eTIMS invoice rules, so
+          have your CA or tax adviser check a sample bill before you go live.
+        - >-
+          **The desk needs the internet.** EasyClinic is cloud software and does not run fully offline
+          today, so if the line at your clinic drops often, arrange a backup connection for the billing
+          desk, such as a mobile hotspot, before you go live.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How EasyClinic is rated on Capterra and Google
+      intro: >-
+        The Capterra link opens the reviews themselves, so you can read what reviewers wrote about
+        EasyClinic before you book a demo.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions clinic owners ask about billing
+faq:
+  - question: Do I charge GST on a consultation?
+    answer: >-
+      No, in most cases: healthcare services by a clinical establishment or an authorised medical
+      practitioner are exempt from GST, so the consultation bill carries none. Medicines sold over your
+      pharmacy counter and cosmetic procedures are taxable, and in EasyClinic each service and item is
+      marked taxable or non-taxable, so the tax you define applies only to the taxable lines. Ask your CA
+      which of your services are taxable.
+  - question: Can my receptionist bill without seeing patients' notes?
+    answer: >-
+      Yes: the reception login included in the price can do the front-desk work, including registration,
+      appointments, billing and payments, and it cannot use the EMR or issue prescriptions. If you want a nurse or clinical
+      assistant to fill in part of the record, they get a clinical role as a separate user.
+  - question: Can patients pay by M-Pesa?
+    answer: >-
+      Yes, at the desk: a patient in Kenya can pay by M-Pesa or in cash, and the payment is recorded on
+      their bill, which shows what is still owed. Online payments, for patients who pay without coming to
+      the counter, come with Premium.
+  - question: Can the desk give a refund or void a bill?
+    answer: >-
+      Yes, with authorisation: refunds and voided invoices go through with authorisation, and discounts
+      and write-offs are controlled the same way. Each transaction stays on the till's audit trail, so
+      you can see later what was refunded or voided.
+  - question: Can a patient pay for a package of sessions in instalments?
+    answer: >-
+      Yes, on Premium and Enterprise, which include package treatments: a package can be billed in one
+      visit or across several, with its payment spread over the visits. Professional does not include
+      package treatments.
+  - question: How does the desk close the day?
+    answer: >-
+      The till is balanced across payment modes, such as cash and online payments, and the end-of-day
+      report gives a snapshot of the day's cash transactions to count the drawer against. Access to the
+      cash register is set by role and every transaction stays on the till's audit trail; tracing a gap
+      between the drawer and the report is covered on the
+      [revenue management page](/features/revenue-management/).
+  - question: What can my accountant get from EasyClinic?
+    answer: >-
+      Your accountant can have a login that reads the financial reports, which are ready for daily,
+      weekly, monthly and quarterly book balancing and for profit and loss, and role-based access can keep
+      those reports from the front desk. Financial accounting itself comes with Enterprise; on
+      Professional and Premium your accountant keeps the books in the software they use now.
+  - question: Can EasyClinic send our figures to our accounting software?
+    answer: >-
+      Yes, as integration work scoped for your clinic: a connection to your accounting system comes with
+      Enterprise, under integrations and custom features, and is an add-on on Professional and Premium.
+      What goes across, and how often, is set in that scoping.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist who bills from the appointment screen, on the Professional plan.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: Several specialists billing through one front desk, on one patient record.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: End-of-day financial reports for each clinic and for the whole organisation.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: Consultations, lab tests, procedures and pharmacy sales billed through workflows you set up.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /features/revenue-management/
+      label: Revenue management
+      description: Unbilled visits and cash variance, found before the month closes.
+    - href: /features/insurance-claims/
+      label: Insurance claims
+      description: The patient's share at the desk, and a claim for the rest that is clean before it leaves.
+    - href: /features/pharmacy-and-inventory/
+      label: Pharmacy and inventory
+      description: Medicines dispensed from the prescription, on the bill and off the stock count.
+
+closing:
+  heading: Watch a consult become a bill
+  body: >-
+    Book a 20-minute demo to see a bill built from a consult and the till's end-of-day report on screen.
+    If a call is too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    Little beyond the sourced product facts: the reception login that bills but cannot use the EMR comes
+    from EasyClinic's pricing page and M-Pesa at the Kenyan desk from its Kenya demo page, and the GST
+    line on consultations and pharmacy sales is the rule an Indian clinic owner meets at the counter.
+  readsMachineWritten: >-
+    The desk scenes, such as the 11:40 consult and the ₹2,000 advance in a diary, are labelled
+    illustrations rather than a named clinic's day, and with no named person, no measured billing figure,
+    no screenshot and no customer quote about billing, the page does not meet the spec 6.5 pass until a
+    front-desk read-aloud and one real customer case are added.
+
+notes:
+  - 'Title 48 characters; meta 152 characters (no tokens). Spec 4.1 title ("Clinic Billing Software with GST Invoicing"), meta ("GST invoices, OPD bills...") and H1 ("Billing and GST invoicing for your clinic") all drop "GST invoicing": src/data/regulators/in-gst.yaml has state null and the live India page calls GST "being expanded", so a GST-invoicing claim in the title would imply a status nobody has confirmed. The title leads with the head keyword instead; GST appears on the page only as a description of the rule (tax table, FAQ 1) and in the scope item that makes no claim about it. Restore "GST invoicing" to the title and H1 once in-gst has a state and a date.'
+  - 'Cannibalisation (4.5 rule 2): this page owns invoices, tax on the bill, payments at the desk and the till mechanics. Leakage, unbilled visits, cash-variance tracing, price lists by branch and payer, denials and ageing stay on /features/revenue-management/ (linked from the price row, the end-of-day row and the day-close FAQ). Payer linking, co-payment rules, claim submission, TPA, HMO and SHA stay on /features/insurance-claims/ (one row and one scope item here). WhatsApp templates, API and message costs stay on /features/whatsapp/ (4.5 rule 3); here WhatsApp is only the channel a receipt goes out on. "Revenue cycle management" does not appear.'
+  - 'Grounding (live pages re-fetched 2026-09-26, curl plus tag strip): /features/ billing section: one-click billing for receptionists; online and offline payments with the balance visible at once; part payments, advance payments, refunds and invoice voiding "with proper authorization"; payment amortisation for package treatments; service list with prices adjustable without regenerating billing records; custom tax definition for taxable and non-taxable items; financial reports for daily, weekly, monthly and quarterly book balancing and profit and loss; receipts and invoices sent by WhatsApp, SMS and email; discount authorisation, write-off and void control; CPOE billing; billing workflows for consultations, pharmacy, lab tests, procedures, vaccinations and teleconsultations; till management balancing payment modes with an audit trail; integration with third-party financial software; multi-payer billing in a single visit. /features/ inventory and pharmacy sections: EMR prescription to billing and pharmacy dispensing; OTC products added at the time of dispensing; custom package treatments billable in one visit or across multiple visits. /features/ lab section: tests added to the invoice on sample collection. /revenue-management/: lab and procedure work orders becoming invoice lines as they are processed; new prices reflected in billing at once; cash registers that track cash in and out for daily reconciliation, with role-based access and end-of-day reports of cash transactions; end-of-day financial reports clinic- and organisation-wide; role-based access to reports; automated generation and distribution of reports. /appointment-scheduling-at-easy-clinic/: 1-click billing and payments from the appointment screen. /pricing/ FAQ (facts.md): reception licence bills and takes payment but cannot use the EMR or issue prescriptions; a clinical assistant or nurse role can complete some EMR records. /kenyademo/ ("M-Pesa handles cash", "M-Pesa received ... Balance zero") per facts.md and the brief: M-Pesa at the desk only; no M-Pesa integration state is stated.'
+  - 'Plan tags only where plans.yaml is explicit: billing and payments (Professional, so every plan), package treatments and online payments (Premium), pharmacy and insurance claims (Enterprise, and add-ons on Professional and Premium per plans.yaml addons). Lab management and financial accounting are named in body text with their plans. Receipts by SMS or email carry no plan; the receipt row has no tag because a Premium tag would say SMS and email receipts need Premium. Which plan carries cash registers, till management, billing workflows and automated reports is not stated, so those rows carry no tag.'
+  - 'Editor pass 2026-09-26 removed or rephrased: "Most clinics that move their billing to software..." (unsourced); "each cash register closes the day with its own end-of-day report", "a register for each counter", "each counter closes on its own" and the two-counters FAQ (the live page says only that cash register access is set by role and that end-of-day reports snapshot the cash transactions, not that each counter has its own register or close); "the receipt prints at the desk" (printing is stated for prescriptions and labels, not receipts); "in cash or by card" (the live till list says "cash, credit, and online payments", and "credit" may not mean card); "reach the owner on a schedule" (the live page says automated generation and distribution); "the consult fee already on it" (not stated); "the payment sits against the bill" for advances (an advance can come before the bill); "Refunds and cancelled invoices go through only with approval from someone you have authorised" (the live wording is "with proper authorization"); the package mechanics (now the live wording: billable in one visit or across several, with payment amortisation); every "status is kept on the trust page" line and the eTIMS FAQ that pointed there (/trust/ is a draft with placeholder statuses and its link is hidden in production, as on /features/insurance-claims/); the "gateways with the state of each on the integrations page" sentence and link (/integrations/ has no content entry and no status exists); the Premium tag on the receipt row. The eTIMS FAQ was replaced with the reception-login question, and the counters FAQ with how the desk closes the day. Illustrations are labelled in the pain-block intro and the tax example starts "For example".'
+  - 'Links: the Kenya row links to /kenyademo/ (published) instead of /emr-software-in-kenya/ (draft, hidden in production); the tax-table country cells are plain text because /clinic-management-software-india/ and /emr-software-in-kenya/ are drafts.'
+  - 'Left out for lack of a confirmed fact: named payment gateways by country and their state (spec 5.11 lists Razorpay/PayU, M-Pesa Daraja, UAE gateways, Paystack/Flutterwave; every countries/*.yaml payment state is null), so the page names none and says so; UPI; card payments; M-Pesa reconciliation against a Till or Paybill statement (spec FAQ); GST e-invoicing and eTIMS status, and whether invoices carry HSN or SAC codes (in-gst and ke-etims state null); VAT rules for the UAE and Nigeria (no regulator entry in src/data and no confirmed description, so the tax table covers India and Kenya only; add rows after a tax read); shifts and separate registers per counter (not on the live site); Tally export (not stated anywhere on the live site; the accounting FAQ uses the plans.yaml integrations add-on wording and names no product); which plan carries personalised invoice and receipt templates (live "Customizable Billing Templates" vs Premium "Custom clinical forms and print layouts"), so that row was dropped; credit limits and cost of goods sold (listed on /features/ without detail).'
+  - 'Left out from the live pages as unsourced marketing: "Invoices are ready in less than 10 seconds", "faster reimbursement cycles", "reducing claim rejections", "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and Cura AI bill coding (the /ai/ page claims it, but which plan carries it is not known).'
+  - 'Tax table and FAQ 1: the GST exemption for healthcare services by a clinical establishment or authorised medical practitioner, and the taxable pharmacy and cosmetic items, repeat the wording already on /pricing/india/ (pricing/india.yaml "gst-and-payment"). eTIMS wording follows src/data/regulators/ke-etims.yaml. The column is "Tax authority" because GST rates are set on GST Council recommendations and CBIC administers them. Both rows need a CA read before launch. No regulatorStrip or regulatorTable (page-writing rules).'
+  - 'The desk scenes use illustrative amounts and times (11:40 consult, ₹6,000 procedure, ₹2,000 advance, 20% discount, ten minutes with a receipt book); the pain-block intro labels them as illustrations. They are not plan prices and not measured figures.'
+  - 'No testimonials (all placed elsewhere). Proof is the ratings badge block; review counts are unknown (facts.yaml capterraReviews and googleReviews are null), so no count is shown.'
+  - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, the hero is the bill opened from the appointment screen with the orders on it, and the end-of-day report goes on the end-of-day row.'
+  - 'Related links: all five solution pages (spec 2.9) plus revenue management, insurance claims and pharmacy, eight in all. Solution descriptions restate only what this page and those pages source.'

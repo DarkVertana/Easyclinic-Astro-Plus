@@ -1,0 +1,396 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { need } from '../../../lib/content/need';
+import { formatDate, isoDate } from '../../../lib/format/date';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'comparisonTable'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, columns, rows, note, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+/*
+ * Spec 5.14 item 4, 5.16 item 2, 7.3: one column per product, one row per thing compared. Every
+ * competitor cell carries its source and the date it was checked; the schema refuses a competitor fact
+ * without them, and "Check" as a value. The products get equal columns. EasyClinic's column has a light
+ * tint and an icon beside its name; the name says whose column it is, so nothing rests on colour.
+ *
+ * Never a sideways scroll (spec 7.5): below the width at which every column still has room, the table
+ * becomes one card per row, listing each product and its value. That is 640px for two or three products,
+ * 960px for four to six and 1200px for seven or eight. Explicit roles keep the table semantics when the
+ * cells are display:block (Safari drops them otherwise).
+ */
+const fit = columns.length <= 3 ? 'sm' : columns.length <= 6 ? 'md' : 'lg';
+
+// Accessible name: the section heading (by reference when it has an id), else a caption naming the products.
+const labelledBy = heading && id ? `${id}-heading` : undefined;
+const label = heading && !id ? heading : undefined;
+const names = columns.map((c) => c.name);
+const caption = heading ? undefined : `Comparison of ${names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names.at(-1)}` : names[0]}`;
+
+// A screen reader hears the column's name; when the name is a product (CuraPilot) rather than the company, say whose it is.
+const usSuffix = (name: string) => (/easyclinic/i.test(name) ? '' : ' (EasyClinic)');
+
+// One cell per column. The schema already requires this; a short row still renders a placeholder under
+// the right header rather than shifting cells, and blocks publishing.
+const body = rows.map((row) => ({
+  label: row.label,
+  cells: columns.map((column, c) => {
+    const cell = row.cells[c];
+    return {
+      column: column.name,
+      us: column.us,
+      value: cell?.value,
+      placeholder: cell ? null : need(Astro, `${column.name} for "${row.label}"`, null),
+      source: cell?.source,
+      checkedOn: cell?.checkedOn,
+    };
+  }),
+}));
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <div class="ct-wrap" data-fit={fit}>
+    <table class="ct" role="table" aria-labelledby={labelledBy} aria-label={label}>
+      {caption && <caption class="sr-only">{caption}</caption>}
+      <thead role="rowgroup">
+        <tr role="row">
+          <th scope="col" role="columnheader"><span class="sr-only">Compared on</span></th>
+          {
+            columns.map((column) =>
+              column.us ? (
+                <th scope="col" role="columnheader" class="ct-us">
+                  <span class="flex items-start gap-1.5">
+                    <Icon name="circle-dot" size={16} class="mt-px text-blue-700" />
+                    <span>
+                      {column.name}
+                      {usSuffix(column.name) && <span class="sr-only">{usSuffix(column.name)}</span>}
+                    </span>
+                  </span>
+                </th>
+              ) : (
+                <th scope="col" role="columnheader">
+                  {column.name}
+                </th>
+              ),
+            )
+          }
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        {
+          body.map((row) => (
+            <tr role="row">
+              <th scope="row" role="rowheader">
+                {row.label}
+              </th>
+              {row.cells.map((cell) => (
+                <td role="cell" data-label={cell.column} class:list={[cell.us && 'ct-us']}>
+                  <div class="ct-cell">
+                    {cell.value ? <Md text={cell.value} inline class="[&_a]:underline" /> : cell.placeholder}
+                    {(cell.source || cell.checkedOn) && (
+                      <span class="ct-meta">
+                        {cell.source && (
+                          <a href={cell.source} rel="noopener" class="ct-src">
+                            Source<span class="sr-only">{` for ${cell.column}, ${row.label}`}</span>
+                          </a>
+                        )}
+                        {cell.checkedOn && (
+                          <span>
+                            checked <time datetime={isoDate(cell.checkedOn)}>{formatDate(cell.checkedOn)}</time>
+                          </span>
+                        )}
+                      </span>
+                    )}
+                  </div>
+                </td>
+              ))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  {note && <Md text={note} class:list={['mt-4 max-w-[46rem] text-sm', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+</Section>
+
+<style>
+  /* Table layout: a bordered table on a surface card, so it reads on any section tone. */
+  .ct-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card, 0.75rem);
+    overflow: hidden;
+  }
+  .ct {
+    width: 100%;
+    border-collapse: collapse;
+    /* Equal product columns, whatever each cell says. */
+    table-layout: fixed;
+    color: var(--ink);
+    text-align: left;
+  }
+  .ct th,
+  .ct td {
+    padding: 0.875rem 1rem;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .ct thead th {
+    padding-block: 0.75rem;
+    border-top: 0;
+    background: var(--surface-muted);
+    color: var(--ink-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    line-height: 1.3;
+    vertical-align: bottom;
+  }
+  .ct thead th:first-child {
+    width: 26%;
+  }
+  [data-fit='md'] .ct thead th:first-child {
+    width: 20%;
+  }
+  [data-fit='lg'] .ct thead th:first-child {
+    width: 15%;
+  }
+  .ct tbody th {
+    color: var(--ink-heading);
+    font-weight: 600;
+  }
+  /* Four or more products: smaller type and padding, so each column keeps room for its facts. */
+  @media (width >= 60rem) {
+    .ct-wrap:not([data-fit='sm']) .ct :is(th, td) {
+      padding-inline: 0.75rem;
+      font-size: var(--text-sm, 0.875rem);
+    }
+  }
+
+  /* EasyClinic's column: a light tint, and a brand rule over its name (the icon sits beside it). */
+  .ct .ct-us {
+    background: var(--surface-alt);
+  }
+  .ct thead .ct-us {
+    box-shadow: inset 0 3px 0 var(--color-blue-700);
+  }
+
+  /* Source and checked-on date: small print under the value. */
+  .ct-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.625rem;
+    margin-top: 0.25rem;
+    color: var(--ink-muted);
+    font-size: var(--text-xs, 0.8rem);
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  .ct-src {
+    position: relative;
+    font-weight: 600;
+  }
+  /* A 44px tap target without spreading the small print: the hit area reaches into the cell's padding. */
+  .ct-src::after {
+    content: '';
+    position: absolute;
+    inset: -0.5rem -0.375rem -1rem;
+  }
+
+  /* Card layout, one card per row, two across from 640px. Harmless while the element is a table. */
+  .ct tbody {
+    gap: 1rem;
+  }
+  .ct tbody td {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    column-gap: 1rem;
+  }
+  @media (width >= 40rem) {
+    .ct tbody {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /*
+   * The switch to cards, at each table's own width (see the note at the top): every table below 640px,
+   * four to eight products below 960px, seven or eight below 1200px. The three blocks hold the same
+   * rules for different tables; keep them in step.
+   */
+  @media (width < 40rem) {
+    .ct-wrap {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .ct,
+    .ct tr,
+    .ct th,
+    .ct td {
+      display: block;
+      width: auto;
+    }
+    .ct tbody,
+    .ct tbody td {
+      display: grid;
+    }
+    .ct thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .ct tbody tr {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card, 0.75rem);
+      overflow: hidden;
+    }
+    .ct tbody th {
+      padding: 0.75rem 1rem;
+      border-top: 0;
+      background: var(--surface-muted);
+      font-family: var(--font-sans);
+      font-size: var(--text-base, 1rem);
+      line-height: 1.35;
+    }
+    .ct tbody td {
+      padding: 0.75rem 1rem;
+      font-size: var(--text-base, 1rem);
+      /* The value column has room for whole words here. */
+      hyphens: manual;
+    }
+    .ct tbody td::before {
+      content: attr(data-label);
+      /* Empty alt text: screen readers already announce the column header. */
+      content: attr(data-label) / '';
+      color: var(--ink-heading);
+      font-size: var(--text-sm, 0.875rem);
+      font-weight: 600;
+      line-height: 1.5rem;
+    }
+  }
+
+  @media (40rem <= width < 60rem) {
+    .ct-wrap:not([data-fit='sm']) {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .ct-wrap:not([data-fit='sm']) .ct,
+    .ct-wrap:not([data-fit='sm']) .ct tr,
+    .ct-wrap:not([data-fit='sm']) .ct th,
+    .ct-wrap:not([data-fit='sm']) .ct td {
+      display: block;
+      width: auto;
+    }
+    .ct-wrap:not([data-fit='sm']) .ct tbody,
+    .ct-wrap:not([data-fit='sm']) .ct tbody td {
+      display: grid;
+    }
+    .ct-wrap:not([data-fit='sm']) .ct thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .ct-wrap:not([data-fit='sm']) .ct tbody tr {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card, 0.75rem);
+      overflow: hidden;
+    }
+    .ct-wrap:not([data-fit='sm']) .ct tbody th {
+      padding: 0.75rem 1rem;
+      border-top: 0;
+      background: var(--surface-muted);
+      font-family: var(--font-sans);
+      font-size: var(--text-base, 1rem);
+      line-height: 1.35;
+    }
+    .ct-wrap:not([data-fit='sm']) .ct tbody td {
+      padding: 0.75rem 1rem;
+      font-size: var(--text-base, 1rem);
+      /* The value column has room for whole words here. */
+      hyphens: manual;
+    }
+    .ct-wrap:not([data-fit='sm']) .ct tbody td::before {
+      content: attr(data-label);
+      /* Empty alt text: screen readers already announce the column header. */
+      content: attr(data-label) / '';
+      color: var(--ink-heading);
+      font-size: var(--text-sm, 0.875rem);
+      font-weight: 600;
+      line-height: 1.5rem;
+    }
+  }
+
+  @media (60rem <= width < 75rem) {
+    .ct-wrap[data-fit='lg'] {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .ct-wrap[data-fit='lg'] .ct,
+    .ct-wrap[data-fit='lg'] .ct tr,
+    .ct-wrap[data-fit='lg'] .ct th,
+    .ct-wrap[data-fit='lg'] .ct td {
+      display: block;
+      width: auto;
+    }
+    .ct-wrap[data-fit='lg'] .ct tbody,
+    .ct-wrap[data-fit='lg'] .ct tbody td {
+      display: grid;
+    }
+    .ct-wrap[data-fit='lg'] .ct thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .ct-wrap[data-fit='lg'] .ct tbody tr {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card, 0.75rem);
+      overflow: hidden;
+    }
+    .ct-wrap[data-fit='lg'] .ct tbody th {
+      padding: 0.75rem 1rem;
+      border-top: 0;
+      background: var(--surface-muted);
+      font-family: var(--font-sans);
+      font-size: var(--text-base, 1rem);
+      line-height: 1.35;
+    }
+    .ct-wrap[data-fit='lg'] .ct tbody td {
+      padding: 0.75rem 1rem;
+      font-size: var(--text-base, 1rem);
+      /* The value column has room for whole words here. */
+      hyphens: manual;
+    }
+    .ct-wrap[data-fit='lg'] .ct tbody td::before {
+      content: attr(data-label);
+      /* Empty alt text: screen readers already announce the column header. */
+      content: attr(data-label) / '';
+      color: var(--ink-heading);
+      font-size: var(--text-sm, 0.875rem);
+      font-weight: 600;
+      line-height: 1.5rem;
+    }
+  }
+</style>

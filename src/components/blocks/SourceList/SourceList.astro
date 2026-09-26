@@ -1,0 +1,35 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { formatDate, isoDate } from '../../../lib/format/date';
+import Section from '../../ui/Section.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'sourceList'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+/*
+ * Spec 5.14 item 8 and 5.16 item 7: every source the page relies on, with the date it was read, as a
+ * numbered list in the order written. Each item is a 48px row and the link's padding fills most of it,
+ * so the tap target is the row's height. The link stays inline: a long label wraps under itself and the
+ * number stays on its first line.
+ */
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading || 'Sources'} intro={intro} tone={sectionTone}>
+  <ol class:list={['max-w-[46rem] list-decimal pl-6', inverse ? 'marker:text-ink-inverse-muted' : 'marker:text-ink-muted']}>
+    {
+      items.map((item) => (
+        <li class="py-3 pl-1 leading-6">
+          <a href={item.url} rel="noopener" class:list={['py-3.5 font-medium underline underline-offset-2', inverse && '!text-white']}>
+            {item.label}
+          </a>{' '}
+          <span class:list={['text-sm whitespace-nowrap', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']}>
+            accessed <time datetime={isoDate(item.accessed)}>{formatDate(item.accessed)}</time>
+          </span>
+        </li>
+      ))
+    }
+  </ol>
+</Section>

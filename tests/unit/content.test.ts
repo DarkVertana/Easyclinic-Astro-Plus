@@ -54,6 +54,12 @@ describe('tokens', () => {
     expect(value.d).toBe(date);
     expect(value.ref).toEqual({ collection: 'x', id: 'y' });
   });
+  it('leaves editor notes alone, even with unknown tokens', () => {
+    const { value, issues } = resolveDeep({ notes: ['{fact:unknownThing} and {price:kes...}'], title: '{fact:founded}' }, data);
+    expect(value.notes[0]).toBe('{fact:unknownThing} and {price:kes...}');
+    expect(value.title).toBe('2003');
+    expect(issues).toEqual([]);
+  });
 });
 
 describe('money', () => {

@@ -1,0 +1,49 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'decisionMatrix'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, options, ctx } = Astro.props;
+
+/*
+ * Spec 5.16 item 4 and 5.14 item 6: "Choose Practo Ray if" beside "Choose EasyClinic if". Honest by
+ * design: every option gets the same card, type, check marks and space, so a competitor's case reads as
+ * seriously as ours. EasyClinic's card differs only in its brand-blue border; its title already says
+ * whose card it is, so nothing rests on colour.
+ */
+
+// Headings stay in order: option titles sit under the section heading (h3), or at h2 when there is none.
+const OptionHeading = (heading ? 'h3' : 'h2') as 'h2' | 'h3';
+
+// Stacked on phones; two, three or four across when there is room for each list.
+const GRID_BY_COUNT: Record<number, string> = {
+  2: 'sm:grid-cols-2',
+  3: 'md:grid-cols-3',
+  4: 'sm:grid-cols-2 lg:grid-cols-4',
+};
+const grid = GRID_BY_COUNT[options.length] ?? 'sm:grid-cols-2';
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <div class:list={['grid gap-5', grid]}>
+    {
+      options.map((option) => (
+        <div class:list={['card flex h-full flex-col border-t-4 p-6 text-ink', option.us ? 'border-blue-700' : 'border-line-strong']}>
+          <OptionHeading class="font-sans text-lg font-semibold leading-snug">{option.title}</OptionHeading>
+          {/* role="list" keeps list semantics in Safari, which drops them when list-style is none. */}
+          <ul role="list" class="mt-4 grid gap-3">
+            {option.items.map((item) => (
+              <li class="flex items-start gap-3">
+                <Icon name="check" size={20} class="mt-0.5 text-success" />
+                <Md text={item} inline class="min-w-0 flex-1 [&_a]:underline" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</Section>

@@ -27,7 +27,7 @@ const exclusion = variant !== 'limits';
     <ul class:list={['grid gap-x-10 gap-y-4', items.length > 3 ? 'md:grid-cols-2' : 'max-w-[46rem]']}>
       {
         items.map((item) => (
-          <li class="flex gap-3">
+          <li class="flex items-start gap-3">
             <Icon name={exclusion ? 'circle-x' : 'info'} size={20} class:list={['mt-0.5', exclusion ? 'text-warning' : 'text-info']} />
             <Md text={item} class="min-w-0 flex-1" />
           </li>

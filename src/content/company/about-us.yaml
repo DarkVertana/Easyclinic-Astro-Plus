@@ -1,0 +1,227 @@
+# About us (spec 5.19 /about-us/; section 2 and 6 rules; grounded on the live /about-us/ page, fetched 2026-09-26).
+status: published
+headKeyword: about EasyClinic
+secondaryKeywords:
+  - who owns EasyClinic
+  - EasyClinic company
+  - EasyClinic founder
+  - Novel Medicare Solutions
+title: 'About EasyClinic: Clinic Software Since {fact:founded}'
+metaDescription: >-
+  EasyClinic is made by Novel Medicare Solutions Pvt Ltd in Kolkata and has run clinics since
+  {fact:founded}. Who leads it, and two things we will not do.
+h1: About EasyClinic
+linkLabel: About us
+eyebrow: Novel Medicare Solutions Pvt Ltd, Kolkata
+openingAnswer: >-
+  EasyClinic is clinic management software made by Novel Medicare Solutions Pvt Ltd, a Kolkata company,
+  and it has been running doctors' clinics since {fact:founded}. Today {fact:doctors} doctors in
+  {fact:countries} countries use it, from one-doctor practices in India to Penda Health's clinics in
+  Nairobi.
+summary: >-
+  Who makes EasyClinic, how long it has run clinics, the five people who lead it, the Kolkata office, and
+  the two things the company will not do.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Call or email us
+    href: /contact-us/
+  whatsapp: Hi, I was reading the EasyClinic About page and would like to book a 20-minute demo for my clinic.
+
+sections:
+  - discriminant: prose
+    value:
+      id: story
+      heading: Running clinics since {fact:founded}
+      body: |-
+        EasyClinic has been running doctors' clinics since {fact:founded}. Two customers quoted on our [customers page](/customers/) have used it since 2008 and 2012: Dr Prantar Chakrabarti, a haematologist at the Institute of Hematology and Transfusion Medicine, and Aditya Women and Infertility Clinic in Hyderabad. Today EasyClinic runs in the cloud and clinics sign in at [app.easyclinic.io](https://app.easyclinic.io/). It is used in {fact:countries} countries, by clinics that range from one doctor and a receptionist to a chain of {fact:largestChain} locations. In Nairobi, Penda Health has kept its clinic records on EasyClinic since 2017, and in 2025 researchers at Penda Health and OpenAI published a preprint on {fig:visits} of its patient visits, in which an AI tool called AI Consult ran inside that record.
+
+  - discriminant: dataTable
+    value:
+      id: milestones
+      heading: The dates we can put a source to
+      intro: This list keeps to dates with a source, and the note under it says where each one comes from.
+      columns:
+        - Year
+        - What happened
+      rows:
+        - - '{fact:founded}'
+          - EasyClinic is established and starts running doctors' clinics.
+        - - '2008'
+          - Dr Prantar Chakrabarti, a haematologist at the Institute of Hematology and Transfusion Medicine, starts using EasyClinic.
+        - - '2012'
+          - Aditya Women and Infertility Clinic, an obstetrics and fertility clinic in Hyderabad, starts using EasyClinic.
+        - - '2017'
+          - Penda Health in Nairobi introduces EasyClinic as the cloud-hosted record for its clinics.
+        - - '2025'
+          - Researchers at Penda Health and OpenAI publish a preprint on {fig:visits} patient visits at 15 Penda clinics, comparing clinicians with and without AI Consult, an AI tool embedded in the EasyClinic record.
+      note: >-
+        The founding year is our own. The 2008 and 2012 dates are the customers' own, from Dr Chakrabarti
+        and from Dr Seetha Lakshmi Kolanakuduru at Aditya. The 2017 and 2025 dates come from the paper,
+        [arXiv:2507.16947](https://arxiv.org/abs/2507.16947).
+
+  - discriminant: dataTable
+    value:
+      id: numbers
+      heading: EasyClinic in four numbers
+      columns:
+        - Number
+        - What it counts
+      rows:
+        - - '{fact:doctors}'
+          - Doctors who use EasyClinic
+        - - '{fact:cities}'
+          - Cities those doctors work in
+        - - '{fact:retention}'
+          - Customers who have used EasyClinic for more than five years
+        - - '{fact:supportSatisfaction}'
+          - Customers satisfied with our support and training
+      note: >-
+        All four are EasyClinic's own figures, as we stated them in September 2026. We have not published
+        how or when the retention and satisfaction figures were measured, so treat them as our own count.
+
+  - discriminant: dataTable
+    value:
+      id: leadership
+      heading: Who runs EasyClinic
+      intro: Five people lead the company.
+      columns:
+        - Name
+        - Role
+        - Background
+      rows:
+        - - Girish Mohata
+          - Founder and CEO
+          - Founded EasyClinic and leads it as chief executive.
+        - - Mrinal Pasari
+          - Co-founder
+          - A solution and enterprise architect with 20 years of experience in enterprise application development, in fields from banking to healthcare.
+        - - Vikas Malpani
+          - Director, business growth and strategy
+          - An entrepreneur and business strategist who leads the company's growth.
+        - - Gaurab Chatterjee
+          - Head of software development
+          - At EasyClinic since 2010, with over 16 years in software development and a background in Microsoft technologies.
+        - - Subhashish Saha
+          - Head of customer success
+          - At EasyClinic since 2012, leading the team that supports the clinics using it.
+
+  - discriminant: prose
+    value:
+      id: research
+      heading: The Penda Health study, and our part in it
+      body: |-
+        In July 2025, researchers at Penda Health and OpenAI published a preprint on arXiv, [AI-based Clinical Decision Support for Primary Care: A Real-World Study](https://arxiv.org/abs/2507.16947) (Korom and others). It compared {fig:visits} patient visits at 15 Penda Health clinics in Nairobi by clinicians with and without AI Consult, an AI tool embedded in Penda's EasyClinic record. Independent physicians rated a random sample of the visit records, and clinicians with AI Consult made {fig:diagnostic-errors} fewer diagnostic errors and {fig:treatment-errors} fewer treatment errors.
+
+        Our part, as the paper tells it, is the record. It names EasyClinic as the cloud-hosted record Penda introduced in 2017, which supports all of its patient visits, and it does not name any other EasyClinic product. The paper is a preprint that has not been through a journal's review, and its figures are errors that physicians judged from visit records, not measures of how patients fared afterwards.
+      aside: >-
+        The [CuraPilot page](/curapilot/) covers the study in more detail, including what it did and did
+        not test.
+
+  - discriminant: featureRows
+    value:
+      id: what-we-will-not-do
+      heading: What we will not do
+      intro: Two promises a clinic can hold us to.
+      items:
+        - heading: We will not sell patient data
+          body: >-
+            We never sell patient data, and we do not misuse the records a clinic keeps in EasyClinic.
+        - heading: We will not lock you in with a contract
+          body: >-
+            There is no binding contract on any plan and no setup fee, so a clinic can use EasyClinic for
+            as long as it is happy with it, and stop when it is not.
+
+  - discriminant: prose
+    value:
+      id: where-we-are
+      heading: Where to find us
+      body: |-
+        Our office is at 30 Circus Avenue, Kolkata 700017, West Bengal, India. Clinics in India can call {contact:in.phone}, and clinics in Kenya have their own line on {contact:ke.phone}.
+
+        Outside India, Penda Health in Nairobi and CIMAS Health in Zimbabwe both use EasyClinic.
+      aside: >-
+        **Looking for work?** The [careers page](/careers/) says whether we are hiring and how to send us
+        your CV.
+
+faqHeading: Questions about the company
+faq:
+  - question: Who owns EasyClinic?
+    answer: >-
+      EasyClinic is owned and made by Novel Medicare Solutions Pvt Ltd, a private limited company based in
+      Kolkata, India. Girish Mohata founded it and is its chief executive, and Mrinal Pasari is a
+      co-founder.
+  - question: Where is EasyClinic based?
+    answer: >-
+      EasyClinic is based in Kolkata, at 30 Circus Avenue, Kolkata 700017. Clinics in India can call
+      {contact:in.phone} and clinics in Kenya have their own line on {contact:ke.phone}; the
+      [contact page](/contact-us/) lists both with their email addresses.
+  - question: How long has EasyClinic been running clinics?
+    answer: >-
+      EasyClinic has been running clinics since {fact:founded}, which is more than 20 years.
+      {fact:retention} of its customers have used it for more than five years, and Penda Health in
+      Nairobi has used it as the record for its clinics since 2017.
+  - question: Is EasyClinic a startup?
+    answer: >-
+      No, EasyClinic has been running clinics since {fact:founded}. Its head of software development has
+      been with the company since 2010 and its head of customer success since 2012.
+  - question: Does EasyClinic sell patient data?
+    answer: >-
+      No, EasyClinic never sells patient data, and we do not misuse the records a clinic keeps in
+      EasyClinic.
+
+links:
+  related:
+    - href: /customers/
+      label: Customers
+      description: Doctors and clinic groups on EasyClinic, in their own words.
+    - href: /careers/
+      label: Careers
+      description: Whether we are hiring, and how to send us your CV.
+    - href: /contact-us/
+      label: Contact us
+      description: The India and Kenya phone numbers, their email addresses, the Kolkata office and a form to book a demo.
+    - href: /curapilot/
+      label: CuraPilot
+      description: EasyClinic's clinical copilot. The page also covers the Penda Health preprint on AI Consult.
+
+closing:
+  heading: See EasyClinic set up for a clinic like yours
+  body: >-
+    The demo takes 20 minutes and is set up around your type of practice and number of locations. If you
+    would rather ask about the company first, call {contact:in.phone} or email hello@easyclinic.io.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Call or email us
+    href: /contact-us/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The timeline rests on a haematologist's 2008 start and a Hyderabad fertility clinic's 2012 start in
+    their own words, and the research section says exactly what part the Penda paper gives EasyClinic.
+  readsMachineWritten: >-
+    With no photos and one-line entries for Girish Mohata and Vikas Malpani, the leadership table reads
+    like a directory, and the two promises are short enough to sound like slogans, so the read-aloud pass
+    should check the page sounds like someone from the company talking.
+
+notes:
+  - 'Published 2026-09-26 with confirmed facts only (owner decision). Grounded on the live /about-us/ page (re-fetched 2026-09-26; counters in the HTML are 20, 92, 500 and 98). Live copy dropped as old boilerplate (spec 5.19): the vision, mission and six values, "Dream Team", "Chief Product Officers", "revolutionising", "empower", "seamless", "world-class", "unparalleled", and the "try Easy Clinic absolutely free" line (no free trial exists).'
+  - 'Fact-check pass 2026-09-26 removed: the 2003 row''s claim that Novel Medicare Solutions Pvt Ltd made EasyClinic in 2003 (the company''s name and incorporation date for that year are not sourced); "keeps no server of its own" (Enterprise offers custom or private cloud hosting); "without a contract holding them" after the retention figure (whether long-standing customers ever had contracts is unknown); the visit advice "call first so the person you want to meet is in"; "organisations as different as" (unsourced characterisation); "No open roles right now" in the careers link (the careers page owns that fact). The story now links to /customers/ rather than putting customer names on solution and specialty page links. The meta description no longer repeats the doctors and countries pair (spec 2.11 stat line).'
+  - 'Leadership: names and roles from src/data/authors. No photos (none exist) and no LinkedIn URLs (all null), though spec 5.19 asks for both. Backgrounds keep only plain statements from the live page: Mrinal Pasari (solution and enterprise architect, 20 years, enterprise application development for banking to healthcare), Vikas Malpani (entrepreneur and business strategist), Gaurab Chatterjee (since 2010, over 16 years, Microsoft technologies), Subhashish Saha (since 2012, leads his team). Left out: Girish Mohata "build and exit multiple tech companies profitably" (unverified) and the puffery around Vikas Malpani. Add a verified line for Girish when supplied. Spec 12 founder block needs a real photograph of Girish Mohata.'
+  - 'Timeline keeps to dated facts with a source: founded {fact:founded} (live "Established in 2003"); 2008 and 2012 from testimonial data (prantar-chakrabarti customerSince 2008, seetha-lakshmi-kolanakuduru customerSince 2012); 2017 and 2025 from arXiv:2507.16947, re-read 2026-09-26 ("A cloud-hosted electronic medical record (EMR), Easy Clinic, was introduced in 2017, supporting all patient visits"; "AI Consult is embedded in Penda''s cloud-hosted EMR (Easy Clinic)"; Easy Clinic is named only as the EMR). The first clinics of 2003 and the year EasyClinic moved to the cloud are unknown; add rows when the company supplies them.'
+  - 'No testimonial ids on this page. The company family needs no proof block, and each testimonial stays on the page it praises (prantar-chakrabarti on /solutions/hospital-opd/, seetha-lakshmi-kolanakuduru on /specialties/ivf-emr/); /customers/ shows every testimonial, so the story links there.'
+  - 'Numbers: doctors and cities from /pricing/, countries from /about-us/ and /kenyademo/, retention and supportSatisfaction from the live /about-us/ counters (facts.yaml note: no method or date published), which the table note says plainly. Not used: the "20+ years" counter (years are inconsistent across the live site: 22+, 20+, 15+; "more than 20 years" in the FAQ is derived from {fact:founded}), "500+ custom workflows" and "8+ years average client relationship" (not in the confirmed facts).'
+  - 'Research: only korom-2025 (arXiv preprint, verified 2026-09-26) is cited. The Nature Health and Nature Medicine papers in study.yaml are separate studies with easyclinicRole null and are not mentioned. "108 independent physicians" is written as "independent physicians" (claims rule); the paper''s abstract says visits were rated by independent physicians and its methods say a random sample of visits was rated. The verified 10% fewer investigation errors is left out (no fig token). The page never calls the studied tool Cura AI or CuraPilot.'
+  - 'Values cut to two things the company will not do (spec 5.19; two rather than three per spec 6.2). No sale of patient data: live /pricing/ FAQ ("We never misuse, sell or in any way disclose your data"). The page does not repeat "never disclose" because the privacy policy allows disclosure. No lock-in: live /pricing/ FAQ ("There are NO binding contracts whatsoever. Use Easy Clinic till you are happy with it.") and plans.yaml conditions (no setup fee, no contract). Data export on leaving is not stated here.'
+  - 'LEGAL, fix before or with this page: the global part of src/content/legal/privacy.mdx (section 2, clause (d)) says the company "may collect, analyse, use, publish, create and sell de-identified information, of which your personal or sensitive personal information might be a component". Only the Kenya section says "We do not sell personal data, health data, or de-identified data derived from health data". This page promises "We never sell patient data", so it no longer links to the privacy policy as support for that promise. Remove or rewrite clause (d) so the policy and this page agree, then the promise and FAQ can link to /privacy/ again. The policy also names a registered office at New Alipore, Kolkata 700053; this page uses the 30 Circus Avenue office only (page-writing-rules).'
+  - 'Country partners (spec 5.19) are left out: none are confirmed. Qualitas Health is not named as a current customer because its testimonial is in the past tense ("We had the pleasure of using"); CIMAS Health is named from its testimonial ("the heart of our operations today").'
+  - 'Schema: src/lib/seo/page-graph.ts adds AboutPage and Organization (with sameAs from site.yaml) for /about-us/. Spec 5.19 also asks for founders: page-graph.ts adds them to the Organization node from src/data/authors (every author whose role says founder: Girish Mohata, Mrinal Pasari).'
+  - 'The /siliconindia/ press page redirects here (redirects.yaml, "confirm"); the press mention itself is not used because its content is not in the confirmed facts.'

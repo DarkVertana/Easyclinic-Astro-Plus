@@ -1,0 +1,374 @@
+# WhatsApp feature page (spec 5.11 "/features/whatsapp", keyword row in 4.1, cannibalisation rule 4.5.3).
+status: published
+headKeyword: WhatsApp for clinics
+secondaryKeywords:
+  - WhatsApp appointment reminders
+  - WhatsApp Business API for healthcare
+  - WhatsApp patient communication
+title: 'WhatsApp Reminders and Messaging for Clinics: EasyClinic'
+metaDescription: 'WhatsApp for clinics: reminders, prescriptions, reports and feedback sent from your clinic software on approved templates. WhatsApp starts on Premium.'
+h1: WhatsApp reminders and messaging, built in
+linkLabel: WhatsApp reminders and messages
+eyebrow: WhatsApp
+openingAnswer: >-
+  EasyClinic sends appointment reminders, prescriptions, lab reports and feedback requests to patients
+  on WhatsApp from the clinic software, on message templates approved by Meta, instead of from a phone
+  on the front desk. WhatsApp messages come with the Premium plan at {price:usd.premium.annual} per
+  doctor per month billed annually ({price:inr.premium.annual} in India), and the Professional plan
+  sends reminders by SMS and email.
+summary: >-
+  Reminders, prescriptions, reports and feedback requests sent to patients on WhatsApp by the clinic
+  software, on Meta-approved templates, from the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+  whatsapp: Hi, I was reading the EasyClinic WhatsApp page and would like to see the reminder and prescription messages in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: whatsapp-at-the-desk
+      heading: What WhatsApp at the front desk looks like today
+      intro: >-
+        If your clinic already talks to patients on WhatsApp, it probably runs through one phone and one
+        person's spare minutes.
+      items:
+        - heading: The reminders go out when someone remembers
+          body: >-
+            At six the receptionist starts sending tomorrow's reminders from her own phone, typing each
+            one between the walk-ins and the cash counter. On a busy day she gets halfway down the list,
+            and some of the patients who heard nothing do not turn up.
+          fix: >-
+            EasyClinic sends the reminder from the appointment itself, using a message template the
+            clinic sets up once. SMS and email reminders come with every plan, and WhatsApp from
+            Premium.
+          href: /features/appointment-scheduling/
+          linkLabel: How appointment reminders work
+        - heading: The clinic's patients are on one person's phone
+          body: >-
+            Years of patient chats and phone numbers sit on the handset the front desk uses, which is
+            often somebody's own. When that person leaves the clinic, the chats leave with them.
+          fix: >-
+            The messages go out from the clinic software rather than from anyone's handset, and each
+            patient's number stays on the patient's record in EasyClinic.
+        - heading: The report goes as a photo of a printout
+          body: >-
+            The lab report is printed and photographed on the desk, slightly skewed, with the edge of the
+            next patient's file in the shot, then sent from the desk phone.
+          fix: >-
+            Once the report is on the patient's record, the report itself goes to the patient on
+            WhatsApp instead of a photo of it. Lab reports come with the Premium plan.
+          href: /features/lab/
+          linkLabel: How lab results reach the record
+
+  - discriminant: featureRows
+    value:
+      id: what-goes-out
+      heading: What goes out on WhatsApp, and when
+      intro: >-
+        Each message starts from something that happens in EasyClinic, such as a booking, a finished
+        prescription, a report on the record or a settled bill. Any message on WhatsApp needs the
+        Premium plan; on Professional the reminders go by SMS and email.
+      items:
+        - heading: The appointment reminder
+          body: >-
+            The reminder goes out before the visit with the details filled in from the appointment. The
+            clinic sets up the wording, and the event that sends it, once in EasyClinic's message
+            templates, and every booking after that gets its reminder without anyone at the desk picking
+            up a phone.
+          plan: premium
+          link:
+            label: Read how appointment reminders work
+            href: /features/appointment-scheduling/
+        - heading: The prescription, after the consult
+          body: >-
+            When the doctor finishes the prescription, it can go to the patient on WhatsApp as well as on
+            paper, so the dosage instructions are on the patient's phone at the pharmacy counter. A
+            prescription from a video consult goes the same way, with a line saying the consultation was
+            held remotely.
+          plan: premium
+          link:
+            label: See how the prescription is written
+            href: /features/emr/
+        - heading: The lab report, when it is ready
+          body: >-
+            Once the result is on the patient's record, the report can go to the patient on WhatsApp, so
+            the patient does not come back to the desk to collect a printout. Lab reports come with
+            Premium; running an in-house lab is lab management, on Enterprise or as an add-on.
+          plan: premium
+          link:
+            label: See how lab results reach the chart
+            href: /features/lab/
+        - heading: The receipt, after payment
+          body: >-
+            The payment receipt and the invoice can go to the patient on WhatsApp once the bill is
+            settled, so a patient who wants them on the phone does not wait for a printout. They can go
+            by SMS or email as well.
+          plan: premium
+          link:
+            label: See how billing works
+            href: /features/billing/
+        - heading: A feedback request after the visit
+          body: >-
+            After the visit the patient can be asked for feedback on WhatsApp, and the clinic decides
+            whether each response is shared publicly or kept internal.
+          bullets:
+            - Sending it on WhatsApp needs the Premium plan
+        - heading: A registration link before the first visit
+          body: >-
+            A new patient can be sent a registration link on WhatsApp and fill in their details on their
+            own phone before arriving, so the front desk is not typing them in while the queue waits.
+          bullets:
+            - Sending the link on WhatsApp needs the Premium plan
+          link:
+            label: Read how enrolment links work
+            href: /features/patient-engagement/
+        - heading: When a patient writes back
+          body: >-
+            The messaging runs both ways. When a patient replies or asks a question, Cura AI, the AI
+            reception in EasyClinic, answers the standard questions, so fewer of them turn into phone
+            calls to the front desk.
+          bullets:
+            - Replies on WhatsApp need the Premium plan
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: splitTable
+    value:
+      id: api-or-phone
+      heading: What is the difference between the WhatsApp Business API and a phone on the desk?
+      intro: >-
+        The WhatsApp app on a phone is built for a person typing messages; the WhatsApp Business
+        Platform, usually called the API, is built for software sending them. Ordinary chats on the app
+        need no approval and carry no per-message charge, but every reminder depends on someone
+        remembering to send it. The platform sends from the clinic software on a schedule, using
+        templates Meta has approved, and Meta charges for each template message it delivers.
+      left:
+        title: A phone on the front desk
+        items:
+          - Someone types or forwards each message, one patient at a time, when there is a free minute.
+          - The chats and the patients' numbers sit on that handset, and on a personal phone they leave with its owner.
+          - Ordinary chats need no template approval and carry no per-message charge.
+      right:
+        title: The WhatsApp Business Platform
+        items:
+          - The software sends the message from the appointment or the report, on a schedule.
+          - Messages the clinic starts use templates Meta has approved; free-form replies fit inside the 24 hours after the patient last wrote.
+          - Meta charges for each template message delivered, at a rate set by the kind of message and the country code of the patient's number.
+          - Meta limits how many different patients a new sender can message in a day, and raises the limit as it sends more messages that are received well.
+      note: >-
+        EasyClinic sends WhatsApp messages from the clinic software on approved templates, so the
+        platform's rules on templates and Meta's per-message rates apply to the rest of this page.
+
+  - discriminant: flowDiagram
+    value:
+      id: template-approval
+      heading: How a WhatsApp message template gets approved
+      intro: >-
+        Any message a clinic starts, such as a reminder or a report notice, goes out on a template. This
+        is Meta's process for every business on the WhatsApp Business Platform, and it is the same for a
+        clinic on EasyClinic.
+      steps:
+        - label: Write the template
+          body: >-
+            The wording of one kind of message, with blanks the software fills in for each patient, such
+            as the patient's name and the appointment time.
+        - label: Give it a category
+          body: >-
+            Utility for messages about a visit the patient already has, such as a reminder or a report;
+            marketing for offers and campaigns. Meta's price for each message depends on the category.
+        - label: Meta reviews it
+          body: >-
+            Every template is reviewed when it is created and again when it is edited. An approved
+            template can be sent; a rejected one cannot, and is reworded and submitted again.
+        - label: The software sends it
+          body: >-
+            Once approved, the template goes out for each patient with the blanks filled in from the
+            appointment or the record.
+        - label: Meta keeps watching
+          body: >-
+            A template's status can change after approval, based on how patients receive it, so one that
+            many patients block or report can be paused.
+      examples:
+        - country: Kenya
+          body: >-
+            Meta does not translate templates, so a clinic that writes to patients in English and Swahili
+            needs an approved template in each language.
+
+  - discriminant: prose
+    value:
+      id: consent
+      heading: Consent before the first message, and a way to stop
+      body: >-
+        **Ask first.** WhatsApp's business messaging policy lets a business message a person only after
+        the person has given it their number and agreed to receive its messages. How to ask is left to
+        the business, within the law of its country. At a clinic the natural moment is registration: ask
+        which messages the patient wants, keeping reminders and reports apart from offers as Meta
+        suggests, and keep the answer with the patient's details.
+
+
+        **Make stopping easy.** Meta asks businesses to explain how to opt out and to honour every request
+        to stop, whether it arrives on WhatsApp or across the desk. A patient who cannot find the way out is
+        more likely to block or report the number instead, and Meta can limit how many messages a number with many
+        blocks may send.
+
+
+        **The law where you practise applies as well.** India's Digital Personal Data Protection Act, 2023
+        and Kenya's Data Protection Act, 2019 each set rules for consent to use a patient's personal data.
+        WhatsApp's own policy also says not to send or ask for health information on WhatsApp where the
+        law requires a system held to a higher standard for it. The
+        [patient engagement page](/features/patient-engagement/#consent-by-country) covers consent country
+        by country.
+      width: measure
+
+  - discriminant: scopeBox
+    value:
+      id: limits
+      heading: What to know before you switch WhatsApp on
+      variant: limits
+      items:
+        - >-
+          WhatsApp messages come with Premium and Enterprise. On Professional, at
+          {price:usd.professional.annual} per doctor per month billed annually, reminders go by SMS and
+          email.
+        - >-
+          A patient without WhatsApp, or one who has asked you to stop, can still be reached by SMS or
+          email if they agreed to those, and both come with every plan.
+        - >-
+          Each new kind of message needs a template Meta has approved before its first send, and Meta can
+          reject a template or pause one that patients block.
+        - Meta sets WhatsApp's per-message rates and can change them on the first day of any quarter.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        We do not yet have a clinic's own words about its WhatsApp messages to put on this page. These
+        are EasyClinic's public ratings for the product as a whole.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+faqHeading: Questions clinics ask about WhatsApp
+faq:
+  - question: Which plan includes WhatsApp messages?
+    answer: >-
+      WhatsApp messages come with Premium and Enterprise. Premium costs {price:usd.premium.annual} per
+      doctor per month billed annually ({price:inr.premium.annual} in India) and includes everything in
+      Professional, so SMS and email reminders come with it too. Professional, at
+      {price:usd.professional.annual} per doctor per month billed annually, sends reminders by SMS and
+      email but not on WhatsApp.
+  - question: Can the messages come from my clinic's own WhatsApp number?
+    answer: >-
+      Yes: EasyClinic supports custom integrations that send WhatsApp messages through your clinic's own
+      branded channel, so patients see them under your clinic's name. A number used this way has to be
+      registered with Meta on the WhatsApp Business Platform.
+  - question: Does every message need Meta's approval?
+    answer: >-
+      Every message the clinic starts does: a reminder or a report notice goes out on a template Meta has
+      reviewed and approved, with blanks the software fills in. A reply to a patient who has written to
+      the clinic in the last 24 hours can be written freely, because it falls inside WhatsApp's customer
+      service window.
+  - question: What does each WhatsApp message cost?
+    answer: >-
+      It depends on WhatsApp's own pricing: Meta charges for each template message delivered, at a rate
+      set by the message's category and the country code of the patient's phone number. A reminder or a
+      report notice is normally a utility message and an offer is a marketing message, and Meta sets a
+      separate rate for each category. Meta can change its rates on the first day of each quarter and
+      publishes them on its
+      [WhatsApp pricing page](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
+  - question: Can patients reply to the messages?
+    answer: >-
+      Yes, the messaging is two-way. When a patient writes back, Cura AI, the AI reception in EasyClinic,
+      answers the standard questions, so fewer of them become phone calls to the front desk.
+  - question: What if a patient asks us to stop the WhatsApp messages?
+    answer: >-
+      Stop sending them WhatsApp messages, whichever way they ask: WhatsApp's business policy requires a
+      business to honour every request to opt out, made on WhatsApp or anywhere else. SMS and email come
+      with every plan, so a patient who still wants reminders by those can have them. A patient who
+      blocks or reports the number instead counts against it, and Meta can limit how many messages a
+      number sends when many patients do.
+  - question: Should we start a WhatsApp group for our patients?
+    answer: >-
+      Only for shared education and support, such as a diabetes group or a pregnancy group that the
+      clinic moderates, and never for one patient's own results or medicines. In an ordinary group every
+      member sees what the others write, which is why EasyClinic sends each patient's reminders and
+      reports to that patient alone. Our post on
+      [WhatsApp groups for patient care](/whatsapp-groups-for-patient-care/) looks at how a diabetes or
+      pregnancy group can be run.
+
+links:
+  hub: /features/
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor
+      description: One doctor and a receptionist, with reminders that go out without anyone picking up a phone.
+    - href: /solutions/polyclinic/
+      label: EasyClinic for a polyclinic
+      description: One front desk and one patient record shared by every specialist.
+    - href: /solutions/clinic-chain/
+      label: EasyClinic for a clinic chain
+      description: One central chart across every branch, with clinical SOPs tracked branch by branch.
+    - href: /solutions/hospital-opd/
+      label: EasyClinic for a hospital OPD
+      description: The OPD on one patient record, from the registration queue to the pharmacy.
+    - href: /solutions/ngo-clinics/
+      label: EasyClinic for NGO and mission clinics
+      description: Clinic records and programme reports in the shape donors ask for.
+    - href: /features/appointment-scheduling/
+      label: Appointment scheduling
+      description: Walk-ins and booked slots on one calendar, where the reminders start.
+    - href: /features/patient-engagement/
+      label: Patient engagement
+      description: Portal and app, recall campaigns, feedback and loyalty, with WhatsApp as one channel among them.
+    - href: /ai/
+      label: Cura AI
+      description: What each AI feature does, including the AI reception that answers patients on WhatsApp.
+
+closing:
+  heading: See the messages your patients would get
+  body: >-
+    Book a 20-minute demo to watch a reminder and a prescription go out on WhatsApp from EasyClinic. If
+    a call is too much today, send us a WhatsApp message from this page.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The flows come from EasyClinic's own live pages and price list (the video-consult prescription that
+    says the consult was remote, feedback the clinic keeps internal or shares, the enrolment link, the
+    clinic's own branded channel, WhatsApp on Premium with SMS and email on Professional), and the
+    Kenya note on English and Swahili templates is a local fact.
+  readsMachineWritten: >-
+    The pain-block scenes and the phone-versus-platform comparison could sit on any WhatsApp vendor's
+    page and need a front-desk read-aloud, and the page has no named clinic, no clinic's own words about
+    WhatsApp, no measured outcome and no screenshot of a real message thread yet.
+
+notes:
+  - 'Title 56 characters (spec 4.1 row, unchanged). Meta description reworded from the 4.1 wording to lead with the head keyword and say WhatsApp starts on Premium, without implying every flow it names is a Premium feature; 150 characters, no tokens.'
+  - 'Grounding (live pages re-fetched 2026-09-26 with curl and tag stripping): /features/ "Communication - All in one with WhatsApp, SMS, Email & Push Notification" (message templates and events per module; automated appointment reminders, digital prescriptions, invoices and receipts; "custom integrations for WhatsApp, Email, and SMS, enabling clinics to send messages through their own branded channels"; "AI-Powered Two-Way Messaging ... automating standard patient communication and significantly reducing the need for phone calls"), /features/ EMR (prescriptions "via print or WhatsApp, SMS, or Email"), billing (receipts and invoices on WhatsApp, SMS and email), teleconsult (prescriptions sent on WhatsApp, SMS or email with a remote-consultation disclaimer) and portal sections (feedback through WhatsApp, SMS or the portal, shared publicly or kept internal; "communication numbers can all be custom branded"; "Automated WhatsApp Assistant"); /patient-engagement-at-easyclinic/ (enrolment links by SMS and WhatsApp, registration on the patient''s phone); /pricing/ ("WhatsApp Communication" under Premium); /kenyademo/ (WhatsApp among Kenya integrations, "Post Visit Automation"). Lab reports on WhatsApp from spec 4.1 and 5.11 (lab). Cura AI answering WhatsApp from spec 4.1 (/ai row).'
+  - 'General WhatsApp statements re-checked on 2026-09-26 against Meta''s pages: Business Messaging Policy (opt-in after the person gives their number; business chooses the opt-in method within applicable law; honour opt-out requests on or off WhatsApp; separate opt-in by message category and clear opt-out instructions as best practice; blocks and reports can limit sending; "Don''t use WhatsApp for telemedicine or to send or request any health related information, if applicable regulations prohibit distribution of such information to systems that do not meet heightened requirements"); Template fundamentals (reviewed on creation and after editing, only APPROVED templates send, status can change on usage and quality feedback, Meta does not translate templates, categories authentication, marketing and utility, category factors into pricing); Pricing (per-message charging for delivered template messages since 1 July 2025, rates by category and recipient country calling code, template messages the only type outside the customer service window, Meta may update pricing only on the first day of each quarter); Messaging limits (new business portfolios limited to 250 unique users outside the service window, raised with volume and quality). WhatsApp Help Center and 2025-26 reports show the Business app now meters business broadcasts beyond a free allowance in some regions, so the page says ordinary chats carry no per-message charge rather than that the app is free, and the broadcast-list row was removed. The page makes no statement about which Business Platform messages are free.'
+  - 'Left out for lack of a confirmed fact: per-message costs in any country and whether utility is cheaper than marketing in each market (rate cards load by script and were not read); how WhatsApp message charges are billed to the clinic (included in Premium or passed on); the default sender when the clinic has no own-number integration (EasyClinic''s number or another), and which plan the own-number integration needs; who writes and submits templates to Meta for the clinic; template approval time (Meta states a review window, left out on instruction); whether replies land in a front-desk inbox and when Cura AI hands a conversation to staff; which plan includes the AI reception; which plan includes the feedback request and the registration link (live /pricing/ lists "Patient Engagement, Patient Portal & App" under Enterprise, not confirmed for these two); a per-patient WhatsApp opt-out switch in the software; reminder timing; message languages beyond the Kenya English and Swahili template point; country availability (skipped per brief); a measured no-show reduction (unknown).'
+  - 'Plan tags: rows tagged Premium are the ones whose underlying feature is on Professional or Premium in plans.yaml and whose WhatsApp sending is Premium. The feedback, registration and two-way rows carry no tag and a bullet saying WhatsApp needs Premium, the same pattern as /features/patient-engagement/, because the plan behind the underlying feature is not known.'
+  - 'Groups FAQ links the ranking post /whatsapp-groups-for-patient-care/ (live, Akshay Chandel, 14 April 2026: guided diabetes and pregnancy groups with clinic moderation, individual clinical issues moved to private consultation). The post is not built in this site yet, so the link renders as text until it is imported.'
+  - 'No testimonial: none is about WhatsApp and all are placed. Proof is the badges variant without counts (review counts unknown); add a front-desk quote or the spec 12 "WhatsApp reminder thread as the patient sees it" screenshot as the proof when either exists. No heroMedia and no media objects until then.'
+  - 'Cannibalisation (4.5.3): this page owns the API, templates and message costs; the consent paragraph names India''s DPDP Act and Kenya''s Data Protection Act only in general terms and sends country-by-country consent to /features/patient-engagement/#consent-by-country (spec 5.11). Receipts get one row and link to /features/billing/, which owns invoices and GST. The AI reception is one row linking /ai/, which owns AI receptionist terms (4.5.1).'
+  - 'Spec 6.5 pass: one local fact (English and Swahili templates in Kenya), admissions of limits (the scope box, the Professional plan line, WhatsApp''s own rule on health information), prices as tokens; there is no named person and no measured outcome on the page, which the editorial pass records.'

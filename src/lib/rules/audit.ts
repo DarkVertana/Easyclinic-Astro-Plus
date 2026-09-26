@@ -41,11 +41,12 @@ export const FAMILY_RULES: Record<string, FamilyRules> = {
   legal: { faq: null, author: false, proof: false, editorialPass: false },
   guide: { faq: [5, 8], author: true, proof: false, editorialPass: true },
   post: { faq: [3, 8], author: true, proof: false, editorialPass: true },
+  glossary: { faq: null, author: true, proof: false, editorialPass: true },
   kitchenSink: { faq: [0, 99], author: false, proof: false, editorialPass: false },
 };
 
 /** Section types that count as a page's proof block (spec 2.4). */
-export const PROOF_BLOCKS = new Set(['proofBlock', 'testimonialRow', 'testimonialCard', 'studyCard']);
+export const PROOF_BLOCKS = new Set(['proofBlock', 'testimonialRow', 'testimonialCard', 'studyCard', 'testimonialGrid']);
 
 /**
  * Research and outcome claims that must come from src/data/study.yaml via {fig:...} tokens, or carry
