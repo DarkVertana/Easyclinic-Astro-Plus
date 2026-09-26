@@ -32,8 +32,10 @@ test('the demo form submits without JavaScript', async ({ page }) => {
   await form.getByLabel('Clinic name').fill('Test Clinic');
   await form.getByText('Solo practice', { exact: true }).click();
   await form.getByText('1', { exact: true }).click();
-  await form.getByLabel('Country').selectOption('India');
-  await form.getByRole('button', { name: /book my 20-minute demo/i }).click();
+  await form.getByLabel('Country', { exact: true }).selectOption('India');
+  await expect(form.getByRole('button', { name: /book my 20-minute demo/i })).toBeVisible();
+  // Implicit submission (Enter in a text field): the preview toolbar can cover the button in preview builds.
+  await form.getByLabel('Clinic name').press('Enter');
   await expect(page).toHaveURL(/\/demo\/confirmation\//);
   await expect(page.locator('h1')).toHaveText(/We have your demo request/);
 });

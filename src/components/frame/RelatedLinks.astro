@@ -27,7 +27,7 @@ const items = links
         <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <li>
-              <a href={item.href} class:list={['card group flex h-full flex-col p-5 no-underline hover:border-blue-500', item.missing && 'border-dashed opacity-60']}>
+              <a href={item.href} class:list={['card group flex h-full flex-col p-5 no-underline hover:border-blue-500', item.missing && 'border-dashed border-line-strong']}>
                 <span class="flex items-center justify-between gap-2 font-semibold text-ink-heading">
                   {item.label}
                   <Icon name="arrow-right" size={18} class="text-blue-600 transition-transform group-hover:translate-x-0.5" />

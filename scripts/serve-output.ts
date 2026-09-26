@@ -14,6 +14,7 @@ import { createServer, type IncomingMessage, type ServerResponse } from 'node:ht
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { brotliCompressSync, constants } from 'node:zlib';
 
 interface Route {
   src?: string;
@@ -125,8 +126,12 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
 
   const file = await staticFile(pathname);
   if (file && (req.method === 'GET' || req.method === 'HEAD')) {
-    const body = await readFile(file);
-    res.writeHead(statusOverride ?? 200, { 'content-type': MIME[extname(file)] ?? 'application/octet-stream', ...headers });
+    let body = await readFile(file);
+    const type = MIME[extname(file)] ?? 'application/octet-stream';
+    // Compress text like Vercel's edge does, so Lighthouse numbers are realistic.
+    const compress = /text|javascript|json|xml|svg/.test(type) && /\bbr\b/.test(String(req.headers['accept-encoding'] ?? ''));
+    if (compress) body = brotliCompressSync(body, { params: { [constants.BROTLI_PARAM_QUALITY]: 9 } });
+    res.writeHead(statusOverride ?? 200, { 'content-type': type, ...(compress ? { 'content-encoding': 'br', vary: 'accept-encoding' } : {}), ...headers });
     return res.end(req.method === 'HEAD' ? undefined : body);
   }
 

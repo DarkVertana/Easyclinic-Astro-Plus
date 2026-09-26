@@ -112,6 +112,8 @@ for (const page of manifest.pages.filter((p) => p.collection !== 'static')) {
       report('error', page.path, `JSON-LD does not parse: ${(error as Error).message}`);
     }
   }
+  // ContactPage, AboutPage and CollectionPage are WebPage subtypes.
+  if (['ContactPage', 'AboutPage', 'CollectionPage'].some((t) => types.has(t))) types.add('WebPage');
   for (const type of REQUIRED_TYPES[page.family] ?? ['WebPage']) {
     if (!types.has(type)) contentIssue(page.path, `JSON-LD missing ${type}`);
   }

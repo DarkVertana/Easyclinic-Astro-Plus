@@ -1,0 +1,426 @@
+# Home page (spec 5.1, with the revised section order in section 11 "Content direction, page by page").
+status: draft
+path: /
+headKeyword: clinic management software
+secondaryKeywords:
+  - practice management software
+  - AI EMR software
+  - clinic software for doctors
+  - cloud clinic software
+title: 'Clinic Management Software for Doctors: EasyClinic'
+metaDescription: 'Clinic management software for India, Kenya, the UAE and Nigeria since {fact:founded}: appointments, EMR, billing, pharmacy and WhatsApp in one system.'
+h1: Clinic management software that runs the desk, the chart and the till
+linkLabel: Home
+eyebrow: For clinics in India, Kenya, the UAE and Nigeria
+openingAnswer: >-
+  EasyClinic is clinic management software that runs appointments, the EMR, billing, pharmacy and lab
+  in one cloud system, used by solo doctors, polyclinics, clinic chains and hospital OPDs in
+  {fact:countries} countries. In a 2025 study of {fig:visits} visits at Penda Health clinics in Nairobi,
+  clinicians with an AI copilot inside their EasyClinic record made {fig:diagnostic-errors} fewer
+  diagnostic errors.
+summary: >-
+  Clinic management software for appointments, the EMR, billing, pharmacy and lab, from one-doctor
+  practices to a chain of {fact:largestChain} locations.
+author: null
+lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  needed: 'Today view: appointment list with walk-ins, fixed slots and a teleconsult. Seed 14 appointments, two walk-ins, one video consult and one no-show marked. Phone capture too (spec 12).'
+  alt: The EasyClinic Today view listing the day's appointments, with two walk-ins, a video consult and a no-show marked
+  caption: The front desk sees walk-ins and booked slots on one list, with the video consult and the no-show marked.
+  frame: browser
+heroStrip:
+  regulators:
+    - in-abdm-m1
+    - ke-sha
+    - ae-nabidh
+    - ng-ndpa
+  ratings: true
+  study: true
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See pricing
+    href: /pricing/
+  whatsapp: Hi, I was on the EasyClinic home page and would like to book a 20-minute demo for my clinic.
+
+sections:
+  - discriminant: personaRouter
+    value:
+      id: pick-your-clinic
+      heading: Pick your clinic
+      intro: >-
+        EasyClinic has run clinics since {fact:founded}, from one-doctor practices to a chain of
+        {fact:largestChain} locations. Pick the one that sounds like yours; each page shows the screens that
+        kind of clinic uses most.
+      items:
+        - persona: solo
+          title: I run my own clinic
+          body: One doctor and a receptionist, with no IT staff to call. The prescription takes thirty seconds and the notes are done before you go home.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: We share one front door
+          body: Specialists sharing rooms and a reception desk. Every doctor writes on the same patient record, and roles decide who sees what.
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: We run many branches
+          body: One central chart and one set of SOPs across every branch, with branch KPIs side by side so drift shows up early.
+          href: /solutions/clinic-chain/
+        - persona: hospital-opd
+          title: We run a hospital OPD
+          body: A token queue that keeps the OPD moving, and claims that start at the prescription rather than at the billing counter.
+          href: /solutions/hospital-opd/
+        - persona: ngo
+          title: We run an NGO or mission clinic
+          body: Visit and stock reports by programme, in the shape donors ask for.
+          href: /solutions/ngo-clinics/
+
+  - discriminant: oldWayNewWay
+    value:
+      id: what-it-replaces
+      heading: What one screen replaces
+      intro: Walk into a busy clinic at six in the evening and you often find the same four things, none of them talking to each other.
+      old:
+        title: The old way
+        items:
+          - A paper register at the desk that only the receptionist can read
+          - Appointment reminders sent from someone's personal WhatsApp, when they remember
+          - Billing in an Excel sheet that never quite matches the cash drawer
+          - Three logins for three systems, and every patient typed in twice
+        media:
+          kind: photo
+          needed: 'Old way generated environment image (spec 12, file oldway-desk-01.webp): cluttered clinic reception desk with a paper appointment register, a stack of patient files with handwritten labels, a personal smartphone showing notification badges, a calculator and receipt book, overhead fluorescent light, no readable text.'
+          alt: A cluttered clinic reception desk with a paper appointment register, stacked patient files and a phone
+          caption: Generated image of a typical reception desk, for illustration. It is not a customer's clinic.
+          frame: none
+          aiGenerated: true
+      next:
+        title: The EasyClinic way
+        items:
+          - One patient list that the desk and the doctor both see, updated as each patient moves through the clinic
+          - WhatsApp reminders that the software sends on a schedule, so nobody uses a personal phone
+          - Invoices raised from the consult, and a day-end close that matches the drawer
+          - One login per person, each seeing only the screens their role needs
+
+  - discriminant: journeyDiagram
+    value:
+      id: patient-journey
+      heading: The patient journey, from booking to the owner's evening report
+      intro: Follow one patient through the clinic. Every step writes to the same record, so nobody retypes a name or an amount.
+      steps:
+        - label: Book
+          body: The patient books online or at the desk, and walk-ins join the same list as booked slots.
+          href: /features/appointment-scheduling/
+          media:
+            kind: screenshot
+            needed: 'Patient app: booking screen (spec 12, phone capture)'
+            alt: The EasyClinic patient app on a phone, showing a booking screen with open slots
+            frame: phone
+        - label: Arrive
+          body: Reception registers the patient once and checks the insurer or TPA plan before the consult, so the claim starts clean.
+          href: /features/insurance-claims/
+          media:
+            kind: screenshot
+            needed: 'Payor setup and coverage check at registration: two insurers, one TPA, a coverage validation result (spec 12)'
+            alt: The registration screen with the patient's insurer selected and a coverage check result
+            frame: browser
+        - label: Consult
+          body: Past visits and lab results sit on one chart. Order a test from it and the result comes back into the chart, flagged if it is abnormal.
+          href: /features/lab/
+          media:
+            kind: screenshot
+            needed: 'Lab order from the chart and result back with a flag: one abnormal value (spec 12)'
+            alt: A patient chart with a lab order and a returned result flagged as abnormal
+            frame: browser
+        - label: Prescribe
+          body: A prescription takes about thirty seconds, with a drug-interaction check. Cura AI can draft the note for the doctor to review and sign.
+          href: /features/emr/
+          media:
+            kind: screenshot
+            needed: 'Thirty-second prescription: the Rx screen mid-entry with a drug interaction warning, two drugs, one interaction flagged, Hindi print option visible (spec 12)'
+            alt: The prescription screen mid-entry, with a drug-interaction warning between two medicines
+            frame: browser
+        - label: Pay
+          body: The invoice builds itself from what was ordered in the consult, with tax applied, and the receipt goes out on WhatsApp.
+          href: /features/billing/
+          media:
+            kind: screenshot
+            needed: 'Invoice from an encounter with GST lines and a part payment, in INR (spec 12)'
+            alt: An invoice raised from a consult, with GST lines and a part payment recorded
+            frame: browser
+        - label: Dispense
+          body: The pharmacy dispenses from the prescription on screen, with batch and expiry tracked, so stock falls as medicines leave the counter.
+          href: /features/pharmacy-and-inventory/
+          media:
+            kind: screenshot
+            needed: 'Pharmacy dispensing from a prescription with batch and expiry, one expiring batch flagged (spec 12)'
+            alt: The pharmacy dispensing screen, showing batch numbers and an expiring batch flagged
+            frame: browser
+        - label: Follow up
+          body: The reminder for the next visit and the lab report reach the patient on WhatsApp, sent by the clinic software on a schedule.
+          href: /features/whatsapp/
+          media:
+            kind: screenshot
+            needed: 'WhatsApp reminder thread as the patient sees it: reminder, confirmation reply, prescription PDF, report PDF (spec 12, phone capture)'
+            alt: A WhatsApp thread on a phone with an appointment reminder, the patient's reply and a report attached
+            frame: phone
+        - label: Report
+          body: At the end of the day the owner sees revenue, collections, no-shows and pending claims on one dashboard, by doctor or by branch.
+          href: /features/reports-and-dashboards/
+          media:
+            kind: screenshot
+            needed: 'Owner dashboard: the eight morning numbers (revenue by branch, collections vs billed, no-show rate, patients per doctor per hour, average ticket, stock days, claims pending, feedback score) (spec 12)'
+            alt: The owner dashboard with revenue by branch, collections against billed, no-show rate and claims pending
+            frame: browser
+
+  - discriminant: moduleGrid
+    value:
+      id: modules
+      heading: Everything the clinic runs on, in four groups
+      intro: Twelve modules, grouped the way a clinic is run. Which ones you get depends on the plan, and the [price list](/pricing/) shows it line by line.
+      columns: 4
+      items:
+        - title: Front desk
+          icon: calendar-clock
+          outcome: Walk-ins and booked slots share one calendar, and reminders go out on WhatsApp without anyone picking up a phone.
+          links:
+            - label: Appointment scheduling
+              href: /features/appointment-scheduling/
+            - label: WhatsApp
+              href: /features/whatsapp/
+            - label: Telehealth
+              href: /features/telehealth/
+        - title: Chart
+          icon: notebook-pen
+          outcome: The note finishes with the visit, and the lab and the pharmacy work from the same chart the doctor writes in.
+          links:
+            - label: EMR and e-prescriptions
+              href: /features/emr/
+            - label: Lab
+              href: /features/lab/
+            - label: Pharmacy and inventory
+              href: /features/pharmacy-and-inventory/
+        - title: Money
+          icon: receipt
+          outcome: Every order becomes an invoice, and the owner sees unbilled work and denied claims before the month ends.
+          links:
+            - label: Billing
+              href: /features/billing/
+            - label: Insurance claims
+              href: /features/insurance-claims/
+            - label: Revenue management
+              href: /features/revenue-management/
+        - title: Growth
+          icon: chart-column
+          outcome: Recall campaigns tell patients when their review is due, and the owner checks the morning numbers for every branch on one screen.
+          links:
+            - label: Patient engagement
+              href: /features/patient-engagement/
+            - label: Reports and dashboards
+              href: /features/reports-and-dashboards/
+            - label: Multi-location
+              href: /features/multi-location/
+
+  - discriminant: proofBlock
+    value:
+      id: study
+      eyebrow: The Penda Health study
+      heading: What changed when clinicians had AI inside the record
+      variant: study
+      figures:
+        - visits
+        - diagnostic-errors
+        - treatment-errors
+        - history-errors
+      body: |
+        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda's clinicians work in EasyClinic, and AI Consult, an AI copilot embedded in that record, checked their work as they went. Independent physicians rated the visits, and visits where the clinician had the copilot scored better on each of the error measures above.
+
+        The results are published as a preprint on arXiv, not in a journal. The [CuraPilot page](/curapilot/) sets out how the study was run and what it did not measure.
+      link:
+        label: Read how the study was run
+        href: /curapilot/
+
+  - discriminant: pricingCards
+    value:
+      id: pricing
+      heading: What EasyClinic costs
+      intro: Per doctor per month, shown here in US dollars. Every plan includes unlimited support and training, and prices in rupees and other local currencies are on the [pricing page](/pricing/).
+      currency: usd
+      switcher: false
+      showConditions: true
+      planCta:
+        label: See the full price list
+        href: /pricing/
+      enterpriseCta:
+        label: Get an Enterprise quote
+        href: /contact-us/#book-a-demo
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: From a solo orthopaedic practice to a healthcare group
+      intro: One quote from each kind of clinic, exactly as the customer wrote it.
+      items:
+        - chao-rochek-buragohain
+        - siddhartha-ghosh
+        - hisham-ismail
+      layout: row
+      usePullQuote: true
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: Switching is a four-day course
+      intro: >-
+        Training runs over {fact:trainingDays} days, about two hours in all, for you and your clinic staff.
+        It is short on purpose, because a busy clinic cannot stop seeing patients to learn software.
+      steps:
+        - title: Basic training
+          meta: Day 1, 40 minutes
+          body: Everyone learns the screens their role uses every day, at the desk and in the consulting room.
+        - title: EMR scenario training
+          meta: Day 2, 40 minutes
+          body: Doctors work through the chart and the prescription using the kinds of cases your clinic sees.
+        - title: Practice exercises
+          meta: Day 3, 20 minutes
+          body: Your staff practise on their own, so the first real patient is not the first attempt.
+        - title: Road to expertise
+          meta: Day 4, 20 minutes
+          body: The shortcuts and templates that make a busy afternoon faster, once the basics are routine.
+      note: >-
+        The fastest clinics go live {fact:goLiveDays} days after the demo. Bringing years of records across
+        from another system takes longer: [typical go-live time with data migration].
+
+  - discriminant: regulatorStrip
+    value:
+      id: regulators
+      heading: Your country's rules, and where EasyClinic stands on each
+      intro: >-
+        Every country has its own rules for patient records and for getting paid. Each rule below shows its
+        status and the date we last checked it. The pages for [India](/clinic-management-software-india/),
+        [Kenya](/emr-software-in-kenya/), [the UAE](/clinic-management-software-uae/) and
+        [Nigeria](/hospital-management-software-nigeria/) explain what each one asks of your clinic.
+      regulators:
+        - in-abdm-m1
+        - ke-sha
+        - ke-etims
+        - ae-nabidh
+        - ae-malaffi
+        - ng-ndpa
+      link: /trust/
+
+faq:
+  - question: What is clinic management software?
+    answer: >-
+      Clinic management software, also called practice management software, is the system a clinic runs its
+      day on: appointments, patient records and prescriptions, billing and, in bigger clinics, pharmacy, lab,
+      insurance claims and reports. What sets it apart from a plain EMR is that the front desk and the till
+      work on the same record as the chart, so a booking turns into a visit and the visit into an invoice
+      without anyone typing the patient in twice.
+  - question: Is EasyClinic an EMR or a full hospital information system?
+    answer: >-
+      EasyClinic is AI EMR software with the front desk, billing, pharmacy and lab built around it, not a full
+      hospital information system. It covers outpatient clinics, hospital OPDs, day care and nursing homes,
+      but it does not run inpatient wards or operating theatres, so a hospital that needs those runs
+      EasyClinic in the OPD beside an inpatient system [inpatient systems EasyClinic has connected to, and
+      what the two exchange].
+  - question: How much does EasyClinic cost?
+    answer: >-
+      EasyClinic costs {price:usd.professional.annual} per doctor per month on Professional and
+      {price:usd.premium.annual} on Premium when billed annually, or {price:usd.professional.quarterly} and
+      {price:usd.premium.quarterly} billed quarterly. In India the annual prices are
+      {price:inr.professional.annual} and {price:inr.premium.annual}. Enterprise, for clinic chains and
+      hospital OPDs, is quoted for your network, and every plan includes the reception login with no setup fee.
+      On Professional and Premium, pharmacy, lab management, insurance claims and integrations are add-ons
+      [add-on prices per currency].
+  - question: Does EasyClinic work offline?
+    answer: >-
+      Not fully: EasyClinic's cloud version needs an internet connection and does not run fully offline
+      today [what keeps working when the connection drops, and what syncs when it returns]. Clinics where
+      the connection cannot be trusted can run a self-hosted installation on their own server
+      [self-hosted option: plans and cost].
+  - question: Who owns the patient data, and what happens to it if we leave?
+    answer: >-
+      Your clinic owns its patient records, and EasyClinic does not sell them. If you leave, you can export
+      your records [export format and what the export includes], and there is no contract to break
+      [notice period, refunds and any export fee on leaving].
+  - question: Do I have to use the AI?
+    answer: >-
+      No, the EMR works without Cura AI: you write notes from your own templates and shortcuts, and the
+      prescription goes out exactly as it would with the AI switched on. Cura AI (documentation) comes with
+      every plan and drafts the note for you to review and sign, so you can try it on a few patients and
+      leave it off if it does not suit you [how Cura AI is switched on or off, per doctor or per clinic].
+  - question: Can EasyClinic run more than one clinic location?
+    answer: >-
+      Yes. Premium covers more than one location and Enterprise adds central control and SOP tracking
+      across branches; the largest chain on EasyClinic has {fact:largestChain} locations. A second branch
+      opened later costs [what a second branch adds to the bill: per doctor, per location or both].
+  - question: How long does it take to go live?
+    answer: >-
+      The fastest clinics go live {fact:goLiveDays} days after the demo, and staff training is
+      {fact:trainingDays} short sessions, about two hours in total. A clinic bringing years of records from
+      another system takes longer [typical go-live time with data migration].
+
+links:
+  related:
+    - href: /clinic-management-software-india/
+      label: EasyClinic in India
+      description: ABDM and GST invoicing, with prices in rupees.
+    - href: /emr-software-in-kenya/
+      label: EasyClinic in Kenya
+      description: M-Pesa at the desk and SHA e-claims, and where each one stands.
+    - href: /clinic-management-software-uae/
+      label: EasyClinic in the UAE
+      description: NABIDH in Dubai and Malaffi in Abu Dhabi, with the status of each.
+    - href: /hospital-management-software-nigeria/
+      label: EasyClinic in Nigeria
+      description: HMO claims and the Nigeria Data Protection Act, for hospitals and clinics.
+    - href: /features/
+      label: Every module
+      description: Twelve modules in the order a patient moves through the clinic.
+    - href: /ai/
+      label: Cura AI
+      description: What each AI feature does, and which plan includes it.
+    - href: /curapilot/
+      label: CuraPilot
+      description: EasyClinic's clinical copilot, and the Penda Health study in detail.
+    - href: /trust/
+      label: Trust and compliance
+      description: Each regulator's status, with the date it was last checked.
+
+closing:
+  heading: See your own clinic's day on EasyClinic
+  body: >-
+    In 20 minutes we walk through a day like yours on EasyClinic, from the first booking to the evening cash
+    close. If a call is too much today, send us a WhatsApp message instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See pricing
+    href: /pricing/
+
+notes:
+  - 'Title shortened from the spec 4.1 title (62 characters) to 50: "Clinic Management Software for Doctors: EasyClinic".'
+  - 'Spec 6.3 and 5.1 copy says "published in Nature Medicine" and "peer-reviewed". The 39,849-visit study is an arXiv preprint (korom-2025 in study.yaml). Every study mention here says "studied" and "preprint". Do not equate AI Consult with CuraPilot until product confirms (study.yaml note).'
+  - 'Opening answer drops the 34% denied-claims figure from spec 5.1: it has no public or internal source (study.yaml denied-claims).'
+  - 'Switch the secondary CTA (hero and closing) to "See the product in 6 minutes" when the six-minute tour ships (spec 12, The tour; section 11 UX direction 1).'
+  - 'Founder block (section 11 item 9: Girish Mohata and the 2003 story, one photo) is left out on purpose. Spec 12 says it does not run until a real photograph of Girish Mohata exists. Add it between the testimonials and the regulator strip when the photo arrives.'
+  - 'Live counter (section 11 item 6, "appointments booked on EasyClinic this week") is left out: there is no product data feed yet.'
+  - 'Resources teaser (spec 5.1 item 10, ContentCards "Latest guides", three) is left out until the guides are built. Add it after the regulator strip.'
+  - 'Section 11 item 5 asks for Dr Korom''s one-line quote in the study block. The Korom testimonials (robert-korom-partner, robert-korom-reliability) are not assigned to this page; decide whether one moves here.'
+  - 'All three testimonials (chao-rochek-buragohain, siddhartha-ghosh, hisham-ismail) have city null; section 11 asks for a city on each home quote. Hisham Ismail is Qualitas Health, Malaysia.'
+  - 'Section 11 item 7 asks for the pricing table in local currency. This page shows USD with no switcher; consider a geo-selected currency later.'
+  - 'Spec 5.1 item 4 asks for one screenshot per module pillar. Left out so the page does not repeat the eight journey screenshots; add if design wants them.'
+  - 'Proof block shows four study figures (visits plus three error figures); the block lays them out in a three-column grid.'
+  - 'Hero rating strip needs review counts (facts capterraReviews and googleReviews are null) and as-of dates for both ratings.'
+  - 'Spec 5.1 item 6 names NHIA; the regulator strip uses in-abdm-m1, ke-sha, ke-etims, ae-nabidh, ae-malaffi and ng-ndpa per the page brief.'
+  - 'goLiveDays (3) conflicts with "2 to 4 week setup" on the live Kenya listicle (facts.yaml note). Confirm before publishing the step list note and the go-live FAQ.'
+  - 'Offline FAQ follows the live Kenya listicle ("It does not run fully offline today"; a self-hosted option exists). Product to confirm both.'
+  - 'Directory pages (/doctors/, /clinics/) are out of scope and not linked from this page.'
+  - 'Regulator strip heading changed from the spec''s "Built for your regulator" to "Your country''s rules, and where EasyClinic stands on each": every regulator state in src/data/regulators is null, and the live site says ABDM and SHA work is not finished, so the heading must not imply support. Restore the spec heading only if every listed regulator is Live.'
+  - 'H1 keeps the spec 4.1 wording ("the desk, the chart and the till"), a group of three that spec 6.2 would otherwise cut. Editor to decide.'
+  - 'Pricing FAQ says pharmacy, lab management, insurance claims and integrations are add-ons on Professional and Premium (plans.yaml addons, availableOn); add-on prices are null in every currency.'
+  - 'Meta description reordered so it opens with the head keyword; 151 characters as written, 141 after token expansion.'

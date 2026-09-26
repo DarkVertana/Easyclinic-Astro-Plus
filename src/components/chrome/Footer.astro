@@ -67,7 +67,7 @@ const year = new Date().getFullYear();
               <ul class="space-y-2 text-sm">
                 {group.links.map((l) => (
                   <li>
-                    <a href={l.href} class:list={['text-ink-inverse-muted no-underline hover:text-white hover:underline', l.missing && !isProduction && 'opacity-50']}>
+                    <a href={l.href} class:list={['text-ink-inverse-muted no-underline hover:text-white hover:underline', l.missing && !isProduction && 'underline decoration-dotted']}>
                       {l.label}
                     </a>
                   </li>

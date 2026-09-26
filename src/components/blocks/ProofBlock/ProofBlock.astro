@@ -42,7 +42,7 @@ const citations = [...new Map(figureRows.filter((f) => f.citation).map((f) => [f
   {
     variant === 'study' && (
       <div>
-        <dl class:list={['grid gap-4', figureRows.length >= 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2']}>
+        <dl class:list={['grid gap-4', figureRows.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : figureRows.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2']}>
           {figureRows.map((f) => (
             <div class="card p-6">
               <dt class="sr-only">{f.label}</dt>

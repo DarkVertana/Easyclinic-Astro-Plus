@@ -44,8 +44,9 @@ const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Font cssVariable="--font-inter" preload />
-    <Font cssVariable="--font-fraunces" preload />
+    <!-- Preload only the Latin files the first paint needs. -->
+    <Font cssVariable="--font-inter" preload={[{ subset: 'latin', weight: '400' }]} />
+    <Font cssVariable="--font-fraunces" preload={[{ subset: 'latin', weight: '600' }]} />
     <SEO title={title} description={description} path={path} canonical={canonical} indexable={indexable} jsonLd={jsonLd} ogType={ogType} modifiedTime={modifiedTime} />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png" />

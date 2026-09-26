@@ -10,6 +10,9 @@ export default defineConfig({
   // Astro 7 defaults to 'jsx', which strips whitespace between inline elements and glues words in copy.
   compressHTML: true,
   prerenderConflictBehavior: 'error',
+  // Inline the (small, purged) CSS: one fewer render-blocking request on slow mobile data, which is
+  // what most visitors land on from search (spec 7.1: LCP under 2.0 s).
+  build: { inlineStylesheets: 'always' },
   adapter: vercel(),
   // Redirects are not configured here: see integrations/vercel-routes.ts (withastro/astro#18073).
   integrations: [vercelRoutes()],
@@ -20,10 +23,13 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: 'Inter',
       cssVariable: '--font-inter',
-      weights: ['400 700'],
+      // Static weights: far smaller than the variable file, and the site only uses regular and semibold.
+      weights: [400, 600],
       styles: ['normal'],
-      // latin-ext carries ₹ and ₦; names in the markets served (spec 7.5).
-      subsets: ['latin', 'latin-ext'],
+      // Latin only: loading latin-ext for ₹ and ₦ re-painted the LCP paragraph ~450 ms late on slow 4G.
+      // Those glyphs render from the metric-matched fallback. Follow-up: a custom subset (fonttools)
+      // with Latin + ₹ + ₦ + Latin Extended-A for names, served through fontProviders.local().
+      subsets: ['latin'],
       fallbacks: ['ui-sans-serif', 'system-ui', 'sans-serif'],
     },
     {

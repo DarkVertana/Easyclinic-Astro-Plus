@@ -1,0 +1,302 @@
+# /pricing/ (spec 5.12, 4.1 row "/pricing", section 11 "Pricing", 6.3 "Pricing FAQ", 6.4 keep list).
+status: draft
+path: /pricing/
+headKeyword: clinic management software pricing
+secondaryKeywords:
+  - EMR software cost
+  - clinic software cost India
+  - price per doctor per month
+title: 'EasyClinic Pricing: Per Doctor, Per Month'
+metaDescription: Professional {price:usd.professional.annual}, Premium {price:usd.premium.annual}, Enterprise on quote. Reception included, no setup fee, no contract.
+h1: Pricing, per doctor per month
+linkLabel: Pricing
+openingAnswer: >-
+  EasyClinic's clinic management software starts at {price:usd.professional.annual} per doctor per
+  month on the Professional plan, billed annually, or {price:inr.professional.annual} in India. Premium
+  is {price:usd.premium.annual} per doctor per month, and Enterprise, for clinic chains and hospital
+  OPDs, is priced on a quote.
+summary: >-
+  Professional {price:usd.professional.annual} and Premium {price:usd.premium.annual} per doctor per
+  month, Enterprise on quote, with what a 5-doctor polyclinic pays and the four-day training path.
+author: null
+lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  needed: 'Currency-localised pricing cards in INR, KES, AED and NGN (spec 12 screenshot list), desktop plus a 390 by 844 phone capture'
+  alt: EasyClinic plan cards on a phone, showing the Professional and Premium price per doctor per month in Indian rupees
+  caption: Every plan is priced per doctor per month, in the currency your clinic pays in.
+  frame: phone
+heroStrip:
+  ratings: true
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare every feature
+    href: /pricing/#compare
+  whatsapp: Hi, I am on the EasyClinic pricing page and would like the monthly price for my clinic.
+faqHeading: Questions clinic owners ask about price
+faq:
+  - question: How long does it take to learn EasyClinic, and what support comes after?
+    answer: >-
+      Training takes about two hours, spread over four days: Day 1 is basic training (40 minutes),
+      Day 2 is EMR scenario training (40 minutes), Day 3 is practice exercises (20 minutes) and Day 4,
+      the road to expertise, is 20 minutes. It is included in every plan, for you and your staff.
+      After that, support is unlimited on every plan by phone and chat, and Premium and Enterprise add
+      a named account manager. [Support hours and the time zones covered].
+  - question: Am I locked into a contract, and what happens to my data if I leave?
+    answer: >-
+      No. There is no contract on any plan, so you can stop at the end of any billing period you have
+      paid for. If you paid for a year and leave in month five, [refund policy for unused months on
+      annual billing]. When you leave, [how you get your patient records back, and in what format],
+      and [how long data is kept after cancelling, and when it is deleted]. The
+      [trust page](/trust/) covers where your data is stored and who can see it while you are a
+      customer.
+  - question: Do I pay a licence for my receptionist?
+    answer: >-
+      No, a reception login is included in the price of every plan, so a clinic with one doctor and
+      one receptionist pays for one licence. The reception login is for the front desk and cannot open
+      the EMR or write a prescription. [Number of reception logins included per clinic, and the licence
+      rule for nurses and pharmacists].
+  - question: What does a second branch cost?
+    answer: >-
+      A second branch adds a licence for each doctor who works there: on Premium that is
+      {price:usd.premium.annual} per doctor per month billed annually, and [per-location fee, or
+      confirmation that there is none]. [Whether a doctor who works at both branches needs a second
+      licence]. Professional covers one location, so a solo clinic opening a second branch moves up
+      to Premium. Chains that want central control of every branch are priced on Enterprise.
+  - question: Why pay when there are free EMRs?
+    answer: >-
+      Free EMRs are free until you need the second doctor, the WhatsApp reminders, someone to answer
+      the phone when the printer will not talk to the system, or your data back when you leave. The
+      {price:usd.professional.annual} Professional plan includes unlimited support and training and a
+      reception login. If your clinic is one doctor with no staff and no plans to grow, a free EMR may
+      be enough, and we will say so on the call.
+  - question: Can I build my own prescription template, and how long does it take?
+    answer: >-
+      Yes, on Premium and Enterprise, where your own clinical forms and print layouts are part of the
+      plan, and a typical prescription template takes [time to build a prescription template, and who
+      builds it]. The customisation options in the product carry no extra charge, and a feature built
+      only for your clinic is scoped and priced as an add-on. On Professional you work with the
+      standard prescription layout, and [what a Professional clinic can change on the printed
+      prescription].
+  - question: Which currency will I be billed in, and are taxes included?
+    answer: >-
+      You are billed in your own currency where EasyClinic has a local price list, and in US dollars
+      everywhere else. In India, Professional is {price:inr.professional.annual} and Premium is
+      {price:inr.premium.annual} per doctor per month, billed annually, and [whether INR prices include
+      GST]. The local prices for Kenya, the UAE and Nigeria are [KES, AED and NGN prices per plan].
+      Dollar prices have local taxes added where they apply, and you pay them by card or bank transfer.
+  - question: Is there a discount for paying annually, or for NGO clinics?
+    answer: >-
+      Annual billing is the discount: Professional is {price:usd.professional.annual} per doctor per
+      month billed annually against {price:usd.professional.quarterly} billed quarterly, and Premium is
+      {price:usd.premium.annual} against {price:usd.premium.quarterly}. NGO and mission clinics get
+      [NGO discount or NGO plan price], and the [NGO clinics page](/solutions/ngo-clinics/) covers
+      donor reporting.
+links:
+  relatedHeading: Local prices, and the next questions
+  related:
+    - href: /pricing/india/
+      label: Pricing in India
+      description: The same plans in Indian rupees, with local taxes and payment methods.
+    - href: /pricing/kenya/
+      label: Pricing in Kenya
+      description: The same plans in Kenyan shillings, with local taxes and payment methods.
+    - href: /pricing/uae/
+      label: Pricing in the UAE
+      description: The same plans in UAE dirhams, with local taxes and payment methods.
+    - href: /pricing/nigeria/
+      label: Pricing in Nigeria
+      description: The same plans in Nigerian naira, with local taxes and payment methods.
+    - href: /trust/
+      label: Security and compliance
+      description: Where your data lives and who can see it, with each regulator's status and its date.
+    - href: /switch/
+      label: Switching to EasyClinic
+      description: What we import from paper records or your current system, and how long it takes.
+closing:
+  heading: Get the monthly total for your clinic in 20 minutes
+  body: >-
+    Tell us how many doctors and branches you run. We will show EasyClinic on your own patient flow
+    and work out the monthly figure with you, in your currency.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See the prices in rupees
+    href: /pricing/india/
+notes:
+  - 'Meta description follows the spec 4.1 row minus "See local prices": the lint counts the raw string, and with price tokens the full spec text is 167 characters (it renders at about 98). "Per doctor per month" is carried by the title.'
+  - 'Head keyword: the spec title and H1 do not contain "clinic management software pricing", so the phrase sits in the first sentence of the opening answer. Title and H1 are kept exactly as spec 4.1 sets them.'
+  - 'planCta uses "Start with {plan}", which the cards render as the spec labels "Start with Professional" and "Start with Premium". There is no free trial (spec 12), so the button goes to the demo form.'
+  - 'Closing secondary CTA links to /pricing/india/ for now. Switch it to "See the product in 6 minutes" when the six-minute tour has a URL (spec 12, The tour; same note as home.yaml). /tour/ is not in the spec site tree and would fail the post-build link check.'
+  - 'Pricing unit conflict on the live site: /best-clinic-management-software-kenya/ says "per user and per location", /emr-software-in-india/ says "per clinic per month". This page follows live /pricing/ (per doctor). Fix the other pages.'
+  - INR Professional quarterly is 1,899 on the live site and 1,875 on staging (prices/inr.yaml is null). This page does not quote it; the cards show a placeholder until it is set.
+  - 'Live /pricing/ FAQ says a beginner becomes an expert "in less than 1 hour", while the four-day breakdown adds up to two hours. This page uses the four-day breakdown (spec 6.4 keep list).'
+  - The 12-branch chain example assumes three doctors per branch (36). It is illustrative; change the numbers to a real customer shape if one can be named.
+  - 'Free-EMR table: the statements about OpenMRS, OpenEMR and KenyaEMR are general (open source, self-hosted or partner-hosted, KenyaEMR is an OpenMRS distribution). Check them once more before publishing.'
+  - 'Support channels on live /pricing/ are phone, email and chat; this page names phone and chat only.'
+  - 'Testimonials: consentOnFile is null for both. "Premanand" vs "Premananda" spelling is unresolved (facts.md, section 2); the name also appears in the training step list.'
+  - 'Hero media follows the spec 12 row "Currency-localised pricing cards". If the editor prefers a product screen, use the invoice screen (INR with GST lines) instead.'
+sections:
+  - discriminant: pricingCards
+    value:
+      id: plans
+      heading: Three plans, from one doctor to a chain of branches
+      intro: >-
+        Pay annually for the lower price, or quarterly if you would rather not pay for a year up front.
+        Every price is per doctor, and your receptionist's login costs nothing.
+      currency: usd
+      switcher: true
+      showConditions: true
+      planCta:
+        label: Start with {plan}
+        href: /contact-us/#book-a-demo
+      enterpriseCta:
+        label: Talk to sales about Enterprise
+        href: /contact-us/#book-a-demo
+  - discriminant: costExamples
+    value:
+      id: what-clinics-pay
+      heading: What a 5-doctor polyclinic pays
+      intro: >-
+        Totals at the annual US dollar price, before local taxes, with a one-doctor clinic and a
+        12-branch chain on either side for scale. The same plans in rupees are on the
+        [India pricing page](/pricing/india/).
+      currency: usd
+      period: annual
+      examples:
+        - title: Solo doctor with a receptionist
+          doctors: 1
+          locations: 1
+          plan: professional
+          note: >-
+            The receptionist uses the included reception login, so this is one licence. Paying
+            quarterly instead would make it {price:usd.professional.quarterly} a month.
+        - title: Five-doctor polyclinic
+          doctors: 5
+          locations: 1
+          plan: premium
+          note: >-
+            Five doctors sharing one front desk and one patient record, with specialty templates and
+            WhatsApp reminders. The reception login is still included. If you run an in-house pharmacy
+            or lab, add it from the modules below.
+        - title: Twelve-branch chain
+          doctors: 36
+          locations: 12
+          plan: enterprise
+          note: >-
+            Three doctors a branch, with pharmacy and claims run centrally. Enterprise is quoted because
+            integrations and custom features are scoped chain by chain.
+            [Indicative Enterprise price range per doctor per month].
+  - discriminant: planMatrix
+    value:
+      id: compare
+      heading: Every feature, plan by plan
+      intro: >-
+        The bigger modules, pharmacy and lab management among them, come with Enterprise. On
+        Professional and Premium you can add them one at a time, and the modules section below shows
+        the price.
+      open: false
+  - discriminant: addOns
+    value:
+      id: add-ons
+      heading: Modules you add when you need them
+      intro: >-
+        Add a module when the clinic starts needing it, not before. A solo clinic that opens a
+        dispensary next year adds pharmacy then, without changing plan.
+      currency: usd
+  - discriminant: prose
+    value:
+      id: licences
+      heading: What counts as a doctor licence and a location
+      body: |
+        You pay one licence for each doctor who uses EasyClinic. A clinic with four consultants and one visiting surgeon pays for [how visiting and part-time doctors are counted].
+
+        Your receptionist does not need one. A reception login is included in the price of every plan, and the person at the front desk books appointments and takes payments on it. It cannot open the EMR or issue a prescription. [Number of reception logins included per clinic]. [Licence rule for nurses and pharmacists].
+
+        A location is [what EasyClinic counts as a location, for example a separate address or front desk]. Professional covers one. Premium and Enterprise cover more than one, and the bill is still counted per doctor, with [per-location fee, or confirmation that there is none].
+      aside: |
+        **In short**
+
+        - Each doctor: one licence.
+        - The front desk: included.
+        - A second address: Premium or Enterprise.
+        - Nurses and pharmacists: [licence rule for nurses and pharmacists].
+  - discriminant: stepList
+    value:
+      id: training
+      heading: Four days of training, about two hours in all
+      intro: >-
+        Training is included in every plan and is run for you and your clinic staff. The sessions are
+        short so the clinic keeps seeing patients while everyone learns.
+      steps:
+        - title: Basic training
+          meta: Day 1 · 40 minutes
+          body: You and your staff find your way round the screens you will use every day, at the front desk and in the consult room.
+        - title: EMR scenario training
+          meta: Day 2 · 40 minutes
+          body: Your common cases played through the chart, from the history to the prescription the patient takes home.
+        - title: Practice exercises
+          meta: Day 3 · 20 minutes
+          body: Short exercises on the kinds of patients you see, so the steps stick before you use them in a real queue.
+        - title: Road to expertise
+          meta: Day 4 · 20 minutes
+          body: The shortcuts that make the chart fast. Dr Premanand Raya, a pulmonologist, types a full prescription in half a minute with them.
+      note: >-
+        Data migration is [migration price, or included]. The [switching page](/switch/) sets out what
+        we import from paper records or another system, and how long it takes.
+  - discriminant: dataTable
+    value:
+      id: free-or-paid
+      heading: Free EMR or paid clinic software
+      intro: >-
+        Open-source EMRs such as OpenMRS and OpenEMR cost nothing to license, and for some clinics they
+        are the right choice. The cost moves to the server and to the person you call when it stops
+        working. This is where the money goes on each side.
+      caption: A free or open-source EMR compared with EasyClinic
+      columns:
+        - What you are paying for
+        - Free or open-source EMR
+        - EasyClinic
+      rows:
+        - - The software licence
+          - Nothing.
+          - '{price:usd.professional.annual} per doctor per month on Professional, billed annually.'
+        - - Hosting
+          - Your own server, or a hosting partner you pay separately.
+          - Hosted by EasyClinic and included in the price. Enterprise can have a private cloud on request.
+        - - Setup and training
+          - You or a local IT partner install and configure it.
+          - No setup fee, and four days of training for you and your staff.
+        - - Support
+          - Community forums, or a paid support contract with a partner.
+          - Unlimited support by phone and chat on every plan.
+        - - Appointments and billing
+          - Varies by project. Check that billing works the way your clinic invoices and gets paid.
+          - On every plan, with a reception login at no charge.
+        - - WhatsApp reminders
+          - A WhatsApp Business API provider, connected by someone technical.
+          - Included on Premium and Enterprise, with [per-message WhatsApp charges, if any]. Professional sends SMS and email reminders.
+        - - Your data when you leave
+          - On your own server, so it stays with you.
+          - '[Export format, and how long data is kept after cancelling].'
+        - - Who it suits
+          - A programme with its own IT team, or one doctor with no staff and no plans to grow.
+          - A private clinic that wants the chart and the till on one login, and someone to call.
+      note: >-
+        KenyaEMR, used in many Kenyan public facilities, is a distribution of OpenMRS. Hosting and
+        support costs for any open-source EMR depend on who you hire to run it. The
+        [EasyClinic and KenyaEMR comparison](/easyclinic-vs-kenyaemr/) goes through the two side by side.
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Doctors who have used it for years
+      intro: Two doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+      layout: row
+      usePullQuote: false

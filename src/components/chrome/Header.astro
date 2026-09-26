@@ -169,9 +169,10 @@ const missingClass = !isProduction ? 'nav-missing' : '';
 </script>
 
 <style>
+  /* Preview only: links to pages that are not built yet. Styled without dimming so contrast still passes. */
   .nav-missing {
-    opacity: 0.55;
-    text-decoration: line-through dotted;
+    text-decoration: underline dotted;
+    text-underline-offset: 0.25em;
   }
   :global(html.drawer-open) {
     overflow: hidden;

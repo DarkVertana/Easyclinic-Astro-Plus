@@ -1,0 +1,314 @@
+status: draft
+headKeyword: EasyClinic India demo
+secondaryKeywords:
+  - clinic management software demo India
+  - EMR software demo India
+  - book EasyClinic demo
+  - clinic software free demo India
+title: 'Book an EasyClinic Demo in India: 20 Minutes'
+metaDescription: >-
+  A 20-minute EasyClinic demo in India on your clinic's own patient flow, from booking to bill and
+  WhatsApp. Live in as little as {fact:goLiveDays} days.
+h1: You care for your patients. Leave everything else to us.
+linkLabel: Book a demo in India
+eyebrow: Made for clinics in India
+openingAnswer: >-
+  The EasyClinic demo in India takes 20 minutes and follows one patient along your clinic's own flow,
+  from the booking and the prescription to the bill and the WhatsApp follow-up. After it, the fastest
+  clinics go live in {fact:goLiveDays} days, with {fact:trainingDays} short training sessions for you and
+  your staff.
+summary: >-
+  A 20-minute demo that follows your clinic's own patient flow, then {fact:trainingDays} training sessions
+  and a go-live in as little as {fact:goLiveDays} days.
+author: null
+lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  needed: >-
+    Invoice from an encounter with GST lines and a part payment, INR version (spec 12 screenshot list:
+    billing, revenue, country pages). Desktop capture from the seeded demo tenant.
+  alt: >-
+    EasyClinic invoice screen for one clinic visit in rupees, listing a consultation and two medicines
+    with their GST lines, and a part payment.
+  caption: One visit, one bill in rupees, with GST on the medicine lines and the part payment recorded against it.
+  frame: browser
+heroStrip:
+  regulators:
+    - in-abdm-m1
+    - in-abdm-m2
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book my 20-minute demo
+    href: /indiademo/#book-a-demo
+  secondary:
+    label: See prices in rupees
+    href: /pricing/india/
+  whatsapp: Hi, I was reading the EasyClinic India demo page and would like to book a 20-minute demo for my clinic.
+faqHeading: Questions before you book
+faq:
+  - question: How long is the demo?
+    answer: >-
+      The demo takes 20 minutes and follows one patient from the booking to the WhatsApp follow-up. If
+      TPA claims or the pharmacy matter most to your clinic, say so when we call and the demo spends its
+      time there.
+  - question: Will the demo use my own clinic's data?
+    answer: >-
+      No, the demo runs on a demo clinic set up to look like yours, with your specialty and your kind of
+      patient day, but none of your real patient records. Your data comes across only after you decide
+      to go ahead, during migration.
+  - question: Do I need to install anything?
+    answer: >-
+      No, EasyClinic runs in a web browser on a computer or a tablet, so there is nothing to install for
+      the demo or for daily use. It needs an internet connection and does not run fully offline today.
+      Clinics that want the system on a private server can ask about private cloud hosting on the
+      Enterprise plan.
+  - question: What does EasyClinic cost after the demo?
+    answer: >-
+      Professional costs {price:inr.professional.annual} per doctor per month and Premium costs
+      {price:inr.premium.annual}, both billed annually; Premium billed quarterly is
+      {price:inr.premium.quarterly}. Enterprise, for clinic chains and hospital OPDs, is priced on a
+      quote. There is no setup fee and a reception login is included. The prices are [inclusive of or plus
+      18% GST], and the demo itself costs nothing.
+  - question: How long does it take to go live after the demo?
+    answer: >-
+      The fastest clinics go live {fact:goLiveDays} days after the demo, and training runs over
+      {fact:trainingDays} days in sessions of 20 to 40 minutes. A clinic group or a hospital OPD with
+      years of records to move takes longer, typically [typical go-live time for clinic groups and
+      hospital OPDs].
+  - question: Can my receptionist join the demo?
+    answer: >-
+      Yes, and it helps, because your receptionist is the person who books and bills all day. Every plan
+      includes a reception login at no extra cost; reception staff can book and bill but cannot open the
+      EMR or write prescriptions.
+  - question: Is there a free trial?
+    answer: >-
+      No, EasyClinic does not offer a free trial. The six-minute product tour shows the product without
+      asking you to fill in a form, and if you go ahead after the demo there is no contract to sign. If
+      you later stop, [what happens to unused months on an annual plan], and your records come back to you
+      as [data export format on leaving].
+  - question: What happens after I submit the form?
+    answer: >-
+      [India contact name] calls you on the number you gave, within [call-back window for India], to fix
+      a time for the demo and ask two or three questions about how your clinic runs. We use your details
+      only to arrange the demo, and if you would rather not wait, call {contact:in.phone}.
+links:
+  hub: /clinic-management-software-india/
+  related:
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What ABDM and the DPDP Act ask of your clinic, and how EasyClinic handles each.
+    - href: /pricing/india/
+      label: EasyClinic prices in India
+      description: Per doctor per month in rupees, from {price:inr.professional.annual} on the Professional plan.
+    - href: /easyclinic-vs-practo/
+      label: EasyClinic vs Practo Ray
+      description: Where the two differ for a clinic in India, and what moves across if you switch.
+    - href: /trust/
+      label: Security and compliance
+      description: Where patient data lives, and the dated status of every regulator EasyClinic works with in India.
+closing:
+  heading: Twenty minutes, on a clinic set up like yours
+  body: Send the form and we call you to fix a time around your OPD hours, or message us on WhatsApp from this page.
+  primary:
+    label: Book my 20-minute demo
+    href: /indiademo/#book-a-demo
+country: in
+notes:
+  - >-
+    Structure follows the live /kenyademo/ page (spec 5.13 and 6): demo form, three problems, eight
+    modules, integrations and payers, compliance, local testimonial, demo to live. Kenya-specific facts
+    (M-Pesa, SLADE, eTIMS, MOH 705, Walter) are not carried over.
+  - >-
+    "Or call [name] directly" is rendered by the DemoForm and the hero ContactCard from countries/in.yaml.
+    contact.name, publishName, hours and callbackWindow are null there, so both show "Or call us
+    directly" with +91 91477 70277 until the India contact is confirmed.
+  - >-
+    Kenya's live page says a 30-minute demo; the rebuild and the confirmation page say 20 minutes. This
+    page uses 20. The page does not say whether the demo is a video call or in person, because
+    /contact-us/ offers both and the in-person cities are still a placeholder there.
+  - >-
+    goLiveDays (3) has no asOf in facts.yaml and conflicts with the "2 to 4 week setup" on the live Kenya
+    listicle. Confirm before publishing; the opening answer, meta, step list and FAQ all depend on it.
+  - >-
+    INR Professional quarterly is null in prices/inr.yaml (1,899 live vs 1,875 staging), so the cost FAQ
+    quotes both annual prices and Premium quarterly only.
+  - >-
+    GST invoicing (in-gst) and UPI (countries/in.yaml payments) have null states, so the prose describes
+    no GST or UPI capability as working: the GST chip, the integrations table and the hero screenshot carry
+    them. Restore "with GST on taxable lines" and "UPI in the day-end close" wording once both have a
+    state and date, matching /clinic-management-software-india/ and /pricing/india/.
+  - >-
+    Support step uses [support line and hours in India] because /contact-us/ has not confirmed whether
+    existing-customer support shares the sales number (+91 91477 70277).
+  - >-
+    Module 7 replaces Kenya's "Compliance and reporting" with reports and dashboards, because every India
+    regulator state is null; compliance appears only as status chips (RegulatorStrip), never in prose.
+  - >-
+    The free-trial FAQ mentions the six-minute tour (spec 12, phase 1). Add a link once the tour page
+    exists. FAQ 1 (say so when we call and the demo spends its time on claims or pharmacy) and FAQ 8 (two or
+    three questions on the call, as on /contact-us/) are process claims for the India team to confirm.
+  - >-
+    Dr Prantar Chakrabarti's testimonial has city: null and consentOnFile: null in testimonials data.
+    Needs both before publishing. Author needs to be the India country lead or the product lead.
+sections:
+  - discriminant: demoForm
+    value:
+      id: book-a-demo
+      heading: Book a 20-minute demo
+      country: in
+      promise: |-
+        In 20 minutes we take one patient through a clinic set up like yours: the booking, the consult and prescription, the bill and the WhatsApp follow-up. Before the demo we ask two or three questions about how your clinic runs, so it follows your patient flow and your specialty.
+
+        You leave knowing which plan fits your clinic and what it costs in rupees, from {price:inr.professional.annual} per doctor per month.
+  - discriminant: painBlocks
+    value:
+      heading: What EasyClinic fixes first
+      intro: If your clinic runs on a paper register and the receptionist's phone, these will sound familiar.
+      items:
+        - heading: Your clinic works. But it is exhausting you.
+          body: >-
+            The register is on paper, appointments sit on the receptionist's personal WhatsApp, the receipt
+            book lives in a drawer, and the notes get finished at 9pm after the last patient. When a patient
+            asks for last year's report, someone spends the morning looking for it.
+          fix: >-
+            One system, and everyone on it: reception, doctors, pharmacy and lab. The note and the
+            prescription are done before the patient leaves the room, so the evening is yours again.
+        - heading: You are giving services you are not paid for.
+          body: >-
+            The dressing done at the end of a crowded OPD never reaches the bill. The receipt book and the UPI
+            statement disagree by a few hundred rupees, and a TPA sends a claim back because the
+            pre-authorisation was not attached.
+          fix: >-
+            Every order in the chart lands on the bill, so the dressing is charged before the patient reaches
+            the desk. Claims are checked for the pre-authorisation before they leave, and the money you were
+            losing shows up in a report you can act on.
+        - heading: The bigger you grow, the less you can see.
+          body: >-
+            With one clinic you can see everything from the doctor's chair. Add a pharmacy counter or a
+            branch across town, and you hear about Tuesday from a phone call on Wednesday.
+          fix: >-
+            One clinic or fifteen, you get the same morning view: revenue by doctor, collections against
+            billing, stock and pending claims. Decisions come from the numbers instead of a feeling.
+  - discriminant: moduleGrid
+    value:
+      heading: Eight modules on one patient record
+      intro: >-
+        Every module shares the same record, so the prescription reaches the pharmacy and the bill without
+        anyone typing it twice. Appointments, records, billing, reports and Cura AI come with every plan.
+        Pharmacy and TPA claims come with Enterprise or as add-ons, and lab reports start on Premium; the
+        [India pricing page](/pricing/india/) has the full list.
+      columns: 4
+      items:
+        - title: Appointments
+          outcome: Walk-ins and booked slots on one calendar, with SMS reminders, or WhatsApp reminders on Premium.
+          icon: calendar-clock
+          href: /features/appointment-scheduling/
+        - title: Records and prescriptions
+          outcome: Notes and prescriptions on one record, with a prescription done in about thirty seconds and printed or sent on WhatsApp.
+          icon: notebook-pen
+          href: /features/emr/
+        - title: Billing and payments
+          outcome: Orders from the chart land on the bill, part payments included, and the day-end close shows the takings by payment mode.
+          icon: receipt
+          href: /features/billing/
+        - title: Insurance and TPA claims
+          outcome: Payer price lists and coverage checked at registration, so the TPA claim leaves with the pre-authorisation attached.
+          icon: file-check
+          href: /features/insurance-claims/
+        - title: Pharmacy and inventory
+          outcome: Dispense straight from the prescription and see batch and expiry before a strip leaves the counter.
+          icon: pill
+          href: /features/pharmacy-and-inventory/
+        - title: Lab reports
+          outcome: Order tests from the chart; results come back into the record and go to the patient on WhatsApp.
+          icon: flask-conical
+          href: /features/lab/
+        - title: Reports and dashboards
+          outcome: Revenue by doctor, collections against billing, no-shows and pending claims in one morning view.
+          icon: layout-dashboard
+          href: /features/reports-and-dashboards/
+        - title: Cura AI
+          outcome: Drafts the consult note while you see the patient; you review it and sign.
+          icon: sparkles
+          href: /ai/
+  - discriminant: dataTable
+    value:
+      heading: Integrations and payers in India
+      caption: Payment, accounting, messaging and payer connections for clinics in India
+      columns:
+        - Connection
+        - What it does at your clinic
+        - Status
+      rows:
+        - - UPI
+          - Payments recorded against the bill and counted in the day-end close
+          - '[UPI status as of date]'
+        - - Razorpay
+          - Payment links sent to the patient, on the Premium plan
+          - '[Razorpay status as of date]'
+        - - PayU
+          - The same payment links, for clinics that already have a PayU account
+          - '[PayU status as of date]'
+        - - Tally
+          - The day's invoices and receipts exported for your accountant
+          - '[Tally export status as of date]'
+        - - WhatsApp
+          - Reminders and messages to patients, prescriptions and reports included, on the Premium plan
+          - '[WhatsApp status as of date]'
+        - - TPAs and insurers
+          - 'Claim packs with the pre-authorisation attached, reconciled when the payment arrives. [TPAs and insurers EasyClinic submits claims to]'
+          - '[TPA and insurer connection status as of date]'
+      note: >-
+        Each status carries the date it was last checked. Every connection in every country is listed on
+        the [integrations page](/integrations/).
+  - discriminant: regulatorStrip
+    value:
+      heading: Compliance in India
+      intro: >-
+        Each chip shows the current status and the date it was last checked, and opens the trust page with
+        the detail. What each rule asks of your clinic, from Health Facility Registry sign-up to a DPDP
+        privacy notice, is explained on the [India page](/clinic-management-software-india/).
+      regulators:
+        - in-abdm-m1
+        - in-abdm-m2
+        - in-dpdp
+        - in-gst
+      link: /trust/
+  - discriminant: testimonialRow
+    value:
+      heading: A haematologist on EasyClinic since 2008
+      items:
+        - prantar-chakrabarti
+      layout: single
+  - discriminant: stepList
+    value:
+      heading: From demo to live in as little as {fact:goLiveDays} days
+      steps:
+        - title: Live demo
+          meta: 20 minutes
+          body: >-
+            One patient through a clinic set up like yours. You leave knowing which plan fits and what it
+            costs in rupees.
+        - title: Staff training
+          meta: '{fact:trainingDays} sessions, about two hours in all'
+          body: >-
+            Day 1 is basic training (40 minutes), day 2 is EMR scenarios (40 minutes), day 3 is practice
+            exercises (20 minutes) and day 4 is the road to expertise (20 minutes). The sessions are for you
+            and your clinic staff.
+        - title: Data migration
+          meta: '[migration time for a typical clinic]'
+          body: >-
+            We bring your patient list and history across from your current software or spreadsheets, so
+            the first morning does not start from an empty screen. [What is imported from each source, and
+            whether migration is included in the plan price]
+        - title: Support
+          meta: Unlimited, on every plan
+          body: >-
+            Support and training are included in every plan at no extra charge, on [support line and hours
+            in India]. Premium and Enterprise clinics also get a named account manager, and the
+            [help centre](https://help.easyclinic.io/) has written guides for the common questions.
+      note: >-
+        {fact:goLiveDays} days is the fastest time from demo to live. A clinic group or a hospital OPD with
+        years of records to move takes longer: [typical go-live time for clinic groups and hospital OPDs].
