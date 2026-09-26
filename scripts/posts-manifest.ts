@@ -7,10 +7,18 @@
  * migration/posts-review-proposals.csv (a content review, 2026-09-26) when that file has a row for them.
  * There was no Search Console data for that review, so those reasons say so and never claim rankings.
  *
- * Usage: node scripts/posts-manifest.ts
+ * Posts held in the 2026-09-26 refresh (migration/posts-triage.csv, from node scripts/posts-triage.ts) turn their
+ * "keep" row into a merge into the resolved final target, with no owner page. A review proposal that merges into a
+ * held post is re-pointed to that post's final target (the proposals CSV itself is left as the review wrote it).
+ * Either change is a new proposal: a confirmation carries over only if the previous manifest already had the same
+ * decision and target for that path.
+ *
+ * Usage: node scripts/posts-triage.ts && node scripts/posts-manifest.ts
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { normalizePath } from '../integrations/routes-core.ts';
 import { parseCsv, parseCsvRecords, stringifyCsv } from './lib/csv.ts';
+import { TRIAGE_COLUMNS, TRIAGE_CSV, TRIAGE_DATE } from './posts-triage.ts';
 
 const md = readFileSync('migration/research/sitemap.md', 'utf8');
 const section = (title: string) => {
@@ -83,6 +91,44 @@ const comparisonPages = new Set(['/easyclinic-vs-practo/', '/easyclinic-vs-healt
 const previous = existsSync('migration/posts-manifest.csv') ? parseCsv(readFileSync('migration/posts-manifest.csv', 'utf8')) : [];
 const confirmedCol = previous[0]?.indexOf('confirmed') ?? -1;
 const confirmedByPath = new Map(confirmedCol >= 0 ? previous.slice(1).map((r) => [r[0], r[confirmedCol] ?? '']) : []);
+const [decisionCol, targetCol] = ['proposed_decision', 'target'].map((c) => previous[0]?.indexOf(c) ?? -1);
+const previousProposal = new Map(previous.slice(1).map((r) => [r[0], `${r[decisionCol] ?? ''} ${r[targetCol] ?? ''}`]));
+const droppedConfirmations: string[] = [];
+/** A row this script changed keeps its confirmation only when marketing confirmed this same decision and target. */
+const confirmedFor = (path: string, decision: string, target: string, changed: boolean) => {
+  const confirmed = confirmedByPath.get(path) ?? '';
+  if (!changed || !confirmed.trim() || previousProposal.get(path) === `${decision} ${target}`) return confirmed;
+  droppedConfirmations.push(`${path} ("${confirmed}" was for ${previousProposal.get(path)})`);
+  return '';
+};
+
+/** Held posts (columns: path, target, final_target, reason), resolved by scripts/posts-triage.ts. */
+const HELD_NOTE = `Held in the ${TRIAGE_DATE} refresh:`;
+const triageCsv = existsSync(TRIAGE_CSV) ? parseCsvRecords(readFileSync(TRIAGE_CSV, 'utf8')) : null;
+if (!triageCsv) console.warn(`  ! ${TRIAGE_CSV} not found: no held posts applied (run node scripts/posts-triage.ts)`);
+const triageMissing = triageCsv?.records.length ? TRIAGE_COLUMNS.filter((c) => !triageCsv.header.includes(c)) : [];
+if (triageMissing.length) throw new Error(`${TRIAGE_CSV} has no ${triageMissing.map((c) => `"${c}"`).join(', ')} column`);
+const held = new Map(
+  (triageCsv?.records ?? []).map((r): [string, { final_target: string; reason: string }] => [
+    normalizePath(r.path),
+    { final_target: normalizePath(r.final_target.trim()), reason: r.reason },
+  ]),
+);
+const triageErrors = (triageCsv?.records ?? []).flatMap((r) => {
+  const final = r.final_target.trim();
+  if (!final.startsWith('/') || normalizePath(final) === normalizePath(r.path)) return [`${r.path}: final_target "${r.final_target}" is not another path`];
+  if (held.has(normalizePath(final))) return [`${r.path}: final_target ${final} is itself held; re-run node scripts/posts-triage.ts`];
+  if (!r.reason.trim()) return [`${r.path}: no reason`];
+  return [];
+});
+if (held.size !== (triageCsv?.records.length ?? 0)) triageErrors.push(`${TRIAGE_CSV} lists a path twice`);
+if (triageErrors.length) {
+  for (const e of triageErrors) console.error(`  ✗ ${e}`);
+  console.error(`\n${TRIAGE_CSV} has ${triageErrors.length} unusable rows; nothing written.`);
+  process.exit(1);
+}
+const usedHolds = new Set<string>();
+const repointed: string[] = [];
 
 /** Content-review proposals for "review" rows (columns: path, decision, target, owner, reason, evidence). */
 const PROPOSALS_CSV = 'migration/posts-review-proposals.csv';
@@ -147,7 +193,28 @@ for (const [title, cls] of classes) {
       decision = 'review';
       reason = 'Needs a human decision with Search Console data';
     }
-    rows.push([path, title, decision, target, ownerPage ?? (decision === 'keep' ? owner : ''), reason, confirmedByPath.get(path) ?? '']);
+    let changed = false;
+    const hold = held.get(path);
+    if (hold && decision === 'keep') {
+      usedHolds.add(path);
+      changed = true;
+      decision = 'merge';
+      target = hold.final_target;
+      ownerPage = '';
+      reason = `${HELD_NOTE} ${hold.reason.trim()}`;
+    } else if (proposal && decision === 'merge' && held.has(normalizePath(target))) {
+      const via = normalizePath(target);
+      const final = held.get(via)!.final_target;
+      if (final === path) {
+        console.error(`  ✗ ${path}: the proposal merges into ${via}, which is held and resolves back to ${path}; nothing written.`);
+        process.exit(1);
+      }
+      changed = true;
+      target = final;
+      reason = `${reason} Re-pointed: the proposed target ${via} is held in the ${TRIAGE_DATE} refresh and merges into ${final}.`;
+      repointed.push(`${path}: ${via} -> ${final}`);
+    }
+    rows.push([path, title, decision, target, ownerPage ?? (decision === 'keep' ? owner : ''), reason, confirmedFor(path, decision, target, changed)]);
   }
 }
 writeFileSync('migration/posts-manifest.csv', stringifyCsv(rows));
@@ -156,4 +223,13 @@ console.log(`posts: ${rows.length - 1}  keep: ${count('keep')}  merge: ${count('
 console.log(`review rows decided from ${PROPOSALS_CSV}: ${usedProposals.size}`);
 const unused = [...proposals.keys()].filter((p) => !usedProposals.has(p));
 if (unused.length) console.warn(`  ! ${unused.length} proposals match no review row (ignored): ${unused.join(', ')}`);
+console.log(`held posts from ${TRIAGE_CSV} turned into merge proposals: ${usedHolds.size} of ${held.size}`);
+const unusedHolds = [...held.keys()].filter((p) => !usedHolds.has(p));
+if (unusedHolds.length) console.warn(`  ! ${unusedHolds.length} held posts have no "keep" row to turn into a merge (left as they are): ${unusedHolds.join(', ')}`);
+console.log(`review proposals re-pointed because their target is held: ${repointed.length}`);
+for (const r of repointed) console.log(`  - ${r}`);
+if (droppedConfirmations.length) {
+  console.warn(`  ! ${droppedConfirmations.length} confirmations cleared because the proposal changed; marketing confirms again:`);
+  for (const d of droppedConfirmations) console.warn(`    ${d}`);
+}
 if (!existsSync('migration/posts-manifest.csv')) process.exit(1);
