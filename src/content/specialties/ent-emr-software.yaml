@@ -1,0 +1,331 @@
+# /ent-emr-software/ (spec 5.15 SpecialtyPage template; no spec 4.3 row and no 5.15 must-have row for ENT).
+# Slug kept from the live site; /ent/ redirects here through src/data/redirects.yaml. The staging audit keeps
+# this page. Grounding: capability statements the live /ent-emr-software/ page makes plainly (retrieved
+# 2026-09-26) and plans.yaml. No template counts, device integrations, timings or outcomes.
+status: published
+headKeyword: ENT EMR software
+secondaryKeywords:
+  - ENT clinic software
+  - ENT practice management software
+  - otolaryngology EMR
+title: 'ENT EMR Software: EasyClinic'
+metaDescription: >-
+  ENT EMR software with an ear examination form, and hearing tests and endoscopy records kept on the
+  patient's record. Premium is {price:usd.premium.annual} per doctor a month.
+h1: 'EMR for ENT clinics: ear examinations and hearing tests on one record'
+linkLabel: ENT
+eyebrow: For ENT clinics
+openingAnswer: >-
+  ENT EMR software has to hold four things a general consultation note has no place for: the ear
+  examination, the hearing test, the endoscopy and the minor procedure done in the clinic. EasyClinic keeps
+  all four with the patient's record, and its Premium plan for specialists adds the ENT consultation
+  templates, at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual} in
+  US dollars, billed annually.
+summary: >-
+  The ear examination and the hearing test on one patient record, with ENT consultation templates on the
+  Premium plan at {price:usd.premium.annual} per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for ENT clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-ent-clinic-loses-track
+      heading: Where an ENT clinic loses track
+      intro: >-
+        An ENT visit often produces a hearing test or a scope picture as well as the note, and those are
+        the records that end up somewhere other than the chart.
+      items:
+        - heading: Last year's audiogram is in the patient's plastic bag
+          body: >-
+            A patient with hearing loss comes back after a year for a repeat audiogram. The old report is
+            folded into a bag of papers, or filed in the audiometry room, and the comparison the whole visit
+            turns on waits until someone finds it.
+          fix: >-
+            The scanned hearing test report uploads to the patient's record, beside the visits written
+            there, so last year's result is already on the record when this year's is added.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The scope pictures stay on the endoscopy computer
+          body: >-
+            A diagnostic nasal endoscopy is saved on the computer beside the scope, or printed and handed
+            to the patient. At the review visit the doctor describes the polyp from memory, because the
+            picture is on another machine in another room.
+          fix: >-
+            Upload the images and the report to the patient's record after the procedure, and they are on
+            the chart at the review.
+        - heading: The wax removal is done but never written up
+          body: >-
+            Between consultations the doctor clears an impacted ear or takes a bead out of a child's nose in
+            the procedure room. The procedure goes in a register, if anywhere, and the desk bills it from
+            what the assistant remembers.
+          fix: >-
+            Minor surgeries and ENT procedures are recorded in the patient's record, and the desk bills
+            each one as an item from the clinic's service list.
+          href: /features/billing/
+          linkLabel: Read how billing works
+        - heading: The ear that keeps discharging
+          body: >-
+            Chronic ear discharge and sinusitis come back, and the patient returns every few months with no
+            memory of what was tried last time. Nobody calls the ones who stop coming, because the follow-up
+            dates are in the doctor's head.
+          fix: >-
+            Follow-up for a recurring ENT condition is tracked on the patient's record, so the next visit
+            starts from what was tried last time, and the follow-up itself is automated.
+
+  - discriminant: featureRows
+    value:
+      id: the-ent-chart
+      heading: Built around the ENT chart
+      intro: >-
+        What the doctor records in the consulting room and the procedure room. Premium, the plan for
+        specialists, includes every row below, and the row marked Premium is not on Professional.
+      items:
+        - heading: The consultation, by point and click
+          body: >-
+            Chief complaint, history, vitals, diagnosis, medicines, investigations, referrals, patient
+            guidelines and the follow-up date are recorded by point and click, with auto-complete, without
+            paging through long screens. The medicines and investigations you order most sit within reach,
+            and the prescription goes through a drug interaction check.
+          bullets:
+            - A tabular prescription, printed or sent to the patient
+            - A facesheet with the patient's key history on one screen
+            - Past records opened side by side with today's visit
+            - History and vitals taken by an assistant or nurse before the doctor
+        - heading: ENT templates, with the ear examination form
+          plan: premium
+          body: >-
+            On Premium the chart comes with the ENT consultation templates and custom examination forms,
+            such as the ear examination form. If you examine the nose and throat on a paper form of your
+            own, the form builder turns it into a digital form, and you set your own print layout for the
+            prescription and the case sheet.
+          link:
+            label: Compare what each plan includes
+            href: /pricing/
+        - heading: Hearing tests and endoscopy records
+          body: >-
+            Hearing test results and endoscopy records are stored in EasyClinic. Scanned reports and images
+            upload to the patient's record, so the audiogram and the scope pictures sit beside the visits
+            they belong to. Vitals are charted over time on the same record, and on Premium lab reports
+            come into the chart as well.
+          bullets:
+            - Audiograms and other hearing test reports on the record
+            - Endoscopy images and reports on the same record
+            - Reports the patient brings, scanned and attached
+            - Vitals charted visit by visit
+        - heading: Procedures and minor surgery on the record
+          body: >-
+            Minor surgeries and ENT procedures done in the clinic are recorded in the patient's record.
+            When a procedure is booked ahead, the equipment or the assistant it needs is booked inside the
+            same appointment slot, and the multi-resource calendar shows the desk what is already taken.
+        - heading: Cura AI drafts the note
+          plan: professional
+          body: >-
+            Cura AI, the documentation assistant, comes with every plan. It drafts the note, and the draft
+            stays a suggestion until the doctor corrects and confirms it.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: featureRows
+    value:
+      id: the-visit
+      heading: An ENT visit, from the front desk to the follow-up
+      intro: >-
+        What happens around the consultation, in a clinic with one doctor and a receptionist.
+      items:
+        - heading: Booked patients and walk-ins at the same desk
+          body: >-
+            The desk books fixed-time appointments and takes walk-ins first come, first served, and a
+            priority appointment can go to the patient who needs one. The waiting room view shows the queue
+            and how long each patient has waited, so the receptionist can answer the patient who asks.
+          bullets:
+            - Token numbers for the walk-in queue
+            - Several sessions booked in one go
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The bill for the consultation and the procedure
+          body: >-
+            The receptionist bills the consultation and any procedure from the clinic's service list, and
+            each payment is recorded against the bill, with the balance on screen. Part payments and
+            advances are recorded at the desk, and a refund or a voided invoice goes through only with
+            authorisation.
+          bullets:
+            - Discounts only with authorisation
+            - Taxable and non-taxable items kept apart on the bill
+            - Receipts sent by SMS or email, and on WhatsApp with Premium
+            - Daily and monthly financial reports, exported to Excel or PDF
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Treatment billed as a package
+          plan: premium
+          body: >-
+            On Premium a treatment sold as a package is billed as one package treatment, and the payment
+            can be spread over the course of the treatment, with each part payment recorded against it.
+        - heading: Reminders for the follow-up visit
+          body: >-
+            The follow-up date goes in the note, and the patient gets an automated reminder for it, by SMS
+            or email on every plan and by WhatsApp on Premium.
+          link:
+            label: Read how WhatsApp reminders work
+            href: /features/whatsapp/
+        - heading: Video follow-ups
+          plan: premium
+          body: >-
+            On Premium, a video consultation is booked through the appointment screen and the fee can be
+            collected online at booking. Doctor and patient join from a web browser on a computer or a
+            phone, and the prescription is sent with a line saying the consultation was remote. It suits a
+            review of symptoms or a report; a review that needs the otoscope or the scope still happens in
+            the clinic.
+          link:
+            label: Read how video consultations work
+            href: /features/telehealth/
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        We do not yet have an ENT specialist's own words to put on this page. These are EasyClinic's public
+        ratings, from clinics of every kind.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: '{fact:trainingDays} days of training, about two hours in all'
+      intro: >-
+        Training is included in every plan, in sessions of 20 to 40 minutes spread over
+        {fact:trainingDays} days, short enough to fit between the morning and evening OPD, so the clinic
+        keeps seeing patients while you learn.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the doctor use every day. Bring your receptionist, whose login is
+            part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            You work through the chart and the prescription on the kinds of case your clinic sees.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions ENT clinic owners ask
+faq:
+  - question: Which EasyClinic plan does an ENT clinic need, and what does it cost?
+    answer: >-
+      Premium, if you want the ENT consultation templates and your own examination forms: it costs
+      {price:inr.premium.annual} per doctor per month billed annually in India, or
+      {price:usd.premium.annual} in US dollars. Professional, at {price:inr.professional.annual} or
+      {price:usd.professional.annual}, has the EMR and the billing but not the specialty templates. Both
+      include a reception login, with no setup fee and no binding contract.
+  - question: Can I keep audiograms and endoscopy pictures on the patient's record?
+    answer: >-
+      Yes, hearing test results and endoscopy records are stored in EasyClinic, and scanned reports and
+      images upload to the patient's record. When the patient comes back for a repeat audiogram, last
+      year's report is on the same record as this year's.
+  - question: Can I record the minor procedures I do in the clinic?
+    answer: >-
+      Yes, minor surgeries and ENT procedures are recorded in the patient's record, and each one is billed
+      from the clinic's service list. If a procedure needs a piece of equipment or an assistant, book it
+      inside the appointment slot so the desk can see it is taken.
+  - question: Is EasyClinic too much for a one-doctor ENT clinic?
+    answer: >-
+      No, it works for single-doctor clinics as well as multi-doctor centres, and Professional is the plan
+      for a doctor running their own clinic with a receptionist. Move to Premium when you want the ENT
+      templates and your own forms. Training takes about two hours over {fact:trainingDays} days.
+  - question: Can I turn my own paper examination form into a digital one?
+    answer: >-
+      Yes, on Premium, which includes your own clinical forms and print layouts: the form builder turns a
+      paper form, such as your nose and throat examination sheet, into a digital form on the chart. We do
+      not charge for the customisation itself.
+  - question: Can my receptionist read the ENT notes?
+    answer: >-
+      No, the reception login included in the price is not allowed into the EMR and cannot issue
+      prescriptions. Access is set by role for every login, and user activity is kept in audit logs.
+  - question: Does EasyClinic manage the clinic's medicine stock?
+    answer: >-
+      Not on Professional or Premium alone: pharmacy and inventory are included in Enterprise, or added to
+      Professional and Premium as a module. With the module, the pharmacy dispenses from the doctor's
+      prescription and tracks each batch to its expiry date.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today, so plan on a working internet connection in the
+      consulting room and at the desk. A self-hosted option also exists, where the system runs on the clinic's own server
+      rather than in EasyClinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where ENT clinic owners go next
+  related:
+    - href: /solutions/solo-clinic/
+      description: For an ENT specialist running their own clinic with a receptionist and no IT staff.
+    - href: /clinic-management-software-india/
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      description: EasyClinic for clinics in Kenya, with prescriptions in English and Swahili.
+    - href: /features/emr/
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /pricing/
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See an ENT patient's record before you decide
+  body: >-
+    Book a 20-minute demo and ask to see the ear examination form and a hearing test report on a
+    patient's record, or compare what each plan includes on the pricing page. If a call is too much today,
+    send us a WhatsApp message from this page instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The audiogram folded into the patient's bag and the scope pictures left on the endoscopy computer are
+    ENT clinic problems, and every capability on the page is one that EasyClinic's live ENT page or
+    plans.yaml states plainly.
+  readsMachineWritten: >-
+    The page has no named ENT specialist and no screenshot and names one ENT form only, so the chart rows
+    read like a capability list, and an ENT surgeon will notice that it says nothing about connecting an
+    audiometer or an endoscope, or about charting an audiogram.
+
+notes:
+  - 'Recruit a named ENT testimonial (spec 5.15 item 9): a named ENT specialist or ENT clinic owner on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no ENT quote exists yet. Capterra and Google review counts are null in facts.yaml, so the badges show no count. The four testimonials on the live ENT page (two psychiatrists, a general physician, an ophthalmologist) are not ENT and are placed on other pages.'
+  - 'Grounding: stated plainly on the live /ent-emr-software/ page (retrieved 2026-09-26): ENT consultation templates; custom examination forms "like Ear Examination"; point-and-click recording of chief complaints, history, vitals, diagnosis, medications, investigations, referrals, follow-ups and patient guidelines with auto-complete; customisable intake forms feeding the facesheet; storage of "hearing test results, endoscopy records, and other diagnostic data" (FAQ); image and document upload; recording "minor surgeries and ENT procedures in patient records" (FAQ); "detailed follow-up tracking for recurring ENT conditions" (FAQ); automated follow up; drug interaction check; tabular Rx; side-by-side past records; clinical assistant or nurse intake; vitals and lab charts; form builder for paper forms; teleconsultation in a browser with online fee and a remote-consult line on the prescription; walk-ins, first-come-first-served, tokens, priority patients and waiting room status; resource booking (equipment or assistants) inside the appointment slot; multi-session booking; service list billing, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments, discount authorisation, taxable items, financial reports and Excel or PDF export; single-doctor and multi-doctor use (FAQ); cloud-based (FAQ). Plan placement follows plans.yaml.'
+  - 'Plan tags: the live page ties nothing to a plan. The ENT templates row is tagged Premium because plans.yaml puts specialty EMR templates and your own clinical forms on Premium; package treatments, WhatsApp and video consultations are Premium per plans.yaml. Storage and upload of hearing tests and endoscopy records, procedure recording and follow-up tracking carry no plan tag, and the featureRows intro says only that Premium includes every row.'
+  - 'Company to-do, spec 5.15 template items with no public source (no ENT must-have row exists in spec 5.15): (item 5) the ENT templates and forms by name and count, since the live page names only the Ear Examination form, and the fields on it; (item 6) devices and integrations with status: audiometer, tympanometer, endoscopy or video laryngoscopy camera, whether endoscopy video (not only stills) can be stored, whether audiogram thresholds can be entered and charted as data rather than uploaded as a file, and whether any direct device connection exists at all (the page is silent on it); (item 4) a timed walkthrough of the most common ENT visit; (item 8) which ENT note types Cura AI drafts, with one example; (item 7) whether common ENT procedures (for example tonsillectomy or septoplasty) are set up as package treatments, and procedure note and consent templates; which plan carries procedure documentation and follow-up tracking; whether audiologists and ENT assistants need a paid licence under per-doctor pricing.'
+  - 'Dropped from the live page: both "Easy Clinic vs Other/Generic EMR" comparison tables (unsourced competitor cells), "prescriptions in 30 seconds", "invoices ready in less than 10 seconds", "over 100 graphical dashboards", "Reduces no-shows" (noShowReduction is null), AI diagnostic support and ADR alerts (CuraPilot claims), AI-powered wait-time alerts and AI two-way messaging (plan unclear), patient self-booking and check-in on the phone (plan unclear), "Inventory management is included for medicines and clinic supplies" and "Inventory for medicines & supplies: Built-in" (conflict with plans.yaml; the FAQ gives the plans.yaml answer), prescriptions "in any language" (only English and Swahili are confirmed), HR, roster, incentive and commission features (plan unclear), data warehouse and Power BI (Enterprise chain scope), the shared stat line, and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial).'
+  - 'No dataTable of templates: the live page names one ENT template (Ear Examination), which is too few to count; add the table once the company lists the ENT templates by name. No dayTimeline: no timed ENT visit exists.'
+  - 'No heroMedia and no media: screenshots do not exist yet. When the seeded demo tenant exists, capture the ENT chart with the ear examination form as hero, an audiogram and an endoscopy image uploaded on the patient record, and a minor procedure recorded and billed from the service list.'
+  - 'The four pains are illustrative ENT clinic situations, not customers; "a bead out of a child''s nose" and "the polyp" are examples. The video row''s line that an examination still needs the clinic is a clinical admission, not a product limit.'
+  - 'Removed in the adversarial fact check (2026-09-26), for lack of a plain source: that audiograms and scope images go in only as files, and that a direct audiometer or endoscopy connection is custom integration work scoped per project (a device integration status; the plans.yaml add-on names lab machines, accounting and an HIS only); "examination findings" in the point-and-click list (the live list is used instead); "where its price is set once" (the live page says service prices can be adjusted); "with the visit they came from"; walk-ins and booked patients "in one list" and a priority patient "moved up"; an audit log showing "who made each entry on a patient''s record" (the live page says only audit logs); and "the cloud version needs a working connection while you see patients" (the live page says only that it does not run fully offline). The ear examination form is now called a custom examination form, as the live page does, rather than one of the ENT consultation templates.'
+  - 'Title 28 characters; meta description 151 characters with the token resolved ($99), 155 as the linter counts tokens. The brief H1 "EMR for ENT clinics" is extended in the spec 5.15 item 1 pattern with two honest objects. /clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts; the related links resolve once they publish. The Kenya link description avoids integration status and names only the bilingual prescription from facts.md.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits in the stock and offline answers) until the testimonial arrives.

@@ -3,6 +3,7 @@ import { z } from 'astro/zod';
 import {
   BILLING_PERIODS,
   CURRENCIES,
+  INTEGRATION_CATEGORIES,
   INTEGRATION_STATES,
   PERSONAS,
   PLAN_IDS,
@@ -252,7 +253,7 @@ export const navSchema = z.object({
 
 export const integrationSchema = z.object({
   name: z.string(),
-  category: z.enum(['payments', 'labs', 'accounting', 'bi', 'messaging', 'national-health', 'insurance', 'emr']),
+  category: z.enum(INTEGRATION_CATEGORIES),
   countries: z.array(z.string()).default([]),
   state: unknown(z.enum(INTEGRATION_STATES)),
   asOf: unknown(isoDate),

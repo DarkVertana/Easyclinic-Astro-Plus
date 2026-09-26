@@ -1,0 +1,179 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { INTEGRATION_CATEGORIES, type IntegrationCategory } from '../../../schemas/constants';
+import { need } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import StatusChip from '../../ui/StatusChip.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'integrationDirectory'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, categories, countries, filters, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+const uid = id ?? `integrations-${ctx.index}`;
+
+type Integration = CollectionEntry<'integrations'>;
+
+const CATEGORY_LABELS: Record<IntegrationCategory, string> = {
+  payments: 'Payments',
+  insurance: 'Insurance and claims',
+  'national-health': 'National health systems',
+  labs: 'Labs and devices',
+  accounting: 'Accounting and tax',
+  bi: 'Reports and BI',
+  messaging: 'Messaging',
+  emr: 'Hospital systems and other EMRs',
+};
+
+const countryNames = new Map((await getCollection('countries')).map((c) => [c.id, c.data.name]));
+const countryName = (code: string) => countryNames.get(code) ?? code.toUpperCase();
+
+// Entries for the countries asked for (and entries for every country), sorted by name within a category.
+const all = (await getCollection('integrations'))
+  .filter((i) => !countries.length || !i.data.countries.length || i.data.countries.some((c) => countries.includes(c)))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const order = categories.length ? categories : INTEGRATION_CATEGORIES;
+const groups = order
+  .map((category) => ({ category, label: CATEGORY_LABELS[category], items: all.filter((i) => i.data.category === category) }))
+  .filter((g) => g.items.length > 0);
+
+// Country filter: CSS radios with one rule per slot (as in TestimonialGrid). Entries used in every country
+// carry the slot "all" and never hide.
+const SLOTS = 8;
+const countryOptions = [...new Set(all.flatMap((i) => i.data.countries))]
+  .map((code) => ({ code, name: countryName(code), count: all.filter((i) => !i.data.countries.length || i.data.countries.includes(code)).length }))
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .map((o, n) => ({ ...o, slot: n + 1 }));
+if (countryOptions.length > SLOTS) {
+  throw new Error(`integrationDirectory on ${ctx.path}: ${countryOptions.length} countries; add slot rules past ${SLOTS} in IntegrationDirectory.astro`);
+}
+const slotOf = new Map(countryOptions.map((o) => [o.code, o.slot]));
+const slotsFor = (i: Integration) => (i.data.countries.length ? i.data.countries.map((c) => slotOf.get(c)).join(' ') : 'all');
+const filtering = filters && countryOptions.length > 1;
+
+// A directory with nothing in it cannot be published.
+const none = all.length === 0 ? need(Astro, 'integrations for this directory', null) : null;
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <div class:list={['idir', filtering && 'idir-filtering']}>
+    {
+      filtering && (
+        <fieldset class="idir-filters min-w-0">
+          <legend class="text-sm font-semibold">Country</legend>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <label class="relative">
+              <input type="radio" class="sr-only" name={`${uid}-country`} value="all" data-slot-input="all" checked />
+              <span class="idir-chip">
+                <span class="idir-chip-check">
+                  <Icon name="check" size={16} />
+                </span>
+                <span>All countries</span>
+              </span>
+            </label>
+            {countryOptions.map((o) => (
+              <label class="relative">
+                <input type="radio" class="sr-only" name={`${uid}-country`} value={o.code} data-slot-input={String(o.slot)} />
+                <span class="idir-chip">
+                  <span class="idir-chip-check">
+                    <Icon name="check" size={16} />
+                  </span>
+                  <span>{o.name}</span>
+                  <span class="font-normal">({o.count})</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )
+    }
+
+    {none && <p class="card p-6 text-ink">{none}</p>}
+
+    <div class="idir-groups flex flex-col gap-10">
+      {
+        groups.map((g) => (
+          <div class="idir-group" data-slots={[...new Set(g.items.map(slotsFor).join(' ').split(' '))].join(' ')}>
+            <h3 class:list={['text-xl', inverse && 'text-white']}>{g.label}</h3>
+            <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+              {g.items.map((i) => (
+                <li class="idir-item card flex flex-col gap-3 p-5 text-ink" data-slots={slotsFor(i)}>
+                  <div class="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
+                    <h4 class="font-sans text-lg font-semibold text-ink-heading">{i.data.name}</h4>
+                    <StatusChip state={i.data.state} asOf={i.data.asOf} subject={i.data.name} />
+                  </div>
+                  <div class="text-base leading-7">
+                    <Md text={i.data.description} />
+                  </div>
+                  <p class="mt-auto text-sm text-ink-muted">
+                    {i.data.countries.length ? i.data.countries.map(countryName).join(', ') : 'Every country'}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>
+
+<style>
+  .idir-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+  .idir-chip:hover {
+    border-color: var(--color-blue-700);
+  }
+  .idir-chip-check {
+    display: none;
+  }
+  input:checked + .idir-chip {
+    background: var(--btn-bg);
+    border-color: var(--btn-bg);
+    color: var(--btn-ink);
+  }
+  input:checked + .idir-chip .idir-chip-check {
+    display: inline-flex;
+  }
+  input:focus-visible + .idir-chip {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  /* CSS-only country filter (spec 7.1: every entry stays in the HTML). Without :has() everything shows. */
+  .idir-filters {
+    display: none;
+  }
+  @supports selector(:has(*)) {
+    .idir-filtering .idir-filters {
+      display: block;
+      margin-bottom: 2rem;
+    }
+    /* One rule per slot (SLOTS in the frontmatter): hide entries and whole categories with nothing for that country. */
+    .idir:has([data-slot-input='1']:checked) :is(.idir-item, .idir-group):not([data-slots~='1'], [data-slots~='all']),
+    .idir:has([data-slot-input='2']:checked) :is(.idir-item, .idir-group):not([data-slots~='2'], [data-slots~='all']),
+    .idir:has([data-slot-input='3']:checked) :is(.idir-item, .idir-group):not([data-slots~='3'], [data-slots~='all']),
+    .idir:has([data-slot-input='4']:checked) :is(.idir-item, .idir-group):not([data-slots~='4'], [data-slots~='all']),
+    .idir:has([data-slot-input='5']:checked) :is(.idir-item, .idir-group):not([data-slots~='5'], [data-slots~='all']),
+    .idir:has([data-slot-input='6']:checked) :is(.idir-item, .idir-group):not([data-slots~='6'], [data-slots~='all']),
+    .idir:has([data-slot-input='7']:checked) :is(.idir-item, .idir-group):not([data-slots~='7'], [data-slots~='all']),
+    .idir:has([data-slot-input='8']:checked) :is(.idir-item, .idir-group):not([data-slots~='8'], [data-slots~='all']) {
+      display: none;
+    }
+  }
+</style>

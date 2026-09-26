@@ -1,0 +1,319 @@
+# /mental-health/ (spec 5.15 SpecialtyPage and must-have row for /mental-health-emr; keyword row 4.3). The live
+# slug is kept. /psychiatry-emr/, /psychiatry-emr-software/ and /psychology-emr/ redirect here through
+# src/data/redirects.yaml, so psychiatry and psychology practices are covered on this page.
+# Grounding: capability statements the live /mental-health/, /psychiatry-emr/ and /psychology-emr/ pages make
+# plainly (retrieved 2026-09-26), migration/research/facts.md, and plans.yaml.
+status: published
+headKeyword: mental health EHR software
+secondaryKeywords:
+  - psychiatry EMR software
+  - therapist practice management software
+  - psychology EMR software
+  - mental health EMR
+title: 'Mental Health and Psychiatry EHR Software: EasyClinic'
+metaDescription: >-
+  Mental health EHR software: session notes and psychotropic dose changes on one record, and video
+  sessions on Premium at {price:usd.premium.annual} per doctor per month.
+h1: EHR for mental health and psychiatry practices
+linkLabel: Mental health
+eyebrow: For psychiatry and psychology practices
+openingAnswer: >-
+  A mental health practice needs session notes and psychometric test results on the record visit by
+  visit beside the prescription, and access set by role, so the front desk can book a session without
+  opening the notes. EasyClinic keeps both, and its Premium plan adds video sessions and your own clinical
+  forms at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual} in US
+  dollars, billed annually.
+summary: >-
+  Session notes and psychotropic dose changes on one record, and video sessions on the Premium plan at
+  {price:usd.premium.annual} per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a mental health practice demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for mental health practices and would like to book a demo for our practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-it-slips
+      heading: Where a mental health practice loses track
+      intro: >-
+        Mental health care runs over months, and a patient's story is told across many sessions, often to
+        more than one clinician. The four slips below happen between those sessions.
+      items:
+        - heading: The therapy notebook and the prescription pad
+          body: >-
+            The psychologist writes session notes in her own notebook and the psychiatrist writes on a pad
+            whose copy goes home with the patient. At the three-month review neither can see what the other
+            recorded, and the patient is asked to tell the story again.
+          fix: >-
+            Session notes and observations go on the patient's record in EasyClinic, and progress notes
+            follow the symptoms and the effect of each medication from visit to visit. Collaborative case
+            notes let the psychiatrist and the psychologist work from the same record.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The patient's file waits at the front desk
+          body: >-
+            In a small practice the file sits on the reception desk until the doctor calls the patient in,
+            with last month's session notes inside it. Anyone who stops at the desk can open it.
+          fix: >-
+            Each person logs in as themselves, and the role on that login decides which screens they can
+            open. The reception login included in the price is not allowed into the EMR and cannot issue
+            prescriptions, and audit logs keep a record of what each user did.
+        - heading: Three dose changes on three sheets of paper
+          body: >-
+            A patient starting an antidepressant comes back every few weeks while the dose is adjusted. Each
+            change is on a separate sheet the patient took home, and when she says the side effects started
+            after the last change, nobody in the room can say which change that was.
+          fix: >-
+            Psychotropic prescriptions are tracked on the record with each dosage adjustment and refill
+            reminders, and the progress notes record how the patient responded to each medication. The drug
+            interaction check alerts the doctor to potential interactions or contraindications.
+        - heading: The session that happened on a personal phone
+          body: >-
+            A patient who cannot face the journey in a bad week asks to be seen by video. The call happens on
+            the doctor's personal WhatsApp and the prescription is a photograph of the pad. The fee gets
+            chased a week later, if anyone remembers.
+          fix: >-
+            On Premium a video session is booked from the appointment screen, and the fee can be paid online
+            at booking. The patient joins from a web browser on a computer or a phone, and the prescription
+            goes to them on WhatsApp or by email with a note that the consultation was held remotely.
+          href: /features/telehealth/
+          linkLabel: Read how video consultations work
+
+  - discriminant: featureRows
+    value:
+      id: the-mental-health-record
+      heading: Built around the mental health record
+      intro: >-
+        Each session is written against the same record, so the course of care reads from intake to the
+        latest visit. Premium is the plan most specialists choose, and the rows marked Premium are not on
+        Professional.
+      items:
+        - heading: Mental health history, taken once
+          body: >-
+            The record holds the mental health evaluation and the diagnostic criteria you worked from, with
+            the family and social history and the substance use history taken at intake. Intake forms can
+            take a detailed history or a short one, and what they capture goes onto the patient's facesheet
+            for the next follow-up.
+          bullets:
+            - Mental health evaluation and diagnostic criteria
+            - Family and social history taken at intake
+            - Substance use history
+            - Key data on the patient's facesheet
+        - heading: Session notes and treatment plans
+          body: >-
+            The therapist records the session's notes and observations, with any assessment made, on the
+            patient's record. A treatment plan holds the therapy goals and the milestones towards them, and
+            the whole visit history opens on one screen, with past records side by side.
+          bullets:
+            - Therapy goals and milestones in the treatment plan
+            - Progress notes from visit to visit
+            - Past records side by side
+            - Case notes shared with the care team
+        - heading: Psychometric test results on the record
+          body: >-
+            Results from standardised tests, such as the Beck Depression Inventory or the MMPI, are stored
+            on the patient's record, so the result from intake is there when you repeat the test months
+            later. If you use a paper questionnaire today, Premium lets you rebuild it as a digital form with
+            the form builder, and the clinician fills it in on the record.
+        - heading: Psychotropic medication, dose by dose
+          body: >-
+            Psychotropic prescriptions are tracked with each dosage adjustment and refill reminders, and the
+            drug interaction check alerts you to potential interactions or contraindications. The
+            prescription is printed or sent by SMS or email, and on Premium by WhatsApp as well.
+          bullets:
+            - Each dosage adjustment recorded with the prescription
+            - Refill reminders
+        - heading: Who can open the record
+          body: >-
+            Access is set by role and by department, so the front desk and the clinicians each open only the
+            screens their role allows. The reception login included in the price is not allowed into the EMR
+            and cannot issue prescriptions, and audit logs keep a record of what each user did. The EMR also
+            has confidential notes, and the scheduler has confidential appointments.
+          bullets:
+            - Access by role and by department
+            - No EMR access on the reception login
+            - Confidential notes and confidential appointments
+            - Audit logs and usage history for each user
+        - heading: Video sessions from a web browser
+          plan: premium
+          body: >-
+            On Premium, a video session is booked from the appointment screen beside visits in person, and
+            the fee can be paid online when the session is booked. EasyClinic has video and chat built in,
+            so you and the patient join from a web browser on a computer or a phone, with no other software
+            to install. The prescription from the session goes to the patient on WhatsApp or by email, and
+            says the consultation was held remotely.
+          link:
+            label: Read how video consultations work
+            href: /features/telehealth/
+        - heading: A course of therapy, billed as one package
+          plan: premium
+          body: >-
+            On Premium a course of therapy can be billed as one package treatment, with the payment spread
+            over the course. Each advance or part payment is recorded against the bill, so the desk can see
+            what is still owed before the next session.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Cura AI drafts the note
+          plan: professional
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note and the prescription in the
+            patient's chart, and the draft stays a suggestion until the clinician corrects and confirms it.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        These are EasyClinic's public ratings, from clinics of every kind. A psychiatrist who wrote, after
+        ten years on EasyClinic, that it took his practice from pen and paper to a digital record is quoted
+        on [the EMR page](/features/emr/).
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, short enough to fit between appointments, so the practice keeps seeing
+        patients while the team learns.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the clinicians use every day. Bring your receptionist, whose
+            login is part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            You work through the chart and the prescription on the kinds of case your practice sees, from a
+            first assessment to a follow-up.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You work through exercises on your own, then bring back the questions that came up.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a practice can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions mental health practice owners ask
+faq:
+  - question: What does EasyClinic cost for a psychiatry or psychology practice?
+    answer: >-
+      Premium, the plan with video consultations and your own clinical forms, costs
+      {price:inr.premium.annual} per doctor per month billed annually in India, or
+      {price:usd.premium.annual} in US dollars. Professional, at {price:inr.professional.annual} or
+      {price:usd.professional.annual}, has the EMR and billing but no video consultations. Both include a
+      reception login, with no setup fee and no binding contract.
+  - question: Can my receptionist read a patient's session notes?
+    answer: >-
+      No, not on the reception login that comes with every plan: it is not allowed into the EMR and cannot
+      issue prescriptions. Each clinician logs in as themselves with access set by role and by department,
+      and audit logs keep a record of what each user did.
+  - question: Can I keep psychometric test results on the patient's record?
+    answer: >-
+      Yes, results from standardised tests such as the Beck Depression Inventory or the MMPI are stored on
+      the patient's record, beside the session notes. If you use a paper questionnaire today, Premium lets
+      you rebuild it as a digital form in your practice's own layout with the form builder.
+  - question: Can I follow a patient's medication and dose changes over time?
+    answer: >-
+      Yes, psychotropic prescriptions are tracked with each dosage adjustment and refill reminders, and the
+      progress notes record the effect of each medication from visit to visit. The drug interaction check
+      alerts you to potential interactions or contraindications.
+  - question: Can I see patients by video?
+    answer: >-
+      Yes, on Premium, which includes video consultations: you and the patient join from a web browser on a
+      computer or a phone, with nothing to install. The fee can be paid online when the session is booked,
+      and the prescription goes to the patient on WhatsApp or by email with a note that the consultation
+      was held remotely.
+  - question: Can a patient pay for a course of therapy sessions in parts?
+    answer: >-
+      Yes, on Premium, where package treatments are part of the plan: the course is billed as one package
+      with the payment spread over it, and each advance or part payment is recorded against the bill.
+      Professional does not include package treatments.
+  - question: Does EasyClinic run the practice's pharmacy?
+    answer: >-
+      Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
+      Professional and Premium as a module. With the module, the pharmacist dispenses from the doctor's
+      prescription and tracks each batch to its expiry date.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      the practice needs a working line while it sees patients. A self-hosted option also exists, where the
+      system runs on the practice's own server rather than in EasyClinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where mental health practice owners go next
+  related:
+    - href: /solutions/solo-clinic/
+      label: Software for a solo practice
+      description: For a psychiatrist or psychologist running their own practice with a receptionist.
+    - href: /features/telehealth/
+      label: Video consultations
+      description: Video sessions booked beside visits in person, with the fee paid online at booking.
+    - href: /features/emr/
+      label: The EMR and e-prescriptions
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      label: Clinic software in Kenya
+      description: EasyClinic for clinics in Kenya, with prescriptions in English and Swahili.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See a mental health record on EasyClinic
+  body: >-
+    Book a demo and ask to see a psychotropic prescription with its dose changes, and what the reception
+    login can and cannot open. Or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a mental health practice demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    Every capability is taken from EasyClinic's three live mental health pages, down to
+    the video-session prescription that says it was a remote consultation and the reception login that
+    cannot open the EMR, though nothing on it is specific to one country beyond the rupee price.
+  readsMachineWritten: >-
+    The four pain scenes are composites rather than a named practice, and a psychiatrist will notice that
+    the page names no PHQ-9 or GAD-7 form and does not say whether a confidential note is hidden from other
+    clinicians.
+
+notes:
+  - 'Recruit a named mental health testimonial (spec 5.15 item 9): a named psychiatrist, psychologist or mental health practice owner on EasyClinic, with city, practice and consent on file, added to src/data/testimonials/ and placed only on this page. The two psychiatrist testimonials that exist are already placed: nrp-chandra-balaji on /features/emr/ and srinivasa-teja on /indiademo/ (both have city null). If one is reassigned here, remove it from its current page. Until then the proof is the Capterra and Google badges, and the intro only points to the EMR page quote (no testimonial id is placed here). Review counts are null in facts.yaml, so the badges show no count.'
+  - 'Grounding (live pages retrieved 2026-09-26). /mental-health/: mental health evaluations, family history, substance use history and diagnostic criteria; progress notes for symptoms, therapy progress and medication effects; drug interaction checks (alerts for potential interactions or contraindications); customisable intake forms, detailed or concise, feeding the facesheet; form builder for paper forms; visit history on one screen; side-by-side past records; confidential notes, collaborative case notes (EMR list); in-built video and chat, video consults created through the appointment module with online fee payment, browser on computer or phone, teleconsult prescriptions by WhatsApp, SMS or email with a disclaimer that the consult was remote; part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments; multi session booking, data access control for reception, confidential appointment (scheduling list); access rights and audit logs, access by roles, departments and hierarchical levels, usage history, role based access. /psychiatry-emr/: customisable treatment plans with therapy goals, progress tracking and milestones; medication management (psychotropic prescriptions, dosage adjustments, refill reminders). /psychology-emr/: session notes, observations and assessments; psychometric test management (results from standardised tests such as MMPI, Beck Depression Inventory or IQ tests). Reception login rule from facts.md. Plans from plans.yaml (video consultations, own clinical forms, package treatments and WhatsApp messages on Premium; pharmacy and inventory on Enterprise or as a module). WhatsApp prescription sending is tied to Premium to match /features/emr/.'
+  - 'Spec 5.15 must-haves left out (company to-do). (1) Session notes separate from the shared chart: the live pages list "Confidential notes" and "Confidential Appointment" as feature names but do not say what either hides or from which roles; company to describe who can read a confidential note (the author only, prescribers, the care team) and what a confidential appointment hides at the desk, then add a row and a FAQ ("Are therapy notes kept apart from the rest of the chart?"). (2) Outcome scales PHQ-9 and GAD-7: not named on any live page; company to confirm whether they exist as ready templates, whether the total is scored automatically and whether the score is charted as a trend across sessions (the live pages list "Growth & Progress charts" without detail). Until then the page offers the stored psychometric results named on /psychology-emr/ and the Premium form builder, and does not name PHQ-9 or GAD-7 as a capability. (3) Medication audit: the page states dose-by-dose tracking and user audit logs, both grounded, but not a medication audit trail; company to confirm whether each prescription change is logged with the user and time, and whether a report of psychotropic or controlled prescribing exists. (4) Consent language per country: nothing on the live pages; company to confirm whether consent forms (treatment, teletherapy, information sharing) can be captured and stored, and in which countries'' wording. Teletherapy is included (video consultations are Premium in plans.yaml).'
+  - 'Also for the full spec 5.15 template: which plan carries the psychiatry and psychology screens (treatment plans, medication management, psychometric results, role and department access are listed on the live pages with no plan, so those rows carry no plan badge and the featureRows intro no longer says Premium includes every row; it says only that most specialists choose Premium, from the plans.yaml highlight); the mental health templates and forms by name and count (spec item 5; no dataTable, because the only template claim is the "Psychiatry consultation templates: Yes" cell in the live comparison table); a timed walkthrough of a follow-up visit (item 4); which mental health note types Cura AI drafts, with an example (item 8); devices and integrations (item 6, none for this specialty, section left out); whether counsellors and psychologists who do not prescribe need a paid per-doctor licence.'
+  - 'Dropped from the live pages: the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial); "prescriptions in 30 seconds", "three clicks" and "invoices ready in less than 10 seconds" (unmeasured here); "over 100 graphical dashboards"; "Reduces no-shows" (no measured figure); both comparison tables on /psychiatry-emr/ (unsourced competitor cells; its "Inventory for medicines & supplies: Built-in" conflicts with plans.yaml); AI-powered diagnostic support and ADR alerts (CuraPilot claims); AI wait-time management and AI two-way messaging; patient self-service booking, check-in and intake forms on the phone (plan unclear; the patient portal and app is Enterprise); "ensuring clarity and compliance" after the teleconsult disclaimer; data warehouse and Power BI; "any language" prescriptions (the EMR page limits this to English and Swahili in Kenya). Multi-session booking (scheduling list, no plan) was taken out of the Premium package row so the Premium badge does not claim it; add it back once its plan is known. Refund and invoice-voiding authorisation (billing on every plan) was taken out of the same row for the same reason. The duplicated placeholder sentence the spec mentions for staging does not exist in this rewrite.'
+  - 'Confidentiality wording is limited to what the live pages state: the reception login cannot open the EMR (facts.md), access by role and department, audit logs and usage history, and the names "confidential notes" and "confidential appointment". The page claims no compliance with any law (India DPDP Act, Mental Healthcare Act 2017, NMC telemedicine guidelines, Kenya or Nigeria data protection) and names none. The front-desk pain is about the paper file, not the appointment register: what "confidential appointment" and "data access control for reception" hide in the scheduler is not stated on the live pages, so the fix rests only on the reception login rule, roles and audit logs.'
+  - 'Title 53 characters (spec 4.3 wording); meta description 145 characters with the token resolved. H1 is the spec 4.3 row wording, as the page brief asks. WhatsApp, SMS and email lists were cut to two channels in running text (spec 6.2, no groups of three); the teleconsult prescription can also go by SMS. The four pains are illustrative situations, not customers. No heroMedia or media: screenshots do not exist yet. When the seeded demo tenant exists: a psychiatry follow-up with the dose history beside the progress note as hero, and the reception view of the same patient without EMR access.'
+  - '/clinic-management-software-india/ and /emr-software-in-kenya/ are drafts; the related links resolve once they publish. /psychiatry-emr/, /psychiatry-emr-software/ and /psychology-emr/ already redirect here in src/data/redirects.yaml, so the page sets no redirectFrom.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person on it and no measured number, so it meets two of the four pass marks (a local fact in the rupee price, and admissions of limits in the pharmacy and offline FAQs) until a testimonial arrives.

@@ -12,6 +12,10 @@ export type RegulatorState = (typeof REGULATOR_STATES)[number];
 export const INTEGRATION_STATES = ['live', 'beta', 'planned'] as const;
 export type IntegrationState = (typeof INTEGRATION_STATES)[number];
 
+/** Spec 5.17 /integrations directory categories, in the order the page shows them. */
+export const INTEGRATION_CATEGORIES = ['payments', 'insurance', 'national-health', 'labs', 'accounting', 'bi', 'messaging', 'emr'] as const;
+export type IntegrationCategory = (typeof INTEGRATION_CATEGORIES)[number];
+
 export const CURRENCIES = ['USD', 'INR', 'KES', 'AED', 'NGN'] as const;
 export type Currency = (typeof CURRENCIES)[number];
 

@@ -3,7 +3,7 @@ path: /specialties/
 headKeyword: specialty EMR software
 secondaryKeywords: [EMR by specialty, specialty clinic software]
 title: 'Specialty EMR Software for Clinics: EasyClinic'
-metaDescription: 'EasyClinic by specialty: templates, packages and records for IVF, physiotherapy, dental, dermatology, paediatric and other clinics.'
+metaDescription: 'EasyClinic by specialty: templates, packages and records for IVF, physiotherapy, dental, dermatology, paediatric, ENT and other clinics.'
 h1: EasyClinic for your specialty
 linkLabel: Specialties
 openingAnswer: 'EasyClinic''s Premium plan adds specialty EMR templates, your own clinical forms and package treatments, priced at {price:usd.premium.annual} per doctor per month billed annually. Each specialty page shows what a clinic in that field uses most.'
@@ -37,6 +37,9 @@ sections:
             - { href: /orthopedic-emr/, label: Orthopaedics, icon: bone }
             - { href: /obgyn-emr-software/, label: OB-GYN, icon: heart }
             - { href: /ayurveda-clinic-management-software/, label: Ayurveda, icon: pill }
+            - { href: /general-practitioner-emr/, label: General practice, icon: stethoscope }
+            - { href: /ent-emr-software/, label: ENT, icon: stethoscope }
+            - { href: /neurology-emr/, label: Neurology, icon: brain }
   - discriminant: proofBlock
     value:
       heading: Rated by the doctors who use it

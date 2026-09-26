@@ -1,0 +1,336 @@
+# /general-practitioner-emr/ (spec 5.15 SpecialtyPage template). There is no spec 4.3 keyword row and no
+# spec 5.15 must-have row for general practice, so the head keyword, title and H1 follow the Phase 3 brief.
+# The staging audit keeps this slug and merges /family-physician-emr/ into it (301 already in
+# src/data/redirects.yaml). Spec 4.5 rule 5: this page owns the GP and family physician specialty terms;
+# /solutions/solo-clinic/ owns the size terms (solo, single-doctor, small clinic), which are not used here.
+# Grounding: capability statements the live /general-practitioner-emr/ and /family-physician-emr/ pages make
+# plainly (retrieved 2026-09-26), plans.yaml, and the live /pricing/ line that Professional is "best suited
+# for general practitioners and physicians" (migration/research/facts.md section 1).
+status: published
+headKeyword: EMR for general practitioners
+secondaryKeywords:
+  - GP EMR software
+  - family physician EMR
+  - family medicine EMR software
+  - general practice EMR
+title: 'EMR Software for General Practitioners: EasyClinic'
+metaDescription: >-
+  EMR for general practitioners and family physicians: history and immunisations on one facesheet,
+  vitals charted over years, from {price:usd.professional.annual} a doctor a month.
+h1: EMR for general practitioners and family physicians
+linkLabel: General practice
+eyebrow: For general practitioners and family physicians
+openingAnswer: >-
+  What a general practitioner needs from an EMR, beyond a visit note and a prescription, is the long view
+  of patients seen for years: the whole history on one facesheet, immunisations and chronic conditions
+  such as diabetes included, and a way to bring each patient back or send them on, with a reminder for
+  the next check-up or a referral written in the consult. EasyClinic's EMR and e-prescriptions come with
+  every plan, starting with Professional, the plan meant for general practitioners and physicians, at
+  {price:inr.professional.annual} per doctor per month in India or {price:usd.professional.annual} in US
+  dollars, billed annually.
+summary: >-
+  The whole history on one facesheet, vitals charted over the years, referrals written in the consult and
+  reminders for check-ups, with the EMR on every plan from {price:usd.professional.annual} per doctor per
+  month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Professional pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for general practitioners and would like to book a demo for my practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-general-practice-loses-track
+      heading: Where a general practice loses track
+      intro: >-
+        A general practice sees the same patients for years, for a cough one month and a blood pressure
+        review the next. Most of what goes wrong is history that does not follow the patient into the
+        consulting room.
+      items:
+        - heading: The history is in last year's file
+          body: >-
+            A patient you have seen since her children were small comes in with chest pain. Her father's
+            heart attack and the smoking she gave up are written in an old file, and the doctor who saw her
+            on Saturday had neither in front of him.
+          fix: >-
+            The history is taken once and kept. Chronic conditions, family and social history, substance
+            use and immunisations go into the intake form and onto the patient's facesheet, which is in
+            front of you at every follow-up.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: Blood pressure readings on the back of old prescriptions
+          body: >-
+            A patient with hypertension comes in every two months. Each reading is on that visit's
+            prescription, so deciding whether the new tablet is working means turning pages and doing the
+            arithmetic in your head.
+          fix: >-
+            Vitals are recorded at each visit and charted over time, so the trend since the tablet changed
+            is one graph on the screen. On Premium, lab reports come into the chart as well, and their
+            values can be charted the same way.
+        - heading: The check-up nobody reminds them about
+          body: >-
+            The annual check-up and the vaccination you advised both depend on the patient remembering.
+            Some forget, and nobody at the clinic knows until they walk in again with something else.
+          fix: >-
+            Set the follow-up in the consult and the patient is reminded automatically, and the EMR can send
+            alerts when an annual check-up or a vaccination is due. Reminders go by SMS and email on every
+            plan, and by WhatsApp on Premium.
+          href: /features/patient-engagement/
+          linkLabel: Read how reminders and recalls work
+        - heading: The referral goes out on a prescription slip
+          body: >-
+            You send a patient to a cardiologist with a note on the back of a prescription slip. The report
+            comes back weeks later in the patient's bag, and whether it reaches the file depends on who is
+            at the desk that day.
+          fix: >-
+            The referral is written in the consult, alongside the note and the prescription, and it stays on
+            the patient's record. When the specialist's report comes back, it is uploaded to the patient's
+            record as a document or an image, beside your own visits.
+
+  - discriminant: featureRows
+    value:
+      id: built-around-the-gp-chart
+      heading: Built around the general practice chart
+      intro: >-
+        The EMR and e-prescriptions come with every plan, starting with Professional. Your own templates
+        and lab reports in the chart come with Premium, at {price:inr.premium.annual} per doctor per month
+        in India or {price:usd.premium.annual} in US dollars, billed annually.
+      items:
+        - heading: The facesheet and the history
+          body: >-
+            The history is taken on an intake form, as detailed or as brief as you want it, and what it
+            records lands on the patient's facesheet. The facesheet and the auto-generated summary put the
+            key facts in front of you at every follow-up, and each past visit stays on the same record
+            with its diagnosis and treatment.
+          bullets:
+            - Chronic conditions, with family and social history
+            - Substance use and obs-gynae details
+            - Immunisations and COVID history
+            - Alternative therapies the patient uses
+        - heading: Chronic conditions over the years
+          body: >-
+            Patients with diabetes or hypertension are tracked over the long term. Vitals and other clinical
+            parameters are charted visit by visit, so a change in treatment can be read against the trend.
+            On Premium, lab reports come into the chart and their values are charted as well.
+        - heading: Follow-ups and check-ups
+          body: >-
+            The follow-up is set during the consult, and the patient gets an automated reminder before it
+            is due. The EMR also sends alerts when an annual check-up or a vaccination is due. Appointment
+            reminders go by SMS and email on every plan, and by WhatsApp on Premium.
+          link:
+            label: Read how reminders and recalls work
+            href: /features/patient-engagement/
+        - heading: Referrals and reports from outside
+          body: >-
+            Referrals are written in the consult and managed from the patient's record, so the referral
+            stays with the rest of the history. Reports and images that come back from a specialist or a
+            scan centre are uploaded to the same record.
+        - heading: Your own templates for the conditions you see most
+          plan: premium
+          body: >-
+            Family practice has its regular conditions, such as diabetes or a respiratory infection, and a
+            template for each saves writing the same note from scratch. On Premium you can have a template
+            for each of them, and turn your paper forms into digital ones with the form builder.
+          link:
+            label: Compare what each plan includes
+            href: /pricing/
+        - heading: Cura AI drafts the note
+          plan: professional
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the visit note for you to review and
+            sign, and it is optional: a doctor who prefers to write every note writes it in the same chart.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: featureRows
+    value:
+      id: a-walk-in-visit
+      heading: A walk-in visit, from the token to the follow-up
+      intro: >-
+        A general practice sees many of its patients without a booking, so the visit starts at the desk
+        and ends with the next appointment. The appointment book and billing come with every plan.
+      items:
+        - heading: 'At the desk: the token and the queue'
+          body: >-
+            A walk-in gets a token number and joins the day's list beside the booked patients, first come
+            first served, and a patient who needs to be seen sooner can be moved up as a priority. The desk
+            sees the queue and each patient's waiting time as the day goes on.
+          link:
+            label: Read how the appointment book works
+            href: /features/appointment-scheduling/
+        - heading: 'Before the consult: triage'
+          body: >-
+            Triage is part of the EMR, for deciding who needs to be seen first when the waiting room is
+            full.
+        - heading: 'In the consult: point and click'
+          body: >-
+            The chief complaint, the history, the vitals and the examination are recorded by pointing and
+            clicking, with auto-complete for notes and diagnoses. Investigations, referrals, the follow-up
+            date and advice for the patient are added in the same consult.
+        - heading: The prescription, checked and sent
+          body: >-
+            The prescription is written on the same record, with the drug interaction check built into the
+            EMR. It can be printed, or sent to the patient by SMS or email and, on Premium, by WhatsApp, and
+            it can be bilingual, such as English and Swahili for clinics in Kenya.
+        - heading: 'Back at the desk: the bill'
+          body: >-
+            The receptionist raises the bill in one click from the clinic's service list, and on Premium the
+            receipt goes to the patient on WhatsApp. Part payments are recorded against the bill, and a refund or a discount goes through only with authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        We do not yet have a general practitioner's account of this chart to put on this page. These are
+        EasyClinic's public ratings on Capterra and Google, from clinics of every kind.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, short enough to fit between the morning and evening clinics, so the
+        practice keeps seeing patients while the team learns.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the doctors use every day. Bring your receptionist, whose login
+            is part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: You work through the chart and the prescription on the kinds of cases your clinic sees.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note and prescription quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions general practitioners ask
+faq:
+  - question: Which EasyClinic plan does a general practice need, and what does it cost?
+    answer: >-
+      Professional, the plan meant for general practitioners and physicians, costs
+      {price:inr.professional.annual} per doctor per month billed annually in India or
+      {price:inr.professional.quarterly} billed quarterly, and {price:usd.professional.annual} or
+      {price:usd.professional.quarterly} in US dollars. It includes the EMR, e-prescriptions, Cura AI,
+      billing and the appointment book, and the price includes a reception login, with no setup fee or
+      binding contract. Premium, at {price:inr.premium.annual} or {price:usd.premium.annual} billed
+      annually, adds WhatsApp messages, video consultations, lab reports in the chart and your own
+      templates and forms.
+  - question: Can I track patients with diabetes and hypertension over the years?
+    answer: >-
+      Yes, chronic conditions such as diabetes and hypertension are tracked over the long term, with
+      vitals and other clinical parameters charted visit by visit on the patient's record. On Premium, lab
+      reports come into the chart and their values are charted too, and you can have your own template for
+      each condition you see often.
+  - question: Does EasyClinic remind patients about check-ups and vaccinations?
+    answer: >-
+      Yes, the EMR sends alerts when an annual check-up or a vaccination is due, and a follow-up set during
+      the consult brings the patient an automated reminder. Appointment reminders go by SMS and email on
+      every plan, and by WhatsApp on Premium.
+  - question: I have years of paper files. Can they go into EasyClinic?
+    answer: >-
+      Yes, as scans: documents and images can be uploaded to each patient's record, so pages from the old
+      file sit beside the new visits. The history you want on the facesheet, such as chronic conditions and
+      immunisations, goes in through the intake form, which you can fill in at the patient's next visit.
+  - question: Can I dispense medicines from my clinic with EasyClinic?
+    answer: >-
+      Yes, but not on Professional or Premium alone: pharmacy and inventory come with Enterprise, or as a
+      module added to Professional or Premium. With it, medicines are dispensed from the doctor's
+      prescription and tracked by batch and expiry date.
+  - question: Can I see follow-up patients by video?
+    answer: >-
+      Yes, on Premium, which includes video consultations: you and the patient join from a web browser on
+      a computer or a phone, and the fee can be collected online when the consult is booked. The
+      prescription is sent to the patient afterwards and carries a line saying the consult was held
+      remotely.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic is cloud software and does not run fully offline today, so plan for a working
+      connection in the consulting room. If the line at your clinic drops often, keep a backup connection,
+      such as a mobile hotspot.
+  - question: Do I have to use the AI?
+    answer: >-
+      No, Cura AI (documentation) is optional. It comes with every plan and drafts the visit note for you
+      to review and sign, but a doctor who prefers to write every note writes it in the same chart without
+      it.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where general practitioners go next
+  related:
+    - href: /solutions/solo-clinic/
+      label: EasyClinic for a solo doctor clinic
+      description: For a doctor running their own clinic with a receptionist, on the Professional plan.
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      label: Clinic software in Kenya
+      description: What a clinic in Kenya needs from its software, with prescriptions in English and Swahili.
+    - href: /features/emr/
+      label: The EMR and e-prescriptions
+      description: The chart and the prescription on every plan, with Cura AI drafting the note.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: Professional at {price:usd.professional.annual} per doctor per month, and what Premium adds.
+
+closing:
+  heading: See a general practice visit on EasyClinic
+  body: >-
+    In 20 minutes we follow one patient from the token at the desk through the facesheet and the
+    prescription to the follow-up reminder. If a call is too much today, send us a WhatsApp message from
+    this page instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Professional pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The history intake fields and the check-up and vaccination alerts come from EasyClinic's own general
+    practitioner and family physician pages, and the plan split a GP meets is stated as it is: the EMR on
+    Professional, the dispensary only on Enterprise or as a module.
+  readsMachineWritten: >-
+    The four pain scenes are composites rather than a named practice's day, and with no general
+    practitioner quoted and no visit timed, a GP may find the two feature sections read like a capability
+    list.
+
+notes:
+  - 'Grounding: stated plainly on the live /general-practitioner-emr/ and /family-physician-emr/ pages (retrieved 2026-09-26): customisable intake forms capturing chronic conditions, family and social history, obs-gynae details, substance use, alternative therapies, COVID history and immunisations, fed into the face sheet; auto-generated summaries and facesheets; charts of vitals, lab reports and clinical parameters; point-and-click documentation of chief complaints, history and vitals with auto-complete notes, diagnoses, investigations, referrals, follow-ups and patient guidelines; referral management, automated follow-up, drug interaction check, triage, image and document upload, multilingual prescriptions; prescriptions shared by print, WhatsApp, SMS or email; templates for common family medicine conditions (diabetes, hypertension, respiratory infections) and preventive care reminders for annual check-ups, vaccinations and screenings (family physician page); the FAQ lines on long-term tracking of diabetes and hypertension and on vaccinations and routine check-ups; token numbers, first-come-first-serve, docket numbers and priority patients, queue status and waiting times; one-click billing from a service list, part payments, refunds and invoice voiding with authorisation, discount authorisation, receipts by WhatsApp, SMS or email; video consults in the browser with online fees and a remote-consult line on the prescription. "Professional, the plan meant for general practitioners and physicians" rests on the live /pricing/ "Best suited for: general practitioners and physicians" (facts.md section 1); plans.yaml bestFor says "A doctor running their own clinic, with a receptionist", which is size wording owned by /solutions/solo-clinic/, so it is not quoted here.'
+  - 'Recruit a named general practitioner testimonial (spec 5.15 item 9): a named GP or family physician on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow, ideally about the facesheet, chronic-condition charts or referrals. Dr Sanjay Teotia (general physician) is already placed on pricing/india.yaml, and his quote is about ease of use rather than a GP feature, so he is not used here. Until then the proof block is the Capterra and Google badges with no count (review counts are null in facts.yaml).'
+  - 'Plan placement (company to confirm): plans.yaml puts "Patient records and the EMR" and "E-prescriptions" on Professional but does not say whether the intake form, the facesheet, vitals charts, preventive care alerts, referral management, triage, the drug interaction check or bilingual prescriptions are on Professional. The live GP page lists them in its general EMR section, so those rows carry no plan badge and the featureRows intro names only what Premium adds; nothing says the unbadged rows are on Professional. The family medicine condition templates are shown as Premium (specialty EMR templates and your own clinical forms in plans.yaml); if they are on Professional, drop the badge. Whether SMS and email delivery of prescriptions and receipts is on Professional is also unconfirmed (plans.yaml names only SMS and email reminders).'
+  - 'Spec 5.15 template items left out for lack of a public fact (company to-do): (3) screenshots of each chart object; (4) a timed walkthrough of the most common GP visit (the walk-in section is untimed); (5) GP templates and forms named and counted (the live page names only diabetes, hypertension and respiratory infections, "such as", so no dataTable); (6) devices used in general practice, such as BP monitors, glucometers or ECG machines, and whether any connect (section left out); (8) which note types Cura AI drafts for a GP visit, with one example note; (9) the named GP testimonial above. Also to confirm: whether preventive care alerts follow a national immunisation schedule (India UIP, Kenya KEPI) or are set per patient, and by which channel they go out; whether a nurse or clinical assistant doing triage and vitals needs a paid licence; which prescription languages exist beyond English and Swahili.'
+  - 'Dropped from the live pages: "Create and share in 30 seconds" and "invoices ready in less than 10 seconds" (unmeasured here); the two comparison tables ("Easy Clinic vs Other EMR" and "EMR Software Comparison for General Practitioner Clinics", unsourced competitor cells); "over 100 graphical dashboards"; "Reduces no-shows" (noShowReduction is null); AI-powered diagnostic support, differential diagnoses and ADR alerts (CuraPilot claims); AI-powered wait time management and AI two-way messaging; "Inventory for medicines & supplies Built-in" and the FAQ "Inventory management is included" (plans.yaml puts pharmacy and inventory on Enterprise or as a module; the page says so in the dispensing FAQ); patient self check-in and self-service intake on the phone (the patient portal and app are Enterprise; plan unclear); the "Advanced EMR for specialists" list (medical calculators, side-by-side past records, nurse intake, tabular Rx, growth and progress charts), because the live /pricing/ names "Advanced EMR for Specialists" as a Premium inclusion and the items are not tied to a plan; the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial); the shared testimonials (placed on other pages); HR, roster, incentive and commission plans, data warehouse, Power BI and Azure Data Factory (not GP-specific and plan unknown); "Where clinics lose time" filler (replaced by four GP-specific pains).'
+  - 'No heroMedia and no media: screenshots do not exist yet. When the seeded demo tenant exists: the GP facesheet with history, immunisations and a BP chart as hero, the referral on the record, and the token queue at the desk. The four pains are illustrative general practice situations, not customers; "every two months" and "Saturday" are examples.'
+  - 'Title 50 characters; meta description 150 characters with the $79 token resolved (154 in the lint, which counts a token as 7). H1 follows the brief rather than the spec 5.15 item 1 pattern, whose colon clause would need a group of three. The opening answer names what a GP needs beyond a note and a prescription (spec 5.15 item 2) as two items, to avoid a group of three.'
+  - 'Related links: /solutions/solo-clinic/ is the solution page for the usual GP practice size (spec 2.9); /clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts and will resolve when they publish. The Kenya description names bilingual prescriptions only and says nothing about integration status.'
+  - 'Adversarial fact check, 2026-09-26 (live /general-practitioner-emr/ and /family-physician-emr/ re-fetched): cut "moving old records across from another system adds time" from the go-live note (no source; the /kenyademo/ 3-day path lists data migration as one of its steps, and home.yaml cut the same line); cut "the vitals taken before the consult are on the chart" from the triage row (pre-consult vitals by a nurse is the "Clinical Assistant / Nurse intake" item in the Premium "Advanced EMR for specialists" list; triage alone is stated); cut "on the screen before the patient sits down", "on one screen" and "on the same screen" (the live pages say "for quick and easy reference during follow-ups" and "without navigating complex screens", and "single screen" appears only in the Advanced EMR list); cut "warns you while you are still writing it" from the drug interaction check (only the check itself is stated); cut "so stock is reordered" as a consequence of batch and expiry tracking in the dispensing FAQ; cut "Most do not" and "the problem the check-up was meant to catch" (unmeasured, and an outcome claim); fixed groups of three (templates row; past visits, diagnoses and treatments; prescription channels); replaced the referral FAQ, which repeated pain 4 and the referrals row, with the paper-files question answered from the stated image and document upload and intake form; the offline FAQ now gives advice rather than asserting how much of the product needs a connection, since the live wording is "does not run fully offline today".'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price and the Kenyan bilingual prescription, and admissions of limits in the dispensing, offline and plan FAQs) until the testimonial arrives.

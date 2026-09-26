@@ -1,0 +1,430 @@
+# /obgyn-emr-software/ (spec 5.15 SpecialtyPage, keyword row 4.3). The live slug is kept rather than the spec's
+# /obgyn-emr because it has history; the specialties and solutions hubs already link here.
+# Grounding: capability statements the live /obgyn-emr-software/ page makes plainly (retrieved 2026-09-26),
+# plans.yaml, the reception rule from the live /pricing/ FAQ, and the inpatient scope in spec 5.8. No template
+# counts beyond the three the live page names, no device integrations, no outcomes.
+status: published
+headKeyword: OB-GYN EMR software
+secondaryKeywords:
+  - gynecology clinic software
+  - prenatal care software
+  - gynaecology EMR software
+title: 'OB-GYN and Gynaecology EMR Software: EasyClinic'
+metaDescription: >-
+  OB-GYN EMR software: each pregnancy tracked to the due date on one record, and antenatal care billed as a
+  package on Premium at {price:inr.premium.annual} a doctor a month.
+h1: 'EMR for OB-GYN and gynaecology clinics: antenatal visits and scan reports on one record'
+linkLabel: OB-GYN and gynaecology
+eyebrow: For obstetricians and gynaecologists
+openingAnswer: >-
+  An OB-GYN clinic needs two things a general EMR leaves out: a pregnancy record that carries gestational
+  age and the due date from one antenatal visit to the next, and gynaecology templates for examinations
+  such as a Pap smear. EasyClinic has both, with the templates on Premium, its plan for specialists, which
+  also bills antenatal care as one package paid in parts, at {price:inr.premium.annual} per doctor per month
+  in India or {price:usd.premium.annual} in US dollars, billed annually.
+summary: >-
+  Each pregnancy on one record, from gestational age to the due date, with antenatal care billed as one
+  package paid in parts on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book an OB-GYN clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for OB-GYN clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-obgyn-clinic-loses-track
+      heading: Where an OB-GYN clinic loses track
+      intro: >-
+        An antenatal patient comes back every few weeks for nine months, and most of what goes missing falls
+        between one visit and the next.
+      items:
+        - heading: The antenatal card stays at home
+          body: >-
+            At the 28-week visit the patient arrives without her antenatal card, which holds the date of her
+            last period and the dates of her scans. The doctor works out the gestational age again from what
+            the patient remembers, and it does not quite match the due date written in the file last month.
+          fix: >-
+            Gestational age and the due date are tracked on the patient's record, with every antenatal visit
+            beside them, so the doctor reads them on screen before the patient sits down.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: Scan reports pile up in the paper file
+          body: >-
+            The anomaly scan was done at a diagnostic centre across town, and the printout goes into the
+            clinic's paper file behind the dating scan. At the next visit the doctor turns the pages to compare
+            the two while the patient waits.
+          fix: >-
+            The report and the scan images are uploaded to the patient's file on the day she brings them, and
+            the fetal growth parameters from each scan are tracked on the pregnancy record, so the doctor reads
+            them there instead of in the paper file.
+        - heading: The package is paid in parts and tracked in the receipt book
+          body: >-
+            The clinic sells antenatal care as a package, with an advance at the first visit and the rest in
+            instalments. The receipt book shows each payment but not the package it belongs to, and when a
+            patient moves to her mother's town at 32 weeks, nobody can say what she has paid for.
+          fix: >-
+            On Premium, antenatal care is billed as one package treatment, and every advance and part payment
+            is recorded against it. The front desk sees the balance on the bill, and a refund goes through only
+            with authorisation.
+          href: /pricing/
+          linkLabel: See what Premium includes
+        - heading: The smear result that nobody followed up
+          body: >-
+            A Pap smear goes to the lab and the result comes back two weeks later. The follow-up visit was
+            agreed in the consulting room and written down nowhere else, so the patient hears nothing until she
+            calls.
+          fix: >-
+            Book the follow-up before she leaves, and she gets an automated reminder by SMS and email, or by
+            WhatsApp on Premium. On Premium the lab report also comes into her chart.
+          href: /features/whatsapp/
+          linkLabel: Read how WhatsApp reminders work
+
+  - discriminant: featureRows
+    value:
+      id: built-around-the-pregnancy
+      heading: Built around the pregnancy record
+      intro: >-
+        An antenatal patient is seen many times over one pregnancy, so the record follows the pregnancy and
+        each visit is written against it. Rows marked Premium come with EasyClinic's plan for specialists.
+      items:
+        - heading: The pregnancy record, visit by visit
+          body: >-
+            Track gestational age and trimester progress through the pregnancy, with fetal growth parameters
+            and the due date on the same record. The antenatal visits and the follow-ups between them sit there
+            too, so a second obstetrician in the clinic opens the same history as the first.
+          bullets:
+            - Gestational age and trimester progress
+            - Fetal growth parameters over the pregnancy
+            - The due date on the record
+            - Antenatal visits and follow-ups in one place
+        - heading: Obstetric and menstrual history on the facesheet
+          body: >-
+            The intake form records the patient's obstetric and gynaecological history, including her menstrual
+            cycles and hormonal treatments, with family and social history beside it. It feeds the facesheet, so
+            at each follow-up the doctor reads the history on one screen.
+          bullets:
+            - Obstetric and gynaecological history
+            - Menstrual cycles and hormonal treatments
+            - Case history and facesheet built from the record
+            - Past visits side by side
+        - heading: Ultrasound reports in the file, vitals on a chart
+          body: >-
+            Ultrasound reports and other diagnostic records are stored in the patient's file, uploaded as
+            documents or images. Vitals such as blood pressure and weight can be charted visit by visit, so a
+            rising trend shows on one screen.
+        - heading: Lab reports in the chart
+          plan: premium
+          body: >-
+            On Premium, lab reports come into the patient's chart, and the values can be charted over time
+            beside the vitals. Full lab management, with orders from the chart and sample tracking, comes with
+            Enterprise or as a module added to Professional or Premium.
+        - heading: Antenatal care billed as one package
+          plan: premium
+          body: >-
+            On Premium, antenatal care is billed as one package treatment and the payment is spread over the
+            pregnancy, so the front desk sees what is paid and what is due before taking the next instalment.
+          bullets:
+            - Advances and part payments recorded against the package
+            - Refunds and voided invoices only with authorisation
+            - Taxable and non-taxable items kept apart on the bill
+            - Receipts and invoices sent to the patient on WhatsApp
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Video follow-ups
+          plan: premium
+          body: >-
+            For a follow-up that needs no examination, such as going over a report, book a video consultation
+            through the appointment screen and collect the fee online at booking. The patient joins from a web
+            browser on her phone, and the prescription is sent to her on WhatsApp or by SMS, marked as written
+            after a remote consultation.
+          link:
+            label: Read how video consultations work
+            href: /features/telehealth/
+        - heading: Cura AI drafts the note
+          body: >-
+            Cura AI (documentation) comes with every plan, Professional included. It drafts the consult note in
+            the patient's chart, and the doctor corrects it and confirms it.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: dataTable
+    value:
+      id: gynaecology-templates
+      heading: Gynaecology templates and your own forms
+      intro: >-
+        The gynaecology chart has its own templates for the examinations below, and the form builder turns a
+        paper form the clinic already uses into a digital one. All of them come with Premium, the plan for
+        specialists.
+      columns:
+        - Template or form
+        - What it records
+      rows:
+        - [Pap smear, The smear and its findings]
+        - [Pelvic examination, The examination and its findings]
+        - [Breast examination, The examination and its findings]
+        - [Your own form, 'The fields on your paper antenatal card or history sheet, rebuilt with the form builder']
+        - [Your own print layout, "The prescription and the case sheet, printed in your clinic's layout"]
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        We do not yet have an obstetrician's or gynaecologist's own words to put on this page. These are
+        EasyClinic's public ratings, which cover the product as a whole.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, short enough to fit between the morning and evening OPD, so the clinic
+        keeps seeing patients while the team learns.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the doctors use every day. Bring your receptionist, whose login is
+            part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            You work through the chart and the prescription on the kinds of case your clinic sees.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: Practice exercises on the screens from the first two days.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions OB-GYN clinic owners ask
+faq:
+  - question: Which EasyClinic plan does an OB-GYN clinic need, and what does it cost?
+    answer: >-
+      Premium, the plan for specialists, because the gynaecology templates and package treatments start on
+      it: {price:inr.premium.annual} per doctor per month billed annually in India or
+      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
+      {price:usd.premium.quarterly} in US dollars. It also brings lab reports into the chart and adds video
+      consultations. The price includes a reception login. There is no setup fee and no binding contract.
+  - question: Can EasyClinic track a pregnancy from one antenatal visit to the next?
+    answer: >-
+      Yes, gestational age, trimester progress, fetal growth parameters and the due date are tracked on the
+      patient's record, with each antenatal visit and follow-up on the same record. On Premium you can also
+      rebuild your paper antenatal card as a digital form with the form builder, so the fields your doctors
+      already use carry over.
+  - question: How do ultrasound reports get into the record, and does EasyClinic connect to our scan machine?
+    answer: >-
+      By upload: the ultrasound report and any images are stored in the patient's file as documents or
+      images, where the doctor opens them at the next visit. No plan lists a connection to an ultrasound
+      machine. Custom integrations, such as connections to lab machines or an existing HIS, are scoped per
+      project and come with Enterprise or as an add-on to Professional and Premium.
+  - question: Does EasyClinic cover the delivery and the delivery package?
+    answer: >-
+      No, the delivery is inpatient care, and EasyClinic does not run inpatient wards or operating theatres,
+      so the admission and the bill for the stay belong on the inpatient system of the hospital or nursing
+      home where she delivers. EasyClinic runs the antenatal and postnatal visits in the OPD, and on Premium
+      the antenatal care you sell as a package is billed as one package treatment, with the advance and each
+      part payment recorded against it.
+  - question: Who in the clinic can read a patient's gynaecological history?
+    answer: >-
+      Only the people whose role allows it: each person logs in as themselves, and the role on that login
+      decides which screens they can open. The reception login, included in the price, cannot open the EMR or
+      issue a prescription, so the front desk books and bills without reading clinical notes. The EMR also
+      has confidential notes, and user activity is kept in audit logs.
+  - question: Can EasyClinic run the pharmacy that dispenses our antenatal supplements?
+    answer: >-
+      Yes, with the pharmacy and inventory module, which is included in Enterprise or added to Professional
+      and Premium; Premium alone does not include it. With the module, the pharmacist dispenses from the
+      doctor's prescription and tracks each batch to its expiry date.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so the
+      clinic needs a working line while it sees patients. A self-hosted option also exists, where the system
+      runs on the clinic's own server rather than in EasyClinic's cloud.
+  - question: Is there a free trial?
+    answer: >-
+      No, EasyClinic does not offer a free trial. You can book a demo where we show the system on your own
+      clinic's patient flow, and if you want to test it on real patients, pay for one quarter; there is no
+      contract to break if you stop.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where OB-GYN clinic owners go next
+  related:
+    - href: /solutions/polyclinic/
+      label: Polyclinic software
+      description: >-
+        For a women's clinic with several doctors: one patient record for every specialist, and one calendar
+        for doctors and shared rooms.
+    - href: /ivf-emr/
+      label: IVF and fertility clinics
+      description: For a clinic that also runs IVF cycles, with each cycle on one record from stimulation to embryo transfer.
+    - href: /solutions/hospital-opd/
+      label: Hospital OPD and nursing homes
+      description: For a maternity nursing home that runs EasyClinic in the OPD, beside the inpatient system on the ward.
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      label: Clinic software in Kenya
+      description: EasyClinic for clinics in Kenya, where Penda Health's EMR has been EasyClinic since 2017.
+    - href: /features/emr/
+      label: The EMR and e-prescriptions
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See a pregnancy record and an antenatal package on EasyClinic
+  body: >-
+    Book a demo and ask to see a pregnancy record with a scan report uploaded to it and an antenatal package
+    paid in parts, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book an OB-GYN clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The antenatal card left at home at 28 weeks and the patient who moves to her mother's town at 32 weeks
+    with an antenatal package half paid are an Indian OB-GYN clinic's problems, and the page says plainly
+    where EasyClinic stops: the delivery and its bill stay on the inpatient system, no plan lists an
+    ultrasound machine connection, and only antenatal care is billed here as a package, on Premium.
+  readsMachineWritten: >-
+    The page has no named obstetrician, no screenshot and no measured number, the pain scenarios are
+    composites, the template table says little beyond each template's name, and an obstetrician will notice
+    that it does not say whether the due date is calculated from the last period or revised after the
+    dating scan.
+
+notes:
+  - >-
+    Grounding: pregnancy tracking (gestational age, trimester progress, fetal growth parameters and due
+    dates); gynaecological charting templates for Pap smears, pelvic exams and breast exams; menstrual cycles
+    and hormonal treatments in the history; obstetric-gynaecological details on intake forms feeding the
+    facesheet; auto-generated case histories and facesheets; side-by-side past records; ultrasound and
+    diagnostic report storage in patient files; image and document upload; vitals and lab charts; the form
+    builder for paper forms; personalised print formats and case sheet; confidential notes; antenatal visits
+    and follow-ups; prenatal and postnatal care; automated reminders and follow-up; part and advance payments,
+    refunds and invoice voiding with authorisation, payment amortisation for package treatments and taxable
+    item handling; receipts and invoices on WhatsApp; video consultations with online fees, browser access
+    and the remote-consultation disclaimer on the prescription; role-based access and audit logs. All are
+    stated plainly on the live /obgyn-emr-software/ page (retrieved 2026-09-26). Plan placement follows
+    plans.yaml; the reception rule is from the live /pricing/ FAQ; the inpatient scope follows spec 5.8 and
+    the published /solutions/hospital-opd/ page; the offline answer follows facts.md, worded as on the
+    cardiology and paediatric pages; the free-trial answer follows the spec 1.2 decision (no free trial) and
+    the /pricing/india/ wording.
+  - >-
+    Dropped from the live page: "prescriptions in just 30 seconds" and "three clicks" (unmeasured here); both
+    "Easy Clinic vs other EMR" comparison tables (unsourced competitor cells); AI-driven diagnostic
+    assistance, differential diagnoses and ADR alerts (CuraPilot claims); the drug interaction check (plan and
+    scope not stated); "invoices ready in less than 10 seconds"; "over 100 graphical dashboards"; "reduces
+    no-shows" (noShowReduction is null); AI wait-time alerts and AI two-way messaging; "Inventory for
+    medicines & supplies: Built-in" and the FAQ "Inventory management is included" (plans.yaml puts pharmacy
+    and inventory in Enterprise or an add-on); "fully cloud-based and accessible from anywhere" (the site
+    says it does not run fully offline); "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and
+    "try Easy Clinic absolutely free" (owner decision: no free trial, answered in the FAQ); patient
+    self-service intake and check-in on the phone (plan not stated; the patient portal and app are Enterprise
+    in plans.yaml); resource booking, multi-location scheduling, HR, roster and commission plans (not
+    specialty-specific); "fertility & treatment tracking" (owned by /ivf-emr/); the four testimonials from
+    psychiatrists, a general physician and an ophthalmologist, which belong on their own pages.
+  - >-
+    Company to-do, spec 5.15 must-have "antenatal timeline": the live page says gestational age, trimester
+    progress, antenatal visits and follow-ups are tracked, but names no timeline view and no antenatal visit
+    schedule, so the page describes the pregnancy record visit by visit and claims no timeline. Confirm
+    whether a timeline view exists (visits, scans and tests laid out by gestational week), whether the
+    schedule of antenatal visits is set up for each pregnancy and reminded automatically, and against which
+    guideline (India's antenatal schedule, Kenya's, or the WHO contact schedule).
+  - >-
+    Company to-do, spec 5.15 must-have "EDD": the live page says due dates are tracked but not how they are
+    set. Confirm whether the EDD is calculated from the last menstrual period, whether it can be revised
+    after the dating scan, and whether gestational age updates itself at each visit. The page says only that
+    the due date is tracked on the record; readsMachineWritten flags the gap.
+  - >-
+    Company to-do, spec 5.15 must-have "ultrasound records": stated only as report storage (documents and
+    images uploaded to the patient file) and "fetal growth parameters" tracking. Confirm which fetal
+    biometry fields are structured (for example BPD, HC, AC, FL and estimated fetal weight), whether they are
+    plotted on a growth chart, and any direct ultrasound machine or DICOM connection with its status. The FAQ
+    says only that no plan lists an ultrasound machine connection, and describes custom integrations in the
+    plans.yaml add-on wording (lab machines, an existing HIS, scoped per project) without claiming that an
+    ultrasound machine can be connected.
+  - >-
+    Company to-do, spec 5.15 must-have "delivery packages": the delivery is inpatient care, out of scope per
+    spec 5.8, so the page bills antenatal care as a Premium package treatment and says the delivery and its
+    bill stay on the inpatient system. Confirm whether an OB-GYN who delivers in her own nursing home can
+    bill a delivery package through EasyClinic billing and how that sits beside the inpatient bill, and
+    whether a package shows the visits used and remaining.
+  - >-
+    Other spec 5.15 template items left out for lack of facts: a timed walkthrough of an antenatal visit
+    (item 4); OB-GYN templates beyond the three the live page names, with a count (item 5); integrations and
+    devices such as ultrasound or CTG machines (item 6, no section); which OB-GYN note types Cura AI drafts,
+    with one example (item 8). Also unknown: which plan carries pregnancy tracking and the obstetric history
+    (the live page ties them to no plan, so those rows carry no plan badge and the plan FAQ recommends
+    Premium for the templates and packages only); what a confidential note hides and from whom, and whether
+    the live page's "confidential appointment" hides the patient's name on the calendar.
+  - >-
+    Recruit a named OB-GYN testimonial (spec 5.15 item 9): an obstetrician or gynaecologist on EasyClinic,
+    with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page.
+    Dr Seetha Lakshmi Kolanakuduru (Aditya Women and Infertility Clinic, Hyderabad) is placed on /ivf-emr/
+    only; a second quote from that clinic about antenatal records, or from another obstetrician, would serve
+    here. Until then the proof block is the Capterra and Google badges, with no counts (null in facts.yaml),
+    and its intro says no OB-GYN quote exists yet.
+  - >-
+    No heroMedia and no media: screenshots do not exist yet. When the seeded demo tenant exists: the
+    pregnancy record with gestational age, due date and fetal growth rows as hero, a scan report uploaded to
+    the patient file, the Pap smear template, and an antenatal package bill with part payments.
+  - >-
+    The four pains are illustrative OB-GYN clinic situations, not customers; "28 weeks", "32 weeks" and "two
+    weeks" are examples. The H1 keeps the spec 4.3 wording ("EMR for OB-GYN and gynaecology clinics") and
+    adds the spec 5.15 item 1 pattern after the colon with two objects rather than three, as the cardiology
+    and paediatric pages do; the eyebrow names the doctors so it does not repeat the H1. Title 47 characters
+    (spec 4.3 wording). Meta description 152 characters with the token resolved (153 as the lint counts it).
+  - >-
+    Links: /clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts and resolve once
+    they publish. The Kenya description uses the verified Penda Health fact (EMR on EasyClinic since 2017)
+    and names no integration, since integration status is unknown. /solutions/hospital-opd/ is linked for
+    the maternity nursing home reader because the delivery FAQ sends inpatient care there.
+  - >-
+    migration/posts-manifest.csv merges /clinic-automation-for-gynaecologists/,
+    /clinic-management-software-for-gynaecology/ and /ai-in-gynecology-emr-empowering-womens-health/ into
+    this page. No redirectFrom is set here: the manifest waits for marketing to confirm. The spec slug
+    /obgyn-emr never existed live; add it to src/data/redirects.yaml if a redirect is wanted.
+  - >-
+    The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and
+    answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only
+    two of the four spec 6.5 pass marks (a local fact in the rupee price and the Penda link, and admissions
+    of limits in the delivery, ultrasound, pharmacy and offline FAQs) until the testimonial arrives.
+  - >-
+    Editorial pass, 2026-09-26 (adversarial re-check against the live page, re-fetched the same day): H1
+    changed to carry the spec 4.3 wording; the second pain rewritten, since it repeated the first (a paper
+    record left at home) and its fix said "the growth is on screen", which the live page does not state; the
+    ultrasound FAQ no longer implies an ultrasound machine can be connected as custom integration work (plans.yaml
+    names lab machines, accounting and an existing HIS only); the "Who sees a gynaecological history" feature
+    row removed because it repeated the access FAQ nearly word for word; the template table note removed
+    because it repeated the "Your own form" row; the ratings intro no longer says the ratings come "from
+    clinics of every kind" (unsourced); the Cura AI row follows the /ai/ wording (drafts the note in the
+    chart, the doctor corrects and confirms it); the day 3 training step no longer describes a format the
+    source does not give.

@@ -5,6 +5,7 @@ import { schema as comparisonTable } from '../components/blocks/ComparisonTable/
 import { schema as decisionMatrix } from '../components/blocks/DecisionMatrix/schema';
 import { schema as sourceList } from '../components/blocks/SourceList/schema';
 import { schema as testimonialGrid } from '../components/blocks/TestimonialGrid/schema';
+import { schema as integrationDirectory } from '../components/blocks/IntegrationDirectory/schema';
 import { schema as vendorList } from '../components/blocks/VendorList/schema';
 import { schema as dayTimeline } from '../components/blocks/DayTimeline/schema';
 import { schema as flowDiagram } from '../components/blocks/FlowDiagram/schema';
@@ -45,6 +46,7 @@ export const BLOCK_SCHEMAS = {
   decisionMatrix,
   sourceList,
   testimonialGrid,
+  integrationDirectory,
   vendorList,
   dayTimeline,
   flowDiagram,

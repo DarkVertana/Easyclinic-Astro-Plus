@@ -12,6 +12,7 @@ import DayTimeline from './DayTimeline/DayTimeline.astro';
 import DecisionMatrix from './DecisionMatrix/DecisionMatrix.astro';
 import SourceList from './SourceList/SourceList.astro';
 import TestimonialGrid from './TestimonialGrid/TestimonialGrid.astro';
+import IntegrationDirectory from './IntegrationDirectory/IntegrationDirectory.astro';
 import VendorList from './VendorList/VendorList.astro';
 import DemoForm from './DemoForm/DemoForm.astro';
 import FlowDiagram from './FlowDiagram/FlowDiagram.astro';
@@ -44,6 +45,7 @@ export const BLOCKS = {
   decisionMatrix: DecisionMatrix,
   sourceList: SourceList,
   testimonialGrid: TestimonialGrid,
+  integrationDirectory: IntegrationDirectory,
   vendorList: VendorList,
   clinicTypes: ClinicTypes,
   contactCard: ContactCard,

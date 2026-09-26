@@ -1,0 +1,320 @@
+# /ophthalmology-emr/ (spec 5.15 SpecialtyPage, keyword row 4.3). Slug kept from the live site.
+# Grounding: capability statements the live /ophthalmology-emr/ page makes plainly (retrieved 2026-09-26) and
+# plans.yaml. No refraction fields, IOP charts, optical retail or device integrations: none is stated plainly.
+status: published
+headKeyword: ophthalmology EMR software
+secondaryKeywords:
+  - eye clinic management software
+  - eye clinic EMR
+title: 'Ophthalmology EMR Software: EasyClinic'
+metaDescription: >-
+  Ophthalmology EMR software: vision tests and OCT and fundus reports on one patient record,
+  with eye templates on Premium at {price:usd.premium.annual} per doctor a month.
+h1: 'EMR for eye clinics: vision tests and OCT reports on one patient record'
+linkLabel: Ophthalmology
+eyebrow: For eye clinics and eye hospitals
+openingAnswer: >-
+  An eye clinic needs two things on one patient record: each vision test and eye examination, kept visit
+  after visit, and the OCT and fundus reports that go with them. EasyClinic keeps both, and its Premium
+  plan adds preloaded templates for eye conditions such as glaucoma and cataract, at {price:inr.premium.annual} per doctor per month billed annually in India or
+  {price:usd.premium.annual} in US dollars.
+summary: >-
+  Each vision test and eye examination on one patient record with the OCT and fundus reports, and eye
+  condition templates on the Premium plan at {price:usd.premium.annual} per doctor per month.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book an eye clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for eye clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-eye-clinics-lose-track
+      heading: Where an eye clinic loses track
+      intro: >-
+        Many eye patients are seen for years: a glaucoma patient at every review, a cataract patient from
+        the first examination through surgery and back. What goes missing usually falls between those
+        visits.
+      items:
+        - heading: The scan report in a plastic folder
+          body: >-
+            A glaucoma patient comes back for review with this month's OCT printout and fundus photographs in
+            a plastic folder. Last year's scans are somewhere in the paper file, and the doctor spends the
+            first minutes of the consult laying two printouts side by side on the desk.
+          fix: >-
+            OCT and fundus reports, and the diagnostic data that comes with them, are stored in the patient's
+            record as uploaded images or documents. The visit history opens on one screen, and past records
+            can be opened side by side.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The glaucoma review nobody chased
+          body: >-
+            A patient on pressure-lowering drops is due back in three months. The date goes in the register,
+            the three months pass, and nobody reads that page until the patient turns up a year later.
+          fix: >-
+            Follow-up tracking for chronic eye conditions sits on the patient's record, and follow-ups are
+            automated, so the reminder goes out without anyone opening the register. SMS and email reminders
+            come with every plan, and Premium adds WhatsApp.
+          href: /features/whatsapp/
+          linkLabel: Read how WhatsApp reminders work
+        - heading: The spectacle prescription the optician misreads
+          body: >-
+            The eyeglass prescription is written by hand on a slip the patient carries to the optician down
+            the road. One figure can be read two ways, and a week later the patient is back with glasses made
+            to the wrong axis.
+          fix: >-
+            The eyeglass prescription is generated in EasyClinic and printed for the patient, or sent on
+            WhatsApp on Premium. It stays on the record, so the next visit starts from what was prescribed
+            last time.
+        - heading: The cataract package paid in parts
+          body: >-
+            Cataract surgery is quoted as one package and paid in parts, an advance when the date is booked
+            and the balance on the day. The receipts sit in the book, and when the patient asks what is still
+            owed, the desk adds them up by hand.
+          fix: >-
+            On Premium the surgery is billed as one package treatment, with the advance and each part payment
+            recorded against it, so the balance shows on the bill. A refund or a voided invoice goes through
+            only with authorisation.
+          href: /pricing/
+          linkLabel: See what Premium includes
+
+  - discriminant: featureRows
+    value:
+      id: built-around-the-eye-examination
+      heading: Built around the eye examination
+      intro: >-
+        Premium, EasyClinic's plan for specialists, includes every row below except the pharmacy, and the
+        rows marked Premium are not on Professional.
+      items:
+        - heading: Vision tests and eye examinations on the record
+          body: >-
+            Record each vision test and eye examination in detail, visit after visit, with the chief
+            complaint and history entered by point and click. The facesheet pulls the patient's key
+            data onto one screen, so a review starts from what was found last time.
+          bullets:
+            - Detailed vision test and eye examination records
+            - Intake by a clinical assistant or nurse before the consult
+            - The facesheet, with the patient's key data on one screen
+            - Case notes shared across the care team
+        - heading: OCT and fundus reports beside the visits
+          body: >-
+            Imaging reports and diagnostic data, such as OCT reports and fundus photographs, are stored in
+            the patient's record as uploaded images or documents. When you compare one visit with another,
+            past records open side by side.
+          bullets:
+            - OCT and fundus reports stored on the patient's record
+            - Images and documents uploaded to the record
+            - Past records opened side by side
+            - Vitals and clinical parameters shown as charts
+        - heading: Eyeglass prescriptions from the chart
+          body: >-
+            Generate and manage the eyeglass prescription in EasyClinic, so the last one is on the record when
+            the patient comes back. It is printed for the patient or, on Premium, sent on WhatsApp, and
+            Premium also lets the clinic print on its own layout.
+        - heading: Templates for common eye conditions
+          plan: premium
+          body: >-
+            Premium comes with specialty EMR templates, and EasyClinic's ophthalmology templates are preloaded
+            for common eye conditions such as glaucoma and cataract. If your clinic works from its own paper
+            sheet, the form builder turns it into a digital form, and the customisation comes without
+            charges.
+        - heading: Procedure and surgery notes
+          body: >-
+            Document procedures such as cataract surgery on the patient's record, so the surgery note sits in
+            the same history as the examination that led to it and the reviews that follow.
+        - heading: Surgery billed as a package
+          plan: premium
+          body: >-
+            On Premium, cataract surgery or another procedure is billed as one package treatment, with the
+            payment spread over the course of treatment. Advances and part payments are recorded against the
+            package, and refunds and discounts need authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Eye drops dispensed from the prescription
+          plan: enterprise
+          body: >-
+            Pharmacy and inventory are included in Enterprise, or added to Professional and Premium as a
+            module. The pharmacist dispenses from the doctor's prescription and tracks each batch to its
+            expiry date.
+          link:
+            label: Read how the pharmacy works
+            href: /features/pharmacy-and-inventory/
+        - heading: Cura AI drafts the note
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the doctor to review.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: dataTable
+    value:
+      id: eye-templates
+      heading: Ophthalmology templates and forms
+      intro: >-
+        The eye condition templates EasyClinic names, and the form a clinic can add from its own paper
+        sheet.
+      columns:
+        - Template or form
+        - What it is
+        - Plan
+      rows:
+        - [Glaucoma, Preloaded eye condition template, Premium]
+        - [Cataract, Preloaded eye condition template, Premium]
+        - [Macular degeneration, Preloaded eye condition template, Premium]
+        - [Your own examination sheet, 'Your paper form rebuilt as a digital form with the form builder, in your own layout', Premium]
+      note: >-
+        EasyClinic names these conditions as examples of its preloaded eye templates. If a condition your
+        clinic sees often is not listed, the form builder on Premium turns your own sheet into a template.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: EasyClinic's public ratings, from clinics of every specialty.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, so the clinic keeps seeing patients while the team learns.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the doctors use every day: the appointment book and the bill at
+            the desk, the chart and the prescription in the consulting room. Bring your receptionist, whose
+            login is part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: You work through the chart and the prescription on the kinds of case your clinic sees.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions eye clinic owners ask
+faq:
+  - question: Which EasyClinic plan does an eye clinic need, and what does it cost?
+    answer: >-
+      Premium, the plan for specialists, because the ophthalmology templates and package billing for
+      surgery start on it: {price:inr.premium.annual} per doctor per month billed annually in India or
+      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
+      {price:usd.premium.quarterly} in US dollars. The price includes a reception login. There is no setup
+      fee and no binding contract.
+  - question: Can EasyClinic store OCT reports and fundus photographs?
+    answer: >-
+      Yes, imaging reports and diagnostic data such as OCT reports and fundus photographs are stored in the
+      patient's record. Each report is uploaded to the record as an image or a document, and past records
+      open side by side when you compare one visit with another.
+  - question: Does EasyClinic record vision tests and write eyeglass prescriptions?
+    answer: >-
+      Yes, each vision test and eye examination is recorded on the patient's record, and the eyeglass
+      prescription is generated in EasyClinic and kept with it. The prescription is printed for the patient
+      or, on Premium, sent on WhatsApp.
+  - question: Which eye conditions have ready templates?
+    answer: >-
+      Glaucoma, cataract and macular degeneration are the eye conditions EasyClinic names among its
+      preloaded ophthalmology templates, which come with the Premium plan. If your clinic uses its own
+      examination sheet, Premium's form builder turns the paper form into a digital one, and customisation
+      comes without charges.
+  - question: Can we bill cataract surgery as a package paid in instalments?
+    answer: >-
+      Yes, on Premium: the surgery is billed as one package treatment, and the advance and each part
+      payment are recorded against it, so the desk sees the balance before taking the next payment. A
+      refund for a surgery cancelled after the advance goes through only with authorisation, and
+      Professional does not include package treatments.
+  - question: Can EasyClinic run our pharmacy and the stock of eye drops?
+    answer: >-
+      Yes, with the pharmacy and inventory module, which is included in Enterprise or added to Professional
+      and Premium. The pharmacist dispenses from the doctor's prescription and tracks each batch to its
+      expiry date.
+  - question: Can several ophthalmologists and a second branch share one system?
+    answer: >-
+      Yes, every ophthalmologist in the clinic works from the same patient record, and each login carries a
+      role that decides which screens that person can open. The price is per doctor, and a second location
+      needs Premium. The reception login included in the price cannot open the EMR or issue a prescription.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
+      system runs on the clinic's own server rather than in EasyClinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where eye clinic owners go next
+  related:
+    - href: /solutions/polyclinic/
+      label: Polyclinic software
+      description: >-
+        For an eye centre with several doctors: one patient record for every specialist, and one calendar
+        for doctors and shared rooms.
+    - href: /solutions/hospital-opd/
+      label: Hospital OPD software
+      description: For an eye hospital's outpatient department, from the registration queue to the pharmacy counter.
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      label: Clinic software in Kenya
+      description: EasyClinic for clinics in Kenya, with M-Pesa at the desk and prescriptions in English and Swahili.
+    - href: /features/emr/
+      label: The EMR and e-prescriptions
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See an eye examination and its scan reports on EasyClinic
+  body: >-
+    Book a demo and ask to see an eye examination record with its OCT report and a cataract package bill
+    paid in parts, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book an eye clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The eye templates EasyClinic names, the OCT and fundus reports kept on the record, and the plan split
+    an eye clinic meets when it bills cataract packages on Premium and runs the pharmacy on Enterprise or
+    as a module all come from EasyClinic's own pages; the pains are general eye clinic situations, and
+    nothing is specific to one country beyond the rupee price.
+  readsMachineWritten: >-
+    The page names no ophthalmologist and no refraction field, and shows no eye pressure chart, optical
+    counter or device connection, so an eye surgeon will find the examination rows general and will notice
+    what is missing; the four pains are composites rather than a named clinic's day.
+
+notes:
+  - 'Recruit a named ophthalmology testimonial (spec 5.15 item 9): a named ophthalmologist or eye clinic owner on EasyClinic, with city, clinic and consent on file, placed only on this page as a customer proofBlock or a single testimonialRow. siddhartha-ghosh (Senior Ophthalmologist, Global Eye Hospital, consent on file, city null) is assigned to the home page, so it is not used here; if home gives it up, it belongs on this page (his quote praises that every field is searchable and the support). Until then the proof block is the Capterra and Google badges; review counts are null in facts.yaml, so the badges show no count.'
+  - 'Grounding (live /ophthalmology-emr/, retrieved 2026-09-26): eyeglass prescriptions generated and managed; detailed vision test and eye examination records (FAQ); imaging reports and diagnostic data for OCT and fundus photography stored in patient records (FAQ); image and document upload; side-by-side past records; visit history on one screen; facesheets; point-and-click chief complaint, history and vitals; clinical assistant or nurse intake; collaborative case notes; charts of vitals, lab reports and clinical parameters; preloaded templates for common eye conditions (e.g. glaucoma, cataracts, macular degeneration); form builder for paper forms; procedure documentation such as cataract surgery (FAQ); long-term monitoring and follow-up tracking for chronic eye conditions (FAQ); automated follow-up and reminders; personalised print formats; part and advance payments, refunds and voiding with authorisation, amortisation for package treatments, discount authorisation; multi-doctor and multi-branch use (FAQ). Plan placement follows plans.yaml (specialty templates, own forms and print layouts, package treatments, WhatsApp and more than one location on Premium; pharmacy and inventory on Enterprise or as a module; integrations on Enterprise or as an add-on).'
+  - 'Spec 5.15 must-haves left out, company to confirm: (1) Refraction: the live page states eyeglass prescriptions and vision test records but names no refraction fields (sphere, cylinder, axis, add, visual acuity per eye, near vision) and no auto-refractor or lensmeter import; confirm the fields, whether they print on the spectacle prescription, and the plan. (2) IOP trends: the live page says vitals, lab reports and clinical parameters can be charted, but never names intraocular pressure; confirm whether IOP per eye is a preset parameter charted across visits, with which tonometry method recorded, and on which plan. (3) Optical retail: nothing on the live page covers frames, lenses, lens orders to a lab or an optical counter; confirm whether the pharmacy and inventory module handles optical stock and sales, and on which plan. (4) Imaging: confirm whether any OCT, fundus camera, perimeter or biometer connects directly (DICOM or file-based), with status and date; the page now says only that reports are uploaded to the record (the earlier line calling a direct OCT or fundus camera connection custom integration work was cut in the fact check, since plans.yaml names lab machines, accounting and HIS connections, not imaging devices).'
+  - 'Other facts needed for the full spec 5.15 template: which plan carries vision and eye examination records and imaging storage (the live page ties none to a plan, so those rows carry no plan badge); the full list and count of ophthalmology templates (the live page gives three as examples); a timed walkthrough of the commonest eye visit (spec 5.15 item 4); which eye note types Cura AI drafts, with an example (item 8); whether optometrists, refractionists and clinical assistants need a paid licence under per-doctor pricing; surgical consent handling and OT scheduling for cataract lists.'
+  - 'Dropped from the live page: both comparison tables ("Easy Clinic vs Other EMR" and "EMR Software Comparison for Ophthalmology Clinics", unsourced competitor cells); "generate and share in 30 seconds" and "invoices ready in less than 10 seconds" (unmeasured); "in any language" (only English and Swahili are confirmed); AI diagnostic support and ADR alerts (CuraPilot claims); drug interaction check (source unnamed, as on /features/emr/); "Reduces no-shows" (noShowReduction is null); "over 100 graphical dashboards"; "Inventory for lab reagents and supplies built-in" (plans.yaml puts inventory on Enterprise or as a module); resource booking within appointments and patient self-service (plan unclear); teleconsultation (Premium, but not eye-specific); data warehouse and Power BI; the four unrelated testimonials; and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial).'
+  - 'H1 is the spec 4.3 H1 "EMR for eye clinics" extended in the spec 5.15 item 1 pattern with two named objects (as on the ENT and paediatric pages); the head keyword stays in the title. The opening answer names two needs, not three, to avoid a group of three, and no longer claims what a general EMR lacks. Title 38 characters; meta description within 155 with the token resolved. The four pains are illustrative eye clinic situations, not customers; "three months" and "wrong axis" are examples. The charts bullet names vitals and clinical parameters only, because lab reports in the chart are Premium in plans.yaml and that row carries no plan badge.'
+  - 'No heroMedia and no media: screenshots do not exist yet. When the seeded demo tenant exists: the eye examination record with an OCT report attached as hero, the eyeglass prescription print, and a cataract package bill with an advance and a part payment.'
+  - '/clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts; the related links resolve once they publish. The "several ophthalmologists" FAQ uses the live FAQ (multi-doctor and multi-branch) with the Premium location rule from plans.yaml.'

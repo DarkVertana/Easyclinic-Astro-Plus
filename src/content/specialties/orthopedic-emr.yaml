@@ -1,0 +1,340 @@
+# /orthopedic-emr/ (spec 5.15 SpecialtyPage and its orthopaedic row; keyword row 4.3). Live slug kept.
+# Grounding: capability statements the live /orthopedic-emr/ page makes plainly (retrieved 2026-09-26),
+# plans.yaml, and the hospital OPD page's scope (theatres and wards out of scope). No template counts,
+# device integrations, timings or outcomes.
+status: published
+headKeyword: orthopedic EMR software
+secondaryKeywords:
+  - orthopedic practice management software
+  - orthopaedic EMR
+title: 'Orthopedic EMR Software: EasyClinic'
+metaDescription: >-
+  Orthopedic EMR software: X-rays and MRI scans on the patient record, with fracture and joint
+  replacement templates and surgery packages on Premium.
+h1: 'EMR for orthopaedic clinics: X-rays and procedure notes on one record'
+linkLabel: Orthopaedics
+eyebrow: For orthopaedic clinics
+openingAnswer: >-
+  An orthopaedic clinic needs its EMR to keep the X-rays and MRI scans on the patient's record beside
+  every visit, and to carry templates for fracture management and joint replacement. EasyClinic keeps
+  the imaging on the record, and its Premium plan, at {price:inr.premium.annual} or
+  {price:usd.premium.annual} per doctor per month billed annually, adds the orthopaedic templates and
+  lets you bill a surgery as one package paid in parts.
+summary: >-
+  X-rays and MRI scans on the patient's record beside every visit, with orthopaedic templates and
+  surgery packages paid in parts on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book an orthopaedic clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the EasyClinic page for orthopaedic clinics and would like to book a demo for our practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-orthopaedic-clinics-lose-track
+      heading: Where an orthopaedic clinic loses track
+      intro: >-
+        Orthopaedic care runs over weeks and months, from the injury to the last review after
+        physiotherapy, and most of what goes missing falls between one visit and the next.
+      items:
+        - heading: The X-ray travels in the patient's bag
+          body: >-
+            The patient brings last month's films to the fracture review, when they remember them. The MRI
+            report from the diagnostic centre is a photo on the patient's phone, and the doctor holds the old
+            film up to the window beside today's.
+          fix: >-
+            X-rays and MRI scans are uploaded to the patient's record and stay there, and past records open
+            beside today's visit, so the comparison does not wait on what the patient remembered to bring.
+          href: /features/emr/
+          linkLabel: Read how the chart works
+        - heading: The six-week review nobody booked
+          body: >-
+            The plaster goes on and the patient is told to come back in six weeks, a date written only on
+            the prescription. Nobody at the desk knows who is due that week, so the patient turns up two
+            weeks late, or not at all.
+          fix: >-
+            The follow-up is set from the chart before the patient leaves, and an automated reminder goes
+            out before the date. SMS and email reminders come with every plan, and Premium adds WhatsApp.
+          href: /features/appointment-scheduling/
+          linkLabel: Read how booking and reminders work
+        - heading: The physiotherapy slip that never comes back
+          body: >-
+            When the cast comes off, the patient leaves with a slip for physiotherapy. At the next review the
+            doctor asks how many sessions they did and what the physiotherapist found, and the answer
+            depends on the patient's memory.
+          fix: >-
+            The referral is written from the chart and stays on the patient's record. If the
+            physiotherapist works in your clinic or hospital on EasyClinic, they write on the same patient
+            record, so their notes are there when the patient comes back to you.
+          href: /physiotherapy-clinic-management-software/
+          linkLabel: Read about EasyClinic for physiotherapy
+        - heading: The surgery package lives in a register
+          body: >-
+            A knee replacement is quoted as one package. The patient pays an advance when the date is fixed
+            and the balance after the operation, and the accounts desk tracks both in a register. When the
+            surgery is postponed, nobody is sure what was paid or what is owed back.
+          fix: >-
+            On Premium the surgery is billed as one package treatment, with the payment spread over the
+            course of treatment and every advance and part payment recorded against it. The desk sees the
+            balance straight away, and a refund goes through only with authorisation.
+          href: /pricing/
+          linkLabel: See what Premium includes
+
+  - discriminant: featureRows
+    value:
+      id: orthopaedic-chart
+      heading: Built around the orthopaedic chart
+      intro: >-
+        Rows marked Premium need EasyClinic's Premium plan, the plan for specialists. The orthopaedic
+        history and templates, and package billing, are the two rows below that Professional does not
+        include.
+      items:
+        - heading: Orthopaedic history and templates
+          plan: premium
+          body: >-
+            Premium includes EasyClinic's specialty EMR templates. For orthopaedics the history has fields
+            such as joint pain severity and mobility assessment, with the X-ray and MRI results recorded
+            alongside. Pre-built templates cover orthopaedic procedures, fracture management and joint
+            replacement among them, and a physical therapy template covers the rehabilitation that follows.
+            A paper examination or intake form your clinic already uses can be rebuilt in the form builder,
+            and your prescription and case sheet print in your own layout, with no charge for the
+            customisation.
+          bullets:
+            - Fracture management template
+            - Joint replacement template
+            - Physical therapy template
+            - Your own paper forms, rebuilt with the form builder
+        - heading: X-rays and MRI scans on the record
+          body: >-
+            X-rays and MRI scans are stored on the patient's record as uploaded images and documents, with
+            any other imaging the patient brings in. Past records open side by side with today's visit, and
+            the patient's visits over the years sit on one screen.
+        - heading: Surgeries and procedures on the same record
+          body: >-
+            A surgery or a fracture treatment is documented on the patient's record like any other
+            procedure, so the operation and every review after it are in one place. EasyClinic runs the
+            outpatient side: the operating theatre's own scheduling and records, and the wards, stay on the
+            hospital's system.
+        - heading: Referrals, physiotherapy included
+          body: >-
+            Referral management is part of the chart, so the referral is written during the consult and
+            stays on the patient's record. A physiotherapist who works in your clinic or hospital on
+            EasyClinic writes on the same record, and you see their notes at the next review.
+          link:
+            label: Read about EasyClinic for physiotherapy
+            href: /physiotherapy-clinic-management-software/
+        - heading: Surgery packages, paid in parts
+          plan: premium
+          body: >-
+            On Premium a surgery or a course of treatment is billed as one package treatment, and the patient
+            can pay for it in parts. Advances and part payments are recorded against the package, and a
+            refund or a voided invoice goes through only with authorisation.
+          bullets:
+            - Advances and part payments recorded against the package
+            - Refunds and voided invoices only with authorisation
+            - Taxable and non-taxable items handled automatically
+            - Receipts and invoices sent to the patient on WhatsApp or email
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Cura AI drafts the note
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note beside the consult, and the
+            draft stays a draft until the doctor reviews and signs it.
+          link:
+            label: Read what Cura AI does
+            href: /ai/
+
+  - discriminant: featureRows
+    value:
+      id: fracture-review
+      heading: A fracture review, from the desk to the bill
+      intro: >-
+        The review visit is the one an orthopaedic clinic repeats most: the patient is back with a new
+        X-ray, and the doctor decides what happens next. This is how that visit runs on EasyClinic.
+      items:
+        - heading: At the desk
+          body: >-
+            The patient checks in at the desk, booked or walked in, and gets a token number for the queue.
+            The new X-ray, or the report that came with it, is uploaded to the patient's record, and a nurse
+            or clinical assistant takes the complaint and the vitals before the consult.
+          link:
+            label: Read how the queue works
+            href: /features/appointment-scheduling/
+        - heading: In the consulting room
+          body: >-
+            The doctor has last month's X-ray open beside today's visit and writes the note by point and
+            click, or from the orthopaedic template on Premium. The prescription screen warns of a drug
+            interaction while it is being written, and the prescription prints for the patient or goes out by
+            email, or on WhatsApp on Premium.
+        - heading: The referral and the next review
+          body: >-
+            A referral to physiotherapy is written from the chart, and the follow-up date is set before the
+            patient leaves. The reminder goes to the patient automatically before the review.
+        - heading: At the bill
+          body: >-
+            The visit is billed in one click at the desk, or recorded against the surgery package on
+            Premium. Either way the balance shows straight away.
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        These are EasyClinic's public ratings, from clinics of every kind rather than orthopaedic clinics
+        alone.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+  - discriminant: stepList
+    value:
+      id: training
+      heading: How long does it take to learn EasyClinic?
+      intro: >-
+        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
+        session is 20 to 40 minutes, short enough to fit between the morning OPD and the evening clinic, so
+        the clinic keeps seeing patients while the team learns.
+      steps:
+        - title: 'Day 1: basic training'
+          meta: 40 minutes
+          body: >-
+            The screens the front desk and the doctors use every day. Bring your receptionist, whose login
+            is part of the plan.
+        - title: 'Day 2: EMR scenario training'
+          meta: 40 minutes
+          body: >-
+            You work through the chart and the prescription on the kinds of case your clinic sees, from a
+            first visit after an injury to a review.
+        - title: 'Day 3: practice exercises'
+          meta: 20 minutes
+          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
+        - title: 'Day 4: road to expertise'
+          meta: 20 minutes
+          body: The shortcuts that make each note quicker, once the basics have become habit.
+      note: >-
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+
+faqHeading: Questions orthopaedic clinic owners ask
+faq:
+  - question: Which EasyClinic plan does an orthopaedic clinic need, and what does it cost?
+    answer: >-
+      Premium, the plan for specialists, because the orthopaedic templates and package treatments start
+      on it: {price:inr.premium.annual} per doctor per month billed annually in India or
+      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
+      {price:usd.premium.quarterly} in US dollars. Professional, at {price:inr.professional.annual} or
+      {price:usd.professional.annual} billed annually, has the chart and billing but no specialty templates
+      or package treatments. Both include a reception login, with no setup fee and no binding contract.
+  - question: Can I keep X-rays and MRI scans in EasyClinic?
+    answer: >-
+      Yes, X-rays and MRI scans are stored on the patient's record, uploaded as images or as documents,
+      with any other imaging the patient brings in. Past records open side by side with today's visit, so
+      last month's X-ray is on screen at the fracture review whether or not the patient brought the film.
+  - question: Can I write the operation note in EasyClinic?
+    answer: >-
+      Yes, surgeries and fracture treatments are documented on the patient's record like any other
+      procedure, and on Premium the orthopaedic templates cover procedures such as joint replacement.
+      EasyClinic does not run the operating theatre: theatre scheduling and the theatre's own records stay
+      on the hospital's system, as do admissions and the wards.
+  - question: How do I refer a patient to physiotherapy and follow their progress?
+    answer: >-
+      Write the referral from the chart, where it stays on the patient's record, and on Premium use the
+      physical therapy template for the rehabilitation plan. If the physiotherapist works in your clinic or
+      hospital on EasyClinic, their notes go on the same record, so you read them at the next review.
+  - question: How is a surgery package billed when the patient pays in parts?
+    answer: >-
+      On Premium the surgery is billed as one package treatment, and each advance or part payment is
+      recorded against it, so the desk sees the balance before taking the next payment. If the surgery is
+      cancelled, a refund or a voided invoice goes through only with authorisation.
+  - question: Does EasyClinic run the clinic pharmacy and the stock?
+    answer: >-
+      Yes, but not on Premium alone: pharmacy and inventory come with Enterprise, or as a module added to
+      Professional or Premium. With the module, the pharmacist dispenses from the doctor's prescription and
+      tracks each batch to its expiry date.
+  - question: Can I see a patient by video after surgery?
+    answer: >-
+      Yes, on Premium, which includes video consultations booked through the appointment screen, with the
+      option to collect the fee online at booking. The patient joins from a web browser on a computer or a
+      phone, and the prescription goes out on WhatsApp or email, marked as issued after a remote
+      consultation.
+  - question: Does EasyClinic work without an internet connection?
+    answer: >-
+      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients. Larger clinics and groups that want their
+      data on their own infrastructure can choose a self-hosted deployment instead of EasyClinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where orthopaedic clinic owners go next
+  related:
+    - href: /solutions/solo-clinic/
+      label: Solo doctor clinic
+      description: For an orthopaedic surgeon running their own clinic with a receptionist.
+    - href: /solutions/hospital-opd/
+      label: Hospital OPD and nursing homes
+      description: >-
+        For an orthopaedic department in a hospital OPD, writing on the same patient record as every other
+        department.
+    - href: /physiotherapy-clinic-management-software/
+      label: Software for physiotherapy clinics
+      description: Session-wise treatment plans for the physiotherapist your patients go on to see.
+    - href: /clinic-management-software-india/
+      label: Clinic management software in India
+      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+    - href: /emr-software-in-kenya/
+      label: EMR software in Kenya
+      description: How EasyClinic works for a clinic in Kenya.
+    - href: /features/emr/
+      label: The EMR and e-prescriptions
+      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
+    - href: /pricing/
+      label: EasyClinic pricing
+      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+
+closing:
+  heading: See an orthopaedic record on EasyClinic, from the X-ray to the package bill
+  body: >-
+    Book a demo and ask to see a patient's X-rays on the record and a surgery package paid in parts, or
+    compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book an orthopaedic clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The film that travels in the patient's bag and the physiotherapy slip that never comes back are
+    orthopaedic problems, and every capability that answers them comes from EasyClinic's live orthopaedic
+    page or plans.yaml, with the theatre and ward limit taken from the published hospital OPD scope;
+    nothing is specific to one country beyond the rupee price.
+  readsMachineWritten: >-
+    The page has no named orthopaedic surgeon and no measured number, the fracture review walkthrough
+    carries no timings, and an orthopaedic surgeon will notice that implant tracking and any DICOM viewer
+    or imaging-archive link are not mentioned.
+
+notes:
+  - 'Recruit a named orthopaedic testimonial (spec 5.15 item 9): an orthopaedic surgeon or clinic owner on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page. The one orthopaedic testimonial on file, chao-rochek-buragohain (Arogya Orthopaedic Clinic, city null), is assigned to the home page and praises usability rather than an orthopaedic feature; decide whether it moves here. Until then the proof block is the Capterra and Google badges, with no review counts (null in facts.yaml).'
+  - 'Grounding: orthopaedic history fields (joint pain severity, mobility assessments, X-ray and MRI results), pre-built templates for diagnoses, treatment plans and procedures (fracture management, joint replacement, physical therapy named as examples), storage of X-rays, MRI scans and other imaging in patient records, image and document upload, documentation of surgeries, fracture treatments and other procedures, referral management, automated follow-up, drug interaction check, side-by-side past records, nurse or clinical assistant intake, vitals and lab charts, the form and template builder, personalised print formats and case sheet, video consultations with online fees and the remote-consult disclaimer on the prescription, token numbers and waiting room management, one-click billing, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments and taxable item handling are all stated plainly on the live /orthopedic-emr/ page (retrieved 2026-09-26). Plan placement follows plans.yaml: specialty templates, own forms and print layouts, package treatments, video and WhatsApp on Premium; pharmacy and inventory on Enterprise or as a module. The theatre and ward limit comes from the published /solutions/hospital-opd/ scope box.'
+  - 'Spec 5.15 must-have "implant tracking" is left out: the live page does not mention implants, and plans.yaml covers pharmacy and general inventory only. Company to confirm whether EasyClinic records which implant (make, size, batch or serial number) went into which patient, whether implant stock is tracked in the inventory module, and on which plan. Then add a feature row and a FAQ.'
+  - 'Spec 5.15 must-have "imaging" is included as file-based storage only (uploaded images and documents on the record, side-by-side past records). Company to confirm whether a DICOM viewer exists, whether any X-ray machine or PACS connection has been built, and with what status; the imaging FAQ now states only file-based storage. The earlier line that a direct feed from an X-ray machine or imaging archive "would be custom integration work" was cut in the 26 September edit: plans.yaml scopes the integrations add-on to lab machines, accounting systems and an existing HIS, so it implied a device integration nobody has confirmed.'
+  - 'Spec 5.15 must-have "physio referrals" is included as referral management from the chart and a shared record for a physiotherapist working in the same clinic or hospital, linking /physiotherapy-clinic-management-software/. Company to confirm whether a referral can be sent electronically to a physiotherapist outside the clinic (the live page mentions WhatsApp, SMS and email messages to referral doctors and third-party providers but not referral letters), and whether the physiotherapy session record appears on the orthopaedic chart when the physiotherapist is a separate EasyClinic customer.'
+  - 'Spec 5.15 must-have "surgical packages" is included through package treatments on Premium (plans.yaml) and the live billing rows. Company to confirm whether a package shows the procedures or reviews used and remaining, and how a package billed in the clinic works when the surgery happens in a hospital on another system.'
+  - 'Other spec 5.15 template items not yet possible: the full list and count of orthopaedic templates and forms (item 5; the live page names three as examples, so they are feature-row bullets rather than a dataTable); a timed walkthrough of the review visit (item 4; the fracture review rows carry no minutes because no timing is measured); devices and integrations used in orthopaedics with status (item 6); which orthopaedic note types Cura AI drafts, with one example note (item 8); whether the orthopaedic history fields need Premium (the live page does not tie them to a plan; the 26 September edit moved them into the Premium templates row as the conservative reading of "Specialty EMR templates" in plans.yaml, so a Professional buyer is not promised them; badge them on Professional if the company confirms); how nurses, clinical assistants and physiotherapists are licensed under per-doctor pricing.'
+  - 'Dropped from the live page: both "Easy Clinic vs Other EMR" comparison tables (unsourced competitor cells), "prescriptions in under 30 seconds" and "three clicks", "invoices ready in less than 10 seconds", "over 100 graphical dashboards", "Reduces no-shows" (noShowReduction is null), prescriptions "in any language" (only English and Swahili are confirmed), AI diagnostic support and ADR alerts (CuraPilot claims), AI wait-time alerts and AI two-way messaging, patient self check-in (plan unclear), the "Inventory for medicines & supplies: Built-in" cell and FAQ (plans.yaml puts inventory on Enterprise or as a module), "Rehabilitation & follow-up tracking: Advance" and the rehabilitation FAQ (its answer is about paediatric care, a copy error), the shared "Where clinics lose time" style filler, the four non-orthopaedic testimonials, and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial).'
+  - 'No heroMedia and no media: screenshots do not exist yet. Hero when captured: an orthopaedic record with an X-ray open beside the visit note from the fracture management template; then the package bill with an advance and a part payment. The four pains are illustrative orthopaedic situations, not customers; "six weeks", "two weeks late" and the knee replacement are examples.'
+  - 'Title 35 characters; meta description 147 characters (no tokens). H1 starts with the spec 4.3 H1 "EMR for orthopaedic clinics" and adds the spec 5.15 item 1 pattern with two items instead of three (spec 6.2 groups of three), as the cardiology, ENT and paediatric pages do. The offline FAQ follows the live /best-clinic-management-software-kenya/ wording: a self-hosted deployment for larger clinics and groups that want data on their own infrastructure. /clinic-management-software-india/ and /emr-software-in-kenya/ are drafts; those related links resolve once they publish.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits on theatres, wards, offline use and plan placement) until the testimonial arrives.
