@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getRegistry, type PageRecord } from '../lib/content/registry';
+import LandingPage from '../templates/LandingPage.astro';
+
+/**
+ * Every content-backed page. The registry derives paths, checks collisions and publish rules, and
+ * decides what renders in this stage (production: published only).
+ */
+export const getStaticPaths = (async () => {
+  const registry = await getRegistry();
+  return registry.visible.map((record) => ({
+    params: { path: record.path === '/' ? undefined : record.path.replace(/^\/|\/$/g, '') },
+    props: { path: record.path },
+  }));
+}) satisfies GetStaticPaths;
+
+const registry = await getRegistry();
+const record = registry.get(Astro.props.path) as PageRecord;
+Astro.locals.page = { path: record.path, status: record.status, family: record.family, country: record.data.country?.id, title: record.data.title };
+---
+
+<LandingPage record={record} />

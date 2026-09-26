@@ -1,0 +1,118 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import { need, unconfirmed } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Quote from '../../ui/Quote.astro';
+import Screenshot from '../../ui/Screenshot.astro';
+import Button from '../../ui/Button.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'proofBlock'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, variant, figures, testimonial, badges, media, body, link, ctx } = Astro.props;
+
+const registry = await getRegistry();
+const study = variant === 'study' ? (await getEntry('study', 'study'))!.data : null;
+const testimonialEntry = testimonial ? await getEntry(testimonial) : undefined;
+
+// Study figures render from study.yaml with their citation (plan: research finding 2). A figure with
+// no public or internal source, or a publication not yet re-verified, cannot be published.
+const figureRows = study
+  ? figures.map((figId) => {
+      const f = study.figures.find((x) => x.id === figId);
+      if (!f) throw new Error(`proofBlock on ${ctx.path}: figure "${figId}" is not in study.yaml`);
+      const pub = f.source ? study.publications.find((p) => p.id === f.source) : undefined;
+      const confirmed = pub ? Boolean(pub.verifiedOn) : Boolean(f.internalSource);
+      return {
+        value: unconfirmed(Astro, `source for "${f.value} ${f.label}"`, f.value, confirmed),
+        label: f.label,
+        context: f.context,
+        citation: pub ? `${pub.authors}, ${pub.venue} (${pub.published.getUTCFullYear()})` : null,
+        url: pub?.url,
+      };
+    })
+  : [];
+const citations = [...new Map(figureRows.filter((f) => f.citation).map((f) => [f.url, f])).values()];
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  {
+    variant === 'study' && (
+      <div>
+        <dl class:list={['grid gap-4', figureRows.length >= 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2']}>
+          {figureRows.map((f) => (
+            <div class="card p-6">
+              <dt class="sr-only">{f.label}</dt>
+              <dd>
+                <span class="block font-display text-4xl font-semibold text-blue-700 md:text-5xl">{f.value}</span>
+                <span class="mt-2 block font-semibold text-ink-heading">{f.label}</span>
+                <span class="mt-1 block text-sm text-ink-muted">{f.context}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+        {body && <Md text={body} class="mt-6 max-w-[42rem]" />}
+        {citations.length > 0 && (
+          <p class="mt-5 text-sm text-ink-muted">
+            Source:{' '}
+            {citations.map((c, i) => (
+              <>
+                {i > 0 && '; '}
+                <a href={c.url} rel="noopener">
+                  {c.citation}
+                </a>
+              </>
+            ))}
+            .
+          </p>
+        )}
+      </div>
+    )
+  }
+
+  {
+    variant === 'customer' && testimonialEntry && (
+      <div class="grid items-center gap-8 lg:grid-cols-[1.3fr_1fr]">
+        <Quote testimonial={testimonialEntry} size="large" />
+        {body && <Md text={body} class="card p-6" />}
+      </div>
+    )
+  }
+
+  {
+    variant === 'badges' && (
+      <ul class="flex flex-wrap gap-4">
+        {badges.map((b) => (
+          <li class="card flex items-center gap-3 p-4">
+            <Icon name="star" size={22} class="fill-star text-star" />
+            <span>
+              <span class="block font-semibold text-ink-heading">
+                {b.rating} on {b.label}
+              </span>
+              <span class="block text-sm text-ink-muted">{need(Astro, `${b.label} review count`, b.count)} reviews</span>
+            </span>
+            {b.href && (
+              <a href={b.href} rel="noopener" class="ml-2 text-sm">
+                Read the reviews
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  {
+    variant === 'screenshot' && media && (
+      <div class="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+        <Screenshot media={media} />
+        {body && <Md text={body} />}
+      </div>
+    )
+  }
+
+  {link && registry.urlFor(link.href) && <div class="mt-8"><Button {...link} variant="outline" /></div>}
+</Section>

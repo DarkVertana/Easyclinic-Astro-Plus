@@ -1,0 +1,206 @@
+# Internal fixture: renders every section block once, for visual checks, axe and the schema test.
+# Never published (status draft, noindex).
+status: draft
+path: /kitchen-sink/
+noindex: true
+headKeyword: kitchen sink
+title: Component kitchen sink (internal)
+metaDescription: Every EasyClinic section block rendered once with sample data, for design review and accessibility testing.
+h1: Every block on one page
+linkLabel: Kitchen sink
+eyebrow: Internal
+openingAnswer: This page renders each section block with sample data. Prices, statuses and contacts come from the shared data files, so placeholders show where facts are still missing.
+author: null
+lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  needed: 'Today view: 14 appointments, two walk-ins, one video, one no-show marked'
+  alt: The EasyClinic today view with the day's appointments, walk-ins and a teleconsult
+  caption: The front desk sees walk-ins and booked slots on one list.
+  frame: browser
+heroStrip:
+  regulators: [in-abdm-m1, ke-sha]
+  ratings: true
+  study: true
+ctas:
+  primary: { label: Book a 20-minute demo, href: /contact-us/#book-a-demo }
+  secondary: { label: See pricing, href: /pricing/ }
+faq:
+  - question: Does the kitchen sink page appear on the live site?
+    answer: No. It is a draft with noindex, so it only renders on preview builds and local development.
+links:
+  related:
+    - { href: /pricing/, description: Plans and prices per doctor per month. }
+    - { href: /clinic-management-software-india/ }
+closing:
+  heading: Closing band with page-specific copy
+  body: Each page writes its own closing line; there is no shared closing block.
+  primary: { label: Book a 20-minute demo, href: /contact-us/#book-a-demo }
+  secondary: { label: See pricing, href: /pricing/ }
+sections:
+  - discriminant: prose
+    value:
+      heading: Prose
+      body: |
+        A paragraph of markdown with a [link to pricing](/pricing/) and a placeholder for [a fact the company must supply].
+
+        - A list item
+        - Another list item
+      aside: An aside panel for a side note.
+  - discriminant: personaRouter
+    value:
+      heading: Pick your clinic
+      items:
+        - { persona: solo, title: I run my own clinic, body: One doctor and a receptionist., href: /solutions/solo-clinic/ }
+        - { persona: polyclinic, title: We share one front door, body: Several specialists and one record., href: /solutions/polyclinic/ }
+        - { persona: chain, title: We run many branches, body: Central records and SOPs., href: /solutions/clinic-chain/ }
+        - { persona: hospital-opd, title: We run a hospital OPD, body: Queues, pharmacy and claims., href: /solutions/hospital-opd/ }
+        - { persona: ngo, title: We run an NGO clinic, body: Donor-ready reports., href: /solutions/ngo-clinics/ }
+  - discriminant: oldWayNewWay
+    value:
+      heading: Old way and new way
+      old:
+        title: The old way
+        items: [Paper appointment register, WhatsApp on a personal phone, Billing in Excel, Three separate logins]
+        media:
+          kind: photo
+          needed: 'Old way: cluttered reception desk with a paper register (generated environment image)'
+          alt: A reception desk with a paper register and a stack of patient files
+          frame: none
+          aiGenerated: true
+      next:
+        title: The EasyClinic way
+        items: [One calendar for walk-ins and slots, Reminders sent from the clinic number, Invoices from the prescription, One login for the whole team]
+  - discriminant: journeyDiagram
+    value:
+      heading: The patient journey
+      steps:
+        - { label: Book, body: Online, on WhatsApp or at the desk., href: /features/appointment-scheduling/ }
+        - { label: Arrive, body: Token issued and the chart ready., href: /features/appointment-scheduling/ }
+        - { label: Consult, body: Notes written during the visit., href: /features/emr/ }
+        - { label: Prescribe, body: A prescription in about thirty seconds., href: /features/emr/ }
+        - { label: Pay, body: Invoice and receipt on WhatsApp., href: /features/billing/ }
+        - { label: Dispense, body: Pharmacy works from the prescription., href: /features/pharmacy-and-inventory/ }
+        - { label: Follow up, body: Reminders bring the patient back., href: /features/patient-engagement/ }
+        - { label: Report, body: The owner's numbers in the morning., href: /features/reports-and-dashboards/ }
+  - discriminant: moduleGrid
+    value:
+      heading: Module grid
+      columns: 4
+      items:
+        - title: Front desk
+          outcome: Walk-ins and booked slots on one list.
+          icon: calendar-clock
+          links: [{ label: Scheduling, href: /features/appointment-scheduling/ }, { label: WhatsApp, href: /features/whatsapp/ }]
+        - { title: Chart, outcome: The note finishes with the visit., icon: notebook-pen, href: /features/emr/ }
+        - { title: Money, outcome: Invoices from the prescription., icon: receipt, href: /features/billing/ }
+        - { title: Growth, outcome: Patients come back between visits., icon: heart-handshake, href: /features/patient-engagement/ }
+  - discriminant: proofBlock
+    value:
+      heading: Proof block, study variant
+      variant: study
+      figures: [visits, diagnostic-errors, treatment-errors]
+      body: Figures render from study.yaml with their citation.
+      link: { label: Read how the study was run, href: /curapilot/ }
+  - discriminant: proofBlock
+    value:
+      heading: Proof block, badges variant
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '4.9', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+  - discriminant: testimonialRow
+    value:
+      heading: Testimonial row
+      items: [tl-prabhu, manish-bhatia, premanand-raya]
+  - discriminant: regulatorTable
+    value:
+      heading: Regulator table
+      countries: [in]
+  - discriminant: regulatorStrip
+    value:
+      heading: Regulator strip
+      regulators: [in-abdm-m1, ke-sha, ae-nabidh, ng-ndpa]
+  - discriminant: stepList
+    value:
+      heading: Four-day training path
+      steps:
+        - { title: Basic training, meta: Day 1 · 40 minutes, body: Registration, appointments and billing. }
+        - { title: EMR scenario training, meta: Day 2 · 40 minutes, body: Writing notes and prescriptions. }
+        - { title: Practice exercises, meta: Day 3 · 20 minutes, body: Your team practises on sample patients. }
+        - { title: Road to expertise, meta: Day 4 · 20 minutes, body: Shortcuts and templates for your specialty. }
+  - discriminant: pricingCards
+    value:
+      heading: Pricing cards with the currency switcher
+      currency: usd
+      switcher: true
+      planCta: { label: Book a 20-minute demo, href: /contact-us/#book-a-demo }
+      enterpriseCta: { label: Talk to sales about Enterprise, href: /contact-us/#book-a-demo }
+  - discriminant: planMatrix
+    value:
+      id: compare
+      heading: Plan matrix
+  - discriminant: addOns
+    value:
+      heading: Add-ons
+      currency: inr
+  - discriminant: costExamples
+    value:
+      heading: What clinics pay
+      currency: inr
+      examples:
+        - { title: One doctor, doctors: 1, plan: professional }
+        - { title: Five-doctor polyclinic, doctors: 5, plan: premium }
+        - { title: Twelve-branch chain, doctors: 40, locations: 12, plan: enterprise, note: Enterprise is priced per network. }
+  - discriminant: contactCard
+    value:
+      heading: Contact card
+      country: ke
+  - discriminant: countryMoney
+    value:
+      heading: Country money block
+      country: in
+      currency: inr
+  - discriminant: clinicTypes
+    value:
+      heading: Clinic types
+      items:
+        - { persona: solo, title: Solo clinics, body: One doctor and a receptionist., href: /solutions/solo-clinic/ }
+        - { persona: chain, title: Clinic chains, body: Many branches on one record., example: 'A local example goes here: [local chain client]', href: /solutions/clinic-chain/ }
+  - discriminant: dataTable
+    value:
+      heading: Data table
+      columns: [Question, Free EMR, EasyClinic]
+      rows:
+        - ['Who answers the phone when the printer stops?', 'A forum', 'Our support team']
+        - ['Can you take your data with you?', 'Depends on the project', '[export format]']
+  - discriminant: scopeBox
+    value:
+      variant: isNot
+      items: [An inpatient hospital system with wards and theatres, A fundraising CRM]
+  - discriminant: demoForm
+    value:
+      heading: Book a 20-minute demo
+      country: in
+      promise: We show the system on your own patient flow.
+  - discriminant: contentCards
+    value:
+      heading: Content cards
+      items: [{ href: /pricing/ }, { href: /the-ultimate-guide-to-starting-a-clinic-in-kenya/, label: Starting a clinic in Kenya }]
+  - discriminant: featureRows
+    value:
+      heading: Feature rows
+      items:
+        - heading: Thirty-second prescriptions
+          body: Shortcuts fill the drug, dose and duration.
+          bullets: [Drug interaction warnings, Print or send on WhatsApp]
+          plan: professional
+          media: { kind: screenshot, needed: 'Rx screen mid-entry with an interaction warning', alt: The prescription screen with a drug interaction warning, frame: browser }
+        - heading: Reminders that cut no-shows
+          body: Sent from the clinic's own WhatsApp number.
+          plan: premium
+  - discriminant: painBlocks
+    value:
+      heading: Pain blocks
+      items:
+        - { heading: Why charting takes your evenings, body: The notes get finished at 9pm., fix: The note finishes with the visit., href: /features/emr/ }
+        - { heading: Why patients do not show up, body: Nobody called the 4pm patients., fix: Reminders go out on WhatsApp., href: /features/whatsapp/, linkLabel: WhatsApp reminders }

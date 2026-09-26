@@ -1,0 +1,26 @@
+---
+import { getEntries } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Quote from '../../ui/Quote.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'testimonialRow'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, layout, usePullQuote, ctx } = Astro.props;
+const testimonials = await getEntries(items);
+const single = layout === 'single' || testimonials.length === 1;
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center={single}>
+  {
+    single ? (
+      <Quote testimonial={testimonials[0]} pull={usePullQuote} size="large" />
+    ) : (
+      <div class:list={['grid gap-5', testimonials.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3']}>
+        {testimonials.map((t) => (
+          <Quote testimonial={t} pull={usePullQuote} />
+        ))}
+      </div>
+    )
+  }
+</Section>

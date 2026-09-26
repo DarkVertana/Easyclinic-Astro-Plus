@@ -1,0 +1,85 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { requireConfirmed } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import Screenshot, { type MediaProps } from '../../ui/Screenshot.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'oldWayNewWay'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, old, next, ctx } = Astro.props;
+
+// Section 11 "old way vs new way": paper, WhatsApp and Excel on the left, one system on the right.
+// Photos never sit in a browser or phone frame.
+const framed = (media: MediaProps): MediaProps => (media.kind === 'photo' ? { ...media, frame: 'none' } : media);
+
+// Spec 12: generated imagery may set the scene for the old way only. The EasyClinic side shows the
+// product, so a generated image there is held back: a placeholder in preview, a failed build when published.
+const nextMediaNote = next.media ? requireConfirmed(Astro, `product screenshot, not generated imagery, for "${next.title}"`, !next.media.aiGenerated) : '';
+const nextMedia = next.media && !next.media.aiGenerated ? framed(next.media) : null;
+const sizes = '(min-width: 75rem) 560px, (min-width: 60rem) 45vw, 100vw';
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center>
+  <div class="grid overflow-hidden rounded-card border border-line md:grid-cols-2">
+    <div class="flex flex-col bg-surface-muted p-6 text-ink sm:p-8 lg:p-10">
+      <h3 class="font-sans text-xl font-semibold text-ink-heading">{old.title}</h3>
+      <ul class="mt-5 grid gap-3">
+        {
+          old.items.map((item) => (
+            <li class="flex items-start gap-3">
+              <Icon name="circle-x" size={22} class="mt-0.5 text-danger" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+      {
+        old.media && (
+          <div class="mt-auto pt-8">
+            <Screenshot media={framed(old.media)} sizes={sizes} />
+          </div>
+        )
+      }
+    </div>
+
+    <div class="next-side relative flex flex-col bg-blue-700 p-6 pt-12 text-white sm:p-8 sm:pt-12 md:pt-8 lg:p-10">
+      <span
+        class="absolute left-1/2 top-0 flex size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface text-blue-700 md:left-0 md:top-1/2"
+        aria-hidden="true"
+      >
+        <Icon name="arrow-right" size={20} class="rotate-90 md:rotate-0" />
+      </span>
+      <h3 class="font-sans text-xl font-semibold text-white">{next.title}</h3>
+      <ul class="mt-5 grid gap-3">
+        {
+          next.items.map((item) => (
+            <li class="flex items-start gap-3">
+              <Icon name="circle-check" size={22} class="mt-0.5 text-amber-400" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+      {
+        nextMedia && (
+          <div class="mt-auto pt-8">
+            <Screenshot media={nextMedia} sizes={sizes} />
+          </div>
+        )
+      }
+      {nextMediaNote && <p class="mt-auto pt-8 text-sm">{nextMediaNote}</p>}
+    </div>
+  </div>
+</Section>
+
+<style>
+  /* Screenshot captions and links default to muted grey and link blue; on the brand side they need light ink. */
+  .next-side :global(figcaption) {
+    color: var(--color-blue-100);
+  }
+  .next-side :global(figcaption a) {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+</style>

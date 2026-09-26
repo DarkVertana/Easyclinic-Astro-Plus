@@ -1,0 +1,40 @@
+---
+import Md from './Md.astro';
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+  tone?: 'plain' | 'wash' | 'inverse';
+  width?: 'page' | 'measure';
+  /** Centre the heading and intro (grids and routers). */
+  center?: boolean;
+  class?: string;
+  headingLevel?: 2 | 3;
+}
+
+const { id, eyebrow, heading, intro, tone = 'plain', width = 'page', center = false, class: className, headingLevel = 2 } = Astro.props;
+const H = `h${headingLevel}` as 'h2' | 'h3';
+const headingId = id ? `${id}-heading` : undefined;
+const toneClass = { plain: 'bg-surface', wash: 'bg-surface-alt', inverse: 'bg-surface-inverse text-ink-inverse' }[tone];
+---
+
+<section id={id} aria-labelledby={heading ? headingId : undefined} class:list={['section-y', toneClass, className]} data-tone={tone}>
+  <div class={width === 'measure' ? 'container-measure' : 'container-page'}>
+    {
+      (eyebrow || heading || intro) && (
+        <header class:list={['mb-8 md:mb-10', center ? 'mx-auto max-w-[46rem] text-center' : 'max-w-[46rem]']}>
+          {eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
+          {heading && (
+            <H id={headingId} class:list={[tone === 'inverse' && '!text-white']}>
+              {heading}
+            </H>
+          )}
+          {intro && <Md text={intro} class:list={['lede mt-4', tone === 'inverse' ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+        </header>
+      )
+    }
+    <slot />
+  </div>
+</section>

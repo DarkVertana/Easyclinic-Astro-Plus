@@ -1,0 +1,28 @@
+---
+import type { Crumb } from '../../lib/seo/breadcrumbs';
+import Icon from '../ui/Icon.astro';
+
+interface Props {
+  trail: Crumb[];
+}
+const { trail } = Astro.props;
+---
+
+{
+  trail.length > 1 && (
+    <nav aria-label="Breadcrumb" class="container-page pt-5 text-sm">
+      <ol class="flex flex-wrap items-center gap-1 text-ink-muted">
+        {trail.map((crumb, i) => (
+          <li class="flex items-center gap-1">
+            {i > 0 && <Icon name="chevron-right" size={14} />}
+            {i === trail.length - 1 ? (
+              <span aria-current="page" class="text-ink">{crumb.label}</span>
+            ) : (
+              <a href={crumb.path} class="text-ink-muted">{crumb.label}</a>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}

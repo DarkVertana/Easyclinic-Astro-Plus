@@ -1,0 +1,27 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'stepList'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, steps, note, ctx } = Astro.props;
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <ol class:list={['grid gap-4', steps.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : steps.length === 3 ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-3']}>
+    {
+      steps.map((step, i) => (
+        <li class="card relative flex flex-col p-5">
+          <span class="mb-3 flex size-9 items-center justify-center rounded-full bg-blue-700 font-semibold text-white" aria-hidden="true">
+            {i + 1}
+          </span>
+          <h3 class="font-sans text-lg font-semibold">{step.title}</h3>
+          {step.meta && <p class="mt-1 text-sm font-medium text-teal-700">{step.meta}</p>}
+          <Md text={step.body} class="mt-2 text-ink-muted" />
+        </li>
+      ))
+    }
+  </ol>
+  {note && <Md text={note} class="mt-6 max-w-[42rem] text-sm text-ink-muted" />}
+</Section>

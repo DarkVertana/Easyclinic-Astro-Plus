@@ -52,7 +52,10 @@ const filesystemIndex = config.routes.findIndex((r) => r.handle === 'filesystem'
 const beforeFs = config.routes.slice(0, filesystemIndex);
 const afterFs = config.routes.slice(filesystemIndex + 1).filter((r) => !r.handle);
 
-const fn = (await import(pathToFileURL(join(root, 'functions/_render.func/entry.mjs')).href)).default as {
+// The handler path is relative to the function directory and depends on dependency tracing.
+const fnDir = join(root, 'functions/_render.func');
+const vcConfig = JSON.parse(await readFile(join(fnDir, '.vc-config.json'), 'utf8')) as { handler: string };
+const fn = (await import(pathToFileURL(join(fnDir, vcConfig.handler)).href)).default as {
   fetch: (request: Request) => Promise<Response>;
 };
 
@@ -69,7 +72,7 @@ function substitute(value: string, match: RegExpMatchArray): string {
 
 async function staticFile(pathname: string): Promise<string | null> {
   const decoded = decodeURIComponent(pathname);
-  if (decoded.includes('..')) return null;
+  if (decoded.split('/').includes('..')) return null;
   const candidates = decoded.endsWith('/') ? [join(root, 'static', decoded, 'index.html')] : [join(root, 'static', decoded)];
   for (const file of candidates) {
     try {
@@ -136,7 +139,7 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
       const request = new Request(new URL(pathname + url.search, url), {
         method: req.method,
         headers: Object.entries(req.headers).flatMap(([k, v]) => (v === undefined ? [] : [[k, String(v)]])) as [string, string][],
-        body,
+        body: body ? new Uint8Array(body) : undefined,
       });
       const response = await fn.fetch(request);
       const status = route.status ?? statusOverride;

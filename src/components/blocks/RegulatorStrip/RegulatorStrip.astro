@@ -1,0 +1,68 @@
+---
+import { getEntries } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import StatusChip from '../../ui/StatusChip.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'regulatorStrip'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, regulators, link, ctx } = Astro.props;
+
+const registry = await getRegistry();
+const entries = await getEntries(regulators);
+const resolvedTone = toneFor(tone, ctx.index);
+const inverse = resolvedTone === 'inverse';
+
+// Spec 5.1 item 6: each regulator's name and four-state status, linking to its row on the compliance page.
+const target = link.split('#')[0];
+/** Short label for the strip: the part before a colon ("ABDM Milestone 1: ABHA creation" -> "ABDM Milestone 1"). */
+const shortName = (name: string) => name.split(':')[0].trim();
+const items = entries.map((r) => ({
+  id: r.id,
+  name: shortName(r.data.name),
+  fullName: r.data.name,
+  state: r.data.state,
+  asOf: r.data.asOf,
+  expected: r.data.expected,
+  href: registry.urlFor(`${target}#${r.id}`),
+}));
+const linkHref = registry.urlFor(link);
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={resolvedTone}>
+  <ul class="flex flex-wrap gap-3">
+    {
+      items.map((item) => (
+        <li>
+          {item.href ? (
+            <a
+              href={item.href}
+              class="card flex min-h-11 flex-wrap items-center gap-x-3 gap-y-1.5 px-4 py-2.5 no-underline hover:border-line-strong hover:bg-surface-muted"
+              title={item.name !== item.fullName ? item.fullName : undefined}
+            >
+              <span class="font-semibold text-ink-heading">{item.name}</span>
+              <StatusChip state={item.state} asOf={item.asOf} expected={item.expected} subject={item.fullName} />
+            </a>
+          ) : (
+            <span class="card flex min-h-11 flex-wrap items-center gap-x-3 gap-y-1.5 px-4 py-2.5">
+              <span class="font-semibold text-ink-heading">{item.name}</span>
+              <StatusChip state={item.state} asOf={item.asOf} expected={item.expected} subject={item.fullName} />
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+  {
+    linkHref && (
+      <p class="mt-6">
+        <a href={linkHref} class:list={['inline-flex min-h-11 items-center gap-1.5 font-semibold', inverse && '!text-white']}>
+          How we handle compliance, country by country
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </p>
+    )
+  }
+</Section>

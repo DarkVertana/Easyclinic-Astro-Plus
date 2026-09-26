@@ -1,0 +1,88 @@
+---
+import type { z } from 'astro/zod';
+import type { SectionValue } from '../../../schemas/sections';
+import type { pageBase } from '../../../schemas/base';
+import { getRegistry } from '../../../lib/content/registry';
+import { isProduction } from '../../../lib/content/stage';
+import { formatDate, isoDate } from '../../../lib/format/date';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'contentCards'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+
+interface Card {
+  href: string;
+  label: string;
+  description?: string;
+  updated: Date | null;
+  /** The target page has no content entry yet (preview only). */
+  missing: boolean;
+}
+
+/** Page fields the card reads; every page family has them (pageBase). */
+type CardSource = Pick<z.infer<ReturnType<typeof pageBase>>, 'summary' | 'lastUpdated'>;
+
+const registry = await getRegistry();
+const cards = items.flatMap((item): Card[] => {
+  const href = registry.urlFor(item.href);
+  // Not rendered in this stage (a draft, or a page that does not exist, in production).
+  if (!href) return [];
+  const target = registry.get(item.href.split('#')[0]);
+  if (!target) {
+    if (isProduction) return [];
+    return [{ href, label: item.label ?? item.href, description: item.description, updated: null, missing: true }];
+  }
+  const data = target.data as CardSource;
+  return [
+    {
+      href,
+      label: item.label ?? target.label,
+      description: item.description ?? data.summary,
+      updated: data.lastUpdated,
+      missing: false,
+    },
+  ];
+});
+const columns = cards.length === 2 || cards.length === 4 ? 'sm:grid-cols-2' : cards.length === 1 ? 'max-w-[28rem]' : 'sm:grid-cols-2 md:grid-cols-3';
+---
+
+{
+  cards.length > 0 && (
+    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+      <ul class:list={['grid gap-5', columns]}>
+        {cards.map((card) => (
+          <li
+            class:list={[
+              'card group relative flex h-full flex-col p-6 text-ink hover:border-blue-500 focus-within:border-blue-500',
+              card.missing && 'border-dashed border-line-strong',
+            ]}
+          >
+            <h3 class="font-sans text-lg font-semibold leading-snug">
+              {/* The link's ::after covers the card, so the whole card is the tap target. */}
+              <a href={card.href} class="link-plain after:absolute after:inset-0 after:rounded-card">
+                {card.label}
+              </a>
+            </h3>
+            {card.description && <p class="mt-2 text-ink-muted">{card.description}</p>}
+            {card.missing && (
+              <p class="mt-3 flex items-center gap-1.5 text-sm font-medium text-warning">
+                <Icon name="triangle-alert" size={16} />
+                <span>Page not built yet</span>
+              </p>
+            )}
+            <div class="mt-auto flex items-center gap-3 pt-5 text-sm text-ink-muted">
+              {card.updated && (
+                <span>
+                  Updated <time datetime={isoDate(card.updated)}>{formatDate(card.updated)}</time>
+                </span>
+              )}
+              <Icon name="arrow-right" size={18} class="ml-auto text-link transition-transform group-hover:translate-x-0.5" />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </Section>
+  )
+}

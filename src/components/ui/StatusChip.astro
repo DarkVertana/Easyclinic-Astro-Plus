@@ -1,0 +1,40 @@
+---
+import { STATUS_LABELS, type IntegrationState, type RegulatorState } from '../../schemas/constants';
+import { formatDate } from '../../lib/format/date';
+import { need } from '../../lib/content/need';
+import Icon from './Icon.astro';
+
+interface Props {
+  state: RegulatorState | IntegrationState | null;
+  asOf?: Date | null;
+  expected?: string;
+  href?: string;
+  /** What the chip describes, for the placeholder text and the accessible name. */
+  subject: string;
+}
+
+const { state, asOf, expected, href, subject } = Astro.props;
+// Status chips carry a text label and an icon shape, never colour alone (spec 7.3, 7.6).
+const STYLE: Record<string, { icon: string; cls: string }> = {
+  live: { icon: 'circle-check', cls: 'bg-success-bg text-success border-success/30' },
+  'in-certification': { icon: 'clock', cls: 'bg-info-bg text-info border-info/30' },
+  beta: { icon: 'circle-dot', cls: 'bg-info-bg text-info border-info/30' },
+  planned: { icon: 'circle-dashed', cls: 'bg-warning-bg text-warning border-warning/30' },
+  'not-applicable': { icon: 'minus', cls: 'bg-surface-muted text-ink-muted border-line' },
+};
+const style = state ? STYLE[state] : { icon: 'circle-help', cls: 'bg-surface-muted text-ink-muted border-line-strong border-dashed' };
+const label = state ? STATUS_LABELS[state] : need(Astro, `${subject} status`, null);
+const date = asOf ? formatDate(asOf) : state && state !== 'not-applicable' ? need(Astro, `${subject} as-of date`, null) : null;
+const detail = state === 'planned' || state === 'in-certification' ? expected : undefined;
+const Tag = href ? 'a' : 'span';
+---
+
+<Tag
+  href={href}
+  class:list={['inline-flex flex-wrap items-center gap-x-1.5 gap-y-0.5 rounded-full border px-2.5 py-1 text-sm font-medium no-underline', style.cls]}
+>
+  <Icon name={style.icon} size={16} />
+  <span>{label}</span>
+  {detail && <span class="font-normal">· expected {detail}</span>}
+  {date && <span class="font-normal opacity-90">· as of {date}</span>}
+</Tag>

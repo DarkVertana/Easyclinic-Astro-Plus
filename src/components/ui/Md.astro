@@ -1,0 +1,19 @@
+---
+import { getRegistry } from '../../lib/content/registry';
+import { renderMarkdown } from '../../lib/markdown';
+
+interface Props {
+  text: string | undefined | null;
+  inline?: boolean;
+  class?: string;
+  as?: 'div' | 'span' | 'p';
+  minHeading?: number;
+}
+
+const { text, inline = false, class: className, as, minHeading } = Astro.props;
+const registry = await getRegistry();
+const html = text ? renderMarkdown(text, { inline, urlFor: registry.urlFor, minHeading }) : '';
+const Tag = as ?? (inline ? 'span' : 'div');
+---
+
+{html && <Tag class:list={[!inline && 'prose-md', className]} set:html={html} />}

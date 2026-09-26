@@ -1,0 +1,77 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { need } from '../../lib/content/need';
+import Icon from './Icon.astro';
+import Md from './Md.astro';
+
+export interface MediaProps {
+  kind: 'screenshot' | 'photo' | 'video';
+  src?: ImageMetadata;
+  needed?: string;
+  alt: string;
+  caption?: string;
+  frame: 'browser' | 'phone' | 'none';
+  aiGenerated?: boolean;
+  videoUrl?: string;
+}
+
+interface Props {
+  media: MediaProps;
+  /** Hero images load eagerly with high priority; everything else is lazy. */
+  priority?: boolean;
+  sizes?: string;
+  class?: string;
+  /** Smaller phone frames for dense layouts such as the journey diagram. */
+  compact?: boolean;
+}
+
+const { media, priority = false, sizes = '(min-width: 75rem) 600px, (min-width: 60rem) 50vw, 100vw', class: className, compact = false } = Astro.props;
+const frame = media.frame;
+const phoneWidth = compact ? 'max-w-[9.5rem]' : 'max-w-[18rem]';
+const ratio = frame === 'phone' ? `aspect-[390/844] ${phoneWidth} mx-auto` : 'aspect-[1440/900]';
+const placeholder = !media.src ? need(Astro, `Screenshot: ${media.needed ?? media.alt}`, null) : null;
+---
+
+<figure class:list={['m-0', className]}>
+  <div
+    class:list={[
+      'overflow-hidden bg-surface',
+      frame === 'browser' && 'rounded-card border border-line',
+      frame === 'phone' && ['mx-auto border-navy-900', compact ? 'max-w-[9.5rem] rounded-[1.25rem] border-4' : 'max-w-[18rem] rounded-[2rem] border-[6px]'],
+    ]}
+  >
+    {
+      frame === 'browser' && (
+        <div class="flex items-center gap-1.5 border-b border-line bg-surface-muted px-3 py-2" aria-hidden="true">
+          <span class="size-2.5 rounded-full bg-grey-200" />
+          <span class="size-2.5 rounded-full bg-grey-200" />
+          <span class="size-2.5 rounded-full bg-grey-200" />
+        </div>
+      )
+    }
+    {
+      media.src ? (
+        <Picture
+          src={media.src}
+          alt={media.alt}
+          formats={['avif', 'webp']}
+          sizes={sizes}
+          widths={[480, 768, 1080, 1440]}
+          priority={priority}
+          class="block h-auto w-full"
+        />
+      ) : (
+        <div
+          class:list={['flex flex-col items-center justify-center gap-3 bg-blue-50 p-6 text-center text-ink-muted', ratio]}
+          role="img"
+          aria-label={media.alt}
+        >
+          <Icon name="layout-dashboard" size={32} class="text-blue-500" />
+          <p class:list={['max-w-[28rem]', compact ? 'text-xs' : 'text-sm']}>{placeholder}</p>
+        </div>
+      )
+    }
+  </div>
+  {media.caption && <figcaption class="mt-3 text-sm text-ink-muted"><Md text={media.caption} inline /></figcaption>}
+</figure>

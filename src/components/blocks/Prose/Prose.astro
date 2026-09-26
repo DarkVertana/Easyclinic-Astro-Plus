@@ -1,0 +1,16 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'prose'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, body, aside, width, ctx } = Astro.props;
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width={width === 'measure' && !aside ? 'measure' : 'page'}>
+  <div class:list={[aside ? 'grid gap-8 lg:grid-cols-[1.6fr_1fr]' : '']}>
+    <Md text={body} class="max-w-[42rem] text-lg leading-relaxed" />
+    {aside && <aside class="card h-fit bg-surface p-6"><Md text={aside} /></aside>}
+  </div>
+</Section>

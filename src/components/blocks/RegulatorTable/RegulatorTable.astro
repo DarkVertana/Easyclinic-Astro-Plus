@@ -1,0 +1,246 @@
+---
+import { getCollection, getEntries, getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import { need } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import StatusChip from '../../ui/StatusChip.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'regulatorTable'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, countries, regulators, showClinicMustDo, trustLink, ctx } = Astro.props;
+
+const registry = await getRegistry();
+const resolvedTone = toneFor(tone, ctx.index);
+const inverse = resolvedTone === 'inverse';
+
+// Spec 2.6: every regulator for the countries given, plus any listed one by one.
+const countryIds = countries.map((c) => c.id);
+const byCountry = countryIds.length ? await getCollection('regulators', (r) => countryIds.includes(r.data.country)) : [];
+const explicit = regulators.length ? await getEntries(regulators) : [];
+const rows = [...new Map([...byCountry, ...explicit].map((r) => [r.id, r])).values()];
+
+// Countries in the order the block lists them, then any others (from explicit rows) alphabetically.
+const extra = [...new Set(rows.map((r) => r.data.country).filter((c) => !countryIds.includes(c)))].sort();
+const countryOrder = [...countryIds, ...extra];
+rows.sort(
+  (a, b) =>
+    countryOrder.indexOf(a.data.country) - countryOrder.indexOf(b.data.country) ||
+    a.data.order - b.data.order ||
+    a.data.name.localeCompare(b.data.name),
+);
+
+const countryNames = new Map<string, string>();
+for (const code of countryOrder) {
+  const entry = await getEntry('countries', code);
+  countryNames.set(code, entry?.data.name ?? code.toUpperCase());
+}
+
+const groups = countryOrder
+  .map((code) => ({ code, name: countryNames.get(code)!, rows: rows.filter((r) => r.data.country === code) }))
+  .filter((g) => g.rows.length > 0);
+const grouped = groups.length > 1;
+const columns = showClinicMustDo ? 4 : 3;
+const caption = grouped
+  ? 'Regulators and laws by country, with status and date'
+  : `Regulators and laws in ${groups[0]?.name ?? countryNames.get(countryIds[0] ?? '') ?? 'this country'}, with status and date`;
+
+// A table with no rows means the regulator data for this country has not been written yet.
+const missing = rows.length === 0 ? need(Astro, `regulators for ${countryIds.map((c) => countryNames.get(c)).join(', ') || 'this table'}`, null) : null;
+
+const trustHref = trustLink && ctx.path !== '/trust/' ? registry.urlFor('/trust/') : null;
+
+const headers = ['Regulator or law', 'Status', 'What it does', 'What the clinic must do'];
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={resolvedTone}>
+  {
+    missing ? (
+      <p class="card p-5">{missing}</p>
+    ) : (
+      <div class="reg-wrap">
+        <table class="reg-table w-full text-left" role="table">
+          <caption class="sr-only">{caption}</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader" class="w-[24%]">{headers[0]}</th>
+              <th scope="col" role="columnheader" class="w-[18%]">{headers[1]}</th>
+              <th scope="col" role="columnheader">{headers[2]}</th>
+              {showClinicMustDo && <th scope="col" role="columnheader">{headers[3]}</th>}
+            </tr>
+          </thead>
+          {groups.map((group) => (
+            <tbody role="rowgroup">
+              {grouped && (
+                <tr role="row" class="reg-group">
+                  <th scope="rowgroup" role="rowheader" colspan={columns}>
+                    {group.name}
+                  </th>
+                </tr>
+              )}
+              {group.rows.map((r) => (
+                <tr id={r.id} role="row" class="reg-row">
+                  <th scope="row" role="rowheader" class="reg-name">
+                    {r.data.link ? (
+                      <a href={r.data.link} rel="noopener" class="inline-flex items-start gap-1 font-semibold">
+                        <span>{r.data.name}</span>
+                        <Icon name="arrow-up-right" size={16} class="mt-1" />
+                      </a>
+                    ) : (
+                      <span class="font-semibold text-ink-heading">{r.data.name}</span>
+                    )}
+                    <span class="mt-1 block text-sm font-normal text-ink-muted">{r.data.body}</span>
+                  </th>
+                  <td role="cell" data-label={headers[1]}>
+                    <StatusChip state={r.data.state} asOf={r.data.asOf} expected={r.data.expected} subject={r.data.name} />
+                  </td>
+                  <td role="cell" data-label={headers[2]}>
+                    <Md text={r.data.whatItDoes} class="text-sm" />
+                  </td>
+                  {showClinicMustDo && (
+                    <td role="cell" data-label={headers[3]} class:list={[!r.data.clinicMustDo && 'reg-empty']}>
+                      {r.data.clinicMustDo ? (
+                        <Md text={r.data.clinicMustDo} class="text-sm" />
+                      ) : (
+                        <>
+                          <span aria-hidden="true" class="text-ink-muted">–</span>
+                          <span class="sr-only">None listed</span>
+                        </>
+                      )}
+                    </td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          ))}
+        </table>
+      </div>
+    )
+  }
+  {
+    trustHref && (
+      <p class="mt-6">
+        <a href={trustHref} class:list={['inline-flex min-h-11 items-center gap-1.5 font-semibold', inverse && '!text-white']}>
+          See every country's status on the trust page
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </p>
+    )
+  }
+</Section>
+
+<style>
+  /* Desktop and tablet: a bordered table on a surface card, so it reads on any section tone. */
+  .reg-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+  .reg-table {
+    border-collapse: collapse;
+    color: var(--ink);
+  }
+  .reg-table th,
+  .reg-table td {
+    padding: 1rem;
+    vertical-align: top;
+    border-top: 1px solid var(--border);
+  }
+  .reg-table thead th {
+    border-top: 0;
+    background: var(--surface-muted);
+    color: var(--ink-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding-block: 0.75rem;
+  }
+  .reg-table .reg-name {
+    font-weight: 400;
+  }
+  .reg-group th {
+    background: var(--surface-alt);
+    color: var(--ink-heading);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    padding-block: 0.625rem;
+  }
+  /* Anchor target from /trust/#<id> and hero chips: highlighted without motion. */
+  .reg-row:target > * {
+    background: var(--warning-bg);
+  }
+
+  /* Below 640px each row becomes a card; roles on the elements keep the table semantics. */
+  @media (max-width: 39.99rem) {
+    .reg-wrap {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .reg-table,
+    .reg-table tbody,
+    .reg-table tr,
+    .reg-table th,
+    .reg-table td {
+      display: block;
+      width: auto;
+    }
+    .reg-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .reg-table tbody + tbody {
+      margin-top: 1.5rem;
+    }
+    .reg-group th {
+      border: 0;
+      border-radius: var(--radius-control);
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .reg-row {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 1rem;
+    }
+    .reg-row + .reg-row {
+      margin-top: 0.75rem;
+    }
+    .reg-row > th,
+    .reg-row > td {
+      border: 0;
+      padding: 0;
+    }
+    .reg-row > td {
+      margin-top: 0.875rem;
+    }
+    .reg-row > td::before {
+      content: attr(data-label);
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--ink-muted);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .reg-row > td.reg-empty {
+      display: none;
+    }
+    .reg-row:target > * {
+      background: none;
+    }
+    .reg-row:target {
+      background: var(--warning-bg);
+    }
+  }
+</style>

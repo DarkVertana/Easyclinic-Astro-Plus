@@ -25,6 +25,10 @@
     "@astrojs/vercel": "11.0.11",
     "@tailwindcss/vite": "4.3.3",
     "astro": "7.3.5",
+    "lucide-static": "^1.48.0",
+    "marked": "^18.0.14",
+    "sharp": "0.35.4",
+    "simple-icons": "^16.32.0",
     "tailwindcss": "4.3.3"
   },
   "devDependencies": {
@@ -33,6 +37,7 @@
     "@playwright/test": "1.63.0",
     "@types/node": "^24.0.0",
     "html-validate": "11.16.0",
+    "node-html-parser": "^9.0.4",
     "schema-dts": "2.0.0",
     "typescript": "^6.0.3",
     "vitest": "5.0.2",

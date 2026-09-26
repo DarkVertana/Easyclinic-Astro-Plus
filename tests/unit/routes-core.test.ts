@@ -40,11 +40,11 @@ describe('sourcePattern', () => {
     expect(re.test('/wp-loginXphp')).toBe(false);
   });
   it('children mode never matches the parent path', () => {
-    expect(matchesRule('/doctors/', '/doctors/', 'children')).toBe(false);
-    expect(matchesRule('/doctors', '/doctors/', 'children')).toBe(false);
-    expect(matchesRule('/doctors/dr-x/', '/doctors/', 'children')).toBe(true);
-    expect(matchesRule('/doctors/dr-x', '/doctors/', 'children')).toBe(true);
-    expect(matchesRule('/doctorsx/', '/doctors/', 'children')).toBe(false);
+    expect(matchesRule('/archive/', '/archive/', 'children')).toBe(false);
+    expect(matchesRule('/archive', '/archive/', 'children')).toBe(false);
+    expect(matchesRule('/archive/item/', '/archive/', 'children')).toBe(true);
+    expect(matchesRule('/archive/item', '/archive/', 'children')).toBe(true);
+    expect(matchesRule('/archivex/', '/archive/', 'children')).toBe(false);
   });
   it('prefix mode matches the path and below', () => {
     expect(matchesRule('/category/', '/category/', 'prefix')).toBe(true);
@@ -74,7 +74,7 @@ describe('collapseRedirects', () => {
 });
 
 describe('resolveRules', () => {
-  const built = new Set(['/', '/doctors/', '/solutions/clinic-chain/', '/countries/']);
+  const built = new Set(['/', '/archive/', '/solutions/clinic-chain/', '/countries/']);
   it('activates redirects with built targets and skips the rest', () => {
     const { active, skipped, errors } = resolveRules(
       [
@@ -92,14 +92,14 @@ describe('resolveRules', () => {
   });
   it('rejects redirect sources and gone patterns that shadow built pages', () => {
     const { errors } = resolveRules(
-      [{ from: '/doctors/', to: '/' }],
-      [{ path: '/doctors/', match: 'prefix' }],
+      [{ from: '/archive/', to: '/' }],
+      [{ path: '/archive/', match: 'prefix' }],
       built,
     );
     expect(errors).toHaveLength(2);
   });
-  it('accepts the children gone rule alongside the /doctors/ page', () => {
-    expect(resolveRules([], [{ path: '/doctors/', match: 'children' }], built).errors).toEqual([]);
+  it('accepts a children gone rule alongside its parent page', () => {
+    expect(resolveRules([], [{ path: '/archive/', match: 'children' }], built).errors).toEqual([]);
   });
   it('flags duplicate sources', () => {
     const { errors } = resolveRules([{ from: '/a/', to: '/' }, { from: '/a', to: '/' }], [], built);
@@ -128,7 +128,7 @@ describe('buildRoutes and injectRoutes', () => {
   it('prepends our routes before the trailing-slash rule and the filesystem', () => {
     const ours = buildRoutes({
       redirects: [{ from: '/a/', to: '/b/' }],
-      gone: [{ path: '/doctors/', match: 'children' }],
+      gone: [{ path: '/archive/', match: 'children' }],
       canonicalHost: 'www.easyclinic.io',
       indexingEnabled: false,
     });

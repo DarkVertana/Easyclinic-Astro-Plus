@@ -1,0 +1,11 @@
+currency: USD
+label: US dollars
+locale: en-US
+plans:
+  professional: { annual: 79, quarterly: 99 }
+  premium: { annual: 99, quarterly: 129 }
+addons: { pharmacy: null, lab: null, claims: null, integrations: null }
+taxNote: Local taxes are added where they apply.
+paymentMethods: [Card, Bank transfer]
+source: Staging /pricing/ data and spec 5.12 (September 2026)
+asOf: null

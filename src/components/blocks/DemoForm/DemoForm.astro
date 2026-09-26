@@ -1,0 +1,171 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { LOCATION_BANDS, PRACTICE_TYPES } from '../../../schemas/constants';
+import { DEMO_COUNTRIES, DIAL_CODES } from '../../../lib/crm/schema';
+import { need, unconfirmed } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'demoForm'> & { ctx: BlockContext };
+const { id = 'book-a-demo', eyebrow, heading, intro, tone, country, promise, ctx } = Astro.props;
+
+const countryId = country?.id ?? ctx.country;
+const countryData = countryId ? (await getEntry('countries', countryId))?.data : undefined;
+const contact = countryData?.contact;
+const defaultDial = countryData?.dialCode ?? '+91';
+const defaultCountry = countryData?.name ?? '';
+// "Or call Walter directly" (spec 6, the live Kenya demo page's voice) only with a confirmed name.
+const callName = contact?.name ? unconfirmed(Astro, `${countryData?.name} contact name consent`, contact.name, contact.publishName === true) : null;
+const callPhone = contact?.phone ?? null;
+const f = (name: string) => ({ id: `demo-${name}`, error: `demo-${name}-error` });
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+    <form method="post" action="/demo/submit/" data-demo-form class="card grid gap-5 p-5 sm:p-7" aria-describedby="demo-form-note">
+      <input type="hidden" name="page" value={ctx.path} />
+      {countryId && <input type="hidden" name="pageCountry" value={countryId} />}
+      <input type="hidden" name="startedAt" value="" />
+      <div class="hidden" aria-hidden="true">
+        <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <div class="grid gap-1.5">
+        <label for={f('name').id} class="font-semibold text-ink-heading">Your name</label>
+        <input id={f('name').id} name="name" type="text" required autocomplete="name" class="field" aria-describedby={f('name').error} />
+        <p id={f('name').error} data-error-for="name" class="field-error" hidden></p>
+      </div>
+
+      <fieldset class="grid gap-1.5">
+        <legend class="mb-1.5 font-semibold text-ink-heading">Phone number</legend>
+        <div class="grid grid-cols-[minmax(0,10rem)_1fr] gap-2">
+          <label for="demo-dialCode" class="sr-only">Country code</label>
+          <select id="demo-dialCode" name="dialCode" class="field" autocomplete="tel-country-code">
+            {DIAL_CODES.map((d) => <option value={d.code} selected={d.code === defaultDial}>{d.label}</option>)}
+          </select>
+          <label for={f('phone').id} class="sr-only">Phone number without the country code</label>
+          <input id={f('phone').id} name="phone" type="tel" required inputmode="tel" autocomplete="tel-national" pattern="[\d\s()\-]{6,20}" class="field" aria-describedby={f('phone').error} />
+        </div>
+        <p id={f('phone').error} data-error-for="phone" class="field-error" hidden></p>
+      </fieldset>
+
+      <div class="grid gap-1.5">
+        <label for={f('email').id} class="font-semibold text-ink-heading">Email</label>
+        <input id={f('email').id} name="email" type="email" required autocomplete="email" class="field" aria-describedby={f('email').error} />
+        <p id={f('email').error} data-error-for="email" class="field-error" hidden></p>
+      </div>
+
+      <div class="grid gap-1.5">
+        <label for={f('clinic').id} class="font-semibold text-ink-heading">Clinic name</label>
+        <input id={f('clinic').id} name="clinic" type="text" required autocomplete="organization" class="field" aria-describedby={f('clinic').error} />
+        <p id={f('clinic').error} data-error-for="clinic" class="field-error" hidden></p>
+      </div>
+
+      <fieldset aria-describedby={f('practiceType').error}>
+        <legend class="mb-2 font-semibold text-ink-heading">Practice type</legend>
+        <div class="flex flex-wrap gap-2">
+          {
+            PRACTICE_TYPES.map((p, i) => (
+              <label class="chip-option">
+                <input type="radio" name="practiceType" value={p} required={i === 0} class="sr-only" />
+                <span>{p}</span>
+              </label>
+            ))
+          }
+        </div>
+        <p id={f('practiceType').error} data-error-for="practiceType" class="field-error" hidden></p>
+      </fieldset>
+
+      <fieldset aria-describedby={f('locations').error}>
+        <legend class="mb-2 font-semibold text-ink-heading">Number of locations</legend>
+        <div class="flex flex-wrap gap-2">
+          {
+            LOCATION_BANDS.map((l, i) => (
+              <label class="chip-option">
+                <input type="radio" name="locations" value={l} required={i === 0} class="sr-only" />
+                <span>{l}</span>
+              </label>
+            ))
+          }
+        </div>
+        <p id={f('locations').error} data-error-for="locations" class="field-error" hidden></p>
+      </fieldset>
+
+      <div class="grid gap-1.5">
+        <label for={f('country').id} class="font-semibold text-ink-heading">Country</label>
+        <select id={f('country').id} name="country" required class="field" autocomplete="country-name" aria-describedby={f('country').error}>
+          <option value="" selected={!defaultCountry}>Choose your country</option>
+          {DEMO_COUNTRIES.map((c) => <option value={c} selected={c === defaultCountry}>{c}</option>)}
+        </select>
+        <p id={f('country').error} data-error-for="country" class="field-error" hidden></p>
+      </div>
+
+      <button type="submit" class="btn btn-cta w-full sm:w-auto sm:justify-self-start" data-label="demo form submit">Book my 20-minute demo</button>
+      <p data-form-status role="status" aria-live="polite" class="text-sm text-ink-muted"></p>
+      <p id="demo-form-note" class="text-sm text-ink-muted">We use these details only to arrange your demo. No contract, and no card needed.</p>
+    </form>
+
+    <aside class="space-y-5">
+      {promise && <Md text={promise} class="text-lg" />}
+      {
+        callPhone && (
+          <p class="card flex items-start gap-3 p-5">
+            <Icon name="phone" size={22} class="mt-0.5 text-blue-700" />
+            <span>
+              {callName ? `Or call ${callName} directly: ` : 'Or call us directly: '}
+              <a href={`tel:${callPhone.replace(/\s/g, '')}`} class="font-semibold" data-track="cta_click" data-label="call local contact">
+                {callPhone}
+              </a>
+              {contact?.hours ? <span class="block text-sm text-ink-muted">{contact.hours}</span> : <span class="block text-sm text-ink-muted">{need(Astro, `${countryData?.name ?? 'local'} contact hours`, null)}</span>}
+            </span>
+          </p>
+        )
+      }
+    </aside>
+  </div>
+</Section>
+
+<script>
+  import '../../../scripts/demo-form';
+</script>
+
+<style>
+  .field {
+    width: 100%;
+    min-height: 2.75rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-control);
+    background: var(--surface);
+    padding: 0.5rem 0.75rem;
+    color: var(--ink);
+  }
+  .field[aria-invalid='true'] {
+    border-color: var(--danger);
+  }
+  .field-error {
+    color: var(--danger);
+    font-size: var(--text-sm);
+  }
+  .chip-option span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    cursor: pointer;
+    background: var(--surface);
+  }
+  .chip-option input:checked + span {
+    background: var(--color-blue-700);
+    border-color: var(--color-blue-700);
+    color: var(--color-white);
+  }
+  .chip-option input:focus-visible + span {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+</style>

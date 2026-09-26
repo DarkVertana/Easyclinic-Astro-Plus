@@ -1,0 +1,46 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { need } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'addOns'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, currency, ctx } = Astro.props;
+
+const plans = (await getEntry('plans', 'plans'))?.data;
+if (!plans) throw new Error(`addOns on ${ctx.path}: src/data/plans.yaml is missing`);
+const price = (await getEntry(currency))?.data;
+if (!price) throw new Error(`addOns on ${ctx.path}: no price entry "${currency.id}"`);
+
+const planName = new Map(plans.plans.map((p) => [p.id, p.name]));
+
+// Indicative prices or ranges from the currency's price file, never "quoted separately" (spec 5.12 item 4).
+const addons = plans.addons.map((addon) => {
+  const value = price.addons[addon.id] ?? null;
+  return {
+    ...addon,
+    known: value !== null,
+    price: need(Astro, `${price.currency} ${addon.name} add-on price`, value),
+    availableOn: addon.availableOn.map((id) => planName.get(id) ?? id).join(', '),
+  };
+});
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <ul class:list={['grid gap-5', addons.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : addons.length === 2 ? 'md:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3']}>
+    {
+      addons.map((a) => (
+        <li class="card flex flex-col p-6 text-ink">
+          <h3 class="font-sans text-lg font-semibold">{a.name}</h3>
+          <p class:list={['mt-3', a.known ? 'font-display text-xl font-semibold text-ink-heading' : 'text-base']}>{a.price}</p>
+          <Md text={a.body} class="mt-3 text-ink-muted" />
+          <p class="mt-auto pt-5 text-sm text-ink-muted">
+            <span class="font-semibold text-ink-heading">Available on:</span> {a.availableOn}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</Section>

@@ -1,4 +1,85 @@
 ---
+import { getEntry } from 'astro:content';
+import { DEMO_REF_SECRET } from 'astro:env/server';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { verifyRef } from '../../lib/crm/ref';
+import { isProduction } from '../../lib/content/stage';
+import { need } from '../../lib/content/need';
+import Icon from '../../components/ui/Icon.astro';
+
 export const prerender = false;
+
+const ref = Astro.url.searchParams.get('ref');
+const countryParam = Astro.url.searchParams.get('c') ?? '';
+const secret = DEMO_REF_SECRET ?? (isProduction ? null : 'development-only-secret');
+const verified = secret ? verifyRef(ref, secret) : { valid: false };
+const countryId = verified.valid ? verified.country : countryParam || undefined;
+const country = countryId ? (await getEntry('countries', countryId))?.data : undefined;
+const site = (await getEntry('site', 'site'))!.data;
+const contact = country?.contact;
+
+// Name the person who will call, and when (section 11 UX 3), but only with confirmed facts. In production an
+// unconfirmed name or window falls back to plain wording; in preview it shows as a placeholder to fill.
+const name = contact?.name && contact.publishName ? contact.name : isProduction ? null : need(Astro, `${country?.name ?? 'local'} contact name`, null);
+const window_ = contact?.callbackWindow ?? (isProduction ? null : need(Astro, `${country?.name ?? 'local'} call-back window`, null));
+const phone = contact?.phone ?? site.phone;
 ---
-<html lang="en"><head><title>c</title></head><body><h1>c</h1></body></html>
+
+<BaseLayout
+  title="Demo request received: EasyClinic"
+  description="Your EasyClinic demo request has reached us. Here is what happens next."
+  path="/demo/confirmation/"
+  indexable={false}
+  country={countryId}
+  analyticsImmediate
+>
+  <section class="section-y">
+    <div
+      class="container-measure"
+      data-demo-ref={verified.valid ? ref : undefined}
+      data-country={countryId}
+      data-practice-type={Astro.url.searchParams.get('pt') ?? undefined}
+      data-locations={Astro.url.searchParams.get('l') ?? undefined}
+      data-from={Astro.url.searchParams.get('from') ?? undefined}
+    >
+      <Icon name="circle-check" size={40} class="text-success" />
+      <h1 class="mt-4">We have your demo request</h1>
+      <p class="lede mt-4">
+        {name ? `${name} will call you` : 'We will call you'} on the number you gave us{window_ ? ` ${window_}` : ''}, to book a 20-minute demo at a
+        time that suits your clinic.
+      </p>
+      <h2 class="mt-10 text-2xl">What happens next</h2>
+      <ol class="mt-4 list-decimal space-y-2 pl-5">
+        <li>We ask two or three questions about how your clinic runs today, so the demo uses your own patient flow.</li>
+        <li>The demo is on a video call or in person, and takes about 20 minutes.</li>
+        <li>If you want to go ahead, training takes four short sessions and your data comes across with you.</li>
+      </ol>
+      <p class="mt-8">
+        Need to talk sooner? Call <a href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a>{contact?.email && <> or email <a href={`mailto:${contact.email}`}>{contact.email}</a></>}.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { track } from '../../scripts/track';
+  const el = document.querySelector<HTMLElement>('[data-demo-ref]');
+  const ref = el?.dataset.demoRef;
+  // Fires once per server-confirmed submission, never on reload (spec 7.8 key event).
+  if (ref) {
+    const key = `ec-demo-${ref}`;
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem(key) === '1';
+      sessionStorage.setItem(key, '1');
+    } catch {}
+    if (!seen) {
+      track('demo_form_submitted', {
+        country: el?.dataset.country,
+        practiceType: el?.dataset.practiceType,
+        locations: el?.dataset.locations,
+        form_page: el?.dataset.from,
+      });
+    }
+  }
+</script>

@@ -1,0 +1,33 @@
+---
+import { getIcon } from './icons';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  /** Accessible label. Without it the icon is decorative and hidden from assistive tech. */
+  label?: string;
+}
+
+const { name, size = 20, class: className, label } = Astro.props;
+const icon = getIcon(name);
+const stroke = icon.kind === 'stroke';
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={icon.viewBox}
+  width={size}
+  height={size}
+  class:list={['shrink-0', className]}
+  fill={stroke ? 'none' : 'currentColor'}
+  stroke={stroke ? 'currentColor' : undefined}
+  stroke-width={stroke ? 2 : undefined}
+  stroke-linecap={stroke ? 'round' : undefined}
+  stroke-linejoin={stroke ? 'round' : undefined}
+  aria-hidden={label ? undefined : 'true'}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  focusable="false"
+  set:html={icon.inner}
+/>

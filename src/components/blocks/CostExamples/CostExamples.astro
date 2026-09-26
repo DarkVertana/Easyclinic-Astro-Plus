@@ -1,0 +1,76 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { need, unconfirmed } from '../../../lib/content/need';
+import { formatMoney } from '../../../lib/format/money';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'costExamples'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, currency, period, examples, ctx } = Astro.props;
+
+const plans = (await getEntry('plans', 'plans'))?.data;
+if (!plans) throw new Error(`costExamples on ${ctx.path}: src/data/plans.yaml is missing`);
+const price = (await getEntry(currency))?.data;
+if (!price) throw new Error(`costExamples on ${ctx.path}: no price entry "${currency.id}"`);
+
+// Prices without an as-of date render marked as unconfirmed, like {price:} tokens.
+const money = (n: number) => unconfirmed(Astro, `${price.currency} prices as-of date`, formatMoney(n, price.currency), Boolean(price.asOf));
+const BILLED = { annual: 'billed annually', quarterly: 'billed quarterly' } as const;
+const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+
+// Totals are computed from the price data: doctors × the plan's per-doctor monthly price. The
+// reception login is included in every plan, so no extra seats are added.
+const rows = examples.map((ex) => {
+  const plan = plans.plans.find((p) => p.id === ex.plan);
+  if (!plan) throw new Error(`costExamples on ${ctx.path}: plan "${ex.plan}" is not in plans.yaml`);
+  const quote = plan.custom || ex.plan === 'enterprise';
+  const unit = ex.plan === 'enterprise' ? null : price.plans[ex.plan][period];
+  const doctors = plural(ex.doctors, 'doctor', 'doctors');
+  const monthly = unit !== null ? unit * ex.doctors : null;
+  return {
+    ...ex,
+    planName: plan.name,
+    quote,
+    meta: `${doctors}, ${plural(ex.locations, 'location', 'locations')}, ${plan.name} plan`,
+    monthly: monthly !== null ? money(monthly) : null,
+    yearly: monthly !== null ? money(monthly * 12) : null,
+    sum: unit !== null && monthly !== null ? `${doctors} × ${money(unit)} = ${money(monthly)} per month` : null,
+    missing: quote || unit !== null ? null : need(Astro, `${price.currency} ${plan.name} ${period} price`, null),
+  };
+});
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <ul class:list={['grid gap-5', rows.length === 1 ? 'max-w-[32rem]' : rows.length === 2 ? 'md:grid-cols-2' : rows.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3']}>
+    {
+      rows.map((row) => (
+        <li class="card flex flex-col p-6 text-ink">
+          <h3 class="font-sans text-lg font-semibold">{row.title}</h3>
+          <p class="mt-1 text-sm text-ink-muted">{row.meta}</p>
+
+          {row.quote ? (
+            <p class="mt-5 font-display text-3xl font-semibold text-ink-heading">On quote</p>
+          ) : row.missing ? (
+            <p class="mt-5">{row.missing}</p>
+          ) : (
+            <dl class="mt-5 space-y-4">
+              <div>
+                <dt class="text-sm font-semibold text-ink-heading">Per month, {BILLED[period]}</dt>
+                <dd class="font-display text-3xl font-semibold text-ink-heading">{row.monthly}</dd>
+                <dd class="mt-1 text-sm text-ink-muted">{row.sum}</dd>
+              </div>
+              <div>
+                <dt class="text-sm font-semibold text-ink-heading">Per year</dt>
+                <dd class="font-display text-2xl font-semibold text-ink-heading">{row.yearly}</dd>
+              </div>
+            </dl>
+          )}
+
+          {row.note && <Md text={row.note} class="mt-5 border-t border-line pt-4 text-sm text-ink-muted" />}
+        </li>
+      ))
+    }
+  </ul>
+</Section>

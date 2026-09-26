@@ -1,0 +1,179 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import logo from '../../assets/logo/easyclinic-logo.png';
+import { getRegistry } from '../../lib/content/registry';
+import { isProduction } from '../../lib/content/stage';
+import Icon from '../ui/Icon.astro';
+
+interface Props {
+  /** Country id of the current page, used to route "Book a demo" to the local demo page. */
+  country?: string;
+  whatsappHref: string;
+}
+
+const { country, whatsappHref } = Astro.props;
+const nav = (await getEntry('nav', 'nav'))!.data;
+const site = (await getEntry('site', 'site'))!.data;
+const registry = await getRegistry();
+const countryData = country ? (await getEntry('countries', country))?.data : undefined;
+
+/** Hides links to pages that are not rendered in production; marks them in preview. */
+function link(href: string) {
+  if (!href.startsWith('/')) return { href, missing: false };
+  const resolved = registry.urlFor(href);
+  return { href: resolved, missing: !registry.get(href.split('#')[0]) };
+}
+
+const demoCandidate = countryData?.pages.demo;
+const demoHref = (demoCandidate && registry.urlFor(demoCandidate)) || registry.urlFor('/contact-us/#book-a-demo') || '/contact-us/#book-a-demo';
+
+const primary = nav.primary
+  .map((item) => ({
+    ...item,
+    top: item.href ? link(item.href) : null,
+    groups: (item.groups ?? [])
+      .map((g) => ({ ...g, links: g.links.map((l) => ({ ...l, ...link(l.href) })).filter((l) => l.href) }))
+      .filter((g) => g.links.length),
+  }))
+  .filter((item) => item.groups.length || item.top?.href);
+const missingClass = !isProduction ? 'nav-missing' : '';
+---
+
+<header class="sticky top-0 z-40 border-b border-line bg-surface">
+  <div class="container-page flex h-16 items-center gap-4 md:h-[4.5rem]">
+    <a href="/" class="shrink-0" aria-label="EasyClinic home">
+      <Image src={logo} alt={site.logoAlt} width={162} height={32} loading="eager" fetchpriority="high" class="h-8 w-auto" />
+    </a>
+
+    <nav aria-label="Main" class="ml-4 hidden md:block">
+      <ul class="flex items-center gap-1">
+        {
+          primary.map((item) => (
+            <li class="relative">
+              {item.groups.length ? (
+                <details data-menu="dropdown" class="nav-dd group">
+                  <summary class="flex list-none items-center gap-1 rounded-control px-3 py-2 font-medium text-ink-heading hover:bg-surface-muted [&::-webkit-details-marker]:hidden">
+                    {item.label}
+                    <Icon name="chevron-down" size={16} class="transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div
+                    class:list={[
+                      'absolute left-0 top-full z-50 mt-2 rounded-card border border-line bg-surface p-5 shadow-[0_12px_32px_-12px_rgb(10_37_64/0.25)]',
+                      item.groups.length > 2 ? 'w-[min(56rem,calc(100vw-3rem))]' : item.groups.length === 2 ? 'w-[40rem]' : 'w-[22rem]',
+                    ]}
+                  >
+                    <div class:list={['grid gap-6', item.groups.length >= 4 ? 'grid-cols-4' : item.groups.length === 3 ? 'grid-cols-3' : item.groups.length === 2 ? 'grid-cols-2' : 'grid-cols-1']}>
+                      {item.groups.map((group) => (
+                        <div>
+                          <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">{group.title}</p>
+                          <ul class="space-y-1">
+                            {group.links.map((l) => (
+                              <li>
+                                <a href={l.href} class:list={['flex gap-2.5 rounded-control p-2 no-underline hover:bg-surface-alt', l.missing && missingClass]}>
+                                  {l.icon && <Icon name={l.icon} size={18} class="mt-0.5 text-blue-600" />}
+                                  <span>
+                                    <span class="block text-sm font-semibold text-ink-heading">{l.label}</span>
+                                    {l.description && <span class="block text-sm leading-snug text-ink-muted">{l.description}</span>}
+                                  </span>
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    {item.footerLink && link(item.footerLink.href).href && (
+                      <a href={link(item.footerLink.href).href} class="mt-4 inline-flex items-center gap-1 border-t border-line pt-4 text-sm font-semibold">
+                        {item.footerLink.label} <Icon name="arrow-right" size={16} />
+                      </a>
+                    )}
+                  </div>
+                </details>
+              ) : (
+                <a href={item.top!.href} class:list={['block rounded-control px-3 py-2 font-medium text-ink-heading no-underline hover:bg-surface-muted', item.top!.missing && missingClass]}>
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-2">
+      <a href={site.appLoginUrl} class="btn btn-ghost hidden sm:inline-flex" rel="noopener">Log in</a>
+      <a href={whatsappHref} class="btn btn-ghost hidden !px-3 lg:inline-flex" data-track="whatsapp_click" data-label="header" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <Icon name="brand-whatsapp" size={20} class="text-whatsapp" />
+      </a>
+      <a href={demoHref} class="btn btn-cta hidden sm:inline-flex" data-track="cta_click" data-label="header book a demo">Book a demo</a>
+
+      <details data-menu="drawer" class="md:hidden">
+        <summary class="btn btn-ghost list-none !px-2.5 [&::-webkit-details-marker]:hidden" aria-label="Menu">
+          <Icon name="menu" size={24} />
+        </summary>
+        <div class="fixed inset-x-0 bottom-0 top-16 z-50 overflow-y-auto border-t border-line bg-surface px-4 pb-24 pt-2">
+          <nav aria-label="Main">
+            <ul class="divide-y divide-line">
+              {
+                primary.map((item) =>
+                  item.groups.length ? (
+                    <li>
+                      <details class="group/m">
+                        <summary class="flex min-h-12 list-none items-center justify-between py-3 font-semibold text-ink-heading [&::-webkit-details-marker]:hidden">
+                          {item.label}
+                          <Icon name="chevron-down" size={18} class="transition-transform group-open/m:rotate-180" />
+                        </summary>
+                        {item.groups.map((group) => (
+                          <div class="pb-3">
+                            {item.groups.length > 1 && <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-ink-muted">{group.title}</p>}
+                            <ul>
+                              {group.links.map((l) => (
+                                <li>
+                                  <a href={l.href} class:list={['block min-h-11 py-2.5 text-ink no-underline', l.missing && missingClass]}>
+                                    {l.label}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </details>
+                    </li>
+                  ) : (
+                    <li>
+                      <a href={item.top!.href} class:list={['flex min-h-12 items-center py-3 font-semibold text-ink-heading no-underline', item.top!.missing && missingClass]}>
+                        {item.label}
+                      </a>
+                    </li>
+                  ),
+                )
+              }
+            </ul>
+          </nav>
+          <div class="mt-6 grid gap-3">
+            <a href={demoHref} class="btn btn-cta w-full" data-track="cta_click" data-label="drawer book a demo">Book a demo</a>
+            <a href={whatsappHref} class="btn btn-outline w-full" data-track="whatsapp_click" data-label="drawer" rel="noopener">
+              <Icon name="brand-whatsapp" size={20} /> Chat on WhatsApp
+            </a>
+            <a href={site.appLoginUrl} class="btn btn-ghost w-full" rel="noopener">Log in</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<script>
+  import '../../scripts/header';
+</script>
+
+<style>
+  .nav-missing {
+    opacity: 0.55;
+    text-decoration: line-through dotted;
+  }
+  :global(html.drawer-open) {
+    overflow: hidden;
+  }
+</style>

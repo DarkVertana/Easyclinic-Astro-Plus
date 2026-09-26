@@ -1,0 +1,87 @@
+# Numbers the site states, with where they come from. `asOf: null` means the company has not
+# confirmed the figure for publication yet; pages can render it in preview but not publish it.
+facts:
+  doctors:
+    label: doctors use EasyClinic
+    value: 5,000+
+    source: Live site (/pricing/, homepage), September 2026
+    asOf: null
+  cities:
+    label: cities
+    value: '200'
+    source: Live site (/pricing/), September 2026
+    asOf: null
+  countries:
+    label: countries
+    value: '18'
+    source: Live site (/about-us/, /kenyademo/), September 2026
+    asOf: null
+  founded:
+    label: running clinics since
+    value: '2003'
+    source: Live site (/about-us/)
+    asOf: 2026-09-26
+  prescriptionsDaily:
+    label: prescriptions written each day
+    value: 200,000
+    source: Live site (homepage, /kenyademo/)
+    asOf: null
+  retention:
+    label: of customers have used EasyClinic for more than five years
+    value: 92%
+    source: null
+    asOf: null
+    note: Live /about-us/ counter; no method or date published.
+  supportSatisfaction:
+    label: support and training satisfaction
+    value: 98%
+    source: null
+    asOf: null
+  largestChain:
+    label: locations in the largest chain on EasyClinic
+    value: 100+
+    source: Live homepage ("From Solo Clinics to 100+ Locations")
+    asOf: null
+  goLiveDays:
+    label: days from demo to live, at the fastest
+    value: '3'
+    source: Live /kenyademo/ ("From demo to live in as little as 3 days")
+    asOf: null
+    note: Conflicts with "2 to 4 week setup" on the live Kenya listicle. Confirm.
+  trainingDays:
+    label: days of training, about two hours in total
+    value: '4'
+    source: Live /pricing/ FAQ (Day 1 40 min, Day 2 40 min, Day 3 20 min, Day 4 20 min)
+    asOf: 2026-09-26
+  noShowReduction:
+    label: fewer no-shows after WhatsApp reminders
+    value: null
+    source: null
+    asOf: null
+    note: Spec 5.11 asks for one real percentage from customer data.
+  minutesPerNote:
+    label: minutes per note with Cura AI
+    value: null
+    source: null
+    asOf: null
+  capterraRating:
+    label: rating on Capterra
+    value: '4.9'
+    source: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+    asOf: null
+    note: Review count needed (spec 2.4 badge with its count).
+  capterraReviews:
+    label: Capterra reviews
+    value: null
+    source: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+    asOf: null
+  googleRating:
+    label: rating on Google
+    value: '4.8'
+    source: Trustindex badge on the live footer
+    asOf: null
+  googleReviews:
+    label: Google reviews
+    value: null
+    source: null
+    asOf: null

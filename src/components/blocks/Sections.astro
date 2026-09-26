@@ -1,0 +1,19 @@
+---
+import type { Section } from '../../schemas/sections';
+import { BLOCKS } from './registry';
+import type { BlockContext } from './types';
+
+interface Props {
+  sections: Section[];
+  ctx: Omit<BlockContext, 'index'>;
+}
+
+const { sections, ctx } = Astro.props;
+---
+
+{
+  sections.map((section, index) => {
+    const Component = BLOCKS[section.discriminant] as (props: Record<string, unknown>) => unknown;
+    return <Component {...section.value} ctx={{ ...ctx, index }} />;
+  })
+}

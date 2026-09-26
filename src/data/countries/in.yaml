@@ -1,0 +1,40 @@
+name: India
+code: IN
+currency: INR
+dialCode: '+91'
+timezone: Asia/Kolkata
+flagship: true
+contact:
+  name: null
+  publishName: null
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: 30 Circus Avenue, Kolkata 700017
+pages:
+  country: /clinic-management-software-india/
+  demo: /indiademo/
+  pricing: /pricing/india/
+  listicle: /best-clinic-management-software-india/
+  comparison: /easyclinic-vs-practo/
+  privacy: /privacy/india/
+cities: [Kolkata, Hyderabad, Jaipur, Mumbai]
+clients:
+  - Prashanthi Super Clinic
+  - Aditya Women and Infertility Clinic, Hyderabad
+  - Institute of Hematology and Transfusion Medicine
+  - Asha Homeopathy Medical Center, Jaipur
+  - Seth GS KEM Hospital
+  - Samonnoy Clinic
+  - Sri Swasthyaa Clinic
+payments:
+  - { name: UPI, state: null, asOf: null }
+  - { name: Razorpay, state: null, asOf: null }
+  - { name: PayU, state: null, asOf: null }
+  - { name: Cards and cash at the desk, state: live, asOf: 2026-09-26 }
+insurers: []
+languages: []
+taxInvoicing: null

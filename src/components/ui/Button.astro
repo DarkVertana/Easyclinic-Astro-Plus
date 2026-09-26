@@ -1,0 +1,36 @@
+---
+import { getRegistry } from '../../lib/content/registry';
+import Icon from './Icon.astro';
+
+interface Props {
+  href: string;
+  label: string;
+  variant?: 'cta' | 'solid' | 'outline' | 'ghost';
+  /** Analytics label (spec 7.8 cta_click). */
+  event?: string;
+  icon?: string;
+  class?: string;
+  /** Event name override, e.g. whatsapp_click or pricing_contact_click. */
+  track?: string;
+}
+
+const { href, label, variant = 'cta', event, icon, class: className, track = 'cta_click' } = Astro.props;
+const registry = await getRegistry();
+const resolved = href.startsWith('/') ? registry.urlFor(href) : href;
+const external = /^https?:\/\//.test(href);
+---
+
+{
+  resolved && (
+    <a
+      href={resolved}
+      class:list={['btn', `btn-${variant}`, className]}
+      data-track={track}
+      data-label={event ?? label}
+      rel={external ? 'noopener' : undefined}
+    >
+      {icon && <Icon name={icon} size={18} />}
+      <span>{label}</span>
+    </a>
+  )
+}

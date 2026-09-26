@@ -1,0 +1,117 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'planMatrix'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, open, ctx } = Astro.props;
+
+const registry = await getRegistry();
+const data = (await getEntry('plans', 'plans'))?.data;
+if (!data) throw new Error(`planMatrix on ${ctx.path}: src/data/plans.yaml is missing`);
+
+const plans = data.plans;
+const groups = data.matrix.map((group) => ({
+  group: group.group,
+  rows: group.rows.map((row) => ({
+    feature: row.feature,
+    href: row.href ? registry.urlFor(row.href) : null,
+    cells: plans.map((plan) => row[plan.id]),
+  })),
+}));
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  {/* Open in the DOM, collapsed by <details> (spec 7.3). */}
+  <details class="group card text-ink" open={open}>
+    <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 [&::-webkit-details-marker]:hidden">
+      <span class="font-sans text-lg font-semibold text-ink-heading">Compare every feature by plan</span>
+      <Icon name="chevron-down" size={22} class="text-blue-600 transition-transform group-open:rotate-180" />
+    </summary>
+
+    <div class="border-t border-line">
+      {/* The one table allowed to scroll sideways on phones (spec 7.5): a named, focusable region (a labelled section) with a visible hint. */}
+      <p class="flex items-center gap-2 px-5 pt-4 text-sm text-ink-muted sm:hidden">
+        <Icon name="arrow-right" size={16} />
+        <span>Scroll sideways to see all plans</span>
+      </p>
+      <section aria-label="Features by plan" tabindex="0" class="matrix overflow-x-auto">
+        <table class="w-full min-w-[36rem] text-left">
+          <caption class="sr-only">Features included in each plan</caption>
+          <thead>
+            <tr class="border-b border-line-strong">
+              <th scope="col" class="sticky-col px-5 py-3 text-sm font-semibold text-ink-muted">Feature</th>
+              {
+                plans.map((plan) => (
+                  <th scope="col" class="w-32 px-3 py-3 text-center font-semibold text-ink-heading">
+                    {plan.name}
+                  </th>
+                ))
+              }
+            </tr>
+          </thead>
+          {
+            groups.map((group) => (
+              <tbody>
+                <tr class="bg-surface-muted">
+                  <th scope="rowgroup" colspan={plans.length + 1} class="px-5 pt-5 pb-2 text-sm font-semibold uppercase tracking-wide text-blue-700">
+                    <span class="sticky left-5">{group.group}</span>
+                  </th>
+                </tr>
+                {group.rows.map((row) => (
+                  <tr class="border-b border-line">
+                    <th scope="row" class="sticky-col px-5 py-0.5 font-normal">
+                      {row.href ? (
+                        <a href={row.href} class="inline-flex min-h-11 items-center">
+                          {row.feature}
+                        </a>
+                      ) : (
+                        <span class="inline-flex min-h-11 items-center">{row.feature}</span>
+                      )}
+                    </th>
+                    {row.cells.map((value) => (
+                      <td class="px-3 py-0.5 text-center">
+                        {value === true ? (
+                          <span class="inline-flex items-center justify-center text-success">
+                            <Icon name="check" size={22} />
+                            <span class="sr-only">Included</span>
+                          </span>
+                        ) : value === false ? (
+                          <span class="inline-flex items-center justify-center text-ink-muted">
+                            <Icon name="minus" size={22} />
+                            <span class="sr-only">Not included</span>
+                          </span>
+                        ) : (
+                          <span class="text-sm">{value}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            ))
+          }
+        </table>
+      </section>
+    </div>
+  </details>
+</Section>
+
+<style>
+  /* Feature names stay in view while the plan columns scroll on phones. */
+  @media (width < 40rem) {
+    .sticky-col {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--surface);
+      box-shadow: inset -1px 0 0 var(--border);
+    }
+  }
+  .matrix:focus-visible {
+    outline-offset: -3px;
+  }
+</style>

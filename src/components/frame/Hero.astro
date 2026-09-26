@@ -1,0 +1,101 @@
+---
+import { getEntries, getEntry, type ReferenceDataEntry } from 'astro:content';
+import type { MediaProps } from '../ui/Screenshot.astro';
+import { getRegistry } from '../../lib/content/registry';
+import { need, unconfirmed } from '../../lib/content/need';
+import Button from '../ui/Button.astro';
+import Md from '../ui/Md.astro';
+import Screenshot from '../ui/Screenshot.astro';
+import StatusChip from '../ui/StatusChip.astro';
+import Icon from '../ui/Icon.astro';
+import AuthorByline from './AuthorByline.astro';
+
+interface Props {
+  eyebrow?: string;
+  h1: string;
+  openingAnswer: string;
+  ctas: { primary: { label: string; href: string; event?: string }; secondary?: { label: string; href: string; event?: string } };
+  heroMedia?: MediaProps;
+  heroStrip?: { regulators: ReferenceDataEntry<'regulators'>[]; ratings: boolean; study: boolean };
+  byline?: { author: ReferenceDataEntry<'authors'> | null; reviewedBy?: ReferenceDataEntry<'authors'>; lastUpdated: Date | null };
+}
+
+const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, byline } = Astro.props;
+const registry = await getRegistry();
+const regulators = heroStrip?.regulators.length ? await getEntries(heroStrip.regulators) : [];
+const facts = heroStrip?.ratings ? (await getEntry('facts', 'facts'))!.data.facts : null;
+const study = heroStrip?.study ? (await getEntry('study', 'study'))!.data : null;
+
+function rating(ratingId: string, countId: string, platform: string) {
+  const r = facts![ratingId];
+  const c = facts![countId];
+  const value = need(Astro, `${platform} rating`, r?.value);
+  const count = need(Astro, `${platform} review count`, c?.value);
+  return { value: unconfirmed(Astro, `${platform} rating as-of date`, value, Boolean(r?.asOf)), count, platform };
+}
+const ratings = facts ? [rating('capterraRating', 'capterraReviews', 'Capterra'), rating('googleRating', 'googleReviews', 'Google')] : [];
+
+let studyLine: string | null = null;
+if (study) {
+  const visits = study.figures.find((f) => f.id === 'visits');
+  const publication = study.publications.find((p) => p.id === visits?.source);
+  if (visits && publication) {
+    studyLine = `AI copilot ${unconfirmed(Astro, 'study citation verification', `studied on ${visits.value} visits`, Boolean(publication.verifiedOn))}`;
+  }
+}
+const trustHref = registry.urlFor('/trust/');
+const studyHref = registry.urlFor('/curapilot/');
+---
+
+<section class="border-b border-line bg-gradient-to-b from-blue-50 to-surface">
+  <div class:list={['container-page grid items-center gap-10 py-10 md:py-16', heroMedia && 'lg:grid-cols-[1.2fr_1fr] lg:gap-12']}>
+    <div class="max-w-[44rem]">
+      {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
+      <h1 class="lg:text-[2.875rem]">{h1}</h1>
+      <Md text={openingAnswer} class="lede mt-5 text-ink" />
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <Button {...ctas.primary} variant="cta" />
+        {ctas.secondary && <Button {...ctas.secondary} variant="outline" />}
+      </div>
+
+      <slot name="aside" />
+
+      {
+        (regulators.length > 0 || ratings.length > 0 || studyLine) && (
+          <ul class="mt-7 flex flex-wrap items-center gap-2" aria-label="Compliance status and ratings">
+            {regulators.map((r) => (
+              <li>
+                <StatusChip
+                  state={r.data.state}
+                  asOf={r.data.asOf}
+                  expected={r.data.expected}
+                  subject={r.data.name}
+                  href={trustHref ? `${trustHref}#${r.id}` : undefined}
+                />
+              </li>
+            ))}
+            {ratings.map((r) => (
+              <li class="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2.5 py-1 text-sm">
+                <Icon name="star" size={16} class="fill-star text-star" />
+                <span class="font-semibold text-ink-heading">{r.value}</span>
+                <span class="text-ink-muted">
+                  on {r.platform} ({r.count} reviews)
+                </span>
+              </li>
+            ))}
+            {studyLine && (
+              <li class="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2.5 py-1 text-sm">
+                <Icon name="stethoscope" size={16} class="text-teal-700" />
+                {studyHref ? <a href={studyHref}>{studyLine}</a> : <span>{studyLine}</span>}
+              </li>
+            )}
+          </ul>
+        )
+      }
+
+      {byline && <AuthorByline {...byline} class="mt-6" />}
+    </div>
+
+    {heroMedia && <Screenshot media={heroMedia} priority sizes="(min-width: 75rem) 560px, (min-width: 60rem) 48vw, 100vw" />}
+  </div>
+</section>

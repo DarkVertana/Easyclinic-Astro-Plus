@@ -1,0 +1,20 @@
+---
+import Icon from '../ui/Icon.astro';
+
+interface Props {
+  href: string;
+}
+const { href } = Astro.props;
+---
+
+<!-- Persistent WhatsApp contact on phones, bottom right (section 11, UX 2). -->
+<a
+  href={href}
+  class="fixed bottom-4 right-4 z-40 flex size-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_8px_24px_-8px_rgb(0_0_0/0.45)] hover:brightness-110 md:hidden"
+  data-track="whatsapp_click"
+  data-label="floating"
+  rel="noopener"
+  aria-label="Chat with EasyClinic on WhatsApp"
+>
+  <Icon name="brand-whatsapp" size={28} />
+</a>

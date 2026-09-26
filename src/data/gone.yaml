@@ -1,7 +1,5 @@
 # Paths that return 410 Gone with a small body and X-Robots-Tag: noindex.
 # match: exact (default) | prefix (path and everything below) | children (only below)
-- { path: /doctors/, match: children, note: 'directory moved; /doctors/ itself is the selector page (spec 3.5, 5.9). Switch to per-URL 301s when the directory domain is live.' }
-- { path: /clinics/, match: prefix, note: directory moved (spec 3.5) }
 - { path: /devlabs/, match: prefix, note: staging CMS login (audit) }
 - { path: /wp-admin/, match: prefix }
 - { path: /wp-login.php }

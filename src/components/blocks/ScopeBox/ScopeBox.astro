@@ -1,0 +1,46 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'scopeBox'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, variant, items, note, ctx } = Astro.props;
+
+// Honest limits (spec 5.8 item 6, 5.10 item 6, 6.1: admit what the product does not do).
+const DEFAULT_HEADING = {
+  notFor: 'EasyClinic is not the right fit if',
+  isNot: 'What EasyClinic is not',
+  limits: 'What it does not do yet',
+} as const;
+const exclusion = variant !== 'limits';
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading || DEFAULT_HEADING[variant]} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <div
+    class:list={[
+      'rounded-card border p-6 text-ink md:p-8',
+      exclusion ? 'border-warning/40 bg-warning-bg' : 'border-line-strong bg-surface-muted',
+    ]}
+  >
+    <ul class:list={['grid gap-x-10 gap-y-4', items.length > 3 ? 'md:grid-cols-2' : 'max-w-[46rem]']}>
+      {
+        items.map((item) => (
+          <li class="flex gap-3">
+            <Icon name={exclusion ? 'circle-x' : 'info'} size={20} class:list={['mt-0.5', exclusion ? 'text-warning' : 'text-info']} />
+            <Md text={item} class="min-w-0 flex-1" />
+          </li>
+        ))
+      }
+    </ul>
+    {
+      note && (
+        <Md
+          text={note}
+          class:list={['mt-6 max-w-[46rem] border-t pt-5 text-sm text-ink-muted', exclusion ? 'border-warning/30' : 'border-line']}
+        />
+      )
+    }
+  </div>
+</Section>

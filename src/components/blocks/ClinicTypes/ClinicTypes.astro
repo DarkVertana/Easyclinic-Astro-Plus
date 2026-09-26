@@ -1,0 +1,59 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import type { Persona } from '../../../schemas/constants';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'clinicTypes'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+
+const registry = await getRegistry();
+
+// Spec 5.13 block 6: who it is for locally, one card per clinic type in the ladder vocabulary (2.8).
+const ICONS: Record<Persona, string> = {
+  solo: 'user-round',
+  polyclinic: 'users',
+  chain: 'network',
+  'hospital-opd': 'hospital',
+  ngo: 'heart',
+};
+const cards = items.map((item) => ({ ...item, icon: ICONS[item.persona], url: registry.urlFor(item.href) }));
+const cols =
+  cards.length === 2 ? 'md:grid-cols-2' : cards.length === 3 ? 'md:grid-cols-3' : cards.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-2 lg:grid-cols-3';
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <ul class:list={['grid gap-5', cols]}>
+    {
+      cards.map((card) => (
+        <li class="card flex flex-col p-6">
+          <span class="mb-4 flex size-11 items-center justify-center rounded-full bg-blue-50 text-blue-700">
+            <Icon name={card.icon} size={22} />
+          </span>
+          <h3 class="font-sans text-lg font-semibold">{card.title}</h3>
+          <Md text={card.body} class="mt-2 text-ink-muted" />
+          {card.example && (
+            <div class="mt-4 rounded-control border-l-4 border-journey bg-surface-muted px-4 py-3 text-sm text-ink">
+              <p class="mb-1 flex items-center gap-1.5 font-semibold text-ink-heading">
+                <Icon name="map-pin" size={16} class="text-teal-700" />
+                Local example
+              </p>
+              <Md text={card.example} />
+            </div>
+          )}
+          {card.url && (
+            <p class="mt-auto pt-5">
+              <a href={card.url} class="inline-flex min-h-11 items-center gap-1.5 font-semibold">
+                <span>{card.title}: how EasyClinic works for you</span>
+                <Icon name="arrow-right" size={18} />
+              </a>
+            </p>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Section>

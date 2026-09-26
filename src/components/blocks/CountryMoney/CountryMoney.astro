@@ -1,0 +1,166 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import { need, unconfirmed } from '../../../lib/content/need';
+import { annualSaving, formatMoney } from '../../../lib/format/money';
+import { formatDate, isoDate } from '../../../lib/format/date';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import StatusChip from '../../ui/StatusChip.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'countryMoney'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, country: countryRef, currency: currencyRef, payersNote, ctx } = Astro.props;
+
+const registry = await getRegistry();
+const countryEntry = await getEntry(countryRef);
+const priceEntry = await getEntry(currencyRef);
+if (!countryEntry) throw new Error(`countryMoney on ${ctx.path}: no country "${countryRef.id}"`);
+if (!priceEntry) throw new Error(`countryMoney on ${ctx.path}: no prices entry "${currencyRef.id}"`);
+const country = countryEntry.data;
+const price = priceEntry.data;
+const plans = (await getEntry('plans', 'plans'))!.data.plans;
+
+// Spec 5.13 block 4. Prices come from prices/<currency>.yaml; unknown prices render placeholders, and
+// prices without an asOf date are unconfirmed, the same rule as {price:...} tokens.
+function amount(value: number | null, planName: string, period: 'annual' | 'quarterly'): string {
+  if (value == null) return need(Astro, `${price.currency} ${planName} ${period} price`, null);
+  return unconfirmed(Astro, `prices/${priceEntry!.id}.yaml asOf date`, formatMoney(value, price.currency), Boolean(price.asOf));
+}
+
+function saving(annual: number | null, quarterly: number | null): string | null {
+  const pct = annualSaving(annual, quarterly);
+  return pct ? unconfirmed(Astro, `prices/${priceEntry!.id}.yaml asOf date`, `Save ${pct}% paying annually`, Boolean(price.asOf)) : null;
+}
+
+const cards = plans.map((plan) => {
+  if (plan.id === 'enterprise') return { id: plan.id, name: plan.name, bestFor: plan.bestFor, quote: true as const };
+  const p = price.plans[plan.id];
+  return {
+    id: plan.id,
+    name: plan.name,
+    bestFor: plan.bestFor,
+    quote: false as const,
+    annual: amount(p.annual, plan.name, 'annual'),
+    quarterly: amount(p.quarterly, plan.name, 'quarterly'),
+    saving: saving(p.annual, p.quarterly),
+  };
+});
+
+const taxNote = need(Astro, `${price.currency} tax note`, price.taxNote);
+const taxInvoicing = need(Astro, `${country.name} tax invoicing`, country.taxInvoicing);
+const paymentsMissing = country.payments.length === 0 ? need(Astro, `${country.name} payment methods`, null) : null;
+const pricingPath = country.pages.pricing;
+const pricingHref = pricingPath && pricingPath !== ctx.path ? registry.urlFor(pricingPath) : null;
+const showPayers = country.insurers.length > 0 || Boolean(payersNote);
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <div class="grid gap-6 md:grid-cols-2 md:gap-8">
+    <div class="card flex flex-col p-5 sm:p-6">
+      <p class="text-sm font-semibold text-ink-muted">Prices in {price.label}</p>
+      <ul class="mt-4 grid gap-4">
+        {
+          cards.map((card) => (
+            <li class="rounded-control border border-line p-4">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <h3 class="font-sans text-lg font-semibold">{card.name}</h3>
+                {!card.quote && card.saving && (
+                  <span class="rounded-full bg-success-bg px-2.5 py-0.5 text-xs font-semibold text-success">{card.saving}</span>
+                )}
+              </div>
+              <p class="mt-1 text-sm text-ink-muted">{card.bestFor}</p>
+              {card.quote ? (
+                <p class="mt-3 font-display text-2xl font-semibold text-ink-heading">On quote</p>
+              ) : (
+                <dl class="mt-3 grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <dt class="text-sm text-ink-muted">Paid annually</dt>
+                    <dd>
+                      <span class="font-display text-2xl font-semibold text-ink-heading">{card.annual}</span>
+                      <span class="block text-sm text-ink-muted">per doctor per month</span>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt class="text-sm text-ink-muted">Paid quarterly</dt>
+                    <dd>
+                      <span class="font-display text-2xl font-semibold text-ink-heading">{card.quarterly}</span>
+                      <span class="block text-sm text-ink-muted">per doctor per month</span>
+                    </dd>
+                  </div>
+                </dl>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-4 text-sm text-ink-muted">
+        {taxNote}
+        {price.asOf && <> Prices as of <time datetime={isoDate(price.asOf)}>{formatDate(price.asOf)}</time>.</>}
+      </p>
+      {
+        pricingHref && (
+          <p class="mt-auto pt-4">
+            <a href={pricingHref} class="inline-flex min-h-11 items-center gap-1.5 font-semibold" data-track="cta_click" data-label="country pricing page">
+              See every plan and add-on in {price.label}
+              <Icon name="arrow-right" size={18} />
+            </a>
+          </p>
+        )
+      }
+    </div>
+
+    <div class="card divide-y divide-line p-5 sm:p-6">
+      <div class="pb-5">
+        <h3 class="flex items-center gap-2 font-sans text-lg font-semibold">
+          <Icon name="wallet" size={20} class="text-blue-700" />
+          How patients pay you
+        </h3>
+        {
+          paymentsMissing ? (
+            <p class="mt-3">{paymentsMissing}</p>
+          ) : (
+            <ul class="mt-3 grid gap-3">
+              {country.payments.map((p) => (
+                <li class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5">
+                  <span class="font-medium text-ink-heading">{p.name}</span>
+                  <StatusChip state={p.state} asOf={p.asOf} subject={p.name} />
+                  {p.note && <span class="basis-full text-sm text-ink-muted">{p.note}</span>}
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+
+      <div class={showPayers ? 'py-5' : 'pt-5'}>
+        <h3 class="flex items-center gap-2 font-sans text-lg font-semibold">
+          <Icon name="receipt" size={20} class="text-blue-700" />
+          Tax invoices
+        </h3>
+        <p class="mt-2">{taxInvoicing}</p>
+      </div>
+
+      {
+        showPayers && (
+          <div class="pt-5">
+            <h3 class="flex items-center gap-2 font-sans text-lg font-semibold">
+              <Icon name="shield-check" size={20} class="text-blue-700" />
+              Insurers and payers
+            </h3>
+            {country.insurers.length > 0 && (
+              <ul class="mt-3 flex flex-wrap gap-2" aria-label={`Insurers in ${country.name}`}>
+                {country.insurers.map((name) => (
+                  <li class="rounded-full border border-line bg-surface-muted px-3 py-1 text-sm font-medium text-ink-heading">{name}</li>
+                ))}
+              </ul>
+            )}
+            {payersNote && <Md text={payersNote} class="mt-3 text-sm text-ink-muted" />}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Section>

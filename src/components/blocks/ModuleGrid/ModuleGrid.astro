@@ -1,0 +1,100 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import Screenshot from '../../ui/Screenshot.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'moduleGrid'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, columns, items, ctx } = Astro.props;
+
+const registry = await getRegistry();
+
+// Spec 5.1 item 4 (four pillars) and 5.4 (twelve modules): every card has the same parts in the same
+// order, so no module gets more depth than another. A card with no links list is one link (the title's
+// ::after covers the card); a card with a links list links only its title, so links never nest.
+const cards = items.map((item) => {
+  const url = item.href ? registry.urlFor(item.href) : null;
+  return {
+    ...item,
+    url,
+    wholeCard: Boolean(url) && item.links.length === 0,
+    links: item.links.map((link) => ({ label: link.label, url: registry.urlFor(link.href) })),
+  };
+});
+
+// One column on phones, two from sm, then the requested count.
+const GRID = {
+  2: { cols: 'sm:grid-cols-2', sizes: '(min-width: 75rem) 560px, (min-width: 40rem) 45vw, 100vw' },
+  3: { cols: 'sm:grid-cols-2 md:grid-cols-3', sizes: '(min-width: 75rem) 360px, (min-width: 40rem) 45vw, 100vw' },
+  4: { cols: 'sm:grid-cols-2 lg:grid-cols-4', sizes: '(min-width: 75rem) 270px, (min-width: 40rem) 45vw, 100vw' },
+}[columns];
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <ul class:list={['grid gap-5', GRID.cols]}>
+    {
+      cards.map((card) => (
+        <li
+          class:list={[
+            'module-card card relative flex h-full flex-col p-6 text-ink',
+            card.wholeCard && 'group transition-colors hover:border-blue-500 focus-within:border-blue-500',
+          ]}
+        >
+          {card.icon && (
+            <span class="mb-4 flex size-11 items-center justify-center rounded-control bg-blue-50 text-blue-700">
+              <Icon name={card.icon} size={22} />
+            </span>
+          )}
+          <h3 class="font-sans text-lg font-semibold leading-snug">
+            {card.url ? (
+              <a
+                href={card.url}
+                class:list={[
+                  'link-plain inline-block py-2.5 -my-2.5',
+                  card.wholeCard && 'after:absolute after:inset-0 after:rounded-card group-hover:underline',
+                ]}
+              >
+                {card.title}
+                <Icon name="arrow-right" size={18} class="ml-1 inline-block align-[-0.15em] text-link" />
+              </a>
+            ) : (
+              card.title
+            )}
+          </h3>
+          <p class="mt-2 text-ink-muted">{card.outcome}</p>
+          {card.links.length > 0 && (
+            <ul class="mt-3">
+              {card.links.map((link) => (
+                <li>
+                  {link.url ? (
+                    <a href={link.url} class="inline-flex min-h-11 items-center gap-1.5 font-medium">
+                      <span>{link.label}</span>
+                      <Icon name="chevron-right" size={16} />
+                    </a>
+                  ) : (
+                    <span class="inline-flex min-h-11 items-center text-ink-muted">{link.label}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+          {card.media && (
+            <div class="mt-auto pt-5">
+              <Screenshot media={card.media} sizes={GRID.sizes} />
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Section>
+
+<style>
+  /* A caption link inside a whole-card link stays clickable above the card's cover. */
+  .module-card :global(figcaption a) {
+    position: relative;
+    z-index: 1;
+  }
+</style>

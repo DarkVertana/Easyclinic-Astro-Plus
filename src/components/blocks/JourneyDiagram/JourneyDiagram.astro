@@ -1,0 +1,233 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Screenshot from '../../ui/Screenshot.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'journeyDiagram'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, steps, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+const registry = await getRegistry();
+
+/*
+ * The patient journey (spec 5.4, section 11): the site's signature device, a thin teal line that joins
+ * book, arrive, consult, prescribe, pay, dispense, follow up. The steps are an ordered list; the line is
+ * decoration drawn in CSS (below), so it is invisible to assistive tech and never moves.
+ *
+ * Wide screens (lg): one row for up to six steps; seven or more wrap into two rows and the line bends
+ * round the right edge, back along the gap and into the second row. Below lg the steps stack and the
+ * line runs down the left through the markers.
+ */
+const count = steps.length;
+const twoRows = count > 6;
+const perRow = twoRows ? Math.ceil(count / 2) : count;
+const secondRow = count - perRow;
+
+// Which step carries which piece of the line on wide screens (each piece is that step's ::after).
+function linePiece(i: number): 'row' | 'turn' | 'enter' | undefined {
+  if (!twoRows) return i === count - 1 ? 'row' : undefined;
+  if (i === perRow - 1) return 'turn';
+  if (i === perRow) return 'enter';
+  return undefined;
+}
+
+const items = steps.map((step, i) => ({
+  ...step,
+  number: i + 1,
+  url: step.href ? registry.urlFor(step.href) : null,
+  line: linePiece(i),
+}));
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <ol class="journey" data-cols={perRow} data-cols2={twoRows ? secondRow : undefined}>
+    {
+      items.map((step) => (
+        <li class:list={['journey-step', step.media && 'has-media']} data-line={step.line}>
+          <span class="journey-marker font-sans" aria-hidden="true">
+            {step.number}
+          </span>
+          <div class="journey-text">
+            <h3 class:list={['font-sans text-lg font-semibold leading-snug', inverse && 'text-white']}>
+              {step.url ? (
+                <a
+                  href={step.url}
+                  class:list={[
+                    'inline-block py-2.5 -my-2.5 underline decoration-journey decoration-2 underline-offset-4',
+                    inverse ? 'text-white hover:text-blue-200' : 'text-ink-heading hover:text-link',
+                  ]}
+                >
+                  {step.label}
+                </a>
+              ) : (
+                step.label
+              )}
+            </h3>
+            <p class:list={['mt-1', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']}>{step.body}</p>
+          </div>
+          {step.media && (
+            <div class="journey-media">
+              <Screenshot media={step.media} compact sizes="(min-width: 75rem) 280px, (min-width: 40rem) 40vw, 85vw" />
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</Section>
+
+<style>
+  .journey {
+    --m: 2.75rem; /* marker diameter, also the 44px tap-target grid */
+    --r: 1.5rem; /* radius of the line's bends */
+    --gx: 2rem; /* column gap on wide screens */
+    --gy: 3.5rem; /* row gap on wide screens; the line runs back along its middle */
+    position: relative;
+    isolation: isolate;
+  }
+  .journey[data-cols='4'] {
+    --cols: 4;
+  }
+  .journey[data-cols='5'] {
+    --cols: 5;
+  }
+  .journey[data-cols='6'] {
+    --cols: 6;
+  }
+  .journey[data-cols2='3'] {
+    --cols2: 3;
+  }
+  .journey[data-cols2='4'] {
+    --cols2: 4;
+  }
+  .journey[data-cols2='5'] {
+    --cols2: 5;
+  }
+  .journey[data-cols2='6'] {
+    --cols2: 6;
+  }
+
+  /* Phones and tablets: marker on the left, text beside it, the line running down through the markers. */
+  .journey-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--m) minmax(0, 1fr);
+    column-gap: 1rem;
+    padding-bottom: 2rem;
+  }
+  .journey-step:last-child {
+    padding-bottom: 0;
+  }
+  .journey-marker {
+    position: relative;
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--m);
+    height: var(--m);
+    border: 2px solid var(--journey);
+    border-radius: 9999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .journey-text {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 0.5rem;
+  }
+  .journey-media {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 1rem;
+  }
+  .journey-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--m) / 2);
+    bottom: 0;
+    left: calc(var(--m) / 2 - 1px);
+    border-left: 2px solid var(--journey);
+    pointer-events: none;
+  }
+
+  @media (width >= 40rem) {
+    .journey-step.has-media {
+      grid-template-columns: var(--m) minmax(0, 1fr) minmax(0, 1fr);
+    }
+    .journey-step.has-media .journey-media {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+      margin-top: 0;
+    }
+  }
+
+  /* Wide screens: steps in a row (or two), the line running across through the markers. */
+  @media (width >= 75rem) {
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+      column-gap: var(--gx);
+      row-gap: var(--gy);
+    }
+    .journey-step,
+    .journey-step.has-media {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+    .journey-text {
+      padding-top: 0;
+      margin-top: 1rem;
+    }
+    .journey-step.has-media .journey-media {
+      margin-top: auto;
+      padding-top: 1.25rem;
+    }
+    .journey-step:not(:last-child)::before {
+      content: none;
+    }
+    .journey-step[data-line]::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      border: 0 solid var(--journey);
+      pointer-events: none;
+    }
+    /* One row: a straight line from the first marker to this, the last. */
+    .journey-step[data-line='row']::after {
+      top: calc(var(--m) / 2 - 1px);
+      left: calc(var(--m) / 2 - (var(--cols) - 1) * (100% + var(--gx)));
+      right: calc(100% - var(--m) / 2);
+      border-top-width: 2px;
+    }
+    /* Two rows, first piece (on the last step of row one): from the first marker along row one,
+       round the right edge and back along the middle of the row gap. */
+    .journey-step[data-line='turn']::after {
+      top: calc(var(--m) / 2 - 1px);
+      bottom: calc(var(--gy) / -2 - 1px);
+      left: calc(var(--m) / 2 - (var(--cols) - 1) * (100% + var(--gx)));
+      right: calc(var(--gx) / -2);
+      border-width: 2px 2px 2px 0;
+      border-radius: 0 var(--r) var(--r) 0;
+    }
+    /* Second piece (on the first step of row two): from the row gap, round the left edge and along
+       row two to its last marker. */
+    .journey-step[data-line='enter']::after {
+      top: calc(var(--gy) / -2 - 1px);
+      height: calc(var(--gy) / 2 + var(--m) / 2 + 2px);
+      left: calc(var(--gx) / -2);
+      right: calc(100% - var(--m) / 2 - (var(--cols2) - 1) * (100% + var(--gx)));
+      border-width: 2px 0 2px 2px;
+      border-radius: var(--r) 0 0 var(--r);
+    }
+  }
+</style>

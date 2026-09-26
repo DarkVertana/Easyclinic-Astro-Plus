@@ -1,0 +1,57 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import { need } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'painBlocks'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+
+const registry = await getRegistry();
+const blocks = items.map((item) => {
+  const url = item.href ? registry.urlFor(item.href) : null;
+  // Link text is written or taken from the target page's link label, never a generic label (spec 6).
+  const linkLabel = url
+    ? item.linkLabel || need(Astro, `link text for ${item.href}`, registry.get(item.href!.split('#')[0])?.label)
+    : null;
+  return { ...item, url, linkLabel };
+});
+const columns = blocks.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <ul class:list={['grid gap-5', columns]}>
+    {
+      blocks.map((block) => (
+        <li class="card flex h-full flex-col overflow-hidden text-ink">
+          <div class="p-6">
+            <h3 class="font-sans text-lg font-semibold leading-snug">{block.heading}</h3>
+            <Md text={block.body} class="mt-3 text-ink-muted" />
+          </div>
+          {(block.fix || block.url) && (
+            <div class:list={['mt-auto px-6 pb-5', block.fix ? 'border-t border-line bg-surface-alt pt-5' : 'pt-0']}>
+              {block.fix && (
+                <>
+                  <h4 class="flex items-center gap-2 font-sans text-base font-semibold text-success">
+                    <Icon name="circle-check" size={18} />
+                    What changes
+                  </h4>
+                  <Md text={block.fix} class="mt-2" />
+                </>
+              )}
+              {block.url && (
+                <a href={block.url} class="mt-3 inline-flex min-h-11 items-center gap-1.5 font-semibold">
+                  <span>{block.linkLabel}</span>
+                  <Icon name="arrow-right" size={18} />
+                </a>
+              )}
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Section>

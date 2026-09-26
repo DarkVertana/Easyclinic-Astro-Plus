@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getRegistry } from '../lib/content/registry';
+
+// Suggests the hub pages and logs the missing path so the redirect map can grow (spec 7.7).
+const registry = await getRegistry();
+const suggestions = [
+  { href: '/', label: 'Home' },
+  { href: '/features/', label: 'Every module' },
+  { href: '/solutions/', label: 'Solutions by clinic type' },
+  { href: '/pricing/', label: 'Pricing' },
+  { href: '/countries/', label: 'Countries' },
+  { href: '/blog/', label: 'Guides for clinic owners' },
+  { href: '/contact-us/', label: 'Contact us' },
+]
+  .map((s) => ({ ...s, href: registry.urlFor(s.href) }))
+  .filter((s) => s.href && (s.href === '/' || registry.get(s.href)));
+---
+
+<BaseLayout title="Page not found: EasyClinic" description="This page does not exist on the EasyClinic website." path="/404/" indexable={false} analyticsImmediate>
+  <section class="section-y">
+    <div class="container-measure">
+      <p class="eyebrow">404</p>
+      <h1 class="mt-2">We could not find that page</h1>
+      <p class="lede mt-4">The page may have moved when we rebuilt the site. These are the places most people are looking for:</p>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+        {suggestions.map((s) => <li><a href={s.href} class="card block p-4 font-semibold no-underline">{s.label}</a></li>)}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { track } from '../scripts/track';
+  track('page_not_found', { missing_path: location.pathname, referrer: document.referrer });
+</script>

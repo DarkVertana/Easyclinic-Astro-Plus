@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { need, requireConfirmed } from '../../lib/content/need';
+import Icon from './Icon.astro';
+
+interface Props {
+  testimonial: CollectionEntry<'testimonials'>;
+  /** Use the verbatim one-line excerpt when present (section 11: a sentence a doctor would say). */
+  pull?: boolean;
+  size?: 'card' | 'large';
+}
+
+const { testimonial, pull = true, size = 'card' } = Astro.props;
+const t = testimonial.data;
+const text = pull && t.pullQuote ? t.pullQuote : t.quote;
+const consent = requireConfirmed(Astro, `consent on file for ${t.name}'s testimonial`, t.consentOnFile);
+const city = need(Astro, `${t.name}'s city`, t.city);
+const place = [t.clinic, city].filter(Boolean).join(', ');
+---
+
+<figure class:list={['flex h-full flex-col', size === 'card' ? 'card p-6' : 'mx-auto max-w-[48rem] text-center']}>
+  <Icon name="quote" size={size === 'large' ? 36 : 24} class:list={['text-teal-500', size === 'large' && 'mx-auto']} />
+  <blockquote class:list={['mt-3 text-ink-heading', size === 'large' ? 'font-display text-2xl leading-snug md:text-3xl' : 'text-lg leading-relaxed']}>
+    <p>{text}</p>
+  </blockquote>
+  <figcaption class:list={['mt-auto pt-5 text-sm', size === 'large' && 'mt-6']}>
+    <span class="block font-semibold text-ink-heading">{t.name}</span>
+    <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) ? `, ${t.specialty}` : ''}</span>
+    {place && <span class="block text-ink-muted">{place}</span>}
+    {t.customerSince && <span class="block text-ink-muted">Using EasyClinic since {t.customerSince}</span>}
+    {consent && <span class="mt-1 block text-xs">{consent}</span>}
+  </figcaption>
+</figure>

@@ -1,0 +1,91 @@
+# Single source of truth for research claims (plan: research finding 2).
+# Every publication must be re-verified (verifiedOn) before any page citing it is published.
+publications:
+  - id: korom-2025
+    title: 'AI-based Clinical Decision Support for Primary Care: A Real-World Study'
+    authors: Korom R, et al. (Penda Health and OpenAI)
+    venue: arXiv (preprint)
+    identifier: arXiv:2507.16947
+    url: https://arxiv.org/abs/2507.16947
+    published: 2025-07-22
+    peerReviewed: false
+    scope: 39,849 patient visits at 15 Penda Health clinics in Nairobi; AI Consult embedded in Penda's EasyClinic EMR; errors rated by 108 independent physicians.
+    easyclinicRole: null
+    verifiedOn: null
+  - id: nature-health-2026
+    title: Safety of a large language model-based clinical decision support system in African primary healthcare
+    authors: '[Authors to verify]'
+    venue: Nature Health
+    identifier: doi:10.1038/s44360-026-00082-5
+    url: https://doi.org/10.1038/s44360-026-00082-5
+    published: 2026-03-10
+    peerReviewed: true
+    scope: A separate safety study (16 clinics, 1,469 records). Not the 39,849-visit study.
+    easyclinicRole: null
+    verifiedOn: null
+  - id: nature-medicine-2026
+    title: '[Title to verify from doi:10.1038/s41591-026-04503-6]'
+    authors: '[Authors to verify]'
+    venue: Nature Medicine
+    identifier: doi:10.1038/s41591-026-04503-6
+    url: https://doi.org/10.1038/s41591-026-04503-6
+    published: 2026-06-26
+    peerReviewed: true
+    scope: A separate randomised trial (9,691 patients, 16 facilities). Reported no significant difference in treatment failure.
+    easyclinicRole: null
+    verifiedOn: null
+figures:
+  - id: visits
+    value: 39,849
+    label: patient visits studied
+    source: korom-2025
+    internalSource: null
+    context: Visits at 15 Penda Health clinics in Nairobi, 2025.
+  - id: diagnostic-errors
+    value: 16%
+    label: fewer diagnostic errors
+    source: korom-2025
+    internalSource: null
+    context: Relative reduction in visits where clinicians had AI Consult, rated by independent physicians.
+  - id: treatment-errors
+    value: 13%
+    label: fewer treatment errors
+    source: korom-2025
+    internalSource: null
+    context: Relative reduction, same study.
+  - id: history-errors
+    value: 32%
+    label: fewer history-taking errors
+    source: korom-2025
+    internalSource: null
+    context: Relative reduction, same study.
+  - id: denied-claims
+    value: 34%
+    label: fewer denied insurance claims
+    source: null
+    internalSource: null
+    context: Appears only in EasyClinic marketing. Needs an internal source (organisations, period, method) before publication.
+  - id: stockouts
+    value: 67%
+    label: fewer stockout events
+    source: null
+    internalSource: null
+    context: Appears only in EasyClinic marketing ("across 28 organisations"). Needs an internal source.
+  - id: stockout-lead
+    value: 45 days
+    label: early warning before a shortage reaches the counter
+    source: null
+    internalSource: null
+    context: Appears only in EasyClinic marketing. Needs an internal source.
+  - id: uptime
+    value: 99.97%
+    label: uptime over nine years at Penda Health
+    source: null
+    internalSource: null
+    context: Appears only in EasyClinic marketing. Needs a measurement source; belongs on /trust (spec 5.3).
+approvedWording:
+  short: Studied across 39,849 patient visits at Penda Health clinics in Nairobi, in a 2025 study with OpenAI.
+  approvedBy: null
+notes:
+  - The spec copy "published in Nature Medicine" and "peer reviewed" does not match the 39,849-visit study, which is a preprint. Do not use either phrase for it.
+  - Confirm whether CuraPilot is the AI Consult system named in the preprint.

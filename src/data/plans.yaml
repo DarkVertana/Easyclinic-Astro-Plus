@@ -1,0 +1,107 @@
+# Plan definitions shared by every currency. Prices live in prices/<currency>.yaml.
+# Source: live /pricing/ (September 2026). "AI Assistant" renamed per the naming decision (spec 1.2).
+plans:
+  - id: professional
+    name: Professional
+    bestFor: A doctor running their own clinic, with a receptionist
+    includesLabel: Includes
+    includes:
+      - Patient records and the EMR
+      - E-prescriptions
+      - Cura AI (documentation)
+      - Billing and payments
+      - Appointment scheduling
+      - Dashboards and reports
+      - Logins for your staff
+      - SMS and email reminders
+      - Unlimited support and training
+  - id: premium
+    name: Premium
+    bestFor: Specialists, and group practices that share one front door
+    highlight: Chosen by most specialists
+    includesLabel: Everything in Professional, plus
+    includes:
+      - Specialty EMR templates
+      - Video consultations
+      - Online payments
+      - Your own clinical forms and print layouts
+      - Package treatments
+      - Lab reports
+      - WhatsApp reminders and messages
+      - More than one location
+      - A named account manager
+  - id: enterprise
+    name: Enterprise
+    bestFor: Clinic chains, hospital OPDs and nursing homes
+    includesLabel: Everything in Premium, plus
+    custom: true
+    includes:
+      - Clinical SOP tracking across branches
+      - Financial accounting
+      - Insurance, TPA and HMO claims
+      - Inventory and stock transfers
+      - Pharmacy
+      - Lab management
+      - A reporting server and custom analytics
+      - Workflow rules
+      - Patient portal and app
+      - Integrations and custom features
+      - Central control of every location
+      - Private cloud hosting on request
+conditions:
+  - No setup fee
+  - No contract
+  - Reception login included
+matrix:
+  - group: Front desk
+    rows:
+      - { feature: Appointment scheduling and walk-ins, href: /features/appointment-scheduling/, professional: true, premium: true, enterprise: true }
+      - { feature: SMS and email reminders, professional: true, premium: true, enterprise: true }
+      - { feature: WhatsApp reminders and messages, href: /features/whatsapp/, professional: false, premium: true, enterprise: true }
+      - { feature: Video consultations, href: /features/telehealth/, professional: false, premium: true, enterprise: true }
+      - { feature: Patient portal and app, href: /features/patient-engagement/, professional: false, premium: false, enterprise: true }
+  - group: Chart
+    rows:
+      - { feature: EMR and e-prescriptions, href: /features/emr/, professional: true, premium: true, enterprise: true }
+      - { feature: Cura AI note drafting, href: /ai/, professional: true, premium: true, enterprise: true }
+      - { feature: Specialty templates, professional: false, premium: true, enterprise: true }
+      - { feature: Your own forms and print layouts, professional: false, premium: true, enterprise: true }
+      - { feature: Lab reports in the chart, href: /features/lab/, professional: false, premium: true, enterprise: true }
+      - { feature: Lab management, href: /features/lab/, professional: false, premium: false, enterprise: true }
+  - group: Money
+    rows:
+      - { feature: Billing and payments, href: /features/billing/, professional: true, premium: true, enterprise: true }
+      - { feature: Online payments, professional: false, premium: true, enterprise: true }
+      - { feature: Package treatments, professional: false, premium: true, enterprise: true }
+      - { feature: 'Insurance, TPA and HMO claims', href: /features/insurance-claims/, professional: false, premium: false, enterprise: true }
+      - { feature: Pharmacy and inventory, href: /features/pharmacy-and-inventory/, professional: false, premium: false, enterprise: true }
+      - { feature: Financial accounting, professional: false, premium: false, enterprise: true }
+  - group: Growth and control
+    rows:
+      - { feature: Dashboards and reports, href: /features/reports-and-dashboards/, professional: true, premium: true, enterprise: true }
+      - { feature: More than one location, href: /features/multi-location/, professional: false, premium: true, enterprise: true }
+      - { feature: Central control and SOP tracking, href: /solutions/clinic-chain/, professional: false, premium: false, enterprise: true }
+      - { feature: Reporting server and custom analytics, professional: false, premium: false, enterprise: true }
+      - { feature: Private cloud hosting, professional: false, premium: false, enterprise: true }
+  - group: Support
+    rows:
+      - { feature: Unlimited support and training, professional: true, premium: true, enterprise: true }
+      - { feature: Named account manager, professional: false, premium: true, enterprise: true }
+      - { feature: Integrations and custom features, href: /integrations/, professional: false, premium: false, enterprise: true }
+addons:
+  - id: pharmacy
+    name: Pharmacy and inventory
+    body: Dispense from the prescription, track batch and expiry, and reorder before you run out.
+    availableOn: [professional, premium]
+  - id: lab
+    name: Lab management
+    body: Orders from the chart, sample tracking and results back into the record.
+    availableOn: [professional, premium]
+  - id: claims
+    name: Insurance and payer claims
+    body: Payer price lists, coverage checks at registration, claim packs and reconciliation.
+    availableOn: [professional, premium]
+  - id: integrations
+    name: Integrations and custom development
+    body: Connections to your lab machines, accounting system or an existing HIS, scoped per project.
+    availableOn: [professional, premium]

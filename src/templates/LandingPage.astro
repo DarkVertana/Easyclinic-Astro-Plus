@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/frame/Breadcrumbs.astro';
+import Hero from '../components/frame/Hero.astro';
+import FAQ from '../components/frame/FAQ.astro';
+import RelatedLinks from '../components/frame/RelatedLinks.astro';
+import CTABand from '../components/frame/CTABand.astro';
+import Sections from '../components/blocks/Sections.astro';
+import ContactCard from '../components/blocks/ContactCard/ContactCard.astro';
+import { getEntry } from 'astro:content';
+import { getRegistry, type PageRecord } from '../lib/content/registry';
+import { breadcrumbTrail } from '../lib/seo/breadcrumbs';
+import { pageGraph } from '../lib/seo/page-graph';
+import type { BlockContext } from '../components/blocks/types';
+
+/**
+ * The template for landing families (spec 7.4): frame around the page's sections.
+ * Hero, byline, FAQ, related links and the closing band come from the entry's own fields.
+ */
+interface Props {
+  record: PageRecord;
+}
+
+const { record } = Astro.props;
+const registry = await getRegistry();
+const d = record.data;
+const trail = breadcrumbTrail(record, registry);
+const jsonLd = await pageGraph(record, trail);
+const countryId = d.country?.id;
+const site = (await getEntry('site', 'site'))!.data;
+const countryData = countryId ? (await getEntry('countries', countryId))?.data : undefined;
+const whatsappText = d.ctas.whatsapp ?? `Hi, I was reading about EasyClinic (${record.label}) and would like a demo.`;
+const whatsappHref = `https://wa.me/${countryData?.contact.whatsapp ?? site.whatsapp}?text=${encodeURIComponent(whatsappText)}`;
+const ctx: Omit<BlockContext, 'index'> = {
+  path: record.path,
+  family: record.family,
+  status: record.status,
+  country: countryId,
+  pageLabel: record.label,
+  whatsappHref,
+};
+// Country pages carry the local contact card in the hero (section 11, "Country pages").
+const heroContact = (record.family === 'country' || record.family === 'countryDemo') && d.country;
+---
+
+<BaseLayout
+  title={d.title}
+  description={d.metaDescription}
+  path={record.path}
+  canonical={d.canonical}
+  indexable={record.indexable}
+  jsonLd={jsonLd}
+  modifiedTime={d.lastUpdated}
+  country={countryId}
+  family={record.family}
+  whatsappText={whatsappText}
+  preview={{ status: record.status, issues: record.issues }}
+>
+  <Breadcrumbs trail={trail} />
+  <Hero
+    eyebrow={d.eyebrow}
+    h1={d.h1}
+    openingAnswer={d.openingAnswer}
+    ctas={d.ctas}
+    heroMedia={d.heroMedia}
+    heroStrip={d.heroStrip}
+    byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
+  >
+    {heroContact && <div slot="aside" class="mt-6"><ContactCard country={d.country!} showClients={false} ctx={{ ...ctx, index: -1 }} /></div>}
+  </Hero>
+  <Sections sections={d.sections} ctx={ctx} />
+  <FAQ heading={d.faqHeading} items={d.faq} tone={d.sections.length % 2 === 0 ? 'plain' : 'wash'} />
+  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} />
+  {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}
+</BaseLayout>

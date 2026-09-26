@@ -1,0 +1,44 @@
+---
+import type { Issue } from '../../lib/rules/audit';
+
+interface Props {
+  status: string;
+  issues: Issue[];
+  path: string;
+}
+
+const { status, issues, path } = Astro.props;
+const errors = issues.filter((i) => i.severity === 'error');
+const warnings = issues.filter((i) => i.severity === 'warning');
+// Brackets are entity-escaped so the placeholder highlighter does not mark the toolbar's own text.
+const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\[/g, '&#91;').replace(/\]/g, '&#93;');
+const tone = status === 'published' ? 'bg-green-700' : status === 'review' ? 'bg-blue-700' : 'bg-navy-900';
+---
+
+<!-- Preview only: never rendered in production builds. -->
+<details class="preview-toolbar fixed bottom-4 left-4 z-50 max-w-[min(34rem,calc(100vw-6rem))] opacity-95 rounded-card border border-line bg-surface text-sm shadow-lg" data-nosnippet>
+  <summary class:list={['flex cursor-pointer list-none items-center gap-2 rounded-card px-3 py-2 text-white [&::-webkit-details-marker]:hidden', tone]}>
+    <span class="font-semibold uppercase tracking-wide">{status}</span>
+    <span>· {errors.length} blocking</span>
+    <span class="hidden sm:inline">· {warnings.length} warnings</span>
+    <span class="hidden sm:inline">· <ec-placeholder-count></ec-placeholder-count> placeholders shown</span>
+  </summary>
+  <div class="max-h-[50vh] overflow-y-auto p-3">
+    <p class="mb-2 text-ink-muted">{path} {status !== 'published' && '· noindex, hidden in production until published'}</p>
+    {
+      issues.length === 0 ? (
+        <p>No issues. This page meets the publish checklist.</p>
+      ) : (
+        <ul class="space-y-2">
+          {[...errors, ...warnings].map((i) => (
+            <li class:list={['border-l-2 pl-2', i.severity === 'error' ? 'border-red-700' : 'border-yellow-800']}>
+              <span class="font-mono text-xs text-ink-muted" set:html={esc(`[${i.rule}] ${i.path}`)} />
+              <br />
+              <span set:html={esc(i.message)} />
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</details>

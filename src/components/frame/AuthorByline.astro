@@ -1,0 +1,27 @@
+---
+import { getEntry, type ReferenceDataEntry } from 'astro:content';
+import { formatDate, isoDate } from '../../lib/format/date';
+import { need } from '../../lib/content/need';
+
+interface Props {
+  author: ReferenceDataEntry<'authors'> | null;
+  reviewedBy?: ReferenceDataEntry<'authors'>;
+  lastUpdated: Date | null;
+  class?: string;
+}
+
+const { author, reviewedBy, lastUpdated, class: className } = Astro.props;
+const authorData = author ? (await getEntry(author))?.data : null;
+const reviewer = reviewedBy ? (await getEntry(reviewedBy))?.data : null;
+const name = authorData ? authorData.name : need(Astro, 'named author (clinician, product lead or country lead)', null);
+const role = authorData ? authorData.role : null;
+---
+
+<p class:list={['text-sm text-ink-muted', className]}>
+  <span>By <span class="font-semibold text-ink">{name}</span>{role && `, ${role}`}</span>
+  {reviewer && <span> · Reviewed by {reviewer.name}</span>}
+  <span>
+    · Last updated
+    {lastUpdated ? <time datetime={isoDate(lastUpdated)}>{formatDate(lastUpdated)}</time> : need(Astro, 'last-updated date', null)}
+  </span>
+</p>

@@ -1,0 +1,325 @@
+---
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { BILLING_PERIODS, CURRENCIES, type BillingPeriod, type PlanId } from '../../../schemas/constants';
+import { getRegistry } from '../../../lib/content/registry';
+import { need, unconfirmed } from '../../../lib/content/need';
+import { isProduction } from '../../../lib/content/stage';
+import { annualSaving, formatMoney } from '../../../lib/format/money';
+import Section from '../../ui/Section.astro';
+import Button from '../../ui/Button.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'pricingCards'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, currency, switcher, showConditions, planCta, enterpriseCta, ctx } = Astro.props;
+
+type Price = CollectionEntry<'prices'>['data'];
+
+const registry = await getRegistry();
+const plans = (await getEntry('plans', 'plans'))?.data;
+if (!plans) throw new Error(`pricingCards on ${ctx.path}: src/data/plans.yaml is missing`);
+const base = (await getEntry(currency))?.data;
+if (!base) throw new Error(`pricingCards on ${ctx.path}: no price entry "${currency.id}"`);
+
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+const muted = inverse ? 'text-ink-inverse-muted' : 'text-ink-muted';
+/** Radio group names; unique per section so two pricing blocks on one page do not share state. */
+const uid = id ?? `pricing-${ctx.index}`;
+
+// The main pricing page carries every currency behind a CSS switcher; country pages show one (spec 7.3).
+// In production the switcher offers only currencies whose prices are confirmed, so /pricing/ can launch
+// before every local price is decided; preview shows all of them with placeholders.
+const confirmed = (p: Price) => Boolean(p.asOf) && p.plans.professional.annual !== null && p.plans.premium.annual !== null;
+const currencies: Price[] = switcher
+  ? (await getCollection('prices'))
+      .map((e) => e.data)
+      .filter((p) => !isProduction || p.currency === base.currency || confirmed(p))
+      .sort((a, b) => CURRENCIES.indexOf(a.currency) - CURRENCIES.indexOf(b.currency))
+  : [base];
+
+/** Currencies with a show/hide rule in the <style> block below; add a rule there with any new currency. */
+const STYLED: string[] = ['USD', 'INR', 'KES', 'AED', 'NGN'];
+const unstyled = CURRENCIES.filter((c) => !STYLED.includes(c));
+if (unstyled.length) throw new Error(`pricingCards: add a :has() rule for ${unstyled.join(', ')} in PricingCards.astro`);
+
+const PERIOD_LABEL: Record<BillingPeriod, string> = { annual: 'Annual', quarterly: 'Quarterly' };
+const BILLED: Record<BillingPeriod, string> = { annual: 'billed annually', quarterly: 'billed quarterly' };
+
+function priceFor(p: Price, plan: PlanId, period: BillingPeriod): number | null {
+  return plan === 'enterprise' ? null : p.plans[plan][period];
+}
+
+const cards = plans.plans.map((plan) => {
+  const quote = plan.custom || plan.id === 'enterprise';
+  const variants = quote
+    ? []
+    : currencies.map((p) => {
+        const annual = priceFor(p, plan.id, 'annual');
+        const quarterly = priceFor(p, plan.id, 'quarterly');
+        return {
+          currency: p.currency,
+          isDefault: p.currency === base.currency,
+          saving: annualSaving(annual, quarterly),
+          periods: BILLING_PERIODS.map((period) => {
+            const amount = period === 'annual' ? annual : quarterly;
+            return {
+              period,
+              isDefault: period === base.defaultPeriod,
+              known: amount !== null,
+              text:
+                amount !== null
+                  ? unconfirmed(Astro, `${p.currency} prices as-of date`, formatMoney(amount, p.currency), Boolean(p.asOf))
+                  : need(Astro, `${p.currency} ${plan.name} ${period} price`, null),
+            };
+          }),
+        };
+      });
+  // "{plan}" in the shared CTA label becomes the plan name ("Start with {plan}" -> "Start with Premium").
+  const cta = quote ? enterpriseCta : { ...planCta, label: planCta.label.replaceAll('{plan}', plan.name) };
+  return { plan, quote, variants, cta };
+});
+
+const taxNotes = currencies.map((p) => ({
+  currency: p.currency,
+  isDefault: p.currency === base.currency,
+  text: need(Astro, `${p.currency} tax note`, p.taxNote),
+}));
+
+// Switcher extras: links to the static country pricing pages, and the time-zone map the script uses
+// for a first-visit default. Both come from the country records, not from this component.
+const TZ_ALIASES: Record<string, string[]> = { 'Asia/Kolkata': ['Asia/Calcutta'] };
+const countryRows = switcher
+  ? await Promise.all(
+      currencies
+        .filter((p) => p.country)
+        .map(async (p) => ({ currency: p.currency, country: (await getEntry('countries', p.country!))?.data })),
+    )
+  : [];
+const countryLinks = countryRows.flatMap(({ country }) => {
+  const href = country?.pages.pricing ? registry.urlFor(country.pages.pricing) : null;
+  return country && href ? [{ href, label: `${country.name} pricing` }] : [];
+});
+const zones = Object.fromEntries(
+  countryRows.flatMap(({ currency: code, country }) =>
+    country ? [country.timezone, ...(TZ_ALIASES[country.timezone] ?? [])].map((tz): [string, string] => [tz, code]) : [],
+  ),
+);
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <div class="pricing" data-currency-switcher={switcher ? '' : undefined} data-tz={switcher ? JSON.stringify(zones) : undefined}>
+    {
+      showConditions && (
+        <ul class="mb-8 flex flex-wrap gap-x-6 gap-y-2">
+          {plans.conditions.map((c) => (
+            <li class="flex items-center gap-2 font-medium">
+              <Icon name="circle-check" size={20} class={inverse ? 'text-ink-inverse' : 'text-success'} />
+              <span>{c}</span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <div class="mb-8 flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
+      {
+        switcher && (
+          <div>
+            <fieldset class="min-w-0">
+              <legend class="text-sm font-semibold">Show prices in</legend>
+              <div class="mt-2 flex flex-wrap gap-2">
+                {currencies.map((p) => (
+                  <label class="relative">
+                    <input
+                      type="radio"
+                      class="sr-only"
+                      name={`${uid}-currency`}
+                      value={p.currency}
+                      data-cur-input={p.currency}
+                      checked={p.currency === base.currency}
+                    />
+                    <span class="chip">
+                      <span class="chip-check">
+                        <Icon name="check" size={16} />
+                      </span>
+                      <span>{p.currency}</span>
+                      <span class="sr-only">, {p.label}</span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            {countryLinks.length > 0 && (
+              <ul class="mt-2 flex flex-wrap gap-x-5 text-sm">
+                {countryLinks.map((l) => (
+                  <li>
+                    <a href={l.href} class:list={['inline-flex min-h-11 items-center', inverse && 'text-ink-inverse underline']}>
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )
+      }
+      <fieldset class="min-w-0">
+        <legend class="text-sm font-semibold">Billing period</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {
+            BILLING_PERIODS.map((period) => (
+              <label class="relative">
+                <input
+                  type="radio"
+                  class="sr-only"
+                  name={`${uid}-period`}
+                  value={period}
+                  data-period-input={period}
+                  checked={period === base.defaultPeriod}
+                />
+                <span class="chip">
+                  <span class="chip-check">
+                    <Icon name="check" size={16} />
+                  </span>
+                  <span>{PERIOD_LABEL[period]}</span>
+                </span>
+              </label>
+            ))
+          }
+        </div>
+      </fieldset>
+    </div>
+
+    <ul class="grid gap-5 md:grid-cols-3">
+      {
+        cards.map(({ plan, quote, variants, cta }) => (
+          <li class:list={['card flex flex-col p-6 text-ink', plan.highlight && 'border-2 border-blue-700']}>
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-sans text-xl font-semibold">{plan.name}</h3>
+              {plan.highlight && (
+                <p class="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-navy-900">
+                  <Icon name="star" size={14} />
+                  <span>{plan.highlight}</span>
+                </p>
+              )}
+            </div>
+            <p class="mt-2 text-ink-muted">{plan.bestFor}</p>
+
+            <div class="mt-6 min-h-24">
+              {quote ? (
+                <p class="font-display text-4xl font-semibold text-ink-heading">On quote</p>
+              ) : (
+                variants.map((v) => (
+                  <div data-cur={v.currency} data-cur-default={v.isDefault ? '' : undefined}>
+                    {v.periods.map((p) => (
+                      <p data-period={p.period} data-period-default={p.isDefault ? '' : undefined} class="flex flex-wrap items-baseline gap-x-2 gap-y-1.5">
+                        <span class:list={[p.known ? 'font-display text-4xl leading-none font-semibold text-ink-heading' : 'text-lg']}>{p.text}</span>
+                        <span class="text-ink-muted">
+                          per doctor per month<span class="sr-only">,</span>
+                        </span>
+                        <span class="w-full text-sm text-ink-muted">{BILLED[p.period]}</span>
+                      </p>
+                    ))}
+                    {v.saving !== null && <p class="mt-2 text-sm font-semibold text-success">Save {v.saving}% with annual billing</p>}
+                  </div>
+                ))
+              )}
+            </div>
+
+            <div class="mt-6">
+              <Button
+                href={cta.href}
+                label={cta.label}
+                event={quote ? cta.event : `${cta.event ?? cta.label}: ${plan.name}`}
+                variant={plan.highlight ? 'cta' : 'outline'}
+                track={quote ? 'pricing_contact_click' : undefined}
+                class="w-full"
+              />
+            </div>
+
+            <p class="mt-8 text-sm font-semibold text-ink-heading">{plan.includesLabel}</p>
+            <ul class="mt-3 space-y-2">
+              {plan.includes.map((item) => (
+                <li class="flex gap-2">
+                  <Icon name="check" size={18} class="mt-1 text-success" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      taxNotes.map((t) => (
+        <p data-cur={t.currency} data-cur-default={t.isDefault ? '' : undefined} class:list={['mt-6 text-sm', muted]}>
+          {t.text}
+        </p>
+      ))
+    }
+  </div>
+</Section>
+
+{switcher && <script>import '../../../scripts/currency';</script>}
+
+<style>
+  /* Radio chips: the native radio stays focusable (visually hidden); the chip shows checked and focus. */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+  .chip:hover {
+    border-color: var(--color-blue-700);
+  }
+  .chip-check {
+    display: none;
+  }
+  input:checked + .chip {
+    background: var(--btn-bg);
+    border-color: var(--btn-bg);
+    color: var(--btn-ink);
+  }
+  input:checked + .chip .chip-check {
+    display: inline-flex;
+  }
+  input:focus-visible + .chip {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  /*
+   * Every currency and both billing periods are in the HTML (spec 7.1); the checked radios decide
+   * which one shows. CURRENCIES in schemas/constants.ts is a closed list, so each has a rule here.
+   */
+  .pricing:has([data-period-input='annual']:checked) [data-period='quarterly'],
+  .pricing:has([data-period-input='quarterly']:checked) [data-period='annual'],
+  .pricing:has([data-cur-input='USD']:checked) [data-cur]:not([data-cur='USD']),
+  .pricing:has([data-cur-input='INR']:checked) [data-cur]:not([data-cur='INR']),
+  .pricing:has([data-cur-input='KES']:checked) [data-cur]:not([data-cur='KES']),
+  .pricing:has([data-cur-input='AED']:checked) [data-cur]:not([data-cur='AED']),
+  .pricing:has([data-cur-input='NGN']:checked) [data-cur]:not([data-cur='NGN']) {
+    display: none;
+  }
+
+  /* Browsers without :has() get the default currency and period, and no controls that would do nothing. */
+  @supports not selector(:has(*)) {
+    .pricing [data-cur]:not([data-cur-default]),
+    .pricing [data-period]:not([data-period-default]),
+    .pricing fieldset {
+      display: none;
+    }
+  }
+</style>

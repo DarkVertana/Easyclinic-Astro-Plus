@@ -1,0 +1,74 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import type { Persona } from '../../../schemas/constants';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'personaRouter'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+
+const registry = await getRegistry();
+
+// "Pick your clinic" (spec 5.1 item 2, section 11): one tile per rung of the persona ladder (2.8).
+const ICONS: Record<Persona, string> = {
+  solo: 'user-round',
+  polyclinic: 'users',
+  chain: 'network',
+  'hospital-opd': 'hospital',
+  ngo: 'heart',
+};
+// A target that is not rendered in this stage leaves the tile as plain text, never a dead link.
+// Each linked tile has one link, on its title; the link's ::after covers the card, so the whole tile
+// is the tap target without nesting links.
+const cards = items.map((item) => ({ ...item, icon: item.icon ?? ICONS[item.persona], url: registry.urlFor(item.href) }));
+
+// One column on phones, two from sm, then a single row of four or five on wide screens.
+const COLUMNS: Record<number, string> = {
+  2: 'sm:grid-cols-2',
+  3: 'sm:grid-cols-2 md:grid-cols-3',
+  4: 'sm:grid-cols-2 lg:grid-cols-4',
+  5: 'sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
+  6: 'sm:grid-cols-2 md:grid-cols-3',
+};
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center>
+  <ul class:list={['grid gap-4', COLUMNS[cards.length]]}>
+    {
+      cards.map((card) => (
+        <li
+          class:list={[
+            'card relative flex h-full flex-col p-6 text-ink',
+            card.url && 'group transition-colors hover:border-blue-500 focus-within:border-blue-500',
+          ]}
+        >
+          <span class="flex size-12 items-center justify-center rounded-full bg-blue-50 text-blue-700">
+            <Icon name={card.icon} size={24} />
+          </span>
+          <h3 class="mt-4 font-sans text-lg font-semibold leading-snug">
+            {card.url ? (
+              <a
+                href={card.url}
+                class="link-plain after:absolute after:inset-0 after:rounded-card group-hover:underline"
+                data-track="cta_click"
+                data-label={`Persona router: ${card.title}`}
+              >
+                {card.title}
+              </a>
+            ) : (
+              card.title
+            )}
+          </h3>
+          <p class="mt-2 text-ink-muted">{card.body}</p>
+          {card.url && (
+            <span class="mt-auto flex justify-end pt-4 text-link">
+              <Icon name="arrow-right" size={20} />
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Section>

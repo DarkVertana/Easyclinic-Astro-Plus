@@ -1,0 +1,27 @@
+---
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import Md from '../ui/Md.astro';
+
+interface Props {
+  closing: { heading: string; body?: string; primary: { label: string; href: string; event?: string }; secondary?: { label: string; href: string; event?: string } };
+  whatsappHref: string;
+}
+const { closing, whatsappHref } = Astro.props;
+---
+
+<section aria-labelledby="closing-heading" class="bg-navy-900 py-14 text-white md:py-20">
+  <div class="container-page grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
+    <div>
+      <h2 id="closing-heading" class="!text-white">{closing.heading}</h2>
+      {closing.body && <Md text={closing.body} class="lede mt-4 text-ink-inverse-muted [&_a]:text-white" />}
+    </div>
+    <div class="flex flex-col gap-3 sm:flex-row md:flex-col md:items-end lg:flex-row lg:justify-end">
+      <Button {...closing.primary} variant="cta" />
+      {closing.secondary && <Button {...closing.secondary} variant="outline" class="!bg-transparent !text-white !border-white/60 hover:!bg-white/10" />}
+      <a href={whatsappHref} class="btn btn-ghost !text-white hover:!bg-white/10" data-track="whatsapp_click" data-label="closing band" rel="noopener">
+        <Icon name="brand-whatsapp" size={20} /> WhatsApp us
+      </a>
+    </div>
+  </div>
+</section>

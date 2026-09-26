@@ -1,0 +1,79 @@
+---
+import { getEntry } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { PLAN_IDS, type PlanId } from '../../../schemas/constants';
+import { getRegistry } from '../../../lib/content/registry';
+import { need } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import Button from '../../ui/Button.astro';
+import Screenshot from '../../ui/Screenshot.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'featureRows'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+const registry = await getRegistry();
+const plans = (await getEntry('plans', 'plans'))!.data.plans;
+
+// Plan names come from plans.yaml; the top plan of the ladder has nothing "above" it.
+function planTag(planId: PlanId): string {
+  const name = need(Astro, `${planId} plan name in plans.yaml`, plans.find((p) => p.id === planId)?.name);
+  return PLAN_IDS.indexOf(planId) === PLAN_IDS.length - 1 ? `Included in ${name}` : `Included in ${name} and above`;
+}
+
+// Media alternates right, left, right on wide screens, counting only rows that have media.
+let mediaCount = 0;
+const rows = items.map((item) => ({
+  ...item,
+  tag: item.plan ? planTag(item.plan) : null,
+  flip: item.media ? mediaCount++ % 2 === 1 : false,
+  showLink: Boolean(item.link && registry.urlFor(item.link.href)),
+}));
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  <div class="grid gap-16 md:gap-20">
+    {
+      rows.map((row) => (
+        <div class:list={['grid gap-8', row.media && 'lg:grid-cols-2 lg:items-center lg:gap-14']}>
+          <div>
+            <div class="max-w-[46rem]">
+              <h3 class:list={[inverse && '!text-white']}>{row.heading}</h3>
+              {row.tag && (
+                <p class="mt-3">
+                  <span class="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface-muted px-3 py-1 text-sm font-medium text-ink-heading">
+                    <Icon name="layers" size={16} class="text-teal-700" />
+                    {row.tag}
+                  </span>
+                </p>
+              )}
+              <Md text={row.body} class:list={['mt-4', inverse && 'text-ink-inverse-muted']} />
+            </div>
+            {row.bullets.length > 0 && (
+              <ul class:list={['mt-5 grid gap-x-8 gap-y-2.5', !row.media && 'sm:grid-cols-2']}>
+                {row.bullets.map((bullet) => (
+                  <li class="flex gap-2.5">
+                    <Icon name="check" size={20} class:list={['mt-0.5', inverse ? 'text-teal-500' : 'text-success']} />
+                    <span class:list={[inverse && 'text-ink-inverse-muted']}>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {row.showLink && row.link && (
+              <div class="mt-6">
+                <Button {...row.link} variant="outline" />
+              </div>
+            )}
+          </div>
+          {row.media && (
+            <Screenshot media={row.media} class={row.flip ? 'lg:order-first' : undefined} sizes="(min-width: 75rem) 580px, 100vw" />
+          )}
+        </div>
+      ))
+    }
+  </div>
+</Section>
