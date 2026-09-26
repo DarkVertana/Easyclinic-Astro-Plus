@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection, getEntry } from 'astro:content';
 import { getRegistry } from '../lib/content/registry';
 import { INDEXING_ENABLED, STAGE } from '../lib/content/stage';
+import { sitemapFamilies } from '../lib/seo/sitemap';
 
 /**
  * Build metadata for integrations/vercel-routes.ts and the post-build checks. Moved out of the public
@@ -18,8 +19,10 @@ export const GET: APIRoute = async () => {
     for (const from of record.data.redirectFrom) redirects.push({ from, to: record.path, match: 'exact', status: 301 });
   }
   const gone = (await getCollection('gone')).map((e) => e.data);
-  // Route files that redirects may target: /feed/ (the WordPress feed) 301s to /rss.xml.
-  const staticPages = ['/gone/', '/rss.xml'];
+  // Route files that redirects may target (/feed/ 301s to /rss.xml, the WordPress sitemap files to
+  // /sitemap-index.xml). The per-family sitemaps are listed too, so vercel-routes fails the build if a legacy
+  // sitemap redirect (/sitemap-posts.xml and the rest) would shadow one: redirect routes run before the filesystem.
+  const staticPages = ['/gone/', '/rss.xml', '/sitemap-index.xml', ...sitemapFamilies(registry).map((f) => `/sitemap-${f.family}.xml`)];
   return Response.json({
     stage: STAGE,
     indexingEnabled: INDEXING_ENABLED && STAGE === 'production',

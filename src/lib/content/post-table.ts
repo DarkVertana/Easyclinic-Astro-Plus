@@ -1,8 +1,9 @@
 /**
- * Table markup for blog posts (src/components/mdx/PostTable.astro). MDX renders a Markdown table as a
- * thead with one header row and a tbody; this adds explicit table roles (kept when the cells are
- * display:block below 640px) and gives every body cell its column header as `data-label`, which the
- * stacked layout shows above the cell. GFM tables never nest, so a tag-level pass is safe.
+ * Table markup for Markdown tables in posts, guides and legal pages (src/components/mdx/PostTable.astro).
+ * MDX renders a Markdown table as a thead with one header row and a tbody; this adds explicit table roles
+ * (kept when the cells are display:block below 640px) and gives every body cell its column header as
+ * `data-label`, which the stacked layout shows above the cell. A cell under an empty header gets no label.
+ * GFM tables never nest, so a tag-level pass is safe.
  */
 const plain = (html: string) => html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 const attr = (s: string) => s.replace(/"/g, '&quot;');

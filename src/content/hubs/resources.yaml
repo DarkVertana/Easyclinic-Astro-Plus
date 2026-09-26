@@ -1,0 +1,297 @@
+# /resources/ hub: the human sitemap (spec 3.1 "Resources: /blog, /help, /glossary, /customers, /resources"; spec 5.19
+# "The human sitemap, with three selectors (country, specialty, clinic type) and the four most-read guides"; staging
+# audit row "/resources/ | Keep | Fine as a finder once the three selectors are added"). The live URL is in the WordPress
+# sitemap and had no page, redirect or 410 in this build (reports/coverage.md, 404 list). No read or traffic data exists,
+# so the guide group is not called "most-read" anywhere on the page; see notes.
+status: published
+path: /resources/
+headKeyword: EasyClinic resources
+secondaryKeywords:
+  - EasyClinic site map
+  - EasyClinic pages by country
+title: 'EasyClinic Resources: Pages by Country and Specialty'
+metaDescription: >-
+  EasyClinic resources: pages for clinics in India, Kenya, the UAE and Nigeria, 14 specialties, clinic types
+  from solo to hospital OPD, and setup guides.
+h1: Find the EasyClinic pages for your clinic
+linkLabel: Resources
+eyebrow: Resources
+openingAnswer: >-
+  Start from your country or your specialty: India, Kenya, the UAE and Nigeria have EasyClinic pages of their
+  own, and so do 14 specialties from ayurveda to physiotherapy. Or start from the kind of clinic you run, from a
+  one-doctor clinic to a hospital OPD, and if you are opening one, four start-a-clinic guides follow.
+summary: >-
+  EasyClinic pages sorted by country and specialty and by the kind of clinic you run, with four start-a-clinic
+  guides and links to the rest of the site.
+author: subhashish-saha
+lastUpdated: 2026-09-26
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See prices per doctor
+    href: /pricing/
+  whatsapp: Hi, I was on the EasyClinic resources page and would like help finding the right page for my clinic.
+
+sections:
+  - discriminant: hubGrid
+    value:
+      id: countries
+      heading: By country
+      intro: >-
+        Clinics in {fact:countries} countries run on EasyClinic, and four of those countries have pages of their
+        own. Prices are published in rupees for India and in US dollars, and no other local-currency price is
+        published yet. A clinic anywhere else can book a demo from the [countries page](/countries/#book-a-demo).
+      columns: 3
+      groups:
+        - title: India
+          items:
+            - href: /clinic-management-software-india/
+            - href: /pricing/india/
+              description: The price in rupees per doctor per month, with worked monthly totals.
+            - href: /indiademo/
+              description: A 20-minute demo that follows your clinic's own patient flow.
+            - href: /best-clinic-management-software-india/
+              description: Seven options compared on published price, WhatsApp, AI notes and offline use.
+            - href: /easyclinic-vs-practo/
+              description: Compared on published prices, AI notes, WhatsApp and switching.
+            - href: /easyclinic-vs-healthplix/
+              description: Compared on price in rupees, AI, offline use and billing.
+            - href: /compare/practo-ray-alternatives/
+              description: Six alternatives compared, with Practo's notice and export terms for leaving Ray.
+            - href: /compare/healthplix-alternatives/
+              description: Six alternatives compared on price, AI notes, offline use and moving your records.
+            - href: /privacy/india/
+        - title: Kenya
+          items:
+            - href: /emr-software-in-kenya/
+            - href: /pricing/kenya/
+            - href: /kenyademo/
+              description: A 20-minute demo that runs from the booking to the M-Pesa payment.
+            - href: /best-clinic-management-software-kenya/
+              description: Seven systems ranked, plus EasyClinic unranked, with the SHA certification rule explained.
+            - href: /easyclinic-vs-kenyaemr/
+              description: A sourced side-by-side table, and what each costs a private clinic.
+            - href: /privacy/kenya/
+        - title: United Arab Emirates
+          items:
+            - href: /clinic-management-software-uae/
+            - href: /pricing/uae/
+            - href: /uaedemo/
+            - href: /best-clinic-management-software-uae/
+              description: Eight systems compared, checked against the NABIDH and Malaffi lists.
+            - href: /privacy/uae/
+        - title: Nigeria
+          items:
+            - href: /hospital-management-software-nigeria/
+            - href: /pricing/nigeria/
+            - href: /nigeriademo/
+            - href: /best-clinic-management-software-nigeria/
+              description: Six systems ranked, plus EasyClinic unranked, with what each says about HMO claims.
+            - href: /privacy/nigeria/
+        - title: Every other country
+          items:
+            - href: /countries/
+              label: All countries
+              description: A demo form for clinics outside these four countries.
+
+  - discriminant: hubGrid
+    value:
+      id: specialties
+      heading: By specialty
+      intro: >-
+        Specialty EMR templates come with Premium, at {price:usd.premium.annual} per doctor per month billed
+        annually or {price:inr.premium.annual} in India. Each page shows what that specialty keeps on the patient
+        record, from each tooth in a dental chart to each IVF cycle.
+      columns: 4
+      groups:
+        - items:
+            - href: /ayurveda-clinic-management-software/
+              description: The Panchakarma course and the prescription on one treatment plan.
+            - href: /cardiology-emr/
+              description: ECG and echo reports beside the blood pressure chart.
+            - href: /dental-emr-software/
+              description: A chart of each tooth, and treatment plans over several visits.
+            - href: /dermatology-emr-software/
+              description: Before-and-after photographs and procedure sessions.
+            - href: /ent-emr-software/
+              description: The ear examination and the hearing test on one record.
+            - href: /general-practitioner-emr/
+              description: The whole history on one facesheet, with vitals charted over the years.
+            - href: /ivf-emr/
+              description: Each cycle from stimulation to embryo transfer, billed as one package.
+            - href: /mental-health/
+              description: Session notes and psychotropic dose changes.
+            - href: /neurology-emr/
+              description: EEG and MRI reports kept beside every visit.
+            - href: /obgyn-emr-software/
+              description: Each pregnancy from gestational age to the due date.
+            - href: /ophthalmology-emr/
+              description: Vision tests and eye examinations with the OCT and fundus reports.
+            - href: /orthopedic-emr/
+              description: X-rays and MRI scans on the record beside every visit.
+            - href: /pediatric-emr/
+              description: Growth against growth standards, and a vaccine schedule set by age.
+            - href: /physiotherapy-clinic-management-software/
+              description: Session-wise treatment plans and progress against goals.
+            - href: /specialties/
+              label: All specialties
+              description: Every specialty page, and a demo form if yours is not listed.
+
+  - discriminant: hubGrid
+    value:
+      id: clinic-types
+      heading: By clinic type
+      intro: >-
+        Each page says which plan that kind of clinic usually needs. A doctor with a receptionist starts on
+        Professional at {price:usd.professional.annual} per doctor per month billed annually, and chains and
+        hospital OPDs are quoted on Enterprise.
+      columns: 3
+      groups:
+        - items:
+            - href: /solutions/solo-clinic/
+              description: One doctor and a receptionist, from {price:usd.professional.annual} per doctor per month.
+            - href: /solutions/polyclinic/
+              description: One record for every specialist, on Premium at {price:usd.premium.annual} per doctor per month.
+            - href: /solutions/clinic-chain/
+              description: SOP tracking by branch, for chains of 2 to {fact:largestChain} locations.
+            - href: /solutions/hospital-opd/
+              description: The OPD and day care on one record. Inpatient wards are out of scope.
+            - href: /solutions/ngo-clinics/
+            - href: /solutions/
+              label: All clinic types
+              description: The plan each kind of practice usually needs, and what it costs per doctor per month.
+
+  - discriminant: hubGrid
+    value:
+      id: start-here
+      heading: Four guides for opening a clinic
+      intro: >-
+        A starting point if you are opening a clinic: two of these guides are for Kenya, and the others cover
+        India and Uganda. Each has a licensing checklist and ends with choosing software before opening day, and
+        the start-a-clinic page has the rest, including Nigeria and Ethiopia.
+      columns: 2
+      groups:
+        - items:
+            - href: /the-ultimate-guide-to-starting-a-clinic-in-kenya/
+            - href: /how-do-i-get-approval-from-the-kmpdc-in-kenya/
+            - href: /clinic-in-india/
+            - href: /clinic-in-uganda/
+
+  - discriminant: hubGrid
+    value:
+      id: rest-of-the-site
+      heading: The rest of the site
+      intro: The privacy policy and the terms are linked at the foot of every page.
+      columns: 3
+      groups:
+        - title: The product and its prices
+          items:
+            - href: /features/
+              description: Twelve modules in the order a patient moves through the clinic.
+            - href: /ai/
+              description: What each Cura AI feature does, from the AI scribe to the owner's end-of-day summary.
+            - href: /curapilot/
+              description: The AI copilot for doctors, and what the Penda Health study did and did not measure.
+            - href: /pricing/
+              description: >-
+                Professional at {price:usd.professional.annual} and Premium at {price:usd.premium.annual} per doctor
+                per month billed annually, and what a 5-doctor polyclinic pays.
+            - href: /integrations/
+            - href: /trust/
+        - title: Choosing and switching
+          items:
+            - href: /compare/
+              description: EasyClinic against one product or a longer list, with each competitor fact sourced and dated.
+            - href: /customers/
+              description: Reviews in customers' own words, from doctors in India to Penda Health in Nairobi.
+            - href: /switch/
+              description: The four steps from the demo to your first day.
+            - href: /glossary/
+              description: Forty terms, from EMR vs EHR to ABDM, SHA, NABIDH and HMO, each with its official source.
+        - title: Guides and articles
+          items:
+            - href: /start-a-clinic/
+              description: Licensing and setup costs for Kenya, India, Uganda, Nigeria and Ethiopia.
+            - href: /blog/
+              description: Articles for clinic owners, grouped by topic and newest first.
+        - title: The company
+          items:
+            - href: /about-us/
+              description: Who makes EasyClinic, the people who lead it, the Kolkata office and what the company will not do.
+            - href: /contact-us/
+              description: The phone and WhatsApp number for India, the Kenya number, the Kolkata address and a demo form.
+            - href: /careers/
+              description: No open roles right now, and how to send your CV.
+            - href: /partner-with-ec/
+
+  - discriminant: prose
+    value:
+      id: customers-help
+      heading: Already running your clinic on EasyClinic?
+      body: >-
+        How-to articles for clinics already on EasyClinic are in the [help centre](https://help.easyclinic.io/),
+        and you log in at [app.easyclinic.io](https://app.easyclinic.io/). Support and training are unlimited on
+        every plan, and the [contact page](/contact-us/) has the phone and WhatsApp number for India and the
+        number for Kenya.
+      width: measure
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      heading: How clinics rate EasyClinic
+      intro: >-
+        The Capterra link opens the reviews behind the score, so you can read what clinics wrote rather than rely
+        on the number.
+      variant: badges
+      badges:
+        - label: Capterra
+          rating: '{fact:capterraRating}'
+          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
+        - label: Google
+          rating: '{fact:googleRating}'
+
+# The page is a list of links, so there is no separate "Where to go next" block (RelatedLinks renders nothing
+# when the list is empty). /resources/ is a top-level page with no parent hub.
+links:
+  related: []
+
+closing:
+  heading: Cannot find the page for your clinic?
+  body: >-
+    Tell us where your clinic is and how many doctors work there. In a 20-minute demo we show EasyClinic on a
+    clinic set up like yours and say which plan fits.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See our phone and WhatsApp numbers
+    href: /contact-us/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-09-26
+  onlyUsCouldWrite: >-
+    The page sorts EasyClinic's own pages for the four countries it writes for and admits that prices are
+    published only in rupees and US dollars, though it names no person and nothing on it comes from running a
+    clinic.
+  readsMachineWritten: >-
+    It is mostly a list of links whose short descriptions, cut down from each page's own summary, follow one
+    pattern, and the page gives no reason for its choice of four guides.
+
+notes:
+  - 'Published 2026-09-26 with confirmed facts only (owner decision). No heroMedia, no screenshots, no regulator blocks, no testimonials. Proof is the badges variant with Capterra (linked) and Google (no link, no count; capterraReviews and googleReviews are null), as on /compare/ and /solutions/; the hub family requires a proof block (src/lib/rules/audit.ts).'
+  - 'Spec 5.19 asks for "the four most-read guides". There is no read or traffic data for this build (no GA4 export in the repo), so the page never says "most-read" or "most popular" and calls the four a starting point. They were chosen by the 12-month Search Console impressions quoted in spec 4.4, the only usage figures available: /how-do-i-get-approval-from-the-kmpdc-in-kenya/ 90,547; /clinic-in-india/ 85,551 (combined with /your-complete-guide-to-starting-a-clinic-in-india/, which now 301s to it); /clinic-in-uganda/ 81,011 (combined with /your-essential-guide-to-launching-a-clinic-in-uganda/, which now 301s to it); /the-ultimate-guide-to-starting-a-clinic-in-kenya/ 66,341. Next is the NMC guide at 53,691. Impressions are appearances in search results, not reads. Replace the four when real read data exists, and only then consider calling them most-read. The cards are ordered by country (Kenya, KMPDC, India, Uganda), not by impressions.'
+  - 'The four guides carry no description, so HubGrid shows each guide''s own summary. The intro claims "a licensing checklist" and "ends with choosing software before opening day": checked 2026-09-26, each of the four has a "Licensing checklist" H2 and its last H2 is "Choosing software before opening day". "The rest, including Nigeria and Ethiopia": /start-a-clinic/ lists /clinic-in-nigeria/ and /clinic-in-ethiopia/.'
+  - 'Country groups list every page in src/content that carries that country''s `country` field (country page, pricing page, demo page, listicle, and for India and Kenya the head-to-head and alternatives pages), plus /easyclinic-vs-healthplix/ and /compare/healthplix-alternatives/ (India-only products and prices in rupees, no `country` field) and each country''s privacy page. Drafts are listed on purpose: HubGrid drops a card whose target is not rendered in production (registry.urlFor), and shows it in preview. Drafts on 2026-09-26: all four country pages, /pricing/kenya/, /pricing/uae/, /pricing/nigeria/, /uaedemo/, /nigeriademo/, all four country privacy pages, /solutions/ngo-clinics/, /integrations/, /trust/, /partner-with-ec/. In production today the UAE and Nigeria groups show only their listicle. Start-a-clinic guides are not repeated in the country groups; /start-a-clinic/ groups them by country and is linked. Blog posts are reached through /blog/.'
+  - 'Card descriptions paraphrase each target page''s own summary, checked 2026-09-26, and keep to two or four items where the summary lists more. Draft targets carry no description, so their cards follow their own summary when they publish. If a target''s summary changes, re-check its description here or delete it (HubGrid falls back to item.description ?? target.data.summary). Labels are each page''s linkLabel except /countries/ ("All countries"), /specialties/ ("All specialties") and /solutions/ ("All clinic types").'
+  - 'Country intro: "{fact:countries} countries" is facts.yaml, as on /countries/. "Prices are published in rupees for India and in US dollars, and no other local-currency price is published yet" matches the brief (KES, AED and NGN prices are unknown) and the draft status of /pricing/kenya/, /pricing/uae/ and /pricing/nigeria/. Rewrite that sentence when a local-currency price is published. "Book a demo from the countries page": /countries/ has a demoForm headed "Your country is not listed".'
+  - 'Specialty group: all 14 pages in src/content/specialties (all published), in alphabetical order by label, plus /specialties/. The opening answer counts them ("14 specialties from ayurveda to physiotherapy"); recount if a specialty page is added or dropped. Hrefs match /specialties/ and nav.yaml. The intro price sentence is the one on /solutions/; "each tooth in a dental chart" and "each IVF cycle" come from the dental and IVF summaries.'
+  - 'Clinic-type group: the five solution pages and /solutions/. The intro plan sentence follows the /solutions/ opening answer and plan table. The hospital OPD card keeps the page''s own limit ("Inpatient wards are out of scope"). The NGO card is a draft and drops out in production, so the opening answer says "from a one-doctor clinic to a hospital OPD" and counts no clinic types.'
+  - 'The rest of the site: the brief asked for /features/, /pricing/, /compare/, /blog/, /start-a-clinic/, /glossary/, /customers/ and /about-us/. /ai/, /curapilot/, /switch/, /contact-us/, /careers/ and the drafts /integrations/, /trust/ and /partner-with-ec/ were added so the sitemap reaches every top-level section in spec 3.1. Not linked: /doctors/ and /clinics/ (owner decision, never linked), /kitchen-sink/, and the privacy and terms pages, which sit in the footer legal row on every page (the intro says so). /pricing/ description follows the /pricing/ summary (prices as tokens); /customers/ description follows its summary.'
+  - 'Help section: help.easyclinic.io and app.easyclinic.io are site.yaml helpUrl and appLoginUrl (also the nav Help centre link). "Support and training are unlimited on every plan" is plans.yaml ("Unlimited support and training" on all three plans). The contact page summary names the EasyClinic phone and WhatsApp number (the India +91 number in site.yaml) and the Kenya number. No names, roles or hours.'
+  - 'Section id "specialties" matches the staging footer link /resources#specialties (migration/research/brand.md section 8; the live footer in section 5 has no /resources/ link), so that link lands on the right section. The staging footer also linked /resources#comparisons; comparisons are reached here through the country groups and the /compare/ card, and there is no section with that id.'
+  - 'No FAQ. Spec 2.5 says a page with no true FAQs leaves the section out, and spec 6.4 drops routing questions ("Where next?"), which is all a sitemap would carry; the country and specialty questions ("my country is not listed", "my specialty is not listed") are answered on /countries/ and /specialties/. The hub family allows no FAQ or 5 to 8 questions (FAMILY_RULES.hub in src/lib/rules/audit.ts); this page has none.'
+  - 'Title 52 characters, with the head keyword first; meta description 151 characters with no tokens; H1 plain. Spec section 4 has no row for this page. Head keyword "EasyClinic resources" does not collide with any other page as of 2026-09-26 (/customers/ owns "EasyClinic reviews", /blog/ "clinic management blog", /glossary/ "clinic software glossary"). The opening answer is two sentences, with the country list and the specialty count as its numbers.'
+  - 'Footer: "All resources" added as the first link of the footer Resources group in src/data/nav.yaml. The header Resources dropdown has no href and was not changed.'

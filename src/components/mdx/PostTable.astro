@@ -1,10 +1,11 @@
 ---
 /**
- * Tables in blog posts (docs/components.md rule 3): below 640px every body row becomes a card and each
- * cell shows its column header, so the page never scrolls sideways and there is no scroll region. The
- * Markdown table arrives as the slot (thead and tbody from MDX); each body cell gets its column header as
- * `data-label`, and explicit roles keep the table semantics when the cells are display:block (Safari drops
- * them otherwise). Guides keep their own table styles.
+ * Markdown tables in long-form MDX: posts, guides and legal pages, all rendered by GuidePage
+ * (docs/components.md rule 3). Below 640px every body row becomes a card and each cell shows its column
+ * header, so the page never scrolls sideways and there is no scroll region. The Markdown table arrives as
+ * the slot (thead and tbody from MDX); each body cell gets its column header as `data-label`, and explicit
+ * roles keep the table semantics when the cells are display:block (Safari drops them otherwise). The
+ * bordered wide-screen look comes from GuidePage's `.guide-body` table styles.
  */
 import { labelTableCells } from '../../lib/content/post-table';
 
@@ -62,6 +63,9 @@ const html = labelTableCells(await Astro.slots.render('default'));
       padding: 0.5rem 1rem;
       border: 0;
       background: transparent;
+      /* A column aligned in Markdown (`---:`, e.g. the money columns in the cost guides) arrives as an
+         inline text-align; in a card every label and value reads from the left edge. */
+      text-align: start !important;
     }
 
     .post-table :global(tbody [data-label]::before) {

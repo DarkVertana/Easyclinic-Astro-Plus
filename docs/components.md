@@ -114,8 +114,11 @@ Shared data: `getEntry('countries', id)`, `getEntry('prices', 'inr')`, `getEntry
 3. **Tables stack into cards below 640px.** Use `<table>` with `data-label` on cells and CSS that turns
    rows into cards under `sm`, keeping `role` attributes so screen readers still read a table. Never a
    horizontal scroll, except the plan matrix, which gets a labelled, focusable scroll region and a visible hint.
-   Markdown tables in blog posts stack the same way: `src/components/mdx/PostTable.astro` adds the roles and
-   gives each body cell its column header as `data-label` (`src/lib/content/post-table.ts`).
+   Markdown tables in long-form MDX (posts, guides and legal pages, all rendered by `src/templates/GuidePage.astro`)
+   stack the same way: GuidePage maps `table` to `src/components/mdx/PostTable.astro`, which adds the roles and
+   gives each body cell its column header as `data-label` (`src/lib/content/post-table.ts`). Every Markdown table
+   therefore needs a header row with a label in each column (a cell under an empty header gets no label), and a
+   column aligned with `---:` reads from the left once stacked.
 4. **Accessibility (WCAG 2.2 AA).** Labels on every control, visible focus (global), 44px tap targets,
    status carries text not just colour, headings in order (blocks use h2 via `Section`, then h3).
 5. **No invented facts.** Anything from shared data that can be `null` goes through `need()` or

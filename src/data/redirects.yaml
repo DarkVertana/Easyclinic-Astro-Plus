@@ -10,7 +10,7 @@
 - { from: /doctor-clinic-software/, to: /solutions/solo-clinic/ }
 - { from: /polyclinic-software/, to: /solutions/polyclinic/ }
 - { from: /solutions/doctor-clinic/, to: /solutions/solo-clinic/, note: staging-only slug }
-- { from: /ngo-landing-page/, to: /solutions/ngo-clinics/ }
+- { from: /ngo-landing-page/, to: /solutions/ngo-clinics/, fallback: /solutions/, note: fallback is the hub with the NGO card while ngo-clinics is a draft }
 
 # --- Features (spec 3.4) ---
 - { from: /appointment-scheduling-at-easy-clinic/, to: /features/appointment-scheduling/ }
@@ -31,9 +31,9 @@
 - { from: /curapilot-ai/, to: /curapilot/ }
 
 # --- Countries (spec 3.2, 3.4; Kenya keeps its slug) ---
-- { from: /emr-software-in-india/, to: /clinic-management-software-india/ }
-- { from: /emr-software-in-uae/, to: /clinic-management-software-uae/ }
-- { from: /emr-software-in-nigeria/, to: /hospital-management-software-nigeria/ }
+- { from: /emr-software-in-india/, to: /clinic-management-software-india/, fallback: /pricing/india/, note: 'fallback while the country page is a draft: India prices in rupees plus the India demo link (/indiademo/ is the other published India page)' }
+- { from: /emr-software-in-uae/, to: /clinic-management-software-uae/, fallback: /countries/, note: not the UAE listicle (it ranks competitors) }
+- { from: /emr-software-in-nigeria/, to: /hospital-management-software-nigeria/, fallback: /countries/, note: not the Nigeria listicle (it ranks competitors) }
 - { from: /emr-software-in-ghana/, to: /clinic-management-software-ghana/, fallback: /countries/ }
 - { from: /emr-software-in-uganda/, to: /clinic-management-software-uganda/, fallback: /countries/ }
 - { from: /emr-software-in-tanzania/, to: /clinic-management-software-tanzania/, fallback: /countries/ }
@@ -43,12 +43,12 @@
 - { from: /emr-software-in-qatar/, to: /clinic-management-software-qatar/, fallback: /countries/ }
 - { from: /emr-software-in-malaysia/, to: /countries/, note: not in the spec country list; confirm }
 - { from: /clinic-automation-in-uganda/, to: /clinic-management-software-uganda/, fallback: /countries/ }
-# India city pages: no local client or address on record (spec 3.4)
-- { from: /emr-software-in-mumbai/, to: /clinic-management-software-india/ }
-- { from: /emr-software-in-delhi-ncr/, to: /clinic-management-software-india/ }
-- { from: /emr-software-in-hyderabad/, to: /clinic-management-software-india/ }
-- { from: /emr-software-in-chennai/, to: /clinic-management-software-india/ }
-- { from: /emr-software-in-bangalore/, to: /clinic-management-software-india/ }
+# India city pages: no local client or address on record (spec 3.4). Fallback as for /emr-software-in-india/.
+- { from: /emr-software-in-mumbai/, to: /clinic-management-software-india/, fallback: /pricing/india/ }
+- { from: /emr-software-in-delhi-ncr/, to: /clinic-management-software-india/, fallback: /pricing/india/ }
+- { from: /emr-software-in-hyderabad/, to: /clinic-management-software-india/, fallback: /pricing/india/ }
+- { from: /emr-software-in-chennai/, to: /clinic-management-software-india/, fallback: /pricing/india/ }
+- { from: /emr-software-in-bangalore/, to: /clinic-management-software-india/, fallback: /pricing/india/ }
 # Micro-market pages (spec 3.4)
 - { from: /emr-software-in-maldives/, to: /countries/ }
 - { from: /emr-software-in-mauritius/, to: /countries/ }
@@ -63,6 +63,7 @@
 # --- Country listicles ---
 - { from: /best-clinic-management-software-india-new/, to: /best-clinic-management-software-india/ }
 - { from: /best-clinic-management-software-kenya-new/, to: /best-clinic-management-software-kenya/ }
+- { from: /best-clinic-management-software-uganda-new/, to: /best-clinic-management-software-uganda/, fallback: /countries/, note: follows the Uganda row below (one hop after collapse); page-sitemap.xml 2026-09-26 }
 - { from: /best-clinic-management-software-maldives/, to: /countries/ }
 - { from: /best-clinic-management-software-mauritius/, to: /countries/ }
 - { from: /best-clinic-management-software-seychelles/, to: /countries/ }
@@ -134,6 +135,27 @@
 - { from: /newsletter/, to: /blog/, note: confirm }
 - { from: /siliconindia/, to: /about-us/, note: press page; confirm }
 - { from: /jarico/, to: /, note: unknown utility page; confirm }
+- { from: /custom-healthcare-software-development/, to: /integrations/, fallback: /features/, note: 'spec 5.19 fold (no case studies on record); /features/ has the integrations and custom-connection section while /integrations/ is a draft' }
+# /resources/ is not redirected: src/content/hubs/resources.yaml builds the page.
+
+# --- WordPress sitemap files (sitemap.md sections 1 and 5): all to the new index, which robots.txt names ---
+# The always-404 live names (category-sitemap.xml, sitemap-tags.xml and the rest in sitemap.md section 1) get no row.
+# A source here must never equal a generated /sitemap-<family>.xml; the build fails if it does (build-manifest.json.ts).
+- { from: /sitemap_index.xml, to: /sitemap-index.xml, note: the live index robots.txt names }
+- { from: /sitemap.xml, to: /sitemap-index.xml, note: live alias of sitemap_index.xml }
+- { from: /wp-sitemap.xml, to: /sitemap-index.xml, note: live alias of sitemap_index.xml }
+- { from: /sitemap-pages.xml, to: /sitemap-index.xml, note: thinkrank child }
+- { from: /sitemap-posts.xml, to: /sitemap-index.xml, note: thinkrank child }
+- { from: /sitemap-posts-2.xml, to: /sitemap-index.xml, note: thinkrank child }
+- { from: /sitemap-posts-3.xml, to: /sitemap-index.xml, note: thinkrank child }
+- { from: /sitemap-e-floating-buttons.xml, to: /sitemap-index.xml, note: thinkrank child (empty) }
+- { from: /local-sitemap.xml, to: /sitemap-index.xml, note: thinkrank child (home page only) }
+- { from: /page-sitemap.xml, to: /sitemap-index.xml, note: unlinked second set }
+- { from: /post-sitemap.xml, to: /sitemap-index.xml, note: live alias of post-sitemap1.xml }
+- { from: /post-sitemap1.xml, to: /sitemap-index.xml, note: unlinked second set }
+- { from: /post-sitemap2.xml, to: /sitemap-index.xml, note: unlinked second set }
+- { from: /post-sitemap3.xml, to: /sitemap-index.xml, note: unlinked second set }
+- { from: /sitemap-0.xml, to: /sitemap-index.xml, note: 'staging sitemap child, listed with the www host (sitemap.md section 5); not in legacy-urls.csv' }
 
 # --- Guides (live 404 with search history; spec 4.4) ---
 - { from: /how-to-setup-clinic-legally-in-india-compliance-guide/, to: /clinic-in-india/, note: 404 on the live site since 2026; had 48K impressions }

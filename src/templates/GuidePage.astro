@@ -22,7 +22,8 @@ import { POST_TOPIC_LABELS } from '../schemas/constants';
 /**
  * Long-form template (spec 7.4 GuidePage): byline, table of contents, body, FAQ, curated links.
  * Posts (spec 5.19) add the topic, the reading time beside the date, the summary and a labelled link to
- * the landing page that owns the post.
+ * the landing page that owns the post. Markdown tables in every family render through PostTable, which
+ * stacks them into cards below 640px.
  */
 interface Props {
   record: PageRecord;
@@ -121,7 +122,7 @@ const ownerHref = post && ownerRecord ? registry.urlFor(post.owner) : null;
         )
       }
       <div class:list={['guide-body prose-md text-lg leading-relaxed', post && 'post-body']}>
-        <Content components={post ? { InlineCta, a: Link, table: PostTable } : { InlineCta, a: Link }} />
+        <Content components={{ InlineCta, a: Link, table: PostTable }} />
       </div>
       {
         ownerRecord && ownerHref && (
@@ -152,6 +153,8 @@ const ownerHref = post && ownerRecord ? registry.urlFor(post.owner) : null;
     margin-top: 1.75rem;
     font-size: var(--text-xl);
   }
+  /* Markdown tables in every family. Below 640px PostTable stacks the rows into cards
+     (components/mdx/PostTable.astro, docs/components.md rule 3), so nothing scrolls sideways. */
   .guide-body :global(table) {
     width: 100%;
     font-size: var(--text-sm);
@@ -167,14 +170,7 @@ const ownerHref = post && ownerRecord ? registry.urlFor(post.owner) : null;
   .guide-body :global(th) {
     background: var(--surface-muted);
   }
-  @media (width < 40rem) {
-    .guide-body :global(table) {
-      display: block;
-      overflow-x: auto;
-    }
-  }
-  /* Posts: long words and pasted URLs wrap instead of widening the page; tables stack into cards below
-     640px (components/mdx/PostTable.astro). */
+  /* Posts: long words and pasted URLs wrap instead of widening the page. */
   .post-body {
     overflow-wrap: break-word;
   }
