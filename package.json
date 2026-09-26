@@ -1,0 +1,41 @@
+{
+  "name": "easyclinic-web",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@12.5.1",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/check-output.ts",
+    "build:prod": "CONTENT_STAGE=production astro build && CONTENT_STAGE=production node scripts/check-output.ts",
+    "check": "astro sync && astro check",
+    "test": "vitest run --project unit",
+    "test:output": "vitest run --project output",
+    "serve:output": "node scripts/serve-output.ts",
+    "e2e": "playwright test",
+    "lint:content": "node scripts/lint-content.ts",
+    "facts:report": "node scripts/report-facts.ts",
+    "smoke": "node scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "8.0.2",
+    "@astrojs/vercel": "11.0.11",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "7.3.5",
+    "tailwindcss": "4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^24.0.0",
+    "html-validate": "11.16.0",
+    "schema-dts": "2.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "5.0.2",
+    "yaml": "2.9.1"
+  }
+}

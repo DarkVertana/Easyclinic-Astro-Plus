@@ -1,0 +1,136 @@
+# Legacy URL -> new URL. One row per source. Rows whose target is not built in the current
+# stage are skipped (see reports/redirects-skipped.json) and activate when the target publishes.
+# match: exact (default) | prefix (path and everything below) | children (only below)
+# fallback: used while `to` is unpublished.
+# Sources: spec 3.4, staging audit verdicts, live sitemaps (migration/research/sitemap.md).
+
+# --- Solutions (spec 3.4, live nav) ---
+- { from: /clinic-chain-software/, to: /solutions/clinic-chain/ }
+- { from: /hospital-opd-nursing-home-software/, to: /solutions/hospital-opd/ }
+- { from: /doctor-clinic-software/, to: /solutions/solo-clinic/ }
+- { from: /polyclinic-software/, to: /solutions/polyclinic/ }
+- { from: /solutions/doctor-clinic/, to: /solutions/solo-clinic/, note: staging-only slug }
+- { from: /ngo-landing-page/, to: /solutions/ngo-clinics/ }
+
+# --- Features (spec 3.4) ---
+- { from: /appointment-scheduling-at-easy-clinic/, to: /features/appointment-scheduling/ }
+- { from: /patient-engagement-at-easyclinic/, to: /features/patient-engagement/ }
+- { from: /payor-management/, to: /features/insurance-claims/ }
+- { from: /insurance-claim-management-system/, to: /features/insurance-claims/ }
+- { from: /payor-management-system/, to: /features/insurance-claims/, note: duplicate post pair }
+- { from: /revenue-management/, to: /features/revenue-management/ }
+- { from: /reports-and-dashboards/, to: /features/reports-and-dashboards/ }
+- { from: /healthcare-dashboard-software/, to: /features/reports-and-dashboards/ }
+- { from: /cmo-landing-page/, to: /features/reports-and-dashboards/ }
+- { from: /cfo-landing-page/, to: /features/reports-and-dashboards/ }
+- { from: /ceo-landing-page/, to: /features/reports-and-dashboards/ }
+- { from: /emr-landing-page/, to: /features/emr/ }
+- { from: /pathology-emr/, to: /features/lab/, note: audit merge }
+
+# --- AI ---
+- { from: /curapilot-ai/, to: /curapilot/ }
+
+# --- Countries (spec 3.2, 3.4; Kenya keeps its slug) ---
+- { from: /emr-software-in-india/, to: /clinic-management-software-india/ }
+- { from: /emr-software-in-uae/, to: /clinic-management-software-uae/ }
+- { from: /emr-software-in-nigeria/, to: /hospital-management-software-nigeria/ }
+- { from: /emr-software-in-ghana/, to: /clinic-management-software-ghana/, fallback: /countries/ }
+- { from: /emr-software-in-uganda/, to: /clinic-management-software-uganda/, fallback: /countries/ }
+- { from: /emr-software-in-tanzania/, to: /clinic-management-software-tanzania/, fallback: /countries/ }
+- { from: /emr-software-in-rwanda/, to: /clinic-management-software-rwanda/, fallback: /countries/ }
+- { from: /emr-software-in-south-africa/, to: /clinic-management-software-south-africa/, fallback: /countries/ }
+- { from: /emr-software-in-ethiopia/, to: /clinic-management-software-ethiopia/, fallback: /countries/ }
+- { from: /emr-software-in-qatar/, to: /clinic-management-software-qatar/, fallback: /countries/ }
+- { from: /emr-software-in-malaysia/, to: /countries/, note: not in the spec country list; confirm }
+- { from: /clinic-automation-in-uganda/, to: /clinic-management-software-uganda/, fallback: /countries/ }
+# India city pages: no local client or address on record (spec 3.4)
+- { from: /emr-software-in-mumbai/, to: /clinic-management-software-india/ }
+- { from: /emr-software-in-delhi-ncr/, to: /clinic-management-software-india/ }
+- { from: /emr-software-in-hyderabad/, to: /clinic-management-software-india/ }
+- { from: /emr-software-in-chennai/, to: /clinic-management-software-india/ }
+- { from: /emr-software-in-bangalore/, to: /clinic-management-software-india/ }
+# Micro-market pages (spec 3.4)
+- { from: /emr-software-in-maldives/, to: /countries/ }
+- { from: /emr-software-in-mauritius/, to: /countries/ }
+- { from: /emr-software-in-seychelles/, to: /countries/ }
+- { from: /emr-software-in-somalia/, to: /countries/ }
+- { from: /emr-software-in-fiji/, to: /countries/ }
+- { from: /emr-software-in-suriname/, to: /countries/ }
+- { from: /emr-software-in-trinidad-and-tobago/, to: /countries/ }
+- { from: /new-emr-software-in-maldives/, to: /countries/ }
+- { from: /new-emr-software-in-mauritius/, to: /countries/ }
+
+# --- Country listicles ---
+- { from: /best-clinic-management-software-india-new/, to: /best-clinic-management-software-india/ }
+- { from: /best-clinic-management-software-kenya-new/, to: /best-clinic-management-software-kenya/ }
+- { from: /best-clinic-management-software-maldives/, to: /countries/ }
+- { from: /best-clinic-management-software-mauritius/, to: /countries/ }
+- { from: /best-clinic-management-software-seychelles/, to: /countries/ }
+- { from: /best-clinic-management-software-somalia/, to: /countries/ }
+- { from: /best-clinic-management-software-fiji/, to: /countries/ }
+- { from: /best-clinic-management-software-suriname/, to: /countries/ }
+- { from: /best-clinic-management-software-trinidad-and-tobago/, to: /countries/ }
+- { from: /best-clinic-management-software-malaysia/, to: /countries/ }
+# Held listicles (audit): redirect until a sourced local shortlist exists; remove the row to publish one.
+- { from: /best-clinic-management-software-ethiopia/, to: /countries/ }
+- { from: /best-clinic-management-software-ghana/, to: /countries/ }
+- { from: /best-clinic-management-software-qatar/, to: /countries/ }
+- { from: /best-clinic-management-software-rwanda/, to: /countries/ }
+- { from: /best-clinic-management-software-south-africa/, to: /countries/ }
+- { from: /best-clinic-management-software-tanzania/, to: /countries/ }
+- { from: /best-clinic-management-software-uganda/, to: /countries/ }
+
+# --- Specialties: merges (audit) and slug decisions (keep the URL with more GSC clicks; confirm) ---
+- { from: /ayurveda-emr-software/, to: /ayurveda-clinic-management-software/ }
+- { from: /alternative-medicine/, to: /ayurveda-clinic-management-software/ }
+- { from: /physiotherapy-emr-software/, to: /physiotherapy-clinic-management-software/ }
+- { from: /physiotherapy-emr/, to: /physiotherapy-clinic-management-software/ }
+- { from: /aesthetic-emr-software/, to: /dermatology-emr-software/ }
+- { from: /cosmetology-emr-software/, to: /dermatology-emr-software/ }
+- { from: /trichology-emr-software/, to: /dermatology-emr-software/ }
+- { from: /trichology-emr/, to: /dermatology-emr-software/ }
+- { from: /trichology/, to: /dermatology-emr-software/ }
+- { from: /family-physician-emr/, to: /general-practitioner-emr/ }
+- { from: /psychiatry-emr/, to: /mental-health/ }
+- { from: /psychiatry-emr-software/, to: /mental-health/ }
+- { from: /psychology-emr/, to: /mental-health/ }
+- { from: /pediatric/, to: /pediatric-emr/ }
+- { from: /ent/, to: /ent-emr-software/ }
+- { from: /diabetology-emr-software/, to: /endocrinology-emr-software/ }
+- { from: /immunology-emr/, to: /allergy-emr-software/ }
+# Held specialties (audit "Hold"): redirect to the hub until the specialty template can be filled.
+# Three of these loop on the live site today (rheumatology, hematology, endocrinology).
+- { from: /allergy-emr-software/, to: /specialties/ }
+- { from: /endocrinology-emr-software/, to: /specialties/ }
+- { from: /endocrinology/, to: /specialties/ }
+- { from: /gastroenterology-emr/, to: /specialties/ }
+- { from: /gastroenterology/, to: /specialties/ }
+- { from: /general-surgery-emr/, to: /specialties/ }
+- { from: /hematology-emr/, to: /specialties/ }
+- { from: /hematology/, to: /specialties/ }
+- { from: /nephrology-emr/, to: /specialties/ }
+- { from: /oncology-emr/, to: /specialties/ }
+- { from: /pulmonology-emr/, to: /specialties/ }
+- { from: /radiology-emr/, to: /specialties/ }
+- { from: /rheumatology-emr/, to: /specialties/ }
+- { from: /rheumatology/, to: /specialties/ }
+- { from: /sexology-emr/, to: /specialties/ }
+- { from: /urology-emr/, to: /specialties/ }
+
+# --- Company, legal, resources ---
+- { from: /privacy-policy/, to: /privacy/ }
+- { from: /terms-of-service/, to: /terms/ }
+- { from: /testimonials/, to: /customers/ }
+- { from: /blogs/, to: /blog/ }
+- { from: /blogs/, match: children, to: /blog/, note: staging-only nested posts }
+- { from: /blog/page/, match: prefix, to: /blog/ }
+- { from: /category/, match: prefix, to: /blog/ }
+- { from: /tag/, match: prefix, to: /blog/ }
+- { from: /author/, match: prefix, to: /blog/ }
+- { from: /feed/, to: /rss.xml }
+- { from: /knowledgebase/, to: 'https://help.easyclinic.io/', note: pending the help-centre decision (spec 1.2) }
+- { from: /demo-form-embed/, to: /contact-us/ }
+- { from: /thank-you/, to: /contact-us/ }
+- { from: /newsletter/, to: /blog/, note: confirm }
+- { from: /siliconindia/, to: /about-us/, note: press page; confirm }
+- { from: /jarico/, to: /, note: unknown utility page; confirm }
