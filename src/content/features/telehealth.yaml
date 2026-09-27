@@ -221,6 +221,16 @@ sections:
         - label: Google
           rating: '{fact:googleRating}'
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /features-that-your-telemedicine-software-should-have/
+        - href: /telemedicine-in-india/
+        - href: /telemedicine-in-kenya-2025/
+        - href: /healthcare-in-uganda/
+
 faqHeading: Questions doctors ask about video consults
 faq:
   - question: Is it legal to see patients by video in India?
@@ -323,3 +333,4 @@ notes:
   - 'Cannibalisation (spec 4.5): receipts and invoices link to /features/billing/, WhatsApp mechanics (templates, message costs) to /features/whatsapp/, and calendar mechanics to /features/appointment-scheduling/, whose teleconsult paragraph (spec 5.11) links here.'
   - 'No testimonial: none of the testimonials in src/data/testimonials mentions video consults, and all are placed. Proof is the badges variant; add the review count when capterraReviews is confirmed.'
   - 'No heroMedia and no media objects: screenshots do not exist yet (page-writing rules). When captured, add the video consult screen with the patient record beside it as hero, and the WhatsApp prescription message on a phone to the WhatsApp row (spec 12).'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 3 of them (/features-that-your-telemedicine-software-should-have/, /telemedicine-in-india/, /telemedicine-in-kenya-2025/) had no inbound link but /blog/, and links.related is full (8 of 8).'

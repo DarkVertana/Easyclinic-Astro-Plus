@@ -121,7 +121,7 @@ sections:
         - diagnostic-errors
         - treatment-errors
       body: |
-        In a 2025 preprint written with OpenAI, Penda Health studied {fig:visits} patient visits at 15 of its clinics in Nairobi. The tool it measured was AI Consult, a copilot embedded in the EasyClinic record Penda has used since 2017. Independent physicians rated the visits, and those where the clinician had AI Consult showed fewer errors on the measures above.
+        In a 2025 preprint written with OpenAI, Penda Health studied {fig:visits} patient visits at 15 of its clinics in Nairobi. The tool it measured was AI Consult, a copilot embedded in the EasyClinic record Penda has used since 2017. Independent physicians rated a random sample of the visit records, and those where the clinician had AI Consult showed fewer errors on the measures above.
 
         The study measured clinical errors, not note drafting, and it is a preprint on arXiv rather than a journal article.
       link:
@@ -214,6 +214,8 @@ links:
     - href: /trust/
       label: Trust and security
       description: Where your data lives and who can see it.
+    - href: /ai-emr-software-vs-traditional-emr/
+    - href: /clinic-workflow-automation/
 
 closing:
   heading: See Cura AI in a 20-minute demo
@@ -253,3 +255,5 @@ notes:
   - 'Left out until they exist: hero ambient-note demo video (spec 5.2 item 1), one screenshot per job (spec 12), a measured minutes-per-note figure and a doctor quote about documentation (spec 5.2 proof). No testimonial is assigned to this page.'
   - 'Spec 5.2 primary CTA "Try Cura AI on your next 10 patients" is not used: no such trial is confirmed and the 23 September decision is no free trial. The demo CTA is used instead.'
   - 'heroStrip.study is left off because its line ("AI copilot studied on ...") under a scribe H1 could read as if the scribe was studied.'
+  - 'Audit 2026-09-27: study body now says independent physicians rated "a random sample of the visit records", as /about-us/ does; the paper''s panel rated 5,666 of the visits, not all of them (study.yaml scope). The "Predicts stockouts" row is unchanged: /curapilot/ now also names stock prediction as a Cura AI job (spec 1.2).'
+  - 'Audit 2026-09-27: added the published posts this page owns to links.related, with each post''s own label and summary as anchor text and description. /ai-emr-software-vs-traditional-emr/ and /clinic-workflow-automation/ had no inbound link but /blog/.'

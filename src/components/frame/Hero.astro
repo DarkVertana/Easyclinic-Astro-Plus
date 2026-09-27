@@ -40,11 +40,13 @@ if (study) {
   const visits = study.figures.find((f) => f.id === 'visits');
   const publication = study.publications.find((p) => p.id === visits?.source);
   if (visits && publication) {
-    studyLine = `AI copilot ${unconfirmed(Astro, 'study citation verification', `studied on ${visits.value} visits`, Boolean(publication.verifiedOn))}`;
+    // Names the studied tool (AI Consult), never CuraPilot or Cura AI (page-writing-rules; audit 2026-09-27).
+    studyLine = `AI Consult ${unconfirmed(Astro, 'study citation verification', `studied on ${visits.value} visits in an EasyClinic record`, Boolean(publication.verifiedOn))}`;
   }
 }
 const trustHref = registry.urlFor('/trust/');
-const studyHref = registry.urlFor('/curapilot/');
+// The /curapilot/ studyCard (id: study) says the paper names AI Consult, not CuraPilot.
+const studyHref = registry.urlFor('/curapilot/#study');
 ---
 
 <section class="border-b border-line bg-gradient-to-b from-blue-50 to-surface">

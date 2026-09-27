@@ -35,6 +35,7 @@ primary:
           - { label: Clinic chain, href: /solutions/clinic-chain/, description: 'Central records and SOPs for every branch', icon: network }
           - { label: Hospital OPD and nursing home, href: /solutions/hospital-opd/, description: 'Queues, pharmacy, lab and claims', icon: hospital }
           - { label: NGO and mission clinics, href: /solutions/ngo-clinics/, description: 'Donor-ready reports on low bandwidth', icon: heart }
+          - { label: All clinic types, href: /solutions/, description: 'The plan each kind of practice usually needs', icon: layout-dashboard }
       - title: By specialty
         links:
           - { label: Dental, href: /dental-emr-software/ }
@@ -48,6 +49,9 @@ primary:
           - { label: IVF and fertility, href: /ivf-emr/ }
           - { label: Physiotherapy, href: /physiotherapy-clinic-management-software/ }
           - { label: Ayurveda, href: /ayurveda-clinic-management-software/ }
+          - { label: General practice, href: /general-practitioner-emr/ }
+          - { label: ENT, href: /ent-emr-software/ }
+          - { label: Neurology, href: /neurology-emr/ }
           - { label: All specialties, href: /specialties/ }
   - label: Countries
     href: /countries/
@@ -78,6 +82,7 @@ primary:
           - { label: Switch to EasyClinic, href: /switch/, description: 'What we import and how long it takes', icon: repeat }
           - { label: Blog, href: /blog/, description: 'Guides for clinic owners', icon: file-text }
           - { label: Help centre, href: 'https://help.easyclinic.io/', description: 'How-to articles for customers', icon: circle-help }
+          - { label: All resources, href: /resources/, description: 'Find the EasyClinic pages for your clinic', icon: list-checks }
 
 footer:
   - title: Product
@@ -100,6 +105,7 @@ footer:
       - { label: Integrations, href: /integrations/ }
   - title: Solutions
     links:
+      - { label: All clinic types, href: /solutions/ }
       - { label: Solo doctor clinic, href: /solutions/solo-clinic/ }
       - { label: Polyclinic, href: /solutions/polyclinic/ }
       - { label: Clinic chain, href: /solutions/clinic-chain/ }

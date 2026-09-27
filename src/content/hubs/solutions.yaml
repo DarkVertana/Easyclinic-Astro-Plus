@@ -121,6 +121,15 @@ sections:
             - label: Ayurveda
               href: /ayurveda-clinic-management-software/
               description: Software for ayurveda clinics.
+            - label: General practice
+              href: /general-practitioner-emr/
+              description: The EMR for general practice, on every plan.
+            - label: ENT
+              href: /ent-emr-software/
+              description: The EMR for ENT clinics.
+            - label: Neurology
+              href: /neurology-emr/
+              description: The EMR for neurology clinics.
             - label: All specialties
               href: /specialties/
               description: Every specialty page on one list.
@@ -130,7 +139,8 @@ sections:
       id: which-plan
       heading: Which plan fits which clinic
       intro: >-
-        Every price is per doctor per month. The plan follows how the practice is run, from one doctor
+        Professional and Premium are priced per doctor per month, and Enterprise is quoted. The plan
+        follows how the practice is run, from one doctor
         at one desk to a head office running the branches.
       caption: EasyClinic plans by kind of clinic
       columns:
@@ -225,7 +235,7 @@ links:
   related:
     - href: /pricing/
       label: Pricing
-      description: Every plan per doctor per month, with what a 5-doctor polyclinic pays.
+      description: Prices per doctor per month, and what a 5-doctor polyclinic pays.
     - href: /features/
       label: Every module
       description: Twelve modules in the order a patient moves through the clinic.
@@ -253,7 +263,7 @@ editorialPass:
     and rupees, and the page admits that EasyClinic does not run inpatient wards or fully offline, though
     it names no person and nothing on it is specific to one country.
   readsMachineWritten: >-
-    The eleven one-line specialty descriptions follow one pattern and say little beyond the specialty's
+    The fourteen one-line specialty descriptions follow one pattern and say little beyond the specialty's
     name, and the ratings block has no review counts, so a doctor may read both as filler.
 
 notes:
@@ -270,3 +280,5 @@ notes:
   - 'Secondary keyword "clinic software by specialty" replaced with "clinic software by practice size" so specialty terms stay with the /specialties/ hub and the specialty pages (spec 4.5 rule 5).'
   - 'Meta description is 154 characters, opens with the head keyword and carries no tokens (the lint measures the raw string, so a price token would count at its token length).'
   - 'Title (58 characters) carries the head keyword; spec section 4 has no row for this hub. Head keyword "clinic software by practice type" does not collide with any other page as of 2026-09-26.'
+  - 'Audit 2026-09-27: added General practice, ENT and Neurology to the by-specialty grid, in step with the same addition to the nav.yaml By specialty menu. All three pages are published and had only two or three in-content inbound links. Descriptions follow the existing generic pattern; the GP card says "on every plan" because plans.yaml puts patient records and the EMR in Professional and the GP page says a GP without templates can stay on Professional. readsMachineWritten now counts fourteen descriptions.'
+  - 'Audit 2026-09-27: the plan table intro and the /pricing/ related-link description no longer say every plan is priced per doctor per month. Enterprise is on a quote (plans.yaml custom: true), and whether that quote is per doctor is not public; the link uses the /compare/ hub''s wording.'

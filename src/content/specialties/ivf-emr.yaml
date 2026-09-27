@@ -94,7 +94,7 @@ sections:
             - Stimulation protocol and follicle tracking
             - Egg retrieval and embryo transfer as milestones
             - Each dose adjustment recorded with the medication
-            - Hormone and other lab values charted over time
+            - Hormone levels kept on the record beside each dose change
         - heading: Embryology and lab records in EasyClinic
           body: >-
             Embryo-related data and the lab's records are stored and managed in EasyClinic, the system the
@@ -168,8 +168,8 @@ sections:
           meta: Day 4, 20 minutes
           body: The last session moves you from the basics to the shortcuts that make the daily work quicker.
       note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days. Moving old records across
-        from another system adds time to that.
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days. That is the quickest
+        case, and yours may take longer.
 
 faqHeading: Questions IVF clinic owners ask
 faq:
@@ -259,3 +259,5 @@ notes:
   - 'Screenshots left out (no heroMedia or media on published pages). When the seeded demo tenant exists: the IVF cycle chart (stimulation protocol with follicle-tracking rows and dose changes) as hero, the embryo record on the patient record, and the package bill with part payments.'
   - 'Testimonial seetha-lakshmi-kolanakuduru is placed only on this page (the draft India country page mentions it in its notes only). Her quote praises support rather than an IVF feature; recruit a second fertility quote about the cycle chart or package billing if one exists.'
   - '/clinic-management-software-india/ is still a draft; the related link will resolve once it publishes. Spec 2.9 asks for two country pages; add /clinic-management-software-kenya/ or another when a fertility client there is confirmed.'
+  - 'Audit 2026-09-27: the cycle-tracking row (no plan tag) had the bullet "Hormone and other lab values charted over time", which implied lab charting on every plan while the Premium row and the section intro tie lab reports in the chart to Premium. The bullet now reads "Hormone levels kept on the record beside each dose change", matching the row body; charting stays only in the Premium "Lab reports in the chart" row.'
+  - 'Audit 2026-09-27: the training step note no longer says moving old records from another system adds time to go-live. No source says what slows go-live (the same line was cut on /switch/, /kenyademo/, /indiademo/ and home), and it implied records beyond the patient list are moved; it now uses the /switch/ wording.'

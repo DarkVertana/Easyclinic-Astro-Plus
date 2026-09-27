@@ -5,7 +5,6 @@ headKeyword: best clinic management software in India
 secondaryKeywords:
   - top clinic software India 2026
   - clinic software comparison India
-  - clinic management software price India
 title: Best Clinic Management Software in India (2026)
 metaDescription: >-
   Seven clinic software options for Indian clinics compared on published price, WhatsApp, AI notes,
@@ -144,9 +143,10 @@ sections:
               source: https://www.practo.com/providers/clinics/ray/plans
               checkedOn: 2026-09-26
             - value: >-
-                Not published (checked 26 September 2026). Elite includes 5,000 credits for patient engagement
-                messages without naming the channel.
-              source: https://www.healthplix.com/pricing-1
+                The SPOT mobile app sends digital prescriptions to patients by SMS or WhatsApp. Neither
+                [published plan](https://www.healthplix.com/pricing-1) names WhatsApp; Elite includes 5,000
+                credits for patient messages without naming the channel.
+              source: https://www.healthplix.com/spot-mobile-emr
               checkedOn: 2026-09-26
             - value: Appointment notifications by SMS, WhatsApp and email.
               source: https://mocdoc.com/clinic-management-software
@@ -286,7 +286,7 @@ sections:
           bestFor: Clinics of two or more doctors, polyclinics and groups adding branches
           url: https://www.easyclinic.io/
           body: >-
-            EasyClinic is clinic software from a Kolkata company established in {fact:founded}.
+            EasyClinic is clinic software from a Kolkata company, and it has run clinics since {fact:founded}.
             {fact:doctors} doctors in {fact:cities} cities use it, and the largest chain on it
             has {fact:largestChain} locations. Professional, at {price:inr.professional.annual} per doctor per
             month billed annually, covers the appointment book, the EMR with e-prescriptions, billing,
@@ -425,7 +425,7 @@ sections:
             - H.A.L.O drafts the note and prescription from the recorded consultation.
           cons:
             - The AI tools and the multi-clinic setup are on Elite only.
-            - WhatsApp is not named on the pages we read.
+            - WhatsApp appears only on the SPOT mobile app page, for prescriptions; neither published plan names it.
             - Pharmacy is not listed in either published plan.
             - No reviews yet on Capterra, and 4 on SoftwareSuggest.
           facts:
@@ -542,7 +542,8 @@ sections:
             Both plans include the appointment calendar, billing, patient charting, SMS confirmations and
             reminders, and Practo.com integration. Practo's own FAQ says Ray is clinic software and not an
             advertising product; online booking by patients sits with Practo.com and the separate Practo Prime
-            programme, which charges a one-time technology fee the first time each patient connects through it.
+            programme, which charges a one-time platform fee the first time each patient connects through it in a
+            rolling 180-day window.
             Prices are per plan rather than
             per doctor: CM Atom is ₹999 a month on a one-year term for up to 50 doctors, and Clinic Management
             is ₹1,499 a month on one year, or ₹999 on four years, for unlimited doctors. Online payments through
@@ -647,9 +648,6 @@ sections:
               You are one doctor and want a low yearly price: ₹10,999 on Doctors App Silver with two staff
               logins, or ₹12,000 on HealthPlix Pro, both before 18% GST.
             - Your internet drops often, since HealthPlix describes itself as an online and offline EMR.
-            - >-
-              You want AI that listens to the consultation: HealthPlix's H.A.L.O and the Doctors App AI scribe
-              both turn the conversation into notes.
             - Your patients want the prescription in their own language, which both say they print in 14 languages.
             - You want an appointment booking website included, on HealthPlix Elite or Doctors App Gold.
         - title: Choose MocDoc or Healthray if
@@ -738,6 +736,9 @@ sections:
           accessed: 2026-09-26
         - label: 'HealthPlix: H.A.L.O'
           url: https://www.healthplix.com/halo
+          accessed: 2026-09-26
+        - label: 'HealthPlix: SPOT mobile EMR'
+          url: https://www.healthplix.com/spot-mobile-emr
           accessed: 2026-09-26
         - label: 'Capterra: HealthPlix'
           url: https://www.capterra.com/p/10005728/HealthPlix/
@@ -835,8 +836,8 @@ faq:
       MocDoc, Healthray and DocEngage list WhatsApp on their clinic software pages, and Doctors App includes
       WhatsApp message credits, limited on its Silver plan. EasyClinic sends WhatsApp reminders and messages
       on Premium and Enterprise, with SMS and email reminders on every plan. Practo Ray's plans list SMS
-      reminders and do not mention WhatsApp, and HealthPlix's Elite plan includes 5,000 message credits
-      without naming the channel.
+      reminders and do not mention WhatsApp, and HealthPlix's SPOT mobile app sends prescriptions by SMS or
+      WhatsApp, though neither published HealthPlix plan names WhatsApp.
     lastVerified: 2026-09-26
   - question: What happens to the price when we open a second branch?
     answer: >-
@@ -916,3 +917,8 @@ notes:
   - 'Fact check 2026-09-26: DocEngage /pricing opens on a USER WISE tab (₹499 / ₹699 per user per month billed annually); the CARE CENTER WISE tab holds ₹30,000 / ₹36,000. Healthray /pricing shows both figures on the same card. "Lowest price on this page" claims for Doctors App and "Healthray and DocEngage cost more for a solo doctor" were removed because the per-user figure is lower.'
   - 'Fact check 2026-09-26: Doctors App own-number WhatsApp integration is in the Gold column only (Silver blank); the AI scribe is not in either clinic plan table; Silver/Gold include a 7-day full refund promise. DocEngage CRM WhatsApp campaigns and memberships are on HCRM Advanced (₹1,80,000), not Basic. Healthray 1-2 weeks applies to "larger polyclinics with pharmacy and lab". H.A.L.O is not listed in the HealthPlix pricing image.'
   - EasyClinic's Capterra listing showed 4.9 from 11 reviews on 2026-09-26; the count is not used because review counts are not a confirmed fact (page-writing-rules.md), and the limits box says so.
+  - 'Audit 2026-09-27: HealthPlix WhatsApp cell, con and FAQ corrected. HealthPlix''s SPOT mobile EMR page says prescriptions go to patients "via SMS/WhatsApp" (read for /easyclinic-vs-healthplix/ on 26 September, re-read 27 September); neither published plan names WhatsApp. The SPOT page is added to the sourceList.'
+  - 'Audit 2026-09-27: removed "You want AI that listens to the consultation" from Choose HealthPlix or Doctors App: it implied EasyClinic has no such AI, while /ai/ and the spec say Cura AI listens to the consult on every plan. The list keeps four real differences.'
+  - 'Audit 2026-09-27: Practo Prime fee now reads "a one-time platform fee the first time each patient connects through it in a rolling 180-day window", as the Prime page (re-read 27 September) and /easyclinic-vs-practo/ say; before, it read as once per patient ever.'
+  - 'Audit 2026-09-27: removed the secondary keyword "clinic management software price India", which spec 4.2 does not give this page and which overlaps /pricing/india/ (head keyword "clinic software cost in India"). Spec 4.5 rule 4: the country listicle takes comparison intent and the country pricing page takes cost intent.'
+  - 'Audit 2026-09-27: EasyClinic entry changed from "a Kolkata company established in 2003" to "a Kolkata company, and it has run clinics since 2003". "Established" read as an incorporation date, which is unsourced; the confirmed fact (facts.yaml founded) is that EasyClinic has run clinics since 2003, as about-us.yaml records.'

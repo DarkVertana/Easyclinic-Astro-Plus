@@ -8,7 +8,7 @@ linkLabel: ABDM for private clinics
 openingAnswer: 'For a private clinic in India, joining ABDM is voluntary, and it starts with two free registrations: the clinic on the Health Facility Registry and each doctor on the Healthcare Professionals Registry. The clinic''s software then works through three milestones, M1 to M3, which run from creating or verifying each patient''s 14-digit ABHA number to sharing and fetching records with the patient''s consent.'
 summary: Whether ABDM is compulsory, what registering the clinic and its doctors involves, what each milestone changes at the desk and in the consulting room, and what the incentive scheme pays a clinic.
 author: subhashish-saha
-lastUpdated: 2026-09-26
+lastUpdated: 2026-09-27
 originallyPublished: 2026-05-04
 topic: compliance-by-country
 owner: /features/emr/
@@ -60,7 +60,7 @@ faq:
       Only above 100 eligible transactions a month: under
       [Corrigendum 7](https://abdm.gov.in/strapicms/uploads/DHIS_corrigendum_7_c1d7e09cc2.pdf), nothing is
       paid at 100 or fewer, and above that only the records beyond the first 100 are paid. A clinic's
-      transactions count only on software integrated with ABDM up to M3. The terms run from April to
+      transactions count only on software integrated with ABDM up to M3. Those terms covered April to
       September 2026, subject to funds, so check whether a further corrigendum has been issued.
 links:
   hub: /blog/
@@ -73,7 +73,7 @@ links:
       description: What the DPDP Act and the older SPDI Rules mean for a clinic's patient records, with a privacy checklist.
     - href: /clinic-in-india/
       label: How to start a clinic in India
-      description: The route to opening a private clinic, from the premises to Clinical Establishments Act registration.
+      description: The route to opening a private clinic, from the premises to registering the clinic with the state.
     - href: /indiademo/
       label: EasyClinic in India
       description: Book a 20-minute demo with the EasyClinic team in India.
@@ -91,6 +91,8 @@ notes:
   - 'EasyClinic facts used: EMR and e-prescriptions on every plan (src/data/plans.yaml); demo to live in as little as 3 days and training in four short sessions over four days (facts.yaml goLiveDays and trainingDays, page-writing rules). Body values are plain text because tokens do not work in MDX bodies. No price is written.'
   - 'Spec 6.5: the named person is the author byline only; the local facts are the Indian registries, the milestones and the rupee incentive rates; there is no measured EasyClinic number; the limit admitted is that the post says nothing about EasyClinic''s own ABDM status. Rupee amounts in the incentive section are scheme rates, not EasyClinic prices.'
   - 'Fact check on 2026-09-26 (re-fetched: the FAQ content API at https://abdm.gov.in/strapicms/api/faqs, the M1 document, DHIS Corrigendum 7 and the 2022 paper). Corrections made: (1) the registry links. https://facility.abdm.gov.in/ and https://hpr.abdm.gov.in/ both now redirect to https://nhpr.abdm.gov.in/, the National Healthcare Providers Registry portal, which carries both the HFR and HPR logins and a facility manager sign-up; the registration section now says the two registries share that portal and links it, instead of linking the two old addresses as separate sites. (2) The FAQ links now point to https://abdm.gov.in/FAQ (the site''s FAQ route) instead of the home page. (3) The incentive rates: Corrigendum 7 clause 3(iii) pays only for eligible transactions beyond the first 100, deducting the lowest-value ones first, so "above that, a facility gets Rs 10 per ..." was corrected to payment for the records beyond the first 100, in the body and the FAQ (https://abdm.gov.in/strapicms/uploads/DHIS_corrigendum_7_c1d7e09cc2.pdf). (4) "NHA paper": the PDF does not name its author in its text, so it is now "a 2022 paper on ABDM''s website" (the text cites figures as of 14 September 2022) (https://abdm.gov.in/strapicms/uploads/Accelerating_Digitisation_in_Healthcare_Delivery_v3_fad6fe700f.pdf). (5) The HFR FAQ answer said the verification "takes longer than the form", which no source says; it now says the FAQ gives no time for verification (FAQ id 243). (6) The address-proof list now follows FAQ id 243 (CEA certificate, utility bills, rent agreement, property record). No DHIS corrigendum after number 7 was found on 2026-09-26; the post already tells the reader to check.'
+  - 'Audit 2026-09-27: the related link to /clinic-in-india/ said that route ends in "Clinical Establishments Act registration", which reads as if every clinic in India registers under that Act. The Act''s site (https://clinicalestablishments.mohfw.gov.in/, fetched 2026-09-27) says it has been adopted in 19 States/UTs only, so the description now says "registering the clinic with the state", matching the corrected guide.'
+  - 'Audit 2026-09-27: the incentive section called Corrigendum 7 the scheme''s "current terms" and its first bullet and the FAQ said the terms "run" from April to September 2026. Corrigendum 7 (https://abdm.gov.in/strapicms/uploads/DHIS_corrigendum_7_c1d7e09cc2.pdf, re-fetched 2026-09-27) says it "is effective from the month of April 2026 till September 2026", so from 1 October 2026 it is no longer current. The lead-in now says it "set the terms for April to September 2026, subject to funds", the first bullet says it does not cover October 2026 onwards and tells the reader to check for a further corrigendum, and the FAQ says "Those terms covered April to September 2026". The other bullets are left as the corrigendum''s terms for that period. No Corrigendum 8 was found: the DHIS FAQ API (https://abdm.gov.in/strapicms/api/dhis-faqs, fetched 2026-09-27) mentions only Corrigendum 7. No new URL was added.'
 ---
 
 ABDM, the Ayushman Bharat Digital Mission, is run by the National Health Authority (NHA). It gives each patient a health ID and lets records move between providers with the patient's consent. This post looks at it from a private clinic's side, starting with whether a clinic has to join at all.
@@ -149,9 +151,9 @@ Consent works record by record. The FAQ says a patient can share selected record
 
 ## What the incentive scheme pays a clinic
 
-The Digital Health Incentive Scheme has offered facilities payments for ABDM transactions since 1 January 2023. Its current terms are in [Corrigendum 7](https://abdm.gov.in/strapicms/uploads/DHIS_corrigendum_7_c1d7e09cc2.pdf), dated 9 April 2026:
+The Digital Health Incentive Scheme has offered facilities payments for ABDM transactions since 1 January 2023. [Corrigendum 7](https://abdm.gov.in/strapicms/uploads/DHIS_corrigendum_7_c1d7e09cc2.pdf), dated 9 April 2026, set the terms for April to September 2026, subject to funds:
 
-- The terms run from April to September 2026, subject to funds. Check whether the NHA has issued a further corrigendum before you count on the money.
+- Corrigendum 7 does not cover October 2026 onwards, so check whether the NHA has issued a further corrigendum before you count on the money.
 - For a health facility or clinic, a transaction counts only if it is done on a system integrated with ABDM up to M3.
 - Nothing is paid at 100 eligible transactions a month or fewer. Above that, the facility is paid for each eligible record beyond the first 100: Rs 10 for a diagnostic report or discharge summary, and Rs 5 for other records, such as a prescription or an OP consultation.
 - Records count only if they are linked to a KYC-verified ABHA, and Scan and Share registrations are not paid.

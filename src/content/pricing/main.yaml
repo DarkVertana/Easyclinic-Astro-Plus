@@ -4,7 +4,6 @@ path: /pricing/
 headKeyword: clinic management software pricing
 secondaryKeywords:
   - EMR software cost
-  - clinic software cost India
   - price per doctor per month
 title: 'EasyClinic Pricing: Per Doctor, Per Month'
 metaDescription: Professional {price:usd.professional.annual}, Premium {price:usd.premium.annual}, Enterprise on quote. Reception included, no setup fee, no contract.
@@ -72,8 +71,8 @@ faq:
       which is priced on a quote.
   - question: Why pay when there are free EMRs?
     answer: >-
-      Free EMRs are free until you need the second doctor, the WhatsApp reminders, a server to run on,
-      or someone to answer the phone when the printer will not talk to the system. The
+      A free EMR costs nothing to license, and the cost moves to the server it runs on and to the person
+      you call when the printer will not talk to the system. The
       {price:usd.professional.annual} Professional plan includes unlimited support and training and a
       reception login. If your clinic is one doctor with no staff and no plans to grow, a free EMR may
       be enough, and we will say so on the call.
@@ -115,7 +114,7 @@ links:
       description: Where your patient data is stored, and who can see it.
     - href: /switch/
       label: Switching to EasyClinic
-      description: What we import from paper records or your current system, and how long it takes.
+      description: The four steps from the demo to your first day, and what changes for a clinic on paper or other software.
 closing:
   heading: Get the monthly total for your clinic in 20 minutes
   body: >-
@@ -140,7 +139,12 @@ notes:
   - 'Free-EMR table: the statements about OpenMRS, OpenEMR and KenyaEMR are general (open source, self-hosted or partner-hosted, KenyaEMR is an OpenMRS distribution). The AI pass found them consistent with general knowledge; a human should still check them.'
   - 'Support channels on live /pricing/ are phone, email and chat; this page names phone and chat only, to avoid a list of three.'
   - '"Premanand" vs "Premananda" spelling is unresolved (facts.md, section 2); the name appears in the testimonial and in the training step list.'
+  - 'Audit 2026-09-27: dropped the spec 4.1 secondary keyword "clinic software cost India"; /pricing/india/ owns India cost intent (spec 4.5 rule 4). The rupee prices on this page stay: spec line 28 and the CurrencySwitcher require them, and the page links to /pricing/india/.'
   - 'heroMedia was removed for publication because the screenshot does not exist yet. When it does, add it back per the spec 12 row "Currency-localised pricing cards", or use the invoice screen in INR with GST lines if the editor prefers a product screen.'
+  - 'Audit 2026-09-27: pen-and-paper promise changed from "2 hours and 10 patient records" to "2 hours, or 10 patient records", the wording on /switch/, /pricing/india/, /kenyademo/ and /features/emr/. The live /pricing/ FAQ source ("give us just 2 hours / 10 patient records") is ambiguous; if the company says both are required, change every page to "and".'
+  - 'Audit 2026-09-27: FAQ "Why pay when there are free EMRs?" said free EMRs are free "until you need the second doctor, the WhatsApp reminders, a server to run on", which nothing supports and several pages contradict (this page''s own free-EMR table, KenyaEMR with no licence fee, ClinikEHR''s free plan for two staff). The first sentence now reuses the free-EMR table wording: a free EMR costs nothing to license, and the cost moves to the server and to the person you call.'
+  - 'Audit 2026-09-27: the /switch/ related-link description ("What we import from paper records or your current system, and how long it takes") and the training step note ("Moving your old records across from paper or another system") promised what /switch/ does not give: it lists nothing beyond the patient list, gives no migration time, and its notes say whether a paper register becomes the patient list is unknown. Both now describe what /switch/ covers (the four steps to the first day, and what changes for a clinic on paper or other software). Link href and label unchanged.'
+
 sections:
   - discriminant: pricingCards
     value:
@@ -245,8 +249,8 @@ sections:
           meta: Day 4 · 20 minutes
           body: The shortcuts that make the chart fast. Dr Premanand Raya, a pulmonologist, types a full prescription in half a minute with them.
       note: >-
-        If you write prescriptions by hand today, give us 2 hours and 10 of your patient records, and we
-        promise to make your prescription writing faster. Moving your old records across from paper or
+        If you write prescriptions by hand today, give us 2 hours, or 10 of your patient records, and we
+        promise to make your prescription writing faster. What changes when you move from paper or
         another system is covered on the [switching page](/switch/).
   - discriminant: dataTable
     value:

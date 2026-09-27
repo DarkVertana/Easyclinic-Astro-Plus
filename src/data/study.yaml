@@ -9,7 +9,7 @@ publications:
     url: https://arxiv.org/abs/2507.16947
     published: 2025-07-22
     peerReviewed: false
-    scope: 39,849 patient visits at 15 Penda Health clinics in Nairobi; AI Consult embedded in Penda's EasyClinic EMR; errors rated by 108 independent physicians.
+    scope: 39,849 patient visits at 15 Penda Health clinics in Nairobi; AI Consult embedded in Penda's EasyClinic EMR; errors rated by 108 independent physicians on a random sample of 5,666 of the visits.
     easyclinicRole: 'The paper names Easy Clinic as the cloud-hosted EMR Penda Health introduced in 2017, which supports all patient visits.'
     verifiedOn: 2026-09-26
   - id: nature-health-2026
@@ -89,3 +89,4 @@ approvedWording:
 notes:
   - The spec copy "published in Nature Medicine" and "peer reviewed" does not match the 39,849-visit study, which is a preprint. Do not use either phrase for it.
   - Confirm whether CuraPilot is the AI Consult system named in the preprint.
+  - 'Audit 2026-09-27: scope now says the physician panel rated a random sample of 5,666 visits (arXiv 2507.16947 HTML, re-read 2026-09-27: "We selected a random sample of 5666 visits ... presented these to a panel of 108 physicians"). Pages say "a random sample of the visit records" without the number.'

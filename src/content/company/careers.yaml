@@ -15,8 +15,8 @@ linkLabel: Careers
 openingAnswer: >-
   EasyClinic has no open roles listed right now, so the way to apply is to email a short introduction and
   your CV to [hello@easyclinic.io](mailto:hello@easyclinic.io), and we keep it on file. We are a Kolkata
-  company that has been running clinics on our software since {fact:founded}, and when a role does open we
-  post it on this page first.
+  company, and EasyClinic has been running clinics since {fact:founded}; when a role does open we post it on
+  this page first.
 summary: >-
   No open roles right now: how to send your CV to hello@easyclinic.io while we are not hiring, and how
   hiring works when a role opens.
@@ -104,7 +104,7 @@ links:
   related:
     - href: /about-us/
       label: About EasyClinic
-      description: The company's story since {fact:founded} and the people who lead it.
+      description: EasyClinic's story since {fact:founded} and the people who lead it.
     - href: /contact-us/
       label: Contact EasyClinic
       description: The Kolkata office and how to reach it about anything other than a job.
@@ -145,3 +145,4 @@ notes:
   - 'Named people: Gaurab Chatterjee (head of software development) and the byline, Subhashish Saha, from src/data/authors. "At EasyClinic since 2010" is from the live /about-us/ ("in his role at Easy Clinic since 2010") and facts.md, as about-us.yaml states it; no other bio, no photos, no personal LinkedIn. The LinkedIn link is the company page from site.yaml social, which the live careers page links.'
   - 'ctas.whatsapp is set so the persistent button and the closing band do not send the default demo request from a careers page. The WhatsApp line is the main sales line; applications still go by email.'
   - 'Related links: /about-us/ and /contact-us/ (brief). No proof block: the company family does not require one, and no testimonial is about working at EasyClinic.'
+  - 'Audit 2026-09-27: the opening answer said "a Kolkata company that has been running clinics on our software since 2003", which dates the company itself to 2003; the confirmed fact (facts.yaml founded) is that EasyClinic has run clinics since 2003, and the company''s incorporation date is unsourced (about-us.yaml). It now reads "We are a Kolkata company, and EasyClinic has been running clinics since 2003". The semicolon keeps the opening answer at two sentences. The /about-us/ related-link description changed from "The company''s story since 2003" to "EasyClinic''s story since 2003" for the same reason.'

@@ -146,8 +146,7 @@ sections:
             A report from an outside lab can be scanned and uploaded to the patient's record as a file,
             where it sits beside the results from your own lab. A direct feed from an outside lab's own
             system into EasyClinic would be integration work, scoped as a project, and this page does not
-            name any outside lab as connected. The [integrations page](/integrations/) covers connections
-            country by country.
+            name any outside lab as connected.
         - heading: Your lab machines, connected by project
           body: >-
             A connection between EasyClinic and your lab analysers is integration work, scoped for your
@@ -221,6 +220,13 @@ sections:
           href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
         - label: Google
           rating: '{fact:googleRating}'
+
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /lab-report-management/
 
 faqHeading: Questions clinics ask about the lab
 faq:
@@ -316,10 +322,12 @@ notes:
   - 'Grounding: the live /pathology-emr/ (fetched 2026-09-26) states the test catalog with health check-up packages and imaging among the tests, barcode or QR code sample tracking "to prevent mix-ups", workflow from sample collection to result generation, built-in report templates, vitals and lab charts, and multi-user access for technicians. Its marketing numbers ("100+ dashboards", "invoices in less than 10 seconds"), its comparison tables against "other EMR software", "optimised for high-volume" and "integration readiness (lab devices): supported" were left out.'
   - 'Plan statements follow src/data/plans.yaml: Premium includes "Lab reports" (matrix: lab reports in the chart) and WhatsApp; Enterprise includes lab management, integrations and custom features, and inventory; the lab, integrations and pharmacy add-ons are available on Professional and Premium. Add-on prices are null in src/data/prices, so no add-on price is stated.'
   - 'Which plan includes the report templates, the flags on abnormal values and the lab charts is not known. Flags are placed with lab reports in the chart (Premium row) as spec 5.11 and the features hub describe them; the templates row carries no plan tag.'
-  - 'External lab integrations by country (spec 5.11 asks for them named with status): integration status is unknown, so no outside lab is named, the page says so, and a direct feed from an outside lab is written as "would be integration work" (plans.yaml names lab machines, accounting and an existing HIS for the integrations add-on, not outside labs). The integrations pointer says only that the page covers connections by country, as the features hub does, and never implies that any lab connection is live. /integrations/ has no content entry yet; the link renders as plain text in production until it publishes.'
+  - 'External lab integrations by country (spec 5.11 asks for them named with status): integration status is unknown, so no outside lab is named, the page says so, and a direct feed from an outside lab is written as "would be integration work" (plans.yaml names lab machines, accounting and an existing HIS for the integrations add-on, not outside labs). The integrations pointer (removed in the 2026-09-27 audit while /integrations/ is a draft) said only that the page covers connections by country, and never implied that any lab connection is live.'
   - 'Machine interfaces are described only as the plans.yaml integrations add-on ("connections to your lab machines, scoped per project"). No analyser makes, protocols (HL7, ASTM) or timelines are stated.'
   - 'Spec 5.11 FAQ items left out for lack of a confirmed fact: turnaround reporting (no confirmed turnaround-time report) and accreditation documents (NABL or similar status unknown). Radiology is answered only as far as the live page goes (imaging tests in the catalog, "image upload" and "document upload" in the EMR list); PACS, DICOM viewing and radiology equipment connections are not stated. Replaced with the plan question and the reagent stock question.'
   - 'Lab billing is one row linking to /features/billing/ (spec 4.5 rule 2: billing owns invoices and GST). WhatsApp is described only as report delivery; templates, costs and the API stay on /features/whatsapp/ (rule 3). Nothing about unbilled tests or leakage (revenue-management).'
   - 'Proof: badges variant (Capterra and Google). No testimonial: all are placed, and none is from a lab. No heroMedia or media: screenshots do not exist yet. When they exist, add the spec 12 capture "Lab order from the chart and result back with a flag" (one abnormal value) as hero.'
   - 'Not stated for lack of a fact: whether lab technicians need a paid login, add-on prices, lab turnaround figures, any measured error or time saving, whether the lab works offline beyond the site-wide "does not run fully offline today".'
   - 'Fact-check pass 2026-09-26: removed "the part most clinics ask about before the demo" and "from clinics of every kind" (unsourced); removed the FAQ claim that a lab''s paper report format can be kept through Premium print layouts at no charge (plans.yaml print layouts and the facts.md customisation line do not say lab reports); the analyser FAQ no longer opens with an unqualified "Yes"; the pain-block intro no longer claims every pain ends in a phone call or a wasted trip; the sample-tracking steps no longer claim a pending-samples view (the live page says tracking "to prevent mix-ups" and workflow "for sample collection, processing, and result generation", nothing more); WhatsApp delivery is written as Premium and Enterprise, not Premium alone; the catalog and sample rows say lab management is an add-on on Professional and Premium, since their plan tag reads "Included in Enterprise".'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 1 of them (/lab-report-management/) had no inbound link but /blog/, and links.related is full (8 of 8).'
+  - 'Audit 2026-09-27: removed "The integrations page covers connections country by country" from the outside-lab row. /integrations/ is a draft, so the link rendered as plain text in production; the next row already covers lab machines. Restore the link when /integrations/ publishes.'

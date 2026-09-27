@@ -248,6 +248,8 @@ notes:
   - >-
     editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite
     or cut anything in readsMachineWritten, and update editorialPass.
+  - 'Audit 2026-09-27: module grid aligned with plans.yaml, /features/lab/ and the published /kenyademo/: Cura AI note drafting on every plan, lab reports in the chart on Premium, ordering tests from the chart as lab management (Enterprise or an add-on), and CuraPilot named as outside every plan (/curapilot/ says it is not part of any plan on the price list). The data migration step now says the patient list is moved, as /switch/ and /kenyademo/ do, instead of "your existing patient records come across before go-live" and "nothing to import", which no source supports.'
+
 sections:
   - discriminant: demoForm
     value:
@@ -296,9 +298,10 @@ sections:
       heading: Eight modules on one patient record
       intro: >-
         Every module works on the same record, so the prescription reaches the pharmacy and the bill without
-        anyone typing it twice. Appointments, records, billing, reports and Cura AI come with every plan;
-        lab reports and WhatsApp messages start on Premium, and pharmacy and HMO claims come with
-        Enterprise or as add-ons.
+        anyone typing it twice. Appointments, records, billing, reports and Cura AI note drafting come with
+        every plan. Lab reports in the chart and WhatsApp messages start on Premium. Pharmacy and HMO claims
+        come with Enterprise or as add-ons, and so does lab management, which covers ordering tests from the
+        chart.
       columns: 4
       items:
         - title: Appointments
@@ -322,7 +325,7 @@ sections:
           icon: pill
           href: /features/pharmacy-and-inventory/
         - title: Lab reports
-          outcome: Order tests from the chart, and the results come back into the patient's record.
+          outcome: On Premium, lab reports come back into the patient's record; with lab management, tests are ordered from the chart.
           icon: flask-conical
           href: /features/lab/
         - title: Reports and dashboards
@@ -330,7 +333,7 @@ sections:
           icon: layout-dashboard
           href: /features/reports-and-dashboards/
         - title: AI and automation
-          outcome: Dictate the note and Cura AI drafts it for you to sign, with clinical decision support during the consult.
+          outcome: Cura AI listens to the consult and drafts the note for you to sign, on every plan. CuraPilot, which is not part of any plan, adds clinical decision support during the consult.
           icon: sparkles
           href: /ai/
           links:
@@ -414,10 +417,10 @@ sections:
             call].
         - title: Data migration
           body: >-
-            Your existing patient records come across before go-live, so the first morning does not start
-            from an empty screen. If your clinic writes on paper, there is nothing to import: give us 2 hours
-            or 10 patient records, and we promise to make your prescription writing faster. [How long
-            migration takes, and whether it is included in the price].
+            We move your patient list into EasyClinic, so a returning patient is found by name at the desk.
+            If your clinic writes on paper, give us 2 hours, or 10 patient records, and we promise to make
+            your prescription writing faster. [How long migration takes, and whether it is included in the
+            price].
         - title: Support
           meta: Unlimited, on every plan
           body: >-

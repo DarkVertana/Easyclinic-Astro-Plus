@@ -8,6 +8,11 @@
  *
  * The bypass secret (--bypass or VERCEL_AUTOMATION_BYPASS_SECRET) is sent only to *.vercel.app and
  * easyclinic.io hosts; any other non-local host is refused rather than handed the secret.
+ *
+ * On www the checks assert the launched state (INDEXING_ENABLED=true in Vercel Production): no X-Robots-Tag,
+ * a robots.txt that allows crawling and lists the sitemap, and a sitemap index that answers 200. Run against
+ * www before indexing is switched on, those checks fail, which is the point: launch checklist 2.2 runs this
+ * against www only after the switch, and a www left noindexed or disallowed must not pass.
  */
 import { readFileSync } from 'node:fs';
 
@@ -57,11 +62,13 @@ for (const g of manifest.gone as Array<{ path: string; match?: string }>) {
   check(res.status === 410 && (await res.text()).length > 100, `${sample} -> 410 with body (got ${res.status})`);
 }
 
-// Pages, noindex outside production www, robots.
+// Pages, noindex outside production www and none on www (routes-core.ts scopes the header to other hosts), robots.
 for (const page of manifest.pages.slice(0, 50) as Array<{ path: string }>) {
   const res = await get(page.path);
   check(res.status === 200, `${page.path} -> ${res.status}`);
-  if (!isWww) check((res.headers.get('x-robots-tag') ?? '').includes('noindex'), `${page.path} carries X-Robots-Tag noindex off www`);
+  const robotsTag = res.headers.get('x-robots-tag');
+  if (isWww) check(robotsTag === null, `${page.path} carries no X-Robots-Tag on www (got ${robotsTag ?? 'none'}); is INDEXING_ENABLED=true in Production?`);
+  else check((robotsTag ?? '').includes('noindex'), `${page.path} carries X-Robots-Tag noindex off www`);
 }
 // Content-Security-Policy: the header half (frame-ancestors) on every response, the per-page half in a <meta>.
 const home = await get('/');
@@ -81,8 +88,20 @@ check(
   `/demo/confirmation/ refuses framing by other sites (frame-ancestors or X-Frame-Options)`,
 );
 
+// robots.txt: robots.txt.ts serves the open file on www once indexing is on; every other host gets disallow-all.
 const robots = await (await get('/robots.txt')).text();
-check(isWww ? true : robots.includes('Disallow: /'), `robots.txt disallows crawling on ${new URL(base).hostname}`);
+const disallowsAll = /^Disallow: \/$/m.test(robots);
+if (isWww) {
+  check(
+    /^Allow: \/$/m.test(robots) && !disallowsAll && robots.includes('Sitemap: https://www.easyclinic.io/sitemap-index.xml'),
+    `robots.txt on www allows crawling and lists https://www.easyclinic.io/sitemap-index.xml`,
+  );
+  const sitemap = await get('/sitemap-index.xml');
+  const sitemapBody = await sitemap.text();
+  check(sitemap.status === 200 && /<sitemapindex[\s>]/.test(sitemapBody), `/sitemap-index.xml -> ${sitemap.status} (${(sitemapBody.match(/<sitemap>/g) ?? []).length} child sitemaps)`);
+} else {
+  check(disallowsAll, `robots.txt disallows crawling on ${hostname}`);
+}
 
 // Trailing slash normalisation and the demo endpoint.
 const slash = await get('/contact-us');

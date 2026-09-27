@@ -90,6 +90,10 @@ links:
     - href: /curapilot/
       label: CuraPilot
       description: EasyClinic's AI clinical copilot, for decision support during the consult.
+    - href: /what-are-the-best-locations-to-open-a-clinic-in-kenya/
+    - href: /tax-benefits-for-medical-startups-in-kenya/
+    - href: /healthcare-startup-in-kenya/
+    - href: /data-privacy-laws-in-kenya/
 closing:
   heading: Twenty minutes on a clinic set up like yours
   body: Send the form and we call you to fix a time around your clinic hours, or call {contact:ke.phone} now.
@@ -158,8 +162,10 @@ notes:
     so it does not contradict the 3-day go-live and the four-day training path from the live /pricing/
     FAQ. The Kenya team should confirm that reading and that both figures still hold.
   - >-
-    Data migration step: the migration time, the sources imported and whether migration is included in
-    the price are unknown, so the step states none of them. Support step gives the channels from the live
+    Data migration step: the migration time, what is imported beyond the patient list, whether it happens
+    before go-live, whether a paper register is typed in, and whether migration is included in the price
+    are unknown, so the step states only that the patient list is moved (the one confirmed migration fact,
+    as on /switch/). Support step gives the channels from the live
     /pricing/ FAQ only; whether the Kenya number handles support is unknown, so it is not given as a
     support line.
   - >-
@@ -178,8 +184,9 @@ notes:
     The live hero's study line ("... in Nairobi"), "22+ years", "8+ years average client relationship" and
     the unnamed award badges on the live page are not carried over.
   - >-
-    CuraPilot's plan availability is not in plans.yaml, so the AI module names clinical decision support
-    without a plan; only Cura AI is said to come with every plan.
+    CuraPilot's plan availability is not in plans.yaml, and /curapilot/ says it is not part of any plan
+    on the price list, so the AI module says so; only Cura AI note drafting is said to come with every
+    plan.
   - >-
     heroMedia and module media are left out until the spec 12 screenshots exist (the live page's
     bilingual prescription and "SLADE submitted, M-Pesa received, balance zero" screens are the obvious
@@ -187,6 +194,13 @@ notes:
   - >-
     editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite
     or cut anything in readsMachineWritten, and update editorialPass.
+  - >-
+    Audit 2026-09-27: links.hub stays /emr-software-in-kenya/. While that page is a draft, the breadcrumb
+    and BreadcrumbList fall back to its own hub, so production shows Home > Countries > this page
+    (src/lib/seo/breadcrumbs.ts); the full trail returns once the Kenya page publishes.
+  - 'Audit 2026-09-27: added the published posts this page owns to links.related, with each post''s own label and summary as anchor text and description. /what-are-the-best-locations-to-open-a-clinic-in-kenya/ and /tax-benefits-for-medical-startups-in-kenya/ had no inbound link but /blog/. /healthcare-startup-in-kenya/ and /data-privacy-laws-in-kenya/ are this page''s other published posts, added with them.'
+  - 'Audit 2026-09-27: the data migration step no longer promises that "your existing patient records come across before go-live" or that a paper clinic has "nothing to import"; it says the patient list is moved, as /switch/ does. The module grid now follows plans.yaml and /features/lab/: Cura AI note drafting on every plan, lab reports in the chart on Premium, ordering tests from the chart as lab management (Enterprise or an add-on), and CuraPilot named as outside every plan. The AI card says Cura AI listens to the consult, as /ai/ does.'
+
 sections:
   - discriminant: demoForm
     value:
@@ -232,9 +246,10 @@ sections:
       heading: Eight modules on one patient record
       intro: >-
         Every module works on the same record, so the prescription reaches the pharmacy and the bill without
-        anyone typing it twice. Appointments, records, billing, reports and Cura AI come with every plan;
-        lab reports and WhatsApp messages start on Premium, and pharmacy and insurance claims come with
-        Enterprise or as add-ons.
+        anyone typing it twice. Appointments, records, billing, reports and Cura AI note drafting come with
+        every plan. Lab reports in the chart and WhatsApp messages start on Premium. Pharmacy and insurance
+        claims come with Enterprise or as add-ons, and so does lab management, which covers ordering tests
+        from the chart.
       columns: 4
       items:
         - title: Appointments
@@ -258,7 +273,7 @@ sections:
           icon: pill
           href: /features/pharmacy-and-inventory/
         - title: Lab reports
-          outcome: Order tests from the chart, and the results come back into the patient's record.
+          outcome: On Premium, lab reports come back into the patient's record; with lab management, tests are ordered from the chart.
           icon: flask-conical
           href: /features/lab/
         - title: MOH reports and dashboards
@@ -266,7 +281,7 @@ sections:
           icon: clipboard-list
           href: /features/reports-and-dashboards/
         - title: AI and automation
-          outcome: Dictate the note and Cura AI drafts it for you to sign, with clinical decision support during the consult.
+          outcome: Cura AI listens to the consult and drafts the note for you to sign, on every plan. CuraPilot, which is not part of any plan, adds clinical decision support during the consult.
           icon: sparkles
           href: /ai/
           links:
@@ -320,9 +335,9 @@ sections:
             expertise on day 4 (20 minutes).
         - title: Data migration
           body: >-
-            Your existing patient records come across before go-live, so the first morning does not start
-            from an empty screen. If your clinic writes on paper, there is nothing to import: give us 2 hours
-            or 10 patient records, and we promise to make your prescription writing faster.
+            We move your patient list into EasyClinic, so a returning patient is found by name at the desk.
+            If your clinic writes on paper, give us 2 hours, or 10 patient records, and we promise to make
+            your prescription writing faster.
         - title: Support
           meta: Unlimited, on every plan
           body: >-

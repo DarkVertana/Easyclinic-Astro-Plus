@@ -159,16 +159,18 @@ sections:
           - Dubai Health Authority (DHA), for Dubai
           - >-
             Licenses doctors and facilities in Dubai, and DHA-licensed facilities must share patient
-            encounters with NABIDH, Dubai's health information exchange. Abu Dhabi's Department of Health
-            and Emirates Health Services in the Northern Emirates set their own rules.
+            encounters with NABIDH, Dubai's health information exchange. Abu Dhabi's Department of Health,
+            and the Ministry of Health and Prevention, which licenses private facilities in the Northern
+            Emirates, set their own rules.
         - - '[Nigeria](/hospital-management-software-nigeria/)'
           - Medical and Dental Council of Nigeria (MDCN)
           - >-
             Registers and licenses the doctors and dentists who prescribe. The patient data on a
             prescription also falls under the Nigeria Data Protection Act, 2023.
       note: >-
-        This table describes the rules and says nothing about where EasyClinic stands on them. That is kept
-        on the [trust page](/trust/), not on this page.
+        This table describes the rules and says nothing about where EasyClinic stands on them. This page
+        does not state EasyClinic's status, so ask us for the status and date of each rule that applies
+        to your clinic, and get it in writing.
 
   - discriminant: stepList
     value:
@@ -191,6 +193,15 @@ sections:
           meta: Day 4, 20 minutes
           body: The faster ways of working, once the basics are routine.
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /questions-to-ask-your-clinic-emr-software-provider/
+        - href: /abdm-compliance/
+        - href: /clinic-compliance-checklist/
+
 faqHeading: Questions doctors ask about the EMR
 faq:
   - question: Can I have templates for my specialty and my own print layout?
@@ -205,8 +216,8 @@ faq:
       Yes, within the rules the National Medical Commission sets in its Telemedicine Practice Guidelines.
       For a prescription issued after a teleconsult, the patient is identified and gives consent, and
       remote prescribing is limited to the medicine lists for first and follow-up consults. Following the
-      medicine lists is the doctor's responsibility, and where EasyClinic stands on the guidelines is kept
-      on the [trust page](/trust/).
+      medicine lists is the doctor's responsibility. Ask us in writing for our status and its date under
+      the guidelines.
   - question: Can patients in Kenya get the prescription in Swahili?
     answer: >-
       Yes, clinics in Kenya can issue bilingual prescriptions in English and Swahili, so the patient takes
@@ -225,7 +236,7 @@ faq:
     answer: >-
       Yes, as scanned files: scan the old pages and attach them to the patient's record, where they sit
       beside the visits written in EasyClinic. If the old records are in another clinic system instead,
-      moving them is the data migration step of going live.
+      the patient list is moved across as part of going live; agree in writing what else comes across.
   - question: Can my receptionist read the medical notes?
     answer: >-
       Not on the reception login that comes with every plan, which is not allowed into the EMR and cannot
@@ -235,8 +246,8 @@ faq:
       ABDM's first milestone asks the clinic's software to create or verify each patient's ABHA number at
       registration, once the clinic is on the Health Facility Registry and each doctor on the Healthcare
       Professionals Registry. The later milestones link each visit's records to the patient's ABHA and,
-      with consent, fetch records from other ABDM-linked facilities. Where EasyClinic stands on each
-      milestone is kept on the [trust page](/trust/).
+      with consent, fetch records from other ABDM-linked facilities. Ask us in writing whether EasyClinic
+      is live on each milestone, and since when.
 
 links:
   hub: /features/
@@ -300,3 +311,8 @@ notes:
   - 'Country table names the rule-maker per spec 5.11 and describes each in general terms from src/data/regulators (in-nmc-telemedicine, ke-kmpdc, ae-nabidh, ae-malaffi, ae-riayati, ng-ndpa). No status column: every regulator state is null. MDCN and DHA licensing descriptions are general and need a compliance read. /trust/ is not built yet; the links follow spec 2.6 (the trust page holds the master status table).'
   - 'Pen-and-paper FAQ uses the live /pricing/ promise ("give us just 2 hours / 10 patient records, we promise to make your prescription writing faster"), per facts.md.'
   - 'Secondary CTA becomes "See the product in 6 minutes" when the tour ships (spec 12).'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 2 of them (/abdm-compliance/, /clinic-compliance-checklist/) had no inbound link but /blog/, and links.related has 7 of 8 slots used, and a section keeps every post together.'
+  - 'Audit 2026-09-27: the old-records FAQ no longer implies every record in another clinic system is moved at go-live. The patient list is the only confirmed migration fact (/switch/, /compare/healthplix-alternatives/), so the answer says that and tells the clinic to agree the rest in writing.'
+  - 'Audit 2026-09-27: removed the three "kept on the trust page" pointers (country table note, India e-prescription FAQ, ABDM FAQ). /trust/ is a draft (trust.yaml status: draft), so the link rendered as plain text and sent readers to a status statement that no published page makes, because the status is unknown. Each now tells the clinic to ask us in writing for the status and its date, as /choosing-the-right-practice-management-software-a-clinics-guide-to-streamlined-success/ does; the ABDM FAQ asks "whether" EasyClinic is live on each milestone so it does not imply it is live on any. The /trust/ related link stays (RelatedLinks.astro drops unpublished targets). Restore the /trust/ pointers once trust.yaml publishes with regulator states and dates; notes 2 and 10 above describe the old pointers.'
+  - 'Audit 2026-09-27: the country table note said "EasyClinic does not state its status on this site", which is false while the published /privacy/ page (an imported legal policy) carries ODPC and Digital Health Agency rows. It now says "This page does not state EasyClinic''s status", the page-scoped wording used on the listicles and /features/insurance-claims/.'
+  - 'Audit 2026-09-27: the UAE row of the prescribing-rules table named Emirates Health Services as the body that sets its own rules in the Northern Emirates. It now names the Ministry of Health and Prevention, which licenses private facilities there, matching /glossary/ and /best-clinic-management-software-uae/. mohap.gov.ae resets direct connections, so this was checked through a search restricted to mohap.gov.ae on 2026-09-27: /en/w/complaints-about-private-health-and-pharmaceutical-facilities-and-their-medical-staff covers private facilities licensed by MOHAP, including those in Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah, and /en/w/initial-approval-for-licensing-re-licensing-health-facility and /en/w/licensing-or-re-licensing-of-health-professional are MOHAP licensing services. Emirates Health Services runs the federal public facilities and implements MOHAP policies and standards. No MOHAP link was added, because the site could not be fetched. src/data/regulators/ae-riayati.yaml still says body: Emirates Health Services and was not changed in this pass.'

@@ -10,6 +10,11 @@ interface Props {
   description: string;
   /** Canonical path with trailing slash. */
   path: string;
+  /**
+   * Absolute canonical URL; defaults to the site URL plus `path`. An empty string omits <link rel="canonical">
+   * and og:url: the 404 page passes it, because Vercel serves that page at every missing URL and /404/ itself
+   * answers 404, so a canonical there would point at a 4xx page.
+   */
   canonical?: string;
   indexable: boolean;
   ogType?: 'website' | 'article';
@@ -24,7 +29,7 @@ interface Props {
 const generatedImage = Astro.locals.page ? ogImagePath(Astro.locals.page.path) : OG_FALLBACK;
 const { title, description, path, canonical, indexable, ogType = 'website', ogImage = generatedImage, jsonLd, modifiedTime } = Astro.props;
 const site = (await getEntry('site', 'site'))!.data;
-const canonicalUrl = canonical ?? new URL(path, site.url).href;
+const canonicalUrl = canonical === '' ? null : (canonical ?? new URL(path, site.url).href);
 // Absolute on the origin that serves this build's cards: the site URL in production, the deployment's own URL on
 // a Vercel preview (src/pages/og/_origin.ts). The canonical URL above stays on the site URL everywhere.
 const image = ogImageUrl(ogImage, { production: isProduction, siteUrl: site.url, env: process.env, pageOrigin: Astro.url.origin });
@@ -36,13 +41,13 @@ const ld = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null;
 
 <title>{cleanTitle}</title>
 <meta name="description" content={cleanDescription} />
-<link rel="canonical" href={canonicalUrl} />
+{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 <meta name="robots" content={indexable ? 'index, follow, max-image-preview:large' : 'noindex, nofollow'} />
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content="EasyClinic" />
 <meta property="og:title" content={cleanTitle} />
 <meta property="og:description" content={cleanDescription} />
-<meta property="og:url" content={canonicalUrl} />
+{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
 <meta property="og:image" content={image} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />

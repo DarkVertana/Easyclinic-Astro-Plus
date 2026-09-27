@@ -217,8 +217,8 @@ sections:
           meta: Day 4, 20 minutes
           body: The last session moves you from the basics to the shortcuts that make prescribing quicker.
       note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days. A clinic bringing years
-        of records across from another system takes longer.
+        From the demo, a clinic can be live in as little as {fact:goLiveDays} days, and yours may take
+        longer.
 
 faq:
   - question: Is EasyClinic overkill for a solo doctor clinic?
@@ -262,7 +262,7 @@ faq:
   - question: Can I take my data with me if I leave?
     answer: >-
       Yes, you can take your data with you if you stop using EasyClinic, and there is no binding contract
-      to wait out first. We never sell your data or disclose it to anyone.
+      to wait out first. What we may and may not do with it is set out in our [privacy policy](/privacy/).
 
 links:
   hub: /solutions/
@@ -279,9 +279,10 @@ links:
     - href: /specialties/
       label: Software by specialty
       description: What changes for a dental or an eye clinic, one specialty at a time.
-    - href: /clinic-management-software-india/
-      label: Clinic software in India
-      description: Prices in rupees, and what a clinic in India needs from its software.
+    - href: /general-practitioner-emr/
+    - href: /pricing/india/
+    - href: /clinic-break-even-point/
+    - href: /open-a-clinic-in-india/
 
 closing:
   heading: See a day like yours on EasyClinic
@@ -317,8 +318,11 @@ notes:
   - 'Cura AI drafting during the consult with review and sign follows spec 4.1 (/ai row), spec 12 (draft SOAP note in a "review and sign" state) and plans.yaml (Cura AI note drafting on Professional).'
   - '"When you grow": a second consulting room is stated only as not changing the plan (pricing is per doctor, and Professional covers one location). Whether Professional schedules rooms separately is not confirmed, so room scheduling is not claimed. Per-location fees and whether a doctor working at two branches needs a second licence are unknown and not stated.'
   - 'Testimonial tl-prabhu has city null; it renders without a city in production. Add the city (spec 5.5 item 6 asks for specialty and city).'
-  - 'FAQ left out for lack of a confirmed fact: mobile app for the doctor, e-prescription legality by country, data export format and timing on leaving, refund of unused months on annual billing, and how long a custom prescription layout takes to build. The data answer says only that you can take your data (no format, no ownership wording) and quotes the live privacy line ("never misuse, sell or in any way disclose"). The setup question was reworded to "Do I need IT staff to set it up?" because who performs setup beyond training and support is not confirmed.'
+  - 'FAQ left out for lack of a confirmed fact: mobile app for the doctor, e-prescription legality by country, data export format and timing on leaving, refund of unused months on annual billing, and how long a custom prescription layout takes to build. The data answer says only that you can take your data (no format, no ownership wording) and points to the privacy policy (/privacy/) for what EasyClinic may do with it, as /questions-to-ask-your-clinic-emr-software-provider/ does. The setup question was reworded to "Do I need IT staff to set it up?" because who performs setup beyond training and support is not confirmed.'
   - 'Offline FAQ follows the live site ("does not run fully offline today"). The self-hosted option mentioned on the live Kenya listicle is not offered here because it is unconfirmed and not a solo-clinic plan.'
-  - 'Step list note: goLiveDays (3, "in as little as 3 days" on /kenyademo/) conflicts with the "2 to 4 week setup" on the live Kenya listicle (facts.yaml note). Typical go-live time with data migration is unknown, so the note says only that it takes longer. Day 3 and day 4 step bodies describe only the session names from the live /pricing/ FAQ.'
+  - 'Step list note: goLiveDays (3, "in as little as 3 days" on /kenyademo/) conflicts with the "2 to 4 week setup" on the live Kenya listicle (facts.yaml note). Typical go-live time, and what makes a clinic slower, are unknown, so the note says only that yours may take longer. Day 3 and day 4 step bodies describe only the session names from the live /pricing/ FAQ.'
   - 'Related links follow spec 5.5 item 9. The buyer''s country page is fixed to India until a geo-selected link exists; /features/billing/ is linked from the timeline, pains and day-one rows.'
+  - 'Audit 2026-09-27: the draft /clinic-management-software-india/ related link (hidden in production) was replaced by /pricing/india/, the only published India page with prices in rupees; swap it back when the country page publishes. /general-practitioner-emr/ was added as the one specialty page spec 2.9 asks for (it links back here); /specialties/ stays as spec 5.5 item 9 asks. Both have href only, so each card takes the target''s own linkLabel and summary.'
   - 'The old URL /doctor-clinic-software/ already redirects here in src/data/redirects.yaml, so it is not repeated in redirectFrom.'
+  - 'Audit 2026-09-27: the data FAQ no longer says "We never sell your data or disclose it to anyone", because the published /privacy/ allows disclosure (section 3(a)) and says your information may not always remain private; it now points to the privacy policy. The step list note no longer says years of records slow go-live, which no source states (cut on /kenyademo/, /switch/ and home). Open for the owner: "Yes, you can take your data with you" has no source either (facts-needed P17).'
+  - 'Audit 2026-09-27: added the published posts this page owns to links.related, with each post''s own label and summary as anchor text and description. /clinic-break-even-point/ and /open-a-clinic-in-india/ had no inbound link but /blog/. /launch-with-confidence-a-complete-checklist-for-setting-up-a-new-clinic-in-2025/, also owned here, is left out because related takes eight links and other posts already link it.'

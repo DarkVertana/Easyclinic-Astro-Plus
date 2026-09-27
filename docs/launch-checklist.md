@@ -183,14 +183,19 @@ Check:
 
 ```sh
 curl -sI https://www.easyclinic.io/ | grep -i x-robots-tag        # no output on www
-curl -s https://www.easyclinic.io/robots.txt                        # allows crawling, lists the sitemap
+curl -s https://www.easyclinic.io/robots.txt                        # "Allow: /" and "Sitemap: https://www.easyclinic.io/sitemap-index.xml"
+curl -s -o /dev/null -w '%{http_code}\n' https://www.easyclinic.io/sitemap-index.xml   # 200
+curl -s https://www.easyclinic.io/sitemap-index.xml | grep -c '<sitemap>'              # 17 child sitemaps (count at audit, 2026-09-27)
 curl -sI https://easyclinic.io/ | grep -i location                  # https://www.easyclinic.io/
 curl -sI https://www.easyclinic.io/clinic-chain-software | head -3  # 301 to /solutions/clinic-chain/ in one hop
 curl -sI https://www.easyclinic.io/wp-login.php | head -1           # 410
 ```
 
 Then run the smoke test against www, from a production-stage build of the commit that is live (`smoke.ts`
-refuses a preview-stage manifest for www):
+refuses a preview-stage manifest for www). On www it asserts the launched state: no `X-Robots-Tag` on the
+pages it fetches, a robots.txt with `Allow: /` and the sitemap line and no `Disallow: /`, and a sitemap index
+that answers 200. Run it against www only after the switch above; before it, those checks fail by design, so a
+www left noindexed or disallowed cannot pass:
 
 ```sh
 git checkout <deployed sha> && pnpm build:prod && pnpm smoke --base https://www.easyclinic.io

@@ -51,11 +51,12 @@ faq:
       India. Enterprise adds clinical SOP tracking, insurance claims, stock transfers and central control
       of every location, and the largest chain on EasyClinic has {fact:largestChain} locations, so you do
       not change systems as the chain grows.
-  - question: Do we pay per branch?
+  - question: How is a clinic chain priced?
     answer: >-
-      Not on Premium, which is priced per doctor per month and covers more than one location. Enterprise,
-      the plan with SOP tracking and central control of every location, has no list price, and each chain
-      gets its own quote.
+      EasyClinic's published prices are per doctor per month, with no separate line for a branch, and
+      Premium, at {price:usd.premium.annual} per doctor per month billed annually, covers more than one
+      location. Enterprise, the plan with SOP tracking and central control of every location, has no list
+      price, and each chain gets its own quote.
   - question: Which branch should go live first?
     answer: >-
       Start with one branch that head office can watch closely, and settle the SOPs and price lists there
@@ -96,6 +97,8 @@ links:
     - href: /pricing/
       label: Pricing and the Enterprise plan
       description: Per doctor per month from {price:usd.professional.annual}, with Enterprise quoted for clinic chains.
+    - href: /physiotherapy-clinic-management-software/
+    - href: /pricing/india/
 closing:
   heading: Bring your branch list
   body: >-
@@ -135,8 +138,14 @@ notes:
     invoicing across branches. The spec 5.11 multi-location row also mentions sharing the patient record
     across branches "with consent"; how consent works is not stated here.
   - >-
-    Enterprise pricing structure (per doctor, per branch or per network) is not public; the per-branch FAQ
+    Enterprise pricing structure (per doctor, per branch or per network) is not public; the pricing FAQ
     answers for Premium only (Professional does not include more than one location).
+  - >-
+    Audit 2026-09-27: the FAQ "Do we pay per branch?" answered "Not on Premium", which states there is no
+    per-location fee; that is unconfirmed (pricing/main.yaml notes; the live Kenya listicle says per user and
+    per location). Retitled "How is a clinic chain priced?" and reworded to the published per-doctor prices
+    with no separate branch line, as /features/multi-location/ does. Say "no per-branch fee" outright only
+    once the company confirms it.
   - >-
     No heroMedia on publish (spec 12 screenshots do not exist yet). When taken, the hero is the
     branch-by-branch KPI comparison (five branches); the SOP adherence by branch screen and the stock
@@ -146,15 +155,24 @@ notes:
     say any of them is a chain. CIMAS Health's branch count and Foster Akaketwa's city are unknown
     (testimonials/foster-akaketwa.yaml city: null), so the testimonial renders without a city.
   - >-
-    Spec 2.9 asks every solution page to link one specialty page and one country page as well; the related
-    list follows the orchestrator's six links. Add both once those pages exist.
+    Spec 2.9 asks every solution page to link one specialty page and one country page as well. The related
+    list is the orchestrator's six links plus /physiotherapy-clinic-management-software/ and /pricing/india/
+    (added in the 2026-09-27 audit), which fills the cap of 8 (src/schemas/base.ts). Swap /pricing/india/
+    for /clinic-management-software-india/ when that country page publishes; do not add both.
+  - >-
+    Audit 2026-09-27: added /physiotherapy-clinic-management-software/ (the only specialty page that links
+    to this page, for physiotherapy groups with several branches) and /pricing/india/ (the only published
+    country page for now; all four country pages are drafts) to the related links, with href only so each
+    card takes the target's own linkLabel and summary.
   - >-
     Editor pass 2026-09-26: the "only for big chains" FAQ is asked as a two-branch question (spec 6.4 drops
     leading "only for large clinics" questions). Price lists are described as set by head office for each
     branch and payer, not "the same at every counter", because spec 5.11 has price lists by location. Which
     plan carries one login across branches is not stated separately from central control (Enterprise).
     Revenue per doctor per branch is left out (spec 6.4 poses it as a question, not a confirmed report);
-    the per-doctor bullet uses patients per doctor per hour from the eight morning numbers (spec 5.11).
+    the per-doctor bullet (patients per doctor per hour, from the spec 5.11 eight morning numbers) was
+    removed in the 2026-09-27 audit.
+  - 'Audit 2026-09-27: the "Every branch on one morning screen" row no longer names collections against billing, stock days left, claims pending or patients per doctor per hour, and the per-doctor bullet is gone. No live product page or confirmed fact states them, /features/reports-and-dashboards/ leaves them out, and home, the /features/ hub and /indiademo/ dropped them in their fact checks. The row now names what /features/reports-and-dashboards/ grounds (revenue by branch, then stock and claim status where the chain runs those modules, as that page''s limits box says), written as two sentences to avoid a list of three; "one screen" rests on live /kenyademo/. Restore the spec 5.11 numbers here and on /features/reports-and-dashboards/ only after product confirms them.'
 sections:
   - discriminant: painBlocks
     value:
@@ -223,11 +241,11 @@ sections:
       items:
         - heading: Every branch on one morning screen
           body: >-
-            The owner's dashboard puts the branches side by side: revenue by branch, collections against
-            billing, stock days left and claims pending. When one branch's collections fall behind what it
-            billed, you see it on the same screen as the branches that are on track.
+            The owner's dashboard puts the branches side by side, starting with revenue for each branch.
+            Where the chain runs pharmacy and claims, each branch's stock and the status of its claims sit
+            beside it, so a branch that falls behind shows up on the same screen as the branches that are on
+            track.
           bullets:
-            - Patients per doctor per hour at each branch
             - Custom analytics on a reporting server, on Enterprise
           link:
             label: See the reports and dashboards

@@ -46,7 +46,8 @@ faq:
     answer: >-
       Plan on ₹50,000 to ₹2,00,000 for a small clinic, and the budget in this guide uses ₹1,00,000. The
       fire NOC and environmental clearances are the largest item at ₹50,000 to ₹2,00,000, depending on the
-      size of the clinic, and the other four items run ₹10,000 to ₹50,000 each. Added up, those separate
+      size of the clinic, and the other two items, municipal permits and biomedical waste authorisation,
+      run ₹10,000 to ₹50,000 each. Added up, those separate
       ranges come to more than the total, so get a quote for each before you rely on it.
   - question: How much is the rent deposit for a clinic in Mumbai?
     answer: >-
@@ -61,7 +62,7 @@ faq:
   - question: What does medical equipment cost for a general clinic in Mumbai?
     answer: >-
       About ₹3,00,000 for a general clinic: ₹1,00,000 for basic equipment and sterilisation, and ₹2,00,000
-      for diagnostics such as an ECG machine. An ultrasound machine for a maternity clinic costs ₹5,00,000
+      for diagnostics such as an ECG or a blood testing machine. An ultrasound machine for a maternity clinic costs ₹5,00,000
       to ₹25,00,000 on its own.
   - question: How much does clinic software add to the budget?
     answer: >-
@@ -83,6 +84,9 @@ links:
     - href: /indiademo/
       label: Book a demo in India
       description: A 20-minute demo of the system before your first patient.
+    - href: /clinic-setup-cost-in-india/
+      label: Clinic setup cost in India
+      description: Dated rent and equipment prices for a clinic anywhere in India, with the registrations to budget for.
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
@@ -133,6 +137,8 @@ notes:
     guide's own figures and the allowed software facts. No UPI, GST or ABDM claim is made, and no
     regulator status is stated for EasyClinic. Spec 5.18 asks for an author who has opened a clinic or a
     quoted owner; neither is on the page yet.
+  - 'Audit 2026-09-27: the diagnostic equipment paragraph no longer gives an ECG machine ₹1,00,000 to ₹5,00,000. That undated range from the 2025 import sat above most dated prices: Bajaj Finance (https://www.bajajfinserv.in/ecg-machine-price-list-in-india, dated Aug 10, 2026, re-fetched with curl on 2026-09-27) gives Rs. 22,411 to Rs. 55,885 for a 3-channel machine and Rs. 32,000 to Rs. 1,30,000+ for a 12-channel one, the figures /clinic-setup-cost-in-india/ already cites. The ₹1,00,000 to ₹5,00,000 range now applies to a blood testing machine only (still undated, from the import), the equipment FAQ says "an ECG or a blood testing machine" to match the budget table row, and the ₹2,00,000 diagnostics line and the ₹17.55 lakh total are unchanged. Added /clinic-setup-cost-in-india/ to the related links so the two pages link both ways.'
+  - 'Audit 2026-09-27: the two registration lines lost their unsourced ₹10,000 to ₹50,000 fees. (1) Clinic registration: the Clinical Establishments Act''s site (https://clinicalestablishments.mohfw.gov.in/, fetched 2026-09-27) lists the 19 States/UTs that have adopted the Act, and Maharashtra is not among them; the page named no other law and its own note above said the requirement and fee were unchecked. The table row and checklist step 3 now tell the reader to ask the state health department which law applies, as /clinic-setup-cost-in-india/ and the NMC guide do. (2) Doctor registration: "with the NMC or the state medical council" read as a choice. The NMC guide says a doctor registers with the State Medical Council (its example is the Maharashtra Medical Council) and then appears on the NMC''s National Medical Register, and it gives no fee, so the row now names the Maharashtra Medical Council with the fee "Set by the council", and checklist step 2 links the NMC guide instead of nmc.org.in. /clinic-in-india/ had a different unsourced figure (₹5,000 to ₹15,000 a year), removed in the same audit. The licences FAQ now says "the other two items, municipal permits and biomedical waste authorisation". The five-row table, the ₹50,000 to ₹2,00,000 licensing range, the ₹1,00,000 budget line and the ₹17.55 lakh total are unchanged; the remaining ranges (₹70,000 to ₹3,00,000 together) still exceed that range at both ends, so the sentence saying so still holds. Still to check in the human pass: which law registers a small OPD clinic in Mumbai, and the council''s current fee.'
 ---
 
 This is the budget for a small general clinic in Mumbai: about 500 square feet in an affordable area, one consultation room, three staff, and enough money to run for three months after opening. The figures are planning ranges, not quotes. Fees change and this page can lag behind them, so get a written quote for each large line before you sign.
@@ -186,7 +192,7 @@ Stethoscopes, BP monitors, pulse oximeters and thermometers cost ₹10,000 to �
 
 ### Diagnostic equipment
 
-An ECG machine or a blood testing machine costs ₹1,00,000 to ₹5,00,000, and a general clinic can plan on about ₹2,00,000 for diagnostics. A maternity clinic that needs an ultrasound machine should budget ₹5,00,000 to ₹25,00,000 for that machine alone.
+A blood testing machine costs ₹1,00,000 to ₹5,00,000. For an ECG machine, [Bajaj Finance's price list](https://www.bajajfinserv.in/ecg-machine-price-list-in-india), updated on 10 August 2026, gives ₹22,411 to ₹55,885 for a 3-channel machine and ₹32,000 to more than ₹1.3 lakh for a 12-channel one. A general clinic can plan on about ₹2,00,000 for diagnostics. A maternity clinic that needs an ultrasound machine should budget ₹5,00,000 to ₹25,00,000 for that machine alone.
 
 ### Surgical instruments
 
@@ -198,8 +204,8 @@ Five pieces of paperwork stand between a finished clinic and the first patient. 
 
 | Licence or approval | Cost (₹) |
 | --- | --- |
-| Doctor's registration with the NMC or the state medical council | 10,000 to 50,000 |
-| Clinical establishment registration in Maharashtra | 10,000 to 50,000 |
+| Doctor's registration with the Maharashtra Medical Council | Set by the council |
+| Clinic registration (Maharashtra is not on the Clinical Establishments Act's list of adopting states) | Ask the state health department which law applies |
 | Fire NOC and environmental clearances | 50,000 to 2,00,000, by the size of the clinic |
 | Local municipal permits and signage approval | 10,000 to 50,000 |
 | Biomedical waste disposal authorisation | 10,000 to 50,000 |
@@ -211,8 +217,8 @@ For the wider route in India, from the business plan to registration, see [start
 ## Licensing checklist
 
 1. Put ₹1,00,000 aside for licences and approvals at the start. Budgeting for them up front avoids penalties.
-2. Check that each doctor who will practise at the clinic is registered with the [National Medical Commission (NMC)](https://www.nmc.org.in/) or the state medical council. This guide budgets ₹10,000 to ₹50,000 for the registration.
-3. Register the clinic as a clinical establishment in Maharashtra, at ₹10,000 to ₹50,000.
+2. Check that each doctor who will practise at the clinic is registered with the Maharashtra Medical Council; the [NMC registration guide](/how-to-get-approval-from-the-medical-practitioners-and-dentists-council-in-india-nmc-dci/) explains how the state register and the NMC's National Medical Register fit together.
+3. Ask the state health department which law registers a clinic in Mumbai. Maharashtra is not among the 19 states and union territories that have adopted the [Clinical Establishments Act](https://clinicalestablishments.mohfw.gov.in/).
 4. Apply for the fire NOC and environmental clearances. They cost ₹50,000 to ₹2,00,000, depending on the size of the clinic.
 5. Get the local municipal permits and signage approval, at ₹10,000 to ₹50,000.
 6. Get biomedical waste disposal authorisation, at ₹10,000 to ₹50,000.

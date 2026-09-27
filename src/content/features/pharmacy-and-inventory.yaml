@@ -212,6 +212,15 @@ sections:
         - label: Google
           rating: '{fact:googleRating}'
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /inventory-management-for-rural-clinics/
+        - href: /smarter-stocks-bigger-savings-how-clinic-inventory-management-helps-cut-costs/
+        - href: /clinic-inventory-management-system/
+
 faqHeading: Questions clinic owners ask about the pharmacy
 faq:
   - question: Do I need the Enterprise plan to run a pharmacy on EasyClinic?
@@ -317,3 +326,4 @@ notes:
   - 'Price lists by payer and location (on the live inventory list) are left to /features/revenue-management/ and /features/billing/.'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add "Pharmacy dispensing from a prescription with batch and expiry, one expiring batch flagged" as hero and "Stock transfer between branches and reorder alert" to the transfers row.'
   - 'Proof is the badges variant because no testimonial speaks about the pharmacy and every testimonial is placed on another page. Replace with a pharmacist or clinic-chain quote when one is collected.'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 1 of them (/inventory-management-for-rural-clinics/) had no inbound link but /blog/, and links.related is full (8 of 8).'

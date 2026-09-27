@@ -15,9 +15,11 @@ const suggestions = [
 ]
   .map((s) => ({ ...s, href: registry.urlFor(s.href) }))
   .filter((s) => s.href && (s.href === '/' || registry.get(s.href)));
+// canonical="" below omits the canonical link and og:url (SEO.astro): this page answers every missing URL, and
+// /404/ is itself a 404, so a canonical to it would point at a 4xx page.
 ---
 
-<BaseLayout title="Page not found: EasyClinic" description="This page does not exist on the EasyClinic website." path="/404/" indexable={false} analyticsImmediate>
+<BaseLayout title="Page not found: EasyClinic" description="This page does not exist on the EasyClinic website." path="/404/" canonical="" indexable={false} analyticsImmediate>
   <section class="section-y">
     <div class="container-measure">
       <p class="eyebrow">404</p>

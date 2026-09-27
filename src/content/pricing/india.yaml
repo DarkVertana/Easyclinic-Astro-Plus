@@ -92,8 +92,8 @@ sections:
       id: included
       heading: What the price includes and what costs extra
       intro: >-
-        You pay for each doctor who writes notes or prescriptions in the EMR. This table shows what that
-        price covers and what you pay for separately.
+        You pay one licence for each doctor who uses EasyClinic. This table shows what that price covers
+        and what you pay for separately.
       caption: What is included in the per-doctor price in India, and what is charged separately
       columns:
         - Item
@@ -103,9 +103,9 @@ sections:
         - - Reception login
           - Included on every plan
           - A licence for your reception comes with the price. Reception cannot open the EMR or write prescriptions.
-        - - Other staff logins, such as a nurse or pharmacist
+        - - Logins for your staff
           - Included on every plan
-          - Staff logins are part of Professional, and every higher plan includes everything in Professional.
+          - Professional includes logins for your staff, and every higher plan includes everything in Professional.
         - - Setup
           - No fee
           - No setup fee on any plan, and no contract to sign.
@@ -213,8 +213,8 @@ faq:
   - question: Do I pay extra for my receptionist's login?
     answer: >-
       No, a licence for your reception is included in the price of every plan. The reception login cannot
-      open the EMR or issue prescriptions, so each doctor who writes notes or prescriptions has their own
-      licence, from {price:inr.professional.annual} a month on Professional billed annually.
+      open the EMR or issue prescriptions, so each doctor has their own licence, from
+      {price:inr.professional.annual} a month on Professional billed annually.
   - question: Do I have to charge my patients GST on consultations?
     answer: >-
       Usually not, because healthcare services by a clinical establishment or an authorised medical
@@ -235,17 +235,21 @@ faq:
       one quarter; there is no contract to break if you stop.
   - question: Why pay for EasyClinic when there are free EMRs?
     answer: >-
-      Free EMRs are free until you need the second doctor, or someone to answer the phone when the printer
-      will not talk to the system. Every EasyClinic plan includes unlimited training and support, by phone
+      A free EMR costs nothing to license, and the cost moves to the server it runs on and to the person
+      you call when the printer will not talk to the system. Every EasyClinic plan includes unlimited training and support, by phone
       as well as email. If you are one doctor with no staff and no plans to grow, a
       free EMR may be enough.
   - question: Is EasyClinic cheaper than Practo Ray or HealthPlix?
     answer: >-
-      We do not claim it is, because the answer depends on the quote each vendor gives for your number of
-      doctors and staff, and we can only publish our own price. The [EasyClinic vs Practo
-      Ray](/easyclinic-vs-practo/) and [EasyClinic vs HealthPlix](/easyclinic-vs-healthplix/) pages set out
-      each vendor's pricing model and any price it publishes, with the source and the date it was checked.
-      When you compare, ask each vendor for the monthly price per doctor and what extra staff logins cost.
+      No, not at list price. Practo Ray's [CM Atom](https://www.practo.com/providers/clinics/ray/plans) is
+      ₹999 a month on a one-year term for up to 50 doctors, and [HealthPlix
+      Pro](https://www.healthplix.com/pricing-1) is ₹12,000 a year before 18% GST, though HealthPlix does
+      not say whether that price is per doctor. EasyClinic Professional is {price:inr.professional.annual}
+      per doctor per month billed annually, with a reception login and unlimited support and training
+      included. The [EasyClinic vs Practo Ray](/easyclinic-vs-practo/) and [EasyClinic vs
+      HealthPlix](/easyclinic-vs-healthplix/) pages set out what each price covers, with the source and the
+      date it was checked, so ask each vendor for the yearly total with tax for your doctors and staff
+      logins.
   - question: Does EasyClinic work if I later open a second location?
     answer: >-
       Yes, once you move to Premium or Enterprise, because Professional covers one location and Premium is
@@ -305,7 +309,8 @@ editorialPass:
     the page does not say whether the prices include GST or what the add-ons cost.
 
 notes:
-  - Head keyword "clinic software cost in India" is owned here (spec 4.5 rule 4, cost intent). Spec 4.1 lists "clinic software cost India" as a secondary keyword of /pricing/; drop it there so the two pages do not compete.
+  - Head keyword "clinic software cost in India" is owned here (spec 4.5 rule 4, cost intent). Spec 4.1 lists "clinic software cost India" as a secondary keyword of /pricing/; it was dropped there in the 2026-09-27 audit so the two pages do not compete.
+  - 'Audit 2026-09-27: done. "clinic software cost India" is gone from /pricing/ and "clinic management software price India" from /best-clinic-management-software-india/, so no other page lists an India software cost or price keyword (checked 2026-09-27; /clinic-setup-cost-in-india/ targets the cost of setting up the clinic itself).'
   - Published on 2026-09-26 with confirmed facts only. prices/inr.yaml taxNote and paymentMethods are null, so the page does not say whether prices include 18% GST or how the subscription is paid. When both are confirmed, add one sentence each to the opening answer, the cost-examples intro, the GST section and the closing, and bring back the FAQ "Is GST charged on top of EasyClinic's prices?".
   - 'Removed until the company supplies them, each to be added back with the fact: add-on prices in INR (spec 5.12 item 4 wants indicative prices or ranges, and the add-ons heading can then say "priced in rupees" again); an indicative Enterprise range per doctor; any limit on staff logins; how a part-time or visiting doctor is charged (the table row was deleted); data migration included or priced (spec 5.12 item 7; the table row and the training note were changed); any monthly SMS limit; who pays WhatsApp message charges; any per-location fee and how a doctor at two branches is counted.'
   - 'Also removed until confirmed, and to be added back only with a status and a date: UPI, Razorpay and PayU (countries/in.yaml states are null), GST invoicing with HSN and SAC codes, Tally export and a GST sales register export. Regulator status is unknown, so the hero strip carries no regulator chip and nothing on the page states or implies a compliance status.'
@@ -318,3 +323,6 @@ notes:
   - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions.
   - Secondary keyword "price per doctor per month India" was removed because /pricing/ owns "price per doctor per month" (spec 4.1). The meta description uses one price token because the length rule counts the raw token text.
   - The integrations row follows plans.yaml (included on Enterprise, an add-on on Professional and Premium). The customisation row uses the live FAQ ("hundreds of customisation options... without any charges"); custom development stays an add-on.
+  - 'Audit 2026-09-27: the included table said nurse and pharmacist logins come on every plan and that you pay for each doctor "who writes notes or prescriptions", and the reception FAQ repeated the second rule. /pricing/ lists the licence rule for nurses, pharmacists and visiting or part-time doctors as unconfirmed, and plans.yaml says only "Logins for your staff", so the row is now "Logins for your staff", the table intro matches /pricing/ ("one licence for each doctor who uses EasyClinic") and the FAQ says "each doctor has their own licence". Name nurses, pharmacists or visiting doctors only after the company confirms the licence rule.'
+  - 'Audit 2026-09-27: FAQ "Is EasyClinic cheaper than Practo Ray or HealthPlix?" declined to answer although /easyclinic-vs-practo/, /easyclinic-vs-healthplix/, the India listicle and /compare/ answer it from published prices. It now answers "No, not at list price" with Practo Ray CM Atom (Rs 999 a month on a one-year term, up to 50 doctors) and HealthPlix Pro (Rs 12,000 a year excluding 18% GST, per doctor not stated), as read on 2026-09-26 by the vs-practo and vs-healthplix fact checks and re-read on 2026-09-27 from the linked pages (the Practo plans page HTML; the HealthPlix figures are in the pricing image on its Wix page). Re-read both when the vs pages are re-checked.'
+  - 'Audit 2026-09-27: FAQ "Why pay for EasyClinic when there are free EMRs?" said free EMRs are free "until you need the second doctor", which nothing supports (KenyaEMR has no licence fee at any size; the /pricing/ free-EMR table says open-source EMRs cost nothing to license). The first sentence now reuses the /pricing/ table wording: the cost moves to the server and to the person you call.'

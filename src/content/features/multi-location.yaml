@@ -189,8 +189,9 @@ sections:
             keeps the login she has, and the reception login is included in the price.
         - title: Bring the records across
           body: >-
-            If the branch has patients on another system, their records are moved across in a data
-            migration. Old paper notes can be scanned and attached to each patient's record.
+            If the branch has patients on another system, their patient list is moved across; agree in
+            writing what else comes across. Old paper notes can be scanned and attached to each patient's
+            record.
         - title: Train the branch staff
           meta: Four short sessions, about two hours in all
           body: >-
@@ -351,3 +352,4 @@ notes:
   - 'Proof block is the badges variant with fact tokens (the registry resolves tokens in badge ratings). Review counts are unknown (capterraReviews and googleReviews null) and are left out. No testimonial: all are placed on other pages.'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When spec 12 captures exist, the hero is the branch-by-branch KPI comparison (five branches), and the stock transfer screen belongs on the stock row.'
   - 'Related links: all five solution pages (spec 2.9), /pricing/ for the Enterprise plan (spec 5.11), plus /features/reports-and-dashboards/ and /features/pharmacy-and-inventory/ (8 in total).'
+  - 'Audit 2026-09-27: the "Bring the records across" step no longer says a branch''s records are moved in a data migration. The patient list is the only confirmed migration fact (/switch/, /compare/healthplix-alternatives/), so the step says that and tells the clinic to agree the rest in writing.'

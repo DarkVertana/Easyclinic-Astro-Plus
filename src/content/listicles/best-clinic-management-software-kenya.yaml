@@ -211,7 +211,7 @@ sections:
               source: https://streamlinehealth.org/what-we-do/
               checkedOn: 2026-09-26
             - value: Not published (26 September 2026)
-            - value: Cura AI drafts the note from dictation, on every plan
+            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
         - label: M-Pesa or mobile money at the desk
           cells:
             - value: Not published. Its payment integrations include Flutterwave and Stripe
@@ -262,10 +262,13 @@ sections:
       id: sha-and-regulators
       heading: SHA claims now need a DHA-certified system
       intro: >-
-        A clinic that wants to claim from the Social Health Authority in the 2026/28 contracting cycle must
-        use a health management information system certified by the Digital Health Agency, and SHA has
-        extended the deadline to 30 September 2026 ([Capital FM, 1 September
+        A clinic that wants to claim from the Social Health Authority in the contracting cycle that starts
+        on 1 October 2026 must use a health management information system certified by the Digital Health
+        Agency, and SHA has extended the deadline to 30 September 2026 ([Capital FM, 1 September
         2026](https://capitalfm.africa/sha-gives-hospitals-one-more-month-to-meet-digital-health-rules/)).
+        SHA's [notice of 8 September
+        2026](https://www.sha.go.ke/wp-content/uploads/2026/09/Notice-On-New-Contracting-Cycle.pdf) puts
+        that cycle at 1 October 2026 to 30 June 2029.
         The Digital Health (Health Information Management Procedures) Regulations, 2025 require digital
         health solutions used in care to be certified by the agency. None of the seven other vendors' pages
         we read names a DHA certificate. This page does not state EasyClinic's status either, so before you
@@ -417,7 +420,7 @@ sections:
             from source, but none of the pages we read offers a private clinic support or a price.
           pros:
             - Kenya's national system, built to Ministry of Health standards
-            - Open source, with a free service desk for its sites
+            - Open source, with a free service desk for its sites under KeHMIS III
             - In use at more than 2,200 sites
           cons:
             - No published support offer or price for a private clinic
@@ -521,7 +524,7 @@ sections:
             since 2017. The patient's M-Pesa payment is recorded against the bill at reception, and claims to
             Jubilee, AAR, CIC, Britam and Resolution go through SLADE from the same bill, on Enterprise or as
             an add-on. Prescriptions print in English and Swahili, and the MOH 705 and DHIS2 reports come
-            from the visits already recorded. Cura AI drafts the note from dictation on every plan, and a
+            from the visits already recorded. Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan, and a
             clinic can be live in as little as {fact:goLiveDays} days. The limits matter in Kenya. The
             shilling price is not yet published, so this page gives no EasyClinic price for Kenya and leaves
             it unranked; the US dollar list is on the [pricing page](/pricing/). It also does not run fully
@@ -618,7 +621,7 @@ sections:
           items:
             - You run a private clinic, from one doctor to several branches, and most of your money comes by M-Pesa and from insurers such as Jubilee or AAR.
             - You will get the shilling price per doctor in writing before you sign, since it is not yet published, and you want a reception login included with no setup fee and no binding contract.
-            - Your doctors want Cura AI to draft the note from dictation.
+            - Your doctors want Cura AI to listen to the consult and draft the note.
             - Your patients read WhatsApp more than SMS, and you are ready for Premium.
             - You want prescriptions in English and Swahili, and MOH 705 reports from recorded visits.
 
@@ -638,7 +641,7 @@ sections:
     value:
       id: sources
       heading: Sources
-      intro: Every page we read for this comparison, all on 26 September 2026.
+      intro: Every page we read for this comparison, all on 26 September 2026 except SHA's contracting cycle notice, read on 27 September 2026.
       items:
         - { label: 'Capterra: EasyClinic reviews', url: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/', accessed: 2026-09-26 }
         - { label: 'Clinicea: homepage', url: 'https://clinicea.com/', accessed: 2026-09-26 }
@@ -680,6 +683,7 @@ sections:
         - { label: 'SourceForge: HospitalOS', url: 'https://sourceforge.net/projects/hospitalos/', accessed: 2026-09-26 }
         - { label: 'Open Source Technology Co., Ltd. (HospitalOS developer)', url: 'https://opensource-technology.com/', accessed: 2026-09-26 }
         - { label: 'Capital FM: SHA gives hospitals one more month to meet digital health rules', url: 'https://capitalfm.africa/sha-gives-hospitals-one-more-month-to-meet-digital-health-rules/', accessed: 2026-09-26 }
+        - { label: 'Social Health Authority: notice on new contracting cycle', url: 'https://www.sha.go.ke/wp-content/uploads/2026/09/Notice-On-New-Contracting-Cycle.pdf', accessed: 2026-09-27 }
         - { label: 'Digital Health Agency: certification programme', url: 'https://certification.dha.go.ke/registry', accessed: 2026-09-26 }
 
 faq:
@@ -693,7 +697,8 @@ faq:
       better than any other system here.
   - question: Do I need a DHA-certified system to claim from SHA?
     answer: >-
-      Yes, if your clinic wants to claim from SHA in the 2026/28 contracting cycle: SHA requires contracted
+      Yes, if your clinic wants to claim from SHA in the contracting cycle that starts on 1 October 2026:
+      SHA requires contracted
       providers to use a health management information system certified by the Digital Health Agency, and
       it extended the deadline to 30 September 2026. Ask every vendor, EasyClinic included, for its DHA
       certificate and check it with the agency before you sign.
@@ -702,7 +707,8 @@ faq:
       The software is open source with no published licence fee, but none of the pages we read says what
       a private clinic would pay for setup or support. The OpenMRS wiki says KenyaEMR can be installed
       from a release or built from source. It is supported by Palladium Kenya under the PEPFAR-funded
-      KeHMIS project, whose service desk gives its sites free support, and OpenMRS, which KenyaEMR is
+      KeHMIS project, whose service desk gives its sites free support under KeHMIS III, projected to end in
+      September 2026, and OpenMRS, which KenyaEMR is
       built on, says to budget for implementation, training, maintenance and infrastructure even without
       a licence fee.
   - question: What does EasyClinic cost, and is there a price in shillings?
@@ -877,3 +883,6 @@ notes:
     Capterra EasyClinic shows 4.9 from 11 reviews; the count is not printed because review counts are not
     on the confirmed-facts list. OWNER ACTION: approve printing "from 11 reviews" so EasyClinic's score
     meets the same standard as the competitors'.
+  - 'Audit 2026-09-27: Cura AI now "listens to the consult and drafts the note for the doctor to confirm" (AI documentation cell, EasyClinic body, Choose EasyClinic item), matching /ai/, /easyclinic-vs-healthplix/ and spec 5.2 and 4.1 ("Cura AI listens to the consult"); "from dictation" undersold it. Reverse on every page only if product says Cura AI works from dictation alone.'
+  - 'Audit 2026-09-27: KenyaEMR''s free service desk is now tied to KeHMIS III (pros and the "Is KenyaEMR free" FAQ), which kenyahmis.org says is projected to last until September 2026; what follows is not published. Re-read kenyahmis.org on or after 30 September 2026 and refresh lastUpdated.'
+  - 'Audit 2026-09-27: the SHA section intro and the DHA-certified FAQ called the contracting cycle "2026/28", taken from Capital FM. SHA''s own Notice on New Contracting Cycle of 8 September 2026 (https://www.sha.go.ke/wp-content/uploads/2026/09/Notice-On-New-Contracting-Cycle.pdf, fetched 2026-09-27) gives 1 October 2026 to 30 June 2029, which /nhif-in-kenya/ follows. Both now say "the contracting cycle that starts on 1 October 2026", the intro cites the SHA notice for the cycle dates, and the notice is added to the source list (its intro now gives the 27 September read date).'

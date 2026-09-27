@@ -395,11 +395,11 @@ sections:
             and your clinic staff.
         - title: Data migration
           body: >-
-            We move your existing data into EasyClinic, so the first morning does not start from an empty
-            screen.
+            We move your patient list into EasyClinic, so a returning patient is found by name at the desk
+            instead of being registered again.
       note: >-
-        Going live in as little as {fact:goLiveDays} days is the fastest case, and a clinic with years of
-        records to move takes longer. Which parts of a HealthPlix export come across, and how long that
+        Going live in as little as {fact:goLiveDays} days is the fastest case, and yours may take longer.
+        Which parts of a HealthPlix export come across, and how long that
         takes for your clinic, is not yet published on this site, so ask us before you sign up.
 
   - discriminant: proofBlock
@@ -505,7 +505,8 @@ faq:
       They stay with HealthPlix until you export them, so ask for the export before you cancel. HealthPlix's
       terms of service say that on termination it will, at its discretion, make reasonable efforts to let
       you take a backup or export in a suitable electronic format, and that your access ends on
-      termination. We then move your existing data into EasyClinic as part of going live.
+      termination. We then move your patient list into EasyClinic as part of going live; agree in writing
+      which other parts of the export come across.
     lastVerified: 2026-09-26
   - question: What is the biggest risk in switching from HealthPlix?
     answer: >-
@@ -534,7 +535,7 @@ links:
       description: What EasyClinic costs in rupees and how Indian clinics of each size use it.
     - href: /pricing/india/
       label: EasyClinic prices in rupees
-      description: Every plan per doctor per month in rupees, and what each one includes.
+      description: Prices per doctor per month in rupees, and what each plan includes.
     - href: /switch/
       label: Switching to EasyClinic
       description: How a clinic moves to EasyClinic from another system, step by step.
@@ -575,7 +576,9 @@ notes:
   - 'HealthPlix pharmacy and lab: healthplix.com product and pricing pages name neither; the SoftwareSuggest listing (claimed by HealthPlix, overview provided by HealthPlix) lists Inventory Management and Lab Integration, so that is the cited source. The Techjockey review summary says users want better pharmacy management; not used (review opinion).'
   - 'HealthPlix facts not used: 45 million patients on the demo sandbox (4.5 crore) against 60 million+ on the home page (the page uses the home page); 12,000+ doctors in 300 cities in the 2023 blog (superseded); the FAQ page answers are loaded by script and were not readable; trust.healthplix.com ("Trust Vault") and ayushman-bharat.healthplix.com render client-side and returned no content. The demo sandbox was re-checked on 2026-09-26: picking a specialty opens sandboxRegistration.php, which asks for name, phone number and clinic pin code and sends login details by OTP, so the page now says you open it with your phone number.'
   - 'Adversarial fact check, 2026-09-26 (every cited URL re-fetched; pricing image re-read in full). Changed: (1) the verdict row for a doctor with a receptionist went from "EasyClinic" to "Either": HealthPlix''s pricing image says "Doctor''s staff can use this for all billing needs of the clinic" on both plans, and its EMR page (https://www.healthplix.com/healthplixemr) says the platform switches between doctor, nurse, admin and IPD staff profiles, so calling EasyClinic the better fit rested only on HealthPlix not publishing a staff-login price; the verdict intro count and the matching "Choose EasyClinic if" item were rewritten to match. (2) The opening answer no longer says EasyClinic suits "a clinic run by a team rather than a doctor alone", which implied HealthPlix does not; it now names the two verdict rows EasyClinic wins (pharmacy or TPA polyclinic, chain). (3) "Toll-free" was removed from the HealthPlix support cell: the contact page lists "Doctor Support : 18001020127" without calling it toll-free. (4) The polyclinic and chain verdict rows now state what HealthPlix does publish (SoftwareSuggest inventory and lab integration; Elite multi-clinic setup). (5) Disclosure "EasyClinic publishes this page" added to the side-by-side intro, as on the Practo page. (6) The offline FAQ adds that the home page still says "Online & Offline EMR" and that no plan is named for offline use. Confirmed unchanged: prices and GST line, every Plix AI and Grow Your Practice tick, H.A.L.O wording, SPOT wording, IPD wording, ABDM and certificate quotes, terms clause 8, Techjockey 4.3 from 6 (JSON-LD reviewCount 6), SoftwareSuggest 4.5 from 4, Capterra 0 reviews (WebFetch; curl 403). EasyClinic''s own Capterra listing read 4.9 from 11 reviews on 2026-09-26; the count is not used because capterraReviews is not a confirmed fact yet.'
-  - 'EasyClinic facts used, with their source: prices and reception login rule (live /pricing/, re-read 2026-09-26, and tokens); plan inclusions and add-ons (plans.yaml); no setup fee, no binding contract (plans.yaml conditions, live FAQ); training breakdown and 20-minute demo wording (published /indiademo/); "We move your existing data into EasyClinic" and the "takes longer" line (published /indiademo/); inpatient out of scope (published /solutions/hospital-opd/); Cura AI drafting and CuraPilot flagging a missed diagnosis (spec 1.2 and 5.2, published /ai/); does not run fully offline (facts.md); no free trial (spec 1.2, decided 23 September); retention, founded, largest chain (facts tokens).'
+  - 'EasyClinic facts used, with their source: prices and reception login rule (live /pricing/, re-read 2026-09-26, and tokens); plan inclusions and add-ons (plans.yaml); no setup fee, no binding contract (plans.yaml conditions, live FAQ); training breakdown and 20-minute demo wording (published /indiademo/); "We move your existing data into EasyClinic" (published /indiademo/); the go-live note says only "yours may take longer", because no source says what slows go-live (audit 2026-09-27); inpatient out of scope (published /solutions/hospital-opd/); Cura AI drafting and CuraPilot flagging a missed diagnosis (spec 1.2 and 5.2, published /ai/); does not run fully offline (facts.md); no free trial (spec 1.2, decided 23 September); retention, founded, largest chain (facts tokens).'
   - 'Migration: spec 5.16 asks what is imported and how long. Neither is confirmed (the /indiademo/ notes say the same), so the step note admits it rather than using a placeholder. Supply: which HealthPlix records EasyClinic imports (patients, visits, prescriptions, uploaded reports, bills), the formats it accepts, the usual time for a one-doctor clinic and for a polyclinic, and whether migration is included in the plan price; then rewrite the step and the "records" FAQ and link /switch/ in the step note.'
   - 'FAQ "Is HealthPlix cheaper" and the verdict table rely on the current token values (Professional annual above ₹1,000). Recheck both if INR prices change. The pricing prose computes ₹1,000 and ₹1,500 a month and ₹14,160 and ₹21,240 a year with GST from HealthPlix''s published figures.'
   - 'Title (31 characters) and H1 follow spec 4.3. Meta description written to stay under 155 characters with the token expanded. No heroMedia or media: screenshots do not exist yet. No testimonial is assigned to this page, so the proof block is the Capterra and Google badges without counts (capterraReviews and googleReviews are null). Related links follow the brief; /compare/healthplix-alternatives/, /clinic-management-software-india/ and /switch/ are not yet published, and /trust/ is draft, so it is not linked.'
+  - 'Audit 2026-09-27: the step list note no longer says "a clinic with years of records to move takes longer", because no source says what slows go-live (the same line was cut on /kenyademo/, /switch/, /indiademo/ and home). It now says only that yours may take longer.'
+  - 'Audit 2026-09-27: the data migration step and the "What happens to my HealthPlix records" FAQ no longer promise to move "your existing data"; they say the patient list is moved, the only confirmed migration fact (/switch/, /compare/healthplix-alternatives/), and the FAQ tells the reader to agree in writing what else comes across. The /pricing/india/ related-link description no longer says every plan is per doctor per month, since Enterprise is quoted.'

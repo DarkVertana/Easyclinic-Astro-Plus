@@ -134,8 +134,9 @@ sections:
             health facilities, healthcare providers and health products, promotes standards for data
             exchange and certifies digital health solutions. Regulations made under the Act in April 2025 add
             procedures for health information management and for data exchange. For a clinic, the practical
-            effect is that its patient record system is expected to meet the Agency's standards, and for the 2026
-            to 2028 contracting cycle SHA requires a system the Agency has certified.
+            effect is that its patient record system is expected to meet the Agency's standards, and for the
+            contracting cycle that runs from 1 October 2026 to 30 June 2029, SHA requires a system the Agency
+            has certified.
           href: /emr-software-in-kenya/
           hrefLabel: Clinic software in Kenya
           source: https://new.kenyalaw.org/akn/ke/act/2023/15/eng@2023-11-24
@@ -144,13 +145,14 @@ sections:
           term: DPDP Act
           aka: Digital Personal Data Protection Act, 2023
           definition: >-
-            India's data protection law, enacted on 11 August 2023, with Rules notified on 14 November 2025 that
-            phase its duties in. A clinic that decides why and how patient data is used is
-            a data fiduciary, and a software vendor that processes the data for it is a data processor. The
-            clinic must give patients a notice, keep reasonable security safeguards, report breaches to the
-            Data Protection Board of India and the patients affected, publish a contact for data
-            questions and answer access or correction requests within 90 days. Failing to keep safeguards can
-            cost up to ₹250 crore.
+            India's data protection law, enacted on 11 August 2023, with Rules notified in November 2025. A
+            clinic that decides why and how patient data is used is a data fiduciary, and a software vendor
+            that processes the data for it is a data processor. From May 2027, when most of the clinic's duties
+            come into force, it must give patients a notice, keep reasonable security safeguards, report
+            breaches to the Data Protection Board of India and the patients affected, publish a contact for
+            data questions and answer grievances within the period it publishes, at most 90 days under
+            [rule 14(3) of the Rules](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf).
+            Failing to keep safeguards can cost up to ₹250 crore.
           href: /patient-data-privacy-laws-in-india/
           hrefLabel: Patient data privacy laws in India
           source: https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf
@@ -217,7 +219,8 @@ sections:
           definition: >-
             The Kenya Revenue Authority's electronic invoicing system. Since 1 September 2023 every business in
             Kenya, registered for VAT or not, must generate its invoices through eTIMS so each one reaches KRA,
-            and from 1 January 2024 a business expense without an eTIMS invoice cannot be deducted for tax. KRA
+            and from 1 January 2024 a business expense without an eTIMS invoice cannot be deducted for tax,
+            unless the Tax Procedures Act exempts the transaction. KRA
             offers simple eTIMS tools for small businesses and system-to-system integration for businesses that
             bill from their own software. A clinic registers for eTIMS with KRA itself, whichever software it
             uses.
@@ -303,8 +306,8 @@ sections:
             treats health data as sensitive personal data, which may be processed only by or under the
             responsibility of a health care provider or someone bound by confidentiality, for a lawful purpose.
             Every clinic, hospital, lab or pharmacy must register with the ODPC, whatever its size or turnover.
-            A breach must be reported to the ODPC within 72 hours of the clinic becoming aware of it, and
-            patients affected by unauthorised access must be told in writing.
+            A breach that puts patients at real risk of harm must be reported to the ODPC within 72 hours of
+            the clinic becoming aware of it, and the patients affected must be told in writing.
           href: /trust/
           hrefLabel: Security and compliance
           source: https://www.odpc.go.ke/wp-content/uploads/2024/02/ODPC-Guidance-Note-on-Processing-of-Health-Data.pdf
@@ -316,8 +319,8 @@ sections:
             The statutory body that registers and licenses medical and dental practitioners in Kenya and
             licenses health facilities, under the Medical Practitioners and Dentists Act (Cap. 253). It inspects
             facilities for compliance, and it renews each practitioner's licence every year once their
-            continuing professional development points are in order. Opening a private clinic means two KMPDC
-            steps: the doctor's own licence, then the facility licence after an inspection. A bill before the
+            continuing professional development points are in order. Opening a private medical or dental
+            clinic means two KMPDC steps: the doctor's own licence, then the facility licence after an inspection. A bill before the
             Senate in September 2026 would give facility licensing and inspection to a new Quality Healthcare
             and Patient Safety Authority, so check which body licenses facilities when you apply.
           href: /how-do-i-get-approval-from-the-kmpdc-in-kenya/
@@ -510,9 +513,9 @@ sections:
             Hospital Insurance Fund (NHIF) on 1 October 2024 and pays for care through three funds: the Primary
             Healthcare Fund, the Social Health Insurance Fund (SHIF), and the Emergency, Chronic and Critical
             Illness Fund. Apart from emergency treatment, it pays only facilities it has empanelled and
-            contracted, at its benefit package tariffs. For the 2026 to 2028 contracting cycle, facilities must
-            send claims from their own system, certified by Kenya's Digital Health Agency, instead of the SHA
-            Provider Portal, by 30 September 2026.
+            contracted, at its benefit package tariffs. For the contracting cycle starting 1 October 2026, SHA
+            set 30 September 2026 as the deadline for facilities to send claims from their own system, certified by
+            Kenya's Digital Health Agency, instead of the SHA Provider Portal.
           href: /features/insurance-claims/
           hrefLabel: Insurance claims
           source: https://sha.go.ke/
@@ -589,15 +592,16 @@ sections:
           term: WhatsApp Business Platform
           aka: WhatsApp Business API
           definition: >-
-            Meta's service for businesses that send WhatsApp messages from their own software, often called the
-            WhatsApp Business API, as distinct from the free WhatsApp Business app on a phone. Messages a
-            business starts, such as appointment reminders, must use a template approved in advance. Since 1
-            July 2025 Meta charges for each delivered template message, at rates that depend on the template's
-            category and the recipient's country. Free-form replies within 24 hours of the patient's last
-            message cost nothing, and so do utility templates sent inside that window.
+            Meta's service for businesses that send WhatsApp messages from their own software, as distinct from
+            the free WhatsApp Business app on a phone. Messages a business starts, such as appointment
+            reminders, must use a template approved in advance. Since 1 July 2025 Meta charges for each
+            delivered template message, at rates set by the template's category and the recipient's country.
+            Replies within 24 hours of the patient's last message need no template. From 1 October 2026 Meta
+            also charges for those replies beyond the first 1,000 a month per business number, and for utility
+            messages sent inside that window.
           href: /features/whatsapp/
           hrefLabel: WhatsApp reminders and messages
-          source: https://developers.facebook.com/docs/whatsapp/pricing/
+          source: https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing
 
 links:
   related:
@@ -639,10 +643,17 @@ notes:
   - 'No definition states or implies EasyClinic''s status with any regulator, exchange or integration (all unknown). The Kenya insurer names on /kenyademo/ (Jubilee, AAR, CIC, Britam, Resolution via SLADE) are left out of the SLADE entry because they describe EasyClinic''s integration claims, not SLADE itself.'
   - 'Link targets follow spec 4.5: TPA, HMO, SHA, SLADE, eClaimLink and pre-authorisation go to /features/insurance-claims/ (rule 2); GST, eTIMS and M-Pesa go to /features/billing/; denials and leakage go to /features/revenue-management/; ABDM goes to /trust/ (rule 6); WhatsApp API and templates go to /features/whatsapp/ (rule 3). /clinic-management-software-uae/ is planned as a draft; until it publishes, production drops those four links (registry urlFor returns null) and the terms render with the official source link only.'
   - 'Sources re-fetched and checked 26 Sep 2026 by an adversarial fact-check pass. ABDM, ABHA, HPR: NHA "brief guide on ABDM and its building blocks" on abdm.gov.in (14-digit ABHA, earlier Health ID, PHR address xyz@abdm, voluntary participation, HPR covers doctors of modern medicine, dentistry and the Ayush systems with nurses and others to follow, HPR does not replace council registration, no HPR fee, only ABDM-enrolled doctors access records from other providers, a private facility joining ABDM needs its professionals on HPR); launch 27 Sep 2021 from PIB (PRID 1758502). M1 (ABHA creation and verification), M2 (HIP, linking records) and M3 (HIU, consent-based fetch) checked on sandbox.abdm.gov.in milestone docs. HFR: hfr and hpr portals both redirect to nhpr.abdm.gov.in (National Healthcare Providers Registry); facility types, voluntary enrolment and verified or self-declared status from the building-blocks guide. HPR source moved from the NHPR portal (a script-only page) to the building-blocks guide, which holds every HPR claim. ABDM FHIR R4 profiles: nrces.in FHIR IG for ABDM.'
-  - 'DPDP: PIB explainer of 17 Nov 2025 (Act 11 Aug 2023; Rules notified 14 Nov 2025; 18-month phased compliance; 90-day response to rights requests; penalties up to ₹250 crore for security safeguards). The end date of the phase-in is not given because a proposal to shorten it (reported Jan 2026) has no located amending instrument.'
+  - 'DPDP: PIB explainer of 17 Nov 2025 (Act 11 Aug 2023; 18-month phased compliance; penalties up to ₹250 crore for security safeguards) and the Rules themselves, G.S.R. 846(E) in the Gazette of India of 13 Nov 2025 (MeitY PDF linked in the definition). The PIB explainer says the Rules were notified on 14 Nov 2025 and the Gazette is dated 13 Nov 2025, so the definition gives only the month, as /patient-data-privacy-laws-in-india/ does. Rule 1(4) brings rules 3, 5 to 16, 22 and 23 (among them notice, safeguards, breach reporting, contact, rights and grievances) into force eighteen months after publication, so the definition says most duties start in May 2027, as /features/patient-engagement/ and /healthcare-cybersecurity-protecting-clinics-and-hospitals-in-the-digital-age/ do. The 90-day cap is rule 14(3), on the grievance redressal period; the PIB explainer applies it to rights requests, so the definition follows the Rules. A proposal to shorten the phase-in (reported Jan 2026) has no located amending instrument; re-check before May 2027.'
   - 'NMC Telemedicine Practice Guidelines: source changed from the nmc.org.in home page (no telemedicine document reachable; its document links return 404) to the MoHFW eSanjeevani copy of the Board of Governors document dated 25 March 2020, "Appendix 5 of the Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulation, 2002", which holds Lists O, A, B and the prohibited list (Schedule X and NDPS drugs) and the signed or e-prescription rule.'
   - 'GST: CBIC Circular 32/06/2018 (health care services by a clinical establishment, authorised medical practitioner or para-medics exempt, Sl. 74 of Notification 12/2017-CT(Rate)); cosmetic and plastic surgery exclusion from the same notification; bill of supply for exempt supplies is section 31(3)(c) of the CGST Act (not fetched, standard law). NABH: nabh.co (QCI constituent, programme list, "NABH accreditation is voluntary"). TPA and pre-authorisation: IRDAI Master Circular on Health Insurance Business, 29 May 2024 (cashless decision within one hour, discharge authorisation within three hours, documents collected from hospitals, NHCX onboarding).'
   - 'Kenya: SHA launch 1 Oct 2024 (health.go.ke press release); three funds (sha.go.ke menu); 2.75% and KES 300 minimum, PHC access at level 2 and 3, empanelment and emergency exception, pre-authorisation definition (Social Health Insurance (General) Regulations 2024 PDF on health.go.ke). SHA HMIS rule: SHA notice of 1 Sep 2026 as reported by Kenyans.co.ke, The Star, Capital FM and The Standard (a DHA-certified HMIS able to exchange data with SHA, replacing reliance on the Provider Portal, required for the 2026/28 contracting cycle, deadline extended from 1 Sep to 30 Sep 2026); the notice itself is not posted on sha.go.ke, so the SHA source stays the home page; re-check after 30 Sep 2026. The seven-day claim deadline in the regulations PDF is left out because the copy is unnumbered and may differ from the gazetted text. eTIMS: KRA public notices (all businesses from 1 Sep 2023; expenses without eTIMS invoices not deductible from 1 Jan 2024) and "What is eTIMS". ODPC: Guidance Note on Processing of Health Data (health data sensitive, processing by or under a provider or person bound by secrecy, mandatory registration for the health sector, 72-hour breach report, written notice to affected patients). KMPDC: kmpdc.go.ke (registers and licenses practitioners and health facilities, annual licence, CPD compliance). The Quality Healthcare and Patient Safety Bill 2025 passed the National Assembly on 2 Jun 2026 and was read in the Senate on 15 Jul 2026 (The Star; Mzalendo tracker shows no assent as of 20 Sep 2026); it would create an Authority to license and inspect facilities, so the KMPDC entry says so and must be updated if it is enacted. Digital Health Act: Agency functions (s.6) checked in the Kenya Law PDF of Act 15 of 2023; kenyalaw.org returns 403 to fetches; LN 76 and 77 of 2025 commenced 11 Apr 2025. "Sets interoperability standards" was softened to "promotes standards for data exchange" because s.6 says the Agency promotes and supports standards. MOH 705A (under five) and 705B (five and over) monthly summaries reported in KHIS; hiskenya.org is the KHIS DHIS2 login page; no single official MOH 705 page was found. SLADE: Savannah Informatics Slade360 EDI page (claims submission, payer review and approval, payment tracking, 6 payers and 3,000+ providers); the earlier "validates against cover in real time" was not on the page and was removed. M-Pesa: Safaricom Lipa na M-Pesa page (Buy Goods till, Paybill; WebFetch gets 403, a browser fetch works) and Daraja.'
   - 'UAE: DHA entry now cites the DHA Manual for Licensing Health Facility (Nov 2024), which holds its mandate (licensure and inspection of facilities and professionals, regulations), Sheryan-only applications, the inspection and the NABIDH EMR evidence and tested-connectivity approval email before activation. NABIDH entry now cites the DHA Standards for Interoperability and Data Exchange (issue 2, effective 2 Jul 2025, served at the 2022 upload URL), which defines NABIDH, applies to DHA-licensed facilities, names HL7 v2 as the recommended standard and asks systems to support FHIR; the two sources were swapped so each entry rests mainly on its own citation. Malaffi: doh.gov.ae featured page (launched 2019, "my file", ADHDS PPP, integrated with Riayati and NABIDH) and the DoH HIE standards page (minimum data set sent from EMRs to Malaffi). Riayati: mohap.gov.ae resets the connection, so the source is now the DoH news release of 31 Jan 2023 (Riayati is the NUMR under MoHAP; integration with Malaffi and NABIDH announced); facility types (public and private hospitals, clinics, day care centres, diagnostic centres) come from MOHAP page listings in search results. "Pharmacies" was removed from the Riayati entry because no fetched source lists them. eClaimLink: eclaimlink.ae (registration opened April 2012), eClaimLink General Circular 04/2018 (eRx reference for insured and cash patients, DHA and DHCC licensed) and the DHIC data governance directive. PDPL: u.ae data protection page (Decree-Law 45 of 2021; consent except listed cases; correction right; ICT Health Law No. 2 of 2019 covers health ICT); the health-data carve-out and the ICT Health Law rules (Article 13 localisation, Article 20 25-year retention) come from legal summaries because uaelegislation.gov.ae returns 403.'
   - 'Nigeria: NHIA about page (Act signed 19 May 2022, replaced NHIS Act 1999, Vulnerable Group Fund), NHIA accredited HMO list; capitation for primary and fee-for-service for secondary care and HMO authorisation codes for referrals come from NHIA operational guideline summaries and a federal hospital NHIS page, not a single NHIA document. NDPA: NDPC registration guidance notice (health sector designation, 200 data subjects in six months); 72-hour breach report is section 40(2) as quoted by NDPC materials; signing date 12 Jun 2023. Re-checked 26 Sep 2026: the NHIA about page confirms the 19 May 2022 signing and the NHIS Act 1999 repeal; the mandatory cover for citizens and legal residents is sections 3(b) and 14(1) of the Act as summarised by WHO AFRO and legal commentary; the NHIA HMO page is the accredited HMO list (no count given here because the about page and the list disagree, 82 against 94). NDPA signing date, section 32 (DPO for controllers of major importance) and section 40(2) (72 hours) checked in the gazetted Act text. The pre-authorisation entry now also names HMO authorisation codes before a referral, on the same basis as the HMO entry.'
-  - 'Facts left out as unconfirmed or changeable: the number of ABHA accounts and registered facilities, NHIA HMO and provider counts, Malaffi and Riayati facility counts, SHIF benefit tariffs, WhatsApp per-message rates, DPDP phase-in end date, whether DHA Kenya certification exists for any vendor, and HFR registration fees.'
+  - 'Facts left out as unconfirmed or changeable: the number of ABHA accounts and registered facilities, NHIA HMO and provider counts, Malaffi and Riayati facility counts, SHIF benefit tariffs, WhatsApp per-message rates, the exact DPDP commencement day in May 2027 (facts-needed L4), whether DHA Kenya certification exists for any vendor, and HFR registration fees.'
+  - 'Audit 2026-09-27: the WhatsApp Business Platform entry no longer says free-form replies and utility templates inside the 24-hour window cost nothing. Meta''s pricing page (https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing, fetched with curl on 2026-09-27; WebFetch serves a stale copy) says that from 1 October 2026 Meta charges per message for service messages after a free tier of 1,000 a month per business phone number, and charges for utility messages in response to users within the 24-hour window, which were free from 1 July 2025. The source moved from the old developers.facebook.com/docs/whatsapp/pricing/ URL to that page. This matches /features/whatsapp/ and /leveraging-sms-and-whatsapp-for-patient-engagement/. "Often called the WhatsApp Business API" was cut from the definition to keep it under 100 words; the aka field still carries that name.'
+  - 'Audit 2026-09-27: the SHA entry now says SHA "set 30 September 2026 as the deadline" for claims from a DHA-certified system, so it stays true after that date. Re-read sha.go.ke on or after 1 October 2026 for any new date and refresh lastUpdated.'
+  - 'Audit 2026-09-27: the DPDP Act entry no longer says the Rules were "notified on 14 November 2025" (the PIB date; the Gazette of India issue carrying G.S.R. 846(E) is dated 13 November 2025, the date /healthcare-cybersecurity-protecting-clinics-and-hospitals-in-the-digital-age/ and /securing-your-clinic-user-access-control-simplified/ give), and says "November 2025" instead. The clinic''s duties are no longer in the present tense: they start in May 2027 under rule 1(4), as /features/patient-engagement/ and /healthcare-cybersecurity-protecting-clinics-and-hospitals-in-the-digital-age/ say. The "90 days" now follows rule 14(3) of the Rules (the cap on the grievance redressal period, linked in the definition; MeitY Gazette PDF fetched with curl on 2026-09-27) instead of the PIB explainer''s "respond to such requests within ninety days". The DPDP source note above was updated to match.'
+  - 'Audit 2026-09-27: the Digital Health Act and SHA entries called the contracting cycle "2026 to 2028", taken from press coverage. SHA''s Notice on New Contracting Cycle, published 8 September 2026 (https://www.sha.go.ke/wp-content/uploads/2026/09/Notice-On-New-Contracting-Cycle.pdf, fetched 2026-09-27), gives 1 October 2026 to 30 June 2029, which /nhif-in-kenya/ follows; the entries now use those dates.'
+  - 'Audit 2026-09-27: the Data Protection Act entry said every breach must be reported to the ODPC within 72 hours. Section 43(1) sets that duty where personal data has been accessed or acquired by an unauthorised person and there is a real risk of harm, as the ODPC copy of the Act says (https://www.odpc.go.ke/wp-content/uploads/2024/02/TheDataProtectionAct__No24of2019.pdf, fetched 2026-09-27) and /data-privacy-laws-in-kenya/ already states; the entry now carries that condition.'
+  - 'Audit 2026-09-27: the eTIMS entry now adds "unless the Tax Procedures Act exempts the transaction" to the deduction rule, as section 16(1)(c) of the Income Tax Act in KRA''s 2026 consolidation says (https://www.kra.go.ke/images/publications/Income-Tax-Act-2026.pdf, fetched 2026-09-27) and /tax-benefits-for-medical-startups-in-kenya/ states.'
+  - 'Audit 2026-09-27: the KMPDC entry now says opening a private "medical or dental" clinic means two KMPDC steps, because a clinical officer''s clinic goes through the Clinical Officers Council, which SHA names beside the KMPDC as a regulator of its contracted facilities (https://www.sha.go.ke/contracted-facilities/, fetched 2026-09-27).'

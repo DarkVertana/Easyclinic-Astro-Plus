@@ -161,7 +161,7 @@ sections:
         items:
           - The software sends the message from the appointment or the report, on a schedule.
           - Messages the clinic starts use templates Meta has approved; free-form replies fit inside the 24 hours after the patient last wrote.
-          - Meta charges for each template message delivered, at a rate set by the kind of message and the country code of the patient's number.
+          - Meta charges for each template message delivered, at a rate set by the kind of message and the country code of the patient's number, and from 1 October 2026 for free-form replies after the first 1,000 a month on each business number.
           - Meta limits how many different patients a new sender can message in a day, and raises the limit as it sends more messages that are received well.
       note: >-
         EasyClinic sends WhatsApp messages from the clinic software on approved templates, so the
@@ -261,6 +261,18 @@ sections:
         - label: Google
           rating: '{fact:googleRating}'
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /leveraging-sms-and-whatsapp-for-patient-engagement/
+        - href: /personalised-whatsapp-messages/
+        - href: /whatsapp-post-surgery-care/
+        - href: /whatsapp-triage-for-clinics/
+        - href: /whatsapp-groups-for-patient-care/
+        - href: /google-reviews-for-clinics/
+
 faqHeading: Questions clinics ask about WhatsApp
 faq:
   - question: Which plan includes WhatsApp messages?
@@ -284,10 +296,11 @@ faq:
   - question: What does each WhatsApp message cost?
     answer: >-
       It depends on WhatsApp's own pricing: Meta charges for each template message delivered, at a rate
-      set by the message's category and the country code of the patient's phone number. A reminder or a
-      report notice is normally a utility message and an offer is a marketing message, and Meta sets a
-      separate rate for each category. Meta can change its rates on the first day of each quarter and
-      publishes them on its
+      set by the message's category and the country code of the patient's phone number. From 1 October
+      2026 Meta also charges for free-form replies inside the 24 hours after the patient writes, beyond
+      the first 1,000 a month on each business number. A reminder or a report notice is normally a utility
+      message and an offer is a marketing message, and Meta sets a separate rate for each category. Meta
+      can change its rates on the first day of each quarter and publishes them on its
       [WhatsApp pricing page](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
   - question: Can patients reply to the messages?
     answer: >-
@@ -372,3 +385,5 @@ notes:
   - 'No testimonial: none is about WhatsApp and all are placed. Proof is the badges variant without counts (review counts unknown); add a front-desk quote or the spec 12 "WhatsApp reminder thread as the patient sees it" screenshot as the proof when either exists. No heroMedia and no media objects until then.'
   - 'Cannibalisation (4.5.3): this page owns the API, templates and message costs; the consent paragraph names India''s DPDP Act and Kenya''s Data Protection Act only in general terms and sends country-by-country consent to /features/patient-engagement/#consent-by-country (spec 5.11). Receipts get one row and link to /features/billing/, which owns invoices and GST. The AI reception is one row linking /ai/, which owns AI receptionist terms (4.5.1).'
   - 'Spec 6.5 pass: one local fact (English and Swahili templates in Kenya), admissions of limits (the scope box, the Professional plan line, WhatsApp''s own rule on health information), prices as tokens; there is no named person and no measured outcome on the page, which the editorial pass records.'
+  - 'Audit 2026-09-27: the platform comparison bullet and the FAQ "What does each WhatsApp message cost?" now say that from 1 October 2026 Meta also charges for free-form replies inside the 24-hour window after the first 1,000 a month on each business number. Source: Meta''s pricing page (https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing, fetched with curl on 2026-09-27: per-message charging for service messages from 1 October 2026, a free monthly tier of 1,000 service messages per business phone number, and charging for utility messages in response to users within the window). This supersedes the 2026-09-26 note that the page makes no statement about which Business Platform messages are free, and matches the glossary and /leveraging-sms-and-whatsapp-for-patient-engagement/.'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 3 of them (/leveraging-sms-and-whatsapp-for-patient-engagement/, /personalised-whatsapp-messages/, /whatsapp-post-surgery-care/) had no inbound link but /blog/, and links.related is full (8 of 8).'

@@ -95,8 +95,8 @@ sections:
       id: included
       heading: What the price includes and what costs extra
       intro: >-
-        You pay for each doctor who writes notes or prescriptions in the EMR. This table shows what that
-        price covers and what you pay for separately.
+        You pay one licence for each doctor who uses EasyClinic. This table shows what that price covers
+        and what you pay for separately.
       caption: What is included in the per-doctor price in Kenya, and what is charged separately
       columns:
         - Item
@@ -109,9 +109,9 @@ sections:
         - - Clinical officers who see patients
           - '[Whether a clinical officer who writes notes and prescriptions needs a doctor licence]'
           - If a clinical officer sees patients and writes prescriptions at your clinic, this decides how many licences you count.
-        - - Other staff logins, such as a nurse or pharmacist
+        - - Logins for your staff
           - Included on every plan
-          - Staff logins are part of Professional, and every higher plan includes everything in Professional.
+          - Professional includes logins for your staff, and every higher plan includes everything in Professional.
         - - Setup
           - No fee
           - No setup fee on any plan, and no contract to sign.
@@ -332,3 +332,4 @@ notes:
   - 'Support channels (phone, email and chat on the live /pricing/ FAQ) are not listed, to avoid a list of three; the table says "unlimited support".'
   - 'The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions, ideally someone who has sold EasyClinic to Kenyan clinics.'
   - No heroMedia. The spec 12 "currency-localised pricing cards" screen duplicates the live cards on this page; add a KES invoice screenshot only once eTIMS has a status, since the invoice would show or omit the eTIMS reference.
+  - 'Audit 2026-09-27: the included table said nurse and pharmacist logins come on every plan and that you pay for each doctor "who writes notes or prescriptions"; /pricing/ lists the licence rule for nurses, pharmacists and visiting or part-time doctors as unconfirmed and plans.yaml says only "Logins for your staff". The row is now "Logins for your staff" and the table intro matches /pricing/ ("one licence for each doctor who uses EasyClinic"), as on /pricing/india/. Name nurses or pharmacists only after the company confirms the licence rule.'

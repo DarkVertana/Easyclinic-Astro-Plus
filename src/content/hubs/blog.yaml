@@ -22,6 +22,7 @@ links:
     - { href: /start-a-clinic/ }
     - { href: /switch/ }
     - { href: /glossary/ }
+    - { href: /resources/ }
 sections:
   # Lists every post and start-a-clinic guide rendered in this stage, grouped by topic. The list comes
   # from the registry; these intros only show for topics that have something published.
@@ -67,3 +68,4 @@ editorialPass:
 notes:
   - 'No FAQ on purpose: the hub rules allow five to eight or none, and spec 2.5 leaves the section out when there are no true questions.'
   - 'In production the index lists only published entries: today the ten start-a-clinic guides. Imported posts are drafts until the spec 5.18/5.19 refresh (src/content/posts).'
+  - 'Audit 2026-09-27: /resources/ added to the related links. The footer was its only link, so the finder page had no link from any page content; the label and description come from its linkLabel and summary.'

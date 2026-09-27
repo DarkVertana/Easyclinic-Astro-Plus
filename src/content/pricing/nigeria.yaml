@@ -97,8 +97,8 @@ sections:
       id: included
       heading: What the price includes and what costs extra
       intro: >-
-        You pay for each doctor who writes notes or prescriptions in the EMR. This table shows what that
-        price covers and what you pay for separately.
+        You pay one licence for each doctor who uses EasyClinic. This table shows what that price covers
+        and what you pay for separately.
       caption: What is included in the per-doctor price in Nigeria, and what is charged separately
       columns:
         - Item
@@ -111,9 +111,9 @@ sections:
         - - Locum doctors
           - '[How a locum doctor who covers some shifts is charged]'
           - If locum doctors cover shifts at your clinic or hospital and write notes or prescriptions, this decides how many licences you count.
-        - - Other staff logins, such as a nurse or pharmacist
+        - - Logins for your staff
           - Included on every plan
-          - Staff logins are part of Professional, and every higher plan includes everything in Professional.
+          - Professional includes logins for your staff, and every higher plan includes everything in Professional.
         - - Setup
           - No fee
           - No setup fee on any plan, and no contract to sign.
@@ -341,3 +341,4 @@ notes:
   - 'REVIEW 2026-09-26, sibling consistency: /hospital-management-software-nigeria/ and /nigeriademo/ agree with this page on naira pricing, card and bank transfer at the desk, Paystack and Flutterwave as placeholders and "does not run fully offline today". The guide /clinic-in-nigeria/ (src/content/guides/clinic-in-nigeria/index.mdx) says "EasyClinic does not publish prices in naira" and links to /pricing/; once NGN prices are filled, that line conflicts with this page and the live "Plans are priced in naira", so its owner should link /pricing/nigeria/ instead. No regulator or law is named on this page (NHIA and the NDPA belong to the country page), so there was no regulator URL to check. The meta description ("billed yearly, with no setup fee or contract") and the section heading "VAT and payments in naira" were reworded here and on /pricing/uae/ to drop a list of three; /pricing/kenya/ still has both and should follow.'
   - 'The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions, ideally someone who has sold EasyClinic to Nigerian clinics. The page has no named person yet (spec 6.5 passing bar) because no Nigerian contact or client is known.'
   - No heroMedia. Add a naira invoice screenshot only once the VAT treatment and the HMO claim pack status are known, since the invoice would show or omit a VAT line and an HMO share.
+  - 'Audit 2026-09-27: the included table said nurse and pharmacist logins come on every plan and that you pay for each doctor "who writes notes or prescriptions"; /pricing/ lists the licence rule for nurses, pharmacists and visiting or part-time doctors as unconfirmed and plans.yaml says only "Logins for your staff". The row is now "Logins for your staff" and the table intro matches /pricing/ ("one licence for each doctor who uses EasyClinic"), as on /pricing/india/. Name nurses or pharmacists only after the company confirms the licence rule.'

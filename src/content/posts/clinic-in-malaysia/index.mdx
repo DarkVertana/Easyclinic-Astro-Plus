@@ -72,7 +72,7 @@ links:
   related:
     - href: /countries/
       label: EasyClinic by country
-      description: Where EasyClinic works today, and a demo form for clinics in other countries.
+      description: Demo pages for India and Kenya, and a demo form for clinics in other countries.
     - href: /start-a-clinic/
       label: Start a clinic
       description: Licences, costs and setup, country by country.
@@ -97,6 +97,8 @@ notes:
   - 'Translations from Malay are ours: OYB (orang yang bertanggungjawab) as "person in charge", Surat Tiada Halangan as "no-objection letter", Lawatan Pemeriksaan Pematuhan Piawaian (3P) as "standards compliance inspection". The MMC spells the certificate "Annual Practicing Certificate", and the post keeps that spelling for the name.'
   - 'EasyClinic facts used: runs in 18 countries (facts.yaml); priced per doctor per month with no setup fee and no contract (plans.yaml conditions); demo to live in as little as 3 days and training over four days (facts.yaml); does not run fully offline today (facts.md). No price is quoted for Malaysia, because no MYR price exists and the USD price is not confirmed for Malaysia. The Qualitas Health testimonial (src/data/testimonials/hisham-ismail.yaml, Malaysia) is not used, because the rules limit EasyClinic claims outside the four markets to "runs in 18 countries"; a human may decide to link /customers/ instead.'
   - 'Spec 6.5: named person is the author byline only; local facts are the CKAPS route, fees and floor plan rules; measured numbers are the regulator''s fees and dimensions, not clinic outcomes; limits admitted are the missing setup-cost figure and that EasyClinic does not run fully offline. No heroMedia or media: screenshots do not exist yet.'
+  - 'Audit 2026-09-27: the /countries/ related-link description no longer says "Where EasyClinic works today", because /countries/ lists none of the 18 countries; it now describes what the page shows (the India and Kenya demo pages and a demo form).'
+  - 'Audit 2026-09-27: the APC renewal sentence was in the present tense ("can be renewed without a late fee until 30 November 2026") and would go stale after that date; it now reads as a dated fact. The MMC APC page (https://mmc.gov.my/annual-practicing-certificates-apc/, re-fetched 2026-09-27, HTTP 200) still says the end date for renewing APC 2027 is 30 November 2026, after which renewal for 2027 incurs an additional late fee. After 30 November 2026, re-read that page, update the sentence for the 2028 APC and refresh lastUpdated.'
 ---
 
 This guide is for a doctor planning to open a private medical clinic in Malaysia. It follows the Ministry of Health's own documents, checked on 26 September 2026: the CKAPS guideline for processing clinic registrations, dated 2 September 2024, its checklist, the guidebook the Ministry published with the Malaysia Productivity Corporation in March 2024, and the Malaysian Medical Council's page on practising certificates. Where we found no official figure, such as a total setup cost, the guide says so rather than guessing.
@@ -113,7 +115,7 @@ CKAPS is the Private Medical Practice Control Section of the Ministry's Medical 
 
 The clinic's registration rests on yours, so start here.
 
-- Full registration with the MMC, and an Annual Practicing Certificate (APC) for the current year. [The MMC](https://mmc.gov.my/annual-practicing-certificates-apc/) says the Medical Act 1971 requires the APC for each year you practise, and that the application needs professional indemnity cover and at least 20 CPD points. The APC for 2027 can be renewed without a late fee until 30 November 2026.
+- Full registration with the MMC, and an Annual Practicing Certificate (APC) for the current year. [The MMC](https://mmc.gov.my/annual-practicing-certificates-apc/) says the Medical Act 1971 requires the APC for each year you practise, and that the application needs professional indemnity cover and at least 20 CPD points. For the 2027 APC, the MMC set 30 November 2026 as the last day to renew without a late fee.
 - Compulsory service. The person in charge of a general clinic must have completed it. If yours was shorter than two years, [the guideline](https://hq.moh.gov.my/medicalprac/wp-content/uploads/2024/08/GARIS-PANDUAN-PENDAFTARAN-KLINIK_SEPTEMBER-2024.pdf) asks for the Ministry's letter approving the exemption or reduction.
 - An APC that names the clinic. The APC you submit must show the name and address of the clinic you are registering. If it still shows another private facility, apply to the MMC to change it. If it shows a Ministry facility, attach the letter confirming your resignation.
 - You cannot apply while you serve with the Ministry of Health. Doctors in other ministries, such as a university hospital, need their head of department's written permission, and the clinic's hours must fall outside their working hours.

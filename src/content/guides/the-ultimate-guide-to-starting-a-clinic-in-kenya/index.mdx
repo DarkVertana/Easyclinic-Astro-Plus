@@ -36,7 +36,12 @@ faq:
   - question: What equipment is mandatory for a new clinic in Kenya?
     answer: The inspection expects examination tools, an emergency tray with a first aid kit, infection control supplies and three waste segregation bins for infectious, non-infectious and sharps waste. Use the KMPDC inspection checklist as your shopping list and leave hospital-grade machines such as an ECG for later.
   - question: Does a clinic in Kenya need electronic medical records?
-    answer: No, a clinic in Kenya does not need electronic medical records, because the layout rules ask for a health information system for keeping records and paper files meet that. Software earns its place once billing and stock need to agree with the records. That is our view as a software company, and the law does not ask for it.
+    answer: >-
+      Not for its licence, because the layout rules ask for a health information system for keeping
+      records and paper files meet that. A clinic that wants to claim from SHA is different: SHA requires
+      contracted facilities to use a system certified by Kenya's Digital Health Agency, with a deadline of
+      30 September 2026, and our [SHA guide](/nhif-in-kenya/) has the detail. Software also earns its
+      place once billing and stock need to agree with the records.
   - question: Is a clinic in Kenya profitable?
     answer: A well-run clinic in Kenya can become profitable within 12 to 24 months, though nothing guarantees it. The ones that get there fastest keep to outpatient care, chronic disease follow-up, maternal care and prevention, and do not overspend on equipment during set-up.
 links:
@@ -66,7 +71,11 @@ notes:
   - Imported from https://www.easyclinic.io/the-ultimate-guide-to-starting-a-clinic-in-kenya/ (published 2025-03-25, modified 2026-09-10). Refreshed to spec 5.18 on 2026-09-26.
   - 'Regulator names corrected from the import: "KMPPDB" is now the KMPDC (src/data/regulators/ke-kmpdc.yaml), "KPPB" is the Pharmacy and Poisons Board, and "KLLTB" is the Kenya Medical Laboratory Technicians and Technologists Board. Verify the last two in the human pass.'
   - 'Cut from the import: "Budget for an inspection incentive" (reads as advice to pay an inspector), the Provincial Medical Officer reference, the dead "#" reference links, a link to a bare IP address, and the "right time" and "career asset" essay sections.'
-  - 'All fees and timelines (KES 1,000, 5,000, 25,000, 10,000 and 1,000 to 2,000; three to four weeks; three to six weeks; KES 300,000 to 1.5 million; 12 to 24 months) are carried from the imported guide without a source. Check them against the current KMPDC schedule. Spec 5.18 also asks for an author who has opened a clinic or a quoted owner; neither is on the page yet.'
+  - 'All fees and timelines (KES 1,000 and 1,000 to 2,000; three to four weeks; three to six weeks; KES 300,000 to 1.5 million; 12 to 24 months) are carried from the imported guide without a source. Check them against the current KMPDC schedule. Spec 5.18 also asks for an author who has opened a clinic or a quoted owner; neither is on the page yet.'
+  - 'Audit 2026-09-27: the FAQ on electronic records said a Kenyan clinic does not need them and "the law does not ask for it", and never mentioned SHA. It now says a licence does not need them but SHA requires contracted facilities to use a system certified by the Digital Health Agency (deadline 30 September 2026), matching /nhif-in-kenya/, /glossary/ and /best-clinic-management-software-kenya/, and links /nhif-in-kenya/.'
+  - 'Audit 2026-09-27: the fee table gave KES 10,000 for the yearly renewal; the KMPDC 2025 annual licence fee list (https://kmpdc.go.ke/licensing-of-a-health-facility/, fetched 2026-09-27) gives KES 15,000 for a medical or dental clinic, which the table row and checklist step 14 now use. The unsourced KES 5,000 clinic registration and KES 25,000 on-submission rows were deleted, and the overlap paragraph now says the KMPDC registration fee depends on the facility level and type and is not given on its registration page (https://kmpdc.go.ke/registration-of-a-health-facility/, fetched 2026-09-27). The KES 1,000 application row is still unsourced.'
+  - 'Audit 2026-09-27: removed "expects clinic owners to have at least two years of experience as a health specialist", which the KMPDC does not say and which contradicted the non-doctor FAQ. The KMPDC notice (https://kmpdc.go.ke/2025/02/12/who-can-own-or-register-a-health-institution/, fetched 2026-09-27) says medical or non-medical persons can register a health institution, patients are managed only by qualified personnel approved by their regulators, and a Level 3B in-charge must be a medical officer with at least three years of practical experience; the text now says that. The older-name note moved to the KMPDC paragraph under "The regulators you will deal with".'
+  - 'Audit 2026-09-27: the document pack and checklist step 11 now name the Clinical Officers Council for a clinic run by a clinical officer, because SHA lists the KMPDC and the COC as the regulators of its contracted facilities (https://www.sha.go.ke/contracted-facilities/, fetched 2026-09-27) and the COC site lists a private practice licence and a facility register (https://clinicalofficerscouncil.org/, fetched 2026-09-27). The pack items (Form IX and the rest) are still the KMPDC list; the COC pack is not checked.'
 ---
 
 This guide follows the order you will meet things in: the area, the premises, the fit-out, the people and then the paperwork. The licensing steps are gathered into one numbered checklist further down, next to the fees this guide quotes in Kenyan shillings. Check each fee against the regulator's current schedule before you budget, because fees change and a guide cannot promise they have not.
@@ -100,7 +109,7 @@ Open in the field you trained in. If you are a dentist, open a dental clinic. Yo
 
 ## Who can own and run a clinic
 
-The person in charge of the clinic must be a trained medical professional with a valid licence. The Kenya Medical Practitioners and Dentists Council (KMPDC), called the Medical Practitioners and Dentists Board in older guides, expects clinic owners to have at least two years of experience as a health specialist.
+The person in charge of the clinic must be a trained medical professional with a valid licence. Anyone, medical or not, can register a clinic with the Kenya Medical Practitioners and Dentists Council (KMPDC), but only qualified medical staff approved by their own regulator can manage the patients. For a Level 3B facility the person in charge must be a medical officer with at least three years of practical experience, [by the KMPDC's own notice](https://kmpdc.go.ke/2025/02/12/who-can-own-or-register-a-health-institution/).
 
 If you are not a medical professional, you can still own the clinic. Hire a qualified, registered doctor to manage the clinical side and run the business yourself.
 
@@ -108,7 +117,7 @@ Either way, a clinic is a business. Someone has to keep the accounts, pay the st
 
 ## The regulators you will deal with
 
-The [KMPDC](https://kmpdc.go.ke/) registers doctors and dentists and licenses the clinic itself, and it runs an online portal for licensing. The other bodies depend on who works in your clinic and what services you offer:
+The [KMPDC](https://kmpdc.go.ke/), called the Medical Practitioners and Dentists Board in older guides, registers doctors and dentists and licenses the clinic itself, and it runs an online portal for licensing. The other bodies depend on who works in your clinic and what services you offer:
 
 - Nursing Council of Kenya (NCK): registers nurses.
 - Clinical Officers Council: registers clinical officers.
@@ -255,7 +264,7 @@ The sub-county (district) health management team, the DHMT, inspects every new c
 
 ### Submit the documents and get the licence
 
-With the signed report in hand, put the pack together for the KMPDC, or for the NCK if your licence comes through the nursing council:
+With the signed report in hand, put the pack together for the KMPDC, or for the Clinical Officers Council if a clinical officer runs the clinic (the NCK if your licence comes through the nursing council):
 
 - Form IX, filled in and signed by a medical officer, with any other forms the area medical officer must sign.
 - The inspection report, signed by the inspection team.
@@ -273,12 +282,10 @@ These are the fees this guide quotes, stage by stage.
 | Stage | Fee | When you pay |
 | --- | --- | --- |
 | Application to register the clinic | KES 1,000 | With the application to the council |
-| Clinic registration | KES 5,000 | With the application to the council |
 | Sub-county inspection | KES 1,000 to 2,000 | When you book the inspection |
-| Registration and licensing on submission | KES 25,000 | With the documents after the inspection |
-| Licence renewal | KES 10,000 | Every year |
+| Annual facility licence (medical or dental clinic) | KES 15,000 | Every year |
 
-The KES 1,000 and KES 5,000 registration fees and the KES 25,000 paid on submission are listed as separate items here, and they may overlap. Budget for all of them until the council tells you otherwise, and check the current schedule on the [KMPDC site](https://kmpdc.go.ke/) before you commit.
+The KMPDC also charges a registration fee set by the facility's level and type. Its [registration page](https://kmpdc.go.ke/registration-of-a-health-facility/) does not give the amount, so ask the council for it before you budget. The KES 15,000 licence fee comes from the council's [2025 licence fee list](https://kmpdc.go.ke/licensing-of-a-health-facility/); fees change, so check it again before you commit.
 
 The paperwork is a small part of the bill. Setting up the whole clinic typically costs KES 300,000 to KES 1.5 million, depending on the location and size of the premises and the equipment you buy. For the running costs line by line, see [what a clinic in Nairobi costs to open](/how-much-does-it-cost-to-open-a-clinic-in-nairobi/). For the council's own registration of doctors and dentists, see [KMPDC approval for a clinic](/how-do-i-get-approval-from-the-kmpdc-in-kenya/).
 
@@ -294,10 +301,10 @@ The paperwork is a small part of the bill. Setting up the whole clinic typically
 8. Fix everything in the inspection report and keep copies of the signed report.
 9. Get Form IX filled in and signed by a medical officer.
 10. Collect certified copies of staff qualifications, and building plans if the clinic has a mortuary.
-11. Submit the pack and the fees to the [KMPDC](https://kmpdc.go.ke/), or to the NCK if your licence comes through the nursing council.
+11. Submit the pack and the fees to the [KMPDC](https://kmpdc.go.ke/), or to the [Clinical Officers Council](https://clinicalofficerscouncil.org/) if a clinical officer runs the clinic. A clinic licensed through the nursing council submits to the NCK instead.
 12. Download the licence online when it is issued, usually three to four weeks later.
 13. Once you are trading, file your returns with the [Kenya Revenue Authority](https://www.kra.go.ke/) on time.
-14. Renew the licence every year, at KES 10,000.
+14. Renew the licence every year; the KMPDC's 2025 fee for a medical or dental clinic is KES 15,000.
 
 <InlineCta heading="Setting up? Get the software sorted before the first patient." href="/kenyademo/" label="Book a 20-minute demo">EasyClinic can go from demo to live in as little as 3 days, and staff training takes four short sessions. Book the demo while you wait for your inspection date, so the front desk can be ready before the first patient walks in.</InlineCta>
 

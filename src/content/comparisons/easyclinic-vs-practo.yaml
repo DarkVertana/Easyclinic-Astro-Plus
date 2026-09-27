@@ -328,7 +328,7 @@ sections:
             of Enterprise. There is no setup fee.
           - >-
             Online payments cost 2% or 1.8% a transaction by plan. Practo Prime charges its own platform fee
-            the first time each patient connects through it. A 2017 help article prices Ray Connect, a call
+            the first time each patient connects through it in a rolling 180-day window. A 2017 help article prices Ray Connect, a call
             handling add-on, separately ([Practo help](https://help.practo.com/practo-ray/ray-connect-pricing-faqs/));
             Practo's current Ray pages do not mention it.
       note: >-
@@ -619,3 +619,4 @@ notes:
   - 'Ray''s phone app: the iOS link in Practo''s 2016 offline help article (apps.apple.com id592116111) now opens "Practo Pro - For Doctors", and the Google Play listing for Practo Pro (com.practo.droid, updated 21 Sept 2026) says "Access your practice offline when phone is not connected to the Internet". The page now calls it Ray''s phone app, now part of the Practo Pro app. Whether the iOS app is still read-only offline is from the 2016 article only.'
   - 'Ray Connect: the only sources are 2017 help articles (a paid add-on needing an active Ray subscription, in specific cities). Practo''s current Ray, plans and provider pages do not mention it and store.practo.com needs a login, so it was removed from the Choose Practo Ray list (replaced by the Prime calling system, from the current Prime page) and kept only as a dated mention in the pricing table.'
   - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions.
+  - 'Audit 2026-09-27: the pricing table''s Practo Prime fee now adds "in a rolling 180-day window", as the Prime page (re-read 27 September) and this page''s own Prime cell and FAQ say.'

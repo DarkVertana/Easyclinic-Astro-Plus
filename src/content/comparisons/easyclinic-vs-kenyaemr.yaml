@@ -41,7 +41,7 @@ sections:
       id: two-systems
       heading: What KenyaEMR is, and what EasyClinic is
       body: |
-        **KenyaEMR** is Kenya's national, open-source electronic medical record. It is a distribution of OpenMRS, first built by I-TECH to the Ministry of Health's 2011 Kenya EMR Standards and Guidelines, and now led by Palladium Kenya, which rolls it out with more than 30 implementing partners. Palladium's KenyaHMIS site counts more than 2,200 active KenyaEMR sites. Palladium's support is funded through KeHMIS III, a PEPFAR cooperative agreement between CDC Kenya and Palladium Kenya that runs from 30 September 2021 to 29 September 2026, and whose scope includes sustaining these systems beyond PEPFAR support.
+        **KenyaEMR** is Kenya's national, open-source electronic medical record. It is a distribution of OpenMRS, first built by I-TECH to the Ministry of Health's 2011 Kenya EMR Standards and Guidelines, and now led by Palladium Kenya, which rolls it out with more than 30 implementing partners. Palladium's KenyaHMIS site counts more than 2,200 active KenyaEMR sites. Palladium's support is funded through KeHMIS III, a PEPFAR cooperative agreement between CDC Kenya and Palladium Kenya that runs from 30 September 2021 to 29 September 2026, and whose scope includes sustaining these systems beyond PEPFAR support. What funds KenyaHMIS support after that date is not published (checked 26 September 2026).
 
         KenyaEMR began in HIV clinics. The current version, TaifaCare KenyaEMR, covers the whole facility: registration and queues, outpatient and inpatient care, maternity, lab and pharmacy, billing with M-Pesa, and SHA e-claims sent through the national Health Information Exchange, with the patient verified by fingerprint or a one-time code. Palladium's setup guide installs it on an Ubuntu server, and Palladium describes it as optimised for low-connectivity settings. The latest release, 19.4.4, came out in September 2026.
 
@@ -65,7 +65,8 @@ sections:
           items:
             - >-
               Your facility is in the national rollout, where Palladium Kenya's implementing partners put
-              KenyaEMR in and the KenyaHMIS service desk supports it free of charge.
+              KenyaEMR in and the KenyaHMIS service desk supports it free of charge under KeHMIS III, which
+              ends on 29 September 2026.
             - >-
               You run HIV, TB, PrEP or maternal and child health services and report them to the National Data
               Warehouse and to KHIS.
@@ -259,7 +260,7 @@ sections:
       body: |
         **EasyClinic** costs {price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, billed annually, or {price:usd.professional.quarterly} and {price:usd.premium.quarterly} billed quarterly. Enterprise, for clinic chains and hospital OPDs, is priced on a quote. Every plan includes a reception login and unlimited support and training, with no setup fee and no binding contract. Insurance claims, pharmacy, stock control and lab management come with Enterprise, or as add-ons on Professional and Premium. EasyClinic lists its prices in US dollars and does not publish a price in shillings.
 
-        **KenyaEMR** has no licence fee: its code is published under the Mozilla Public License 2.0, and each release is on GitHub. For a private clinic, the cost is in the server, the installation, the upgrades and the support. At sites in the national rollout, implementing partners install it and the KenyaHMIS service desk supports it free of charge. Neither kenyahmis.org nor the release notes publish what a private clinic outside the rollout would pay for installation or support (checked 26 September 2026).
+        **KenyaEMR** has no licence fee: its code is published under the Mozilla Public License 2.0, and each release is on GitHub. For a private clinic, the cost is in the server, the installation, the upgrades and the support. At sites in the national rollout, implementing partners install it and the KenyaHMIS service desk supports it free of charge under KeHMIS III, which ends on 29 September 2026. Neither kenyahmis.org nor the release notes publish what a private clinic outside the rollout would pay for installation or support (checked 26 September 2026).
       width: measure
 
   - discriminant: scopeBox
@@ -290,8 +291,8 @@ sections:
       body: >-
         Penda Health, a network of primary care clinics in Nairobi, has used EasyClinic as its record since
         2017. In a 2025 preprint written with OpenAI, Penda studied {fig:visits} patient visits at 15 of
-        those clinics, rated by 108 independent physicians. The tool studied was AI Consult, a safety net
-        inside the EasyClinic record that flagged possible errors while the clinician worked. The study
+        those clinics, and 108 independent physicians rated a random sample of the visit records. The tool
+        studied was AI Consult, a copilot embedded in the EasyClinic record. The study
         measured clinical errors, not the front desk or the claims.
 
   - discriminant: sourceList
@@ -359,7 +360,8 @@ faq:
       not published. EasyClinic's {price:usd.professional.annual} per doctor per month on the annual
       Professional plan covers hosting, monthly upgrades, a reception login and unlimited support and
       training. If your facility is in the national rollout, where partners install KenyaEMR and the
-      KenyaHMIS service desk supports it free of charge, KenyaEMR is the sensible choice.
+      KenyaHMIS service desk supports it free of charge under KeHMIS III, which ends on 29 September 2026,
+      KenyaEMR is the sensible choice.
   - question: Can a private clinic use KenyaEMR?
     answer: >-
       Yes, the code is open source under the Mozilla Public License 2.0 and each release is published on
@@ -494,3 +496,5 @@ notes:
   - >-
     Price sentence "does not publish a price in shillings" must change when src/data/prices/kes.yaml gets
     prices; switch the tokens to {price:kes...} then.
+  - 'Audit 2026-09-27: KenyaEMR''s free service-desk support is now tied to KeHMIS III and its 29 September 2026 end date (who-each-is-for, cost prose, FAQ), and the opening prose says what funds KenyaHMIS support after that date is not published. Re-check kenyahmis.org on or after 30 September 2026 and reword once a successor is announced.'
+  - 'Audit 2026-09-27: Penda proof block now says 108 independent physicians rated a random sample of the visit records (5,666 of the visits, study.yaml scope), not every visit. "A safety net ... that flagged possible errors" was trimmed to "a copilot embedded in the EasyClinic record": the page-writing-rules confirmed list carries only the tool''s name and where it ran. Restore the abstract''s safety-net wording if the owner adds it to the confirmed list.'

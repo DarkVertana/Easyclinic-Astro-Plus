@@ -307,6 +307,14 @@ sections:
         - label: Google
           rating: '{fact:googleRating}'
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /billing-fraud-detection-for-clinics/
+        - href: /clinic-cash-flow/
+
 faqHeading: Questions clinic owners ask about billing
 faq:
   - question: Do I charge GST on a consultation?
@@ -422,3 +430,4 @@ notes:
   - 'No testimonials (all placed elsewhere). Proof is the ratings badge block; review counts are unknown (facts.yaml capterraReviews and googleReviews are null), so no count is shown.'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, the hero is the bill opened from the appointment screen with the orders on it, and the end-of-day report goes on the end-of-day row.'
   - 'Related links: all five solution pages (spec 2.9) plus revenue management, insurance claims and pharmacy, eight in all. Solution descriptions restate only what this page and those pages source.'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 2 of them (/billing-fraud-detection-for-clinics/, /clinic-cash-flow/) had no inbound link but /blog/, and links.related is full (8 of 8).'

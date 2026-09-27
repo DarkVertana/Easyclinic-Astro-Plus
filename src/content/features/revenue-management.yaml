@@ -195,7 +195,9 @@ sections:
       heading: A leakage audit you can run on last month's figures
       intro: >-
         You can run these four checks before you choose any software, from the registers and the receipt
-        book if that is what you have. Each step says where the same check sits in EasyClinic.
+        book if that is what you have. Each step says where the same check sits in EasyClinic. For what each
+        billing mistake looks like at the desk, and the check that catches it, read our post on
+        [clinic billing mistakes](/avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/).
       steps:
         - title: Match orders to bills
           meta: Unbilled orders
@@ -240,6 +242,14 @@ sections:
           href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
         - label: Google
           rating: '{fact:googleRating}'
+
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/
+        - href: /strategic-efficiency-should-your-clinic-outsource-non-core-tasks/
 
 faqHeading: Questions owners ask about revenue management
 faq:
@@ -343,7 +353,7 @@ notes:
   - 'Title 43 characters. Meta 139 characters, rewritten from the spec 4.1 wording ("See unbilled visits, denied claims and cash variance before month end.") to lead with the head keyword, name all four leaks and avoid a group of three.'
   - '"Revenue cycle management" appears only on this page (spec 4.5 rule 2): in the title, meta and opening answer.'
   - 'Cannibalisation (4.5 rule 2): invoice formats, GST and the till mechanics stay on /features/billing/; payer linking at registration, subscription categories, coverage and claim submission (TPA, HMO, SHA) stay on /features/insurance-claims/. Each gets one paragraph here (prose "billing-and-claims") plus a link. This page keeps leakage, denials and ageing.'
-  - 'Leakage audit blog link left out: spec 4.1 says an EasyClinic post already ranks but names no URL, and spec 9.3 item 7 ("Where clinics lose revenue: a leakage audit you can run in one afternoon") is a planned post, not a published one. The audit is written as a stepList instead; link the post from its intro once the spec names it.'
+  - 'Leakage audit blog link: spec 4.1 says an EasyClinic post already ranks but names no URL; spec 3.6 names "revenue leaks" among the posts that rank, so the stepList intro links /avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/ (added in the 2026-09-27 audit; it was left out until then). Spec 9.3 item 7 ("Where clinics lose revenue: a leakage audit you can run in one afternoon") is still a planned post, not a published one; the audit stays a stepList.'
   - 'Capabilities taken from the live /revenue-management/ page (re-fetched 2026-09-26): lab and procedure work orders becoming invoice lines as they are processed; price lists by payer, location and customer category; discounts for patient segments; new prices reflected in billing at once; cash registers that track cash in and out for daily reconciliation, with role-based access and end-of-day reports of cash transactions; end-of-day financial reports clinic- and organisation-wide; role-based access to reports; automated generation and distribution of reports; coverage validated at the time of care. Ageing and denial reports, unbilled visits and price lists by package come from spec 4.1 and 5.11.'
   - 'Editor pass 2026-09-26 removed claims the sources do not make: that the denial report shows each claim''s reason (no source says a denial reason is captured); that the end-of-day report itself shows the cash variance (the live page says it snapshots cash transactions, so the page now says the drawer is counted against it); that head office controls every branch''s price lists on Enterprise (plans.yaml says "Central control of every location", so that wording is used); "on a schedule" for reports (the live page says automated generation and distribution); "ordered in the chart" (the live page says lab orders and procedures, not where they are ordered).'
   - 'Plan tags only where plans.yaml is explicit or the dependency is certain: payer price lists (claims add-on body in plans.yaml), package treatments (Premium), and the ageing and denial reports, tagged Enterprise because they report on payer claims, which need insurance claims (Enterprise, add-on on Professional and Premium). Which plan carries location price lists, patient-category pricing, the unbilled-visits report, cash registers and automated reports is not stated, so those rows carry no tag.'
@@ -354,3 +364,4 @@ notes:
   - 'No testimonials (all placed elsewhere). Proof is the ratings badge block; review counts are unknown (facts.yaml capterraReviews and googleReviews are null), so no count is shown.'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, the hero is the day-end cash close for one register, and the claim status list with denials goes on the denial report row.'
   - 'The redirect from /revenue-management/ is already in src/data/redirects.yaml, so no redirectFrom is set here.'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 2 of them (/avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/, /strategic-efficiency-should-your-clinic-outsource-non-core-tasks/) had no inbound link but /blog/, and links.related is full (8 of 8). The leakage-audit stepList intro now also links /avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/ (spec 5.11; spec 3.6 names the revenue-leaks post among those that rank).'

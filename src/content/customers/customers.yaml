@@ -90,9 +90,8 @@ faq:
       across {fact:countries} countries.
   - question: How long do customers stay with EasyClinic?
     answer: >-
-      {fact:retention} of our customers have used EasyClinic for more than five years, and there is no
-      binding contract holding any of them. Dr Prantar Chakrabarti, a haematologist, has used it since
-      2008, and Penda Health in Nairobi since 2017. The {fact:retention} is our own count, and we have not
+      {fact:retention} of our customers have used EasyClinic for more than five years. Dr Prantar
+      Chakrabarti, a haematologist, has used it since 2008, and Penda Health in Nairobi since 2017. The {fact:retention} is our own count, and we have not
       published how it is measured.
   - question: Where can I read reviews of EasyClinic?
     answer: >-
@@ -159,3 +158,4 @@ notes:
   - 'Not carried over from the live /testimonials/: the Trustindex certificate wording beyond the source of the Google figure, the feature list, the "try Easy Clinic absolutely free" line (other pages say there is no free trial), and the "Ready to rethink medical software" boilerplate. Dr V Ramanathan (Australia) and Dr S. B. Bhattacharyya (Noida), quoted in abridged form on the live homepage, have no testimonial records, so they are not shown.'
   - 'Penda Health study wording follows docs/briefs/page-writing-rules.md and the /curapilot/ page: a 2025 preprint, AI Consult, independent physicians as raters, 15 clinics. The tool is not called Cura AI or CuraPilot, and the page does not say "peer reviewed". The link goes to the studyCard (id study) on /curapilot/.'
   - 'The old URL /testimonials/ already redirects here in src/data/redirects.yaml, so it is not repeated in redirectFrom. There is no customers hub, so links.hub is not set.'
+  - 'Audit 2026-09-27: the retention FAQ no longer adds "there is no binding contract holding any of them" after the figure. Whether long-standing customers ever had contracts is unknown, and /about-us/ cut the same pairing. The no-contract fact stays in the /pricing/ related-link description.'

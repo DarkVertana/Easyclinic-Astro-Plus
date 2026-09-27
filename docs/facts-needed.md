@@ -194,6 +194,20 @@ Owner: marketing, with product.
   calls ABDM, NABH and DPDP work "in progress"; two live solution pages claim HIPAA, PCI-DSS and GDPR. The new
   site repeats none of these.
 
+### 11. The privacy policy states Kenyan registrations the rest of the site may not use (found in the 27 September audit)
+
+- **Evidence:** the live privacy policy (https://www.easyclinic.io/privacy-policy/, imported word for word as
+  `src/content/legal/privacy.mdx`) says EasyClinic is registered with Kenya's Office of the Data Protection
+  Commissioner as a data processor (certificate serial 16499, valid 2 December 2025 to 2 December 2027), that a
+  Digital Health Agency certification application (#APP-2026-HLQYV6) is under review, and that a Kenyan serving copy
+  of the data is "in implementation".
+- **Why it matters:** the rest of the site treats EasyClinic's regulator status as unknown and never states it. If
+  these statements are right, they are the first confirmed Kenyan facts and can go on /trust/ and the Kenya pages
+  (`src/data/regulators/ke-dpa.yaml`, `ke-digital-health-act.yaml`, with an as-of date). If they are not, the policy
+  needs correcting.
+- **Owner:** legal and the Kenya lead. Confirm or correct; the build uses nothing from the policy until then.
+- **Also in the policy:** it still names the old domain easycliniconline.com, which no longer resolves.
+
 ## Draft pages and what holds them
 
 | Page | Waiting on |

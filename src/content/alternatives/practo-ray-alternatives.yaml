@@ -81,6 +81,8 @@ sections:
             [Healthray](https://healthray.com/clinic-management-software/) name WhatsApp notifications or
             reminders. [Doctors App](https://doctorsapp.in/) includes WhatsApp credits, and
             [DocEngage](https://www.docengage.in/clinic-master) lists a WhatsApp integration.
+            [HealthPlix's SPOT app](https://www.healthplix.com/spot-mobile-emr) sends prescriptions to
+            patients by SMS or WhatsApp.
         - - Your doctors finish notes after the last patient.
           - >-
             Neither the [Ray page](https://www.practo.com/providers/clinics/ray) nor the [plans
@@ -243,9 +245,10 @@ sections:
               checkedOn: 2026-09-26
             - value: WhatsApp reminders and messages on Premium and Enterprise; SMS and email reminders on every plan.
             - value: >-
-                Not published (checked 26 September 2026). Elite includes 5,000 free credits for patient
-                messages without naming the channel.
-              source: https://www.healthplix.com/pricing-1
+                The SPOT mobile app sends digital prescriptions to patients by SMS or WhatsApp. Neither
+                [published plan](https://www.healthplix.com/pricing-1) names WhatsApp; Elite includes 5,000
+                free credits for patient messages without naming the channel.
+              source: https://www.healthplix.com/spot-mobile-emr
               checkedOn: 2026-09-26
             - value: Appointment notifications by WhatsApp as well as SMS.
               source: https://mocdoc.com/clinic-management-software
@@ -547,8 +550,9 @@ sections:
             adds the Plix AI tools, such as Quick Rx and past-visit summaries, a multi-clinic setup, an
             appointment booking website and 5,000 free credits for patient messages. H.A.L.O records the
             consultation and drafts a summary and the prescription, but neither published plan lists it.
-            Prescriptions can be shared in 14 languages. The pages we read name neither WhatsApp nor a pharmacy
-            module, and say nothing about moving records in from other software.
+            Prescriptions can be shared in 14 languages. Its SPOT mobile app sends prescriptions by SMS or
+            WhatsApp, though neither plan names WhatsApp. The pages we read name no pharmacy module and say
+            nothing about moving records in from other software.
           pros:
             - Describes itself as an online and offline EMR.
             - Published yearly prices of ₹12,000 (Pro) and ₹18,000 (Elite), before GST.
@@ -557,7 +561,7 @@ sections:
           cons:
             - The AI tools and the multi-clinic setup are on Elite only.
             - The pricing page does not say whether the price is per doctor or per clinic.
-            - WhatsApp and pharmacy are not named on the pages we read.
+            - Pharmacy is not named, and WhatsApp appears only on the SPOT app page, not in either plan.
             - Few directory reviews, 4 on SoftwareSuggest and none on Capterra.
           facts:
             - label: Published price
@@ -702,8 +706,9 @@ sections:
               logins, or ₹12,000 on HealthPlix Pro, both before 18% GST.
             - Your internet drops often, since HealthPlix describes itself as an online and offline EMR.
             - >-
-              You want AI that listens to the consultation. HealthPlix's H.A.L.O and the Doctors App AI scribe
-              both turn the conversation into notes, though neither is listed in a published plan.
+              You want an AI scribe from a vendor whose one-doctor price is below EasyClinic's: HealthPlix's
+              H.A.L.O and the Doctors App AI scribe both turn the conversation into notes, though neither is
+              listed in a published plan, so ask what each adds to the price.
             - Your patients want the prescription in their own language, which both say they share in 14 languages.
         - title: Move to MocDoc, Healthray or DocEngage if
           items:
@@ -851,6 +856,9 @@ sections:
           accessed: 2026-09-26
         - label: 'HealthPlix: H.A.L.O'
           url: https://www.healthplix.com/halo
+          accessed: 2026-09-26
+        - label: 'HealthPlix: SPOT mobile EMR'
+          url: https://www.healthplix.com/spot-mobile-emr
           accessed: 2026-09-26
         - label: 'HealthPlix: terms of service'
           url: https://www.healthplix.com/terms-and-conditions/termsandconditions-1
@@ -1029,7 +1037,7 @@ notes:
   - 'Research date 2026-09-26. Every competitor fact was re-read that day from the URL in its source field or inline link (curl, text extracted; Capterra pages returned 403 to curl and were read with WebFetch). Facts reused from easyclinic-vs-practo.yaml, easyclinic-vs-healthplix.yaml and best-clinic-management-software-india.yaml were only kept after the re-fetch confirmed them.'
   - 'HealthPlix prices are in the image "Pricing Page.png" on /pricing-1 (https://static.wixstatic.com/media/aa75ca_601b93fde5c14b808ba667fb16b8ffb8~mv2.png), downloaded and read in full on 2026-09-26: Pro Rs 12,000/yr, Elite Rs 18,000/yr, excluding 18% GST; Plix AI tools, Multi-Clinic Setup, Appointment Booking Website and 5000 Free Credits ticked for Elite only. Nothing says per doctor or per clinic. H.A.L.O is not on the image.'
   - 'Candidate selection: SoftwareSuggest /practoray/alternatives (Last Updated September 01, 2026) lists 31 products; top ten were MocDoc HIMS (4.9, 213), MEDICIN ERP (4.9, 18), MediXcel EMR and HIS (4.7, 15), CrelioHealth LIMS (4.8, 12), Lybrate (4.4, 7), Clinic Master (4.7, 6), DocOn (4.8, 5), CATALYST (5, 4), athenahealth (4.3, 3), NextGen (5, 2). G2 (https://www.g2.com/products/ray-by-practo/competitors/alternatives) returned 403 to curl and WebFetch. Cut: MediXcel (Plus91): plus91.in/v2/solutions/clinics/ returned 404 and the MediXcel platform page renders client-side; the home page describes MediXcel LITE (WhatsApp and SMS engagement, ABDM-linked records) with no price, too thin for a 120-word section; medixcel.com is an unrelated Saudi distributor. Lybrate: lybrate.com shows only the patient consultation portal; the ₹799/month Lybrate Cube price exists only on SoftwareSuggest, not the vendor site. DocOn: docon.co.in home page carries lorem ipsum placeholder text and two different doctor counts (4,000+ verified, 4,500+ active), and /pricing returned 404. Clinic Master: no vendor price or product page found. MEDICIN ERP and CrelioHealth LIMS are pharmacy and lab systems. athenahealth, NextGen and CATALYST not researched.'
-  - 'Not published (checked 2026-09-26) and left as such: MocDoc price, contract term, offline, migration and AI note drafting; HealthPlix WhatsApp, pharmacy, migration, contract term (terms clause 8 covers only termination for breach); Doctors App multi-branch and offline; DocEngage offline and AI note drafting; Ray WhatsApp and AI note drafting; whether Ray prices include GST; how Ray exports prescriptions and clinical notes; which Ray files any vendor, EasyClinic included, imports.'
+  - 'Not published (checked 2026-09-26) and left as such: MocDoc price, contract term, offline, migration and AI note drafting; HealthPlix pharmacy, migration, contract term (terms clause 8 covers only termination for breach); Doctors App multi-branch and offline; DocEngage offline and AI note drafting; Ray WhatsApp and AI note drafting; whether Ray prices include GST; how Ray exports prescriptions and clinical notes; which Ray files any vendor, EasyClinic included, imports.'
   - 'Left out on purpose. ABDM claims (Practo Ray, HealthPlix, MocDoc, Healthray and Doctors App all state ABDM compliance on their sites): EasyClinic ABDM status is not a confirmed fact, so no row and no vendor-section claim; the limits box says so. HealthPlix terms clause 9 (in-product advertising) and clauses 5 and 6 (de-identified data): not used, for the reasons in the easyclinic-vs-healthplix notes. Ray agreement clause 8.4 sentence on Practo''s use of data published in the public domain, and Exhibit C (Practo Share): need a lawyer''s reading. Healthray home page "Rated 4.8/5 on Capterra & SoftwareSuggest": the directories show 5.0 (1) and 4.7 (7), which the page uses. Vendor promotional figures such as Practo''s "no-shows by over 70%" testimonial and "25% more appointments", and Plus91''s mock "No-show rate reduced by 38%": no method, not used.'
   - 'Practo Profile answer: Practo Pro app page ("Practo Profile is free") and Prime page ("If your clinic/hospital has not subscribed to Prime, your profile will still be available on Practo"). Neither page says in so many words what happens to the profile when Ray ends; the FAQ tells the reader to ask Practo in writing.'
   - 'Groups of three were rewritten where they appeared (for example MocDoc notifications now read "by WhatsApp as well as SMS", dropping email; Healthray hosting reads "on-premise and hybrid installation as well as cloud"). The directory sentence in How we compared names three directories as two plus one; the read-aloud pass may want to shorten it.'
@@ -1037,3 +1045,5 @@ notes:
   - 'Proof block: Capterra badge with href and Google badge with {fact:googleRating} per the brief; the Google badge has no count or link because googleReviews and the Google URL are unknown. No testimonials (all are placed on other pages). No heroMedia or media.'
   - 'Overlap: /easyclinic-vs-practo/ owns the head-to-head (four clinic tests, EasyClinic-only switching steps). This page keeps Ray as the reference column across six alternatives, frames switching as vendor-neutral Practo steps plus one EasyClinic step linking /switch/, and its FAQ is about leaving Ray for any vendor. /best-clinic-management-software-india/ owns the country shortlist.'
   - 'Fact-check pass 2026-09-26 (Claude): every cited URL re-fetched (Capterra via WebFetch; G2 still 403). Changed: verdict no longer implies only MocDoc and Healthray sell hospital software (HealthPlix pricing image "Custom Hospital Plans ... IPD", Doctors App hospital and nursing-home plans on request, DocEngage hospital pricing tab) and names Healthray and Doctors App as also listing WhatsApp plus AI note help; "both plans include the Practo.com integration that brings those online bookings into Ray" narrowed to what the sources say (plans page lists "Practo.com integration"; agreement Exhibit A says it includes online appointments; Prime page now sells 24x7 booking separately); EasyClinic "costs more than Ray from the first doctor" narrowed to CM Atom (Clinic Management 1-year is Rs 1,499 a month, the same as Professional for one doctor); "It brings you no patients from a listing" replaced by the plans.yaml-grounded "none of its plans includes a patient listing"; FAQ "Practo can delete it" corrected to "will delete it" (clause 8.4 "shall ... delete"); Ray offline cell now says Android, iOS read-only (help article); MocDoc multi-branch cell adds its FAQ on central multi-location management; Doctors App migration now includes its "transfer all your patient data from other EMRs" line; Ray plans FAQ "Renewal price for a plan will not change" added for fairness; Ray pages 2017 copyright noted; "ranks 31 products" changed to "lists 31" (SoftwareSuggest shows "1 - 10 of 31 products", Last Updated September 01, 2026); DocEngage "based in Bangalore" changed to its footer wording "made in Bangalore". Overlap: the WhatsApp and offline FAQs duplicated /best-clinic-management-software-india/ almost word for word; WhatsApp FAQ replaced by the Ray-specific records-visibility question (agreement clauses 2.10 and 8.4), offline FAQ reframed around Ray''s app, faqHeading and decision titles made distinct from /easyclinic-vs-practo/. Groups of three removed ("confirmation, reminder and follow-up SMS", the three-directory sentence, the HealthPlix Elite list, "prices, plans and statements").'
+  - 'Audit 2026-09-27: HealthPlix WhatsApp corrected in the table cell, the vendor body and con, and the WhatsApp row of "When an alternative to Ray is worth a look". HealthPlix''s SPOT mobile EMR page says prescriptions go to patients "via SMS/WhatsApp" (read for /easyclinic-vs-healthplix/ on 26 September, re-read 27 September); neither published plan names WhatsApp. The SPOT page is added to the sourceList, and "HealthPlix WhatsApp" is removed from the not-published note.'
+  - 'Audit 2026-09-27: the Move to HealthPlix or Doctors App bullet "You want AI that listens to the consultation" implied EasyClinic has no such AI, while /ai/ says Cura AI listens to the consult on every plan. It now reads as a price reason (both publish a lower one-doctor price than EasyClinic, and neither lists its scribe in a plan), which keeps the list at four items rather than three.'

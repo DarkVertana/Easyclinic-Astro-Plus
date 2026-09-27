@@ -6,10 +6,9 @@ status: published
 country: ae
 headKeyword: best clinic management software UAE
 secondaryKeywords:
-  - clinic management software Dubai
-  - EMR software UAE
   - top clinic software UAE 2026
   - clinic software comparison UAE
+  - best clinic management software Dubai
 title: Best Clinic Management Software in the UAE (2026)
 metaDescription: >-
   Eight clinic systems compared for UAE clinics on the NABIDH and Malaffi lists, AED prices, WhatsApp,
@@ -137,7 +136,7 @@ sections:
             - value: Its Dubai guide says it is DHA NABIDH-approved. Neither the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) nor the [Malaffi](https://www.malaffi.ae/connected-emrs/) list named it
               source: https://pabau.com/blog/emr-software-dubai/
               checkedOn: 2026-09-26
-            - value: Not published on this page; see [security and compliance](/trust/)
+            - value: Not published on this page
         - label: UAE office, as published
           cells:
             - value: Dubai Digital Park, Dubai Silicon Oasis; [its timeline](https://www.unite.care/about-us) dates its Dubai operations to 2020
@@ -231,7 +230,7 @@ sections:
             - value: Several locations on Enterprise, for 16 or more users; other plans are priced per location
               source: https://pabau.com/pricing/
               checkedOn: 2026-09-26
-            - value: From Premium; the UAE page says branches in different emirates run from one central dashboard
+            - value: More than one location from Premium; central control of every location on Enterprise
         - label: AI documentation
           cells:
             - value: Unite Scribe AI is on its homepage, but its pricing FAQ says the beta is not yet released
@@ -251,7 +250,7 @@ sections:
             - value: Pabau Scribe turns the consultation into structured notes, listed on the [pricing page](https://pabau.com/pricing/) as unlimited and free
               source: https://pabau.com/features/ai-medical-scribe/
               checkedOn: 2026-09-26
-            - value: Cura AI drafts the note from dictation, on every plan
+            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
         - label: Review score, with count
           cells:
             - value: Not published (no directory review page we could read, 26 September 2026)
@@ -587,10 +586,10 @@ sections:
             EasyClinic has run clinics since {fact:founded} from its office in Kolkata, and {fact:doctors}
             doctors in {fact:countries} countries use it. Professional, at {price:usd.professional.annual} per
             doctor per month billed annually, covers the appointment book, the EMR with e-prescriptions,
-            billing, dashboards, SMS and email reminders, staff logins and Cura AI, which drafts the note from
-            dictation. Premium, at {price:usd.premium.annual}, adds WhatsApp reminders and messages, video
-            consultations and more than one location, and EasyClinic's UAE page says a group with branches in
-            Dubai, Abu Dhabi and Sharjah runs them from one central dashboard. Insurance claims and pharmacy
+            billing, dashboards, SMS and email reminders, staff logins and Cura AI, which listens to the consult and
+            drafts the note for the doctor to confirm. Premium, at {price:usd.premium.annual}, adds WhatsApp reminders and messages, video
+            consultations and more than one location, and Enterprise adds central control of every location.
+            Insurance claims and pharmacy
             come with Enterprise or as add-ons. A reception login is included with no setup fee or binding
             contract, and a clinic can be live in as little as {fact:goLiveDays} days. A price in dirhams and a
             UAE office are not yet published, and this page does not state EasyClinic's NABIDH, Malaffi or
@@ -598,11 +597,11 @@ sections:
           pros:
             - Cura AI note drafting on every plan, including Professional
             - A published price per doctor with a reception login included, and no setup fee or binding contract
-            - One account for branches in more than one emirate, per its UAE page
+            - More than one location on Premium, and central control of every location on Enterprise
             - '{fact:capterraRating} on Capterra and {fact:googleRating} on Google'
           cons:
             - No price in dirhams and no UAE office published
-            - This page does not state its NABIDH, Malaffi or Riayati status; see [security and compliance](/trust/)
+            - This page does not state its NABIDH, Malaffi or Riayati status
             - WhatsApp messages and a second branch need Premium
             - Does not run fully offline today
           facts:
@@ -610,10 +609,6 @@ sections:
               value: '{price:usd.professional.annual} per doctor per month billed annually; the dirham price is not yet published ([pricing](/pricing/))'
             - label: NABIDH, Malaffi and Riayati
               value: Not published on this page
-            - label: Branches across emirates
-              value: One central dashboard for branches in Dubai, Abu Dhabi and Sharjah, per its UAE page
-              source: https://www.easyclinic.io/emr-software-in-uae/
-              checkedOn: 2026-09-26
 
   - discriminant: stepList
     value:
@@ -690,9 +685,9 @@ sections:
         - title: Choose EasyClinic if
           us: true
           items:
-            - Your doctors want Cura AI to draft the note from dictation, on every plan from Professional.
+            - Your doctors want Cura AI to listen to the consult and draft the note, on every plan from Professional.
             - You want a published price per doctor with a reception login included, and no setup fee or binding contract.
-            - You run, or plan, branches in more than one emirate and want them on one central dashboard.
+            - You run, or plan, branches in more than one emirate, on Premium, or on Enterprise for central control of every location.
             - You have EasyClinic's NABIDH, Malaffi or Riayati status for your emirate, with a date, in writing before you sign.
 
   - discriminant: proofBlock
@@ -756,7 +751,7 @@ sections:
         - { label: 'Pabau: NABIDH integration', url: 'https://pabau.com/integrations/nabidh/', accessed: 2026-09-26 }
         - { label: 'Pabau: best EMR software in Dubai', url: 'https://pabau.com/blog/emr-software-dubai/', accessed: 2026-09-26 }
         - { label: 'Capterra: Pabau reviews', url: 'https://www.capterra.com/p/140062/Pabau-CRM/reviews/', accessed: 2026-09-26 }
-        - { label: 'EasyClinic: EMR software in the UAE', url: 'https://www.easyclinic.io/emr-software-in-uae/', accessed: 2026-09-26 }
+        - { label: 'EasyClinic: EMR software in the UAE (archived 13 May 2026)', url: 'https://web.archive.org/web/20260513165039/https://www.easyclinic.io/emr-software-in-uae/', accessed: 2026-09-27 }
         - { label: 'Capterra: EasyClinic reviews', url: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/', accessed: 2026-09-26 }
 
 faq:
@@ -802,8 +797,8 @@ faq:
     answer: >-
       Yes, several say so, but ask each vendor how every branch reaches its own emirate's exchange. Insta by
       Practo lists one system across centres in different emirates and health authority standards, Unite keeps
-      one patient file across branches, and EasyClinic's UAE page says branches in Dubai, Abu Dhabi and Sharjah
-      run from one central dashboard. For a Dubai and Abu Dhabi group, Unite, MedicoPlus, Insta by Practo and
+      one patient file across branches, and EasyClinic covers more than one location from Premium, with central
+      control of every location on Enterprise. For a Dubai and Abu Dhabi group, Unite, MedicoPlus, Insta by Practo and
       MEDAS are the four systems named on both regulator lists.
   - question: How long does it take to switch?
     answer: >-
@@ -860,8 +855,8 @@ notes:
     criteria, date, sources and a disclosure; comparisonTable; one vendor section each with pros and cons;
     decisionMatrix; FAQ 8; sourceList) plus the Kenya listicle's workflow tests and cost section. Regulator
     row per the brief: each competitor cell gives the vendor's own claim (source = vendor page) plus its
-    place on the NABIDH and Malaffi lists (inline links); EasyClinic's cell reads "Not published" and links
-    /trust/.
+    place on the NABIDH and Malaffi lists (inline links); EasyClinic's cell reads "Not published on this page"
+    (the /trust/ link was removed on 2026-09-27 while /trust/ is a draft; add it back when it publishes).
   - >-
     Ranking: EasyClinic is UNRANKED (no rank field) and placed LAST in the table columns, the vendor list and
     the decision matrix, because the first ranking criterion is the regulators' lists and the page may not
@@ -907,8 +902,9 @@ notes:
     CTA: /uaedemo/, /pricing/uae/ and /clinic-management-software-uae/ are drafts on 2026-09-26, so in a
     production build the primary CTA button and those related links are hidden until they publish (Button and
     RelatedLinks resolve through the registry). The secondary CTA (/pricing/) and /compare/ are published.
-    /trust/ is a draft entry (src/content/trust/trust.yaml); the two inline links to it render as text until
-    it publishes.
+    /trust/ is a draft entry (src/content/trust/trust.yaml), so the page has no inline link to it: the regulator
+    cell and the EasyClinic con that linked it lost the link on 2026-09-27 (inline links to drafts render as bare
+    text, src/lib/markdown.ts). Add both links back when /trust/ publishes.
   - >-
     Not found (cells say Not published): Unite review score (G2 page returns 403; no Capterra listing found);
     MedicoPlus, MEDAS and Yolo directory reviews; MedicoPlus, Insta, MEDAS and Yolo prices; Pabau UAE price
@@ -927,12 +923,33 @@ notes:
     only with 10+ user licences per site; onboarding fee extra; WhatsApp an extra-charge module.
   - >-
     EasyClinic facts used: USD price tokens (AED unknown), plans.yaml (Cura AI on every plan, WhatsApp and
-    more than one location from Premium, claims and pharmacy on Enterprise or as add-ons, reception login, no
-    setup fee, no contract), founded, doctors, countries, goLiveDays, trainingDays, Capterra and Google
-    ratings, Kolkata office, not fully offline today, and from https://www.easyclinic.io/emr-software-in-uae/
-    (read 2026-09-26) the central dashboard for branches in Dubai, Abu Dhabi and Sharjah and
-    hello@easyclinic.io. No trial, Arabic, eClaimLink, Emirates ID or regulator claim for EasyClinic.
+    more than one location from Premium, central control of every location on Enterprise, claims and pharmacy
+    on Enterprise or as add-ons, reception login, no setup fee, no contract), founded, doctors, countries,
+    goLiveDays, trainingDays, Capterra and Google ratings, Kolkata office, not fully offline today, and from
+    https://www.easyclinic.io/emr-software-in-uae/ (read 2026-09-26; cited through the Wayback capture
+    https://web.archive.org/web/20260513165039/https://www.easyclinic.io/emr-software-in-uae/) only
+    hello@easyclinic.io. No trial,
+    Arabic, eClaimLink, Emirates ID, central dashboard or regulator claim for EasyClinic.
   - >-
     Re-read every source and refresh lastUpdated and each checkedOn before republishing; the two regulator
     lists change (NABIDH entries created in 2026: CLINIC SOFTWARE CRM, Clinic Wave, Dental4Windows,
     eClinicalWorks, ERBA, Health Plus EMR, MediPlus, ORYX Medical AI, Remedico.app, Wellnox).
+  - >-
+    Audit 2026-09-27: secondaryKeywords "clinic management software Dubai" and "EMR software UAE" were
+    removed, because they are product-intent variants of the draft /clinic-management-software-uae/ head
+    keyword (spec 2.1, 4.5.4). "best clinic management software Dubai" keeps a Dubai variant in comparison
+    form. Metadata only; nothing rendered changes.
+  - >-
+    Audit 2026-09-27: the claim that EasyClinic runs branches in several emirates from "one central dashboard"
+    came only from the live /emr-software-in-uae/ FAQ, which is not a confirmed-facts source, and it tied the
+    dashboard to Premium while plans.yaml puts "Central control of every location" on Enterprise. The branches
+    cell, vendor body, pros, decision matrix item and FAQ "Can one system run branches in Dubai and Abu Dhabi?"
+    now use the plans.yaml wording (more than one location from Premium, central control of every location on
+    Enterprise), and the "Branches across emirates" fact row was deleted. The sourceList keeps the UAE page,
+    which the office cell still cites for hello@easyclinic.io. Restore the dashboard claim only if the company
+    adds it to the confirmed facts.
+  - >-
+    Audit 2026-09-27: the EasyClinic regulator cell and the NABIDH con no longer link /trust/, a draft whose
+    inline links render as bare text, matching the Nigeria listicle. Add both back when /trust/ publishes.
+  - 'Audit 2026-09-27: Cura AI now "listens to the consult and drafts the note for the doctor to confirm" (AI documentation cell, EasyClinic body, Choose EasyClinic item), matching /ai/, /easyclinic-vs-healthplix/ and spec 5.2 and 4.1 ("Cura AI listens to the consult"). "From dictation", beside Pabau Scribe that "listens during the consultation", undersold it. Reverse on every page only if product says Cura AI works from dictation alone.'
+  - 'Audit 2026-09-27: the sourceList entry for the old UAE page now points at the Wayback capture of 13 May 2026 (https://web.archive.org/web/20260513165039/https://www.easyclinic.io/emr-software-in-uae/, fetched 2026-09-27; it carries hello@easyclinic.io and the central-dashboard sentence). After cutover /emr-software-in-uae/ 301s to /countries/ (redirects.yaml fallback while /clinic-management-software-uae/ is a draft), which carries neither. A fresher Save Page Now capture before cutover would be better. When /clinic-management-software-uae/ publishes, cite https://www.easyclinic.io/clinic-management-software-uae/ instead. The vendor fact row that cited the same URL was deleted in a separate audit fix (see the central-dashboard note).'

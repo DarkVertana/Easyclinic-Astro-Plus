@@ -269,6 +269,18 @@ sections:
           **It does not run fully offline.** EasyClinic is cloud software, so the desk needs a connection
           to run a recall campaign or see a booking made in the app.
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /benefits-of-offering-online-patient-portals/
+        - href: /whatsapp-follow-up-automation/
+        - href: /health-camps-lead-generation/
+        - href: /strengthening-patient-connections-implementing-crm-systems-for-better-relations/
+        - href: /effective-patient-communication-techniques/
+        - href: /simplifying-clinic-workflows-digitally-streamlining-patient-intake-forms/
+
 faqHeading: Questions clinic owners ask about patient engagement
 faq:
   - question: Which plan includes the patient portal and app?
@@ -299,10 +311,12 @@ faq:
       follow-up, that is a reason to book the next visit rather than let it slide.
   - question: Do we need patients' consent before sending recall messages?
     answer: >-
-      In general, yes: the data protection laws of Kenya, the UAE and Nigeria expect a patient to be told
-      what their contact details will be used for and let a patient stop marketing messages, and India's
-      DPDP Act asks the same once its Rules bring those duties into force in May 2027. Ask at registration
-      and record the answer. The duty sits with your clinic, as the holder of the data; the table above
+      In general, yes: the data protection laws of Kenya and Nigeria expect a patient to be told what
+      their contact details will be used for and let a patient stop marketing messages, and India's DPDP
+      Act asks the same once its Rules bring those duties into force in May 2027. In the UAE, the PDPL
+      lets a patient object to direct marketing, but it does not apply to health data that has its own
+      law, and a recall chosen by diagnosis uses health data, which Federal Law No. 2 of 2019 governs.
+      Ask at registration and record the answer. The duty sits with your clinic, as the holder of the data; the table above
       sets out what each law asks in general terms, and it is not legal advice.
   - question: How many more patients will come back?
     answer: >-
@@ -376,3 +390,5 @@ notes:
   - 'WhatsApp appears as one channel (4.5 rule 3). Templates, message charges and opt-in mechanics are only pointed to /features/whatsapp/, which explains how Meta charges but gives no per-message figure, so this page no longer says that page gives "what each message costs".'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the patient app (booking, reports, messages, phone frame) as hero and the diabetes recall campaign with its sent list to the recall section.'
   - 'No testimonial: none is about the patient app or engagement, and all are placed elsewhere. Proof is the ratings badge block (review counts are unknown, so no count is shown).'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 4 of them (/benefits-of-offering-online-patient-portals/, /whatsapp-follow-up-automation/, /health-camps-lead-generation/, /strengthening-patient-connections-implementing-crm-systems-for-better-relations/) had no inbound link but /blog/, and links.related is full (8 of 8). It owns eight published posts and the block takes six, so /clinic-marketing-strategy/ and /maintaining-trust-how-to-handle-negative-reviews-in-healthcare-professionally/, which other posts already link, are left out.'
+  - 'Audit 2026-09-27: the recall-consent FAQ no longer groups the UAE with Kenya and Nigeria as laws that expect a patient to be told what their contact details will be used for. The page''s own UAE row supports only the PDPL right to object to direct marketing, and the PDPL does not cover health data governed by Federal Law No. 2 of 2019, which is what a recall chosen by diagnosis uses. The FAQ now says both, using the sources already linked in the UAE row; the rest of the answer is unchanged.'

@@ -60,8 +60,8 @@ faq:
   - question: How long does it take to go live after the demo?
     answer: >-
       A clinic can go live in as little as {fact:goLiveDays} days after the demo, with training over
-      {fact:trainingDays} days in sessions of 20 to 40 minutes. That is the fastest case; a clinic group
-      or a hospital OPD with years of records to move takes longer.
+      {fact:trainingDays} days in sessions of 20 to 40 minutes. That is the fastest case, and not every
+      clinic moves that fast.
   - question: Can my receptionist join the demo?
     answer: >-
       Yes, and it helps, because your receptionist is the person who books and bills all day. Every plan
@@ -75,7 +75,7 @@ faq:
   - question: What happens after I submit the form?
     answer: >-
       Someone from our team in India calls you on the number you gave, to fix a time for the demo and ask
-      two or three questions about how your clinic runs. If you would rather not wait, call
+      how your clinic runs. If you would rather not wait, call
       {contact:in.phone} or write to {contact:in.email}.
 links:
   hub: /clinic-management-software-india/
@@ -128,8 +128,9 @@ notes:
     /contact-us/ offers both and the in-person cities are still a placeholder there.
   - >-
     goLiveDays (3) is always phrased as "in as little as 3 days" or as the fastest case, because the live
-    Kenya listicle says "2 to 4 week setup". The typical go-live time for clinic groups and hospital OPDs
-    is unknown, so FAQ 5 and the step list note say only that they take longer; add the figure once known.
+    Kenya listicle says "2 to 4 week setup". The typical go-live time, and what makes a clinic slower, are
+    unknown, so FAQ 5 and the step list note say only that not every clinic moves that fast; add the
+    figure once known.
   - >-
     The connections table lists plan inclusions from plans.yaml only. The UPI, Razorpay, PayU, Tally and
     named TPA or insurer rows were removed because their state and date are unknown (countries/in.yaml
@@ -146,16 +147,17 @@ notes:
     and a part payment, INR version, desktop capture from the seeded demo tenant. Restore it only once GST
     invoicing has a status, since the screenshot shows GST lines.
   - >-
-    Data migration step: the migration time, what is imported from each source and whether migration is
-    included in the plan price are unknown, so the step states none of them. Support step: the India
+    Data migration step: the migration time, what is imported beyond the patient list and whether
+    migration is included in the plan price are unknown, so the step states only that the patient list is
+    moved (the one confirmed migration fact, as on /switch/). Support step: the India
     support line and hours are unknown (and /contact-us/ has not confirmed whether support shares the
     sales number), so it gives only the channels from the live /pricing/ FAQ.
   - >-
     The free-trial FAQ no longer mentions the six-minute tour, because the tour page does not exist yet;
     add it back with a link once it does. What happens to unused months on an annual plan, and the export
     format on leaving, are unknown and not stated. FAQ 1 (say so when we call and the demo spends its time
-    on claims or pharmacy), FAQ 8 and the demo form promise (two or three questions on the call, as on
-    /contact-us/) are process claims for the India team to confirm.
+    on claims or pharmacy), FAQ 8 and the demo form promise (we ask how your clinic runs before the demo,
+    as /contact-us/ says) are process claims for the India team to confirm.
   - >-
     Dr Srinivasa Teja's testimonial has city: null in testimonials data (spec 2.4 asks for the city). Add
     it when confirmed. (Dr Chakrabarti moved to /solutions/hospital-opd/, which spec 5.8 names him for.)
@@ -171,6 +173,22 @@ notes:
     /kenyademo/ ("One clinic or fifteen ... Revenue, stock, claims, follow-ups. One screen"), and the
     module says revenue and claim status (live /features/ "Claim Status Tracking Dashboard", live
     /kenyademo/ "One morning view"), matching /features/reports-and-dashboards/.
+  - >-
+    Audit 2026-09-27: FAQ 8 and the demo form promise no longer say we ask "two or three questions"
+    (/contact-us/ now says only that we ask how your clinic runs), and FAQ 5 and the step list note no
+    longer say a clinic group or hospital OPD with years of records takes longer, because no source says
+    what slows go-live (both were cut on /kenyademo/, /switch/ and home). links.hub stays
+    /clinic-management-software-india/: while that page is a draft, the breadcrumb falls back to its own
+    hub, so production shows Home > Countries > this page (src/lib/seo/breadcrumbs.ts).
+  - >-
+    Audit 2026-09-27 (second pass): the data migration step promised to move "your existing data"; it now
+    says the patient list, the only confirmed migration fact (/switch/, /compare/healthplix-alternatives/).
+    The pen-and-paper promise now reads "2 hours, or 10 patient records", as on /switch/ and
+    /pricing/india/. The module grid follows plans.yaml: Cura AI note drafting on every plan, WhatsApp
+    prescriptions on Premium, lab reports in the chart on Premium, and ordering tests from the chart as lab
+    management (Enterprise or an add-on), as /features/lab/ says. The connections note no longer links the
+    draft /integrations/ page, which renders as plain text in production; restore the link when it
+    publishes.
 sections:
   - discriminant: demoForm
     value:
@@ -178,7 +196,7 @@ sections:
       heading: Book a 20-minute demo
       country: in
       promise: |-
-        In 20 minutes we take one patient through a clinic set up like yours: the booking, the consult and prescription, the bill and the WhatsApp follow-up. Before the demo we ask two or three questions about how your clinic runs, so it follows your patient flow and your specialty.
+        In 20 minutes we take one patient through a clinic set up like yours: the booking, the consult and prescription, the bill and the WhatsApp follow-up. Before the demo we ask how your clinic runs, so it follows your patient flow and your specialty.
 
         You leave knowing which plan fits your clinic and what it costs in rupees, from {price:inr.professional.annual} per doctor per month.
   - discriminant: painBlocks
@@ -215,8 +233,9 @@ sections:
       heading: Eight modules on one patient record
       intro: >-
         Every module shares the same record, so the prescription reaches the pharmacy and the bill without
-        anyone typing it twice. Appointments, records, billing, reports and Cura AI come with every plan.
-        Pharmacy and TPA claims come with Enterprise or as add-ons, and lab reports start on Premium; the
+        anyone typing it twice. Appointments, records, billing, reports and Cura AI note drafting come with
+        every plan. Pharmacy and TPA claims come with Enterprise or as add-ons. Lab reports in the chart
+        start on Premium, and lab management comes with Enterprise or as an add-on; the
         [India pricing page](/pricing/india/) has the full list.
       columns: 4
       items:
@@ -225,7 +244,7 @@ sections:
           icon: calendar-clock
           href: /features/appointment-scheduling/
         - title: Records and prescriptions
-          outcome: Notes and prescriptions on one record, with a prescription done in about thirty seconds and printed or sent on WhatsApp.
+          outcome: Notes and prescriptions on one record, with a prescription done in about thirty seconds and printed, or sent on WhatsApp on Premium.
           icon: notebook-pen
           href: /features/emr/
         - title: Billing and payments
@@ -241,7 +260,7 @@ sections:
           icon: pill
           href: /features/pharmacy-and-inventory/
         - title: Lab reports
-          outcome: Order tests from the chart; results come back into the record and go to the patient on WhatsApp.
+          outcome: On Premium, lab reports come back into the patient's record and go to the patient on WhatsApp; with lab management, tests are ordered from the chart.
           icon: flask-conical
           href: /features/lab/
         - title: Reports and dashboards
@@ -277,8 +296,7 @@ sections:
           - Your lab machines or accounting software connected to EasyClinic, scoped per project
           - Enterprise, or an add-on on Professional and Premium
       note: >-
-        The [India pricing page](/pricing/india/) lists what each plan includes, and the
-        [integrations page](/integrations/) has the full list of connections.
+        The [India pricing page](/pricing/india/) lists what each plan includes.
   - discriminant: testimonialRow
     value:
       heading: A psychiatrist in India on EasyClinic
@@ -302,9 +320,9 @@ sections:
             and your clinic staff.
         - title: Data migration
           body: >-
-            We move your existing data into EasyClinic, so the first morning does not start from an empty
-            screen. If your clinic is on paper, give us 2 hours and 10
-            patient records, and we promise to make your prescription writing faster.
+            We move your patient list into EasyClinic, so a returning patient is found by name at the desk
+            instead of being registered again. If your clinic is on paper, give us 2 hours, or 10 patient
+            records, and we promise to make your prescription writing faster.
         - title: Support
           meta: Unlimited, on every plan
           body: >-
@@ -312,5 +330,5 @@ sections:
             email or chat, or through the written guides in the [help centre](https://help.easyclinic.io/).
             Premium and Enterprise clinics also get a named account manager.
       note: >-
-        Going live in as little as {fact:goLiveDays} days is the fastest case. A clinic group or a hospital
-        OPD with years of records to move takes longer.
+        Going live in as little as {fact:goLiveDays} days is the fastest case, and not every clinic moves
+        that fast.

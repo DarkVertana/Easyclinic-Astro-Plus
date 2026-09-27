@@ -265,6 +265,17 @@ sections:
         - label: Google
           rating: '{fact:googleRating}'
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /online-appointment-booking-system/
+        - href: /top-strategies-for-reducing-patient-no-shows/
+        - href: /smarter-scheduling-happier-patients-elevating-healthcare-operations-through-optimized-appointments/
+        - href: /how-to-make-your-waiting-room-more-patient-friendly/
+        - href: /doctor-personal-branding/
+
 faqHeading: Questions front desks and clinic owners ask
 faq:
   - question: Can walk-ins and booked patients share one list?
@@ -367,3 +378,4 @@ notes:
   - 'Cannibalisation (spec 4.5): billing gets one row linking /features/billing/ with no invoice or GST detail; WhatsApp templates, API and message costs are left to /features/whatsapp/; teleconsults are one paragraph linking /features/telehealth/ (spec 5.11).'
   - 'Redirect from /appointment-scheduling-at-easy-clinic/ already exists in src/data/redirects.yaml, so redirectFrom is not set here.'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the Today view (booked patients, two walk-ins, one video consult, one no-show) as hero and the WhatsApp reminder thread to the WhatsApp row.'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 2 of them (/online-appointment-booking-system/, /how-to-make-your-waiting-room-more-patient-friendly/) had no inbound link but /blog/, and links.related is full (8 of 8).'

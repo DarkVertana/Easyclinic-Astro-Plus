@@ -20,6 +20,7 @@ links:
     - { href: /solutions/, description: Software by clinic type and size. }
     - { href: /features/emr/, description: The EMR and e-prescriptions every specialty uses. }
     - { href: /pricing/, description: What Premium includes for specialists. }
+    - { href: /clinic-management-system-for-endocrinologists/ }
 sections:
   - discriminant: hubGrid
     value:
@@ -45,8 +46,8 @@ sections:
       heading: Rated by the doctors who use it
       variant: badges
       badges:
-        - { label: Capterra, rating: '4.9', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
-        - { label: Google, rating: '4.8' }
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}' }
   - discriminant: demoForm
     value:
       id: book-a-demo
@@ -68,3 +69,6 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: 'The page ties specialty work to what Premium actually includes: templates, custom forms and package treatments.'
   readsMachineWritten: 'The FAQ answers are plan-level; each specialty page carries the specifics.'
+notes:
+  - 'Audit 2026-09-27: the Capterra and Google badge ratings were plain text (4.9, 4.8); they are now {fact:capterraRating} and {fact:googleRating}, so they follow facts.yaml as on every specialty page.'
+  - 'Audit 2026-09-27: added the published posts this page owns to links.related, with each post''s own label and summary as anchor text and description. /clinic-management-system-for-endocrinologists/ had no inbound link but /blog/.'

@@ -56,8 +56,8 @@ sections:
             A medicine shortage usually shows up when the patient is already at the counter, not weeks
             before. The signal is there in what each store dispenses, but it is scattered across sites.
           fix: >-
-            Forecasting from what each store dispenses shows a shortage while there is still time to
-            reorder. We have no published measurement of how far this cuts stockouts, so this page gives no
+            Cura AI's stock prediction compares what each store dispenses with the stock that is left and
+            shows a shortage while there is still time to reorder. We have no published measurement of how far this cuts stockouts, so this page gives no
             figure.
         - heading: 'Revenue: claims lost at the prescription'
           body: >-
@@ -88,10 +88,13 @@ sections:
             - Pattern recognition across visits, connecting symptoms that no single encounter would reveal
             - Lab and radiology results in the consult, with abnormal findings flagged
         - heading: Operational intelligence
-          body: The pharmacy shelf and every branch dashboard, reading from the same record.
+          body: The pharmacy shelf and every branch dashboard read from the same record. Stock prediction is a Cura AI job.
           bullets:
-            - Consumption-based forecasting that shows a shortage before it reaches the dispensing counter
+            - Cura AI's stock prediction, from how fast each medicine goes out against the stock left
             - Live dashboards across every facility, showing what is happening now rather than last month
+          link:
+            label: See Cura AI stock prediction
+            href: /ai/
         - heading: Financial intelligence
           body: Claims checked before they leave, and a view of the whole network for leadership.
           bullets:
@@ -146,7 +149,7 @@ sections:
         - history-errors
       method: >-
         Penda Health and OpenAI ran AI Consult, a copilot embedded in Penda's EasyClinic record, during real
-        patient visits. Then 108 independent physicians rated visit records for errors, comparing visits
+        patient visits. Then 108 independent physicians rated a random sample of the visit records for errors, comparing visits
         where the clinician had AI Consult with visits where the clinician did not.
       sites: >-
         15 Penda Health clinics in Nairobi, Kenya, all running on EasyClinic, the record Penda has used
@@ -171,9 +174,9 @@ sections:
       id: where-it-runs
       heading: Where CuraPilot runs
       body: >-
-        CuraPilot sits on EasyClinic, or on top of an existing hospital information system, connecting
-        through HL7 FHIR and open APIs. On EasyClinic it reads the record your clinicians already write in,
-        so there is no second system to keep up to date.
+        CuraPilot sits on EasyClinic, or on top of an existing hospital information system. On EasyClinic
+        it reads the record your clinicians already write in, so there is no second system to keep up to
+        date.
 
 
         This page gives the approach, not a list of named systems. If your clinics run another system, name
@@ -209,14 +212,15 @@ faq:
   - question: Does CuraPilot replace our EMR?
     answer: >-
       No, CuraPilot works inside the record you already keep. On EasyClinic it reads the same patient
-      record the clinician writes in, and on another hospital information system it connects through HL7
-      FHIR and open APIs, so notes and prescriptions stay in that system.
+      record the clinician writes in, and on another hospital information system, notes and
+      prescriptions stay in that system.
   - question: What did the Penda Health study show?
     answer: >-
       The 2025 preprint by Penda Health and OpenAI found that clinicians who had AI Consult made
       {fig:diagnostic-errors} fewer diagnostic errors and {fig:treatment-errors} fewer treatment errors
       than clinicians without it, across {fig:visits} visits at 15 clinics in Nairobi. The biggest drop
-      was in history-taking errors, {fig:history-errors} fewer, as rated by 108 independent physicians.
+      was in history-taking errors, {fig:history-errors} fewer, as rated by 108 independent physicians on a
+      random sample of the visit records.
   - question: Did the study test CuraPilot?
     answer: >-
       Not by name: the paper studied AI Consult, a copilot inside Penda's EasyClinic record, and does not
@@ -231,9 +235,8 @@ faq:
       opinion to weigh, and the decision stays with the clinician.
   - question: Does CuraPilot work with the EMR we already use?
     answer: >-
-      CuraPilot is built to sit on EasyClinic or on top of an existing hospital information system,
-      connecting through HL7 FHIR and open APIs. This page does not list named systems, so name yours when
-      you ask for a proof of concept.
+      CuraPilot is built to sit on EasyClinic or on top of an existing hospital information system. This
+      page does not list named systems, so name yours when you ask for a proof of concept.
   - question: Has the study been published in a journal?
     answer: >-
       No, the {fig:visits}-visit study is a preprint that has not yet been through a journal's review. It
@@ -284,12 +287,15 @@ notes:
   - 'Study honesty: the paper names AI Consult, embedded in Penda''s Easy Clinic EMR since 2017. It does not name CuraPilot (study.yaml note: confirm whether CuraPilot is AI Consult). If product confirms they are the same system, the opening answer, painBlocks clinical fix, studyCard intro and limits, and the "Did the study test CuraPilot?" FAQ can be rewritten.'
   - '"108 independent physicians" is written as text from the paper (verified in page-writing-rules); there is no fig token for it. "10% fewer investigation errors" is verified but left out because it has no fig token; add an investigation-errors figure to study.yaml to use it. The study FAQ splits its figures across two sentences rather than listing three in a row (spec 6.2).'
   - 'Removed for lack of a source: 67% fewer stockouts, 34% fewer denied claims, 45-day early warning, "28 organisations", "23% to under 4%" rejections, 99.97% uptime (spec 5.3 moves uptime to /trust), "100% clinician satisfaction", "22+ years". The Nature Health and Nature Medicine papers are separate studies and are not cited.'
-  - 'Integration note names only the approach (EasyClinic, or an existing HIS through HL7 FHIR and open APIs). The live list (KenyaEMR, OpenMRS, M-Pesa, eTIMS, SMART e-claiming, SLADE, SHA, DHIS2) is left out: integration status is unconfirmed, and live Kenya pages say SHA and eTIMS are not yet supported. Restore an honest per-system list with states from src/data/integrations when confirmed.'
+  - 'Integration note names only the approach (EasyClinic, or an existing HIS). The live list (KenyaEMR, OpenMRS, M-Pesa, eTIMS, SMART e-claiming, SLADE, SHA, DHIS2) is left out: integration status is unconfirmed, and live Kenya pages say SHA and eTIMS are not yet supported. Restore an honest per-system list with states from src/data/integrations when confirmed.'
   - 'Cost: CuraPilot and the proof of concept have no published price, so spec 5.3 "What it costs" and the FAQ "How is it priced?" are left out. The stepList note says only that CuraPilot is not part of any plan on the price list (true of plans.yaml, which has no CuraPilot line).'
   - 'FAQs left out for lack of a confirmed fact: "Is it available in Kenya, India, UAE and Nigeria?", "How is it priced?", "What data leaves the clinic?". Replaced with "Did the study test CuraPilot?" and "Has the study been published in a journal?" (the plain form of "Is the study peer reviewed?", which the claims lint blocks as text).'
   - 'Walkthrough ("What changed for the clinician") has no screenshot: spec 12 asks for a live alert capture. Add media to the flowDiagram step "A pattern is flagged" when it exists. The example symptoms come from the mock alert on the live page and are illustrative.'
-  - 'Operational and financial features (consumption forecasting, claim checks) are written without naming a product, because spec 1.2 and the /ai/ page put stock prediction and AI billing under Cura AI while the live CuraPilot page claims them. The rows stay because spec 5.3 says to keep this section; product should decide which name owns them.'
+  - 'Operational and financial features: stock prediction now follows spec 1.2 and /ai/ and is named as a Cura AI job (audit 2026-09-27). Claim checks stay unnamed here, since spec 4.1''s /curapilot meta says CuraPilot flags claim errors during the consult. The rows stay because spec 5.3 says to keep this section; if product decides CuraPilot owns stock prediction, reword this row and the /ai/ "Predicts stockouts" row together.'
   - 'Staging "intelligence layer" bullets for voice commands, telemedicine and patient engagement are dropped: they overlap Cura AI and feature pages. The staging "drug interaction, allergy and dose" bullet is split in two to avoid a group of three.'
   - 'CTA "Download the study summary" (gated PDF) replaced with "Read the study" linking to arXiv, because no PDF exists yet. Dr Korom video (spec proof, VideoObject schema) left out: none exists.'
   - 'links.hub not set: /ai/ now has a content entry (ai.yaml), but the site tree (spec 3.1) lists /ai and /curapilot as siblings under AI. Set hub: /ai/ if the breadcrumb should run Cura AI > CuraPilot.'
   - 'Old URL /curapilot-ai/ already 301s here through src/data/redirects.yaml (spec 3.4), so redirectFrom is not set.'
+  - 'Audit 2026-09-27: the ''Operational intelligence'' row and the ''Operations'' painBlock fix now say stock prediction is a Cura AI job, with a link to /ai/, following spec 1.2 and the /ai/ "Predicts stockouts" row; before, the page listed forecasting under CuraPilot''s "What it does". The claim-check bullet and the flow step "The claim goes out checked" are unchanged (spec 4.1).'
+  - 'Audit 2026-09-27: the study FAQ and the studyCard method now say the 108 independent physicians rated a random sample of the visit records. The paper''s panel rated 5,666 of the visits (arXiv 2507.16947, re-read 2026-09-27; study.yaml scope), not all of them.'
+  - 'Audit 2026-09-27: removed "connecting through HL7 FHIR and open APIs" from the where-it-runs prose and both EMR FAQs. Integration and standards status is unknown (page-writing rules), spec 5.3 grounds only "sits on EasyClinic or on your existing HIS", and spec 4.1 puts FHIR APIs on /integrations/ with a status for each. Restore the FHIR wording once src/data/integrations has an entry for FHIR and open APIs with a state and date.'

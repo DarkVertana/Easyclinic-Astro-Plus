@@ -97,8 +97,8 @@ sections:
       id: included
       heading: What the price includes and what costs extra
       intro: >-
-        You pay for each doctor who writes notes or prescriptions in the EMR. This table shows what that
-        price covers and what you pay for separately.
+        You pay one licence for each doctor who uses EasyClinic. This table shows what that price covers
+        and what you pay for separately.
       caption: What is included in the per-doctor price in the UAE, and what is charged separately
       columns:
         - Item
@@ -111,9 +111,9 @@ sections:
         - - Part-time and visiting doctors
           - '[How a part-time or visiting doctor who consults on some days is charged]'
           - If a specialist consults at your clinic on set days and practises elsewhere the rest of the week, this decides how many licences you count.
-        - - Other staff logins, such as a nurse or pharmacist
+        - - Logins for your staff
           - Included on every plan
-          - Staff logins are part of Professional, and every higher plan includes everything in Professional.
+          - Professional includes logins for your staff, and every higher plan includes everything in Professional.
         - - Setup
           - No fee
           - No setup fee on any plan, and no contract to sign.
@@ -345,3 +345,4 @@ notes:
   - 'REVIEW 2026-09-26, sibling consistency: this page says there is no free trial (spec 1.2, decided 23 September); /uaedemo/ FAQ 2 still carries a free-trial placeholder, and the live /emr-software-in-uae/ offers a free trial. /clinic-management-software-uae/ states the UAE VAT zero-rating rule for preventive and basic healthcare as fact (from general knowledge, flagged there for a legal check), while this page keeps VAT on a clinic''s own bills as a placeholder for the tax adviser, per the brief. Fill the VAT answer once and use it on both pages. The meta description ("billed yearly, with no setup fee or contract") and the section heading "VAT and payments" were reworded here and on /pricing/nigeria/ to drop a list of three; /pricing/kenya/ still has both lists of three and should follow.'
   - 'The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions, ideally someone who has sold EasyClinic to UAE clinics. The page has no named person yet (spec 6.5 passing bar) because no UAE contact or client is known.'
   - No heroMedia. Add an AED invoice screenshot only once the VAT tax invoice status is known, since the invoice would show or omit the TRN and VAT line.
+  - 'Audit 2026-09-27: the included table said nurse and pharmacist logins come on every plan and that you pay for each doctor "who writes notes or prescriptions"; /pricing/ lists the licence rule for nurses, pharmacists and visiting or part-time doctors as unconfirmed and plans.yaml says only "Logins for your staff". The row is now "Logins for your staff" and the table intro matches /pricing/ ("one licence for each doctor who uses EasyClinic"), as on /pricing/india/. Name nurses or pharmacists only after the company confirms the licence rule.'

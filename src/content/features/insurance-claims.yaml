@@ -164,8 +164,9 @@ sections:
         - - '[Kenya](/emr-software-in-kenya/)'
           - SHA (Social Health Authority), and private insurers such as Jubilee, AAR, CIC, Britam and Resolution
           - >-
-            SHA took over from NHIF on 1 October 2024, and only a contracted SHA facility with a valid
-            facility code can claim from it. Each private insurer sets its own cover and rates.
+            SHA took over from NHIF on 1 October 2024, and apart from emergency treatment only a contracted
+            SHA facility with a valid facility code can claim from it. Each private insurer sets its own cover
+            and rates.
         - - '[UAE](/clinic-management-software-uae/)'
           - Health insurers
           - >-
@@ -212,6 +213,13 @@ sections:
         - label: Google
           rating: '{fact:googleRating}'
 
+  - discriminant: contentCards
+    value:
+      id: further-reading
+      heading: Further reading
+      items:
+        - href: /nhif-in-kenya/
+
 faqHeading: Questions clinics ask about insurance claims
 faq:
   - question: Do we need the Enterprise plan to handle insurance claims?
@@ -251,7 +259,8 @@ faq:
       [revenue management page](/features/revenue-management/).
   - question: What does SHA ask of a clinic that claims from it in Kenya?
     answer: >-
-      SHA pays only a contracted SHA facility with a valid facility code. It took over from NHIF on
+      Apart from emergency treatment, SHA pays only a contracted SHA facility with a valid facility code.
+      It took over from NHIF on
       1 October 2024 and is moving claims from its provider portal into certified hospital management
       systems. This page describes SHA's rules; it does not state EasyClinic's own SHA status.
   - question: Does EasyClinic handle claims for inpatient admissions?
@@ -326,3 +335,5 @@ notes:
   - 'Links: /solutions/ngo-clinics/, the four country pages and /trust/ do not exist yet or are drafts, so they are hidden in production until published; they stay because spec 2.9 wants all five solution pages and the country rows point to their country pages.'
   - 'No redirectFrom: /payor-management/, /insurance-claim-management-system/ and /payor-management-system/ are already in src/data/redirects.yaml.'
   - 'No heroMedia and no media objects: screenshots do not exist yet. Spec 11 wants the claims screen as the hero on this page; add it, and a screenshot of a plan category with its co-payment rule, when the spec 12 captures exist.'
+  - 'Audit 2026-09-27: added a contentCards "Further reading" section listing the published posts this page owns, with each post''s own label and summary. 1 of them (/nhif-in-kenya/) had no inbound link but /blog/, and links.related is full (8 of 8).'
+  - 'Audit 2026-09-27: the Kenya row of the country table and the SHA FAQ said only a contracted SHA facility can claim from SHA, with no exception. Regulation 31(4) of the Social Health Insurance Regulations, 2024, quoted in SHA''s empanelment notice (https://www.sha.go.ke/wp-content/uploads/2025/07/Public_Notice_Empanelment_of_HCPs_and_HF_-_final.pdf, fetched 2026-09-27), lets SHA pay a licensed and certified facility for emergency treatment, as /nhif-in-kenya/ and /glossary/ say. Both now start "apart from emergency treatment".'

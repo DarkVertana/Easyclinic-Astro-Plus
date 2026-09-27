@@ -16,8 +16,8 @@ openingAnswer: >-
   EasyClinic is clinic management software that runs appointments, the EMR, billing, pharmacy and lab
   in one cloud system, used by solo doctors, polyclinics, clinic chains and hospital OPDs in
   {fact:countries} countries. In a 2025 study of {fig:visits} visits at Penda Health clinics in Nairobi,
-  clinicians with an AI copilot inside their EasyClinic record made {fig:diagnostic-errors} fewer
-  diagnostic errors.
+  clinicians with AI Consult, an AI copilot inside their EasyClinic record, made {fig:diagnostic-errors}
+  fewer diagnostic errors.
 summary: >-
   Clinic management software for appointments, the EMR, billing, pharmacy and lab, from one-doctor
   practices to a chain of {fact:largestChain} locations.
@@ -25,7 +25,7 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroStrip:
   ratings: true
-  study: true
+  study: false
 ctas:
   primary:
     label: Book a 20-minute demo
@@ -62,7 +62,7 @@ sections:
           href: /solutions/hospital-opd/
         - persona: ngo
           title: We run an NGO or mission clinic
-          body: Visit and stock reports by programme, in the shape donors ask for.
+          body: Patient records, and the visit and stock reports built from them, for programme clinics and mission hospitals.
           href: /solutions/ngo-clinics/
 
   - discriminant: oldWayNewWay
@@ -176,7 +176,7 @@ sections:
         - treatment-errors
         - history-errors
       body: |
-        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on EasyClinic since 2017, and AI Consult, an AI copilot embedded in Penda's EasyClinic record, checked the clinicians' work as they went. Independent physicians rated the visits, and visits where the clinician had the copilot scored better on each of the error measures above.
+        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on EasyClinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's EasyClinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
 
         The results are published as a preprint on arXiv, not in a journal.
       link:
@@ -232,7 +232,7 @@ sections:
           body: The shortcuts and templates that make a busy afternoon faster, once the basics are routine.
       note: >-
         A clinic can go from demo to live in as little as {fact:goLiveDays} days. If you write prescriptions
-        on paper today, give us two hours and ten patient records and we promise to make your prescription
+        on paper today, give us two hours, or ten patient records, and we promise to make your prescription
         writing faster.
 
 faq:
@@ -267,11 +267,11 @@ faq:
     answer: >-
       No, there is no binding contract on any EasyClinic plan and no setup fee, so you use it for as long as
       it suits your clinic. On Professional and Premium you pay per doctor per month, billed annually or
-      quarterly, and EasyClinic never sells or discloses your clinic's data.
+      quarterly.
   - question: Do I have to use the AI?
     answer: >-
-      No, the EMR works without Cura AI: you write notes from your own templates and shortcuts, and the
-      prescription goes out exactly as it would with the AI. Cura AI (documentation) comes with every plan,
+      No, the EMR works without Cura AI: you write the note and the prescription yourself, with shortcuts
+      set up for the way you prescribe, and the prescription goes out exactly as it would with the AI. Cura AI (documentation) comes with every plan,
       and when you use it, it drafts the note for you to review and sign.
   - question: Can EasyClinic run more than one clinic location?
     answer: >-
@@ -304,7 +304,7 @@ links:
       description: Twelve modules in the order a patient moves through the clinic.
     - href: /ai/
       label: Cura AI
-      description: What each AI feature does, and which plan includes it.
+      description: What each Cura AI feature does, and which plan includes the note drafting.
     - href: /curapilot/
       label: CuraPilot
       description: EasyClinic's clinical copilot, and the Penda Health study in detail.
@@ -353,3 +353,8 @@ notes:
   - 'Directory pages (/doctors/, /clinics/) are out of scope and not linked from this page.'
   - 'Meta description opens with the head keyword; 152 characters as written, 142 after token expansion.'
   - 'Fact check 2026-09-26 (live pages fetched with curl): the journey step "Report" said the owner sees revenue, collections, no-shows and pending claims on one dashboard, by doctor or by branch. No live product page or confirmed fact states collections, no-shows or pending claims as report figures, or any per-doctor split (only the /healthcare-dashboard-software/ blog lists no-show rate and revenue per clinician, as generic KPI advice and an anonymous case study). It now says what live /ceo-landing-page/ (end-of-day financial reports "clinic and organization wide") and live /features/ (daily financial reports; "Claim Status Tracking Dashboard") state, matching /features/reports-and-dashboards/. The Growth card line "morning numbers for every branch on one screen" stays: live /kenyademo/ says "One clinic or fifteen ... One screen" and "Every location. One morning view".'
+  - 'Audit 2026-09-27: heroStrip.study set to false, as on /ai/ and /kenyademo/. Its line ("AI copilot studied on ... visits") linked to /curapilot/, which with the related link "EasyClinic''s clinical copilot" implied CuraPilot was the studied tool; the rules forbid that. The opening answer now names AI Consult. Hero.astro''s strip line now reads "AI Consult studied on ... visits in an EasyClinic record" and links to /curapilot/#study, so a page that turns the strip back on no longer implies CuraPilot was studied.'
+  - 'Audit 2026-09-27: study block trimmed to the confirmed facts (the tool studied was AI Consult, embedded in the EasyClinic record); "checked the clinicians'' work as they went" is not in the page-writing-rules confirmed list, and /ai/ cut it for the same reason. "Independent physicians rated the visits" now reads "a random sample of the visit records": the paper''s panel rated 5,666 of the 39,849 visits (study.yaml scope, verified 2026-09-27).'
+  - 'Audit 2026-09-27: pen-and-paper promise changed from "two hours and ten patient records" to "two hours, or ten patient records", matching /switch/, /pricing/india/, /kenyademo/ and /features/emr/. The live source ("2 hours / 10 patient records") is ambiguous; the company should confirm what the slash means.'
+  - 'Audit 2026-09-27: the contract FAQ no longer ends "and EasyClinic never sells or discloses your clinic''s data". The published /privacy/ allows disclosure (section 3(a)) and says your information may not always remain private, /about-us/ dropped "never disclose" for the same reason, and the clause did not answer the lock-in question.'
+  - 'Audit 2026-09-27: (1) The NGO persona card no longer says "Visit and stock reports by programme, in the shape donors ask for": whether visits can be tagged by programme or grant is unknown (ngo-clinics.yaml note) and the /solutions/ hub NGO card makes no donor-reporting claim. Restore "by programme" only after product confirms programme tagging. (2) The "Do I have to use the AI?" FAQ no longer says you write notes "from your own templates", which implied templates on every plan; plans.yaml puts specialty templates and your own forms on Premium. It now uses the /features/emr/ shortcuts wording. (3) The /ai/ related-link description no longer says /ai/ gives the plan for each AI feature: /ai/ says only the note drafting is on the published price list.'

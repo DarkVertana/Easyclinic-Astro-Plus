@@ -199,10 +199,10 @@ sections:
       variant: badges
       badges:
         - label: Capterra
-          rating: '4.9'
+          rating: '{fact:capterraRating}'
           href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
         - label: Google
-          rating: '4.8'
+          rating: '{fact:googleRating}'
 
 faqHeading: Questions polyclinic owners ask
 faq:
@@ -262,6 +262,8 @@ links:
     - href: /pricing/
       label: EasyClinic pricing
       description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
+    - href: /dental-emr-software/
+    - href: /pricing/india/
 
 closing:
   heading: See the shared chart and the calendar on a polyclinic like yours
@@ -293,8 +295,9 @@ notes:
   - 'FAQ left out for lack of facts: "revenue split by doctor" (needs whether reports show revenue per doctor and whether EasyClinic calculates a consultant''s share) and "migration from two systems" (needs what is imported from which systems, how long it takes and what it costs).'
   - 'Unknown and not stated: the licence rule for visiting or part-time doctors, nurses, pharmacists and accountants; how many reception logins a clinic gets; what a second location costs; add-on prices for pharmacy and lab; which specialty templates exist (a named, countable list, spec 5.11); which plan includes the rooms and devices columns in the resource calendar.'
   - 'Conflict to settle: live /pricing/ says Enterprise is best for "multi-location clinic chains, polyclinics and nursing homes"; plans.yaml says Premium is for group practices that share one front door, and the spec CTA is "See Premium pricing". This page follows plans.yaml.'
-  - 'Badge ratings are written as text (4.9, 4.8) because ProofBlock renders badge ratings without token expansion. Review counts are unknown (facts capterraReviews and googleReviews are null) and are left out.'
+  - 'Badge ratings use {fact:capterraRating} and {fact:googleRating} (tokens resolve in badge ratings, as on every specialty page). Review counts are unknown (facts capterraReviews and googleReviews are null) and are left out.'
   - 'Meta description departs from spec 4.2 ("One record across every specialist, shared rooms and slots, department-wise billing"), which is a group of three. Devices are left out of the calendar wording for the same reason.'
-  - 'Spec 2.9 asks every solution page to link one specialty page and one country page; the related list follows the brief (three feature pages and /pricing/). Consider adding /dental-emr-software/ and /clinic-management-software-india/.'
+  - 'Spec 2.9 asks every solution page to link one specialty page and one country page. The related list follows the brief (three feature pages and /pricing/) plus /dental-emr-software/ and /pricing/india/ (added in the 2026-09-27 audit). Swap /pricing/india/ for /clinic-management-software-india/ when that country page publishes.'
+  - 'Audit 2026-09-27: badge ratings were plain 4.9 and 4.8 and are now fact tokens, so they follow facts.yaml. Related links gained /dental-emr-software/ (spec 5.6 section 3 names dental) and /pricing/india/, the only published country page for now (all four country pages are drafts), with href only so each card takes the target''s own linkLabel and summary.'
   - 'The old /polyclinic-software/ URL already redirects here in src/data/redirects.yaml, so there is no redirectFrom on this page.'
   - 'Fact check (2026-09-26): the resource calendar with doctors and rooms in columns rests on spec 5.6, 5.11 (appointment scheduling promise) and the spec 12 screen list; receipts on WhatsApp, invoices from chart orders and part payments rest on spec 5.11 (billing) and spec 12; department-wise billing rests on the spec 4.2 meta description. Removed in this pass: "most of the lost time" (unsourced share), "print on your letterhead" and "sees the clash" (implied features not in any source).'

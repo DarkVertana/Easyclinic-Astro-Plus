@@ -40,9 +40,8 @@ sections:
       id: countries
       heading: By country
       intro: >-
-        Clinics in {fact:countries} countries run on EasyClinic, and four of those countries have pages of their
-        own. Prices are published in rupees for India and in US dollars, and no other local-currency price is
-        published yet. A clinic anywhere else can book a demo from the [countries page](/countries/#book-a-demo).
+        Clinics in {fact:countries} countries run on EasyClinic. Prices are published in rupees for India and in
+        US dollars, and no other local-currency price is published yet. A clinic anywhere else can book a demo from the [countries page](/countries/#book-a-demo).
       columns: 3
       groups:
         - title: India
@@ -294,4 +293,6 @@ notes:
   - 'Section id "specialties" matches the staging footer link /resources#specialties (migration/research/brand.md section 8; the live footer in section 5 has no /resources/ link), so that link lands on the right section. The staging footer also linked /resources#comparisons; comparisons are reached here through the country groups and the /compare/ card, and there is no section with that id.'
   - 'No FAQ. Spec 2.5 says a page with no true FAQs leaves the section out, and spec 6.4 drops routing questions ("Where next?"), which is all a sitemap would carry; the country and specialty questions ("my country is not listed", "my specialty is not listed") are answered on /countries/ and /specialties/. The hub family allows no FAQ or 5 to 8 questions (FAMILY_RULES.hub in src/lib/rules/audit.ts); this page has none.'
   - 'Title 52 characters, with the head keyword first; meta description 151 characters with no tokens; H1 plain. Spec section 4 has no row for this page. Head keyword "EasyClinic resources" does not collide with any other page as of 2026-09-26 (/customers/ owns "EasyClinic reviews", /blog/ "clinic management blog", /glossary/ "clinic software glossary"). The opening answer is two sentences, with the country list and the specialty count as its numbers.'
-  - 'Footer: "All resources" added as the first link of the footer Resources group in src/data/nav.yaml. The header Resources dropdown has no href and was not changed.'
+  - 'Footer: "All resources" added as the first link of the footer Resources group in src/data/nav.yaml. Header: "All resources" is the last link of the Resources dropdown (audit 2026-09-27), as "All specialties" and "All countries" are in theirs, so it shows in the mobile menu too; the dropdown item itself still has no href.'
+  - 'Audit 2026-09-27: deleted ", and four of those countries have pages of their own" from the By country intro, because all four country pages are drafts and drop out in production. Restore it when they publish. The opening answer and meta ("India, Kenya, the UAE and Nigeria have EasyClinic pages of their own") still hold in production through the four published listicles and the India and Kenya demo pages.'
+  - 'Audit 2026-09-27: the footer was the only link to this page. It is now also linked from the header Resources dropdown (a seventh item after the six in spec 3.3, following the "All specialties" and "All countries" items) and from the /blog/ related links.'

@@ -3,11 +3,11 @@ path: /countries/
 headKeyword: clinic software by country
 secondaryKeywords: [clinic management software Africa, clinic software Asia]
 title: 'Clinic Software by Country: EasyClinic'
-metaDescription: 'EasyClinic runs clinics in 18 countries. Country pages for India, Kenya, the UAE and Nigeria, and a demo form for clinics everywhere else.'
+metaDescription: 'EasyClinic runs clinics in {fact:countries} countries. India and Kenya have their own demo pages, and clinics anywhere else can book a demo from this page.'
 h1: EasyClinic in your country
 linkLabel: Countries
-openingAnswer: 'EasyClinic runs clinics in {fact:countries} countries, from single-doctor practices in Kolkata to Penda Health''s clinics in Nairobi. India, Kenya, the UAE and Nigeria each have a page on local rules, payments and prices; clinics anywhere else can book a demo below.'
-summary: Country pages for India, Kenya, the UAE and Nigeria, and a demo form for clinics in other countries.
+openingAnswer: 'EasyClinic runs clinics in {fact:countries} countries, from single-doctor practices in Kolkata to Penda Health''s clinics in Nairobi. Clinics in India and Kenya can book a demo on their own page, and clinics anywhere else can book a demo below.'
+summary: Demo pages for India and Kenya, and a demo form for clinics in other countries.
 author: subhashish-saha
 lastUpdated: 2026-09-26
 ctas:
@@ -19,51 +19,70 @@ links:
     - { href: /pricing/, description: Prices per doctor per month in US dollars and rupees. }
     - { href: /start-a-clinic/, description: 'Licences, costs and setup, country by country.' }
     - { href: /contact-us/, description: Call or write to the team in Kolkata. }
+    - { href: /clinic-in-malaysia/ }
+    - { href: /clinic-in-rwanda/ }
 sections:
   - discriminant: hubGrid
     value:
-      heading: Country pages
+      heading: India, Kenya, the UAE and Nigeria
       columns: 2
       groups:
-        - items:
-            - { href: /clinic-management-software-india/, label: India, description: 'Clinic software for Indian clinics, with prices in rupees.' }
-            - { href: /emr-software-in-kenya/, label: Kenya, description: 'M-Pesa at the desk, insurer claims through SLADE, Swahili prescriptions.' }
-            - { href: /clinic-management-software-uae/, label: United Arab Emirates, description: 'Clinic software for Dubai, Abu Dhabi and the Northern Emirates.' }
-            - { href: /hospital-management-software-nigeria/, label: Nigeria, description: 'Clinic and hospital OPD software for Nigerian clinics.' }
-  - discriminant: hubGrid
-    value:
-      heading: Book a demo in your country
-      columns: 2
-      groups:
-        - items:
-            - { href: /indiademo/, label: Book a demo in India }
-            - { href: /kenyademo/, label: Book a demo in Kenya }
+        - title: India
+          items:
+            - { href: /clinic-management-software-india/ }
+            - { href: /indiademo/ }
+            - { href: /best-clinic-management-software-india/ }
+            - { href: /pricing/india/ }
+        - title: Kenya
+          items:
+            - { href: /emr-software-in-kenya/ }
+            - { href: /kenyademo/ }
+            - { href: /best-clinic-management-software-kenya/ }
+            - { href: /pricing/kenya/ }
+        - title: United Arab Emirates
+          items:
+            - { href: /clinic-management-software-uae/ }
+            - { href: /uaedemo/ }
+            - { href: /best-clinic-management-software-uae/ }
+            - { href: /pricing/uae/ }
+        - title: Nigeria
+          items:
+            - { href: /hospital-management-software-nigeria/ }
+            - { href: /nigeriademo/ }
+            - { href: /best-clinic-management-software-nigeria/ }
+            - { href: /pricing/nigeria/ }
   - discriminant: proofBlock
     value:
       heading: Rated by the doctors who use it
       variant: badges
       badges:
-        - { label: Capterra, rating: '4.9', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
-        - { label: Google, rating: '4.8' }
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}' }
   - discriminant: demoForm
     value:
       id: book-a-demo
       heading: Your country is not listed
-      intro: Tell us where your clinic is and how it runs. The demo is on a video call and uses a clinic set up like yours.
+      intro: Tell us where your clinic is and how it runs, and the demo uses a clinic set up like yours.
       promise: EasyClinic runs in the cloud, so a clinic anywhere with an internet connection can use it. Prices are per doctor per month, with no setup fee and no contract.
 faq:
-  - question: Can a clinic outside these four countries use EasyClinic?
+  - question: Can a clinic outside India and Kenya use EasyClinic?
     answer: Yes, EasyClinic runs in the cloud in a web browser, and clinics in {fact:countries} countries use it today, so a clinic anywhere with an internet connection can run on it.
   - question: What does EasyClinic cost outside India?
     answer: Prices are published in US dollars, with Professional at {price:usd.professional.annual} and Premium at {price:usd.premium.annual} per doctor per month billed annually, and Enterprise is priced on a quote.
   - question: Do I need a server or IT staff?
     answer: No, EasyClinic runs in the cloud in a web browser, so there is nothing to install, and updates arrive every month without an engineer visiting the clinic.
-  - question: How is training done for a clinic in another country?
-    answer: Training runs over {fact:trainingDays} short sessions of about two hours in total on a video call, and support by phone, email and chat is included in every plan.
+  - question: What training does a clinic in another country get?
+    answer: Training runs over {fact:trainingDays} short sessions of about two hours in total, and support by phone, email and chat is included in every plan.
   - question: Is there a free trial?
     answer: There is no free trial, and the demo runs on a clinic set up like yours so you see your own patient flow before you decide.
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
-  onlyUsCouldWrite: 'The page names the markets with local pages and points every other country to a form, which is where the retired micro-market pages now land.'
-  readsMachineWritten: 'Nothing specific to one country beyond the four country pages; the form carries the rest.'
+  onlyUsCouldWrite: 'The page groups EasyClinic''s own pages by country and points every other country to a form, which is where the retired micro-market pages now land.'
+  readsMachineWritten: 'Nothing is specific to one country beyond the links grouped under India, Kenya, the UAE and Nigeria; the form carries the rest.'
+notes:
+  - 'Audit 2026-09-27: the meta description, opening answer, summary, FAQ 1 and editorial pass no longer say that India, Kenya, the UAE and Nigeria each have a country page. All four country pages are drafts and only rupee and US dollar prices are published. Restore the four-country wording when the country pages publish.'
+  - 'Audit 2026-09-27: the demo-form intro and the training FAQ no longer say the demo and training run on a video call; no confirmed fact says how either is delivered (facts-needed NG2, and /indiademo/ avoids it too). The training question now asks what, not how. Add "video call" back once the company confirms it.'
+  - 'Audit 2026-09-27: "18 countries" in the meta and the Capterra and Google badge ratings are now {fact:countries}, {fact:capterraRating} and {fact:googleRating}, so they follow facts.yaml.'
+  - 'Audit 2026-09-27: the "Country pages" and "Book a demo in your country" grids became one grid with a titled group per country listing its country page, demo page, listicle and pricing page (spec 3.1 Countries hub, spec 2.9 every hub links to all its leaves). Cards carry no label or description, so each takes the target''s own linkLabel and summary. HubGrid drops drafts in production, so today India shows the demo, listicle and pricing page, Kenya the demo and listicle, and the UAE and Nigeria their listicles; each draft appears on its own when it publishes. The heading names the four countries rather than "Country pages" because the country pages are drafts.'
+  - 'Audit 2026-09-27: added the published posts this page owns to links.related, with each post''s own label and summary as anchor text and description. /clinic-in-malaysia/ and /clinic-in-rwanda/ had no inbound link but /blog/.'

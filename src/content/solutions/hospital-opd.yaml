@@ -224,6 +224,8 @@ links:
     - href: /pricing/
       label: Pricing
       description: Per doctor per month from {price:usd.professional.annual}, and what Enterprise adds.
+    - href: /obgyn-emr-software/
+    - href: /pricing/india/
 
 closing:
   heading: Walk one patient through your OPD on EasyClinic
@@ -264,7 +266,8 @@ notes:
   - 'No redirectFrom: /hospital-opd-nursing-home-software/ already redirects here in src/data/redirects.yaml.'
   - 'Testimonial prantar-chakrabarti is assigned to this page by spec 5.8 item 7 (personas: hospital-opd) and no other content entry uses it (checked 2026-09-26). City is null in testimonial data, so the page gives no city.'
   - 'Editor pass 2026-09-26: corporate panels appear only as an India payer example, never as a capability, because corporate and PSU credit billing status is a placeholder on the India page. The Submit step says the billing desk submits the claim pack, so no electronic submission to any payer is implied. Pharmacy, lab, payer claims and HIS integration are described only as plans.yaml inclusions and add-ons.'
-  - 'Spec 2.9 asks every solution page to link one specialty page and one country page; related links follow the brief (three feature pages, reports and pricing). Add /clinic-management-software-india/ or /hospital-management-software-nigeria/ and a specialty page if the link budget allows.'
+  - 'Spec 2.9 asks every solution page to link one specialty page and one country page. Related links follow the brief (three feature pages, reports and pricing) plus /obgyn-emr-software/ and /pricing/india/, added in the 2026-09-27 audit. Swap /pricing/india/ for /clinic-management-software-india/ or /hospital-management-software-nigeria/ when a country page publishes.'
+  - 'Audit 2026-09-27: added /obgyn-emr-software/ (it links here for the maternity nursing home) and /pricing/india/ (the only published country page for now; all four country pages are drafts) to the related links, with href only so each card takes the target''s own linkLabel and summary.'
   - 'Both CTAs go to /contact-us/#book-a-demo, as the Enterprise CTAs on home and pricing do. Point "Get an Enterprise quote" at a dedicated quote form if one is built.'
   - 'editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite or cut anything in readsMachineWritten, and update editorialPass.'
   - 'Fact check 2026-09-26 (live pages fetched with curl): the Reconcile step named a "pending claims report" and the reports related link said "Revenue by doctor and pending claims". No live product page or confirmed fact states a pending claims report or a per-doctor revenue split (only the /healthcare-dashboard-software/ blog mentions revenue per clinician, as generic KPI advice and an anonymous case study). The step now names the claims dashboard, as live /features/ and /hospital-opd-nursing-home-software/ do ("Claim Status Tracking Dashboard"), with reconciliation from plans.yaml (claims add-on); the link says revenue and claim status, as live /kenyademo/ does ("Revenue, claims, diagnoses and stock visible before the first patient walks in"), matching /features/reports-and-dashboards/.'

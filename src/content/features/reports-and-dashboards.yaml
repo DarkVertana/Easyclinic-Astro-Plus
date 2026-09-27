@@ -207,19 +207,19 @@ sections:
   - discriminant: prose
     value:
       id: data-warehouse
-      heading: On Enterprise, a data warehouse that Power BI can read
+      heading: On Enterprise, a data warehouse for large clinic chains
       body: >-
         Enterprise includes a dedicated reporting server with custom business analytics, and a data
         warehouse meant for large clinic chains. Data from EasyClinic, and from other sources such as
-        databases, files, web services or APIs, is moved into the warehouse or a data lake through Azure
-        Data Factory pipelines and SQL-based ETL (extract, transform, load). Which data moves, and how
-        often, is set in the ETL processes defined for your organisation.
+        databases, files, web services or APIs, is moved into the warehouse or a data lake through ETL
+        (extract, transform, load) processes. Which data moves, and how often, is set in the ETL processes
+        defined for your organisation.
 
 
-        Once the data is in the warehouse, you can connect Power BI to it, build your own dashboards and
-        reports, and share them with the people who make the decisions. On Professional and Premium, the
-        reports and dashboards are the ones inside EasyClinic, and they export to Excel or PDF when you
-        need the figures somewhere else.
+        Connecting Power BI to the warehouse is scoped as integration work, under the integrations and
+        custom features that come with Enterprise. On Professional and Premium, the reports and dashboards
+        are the ones inside EasyClinic, and they export to Excel or PDF when you need the figures somewhere
+        else.
 
   - discriminant: scopeBox
     value:
@@ -235,7 +235,7 @@ sections:
           and inventory and with insurance claims, each part of Enterprise or added to Professional or
           Premium as a module.
         - >-
-          **The warehouse and Power BI are Enterprise only.** On Professional and Premium, figures leave
+          **The warehouse is Enterprise only.** On Professional and Premium, figures leave
           EasyClinic as Excel or PDF exports.
         - >-
           **It needs a connection.** EasyClinic is cloud software and does not run fully offline today, so
@@ -276,15 +276,15 @@ faq:
       reporting server with custom analytics and the data warehouse, and it is priced on a quote.
   - question: Can I use Power BI with EasyClinic?
     answer: >-
-      Yes, on Enterprise, through the data warehouse. Azure Data Factory pipelines move the data into the
-      warehouse, and Power BI connects to the warehouse so you can build dashboards and reports and share
-      them with the people who make the decisions. On Professional and Premium, export the reports to
-      Excel instead.
+      Only as Enterprise integration work: Enterprise includes a dedicated reporting server with custom
+      analytics and a data warehouse meant for large clinic chains, and connecting Power BI to it is scoped
+      per project under integrations and custom features. On Professional and Premium, export the reports
+      to Excel instead.
   - question: Are the numbers on the dashboard real time?
     answer: >-
       Yes, the dashboards inside EasyClinic show data in real time, so the figures change as the desk
-      bills and the doctors record visits. On Enterprise, how often data moves into the warehouse, and so
-      into Power BI, is set in the ETL processes defined for your organisation.
+      bills and the doctors record visits. On Enterprise, how often data moves into the warehouse is set
+      in the ETL processes defined for your organisation.
   - question: Can I build reports of my own?
     answer: >-
       Yes, you can set dashboards to the metrics that matter to your clinic and narrow reports with
@@ -323,7 +323,7 @@ links:
       description: The OPD's pharmacy and claims on one record, with hospital MIS reports drawn from it.
     - href: /solutions/ngo-clinics/
       label: EasyClinic for NGO and mission clinics
-      description: Clinic records and programme reports in the shape donors ask for.
+      description: Patient records, and the visit and stock reports built from them, for programme clinics.
     - href: /features/multi-location/
       label: More than one location
       description: One system for every branch, with reports for each branch and for the group.
@@ -351,8 +351,8 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: >-
     The report library and its plan rules come from EasyClinic's own live pages and pricing, down to the
-    Azure Data Factory pipelines behind the Enterprise warehouse and the separate access levels a chain
-    sets for its owned, franchised, mobile and associate clinics.
+    Enterprise warehouse for large chains and the separate access levels a chain sets for its owned,
+    franchised, mobile and associate clinics.
   readsMachineWritten: >-
     The pain-block scenes (the 10pm branch total, the accountant's first week of the month, the evening
     list) could sit on any dashboard page and need an owner's read-aloud, and the page has no dashboard
@@ -366,10 +366,12 @@ notes:
   - 'Spec 5.11 eight morning numbers: described only where a live page or plans.yaml grounds them. Used: revenue by branch (cross-location analytics; Premium for more than one location), stock (as stock levels and movement, not days left), claims (as claim status, not a pending count), plus the day''s appointments with visit status. Left out for lack of a confirmed fact: collections against billed, no-show rate, patients per doctor per hour, average ticket, stock days left and a patient feedback score. The opening answer does not say "all are live" (spec 5.11) because that is not confirmed.'
   - 'Consistency flag for the editor: home (journey step "Report": revenue, collections, no-shows and pending claims by doctor or by branch), the features hub (same line), /indiademo/ (revenue by doctor, collections against billing, no-shows, pending claims) and /solutions/hospital-opd/ (related-link description "Revenue by doctor") state numbers this page no longer claims. None is stated on a live product page; align those pages with this one or confirm the numbers with product.'
   - 'Scheduled email and WhatsApp summaries (spec 5.11) left out: the live pages say only that reports are generated and distributed automatically, with no channel or schedule named. Alerts and anomaly detection (sudden drops in bookings, spikes in denials) appear only in the blog''s anonymous case study and are left out.'
-  - 'Warehouse and Power BI: Enterprise per plans.yaml ("A reporting server and custom analytics"), live /pricing/ ("Dedicated Reporting Server & Custom Business Analytics"), live /features/ ("for large clinic chains ... a dedicated Data Warehouse") and spec 5.11 ("Enterprise only"). Power BI is described as the live /reports-and-dashboards/ page describes it (Power BI reads the warehouse); it is given no integration status, which belongs on /integrations/ (spec 4.1) and is null in src/data. What is exported and how often is not published; the page says it is set in the ETL processes defined for the organisation.'
+  - 'Warehouse and Power BI: Enterprise per plans.yaml ("A reporting server and custom analytics"), live /pricing/ ("Dedicated Reporting Server & Custom Business Analytics"), live /features/ ("for large clinic chains ... a dedicated Data Warehouse") and spec 5.11 ("Enterprise only"). Power BI was described as the live /reports-and-dashboards/ page describes it (Power BI reads the warehouse) until the 2026-09-27 audit, which scoped it as integration work; it is given no integration status, which belongs on /integrations/ (spec 4.1) and is null in src/data. What is exported and how often is not published; the page says it is set in the ETL processes defined for the organisation.'
   - 'Plan uncertainty: which plan includes custom report creation, performance and incentive reports, visual health trend charts, profit and loss analysis, customisable dashboards and the chain access levels for franchisees and associate clinics is not stated anywhere. These carry no plan tag; the report table names the module each comes from. Confirm with product before tagging.'
   - 'Left out of the live pages: "over 100 graphical dashboards" and "100+ views" (unsourced counts; replaced by the report library by role), "30 Second Insights", "AI-Powered Analysis", "encrypted reporting tools" and the HIPAA, GDPR and PCI-DSS compliance claims (compliance status unknown), "Real-time Compliance Tracking", "integrates seamlessly with your existing EMR", the Qualitas Health success story (unmeasured, and Hisham Ismail''s testimonial is in the past tense and placed on home), the blog''s anonymous C-suite case study and its outcomes, "close your month-end in one click", "settlements in hours, not days", "launch new clinics in under an hour", "migrate your data within a week", CMO marketing-campaign analytics (patient engagement territory) and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" line (conflicts with other published pages).'
   - 'Cannibalisation (spec 4.5): ageing, denials and leakage are left to /features/revenue-management/, claim mechanics to /features/insurance-claims/, till close and invoices to /features/billing/. This page owns "healthcare dashboard software" (rule 7), used in the pain-block intro; "hospital MIS reports" appears in the hospital OPD related-link description.'
   - 'Proof is the badges variant: every testimonial is placed. The haematologist quote is Dr Prantar Chakrabarti''s (testimonial prantar-chakrabarti, verbatim pullQuote), placed on /solutions/hospital-opd/; it is quoted in body text without the name and links to that page, following the /features/emr/ precedent for a placed testimonial. It is the only one of the 16 testimonials that speaks to reporting. Replace with an owner''s quote about the dashboard when one is collected.'
   - 'No redirectFrom: /reports-and-dashboards/, /healthcare-dashboard-software/ and the CMO, CFO and CEO landing pages already redirect here in src/data/redirects.yaml.'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the owner dashboard (desktop and phone) as hero, and one capture per morning-view row.'
+  - 'Audit 2026-09-27: Power BI and Azure Data Factory are integration records with state null (src/data/integrations/power-bi.yaml, azure-data-factory.yaml; docs/facts-needed.md P5), so the page no longer answers "Yes" to Power BI or names Azure Data Factory as the pipeline. Changed: the warehouse heading ("a data warehouse for large clinic chains"), the warehouse prose (ETL processes, with Power BI scoped as integration work, per plans.yaml Enterprise "Integrations and custom features" and the integrations add-on "scoped per project"), the limits box ("The warehouse is Enterprise only"), the Power BI FAQ (Enterprise integration work only) and the real-time FAQ (no "and so into Power BI"). The editorial pass no longer cites the Azure pipelines. Restore the Power BI and Azure Data Factory wording once both integration records have a state and date.'
+  - 'Audit 2026-09-27: the NGO related-link description no longer says "programme reports in the shape donors ask for". Whether visits can be tagged by programme or grant is unknown (ngo-clinics.yaml note), and home and the /features/ hub dropped "by programme" in the same audit.'
