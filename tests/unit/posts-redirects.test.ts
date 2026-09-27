@@ -1,8 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import { parse as parseYaml } from 'yaml';
-import { resolveRules } from '../../integrations/routes-core.ts';
+import { resolveRules, yieldingPaths } from '../../integrations/routes-core.ts';
 import { parseCsv, parseCsvRecords, stringifyCsv } from '../../scripts/lib/csv.ts';
-import { generatePostRules, isConfirmed, renderGoneYaml, renderRedirectsYaml, type ManifestRow } from '../../scripts/lib/posts-rules.ts';
+import {
+  generatePostRules,
+  isConfirmed,
+  leftoverPosts,
+  parsePostFile,
+  renderGoneYaml,
+  renderRedirectsYaml,
+  type ManifestRow,
+  type PostFile,
+} from '../../scripts/lib/posts-rules.ts';
 
 const row = (path: string, decision: string, target: string, confirmed = ''): ManifestRow => ({
   path,
@@ -93,6 +102,85 @@ describe('generated rows go through the same validation as hand-written ones', (
     const generated = generatePostRules([row('/ai-medical-scribes/', 'merge', '/emr-landing-page/', 'yes')], none);
     const { active } = resolveRules([{ from: '/emr-landing-page/', to: '/features/emr/' }, ...generated.redirects], [], built);
     expect(active.find((r) => r.from === '/ai-medical-scribes/')?.to).toBe('/features/emr/');
+  });
+});
+
+describe('confirmed rows whose post is still in src/content/posts', () => {
+  const post = (id: string, status: string): PostFile => parsePostFile(id, `src/content/posts/${id}/index.mdx`, `---\nstatus: ${status}\ntitle: x\n---\n\nBody.\n`);
+  const posts = (...files: PostFile[]) => new Map(files.map((f) => [f.path, f]));
+  const rows = [
+    row('/ai-allergy-clinic-software/', 'merge', '/specialties/', 'yes'),
+    row('/old-robot-post/', 'drop', '410', 'yes'),
+    row('/clinic-cash-flow/', 'keep', '/clinic-cash-flow/', 'yes'),
+    row('/unconfirmed-post/', 'merge', '/specialties/', ''),
+  ];
+
+  it('reads a post file as the registry does: status from frontmatter, path from `path` or the folder name', () => {
+    expect(post('ai-allergy-clinic-software', 'draft')).toEqual({ path: '/ai-allergy-clinic-software/', file: 'src/content/posts/ai-allergy-clinic-software/index.mdx', status: 'draft' });
+    expect(parsePostFile('x', 'f', '---\npath: /blog/x\nstatus: published\n---\n').path).toBe('/blog/x/');
+    expect(parsePostFile('x', 'f', 'no frontmatter')).toEqual({ path: '/x/', file: 'f', status: '' });
+  });
+
+  it('says a draft can be deleted once its redirect or 410 is live, for each confirmed merge or drop', () => {
+    const out = generatePostRules(rows, none);
+    expect(out.removals.map((r) => [r.path, r.rule])).toEqual([
+      ['/ai-allergy-clinic-software/', '301 to /specialties/'],
+      ['/old-robot-post/', '410'],
+    ]);
+    const leftovers = leftoverPosts(out.removals, posts(post('ai-allergy-clinic-software', 'draft'), post('old-robot-post', 'draft'), post('clinic-cash-flow', 'published'), post('unconfirmed-post', 'draft')));
+    expect(leftovers.map((l) => [l.path, l.ok])).toEqual([
+      ['/ai-allergy-clinic-software/', true],
+      ['/old-robot-post/', true],
+    ]);
+    expect(leftovers[0].message).toMatch(/draft src\/content\/posts\/ai-allergy-clinic-software\/index\.mdx can be deleted once the redirect \(301 to \/specialties\/\) is live/);
+    expect(leftovers[1].message).toMatch(/can be deleted once the 410 is live/);
+  });
+
+  it('prints nothing for a confirmed row whose post was already deleted', () => {
+    expect(leftoverPosts(generatePostRules(rows, none).removals, posts())).toEqual([]);
+  });
+
+  it('warns that the build fails when the post is published or in review', () => {
+    const out = generatePostRules(rows, none);
+    const leftovers = leftoverPosts(out.removals, posts(post('ai-allergy-clinic-software', 'published'), post('old-robot-post', 'review')));
+    expect(leftovers.map((l) => l.ok)).toEqual([false, false]);
+    expect(leftovers[0].message).toMatch(/status published, so the build fails on the redirect.*status: draft or delete it/);
+    expect(leftovers[1].message).toMatch(/status review, so the build fails on the 410/);
+  });
+
+  it('covers posts left to hand-written rows too, and a draft under a prefix rule is not accepted', () => {
+    const existing = {
+      redirects: [{ from: '/payor-management-system/', to: '/features/insurance-claims/' }],
+      gone: [{ path: '/wp-admin/', match: 'prefix' as const }],
+    };
+    const out = generatePostRules([row('/payor-management-system/', 'merge', '/features/insurance-claims/', 'yes'), row('/wp-admin/old-post/', 'drop', '410', 'yes')], existing);
+    const leftovers = leftoverPosts(out.removals, posts(post('payor-management-system', 'draft'), { path: '/wp-admin/old-post/', file: 'f', status: 'draft' }));
+    expect(leftovers.map((l) => [l.path, l.ok])).toEqual([
+      ['/payor-management-system/', true],
+      ['/wp-admin/old-post/', false],
+    ]);
+    expect(leftovers[0].message).toMatch(/redirect \(301 to \/features\/insurance-claims\/\)/);
+    expect(leftovers[1].message).toMatch(/prefix rule.*delete the draft/);
+  });
+
+  it('the generated rules then pass the build: skipped on the draft in preview, served in production', () => {
+    const out = generatePostRules(rows, none);
+    const pages = [
+      { path: '/specialties/', collection: 'hubs', status: 'published' },
+      { path: '/ai-allergy-clinic-software/', collection: 'posts', status: 'draft' },
+      { path: '/old-robot-post/', collection: 'posts', status: 'draft' },
+    ];
+    const preview = resolveRules(out.redirects, out.gone, new Set(pages.map((p) => p.path)), yieldingPaths(pages));
+    expect(preview.errors).toEqual([]);
+    expect(preview.active).toEqual([]);
+    expect(preview.activeGone).toEqual([]);
+    expect(preview.skipped.map((s) => s.draft)).toEqual(['/ai-allergy-clinic-software/']);
+    expect(preview.skippedGone.map((s) => s.draft)).toEqual(['/old-robot-post/']);
+    const published = pages.filter((p) => p.status === 'published');
+    const production = resolveRules(out.redirects, out.gone, new Set(published.map((p) => p.path)), yieldingPaths(published));
+    expect(production.errors).toEqual([]);
+    expect(production.active.map((r) => r.from)).toEqual(['/ai-allergy-clinic-software/']);
+    expect(production.activeGone.map((g) => g.path)).toEqual(['/old-robot-post/']);
   });
 });
 

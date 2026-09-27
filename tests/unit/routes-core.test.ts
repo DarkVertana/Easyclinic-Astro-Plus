@@ -4,10 +4,15 @@ import {
   buildRoutes,
   collapseRedirects,
   injectRoutes,
+  isYieldingPage,
   matchesRule,
   normalizePath,
+  pageYieldsTo,
   resolveRules,
   sourcePattern,
+  yieldingPaths,
+  type GoneRule,
+  type RedirectRule,
   type VercelRoute,
 } from '../../integrations/routes-core.ts';
 
@@ -112,6 +117,92 @@ describe('resolveRules', () => {
   it('flags duplicate sources', () => {
     const { errors } = resolveRules([{ from: '/a/', to: '/' }, { from: '/a', to: '/' }], [], built);
     expect(errors.join()).toMatch(/Duplicate/);
+  });
+});
+
+describe('a confirmed merge or drop on a post whose draft is still in the repo', () => {
+  type Page = { path: string; collection: string; status: string };
+  const pages: Page[] = [
+    { path: '/', collection: 'home', status: 'published' },
+    { path: '/specialties/', collection: 'hubs', status: 'published' },
+    { path: '/ai-allergy-clinic-software/', collection: 'posts', status: 'draft' },
+    { path: '/old-robot-post/', collection: 'posts', status: 'draft' },
+    { path: '/abdm-compliance/', collection: 'posts', status: 'published' },
+  ];
+  const merge: RedirectRule = { from: '/ai-allergy-clinic-software/', to: '/specialties/', note: 'posts manifest: merge (confirmed)' };
+  const drop: GoneRule = { path: '/old-robot-post/', note: 'posts manifest: drop (confirmed)' };
+  /** What vercel-routes does with a stage's manifest: production builds published pages only, preview builds all. */
+  const build = (stage: 'production' | 'preview', redirects: RedirectRule[], gone: GoneRule[] = [], all: Page[] = pages) => {
+    const built = all.filter((p) => stage === 'preview' || p.status === 'published');
+    return resolveRules(redirects, gone, new Set(built.map((p) => p.path)), yieldingPaths(built));
+  };
+
+  it('lets only a draft post sit on an exact rule (the registry check, every stage)', () => {
+    expect(isYieldingPage({ collection: 'posts', status: 'draft' })).toBe(true);
+    expect(pageYieldsTo({ collection: 'posts', status: 'draft' })).toBe(true);
+    expect(pageYieldsTo({ collection: 'posts', status: 'draft' }, 'prefix')).toBe(false);
+    expect(pageYieldsTo({ collection: 'posts', status: 'draft' }, 'children')).toBe(false);
+    expect(pageYieldsTo({ collection: 'posts', status: 'review' })).toBe(false);
+    expect(pageYieldsTo({ collection: 'posts', status: 'published' })).toBe(false);
+    expect(pageYieldsTo({ collection: 'countryPages', status: 'draft' })).toBe(false);
+    expect(pageYieldsTo({ collection: 'guides', status: 'draft' })).toBe(false);
+  });
+
+  it('production: the draft is not built, and the 301 and 410 apply', () => {
+    const { active, skipped, activeGone, skippedGone, errors } = build('production', [merge], [drop]);
+    expect(errors).toEqual([]);
+    expect(active).toEqual([merge]);
+    expect(skipped).toEqual([]);
+    expect(activeGone).toEqual([drop]);
+    expect(skippedGone).toEqual([]);
+    const routes = buildRoutes({ redirects: active, gone: activeGone, canonicalHost: 'www.easyclinic.io', indexingEnabled: true });
+    expect(routes.find((r) => r.headers?.Location === '/specialties/')?.src).toBe(sourcePattern('/ai-allergy-clinic-software/'));
+    expect(routes.find((r) => r.status === 410)?.src).toBe(sourcePattern('/old-robot-post/'));
+  });
+
+  it('preview: the draft is rendered, and its rule is skipped with a note instead of failing the build', () => {
+    const { active, skipped, activeGone, skippedGone, errors } = build('preview', [merge, { from: '/emr-landing-page/', to: '/' }], [drop, { path: '/wp-login.php' }]);
+    expect(errors).toEqual([]);
+    // Only the draft's own rules give way; the others are served as usual.
+    expect(active.map((r) => r.from)).toEqual(['/emr-landing-page/']);
+    expect(activeGone.map((g) => g.path)).toEqual(['/wp-login.php']);
+    expect(skipped).toEqual([{ rule: merge, draft: '/ai-allergy-clinic-software/', reason: expect.stringMatching(/draft post.*301 to \/specialties\/ applies in production/) }]);
+    expect(skippedGone).toEqual([{ rule: drop, draft: '/old-robot-post/', reason: expect.stringMatching(/draft post.*410 applies in production/) }]);
+    const routes = buildRoutes({ redirects: active, gone: activeGone, canonicalHost: 'www.easyclinic.io', indexingEnabled: false });
+    expect(routes.some((r) => r.headers?.Location === '/specialties/')).toBe(false);
+    expect(routes.filter((r) => r.status === 410).map((r) => r.src)).toEqual([sourcePattern('/wp-login.php')]);
+  });
+
+  it('a published page on a redirect or gone path stays a build error, in both stages', () => {
+    const onPublished: RedirectRule = { from: '/abdm-compliance/', to: '/specialties/' };
+    for (const stage of ['production', 'preview'] as const) {
+      const { errors, skipped, skippedGone } = build(stage, [onPublished], [{ path: '/abdm-compliance/' }]);
+      expect(errors.filter((e) => /Redirect source \/abdm-compliance\/.*matches built page/.test(e))).toHaveLength(1);
+      expect(errors.filter((e) => /Gone pattern \/abdm-compliance\/.*matches built page/.test(e))).toHaveLength(1);
+      // Not skipped as a draft: vercel-routes throws on the errors, failing the build.
+      expect(skipped).toEqual([]);
+      expect(skippedGone).toEqual([]);
+    }
+    expect(pageYieldsTo({ collection: 'posts', status: 'published' })).toBe(false);
+  });
+
+  it('a review post, a draft of another collection, or a prefix rule over a draft still fails in preview', () => {
+    const others: Page[] = [
+      ...pages,
+      { path: '/staff-scheduling/', collection: 'posts', status: 'review' },
+      { path: '/emr-software-in-kenya/', collection: 'countryPages', status: 'draft' },
+    ];
+    const { errors } = build(
+      'preview',
+      [
+        { from: '/staff-scheduling/', to: '/' },
+        { from: '/emr-software-in-kenya/', to: '/' },
+        { from: '/old-robot-post/', to: '/', match: 'prefix' },
+      ],
+      [],
+      others,
+    );
+    expect(errors.map((e) => e.split(' matches built page ')[1]).sort()).toEqual(['/emr-software-in-kenya/', '/old-robot-post/', '/staff-scheduling/']);
   });
 });
 

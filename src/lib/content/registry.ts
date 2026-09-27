@@ -2,7 +2,8 @@
  * The route registry: the single source of every content-backed URL.
  *
  * - Derives each page's path from its collection prefix and file name (or an explicit `path`).
- * - Fails on duplicate paths, reserved routes and redirect sources that shadow pages.
+ * - Fails on duplicate paths, reserved routes and redirect sources that shadow pages (a draft post may sit on an
+ *   exact redirect or gone path: routes-core pageYieldsTo).
  * - Resolves tokens, re-runs the publish rules on the resolved data (title and meta lengths after
  *   tokens, unconfirmed facts) and runs cross-entry checks (links, unique head keywords).
  * - Decides visibility: production renders published entries only.
@@ -11,7 +12,7 @@
  * `urlFor()` and `getRegistry()` are the only way templates, nav, sitemaps and breadcrumbs reach pages.
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { matchesRule } from '../../../integrations/routes-core.ts';
+import { matchesRule, pageYieldsTo, type MatchMode } from '../../../integrations/routes-core.ts';
 import { auditBody, auditEntry, errorsOf, formatIssues, type Issue } from '../rules/audit.ts';
 import type { Family, Status } from '../../schemas/constants';
 import type { PageFields } from '../../schemas/base';
@@ -149,11 +150,22 @@ async function build(): Promise<Registry> {
       for (const reserved of RESERVED) {
         if (path.startsWith(reserved)) structural.push(`${where}: path ${path} is reserved for a route file`);
       }
+      // A draft post may sit on an exact redirect or gone path (a merge or drop marketing confirmed before the draft
+      // was deleted): production does not render it and serves the rule; preview renders it and vercel-routes skips
+      // the rule there. Any other page on a redirect or gone path fails in every stage.
+      const yields = (match?: MatchMode) => pageYieldsTo({ collection: name, status: raw.status }, match);
+      const why = (match: MatchMode = 'exact') =>
+        name !== 'posts' ? '' : raw.status === 'draft' ? ` (a draft post may sit on an exact rule only, not a ${match} one)` : ` (only a draft post may sit on an exact rule; this one is ${raw.status})`;
+      // Rows in the generated files come from confirmed rows in migration/posts-manifest.csv (scripts/posts-redirects.ts).
+      const fix = (file: string | undefined, fallback: string) =>
+        file?.endsWith('-posts.yaml')
+          ? `it comes from a confirmed row in migration/posts-manifest.csv; ${name === 'posts' ? 'set the post to status: draft or delete it' : 'change that manifest row'}`
+          : fallback;
       for (const r of redirects) {
-        if (matchesRule(path, r.data.from, r.data.match)) structural.push(`${where}: ${path} is also a redirect source in ${r.filePath ?? 'src/data/redirects.yaml'} (${r.data.from}); remove the redirect row when publishing the page`);
+        if (matchesRule(path, r.data.from, r.data.match) && !yields(r.data.match)) structural.push(`${where}: ${path} is also a redirect source in ${r.filePath ?? 'src/data/redirects.yaml'} (${r.data.from}); ${fix(r.filePath, 'remove the redirect row when publishing the page')}${why(r.data.match)}`);
       }
       for (const g of gone) {
-        if (matchesRule(path, g.data.path, g.data.match)) structural.push(`${where}: ${path} matches gone pattern ${g.data.path}`);
+        if (matchesRule(path, g.data.path, g.data.match) && !yields(g.data.match)) structural.push(`${where}: ${path} matches gone pattern ${g.data.path} in ${g.filePath ?? 'src/data/gone.yaml'}; ${fix(g.filePath, 'remove the gone row when publishing the page')}${why(g.data.match)}`);
       }
 
       const { value: data, issues: tokenIssues } = resolveDeep<PageFields>(raw, tokenData);
@@ -247,7 +259,7 @@ async function build(): Promise<Registry> {
     tokenData,
     get: (path) => byPath.get(path),
     urlFor(path) {
-      const [bare, hash] = path.split('#');
+      const [bare] = path.split('#');
       if (!bare.startsWith('/')) return path;
       if (visiblePaths.has(bare)) return path;
       if (!isProduction) return path;

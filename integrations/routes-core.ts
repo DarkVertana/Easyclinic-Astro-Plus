@@ -51,6 +51,8 @@ export interface BuildRoutesInput {
   canonicalHost: string;
   indexingEnabled: boolean;
   goneDest?: string;
+  /** The build contains the Keystatic admin (preview with KEYSTATIC_STORAGE=github only; never production). */
+  keystatic?: boolean;
 }
 
 export const GONE_DEST = '/gone/index.html';
@@ -73,6 +75,17 @@ export const SECURITY_HEADERS: Record<string, string> = {
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
   'X-Frame-Options': 'SAMEORIGIN',
 };
+
+/**
+ * Keystatic admin URLs, rewritten (never redirected) ahead of the adapter's trailing-slash 308. The admin is one
+ * client-only page, and its router shows "Not found" when a deep admin URL gains a trailing slash, so every
+ * /keystatic URL is served by /keystatic/. Keystatic calls its API without a trailing slash; the rewrite adds it,
+ * keeping the OAuth callback's query string. Unverified on a real deployment: docs/keystatic-design.md section 9.
+ */
+export const KEYSTATIC_ROUTES: VercelRoute[] = [
+  { src: '^/keystatic(?:/.*)?$', dest: '/keystatic/', check: true },
+  { src: '^/api/keystatic/(.*[^/])$', dest: '/api/keystatic/$1/', check: true },
+];
 
 export function escapeRegex(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -155,27 +168,62 @@ export function collapseRedirects(rules: RedirectRule[]): RedirectRule[] {
   });
 }
 
+/**
+ * A content page that gives way to a redirect or 410 on its own path: a draft of the posts collection. When
+ * marketing confirms a merge or drop in the posts manifest, scripts/posts-redirects.ts writes the rule while the
+ * post's draft MDX is still in the repo. Production never renders drafts, so the rule applies there; a preview
+ * build renders the draft (a reviewer can still read it) and skips the rule for that path (resolveRules).
+ * Published and review pages, and pages of every other collection, never give way: that stays a build error.
+ */
+export function isYieldingPage(page: { collection?: string; status?: string }): boolean {
+  return page.collection === 'posts' && page.status === 'draft';
+}
+
+/**
+ * Whether `page` may sit on the path of a rule with this match mode. Only exact rules: a prefix or children rule
+ * over a draft would take other paths with it if a preview build skipped it.
+ */
+export function pageYieldsTo(page: { collection?: string; status?: string }, match: MatchMode = 'exact'): boolean {
+  return match === 'exact' && isYieldingPage(page);
+}
+
+/** The built pages that give way to an exact rule, for resolveRules (from the build manifest's page list). */
+export function yieldingPaths(pages: Array<{ path: string; collection?: string; status?: string }>): Set<string> {
+  return new Set(pages.filter(isYieldingPage).map((p) => p.path));
+}
+
 export interface ResolveResult {
   active: RedirectRule[];
-  skipped: Array<{ rule: RedirectRule; reason: string }>;
+  /** `draft` is set when the rule was skipped because its source is a draft post this build renders. */
+  skipped: Array<{ rule: RedirectRule; reason: string; draft?: string }>;
+  /** The 410 rules to emit: every gone rule except those skipped for a draft this build renders. */
+  activeGone: GoneRule[];
+  skippedGone: Array<{ rule: GoneRule; reason: string; draft: string }>;
   errors: string[];
 }
 
 /**
  * Checks rules against the set of pages this build actually produced.
- * - A redirect source that is also a built page is an error (the page would be unreachable).
- * - A gone pattern that matches a built page is an error.
+ * - A redirect source that is also a built page is an error (the page would be unreachable), unless the page is
+ *   in `yielding` and the rule is exact: then the rule is skipped in this build with a reason, and applies in
+ *   the build that does not render the page (production, for a draft post; see isYieldingPage).
+ * - A gone pattern that matches a built page is an error, with the same exception.
  * - A redirect whose target is not built uses its fallback, or is skipped with a reason.
  *   Skipped rows activate automatically in the build where their target is published.
+ *
+ * `yielding`: built pages that give way to an exact rule on their path (vercel-routes passes the built draft posts).
  */
 export function resolveRules(
   redirects: RedirectRule[],
   gone: GoneRule[],
   builtPages: Set<string>,
+  yielding: Set<string> = new Set(),
 ): ResolveResult {
   const errors: string[] = [];
   const skipped: ResolveResult['skipped'] = [];
   const active: RedirectRule[] = [];
+  const skippedGone: ResolveResult['skippedGone'] = [];
+  const activeGone: GoneRule[] = [];
 
   const seenSources = new Map<string, RedirectRule>();
   for (const rule of redirects) {
@@ -189,7 +237,7 @@ export function resolveRules(
     collapsed = collapseRedirects(redirects);
   } catch (error) {
     errors.push((error as Error).message);
-    return { active, skipped, errors };
+    return { active, skipped, activeGone, skippedGone, errors };
   }
 
   // A path that both redirects and returns 410 would silently take the redirect (redirect routes come
@@ -203,20 +251,37 @@ export function resolveRules(
     }
   }
 
+  const yields = (page: string, match: MatchMode = 'exact') => match === 'exact' && yielding.has(page);
+  const yieldedNote = (page: string, what: string) =>
+    `source ${page} is a draft post, rendered in this build so a reviewer can read it; the ${what} applies in production, where the draft is not rendered. Delete the draft once the ${what} is live.`;
+  const yieldedRedirects = new Set<RedirectRule>();
+  const yieldedGone = new Set<GoneRule>();
+
   for (const page of builtPages) {
     for (const rule of collapsed) {
-      if (matchesRule(page, rule.from, rule.match)) {
+      if (!matchesRule(page, rule.from, rule.match)) continue;
+      if (yields(page, rule.match)) {
+        yieldedRedirects.add(rule);
+        skipped.push({ rule, reason: yieldedNote(page, `${rule.status ?? 301} to ${rule.to}`), draft: page });
+      } else {
         errors.push(`Redirect source ${rule.from} (${rule.match ?? 'exact'}) matches built page ${page}`);
       }
     }
     for (const rule of gone) {
-      if (matchesRule(page, rule.path, rule.match)) {
+      if (!matchesRule(page, rule.path, rule.match)) continue;
+      if (yields(page, rule.match)) {
+        yieldedGone.add(rule);
+        skippedGone.push({ rule, reason: yieldedNote(page, '410'), draft: page });
+      } else {
         errors.push(`Gone pattern ${rule.path} (${rule.match ?? 'exact'}) matches built page ${page}`);
       }
     }
   }
 
+  for (const rule of gone) if (!yieldedGone.has(rule)) activeGone.push(rule);
+
   for (const rule of collapsed) {
+    if (yieldedRedirects.has(rule)) continue;
     if (isExternal(rule.to) || builtPages.has(stripHash(rule.to))) {
       active.push(rule);
       continue;
@@ -228,7 +293,7 @@ export function resolveRules(
     skipped.push({ rule, reason: `target ${rule.to} is not built in this stage` });
   }
 
-  return { active, skipped, errors };
+  return { active, skipped, activeGone, skippedGone, errors };
 }
 
 function stripHash(path: string): string {
@@ -256,6 +321,8 @@ export function buildRoutes(input: BuildRoutesInput): VercelRoute[] {
     routes.push({ src: '^/(.*)$', headers: { 'X-Robots-Tag': 'noindex, nofollow' }, continue: true });
     routes.push({ src: '^/robots\\.txt$', dest: '/robots-disallow.txt' });
   }
+
+  if (input.keystatic) routes.push(...KEYSTATIC_ROUTES);
 
   for (const rule of collapseRedirects(input.redirects)) {
     routes.push({

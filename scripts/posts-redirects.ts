@@ -4,15 +4,32 @@
  * hand-written redirects.yaml and gone.yaml (src/content.config.ts), so the usual checks apply: duplicate
  * sources, loops, and sources that shadow a built page fail the build.
  *
+ * A confirmed merge or drop whose post draft is still in src/content/posts is allowed: production serves the 301
+ * or 410 and does not render the draft; preview renders the draft and skips the rule (reports/redirects-skipped.json).
+ * The script prints one line per such post: its draft can be deleted once the rule is live. A published or review
+ * post on a confirmed row is printed as a warning, because the build fails until it is set to draft or deleted.
+ *
  * Usage: node scripts/posts-redirects.ts [--check | --dry-run]
  *   --check    exit 1 if the generated files are out of date with the manifest (CI)
  *   --dry-run  print what would be written
  */
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { parse as parseYaml } from 'yaml';
 import type { GoneRule, RedirectRule } from '../integrations/routes-core.ts';
 import { parseCsvRecords } from './lib/csv.ts';
-import { GONE_OUT, MANIFEST_CSV, REDIRECTS_OUT, generatePostRules, renderGoneYaml, renderRedirectsYaml, type ManifestRow } from './lib/posts-rules.ts';
+import {
+  GONE_OUT,
+  MANIFEST_CSV,
+  POSTS_DIR,
+  REDIRECTS_OUT,
+  generatePostRules,
+  leftoverPosts,
+  parsePostFile,
+  renderGoneYaml,
+  renderRedirectsYaml,
+  type ManifestRow,
+  type PostFile,
+} from './lib/posts-rules.ts';
 
 const check = process.argv.includes('--check');
 const dryRun = process.argv.includes('--dry-run');
@@ -36,6 +53,23 @@ if (result.errors.length) {
   for (const e of result.errors) console.error(`  ✗ ${e}`);
   console.error(`\n${result.errors.length} confirmed rows cannot be used; fix the manifest. Nothing written.`);
   process.exit(1);
+}
+
+// Post drafts still in the repo for confirmed merges and drops.
+const posts = new Map<string, PostFile>();
+for (const id of existsSync(POSTS_DIR) ? readdirSync(POSTS_DIR) : []) {
+  const file = `${POSTS_DIR}/${id}/index.mdx`;
+  if (!existsSync(file)) continue;
+  const post = parsePostFile(id, file, readFileSync(file, 'utf8'));
+  posts.set(post.path, post);
+}
+const leftovers = leftoverPosts(result.removals, posts);
+if (leftovers.length) {
+  console.log(`\n${leftovers.length} confirmed merge or drop rows still have their post in ${POSTS_DIR}:`);
+  for (const l of leftovers) {
+    if (l.ok) console.log(`  - ${l.message}`);
+    else console.warn(`  ! ${l.message}`);
+  }
 }
 
 const outputs: Array<[string, string]> = [

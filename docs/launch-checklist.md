@@ -26,6 +26,22 @@ Only confirmed merge and drop rows generate anything; keep and review rows never
 `src/data/redirects.yaml` or `gone.yaml` already covers is left to that row, with a warning when the two disagree.
 The generator refuses to write while a confirmed row is unusable (a merge that points at itself, an unknown decision).
 
+A confirmed merge or drop does not need the post's draft deleted first. While the draft MDX is still in
+`src/content/posts` with `status: draft`:
+
+- Production does not render the draft, and serves the 301 (merge) or 410 (drop) for its URL.
+- Preview renders the draft, so a reviewer can still read it, and skips the redirect or 410 for that one path. Each
+  skipped rule is listed, with the reason, in `reports/redirects-skipped.json` and in the build manifest
+  (`skippedRedirects`, `skippedGone`).
+
+For each confirmed merge or drop whose post is still in the repo, `node scripts/posts-redirects.ts` prints a line
+saying the draft can be deleted once the redirect (or 410) is live in production (on 26 September 2026, 98 proposed
+merge rows have a draft post in the repo; no drop row has one). Delete those drafts after the
+production deployment that serves the rule. A post that is `published` or `review` on a confirmed row is printed as a
+warning instead: the build fails while a published or review page sits on a redirect or 410 path, so set it to
+`status: draft` or delete it before deploying. Only exact rules give way to a draft; a draft under a hand-written
+`prefix` or `children` rule still fails the build.
+
 Fix before marketing reviews the proposals (found while wiring this up):
 
 - 28 rows propose merging into `/ent-emr-software/`, but only two of them are about ENT
@@ -36,8 +52,9 @@ Fix before marketing reviews the proposals (found while wiring this up):
 - `/insurance-claim-management-system/` and `/payor-management-system/` are merge rows, but `redirects.yaml`
   already sends both to `/features/insurance-claims/`, which wins.
 - `/healthcare-dashboard-software/` and `/clinic-automation-in-uganda/` are keep rows, but `redirects.yaml`
-  redirects both. Importing either as a post fails the build (a page may not sit on a redirect source), so one of
-  the two decisions has to change.
+  redirects both. Either can be imported as a draft post (preview renders it, production serves the redirect), but
+  publishing it fails the build (a published page may not sit on a redirect source), so one of the two decisions
+  has to change before the post is published.
 - Re-running `scripts/posts-manifest.ts` rewrites the CSV without the `confirmed` column and would lose
   marketing's answers. Run it only before marketing starts, or teach it to carry the column over.
 
@@ -45,7 +62,8 @@ Fix before marketing reviews the proposals (found while wiring this up):
 
 - `src/data/redirects.yaml` and `gone.yaml` (hand-written), page `redirectFrom` lists, and the generated post files
   above all feed the same routes. Chains are collapsed to one hop at build time; loops, duplicate sources, a
-  source that shadows a built page, and a path that is both redirected and gone all fail the build.
+  source that shadows a built page, and a path that is both redirected and gone all fail the build. The one
+  exception is a draft post on an exact redirect or 410 path (1.1).
 - **Needs company access:** the Search Console pages export and the GA4 "Page Not Found" list (spec 8: the 404
   page was the third most viewed page). Put each export in `migration/legacy-extra/<name>.txt`, one URL or path
   per line, re-run the inventory (1.3), and add redirects for whatever the coverage report lists.
