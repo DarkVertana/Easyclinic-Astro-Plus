@@ -1,6 +1,7 @@
 import { z } from 'astro/zod';
 import { block } from '../../../schemas/block-base';
 import { isoDate, md } from '../../../schemas/fields';
+import { SLUG_ID } from '../../../schemas/patterns';
 
 /**
  * Per-vendor sections for listicles (spec 5.14: 120 to 180 words each, pros and cons, EasyClinic treated
@@ -12,7 +13,7 @@ export const schema = () =>
     vendors: z
       .array(
         z.object({
-          id: z.string().regex(/^[a-z0-9-]+$/),
+          id: z.string().regex(SLUG_ID),
           name: z.string(),
           rank: z.number().int().positive().optional(),
           us: z.boolean().default(false),

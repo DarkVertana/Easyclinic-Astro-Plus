@@ -1,6 +1,9 @@
 ---
 import { getEntry } from 'astro:content';
 import { stripSentinels } from '../../lib/content/sentinel';
+import { isProduction } from '../../lib/content/stage';
+import { OG_FALLBACK, ogImagePath } from '../../lib/seo/og-path';
+import { ogImageUrl } from '../../pages/og/_origin';
 
 interface Props {
   title: string;
@@ -10,16 +13,21 @@ interface Props {
   canonical?: string;
   indexable: boolean;
   ogType?: 'website' | 'article';
+  /** Defaults to the page's generated card (src/pages/og/[...path].png.ts) for content-backed pages, else /og/default.png. */
   ogImage?: string;
   jsonLd?: Record<string, unknown> | null;
   publishedTime?: Date;
   modifiedTime?: Date | null;
 }
 
-const { title, description, path, canonical, indexable, ogType = 'website', ogImage = '/og/default.png', jsonLd, modifiedTime } = Astro.props;
+// Astro.locals.page is set by src/pages/[...path].astro, whose pages all get a generated 1200x630 card.
+const generatedImage = Astro.locals.page ? ogImagePath(Astro.locals.page.path) : OG_FALLBACK;
+const { title, description, path, canonical, indexable, ogType = 'website', ogImage = generatedImage, jsonLd, modifiedTime } = Astro.props;
 const site = (await getEntry('site', 'site'))!.data;
 const canonicalUrl = canonical ?? new URL(path, site.url).href;
-const image = new URL(ogImage, site.url).href;
+// Absolute on the origin that serves this build's cards: the site URL in production, the deployment's own URL on
+// a Vercel preview (src/pages/og/_origin.ts). The canonical URL above stays on the site URL everywhere.
+const image = ogImageUrl(ogImage, { production: isProduction, siteUrl: site.url, env: process.env, pageOrigin: Astro.url.origin });
 const cleanTitle = stripSentinels(title);
 const cleanDescription = stripSentinels(description);
 // JSON-LD is serialised with "<" escaped so content can never close the script element.

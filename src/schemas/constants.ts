@@ -12,6 +12,29 @@ export type RegulatorState = (typeof REGULATOR_STATES)[number];
 export const INTEGRATION_STATES = ['live', 'beta', 'planned'] as const;
 export type IntegrationState = (typeof INTEGRATION_STATES)[number];
 
+/** Country payment rails and other status-carrying list items: the union of the two lists above, without repeats. */
+export const STATUSED_ITEM_STATES = ['live', 'in-certification', 'planned', 'not-applicable', 'beta'] as const;
+
+export const REGULATOR_KINDS = ['integration', 'law', 'guideline', 'certification', 'tax', 'payer'] as const;
+export const AUTHOR_KINDS = ['clinician', 'product', 'country-lead', 'founder', 'editor'] as const;
+
+/** Section background: sections alternate white and a light wash (section 11). */
+export const TONES = ['plain', 'wash', 'inverse'] as const;
+export const MEDIA_KINDS = ['screenshot', 'photo', 'video'] as const;
+export const MEDIA_FRAMES = ['browser', 'phone', 'none'] as const;
+export const PROOF_VARIANTS = ['study', 'customer', 'badges', 'screenshot'] as const;
+export const PROSE_WIDTHS = ['measure', 'wide'] as const;
+export const SCOPE_VARIANTS = ['notFor', 'isNot', 'limits'] as const;
+/** single: one large quote alone (section 11); row: up to three cards. */
+export const TESTIMONIAL_LAYOUTS = ['row', 'single'] as const;
+
+/**
+ * Editor-only keys: never rendered, so the rules engine (src/lib/rules/walk.ts), the token resolver
+ * (src/lib/content/tokens.ts) and the facts report skip them. `notes` sits on pages and data files,
+ * `editorNote` on a section.
+ */
+export const UNRENDERED_KEYS = ['notes', 'editorNote'] as const;
+
 /** Spec 5.17 /integrations directory categories, in the order the page shows them. */
 export const INTEGRATION_CATEGORIES = ['payments', 'insurance', 'national-health', 'labs', 'accounting', 'bi', 'messaging', 'emr'] as const;
 export type IntegrationCategory = (typeof INTEGRATION_CATEGORIES)[number];

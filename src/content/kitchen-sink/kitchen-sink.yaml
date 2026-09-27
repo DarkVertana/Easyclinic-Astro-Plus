@@ -54,7 +54,7 @@ sections:
         - { persona: solo, title: I run my own clinic, body: One doctor and a receptionist., href: /solutions/solo-clinic/ }
         - { persona: polyclinic, title: We share one front door, body: Several specialists and one record., href: /solutions/polyclinic/ }
         - { persona: chain, title: We run many branches, body: Central records and SOPs., href: /solutions/clinic-chain/ }
-        - { persona: hospital-opd, title: We run a hospital OPD, body: Queues, pharmacy and claims., href: /solutions/hospital-opd/ }
+        - { persona: hospital-opd, title: We run a hospital OPD, body: 'Queues, pharmacy and claims.', href: /solutions/hospital-opd/ }
         - { persona: ngo, title: We run an NGO clinic, body: Donor-ready reports., href: /solutions/ngo-clinics/ }
   - discriminant: oldWayNewWay
     value:
@@ -75,7 +75,7 @@ sections:
     value:
       heading: The patient journey
       steps:
-        - { label: Book, body: Online, on WhatsApp or at the desk., href: /features/appointment-scheduling/ }
+        - { label: Book, body: 'Online, on WhatsApp or at the desk.', href: /features/appointment-scheduling/ }
         - { label: Arrive, body: Token issued and the chart ready., href: /features/appointment-scheduling/ }
         - { label: Consult, body: Notes written during the visit., href: /features/emr/ }
         - { label: Prescribe, body: A prescription in about thirty seconds., href: /features/emr/ }
@@ -124,7 +124,7 @@ sections:
     value:
       heading: Four-day training path
       steps:
-        - { title: Basic training, meta: Day 1 · 40 minutes, body: Registration, appointments and billing. }
+        - { title: Basic training, meta: Day 1 · 40 minutes, body: 'Registration, appointments and billing.' }
         - { title: EMR scenario training, meta: Day 2 · 40 minutes, body: Writing notes and prescriptions. }
         - { title: Practice exercises, meta: Day 3 · 20 minutes, body: Your team practises on sample patients. }
         - { title: Road to expertise, meta: Day 4 · 20 minutes, body: Shortcuts and templates for your specialty. }

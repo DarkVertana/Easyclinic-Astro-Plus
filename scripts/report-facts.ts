@@ -9,6 +9,11 @@ import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'n
 import { join, relative } from 'node:path';
 import { parse } from 'yaml';
 import { PLACEHOLDER } from '../src/lib/rules/text.ts';
+import { UNRENDERED_KEYS } from '../src/schemas/constants.ts';
+import { blankGroupsToUndefined } from '../src/schemas/groups.ts';
+
+/** Editor-only keys and rendered footnotes (`note`) are not facts to supply. */
+const SKIP = new Set<string>([...UNRENDERED_KEYS, 'note']);
 
 const ROOT = process.cwd();
 type Row = { file: string; path: string; what: string };
@@ -45,7 +50,7 @@ function walk(value: unknown, file: string, path: string) {
     const obj = value as Record<string, unknown>;
     if ('alt' in obj && 'frame' in obj && !obj.src && !obj.videoUrl) add(group, { file, path, what: `screenshot needed: ${obj.needed ?? obj.alt}` });
     for (const [k, v] of Object.entries(obj)) {
-      if (k === 'notes' || k === 'note') continue;
+      if (SKIP.has(k)) continue;
       walk(v, file, path ? `${path}.${k}` : k);
     }
   }
@@ -54,7 +59,8 @@ function walk(value: unknown, file: string, path: string) {
 for (const file of [...files(join(ROOT, 'src/data')), ...files(join(ROOT, 'src/content'))]) {
   const rel = relative(ROOT, file);
   if (/redirects|gone/.test(rel)) continue;
-  const data = parse(readFileSync(file, 'utf8'));
+  // Blank optional groups (as Keystatic saves an untouched media or CTA group) are absent, as in the build.
+  const data = blankGroupsToUndefined(parse(readFileSync(file, 'utf8')));
   walk(data, rel, '');
   if (rel.startsWith('src/content/') && data && !data.author) add('Page content', { file: rel, path: 'author', what: 'named author' });
 }

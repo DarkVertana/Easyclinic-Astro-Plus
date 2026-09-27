@@ -272,7 +272,9 @@ describe('WordPress import: HTML clean-up', () => {
   it('labels post table cells with their column header for the stacked layout', () => {
     const html = labelTableCells('<thead><tr><th style="text-align:left">Item</th><th>Cost &amp; "fees"</th></tr></thead><tbody><tr><td>Rent</td><td><strong>100</strong></td></tr><tr><td>Staff</td></tr></tbody>');
     expect(html).toContain('<thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader" style="text-align:left">Item</th>');
-    expect(html).toContain('<tbody role="rowgroup"><tr role="row"><td role="cell" data-label="Item">Rent</td><td role="cell" data-label="Cost &amp; &quot;fees&quot;"><strong>100</strong></td></tr>');
+    // "100" is the Cost column's only amount, so that column is also marked numeric (post-table.test.ts covers the rule).
+    expect(html).toContain('<th scope="col" role="columnheader" data-numeric>Cost &amp; "fees"</th>');
+    expect(html).toContain('<tbody role="rowgroup"><tr role="row"><td role="cell" data-label="Item">Rent</td><td role="cell" data-label="Cost &amp; &quot;fees&quot;" data-numeric><strong>100</strong></td></tr>');
     expect(html).toContain('<tr role="row"><td role="cell" data-label="Item">Staff</td></tr>');
   });
   it('escapes MDX syntax outside code', () => {

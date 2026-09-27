@@ -1,7 +1,9 @@
 /**
  * Walks a content entry's data and yields every string and every unknown fact (null), with a
- * dotted path for error messages. Keys holding URLs, ids and machine values are skipped.
+ * dotted path for error messages. Keys holding URLs, ids and machine values are skipped, and so are the
+ * editor-only keys (UNRENDERED_KEYS: `notes`, `editorNote`), which are never rendered.
  */
+import { UNRENDERED_KEYS } from '../../schemas/constants.ts';
 
 export type Leaf =
   | { kind: 'string'; path: string; key: string; value: string; verbatim: boolean; isCtaLabel: boolean }
@@ -29,7 +31,7 @@ const SKIP_KEYS = new Set([
   'redirectFrom',
   'headKeyword',
   'secondaryKeywords',
-  'notes',
+  ...UNRENDERED_KEYS,
   'currency',
   'country',
   'kind',

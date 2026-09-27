@@ -9,7 +9,7 @@
  */
 import type { Issue } from '../rules/audit.ts';
 import { formatMoney } from '../format/money.ts';
-import type { Currency } from '../../schemas/constants';
+import { UNRENDERED_KEYS, type Currency } from '../../schemas/constants.ts';
 import { wrap } from './sentinel.ts';
 
 export const TOKEN = /\{(price|fact|fig|contact):([a-z0-9._-]+)\}/gi;
@@ -88,7 +88,7 @@ export function resolveTokens(input: string, data: TokenData, path: string): Res
 }
 
 /** Editor-only fields: never rendered, so tokens written there (to discuss a fact) are left as text. */
-const UNRENDERED = new Set(['notes']);
+const UNRENDERED = new Set<string>(UNRENDERED_KEYS);
 
 /** Resolves tokens in every string of an entry's data, returning a copy and the issues found. */
 export function resolveDeep<T>(value: T, data: TokenData, path = ''): { value: T; issues: Issue[] } {

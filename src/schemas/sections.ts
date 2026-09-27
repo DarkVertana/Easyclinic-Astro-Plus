@@ -1,5 +1,6 @@
 import type { SchemaContext } from 'astro:content';
 import { z } from 'astro/zod';
+import type { BlockName as ListedBlockName } from './family-blocks';
 import { schema as glossaryList } from '../components/blocks/GlossaryList/schema';
 import { schema as postIndex } from '../components/blocks/PostIndex/schema';
 import { schema as comparisonTable } from '../components/blocks/ComparisonTable/schema';
@@ -83,6 +84,11 @@ export const BLOCK_SCHEMAS = {
 
 export type BlockName = keyof typeof BLOCK_SCHEMAS;
 export const BLOCK_NAMES = Object.keys(BLOCK_SCHEMAS) as BlockName[];
+
+// family-blocks.ts keeps its own literal list for keystatic.config.ts (which cannot import this module); the two
+// must name the same blocks. The parity test also compares the order at run time.
+type Same<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;
+void (true satisfies Same<BlockName, ListedBlockName>);
 
 type BlockSchema<N extends BlockName> = z.infer<ReturnType<(typeof BLOCK_SCHEMAS)[N]>>;
 export type Section = { [N in BlockName]: BlockSchema<N> }[BlockName];

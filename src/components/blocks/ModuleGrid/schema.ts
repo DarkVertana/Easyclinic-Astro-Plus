@@ -1,7 +1,7 @@
 import type { SchemaContext } from 'astro:content';
 import { z } from 'astro/zod';
 import { block } from '../../../schemas/block-base';
-import { internalPath, media } from '../../../schemas/fields';
+import { internalPath, optionalMedia } from '../../../schemas/fields';
 
 export const schema = (ctx: SchemaContext) =>
   block('moduleGrid', {
@@ -13,7 +13,7 @@ export const schema = (ctx: SchemaContext) =>
           outcome: z.string(),
           href: internalPath.optional(),
           icon: z.string().optional(),
-          media: media(ctx).optional(),
+          media: optionalMedia(ctx),
           links: z.array(z.object({ label: z.string(), href: internalPath })).default([]),
         }),
       )

@@ -12,6 +12,7 @@ import { join, relative } from 'node:path';
 import { z } from 'astro/zod';
 import { parse } from 'yaml';
 import { auditBody, auditEntry, errorsOf, type Issue } from '../src/lib/rules/audit.ts';
+import { blankGroupsToUndefined } from '../src/schemas/groups.ts';
 
 register('./lib/astro-hooks.mjs', import.meta.url);
 const families = (await import('../src/schemas/families.ts')) as unknown as Record<string, (ctx: { image: () => z.ZodType }) => z.ZodType>;
@@ -68,7 +69,8 @@ for (const file of files(join(process.cwd(), 'src/content'))) {
   const family = FAMILY_BY_DIR[rel.split('/')[2]] ?? 'feature';
   const source = readFileSync(file, 'utf8');
   const fm = file.endsWith('.mdx') ? source.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/) : null;
-  const data = parse(fm ? fm[1] : source);
+  // Blank optional groups (`editorialPass: {}`, as Keystatic saves an untouched group) are absent, as in the build.
+  const data = blankGroupsToUndefined(parse(fm ? fm[1] : source));
   const bodyIssues = fm && family !== 'legal' ? auditBody(fm[2]) : [];
   const issues = [...schemaIssues(data, family), ...auditEntry(data, family), ...bodyIssues].filter((i) => all || i.severity === 'error');
   if (!issues.length) continue;

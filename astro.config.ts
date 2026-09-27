@@ -3,6 +3,7 @@ import { defineConfig, envField, fontProviders } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
+import keystaticGate from './integrations/keystatic-gate.ts';
 import vercelRoutes from './integrations/vercel-routes.ts';
 
 /**
@@ -54,7 +55,8 @@ export default defineConfig({
   build: { inlineStylesheets: 'always' },
   adapter: vercel(),
   // Redirects are not configured here: see integrations/vercel-routes.ts (withastro/astro#18073).
-  integrations: [mdx(), vercelRoutes()],
+  // keystaticGate adds React and the Keystatic admin (/keystatic/) outside production only; see the file.
+  integrations: [mdx(), keystaticGate(), vercelRoutes()],
   // Shiki writes inline style attributes that the CSP below blocks, and no content has code blocks.
   markdown: { syntaxHighlight: false },
   vite: { plugins: [tailwindcss()] },

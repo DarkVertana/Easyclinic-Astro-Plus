@@ -1,15 +1,23 @@
 import { reference } from 'astro:content';
 import { z } from 'astro/zod';
 import {
+  AUTHOR_KINDS,
   BILLING_PERIODS,
   CURRENCIES,
   INTEGRATION_CATEGORIES,
   INTEGRATION_STATES,
   PERSONAS,
   PLAN_IDS,
+  REGULATOR_KINDS,
   REGULATOR_STATES,
+  STATUSED_ITEM_STATES,
 } from './constants';
-import { href, internalPath, isoDate, md, unknown } from './fields';
+import { href, internalPath, isoDate, md, optionalGroup, unknown } from './fields';
+import { NAV_LINK_PRESENT_IF } from './groups';
+import { DIGITS } from './patterns';
+
+/** Editor notes (provenance, decisions); never rendered. Keystatic keeps them where it would drop YAML comments. */
+const notes = z.array(z.string()).default([]);
 
 /* Shared facts. Every `null` is a fact the company must supply; `pnpm facts:report` lists them. */
 
@@ -21,7 +29,7 @@ export const siteSchema = z.object({
   foundingYear: z.number().int(),
   email: z.email(),
   phone: z.string(),
-  whatsapp: z.string().regex(/^\d+$/),
+  whatsapp: z.string().regex(DIGITS),
   address: z.object({
     street: z.string(),
     city: z.string(),
@@ -44,7 +52,7 @@ export const factSchema = z.object({
   asOf: unknown(isoDate),
   note: z.string().optional(),
 });
-export const factsSchema = z.object({ facts: z.record(z.string(), factSchema) });
+export const factsSchema = z.object({ facts: z.record(z.string(), factSchema), notes });
 
 export const studySchema = z.object({
   publications: z.array(
@@ -119,6 +127,7 @@ export const planSchema = z.object({
     }),
   ),
   conditions: z.array(z.string()).min(1),
+  notes,
 });
 
 const planPrice = z.object({
@@ -135,17 +144,19 @@ export const priceSchema = z.object({
   plans: z.object({ professional: planPrice, premium: planPrice }),
   addons: z.record(z.string(), unknown(z.string())).default({}),
   taxNote: unknown(z.string()),
-  paymentMethods: unknown(z.array(z.string())),
+  /** At least one method when known: an empty list and an unknown one would look the same in the editor. */
+  paymentMethods: unknown(z.array(z.string()).min(1)),
   source: z.string(),
   asOf: unknown(isoDate),
   note: z.string().optional(),
   defaultPeriod: z.enum(BILLING_PERIODS).default('annual'),
+  notes,
 });
 
 // Strict: an unquoted comma in a YAML flow mapping silently truncates a value and adds a stray key.
 const statusedItem = z.strictObject({
   name: z.string(),
-  state: unknown(z.enum([...REGULATOR_STATES, ...INTEGRATION_STATES])),
+  state: unknown(z.enum(STATUSED_ITEM_STATES)),
   asOf: unknown(isoDate),
   note: z.string().optional(),
 });
@@ -163,7 +174,7 @@ export const countrySchema = z.object({
     publishName: unknown(z.boolean()),
     role: unknown(z.string()),
     phone: unknown(z.string()),
-    whatsapp: unknown(z.string().regex(/^\d+$/)),
+    whatsapp: unknown(z.string().regex(DIGITS)),
     email: unknown(z.email()),
     hours: unknown(z.string()),
     callbackWindow: unknown(z.string()),
@@ -184,13 +195,14 @@ export const countrySchema = z.object({
   insurers: z.array(z.string()).default([]),
   languages: z.array(z.string()).default([]),
   taxInvoicing: unknown(z.string()),
+  notes,
 });
 
 export const regulatorSchema = z.object({
   country: z.string(),
   name: z.string(),
   body: z.string(),
-  kind: z.enum(['integration', 'law', 'guideline', 'certification', 'tax', 'payer']),
+  kind: z.enum(REGULATOR_KINDS),
   state: unknown(z.enum(REGULATOR_STATES)),
   asOf: unknown(isoDate),
   /** Quarter for Planned and In certification, e.g. "2027 Q1". */
@@ -199,6 +211,7 @@ export const regulatorSchema = z.object({
   clinicMustDo: md.optional(),
   link: z.url().optional(),
   order: z.number().default(0),
+  notes,
 });
 
 export const testimonialSchema = z.object({
@@ -218,15 +231,17 @@ export const testimonialSchema = z.object({
   source: z.string(),
   consentOnFile: unknown(z.boolean()),
   photo: z.string().optional(),
+  notes,
 });
 
 export const authorSchema = z.object({
   name: z.string(),
   role: z.string(),
-  kind: z.enum(['clinician', 'product', 'country-lead', 'founder', 'editor']),
+  kind: z.enum(AUTHOR_KINDS),
   bio: unknown(z.string()),
   linkedin: unknown(z.url()),
   photo: z.string().optional(),
+  notes,
 });
 
 const navLink = z.strictObject({
@@ -244,11 +259,12 @@ export const navSchema = z.object({
       groups: z
         .array(z.object({ title: z.string(), links: z.array(navLink).min(1) }))
         .optional(),
-      footerLink: navLink.optional(),
+      footerLink: optionalGroup(navLink, NAV_LINK_PRESENT_IF),
     }),
   ),
   footer: z.array(z.object({ title: z.string(), links: z.array(navLink) })),
   legal: z.array(navLink),
+  notes,
 });
 
 export const integrationSchema = z.object({
@@ -260,6 +276,7 @@ export const integrationSchema = z.object({
   /** When a planned or beta connection is expected to go live, as the company states it (e.g. "Q1 2027"). */
   expected: z.string().nullable().default(null),
   description: md,
+  notes,
 });
 
 export const testimonialRef = reference('testimonials');

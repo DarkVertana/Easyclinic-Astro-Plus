@@ -1,6 +1,7 @@
 import { z } from 'astro/zod';
 import { block } from '../../../schemas/block-base';
 import { internalPath, md } from '../../../schemas/fields';
+import { SLUG_ID } from '../../../schemas/patterns';
 
 /**
  * Glossary (spec 5.19: definitions of 60 to 100 words, each its own anchor, each linking to the page
@@ -11,7 +12,7 @@ export const schema = () =>
     terms: z
       .array(
         z.object({
-          id: z.string().regex(/^[a-z0-9-]+$/),
+          id: z.string().regex(SLUG_ID),
           term: z.string(),
           aka: z.string().optional(),
           definition: md,

@@ -2,7 +2,8 @@ import { reference, type SchemaContext } from 'astro:content';
 import { z } from 'astro/zod';
 import { auditEntry, errorsOf } from '../lib/rules/audit.ts';
 import { STATUSES, type Family } from './constants';
-import { cta, faqItem, internalPath, isoDate, md, media } from './fields';
+import { cta, faqItem, internalPath, isoDate, md, optionalCta, optionalGroup, optionalMedia } from './fields';
+import { CLAIMS_REVIEW_PRESENT_IF, CLOSING_PRESENT_IF, EDITORIAL_PASS_PRESENT_IF, HERO_STRIP_PRESENT_IF } from './groups';
 import { sectionsFor, type BlockName, type Section } from './sections';
 
 /**
@@ -30,18 +31,19 @@ export const pageBase = (ctx: SchemaContext) =>
     author: reference('authors').nullable(),
     reviewedBy: reference('authors').optional(),
     lastUpdated: isoDate.nullable(),
-    heroMedia: media(ctx).optional(),
+    heroMedia: optionalMedia(ctx),
     /** Compliance and rating strip under the hero CTAs (section 11). */
-    heroStrip: z
-      .object({
+    heroStrip: optionalGroup(
+      z.object({
         regulators: z.array(reference('regulators')).default([]),
         ratings: z.boolean().default(false),
         study: z.boolean().default(false),
-      })
-      .optional(),
+      }),
+      HERO_STRIP_PRESENT_IF,
+    ),
     ctas: z.object({
       primary: cta,
-      secondary: cta.optional(),
+      secondary: optionalCta,
       /** Prefilled WhatsApp message naming this page (spec 7.9). */
       whatsapp: z.string().optional(),
     }),
@@ -57,30 +59,32 @@ export const pageBase = (ctx: SchemaContext) =>
       relatedHeading: z.string().default('Where to go next'),
     }),
     /** Closing CTA band. Copy is per page; there is no shared closing block (spec 2.11). */
-    closing: z
-      .object({
+    closing: optionalGroup(
+      z.object({
         heading: z.string(),
         body: md.optional(),
         primary: cta,
-        secondary: cta.optional(),
-      })
-      .optional(),
+        secondary: optionalCta,
+      }),
+      CLOSING_PRESENT_IF,
+    ),
     country: reference('countries').optional(),
     noindex: z.boolean().default(false),
     canonical: z.url().optional(),
     /** Old URLs this page replaces; each becomes a 301 to this page. */
     redirectFrom: z.array(internalPath).default([]),
     /** Spec 6.5: the editor's two written answers. Required to publish. */
-    editorialPass: z
-      .object({
+    editorialPass: optionalGroup(
+      z.object({
         by: z.string(),
         on: isoDate,
         onlyUsCouldWrite: z.string().min(10),
         readsMachineWritten: z.string().min(2),
-      })
-      .optional(),
+      }),
+      EDITORIAL_PASS_PRESENT_IF,
+    ),
     /** Sign-off for research or outcome claims written as text rather than study.yaml tokens. */
-    claimsReview: z.object({ by: z.string(), on: isoDate }).optional(),
+    claimsReview: optionalGroup(z.object({ by: z.string(), on: isoDate }), CLAIMS_REVIEW_PRESENT_IF),
     schemaExtras: z.record(z.string(), z.unknown()).optional(),
     /** Editor notes; never rendered. */
     notes: z.array(z.string()).default([]),

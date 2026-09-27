@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { labelTableCells } from '../../src/lib/content/post-table.ts';
+import { isAmount, labelTableCells, numericColumns } from '../../src/lib/content/post-table.ts';
 
 /**
  * Markdown tables in posts, guides and legal pages go through PostTable (GuidePage maps `table` to it for every
@@ -31,16 +31,37 @@ const guideTable = [
 describe('table cell labels', () => {
   it('labels every body cell of a guide table and keeps the column alignment for wide screens', () => {
     const html = labelTableCells(guideTable);
-    expect(html).toContain('<th scope="col" role="columnheader" style="text-align:right">Cost (₹)</th>');
+    expect(html).toContain('<th scope="col" role="columnheader" data-numeric style="text-align:right">Cost (₹)</th>');
     expect(html).toContain('<td role="cell" data-label="Item">Rent deposit</td>');
-    expect(html).toContain('<td role="cell" data-label="Cost (₹)" style="text-align:right">1,00,000</td>');
+    expect(html).toContain('<td role="cell" data-label="Cost (₹)" data-numeric style="text-align:right">1,00,000</td>');
     expect(html).toContain('<td role="cell" data-label="Basis">Between <a href="/x/">Thane</a> and Bandra</td>');
     expect(html.match(/<tr role="row">/g)).toHaveLength(2);
   });
   it('leaves a cell under an empty header without a label rather than an empty one', () => {
     const html = labelTableCells('<thead><tr><th></th><th>2026</th></tr></thead><tbody><tr><td>Fee</td><td>KES 1,000</td></tr></tbody>');
     expect(html).toContain('<td role="cell">Fee</td>');
-    expect(html).toContain('<td role="cell" data-label="2026">KES 1,000</td>');
+    expect(html).toContain('<td role="cell" data-label="2026" data-numeric>KES 1,000</td>');
+  });
+  // The Keystatic editor drops Markdown alignment (`---:`) when it saves a body (docs/keystatic-design.md 2.8), so a
+  // money column must line up without it: PostTable right-aligns every column marked data-numeric.
+  it('marks a column numeric, header included, when every body cell is an amount, without Markdown alignment', () => {
+    const saved = guideTable.replace(/ style="text-align:right"/g, '');
+    const html = labelTableCells(saved);
+    expect(html).toContain('<th scope="col" role="columnheader" data-numeric>Cost (₹)</th>');
+    expect(html).toContain('<td role="cell" data-label="Cost (₹)" data-numeric>1,00,000</td>');
+    expect(html).toContain('<th scope="col" role="columnheader">Item</th>');
+    expect(html).not.toMatch(/data-label="(Item|Basis)" data-numeric/);
+  });
+  it('reads amounts in the forms the cost tables use, and nothing else', () => {
+    for (const amount of ['1,00,000', '17,55,000', '₹45,000', '₹ 1,70,000', 'KES 26,000', '1,800,000', '18.9%', 'About 3.2 million', '6,247', '0.5', '-2,000'])
+      expect(isAmount(amount), amount).toBe(true);
+    for (const text of ['', 'Rent deposit', 'One-time', 'Level 2', '₹50,000 to ₹2,00,000', '3 months', 'Yes', '2024-25'])
+      expect(isAmount(text), text).toBe(false);
+  });
+  it('needs every non-empty body cell of a column to be an amount', () => {
+    expect(numericColumns([['Rent', '1,00,000', ''], ['Total', '17,55,000', '']])).toEqual([false, true, false]);
+    expect(numericColumns([['Fee', '1,000'], ['Waived', 'None']])).toEqual([false, false]);
+    expect(numericColumns([])).toEqual([]);
   });
   it('handles a table that has a header row and no body rows', () => {
     expect(labelTableCells('<thead><tr><th>Item</th></tr></thead>')).toBe(

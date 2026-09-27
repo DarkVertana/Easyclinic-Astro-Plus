@@ -125,11 +125,77 @@ because several of those figures do not yet have a public source.
 
 Quotes in `quote` fields are exempt from the vocabulary rules because they are verbatim.
 
+## Share images
+
+Every page gets its own 1200x630 share image (the card shown when its link is pasted into WhatsApp, LinkedIn
+or X). The build draws it from the page's `title` without ": EasyClinic" and its `eyebrow` (for a post
+without one, the topic; otherwise the page type), so there is nothing to upload. A long title is set smaller;
+one that needs more than three lines even then is cut after the last whole word that fits, with an ellipsis,
+which is one more reason to keep titles under 60 characters. To look at one, open `/og/<page path>.png` on a
+preview (for example `/og/pricing/india.png`; the home page's is `/og/index.png`). Pages outside the content
+collections (404, the demo confirmation) use the standard card, `public/og/default.png`.
+
+## Editing in Keystatic
+
+Keystatic is a form-based editing screen over the same files described above. It is a convenience, not a second
+copy of the content: it reads and writes `src/content/` and `src/data/` directly, in the same format, and the build
+checks what it saves exactly as it checks a hand edit.
+
+**Opening it.** Run `pnpm dev` and open <http://127.0.0.1:4321/keystatic/> (use `127.0.0.1`: Keystatic moves the
+dev server to that address). Saves go straight to the files in your checkout; review and commit them with git as
+usual. Keystatic is only ever part of `pnpm dev` and of preview deployments set up for it
+(`KEYSTATIC_STORAGE=github`, see `docs/keystatic-design.md` section 3.4). The live site never includes it.
+
+**What it edits.** Every page type (Pages), guides, posts and legal pages with their Markdown body (Articles),
+the shared facts (prices, countries, regulators, integrations, testimonials, authors, `facts.yaml`, `study.yaml`,
+`plans.yaml`) and the site settings and navigation. Redirects and gone lists (`redirects.yaml`, `gone.yaml` and the
+generated `*-posts.yaml`) stay hand-edited. Section types whose form is not built yet show as "(form not built
+yet)": Keystatic keeps those sections exactly as they are, and you edit them in the YAML file for now.
+
+> **Warning: a save deletes every YAML comment in the file, with no warning in Keystatic.** A comment is a line
+> starting with `#` (outside a long text), such as `# Source: … Fetched 2026-09-26`. Many files keep their sources
+> and decisions only in comments: on 26 September 2026, 85 files had 310 comment lines, including every integration,
+> specialty and feature page, the four country pages and `facts.yaml`, `study.yaml`, `plans.yaml` and `nav.yaml`.
+> Before you save a file in Keystatic, open it in a text editor. If it has comments, edit it by hand instead, or
+> first move each comment into `notes` (on a page or data file) or `editorNote` (on a section), which are never
+> shown on the site. To list the files that still have comments, run
+> `pnpm exec vitest run --project unit --reporter=verbose tests/unit/keystatic-roundtrip.test.ts | grep "a save deletes"`.
+> If you saved one by mistake, `git diff` shows the deleted lines: put them back before you commit.
+
+**Before your first save, know this:**
+
+- **Saving rewrites the whole file.** Keystatic rebuilds the file from its form: YAML comments are deleted (see the
+  warning above), keys are put in the form's order and long lines are re-wrapped. What the page says does not
+  change, but anything written only in a comment is lost.
+- **Unknown facts.** A field for a fact the company must supply (a price, a status, a date) saves as `null` when
+  you leave it empty, exactly as writing `null` by hand does: the page shows a placeholder and cannot publish.
+  Never type a guess or leave a blank space to get past it.
+- **Keystatic checks structure only**: required fields, lengths, link formats and list sizes. The writing rules
+  (banned words, placeholders, facts that need confirming, FAQ counts) are checked by the preview toolbar after you
+  save, by `pnpm lint:content`, and by the build for published pages.
+- **Renaming an entry changes its id.** For a page that is its URL: add the old URL to "Redirect from". For shared
+  data (a regulator, a country, an author) other entries refer to it by that id, and a broken reference stops the
+  build, so search for the old id first.
+- **Guides and posts.** The body editor opens Markdown with headings (h2 to h5), lists, tables, links and the
+  Inline CTA. It cannot open a body that contains HTML, code, `{...}` expressions or an `<InlineCta>` written on one
+  line; write the Inline CTA in the multi-line form shown above. Every Inline CTA in the content is still on one
+  line, so for now guides and posts that have one are edited by hand. When the editor does save a body, it rewrites
+  the Markdown but keeps every word, link and Inline CTA:
+  - Table column alignment (`---:`) is dropped. Three published pages right-align a money column this way (the
+    Mumbai and Nairobi clinic-cost guides and the post `clinic-setup-cost-in-india`); they still line up on the
+    right, because the site right-aligns any table column whose cells are all amounts. A centred column, or a
+    right-aligned column of words, would lose its alignment.
+  - Bullets become `*`, blank lines between list items go, a line break written as two trailing spaces becomes a
+    `\` at the end of the line, bare web addresses and emails become `[text](address)` links, and characters such as
+    `*`, `_`, `[`, `{` and `<` get a `\` in front. The page reads the same.
+  - A link title (`[text](/page/ "Title")`) is dropped, an image is written back as plain text and a footnote
+    becomes a link. No body uses these today; if you add one, edit that body by hand.
+
 ## Commands
 
 | Command | What it does |
 | --- | --- |
-| `pnpm dev` | Local preview at http://localhost:4321 |
+| `pnpm dev` | Local preview at http://localhost:4321, and the Keystatic editor at http://127.0.0.1:4321/keystatic/ |
 | `pnpm lint:content` | Checks every page against the writing rules in about a second |
 | `pnpm facts:report` | Lists every missing fact, grouped by who must supply it |
 | `pnpm build` | Full preview build with the post-build checks |

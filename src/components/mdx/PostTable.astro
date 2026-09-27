@@ -5,7 +5,9 @@
  * header, so the page never scrolls sideways and there is no scroll region. The Markdown table arrives as
  * the slot (thead and tbody from MDX); each body cell gets its column header as `data-label`, and explicit
  * roles keep the table semantics when the cells are display:block (Safari drops them otherwise). The
- * bordered wide-screen look comes from GuidePage's `.guide-body` table styles.
+ * bordered wide-screen look comes from GuidePage's `.guide-body` table styles. A column whose cells are all
+ * amounts is marked `data-numeric` and right-aligned here, so it does not depend on Markdown alignment (`---:`),
+ * which the Keystatic editor drops on save.
  */
 import { labelTableCells } from '../../lib/content/post-table';
 
@@ -20,6 +22,12 @@ const html = labelTableCells(await Astro.slots.render('default'));
   .post-table :global(td),
   .post-table :global(th) {
     overflow-wrap: break-word;
+  }
+
+  /* Money and other numeric columns line up on the right (lib/content/post-table.ts, numericColumns). */
+  .post-table :global([data-numeric]) {
+    text-align: end;
+    font-variant-numeric: tabular-nums;
   }
 
   /* Below 640px every body row becomes a card; each cell carries its column label (spec 7.5). */
@@ -63,8 +71,8 @@ const html = labelTableCells(await Astro.slots.render('default'));
       padding: 0.5rem 1rem;
       border: 0;
       background: transparent;
-      /* A column aligned in Markdown (`---:`, e.g. the money columns in the cost guides) arrives as an
-         inline text-align; in a card every label and value reads from the left edge. */
+      /* A numeric column (data-numeric) or one aligned in Markdown (`---:`, an inline text-align) is
+         right-aligned on wide screens; in a card every label and value reads from the left edge. */
       text-align: start !important;
     }
 
