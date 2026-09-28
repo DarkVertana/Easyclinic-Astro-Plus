@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import { getEntries } from 'astro:content';
+import type { SectionValue } from '../../../schemas/sections';
+import { optional } from '../../../lib/content/need';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'peopleGrid'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+
+/** Headshot size in CSS pixels; the file is cropped square from the top, at 1x and 2x. */
+const PHOTO = 96;
+
+const authors = await getEntries(items.map((item) => item.author));
+const people = items.map((item, i) => {
+  const author = authors[i].data;
+  return {
+    id: authors[i].id,
+    name: author.name,
+    role: author.role,
+    photo: author.photo,
+    // Spec 5.19 asks for a photo of each person: preview flags a missing one, production leaves it out.
+    missingPhoto: author.photo ? null : optional(`photo of ${author.name}`, null),
+    linkedin: author.linkedin,
+    background: item.background,
+  };
+});
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  {/* role="list" keeps list semantics in Safari, which drops them when list-style is none. */}
+  <ul role="list" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      people.map((person) => (
+        <li class="card flex flex-col gap-4 p-6 text-ink" data-author={person.id}>
+          {person.photo && (
+            <Image
+              src={person.photo}
+              alt={person.name}
+              width={PHOTO}
+              height={PHOTO}
+              layout="fixed"
+              fit="cover"
+              position="top"
+              loading="lazy"
+              decoding="async"
+              class="size-24 rounded-full bg-surface-muted object-cover"
+            />
+          )}
+          <div>
+            <h3 class="font-sans text-lg">{person.name}</h3>
+            <p class="text-sm font-semibold text-ink-muted">{person.role}</p>
+            {person.missingPhoto && <p class="mt-1 text-xs">{person.missingPhoto}</p>}
+          </div>
+          <Md text={person.background} class="text-base leading-relaxed" />
+          {
+            person.linkedin && (
+              <p class="mt-auto text-sm">
+                <a href={person.linkedin} class="inline-flex min-h-11 items-center font-semibold text-link" rel="noopener">
+                  LinkedIn<span class="sr-only">: {person.name}</span>
+                </a>
+              </p>
+            )
+          }
+        </li>
+      ))
+    }
+  </ul>
+</Section>

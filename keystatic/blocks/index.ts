@@ -45,6 +45,8 @@ import { regulatorTable } from './regulatorTable.ts';
 import { scopeBox } from './scopeBox.ts';
 import { stepList } from './stepList.ts';
 import { testimonialRow } from './testimonialRow.ts';
+import { logoStrip } from './logoStrip.ts';
+import { peopleGrid } from './peopleGrid.ts';
 
 export const KS_BLOCKS = {
   addOns,
@@ -85,4 +87,6 @@ export const KS_BLOCKS = {
   scopeBox,
   stepList,
   testimonialRow,
+  logoStrip,
+  peopleGrid,
 } satisfies Record<BlockName, KsBlock>;

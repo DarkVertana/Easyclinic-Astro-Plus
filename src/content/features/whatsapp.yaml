@@ -93,6 +93,14 @@ sections:
             prescription from a video consult goes the same way, with a line saying the consultation was
             held remotely.
           plan: premium
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/prescription-send-actions.png
+            alt: Prescription with Email, WhatsApp, Download and SMS highlighted
+            caption: The prescription goes out on WhatsApp from the same screen.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
           link:
             label: See how the prescription is written
             href: /features/emr/
@@ -111,6 +119,14 @@ sections:
             settled, so a patient who wants them on the phone does not wait for a printout. They can go
             by SMS or email as well.
           plan: premium
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/message-events-invoice-channels.png
+            alt: The invoice event mapped to an email, an SMS and a WhatsApp template
+            caption: Which template carries the invoice on each channel.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-09'
           link:
             label: See how billing works
             href: /features/billing/
@@ -120,12 +136,28 @@ sections:
             whether each response is shared publicly or kept internal.
           bullets:
             - Sending it on WhatsApp needs the Premium plan
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/feedback-request-activity.png
+            alt: 'Feedback timeline: score requested, score received, comment received, follow-up sent'
+            caption: A feedback request and what happened after the reply.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-09'
         - heading: A registration link before the first visit
           body: >-
             A new patient can be sent a registration link on WhatsApp and fill in their details on their
             own phone before arriving, so the front desk is not typing them in while the queue waits.
           bullets:
             - Sending the link on WhatsApp needs the Premium plan
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/whatsapp-registration-link-phone.png
+            alt: WhatsApp message from the clinic asking the patient to register before the visit, with the link removed from this capture
+            caption: The registration message as the patient receives it on WhatsApp.
+            frame: phone
+            origin: old-site
+            capturedOn: '2024-09'
           link:
             label: Read how enrolment links work
             href: /features/patient-engagement/

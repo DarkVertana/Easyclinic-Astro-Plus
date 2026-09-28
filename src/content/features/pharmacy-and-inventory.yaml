@@ -147,6 +147,14 @@ sections:
             - Transfers recorded at the sending and the receiving branch
             - More than one warehouse, with central distribution to the branches
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/stock-transfer-between-branches.png
+            alt: Stock transfer form between two branches
+            caption: A transfer between branches.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
           link:
             label: Read how EasyClinic runs a chain
             href: /solutions/clinic-chain/

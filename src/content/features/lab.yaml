@@ -114,6 +114,14 @@ sections:
             that you put together, and the doctor orders from it on the chart. The catalog is part of lab
             management, an add-on on Professional and Premium.
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/lab-investigation-profiles.png
+            alt: Investigation picker with test profiles such as coronary artery disease that expand into their tests
+            caption: A profile orders its set of tests in one pick.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Samples tracked by barcode or QR code
           body: >-
             Each sample gets a barcode or QR code label when it is collected, and the label ties the tube
@@ -158,6 +166,14 @@ sections:
           body: >-
             Tests ordered from the chart go on the patient's bill, and billing and payments come with every
             plan. Invoices and receipts are covered on the billing page.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/lab-billable-on-sample-collected.png
+            alt: Order settings adding the test to the bill when the sample is collected
+            caption: The test goes on the bill at the step you choose, here when the sample is collected.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-11'
           link:
             label: Read how billing works
             href: /features/billing/

@@ -107,6 +107,14 @@ sections:
             such as the ear examination form. If you examine the nose and throat on a paper form of your
             own, the form builder turns it into a digital form, and you set your own print layout for the
             prescription and the case sheet.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/ent-ear-examination.png
+            alt: Ear examination form for the left and right ear, with tympanic membrane and tuning fork findings
+            caption: The ear examination form, left and right.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
           link:
             label: Compare what each plan includes
             href: /pricing/

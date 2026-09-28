@@ -84,31 +84,22 @@ sections:
         All four are EasyClinic's own figures, as we stated them in September 2026. We have not published
         how or when the retention and satisfaction figures were measured, so treat them as our own count.
 
-  - discriminant: dataTable
+  - discriminant: peopleGrid
     value:
       id: leadership
       heading: Who runs EasyClinic
       intro: Five people lead the company.
-      columns:
-        - Name
-        - Role
-        - Background
-      rows:
-        - - Girish Mohata
-          - Founder and CEO
-          - Founded EasyClinic and leads it as chief executive.
-        - - Mrinal Pasari
-          - Co-founder
-          - A solution and enterprise architect with 20 years of experience in enterprise application development, in fields from banking to healthcare.
-        - - Vikas Malpani
-          - Director, business growth and strategy
-          - An entrepreneur and business strategist who leads the company's growth.
-        - - Gaurab Chatterjee
-          - Head of software development
-          - At EasyClinic since 2010, with over 16 years in software development and a background in Microsoft technologies.
-        - - Subhashish Saha
-          - Head of customer success
-          - At EasyClinic since 2012, leading the team that supports the clinics using it.
+      items:
+        - author: girish-mohata
+          background: Founded EasyClinic and leads it as chief executive.
+        - author: mrinal-pasari
+          background: A solution and enterprise architect with 20 years of experience in enterprise application development, in fields from banking to healthcare.
+        - author: vikas-malpani
+          background: An entrepreneur and business strategist who leads the company's growth.
+        - author: gaurab-chatterjee
+          background: At EasyClinic since 2010, with over 16 years in software development and a background in Microsoft technologies.
+        - author: subhashish-saha
+          background: At EasyClinic since 2012, leading the team that supports the clinics using it.
 
   - discriminant: prose
     value:
@@ -215,7 +206,8 @@ editorialPass:
 notes:
   - 'Published 2026-09-26 with confirmed facts only (owner decision). Grounded on the live /about-us/ page (re-fetched 2026-09-26; counters in the HTML are 20, 92, 500 and 98). Live copy dropped as old boilerplate (spec 5.19): the vision, mission and six values, "Dream Team", "Chief Product Officers", "revolutionising", "empower", "seamless", "world-class", "unparalleled", and the "try Easy Clinic absolutely free" line (no free trial exists).'
   - 'Fact-check pass 2026-09-26 removed: the 2003 row''s claim that Novel Medicare Solutions Pvt Ltd made EasyClinic in 2003 (the company''s name and incorporation date for that year are not sourced); "keeps no server of its own" (Enterprise offers custom or private cloud hosting); "without a contract holding them" after the retention figure (whether long-standing customers ever had contracts is unknown); the visit advice "call first so the person you want to meet is in"; "organisations as different as" (unsourced characterisation); "No open roles right now" in the careers link (the careers page owns that fact). The story now links to /customers/ rather than putting customer names on solution and specialty page links. The meta description no longer repeats the doctors and countries pair (spec 2.11 stat line).'
-  - 'Leadership: names and roles from src/data/authors. No photos (none exist) and no LinkedIn URLs (all null), though spec 5.19 asks for both. Backgrounds keep only plain statements from the live page: Mrinal Pasari (solution and enterprise architect, 20 years, enterprise application development for banking to healthcare), Vikas Malpani (entrepreneur and business strategist), Gaurab Chatterjee (since 2010, over 16 years, Microsoft technologies), Subhashish Saha (since 2012, leads his team). Left out: Girish Mohata "build and exit multiple tech companies profitably" (unverified) and the puffery around Vikas Malpani. Add a verified line for Girish when supplied. Spec 12 founder block needs a real photograph of Girish Mohata.'
+  - 'Leadership moved from a dataTable to the peopleGrid block on 2026-09-28 (docs/image-plan.md 3.2 item 4) so each person''s photo can show beside the name; the five rows and their wording are unchanged. Names, roles and photos now come from src/data/authors.'
+  - 'Leadership: names and roles from src/data/authors. Photos: the five headshots from the old /about-us/ page (old images #84 to #88, docs/image-plan.md 6.1) are set on the author records since 2026-09-28; the company to confirm they are current (uploaded January 2024). No LinkedIn URLs (all null), though spec 5.19 asks for them. Backgrounds keep only plain statements from the live page: Mrinal Pasari (solution and enterprise architect, 20 years, enterprise application development for banking to healthcare), Vikas Malpani (entrepreneur and business strategist), Gaurab Chatterjee (since 2010, over 16 years, Microsoft technologies), Subhashish Saha (since 2012, leads his team). Left out: Girish Mohata "build and exit multiple tech companies profitably" (unverified) and the puffery around Vikas Malpani. Add a verified line for Girish when supplied. The spec 12 founder block on home can use Girish Mohata''s photo once the 2003 story is written from confirmed facts.'
   - 'Timeline keeps to dated facts with a source: founded {fact:founded} (live "Established in 2003"); 2008 and 2012 from testimonial data (prantar-chakrabarti customerSince 2008, seetha-lakshmi-kolanakuduru customerSince 2012); 2017 and 2025 from arXiv:2507.16947, re-read 2026-09-26 ("A cloud-hosted electronic medical record (EMR), Easy Clinic, was introduced in 2017, supporting all patient visits"; "AI Consult is embedded in Penda''s cloud-hosted EMR (Easy Clinic)"; Easy Clinic is named only as the EMR). The first clinics of 2003 and the year EasyClinic moved to the cloud are unknown; add rows when the company supplies them.'
   - 'No testimonial ids on this page. The company family needs no proof block, and each testimonial stays on the page it praises (prantar-chakrabarti on /solutions/hospital-opd/, seetha-lakshmi-kolanakuduru on /specialties/ivf-emr/); /customers/ shows every testimonial, so the story links there.'
   - 'Numbers: doctors and cities from /pricing/, countries from /about-us/ and /kenyademo/, retention and supportSatisfaction from the live /about-us/ counters (facts.yaml note: no method or date published), which the table note says plainly. Not used: the "20+ years" counter (years are inconsistent across the live site: 22+, 20+, 15+; "more than 20 years" in the FAQ is derived from {fact:founded}), "500+ custom workflows" and "8+ years average client relationship" (not in the confirmed facts).'

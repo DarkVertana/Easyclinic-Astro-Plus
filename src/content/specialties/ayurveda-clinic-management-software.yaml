@@ -137,6 +137,14 @@ sections:
             You lay the form out yourself. Intake forms capture the medical history in as much or as little
             detail as you want, including chronic illnesses and the other therapies the patient has tried,
             and it all goes onto the facesheet.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/ayurveda-prakriti-assessment.png
+            alt: Prakriti assessment form with Vata, Pitta and Kapha options for body type, skin, hair, appetite and sleep
+            caption: A Prakriti assessment built as a digital form.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: The whole course of care in one history
           body: >-
             Ayurvedic care runs over months, so every visit and every therapy is recorded in one continuous

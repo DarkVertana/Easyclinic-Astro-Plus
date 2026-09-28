@@ -112,6 +112,7 @@ editorialPass:
     rather than Indian payment rails, so both may read as templated to a doctor, and the page has no named
     India contact or measured clinic outcome, which the live Kenya page's voice relies on.
 notes:
+  - 'Logo strip (docs/image-plan.md 7.2), added 2026-09-28 after the testimonialRow, filtered to clients whose country is in (Seth G S Medical College and K E M Hospital, Prashanthi Super Clinic; the others have country null until confirmed). There is no old /indiademo/ page; the logos come from the old live section "Physicians, Specialists & Clinic Chains using Easy Clinic across the World" on https://www.easyclinic.io/ (the same strip was also on /ai/, /solutions/clinic-chain/ and the old /emr-software-in-*/ pages; migration/images/live-page-images.json). KEM is a public institution, so the heading says only that it has used EasyClinic, not that it endorses it. The heading says "have used", not "use", because the company has not confirmed that each is a current client (Qualitas Health''s testimonial is in the past tense), and it has no count, rating or "trusted by" (docs/image-plan.md 7.2). Production shows a client only when its logoPermission is true (all null on 2026-09-28), so the strip is left out of production until then.'
   - >-
     Structure follows the live /kenyademo/ page (spec 5.13 and 6): demo form, three problems, eight
     modules, connections by plan, local testimonial, demo to live. The compliance block was removed for
@@ -243,6 +244,14 @@ sections:
           outcome: Walk-ins and booked slots on one calendar, with SMS reminders, or WhatsApp reminders on Premium.
           icon: calendar-clock
           href: /features/appointment-scheduling/
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/scheduling-day-visits-walk-in.png
+            alt: Day visits list with a walk-in and booked patients
+            caption: Walk-ins and booked patients on one list.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
         - title: Records and prescriptions
           outcome: Notes and prescriptions on one record, with a prescription done in about thirty seconds and printed, or sent on WhatsApp on Premium.
           icon: notebook-pen
@@ -251,6 +260,14 @@ sections:
           outcome: Orders from the chart land on the bill, part payments included, and the day-end close shows the takings by payment mode.
           icon: receipt
           href: /features/billing/
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/invoice-part-payment-balance.png
+            alt: Invoice balance after a part payment
+            caption: A part payment and the balance due.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
         - title: Insurance and TPA claims
           outcome: Payer price lists and coverage checked at registration, so the TPA claim leaves with the pre-authorisation attached.
           icon: file-check
@@ -303,6 +320,11 @@ sections:
       items:
         - srinivasa-teja
       layout: single
+  - discriminant: logoStrip
+    value:
+      id: client-logos
+      heading: Clinics and hospitals in India that have used EasyClinic
+      country: in
   - discriminant: stepList
     value:
       heading: From demo to live in as little as {fact:goLiveDays} days

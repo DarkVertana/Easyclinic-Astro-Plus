@@ -47,26 +47,28 @@ export const BLOCK_NAMES = [
   'scopeBox',
   'stepList',
   'testimonialRow',
+  'logoStrip',
+  'peopleGrid',
 ] as const;
 export type BlockName = (typeof BLOCK_NAMES)[number];
 
 type Blocks = readonly BlockName[];
 
-const HOME: Blocks = ['personaRouter', 'oldWayNewWay', 'journeyDiagram', 'moduleGrid', 'proofBlock', 'regulatorStrip', 'testimonialRow', 'stepList', 'pricingCards', 'prose', 'contentCards', 'dataTable', 'featureRows', 'scopeBox'];
+const HOME: Blocks = ['personaRouter', 'oldWayNewWay', 'journeyDiagram', 'moduleGrid', 'proofBlock', 'regulatorStrip', 'testimonialRow', 'logoStrip', 'stepList', 'pricingCards', 'prose', 'contentCards', 'dataTable', 'featureRows', 'scopeBox'];
 const PRICING: Blocks = ['pricingCards', 'planMatrix', 'addOns', 'costExamples', 'stepList', 'testimonialRow', 'proofBlock', 'prose', 'dataTable', 'scopeBox', 'regulatorStrip'];
 const COUNTRY: Blocks = ['contactCard', 'regulatorTable', 'regulatorStrip', 'countryMoney', 'clinicTypes', 'testimonialRow', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'painBlocks', 'stepList', 'moduleGrid', 'scopeBox'];
-const COUNTRY_DEMO: Blocks = ['demoForm', 'contactCard', 'painBlocks', 'moduleGrid', 'dataTable', 'regulatorTable', 'regulatorStrip', 'testimonialRow', 'stepList', 'proofBlock', 'prose', 'featureRows'];
-const COMPANY: Blocks = ['prose', 'demoForm', 'contactCard', 'dataTable', 'stepList', 'testimonialRow', 'proofBlock', 'moduleGrid', 'featureRows', 'contentCards'];
+const COUNTRY_DEMO: Blocks = ['demoForm', 'contactCard', 'painBlocks', 'moduleGrid', 'dataTable', 'regulatorTable', 'regulatorStrip', 'testimonialRow', 'logoStrip', 'stepList', 'proofBlock', 'prose', 'featureRows'];
+const COMPANY: Blocks = ['prose', 'demoForm', 'contactCard', 'dataTable', 'peopleGrid', 'stepList', 'testimonialRow', 'proofBlock', 'moduleGrid', 'featureRows', 'contentCards'];
 
 const CORE: Blocks = ['prose', 'featureRows', 'painBlocks', 'moduleGrid', 'proofBlock', 'testimonialRow', 'stepList', 'dataTable', 'scopeBox', 'contentCards', 'flowDiagram', 'splitTable', 'inlineCta'];
 const FEATURE: Blocks = [...CORE, 'regulatorStrip', 'regulatorTable', 'rolesMatrix'];
-const SOLUTION: Blocks = [...CORE, 'dayTimeline', 'rolesMatrix', 'regulatorStrip', 'pricingCards', 'clinicTypes'];
+const SOLUTION: Blocks = [...CORE, 'dayTimeline', 'rolesMatrix', 'regulatorStrip', 'pricingCards', 'clinicTypes', 'logoStrip'];
 const HUB: Blocks = ['hubGrid', 'demoForm', 'journeyDiagram', 'moduleGrid', 'prose', 'proofBlock', 'testimonialRow', 'planMatrix', 'dataTable', 'personaRouter', 'featureRows', 'inlineCta', 'postIndex'];
 const AI: Blocks = [...CORE, 'studyCard', 'regulatorStrip'];
 const TRUST: Blocks = [...CORE, 'regulatorTable', 'regulatorStrip', 'studyCard', 'integrationDirectory', 'demoForm'];
 const SPECIALTY: Blocks = [...CORE, 'dayTimeline'];
 const COMPARISON: Blocks = ['comparisonTable', 'decisionMatrix', 'vendorList', 'sourceList', 'prose', 'painBlocks', 'stepList', 'dataTable', 'scopeBox', 'proofBlock', 'testimonialRow', 'inlineCta', 'featureRows'];
-const CUSTOMERS: Blocks = ['testimonialGrid', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'contentCards'];
+const CUSTOMERS: Blocks = ['testimonialGrid', 'logoStrip', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'contentCards'];
 /** MDX families: no block with media, because a relative image path would differ from the YAML pages'. */
 const GUIDE: Blocks = ['inlineCta', 'dataTable', 'stepList', 'prose'];
 

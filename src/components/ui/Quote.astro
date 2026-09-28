@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { optional, requireConfirmed } from '../../lib/content/need';
 import Icon from './Icon.astro';
@@ -16,6 +17,13 @@ const text = pull && t.pullQuote ? t.pullQuote : t.quote;
 const consent = requireConfirmed(Astro, `consent on file for ${t.name}'s testimonial`, t.consentOnFile);
 const city = optional(`${t.name}'s city`, t.city);
 const place = [t.clinic, city].filter(Boolean).join(', ');
+
+// Spec 12: a photo only when the person supplied or approved it. Until `photoConsent` is true the photo is not
+// rendered anywhere; preview says it is waiting, production leaves it out so the quote still publishes.
+const photo = t.photo && t.photoConsent === true ? t.photo : undefined;
+const photoWaiting = t.photo && !photo ? optional(`photo of ${t.name} waiting on consent`, null) : null;
+/** Round headshot in CSS pixels (docs/image-plan.md 3.2 item 2), rendered at 1x and 2x. */
+const photoSize = size === 'large' ? 72 : 56;
 ---
 
 <figure class:list={['flex h-full flex-col', size === 'card' ? 'card p-6' : 'mx-auto max-w-[48rem] text-center']}>
@@ -23,11 +31,30 @@ const place = [t.clinic, city].filter(Boolean).join(', ');
   <blockquote class:list={['mt-3 text-ink-heading', size === 'large' ? 'font-display text-2xl leading-snug md:text-3xl' : 'text-lg leading-relaxed']}>
     <p>{text}</p>
   </blockquote>
-  <figcaption class:list={['mt-auto pt-5 text-sm', size === 'large' && 'mt-6']}>
-    <span class="block font-semibold text-ink-heading">{t.name}</span>
-    <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) ? `, ${t.specialty}` : ''}</span>
-    {place && <span class="block text-ink-muted">{place}</span>}
-    {t.customerSince && <span class="block text-ink-muted">Using EasyClinic since {t.customerSince}</span>}
-    {consent && <span class="mt-1 block text-xs">{consent}</span>}
+  <figcaption class:list={['mt-auto pt-5 text-sm', size === 'large' ? 'mt-6 flex flex-col items-center gap-3' : 'flex items-center gap-3']}>
+    {
+      photo && (
+        <Image
+          src={photo}
+          alt={t.name}
+          width={photoSize}
+          height={photoSize}
+          layout="fixed"
+          fit="cover"
+          position="top"
+          loading="lazy"
+          decoding="async"
+          class:list={['shrink-0 rounded-full bg-surface-muted object-cover', size === 'large' ? 'size-18' : 'size-14']}
+        />
+      )
+    }
+    <span class="block min-w-0">
+      <span class="block font-semibold text-ink-heading">{t.name}</span>
+      <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) ? `, ${t.specialty}` : ''}</span>
+      {place && <span class="block text-ink-muted">{place}</span>}
+      {t.customerSince && <span class="block text-ink-muted">Using EasyClinic since {t.customerSince}</span>}
+      {consent && <span class="mt-1 block text-xs">{consent}</span>}
+      {photoWaiting && <span class="mt-1 block text-xs">{photoWaiting}</span>}
+    </span>
   </figcaption>
 </figure>

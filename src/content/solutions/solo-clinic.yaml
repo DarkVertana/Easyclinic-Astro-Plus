@@ -150,6 +150,14 @@ sections:
           bullets:
             - Appointment scheduling and walk-ins
             - SMS and email reminders
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/scheduling-day-visits-walk-in.png
+            alt: Day visits list with a walk-in and booked patients and their status
+            caption: Walk-ins and booked patients on one list for the day.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
           link:
             label: See how scheduling works
             href: /features/appointment-scheduling/

@@ -90,6 +90,14 @@ sections:
             clinical forms and print layouts, and the customisation comes without charges. Professional
             includes the EMR and e-prescriptions, without the specialty templates.
           plan: premium
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/visit-template-specialty-components.png
+            alt: Visit template settings with each section, including Obs Gynae and Glass prescription, switched on or off
+            caption: Each specialty section is switched on for the clinics that need it.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
           link:
             label: Compare what each plan includes
             href: /pricing/
@@ -98,6 +106,14 @@ sections:
             When two medicines on the prescription interact, the prescription screen warns you while you
             are still writing it. The change gets made in the consulting room, before the prescription
             reaches the pharmacy.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/prescription-drug-interaction.png
+            alt: 'Drug-to-drug interaction warning: Zocor with Biaxin raises statin levels'
+            caption: The warning shows while the second medicine is added.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Cura AI drafts the note
           body: >-
             Cura AI (documentation) is included in every plan. It drafts a SOAP note beside the consult,

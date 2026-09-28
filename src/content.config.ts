@@ -4,6 +4,7 @@ import { z } from 'astro/zod';
 import { routingLists } from './lib/content/routing-loader';
 import {
   authorSchema,
+  clientSchema,
   countrySchema as countryDataSchema,
   factsSchema,
   integrationSchema,
@@ -81,6 +82,8 @@ const countries = defineCollection({ loader: data('*.yaml', 'countries'), schema
 const regulators = defineCollection({ loader: data('*.yaml', 'regulators'), schema: regulatorSchema });
 const testimonials = defineCollection({ loader: data('*.yaml', 'testimonials'), schema: testimonialSchema });
 const authors = defineCollection({ loader: data('*.yaml', 'authors'), schema: authorSchema });
+// Client logos for logoStrip (docs/image-plan.md section 7). After testimonials, which a client may reference.
+const clients = defineCollection({ loader: data('*.yaml', 'clients'), schema: clientSchema });
 const integrations = defineCollection({ loader: data('*.yaml', 'integrations'), schema: integrationSchema });
 
 /* ---------- Routing data. ---------- */
@@ -133,6 +136,7 @@ export const collections = {
   regulators,
   testimonials,
   authors,
+  clients,
   integrations,
   redirects,
   gone,

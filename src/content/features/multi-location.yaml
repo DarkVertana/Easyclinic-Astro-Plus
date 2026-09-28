@@ -78,6 +78,14 @@ sections:
             own appointment book and its own takings. Every branch works from the same patient list, and
             head office can look at one branch on its own or at all of them together.
           plan: premium
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/locations-list.png
+            alt: Locations list with three clinics under one account
+            caption: Each branch is a location in the same account.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
           link:
             label: Compare what each plan includes
             href: /pricing/
@@ -96,6 +104,14 @@ sections:
             role, such as doctor or pharmacist, which decides what it can open, and a role's access can be
             set location by location. The reception login, included in the price, cannot open the EMR or
             issue a prescription.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/role-permissions.png
+            alt: Permissions by role, with appointment access limited to the location or the organisation
+            caption: What each role can open, and whether it reaches one location or all of them.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
         - heading: Appointments for every branch from one desk
           body: >-
             Appointments can be booked centrally across locations, so a central phone line or call centre
@@ -121,6 +137,14 @@ sections:
             branch that runs short of an antibiotic takes it from a branch that holds plenty, instead of
             buying it from the chemist next door.
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/stock-transfer-between-branches.png
+            alt: Stock transfer form from the Delhi clinic's dispensing room to the Mumbai clinic
+            caption: A stock transfer from one branch to another.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
           link:
             label: See pharmacy and inventory
             href: /features/pharmacy-and-inventory/

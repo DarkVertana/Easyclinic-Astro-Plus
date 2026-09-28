@@ -37,6 +37,8 @@ import RegulatorTable from './RegulatorTable/RegulatorTable.astro';
 import ScopeBox from './ScopeBox/ScopeBox.astro';
 import StepList from './StepList/StepList.astro';
 import TestimonialRow from './TestimonialRow/TestimonialRow.astro';
+import LogoStrip from './LogoStrip/LogoStrip.astro';
+import PeopleGrid from './PeopleGrid/PeopleGrid.astro';
 
 /** One component per section discriminant; the `satisfies` keeps it in step with src/schemas/sections.ts. */
 export const BLOCKS = {
@@ -78,4 +80,6 @@ export const BLOCKS = {
   scopeBox: ScopeBox,
   stepList: StepList,
   testimonialRow: TestimonialRow,
+  logoStrip: LogoStrip,
+  peopleGrid: PeopleGrid,
 } satisfies Record<BlockName, unknown>;

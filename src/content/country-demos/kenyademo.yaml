@@ -119,6 +119,7 @@ editorialPass:
     side (operational within 24 hours of training, live in 3 days at the fastest, training over 4 days)
     may read as stitched together rather than lived.
 notes:
+  - 'Logo strip (docs/image-plan.md 7.2), added 2026-09-28 after the testimonialRow: Penda Health (ke) and CIMAS Health (zw), so the heading names both countries. The live /kenyademo/ page did not show the strip; the logos come from the old live section "Physicians, Specialists & Clinic Chains using Easy Clinic across the World" on https://www.easyclinic.io/ (the same strip was also on /ai/, /solutions/clinic-chain/ and the old /emr-software-in-*/ pages; migration/images/live-page-images.json). The heading says "have used", not "use", because the company has not confirmed that each is a current client (Qualitas Health''s testimonial is in the past tense), and it has no count, rating or "trusted by" (docs/image-plan.md 7.2). Production shows a client only when its logoPermission is true (all null on 2026-09-28), so the strip is left out of production until then.'
   - >-
     Structure follows the live /kenyademo/ page (spec 5.13 country demo pages, spec 6 intro): H1, demo
     form, three problems, eight modules, Kenya connections and insurers, local testimonial, demo to live.
@@ -317,6 +318,13 @@ sections:
       items:
         - robert-korom-reliability
       layout: single
+  - discriminant: logoStrip
+    value:
+      id: client-logos
+      heading: Health groups in Kenya and Zimbabwe that have used EasyClinic
+      clients:
+        - penda-health
+        - cimas-health
   - discriminant: stepList
     value:
       heading: From demo to live in as little as {fact:goLiveDays} days

@@ -47,6 +47,11 @@ sections:
         - label: Google
           rating: '{fact:googleRating}'
 
+  - discriminant: logoStrip
+    value:
+      id: client-logos
+      heading: Clinics and health groups that have used EasyClinic
+
   - discriminant: testimonialGrid
     value:
       id: in-their-words
@@ -146,6 +151,7 @@ editorialPass:
     read as a list of links.
 
 notes:
+  - 'Logo strip (docs/image-plan.md 7.2), added 2026-09-28 above the testimonialGrid: all nine clients in src/data/clients. The old /testimonials/ page (now /customers/) did not show it; the logos come from the old live section "Physicians, Specialists & Clinic Chains using Easy Clinic across the World" on https://www.easyclinic.io/ (the same strip was also on /ai/, /solutions/clinic-chain/ and the old /emr-software-in-*/ pages; migration/images/live-page-images.json). The heading says "have used", not "use", because the company has not confirmed that each is a current client (Qualitas Health''s testimonial is in the past tense), and it has no count, rating or "trusted by" (docs/image-plan.md 7.2). Production shows a client only when its logoPermission is true (all null on 2026-09-28), so the strip is left out of production until then.'
   - 'Spec 5.19 three written case studies (solo, chain, OPD) with before-and-after numbers are omitted: none exist. The "What customers have put a number on" section says so. When they are written, add them as a contentCards section (or featureRows) above the videos and update that paragraph and the editorial pass.'
   - 'Spec 5.19 asks each testimonial to show name, specialty, clinic, city, tenure and one measured outcome; the grid renders these from src/data/testimonials through Quote.astro. outcome is null on all 16 records. city is known on 5 (jj-thakkar and both robert-korom records Nairobi, manish-bhatia Jaipur, seetha-lakshmi-kolanakuduru Hyderabad). customerSince is set on 4 (prantar-chakrabarti 2008, seetha-lakshmi-kolanakuduru 2012, both robert-korom 2017); several quotes state tenure in words ("more than 10 years", "last 5 years") that could become customerSince once dated. Unknowns are left out in production by optional().'
   - 'Filters: TestimonialGrid.astro offers clinic type (personas) and country filters only. Spec 5.19 also asks for a specialty filter, which the component does not have; specialty is also missing on foster-akaketwa, hisham-ismail, robert-korom (both) and tarun-mishra. The grid intro therefore names only clinic type and country.'

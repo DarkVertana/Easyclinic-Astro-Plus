@@ -104,6 +104,14 @@ sections:
             - Fetal growth parameters over the pregnancy
             - The due date on the record
             - Antenatal visits and follow-ups in one place
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/pregnancy-calculator-weeks.png
+            alt: Pregnancy calculator listing each week of the first trimester by date
+            caption: Weeks and trimesters worked out from the dates.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Obstetric and menstrual history on the facesheet
           body: >-
             The intake form records the patient's obstetric and gynaecological history, including her menstrual
@@ -114,6 +122,14 @@ sections:
             - Menstrual cycles and hormonal treatments
             - Case history and facesheet built from the record
             - Past visits side by side
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/obstetric-history.png
+            alt: 'Obstetric history: pregnancies, births, miscarriages and terminations, with the patient marked pregnant'
+            caption: Obstetric history in the G-P-M-T form.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Ultrasound reports in the file, vitals on a chart
           body: >-
             Ultrasound reports and other diagnostic records are stored in the patient's file, uploaded as

@@ -115,6 +115,14 @@ sections:
           bullets:
             - Past treatments and allergies on the patient's profile
             - The complete visit history on a single screen
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/dermatology-skin-assessment.png
+            alt: 'Skin examination form: overall skin condition, skin type and skin colour'
+            caption: Skin condition and skin type on the record.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-12'
         - heading: Procedures and laser sessions, visit by visit
           body: >-
             Track past and ongoing cosmetic procedures, such as Botox, fillers, chemical peels and laser
@@ -131,6 +139,14 @@ sections:
             On Premium the chart comes with specialty EMR templates, and your clinic can have its own
             clinical forms and print layouts. The form builder turns a paper form you already use, such as
             a procedure sheet, into a digital form the doctor fills in on the record.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/dermatology-lesion-template.png
+            alt: 'Skin lesion template: distribution, type of lesion, colour, surface and borders'
+            caption: A skin lesion template by point and click.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Cura AI drafts the note
           body: >-
             Cura AI drafts the visit note for the doctor to check and confirm. The note drafting, listed on

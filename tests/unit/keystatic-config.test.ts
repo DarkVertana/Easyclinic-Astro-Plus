@@ -4,7 +4,7 @@
  * lists match the data files, and Keystatic's reader opens every existing entry. The field-by-field parity and the
  * save round trip are separate tests (keystatic-parity, keystatic-roundtrip) that land with the block forms.
  */
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { createReader } from '@keystatic/core/reader';
 import { parse } from 'yaml';
@@ -13,7 +13,16 @@ import keystaticConfig from '../../keystatic.config.ts';
 import { KS_BLOCKS } from '../../keystatic/blocks/index.ts';
 import { ADDON_IDS } from '../../keystatic/collections/data.ts';
 import { FACT_KEYS, SOCIAL_KEYS } from '../../keystatic/collections/singletons.ts';
-import { FIELD_META } from '../../keystatic/fields.ts';
+import {
+  CLIENT_LOGO_DIR,
+  DATA_CLIENT_LOGO_PATH,
+  DATA_PEOPLE_PATH,
+  FIELD_META,
+  MDX_SCREENSHOT_PATH,
+  PEOPLE_DIR,
+  SCREENSHOT_DIR,
+  YAML_SCREENSHOT_PATH,
+} from '../../keystatic/fields.ts';
 import { BLOCK_NAMES, FAMILY_BLOCKS, type PageFamily } from '../../src/schemas/family-blocks.ts';
 import { describeError as describeReaderError, pendingFixesFor } from './keystatic-harness.ts';
 
@@ -91,7 +100,7 @@ describe('Keystatic collections match the Astro collections', () => {
   });
 
   it('data collections and singletons use the files src/content.config.ts loads', () => {
-    for (const key of ['prices', 'countries', 'regulators', 'testimonials', 'authors', 'integrations']) {
+    for (const key of ['prices', 'countries', 'regulators', 'testimonials', 'authors', 'clients', 'integrations']) {
       expect(contentConfig).toContain(`const ${key} = defineCollection({ loader: data('*.yaml', '${key}')`);
       expect(collections[key].path).toBe(`src/data/${key}/*`);
     }
@@ -185,4 +194,79 @@ describe('Keystatic reads every existing entry', () => {
       await expect(reader.singletons[key].readOrThrow()).resolves.toBeTruthy();
     });
   }
+});
+
+/**
+ * Photos and logos in src/data (docs/image-plan.md 3.2 and 4). Keystatic stores and looks up an image at
+ * `<directory>/<entry id>/<file>` and renames it to the field's name on save, so a file placed anywhere else opens as
+ * empty in the editor and the next save drops the key (docs/keystatic-design.md, media).
+ */
+describe('photos and logos in src/data use Keystatic’s layout', () => {
+  type ImageField = {
+    directory?: string;
+    filename(value: unknown, args: { slug: string }): string | undefined;
+    parse(value: unknown, args: { asset: Uint8Array | undefined; slug: string }): unknown;
+    serialize(value: unknown, args: { suggestedFilenamePrefix?: string; slug: string }): { value: unknown };
+  };
+  const FIELDS = [
+    { key: 'testimonials', field: 'photo', dir: PEOPLE_DIR, prefix: DATA_PEOPLE_PATH },
+    { key: 'authors', field: 'photo', dir: PEOPLE_DIR, prefix: DATA_PEOPLE_PATH },
+    { key: 'clients', field: 'logo', dir: CLIENT_LOGO_DIR, prefix: DATA_CLIENT_LOGO_PATH },
+  ] as const;
+  const imageField = (key: string, field: string) => collections[key].schema[field] as unknown as ImageField;
+  const ids = (key: string) => readdirSync(join(ROOT, `src/data/${key}`)).filter((f) => f.endsWith('.yaml')).map((f) => f.slice(0, -5));
+
+  for (const { key, field, dir, prefix } of FIELDS) {
+    it(`${key}.${field}: a file at ${dir}/<id>/${field}.<ext> opens and saves unchanged; a flat file does not`, () => {
+      const image = imageField(key, field);
+      expect(image.directory).toBe(dir);
+      const value = `${prefix}sample-id/${field}.jpg`;
+      expect(image.filename(value, { slug: 'sample-id' })).toBe(`${field}.jpg`);
+      const state = image.parse(value, { asset: new Uint8Array([1]), slug: 'sample-id' });
+      expect(image.serialize(state, { suggestedFilenamePrefix: field, slug: 'sample-id' }).value).toBe(value);
+      // The flat layout (`<dir>/<id>.jpg`) is looked up somewhere else, so the editor opens it as empty.
+      expect(image.filename(`${prefix}sample-id.jpg`, { slug: 'sample-id' })).not.toBe('sample-id.jpg');
+    });
+
+    it(`every ${key} ${field} in src/data sits at ${dir}/<id>/${field}.<ext> and the file exists`, () => {
+      const wrong: string[] = [];
+      for (const id of ids(key)) {
+        const value = parse(readFileSync(join(ROOT, `src/data/${key}/${id}.yaml`), 'utf8'))?.[field];
+        if (value === undefined || value === null) continue;
+        const ext = /\.([a-z0-9]+)$/.exec(String(value))?.[1];
+        const expected = `${prefix}${id}/${field}.${ext}`;
+        if (value !== expected) wrong.push(`${key}/${id}: ${field} is ${value}; use ${expected}`);
+        else if (!existsSync(join(ROOT, dir, id, `${field}.${ext}`))) wrong.push(`${key}/${id}: no file at ${dir}/${id}/${field}.${ext}`);
+      }
+      expect(wrong).toEqual([]);
+    });
+  }
+
+  it('media src: a path into the shared screenshot library saves unchanged; any other path is refused', () => {
+    type Text = { parse(v: unknown, x: undefined): string; validate(v: string, x: undefined): string; serialize(v: string, x: undefined): { value: unknown } };
+    type Node = { fields: Record<string, Node>; element: Node } & Text;
+    const blockSrc = (KS_BLOCKS.featureRows.schema as unknown as Node).fields.items.element.fields.media.fields.src;
+    const guideSrc = (collections.guides.schema.heroMedia as unknown as Node).fields.src;
+    const saves = (field: Text, value: string) => {
+      try {
+        return field.serialize(field.validate(field.parse(value, undefined), undefined), undefined).value;
+      } catch {
+        return 'refused';
+      }
+    };
+    for (const [field, prefix] of [[blockSrc, YAML_SCREENSHOT_PATH], [guideSrc, MDX_SCREENSHOT_PATH]] as const) {
+      expect(FIELD_META.get(field)).toMatchObject({ kind: 'imagePath', directory: SCREENSHOT_DIR, publicPath: prefix });
+      expect(saves(field, `${prefix}prescription-drug-interaction.png`)).toBe(`${prefix}prescription-drug-interaction.png`);
+      expect(saves(field, `${prefix}cura-ai-consult-transcription.webp`)).toBe(`${prefix}cura-ai-consult-transcription.webp`);
+      expect(saves(field, '')).toBeUndefined();
+      for (const wrong of [`${prefix}Screen 1.png`, `${prefix}sub/x.png`, `${prefix}x.gif`, '../../assets/screenshots/emr/x.png', '/images/x.png']) {
+        expect(saves(field, wrong), wrong).toBe('refused');
+      }
+    }
+  });
+
+  it('testimonial and author ids do not clash (their photos share src/assets/images/people/<id>/)', () => {
+    const authors = new Set(ids('authors'));
+    expect(ids('testimonials').filter((id) => authors.has(id))).toEqual([]);
+  });
 });

@@ -107,6 +107,13 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
             ? 'Last-updated date required (spec 2.7)'
             : `Unknown fact at ${leaf.path}; the company must supply it`;
       err('unknown-fact', leaf.path, message);
+    } else if (leaf.kind === 'interim-media') {
+      // A warning, not an error: the page may publish with it (docs/image-plan.md 3.1); the launch checklist lists them.
+      warn(
+        'interim-media',
+        leaf.path,
+        `Old-site screenshot${leaf.capturedOn ? ` (${leaf.capturedOn})` : ''} with no uiConfirmedOn: the company confirms it matches the current product, or it is replaced by the demo-tenant capture`,
+      );
     } else {
       err('missing-media', leaf.path, `Screenshot or image needed${leaf.needed ? `: ${leaf.needed}` : ''} (spec 12)`);
     }

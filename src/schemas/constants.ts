@@ -22,6 +22,8 @@ export const AUTHOR_KINDS = ['clinician', 'product', 'country-lead', 'founder', 
 export const TONES = ['plain', 'wash', 'inverse'] as const;
 export const MEDIA_KINDS = ['screenshot', 'photo', 'video'] as const;
 export const MEDIA_FRAMES = ['browser', 'phone', 'none'] as const;
+/** Where a screenshot came from (docs/image-plan.md 3.1): the seeded demo tenant (spec 12), or the old site as an interim capture. */
+export const MEDIA_ORIGINS = ['demo-tenant', 'old-site'] as const;
 export const PROOF_VARIANTS = ['study', 'customer', 'badges', 'screenshot'] as const;
 export const PROSE_WIDTHS = ['measure', 'wide'] as const;
 export const SCOPE_VARIANTS = ['notFor', 'isNot', 'limits'] as const;

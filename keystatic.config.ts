@@ -48,7 +48,7 @@ export default config({
         'glossary',
       ],
       Articles: ['guides', 'posts', 'legal'],
-      'Shared facts': ['facts', 'prices', 'countries', 'regulators', 'integrations', 'testimonials', 'authors', 'study', 'plans'],
+      'Shared facts': ['facts', 'prices', 'countries', 'regulators', 'integrations', 'testimonials', 'authors', 'clients', 'study', 'plans'],
       Site: ['site', 'nav'],
     },
   },

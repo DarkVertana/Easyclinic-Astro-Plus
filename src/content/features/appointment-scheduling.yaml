@@ -134,18 +134,42 @@ sections:
             doctor's preferences, so the full-time physician and the Tuesday-evening surgeon sit side by
             side. Consulting rooms and other resources are scheduled on the same screen as the
             appointments, and a change made at the desk shows on the calendar straight away.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/scheduling-two-doctor-calendar.png
+            alt: Day calendar with two doctors side by side
+            caption: Two doctors' days side by side on one calendar.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-01'
         - heading: Walk-ins beside booked slots
           body: >-
             Walk-ins join the same calendar as booked appointments, so the day runs from one list. When a
             patient needs to be seen sooner, the desk can move them up the queue by need or by appointment
             type.
           plan: professional
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/scheduling-priority-walk-in.png
+            alt: Day visits list with a patient flagged as priority beside the day's calendar
+            caption: A patient marked priority moves up the day's list.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-11'
         - heading: Reminders by SMS and email on every plan
           body: >-
             Reminders go out automatically, days or hours before the visit, at the times the clinic sets.
             EasyClinic tracks which patients have acknowledged their reminder, so the desk spends its calls
             on the patients who have not.
           plan: professional
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/message-templates-by-channel.png
+            alt: Communication settings with the email templates open, including the appointment reminder
+            caption: Reminder and other message templates, set up once per channel.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-09'
           link:
             label: Read the sample reminders
             href: /features/appointment-scheduling/#reminder-samples
@@ -175,6 +199,14 @@ sections:
             Patients book their own appointments online through the patient portal and app, which come with
             Enterprise, so the desk no longer takes every booking by phone.
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/online-booking-slots.png
+            alt: Online booking page with a doctor's open slots
+            caption: The page a patient books from.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-09'
           link:
             label: Read what the patient portal does
             href: /features/patient-engagement/

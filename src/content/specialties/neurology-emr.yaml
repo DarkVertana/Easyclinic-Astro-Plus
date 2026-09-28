@@ -102,6 +102,14 @@ sections:
             Premium comes with predefined neurological examination templates for common conditions, among
             them migraine, epilepsy, Parkinson's disease, multiple sclerosis and neuropathy. The table
             further down lists them with the forms and layouts your clinic can add of its own.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/neurology-examination-template.png
+            alt: 'Neurological examination form: orientation, optic discs, sensation, vibration, reflexes and coordination'
+            caption: A neurological examination template.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-05'
         - heading: Scan and EEG reports in the patient's file
           body: >-
             EEG, MRI, CT and other diagnostic reports are stored in the patient's file, with images and

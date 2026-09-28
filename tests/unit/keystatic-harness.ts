@@ -80,6 +80,7 @@ export const DATA_SCHEMA_EXPORT: Record<string, string> = {
   regulators: 'regulatorSchema',
   testimonials: 'testimonialSchema',
   authors: 'authorSchema',
+  clients: 'clientSchema',
   integrations: 'integrationSchema',
   site: 'siteSchema',
   facts: 'factsSchema',
@@ -87,6 +88,14 @@ export const DATA_SCHEMA_EXPORT: Record<string, string> = {
   plans: 'planSchema',
   nav: 'navSchema',
 };
+
+/**
+ * A data schema export as the collection receives it: schemas with an `image()` field are functions of the schema
+ * context (src/content.config.ts passes them to `defineCollection`), so they are called with the stub context.
+ */
+export function resolveDataSchema<T>(exported: T | ((ctx: never) => T)): T {
+  return typeof exported === 'function' ? (exported as (ctx: never) => T)(zodContext) : exported;
+}
 
 /* ---------- Keystatic side ---------- */
 

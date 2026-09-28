@@ -124,6 +124,7 @@ editorialPass:
     a named chain, and the page has no measured chain outcome yet; replace them when a chain customer
     supplies a real case and a number.
 notes:
+  - 'Logo strip (spec 5.7 item 7; docs/image-plan.md 7.2), added 2026-09-28 after the testimonialRow: the five spec logos plus CIMAS, Qualitas and Penda. The live /solutions/clinic-chain/ and /clinic-chain-software/ pages showed these logos under "Physicians, Specialists & Clinic Chains using Easy Clinic across the World" (migration/images/live-page-images.json). The heading says "have used", not "use", because the company has not confirmed that each is a current client (Qualitas Health''s testimonial is in the past tense), and it has no count, rating or "trusted by" (docs/image-plan.md 7.2). Production shows a client only when its logoPermission is true (all null on 2026-09-28), so the strip is left out of production until then.'
   - >-
     Spec 5.7 asks for the 67% stockout and 45-day prediction figures (cross-branch inventory) and the 34%
     denied-claims figure (revenue leakage). None has a public source (facts.md section 4), so both rows
@@ -260,6 +261,14 @@ sections:
             - Batch and expiry tracked at every branch
             - Transfers recorded at the sending and the receiving branch
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/stock-transfer-between-branches.png
+            alt: Stock transfer form between two branches
+            caption: A transfer from one branch's dispensing room to another branch.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
           link:
             label: See pharmacy and inventory
             href: /features/pharmacy-and-inventory/
@@ -273,6 +282,14 @@ sections:
             - Head office settings in place before the first patient
             - The same four-day training at every branch
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/locations-list.png
+            alt: Locations list with three clinics under one account
+            caption: A new branch is one more location in the account.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
           link:
             label: See how branches share one record
             href: /features/multi-location/
@@ -302,6 +319,19 @@ sections:
       items:
         - foster-akaketwa
       layout: single
+  - discriminant: logoStrip
+    value:
+      id: client-logos
+      heading: Clinics and health groups that have used EasyClinic
+      clients:
+        - premier-hospital
+        - ross-clinics
+        - kem-hospital-mumbai
+        - german-osteo-care
+        - caring-minds
+        - cimas-health
+        - qualitas-health
+        - penda-health
   - discriminant: stepList
     value:
       id: roll-out

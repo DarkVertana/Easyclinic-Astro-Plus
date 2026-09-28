@@ -89,12 +89,28 @@ sections:
             On Premium, specialists write in specialty EMR templates, and every template writes to the same
             patient chart. The dermatologist's notes and the physician's prescriptions sit in one history,
             and the next doctor opens it before the patient sits down.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/specialty-templates-on-one-chart.png
+            alt: Examination section with General, Endocrinology and Family Physician templates as tabs on one visit
+            caption: Several specialty templates as tabs on the same visit.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Your own forms and print layouts
           plan: premium
           body: >-
             Where a department needs a form of its own, Premium includes your clinic's own clinical forms
             and print layouts, so the prescription and the report come out the way your clinic sets them.
             Changes made with the product's own customisation options carry no charge.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/visit-template-builder.png
+            alt: Visit template builder with each section set visible or mandatory
+            caption: A visit form set up by the clinic, section by section.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Lab reports in the same chart
           plan: premium
           body: >-

@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, getEntries } from 'astro:content';
+import type { ImageMetadata } from 'astro';
+import type { SectionValue } from '../../../schemas/sections';
+import { isProduction } from '../../../lib/content/stage';
+import { wrap } from '../../../lib/content/sentinel';
+import Section from '../../ui/Section.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'logoStrip'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, clients, country, ctx } = Astro.props;
+
+/*
+ * Logos are sized by area inside a box (docs/image-plan.md 3.2 item 5), so a square mark and a long wordmark carry
+ * about the same visual weight: each gets roughly LOGO_AREA square pixels at its own aspect ratio, capped at
+ * LOGO_MAX_W x LOGO_MAX_H. The files are trimmed to their content, so no padding shrinks the mark.
+ */
+const LOGO_AREA = 4000;
+const LOGO_MAX_W = 128;
+const LOGO_MAX_H = 48;
+function logoSize(logo: ImageMetadata): { width: number; height: number } {
+  const ratio = logo.width / logo.height;
+  let height = Math.sqrt(LOGO_AREA / ratio);
+  if (height > LOGO_MAX_H) height = LOGO_MAX_H;
+  if (height * ratio > LOGO_MAX_W) height = LOGO_MAX_W / ratio;
+  return { width: Math.round(height * ratio), height: Math.round(height) };
+}
+
+// The listed clients in their order, or every client by name; then the country filter.
+const listed = clients.length
+  ? await getEntries(clients)
+  : (await getCollection('clients')).sort((a, b) => a.data.name.localeCompare(b.data.name) || a.id.localeCompare(b.id));
+const picked = country ? listed.filter((c) => c.data.country === country.id) : listed;
+
+type Item = { id: string; name: string; logo?: ImageMetadata; note: string | null };
+
+// Production shows a client only with permission on file and a logo file; preview shows every client and says
+// what is missing. A strip with nothing to show in production is left out, so pending permissions never block a page.
+const items: Item[] = picked.flatMap((c) => {
+  const { name, logo, logoPermission } = c.data;
+  if (isProduction && (logoPermission !== true || !logo)) return [];
+  const missing = [!logo && 'logo file needed', logoPermission !== true && 'permission to show the logo not on file'].filter(Boolean);
+  return [{ id: c.id, name, logo, note: missing.length ? wrap(`[${name}: ${missing.join('; ')}]`) : null }];
+});
+---
+
+{
+  items.length > 0 && (
+    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+      {/* role="list" keeps list semantics in Safari, which drops them when list-style is none. */}
+      <ul role="list" class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+        {items.map((item) => (
+          <li class="flex flex-col gap-2" data-client={item.id}>
+            <div class="logo-tile card flex h-20 items-center justify-center bg-surface px-4 py-3">
+              {item.logo ? (
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  {...logoSize(item.logo)}
+                  layout="fixed"
+                  loading="lazy"
+                  decoding="async"
+                  class="logo-img h-auto w-auto max-w-full"
+                />
+              ) : (
+                <span class="text-center text-sm font-semibold text-ink-heading">{item.name}</span>
+              )}
+            </div>
+            {item.note && <p class="text-xs text-ink-muted">{item.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </Section>
+  )
+}
+
+<style>
+  /* Greyscale so no single logo dominates; full colour on hover. No transition (section 11: no motion). */
+  .logo-img {
+    filter: grayscale(1);
+  }
+  .logo-tile:hover .logo-img {
+    filter: none;
+  }
+</style>

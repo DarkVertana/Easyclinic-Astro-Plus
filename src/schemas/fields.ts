@@ -1,8 +1,8 @@
 import { z } from 'astro/zod';
 import type { SchemaContext } from 'astro:content';
-import { MEDIA_FRAMES, MEDIA_KINDS } from './constants.ts';
+import { MEDIA_FRAMES, MEDIA_KINDS, MEDIA_ORIGINS } from './constants.ts';
 import { CTA_PRESENT_IF, MEDIA_PRESENT_IF, blankToUndefined } from './groups.ts';
-import { EXTERNAL_HREF, INTERNAL_PATH, ISO_DATE } from './patterns.ts';
+import { EXTERNAL_HREF, INTERNAL_PATH, ISO_DATE, YEAR_MONTH } from './patterns.ts';
 
 export { blankGroupsToUndefined } from './groups.ts';
 
@@ -63,7 +63,8 @@ export const isoDate = z
 /**
  * Hero and section media. Screenshots come from the seeded demo tenant (spec 12); until one exists,
  * `src` is empty and `needed` describes the screen from the screenshot brief. A media item with
- * no src is treated as a placeholder and cannot be published.
+ * no src is treated as a placeholder and cannot be published. Files live in the shared library
+ * `src/assets/images/screens/` (docs/image-plan.md 4), so one screen can serve several pages.
  */
 export const media = ({ image }: SchemaContext) =>
   z.object({
@@ -77,6 +78,15 @@ export const media = ({ image }: SchemaContext) =>
     /** Generated environmental imagery must never be presented as a customer (spec 12). */
     aiGenerated: z.boolean().default(false),
     videoUrl: z.url().optional(),
+    /** `old-site`: an interim capture from easyclinic.io, to be replaced by the demo-tenant capture (docs/image-plan.md 3.1). */
+    origin: z.enum(MEDIA_ORIGINS).default('demo-tenant'),
+    /** The month the screen was captured, YYYY-MM (for an old-site screen, the upload month in its old URL). */
+    capturedOn: z.string().regex(YEAR_MONTH, { error: 'Use a month, YYYY-MM' }).optional(),
+    /**
+     * When the company confirmed an old-site screen still matches the current product. Left out until then: preview
+     * labels the image "Interim capture" and lint-content warns, but the page can publish.
+     */
+    uiConfirmedOn: isoDate.optional(),
   });
 
 /** Optional media (a blank one, as Keystatic saves an untouched media group, is absent). */

@@ -88,6 +88,14 @@ sections:
           bullets:
             - A day-end financial report for each clinic and for the whole organisation, covering every transaction
           plan: premium
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/finance-analytics-branch.png
+            alt: 'Finance dashboard for one branch: revenue, outstanding, revenue by service and by day'
+            caption: One branch's revenue by service and by day.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-11'
           link:
             label: Read how multi-location clinics work
             href: /features/multi-location/
@@ -119,6 +127,14 @@ sections:
             items that move fast or slowly, along with seasonal trends. Expiry reports show what is close to
             expiry. It comes with pharmacy and inventory, part of Enterprise or a module added to
             Professional or Premium.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/inventory-valuation-report.png
+            alt: Inventory valuation report by product and batch with expiry, quantity, average cost and value
+            caption: Stock value by batch, with each expiry date.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-09'
           link:
             label: See how the pharmacy counts stock
             href: /features/pharmacy-and-inventory/
@@ -136,6 +152,14 @@ sections:
             officers can oversee how the clinical SOPs are followed. Clinical SOP tracking across branches
             comes with Enterprise.
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/clinical-analytics.png
+            alt: Clinical dashboard with first and repeat visits and the ten commonest diagnoses and complaints
+            caption: The commonest diagnoses and complaints for the period you choose.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-11'
           link:
             label: See how a clinic chain runs on EasyClinic
             href: /solutions/clinic-chain/
@@ -189,10 +213,26 @@ sections:
             Dashboards can be set to the metrics that matter most to your clinic, and reports take filters
             and search parameters of your own, so they show what you need to see. Where the library does not
             have the report you need, a custom report can be created for it.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/reports-library.png
+            alt: Report library with a search box, a category filter and each report listed with its category
+            caption: The report library, with a category filter.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-09'
         - heading: Excel and PDF
           body: >-
             Reports export to Excel and PDF, for the accountant who works in a spreadsheet and for keeping a
             copy of each month's figures after the month has closed.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/report-pdf-export.webp
+            alt: Inventory valuation report exported as a PDF and open in a PDF viewer
+            caption: A report exported to PDF.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-12'
         - heading: Who sees which report
           body: >-
             Each login sees the reports its role allows, and access can be narrowed further by department.

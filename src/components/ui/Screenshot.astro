@@ -2,6 +2,8 @@
 import { Picture } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { need } from '../../lib/content/need';
+import { wrap } from '../../lib/content/sentinel';
+import { isProduction } from '../../lib/content/stage';
 import Icon from './Icon.astro';
 import Md from './Md.astro';
 
@@ -14,6 +16,11 @@ export interface MediaProps {
   frame: 'browser' | 'phone' | 'none';
   aiGenerated?: boolean;
   videoUrl?: string;
+  /** `old-site`: an interim capture from easyclinic.io (docs/image-plan.md 3.1). */
+  origin?: 'demo-tenant' | 'old-site';
+  /** YYYY-MM. */
+  capturedOn?: string;
+  uiConfirmedOn?: Date;
 }
 
 interface Props {
@@ -31,12 +38,24 @@ const frame = media.frame;
 const phoneWidth = compact ? 'max-w-[9.5rem]' : 'max-w-[18rem]';
 const ratio = frame === 'phone' ? `aspect-[390/844] ${phoneWidth} mx-auto` : 'aspect-[1440/900]';
 const placeholder = !media.src ? need(Astro, `Screenshot: ${media.needed ?? media.alt}`, null) : null;
+
+// An old-site screen the company has not yet confirmed against the current product: labelled in preview only; the
+// launch checklist and lint-content list it (docs/image-plan.md 3.1).
+const month = media.capturedOn
+  ? new Date(`${media.capturedOn}-01T00:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' })
+  : null;
+const interim =
+  media.src && media.origin === 'old-site' && !media.uiConfirmedOn && !isProduction
+    ? wrap(`[Interim capture${month ? `, ${month}` : ''}: the company to confirm it matches the current product]`)
+    : null;
 ---
 
 <figure class:list={['m-0', className]}>
+  {/* With a file, the frame is only as wide as the image (up to the column), so a small crop is never stretched. */}
   <div
     class:list={[
       'overflow-hidden bg-surface',
+      media.src && frame !== 'phone' && 'w-fit max-w-full',
       frame === 'browser' && 'rounded-card border border-line',
       frame === 'phone' && ['mx-auto border-navy-900', compact ? 'max-w-[9.5rem] rounded-[1.25rem] border-4' : 'max-w-[18rem] rounded-[2rem] border-[6px]'],
     ]}
@@ -59,7 +78,7 @@ const placeholder = !media.src ? need(Astro, `Screenshot: ${media.needed ?? medi
           sizes={sizes}
           widths={[480, 768, 1080, 1440]}
           priority={priority}
-          class="block h-auto w-full"
+          class:list={['block h-auto max-w-full', frame === 'phone' && 'w-full']}
         />
       ) : (
         <div
@@ -73,5 +92,6 @@ const placeholder = !media.src ? need(Astro, `Screenshot: ${media.needed ?? medi
       )
     }
   </div>
+  {interim && <p class="mt-2 text-xs">{interim}</p>}
   {media.caption && <figcaption class="mt-3 text-sm text-ink-muted"><Md text={media.caption} inline /></figcaption>}
 </figure>

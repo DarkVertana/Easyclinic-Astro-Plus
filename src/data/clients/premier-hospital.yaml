@@ -1,0 +1,11 @@
+name: Premier Hospital
+logo: ../../assets/images/clients/premier-hospital/logo.jpg
+country: null
+sourcePage: https://www.easyclinic.io/
+sourceHeading: 'Physicians, Specialists & Clinic Chains using Easy Clinic across the World'
+logoPermission: null
+notes:
+  - 'Logo: old image #4 from the live customer strip (docs/image-plan.md 7.1; migration/images/image-sources.csv). Imported 2026-09-28 to src/assets/images/clients/premier-hospital/logo.jpg at 496x102.'
+  - logoPermission stays null until the company confirms the client agrees to its logo being shown (docs/image-plan.md 10, question 8).
+  - 'Country: the old site suggests India; the company to confirm.'
+  - 'The old logo carries the hospital''s own NABH seal. The imported file is cropped to the wordmark (0,70,496,172 of the 600x250 original) so the seal is gone and a visitor cannot read it as EasyClinic''s. Ask the hospital for a file without the seal if a sharper one is needed.'

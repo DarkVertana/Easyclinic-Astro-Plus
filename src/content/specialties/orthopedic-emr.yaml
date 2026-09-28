@@ -110,6 +110,14 @@ sections:
             - Joint replacement template
             - Physical therapy template
             - Your own paper forms, rebuilt with the form builder
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/orthopaedic-examination-template.png
+            alt: Orthopaedic examination form with deformity, position and imaging fields
+            caption: An orthopaedic examination template.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-05'
         - heading: X-rays and MRI scans on the record
           body: >-
             X-rays and MRI scans are stored on the patient's record as uploaded images and documents, with

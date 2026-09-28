@@ -25,6 +25,9 @@ export const TIME_24H = /^\d{1,2}:\d{2}$/;
 /** Digits only (WhatsApp numbers in wa.me form). */
 export const DIGITS = /^\d+$/;
 
+/** A calendar month: YYYY-MM (when a screenshot was captured). */
+export const YEAR_MONTH = /^\d{4}-(?:0[1-9]|1[0-2])$/;
+
 /** A calendar date without a time: YYYY-MM-DD. */
 export const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 

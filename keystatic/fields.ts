@@ -16,9 +16,9 @@
 import { fields } from '@keystatic/core';
 import type { BasicFormField, ComponentSchema, FormFieldStoredValue, SlugFormField } from '@keystatic/core';
 import { wrapper } from '@keystatic/core/content-components';
-import { MEDIA_FRAMES, MEDIA_KINDS, TONES } from '../src/schemas/constants.ts';
+import { MEDIA_FRAMES, MEDIA_KINDS, MEDIA_ORIGINS, TONES } from '../src/schemas/constants.ts';
 import { CTA_PRESENT_IF, MEDIA_PRESENT_IF } from '../src/schemas/groups.ts';
-import { EMAIL, HREF, INTERNAL_PATH, SLUG_ID } from '../src/schemas/patterns.ts';
+import { EMAIL, HREF, INTERNAL_PATH, SLUG_ID, YEAR_MONTH } from '../src/schemas/patterns.ts';
 
 /* ---------- Metadata for the parity test ---------- */
 
@@ -37,6 +37,7 @@ export type FieldMeta =
   | { kind: 'record'; keys: readonly string[] }
   | { kind: 'unknown'; inner: FieldMeta }
   | { kind: 'unknownFlag' | 'unknownList' | 'boolOrText' | 'image' | 'slug' }
+  | { kind: 'imagePath'; directory: string; publicPath: string; pattern: RegExp }
   /** The exact config passed to `fields.mdx`: the body audit (tests/unit/keystatic-mdx-bodies.test.ts) builds the editor's own field from it. */
   | { kind: 'mdx'; config: Parameters<typeof fields.mdx>[0] }
   | { kind: 'preserved'; nullable: boolean }
@@ -429,28 +430,75 @@ export function preserved({ nullable = false }: { nullable?: boolean } = {}) {
 
 /* ---------- Media and calls to action ---------- */
 
-/** Where hand-placed and uploaded screenshots live: `src/assets/screenshots/<entry slug>/…`. */
-export const SCREENSHOT_DIR = 'src/assets/screenshots';
+/**
+ * The screenshot library (docs/image-plan.md 4): one folder of descriptively named files, shared by every page, so
+ * the same screen can serve several pages. Keystatic's own image field stores a copy per entry and renames it on save,
+ * so `media.src` is edited as a path into this folder instead (`imagePath`).
+ */
+export const SCREENSHOT_DIR = 'src/assets/images/screens';
 /** The `src` prefix from a YAML page (`src/content/<collection>/<slug>.yaml`). */
-export const YAML_SCREENSHOT_PATH = '../../assets/screenshots/';
+export const YAML_SCREENSHOT_PATH = '../../assets/images/screens/';
 /** The `src` prefix from an MDX entry (`src/content/<collection>/<slug>/index.mdx`). */
-export const MDX_SCREENSHOT_PATH = '../../../assets/screenshots/';
+export const MDX_SCREENSHOT_PATH = '../../../assets/images/screens/';
 
-export function image(label: string, publicPath: string) {
-  return tag(fields.image({ label, directory: SCREENSHOT_DIR, publicPath }), { kind: 'image' });
+/**
+ * Headshots of named people (testimonials and authors share it): `src/assets/images/people/<entry id>/photo.<ext>`,
+ * written `../../assets/images/people/<entry id>/photo.<ext>` in the data file. Testimonial and author ids must not
+ * clash, because two entries with the same id would share a folder (tests/unit/keystatic-config.test.ts checks).
+ */
+export const PEOPLE_DIR = 'src/assets/images/people';
+/** The `photo` prefix from a data file (`src/data/<collection>/<id>.yaml`). */
+export const DATA_PEOPLE_PATH = '../../assets/images/people/';
+/** Client logos: `src/assets/images/clients/<entry id>/logo.<ext>`, written `../../assets/images/clients/<entry id>/logo.<ext>`. */
+export const CLIENT_LOGO_DIR = 'src/assets/images/clients';
+export const DATA_CLIENT_LOGO_PATH = '../../assets/images/clients/';
+
+/**
+ * An `astro:assets` image (Zod `image()`). Keystatic stores and looks up the file at `<directory>/<entry slug>/<file>`
+ * and renames it to the field's path on save (`photo.jpg`, `logo.png`), so a file placed by hand must already sit
+ * there under that name; anywhere else the editor opens the entry without it and a save drops the key.
+ */
+export function image(label: string, publicPath: string, { directory, description }: { directory: string; description?: string }) {
+  return tag(fields.image({ label, description, directory, publicPath }), { kind: 'image' });
+}
+
+/** A library file name: lowercase words joined by hyphens, with an image extension. */
+const LIBRARY_FILE = '[a-z0-9]+(?:-[a-z0-9]+)*\\.(?:png|jpe?g|webp|avif|svg)';
+const escapeRegex = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/**
+ * An `astro:assets` image (Zod `image()`) chosen from a shared library folder, edited as its path: the value is kept
+ * exactly as written, and the build fails if the file is missing. For files several entries share, where Keystatic's
+ * per-entry image field (`image()`) would copy and rename them.
+ */
+export function imagePath(label: string, publicPath: string, { directory, description }: { directory: string; description?: string }) {
+  const pattern = new RegExp(`^${escapeRegex(publicPath)}${LIBRARY_FILE}$`);
+  const help = `A file in ${directory}/, written ${publicPath}<file-name>.png. Add the file first.`;
+  const field = fields.text({
+    label,
+    description: description ? `${description} ${help}` : help,
+    validation: textValidation(label, { pattern, patternMessage: `Use ${publicPath}<file-name>.png, a lowercase, hyphenated file in ${directory}/` }),
+  });
+  return tag(field, { kind: 'imagePath', directory, publicPath, pattern });
 }
 
 /** Hero or section media (Zod `media` / `optionalMedia`). Blocks always use the YAML prefix: no block with media is allowed in an MDX family. */
 export function media(label: string, { optional = false, publicPath = YAML_SCREENSHOT_PATH }: { optional?: boolean; publicPath?: string } = {}) {
   const shape = {
     kind: choice('Kind', MEDIA_KINDS, { zodDefault: 'screenshot' }),
-    src: image('Image', publicPath),
+    src: imagePath('Image', publicPath, { directory: SCREENSHOT_DIR, description: 'Demo data only: no real patient name, phone number, e-mail, registration number, rating, award or compliance badge.' }),
     needed: text('Screen needed', { multiline: true, description: 'The screen from the screenshot brief, until the image exists. A media item without an image cannot be published.' }),
     alt: text('Alt text', { required: !optional }),
     caption: text('Caption'),
     frame: choice('Frame', MEDIA_FRAMES, { zodDefault: 'browser' }),
     aiGenerated: flag('AI-generated image', { zodDefault: false, description: 'Generated imagery must never be presented as a customer.' }),
     videoUrl: url('Video URL'),
+    origin: choice('Origin', MEDIA_ORIGINS, { zodDefault: 'demo-tenant' }, {
+      labels: { 'demo-tenant': 'Demo tenant (spec 12 capture)', 'old-site': 'Old site (interim capture)' },
+      description: 'An old-site screen is interim: it is labelled in preview until the company confirms it matches the product.',
+    }),
+    capturedOn: text('Captured (month)', { pattern: YEAR_MONTH, patternMessage: 'Use a month, YYYY-MM, e.g. 2025-01', description: 'The month the screen was captured.' }),
+    uiConfirmedOn: date('UI confirmed on', { description: 'When the company confirmed this old-site screen matches the current product. Leave empty until then.' }),
   };
   return optional ? optionalGroup(label, shape, [...MEDIA_PRESENT_IF]) : group(label, shape);
 }

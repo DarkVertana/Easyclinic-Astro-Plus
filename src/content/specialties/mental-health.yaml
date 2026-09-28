@@ -116,6 +116,14 @@ sections:
             - Progress notes from visit to visit
             - Past records side by side
             - Case notes shared with the care team
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/psychiatry-observations-form.png
+            alt: 'Observation form: appearance, speech, eye contact, motor activity, affect and mood'
+            caption: Observations recorded by point and click.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-12'
         - heading: Psychometric test results on the record
           body: >-
             Results from standardised tests, such as the Beck Depression Inventory or the MMPI, are stored

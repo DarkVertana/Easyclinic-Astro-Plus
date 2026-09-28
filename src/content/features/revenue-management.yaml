@@ -166,6 +166,14 @@ sections:
           body: >-
             Access to the financial reports and to each cash register is set by role. The clinic's
             revenue can stay with the owner and the accountant while the front desk still takes payments.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/invoice-permissions-pii.png
+            alt: Invoice permissions for administrator, doctor and nurse, and a setting that shows personal details masked
+            caption: Who can take payments or see personal details, set by role.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-12'
         - heading: Reports that arrive without being run
           body: >-
             Reports can be generated and sent out automatically, so the day-end totals reach the owner

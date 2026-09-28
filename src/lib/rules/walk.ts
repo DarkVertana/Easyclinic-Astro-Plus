@@ -8,7 +8,9 @@ import { UNRENDERED_KEYS } from '../../schemas/constants.ts';
 export type Leaf =
   | { kind: 'string'; path: string; key: string; value: string; verbatim: boolean; isCtaLabel: boolean }
   | { kind: 'null'; path: string; key: string }
-  | { kind: 'missing-media'; path: string; key: string; needed?: string };
+  | { kind: 'missing-media'; path: string; key: string; needed?: string }
+  /** An old-site screenshot the company has not confirmed against the current product (docs/image-plan.md 3.1). */
+  | { kind: 'interim-media'; path: string; key: string; capturedOn?: string };
 
 const SKIP_KEYS = new Set([
   'href',
@@ -50,6 +52,9 @@ const SKIP_KEYS = new Set([
   'claimsReview',
   'source',
   'needed',
+  'origin',
+  'capturedOn',
+  'uiConfirmedOn',
 ]);
 
 const VERBATIM_KEYS = new Set(['quote', 'pullQuote']);
@@ -89,6 +94,9 @@ export function* walk(value: unknown, path = '', key = '', parentIsCta = false):
     if (isReference(obj)) return;
     if (isMedia(obj) && !obj.src && !obj.videoUrl) {
       yield { kind: 'missing-media', path, key, needed: typeof obj.needed === 'string' ? obj.needed : undefined };
+    }
+    if (isMedia(obj) && obj.src && obj.origin === 'old-site' && !obj.uiConfirmedOn) {
+      yield { kind: 'interim-media', path, key, capturedOn: typeof obj.capturedOn === 'string' ? obj.capturedOn : undefined };
     }
     const isCta = key === 'primary' || key === 'secondary' || key === 'cta' || /ctas?$/i.test(key);
     for (const [k, v] of Object.entries(obj)) {

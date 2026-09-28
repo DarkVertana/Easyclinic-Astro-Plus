@@ -18,17 +18,23 @@ import {
 } from '../../src/schemas/constants.ts';
 import { DIGITS, SLUG_ID } from '../../src/schemas/patterns.ts';
 import {
+  CLIENT_LOGO_DIR,
+  DATA_CLIENT_LOGO_PATH,
+  DATA_PEOPLE_PATH,
+  PEOPLE_DIR,
   choice,
   choices,
   email,
   flag,
   group,
+  image,
   int,
   list,
   md,
   num,
   path,
   record,
+  ref,
   slug,
   stringList,
   text,
@@ -175,7 +181,13 @@ export const dataCollections = {
       personas: choices('Personas', PERSONAS),
       source: text('Source', { required: true }),
       consentOnFile: unknownFlag('Consent on file'),
-      photo: text('Photo'),
+      photo: image('Photo', DATA_PEOPLE_PATH, {
+        directory: PEOPLE_DIR,
+        description: 'A headshot the person supplied or approved (spec 12). Never a stock or generated photo. Shown only when Photo consent is Yes.',
+      }),
+      photoConsent: unknownFlag('Photo consent', {
+        description: 'Yes once the company has recorded that the person supplied or approved the photo. Unknown until then.',
+      }),
       notes: notes(),
     },
   }),
@@ -192,7 +204,35 @@ export const dataCollections = {
       kind: choice('Kind', AUTHOR_KINDS, { required: true }),
       bio: unknown(text('Bio', { multiline: true })),
       linkedin: unknown(url('LinkedIn')),
-      photo: text('Photo'),
+      photo: image('Photo', DATA_PEOPLE_PATH, {
+        directory: PEOPLE_DIR,
+        description: 'A current headshot, shown in the byline and on /about-us/. Never a stock or generated photo.',
+      }),
+      notes: notes(),
+    },
+  }),
+
+  clients: collection({
+    label: 'Client logos',
+    path: 'src/data/clients/*',
+    format: { data: 'yaml' },
+    slugField: 'name',
+    columns: ['name', 'country'],
+    schema: {
+      name: idSlug('Name', 'client'),
+      logo: image('Logo', DATA_CLIENT_LOGO_PATH, {
+        directory: CLIENT_LOGO_DIR,
+        description: 'The client’s own logo file (SVG when they supply one), cropped to the logo alone: no certification seals, ratings or awards.',
+      }),
+      country: unknown(
+        text('Country code', { pattern: SLUG_ID, patternMessage: 'A lowercase country code, e.g. in', description: 'e.g. in, ke, my, zw. Empty means not yet confirmed.' }),
+      ),
+      sourcePage: url('Source page', { description: 'The old live page where the logo appeared, or where the company confirmed the client.' }),
+      sourceHeading: text('Source heading', { description: 'The heading of the section the logo appeared under.' }),
+      testimonial: ref('Testimonial', 'testimonials', { description: 'A testimonial from the same organisation, if there is one.' }),
+      logoPermission: unknownFlag('Logo permission', {
+        description: 'Yes once the client has agreed to its logo appearing on the site. Production shows the logo only then.',
+      }),
       notes: notes(),
     },
   }),

@@ -116,6 +116,14 @@ sections:
             Patients book appointments through your clinic's patient portal or app, and the booking goes
             into the same calendar the desk works from.
           plan: enterprise
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/online-booking-slots.png
+            alt: Online booking page with a doctor's open slots
+            caption: Open slots the patient books from.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-09'
           link:
             label: See how the appointment calendar works
             href: /features/appointment-scheduling/
@@ -136,11 +144,27 @@ sections:
             patient record instead of being typed in again at the desk.
           bullets:
             - Sending the link on WhatsApp needs the Premium plan
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/patient-self-registration-phone.png
+            alt: 'Registration form open on a phone: name, gender, date of birth, mobile, blood group and address'
+            caption: The registration form, filled in on the patient's phone.
+            frame: phone
+            origin: old-site
+            capturedOn: '2024-09'
         - heading: Reminders by SMS and email
           body: >-
             Every plan sends SMS and email reminders, so a patient without a smartphone still hears from
             the clinic before the visit.
           plan: professional
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/message-templates-by-channel.png
+            alt: Communication settings with the email templates open, including the appointment reminder
+            caption: The email templates, with the appointment reminder among them.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-09'
         - heading: Messages on WhatsApp
           body: >-
             From the Premium plan, reminders and messages also go out on WhatsApp. How message templates

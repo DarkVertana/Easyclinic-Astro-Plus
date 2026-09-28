@@ -29,7 +29,17 @@ A page that cannot be honest without a missing fact stays `status: draft` with `
 - Compliance and integration STATUS is unknown everywhere. Describing a regulation or an integration and what it
   does is fine; stating or implying EasyClinic's status, readiness or certification is not. On pages meant to
   publish, do not use regulatorStrip, regulatorTable or heroStrip.regulators.
-- Screenshots do not exist yet: on pages meant to publish, no heroMedia and no media objects.
+- Product screenshots: on pages meant to publish, `heroMedia` and `media` may use only the files in
+  `src/assets/images/screens/` that `docs/image-plan.md` places on that slot, with the alt text and caption given
+  there. They are real product screens showing demo data only, with no real patient name, phone number, e-mail,
+  registration or membership number, client or third-party name, rating, award, compliance word or outcome figure.
+  The caption says only what the screen shows; it never says more than the row's text, and it never calls a screen
+  the tool from the Penda Health study. Screens taken from the old site carry `origin: old-site` and the month they
+  were captured. The company must confirm that each one matches the current product, and the confirmation is
+  recorded as `uiConfirmedOn`. Until then preview labels the image "Interim capture", and the launch checklist
+  lists every old-site screen without a confirmation. Conditional images (marked in the plan) stay out until their
+  confirmation is recorded. A media object without `src` is still a placeholder and blocks publishing. Generated
+  images (`aiGenerated: true`) are never used as proof.
 
 ## Writing (spec section 6)
 Clinic administrator's voice; names, numbers, days; admit limits; no exclamation marks; sentence case headings;

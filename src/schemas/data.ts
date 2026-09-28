@@ -1,4 +1,4 @@
-import { reference } from 'astro:content';
+import { reference, type SchemaContext } from 'astro:content';
 import { z } from 'astro/zod';
 import {
   AUTHOR_KINDS,
@@ -14,7 +14,7 @@ import {
 } from './constants';
 import { href, internalPath, isoDate, md, optionalGroup, unknown } from './fields';
 import { NAV_LINK_PRESENT_IF } from './groups';
-import { DIGITS } from './patterns';
+import { DIGITS, SLUG_ID } from './patterns';
 
 /** Editor notes (provenance, decisions); never rendered. Keystatic keeps them where it would drop YAML comments. */
 const notes = z.array(z.string()).default([]);
@@ -214,35 +214,68 @@ export const regulatorSchema = z.object({
   notes,
 });
 
-export const testimonialSchema = z.object({
-  name: z.string(),
-  role: z.string(),
-  specialty: z.string().optional(),
-  clinic: z.string().optional(),
-  city: unknown(z.string()),
-  country: z.string(),
-  customerSince: z.number().int().optional(),
-  /** Verbatim. The banned-words rule does not apply to quotes. */
-  quote: z.string(),
-  /** A one-line version for large single-quote layouts (section 11). Must be a verbatim excerpt. */
-  pullQuote: z.string().optional(),
-  outcome: unknown(z.string()),
-  personas: z.array(z.enum(PERSONAS)).default([]),
-  source: z.string(),
-  consentOnFile: unknown(z.boolean()),
-  photo: z.string().optional(),
-  notes,
-});
+/**
+ * A function of the schema context because `photo` is an `astro:assets` image. Photos sit in Keystatic's layout,
+ * `src/assets/images/people/<entry id>/photo.<ext>`, written `../../assets/images/people/<entry id>/photo.<ext>`.
+ */
+export const testimonialSchema = ({ image }: SchemaContext) =>
+  z.object({
+    name: z.string(),
+    role: z.string(),
+    specialty: z.string().optional(),
+    clinic: z.string().optional(),
+    city: unknown(z.string()),
+    country: z.string(),
+    customerSince: z.number().int().optional(),
+    /** Verbatim. The banned-words rule does not apply to quotes. */
+    quote: z.string(),
+    /** A one-line version for large single-quote layouts (section 11). Must be a verbatim excerpt. */
+    pullQuote: z.string().optional(),
+    outcome: unknown(z.string()),
+    personas: z.array(z.enum(PERSONAS)).default([]),
+    source: z.string(),
+    consentOnFile: unknown(z.boolean()),
+    /** A headshot the person supplied or approved (spec 12). Shown only once `photoConsent` is true. */
+    photo: image().optional(),
+    /** Whether the person supplied or approved `photo`. null until the company records it (docs/image-plan.md 6.2). */
+    photoConsent: unknown(z.boolean()),
+    notes,
+  });
 
-export const authorSchema = z.object({
-  name: z.string(),
-  role: z.string(),
-  kind: z.enum(AUTHOR_KINDS),
-  bio: unknown(z.string()),
-  linkedin: unknown(z.url()),
-  photo: z.string().optional(),
-  notes,
-});
+/** `photo`: a headshot in `src/assets/images/people/<entry id>/photo.<ext>`, shown in the byline and on /about-us/. */
+export const authorSchema = ({ image }: SchemaContext) =>
+  z.object({
+    name: z.string(),
+    role: z.string(),
+    kind: z.enum(AUTHOR_KINDS),
+    bio: unknown(z.string()),
+    linkedin: unknown(z.url()),
+    photo: image().optional(),
+    notes,
+  });
+
+/**
+ * A client organisation whose logo a `logoStrip` may show (docs/image-plan.md section 7). The logo file sits in
+ * Keystatic's layout, `src/assets/images/clients/<entry id>/logo.<ext>`. Production shows a logo only when
+ * `logoPermission` is true; preview shows the rest as placeholders.
+ */
+export const clientSchema = ({ image }: SchemaContext) =>
+  z.object({
+    name: z.string(),
+    /** Empty until the file is imported; the strip then shows a placeholder in preview and leaves the client out in production. */
+    logo: image().optional(),
+    /** Country code (in, ke, my, zw); null until the company confirms where the client is. */
+    country: unknown(z.string().regex(SLUG_ID)),
+    /** The old live page where the logo appeared, or where the company confirmed the client. */
+    sourcePage: z.url().optional(),
+    /** The heading of the section the logo appeared under. */
+    sourceHeading: z.string().optional(),
+    /** A testimonial from the same organisation, when there is one. */
+    testimonial: reference('testimonials').optional(),
+    /** Whether the client agrees to its logo appearing on the site. null until the company confirms it. */
+    logoPermission: unknown(z.boolean()),
+    notes,
+  });
 
 const navLink = z.strictObject({
   label: z.string(),
@@ -284,4 +317,5 @@ export const regulatorRef = reference('regulators');
 export const countryRef = reference('countries');
 export const priceRef = reference('prices');
 export const authorRef = reference('authors');
+export const clientRef = reference('clients');
 export { href };

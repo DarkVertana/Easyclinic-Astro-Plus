@@ -23,6 +23,14 @@ summary: >-
   practices to a chain of {fact:largestChain} locations.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/screens/scheduling-two-doctor-calendar.png
+  alt: Day calendar with a column for each of two doctors and each patient's appointment status
+  caption: Two doctors' days side by side, with each patient's status.
+  frame: browser
+  origin: old-site
+  capturedOn: '2024-01'
 heroStrip:
   ratings: true
   study: false
@@ -94,6 +102,14 @@ sections:
         - label: Book
           body: The patient books online or at the desk, and walk-ins join the same list as booked slots.
           href: /features/appointment-scheduling/
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/online-booking-slots.png
+            alt: Online booking page listing a doctor's open slots for today and the next days
+            caption: The slots a patient picks from online.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-09'
         - label: Arrive
           body: Reception registers the patient once and checks the insurer or TPA plan before the consult, so the claim starts clean.
           href: /features/insurance-claims/
@@ -103,6 +119,14 @@ sections:
         - label: Prescribe
           body: A prescription takes about thirty seconds, with a drug-interaction check. Cura AI can draft the note for the doctor to review and sign.
           href: /features/emr/
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/prescription-drug-interaction-dialog.png
+            alt: 'Drug-to-drug interaction warning: Zocor 10 mg with Biaxin 500 mg, increased statin levels'
+            caption: The interaction warning appears while the prescription is written.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - label: Pay
           body: The invoice builds itself from what was ordered in the consult, and the receipt goes out on WhatsApp.
           href: /features/billing/
@@ -209,6 +233,11 @@ sections:
         - hisham-ismail
       layout: row
       usePullQuote: true
+
+  - discriminant: logoStrip
+    value:
+      id: client-logos
+      heading: Clinics and health groups that have used EasyClinic
 
   - discriminant: stepList
     value:
@@ -331,6 +360,7 @@ editorialPass:
   readsMachineWritten: 'The definition answer to "What is clinic management software?" and the evenly matched old-way and new-way lists read like SEO copy, and with no screenshots yet the journey steps describe screens a doctor cannot see.'
 
 notes:
+  - 'Logo strip (docs/image-plan.md 7.2), added 2026-09-28 after the testimonialRow: all nine clients in src/data/clients. The logos come from the old live section "Physicians, Specialists & Clinic Chains using Easy Clinic across the World" on https://www.easyclinic.io/ (the same strip was also on /ai/, /solutions/clinic-chain/ and the old /emr-software-in-*/ pages; migration/images/live-page-images.json), where this page showed them. The heading says "have used", not "use", because the company has not confirmed that each is a current client (Qualitas Health''s testimonial is in the past tense), and it has no count, rating or "trusted by" (docs/image-plan.md 7.2). Production shows a client only when its logoPermission is true (all null on 2026-09-28), so the strip is left out of production until then.'
   - 'Title shortened from the spec 4.1 title (62 characters) to 50: "Clinic Management Software for Doctors: EasyClinic".'
   - 'Published 2026-09-26 with confirmed facts only (owner decision). Screenshots removed because none exist yet; restore when captured (briefs in spec 12 and in git history before this pass): hero Today view (14 appointments, two walk-ins, one video consult, one no-show; phone capture too); old-way generated desk image oldway-desk-01.webp (aiGenerated: true, caption says it is not a customer''s clinic); journey steps: patient app booking (phone), payor coverage check at registration, lab order with an abnormal flag, thirty-second prescription with an interaction warning and Hindi print option, INR invoice with GST lines and a part payment, pharmacy dispensing with an expiring batch, WhatsApp reminder thread (phone), owner dashboard with the eight morning numbers.'
   - 'Regulator strip (spec 5.1 item 6; was in-abdm-m1, ke-sha, ke-etims, ae-nabidh, ae-malaffi, ng-ndpa, placed after the training steps, linking to /trust/) and heroStrip.regulators (in-abdm-m1, ke-sha, ae-nabidh, ng-ndpa) removed for publication: every regulator state in src/data/regulators is null. Restore both when each regulator has a state and date. Use the spec heading "Built for your regulator" only if every listed regulator is Live. Spec 5.1 also names NHIA. The country and trust related-link descriptions were reworded so they no longer promise a status.'

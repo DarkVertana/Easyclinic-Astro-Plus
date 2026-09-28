@@ -38,6 +38,7 @@ import {
   OPTIONAL_LISTS_SAVED_EMPTY,
   REFERENCE_COLLECTION,
   metaOf,
+  resolveDataSchema,
   rootNode,
   zodContext,
   type KsNode,
@@ -241,7 +242,8 @@ const LEAF_KINDS: Partial<Record<Cls, FieldMeta['kind'][]>> = {
   boolean: ['flag'],
   literal: ['choice'],
   reference: ['ref'],
-  image: ['image'],
+  // Keystatic's per-entry image field (photos, logos) or a path into a shared library folder (screenshots).
+  image: ['image', 'imagePath'],
   boolOrString: ['boolOrText'],
 };
 
@@ -560,7 +562,7 @@ for (const [key, family] of Object.entries(COLLECTION_FAMILY)) {
 
 for (const [key, exportName] of Object.entries(DATA_SCHEMA_EXPORT)) {
   const ctx: Ctx = { scope: `${key in singletons ? 'singleton' : 'collection'} ${key}`, inArray: false, inOptionalGroup: false };
-  const zSchema = (dataSchemas as Record<string, Zod>)[exportName];
+  const zSchema = resolveDataSchema((dataSchemas as Record<string, Zod>)[exportName]);
   countCustom(key, zSchema);
   const collection = collections[key];
   const schema = collection?.schema ?? singletons[key]?.schema;

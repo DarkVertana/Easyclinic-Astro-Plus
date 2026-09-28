@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getEntry, type ReferenceDataEntry } from 'astro:content';
 import { formatDate, isoDate } from '../../lib/format/date';
 import { need } from '../../lib/content/need';
@@ -15,13 +16,34 @@ const authorData = author ? (await getEntry(author))?.data : null;
 const reviewer = reviewedBy ? (await getEntry(reviewedBy))?.data : null;
 const name = authorData ? authorData.name : need(Astro, 'named author (clinician, product lead or country lead)', null);
 const role = authorData ? authorData.role : null;
+/** The author's headshot (src/data/authors `photo`), 32 CSS pixels, before "By …". */
+const photo = authorData?.photo;
+const PHOTO = 32;
 ---
 
-<p class:list={['text-sm text-ink-muted', className]}>
-  <span>By <span class="font-semibold text-ink">{name}</span>{role && `, ${role}`}</span>
-  {reviewer && <span> · Reviewed by {reviewer.name}</span>}
+<p class:list={['text-sm text-ink-muted', photo && 'flex items-center gap-3', className]}>
+  {
+    photo && (
+      <Image
+        src={photo}
+        alt={authorData!.name}
+        width={PHOTO}
+        height={PHOTO}
+        layout="fixed"
+        fit="cover"
+        position="top"
+        loading="lazy"
+        decoding="async"
+        class="size-8 shrink-0 rounded-full bg-surface-muted object-cover"
+      />
+    )
+  }
   <span>
-    · Last updated
-    {lastUpdated ? <time datetime={isoDate(lastUpdated)}>{formatDate(lastUpdated)}</time> : need(Astro, 'last-updated date', null)}
+    <span>By <span class="font-semibold text-ink">{name}</span>{role && `, ${role}`}</span>
+    {reviewer && <span> · Reviewed by {reviewer.name}</span>}
+    <span>
+      · Last updated
+      {lastUpdated ? <time datetime={isoDate(lastUpdated)}>{formatDate(lastUpdated)}</time> : need(Astro, 'last-updated date', null)}
+    </span>
   </span>
 </p>

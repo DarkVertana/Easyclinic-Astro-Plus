@@ -113,11 +113,27 @@ sections:
             - Substance use and obs-gynae details
             - Immunisations and COVID history
             - Alternative therapies the patient uses
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/emr-facesheet-last-visit.png
+            alt: Facesheet with conditions, procedures, hospital history and lifestyle, beside a summary of the last visit
+            caption: The facesheet and the last visit, side by side.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
         - heading: Chronic conditions over the years
           body: >-
             Patients with diabetes or hypertension are tracked over the long term. Vitals and other clinical
             parameters are charted visit by visit, so a change in treatment can be read against the trend.
             On Premium, lab reports come into the chart and their values are charted as well.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/longitudinal-visit-comparison.png
+            alt: Two visits side by side with vitals, abnormal values in red, and the diagnosis
+            caption: Two visits side by side, the abnormal values in red.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Follow-ups and check-ups
           body: >-
             The follow-up is set during the consult, and the patient gets an automated reminder before it
@@ -137,6 +153,14 @@ sections:
             Family practice has its regular conditions, such as diabetes or a respiratory infection, and a
             template for each saves writing the same note from scratch. On Premium you can have a template
             for each of them, and turn your paper forms into digital ones with the form builder.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/diabetic-foot-examination.png
+            alt: Diabetic foot examination for each foot, with the latest glucose and HbA1c above it
+            caption: A diabetic foot examination template.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-03'
           link:
             label: Compare what each plan includes
             href: /pricing/
@@ -162,6 +186,14 @@ sections:
             A walk-in gets a token number and joins the day's list beside the booked patients, first come
             first served, and a patient who needs to be seen sooner can be moved up as a priority. The desk
             sees the queue and each patient's waiting time as the day goes on.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/scheduling-token-list.png
+            alt: Token list for one doctor with each patient's token number and arrival status
+            caption: Token numbers and arrival status for the day.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
           link:
             label: Read how the appointment book works
             href: /features/appointment-scheduling/
@@ -169,16 +201,40 @@ sections:
           body: >-
             Triage is part of the EMR, for deciding who needs to be seen first when the waiting room is
             full.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/visit-workflow-with-triage.png
+            alt: Visit workflow from registration to triage to the doctor, with the moves allowed at each step
+            caption: Triage as a step between the desk and the doctor.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: 'In the consult: point and click'
           body: >-
             The chief complaint, the history, the vitals and the examination are recorded by pointing and
             clicking, with auto-complete for notes and diagnoses. Investigations, referrals, the follow-up
             date and advice for the patient are added in the same consult.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/attend-visit-point-and-click.png
+            alt: Consult screen with complaints, vitals, a notes editor and the facesheet
+            caption: The consult on one screen, recorded by point and click.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-12'
         - heading: The prescription, checked and sent
           body: >-
             The prescription is written on the same record, with the drug interaction check built into the
             EMR. It can be printed, or sent to the patient by SMS or email and, on Premium, by WhatsApp, and
             it can be bilingual, such as English and Swahili for clinics in Kenya.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/prescription-drug-interaction.png
+            alt: Drug-to-drug interaction warning on the prescription
+            caption: The interaction check while prescribing.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: 'Back at the desk: the bill'
           body: >-
             The receptionist raises the bill in one click from the clinic's service list, and on Premium the

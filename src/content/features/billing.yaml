@@ -122,6 +122,14 @@ sections:
             nothing is copied from the prescription. With lab management, part of Enterprise and an
             add-on on Professional or Premium, a test can be set to go on the invoice when the sample is
             collected.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/invoice-lines-from-orders.png
+            alt: Invoice with a consultation, a blood count and a chest X-ray as separate lines, and an Add payor button
+            caption: The consult, the blood count and the X-ray arrive as lines on the bill.
+            frame: browser
+            origin: old-site
+            capturedOn: '2024-12'
           link:
             label: Read how lab orders work
             href: /features/lab/
@@ -165,6 +173,14 @@ sections:
           body: >-
             A patient can pay part of a bill now and the rest at the next visit, or pay an advance before
             a procedure. EasyClinic records each payment and shows the balance at the desk straight away.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/invoice-part-payment-balance.png
+            alt: 'Invoice balance: 950 invoiced, 800 paid in cash, 150 still due'
+            caption: A part payment recorded, and the balance still owed.
+            frame: none
+            origin: old-site
+            capturedOn: '2024-01'
         - heading: Refunds and voided bills, with authorisation
           body: >-
             Refunds and voided invoices go through with authorisation, and discounts and write-offs are

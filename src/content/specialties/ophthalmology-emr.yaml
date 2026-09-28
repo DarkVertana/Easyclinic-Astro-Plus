@@ -117,6 +117,14 @@ sections:
             Generate and manage the eyeglass prescription in EasyClinic, so the last one is on the record when
             the patient comes back. It is printed for the patient or, on Premium, sent on WhatsApp, and
             Premium also lets the clinic print on its own layout.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/eyeglass-prescription.png
+            alt: Glass prescription with sphere, cylinder, axis and visual acuity for each eye, distance and near
+            caption: The eyeglass prescription written in the visit.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Templates for common eye conditions
           plan: premium
           body: >-

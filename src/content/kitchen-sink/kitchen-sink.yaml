@@ -112,6 +112,21 @@ sections:
     value:
       heading: Testimonial row
       items: [tl-prabhu, manish-bhatia, premanand-raya]
+  - discriminant: logoStrip
+    value:
+      heading: Logo strip, every client
+      intro: Client logos from src/data/clients, with no links, count or rating. Production shows only clients with logo permission on file.
+  - discriminant: logoStrip
+    value:
+      heading: Logo strip, listed clients in one country
+      clients: [penda-health, cimas-health, qualitas-health]
+      country: ke
+  - discriminant: peopleGrid
+    value:
+      heading: People grid
+      items:
+        - { author: girish-mohata, background: Founded EasyClinic and leads it as chief executive. }
+        - { author: gaurab-chatterjee, background: 'At EasyClinic since 2010, with over 16 years in software development.' }
   - discriminant: regulatorTable
     value:
       heading: Regulator table

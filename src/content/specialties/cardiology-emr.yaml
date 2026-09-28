@@ -105,20 +105,52 @@ sections:
             reads as one line across visits instead of a list of numbers in separate notes. On Premium, lab
             reports come into the chart, and values such as LDL cholesterol and HbA1c are charted beside
             the vitals. Every past visit is on the same screen.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/fasting-glucose-trend.png
+            alt: Fasting blood glucose readings plotted by date
+            caption: A lab value charted reading by reading.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: The history and risk factors on the facesheet
           body: >-
             The intake form records chronic illnesses, family history, social history and substance use,
             with as much or as little detail as the clinic wants. What it records is shown on the patient's
             facesheet, and an auto-generated summary puts the key data on one screen before each review.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/medical-history-risk-factors.png
+            alt: Medical history form with hypertension, hyperlipidaemia, diabetes, a CABG and heavy smoking
+            caption: The history and risk factors, recorded once.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: A drug interaction check when you prescribe
           body: >-
             A cardiology patient is often on several long-term medicines, and a new one gets added at almost
             every review. EasyClinic's EMR includes a drug interaction check on the prescription.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/prescription-drug-interaction.png
+            alt: 'Drug-to-drug interaction warning: Zocor with Biaxin raises statin levels'
+            caption: The interaction warning shows while the second medicine is on the prescription.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Follow-ups set in the note, with reminders
           body: >-
             Patients with heart failure or hypertension come back for years, so the follow-up is recorded
             in the note at the end of every consult. The reminder goes to the patient automatically, by SMS
             and email on every plan and by WhatsApp on Premium.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/visit-follow-up-and-guidelines.png
+            alt: Visit note with stable angina, ECG, echo, lipid profile and treadmill test ordered, medicines, the next follow-up date and advice
+            caption: The next follow-up date set in the note.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
           link:
             label: Read how reminders work
             href: /features/appointment-scheduling/
@@ -179,6 +211,14 @@ sections:
             The cardiologist opens the record with the vitals already on it. Notes, diagnosis, medications,
             investigations, referrals and follow-ups are picked with auto-complete instead of typed out, and
             on Premium the visit can be written on a cardiology template, heart failure for example.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/cardiology-cvs-examination.png
+            alt: Cardiovascular examination form with the vitals and the latest lab values above it
+            caption: The CVS examination by point and click, with the vitals already on it.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: The echo or the treadmill booked in the slot
           body: >-
             If the review needs a test, the equipment and the assistant who runs it are booked inside the
@@ -191,6 +231,14 @@ sections:
             The prescription is printed for the patient or, on Premium, sent on WhatsApp. EasyClinic also
             carries patient education material, in videos and brochures, on heart disease and on
             rehabilitation.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/cardiology-prescription.png
+            alt: Cardiology prescription with Print, Email, WhatsApp, Download and SMS buttons
+            caption: Printed, or sent on WhatsApp from the same screen.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Packages paid in parts
           plan: premium
           body: >-

@@ -128,6 +128,14 @@ sections:
             On Premium, a paper examination form your clinic already uses is rebuilt as a digital form
             with the form builder, and the prescription prints in your own layout. Premium also includes
             specialty EMR templates, and the customisation comes without charges.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/dental-oral-examination.png
+            alt: 'Oral examination form: gums, teeth, plaque, alignment, soft tissues and the jaw joint'
+            caption: An oral examination form by point and click.
+            frame: browser
+            origin: old-site
+            capturedOn: '2025-01'
         - heading: Cura AI drafts the note
           plan: professional
           body: >-

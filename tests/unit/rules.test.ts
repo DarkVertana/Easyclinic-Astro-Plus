@@ -87,6 +87,13 @@ describe('walk', () => {
     ];
     expect(leaves.map((l) => l.kind)).toEqual(['string', 'null', 'missing-media', 'string']);
   });
+
+  it('reports an old-site screenshot until the company confirms it, and skips its machine values', () => {
+    const media = { kind: 'screenshot', src: '../../assets/images/screens/x.png', alt: 'X', frame: 'browser', origin: 'old-site', capturedOn: '2024-01' };
+    expect([...walk({ media })].map((l) => l.kind)).toEqual(['interim-media', 'string']);
+    expect([...walk({ media: { ...media, uiConfirmedOn: '2026-10-01' } })].map((l) => l.kind)).toEqual(['string']);
+    expect([...walk({ media: { ...media, origin: 'demo-tenant' } })].map((l) => l.kind)).toEqual(['string']);
+  });
 });
 
 describe('auditEntry', () => {

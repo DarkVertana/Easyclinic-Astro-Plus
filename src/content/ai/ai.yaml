@@ -50,6 +50,14 @@ sections:
             Cura AI listens to the consultation and drafts the note and the prescription in the
             patient's chart while you talk. You correct anything it got wrong and confirm it. The draft
             sits in the same chart you write in without the AI, so there is nothing to paste across.
+          media:
+            kind: screenshot
+            src: ../../assets/images/screens/consult-voice-transcription.webp
+            alt: Complaints, allergies and comorbidities picked out beside a recorded doctor-patient conversation and its transcript
+            caption: The consultation, recorded and transcribed beside the chart.
+            frame: none
+            origin: old-site
+            capturedOn: '2025-07'
           link:
             label: See the EMR it writes into
             href: /features/emr/

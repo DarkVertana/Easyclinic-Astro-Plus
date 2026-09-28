@@ -165,6 +165,12 @@ In the Vercel project's Production environment: `CRM_WEBHOOK_URL` (and `CRM_WEBH
 `DEMO_REF_SECRET` (without it production sends leads but counts no conversions), `PUBLIC_GA4_ID`. Test the demo
 form end to end into the CRM's test bin on a preview first (spec 7.10).
 
+### 1.9 Old-site screenshots confirmed: needs company access
+
+Every `origin: old-site` screenshot has `uiConfirmedOn`, or has been replaced by the demo-tenant capture. The
+screens and the pages they sit on are listed in `docs/image-plan.md` (sections 5.1 and 5.2) and
+`migration/images/image-sources.csv`.
+
 ## 2. Cutover day
 
 ### 2.1 DNS: needs company access

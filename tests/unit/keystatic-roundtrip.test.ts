@@ -68,6 +68,7 @@ import {
   normaliseReaderOutput,
   pendingFixesFor,
   postStatus,
+  resolveDataSchema,
   rootNode,
   splitFrontmatter,
   uncommittedPosts,
@@ -184,7 +185,7 @@ async function analyse(key: string, slug: string | undefined): Promise<Report> {
   const family = COLLECTION_FAMILY[key];
   const schema: ZodSchema = family
     ? (families as Record<string, (c: unknown) => ZodSchema>)[`${family}Schema`](zodContext)
-    : (dataSchemas as unknown as Record<string, ZodSchema>)[DATA_SCHEMA_EXPORT[key]];
+    : resolveDataSchema((dataSchemas as unknown as Record<string, ZodSchema>)[DATA_SCHEMA_EXPORT[key]]);
 
   // Step 1: the reader, with pending data fixes expected to fail exactly as listed.
   const source = readFileSync(join(ROOT, file), 'utf8');
@@ -356,6 +357,7 @@ const TEXT_SAMPLES = [
   '+254 700 000 000',
   '@easyclinic',
   'ke',
+  '2025-01',
 ];
 const ids = (n: number) => Array.from({ length: n }, (_, i) => `sample-${i + 1}`);
 
@@ -404,6 +406,7 @@ function filledState(node: KsNode): unknown {
       const meta = metaOf(node);
       if (node.formKind === 'content' || node.formKind === 'assets') return CONTENT;
       if (node.formKind === 'asset') return null;
+      if (meta?.kind === 'imagePath') return node.defaultValue();
       if (meta?.kind === 'slug') return { name: 'Sample name', slug: 'sample' };
       if (meta?.kind === 'preserved') return { value: undefined };
       for (const candidate of sampleCandidates(node)) {
@@ -464,7 +467,7 @@ describe('Keystatic round trip: new entries', () => {
       const family = COLLECTION_FAMILY[key];
       const schema: ZodSchema = family
         ? (families as Record<string, (c: unknown) => ZodSchema>)[`${family}Schema`](zodContext)
-        : (dataSchemas as unknown as Record<string, ZodSchema>)[DATA_SCHEMA_EXPORT[key]];
+        : resolveDataSchema((dataSchemas as unknown as Record<string, ZodSchema>)[DATA_SCHEMA_EXPORT[key]]);
       const entry: EntryInfo = { key, slug: collection ? 'sample' : undefined, file: '', slugField: collection?.slugField };
       expect(saveAndParse(node, filledState(node), entry, schema)).toEqual([]);
     });

@@ -35,6 +35,7 @@ const GROUP_FOR: Array<[RegExp, string]> = [
   [/src\/data\/facts\.yaml/, 'Measured numbers and ratings'],
   [/src\/data\/testimonials\//, 'Testimonials (consent and details)'],
   [/src\/data\/authors\//, 'Authors'],
+  [/src\/data\/clients\//, 'Client logos (permission and country)'],
   [/src\/content\//, 'Page content'],
 ];
 
@@ -51,6 +52,8 @@ function walk(value: unknown, file: string, path: string) {
     if ('alt' in obj && 'frame' in obj && !obj.src && !obj.videoUrl) add(group, { file, path, what: `screenshot needed: ${obj.needed ?? obj.alt}` });
     for (const [k, v] of Object.entries(obj)) {
       if (SKIP.has(k)) continue;
+      // Consent to a photo is only owed for a testimonial that has one (docs/image-plan.md 6.2).
+      if (k === 'photoConsent' && !obj.photo) continue;
       walk(v, file, path ? `${path}.${k}` : k);
     }
   }

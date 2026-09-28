@@ -23,7 +23,11 @@ src/components/blocks/<Name>/
 - `schema.ts` uses `block()` from `src/schemas/block-base.ts`, which adds the shared fields `id`,
   `eyebrow`, `heading`, `intro` (markdown) and `tone` (`plain`, `wash`, `inverse`).
 - Register the schema in `src/schemas/sections.ts` and the component in `src/components/blocks/registry.ts`.
-  Allow it for the page families that use it in `src/schemas/families.ts`.
+  Add its name to `BLOCK_NAMES` and allow it for the page families that use it in `src/schemas/family-blocks.ts`
+  (`src/schemas/families.ts` builds the page schemas from those lists).
+- Add its Keystatic form in `keystatic/blocks/<discriminant>.ts` with `defineBlock()` and list it in
+  `keystatic/blocks/index.ts`, in the same order. `tests/unit/keystatic-parity.test.ts` compares every key with the Zod
+  schema, and `keystatic-roundtrip.test.ts` saves a filled-in and an untouched block.
 - Component props are the section value plus `ctx`:
 
 ```astro
@@ -44,11 +48,11 @@ const { id, eyebrow, heading, intro, tone, steps, ctx } = Astro.props;
 
 The blocks, by use: page body (`prose`, `featureRows`, `painBlocks`, `moduleGrid`, `dataTable`, `scopeBox`,
 `splitTable`, `rolesMatrix`, `dayTimeline`, `flowDiagram`, `journeyDiagram`, `oldWayNewWay`, `personaRouter`,
-`clinicTypes`, `hubGrid`, `contentCards`, `inlineCta`, `stepList`, `glossaryList`, `postIndex`); proof (`proofBlock`,
-`testimonialRow`, `studyCard`, `testimonialGrid`); money (`pricingCards`, `planMatrix`, `addOns`, `costExamples`,
+`clinicTypes`, `hubGrid`, `contentCards`, `inlineCta`, `stepList`, `glossaryList`, `postIndex`); company (`peopleGrid`);
+proof (`proofBlock`, `testimonialRow`, `studyCard`, `testimonialGrid`, `logoStrip`); money (`pricingCards`, `planMatrix`, `addOns`, `costExamples`,
 `countryMoney`); country and compliance (`contactCard`, `regulatorTable`, `regulatorStrip`); comparison
 (`comparisonTable`, `decisionMatrix`, `vendorList`, `sourceList`); conversion (`demoForm`). Which families may use which
-blocks is set in `src/schemas/families.ts`.
+blocks is set in `src/schemas/family-blocks.ts`.
 
 Comparison blocks carry their evidence: every competitor cell in `comparisonTable` and every competitor fact in
 `vendorList` needs a `source` URL and a `checkedOn` date (or reads "Not published"), and "Check" is not an answer. `sourceList` renders the
@@ -63,6 +67,19 @@ Topics with nothing to show are left out, so in production it shows only what is
 (h3 when the block has its own heading) and entry titles one level below; each row is one tap target through the
 title link's `::after`. No JavaScript. Drafts in preview carry a "Draft" or "In review" label.
 
+`logoStrip` (home, customers, solution and countryDemo families) shows client logos from `src/data/clients`: the
+listed `clients` in order, or every client by name, optionally only those whose `country` matches the block's
+`country`. Logos sit in white tiles, greyscale until hovered, each with `alt` set to the client's name. Each is sized by
+area (about 4,000 square pixels inside a 128 x 48 px box), so a square mark and a long wordmark carry the same weight,
+and each file is trimmed to its mark with a small even margin (docs/image-plan.md 3.2). It
+has no links, no count, no rating and no "trusted by" wording (docs/image-plan.md 7). Production shows a client only
+when `logoPermission` is `true` and its logo file exists; preview shows the others with a note saying what is
+missing. A strip with nothing left to show in production renders nothing, so a pending permission never blocks a page.
+
+`peopleGrid` (company family; the /about-us/ leadership section) takes `items: [{ author, background }]`. The photo,
+name and role come from the author record in `src/data/authors`; `background` is written for the page. A missing
+photo shows a placeholder note in preview and is simply left out in production.
+
 **Optional versus required facts.** `need()` is for a fact the page cannot honestly go without (a price, a regulator
 status): it blocks publishing. `optional()` is for a detail that can be left out (a testimonial's city, a review
 count, office hours): preview shows a placeholder, production omits it.
@@ -76,8 +93,9 @@ count, office hours): preview shows a placeholder, production omits it.
 | `ui/Icon.astro` | `<Icon name="circle-check" size={18} />`. Names must be in `ui/icons.ts` (Lucide) or `brand-*` (Simple Icons). Decorative by default; pass `label` for meaningful icons. |
 | `ui/Button.astro` | CTA links: `<Button href label variant="cta|solid|outline|ghost" event? track? />`. Adds analytics attributes. |
 | `ui/StatusChip.astro` | Four-state compliance or three-state integration status with text label, icon shape and as-of date. `null` state renders a placeholder. |
-| `ui/Screenshot.astro` | Media objects from content: framed product screenshot, or a visible "screenshot needed" placeholder. Never stock photos. |
-| `ui/Quote.astro` | One testimonial (name, role, clinic, city, tenure). |
+| `ui/Screenshot.astro` | Media objects from content: framed product screenshot, or a visible "screenshot needed" placeholder. Never stock photos. The frame is only as wide as the file (up to the column), so a small crop is never stretched. An `origin: old-site` screen without `uiConfirmedOn` carries an "Interim capture, {month}" note in preview; `lint-content` warns about it (`interim-media`) but the page can publish (docs/image-plan.md 3.1). |
+| `ui/Quote.astro` | One testimonial (name, role, clinic, city, tenure) and, once `photoConsent` is `true`, the person's photo: a round 56px headshot (72px in the large layout). A photo still waiting on consent is never rendered: preview shows a note, production leaves it out. |
+| `frame/AuthorByline.astro` | "By {name}, {role} · Last updated". Shows the author's 32px round photo first when the author record has one. |
 | `lib/content/need.ts` | `need(Astro, label, value)` for facts from shared data that may be `null`; `unconfirmed(Astro, label, value, confirmed)` for values that exist but are not cleared to publish. Both render highlighted placeholders in preview and fail published pages in production. Never print a null or invent a value. |
 | `lib/format/money.ts` | `formatMoney(amount, currency)` and `annualSaving(annual, quarterly)`. |
 | `lib/format/date.ts` | `formatDate(date)` for visible dates, `isoDate(date)` for `datetime` attributes. |
@@ -127,4 +145,21 @@ Shared data: `getEntry('countries', id)`, `getEntry('prices', 'inr')`, `getEntry
 7. **JavaScript**, when unavoidable: a `<script>` in the component importing a file from `src/scripts/`,
    progressive enhancement only, a few hundred bytes. Analytics use `data-track="<event>"` and
    `data-label` attributes; `src/scripts/track.ts` picks them up.
-8. **Images** through `astro:assets` (`Screenshot.astro` does this) with width, height and alt.
+8. **Images** through `astro:assets` (`Screenshot.astro` does this) with width, height and alt. Only hero media loads
+   eagerly (`priority`); every other image, the byline photo included, is `loading="lazy"`. Small fixed-size images
+   (headshots, logos) use `<Image layout="fixed">` so they get a 1x and 2x file at exactly the displayed size;
+   headshots add `fit="cover" position="top"` and `alt` set to the person's name. Never stock photos, and never a generated or stock person presented as a customer or a member of staff
+   (spec 12). An image that shows a rating, an award, a certification or compliance badge, an uptime or outcome figure
+   or a partner's logo is a claim and needs the same evidence as the text would (`docs/briefs/page-writing-rules.md`).
+   Product screenshots show demo data only.
+9. **Screenshots** live in one shared library, `src/assets/images/screens/<descriptive-name>.<ext>` (lowercase,
+   hyphenated), so one screen can serve several pages. `media.src` is written `../../assets/images/screens/<name>.png`
+   from a YAML page (`../../../` from an MDX entry) and carries `origin`, `capturedOn` (YYYY-MM) and, once the company
+   confirms the screen, `uiConfirmedOn`. Keystatic edits `src` as a path into that folder (`imagePath` in
+   `keystatic/fields.ts`), because its own image field would copy and rename the file per entry.
+10. **Image files for shared data** sit where Keystatic stores them, `<directory>/<entry id>/<field>.<ext>`:
+    `src/assets/images/people/<id>/photo.<ext>` for testimonial and author photos and
+    `src/assets/images/clients/<id>/logo.<ext>` for client logos, written in the YAML as
+    `../../assets/images/people/<id>/photo.jpg`. Keystatic looks a file up only there and renames it to the field's
+    name on save, so a file anywhere else opens as empty in the editor and the next save drops the key.
+    `tests/unit/keystatic-config.test.ts` checks every `photo` and `logo` value, and that the file exists.
