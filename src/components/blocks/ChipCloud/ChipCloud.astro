@@ -1,0 +1,99 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import Button from '../../ui/Button.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'chipCloud'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, items, cta, ctx } = Astro.props;
+
+const registry = await getRegistry();
+const flags = import.meta.glob('/src/assets/flags/*.svg', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const flagSvg = (code: string) => flags[`/src/assets/flags/${code}.svg`];
+
+// A centred cloud of pills on a soft panel: features with a tick, countries with a round flag. A chip whose page is
+// not live in this stage renders as plain text, so the cloud never links to a missing page.
+const chips = items.map((item) => ({ ...item, url: item.href ? registry.urlFor(item.href) : null }));
+// Phones: an even two-column grid of equal-width pills. From sm up: the free-flowing centred cloud.
+const pill =
+  'chip flex h-full min-h-11 w-full items-center gap-2 rounded-2xl border border-line bg-surface py-1.5 pl-1.5 pr-3 text-left text-[0.8125rem] font-medium leading-tight text-ink-heading shadow-[0_1px_2px_rgb(10_37_64/0.06)] sm:inline-flex sm:w-auto sm:rounded-full sm:pr-4 sm:text-sm md:text-[0.9375rem]';
+/** "EMR Software in Kenya": phones show only the country (the heading says the rest); screen readers hear it all. */
+const PREFIX = 'EMR Software in ';
+const split = (label: string) => (label.startsWith(PREFIX) ? { prefix: PREFIX, rest: label.slice(PREFIX.length) } : { prefix: '', rest: label });
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center>
+  <div class="chip-panel relative mx-auto max-w-[72rem] overflow-hidden rounded-[1.25rem] border border-line px-3 py-4 sm:rounded-[1.75rem] sm:px-6 sm:py-8 md:px-10 md:py-12">
+    <ul class="relative grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center sm:gap-2.5 md:gap-3">
+      {
+        chips.map((chip, i) => {
+          const inner = (
+            <>
+              {chip.flag ? (
+                <span class="chip-flag size-6 shrink-0 sm:size-7 overflow-hidden rounded-full ring-2 ring-surface" aria-hidden="true" set:html={flagSvg(chip.flag)} />
+              ) : (
+                <span class="chip-tick flex size-6 shrink-0 sm:size-7 items-center justify-center rounded-full bg-blue-50 text-blue-700" aria-hidden="true">
+                  <Icon name="check" size={15} />
+                </span>
+              )}
+              <span class="min-w-0">
+                {split(chip.label).prefix && <span class="max-sm:sr-only">{split(chip.label).prefix}</span>}
+                {split(chip.label).rest}
+              </span>
+            </>
+          );
+          return (
+            <li class:list={[i === chips.length - 1 && chips.length % 2 === 1 && 'max-sm:col-span-2 max-sm:mx-auto max-sm:w-[calc(50%-0.25rem)]']}>
+              {chip.url ? (
+                <a href={chip.url} class:list={[pill, 'chip-link no-underline']}>
+                  {inner}
+                </a>
+              ) : (
+                <span class={pill}>{inner}</span>
+              )}
+            </li>
+          );
+        })
+      }
+    </ul>
+    {
+      cta && (
+        <p class="relative mt-5 text-center sm:mt-8">
+          <Button href={cta.href} label={cta.label} variant="cta" event={cta.event} icon="arrow-right" />
+        </p>
+      )
+    }
+  </div>
+</Section>
+
+<style>
+  /* Soft panel: a light blue wash with a faint dot grid, so the cloud reads as one object. */
+  .chip-panel {
+    background:
+      radial-gradient(circle at 1px 1px, rgb(0 128 246 / 0.12) 1px, transparent 0) 0 0 / 22px 22px,
+      linear-gradient(180deg, var(--color-blue-50), var(--surface));
+  }
+  .chip-flag :global(svg) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .chip {
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      border-color 160ms ease;
+  }
+  .chip-link:hover,
+  .chip-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--color-blue-500);
+    box-shadow: 0 8px 20px -10px rgb(0 128 246 / 0.45);
+  }
+  .chip-link:hover .chip-tick {
+    background: var(--color-blue-500);
+    color: #fff;
+  }
+</style>

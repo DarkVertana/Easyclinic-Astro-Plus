@@ -9,11 +9,11 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<ul class="space-y-2 text-sm">
+<ul class="space-y-2.5 text-sm leading-snug">
   {
     links.map((l) => (
       <li>
-        <a href={l.href} class:list={['text-ink-inverse-muted no-underline hover:text-white hover:underline', l.missing && !isProduction && 'underline decoration-dotted']}>
+        <a href={l.href} class:list={['text-ink-inverse-muted no-underline transition-colors hover:text-white', l.missing && !isProduction && 'underline decoration-dotted']}>
           {l.label}
         </a>
       </li>

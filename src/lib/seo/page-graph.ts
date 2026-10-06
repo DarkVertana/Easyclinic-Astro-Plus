@@ -13,7 +13,8 @@ export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Rec
 
   const allPrices = (await getCollection('prices')).map((p) => p.data as PriceData);
   if (record.family === 'home') {
-    nodes.push(organization(site), website(site), softwareApplication(site, offers(allPrices.filter((p) => p.currency === 'USD'), url)));
+    // No prices on the home page (owner decision 2026-10-06), so its SoftwareApplication carries no offers.
+    nodes.push(organization(site), website(site), softwareApplication(site, []));
   }
   if (record.family === 'pricing') {
     // Offers for the currencies this page shows: every currency on the main page, one on country pages.

@@ -256,6 +256,8 @@ export const navSchema = z.object({
     z.object({
       label: z.string(),
       href: internalPath.optional(),
+      /** Small tag beside the label, e.g. "New". */
+      badge: z.string().optional(),
       groups: z
         .array(z.object({ title: z.string(), links: z.array(navLink).min(1) }))
         .optional(),

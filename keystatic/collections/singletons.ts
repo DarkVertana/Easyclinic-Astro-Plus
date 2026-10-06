@@ -217,6 +217,7 @@ export const singletons = {
         group('Menu', {
           label: text('Label', { required: true }),
           href: path('Link'),
+          badge: text('Badge', { description: 'Small tag beside the label, e.g. New.' }),
           groups: list(
             group('Group', { title: text('Title', { required: true }), links: navLinks('Links', 1) }),
             { label: 'Groups', itemLabel: (props) => props.fields.title.value || 'Group' },

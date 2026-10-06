@@ -45,6 +45,7 @@ import { regulatorTable } from './regulatorTable.ts';
 import { scopeBox } from './scopeBox.ts';
 import { stepList } from './stepList.ts';
 import { testimonialRow } from './testimonialRow.ts';
+import { chipCloud } from './chipCloud.ts';
 
 export const KS_BLOCKS = {
   addOns,
@@ -85,4 +86,5 @@ export const KS_BLOCKS = {
   scopeBox,
   stepList,
   testimonialRow,
+  chipCloud,
 } satisfies Record<BlockName, KsBlock>;

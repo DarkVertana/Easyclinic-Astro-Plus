@@ -1,88 +1,40 @@
 # Header and footer navigation (spec 3.3). Links to pages that are not published in the current
 # build stage are hidden in production and marked in preview.
 primary:
-  - label: Product
+  # Matches the live easyclinic.io header: Cura AI, Features, Pricing, About us, Resources, Contact us.
+  - label: Cura AI
+    href: /curapilot/
+    badge: New
+  - label: Features
     href: /features/
-    groups:
-      - title: Front desk
-        links:
-          - { label: Appointment scheduling, href: /features/appointment-scheduling/, description: 'One calendar for walk-ins, slots and teleconsults', icon: calendar-clock }
-          - { label: WhatsApp, href: /features/whatsapp/, description: 'Reminders, prescriptions and reports on WhatsApp', icon: message-circle }
-          - { label: Telehealth, href: /features/telehealth/, description: 'Video consults with the prescription in the chart', icon: video }
-      - title: Chart
-        links:
-          - { label: EMR and e-prescriptions, href: /features/emr/, description: 'The note finishes with the visit', icon: notebook-pen }
-          - { label: Lab, href: /features/lab/, description: 'Order from the chart, results back in the record', icon: flask-conical }
-          - { label: Pharmacy and inventory, href: /features/pharmacy-and-inventory/, description: 'Dispense from the prescription, track expiry', icon: pill }
-      - title: Money
-        links:
-          - { label: Billing, href: /features/billing/, description: 'Invoices, taxes and a till that closes clean', icon: receipt }
-          - { label: Insurance claims, href: /features/insurance-claims/, description: 'TPA, HMO and SHA claims from your own system', icon: shield-check }
-          - { label: Revenue management, href: /features/revenue-management/, description: 'See leakage before month end', icon: trending-up }
-      - title: Growth
-        links:
-          - { label: Patient engagement, href: /features/patient-engagement/, description: 'Portal, app and recall campaigns', icon: heart-handshake }
-          - { label: Reports and dashboards, href: /features/reports-and-dashboards/, description: 'The eight numbers an owner checks each morning', icon: chart-column }
-          - { label: Multi-location, href: /features/multi-location/, description: 'One login for every branch', icon: network }
-    footerLink: { label: See every module, href: /features/ }
-  - label: Solutions
-    href: /solutions/
     groups:
       - title: By clinic type
         links:
-          - { label: Solo doctor clinic, href: /solutions/solo-clinic/, description: 'One doctor, a receptionist, no IT staff', icon: user-round }
-          - { label: Polyclinic, href: /solutions/polyclinic/, description: 'One record shared across specialists', icon: users }
-          - { label: Clinic chain, href: /solutions/clinic-chain/, description: 'Central records and SOPs for every branch', icon: network }
-          - { label: Hospital OPD and nursing home, href: /solutions/hospital-opd/, description: 'Queues, pharmacy, lab and claims', icon: hospital }
-          - { label: NGO and mission clinics, href: /solutions/ngo-clinics/, description: 'Donor-ready reports on low bandwidth', icon: heart }
-          - { label: All clinic types, href: /solutions/, description: 'The plan each kind of practice usually needs', icon: layout-dashboard }
-      - title: By specialty
+          - { label: Individual doctor clinic, href: /solutions/solo-clinic/, icon: user-round }
+          - { label: Group practice and polyclinic, href: /solutions/polyclinic/, icon: users }
+          - { label: Multi-location clinic chain, href: /solutions/clinic-chain/, icon: network }
+          - { label: Hospital OPD and nursing home, href: /solutions/hospital-opd/, icon: hospital }
+      - title: By module
         links:
-          - { label: Dental, href: /dental-emr-software/ }
-          - { label: Dermatology, href: /dermatology-emr-software/ }
-          - { label: Paediatrics, href: /pediatric-emr/ }
-          - { label: Cardiology, href: /cardiology-emr/ }
-          - { label: Mental health, href: /mental-health/ }
-          - { label: Ophthalmology, href: /ophthalmology-emr/ }
-          - { label: Orthopaedics, href: /orthopedic-emr/ }
-          - { label: OB-GYN, href: /obgyn-emr-software/ }
-          - { label: IVF and fertility, href: /ivf-emr/ }
-          - { label: Physiotherapy, href: /physiotherapy-clinic-management-software/ }
-          - { label: Ayurveda, href: /ayurveda-clinic-management-software/ }
-          - { label: General practice, href: /general-practitioner-emr/ }
-          - { label: ENT, href: /ent-emr-software/ }
-          - { label: Neurology, href: /neurology-emr/ }
-          - { label: All specialties, href: /specialties/ }
-  - label: Countries
-    href: /countries/
-    groups:
-      - title: Countries
-        links:
-          - { label: India, href: /clinic-management-software-india/, description: 'ABDM, GST invoicing and UPI' }
-          - { label: Kenya, href: /emr-software-in-kenya/, description: 'M-Pesa, SHA claims and eTIMS' }
-          - { label: United Arab Emirates, href: /clinic-management-software-uae/, description: 'NABIDH, Malaffi and Riayati' }
-          - { label: Nigeria, href: /hospital-management-software-nigeria/, description: 'HMO claims and NDPA' }
-          - { label: All countries, href: /countries/, description: 'Ghana, Uganda, Tanzania and more' }
-  - label: AI
-    href: /ai/
-    groups:
-      - title: Cura AI
-        links:
-          - { label: Cura AI, href: /ai/, description: 'Notes, reception and billing help inside EasyClinic', icon: sparkles }
-          - { label: CuraPilot, href: /curapilot/, description: 'The clinical copilot studied at Penda Health', icon: stethoscope }
+          - { label: Patient engagement, href: /features/patient-engagement/, icon: heart-handshake }
+          - { label: Reports and dashboards, href: /features/reports-and-dashboards/, icon: chart-column }
+          - { label: Payor management, href: /features/insurance-claims/, icon: shield-check }
+          - { label: Revenue management, href: /features/revenue-management/, icon: trending-up }
+          - { label: Appointment scheduling, href: /features/appointment-scheduling/, icon: calendar-clock }
+    footerLink: { label: All features, href: /features/ }
   - label: Pricing
     href: /pricing/
+  - label: About us
+    href: /about-us/
   - label: Resources
     groups:
       - title: Resources
         links:
-          - { label: Compare, href: /compare/, description: 'EasyClinic against the software you are considering', icon: layers }
-          - { label: Customers, href: /customers/, description: 'Clinics running on EasyClinic', icon: users }
-          - { label: Start a clinic, href: /start-a-clinic/, description: 'Licences, costs and setup by country', icon: building-2 }
-          - { label: Switch to EasyClinic, href: /switch/, description: 'What we import and how long it takes', icon: repeat }
-          - { label: Blog, href: /blog/, description: 'Guides for clinic owners', icon: file-text }
-          - { label: Help centre, href: 'https://help.easyclinic.io/', description: 'How-to articles for customers', icon: circle-help }
-          - { label: All resources, href: /resources/, description: 'Find the EasyClinic pages for your clinic', icon: list-checks }
+          - { label: Blogs, href: /blog/, icon: file-text }
+          - { label: Knowledgebase, href: 'https://help.easyclinic.io/', icon: circle-help }
+          - { label: Testimonials, href: /customers/, icon: quote }
+  - label: Contact us
+    href: /contact-us/
 
 footer:
   - title: Features

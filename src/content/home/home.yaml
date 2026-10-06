@@ -35,11 +35,37 @@ ctas:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
   secondary:
-    label: See pricing
-    href: /pricing/
+    label: See all features
+    href: /features/
   whatsapp: Hi, I was on the EasyClinic home page and would like to book a 20-minute demo for my clinic.
 
 sections:
+  - discriminant: chipCloud
+    value:
+      id: features-at-a-glance
+      eyebrow: Features
+      heading: Packed with features, so you can choose what your clinic needs
+      items:
+        - { label: 'General & Specialist EMR', href: /features/emr/ }
+        - { label: 'AI Automation', href: /ai/ }
+        - { label: 'Inventory & Logistics', href: /features/pharmacy-and-inventory/ }
+        - { label: 'Pharmacy Management', href: /features/pharmacy-and-inventory/ }
+        - { label: 'Appointment Scheduling', href: /features/appointment-scheduling/ }
+        - { label: 'Teleconsultation', href: /features/telehealth/ }
+        - { label: 'Billing & Payments', href: /features/billing/ }
+        - { label: 'Insurance & Payor Claims', href: /features/insurance-claims/ }
+        - { label: 'WhatsApp, Email, SMS Integrations', href: /features/whatsapp/ }
+        - { label: 'Lab Reporting', href: /features/lab/ }
+        - { label: 'Security & Role Access Control', href: /trust/ }
+        - { label: 'Multi-Location Central Control', href: /features/multi-location/ }
+        - { label: 'Reports, BI & Analytics', href: /features/reports-and-dashboards/ }
+        - { label: 'Workflow Manager', href: /features/ }
+        - { label: '3rd Party API Integration', href: /features/ }
+        - { label: 'Staff & User Management', href: /features/ }
+      cta:
+        label: See all features
+        href: /features/
+
   - discriminant: personaRouter
     value:
       id: pick-your-clinic
@@ -124,7 +150,7 @@ sections:
     value:
       id: modules
       heading: Everything the clinic runs on, in four groups
-      intro: Twelve modules, grouped the way a clinic is run. Which ones you get depends on the plan, and the [price list](/pricing/) shows it line by line.
+      intro: Twelve modules, grouped the way a clinic is run.
       columns: 4
       items:
         - title: Front desk
@@ -187,20 +213,32 @@ sections:
         label: Read how the study was run
         href: /curapilot/
 
-  - discriminant: pricingCards
+  - discriminant: chipCloud
     value:
-      id: pricing
-      heading: What EasyClinic costs
-      intro: Per doctor per month, shown here in US dollars. Every plan includes unlimited support and training, and prices in rupees are on the [pricing page](/pricing/).
-      currency: usd
-      switcher: false
-      showConditions: true
-      planCta:
-        label: See the full price list
-        href: /pricing/
-      enterpriseCta:
-        label: Get an Enterprise quote
-        href: /contact-us/#book-a-demo
+      id: countries
+      eyebrow: Countries
+      heading: Choose your country to see features for your clinic needs
+      intro: Pick your country to see the page for clinics there, or book a demo.
+      items:
+        - { label: EMR Software in Ethiopia, flag: et, href: /countries/#book-a-demo }
+        - { label: EMR Software in Fiji, flag: fj, href: /countries/#book-a-demo }
+        - { label: EMR Software in Ghana, flag: gh, href: /countries/#book-a-demo }
+        - { label: EMR Software in India, flag: in, href: /clinic-management-software-india/ }
+        - { label: EMR Software in Kenya, flag: ke, href: /emr-software-in-kenya/ }
+        - { label: EMR Software in Malaysia, flag: my, href: /countries/#book-a-demo }
+        - { label: EMR Software in Maldives, flag: mv, href: /countries/#book-a-demo }
+        - { label: EMR Software in Mauritius, flag: mu, href: /countries/#book-a-demo }
+        - { label: EMR Software in Nigeria, flag: ng, href: /hospital-management-software-nigeria/ }
+        - { label: EMR Software in Qatar, flag: qa, href: /countries/#book-a-demo }
+        - { label: EMR Software in Rwanda, flag: rw, href: /countries/#book-a-demo }
+        - { label: EMR Software in Seychelles, flag: sc, href: /countries/#book-a-demo }
+        - { label: EMR Software in Somalia, flag: so, href: /countries/#book-a-demo }
+        - { label: EMR Software in South Africa, flag: za, href: /countries/#book-a-demo }
+        - { label: EMR Software in Suriname, flag: sr, href: /countries/#book-a-demo }
+        - { label: EMR Software in Tanzania, flag: tz, href: /countries/#book-a-demo }
+        - { label: EMR Software in Trinidad and Tobago, flag: tt, href: /countries/#book-a-demo }
+        - { label: EMR Software in UAE, flag: ae, href: /clinic-management-software-uae/ }
+        - { label: EMR Software in Uganda, flag: ug, href: /countries/#book-a-demo }
 
   - discriminant: testimonialRow
     value:
@@ -253,15 +291,6 @@ faq:
       hospital information system. It covers outpatient clinics, hospital OPDs, day care and nursing homes,
       but it does not run inpatient wards or operating theatres, so a hospital that needs those runs
       EasyClinic in the OPD beside a separate inpatient system.
-  - question: How much does EasyClinic cost?
-    answer: >-
-      EasyClinic costs {price:usd.professional.annual} per doctor per month on Professional and
-      {price:usd.premium.annual} on Premium when billed annually, or {price:usd.professional.quarterly} and
-      {price:usd.premium.quarterly} billed quarterly. In India the annual prices are
-      {price:inr.professional.annual} and {price:inr.premium.annual}. Enterprise, for clinic chains and
-      hospital OPDs, is quoted for your network, and every plan includes the reception login with no setup fee.
-      Pharmacy, lab management, insurance claims and integrations come with Enterprise, and a clinic on
-      Professional or Premium can add them to its plan.
   - question: Does EasyClinic work offline?
     answer: >-
       EasyClinic does not run fully offline today, because the cloud version needs an internet connection.
@@ -270,8 +299,7 @@ faq:
   - question: Am I locked into a contract?
     answer: >-
       No, there is no binding contract on any EasyClinic plan and no setup fee, so you use it for as long as
-      it suits your clinic. On Professional and Premium you pay per doctor per month, billed annually or
-      quarterly.
+      it suits your clinic.
   - question: Do I have to use the AI?
     answer: >-
       No, the EMR works without Cura AI: you write the note and the prescription yourself, with shortcuts
@@ -293,7 +321,7 @@ links:
   related:
     - href: /clinic-management-software-india/
       label: EasyClinic in India
-      description: Prices in rupees, and what ABDM asks of an Indian clinic.
+      description: What ABDM and GST invoicing ask of an Indian clinic.
     - href: /emr-software-in-kenya/
       label: EasyClinic in Kenya
       description: What SHA and eTIMS ask of a Kenyan clinic, and a Kenyan number to call.
@@ -325,8 +353,8 @@ closing:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
   secondary:
-    label: See pricing
-    href: /pricing/
+    label: See all features
+    href: /features/
 
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
@@ -335,6 +363,7 @@ editorialPass:
   readsMachineWritten: 'The definition answer to "What is clinic management software?" and the evenly matched old-way and new-way lists read like SEO copy, and with no screenshots yet the journey steps describe screens a doctor cannot see.'
 
 notes:
+  - 'Owner decision 2026-10-06: no pricing on the home page. Removed the pricingCards section and the cost FAQ; the hero, closing and feature-cloud CTAs point to /features/ instead of /pricing/. Prices stay on /pricing/ and in the header nav.'
   - 'Title shortened from the spec 4.1 title (62 characters) to 50: "Clinic Management Software for Doctors: EasyClinic".'
   - 'Published 2026-09-26 with confirmed facts only (owner decision). Screenshots removed because none exist yet; restore when captured (briefs in spec 12 and in git history before this pass): hero Today view (14 appointments, two walk-ins, one video consult, one no-show; phone capture too); old-way generated desk image oldway-desk-01.webp (aiGenerated: true, caption says it is not a customer''s clinic); journey steps: patient app booking (phone), payor coverage check at registration, lab order with an abnormal flag, thirty-second prescription with an interaction warning and Hindi print option, INR invoice with GST lines and a part payment, pharmacy dispensing with an expiring batch, WhatsApp reminder thread (phone), owner dashboard with the eight morning numbers.'
   - 'Regulator strip (spec 5.1 item 6; was in-abdm-m1, ke-sha, ke-etims, ae-nabidh, ae-malaffi, ng-ndpa, placed after the training steps, linking to /trust/) and heroStrip.regulators (in-abdm-m1, ke-sha, ae-nabidh, ng-ndpa) removed for publication: every regulator state in src/data/regulators is null. Restore both when each regulator has a state and date. Use the spec heading "Built for your regulator" only if every listed regulator is Live. Spec 5.1 also names NHIA. The country and trust related-link descriptions were reworded so they no longer promise a status.'

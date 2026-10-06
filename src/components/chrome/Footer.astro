@@ -18,6 +18,13 @@ const links = (list: (typeof nav.footer)[number]['links']) =>
 const groups = nav.footer
   .map((g) => ({ ...g, links: links(g.links), sections: g.sections.map((s) => ({ ...s, links: links(s.links) })).filter((s) => s.links.length) }))
   .filter((g) => g.links.length || g.sections.length);
+// A continued group joins the group before it: one heading over two lists (the Specialties column pair).
+const columns = groups.reduce<((typeof groups)[number] & { more: (typeof groups)[number]['links'] })[]>((acc, g) => {
+  const prev = acc[acc.length - 1];
+  if (g.continued && prev) prev.more = [...prev.more, ...g.links];
+  else acc.push({ ...g, more: [] });
+  return acc;
+}, []);
 const legal = nav.legal.map((l) => ({ ...l, href: resolve(l.href) })).filter((l) => l.href);
 
 // Country phone numbers with the named local contact (spec 3.3). Unknown contacts show as placeholders in preview.
@@ -31,35 +38,50 @@ const contacts = countries.map((c) => {
 });
 const SOCIAL: Record<string, string> = { linkedin: 'LinkedIn', youtube: 'YouTube', facebook: 'Facebook', instagram: 'Instagram', x: 'X' };
 const year = new Date().getFullYear();
+const flags = import.meta.glob('/src/assets/flags/*.svg', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const flagFor = (id: string) => flags[`/src/assets/flags/${id}.svg`];
+const contactCards = countries
+  .map((c, i) => ({ ...contacts[i], id: c.id }))
+  .filter((c) => c.phone);
 ---
 
-<footer class="bg-navy-950 text-ink-inverse-muted" aria-labelledby="footer-heading">
+<footer class="footer relative isolate overflow-hidden bg-navy-950 text-ink-inverse-muted" aria-labelledby="footer-heading">
+  <div class="footer-glow pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
   <h2 id="footer-heading" class="sr-only">Site links and contacts</h2>
-  <div class="container-page py-14 md:py-16">
-    <div class="grid gap-10 lg:grid-cols-[1.1fr_3fr]">
-      <div>
+  <div class="container-page relative pb-8 pt-14 md:pt-20">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
+      <!-- Brand, contact and social -->
+      <div class="lg:col-span-3">
         <Image src={logo} alt={site.logoAlt} width={162} height={32} class="h-8 w-auto" />
-        <p class="mt-4 max-w-xs text-sm leading-relaxed">
-          EasyClinic is a secure and versatile healthcare software platform combining Electronic Medical Records (EMR), Practice
-          Management, and Clinic Administration tools, designed for physicians, specialists, polyclinics, nursing homes, and
-          multi-location clinic networks.
+        <p class="mt-5 max-w-xs text-sm leading-relaxed">
+          AI EMR and clinic management software for doctors, polyclinics, clinic chains and hospital OPDs: appointments,
+          records, billing, pharmacy and lab in one secure cloud system.
         </p>
-        <p class="mt-3 max-w-xs text-sm leading-relaxed">
-          Built for an exceptional user experience, EasyClinic integrates AI and automation to reduce clinical errors, enhance
-          patient engagement, simplify documentation, and deliver intelligent, workflow-driven care across all levels of
-          practice, boosting patient care and increasing revenues.
-        </p>
-        <address class="mt-5 text-sm not-italic leading-relaxed">
-          {site.address.street}, {site.address.city} {site.address.postalCode}, India<br />
-          <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="text-white">{site.phone}</a> ·
-          <a href={`mailto:${site.email}`} class="text-white">{site.email}</a>
-        </address>
-        <ul class="mt-5 flex gap-2" aria-label="EasyClinic on social media">
+        <ul class="mt-6 space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <Icon name="map-pin" size={18} class="mt-0.5 shrink-0 text-blue-200" />
+            <span>{site.address.street}, {site.address.city} {site.address.postalCode}, India</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="phone" size={18} class="shrink-0 text-blue-200" />
+            <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="text-white no-underline hover:underline">{site.phone}</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="mail" size={18} class="shrink-0 text-blue-200" />
+            <a href={`mailto:${site.email}`} class="text-white no-underline hover:underline">{site.email}</a>
+          </li>
+        </ul>
+        <ul class="mt-6 flex gap-2" aria-label="EasyClinic on social media">
           {
             Object.entries(site.social).map(([key, url]) => (
               <li>
-                <a href={url} class="flex size-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" rel="noopener me" aria-label={`EasyClinic on ${SOCIAL[key] ?? key}`}>
-                  <Icon name={`brand-${key}`} size={18} />
+                <a
+                  href={url}
+                  class="flex size-9 items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-white/40 hover:bg-white/10"
+                  rel="noopener me"
+                  aria-label={`EasyClinic on ${SOCIAL[key] ?? key}`}
+                >
+                  <Icon name={`brand-${key}`} size={16} />
                 </a>
               </li>
             ))
@@ -67,17 +89,23 @@ const year = new Date().getFullYear();
         </ul>
       </div>
 
-      <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+      <!-- Link columns -->
+      <div class="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:col-span-9 lg:grid-cols-[1.15fr_1fr_1fr_1fr_1.1fr] lg:gap-x-6">
         {
-          groups.map((group) => (
-            <nav aria-label={group.continued ? `${group.title} (continued)` : group.title}>
-              <p class:list={['mb-3 font-semibold text-white', group.continued && 'sm:invisible']} aria-hidden={group.continued ? 'true' : undefined}>
-                {group.title}
-              </p>
-              {group.links.length > 0 && <LinkList links={group.links} />}
+          columns.map((group) => (
+            <nav aria-label={group.title} class:list={[group.more.length > 0 && 'col-span-2']}>
+              <p class="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-white">{group.title}</p>
+              {group.more.length > 0 ? (
+                <div class="grid grid-cols-2 gap-x-6">
+                  <LinkList links={group.links} />
+                  <LinkList links={group.more} />
+                </div>
+              ) : (
+                group.links.length > 0 && <LinkList links={group.links} />
+              )}
               {group.sections.map((section, i) => (
                 <>
-                  <p class:list={['mb-2 text-sm font-semibold text-white', (i > 0 || group.links.length > 0) && 'mt-5']}>{section.title}</p>
+                  <p class:list={['mb-2.5 text-[0.8125rem] font-medium text-blue-200', (i > 0 || group.links.length > 0) && 'mt-6']}>{section.title}</p>
                   <LinkList links={section.links} />
                 </>
               ))}
@@ -87,26 +115,65 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-12 grid gap-4 border-t border-white/15 pt-8 sm:grid-cols-2 lg:grid-cols-4">
-      {
-        // Only countries with a published number are listed; names appear once cleared to publish.
-        contacts.filter((c) => c.phone).map((c) => (
-          <div class="text-sm">
-            <p class="font-semibold text-white">{c.country}</p>
-            {c.name && <p>{c.name}</p>}
-            <a href={`tel:${c.phone!.replace(/\s/g, '')}`} class="text-white">
-              {c.phone}
-            </a>
-          </div>
-        ))
-      }
-    </div>
+    {
+      contactCards.length > 0 && (
+        <div class="mt-14 border-t border-white/10 pt-8">
+          <p class="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-white">Talk to a local team</p>
+          <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {contactCards.map((c) => (
+              <li class="flex items-center gap-3 rounded-card border border-white/10 bg-white/[0.03] px-4 py-3 transition-colors hover:border-white/25 hover:bg-white/[0.06]">
+                {flagFor(c.id) && <span class="footer-flag size-8 shrink-0 overflow-hidden rounded-full" aria-hidden="true" set:html={flagFor(c.id)} />}
+                <span class="min-w-0 text-sm">
+                  <span class="block font-semibold text-white">{c.country}</span>
+                  {c.name && <span class="block">{c.name}</span>}
+                  <a href={`tel:${c.phone!.replace(/\s/g, '')}`} class="text-white no-underline hover:underline">
+                    {c.phone}
+                  </a>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
 
-    <div class="mt-10 flex flex-col gap-4 border-t border-white/15 pt-6 text-sm md:flex-row md:items-center md:justify-between">
-      <p>© {year} {site.legalName}. EasyClinic is a trading name of {site.legalName}.</p>
-      <ul class="flex flex-wrap gap-x-4 gap-y-2">
-        {legal.map((l) => <li><a href={l.href} class="text-ink-inverse-muted hover:text-white">{l.label}</a></li>)}
+    <div class="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-[0.8125rem] lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+      <p class="lg:max-w-md">© {year} {site.legalName}. EasyClinic is a trading name of {site.legalName}.</p>
+      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 lg:justify-end">
+        {legal.map((l) => <li><a href={l.href} class="text-ink-inverse-muted no-underline hover:text-white">{l.label}</a></li>)}
+        <li class="lg:ml-3 lg:border-l lg:border-white/15 lg:pl-5">
+          <a href="#top" class="group inline-flex items-center gap-1.5 text-white no-underline" aria-label="Back to top">
+            Back to top
+            <span class="flex size-6 items-center justify-center rounded-full border border-white/20 transition-transform group-hover:-translate-y-0.5">
+              <Icon name="arrow-right" size={13} class="-rotate-90" />
+            </span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
+  <p class="footer-wordmark pointer-events-none select-none text-center font-sans font-bold leading-none" aria-hidden="true">EasyClinic</p>
 </footer>
+
+<style>
+  /* One soft blue glow from the top corner. */
+  .footer-glow {
+    background: radial-gradient(48rem 26rem at 0% 0%, rgb(0 128 246 / 0.16), transparent 70%);
+  }
+  /* The brand name set huge and faded along the bottom edge, cut off by the footer. */
+  .footer-wordmark {
+    margin-top: 0.5rem;
+    margin-bottom: -0.24em;
+    font-size: clamp(4.5rem, 15vw, 14rem);
+    letter-spacing: -0.04em;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.07), rgb(255 255 255 / 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .footer-flag :global(svg) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+</style>
