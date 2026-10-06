@@ -11,20 +11,24 @@ title: 'Dental Clinic Management Software: EasyClinic'
 metaDescription: >-
   Dental clinic software with a tooth chart and multi-visit treatment plans. Premium bills implants and
   braces as packages, from {price:usd.premium.annual} per doctor a month.
-h1: 'Dental EMR software: tooth charting and treatment plans on one record'
+h1: 'Dental EMR: tooth charts and treatment plans'
 linkLabel: Dental
 eyebrow: For dental clinics
 openingAnswer: >-
-  A dental clinic needs two things a general EMR leaves out: a visual chart that records the condition of
-  each tooth, and a treatment plan for a root canal or an implant that runs over several visits.
-  EasyClinic keeps both on the patient's record, and its Premium plan bills an implant or a course of
+  A dental clinic needs a chart of each tooth and treatment plans for root canals or implants that run
+  over several visits. EasyClinic keeps both on the patient's record, and Premium bills an implant or
   braces as one package paid in parts, at {price:inr.premium.annual} per doctor per month in India or
-  {price:usd.premium.annual} in US dollars, billed annually.
+  {price:usd.premium.annual}, billed annually.
 summary: >-
   A visual chart of each tooth and treatment plans that run over several visits, with implants and
   orthodontic courses billed as packages on the Premium plan.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/15_Workflow.png'
+  alt: 'EasyClinic visit workflow settings, with the queue steps from waiting for the doctor to the pharmacy, the roles for each step and a visit''s activity log'
+  frame: none
 ctas:
   primary:
     label: Book a dental clinic demo

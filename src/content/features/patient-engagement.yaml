@@ -11,16 +11,20 @@ h1: Keep patients coming back between visits
 linkLabel: Patient engagement
 eyebrow: Patient engagement
 openingAnswer: >-
-  EasyClinic's patient engagement software keeps in touch with patients through five loops that run
-  from the patient record: onboard with a registration form sent as a link, remind before the visit,
-  follow up when a review is due, ask how the visit went and reward the patients who keep coming. SMS
-  and email reminders come with every plan, from {price:usd.professional.annual} per doctor per month
-  billed annually, and the patient portal and app come with the Enterprise plan.
+  EasyClinic keeps in touch with patients through five loops that run from the patient record: onboard
+  with a registration link, remind before the visit, follow up when a review is due, ask how it went and
+  reward loyal patients. SMS and email reminders come with every plan, and the patient portal and app with
+  Enterprise.
 summary: >-
   Five loops run from the patient record between visits: a registration form by link, reminders,
   recalls by condition, feedback and loyalty, with the portal and app on Enterprise.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/img5.png
+  alt: EasyClinic patient list and patient profile, with a WhatsApp enrolment link, an online booking page showing clinic visit slots, and the patient registration form on a phone
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

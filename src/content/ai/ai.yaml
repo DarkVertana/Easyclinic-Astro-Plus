@@ -11,20 +11,24 @@ title: 'Cura AI: AI Medical Scribe and Clinic Assistant: EasyClinic'
 metaDescription: >-
   Cura AI is EasyClinic's AI medical scribe: it drafts the consult note and prescription while you talk,
   for you to confirm. Included in Professional.
-h1: An AI scribe that writes the note while you see the patient
+h1: An AI scribe that writes the note as you consult
 linkLabel: Cura AI
 eyebrow: Cura AI, the AI inside EasyClinic
 openingAnswer: >-
   Cura AI is EasyClinic's AI medical scribe: it listens to the consult and drafts the note and
-  prescription in the patient's chart for you to confirm. The note drafting is listed as Cura AI
-  (documentation) in the Professional plan at {price:usd.professional.annual} per doctor per month billed
-  annually, and Cura AI's other jobs are answering the phone and WhatsApp, flagging a missed diagnosis,
-  coding the bill, predicting stockouts and summarising the day for the owner.
+  prescription in the chart for you to confirm. Note drafting is listed as Cura AI (documentation) in the
+  Professional plan, at {price:usd.professional.annual} per doctor per month billed annually, and it also
+  answers the phone and WhatsApp.
 summary: >-
   What each Cura AI feature does, from the AI scribe that drafts the consult note to the owner's
   end-of-day summary, and which plan includes the note drafting.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/curapilot/AI-suggestions-1.png
+  alt: An EasyClinic visit with the chief complaints, vitals and diagnosis, and a suggestion set of investigations, medications and guidelines for the diagnosis picked
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

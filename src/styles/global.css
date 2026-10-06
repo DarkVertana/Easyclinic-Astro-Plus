@@ -187,6 +187,9 @@
     font-size: var(--text-base);
     line-height: 1.6;
   }
+  nav.container-page.pt-5.text-sm {
+    display: none;
+}
   h1,
   h2,
   h3,

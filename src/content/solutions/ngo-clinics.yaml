@@ -14,17 +14,19 @@ h1: Software for NGO clinics and mission hospitals
 linkLabel: NGO and mission clinics
 eyebrow: For NGO clinics and mission hospitals
 openingAnswer: >-
-  EasyClinic is clinic software for NGO clinics and mission hospitals: staff record each visit and each
-  bill once, and the reports a donor asks for, from patient numbers by site to a day-end financial
-  report covering every transaction, are built from those records. NGO pricing is [NGO tier or discount,
-  in numbers], against a standard price of {price:usd.professional.annual} per doctor per month billed
-  annually, and every site needs an internet connection because EasyClinic does not run fully offline
-  today.
+  EasyClinic is clinic software for NGO clinics and mission hospitals: each visit and bill is recorded
+  once, and donor reports, from patients by site to a day-end financial report, are built from those
+  records. NGO pricing is [NGO tier or discount, in numbers], and every site needs an internet connection.
 summary: >-
   Clinic records and the reports donors ask for, for NGO clinics and mission hospitals, with NGO pricing
   and the connectivity limits stated plainly.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/14_Dashboard (1).jpg'
+  alt: 'EasyClinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today''s earnings and invoices by status'
+  frame: none
 ctas:
   primary:
     label: Apply for NGO pricing

@@ -21,19 +21,21 @@ h1: EMR for general practitioners and family physicians
 linkLabel: General practice
 eyebrow: For general practitioners and family physicians
 openingAnswer: >-
-  What a general practitioner needs from an EMR, beyond a visit note and a prescription, is the long view
-  of patients seen for years: the whole history on one facesheet, immunisations and chronic conditions
-  such as diabetes included, and a way to bring each patient back or send them on, with a reminder for
-  the next check-up or a referral written in the consult. EasyClinic's EMR and e-prescriptions come with
-  every plan, starting with Professional, the plan meant for general practitioners and physicians, at
-  {price:inr.professional.annual} per doctor per month in India or {price:usd.professional.annual} in US
-  dollars, billed annually.
+  A general practitioner needs the long view: the whole history on one facesheet, including immunisations
+  and chronic conditions such as diabetes, with check-up reminders and referrals written in the consult.
+  The EMR comes with every plan, from {price:inr.professional.annual} per doctor per month in India or
+  {price:usd.professional.annual}, billed annually.
 summary: >-
   The whole history on one facesheet, vitals charted over the years, referrals written in the consult and
   reminders for check-ups, with the EMR on every plan from {price:usd.professional.annual} per doctor per
   month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/Prescription-3-2.png'
+  alt: 'An EasyClinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

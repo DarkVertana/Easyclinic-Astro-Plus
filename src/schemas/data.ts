@@ -262,7 +262,16 @@ export const navSchema = z.object({
       footerLink: optionalGroup(navLink, NAV_LINK_PRESENT_IF),
     }),
   ),
-  footer: z.array(z.object({ title: z.string(), links: z.array(navLink) })),
+  footer: z.array(
+    z.object({
+      title: z.string(),
+      /** The second column of the group before it: the title stays for screen readers and is hidden on screen. */
+      continued: z.boolean().default(false),
+      links: z.array(navLink).default([]),
+      /** Sub-headings inside the column, each with its own links (the Features column). */
+      sections: z.array(z.object({ title: z.string(), links: z.array(navLink).min(1) })).default([]),
+    }),
+  ),
   legal: z.array(navLink),
   notes,
 });

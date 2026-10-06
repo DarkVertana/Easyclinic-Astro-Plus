@@ -4,12 +4,21 @@ headKeyword: specialty EMR software
 secondaryKeywords: [EMR by specialty, specialty clinic software]
 title: 'Specialty EMR Software for Clinics: EasyClinic'
 metaDescription: 'EasyClinic by specialty: templates, packages and records for IVF, physiotherapy, dental, dermatology, paediatric, ENT and other clinics.'
-h1: EasyClinic for your specialty
+h1: Specialty EMR software for every kind of clinic
 linkLabel: Specialties
-openingAnswer: 'EasyClinic''s Premium plan adds specialty EMR templates, your own clinical forms and package treatments, priced at {price:usd.premium.annual} per doctor per month billed annually. Each specialty page shows what a clinic in that field uses most.'
+openingAnswer: >-
+  EasyClinic's Premium plan adds specialty EMR templates, your own clinical forms and package treatments,
+  priced at {price:usd.premium.annual} per doctor per month billed annually ({price:inr.premium.annual} in
+  India). Each specialty page, from dental and dermatology to IVF and neurology, shows what a clinic in
+  that field uses most.
 summary: Specialty templates, forms and packages, with a page for each specialty.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/Examination-3-1.png'
+  alt: 'An EasyClinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+  frame: none
 ctas:
   primary: { label: Book a 20-minute demo, href: /specialties/#book-a-demo }
   secondary: { label: See Premium pricing, href: /pricing/ }

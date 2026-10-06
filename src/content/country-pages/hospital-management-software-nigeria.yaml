@@ -29,11 +29,10 @@ summary: >-
 author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
-  kind: screenshot
-  needed: 'Invoice from an HMO patient''s visit in naira: the HMO share and the patient share split on one bill, with a bank transfer recorded against the patient share. New capture; spec 12 lists INR and KES invoices only.'
-  alt: An EasyClinic invoice for a clinic visit in Nigerian naira, with the HMO's share and the patient's share split and a bank transfer recorded
-  caption: One bill from the visit in naira, with the HMO's share split from the patient's and the patient's bank transfer recorded.
-  frame: browser
+  kind: photo
+  src: ../../assets/images/countries/nigeria.webp
+  alt: A man in a shirt and tie working at a desk with a large screen and a laptop
+  frame: none
 heroStrip:
   regulators: [ng-nhia, ng-hmo-claims, ng-ndpa]
   ratings: true

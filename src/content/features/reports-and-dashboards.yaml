@@ -8,21 +8,24 @@ secondaryKeywords:
   - doctor productivity report
 title: 'Clinic Dashboard and Reports Software: EasyClinic'
 metaDescription: "Clinic dashboard software for the owner's morning numbers: revenue by branch, the day's appointments, stock and claim status, with reports for each role."
-h1: One dashboard for the numbers a clinic owner checks daily
+h1: The numbers a clinic owner checks daily
 linkLabel: Reports and dashboards
 eyebrow: Reports and dashboards
 openingAnswer: >-
-  EasyClinic's clinic dashboard software shows the owner's morning numbers live, from the system the
-  desk and the doctors already work in: revenue for each branch and for the group, the day's
-  appointments with each visit's status, and, where the clinic runs those modules, stock levels and the
-  status of every insurance claim. Dashboards and reports come with every plan, from
-  {price:usd.professional.annual} per doctor per month billed annually; a second branch needs Premium,
-  and Enterprise adds a reporting server with custom analytics.
+  EasyClinic's clinic dashboard software shows the owner's morning numbers live: revenue for each branch
+  and the group, the day's appointments with each visit's status and, where those modules run, stock and
+  claims. Dashboards and reports come with every plan, from {price:usd.professional.annual} per doctor per
+  month billed annually.
 summary: >-
   Live dashboards for revenue by branch, the day's appointments, stock and claims, with reports for each
   role and a data warehouse on Enterprise.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/14_Dashboard.jpg
+  alt: EasyClinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today's earnings in rupees and invoices by status
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

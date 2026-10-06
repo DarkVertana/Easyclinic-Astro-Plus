@@ -14,14 +14,18 @@ eyebrow: Lab
 openingAnswer: >-
   EasyClinic is lab management software for clinics: the doctor orders the test from the chart, and the
   result comes back into the same patient record with abnormal values flagged. Lab reports in the chart
-  come with the Premium plan, from {price:usd.premium.annual} per doctor per month billed annually
-  ({price:inr.premium.annual} in India), and lab management, with orders from the chart and sample
-  tracking, comes with Enterprise or as an add-on on Professional and Premium.
+  come with Premium, at {price:usd.premium.annual} per doctor per month billed annually, and lab
+  management with Enterprise or as an add-on.
 summary: >-
   Tests ordered from the chart come back as results on the same patient record. Lab reports come with
   Premium, and lab management with Enterprise or as an add-on.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/1-6.png
+  alt: EasyClinic clinical dashboard with total, first and repeat visits, charts of top diagnoses and chief complaints, the top ten medications, and patients by gender and age
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

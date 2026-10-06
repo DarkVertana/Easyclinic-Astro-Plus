@@ -16,16 +16,20 @@ h1: EMR for neurology clinics
 linkLabel: Neurology
 eyebrow: For neurology clinics
 openingAnswer: >-
-  A neurology clinic needs two things a general-practice chart rarely has: examination templates for the
-  conditions it follows for years, such as epilepsy and Parkinson's disease, and the patient's EEG and MRI
-  reports in the same file as the visits. EasyClinic's Premium plan has both, with predefined neurological
-  examination templates, and costs {price:inr.premium.annual} per doctor per month billed annually in
-  India, or {price:usd.premium.annual} in US dollars, with the reception login included.
+  A neurology clinic needs examination templates for conditions it follows for years, such as epilepsy and
+  Parkinson's disease, and EEG and MRI reports in the same file as the visits. EasyClinic's Premium plan
+  has both, at {price:inr.premium.annual} per doctor per month billed annually in India or
+  {price:usd.premium.annual}, with the reception login included.
 summary: >-
   Neurological examination templates on Premium, and EEG and MRI reports kept in the patient's file
   beside every visit.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/Examination-3-1.png'
+  alt: 'An EasyClinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+  frame: none
 ctas:
   primary:
     label: Book a neurology clinic demo

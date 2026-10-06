@@ -18,16 +18,20 @@ h1: EHR for mental health and psychiatry practices
 linkLabel: Mental health
 eyebrow: For psychiatry and psychology practices
 openingAnswer: >-
-  A mental health practice needs session notes and psychometric test results on the record visit by
-  visit beside the prescription, and access set by role, so the front desk can book a session without
-  opening the notes. EasyClinic keeps both, and its Premium plan adds video sessions and your own clinical
-  forms at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual} in US
-  dollars, billed annually.
+  A mental health practice needs session notes and psychometric results beside the prescription, and
+  role-based access so the front desk can book without opening notes. EasyClinic keeps both, and Premium
+  adds video sessions and your own forms at {price:inr.premium.annual} per doctor per month in India or
+  {price:usd.premium.annual}, billed annually.
 summary: >-
   Session notes and psychotropic dose changes on one record, and video sessions on the Premium plan at
   {price:usd.premium.annual} per doctor per month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/16_Portal.png'
+  alt: 'EasyClinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
+  frame: none
 ctas:
   primary:
     label: Book a mental health practice demo

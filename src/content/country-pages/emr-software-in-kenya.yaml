@@ -16,22 +16,20 @@ h1: Clinic software for clinics in Kenya
 linkLabel: Clinic software in Kenya
 eyebrow: Kenya
 openingAnswer: >-
-  EasyClinic is clinic management software built for how a Kenyan clinic gets paid, with M-Pesa at the
-  desk and the claim to Jubilee or AAR sent through SLADE from the same bill, while SHA e-claims are
-  [SHA e-claims status as of date]. It costs {price:kes.professional.annual} per doctor per month, and
-  Penda Health has run its Nairobi clinics on it since 2017, where an AI tool inside the record was
-  studied across {fig:visits} patient visits.
+  EasyClinic is clinic management software built for how a Kenyan clinic gets paid: M-Pesa at the desk,
+  and the claim to Jubilee or AAR sent through SLADE from the same bill, while SHA e-claims are [SHA
+  e-claims status as of date]. It costs {price:kes.professional.annual} per doctor per month, and Penda
+  Health has run its Nairobi clinics on it since 2017.
 summary: >-
   What EasyClinic costs in shillings, how M-Pesa and SLADE claims sit on one bill, the status and date
   of SHA and eTIMS, and who to call in Kenya.
 author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
-  kind: screenshot
-  needed: 'Invoice from an encounter with a part payment: second capture in KES with M-Pesa, seeded demo tenant (spec 12). No eTIMS line until eTIMS has a status.'
-  alt: An EasyClinic invoice for a clinic visit in Kenyan shillings, with an M-Pesa payment recorded against it and the balance still owed
-  caption: One bill from the visit in shillings, with the M-Pesa payment recorded and the balance still owed.
-  frame: browser
+  kind: photo
+  src: ../../assets/images/countries/kenya.jpeg
+  alt: A doctor in a white coat smiling while working on a laptop at a desk
+  frame: none
 heroStrip:
   regulators: [ke-sha, ke-etims]
   ratings: true

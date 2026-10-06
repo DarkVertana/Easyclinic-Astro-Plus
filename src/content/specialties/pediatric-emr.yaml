@@ -11,21 +11,24 @@ title: 'Pediatric EMR Software: EasyClinic'
 metaDescription: >-
   Pediatric EMR software: growth charts and vaccine schedules on one record, with WhatsApp reminders to
   parents on Premium at {price:usd.premium.annual} a doctor a month.
-h1: 'EMR for paediatric clinics: growth charts and vaccine schedules on the child''s record'
+h1: Paediatric EMR with growth charts and vaccines
 linkLabel: Paediatrics
 eyebrow: For paediatric clinics
 openingAnswer: >-
-  Paediatric EMR software has to carry two things a general EMR is not built around: a growth chart that
-  tracks height, weight, BMI and head circumference against growth standards, and a vaccine schedule set
-  by the child's age and local guidelines, with alerts for vaccines that are coming up or overdue.
-  EasyClinic keeps both on the child's record, and its Premium plan for specialists adds specialty EMR
-  templates and WhatsApp reminders to parents at {price:inr.premium.annual} per doctor per month in India,
-  or {price:usd.premium.annual} in US dollars, billed annually.
+  Paediatric EMR software needs a growth chart for height, weight, BMI and head circumference, and a
+  vaccine schedule set by the child's age with alerts for doses due. EasyClinic keeps both on the child's
+  record, and Premium adds WhatsApp reminders to parents at {price:inr.premium.annual} per doctor per
+  month in India or {price:usd.premium.annual}, billed annually.
 summary: >-
   Growth tracked against growth standards and a vaccine schedule set by the child's age, on one record,
   with WhatsApp reminders to parents on Premium at {price:usd.premium.annual} per doctor per month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/16_Portal.png'
+  alt: 'EasyClinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
+  frame: none
 ctas:
   primary:
     label: Book a paediatric clinic demo

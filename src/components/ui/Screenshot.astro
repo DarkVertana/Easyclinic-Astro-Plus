@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { need } from '../../lib/content/need';
 import Icon from './Icon.astro';
@@ -24,20 +24,36 @@ interface Props {
   class?: string;
   /** Smaller phone frames for dense layouts such as the journey diagram. */
   compact?: boolean;
+  /** Opens the full-resolution image in a lightbox, for dense screenshots shown small (the hero). */
+  zoomable?: boolean;
+  /** A raised white card with a soft shadow, for the hero. */
+  elevated?: boolean;
+  /** With `elevated`: on large screens the card fills its parent's height and the screenshot scales to fit. */
+  fill?: boolean;
 }
 
-const { media, priority = false, sizes = '(min-width: 75rem) 600px, (min-width: 60rem) 50vw, 100vw', class: className, compact = false } = Astro.props;
+const { media, priority = false, sizes = '(min-width: 75rem) 600px, (min-width: 60rem) 50vw, 100vw', class: className, compact = false, zoomable = false, elevated = false, fill = false } = Astro.props;
+const filled = elevated && fill;
 const frame = media.frame;
 const phoneWidth = compact ? 'max-w-[9.5rem]' : 'max-w-[18rem]';
 const ratio = frame === 'phone' ? `aspect-[390/844] ${phoneWidth} mx-auto` : 'aspect-[1440/900]';
 const placeholder = !media.src ? need(Astro, `Screenshot: ${media.needed ?? media.alt}`, null) : null;
+const full = zoomable && media.src ? await getImage({ src: media.src, format: 'webp', quality: 90 }) : null;
 ---
 
-<figure class:list={['m-0', className]}>
+<figure class:list={['m-0', filled && 'lg:relative', className]}>
   <div
     class:list={[
       'overflow-hidden bg-surface',
       frame === 'browser' && 'rounded-card border border-line',
+      elevated && [
+        'rounded-2xl shadow-[0_30px_60px_-25px_rgb(10_37_64/0.35),0_10px_24px_-12px_rgb(10_37_64/0.18)] ring-1 ring-navy-900/5',
+      ],
+      filled && [
+        // Fills the hero column without adding to its height (the text sets it); the screenshot covers the card
+        // edge to edge, and the lightbox shows the whole image.
+        'lg:absolute lg:inset-0 lg:flex lg:flex-col',
+      ],
       frame === 'phone' && ['mx-auto border-navy-900', compact ? 'max-w-[9.5rem] rounded-[1.25rem] border-4' : 'max-w-[18rem] rounded-[2rem] border-[6px]'],
     ]}
   >
@@ -51,7 +67,32 @@ const placeholder = !media.src ? need(Astro, `Screenshot: ${media.needed ?? medi
       )
     }
     {
-      media.src ? (
+      media.src && full ? (
+        <button
+          type="button"
+          class:list={['group relative block w-full cursor-zoom-in', filled && 'lg:min-h-0 lg:flex-1']}
+          data-zoom-open
+          aria-haspopup="dialog"
+          aria-label={`Enlarge image: ${media.alt}`}
+        >
+          <Picture
+            src={media.src}
+            alt=""
+            formats={['avif', 'webp']}
+            sizes={sizes}
+            widths={[480, 768, 1080, 1440, 1920]}
+            quality={95}
+            priority={priority}
+            pictureAttributes={filled ? { class: 'contents' } : undefined}
+            position={filled ? (media.kind === 'photo' ? 'center' : 'left top') : undefined}
+            class:list={['block h-auto w-full', filled && 'lg:absolute lg:inset-0 lg:h-full! lg:object-cover']}
+          />
+          <span class="absolute right-3 bottom-3 inline-flex items-center gap-1.5 rounded-full bg-navy-900/85 px-3 py-1.5 text-sm font-semibold text-white shadow transition group-hover:bg-navy-900 group-focus-visible:bg-navy-900">
+            <Icon name="zoom-in" size={16} />
+            Click to enlarge
+          </span>
+        </button>
+      ) : media.src ? (
         <Picture
           src={media.src}
           alt={media.alt}
@@ -73,5 +114,64 @@ const placeholder = !media.src ? need(Astro, `Screenshot: ${media.needed ?? medi
       )
     }
   </div>
+  {
+    full && (
+      <dialog class="screenshot-zoom" data-zoom-dialog aria-label={media.alt}>
+        <button type="button" class="screenshot-zoom-close" data-zoom-close aria-label="Close enlarged image">
+          <Icon name="x" size={24} />
+        </button>
+        <img src={full.src} width={full.attributes.width} height={full.attributes.height} alt={media.alt} loading="lazy" decoding="async" />
+      </dialog>
+    )
+  }
   {media.caption && <figcaption class="mt-3 text-sm text-ink-muted"><Md text={media.caption} inline /></figcaption>}
 </figure>
+
+<script>
+  for (const open of document.querySelectorAll<HTMLButtonElement>('[data-zoom-open]')) {
+    const dialog = open.closest('figure')?.querySelector<HTMLDialogElement>('[data-zoom-dialog]');
+    if (!dialog) continue;
+    open.addEventListener('click', () => dialog.showModal());
+    // A click on the backdrop or the close button closes it; Escape is native to <dialog>.
+    dialog.addEventListener('click', (e) => {
+      const target = e.target as Element;
+      if (target === dialog || target.closest('[data-zoom-close]')) dialog.close();
+    });
+  }
+</script>
+
+<style>
+  .screenshot-zoom {
+    max-width: min(96vw, 1800px);
+    max-height: 94vh;
+    padding: 0;
+    margin: auto;
+    border: 0;
+    border-radius: var(--radius-card, 0.75rem);
+    background: var(--color-surface, #fff);
+    overflow: auto;
+  }
+  .screenshot-zoom::backdrop {
+    background: rgb(10 22 40 / 0.8);
+  }
+  .screenshot-zoom img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .screenshot-zoom-close {
+    position: sticky;
+    top: 0.75rem;
+    float: right;
+    margin: 0.75rem 0.75rem -3.5rem 0;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    background: var(--color-navy-900, #0a1628);
+    color: #fff;
+  }
+</style>

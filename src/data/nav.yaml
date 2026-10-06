@@ -85,41 +85,51 @@ primary:
           - { label: All resources, href: /resources/, description: 'Find the EasyClinic pages for your clinic', icon: list-checks }
 
 footer:
-  - title: Product
+  - title: Features
+    sections:
+      - title: Features by clinic type
+        links:
+          - { label: Individual doctor / specialist clinic, href: /solutions/solo-clinic/ }
+          - { label: Group practice / polyclinic, href: /solutions/polyclinic/ }
+          - { label: Multi-location clinic chain, href: /solutions/clinic-chain/ }
+          - { label: Hospital OPD, href: /solutions/hospital-opd/ }
+          - { label: Nursing home, href: /solutions/hospital-opd/ }
+          - { label: All features, href: /features/ }
+      - title: Features by modules
+        links:
+          - { label: Patient engagement, href: /features/patient-engagement/ }
+          - { label: Reports and dashboards, href: /features/reports-and-dashboards/ }
+          - { label: Payor management, href: /features/insurance-claims/ }
+          - { label: Revenue management, href: /features/revenue-management/ }
+          - { label: Appointment scheduling, href: /features/appointment-scheduling/ }
+  - title: Specialties
     links:
-      - { label: All features, href: /features/ }
-      - { label: EMR and e-prescriptions, href: /features/emr/ }
-      - { label: Appointment scheduling, href: /features/appointment-scheduling/ }
-      - { label: Billing, href: /features/billing/ }
-      - { label: Insurance claims, href: /features/insurance-claims/ }
-      - { label: Revenue management, href: /features/revenue-management/ }
-      - { label: Pharmacy and inventory, href: /features/pharmacy-and-inventory/ }
-      - { label: Lab, href: /features/lab/ }
-      - { label: Telehealth, href: /features/telehealth/ }
-      - { label: Patient engagement, href: /features/patient-engagement/ }
-      - { label: WhatsApp, href: /features/whatsapp/ }
-      - { label: Reports and dashboards, href: /features/reports-and-dashboards/ }
-      - { label: Multi-location, href: /features/multi-location/ }
-      - { label: Cura AI, href: /ai/ }
-      - { label: CuraPilot, href: /curapilot/ }
-      - { label: Integrations, href: /integrations/ }
-  - title: Solutions
+      - { label: Aesthetic, href: /dermatology-emr-software/ }
+      - { label: Alternative medicine, href: /ayurveda-clinic-management-software/ }
+      - { label: Ayurveda, href: /ayurveda-clinic-management-software/ }
+      - { label: Cardiology, href: /cardiology-emr/ }
+      - { label: Cosmetology, href: /dermatology-emr-software/ }
+      - { label: Dentist, href: /dental-emr-software/ }
+      - { label: Dermatology, href: /dermatology-emr-software/ }
+      - { label: ENT, href: /ent-emr-software/ }
+      - { label: Family physician, href: /general-practitioner-emr/ }
+      - { label: General practitioner, href: /general-practitioner-emr/ }
+      - { label: IVF, href: /ivf-emr/ }
+  - title: Specialties
+    continued: true
     links:
-      - { label: All clinic types, href: /solutions/ }
-      - { label: Solo doctor clinic, href: /solutions/solo-clinic/ }
-      - { label: Polyclinic, href: /solutions/polyclinic/ }
-      - { label: Clinic chain, href: /solutions/clinic-chain/ }
-      - { label: Hospital OPD, href: /solutions/hospital-opd/ }
-      - { label: NGO and mission clinics, href: /solutions/ngo-clinics/ }
+      - { label: Neurology, href: /neurology-emr/ }
+      - { label: Obstetrics and gynaecology, href: /obgyn-emr-software/ }
+      - { label: Ophthalmology, href: /ophthalmology-emr/ }
+      - { label: Orthopaedics, href: /orthopedic-emr/ }
+      - { label: Otolaryngology (ENT), href: /ent-emr-software/ }
+      - { label: Paediatrics, href: /pediatric-emr/ }
+      - { label: Pathology, href: /features/lab/ }
+      - { label: Physiotherapy, href: /physiotherapy-clinic-management-software/ }
+      - { label: Psychiatry, href: /mental-health/ }
+      - { label: Psychology, href: /mental-health/ }
+      - { label: Trichology, href: /dermatology-emr-software/ }
       - { label: All specialties, href: /specialties/ }
-  - title: Countries
-    links:
-      - { label: India, href: /clinic-management-software-india/ }
-      - { label: Kenya, href: /emr-software-in-kenya/ }
-      - { label: United Arab Emirates, href: /clinic-management-software-uae/ }
-      - { label: Nigeria, href: /hospital-management-software-nigeria/ }
-      - { label: All countries, href: /countries/ }
-      - { label: Pricing, href: /pricing/ }
   - title: Resources
     links:
       - { label: All resources, href: /resources/ }
@@ -133,10 +143,17 @@ footer:
   - title: Company
     links:
       - { label: About us, href: /about-us/ }
-      - { label: Contact us, href: /contact-us/ }
-      - { label: Trust and security, href: /trust/ }
-      - { label: Partner with us, href: /partner-with-ec/ }
       - { label: Careers, href: /careers/ }
+      - { label: Blogs, href: /blog/ }
+      - { label: EasyClinic AI, href: /ai/ }
+      - { label: Knowledgebase, href: 'https://help.easyclinic.io/' }
+      - { label: Pricing, href: /pricing/ }
+      - { label: Doctors, href: /solutions/solo-clinic/ }
+      - { label: Contact us, href: /contact-us/ }
+      - { label: Support, href: /contact-us/ }
+      - { label: Partner with us, href: /partner-with-ec/ }
+      - { label: Custom healthcare software development, href: '/features/#integrations' }
+      - { label: Trust and security, href: /trust/ }
 
 legal:
   - { label: Privacy, href: /privacy/ }

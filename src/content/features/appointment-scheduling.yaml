@@ -12,16 +12,20 @@ h1: Appointment scheduling that cuts no-shows
 linkLabel: Appointment scheduling
 eyebrow: Appointment scheduling
 openingAnswer: >-
-  EasyClinic's appointment scheduling puts booked slots and walk-ins on one calendar for your doctors and
-  consulting rooms, and sends booked patients a reminder by SMS and email before the visit, with WhatsApp
-  added on the Premium plan. The calendar and the SMS and email reminders come with every plan, from
-  {price:usd.professional.annual} per doctor per month billed annually, or {price:inr.professional.annual}
-  in India.
+  EasyClinic puts booked slots and walk-ins on one calendar for your doctors and consulting rooms, and
+  reminds patients by SMS and email before the visit, with WhatsApp on Premium. The calendar and reminders
+  come with every plan, from {price:usd.professional.annual} per doctor per month billed annually
+  ({price:inr.professional.annual} in India).
 summary: >-
   Booked slots and walk-ins on one calendar, with SMS and email reminders on every plan and WhatsApp
   reminders on Premium.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/3_Video_consultent.png
+  alt: An EasyClinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

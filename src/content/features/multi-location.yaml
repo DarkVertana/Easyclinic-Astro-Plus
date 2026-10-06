@@ -10,16 +10,20 @@ h1: One system for every clinic location
 linkLabel: Multi-location clinic software
 eyebrow: Multi-location
 openingAnswer: >-
-  EasyClinic is multi-location clinic management software: every branch is a location in one account,
-  from a second clinic to a chain of {fact:largestChain} locations, so each patient has one record and
-  each doctor one login wherever they work. More than one location comes with the Premium plan, at
-  {price:usd.premium.annual} per doctor per month billed annually, and Enterprise adds central control of
-  every location, with head office setting price lists and SOPs once for all of them.
+  Every branch is a location in one EasyClinic account, from a second clinic to a chain of
+  {fact:largestChain}, so each patient has one record and each doctor one login. More than one location
+  comes with Premium, at {price:usd.premium.annual} per doctor per month billed annually, and Enterprise
+  adds central control.
 summary: >-
   Every branch as a location in one account, with one patient record and one login per person. More
   than one location comes with Premium, and central control with Enterprise.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/19_Multi_location.png
+  alt: EasyClinic multi-location screens around a clinic illustration, showing the list of locations, adding a new clinic, switching location, a dashboard filtered by location and a stock transfer between clinics
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

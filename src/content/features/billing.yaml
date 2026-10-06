@@ -11,16 +11,20 @@ h1: Billing and invoicing for your clinic
 linkLabel: Billing
 eyebrow: Billing and payments
 openingAnswer: >-
-  EasyClinic is medical billing software for clinics: the lab tests and procedures a doctor orders become
-  lines on the patient's invoice, and the desk takes full or part payment and sends the receipt to the
-  patient's phone. Billing and payments come with every plan, from {price:usd.professional.annual} per
-  doctor per month billed annually ({price:inr.professional.annual} in India), and the till closes the
-  day with an end-of-day report.
+  EasyClinic is medical billing software for clinics: the tests and procedures a doctor orders become
+  invoice lines, the desk takes full or part payment, and the receipt goes to the patient's phone. Billing
+  comes with every plan, from {price:usd.professional.annual} per doctor per month billed annually
+  ({price:inr.professional.annual} in India).
 summary: >-
   Bills built from the doctor's orders, part payments and refunds at the desk, receipts on the patient's
   phone and an end-of-day report when the till closes.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/Payor-11.png
+  alt: An EasyClinic invoice in Kenyan shillings billed to an insurer, with the member's cover limits and membership details, and the total split into the insurance share and the patient's co-pay
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

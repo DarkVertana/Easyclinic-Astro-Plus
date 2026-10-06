@@ -15,17 +15,20 @@ h1: Clinic software by practice type and specialty
 linkLabel: Solutions
 eyebrow: Solutions
 openingAnswer: >-
-  EasyClinic runs a one-doctor clinic and a chain of {fact:largestChain} locations on the same system,
-  and the plan is what changes: Professional at {price:usd.professional.annual} per doctor per month
-  billed annually for a doctor running their own clinic, Premium at {price:usd.premium.annual} for
-  specialists and group practices. Clinic chains and hospital OPDs are quoted on Enterprise, and in
-  India Professional is {price:inr.professional.annual} and Premium {price:inr.premium.annual} per doctor
-  per month billed annually.
+  EasyClinic runs a one-doctor clinic and a chain of {fact:largestChain} locations on the same system; the
+  plan is what changes. Professional, at {price:usd.professional.annual} per doctor per month billed
+  annually, suits a doctor's own clinic, Premium at {price:usd.premium.annual} suits specialists and group
+  practices, and chains and hospital OPDs are quoted on Enterprise.
 summary: >-
   EasyClinic by clinic type and by specialty, with the plan each kind of practice usually needs and
   what it costs per doctor per month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/16_Portal.png'
+  alt: 'EasyClinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

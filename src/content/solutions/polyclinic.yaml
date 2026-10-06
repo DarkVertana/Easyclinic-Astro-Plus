@@ -14,15 +14,19 @@ linkLabel: Polyclinic
 eyebrow: For polyclinics and group practices
 openingAnswer: >-
   Polyclinic management software puts every specialist on one shared patient chart and books doctors and
-  shared rooms on one resource calendar, with the pharmacy and the lab working from the same visit and a
-  role on every login that decides who sees what. EasyClinic's plan for group practices is Premium, at
-  {price:usd.premium.annual} per doctor per month billed annually or {price:inr.premium.annual} in India,
-  with the reception login included and the pharmacy added as a module when you run one.
+  shared rooms on one calendar, with a role on every login deciding who sees what. EasyClinic's Premium
+  plan for group practices costs {price:usd.premium.annual} per doctor per month billed annually
+  ({price:inr.premium.annual} in India).
 summary: >-
   One patient record for every specialist and one calendar for doctors and shared rooms, on the Premium
   plan at {price:usd.premium.annual} per doctor per month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/Prescription-3-2.png'
+  alt: 'An EasyClinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  frame: none
 ctas:
   primary:
     label: Book a polyclinic demo

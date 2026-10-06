@@ -11,16 +11,20 @@ h1: EMR and e-prescription software for clinics
 linkLabel: EMR and e-prescriptions
 eyebrow: EMR and e-prescriptions
 openingAnswer: >-
-  EasyClinic is EMR and e-prescription software for clinics: the visit note and the prescription go on
-  one patient record, and the prescription is printed for the patient or, on the Premium plan, sent on
-  WhatsApp. The EMR and e-prescriptions come with every plan, from {price:usd.professional.annual} per
-  doctor per month billed annually, and doctors on EasyClinic write {fact:prescriptionsDaily}
-  prescriptions a day between them.
+  EasyClinic is EMR and e-prescription software for clinics: the visit note and the prescription go on one
+  patient record, printed or, on Premium, sent on WhatsApp. The EMR comes with every plan, from
+  {price:usd.professional.annual} per doctor per month billed annually, and doctors on EasyClinic write
+  {fact:prescriptionsDaily} prescriptions a day between them.
 summary: >-
   The EMR and e-prescriptions come with every plan: the note and the prescription on one patient record,
   with Cura AI to draft the note.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/img5.png
+  alt: EasyClinic patient list and patient profile, with a WhatsApp enrolment link, an online booking page showing clinic visit slots, and the patient registration form on a phone
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

@@ -15,9 +15,9 @@ linkLabel: IVF and fertility
 eyebrow: For IVF and fertility clinics
 openingAnswer: >-
   EasyClinic keeps an IVF patient's cycle on one record, from the stimulation protocol to embryo transfer,
-  with every dose adjustment recorded against the medication. Its Premium plan for specialists adds
-  package treatments, so the cycle is billed as one package paid in parts, at {price:inr.premium.annual}
-  per doctor per month in India or {price:usd.premium.annual} in US dollars, billed annually.
+  with every dose adjustment recorded against the medication. Premium bills the cycle as one package paid
+  in parts, at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual},
+  billed annually.
 summary: >-
   Each IVF cycle on one record, from stimulation to embryo transfer, and the treatment billed as one
   package paid in parts on the Premium plan.
@@ -26,6 +26,11 @@ lastUpdated: 2026-09-26
 heroStrip:
   ratings: true
   study: false
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/pipeline.webp'
+  alt: 'A lead pipeline board for a fertility clinic, with enquiries moving from consult and assessment to proposal, won or lost'
+  frame: none
 ctas:
   primary:
     label: Book an IVF clinic demo

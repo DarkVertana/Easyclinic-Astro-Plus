@@ -12,20 +12,24 @@ title: 'ENT EMR Software: EasyClinic'
 metaDescription: >-
   ENT EMR software with an ear examination form, and hearing tests and endoscopy records kept on the
   patient's record. Premium is {price:usd.premium.annual} per doctor a month.
-h1: 'EMR for ENT clinics: ear examinations and hearing tests on one record'
+h1: ENT EMR for ear exams and hearing tests
 linkLabel: ENT
 eyebrow: For ENT clinics
 openingAnswer: >-
-  ENT EMR software has to hold four things a general consultation note has no place for: the ear
-  examination, the hearing test, the endoscopy and the minor procedure done in the clinic. EasyClinic keeps
-  all four with the patient's record, and its Premium plan for specialists adds the ENT consultation
-  templates, at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual} in
-  US dollars, billed annually.
+  ENT EMR software has to hold the ear examination, the hearing test, the endoscopy and minor procedures
+  done in the clinic. EasyClinic keeps all four on the patient's record, and Premium adds ENT consultation
+  templates at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual},
+  billed annually.
 summary: >-
   The ear examination and the hearing test on one patient record, with ENT consultation templates on the
   Premium plan at {price:usd.premium.annual} per doctor per month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/18_User.png'
+  alt: 'EasyClinic user settings: staff with their roles and specialties, a doctor''s profile, role permissions and the weekly roster for a location'
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

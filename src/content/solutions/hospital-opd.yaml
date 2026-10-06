@@ -13,16 +13,19 @@ h1: OPD software for hospitals and nursing homes
 linkLabel: Hospital OPD and nursing homes
 eyebrow: For hospital OPDs and nursing homes
 openingAnswer: >-
-  EasyClinic is OPD management software for hospitals and nursing homes: it runs the OPD and day care
-  from the registration queue to the insurance claim, with the pharmacy and the lab working from the
-  same patient record, and doctors on EasyClinic write {fact:prescriptionsDaily} prescriptions a day
-  between them. Inpatient care is out of scope, so a hospital with beds keeps a separate system for
-  wards, bed management, operating theatres and the ICU, and runs EasyClinic in the OPD.
+  EasyClinic is OPD management software for hospitals and nursing homes: it runs the OPD and day care from
+  the registration queue to the insurance claim, with the pharmacy and lab on the same record. Inpatient
+  care is out of scope, so wards, beds, theatres and the ICU stay on a separate system.
 summary: >-
   The OPD and day care of a hospital or nursing home on one record: the registration queue, pharmacy,
   lab and insurance claims. Inpatient wards are out of scope.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/15_Workflow.png'
+  alt: 'EasyClinic visit workflow settings, with the queue steps from waiting for the doctor to the pharmacy, the roles for each step and a visit''s activity log'
+  frame: none
 ctas:
   primary:
     label: Book an OPD walkthrough

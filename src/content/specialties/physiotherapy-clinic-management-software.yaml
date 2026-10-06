@@ -18,14 +18,19 @@ linkLabel: Physiotherapy
 eyebrow: For physiotherapy clinics
 openingAnswer: >-
   EasyClinic is physiotherapy practice management software that keeps each patient's session-wise
-  treatment plan and progress against goals on one record, and on its Premium plan bills a whole course of
-  sessions as one package. Premium costs {price:usd.premium.annual} per doctor per month billed annually,
-  or {price:inr.premium.annual} in India, with the reception login included and no setup fee.
+  treatment plan and progress against goals on one record. Premium bills a whole course of sessions as one
+  package, at {price:usd.premium.annual} per doctor per month billed annually ({price:inr.premium.annual}
+  in India), with no setup fee.
 summary: >-
   Session-wise treatment plans and progress against goals on one record, with courses of sessions billed
   as packages on the Premium plan at {price:usd.premium.annual} per doctor per month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/18_User.png'
+  alt: 'EasyClinic user settings: staff with their roles and specialties, a doctor''s profile, role permissions and the weekly roster for a location'
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

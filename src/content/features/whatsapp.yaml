@@ -11,16 +11,20 @@ h1: WhatsApp reminders and messaging, built in
 linkLabel: WhatsApp reminders and messages
 eyebrow: WhatsApp
 openingAnswer: >-
-  EasyClinic sends appointment reminders, prescriptions, lab reports and feedback requests to patients
-  on WhatsApp from the clinic software, on message templates approved by Meta, instead of from a phone
-  on the front desk. WhatsApp messages come with the Premium plan at {price:usd.premium.annual} per
-  doctor per month billed annually ({price:inr.premium.annual} in India), and the Professional plan
-  sends reminders by SMS and email.
+  EasyClinic sends appointment reminders, prescriptions, lab reports and feedback requests to patients on
+  WhatsApp from the clinic software, on templates approved by Meta, instead of from a phone on the front
+  desk. WhatsApp comes with Premium, at {price:usd.premium.annual} per doctor per month billed annually
+  ({price:inr.premium.annual} in India).
 summary: >-
   Reminders, prescriptions, reports and feedback requests sent to patients on WhatsApp by the clinic
   software, on Meta-approved templates, from the Premium plan.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/Multilocation-telecom.png
+  alt: EasyClinic patient messaging by WhatsApp, SMS, email and video consultation, with a WhatsApp communication report, an SMS template editor and a list of message templates
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

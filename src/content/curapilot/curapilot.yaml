@@ -9,20 +9,24 @@ title: 'CuraPilot, the AI Copilot for Doctors: EasyClinic'
 metaDescription: >-
   CuraPilot is an AI copilot for doctors: it reads past visits and checks the prescription during the
   consult. Every flag is advice; the clinician decides.
-h1: An AI copilot for doctors that reads past visits during the consult
+h1: An AI copilot for doctors that reads past visits
 linkLabel: CuraPilot
 eyebrow: CuraPilot, the clinical copilot from EasyClinic
 openingAnswer: >-
-  CuraPilot is EasyClinic's AI copilot for doctors: during the consult it reads the patient's past
-  visits and checks the prescription before it is finalised, and the clinician decides what to do with
-  each flag. In a 2025 preprint by Penda Health and OpenAI covering {fig:visits} visits at 15 Nairobi
-  clinics that run on EasyClinic, clinicians who had AI Consult, a copilot inside that record, made
-  {fig:diagnostic-errors} fewer diagnostic errors, though the paper does not name CuraPilot.
+  CuraPilot is EasyClinic's AI copilot for doctors: it reads past visits and checks the prescription in
+  the consult, and the doctor decides each flag. In a 2025 Penda Health and OpenAI preprint of
+  {fig:visits} visits on EasyClinic, clinicians with AI Consult made {fig:diagnostic-errors} fewer
+  diagnostic errors; the paper does not name CuraPilot.
 summary: >-
   EasyClinic's AI copilot for doctors, and what the Penda Health study of {fig:visits} visits in Nairobi
   did and did not measure.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/curapilot/usecase1.webp
+  alt: A CuraPilot alert for a patient seen eight times in fourteen months, linking recurring symptoms across visits and recommending tests and a referral
+  frame: none
 ctas:
   primary:
     label: Start a 90-day proof of concept

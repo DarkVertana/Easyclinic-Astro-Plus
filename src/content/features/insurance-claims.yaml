@@ -14,16 +14,19 @@ h1: TPA and HMO claims without a second system
 linkLabel: Insurance claims
 eyebrow: Insurance claims
 openingAnswer: >-
-  EasyClinic is insurance claims software for clinics that catches three mistakes before a claim leaves:
-  the wrong plan picked at registration, a test or medicine the plan does not cover, and a
-  pre-authorisation nobody raised. Claims come with the Enterprise plan, which is priced on a quote, and
-  a clinic on Professional, from {price:usd.professional.annual} per doctor per month billed annually, or
-  on Premium can add the claims module.
+  EasyClinic is insurance claims software that catches three mistakes before a claim leaves: the wrong
+  plan picked at registration, a test or medicine the plan does not cover, and a pre-authorisation nobody
+  raised. Claims come with Enterprise, or as an add-on on Professional and Premium.
 summary: >-
   Claims that are clean before they leave: the plan is linked at the desk, and orders are checked
   against the plan's cover at the time of care.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/17_Integration.png
+  alt: EasyClinic API documentation for AI tasks and appointment booking, with the logos of the health data standards it names
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

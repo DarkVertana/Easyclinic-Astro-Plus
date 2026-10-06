@@ -225,7 +225,20 @@ export const singletons = {
         }),
         { label: 'Header menus', itemLabel: (props) => props.fields.label.value || 'Menu' },
       ),
-      footer: list(group('Column', { title: text('Title', { required: true }), links: navLinks('Links') }), {
+      footer: list(
+        group('Column', {
+          title: text('Title', { required: true }),
+          continued: flag('Continues the column before it', {
+            zodDefault: false,
+            description: 'The title is hidden on screen and read only by screen readers.',
+          }),
+          links: navLinks('Links'),
+          sections: list(group('Section', { title: text('Title', { required: true }), links: navLinks('Links', 1) }), {
+            label: 'Sections',
+            itemLabel: (props) => props.fields.title.value || 'Section',
+          }),
+        }),
+        {
         label: 'Footer columns',
         itemLabel: (props) => props.fields.title.value || 'Column',
       }),

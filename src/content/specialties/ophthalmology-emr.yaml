@@ -10,19 +10,24 @@ title: 'Ophthalmology EMR Software: EasyClinic'
 metaDescription: >-
   Ophthalmology EMR software: vision tests and OCT and fundus reports on one patient record,
   with eye templates on Premium at {price:usd.premium.annual} per doctor a month.
-h1: 'EMR for eye clinics: vision tests and OCT reports on one patient record'
+h1: Eye clinic EMR for vision tests and OCT reports
 linkLabel: Ophthalmology
 eyebrow: For eye clinics and eye hospitals
 openingAnswer: >-
-  An eye clinic needs two things on one patient record: each vision test and eye examination, kept visit
-  after visit, and the OCT and fundus reports that go with them. EasyClinic keeps both, and its Premium
-  plan adds preloaded templates for eye conditions such as glaucoma and cataract, at {price:inr.premium.annual} per doctor per month billed annually in India or
-  {price:usd.premium.annual} in US dollars.
+  An eye clinic needs each vision test and eye examination kept visit after visit, with the OCT and fundus
+  reports beside them on one record. EasyClinic keeps both, and Premium adds templates for glaucoma,
+  cataract and other eye conditions at {price:inr.premium.annual} per doctor per month in India or
+  {price:usd.premium.annual}, billed annually.
 summary: >-
   Each vision test and eye examination on one patient record with the OCT and fundus reports, and eye
   condition templates on the Premium plan at {price:usd.premium.annual} per doctor per month.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/Prescription-3-2.png'
+  alt: 'An EasyClinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  frame: none
 ctas:
   primary:
     label: Book an eye clinic demo

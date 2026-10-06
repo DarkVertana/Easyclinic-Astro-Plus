@@ -1,0 +1,22 @@
+---
+import { isProduction } from '../../lib/content/stage';
+
+/** One list of footer links. A link to a page that does not exist yet is dotted in preview. */
+interface Props {
+  links: { label: string; href: string | null; missing: boolean }[];
+}
+
+const { links } = Astro.props;
+---
+
+<ul class="space-y-2 text-sm">
+  {
+    links.map((l) => (
+      <li>
+        <a href={l.href} class:list={['text-ink-inverse-muted no-underline hover:text-white hover:underline', l.missing && !isProduction && 'underline decoration-dotted']}>
+          {l.label}
+        </a>
+      </li>
+    ))
+  }
+</ul>

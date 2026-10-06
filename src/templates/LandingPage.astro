@@ -64,6 +64,7 @@ const heroContact = (record.family === 'country' || record.family === 'countryDe
     ctas={d.ctas}
     heroMedia={d.heroMedia}
     heroStrip={d.heroStrip}
+    largeHeading={['feature', 'solution', 'specialty', 'ai', 'curapilot'].includes(record.family) || ['/solutions/', '/specialties/', '/countries/', '/pricing/', '/compare/', '/customers/', '/start-a-clinic/', '/switch/', '/blog/'].includes(record.path)}
     byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
   >
     {heroContact && <div slot="aside" class="mt-6"><ContactCard country={d.country!} showClients={false} ctx={{ ...ctx, index: -1 }} /></div>}

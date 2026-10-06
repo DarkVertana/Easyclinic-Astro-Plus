@@ -13,20 +13,24 @@ title: 'OB-GYN and Gynaecology EMR Software: EasyClinic'
 metaDescription: >-
   OB-GYN EMR software: each pregnancy tracked to the due date on one record, and antenatal care billed as a
   package on Premium at {price:inr.premium.annual} a doctor a month.
-h1: 'EMR for OB-GYN and gynaecology clinics: antenatal visits and scan reports on one record'
+h1: OB-GYN EMR for antenatal visits and scans
 linkLabel: OB-GYN and gynaecology
 eyebrow: For obstetricians and gynaecologists
 openingAnswer: >-
-  An OB-GYN clinic needs two things a general EMR leaves out: a pregnancy record that carries gestational
-  age and the due date from one antenatal visit to the next, and gynaecology templates for examinations
-  such as a Pap smear. EasyClinic has both, with the templates on Premium, its plan for specialists, which
-  also bills antenatal care as one package paid in parts, at {price:inr.premium.annual} per doctor per month
-  in India or {price:usd.premium.annual} in US dollars, billed annually.
+  An OB-GYN clinic needs a pregnancy record that carries gestational age and due date across visits, and
+  gynaecology templates such as a Pap smear. EasyClinic has both, and Premium adds the templates and bills
+  antenatal care as one package, at {price:inr.premium.annual} per doctor per month in India or
+  {price:usd.premium.annual}, billed annually.
 summary: >-
   Each pregnancy on one record, from gestational age to the due date, with antenatal care billed as one
   package paid in parts on the Premium plan.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/Prescription-3-2.png'
+  alt: 'An EasyClinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  frame: none
 ctas:
   primary:
     label: Book an OB-GYN clinic demo

@@ -25,11 +25,10 @@ summary: >-
 author: null
 lastUpdated: 2026-09-26
 heroMedia:
-  kind: screenshot
-  needed: 'Invoice from an encounter with GST lines and a part payment: INR invoice, seeded demo tenant (spec 12)'
-  alt: An EasyClinic invoice for a clinic visit in rupees, with a GST line on each taxable item and a part payment recorded
-  caption: One bill from the visit in rupees, with GST shown line by line and a part payment recorded.
-  frame: browser
+  kind: photo
+  src: ../../assets/images/countries/india.webp
+  alt: A doctor with a stethoscope standing at a desk and working on a desktop computer
+  frame: none
 heroStrip:
   regulators: [in-abdm-m1, in-dpdp, in-gst]
   ratings: true

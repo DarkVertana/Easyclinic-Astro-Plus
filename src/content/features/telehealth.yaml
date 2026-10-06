@@ -11,16 +11,20 @@ h1: Teleconsultations beside your clinic visits
 linkLabel: Telehealth
 eyebrow: Telehealth and video consults
 openingAnswer: >-
-  EasyClinic is telemedicine software for doctors that books video consults on the same calendar as your
-  clinic visits and keeps their prescriptions on the same patient record. Video consultations come with
-  the Premium plan, at {price:usd.premium.annual} per doctor per month billed annually
-  ({price:inr.premium.annual} in India), and the patient joins from a web browser on a phone or computer
-  with nothing to install.
+  EasyClinic is telemedicine software for doctors: video consults share the calendar and patient record
+  with clinic visits, and patients join from a browser on a phone or computer with nothing to install.
+  Video consults come with Premium, at {price:usd.premium.annual} per doctor per month billed annually
+  ({price:inr.premium.annual} in India).
 summary: >-
   Video consults on the same calendar and patient record as your clinic visits, with the fee payable
   online at booking. On the Premium plan.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/3_Video_consultent.png
+  alt: An EasyClinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

@@ -7,21 +7,24 @@ secondaryKeywords:
   - RCM software for clinics
 title: 'Clinic Revenue Cycle Management: EasyClinic'
 metaDescription: 'Clinic revenue cycle management in EasyClinic: find unbilled orders, wrong prices, cash variance and denied claims before the month closes.'
-h1: Stop revenue leakage before it reaches your books
+h1: Catch revenue leakage before month end
 linkLabel: Revenue management
 eyebrow: Revenue management
 openingAnswer: >-
-  EasyClinic's revenue cycle management (RCM) puts a control on each of the four places a clinic's
-  revenue leaks: lab orders and procedures become invoice lines as they are done, each bill takes its
-  price from the price list that applies, every cash register closes the day with its own end-of-day
-  report, and denied claims are listed on a denial report. Billing comes with every plan from
-  {price:usd.professional.annual} per doctor per month billed annually, and the claim reports need
-  insurance claims, which is part of Enterprise and an add-on on Professional or Premium.
+  EasyClinic's revenue cycle management puts a control on each of the four places a clinic's revenue
+  leaks: unbilled orders, wrong prices, cash that does not balance at day end and denied claims. Billing
+  comes with every plan, from {price:usd.professional.annual} per doctor per month billed annually, and
+  the claim reports with insurance claims.
 summary: >-
   Four leaks found before month end, each with its own control: unbilled orders, wrong price lists,
   cash variance and denied claims.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/products/5.png
+  alt: A financial dashboard with total visit revenue, total cost and average cost per visit, revenue by city, clinic and department, cost of treatment over time and by patient income level, and revenue by chronic illness
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo

@@ -15,20 +15,24 @@ title: 'Ayurveda Clinic Management Software: EasyClinic'
 metaDescription: >-
   Ayurveda clinic management software that tracks each Panchakarma course by session and bills it as
   one package on Premium, at {price:inr.premium.annual} a doctor a month.
-h1: 'Ayurveda clinic software: Panchakarma courses and prescriptions on one record'
+h1: Ayurveda clinic software for Panchakarma courses
 linkLabel: Ayurveda
 eyebrow: For Ayurveda clinics and Panchakarma centres
 openingAnswer: >-
-  An Ayurveda clinic needs two things a general EMR leaves out: a treatment plan that holds a multi-day
-  Panchakarma course session by session, and a prescription written in Ayurvedic medicines with the diet
-  and daily routine beside it. EasyClinic keeps both on the patient's record, and its Premium plan, at
-  {price:inr.premium.annual} per doctor per month billed annually in India or {price:usd.premium.annual}
-  in US dollars, adds your own case-sheet forms and bills the course as one package paid in parts.
+  An Ayurveda clinic needs a plan that holds a Panchakarma course session by session, and prescriptions in
+  Ayurvedic medicines with diet and routine. EasyClinic keeps both, and Premium, at
+  {price:inr.premium.annual} per doctor per month billed annually in India, adds your own case-sheet forms
+  and bills a course as one package.
 summary: >-
   The Panchakarma course and the Ayurvedic prescription on one treatment plan, with the course billed as
   one package paid in parts on the Premium plan.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/Examination-3-1.png'
+  alt: 'An EasyClinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+  frame: none
 ctas:
   primary:
     label: Book an Ayurveda clinic demo

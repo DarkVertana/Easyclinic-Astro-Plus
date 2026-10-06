@@ -4,8 +4,8 @@ import { getCollection, getEntry } from 'astro:content';
 import logo from '../../assets/logo/easyclinic-logo-white.png';
 import { getRegistry } from '../../lib/content/registry';
 import { optionalConfirmed } from '../../lib/content/need';
-import { isProduction } from '../../lib/content/stage';
 import Icon from '../ui/Icon.astro';
+import LinkList from './FooterLinks.astro';
 
 const nav = (await getEntry('nav', 'nav'))!.data;
 const site = (await getEntry('site', 'site'))!.data;
@@ -13,9 +13,11 @@ const registry = await getRegistry();
 const countries = (await getCollection('countries')).filter((c) => c.data.flagship);
 
 const resolve = (href: string) => (href.startsWith('/') ? registry.urlFor(href) : href);
+const links = (list: (typeof nav.footer)[number]['links']) =>
+  list.map((l) => ({ ...l, href: resolve(l.href), missing: l.href.startsWith('/') && !registry.get(l.href) })).filter((l) => l.href);
 const groups = nav.footer
-  .map((g) => ({ ...g, links: g.links.map((l) => ({ ...l, href: resolve(l.href), missing: l.href.startsWith('/') && !registry.get(l.href) })).filter((l) => l.href) }))
-  .filter((g) => g.links.length);
+  .map((g) => ({ ...g, links: links(g.links), sections: g.sections.map((s) => ({ ...s, links: links(s.links) })).filter((s) => s.links.length) }))
+  .filter((g) => g.links.length || g.sections.length);
 const legal = nav.legal.map((l) => ({ ...l, href: resolve(l.href) })).filter((l) => l.href);
 
 // Country phone numbers with the named local contact (spec 3.3). Unknown contacts show as placeholders in preview.
@@ -38,7 +40,14 @@ const year = new Date().getFullYear();
       <div>
         <Image src={logo} alt={site.logoAlt} width={162} height={32} class="h-8 w-auto" />
         <p class="mt-4 max-w-xs text-sm leading-relaxed">
-          Clinic software for doctors, polyclinics, clinic chains and hospital OPDs. Run from Kolkata since {site.foundingYear}.
+          EasyClinic is a secure and versatile healthcare software platform combining Electronic Medical Records (EMR), Practice
+          Management, and Clinic Administration tools, designed for physicians, specialists, polyclinics, nursing homes, and
+          multi-location clinic networks.
+        </p>
+        <p class="mt-3 max-w-xs text-sm leading-relaxed">
+          Built for an exceptional user experience, EasyClinic integrates AI and automation to reduce clinical errors, enhance
+          patient engagement, simplify documentation, and deliver intelligent, workflow-driven care across all levels of
+          practice, boosting patient care and increasing revenues.
         </p>
         <address class="mt-5 text-sm not-italic leading-relaxed">
           {site.address.street}, {site.address.city} {site.address.postalCode}, India<br />
@@ -61,17 +70,17 @@ const year = new Date().getFullYear();
       <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
         {
           groups.map((group) => (
-            <nav aria-label={group.title}>
-              <p class="mb-3 font-semibold text-white">{group.title}</p>
-              <ul class="space-y-2 text-sm">
-                {group.links.map((l) => (
-                  <li>
-                    <a href={l.href} class:list={['text-ink-inverse-muted no-underline hover:text-white hover:underline', l.missing && !isProduction && 'underline decoration-dotted']}>
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <nav aria-label={group.continued ? `${group.title} (continued)` : group.title}>
+              <p class:list={['mb-3 font-semibold text-white', group.continued && 'sm:invisible']} aria-hidden={group.continued ? 'true' : undefined}>
+                {group.title}
+              </p>
+              {group.links.length > 0 && <LinkList links={group.links} />}
+              {group.sections.map((section, i) => (
+                <>
+                  <p class:list={['mb-2 text-sm font-semibold text-white', (i > 0 || group.links.length > 0) && 'mt-5']}>{section.title}</p>
+                  <LinkList links={section.links} />
+                </>
+              ))}
             </nav>
           ))
         }

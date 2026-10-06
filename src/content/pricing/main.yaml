@@ -7,13 +7,13 @@ secondaryKeywords:
   - price per doctor per month
 title: 'EasyClinic Pricing: Per Doctor, Per Month'
 metaDescription: Professional {price:usd.professional.annual}, Premium {price:usd.premium.annual}, Enterprise on quote. Reception included, no setup fee, no contract.
-h1: Pricing, per doctor per month
+h1: Clinic software pricing, per doctor per month
 linkLabel: Pricing
 openingAnswer: >-
-  EasyClinic's clinic management software starts at {price:usd.professional.annual} per doctor per
-  month on the Professional plan, billed annually, or {price:inr.professional.annual} in India. Premium
-  is {price:usd.premium.annual} per doctor per month, and Enterprise, for clinic chains and hospital
-  OPDs, is priced on a quote.
+  EasyClinic's clinic management software starts at {price:usd.professional.annual} per doctor per month
+  on the Professional plan, billed annually, or {price:inr.professional.annual} in India. Premium is
+  {price:usd.premium.annual} per doctor per month ({price:inr.premium.annual} in India), and Enterprise,
+  for clinic chains and hospital OPDs, is priced on a quote.
 summary: >-
   Professional {price:usd.professional.annual} and Premium {price:usd.premium.annual} per doctor per
   month, Enterprise on quote, with what a 5-doctor polyclinic pays and the four-day training path.
@@ -32,6 +32,11 @@ editorialPass:
     The free-EMR comparison table is general rather than drawn from a named clinic, and the add-on
     cards carry no prices, so a doctor may find those parts generic; the FAQ answers were rewritten by
     AI and still need the read-aloud pass.
+heroMedia:
+  kind: screenshot
+  src: ../../assets/images/pricing/Payor-7.png
+  alt: An EasyClinic patient profile with the patient's details, a summary of the last visit and the insurer, membership number and cover category on file
+  frame: none
 heroStrip:
   ratings: true
 ctas:

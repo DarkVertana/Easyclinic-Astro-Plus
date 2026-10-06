@@ -10,20 +10,24 @@ title: 'Cardiology EMR Software: EasyClinic'
 metaDescription: >-
   Cardiology EMR software: ECG and echo reports on the patient's record with blood pressure and lab trend
   charts, on Premium at {price:usd.premium.annual} per doctor a month.
-h1: 'EMR for cardiology clinics: ECG reports and blood pressure trends on one record'
+h1: Cardiology EMR with ECG reports and BP trends
 linkLabel: Cardiology
 eyebrow: For cardiology clinics
 openingAnswer: >-
-  A cardiology clinic sees the same patients for years, so it needs the ECG and echo reports on the same
-  record as the note, and blood pressure and lab results charted across the visits. EasyClinic's Premium
-  plan, the plan for specialists, keeps the reports and the trend charts on one patient record and adds
-  cardiology templates, at {price:inr.premium.annual} per doctor per month in India or
-  {price:usd.premium.annual} in US dollars, billed annually.
+  A cardiology clinic sees the same patients for years, so it needs ECG and echo reports beside the notes,
+  and blood pressure and lab results charted across visits. EasyClinic's Premium plan keeps both on one
+  record and adds cardiology templates, at {price:inr.premium.annual} per doctor per month in India or
+  {price:usd.premium.annual}, billed annually.
 summary: >-
   ECG and echo reports and the blood pressure chart on one patient record, with lab trends and cardiology
   templates on the Premium plan.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/solutions/14_Dashboard (1).jpg'
+  alt: 'EasyClinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today''s earnings and invoices by status'
+  frame: none
 ctas:
   primary:
     label: Book a cardiology clinic demo
