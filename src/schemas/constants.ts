@@ -118,3 +118,6 @@ export const STATUS_LABELS: Record<RegulatorState | IntegrationState, string> = 
   'not-applicable': 'Not applicable',
   beta: 'Beta',
 };
+
+/** Country flags shipped in src/assets/flags (country-flag-icons, MIT, 1x1) for the chipCloud block. Add the SVG first. */
+export const CHIP_FLAGS = ['ae', 'et', 'fj', 'gh', 'in', 'ke', 'mu', 'mv', 'my', 'ng', 'qa', 'rw', 'sc', 'so', 'sr', 'tt', 'tz', 'ug', 'za'] as const;

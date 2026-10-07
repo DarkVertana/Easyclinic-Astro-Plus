@@ -37,6 +37,7 @@ import RegulatorTable from './RegulatorTable/RegulatorTable.astro';
 import ScopeBox from './ScopeBox/ScopeBox.astro';
 import StepList from './StepList/StepList.astro';
 import TestimonialRow from './TestimonialRow/TestimonialRow.astro';
+import ChipCloud from './ChipCloud/ChipCloud.astro';
 
 /** One component per section discriminant; the `satisfies` keeps it in step with src/schemas/sections.ts. */
 export const BLOCKS = {
@@ -78,4 +79,5 @@ export const BLOCKS = {
   scopeBox: ScopeBox,
   stepList: StepList,
   testimonialRow: TestimonialRow,
+  chipCloud: ChipCloud,
 } satisfies Record<BlockName, unknown>;

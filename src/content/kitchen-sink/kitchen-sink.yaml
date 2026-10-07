@@ -116,6 +116,13 @@ sections:
     value:
       heading: Regulator table
       countries: [in]
+  - discriminant: chipCloud
+    value:
+      heading: Chip cloud
+      items:
+        - { label: EMR, href: /features/emr/ }
+        - { label: EMR Software in India, flag: in, href: /clinic-management-software-india/ }
+      cta: { label: View pricing, href: /pricing/ }
   - discriminant: regulatorStrip
     value:
       heading: Regulator strip

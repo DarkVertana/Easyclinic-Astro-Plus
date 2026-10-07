@@ -116,7 +116,7 @@ sections:
     value:
       id: modules
       heading: Everything the clinic runs on, in four groups
-      intro: Twelve modules, grouped the way a clinic is run. Which ones you get depends on the plan, and the [price list](/pricing/) shows it line by line.
+      intro: Twelve modules, grouped the way a clinic is run.
       columns: 4
       items:
         - title: Front desk
@@ -312,8 +312,8 @@ closing:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
   secondary:
-    label: See pricing
-    href: /pricing/
+    label: See all features
+    href: /features/
 
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
