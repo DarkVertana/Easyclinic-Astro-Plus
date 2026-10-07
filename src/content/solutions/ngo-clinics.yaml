@@ -14,7 +14,7 @@ h1: Software for NGO clinics and mission hospitals
 linkLabel: NGO and mission clinics
 eyebrow: For NGO clinics and mission hospitals
 openingAnswer: >-
-  EasyClinic is clinic software for NGO clinics and mission hospitals: each visit and bill is recorded
+  Easy Clinic is clinic software for NGO clinics and mission hospitals: each visit and bill is recorded
   once, and donor reports, from patients by site to a day-end financial report, are built from those
   records. NGO pricing is [NGO tier or discount, in numbers], and every site needs an internet connection.
 summary: >-
@@ -25,7 +25,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/14_Dashboard (1).jpg'
-  alt: 'EasyClinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today''s earnings and invoices by status'
+  alt: 'Easy Clinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today''s earnings and invoices by status'
   frame: none
 ctas:
   primary:
@@ -34,7 +34,7 @@ ctas:
   secondary:
     label: Book a demo
     href: /contact-us/#book-a-demo
-  whatsapp: Hi, I run an NGO or mission clinic and was reading the EasyClinic NGO page. I would like to apply for NGO pricing.
+  whatsapp: Hi, I run an NGO or mission clinic and was reading the Easy Clinic NGO page. I would like to apply for NGO pricing.
 
 sections:
   - discriminant: prose
@@ -44,19 +44,19 @@ sections:
       body: |-
         A monthly donor report usually asks four things: how many people the clinic saw, who they were, which medicines went out, and where the money went. On paper, somebody answers them at month end by counting through the register and the stock book, and that somebody is usually also running the clinic.
 
-        On EasyClinic the answers come from records the staff made while the patient was in front of them. Patient numbers and demographics come from the visits, narrowed with filters and search parameters of your own, and the day-end financial report covers every transaction, for each clinic and for the whole organisation. Reports can be generated and sent out automatically, and they export to Excel and PDF for the grant report.
+        On Easy Clinic the answers come from records the staff made while the patient was in front of them. Patient numbers and demographics come from the visits, narrowed with filters and search parameters of your own, and the day-end financial report covers every transaction, for each clinic and for the whole organisation. Reports can be generated and sent out automatically, and they export to Excel and PDF for the grant report.
 
   - discriminant: dataTable
     value:
       id: what-donors-ask
       heading: What donors ask for and what the system produces
       intro: >-
-        Each row is a report or dashboard EasyClinic already describes on its own pages, with the plan or
+        Each row is a report or dashboard Easy Clinic already describes on its own pages, with the plan or
         module that includes it.
-      caption: Donor questions, the EasyClinic report that answers each, and the plan it needs
+      caption: Donor questions, the Easy Clinic report that answers each, and the plan it needs
       columns:
         - What the donor asks
-        - What EasyClinic produces
+        - What Easy Clinic produces
         - Plan
       rows:
         - - How many patients did the clinic see, and who were they?
@@ -84,16 +84,16 @@ sections:
       id: connectivity
       heading: It needs an internet connection at every site
       body: |-
-        EasyClinic is cloud software and does not run fully offline today. Every site that records patients in it needs a mobile data or Wi-Fi connection while the clinic is open, and a second connection, even a phone hotspot beside the registration desk, is worth keeping for the day the main line drops.
+        Easy Clinic is cloud software and does not run fully offline today. Every site that records patients in it needs a mobile data or Wi-Fi connection while the clinic is open, and a second connection, even a phone hotspot beside the registration desk, is worth keeping for the day the main line drops.
 
-        On Premium and Enterprise every site works in the same account, so what a site records shows on the programme's dashboards in real time, and head office does not wait for a site to send its figures in. The dashboards open on a phone too, and the phone needs a connection as well. If an outreach camp has no signal at all, EasyClinic is the wrong tool for the camp itself today.
+        On Premium and Enterprise every site works in the same account, so what a site records shows on the programme's dashboards in real time, and head office does not wait for a site to send its figures in. The dashboards open on a phone too, and the phone needs a connection as well. If an outreach camp has no signal at all, Easy Clinic is the wrong tool for the camp itself today.
 
         [The slowest connection a site can work on, measured, and whether private cloud hosting on Enterprise keeps a site running when its internet drops].
 
   - discriminant: prose
     value:
       id: pricing
-      heading: What EasyClinic costs an NGO clinic
+      heading: What Easy Clinic costs an NGO clinic
       body: |-
         [NGO tier or discount, in numbers, and which organisations qualify].
 
@@ -108,25 +108,25 @@ sections:
       body: |-
         Programme clinics often see the patients with the most to lose if a record leaks: people living with HIV, survivors of violence, refugees, children. Kenya's Data Protection Act 2019 treats health data as sensitive personal data, as many data protection laws do, and under it the clinic is the data controller, because it decides what is recorded and why. The clinic is responsible for obtaining the patient's consent where the law asks for it. Donor reports need counts rather than names, so check each export for names and patient numbers before it leaves the clinic.
 
-        In EasyClinic each login sees only what its role allows, and access can also be set by department. The reception login included with every plan books patients and takes payments but cannot open the EMR, and audit logs keep a record of what each user did. What EasyClinic may do with the data it holds for your clinic is set out in our [privacy policy](/privacy/), which has a separate section for Kenya. Read the part that covers your country with your data protection lead before any patient records go in.
+        In Easy Clinic each login sees only what its role allows, and access can also be set by department. The reception login included with every plan books patients and takes payments but cannot open the EMR, and audit logs keep a record of what each user did. What Easy Clinic may do with the data it holds for your clinic is set out in our [privacy policy](/privacy/), which has a separate section for Kenya. Read the part that covers your country with your data protection lead before any patient records go in.
 
   - discriminant: scopeBox
     value:
       id: not-for-you
-      heading: EasyClinic is not for you if
+      heading: Easy Clinic is not for you if
       variant: notFor
       items:
         - >-
-          **Your outreach camps have no signal at all.** EasyClinic does not run fully offline today, so a
+          **Your outreach camps have no signal at all.** Easy Clinic does not run fully offline today, so a
           camp with no mobile data or Wi-Fi needs another way to record patients on the day.
         - >-
-          **You need inpatient wards.** EasyClinic runs outpatient care and day care. A mission hospital
-          with beds keeps a separate system for the wards and theatres and runs EasyClinic in the OPD, as
+          **You need inpatient wards.** Easy Clinic runs outpatient care and day care. A mission hospital
+          with beds keeps a separate system for the wards and theatres and runs Easy Clinic in the OPD, as
           the [hospital OPD page](/solutions/hospital-opd/) explains.
         - >-
           **Your facility is in Kenya's national KenyaEMR rollout.** If you report on HIV or TB programmes
           as part of it, KenyaEMR is built for that job and has no licence fee.
-          [EasyClinic vs KenyaEMR](/easyclinic-vs-kenyaemr/) sets out who each one suits.
+          [Easy Clinic vs KenyaEMR](/easyclinic-vs-kenyaemr/) sets out who each one suits.
         - >-
           **Your site is one clinician with no staff and no reports to send.** A free EMR may be enough,
           and we will tell you so.
@@ -134,10 +134,10 @@ sections:
   - discriminant: proofBlock
     value:
       id: clients
-      heading: Who already uses EasyClinic
+      heading: Who already uses Easy Clinic
       intro: >-
         Hand in Hand India and Dayanand Education Society are among the clients listed on easyclinic.io.
-        We do not yet have a programme manager's own words to put on this page, so these are EasyClinic's
+        We do not yet have a programme manager's own words to put on this page, so these are Easy Clinic's
         public ratings, from clinics of every kind.
       variant: badges
       badges:
@@ -151,19 +151,19 @@ faqHeading: Questions NGO and mission clinics ask
 faq:
   - question: Is there a discount for NGOs and mission clinics?
     answer: >-
-      [NGO tier or discount, in numbers, and which organisations qualify]. Without it, EasyClinic costs
+      [NGO tier or discount, in numbers, and which organisations qualify]. Without it, Easy Clinic costs
       {price:usd.professional.annual} per doctor per month billed annually on Professional
       ({price:inr.professional.annual} in India), with no setup fee and no contract, and support and
       training are included.
-  - question: Does EasyClinic work offline at outreach sites?
+  - question: Does Easy Clinic work offline at outreach sites?
     answer: >-
-      No, EasyClinic does not run fully offline today, so a site needs a mobile data or Wi-Fi connection
+      No, Easy Clinic does not run fully offline today, so a site needs a mobile data or Wi-Fi connection
       while it records patients. If your outreach camps work with no signal at all, keep the camp on paper
       and enter the visits when the team is back in range, or choose a system built to run offline.
   - question: Can the figures go into DHIS2 or a donor's portal?
     answer: >-
       In Kenya, the MOH 705 and DHIS2 reports are built from the visits already recorded, so nobody tallies
-      the register at month end. [Whether EasyClinic submits the figures to DHIS2 directly or the clinic
+      the register at month end. [Whether Easy Clinic submits the figures to DHIS2 directly or the clinic
       uploads them, as of date]. For a donor's own portal, reports export to Excel and PDF for your
       team to upload, and a direct connection to a particular system is custom development: part of
       Enterprise, or scoped per project as a module on Professional and Premium.
@@ -179,9 +179,9 @@ faq:
       minutes, included in every plan, so each new site's staff learn between patients. After that,
       support is unlimited at no extra cost, by phone or in writing, and Premium and Enterprise add a
       named account manager.
-  - question: Which languages does EasyClinic work in?
+  - question: Which languages does Easy Clinic work in?
     answer: >-
-      [Languages the EasyClinic screens are available in, and prescription languages beyond English and
+      [Languages the Easy Clinic screens are available in, and prescription languages beyond English and
       Swahili]. In Kenya, prescriptions print in English and Swahili, so the patient reads the dosage in
       the language they use at home.
 
@@ -204,7 +204,7 @@ links:
       label: Clinic software in Kenya
       description: What a clinic in Kenya needs from its software, including the MOH 705 report.
     - href: /easyclinic-vs-kenyaemr/
-      label: EasyClinic vs KenyaEMR
+      label: Easy Clinic vs KenyaEMR
       description: Which EMR suits a Kenyan facility, with every KenyaEMR fact sourced and dated.
     - href: /pricing/
       label: Plans and prices
@@ -227,7 +227,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The page ties each donor question to a report EasyClinic's own pages describe, down to the MOH 705 and
+    The page ties each donor question to a report Easy Clinic's own pages describe, down to the MOH 705 and
     DHIS2 reports for Kenyan clinics and the reception login that cannot open the EMR, names two clients
     listed on easyclinic.io, and says plainly that it does not run fully offline and does not cover
     inpatient wards.
@@ -238,14 +238,14 @@ editorialPass:
     a grant report.
 
 notes:
-  - 'Status draft: spec 5.10 item 4 wants an NGO tier or discount "in numbers [decide before launch]". Placeholders to fill before publishing: the NGO tier or discount and who qualifies (opening answer, pricing section, first FAQ); how a nurse or clinical officer who sees patients alone is licensed (pricing section; pricing/main.yaml also lists the licence rule for nurses as unknown); the screen and prescription languages (last FAQ); the slowest connection a site can work on and whether private cloud hosting keeps a site running offline (connectivity section); whether EasyClinic submits to DHIS2 directly or the clinic uploads (DHIS2 FAQ). Everything else uses confirmed facts only, so the page can publish once those five are supplied.'
+  - 'Status draft: spec 5.10 item 4 wants an NGO tier or discount "in numbers [decide before launch]". Placeholders to fill before publishing: the NGO tier or discount and who qualifies (opening answer, pricing section, first FAQ); how a nurse or clinical officer who sees patients alone is licensed (pricing section; pricing/main.yaml also lists the licence rule for nurses as unknown); the screen and prescription languages (last FAQ); the slowest connection a site can work on and whether private cloud hosting keeps a site running offline (connectivity section); whether Easy Clinic submits to DHIS2 directly or the clinic uploads (DHIS2 FAQ). Everything else uses confirmed facts only, so the page can publish once those five are supplied.'
   - 'Grounding: live /ngo-landing-page/ fetched 2026-09-26 (it 301s here per src/data/redirects.yaml, so no redirectFrom). Used from it: end-of-day financial reports clinic- and organisation-wide covering all transactions; role-based access control; automated generation and distribution of reports; centralised patient records across locations. Report library, filters, Excel and PDF export, custom reports, access by department, audit logs, inventory reports and real-time dashboards on a phone follow the grounding recorded on /features/reports-and-dashboards/ (live /features/ and /reports-and-dashboards/). Plans from plans.yaml. Reception rule, no contract, support channels, four-day training and "does not run fully offline today" from facts.md. MOH 705 and DHIS2 for Kenya from live /kenyademo/ ("MOH 705 and DHIS2 done automatically"), worded as on /kenyademo/ in this repo.'
   - 'Left out of the live NGO page: tracking donor contributions and fund usage, fundraising campaign management and "increased funding from donors" (no detail of what is recorded; confirm with product before any donor-tracking claim); AI clinician assistant, AI-generated reporting, predictive health-risk AI and AI inventory demand forecasting (not in plans.yaml under those names); automated vaccination and medication-refill reminders (plans.yaml has SMS and email reminders only); staff burnout and turnover claims (unmeasured); "Join 5000+ Doctors" stat line; "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" (conflicts with published pages that say there is no free trial).'
   - 'Spec 5.10 table rows left out for lack of a grounded report: visits by programme (whether visits can be tagged by programme or grant is unknown), services by category, referrals, and "demographics without identifiers" (whether a demographics report carries no identifiers is not confirmed, so the page gives advice to check exports instead). Custom report creation has no confirmed plan, so the table gives no plan for it.'
-  - 'Connectivity (spec 5.10 item 3): offline and "what syncs and when" answered from facts.md ("does not run fully offline today") and real-time dashboards; no sync behaviour is claimed. Not stated because unknown: the minimum bandwidth EasyClinic needs per site (spec 5.10 promises "low bandwidth"; supply a measured figure to restore it), whether the full app works in a phone browser, and the self-hosted option''s behaviour without internet (the self-hosted option from the live Kenya listicle is not described for that reason; the connectivity section carries a placeholder for the measured connection and for private cloud hosting, plans.yaml Enterprise). The live Kenya listicle FAQ also says EasyClinic is "tuned to stay responsive on low bandwidth" and works on 3G; not used because it is not in the confirmed-facts list and the same page carries claims that conflict with other pages (2-4 week setup, per user and per location pricing).'
-  - 'Data protection (spec 5.10 item 5): the obligation is described from src/data/regulators/ke-dpa.yaml and the Kenya section of /privacy/ (clinic as data controller; consent is the provider''s responsibility), with no compliance claim. Conflict for the company and legal: the global part of /privacy/ (section 2(d)) says EasyClinic "may collect, analyse, use, publish, create and sell de-identified information", while the Kenya section says "We do not sell personal data, health data, or de-identified data derived from health data". For that reason the live pricing FAQ line "We never misuse, sell or in any way disclose your data" is not quoted here, and the page sends readers to the policy for their country. The Kenya section also describes consent-recording fields and an audit record of consent; not claimed because product features in the legal text are not in the confirmed-facts list. Add them once product confirms, with the countries they apply to.'
+  - 'Connectivity (spec 5.10 item 3): offline and "what syncs and when" answered from facts.md ("does not run fully offline today") and real-time dashboards; no sync behaviour is claimed. Not stated because unknown: the minimum bandwidth Easy Clinic needs per site (spec 5.10 promises "low bandwidth"; supply a measured figure to restore it), whether the full app works in a phone browser, and the self-hosted option''s behaviour without internet (the self-hosted option from the live Kenya listicle is not described for that reason; the connectivity section carries a placeholder for the measured connection and for private cloud hosting, plans.yaml Enterprise). The live Kenya listicle FAQ also says Easy Clinic is "tuned to stay responsive on low bandwidth" and works on 3G; not used because it is not in the confirmed-facts list and the same page carries claims that conflict with other pages (2-4 week setup, per user and per location pricing).'
+  - 'Data protection (spec 5.10 item 5): the obligation is described from src/data/regulators/ke-dpa.yaml and the Kenya section of /privacy/ (clinic as data controller; consent is the provider''s responsibility), with no compliance claim. Conflict for the company and legal: the global part of /privacy/ (section 2(d)) says Easy Clinic "may collect, analyse, use, publish, create and sell de-identified information", while the Kenya section says "We do not sell personal data, health data, or de-identified data derived from health data". For that reason the live pricing FAQ line "We never misuse, sell or in any way disclose your data" is not quoted here, and the page sends readers to the policy for their country. The Kenya section also describes consent-recording fields and an audit record of consent; not claimed because product features in the legal text are not in the confirmed-facts list. Add them once product confirms, with the countries they apply to.'
   - 'Named clients (spec 5.10 item 7): Hand in Hand India and Dayanand Education Society are logo-wall alts on live /about-us/ and /ai/ (facts.md section 3). Named only as "clients listed on easyclinic.io", with no description of their programmes and without calling them NGO clinics. Replace or add a testimonial from an NGO client when one is collected; the proof block is the badges variant because every testimonial is placed elsewhere and the customer variant renders only with a testimonial.'
-  - 'FAQ (spec 5.10 item 8 lists seven topics for six questions): donor portals and DHIS2 export share one question. "Training on the ground" is asked as how long it takes, because whether trainers travel to a programme site, and at what cost, is unknown. The DHIS2 answer says only that the Kenya reports are built from recorded visits; whether EasyClinic submits to DHIS2 directly or the clinic uploads is unknown, so the answer carries the same placeholder as /emr-software-in-kenya/. DHIS2 outside Kenya is not claimed. The multi-site answer follows /features/multi-location/ (Premium for more than one location; access for owned clinics, franchisees, mobile medical units and associate clinics from live /clinic-chain-software/).'
+  - 'FAQ (spec 5.10 item 8 lists seven topics for six questions): donor portals and DHIS2 export share one question. "Training on the ground" is asked as how long it takes, because whether trainers travel to a programme site, and at what cost, is unknown. The DHIS2 answer says only that the Kenya reports are built from recorded visits; whether Easy Clinic submits to DHIS2 directly or the clinic uploads is unknown, so the answer carries the same placeholder as /emr-software-in-kenya/. DHIS2 outside Kenya is not claimed. The multi-site answer follows /features/multi-location/ (Premium for more than one location; access for owned clinics, franchisees, mobile medical units and associate clinics from live /clinic-chain-software/).'
   - 'Pricing section shows USD and INR only: KES, AED and NGN prices are unknown. A Kenyan NGO reads a dollar price until KES is supplied.'
   - 'Hero screenshot (spec 5.10 item 1: programme report with visits, services and stock by month) left out: no screenshots exist, and no single "programme report" is confirmed as a product screen. The first section describes the report in words from confirmed reports.'
   - 'Spec 6.5 pass: the page has no named person and no measured figure of its own; the NGO price will be its number. Both CTAs go to /contact-us/#book-a-demo, as the orchestrator brief sets; point "Apply for NGO pricing" at an application form if one is built.'

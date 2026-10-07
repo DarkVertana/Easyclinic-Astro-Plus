@@ -5,12 +5,12 @@ headKeyword: clinic management software pricing
 secondaryKeywords:
   - EMR software cost
   - price per doctor per month
-title: 'EasyClinic Pricing: Per Doctor, Per Month'
+title: 'Easy Clinic Pricing: Per Doctor, Per Month'
 metaDescription: Professional {price:usd.professional.annual}, Premium {price:usd.premium.annual}, Enterprise on quote. Reception included, no setup fee, no contract.
 h1: Clinic software pricing, per doctor per month
 linkLabel: Pricing
 openingAnswer: >-
-  EasyClinic's clinic management software starts at {price:usd.professional.annual} per doctor per month
+  Easy Clinic's clinic management software starts at {price:usd.professional.annual} per doctor per month
   on the Professional plan, billed annually, or {price:inr.professional.annual} in India. Premium is
   {price:usd.premium.annual} per doctor per month ({price:inr.premium.annual} in India), and Enterprise,
   for clinic chains and hospital OPDs, is priced on a quote.
@@ -23,7 +23,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    Specific to EasyClinic and to India: the dollar and rupee prices per doctor, the included
+    Specific to Easy Clinic and to India: the dollar and rupee prices per doctor, the included
     reception login that cannot open the EMR, the four-day training timetable in minutes, and two
     Indian doctors (a Jaipur homeopath, and a pulmonologist who types a prescription in half a
     minute); nothing yet speaks to a clinic in Kenya, the UAE or Nigeria, because their local prices
@@ -35,7 +35,7 @@ editorialPass:
 heroMedia:
   kind: screenshot
   src: ../../assets/images/pricing/Payor-7.png
-  alt: An EasyClinic patient profile with the patient's details, a summary of the last visit and the insurer, membership number and cover category on file
+  alt: An Easy Clinic patient profile with the patient's details, a summary of the last visit and the insurer, membership number and cover category on file
   frame: none
 heroStrip:
   ratings: true
@@ -46,10 +46,10 @@ ctas:
   secondary:
     label: Compare every feature
     href: /pricing/#compare
-  whatsapp: Hi, I am on the EasyClinic pricing page and would like the monthly price for my clinic.
+  whatsapp: Hi, I am on the Easy Clinic pricing page and would like the monthly price for my clinic.
 faqHeading: Questions clinic owners ask about price
 faq:
-  - question: How long does it take to learn EasyClinic, and what support comes after?
+  - question: How long does it take to learn Easy Clinic, and what support comes after?
     answer: >-
       Training takes about two hours, spread over four days: Day 1 is basic training (40 minutes),
       Day 2 is EMR scenario training (40 minutes), Day 3 is practice exercises (20 minutes) and Day 4,
@@ -58,7 +58,7 @@ faq:
       a named account manager.
   - question: Am I locked into any contracts?
     answer: >-
-      No, there is no contract on any plan and no setup fee, so you can use EasyClinic for as long as
+      No, there is no contract on any plan and no setup fee, so you can use Easy Clinic for as long as
       it works for your clinic and stop when it does not. If you would rather not pay for a year up
       front, quarterly billing is {price:usd.professional.quarterly} per doctor per month on
       Professional and {price:usd.premium.quarterly} on Premium.
@@ -67,7 +67,7 @@ faq:
       No, a reception login is included in the price of every plan, so a clinic with one doctor and
       one receptionist pays for one licence. The reception login is for the front desk and cannot open
       the EMR or write a prescription.
-  - question: Does EasyClinic still work if I open a second branch?
+  - question: Does Easy Clinic still work if I open a second branch?
     answer: >-
       Yes, on Premium and Enterprise, which both cover more than one location; Professional covers
       one. A solo clinic on Professional that opens a second branch moves up to Premium, where the plan
@@ -87,9 +87,9 @@ faq:
       plan and cost nothing extra. The customisation options already in the product carry no charge
       on any plan, and a feature built only for your clinic is scoped and priced as custom
       development. Professional does not include your own forms or print layouts.
-  - question: Does EasyClinic work without an internet connection?
+  - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No, EasyClinic does not run fully offline today, so a clinic whose internet line often drops
+      No, Easy Clinic does not run fully offline today, so a clinic whose internet line often drops
       should plan for a backup connection. A mobile data connection kept for that belongs in the
       budget alongside the licences.
   - question: Is there a discount for paying annually?
@@ -118,12 +118,12 @@ links:
       label: Security and compliance
       description: Where your patient data is stored, and who can see it.
     - href: /switch/
-      label: Switching to EasyClinic
+      label: Switching to Easy Clinic
       description: The four steps from the demo to your first day, and what changes for a clinic on paper or other software.
 closing:
   heading: Get the monthly total for your clinic in 20 minutes
   body: >-
-    Tell us how many doctors and branches you run. We will show EasyClinic on your own patient flow
+    Tell us how many doctors and branches you run. We will show Easy Clinic on your own patient flow
     and work out the monthly figure with you.
   primary:
     label: Book a 20-minute demo
@@ -133,7 +133,7 @@ closing:
     href: /pricing/india/
 notes:
   - 'Published on 2026-09-26 with confirmed facts only, without waiting for the fact sheet. Restore these when the company confirms them: support hours and time zones; refunds on unused months of annual billing; the export format for patient records on leaving and how long data is kept after cancelling; how many reception logins a clinic gets; the licence rule for nurses, pharmacists and visiting or part-time doctors; what counts as a location, whether there is a per-location fee and whether a doctor at two branches needs two licences; how long a prescription template takes to build and who builds it; what a Professional clinic can change on the printed prescription; whether INR prices include GST; KES, AED and NGN prices; NGO pricing; WhatsApp per-message charges; the data migration price; an indicative Enterprise range per doctor; add-on prices (the add-on cards show none in production).'
-  - 'FAQ changes for publication: "What does a second branch cost?" became "Does EasyClinic still work if I open a second branch?" (spec 6.4 keep list) until the per-location fee is confirmed; "Which currency will I be billed in, and are taxes included?" was replaced by the offline question; the data-on-leaving half of the contracts question and the NGO half of the discount question were cut. Spec 5.12 wants them back, with "what happens on cancelling", once the facts arrive. The free-EMR table lost its "Your data when you leave" row for the same reason.'
+  - 'FAQ changes for publication: "What does a second branch cost?" became "Does Easy Clinic still work if I open a second branch?" (spec 6.4 keep list) until the per-location fee is confirmed; "Which currency will I be billed in, and are taxes included?" was replaced by the offline question; the data-on-leaving half of the contracts question and the NGO half of the discount question were cut. Spec 5.12 wants them back, with "what happens on cancelling", once the facts arrive. The free-EMR table lost its "Your data when you leave" row for the same reason.'
   - 'Meta description follows the spec 4.1 row minus "See local prices": the lint counts the raw string, and with price tokens the full spec text is 167 characters (it renders at about 98). "Per doctor per month" is carried by the title.'
   - 'Head keyword: the spec title and H1 do not contain "clinic management software pricing", so the phrase sits in the first sentence of the opening answer. Title and H1 are kept exactly as spec 4.1 sets them.'
   - 'planCta uses "Start with {plan}", which the cards render as the spec labels "Start with Professional" and "Start with Premium". There is no free trial (spec 12), so the button goes to the demo form.'
@@ -221,7 +221,7 @@ sections:
       id: licences
       heading: Who needs a licence, and which plans cover more than one location
       body: |
-        You pay one licence for each doctor who uses EasyClinic, and every plan price is per doctor per month, whether you are billed annually or quarterly.
+        You pay one licence for each doctor who uses Easy Clinic, and every plan price is per doctor per month, whether you are billed annually or quarterly.
 
         Your receptionist does not need one. A reception login is included in the price of every plan, and the person at the front desk books appointments and takes payments on it. It cannot open the EMR or issue a prescription.
 
@@ -265,18 +265,18 @@ sections:
         Open-source EMRs such as OpenMRS and OpenEMR cost nothing to license, and for some clinics they
         are the right choice. The cost moves to the server and to the person you call when it stops
         working. This is where the money goes on each side.
-      caption: A free or open-source EMR compared with EasyClinic
+      caption: A free or open-source EMR compared with Easy Clinic
       columns:
         - What you are paying for
         - Free or open-source EMR
-        - EasyClinic
+        - Easy Clinic
       rows:
         - - The software licence
           - Nothing.
           - '{price:usd.professional.annual} per doctor per month on Professional, billed annually.'
         - - Hosting
           - Your own server, or a hosting partner you pay separately.
-          - Hosted by EasyClinic and included in the price. Enterprise can have a private cloud on request.
+          - Hosted by Easy Clinic and included in the price. Enterprise can have a private cloud on request.
         - - Setup and training
           - You or a local IT partner install and configure it.
           - No setup fee, and four days of training for you and your staff.
@@ -295,7 +295,7 @@ sections:
       note: >-
         KenyaEMR, used in many Kenyan public facilities, is a distribution of OpenMRS. Hosting and
         support costs for any open-source EMR depend on who you hire to run it. The
-        [EasyClinic and KenyaEMR comparison](/easyclinic-vs-kenyaemr/) goes through the two side by side.
+        [Easy Clinic and KenyaEMR comparison](/easyclinic-vs-kenyaemr/) goes through the two side by side.
   - discriminant: testimonialRow
     value:
       id: customers

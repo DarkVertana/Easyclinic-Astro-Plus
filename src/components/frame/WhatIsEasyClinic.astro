@@ -1,0 +1,22 @@
+---
+import { getEntry } from 'astro:content';
+
+/**
+ * Home page definition block, below the feature pills: one plain answer to "What is Easy Clinic?".
+ * Figures come from src/data/facts.yaml so they stay in step with the rest of the site.
+ */
+const facts = (await getEntry('facts', 'facts'))!.data.facts;
+---
+
+<section id="what-is-easyclinic" aria-labelledby="what-is-easyclinic-heading" class="section-y bg-surface-alt">
+  <div class="container-page mx-auto max-w-[66rem] text-center">
+    <h2 id="what-is-easyclinic-heading">What is Easy Clinic?</h2>
+    <p class="mt-4 text-[1.125rem] leading-[1.8] text-ink md:text-[1.25rem]">
+      Easy Clinic is an AI EMR and clinic management software that brings appointments, electronic medical records,
+      billing, pharmacy, inventory and WhatsApp patient engagement together on one platform. Doctors have used it since
+      {facts.founded.value} &mdash; today more than {facts.doctors.value?.replace(/\+$/, '')} practitioners across
+      {facts.countries.value} countries run their clinics on Easy Clinic, from solo practices to chains with
+      {facts.largestChain.value} locations.
+    </p>
+  </div>
+</section>

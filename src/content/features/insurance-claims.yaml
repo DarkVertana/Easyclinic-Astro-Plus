@@ -6,7 +6,7 @@ secondaryKeywords:
   - TPA software for hospitals
   - HMO claims management software
   - cashless claims software
-title: 'TPA and HMO Claims Software for Clinics: EasyClinic'
+title: 'TPA and HMO Claims Software for Clinics: Easy Clinic'
 metaDescription: >-
   Insurance claims software for clinics: the plan is checked at registration, and each cashless TPA or
   HMO claim is built from the visit and the bill.
@@ -14,7 +14,7 @@ h1: TPA and HMO claims without a second system
 linkLabel: Insurance claims
 eyebrow: Insurance claims
 openingAnswer: >-
-  EasyClinic is insurance claims software that catches three mistakes before a claim leaves: the wrong
+  Easy Clinic is insurance claims software that catches three mistakes before a claim leaves: the wrong
   plan picked at registration, a test or medicine the plan does not cover, and a pre-authorisation nobody
   raised. Claims come with Enterprise, or as an add-on on Professional and Premium.
 summary: >-
@@ -25,7 +25,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: ../../assets/images/products/17_Integration.png
-  alt: EasyClinic API documentation for AI tasks and appointment booking, with the logos of the health data standards it names
+  alt: Easy Clinic API documentation for AI tasks and appointment booking, with the logos of the health data standards it names
   frame: none
 ctas:
   primary:
@@ -34,7 +34,7 @@ ctas:
   secondary:
     label: Compare plans and prices
     href: /pricing/
-  whatsapp: Hi, I was reading the EasyClinic insurance claims page and would like to see a claim built from a visit in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic insurance claims page and would like to see a claim built from a visit in a demo.
 
 sections:
   - discriminant: painBlocks
@@ -129,7 +129,7 @@ sections:
             exclusions, the invoicing limits and the co-payment.
         - heading: The payer's price list on the bill
           body: >-
-            Each payer can have its own price list, and EasyClinic picks it when a linked patient is billed,
+            Each payer can have its own price list, and Easy Clinic picks it when a linked patient is billed,
             so nobody types a TPA rate at the counter. The invoice itself, with its tax, is covered on the
             billing page.
           link:
@@ -150,8 +150,8 @@ sections:
       heading: Who pays a clinic's claims in each country
       intro: >-
         The payers change from market to market while the steps above stay the same. This table lists who
-        pays a clinic's claims in India, Kenya, the UAE and Nigeria. It is not a list of EasyClinic
-        connections, and naming a payer here does not mean EasyClinic sends claims to it electronically.
+        pays a clinic's claims in India, Kenya, the UAE and Nigeria. It is not a list of Easy Clinic
+        connections, and naming a payer here does not mean Easy Clinic sends claims to it electronically.
       caption: Who pays a clinic's claims in each country, and what each asks of the clinic
       columns:
         - Country
@@ -182,7 +182,7 @@ sections:
             Each HMO sets its own claim forms and the documents that go with them. The NHIA accredits the
             facilities that treat patients under its schemes.
       note: >-
-        Any of these payers can be set up in EasyClinic as a payer profile with its plans and price list,
+        Any of these payers can be set up in Easy Clinic as a payer profile with its plans and price list,
         as described above. That is billing setup, not an electronic connection to the payer.
 
   - discriminant: prose
@@ -204,9 +204,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: EasyClinic's public ratings
+      heading: Easy Clinic's public ratings
       intro: >-
-        EasyClinic has not published a measured figure for claim rejections, so the proof on this page is
+        Easy Clinic has not published a measured figure for claim rejections, so the proof on this page is
         its public ratings. The Capterra link opens the reviews themselves.
       variant: badges
       badges:
@@ -231,12 +231,12 @@ faq:
       add-on is not in the per-doctor plan price, and Enterprise is priced on a quote. A single-doctor
       clinic that sees a few corporate patients a week sets up its payers the same way a hospital OPD
       does, only fewer of them.
-  - question: How does EasyClinic reduce rejected claims?
+  - question: How does Easy Clinic reduce rejected claims?
     answer: >-
       By catching the mistakes that start before billing while the patient is still in the clinic: the
       wrong plan at registration, an order the plan does not cover and a missing pre-authorisation. The
       bill is also priced from the payer's own list, so a claim does not go out at the cash price.
-      EasyClinic publishes no percentage for the fall in rejections, because it has no measured figure it
+      Easy Clinic publishes no percentage for the fall in rejections, because it has no measured figure it
       can source, so the number to watch is your own rejection rate by payer.
   - question: Can the patient pay their share at the desk and the insurer pay the rest?
     answer: >-
@@ -248,7 +248,7 @@ faq:
       Yes, a company that pays for its staff is set up as a payer in the same way as an insurer, with its
       own rates and the services it covers. Its employees and their dependants are linked to it at
       registration, and their visits are billed to the company on those terms.
-  - question: How does pre-authorisation work in EasyClinic?
+  - question: How does pre-authorisation work in Easy Clinic?
     answer: >-
       Where a payer needs to approve a test or procedure first, pre-authorisation is a step in the claim
       before the invoice, and the approval is recorded against the patient's visit. A claim that needs an
@@ -265,29 +265,29 @@ faq:
       Apart from emergency treatment, SHA pays only a contracted SHA facility with a valid facility code.
       It took over from NHIF on
       1 October 2024 and is moving claims from its provider portal into certified hospital management
-      systems. This page describes SHA's rules; it does not state EasyClinic's own SHA status.
-  - question: Does EasyClinic handle claims for inpatient admissions?
+      systems. This page describes SHA's rules; it does not state Easy Clinic's own SHA status.
+  - question: Does Easy Clinic handle claims for inpatient admissions?
     answer: >-
-      No, EasyClinic runs outpatient care, the OPD and day care, so its claims start from an outpatient
+      No, Easy Clinic runs outpatient care, the OPD and day care, so its claims start from an outpatient
       visit. Admissions and ward stays, and the claims for them, stay on your inpatient system.
 
 links:
   hub: /features/
   related:
     - href: /solutions/solo-clinic/
-      label: EasyClinic for a solo doctor
+      label: Easy Clinic for a solo doctor
       description: One doctor and a receptionist on the Professional plan, with claims added when insured patients arrive.
     - href: /solutions/polyclinic/
-      label: EasyClinic for a polyclinic
+      label: Easy Clinic for a polyclinic
       description: One record shared by every specialist, with roles that decide who sees what.
     - href: /solutions/clinic-chain/
-      label: EasyClinic for a clinic chain
+      label: Easy Clinic for a clinic chain
       description: Central control of every branch, with price lists set by branch and by payer.
     - href: /solutions/hospital-opd/
-      label: EasyClinic for a hospital OPD
+      label: Easy Clinic for a hospital OPD
       description: The OPD on one patient record, from the registration queue to the insurance claim.
     - href: /solutions/ngo-clinics/
-      label: EasyClinic for NGO and mission clinics
+      label: Easy Clinic for NGO and mission clinics
       description: Patient records and donor-ready reports for clinics run by NGOs and missions.
     - href: /features/billing/
       label: Billing
@@ -316,9 +316,9 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: >-
     The payer table (SHA beside Jubilee, AAR, CIC, Britam and Resolution in Kenya, DHA eClaimLink in
-    Dubai, HMOs and the NHIA in Nigeria) and the product detail taken from EasyClinic's own live payor and
+    Dubai, HMOs and the NHIA in Nigeria) and the product detail taken from Easy Clinic's own live payor and
     OPD pages, such as plan categories with co-payment rules and one visit billed to two payers, come from
-    EasyClinic's markets and product.
+    Easy Clinic's markets and product.
   readsMachineWritten: >-
     The three pain scenes are composites, labelled on the page as typical examples, and the page has no
     named person and no measured rejection figure, so it does not yet meet the spec 6.5 bar and needs a
@@ -330,10 +330,10 @@ notes:
   - 'Proof: the 34% denied-claims figure (live /curapilot/) and "Rejections fell from 23% to under 4% in one quarter" have no public source (facts.md section 4), so the proof block is the badges variant and the proof intro says no rejection figure is published. Replace with a measured rejection rate by payer and a finance-manager quote when either exists (spec 5.11).'
   - 'Capability sources (re-fetched 2026-09-26): live /payor-management/ (same text at /insurance-claim-management-system/): payer profiles with billing rates, contract terms, services covered and payment terms; subscription categories with coverage levels, restrictions and limits; exclusions; coverage validated at the time of care; staff can see what a plan covers; patients linked to payer plans at registration and updated when cover changes; invoices from payer rules. Live /hospital-opd-nursing-home-software/ "Insurance and 3rd Party Payor Management": membership categories with invoicing limits, co-payment rules and inclusions and exclusions; multi-payor billing in a single visit; automated co-pay and deductions; corporate clients as payor; employee and dependant management; multi-level member classification; bulk claim submission; bulk payment settlement; claim status tracking dashboard; payer price lists without manual input; and the Workflow Manager example "creating a visit linked to a 3rd party payor" with authorisation at role or user level (workflow rules are Enterprise in plans.yaml). The eight-step journey and the three rejection causes follow spec 5.11.'
   - 'Pre-authorisation is stated only at the level spec 5.11 gives it (a step in the claim journey, and a missing approval is caught): the step sits before the invoice and the approval is recorded against the visit. The only live wording with more detail ("Pre-authorisation in the visit: raise and track approvals without opening a second system") sits on /kenyademo/ under "Kenya · In development" for SHA, so the page does not say requests are raised or sent from the visit. The company should confirm how pre-authorisation works in the product today.'
-  - 'Editor pass 2026-09-26 removed: the April insurer-change scene (a stored plan link does not catch a changed insurer, so the fix did not match the problem); "before the consult starts" and "caught in the consulting room" (the Kenya In-development wording, stronger than the payor page''s "at the time of care"); "the pre-authorisation travels with the claim to the payer" in the summary; the SHA FAQ sentence on eligibility checked at registration and electronic submission (reads as an EasyClinic capability whose status is unknown); every "status is kept on the trust page" line, because /trust/ is a draft with placeholder statuses and its link is hidden in production; "claims reported by payer" and "often trace to one line" (no per-payer report or frequency is sourced). The Enterprise workflow check moved into the wrong-plan fix instead of repeating as a feature row.'
+  - 'Editor pass 2026-09-26 removed: the April insurer-change scene (a stored plan link does not catch a changed insurer, so the fix did not match the problem); "before the consult starts" and "caught in the consulting room" (the Kenya In-development wording, stronger than the payor page''s "at the time of care"); "the pre-authorisation travels with the claim to the payer" in the summary; the SHA FAQ sentence on eligibility checked at registration and electronic submission (reads as an Easy Clinic capability whose status is unknown); every "status is kept on the trust page" line, because /trust/ is a draft with placeholder statuses and its link is hidden in production; "claims reported by payer" and "often trace to one line" (no per-payer report or frequency is sourced). The Enterprise workflow check moved into the wrong-plan fix instead of repeating as a feature row.'
   - 'Payer table has no status column and names no connection: every regulator state is null (ke-sha, ae-eclaims, ng-nhia, ng-hmo-claims), and integration status is unknown everywhere. SLADE and SMART are not named, because saying claims "go through SLADE" states an integration as live. /kenyademo/, /emr-software-in-kenya/ and /pricing/kenya/ do say claims to the five insurers go through SLADE; the company should confirm the SLADE state so the pages agree.'
-  - 'Not stated for lack of a confirmed fact: online eligibility checks with any payer (the live /kenyademo/ SHA eligibility copy sits under "In development"); electronic submission to any named platform or payer (the live OPD page says EasyClinic can "connect with various electronic claiming platforms" and handles "electronic and manual claiming", but which are connected is unknown); a list of Indian TPAs; the claims add-on price (usd.yaml addons.claims is null, so the FAQ says only that the add-on is not in the plan price); any rejection percentage; EasyClinic''s SHA, DHA eClaimLink or NHIA status.'
-  - 'Spec 5.11 FAQ items left out or folded in: "DHA eClaims" and "HMO claim packs" appear as descriptions in the payer table instead, because answering them as questions needs a status; "SHA today" is answered as what SHA asks of a clinic, and the answer says plainly that the page does not state EasyClinic''s SHA status; "only for hospitals" is asked as the real prospect question "Do we need the Enterprise plan?" (spec 6.4 drops leading "only for X" questions); "corporate plans", "patient copay split", "pre-auth workflow", "reconciliation", "multiple payors" and "reduce rejections" are answered. The inpatient question is added from spec 5.8 (inpatient out of scope).'
+  - 'Not stated for lack of a confirmed fact: online eligibility checks with any payer (the live /kenyademo/ SHA eligibility copy sits under "In development"); electronic submission to any named platform or payer (the live OPD page says Easy Clinic can "connect with various electronic claiming platforms" and handles "electronic and manual claiming", but which are connected is unknown); a list of Indian TPAs; the claims add-on price (usd.yaml addons.claims is null, so the FAQ says only that the add-on is not in the plan price); any rejection percentage; Easy Clinic''s SHA, DHA eClaimLink or NHIA status.'
+  - 'Spec 5.11 FAQ items left out or folded in: "DHA eClaims" and "HMO claim packs" appear as descriptions in the payer table instead, because answering them as questions needs a status; "SHA today" is answered as what SHA asks of a clinic, and the answer says plainly that the page does not state Easy Clinic''s SHA status; "only for hospitals" is asked as the real prospect question "Do we need the Enterprise plan?" (spec 6.4 drops leading "only for X" questions); "corporate plans", "patient copay split", "pre-auth workflow", "reconciliation", "multiple payors" and "reduce rejections" are answered. The inpatient question is added from spec 5.8 (inpatient out of scope).'
   - 'Cannibalisation 4.5.2: invoices and tax link to /features/billing/; denial rate over time and ageing link to /features/revenue-management/; the "Claims sent back" section stays at the claims dashboard and fixing the payer setup. "Revenue cycle management" does not appear.'
   - 'Links: /solutions/ngo-clinics/, the four country pages and /trust/ do not exist yet or are drafts, so they are hidden in production until published; they stay because spec 2.9 wants all five solution pages and the country rows point to their country pages.'
   - 'No redirectFrom: /payor-management/, /insurance-claim-management-system/ and /payor-management-system/ are already in src/data/redirects.yaml.'

@@ -66,7 +66,7 @@ const showPayers = country.insurers.length > 0 || Boolean(payersNote);
           cards.map((card) => (
             <li class="rounded-control border border-line p-4">
               <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <h3 class="font-sans text-lg font-semibold">{card.name}</h3>
+                <h3 class="font-display text-lg font-semibold">{card.name}</h3>
                 {!card.quote && card.saving && (
                   <span class="rounded-full bg-success-bg px-2.5 py-0.5 text-xs font-semibold text-success">{card.saving}</span>
                 )}
@@ -114,7 +114,7 @@ const showPayers = country.insurers.length > 0 || Boolean(payersNote);
 
     <div class="card divide-y divide-line p-5 sm:p-6">
       <div class="pb-5">
-        <h3 class="flex items-center gap-2 font-sans text-lg font-semibold">
+        <h3 class="flex items-center gap-2 font-display text-lg font-semibold">
           <Icon name="wallet" size={20} class="text-blue-700" />
           How patients pay you
         </h3>
@@ -136,7 +136,7 @@ const showPayers = country.insurers.length > 0 || Boolean(payersNote);
       </div>
 
       <div class={showPayers ? 'py-5' : 'pt-5'}>
-        <h3 class="flex items-center gap-2 font-sans text-lg font-semibold">
+        <h3 class="flex items-center gap-2 font-display text-lg font-semibold">
           <Icon name="receipt" size={20} class="text-blue-700" />
           Tax invoices
         </h3>
@@ -146,7 +146,7 @@ const showPayers = country.insurers.length > 0 || Boolean(payersNote);
       {
         showPayers && (
           <div class="pt-5">
-            <h3 class="flex items-center gap-2 font-sans text-lg font-semibold">
+            <h3 class="flex items-center gap-2 font-display text-lg font-semibold">
               <Icon name="shield-check" size={20} class="text-blue-700" />
               Insurers and payers
             </h3>

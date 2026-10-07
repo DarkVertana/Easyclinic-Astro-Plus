@@ -5,7 +5,7 @@ path: /kitchen-sink/
 noindex: true
 headKeyword: kitchen sink
 title: Component kitchen sink (internal)
-metaDescription: Every EasyClinic section block rendered once with sample data, for design review and accessibility testing.
+metaDescription: Every Easy Clinic section block rendered once with sample data, for design review and accessibility testing.
 h1: Every block on one page
 linkLabel: Kitchen sink
 eyebrow: Internal
@@ -15,7 +15,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   needed: 'Today view: 14 appointments, two walk-ins, one video, one no-show marked'
-  alt: The EasyClinic today view with the day's appointments, walk-ins and a teleconsult
+  alt: The Easy Clinic today view with the day's appointments, walk-ins and a teleconsult
   caption: The front desk sees walk-ins and booked slots on one list.
   frame: browser
 heroStrip:
@@ -69,7 +69,7 @@ sections:
           frame: none
           aiGenerated: true
       next:
-        title: The EasyClinic way
+        title: The Easy Clinic way
         items: [One calendar for walk-ins and slots, Reminders sent from the clinic number, Invoices from the prescription, One login for the whole team]
   - discriminant: journeyDiagram
     value:
@@ -169,7 +169,7 @@ sections:
   - discriminant: dataTable
     value:
       heading: Data table
-      columns: [Question, Free EMR, EasyClinic]
+      columns: [Question, Free EMR, Easy Clinic]
       rows:
         - ['Who answers the phone when the printer stops?', 'A forum', 'Our support team']
         - ['Can you take your data with you?', 'Depends on the project', '[export format]']

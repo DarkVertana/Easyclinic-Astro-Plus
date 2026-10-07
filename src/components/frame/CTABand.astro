@@ -1,13 +1,13 @@
 ---
 import Button from '../ui/Button.astro';
-import Icon from '../ui/Icon.astro';
 import Md from '../ui/Md.astro';
 
 interface Props {
   closing: { heading: string; body?: string; primary: { label: string; href: string; event?: string }; secondary?: { label: string; href: string; event?: string } };
-  whatsappHref: string;
+  /** No longer shown in the band (the floating WhatsApp button covers it); kept so callers need not change. */
+  whatsappHref?: string;
 }
-const { closing, whatsappHref } = Astro.props;
+const { closing } = Astro.props;
 ---
 
 <section aria-labelledby="closing-heading" class="bg-navy-900 py-14 text-white md:py-20">
@@ -19,9 +19,6 @@ const { closing, whatsappHref } = Astro.props;
     <div class="flex flex-col gap-3 sm:flex-row md:flex-col md:items-end lg:flex-row lg:justify-end">
       <Button {...closing.primary} variant="cta" />
       {closing.secondary && <Button {...closing.secondary} variant="outline" class="!bg-transparent !text-white !border-white/60 hover:!bg-white/10" />}
-      <a href={whatsappHref} class="btn btn-ghost !text-white hover:!bg-white/10" data-track="whatsapp_click" data-label="closing band" rel="noopener">
-        <Icon name="brand-whatsapp" size={20} /> WhatsApp us
-      </a>
     </div>
   </div>
 </section>

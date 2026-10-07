@@ -42,7 +42,8 @@ const items = steps.map((step, i) => ({
 }));
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+{/* Inset 100px each side on large screens, so the journey reads as a narrower band inside the 1440px page. */}
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} class="journey-section">
   <ol class="journey" data-cols={perRow} data-cols2={twoRows ? secondRow : undefined}>
     {
       items.map((step) => (
@@ -51,7 +52,7 @@ const items = steps.map((step, i) => ({
             {step.number}
           </span>
           <div class="journey-text">
-            <h3 class:list={['font-sans text-lg font-semibold leading-snug', inverse && 'text-white']}>
+            <h3 class:list={['font-display text-lg font-semibold leading-snug', inverse && 'text-white']}>
               {step.url ? (
                 <a
                   href={step.url}
@@ -70,7 +71,7 @@ const items = steps.map((step, i) => ({
           </div>
           {step.media && (
             <div class="journey-media">
-              <Screenshot media={step.media} compact sizes="(min-width: 75rem) 280px, (min-width: 40rem) 40vw, 85vw" />
+              <Screenshot media={step.media} compact sizes="(min-width: 90rem) 340px, (min-width: 75rem) 280px, (min-width: 40rem) 40vw, 85vw" />
             </div>
           )}
         </li>
@@ -228,6 +229,12 @@ const items = steps.map((step, i) => ({
       right: calc(100% - var(--m) / 2 - (var(--cols2) - 1) * (100% + var(--gx)));
       border-width: 2px 0 2px 2px;
       border-radius: var(--r) 0 0 var(--r);
+    }
+  }
+  /* Inset 100px each side on large screens (the section's page container). */
+  @media (width >= 75rem) {
+    :global(.journey-section > .container-page) {
+      padding-inline: 100px;
     }
   }
 </style>

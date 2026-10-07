@@ -30,7 +30,7 @@ const proofOnly = inSection && ctx.index >= 0 && (ctx.family === 'country' || ct
 const consent = contact.publishName === true;
 const nameLabel = `${country.name} contact name`;
 // Optional details: shown when known (and, for the name, cleared to publish); left out of published pages otherwise.
-const fullName = optionalConfirmed(nameLabel, contact.name, consent) ?? `EasyClinic ${country.name} team`;
+const fullName = optionalConfirmed(nameLabel, contact.name, consent) ?? `Easy Clinic ${country.name} team`;
 /** "Or call Walter directly": the first name, keeping an honorific ("Dr Amina") so it still reads as a name. */
 function callName(name: string): string {
   const parts = name.trim().split(/\s+/);
@@ -47,7 +47,7 @@ const clientPlaceholder = optional(`${country.name} named client`, null);
 const clients = showClients ? (country.clients.length ? country.clients : clientPlaceholder ? [clientPlaceholder] : []) : [];
 
 // Click-to-chat routed to the country contact, prefilled with the page name (spec 7.9).
-const prefill = `Hi, I was reading the EasyClinic page "${stripSentinels(ctx.pageLabel)}" and would like a demo.`;
+const prefill = `Hi, I was reading the Easy Clinic page "${stripSentinels(ctx.pageLabel)}" and would like a demo.`;
 const whatsappHref = contact.whatsapp ? `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(prefill)}` : null;
 
 const demoPath = country.pages.demo;

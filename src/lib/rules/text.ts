@@ -53,8 +53,8 @@ const STAT_LINE = [
 
 /** Spec 1.2: one spelling, exactly two AI names. The legal entity name is allowed. */
 const NAMING: Array<[RegExp, string]> = [
-  [/\bEasy Clinic\b/, 'Write "EasyClinic" as one word'],
-  [/\bEasyclinic\b|\bEASYCLINIC\b|\beasyClinic\b/, 'Write "EasyClinic" with a capital C'],
+  [/\bEasyClinic\b/, 'Write "Easy Clinic" as two words'],
+  [/\bEasyclinic\b|\bEASYCLINIC\b|\beasyClinic\b|\bEasy clinic\b/, 'Write "Easy Clinic" as two capitalised words'],
   [/\bAI Assistant\b/, 'The plan feature is "Cura AI (documentation)"'],
   [/\bEasy ?Clinic AI\b/, 'The AI features are called "Cura AI"'],
   [/\bCura ?Pilot AI\b|\bCurapilot\b|\bCura-Pilot\b/, 'Write "CuraPilot"'],

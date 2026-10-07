@@ -3,8 +3,8 @@ import { choice, defineBlock, md, stringList } from '../fields.ts';
 
 /** The heading ScopeBox.astro shows when the section has none. */
 const VARIANT_LABELS = {
-  notFor: 'EasyClinic is not the right fit if',
-  isNot: 'What EasyClinic is not',
+  notFor: 'Easy Clinic is not the right fit if',
+  isNot: 'What Easy Clinic is not',
   limits: 'What it does not do yet',
 } as const;
 

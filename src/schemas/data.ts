@@ -22,7 +22,7 @@ const notes = z.array(z.string()).default([]);
 /* Shared facts. Every `null` is a fact the company must supply; `pnpm facts:report` lists them. */
 
 export const siteSchema = z.object({
-  name: z.literal('EasyClinic'),
+  name: z.literal('Easy Clinic'),
   legalName: z.string(),
   url: z.url(),
   canonicalHost: z.string(),
@@ -226,6 +226,8 @@ export const testimonialSchema = z.object({
   quote: z.string(),
   /** A one-line version for large single-quote layouts (section 11). Must be a verbatim excerpt. */
   pullQuote: z.string().optional(),
+  /** A shorter version for fixed-height cards: verbatim pieces of the quote joined by " … " where sentences are left out. */
+  cardQuote: z.string().optional(),
   outcome: unknown(z.string()),
   personas: z.array(z.enum(PERSONAS)).default([]),
   source: z.string(),
@@ -256,6 +258,8 @@ export const navSchema = z.object({
     z.object({
       label: z.string(),
       href: internalPath.optional(),
+      /** A short tag beside the label, such as "New". */
+      badge: z.string().optional(),
       groups: z
         .array(z.object({ title: z.string(), links: z.array(navLink).min(1) }))
         .optional(),

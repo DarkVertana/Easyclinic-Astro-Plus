@@ -38,7 +38,7 @@ const toc = headings.filter((h) => h.depth === 2);
 const countryId = d.country?.id;
 const site = (await getEntry('site', 'site'))!.data;
 const countryData = countryId ? (await getEntry('countries', countryId))?.data : undefined;
-const whatsappText = d.ctas.whatsapp ?? `Hi, I was reading EasyClinic's ${record.family === 'post' ? 'post' : 'guide'} "${record.label}" and would like a demo.`;
+const whatsappText = d.ctas.whatsapp ?? `Hi, I was reading Easy Clinic's ${record.family === 'post' ? 'post' : 'guide'} "${record.label}" and would like a demo.`;
 const whatsappHref = `https://wa.me/${countryData?.contact.whatsapp ?? site.whatsapp}?text=${encodeURIComponent(whatsappText)}`;
 const minutes = readingMinutes(record.entry.body, record.family);
 

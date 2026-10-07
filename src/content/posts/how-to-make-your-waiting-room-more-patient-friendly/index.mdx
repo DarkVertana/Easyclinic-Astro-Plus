@@ -31,7 +31,7 @@ ctas:
   secondary:
     label: See how the appointment screen tracks who is waiting
     href: /features/appointment-scheduling/
-  whatsapp: Hi, I was reading the EasyClinic post on patient-friendly waiting rooms and would like to see the appointment screen in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic post on patient-friendly waiting rooms and would like to see the appointment screen in a demo.
 faqHeading: Questions owners ask about the waiting room
 faq:
   - question: What matters most in a clinic waiting room?
@@ -59,14 +59,14 @@ faq:
       achievements. Health information with no boasting in it is the safer content.
   - question: How can software help the waiting room?
     answer: >-
-      It can show the desk who is still waiting and tell patients when the wait changes. In EasyClinic
+      It can show the desk who is still waiting and tell patients when the wait changes. In Easy Clinic
       the appointment screen shows each patient's status from check-in until they leave, and waiting
       patients are told automatically when the doctor's delay changes their wait. The calendar comes with
       every plan, from {price:usd.professional.annual} per doctor per month billed annually, or
       {price:inr.professional.annual} in India.
   - question: How do we cut the forms patients fill in while they wait?
     answer: >-
-      Send the registration form before the first visit, so the patient fills it in at home. In EasyClinic
+      Send the registration form before the first visit, so the patient fills it in at home. In Easy Clinic
       you set up your clinic's own registration form and send it as a link by SMS, or by WhatsApp on the
       Premium plan, and the answers go on the patient record.
 links:
@@ -88,7 +88,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The EasyClinic lines (the appointment screen's patient status, automatic wait updates, the bill from
+    The Easy Clinic lines (the appointment screen's patient status, automatic wait updates, the bill from
     the appointment screen and the registration link) come from its own product pages and price list, and
     the display and fee rules are read from India's 2002 ethics regulations; the room advice itself is
     general and could sit on any clinic site.
@@ -99,9 +99,9 @@ editorialPass:
 notes:
   - Imported from https://www.easyclinic.io/how-to-make-your-waiting-room-more-patient-friendly/ (published 2022-11-09, modified 2026-07-12) with scripts/import-wp.ts. Refreshed to spec 5.19 on 2026-09-26.
   - 'Triage 2026-09-26: kept. Owner /features/appointment-scheduling/ and topic patient-engagement from migration/posts-manifest.csv (UNSURE, proposed decision "keep"); marketing has not confirmed the decision. Head keyword "patient-friendly waiting room", which no page in the pages index targets. The post covers the room itself; cutting the wait is left to the published /smarter-scheduling-happier-patients-elevating-healthcare-operations-through-optimized-appointments/ ("reduce patient waiting time in clinics"), which the wait section links to instead of repeating, and the post does not target "clinic appointment scheduling software" (the owner page), which it links to for the product side. The slug is kept because it is the live URL.'
-  - 'Cut from the import. Unconfirmed or wrong EasyClinic claims: prescriptions "printed, emailed or WhatsApped to your patients in less than 30 seconds" (email delivery is not confirmed, WhatsApp needs Premium, and the 30 seconds is not a confirmed fact), "payments are collected online" (online payments need Premium, and the sentence implied every plan), lab reports "delivered directly to you and your patients" (lab reports need Premium; delivery to patients is not confirmed), "It has all the features of EMR records software", the software will "reduce waiting time" (no measured figure exists) and "book a free 30 day trial" (not a confirmed offer; the scheduling page records that the live site''s trial wording conflicts). Also cut: the title''s "Useful Insights by a Clinic Patient Management Software", the link on "EMR records software" to /check-these-useful-insights-on-running-a-clinic-efficiently/ (not a page), "Easy Clinic" as two words, the banned words (streamlined, comprehensive), "plush" and "at least a couple of televisions". No statistic or anecdote appeared in the import. Kept, rewritten: cleanliness, seating and a children''s area, entertainment including tablets and the clinic''s own content, a wait-time board, and food and drink.'
+  - 'Cut from the import. Unconfirmed or wrong Easy Clinic claims: prescriptions "printed, emailed or WhatsApped to your patients in less than 30 seconds" (email delivery is not confirmed, WhatsApp needs Premium, and the 30 seconds is not a confirmed fact), "payments are collected online" (online payments need Premium, and the sentence implied every plan), lab reports "delivered directly to you and your patients" (lab reports need Premium; delivery to patients is not confirmed), "It has all the features of EMR records software", the software will "reduce waiting time" (no measured figure exists) and "book a free 30 day trial" (not a confirmed offer; the scheduling page records that the live site''s trial wording conflicts). Also cut: the title''s "Useful Insights by a Clinic Patient Management Software", the link on "EMR records software" to /check-these-useful-insights-on-running-a-clinic-efficiently/ (not a page), "Easy Clinic" as two words, the banned words (streamlined, comprehensive), "plush" and "at least a couple of televisions". No statistic or anecdote appeared in the import. Kept, rewritten: cleanliness, seating and a children''s area, entertainment including tablets and the clinic''s own content, a wait-time board, and food and drink.'
   - 'Sources added, each fetched 2026-09-26: CDC, Core Infection Prevention and Control Practices for Safe Healthcare Delivery in All Settings (last reviewed 12 April 2024), https://www.cdc.gov/infection-control/hcp/core-practices/index.html (tissues, masks, hand hygiene supplies and instructional signage at points of entry and throughout the facility; separating patients with respiratory symptoms when space permits; masking on entry during higher community transmission), read through WebFetch because the site refuses curl. Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002, https://www.nmc.org.in/page/rules-regulations-rules-regulations-of-erstwhile-mci-code-of-medical-ethics-regulations-2002: 1.4.1 (display of registration number in the clinic and on prescriptions, certificates and receipts), 1.8 (fees announced before rendering service), 2.1.1 (visits at the hour indicated to patients) and 6.1.1 (publicity), adopted by the NMC notification of 23 August 2023, https://www.nmc.org.in/storage/cms/rules-regulation-nmc/KEpwkMzgUwYNR49OrJaqvLcIpeytGPg7XGcorhTg.pdf. State clinical establishment rules on displays were not verified and are not stated.'
-  - 'Sources for EasyClinic facts: src/content/features/appointment-scheduling.yaml, grounded in the live /appointment-scheduling-at-easy-clinic/ page (each patient''s status from check-in until they leave; waiting patients told automatically when the wait changes; the bill and payment from the appointment screen in one click); plans.yaml (appointment scheduling and SMS and email reminders on every plan; WhatsApp on Premium); the published intake forms post and src/content/features/patient-engagement.yaml (the clinic''s own registration form sent as a link by SMS or WhatsApp, answers on the patient record); src/content/features/emr.yaml (prescription printed or, on Premium, sent on WhatsApp). No plan is claimed for the automatic wait updates beyond what the scheduling page says. No study figure, testimonial or proof block. No heroMedia or media: screenshots do not exist yet.'
+  - 'Sources for Easy Clinic facts: src/content/features/appointment-scheduling.yaml, grounded in the live /appointment-scheduling-at-easy-clinic/ page (each patient''s status from check-in until they leave; waiting patients told automatically when the wait changes; the bill and payment from the appointment screen in one click); plans.yaml (appointment scheduling and SMS and email reminders on every plan; WhatsApp on Premium); the published intake forms post and src/content/features/patient-engagement.yaml (the clinic''s own registration form sent as a link by SMS or WhatsApp, answers on the patient record); src/content/features/emr.yaml (prescription printed or, on Premium, sent on WhatsApp). No plan is claimed for the automatic wait updates beyond what the scheduling page says. No study figure, testimonial or proof block. No heroMedia or media: screenshots do not exist yet.'
   - 'Review 2026-09-26 (adversarial pass, WordPress original re-fetched from wp-json): the CDC core practices page was fetched directly this time (it answers a browser request) and says what the post says: tissues, masks, hand hygiene supplies and instructional signage at points of entry and throughout the facility; separate patients with respiratory symptoms when space permits, for example on entry; consider masking everyone on entry during higher community transmission; page dated 12 April 2024. Regulations 1.4.1, 1.8, 2.1.1 and 6.1.1 of the 2002 regulations re-read on the NMC page, and the NMC notification of 23 August 2023 re-read; each matches. No change needed.'
 ---
 
@@ -115,7 +115,7 @@ Waiting to see a doctor is stressful for some patients, and an untidy room makes
 
 Then plan for the patients who arrive coughing. The US [CDC's core infection control practices](https://www.cdc.gov/infection-control/hcp/core-practices/index.html) ask facilities to prompt patients and visitors with respiratory symptoms to cover their coughs and clean their hands, by providing tissues, masks, hand hygiene supplies and instructional signs at the entrance and through the building. When space permits, they ask for patients with respiratory symptoms to be separated from others as soon as possible, for example on entry. In a small clinic that can mean a few chairs by a window or the door, with a box of masks and a bin with a lid beside them. During periods of higher respiratory virus spread in the community, the same page suggests facilities consider asking everyone to wear a mask on entry.
 
-<InlineCta heading="Know who is still waiting without walking into the room." href="/features/appointment-scheduling/" label="See how the appointment screen works">EasyClinic's appointment screen shows each patient's status from check-in until they leave, so the desk can see who is still waiting. The calendar comes with every plan.</InlineCta>
+<InlineCta heading="Know who is still waiting without walking into the room." href="/features/appointment-scheduling/" label="See how the appointment screen works">Easy Clinic's appointment screen shows each patient's status from check-in until they leave, so the desk can see who is still waiting. The calendar comes with every plan.</InlineCta>
 
 ## Seat every kind of patient
 
@@ -136,7 +136,7 @@ Patients can find it annoying when they do not know how long they have to wait, 
 
 India's 2002 ethics regulations put the doctor's side of this plainly: regulation 2.1.1 asks a physician to endeavour to add to the comfort of the sick by making visits at the hour indicated to the patient.
 
-In EasyClinic, waiting patients are told automatically when the doctor's delay changes their wait, so the update does not depend on the receptionist finding a quiet moment. To cut the wait itself, start with the two weeks of measurement in the post on [reducing patient waiting time](/smarter-scheduling-happier-patients-elevating-healthcare-operations-through-optimized-appointments/).
+In Easy Clinic, waiting patients are told automatically when the doctor's delay changes their wait, so the update does not depend on the receptionist finding a quiet moment. To cut the wait itself, start with the two weeks of measurement in the post on [reducing patient waiting time](/smarter-scheduling-happier-patients-elevating-healthcare-operations-through-optimized-appointments/).
 
 ## Give people something to do
 
@@ -162,10 +162,10 @@ Add the practical notices patients look for, such as each doctor's days and hour
 
 Where the reception desk sits in the waiting room, whatever is said at the counter is said to the room. Ask for phone numbers and addresses quietly, or on a form. Call patients by name only, never with the reason for their visit or the test they are waiting for. Hand reports over in an envelope, not across the counter for everyone to read.
 
-Forms filled in on a clipboard in the waiting room add to the time and to what others can see. The [digital intake forms post](/simplifying-clinic-workflows-digitally-streamlining-patient-intake-forms/) covers sending the registration form before the visit instead. In EasyClinic you set up your clinic's own registration form and send it as a link by SMS, or by WhatsApp on Premium, and the answers go on the patient record. The [patient data privacy guide](/patient-data-privacy-laws-in-india/) covers the law on patient records in India.
+Forms filled in on a clipboard in the waiting room add to the time and to what others can see. The [digital intake forms post](/simplifying-clinic-workflows-digitally-streamlining-patient-intake-forms/) covers sending the registration form before the visit instead. In Easy Clinic you set up your clinic's own registration form and send it as a link by SMS, or by WhatsApp on Premium, and the answers go on the patient record. The [patient data privacy guide](/patient-data-privacy-laws-in-india/) covers the law on patient records in India.
 
 ## Where software fits
 
-Software cannot make the room comfortable. What it can do is keep the desk informed and the patient told. In EasyClinic, the appointment screen shows where each patient is in the visit, from check-in until they leave. When the consult ends, the bill and the payment are done from the same screen in one click, so the patient is not waiting at the counter for a bill to be written up. The prescription is printed for the patient or, on Premium, sent on WhatsApp.
+Software cannot make the room comfortable. What it can do is keep the desk informed and the patient told. In Easy Clinic, the appointment screen shows where each patient is in the visit, from check-in until they leave. When the consult ends, the bill and the payment are done from the same screen in one click, so the patient is not waiting at the counter for a bill to be written up. The prescription is printed for the patient or, on Premium, sent on WhatsApp.
 
 The [appointment scheduling page](/features/appointment-scheduling/) shows how the calendar handles walk-ins and booked patients together.

@@ -6,13 +6,13 @@ secondaryKeywords:
   - healthcare dashboard software
   - hospital MIS reports
   - doctor productivity report
-title: 'Clinic Dashboard and Reports Software: EasyClinic'
+title: 'Clinic Dashboard and Reports Software: Easy Clinic'
 metaDescription: "Clinic dashboard software for the owner's morning numbers: revenue by branch, the day's appointments, stock and claim status, with reports for each role."
 h1: The numbers a clinic owner checks daily
 linkLabel: Reports and dashboards
 eyebrow: Reports and dashboards
 openingAnswer: >-
-  EasyClinic's clinic dashboard software shows the owner's morning numbers live: revenue for each branch
+  Easy Clinic's clinic dashboard software shows the owner's morning numbers live: revenue for each branch
   and the group, the day's appointments with each visit's status and, where those modules run, stock and
   claims. Dashboards and reports come with every plan, from {price:usd.professional.annual} per doctor per
   month billed annually.
@@ -24,7 +24,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: ../../assets/images/products/14_Dashboard.jpg
-  alt: EasyClinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today's earnings in rupees and invoices by status
+  alt: Easy Clinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today's earnings in rupees and invoices by status
   frame: none
 ctas:
   primary:
@@ -33,7 +33,7 @@ ctas:
   secondary:
     label: Compare plans and prices
     href: /pricing/
-  whatsapp: Hi, I was reading the EasyClinic reports and dashboards page and would like to see the owner's dashboard in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic reports and dashboards page and would like to see the owner's dashboard in a demo.
 
 sections:
   - discriminant: painBlocks
@@ -50,7 +50,7 @@ sections:
             and another sends the cash but not the card payments. You hear about Tuesday's problem on
             Wednesday afternoon.
           fix: >-
-            On Premium and Enterprise every branch bills in the same EasyClinic system, so revenue for each
+            On Premium and Enterprise every branch bills in the same Easy Clinic system, so revenue for each
             branch and for the whole group is on the dashboard as the bills are raised. Nobody sends a
             total, because nobody has to add one up.
           href: /features/multi-location/
@@ -106,7 +106,7 @@ sections:
         - heading: Staff performance and incentive plans
           body: >-
             Performance reports track staff productivity. If you pay an incentive or a commission, the plan
-            is set up for each user in EasyClinic, doctors included, so the payout rules and the reports that
+            is set up for each user in Easy Clinic, doctors included, so the payout rules and the reports that
             track the work sit in the same system.
         - heading: The books, from the day to the quarter
           body: >-
@@ -140,7 +140,7 @@ sections:
             comes with Enterprise.
           plan: enterprise
           link:
-            label: See how a clinic chain runs on EasyClinic
+            label: See how a clinic chain runs on Easy Clinic
             href: /solutions/clinic-chain/
 
   - discriminant: dataTable
@@ -150,7 +150,7 @@ sections:
       intro: >-
         The dashboards and reports cover clinical, administrative, inventory and financial data. This is
         the library grouped by the person who reads each report, with the plan or module it comes from.
-      caption: EasyClinic reports and dashboards by role, with the plan or module each comes from
+      caption: Easy Clinic reports and dashboards by role, with the plan or module each comes from
       columns:
         - Who opens it
         - What they read
@@ -203,7 +203,7 @@ sections:
             different levels of access, and audit logs keep a record of what each user did.
         - heading: On your phone
           body: >-
-            The dashboards open on a phone or a tablet as well as the office computer. EasyClinic is cloud
+            The dashboards open on a phone or a tablet as well as the office computer. Easy Clinic is cloud
             software and does not run fully offline today, so the phone needs a connection to show the
             day's figures.
 
@@ -213,7 +213,7 @@ sections:
       heading: On Enterprise, a data warehouse for large clinic chains
       body: >-
         Enterprise includes a dedicated reporting server with custom business analytics, and a data
-        warehouse meant for large clinic chains. Data from EasyClinic, and from other sources such as
+        warehouse meant for large clinic chains. Data from Easy Clinic, and from other sources such as
         databases, files, web services or APIs, is moved into the warehouse or a data lake through ETL
         (extract, transform, load) processes. Which data moves, and how often, is set in the ETL processes
         defined for your organisation.
@@ -221,7 +221,7 @@ sections:
 
         Connecting Power BI to the warehouse is scoped as integration work, under the integrations and
         custom features that come with Enterprise. On Professional and Premium, the reports and dashboards
-        are the ones inside EasyClinic, and they export to Excel or PDF when you need the figures somewhere
+        are the ones inside Easy Clinic, and they export to Excel or PDF when you need the figures somewhere
         else.
 
   - discriminant: scopeBox
@@ -239,9 +239,9 @@ sections:
           Premium as a module.
         - >-
           **The warehouse is Enterprise only.** On Professional and Premium, figures leave
-          EasyClinic as Excel or PDF exports.
+          Easy Clinic as Excel or PDF exports.
         - >-
-          **It needs a connection.** EasyClinic is cloud software and does not run fully offline today, so
+          **It needs a connection.** Easy Clinic is cloud software and does not run fully offline today, so
           the dashboard needs a working connection to show the day's figures.
         - >-
           **No measured time saving.** We have not published a measured figure for the hours the reports
@@ -250,9 +250,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       body: >-
-        These are EasyClinic's public ratings. One customer, a haematologist who has used EasyClinic since
+        These are Easy Clinic's public ratings. One customer, a haematologist who has used Easy Clinic since
         2008, wrote about the reporting side: "The features I like the most are: Data handling and
         analytical tools available to generate information from the patient's data." His full testimonial
         is on the [hospital OPD page](/solutions/hospital-opd/).
@@ -268,7 +268,7 @@ faqHeading: Questions clinic owners ask about reports
 faq:
   - question: Can I see last month's revenue for each branch?
     answer: >-
-      Yes, on Premium or Enterprise, where every branch bills in the same EasyClinic system and reports run
+      Yes, on Premium or Enterprise, where every branch bills in the same Easy Clinic system and reports run
       across locations and departments. Filters and search parameters of your own narrow a report to the
       period you need, and a clinic with one location on Professional runs the same reports across its
       departments.
@@ -277,7 +277,7 @@ faq:
       No. Dashboards and reports come with every plan, from {price:usd.professional.annual} per doctor per
       month billed annually ({price:inr.professional.annual} in India). Enterprise adds a dedicated
       reporting server with custom analytics and the data warehouse, and it is priced on a quote.
-  - question: Can I use Power BI with EasyClinic?
+  - question: Can I use Power BI with Easy Clinic?
     answer: >-
       Only as Enterprise integration work: Enterprise includes a dedicated reporting server with custom
       analytics and a data warehouse meant for large clinic chains, and connecting Power BI to it is scoped
@@ -285,7 +285,7 @@ faq:
       to Excel instead.
   - question: Are the numbers on the dashboard real time?
     answer: >-
-      Yes, the dashboards inside EasyClinic show data in real time, so the figures change as the desk
+      Yes, the dashboards inside Easy Clinic show data in real time, so the figures change as the desk
       bills and the doctors record visits. On Enterprise, how often data moves into the warehouse is set
       in the ETL processes defined for your organisation.
   - question: Can I build reports of my own?
@@ -300,12 +300,12 @@ faq:
       without retyping them, and a PDF copy of each month's reports can be kept as the record.
   - question: Is there an audit trail of who did what?
     answer: >-
-      Yes, EasyClinic keeps audit logs for each user and an audit trail for all key transactions. The cash
+      Yes, Easy Clinic keeps audit logs for each user and an audit trail for all key transactions. The cash
       till and stock adjustments carry audit trails of their own, and on Enterprise the workflow manager
       records which user completed each step, with the date and time.
   - question: Can I check the dashboard on my phone?
     answer: >-
-      Yes, the dashboards open on a phone or a tablet as well as a computer. EasyClinic is cloud software
+      Yes, the dashboards open on a phone or a tablet as well as a computer. Easy Clinic is cloud software
       and does not run fully offline today, so the phone needs a mobile data or Wi-Fi connection to show
       the day's figures.
 
@@ -313,19 +313,19 @@ links:
   hub: /features/
   related:
     - href: /solutions/solo-clinic/
-      label: EasyClinic for a solo doctor
+      label: Easy Clinic for a solo doctor
       description: One doctor and a receptionist, with the day's revenue and appointments on the Professional plan.
     - href: /solutions/polyclinic/
-      label: EasyClinic for a polyclinic
+      label: Easy Clinic for a polyclinic
       description: Several specialists on one record, with reports that run across departments.
     - href: /solutions/clinic-chain/
-      label: EasyClinic for a clinic chain
+      label: Easy Clinic for a clinic chain
       description: Reports across every branch, with central control and SOP tracking on Enterprise.
     - href: /solutions/hospital-opd/
-      label: EasyClinic for a hospital OPD
+      label: Easy Clinic for a hospital OPD
       description: The OPD's pharmacy and claims on one record, with hospital MIS reports drawn from it.
     - href: /solutions/ngo-clinics/
-      label: EasyClinic for NGO and mission clinics
+      label: Easy Clinic for NGO and mission clinics
       description: Patient records, and the visit and stock reports built from them, for programme clinics.
     - href: /features/multi-location/
       label: More than one location
@@ -353,7 +353,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The report library and its plan rules come from EasyClinic's own live pages and pricing, down to the
+    The report library and its plan rules come from Easy Clinic's own live pages and pricing, down to the
     Enterprise warehouse for large chains and the separate access levels a chain sets for its owned,
     franchised, mobile and associate clinics.
   readsMachineWritten: >-

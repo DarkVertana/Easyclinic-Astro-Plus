@@ -9,7 +9,7 @@ publications:
     url: https://arxiv.org/abs/2507.16947
     published: 2025-07-22
     peerReviewed: false
-    scope: 39,849 patient visits at 15 Penda Health clinics in Nairobi; AI Consult embedded in Penda's EasyClinic EMR; errors rated by 108 independent physicians on a random sample of 5,666 of the visits.
+    scope: 39,849 patient visits at 15 Penda Health clinics in Nairobi; AI Consult embedded in Penda's Easy Clinic EMR; errors rated by 108 independent physicians on a random sample of 5,666 of the visits.
     easyclinicRole: 'The paper names Easy Clinic as the cloud-hosted EMR Penda Health introduced in 2017, which supports all patient visits.'
     verifiedOn: 2026-09-26
   - id: nature-health-2026
@@ -46,43 +46,43 @@ figures:
     label: fewer diagnostic errors
     source: korom-2025
     internalSource: null
-    context: Relative reduction in visits where clinicians had AI Consult, rated by independent physicians.
+    context: Relative reduction with AI Consult, rated by independent physicians.
   - id: treatment-errors
     value: 13%
     label: fewer treatment errors
     source: korom-2025
     internalSource: null
-    context: Relative reduction, same study.
+    context: Relative reduction with AI Consult, rated by the same physician panel.
   - id: history-errors
     value: 32%
     label: fewer history-taking errors
     source: korom-2025
     internalSource: null
-    context: Relative reduction, same study.
+    context: Relative reduction with AI Consult, in the same random sample of visits.
   - id: denied-claims
     value: 34%
     label: fewer denied insurance claims
     source: null
     internalSource: null
-    context: Appears only in EasyClinic marketing. Needs an internal source (organisations, period, method) before publication.
+    context: Appears only in Easy Clinic marketing. Needs an internal source (organisations, period, method) before publication.
   - id: stockouts
     value: 67%
     label: fewer stockout events
     source: null
     internalSource: null
-    context: Appears only in EasyClinic marketing ("across 28 organisations"). Needs an internal source.
+    context: Appears only in Easy Clinic marketing ("across 28 organisations"). Needs an internal source.
   - id: stockout-lead
     value: 45 days
     label: early warning before a shortage reaches the counter
     source: null
     internalSource: null
-    context: Appears only in EasyClinic marketing. Needs an internal source.
+    context: Appears only in Easy Clinic marketing. Needs an internal source.
   - id: uptime
     value: 99.97%
     label: uptime over nine years at Penda Health
     source: null
     internalSource: null
-    context: Appears only in EasyClinic marketing. Needs a measurement source; belongs on /trust (spec 5.3).
+    context: Appears only in Easy Clinic marketing. Needs a measurement source; belongs on /trust (spec 5.3).
 approvedWording:
   short: Studied across 39,849 patient visits at Penda Health clinics in Nairobi, in a 2025 study with OpenAI.
   approvedBy: null

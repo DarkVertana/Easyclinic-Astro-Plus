@@ -171,6 +171,7 @@ export const dataCollections = {
       customerSince: int('Customer since'),
       quote: text('Quote', { required: true, multiline: true, description: 'Verbatim.' }),
       pullQuote: text('Pull quote', { multiline: true, description: 'A verbatim excerpt for large single-quote layouts.' }),
+      cardQuote: text('Card quote', { multiline: true, description: 'Shorter version for fixed-height cards: verbatim pieces of the quote joined by " … ".' }),
       outcome: unknown(text('Outcome', { multiline: true })),
       personas: choices('Personas', PERSONAS),
       source: text('Source', { required: true }),

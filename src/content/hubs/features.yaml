@@ -5,7 +5,7 @@ headKeyword: clinic management software features
 secondaryKeywords:
   - clinic software modules
   - clinic management system modules
-title: 'Clinic Management Software Features: EasyClinic'
+title: 'Clinic Management Software Features: Easy Clinic'
 metaDescription: >-
   Clinic management software features in twelve modules: scheduling, EMR, billing, pharmacy, lab,
   claims, WhatsApp and reports, with what each plan includes.
@@ -13,7 +13,7 @@ h1: Clinic management software features, from the first booking to the owner's r
 linkLabel: All features
 eyebrow: Twelve modules on one patient record
 openingAnswer: >-
-  EasyClinic's features come as twelve modules that follow a patient through the clinic, from the
+  Easy Clinic's features come as twelve modules that follow a patient through the clinic, from the
   booking and the thirty-second prescription to the claim and the owner's report, all on one patient
   record. Appointments, the EMR, billing, dashboards and Cura AI note drafting come
   with every plan from {price:usd.professional.annual} per doctor per month billed annually, and
@@ -30,7 +30,7 @@ ctas:
   secondary:
     label: See pricing
     href: /pricing/
-  whatsapp: Hi, I was on the EasyClinic features page and would like to book a 20-minute demo for my clinic.
+  whatsapp: Hi, I was on the Easy Clinic features page and would like to book a 20-minute demo for my clinic.
 
 sections:
   - discriminant: journeyDiagram
@@ -155,7 +155,7 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How EasyClinic is rated on Capterra and Google
+      heading: How Easy Clinic is rated on Capterra and Google
       intro: >-
         The Capterra link opens the reviews themselves, so you can read what reviewers wrote before you
         book a demo.
@@ -193,14 +193,14 @@ faq:
       Video consultations are included from Premium, at {price:usd.premium.annual} per doctor per month
       billed annually, and the patient portal and app come with Enterprise. On Professional, patients
       hear from the clinic through SMS and email reminders, and WhatsApp messages start on Premium.
-  - question: Is EasyClinic a full hospital system with inpatient wards?
+  - question: Is Easy Clinic a full hospital system with inpatient wards?
     answer: >-
-      No, EasyClinic does not run inpatient wards or operating theatres. It covers outpatient care, from
+      No, Easy Clinic does not run inpatient wards or operating theatres. It covers outpatient care, from
       a one-doctor clinic to a hospital OPD and day care, so a hospital that admits patients needs a
-      separate system for its wards and can run EasyClinic in its OPD.
-  - question: Does EasyClinic include a fundraising or donor CRM for NGO clinics?
+      separate system for its wards and can run Easy Clinic in its OPD.
+  - question: Does Easy Clinic include a fundraising or donor CRM for NGO clinics?
     answer: >-
-      No, EasyClinic has no fundraising or donor CRM, so donor records and grant tracking stay in the
+      No, Easy Clinic has no fundraising or donor CRM, so donor records and grant tracking stay in the
       tool you use for them now. What it gives an NGO or mission clinic is the patient record and the
       reports built from it, such as the visits seen and the stock used each month. Clinics in Kenya
       also get the MOH 705 and DHIS2 reports from the same records.
@@ -216,7 +216,7 @@ links:
       description: Specialists who share rooms and one patient record, with roles that decide who sees what.
     - href: /solutions/clinic-chain/
       label: Clinic chain
-      description: One chart and one set of SOPs across every branch; the largest chain on EasyClinic has {fact:largestChain} locations.
+      description: One chart and one set of SOPs across every branch; the largest chain on Easy Clinic has {fact:largestChain} locations.
     - href: /solutions/hospital-opd/
       label: Hospital OPD and nursing home
       description: Queues, pharmacy, lab and claims for a busy outpatient department.
@@ -241,9 +241,9 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The plan boundaries as EasyClinic sells them (WhatsApp and video consults from Premium, pharmacy and
+    The plan boundaries as Easy Clinic sells them (WhatsApp and video consults from Premium, pharmacy and
     lab management with Enterprise or as add-ons), the Kenyan MOH 705 and DHIS2 reports, and the plain
-    admissions that EasyClinic runs no inpatient wards and keeps no donor records come from how the
+    admissions that Easy Clinic runs no inpatient wards and keeps no donor records come from how the
     product is actually sold and used.
   readsMachineWritten: >-
     The twelve module cards all follow one pattern, a benefit label and one outcome line, which can read
@@ -251,13 +251,13 @@ editorialPass:
     facts and two ratings.
 
 notes:
-  - 'Spec 5.4 promise and sections; spec 4.1 has no /features/ row, so the head keyword "clinic management software features" comes from the page brief. Title is 47 characters and carries the head keyword; the brief example "Clinic Software Features: Every EasyClinic Module" (49) is the alternative if the editor prefers it.'
+  - 'Spec 5.4 promise and sections; spec 4.1 has no /features/ row, so the head keyword "clinic management software features" comes from the page brief. Title is 47 characters and carries the head keyword; the brief example "Clinic Software Features: Every Easy Clinic Module" (49) is the alternative if the editor prefers it.'
   - 'Spec 5.4 section 2 asks for a ModuleGrid with a screenshot per module. The hub uses hubGrid (the brief), with no media, because screenshots do not exist yet (page-writing rules). Add one captioned screenshot per module (spec 12 list) when they arrive; the journey steps take the same eight screens as the home page.'
   - 'Hub grid groups follow src/data/nav.yaml exactly (Front desk, Chart, Money, Growth). Labels are benefit-and-mechanism names (spec 5.4); descriptions render as plain text, so they carry no markdown (tokens still resolve, as the registry expands them in every string).'
   - 'Left out for lack of a confirmed fact: the measured no-show reduction (facts noShowReduction is null), so no card says reminders "cut no-shows" as spec 5.4 suggests; minutes per note with Cura AI; the eight morning KPIs named as "all live" (spec 5.11); GST, VAT and eTIMS invoice formats (every tax regulator state is null); any integration by name or status (integration states unknown).'
   - 'Proof: spec 5.4 asks for one testimonial per pillar; the brief says no testimonials, so the proof block is the Capterra and Google rating badges. Both lack review counts (facts capterraReviews and googleReviews are null) and the Google badge has no public review URL. Add both when known. Badge ratings use the {fact:capterraRating} and {fact:googleRating} tokens, which the registry resolves before rendering.'
   - 'CTAs: spec 5.4 asks for "Watch a 6-minute product tour" and "Book a demo". The tour does not exist yet, so the secondary CTA is "See pricing". Switch it to "See the product in 6 minutes" when the tour ships (spec 12).'
-  - 'FAQ follows spec 5.4 item 5, split into six: EMR customisation; buying one module (add-ons per plans.yaml); pharmacy, inventory and lab by plan; telehealth and the patient app by plan; inpatient wards (spec 5.8 scope); fundraising CRM (spec 5.10). Open to-dos: how long a custom prescription template takes and who builds it (spec 6.4 question); add-on prices in every currency; which inpatient systems EasyClinic has run beside and what they exchange; whether nursing homes with beds are in scope (spec 5.8 says nursing homes are covered, and inpatient is out of scope).'
+  - 'FAQ follows spec 5.4 item 5, split into six: EMR customisation; buying one module (add-ons per plans.yaml); pharmacy, inventory and lab by plan; telehealth and the patient app by plan; inpatient wards (spec 5.8 scope); fundraising CRM (spec 5.10). Open to-dos: how long a custom prescription template takes and who builds it (spec 6.4 question); add-on prices in every currency; which inpatient systems Easy Clinic has run beside and what they exchange; whether nursing homes with beds are in scope (spec 5.8 says nursing homes are covered, and inpatient is out of scope).'
   - 'Integrations prose names categories only (the spec 5.17 directory categories), never a status (page-writing rules), and the custom-connection paragraph follows the plans.yaml integrations add-on. /integrations/ is still a draft, so the link to it was removed in the 2026-09-27 audit (see below). When src/data/integrations has states and dates, the hub can name the live ones per country.'
   - 'Secondary keywords exclude "practice management software" (owned by /, spec 4.1) and "EMR software" terms (owned by /features/emr/), per spec 2.1 (one page, one query cluster).'
   - 'Sticky sub-navigation (section 11 UX 6) can use the section ids: patient-journey, modules, plans, integrations, ratings.'

@@ -63,11 +63,12 @@ export default defineConfig({
   image: { layout: 'constrained', responsiveStyles: true },
   fonts: [
     {
+      // Body, navigation, buttons and labels: Poppins, as on the live site (www.easyclinic.io).
       provider: fontProviders.fontsource(),
-      name: 'Inter',
-      cssVariable: '--font-inter',
-      // Static weights: far smaller than the variable file, and the site only uses regular and semibold.
-      weights: [400, 600],
+      name: 'Poppins',
+      cssVariable: '--font-poppins',
+      // Static weights: regular text, medium navigation, semibold buttons and labels, bold for emphasis.
+      weights: [400, 500, 600, 700],
       styles: ['normal'],
       // Latin only: loading latin-ext for ₹ and ₦ re-painted the LCP paragraph ~450 ms late on slow 4G.
       // Those glyphs render from the metric-matched fallback. Follow-up: a custom subset (fonttools)
@@ -76,13 +77,15 @@ export default defineConfig({
       fallbacks: ['ui-sans-serif', 'system-ui', 'sans-serif'],
     },
     {
+      // Headings: Varela Round, as on the live site. It has one weight; headings ask for 600 as the live site
+      // does, and the browser draws the bolder face from it.
       provider: fontProviders.fontsource(),
-      name: 'Fraunces',
-      cssVariable: '--font-fraunces',
-      weights: [600],
+      name: 'Varela Round',
+      cssVariable: '--font-varela-round',
+      weights: [400],
       styles: ['normal'],
       subsets: ['latin', 'latin-ext'],
-      fallbacks: ['Georgia', 'serif'],
+      fallbacks: ['ui-rounded', 'ui-sans-serif', 'system-ui', 'sans-serif'],
     },
   ],
   security: {

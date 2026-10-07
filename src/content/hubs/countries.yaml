@@ -2,11 +2,11 @@ status: published
 path: /countries/
 headKeyword: clinic software by country
 secondaryKeywords: [clinic management software Africa, clinic software Asia]
-title: 'Clinic Software by Country: EasyClinic'
-metaDescription: 'EasyClinic runs clinics in {fact:countries} countries. India and Kenya have their own demo pages, and clinics anywhere else can book a demo from this page.'
+title: 'Clinic Software by Country: Easy Clinic'
+metaDescription: 'Easy Clinic runs clinics in {fact:countries} countries. India and Kenya have their own demo pages, and clinics anywhere else can book a demo from this page.'
 h1: Clinic software by country, from India to Kenya
 linkLabel: Countries
-openingAnswer: 'EasyClinic runs clinics in {fact:countries} countries, from single-doctor practices in Kolkata to Penda Health''s clinics in Nairobi. Clinics in India and Kenya can book a demo on their own page, and clinics anywhere else can book a demo below.'
+openingAnswer: 'Easy Clinic runs clinics in {fact:countries} countries, from single-doctor practices in Kolkata to Penda Health''s clinics in Nairobi. Clinics in India and Kenya can book a demo on their own page, and clinics anywhere else can book a demo below.'
 summary: Demo pages for India and Kenya, and a demo form for clinics in other countries.
 author: subhashish-saha
 lastUpdated: 2026-09-26
@@ -18,7 +18,7 @@ heroMedia:
 ctas:
   primary: { label: Book a 20-minute demo, href: /countries/#book-a-demo }
   secondary: { label: See pricing, href: /pricing/ }
-  whatsapp: Hi, I run a clinic outside India and Kenya and would like to see EasyClinic.
+  whatsapp: Hi, I run a clinic outside India and Kenya and would like to see Easy Clinic.
 links:
   related:
     - { href: /pricing/, description: Prices per doctor per month in US dollars and rupees. }
@@ -68,14 +68,14 @@ sections:
       id: book-a-demo
       heading: Your country is not listed
       intro: Tell us where your clinic is and how it runs, and the demo uses a clinic set up like yours.
-      promise: EasyClinic runs in the cloud, so a clinic anywhere with an internet connection can use it. Prices are per doctor per month, with no setup fee and no contract.
+      promise: Easy Clinic runs in the cloud, so a clinic anywhere with an internet connection can use it. Prices are per doctor per month, with no setup fee and no contract.
 faq:
-  - question: Can a clinic outside India and Kenya use EasyClinic?
-    answer: Yes, EasyClinic runs in the cloud in a web browser, and clinics in {fact:countries} countries use it today, so a clinic anywhere with an internet connection can run on it.
-  - question: What does EasyClinic cost outside India?
+  - question: Can a clinic outside India and Kenya use Easy Clinic?
+    answer: Yes, Easy Clinic runs in the cloud in a web browser, and clinics in {fact:countries} countries use it today, so a clinic anywhere with an internet connection can run on it.
+  - question: What does Easy Clinic cost outside India?
     answer: Prices are published in US dollars, with Professional at {price:usd.professional.annual} and Premium at {price:usd.premium.annual} per doctor per month billed annually, and Enterprise is priced on a quote.
   - question: Do I need a server or IT staff?
-    answer: No, EasyClinic runs in the cloud in a web browser, so there is nothing to install, and updates arrive every month without an engineer visiting the clinic.
+    answer: No, Easy Clinic runs in the cloud in a web browser, so there is nothing to install, and updates arrive every month without an engineer visiting the clinic.
   - question: What training does a clinic in another country get?
     answer: Training runs over {fact:trainingDays} short sessions of about two hours in total, and support by phone, email and chat is included in every plan.
   - question: Is there a free trial?
@@ -83,7 +83,7 @@ faq:
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
-  onlyUsCouldWrite: 'The page groups EasyClinic''s own pages by country and points every other country to a form, which is where the retired micro-market pages now land.'
+  onlyUsCouldWrite: 'The page groups Easy Clinic''s own pages by country and points every other country to a form, which is where the retired micro-market pages now land.'
   readsMachineWritten: 'Nothing is specific to one country beyond the links grouped under India, Kenya, the UAE and Nigeria; the form carries the rest.'
 notes:
   - 'Audit 2026-09-27: the meta description, opening answer, summary, FAQ 1 and editorial pass no longer say that India, Kenya, the UAE and Nigeria each have a country page. All four country pages are drafts and only rupee and US dollar prices are published. Restore the four-country wording when the country pages publish.'

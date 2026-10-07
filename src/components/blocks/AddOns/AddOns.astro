@@ -33,7 +33,7 @@ const addons = plans.addons.map((addon) => {
     {
       addons.map((a) => (
         <li class="card flex flex-col p-6 text-ink">
-          <h3 class="font-sans text-lg font-semibold">{a.name}</h3>
+          <h3 class="font-display text-lg font-semibold">{a.name}</h3>
           {a.price && <p class:list={['mt-3', a.known ? 'font-display text-xl font-semibold text-ink-heading' : 'text-base']}>{a.price}</p>}
           <Md text={a.body} class="mt-3 text-ink-muted" />
           <p class="mt-auto pt-5 text-sm text-ink-muted">

@@ -8,26 +8,109 @@ interface Props {
   /** Use the verbatim one-line excerpt when present (section 11: a sentence a doctor would say). */
   pull?: boolean;
   size?: 'card' | 'large';
+  /** Card only: show at most this many lines of the quote, with every card the same height of text. */
+  lines?: number;
 }
 
-const { testimonial, pull = true, size = 'card' } = Astro.props;
+const { testimonial, pull = true, size = 'card', lines } = Astro.props;
 const t = testimonial.data;
-const text = pull && t.pullQuote ? t.pullQuote : t.quote;
+// A fixed-height card uses the shorter card quote when there is one; every piece of it must be verbatim.
+const flatQuote = t.quote.replace(/\s+/g, ' ');
+if (t.cardQuote) {
+  const missing = t.cardQuote.split(' … ').filter((piece) => !flatQuote.includes(piece.trim()));
+  if (missing.length) throw new Error(`testimonial "${testimonial.id}": cardQuote piece is not verbatim: "${missing[0]}"`);
+}
+const text = pull && t.pullQuote ? t.pullQuote : lines && t.cardQuote ? t.cardQuote : t.quote;
 const consent = requireConfirmed(Astro, `consent on file for ${t.name}'s testimonial`, t.consentOnFile);
 const city = optional(`${t.name}'s city`, t.city);
 const place = [t.clinic, city].filter(Boolean).join(', ');
+
+
+// The role line: role, then the specialty when the role does not already say it, then clinic and city
+// (an unknown city is left out rather than shown as a preview placeholder on the card). The clinic, or the
+// city when there is no clinic, is the tagged part: it says where the doctor works.
+const rolePrefix = [
+  t.role === 'Doctor' ? null : t.role,
+  t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) && t.role !== 'Doctor' ? t.specialty : null,
+]
+  .filter(Boolean)
+  .join(', ');
+const roleTag = t.clinic ?? t.city ?? null;
+const roleSuffix = t.clinic && t.city ? t.city : null;
+const hasRoleLine = Boolean(rolePrefix || roleTag);
 ---
 
-<figure class:list={['flex h-full flex-col', size === 'card' ? 'card p-6' : 'mx-auto max-w-[48rem] text-center']}>
-  <Icon name="quote" size={size === 'large' ? 36 : 24} class:list={['text-teal-500', size === 'large' && 'mx-auto']} />
-  <blockquote class:list={['mt-3 text-ink-heading', size === 'large' ? 'font-display text-2xl leading-snug md:text-3xl' : 'text-lg leading-relaxed']}>
-    <p>{text}</p>
-  </blockquote>
-  <figcaption class:list={['mt-auto pt-5 text-sm', size === 'large' && 'mt-6']}>
-    <span class="block font-semibold text-ink-heading">{t.name}</span>
-    <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) ? `, ${t.specialty}` : ''}</span>
-    {place && <span class="block text-ink-muted">{place}</span>}
-    {t.customerSince && <span class="block text-ink-muted">Using EasyClinic since {t.customerSince}</span>}
-    {consent && <span class="mt-1 block text-xs">{consent}</span>}
-  </figcaption>
-</figure>
+{
+  size === 'card' ? (
+    <figure class="quote-card card flex h-full flex-col p-6 md:p-7">
+      <Icon name="quote" size={34} class="text-teal-500/45" />
+      <blockquote
+        class="quote-text mt-4 text-[15px] leading-[1.75] text-ink"
+        data-lines={lines}
+        style={lines ? `--lines: ${lines}` : undefined}
+        title={lines ? t.quote : undefined}
+      >
+        <p>
+          {text}
+        </p>
+      </blockquote>
+      {/* The byline sits at the foot, so cards in a row line up whatever the quote length. */}
+      <div class="mt-auto pt-6">
+        <figcaption>
+          <span class="block font-display text-lg leading-snug font-semibold text-ink-heading">{t.name}</span>
+          {hasRoleLine && (
+            <span class="mt-1 block text-sm leading-relaxed text-ink-muted">
+              {rolePrefix}{rolePrefix && roleTag && ', '}{roleTag && <span class="byline-tag">{roleTag}</span>}{roleSuffix && `, ${roleSuffix}`}
+            </span>
+          )}
+          {t.customerSince && <span class="mt-1 block text-sm text-ink-muted">Using Easy Clinic since {t.customerSince}</span>}
+        </figcaption>
+        {consent && <span class="mt-3 block text-xs">{consent}</span>}
+      </div>
+    </figure>
+  ) : (
+    <figure class="mx-auto flex h-full max-w-[48rem] flex-col text-center">
+      <Icon name="quote" size={36} class="mx-auto text-teal-500" />
+      <blockquote class="mt-3 font-display text-2xl leading-snug text-ink-heading md:text-3xl">
+        <p>{text}</p>
+      </blockquote>
+      <figcaption class="mt-6 text-sm">
+        <span class="block font-semibold text-ink-heading">{t.name}</span>
+        <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) ? `, ${t.specialty}` : ''}</span>
+        {place && <span class="block text-ink-muted">{place}</span>}
+        {t.customerSince && <span class="block text-ink-muted">Using Easy Clinic since {t.customerSince}</span>}
+        {consent && <span class="mt-1 block text-xs">{consent}</span>}
+      </figcaption>
+    </figure>
+  )
+}
+
+<style>
+  /* The clinic in the byline: a yellow tag with a red dashed outline. */
+  .byline-tag {
+    background: #ffe066;
+    color: #3d2a00;
+    outline: 1.5px dashed #d92d20;
+    outline-offset: 1px;
+    border-radius: 2px;
+    padding-inline: 0.2em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .quote-card {
+    border-color: #c7c7c7;
+    transition: border-color 150ms ease;
+  }
+  .quote-card:hover {
+    border-color: var(--color-blue-500);
+  }
+  /* A fixed number of lines: clipped with an ellipsis, and padded so short quotes take the same height. */
+  .quote-text[data-lines] {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--lines);
+    line-clamp: var(--lines);
+    overflow: hidden;
+    min-height: calc(1.75em * var(--lines));
+  }
+</style>

@@ -6,7 +6,7 @@ headKeyword: cardiology EMR software
 secondaryKeywords:
   - cardiology EHR
   - cardiac clinic software
-title: 'Cardiology EMR Software: EasyClinic'
+title: 'Cardiology EMR Software: Easy Clinic'
 metaDescription: >-
   Cardiology EMR software: ECG and echo reports on the patient's record with blood pressure and lab trend
   charts, on Premium at {price:usd.premium.annual} per doctor a month.
@@ -15,7 +15,7 @@ linkLabel: Cardiology
 eyebrow: For cardiology clinics
 openingAnswer: >-
   A cardiology clinic sees the same patients for years, so it needs ECG and echo reports beside the notes,
-  and blood pressure and lab results charted across visits. EasyClinic's Premium plan keeps both on one
+  and blood pressure and lab results charted across visits. Easy Clinic's Premium plan keeps both on one
   record and adds cardiology templates, at {price:inr.premium.annual} per doctor per month in India or
   {price:usd.premium.annual}, billed annually.
 summary: >-
@@ -26,7 +26,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/14_Dashboard (1).jpg'
-  alt: 'EasyClinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today''s earnings and invoices by status'
+  alt: 'Easy Clinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today''s earnings and invoices by status'
   frame: none
 ctas:
   primary:
@@ -35,7 +35,7 @@ ctas:
   secondary:
     label: See Premium pricing
     href: /pricing/#plans
-  whatsapp: Hi, I was reading the EasyClinic cardiology page and would like to book a demo for our clinic.
+  whatsapp: Hi, I was reading the Easy Clinic cardiology page and would like to book a demo for our clinic.
 
 sections:
   - discriminant: painBlocks
@@ -117,7 +117,7 @@ sections:
         - heading: A drug interaction check when you prescribe
           body: >-
             A cardiology patient is often on several long-term medicines, and a new one gets added at almost
-            every review. EasyClinic's EMR includes a drug interaction check on the prescription.
+            every review. Easy Clinic's EMR includes a drug interaction check on the prescription.
         - heading: Follow-ups set in the note, with reminders
           body: >-
             Patients with heart failure or hypertension come back for years, so the follow-up is recorded
@@ -169,7 +169,7 @@ sections:
       id: follow-up-visit
       heading: A cardiology review, from the nurse's desk to the bill
       intro: >-
-        How a review visit runs on EasyClinic in a polyclinic or a hospital OPD. We have not timed these
+        How a review visit runs on Easy Clinic in a polyclinic or a hospital OPD. We have not timed these
         steps in a cardiology clinic, so the page gives no minutes for them.
       items:
         - heading: The nurse records the vitals first
@@ -192,7 +192,7 @@ sections:
             href: /features/appointment-scheduling/
         - heading: The prescription goes home on paper or on WhatsApp
           body: >-
-            The prescription is printed for the patient or, on Premium, sent on WhatsApp. EasyClinic also
+            The prescription is printed for the patient or, on Premium, sent on WhatsApp. Easy Clinic also
             carries patient education material, in videos and brochures, on heart disease and on
             rehabilitation.
         - heading: Packages paid in parts
@@ -218,9 +218,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        We do not yet have a cardiologist's own words to put on this page. These are EasyClinic's public
+        We do not yet have a cardiologist's own words to put on this page. These are Easy Clinic's public
         ratings, from clinics of every specialty.
       variant: badges
       badges:
@@ -233,7 +233,7 @@ sections:
   - discriminant: stepList
     value:
       id: training
-      heading: How long does it take to learn EasyClinic?
+      heading: How long does it take to learn Easy Clinic?
       intro: >-
         About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
         session is 20 to 40 minutes, short enough to fit between OPD sessions, so the clinic keeps seeing
@@ -259,14 +259,14 @@ sections:
 
 faqHeading: Questions cardiology clinic owners ask
 faq:
-  - question: Which EasyClinic plan does a cardiology clinic need, and what does it cost?
+  - question: Which Easy Clinic plan does a cardiology clinic need, and what does it cost?
     answer: >-
       Premium, because the cardiology templates come with it: {price:inr.premium.annual} per doctor per
       month billed annually in India or {price:inr.premium.quarterly} billed quarterly, and
       {price:usd.premium.annual} or {price:usd.premium.quarterly} in US dollars. Professional, at
       {price:inr.professional.annual} or {price:usd.professional.annual}, has the EMR and billing but not the
       specialty templates. Both include a reception login, with no setup fee and no binding contract.
-  - question: Can EasyClinic store ECGs and echo reports, and can it connect to the machines?
+  - question: Can Easy Clinic store ECGs and echo reports, and can it connect to the machines?
     answer: >-
       It stores them as files, and a direct machine connection would be custom work. ECG and echo reports,
       like any other diagnostic record, are kept in the patient's file as uploaded documents or images. A
@@ -296,16 +296,16 @@ faq:
       screen with the fee paid online, and the patient joins from a web browser on a phone or a computer,
       with nothing to install. The prescription can go to the patient on WhatsApp or by email, and it says
       the consult was held remotely.
-  - question: Does EasyClinic run the pharmacy at our cardiac centre?
+  - question: Does Easy Clinic run the pharmacy at our cardiac centre?
     answer: >-
       Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
       Professional and Premium as a module. With the module, the pharmacist dispenses from the doctor's
       prescription and tracks each batch to its expiry date.
-  - question: Does EasyClinic work without an internet connection?
+  - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
       the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
-      system runs on the clinic's own server rather than in EasyClinic's cloud.
+      system runs on the clinic's own server rather than in Easy Clinic's cloud.
 
 links:
   hub: /specialties/
@@ -321,19 +321,19 @@ links:
       description: For a cardiology OPD in a hospital or nursing home, with the registration queue and the pharmacy on one record.
     - href: /clinic-management-software-india/
       label: Clinic management software in India
-      description: What EasyClinic costs in rupees, and how it fits a clinic in India.
+      description: What Easy Clinic costs in rupees, and how it fits a clinic in India.
     - href: /emr-software-in-kenya/
       label: Clinic software in Kenya
-      description: EasyClinic for clinics in Kenya, with prescriptions in English and Swahili.
+      description: Easy Clinic for clinics in Kenya, with prescriptions in English and Swahili.
     - href: /features/emr/
       label: The EMR and e-prescriptions
       description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
     - href: /pricing/
-      label: EasyClinic pricing
+      label: Easy Clinic pricing
       description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
 
 closing:
-  heading: See a cardiology review on EasyClinic
+  heading: See a cardiology review on Easy Clinic
   body: >-
     Book a demo and ask to see an echo report on the patient's record and the blood pressure chart across
     visits, or compare what Premium includes, plan by plan, on the pricing page.
@@ -349,7 +349,7 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: >-
     The details a cardiologist would recognise, the folder of ECGs from two hospitals and the treadmill
-    clash at the TMT room door, sit on capabilities taken only from EasyClinic's own cardiology page and
+    clash at the TMT room door, sit on capabilities taken only from Easy Clinic's own cardiology page and
     plans.yaml, and the only local fact is the rupee price.
   readsMachineWritten: >-
     The pains are composites rather than a named clinic's day and the page has no cardiologist's words or
@@ -357,7 +357,7 @@ editorialPass:
     that follow-up stops at a reminder to the patient.
 
 notes:
-  - 'Recruit a named cardiology testimonial (spec 5.15 item 9): a named cardiologist or cardiology clinic owner on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. The live page carries four testimonials (two psychiatrists, a general physician, an ophthalmologist), none from a cardiologist. Until then the proof block is the Capterra and Google badges, and its intro says no cardiologist quote exists yet. Review counts are null in facts.yaml, so the badges show no count.'
+  - 'Recruit a named cardiology testimonial (spec 5.15 item 9): a named cardiologist or cardiology clinic owner on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. The live page carries four testimonials (two psychiatrists, a general physician, an ophthalmologist), none from a cardiologist. Until then the proof block is the Capterra and Google badges, and its intro says no cardiologist quote exists yet. Review counts are null in facts.yaml, so the badges show no count.'
   - 'Grounding: every capability is stated plainly on the live /cardiology-emr/ page (retrieved 2026-09-26): ECG, echo, lab reports and other diagnostic records stored in patient files (FAQ), image and document upload, procedures and tests recorded in patient records (FAQ; the echo and stress test examples are from its own table row), cardiac health trend visualisation and "Vitals & Lab charts", longitudinal visit data on one screen and side-by-side past records, cardiology templates for heart failure, arrhythmias and coronary artery disease, the CVS Examination form, the customizable intake form (chronic illnesses, family history, social history, substance use) shown on the facesheet, auto-generated patient summaries, point-and-click input with auto-complete notes, diagnosis, medications, investigations, referrals and follow-ups, drug interaction check (listed with no detail, so the page claims only that the check exists, not how or when it warns), clinical assistant or nurse intake, role-based access, automated follow up and automated reminders, resource booking (equipment or assistants) inside the appointment slot and a multi-resource calendar, patient education videos and brochures, part and advance payments and payment amortisation for package treatments, refunds and invoice voiding with authorisation, telecardiology from a browser with online fee payment and the remote-consult line on the prescription, multi-doctor and multi-branch use, and cloud access. Plan placement follows plans.yaml (specialty templates, own forms, package treatments, lab reports in the chart, video consults, online payments, WhatsApp and more than one location on Premium; pharmacy and inventory on Enterprise or as a module; integrations on Enterprise or as an add-on). The offline answer and "customisation without charges" come from migration/research/facts.md, worded as on the physiotherapy and EMR pages.'
   - 'Spec 5.15 must-haves left out (company to-do): (1) anticoagulation tracking: the live page never mentions it; confirm whether there is an INR log with target range, dose changes against each INR and the next test date, and on which plan. (2) Device follow-up: not on the live page; confirm whether pacemaker, ICD or CRT device details and check dates can be recorded and recalled. (3) Chronic-care recall as a list: the live page says only "chronic patient follow-up tracking", "Automated follow up" and automated reminders, so the page claims a follow-up set in the note with an automated reminder and nothing more; confirm whether the clinic can pull a list of patients overdue by condition (for example a heart failure register) and on which plan (/features/patient-engagement/ describes recall campaigns by condition from the spec, with no plan). ECG and echo attachments, BP trend charts and the FAQ at 8 are included; lipid and HbA1c charts are written as lab values charted on Premium, as on /features/lab/.'
   - 'Spec 5.15 template items not covered for lack of facts: (4) a timed walkthrough of the most common cardiology visit (the workflow rows say plainly that no step is timed); (5) the full count of cardiology templates (the live page names three conditions "and other conditions" plus the CVS Examination form; the dataTable lists only those four); (6) devices and integrations with status, such as ECG machine connection, echo DICOM viewing, Holter and ambulatory BP import (the page states only that a direct machine connection is custom integration work per plans.yaml, and names no device or protocol); (8) which cardiology note types Cura AI drafts, with an example note. Also confirm whether nurse and clinical assistant logins are paid licences under per-doctor pricing, and which plan carries vitals charts, the intake form, resource booking and the drug interaction check (the rows carry no plan tag, and the featureRows intro says only that Premium includes every row).'

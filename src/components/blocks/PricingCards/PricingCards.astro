@@ -110,20 +110,21 @@ const zones = Object.fromEntries(
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
   <div class="pricing" data-currency-switcher={switcher ? '' : undefined} data-tz={switcher ? JSON.stringify(zones) : undefined}>
-    {
-      showConditions && (
-        <ul class="mb-8 flex flex-wrap gap-x-6 gap-y-2">
-          {plans.conditions.map((c) => (
-            <li class="flex items-center gap-2 font-medium">
-              <Icon name="circle-check" size={20} class={inverse ? 'text-ink-inverse' : 'text-success'} />
-              <span>{c}</span>
-            </li>
-          ))}
-        </ul>
-      )
-    }
-
-    <div class="mb-8 flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
+    <div class="mb-8 flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
+      {
+        showConditions && (
+          <ul class:list={['flex flex-wrap gap-x-6 gap-y-3', switcher && 'sm:basis-full']}>
+            {plans.conditions.map((c) => (
+              <li class="flex items-center gap-2 font-medium">
+                <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#00c554] text-white" aria-hidden="true">
+                  <Icon name="check" size={13} />
+                </span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
       {
         switcher && (
           <div>
@@ -197,7 +198,7 @@ const zones = Object.fromEntries(
         cards.map(({ plan, quote, variants, cta }) => (
           <li class:list={['card flex flex-col p-6 text-ink', plan.highlight && 'border-2 border-blue-700']}>
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <h3 class="font-sans text-xl font-semibold">{plan.name}</h3>
+              <h3 class="font-display text-xl font-semibold">{plan.name}</h3>
               {plan.highlight && (
                 <p class="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-navy-900">
                   <Icon name="star" size={14} />
@@ -242,8 +243,10 @@ const zones = Object.fromEntries(
             <p class="mt-8 text-sm font-semibold text-ink-heading">{plan.includesLabel}</p>
             <ul class="mt-3 space-y-2">
               {plan.includes.map((item) => (
-                <li class="flex gap-2">
-                  <Icon name="check" size={18} class="mt-1 text-success" />
+                <li class="flex gap-2.5">
+                  <span class="mt-[0.2rem] flex size-5 shrink-0 items-center justify-center rounded-full bg-[#00c554] text-white" aria-hidden="true">
+                    <Icon name="check" size={13} />
+                  </span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -255,8 +258,8 @@ const zones = Object.fromEntries(
 
     {
       taxNotes.filter((t) => t.text).map((t) => (
-        <p data-cur={t.currency} data-cur-default={t.isDefault ? '' : undefined} class:list={['mt-6 text-sm', muted]}>
-          {t.text}
+        <p data-cur={t.currency} data-cur-default={t.isDefault ? '' : undefined} class="mt-6 text-sm">
+          <span class="rating-platform">{t.text}</span>
         </p>
       ))
     }

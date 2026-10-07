@@ -5,20 +5,20 @@ secondaryKeywords:
   - clinical decision support software
   - AI clinical assistant
   - point-of-care decision support
-title: 'CuraPilot, the AI Copilot for Doctors: EasyClinic'
+title: 'CuraPilot, the AI Copilot for Doctors: Easy Clinic'
 metaDescription: >-
   CuraPilot is an AI copilot for doctors: it reads past visits and checks the prescription during the
   consult. Every flag is advice; the clinician decides.
 h1: An AI copilot for doctors that reads past visits
 linkLabel: CuraPilot
-eyebrow: CuraPilot, the clinical copilot from EasyClinic
+eyebrow: CuraPilot, the clinical copilot from Easy Clinic
 openingAnswer: >-
-  CuraPilot is EasyClinic's AI copilot for doctors: it reads past visits and checks the prescription in
+  CuraPilot is Easy Clinic's AI copilot for doctors: it reads past visits and checks the prescription in
   the consult, and the doctor decides each flag. In a 2025 Penda Health and OpenAI preprint of
-  {fig:visits} visits on EasyClinic, clinicians with AI Consult made {fig:diagnostic-errors} fewer
+  {fig:visits} visits on Easy Clinic, clinicians with AI Consult made {fig:diagnostic-errors} fewer
   diagnostic errors; the paper does not name CuraPilot.
 summary: >-
-  EasyClinic's AI copilot for doctors, and what the Penda Health study of {fig:visits} visits in Nairobi
+  Easy Clinic's AI copilot for doctors, and what the Penda Health study of {fig:visits} visits in Nairobi
   did and did not measure.
 author: subhashish-saha
 lastUpdated: 2026-09-26
@@ -34,7 +34,7 @@ ctas:
   secondary:
     label: Read the study
     href: https://arxiv.org/abs/2507.16947
-  whatsapp: Hi, I was reading the EasyClinic CuraPilot page and would like to talk about a 90-day proof of concept.
+  whatsapp: Hi, I was reading the Easy Clinic CuraPilot page and would like to talk about a 90-day proof of concept.
 
 sections:
   - discriminant: painBlocks
@@ -53,7 +53,7 @@ sections:
           fix: >-
             CuraPilot reads the patient's past visits during the consult and flags patterns that no single
             visit shows. In the Penda Health preprint, clinicians who had AI Consult, a copilot inside their
-            EasyClinic record, made {fig:diagnostic-errors} fewer diagnostic errors. The paper does not name
+            Easy Clinic record, made {fig:diagnostic-errors} fewer diagnostic errors. The paper does not name
             CuraPilot.
         - heading: 'Operations: stockouts found too late'
           body: >-
@@ -142,8 +142,8 @@ sections:
       eyebrow: The Penda Health study
       heading: What the Penda Health study measured
       intro: >-
-        The study measured AI Consult, a copilot that Penda Health and OpenAI ran inside Penda's EasyClinic
-        record. The paper does not name CuraPilot. EasyClinic built the record the study took place in, and
+        The study measured AI Consult, a copilot that Penda Health and OpenAI ran inside Penda's Easy Clinic
+        record. The paper does not name CuraPilot. Easy Clinic built the record the study took place in, and
         Penda has run on it since 2017.
       publication: korom-2025
       figures:
@@ -152,11 +152,11 @@ sections:
         - treatment-errors
         - history-errors
       method: >-
-        Penda Health and OpenAI ran AI Consult, a copilot embedded in Penda's EasyClinic record, during real
+        Penda Health and OpenAI ran AI Consult, a copilot embedded in Penda's Easy Clinic record, during real
         patient visits. Then 108 independent physicians rated a random sample of the visit records for errors, comparing visits
         where the clinician had AI Consult with visits where the clinician did not.
       sites: >-
-        15 Penda Health clinics in Nairobi, Kenya, all running on EasyClinic, the record Penda has used
+        15 Penda Health clinics in Nairobi, Kenya, all running on Easy Clinic, the record Penda has used
         since 2017.
       limits: >-
         The paper is a preprint on arXiv and has not yet been through a journal's review. Its figures are
@@ -166,8 +166,8 @@ sections:
   - discriminant: testimonialRow
     value:
       id: penda-health
-      heading: Penda Health on working with EasyClinic
-      intro: Dr Robert Korom is chief medical officer at Penda Health, which has run on EasyClinic since 2017.
+      heading: Penda Health on working with Easy Clinic
+      intro: Dr Robert Korom is chief medical officer at Penda Health, which has run on Easy Clinic since 2017.
       items:
         - robert-korom-partner
       layout: single
@@ -178,7 +178,7 @@ sections:
       id: where-it-runs
       heading: Where CuraPilot runs
       body: >-
-        CuraPilot sits on EasyClinic, or on top of an existing hospital information system. On EasyClinic
+        CuraPilot sits on Easy Clinic, or on top of an existing hospital information system. On Easy Clinic
         it reads the record your clinicians already write in, so there is no second system to keep up to
         date.
 
@@ -201,7 +201,7 @@ sections:
             concept is measured against.
         - title: Deploy
           meta: Weeks 4 to 6
-          body: CuraPilot goes live for your clinicians, on EasyClinic or on your existing hospital information system.
+          body: CuraPilot goes live for your clinicians, on Easy Clinic or on your existing hospital information system.
         - title: Measure
           meta: Weeks 7 to 10
           body: The results are measured on your own data, against the baseline from the first stage.
@@ -215,7 +215,7 @@ sections:
 faq:
   - question: Does CuraPilot replace our EMR?
     answer: >-
-      No, CuraPilot works inside the record you already keep. On EasyClinic it reads the same patient
+      No, CuraPilot works inside the record you already keep. On Easy Clinic it reads the same patient
       record the clinician writes in, and on another hospital information system, notes and
       prescriptions stay in that system.
   - question: What did the Penda Health study show?
@@ -227,8 +227,8 @@ faq:
       random sample of the visit records.
   - question: Did the study test CuraPilot?
     answer: >-
-      Not by name: the paper studied AI Consult, a copilot inside Penda's EasyClinic record, and does not
-      name CuraPilot. EasyClinic built that record, and Penda Health has used it since 2017.
+      Not by name: the paper studied AI Consult, a copilot inside Penda's Easy Clinic record, and does not
+      name CuraPilot. Easy Clinic built that record, and Penda Health has used it since 2017.
   - question: Does the clinician stay in control?
     answer: >-
       Yes, CuraPilot is advisory by design. It raises a flag during the consult, and the clinician decides
@@ -239,7 +239,7 @@ faq:
       opinion to weigh, and the decision stays with the clinician.
   - question: Does CuraPilot work with the EMR we already use?
     answer: >-
-      CuraPilot is built to sit on EasyClinic or on top of an existing hospital information system. This
+      CuraPilot is built to sit on Easy Clinic or on top of an existing hospital information system. This
       page does not list named systems, so name yours when you ask for a proof of concept.
   - question: Has the study been published in a journal?
     answer: >-
@@ -264,8 +264,8 @@ links:
       label: Software for clinic chains
       description: One record and one set of SOPs across every branch.
     - href: /emr-software-in-kenya/
-      label: EasyClinic in Kenya
-      description: Clinic software for Kenya, where Penda Health runs on EasyClinic.
+      label: Easy Clinic in Kenya
+      description: Clinic software for Kenya, where Penda Health runs on Easy Clinic.
 
 closing:
   heading: Try CuraPilot on your own clinics for 90 days
@@ -282,7 +282,7 @@ closing:
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
-  onlyUsCouldWrite: 'EasyClinic has been Penda Health''s record since 2017, so this page can say exactly where AI Consult ran, quote Penda''s chief medical officer and admit that the paper names AI Consult and not CuraPilot.'
+  onlyUsCouldWrite: 'Easy Clinic has been Penda Health''s record since 2017, so this page can say exactly where AI Consult ran, quote Penda''s chief medical officer and admit that the paper names AI Consult and not CuraPilot.'
   readsMachineWritten: 'The three leaks and the three intelligence rows keep the old page''s template shape, the consult walkthrough describes an alert a doctor cannot yet see in a screenshot, and the "does not name CuraPilot" caveat repeats in several places.'
 
 notes:
@@ -291,7 +291,7 @@ notes:
   - 'Study honesty: the paper names AI Consult, embedded in Penda''s Easy Clinic EMR since 2017. It does not name CuraPilot (study.yaml note: confirm whether CuraPilot is AI Consult). If product confirms they are the same system, the opening answer, painBlocks clinical fix, studyCard intro and limits, and the "Did the study test CuraPilot?" FAQ can be rewritten.'
   - '"108 independent physicians" is written as text from the paper (verified in page-writing-rules); there is no fig token for it. "10% fewer investigation errors" is verified but left out because it has no fig token; add an investigation-errors figure to study.yaml to use it. The study FAQ splits its figures across two sentences rather than listing three in a row (spec 6.2).'
   - 'Removed for lack of a source: 67% fewer stockouts, 34% fewer denied claims, 45-day early warning, "28 organisations", "23% to under 4%" rejections, 99.97% uptime (spec 5.3 moves uptime to /trust), "100% clinician satisfaction", "22+ years". The Nature Health and Nature Medicine papers are separate studies and are not cited.'
-  - 'Integration note names only the approach (EasyClinic, or an existing HIS). The live list (KenyaEMR, OpenMRS, M-Pesa, eTIMS, SMART e-claiming, SLADE, SHA, DHIS2) is left out: integration status is unconfirmed, and live Kenya pages say SHA and eTIMS are not yet supported. Restore an honest per-system list with states from src/data/integrations when confirmed.'
+  - 'Integration note names only the approach (Easy Clinic, or an existing HIS). The live list (KenyaEMR, OpenMRS, M-Pesa, eTIMS, SMART e-claiming, SLADE, SHA, DHIS2) is left out: integration status is unconfirmed, and live Kenya pages say SHA and eTIMS are not yet supported. Restore an honest per-system list with states from src/data/integrations when confirmed.'
   - 'Cost: CuraPilot and the proof of concept have no published price, so spec 5.3 "What it costs" and the FAQ "How is it priced?" are left out. The stepList note says only that CuraPilot is not part of any plan on the price list (true of plans.yaml, which has no CuraPilot line).'
   - 'FAQs left out for lack of a confirmed fact: "Is it available in Kenya, India, UAE and Nigeria?", "How is it priced?", "What data leaves the clinic?". Replaced with "Did the study test CuraPilot?" and "Has the study been published in a journal?" (the plain form of "Is the study peer reviewed?", which the claims lint blocks as text).'
   - 'Walkthrough ("What changed for the clinician") has no screenshot: spec 12 asks for a live alert capture. Add media to the flowDiagram step "A pattern is flagged" when it exists. The example symptoms come from the mock alert on the live page and are illustrative.'
@@ -302,4 +302,4 @@ notes:
   - 'Old URL /curapilot-ai/ already 301s here through src/data/redirects.yaml (spec 3.4), so redirectFrom is not set.'
   - 'Audit 2026-09-27: the ''Operational intelligence'' row and the ''Operations'' painBlock fix now say stock prediction is a Cura AI job, with a link to /ai/, following spec 1.2 and the /ai/ "Predicts stockouts" row; before, the page listed forecasting under CuraPilot''s "What it does". The claim-check bullet and the flow step "The claim goes out checked" are unchanged (spec 4.1).'
   - 'Audit 2026-09-27: the study FAQ and the studyCard method now say the 108 independent physicians rated a random sample of the visit records. The paper''s panel rated 5,666 of the visits (arXiv 2507.16947, re-read 2026-09-27; study.yaml scope), not all of them.'
-  - 'Audit 2026-09-27: removed "connecting through HL7 FHIR and open APIs" from the where-it-runs prose and both EMR FAQs. Integration and standards status is unknown (page-writing rules), spec 5.3 grounds only "sits on EasyClinic or on your existing HIS", and spec 4.1 puts FHIR APIs on /integrations/ with a status for each. Restore the FHIR wording once src/data/integrations has an entry for FHIR and open APIs with a state and date.'
+  - 'Audit 2026-09-27: removed "connecting through HL7 FHIR and open APIs" from the where-it-runs prose and both EMR FAQs. Integration and standards status is unknown (page-writing rules), spec 5.3 grounds only "sits on Easy Clinic or on your existing HIS", and spec 4.1 puts FHIR APIs on /integrations/ with a status for each. Restore the FHIR wording once src/data/integrations has an entry for FHIR and open APIs with a state and date.'

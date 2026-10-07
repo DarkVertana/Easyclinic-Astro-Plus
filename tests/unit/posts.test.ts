@@ -225,7 +225,7 @@ describe('WordPress import: HTML clean-up', () => {
   it('drops an opening heading only when it repeats the title', () => {
     expect(repeatsTitle('A Guide to Registration and Licensing Requirements for Doctors in Kenya', 'What Are the Registration and Licensing Requirements for Doctors in Kenya')).toBe(true);
     expect(repeatsTitle('1. Introduction', 'AI Allergy Clinic Software')).toBe(false);
-    expect(repeatsTitle('Why Clinics Are Struggling with Manual Management?', 'EasyClinic EMR Software in India')).toBe(false);
+    expect(repeatsTitle('Why Clinics Are Struggling with Manual Management?', 'Easy Clinic EMR Software in India')).toBe(false);
     const md = (html: string) => htmlToMdx(cleanHtml(html, new Map(), 'AI Surgery Clinic Software'));
     expect(md('<h2>1. Introduction</h2><p>Text.</p><h2>2. Next</h2><p>More.</p>')).toMatch(/^## 1\\. Introduction/);
     expect(md('<h2>AI surgery clinic software</h2><p>Text.</p>')).toBe('Text.');

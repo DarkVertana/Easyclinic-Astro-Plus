@@ -13,7 +13,7 @@ h1: OPD software for hospitals and nursing homes
 linkLabel: Hospital OPD and nursing homes
 eyebrow: For hospital OPDs and nursing homes
 openingAnswer: >-
-  EasyClinic is OPD management software for hospitals and nursing homes: it runs the OPD and day care from
+  Easy Clinic is OPD management software for hospitals and nursing homes: it runs the OPD and day care from
   the registration queue to the insurance claim, with the pharmacy and lab on the same record. Inpatient
   care is out of scope, so wards, beds, theatres and the ICU stay on a separate system.
 summary: >-
@@ -24,7 +24,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/15_Workflow.png'
-  alt: 'EasyClinic visit workflow settings, with the queue steps from waiting for the doctor to the pharmacy, the roles for each step and a visit''s activity log'
+  alt: 'Easy Clinic visit workflow settings, with the queue steps from waiting for the doctor to the pharmacy, the roles for each step and a visit''s activity log'
   frame: none
 ctas:
   primary:
@@ -33,7 +33,7 @@ ctas:
   secondary:
     label: Get an Enterprise quote
     href: /contact-us/#book-a-demo
-  whatsapp: Hi, I was reading the EasyClinic hospital OPD page and would like to book an OPD walkthrough for our hospital.
+  whatsapp: Hi, I was reading the Easy Clinic hospital OPD page and would like to book an OPD walkthrough for our hospital.
 
 sections:
   - discriminant: painBlocks
@@ -89,7 +89,7 @@ sections:
         Each step writes to the same claim, so the billing desk finishes a claim that started at the
         registration counter instead of building one from paper at the end of the week. The payers change
         from country to country and the steps stay the same. The examples below name who pays in each
-        country; they are payer examples, not a list of EasyClinic connections.
+        country; they are payer examples, not a list of Easy Clinic connections.
       steps:
         - label: Register
           body: Reception registers the patient once, and walk-ins and booked patients join the same OPD list.
@@ -127,7 +127,7 @@ sections:
       id: departments
       heading: Departments and staff access
       body: |-
-        A hospital OPD is several clinics sharing one registration desk. Every department on EasyClinic writes on the same patient record, so the physician sees what orthopaedics prescribed last month, and a patient sent from one department to another is not registered twice. On Premium and Enterprise each department keeps its own specialty templates.
+        A hospital OPD is several clinics sharing one registration desk. Every department on Easy Clinic writes on the same patient record, so the physician sees what orthopaedics prescribed last month, and a patient sent from one department to another is not registered twice. On Premium and Enterprise each department keeps its own specialty templates.
 
         Each member of staff has their own login, and the role decides which screens they see. A reception login comes with every plan, and reception cannot open the EMR or write a prescription.
 
@@ -136,25 +136,25 @@ sections:
   - discriminant: scopeBox
     value:
       id: not-in-scope
-      heading: What EasyClinic does not run in a hospital
+      heading: What Easy Clinic does not run in a hospital
       intro: >-
-        EasyClinic stops at the ward door. If your hospital or nursing home admits patients, the inpatient
-        side needs its own system, and EasyClinic runs the OPD and day care beside it.
+        Easy Clinic stops at the ward door. If your hospital or nursing home admits patients, the inpatient
+        side needs its own system, and Easy Clinic runs the OPD and day care beside it.
       variant: isNot
       items:
         - '**Inpatient wards.** Admissions, bed management, ward rounds and nursing charts are out of scope.'
         - '**Operating theatres.** Theatre scheduling and the theatre''s own records are out of scope.'
         - '**Intensive care.** ICU charting and monitoring are out of scope.'
-        - '**A full hospital information system.** EasyClinic does not replace an HIS. It covers the outpatient side, with pharmacy, lab, billing and insurance claims.'
+        - '**A full hospital information system.** Easy Clinic does not replace an HIS. It covers the outpatient side, with pharmacy, lab, billing and insurance claims.'
       note: >-
-        Connecting EasyClinic to the inpatient system you already run is an integration project, scoped for
+        Connecting Easy Clinic to the inpatient system you already run is an integration project, scoped for
         your hospital and that system. Integrations come with Enterprise, or as an add-on on Professional
         and Premium.
 
   - discriminant: testimonialRow
     value:
       id: customer
-      heading: Dr Prantar Chakrabarti, on EasyClinic since 2008
+      heading: Dr Prantar Chakrabarti, on Easy Clinic since 2008
       intro: A haematologist at the Institute of Hematology and Transfusion Medicine, on the features he likes most.
       items:
         - prantar-chakrabarti
@@ -163,46 +163,46 @@ sections:
 
 faqHeading: Questions hospital and nursing home owners ask
 faq:
-  - question: Is EasyClinic a full hospital information system (HIS)?
+  - question: Is Easy Clinic a full hospital information system (HIS)?
     answer: >-
-      No, EasyClinic is not a full HIS. It runs the outpatient side of a hospital or nursing home, the OPD
+      No, Easy Clinic is not a full HIS. It runs the outpatient side of a hospital or nursing home, the OPD
       and day care with their pharmacy, lab, billing and insurance claims, and it does not run inpatient
       wards, bed management, operating theatres or the ICU. A hospital that needs those keeps a separate
-      inpatient system and runs EasyClinic in the OPD.
-  - question: Does EasyClinic include pharmacy and lab?
+      inpatient system and runs Easy Clinic in the OPD.
+  - question: Does Easy Clinic include pharmacy and lab?
     answer: >-
       Yes, pharmacy and lab management both come with Enterprise, and a hospital on Professional or
       Premium can add them to its plan. The pharmacy dispenses from the doctor's prescription with batch
       and expiry tracked, and lab tests are ordered from the chart with the results coming back into the
       patient's record. Premium on its own shows lab reports in the chart but does not include lab
       management.
-  - question: Can EasyClinic handle insurance billing in the OPD?
+  - question: Can Easy Clinic handle insurance billing in the OPD?
     answer: >-
       Yes, Enterprise includes claims to insurers as well as to TPAs and HMOs, and a hospital on
       Professional or Premium can add payer claims to its plan. Each payer gets its own price list and
-      coverage is checked at registration. EasyClinic builds the claim pack from the visit and the invoice,
+      coverage is checked at registration. Easy Clinic builds the claim pack from the visit and the invoice,
       and payments are reconciled against the claim when they arrive.
-  - question: Can one EasyClinic system run several OPD departments?
+  - question: Can one Easy Clinic system run several OPD departments?
     answer: >-
       Yes, every department works on the same patient record, so a patient referred from medicine to
       orthopaedics is not registered twice. Each department can keep its own specialty templates on
       Premium and Enterprise, and each staff login sees only the screens its role needs. Enterprise adds
       workflow rules and central control across locations.
-  - question: Does EasyClinic do bed management?
+  - question: Does Easy Clinic do bed management?
     answer: >-
-      No, bed management is part of inpatient care, which is out of scope for EasyClinic. Admissions and
-      bed allocation stay on your inpatient system, and EasyClinic runs the OPD and day care beside it.
-  - question: Can EasyClinic connect to the HIS we already run?
+      No, bed management is part of inpatient care, which is out of scope for Easy Clinic. Admissions and
+      bed allocation stay on your inpatient system, and Easy Clinic runs the OPD and day care beside it.
+  - question: Can Easy Clinic connect to the HIS we already run?
     answer: >-
       Yes, as an integration project scoped for your hospital and the HIS you run. Integrations and custom
       features come with Enterprise, and Professional and Premium can add them. What passes between the
       two systems is agreed as part of that scope, before the work starts.
-  - question: Can we host EasyClinic on a private cloud?
+  - question: Can we host Easy Clinic on a private cloud?
     answer: >-
-      Yes, private cloud hosting is available on request on the Enterprise plan, and EasyClinic also offers
+      Yes, private cloud hosting is available on request on the Enterprise plan, and Easy Clinic also offers
       a self-hosted option on the hospital's own server. The standard cloud version does not run fully
       offline today, which matters in an OPD where the internet connection drops.
-  - question: How is EasyClinic priced for a hospital OPD?
+  - question: How is Easy Clinic priced for a hospital OPD?
     answer: >-
       Professional and Premium are priced per doctor per month, and Enterprise, the plan built for
       hospital OPDs and nursing homes, is quoted for your hospital. For comparison, Premium costs
@@ -231,10 +231,10 @@ links:
     - href: /pricing/india/
 
 closing:
-  heading: Walk one patient through your OPD on EasyClinic
+  heading: Walk one patient through your OPD on Easy Clinic
   body: >-
     Tell us how your busiest registration hour runs and which payers you bill, and we walk one patient
-    through EasyClinic from the queue to a reconciled claim.
+    through Easy Clinic from the queue to a reconciled claim.
   primary:
     label: Book an OPD walkthrough
     href: /contact-us/#book-a-demo
@@ -248,7 +248,7 @@ editorialPass:
   onlyUsCouldWrite: >-
     The claim flow names the payers an OPD bills in each market, down to Jubilee and AAR in Kenya and DHA
     eClaimLink in Dubai, and the page says plainly that inpatient care is out of scope, with a named
-    haematologist who has used EasyClinic since 2008 as the proof.
+    haematologist who has used Easy Clinic since 2008 as the proof.
   readsMachineWritten: >-
     Without a measured throughput number or a named hospital OPD customer, the pain blocks describe a
     generic busy OPD and several FAQ answers read like the price list rather than a hospital's own
@@ -263,7 +263,7 @@ notes:
   - 'FAQ "doctor productivity reports" (spec 5.8 item 8) left out: whether patients per doctor per hour is live in reports is not confirmed. The related link description now names only revenue and claim status (see the fact-check note below).'
   - 'Flow diagram examples name payers only as spec 5.11 does, with no integration state. SLADE, SHA e-claims, DHA eClaimLink, HMO claim packs and NHIA status are all null in src/data (regulators and countries). Do not add "integrated with" wording until each has a state and date.'
   - 'Spec 5.8 section 5 is "Departments and HR access". Written as "Departments and staff access" because no HR module (attendance, payroll, rosters) is confirmed; it covers role logins, the reception licence rule and the Enterprise workflow rules and central control.'
-  - 'ScopeBox note does not name any inpatient system EasyClinic has run beside, or what data passes between them: both unknown (also listed as missing on home). Add named systems once confirmed.'
+  - 'ScopeBox note does not name any inpatient system Easy Clinic has run beside, or what data passes between them: both unknown (also listed as missing on home). Add named systems once confirmed.'
   - 'Pricing FAQ gives Premium as a reference price because Enterprise is quoted; KES, AED and NGN prices are unknown. What drives the Enterprise quote (doctors, departments, locations) is not stated because it is not confirmed.'
   - 'Self-hosted option is from the live Kenya listicle (facts.md section 7). Its plans, cost and whether it works without internet are unknown and not stated.'
   - 'No redirectFrom: /hospital-opd-nursing-home-software/ already redirects here in src/data/redirects.yaml.'

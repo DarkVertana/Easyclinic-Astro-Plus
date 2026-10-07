@@ -5,13 +5,13 @@ secondaryKeywords:
   - patient portal software
   - patient app for clinics
   - patient retention software
-title: 'Patient Engagement and Portal Software: EasyClinic'
+title: 'Patient Engagement and Portal Software: Easy Clinic'
 metaDescription: 'Patient engagement software for clinics: a portal and app where patients book and see their records, plus recall campaigns by condition.'
 h1: Keep patients coming back between visits
 linkLabel: Patient engagement
 eyebrow: Patient engagement
 openingAnswer: >-
-  EasyClinic keeps in touch with patients through five loops that run from the patient record: onboard
+  Easy Clinic keeps in touch with patients through five loops that run from the patient record: onboard
   with a registration link, remind before the visit, follow up when a review is due, ask how it went and
   reward loyal patients. SMS and email reminders come with every plan, and the patient portal and app with
   Enterprise.
@@ -23,7 +23,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: ../../assets/images/products/img5.png
-  alt: EasyClinic patient list and patient profile, with a WhatsApp enrolment link, an online booking page showing clinic visit slots, and the patient registration form on a phone
+  alt: Easy Clinic patient list and patient profile, with a WhatsApp enrolment link, an online booking page showing clinic visit slots, and the patient registration form on a phone
   frame: none
 ctas:
   primary:
@@ -32,7 +32,7 @@ ctas:
   secondary:
     label: Compare plans and prices
     href: /pricing/
-  whatsapp: Hi, I was reading the EasyClinic patient engagement page and would like to see the patient app and a recall campaign in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic patient engagement page and would like to see the patient app and a recall campaign in a demo.
 
 sections:
   - discriminant: painBlocks
@@ -191,9 +191,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        These are EasyClinic's public ratings on Capterra and Google. They rate the whole product, not
+        These are Easy Clinic's public ratings on Capterra and Google. They rate the whole product, not
         the patient app on its own.
       variant: badges
       badges:
@@ -261,16 +261,16 @@ sections:
       items:
         - >-
           **No revisit figure.** We have no measured rate of patients coming back to a clinic on
-          EasyClinic to publish, so this page gives none.
+          Easy Clinic to publish, so this page gives none.
         - >-
           **The portal and app are Enterprise only.** On Professional and Premium, patients hear from the
           clinic by message but have no login of their own.
         - >-
-          **Consent is the clinic's to collect.** EasyClinic sends the messages your clinic sets up, and
+          **Consent is the clinic's to collect.** Easy Clinic sends the messages your clinic sets up, and
           the laws in the table above put the duty to ask the patient on the clinic, as the holder of the
           data.
         - >-
-          **It does not run fully offline.** EasyClinic is cloud software, so the desk needs a connection
+          **It does not run fully offline.** Easy Clinic is cloud software, so the desk needs a connection
           to run a recall campaign or see a booking made in the app.
 
   - discriminant: contentCards
@@ -332,19 +332,19 @@ links:
   hub: /features/
   related:
     - href: /solutions/solo-clinic/
-      label: EasyClinic for a solo doctor
+      label: Easy Clinic for a solo doctor
       description: One doctor and a receptionist on the Professional plan, with SMS and email reminders included.
     - href: /solutions/polyclinic/
-      label: EasyClinic for a polyclinic
+      label: Easy Clinic for a polyclinic
       description: Every specialist on one patient record, with WhatsApp messages from the Premium plan.
     - href: /solutions/clinic-chain/
-      label: EasyClinic for a clinic chain
+      label: Easy Clinic for a clinic chain
       description: Every branch on one system, with the patient portal and app on the Enterprise plan.
     - href: /solutions/hospital-opd/
-      label: EasyClinic for a hospital OPD
+      label: Easy Clinic for a hospital OPD
       description: The OPD queue and its follow-ups on one patient record.
     - href: /solutions/ngo-clinics/
-      label: EasyClinic for NGO and mission clinics
+      label: Easy Clinic for NGO and mission clinics
       description: Clinic records and programme reports in the shape donors ask for.
     - href: /features/whatsapp/
       label: WhatsApp messaging
@@ -372,7 +372,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The plan split for each channel and the enrolment link sent by SMS or WhatsApp come from EasyClinic's
+    The plan split for each channel and the enrolment link sent by SMS or WhatsApp come from Easy Clinic's
     own price list and live engagement page, and the consent table names the four laws a clinic in India,
     Kenya, the UAE or Nigeria answers to when it messages patients.
   readsMachineWritten: >-
@@ -389,7 +389,7 @@ notes:
   - 'Google review capture (spec 5.11) left out: the live page names feedback surveys, ratings and forms but nothing about Google reviews. The spec FAQ "feedback to Google" is dropped for the same reason.'
   - 'Spec 5.11 FAQ items not answerable with public facts and left out: cost per message (also owned by /features/whatsapp/ per 4.5 rule 3), branded app, multi-branch campaigns, feedback to Google. Replaced with the plan question, patients without the app, and the revisit-rate question answered honestly.'
   - 'Directory booking channel (spec 5.11) omitted: the directory is out of scope.'
-  - 'Consent table describes the laws in general terms from src/data/regulators (in-dpdp, ke-dpa, ae-pdpl, ng-ndpa) plus the text of each law (DPDP withdrawal as easy as giving; Kenya direct-marketing consent and opt-out under the Act and the 2021 General Regulations; UAE PDPL right to object to direct marketing and Federal Law No. 2 of 2019 data localisation; NDPA withdrawal and right to object). No status column and no EasyClinic compliance claim: every regulator state is null. The /trust/ pointers ("where EasyClinic stands is kept on the trust page") were removed from the table note and the consent FAQ, and the /trust/ related link replaced with /features/emr/, because /trust/ is a draft and no status exists to point to. Needs a compliance read before a lawyer-facing use.'
+  - 'Consent table describes the laws in general terms from src/data/regulators (in-dpdp, ke-dpa, ae-pdpl, ng-ndpa) plus the text of each law (DPDP withdrawal as easy as giving; Kenya direct-marketing consent and opt-out under the Act and the 2021 General Regulations; UAE PDPL right to object to direct marketing and Federal Law No. 2 of 2019 data localisation; NDPA withdrawal and right to object). No status column and no Easy Clinic compliance claim: every regulator state is null. The /trust/ pointers ("where Easy Clinic stands is kept on the trust page") were removed from the table note and the consent FAQ, and the /trust/ related link replaced with /features/emr/, because /trust/ is a draft and no status exists to point to. Needs a compliance read before a lawyer-facing use.'
   - 'Consent table fact-checked 2026-09-26 against official texts, each fetched that day, and each law name now links to its source. India: DPDP Act s5(1) notice, s6(4) withdrawal as easy as giving, s6(10) the fiduciary proves notice and consent (replaces "keeps consent records"), s8(9) published contact for questions (replaces "names a contact for grievances"); G.S.R. 843(E) and Rule 1(4) of the DPDP Rules 2025 (G.S.R. 846(E), 13 November 2025, both on meity.gov.in) bring these sections into force 18 months after publication, so the row now says May 2027. Kenya (ODPC copies): Act s2 health status is sensitive data, s37(1) express consent for commercial use; General Regulations 2021 reg 15 and 17 (opt-out statement in each direct-marketing message); Registration Regulations 2021 Third Schedule item 5 (patient care must register), which replaces the unsourced "registers as a data controller". UAE: PDPL Art. 2(2)(e) excludes health data that has its own law and Art. 17(1) gives the right to object to direct marketing (Arabic text on u.ae; uaelegislation.gov.ae blocked fetching); Federal Law No. 2 of 2019 Art. 13 (DHA-hosted copy, dha.gov.ae/uploads/112021/8af22f1c-ebe4-4e20-b157-743ac93bb20b.pdf) bars storing or transferring health data outside the State except by exemption, and u.ae states the confidentiality duty; "on health data" in the law column became "on ICT in health" (its title). Nigeria (ndpc.gov.ng copy): NDPA s65 health status is sensitive data and consent is freely given and specific, s35(2) withdrawal as easy as giving, s36(3) objection to direct marketing; NDPC Guidance Notice on registration (19 December 2024) designates health-sector controllers as of major importance, who register under s44 (replaces "above the threshold").'
   - 'WhatsApp appears as one channel (4.5 rule 3). Templates, message charges and opt-in mechanics are only pointed to /features/whatsapp/, which explains how Meta charges but gives no per-message figure, so this page no longer says that page gives "what each message costs".'
   - 'No heroMedia and no media objects: screenshots do not exist yet. When the spec 12 captures exist, add the patient app (booking, reports, messages, phone frame) as hero and the diabetes recall campaign with its sent list to the recall section.'

@@ -28,53 +28,68 @@ function link(href: string) {
 const demoCandidate = countryData?.pages.demo;
 const demoHref = (demoCandidate && registry.urlFor(demoCandidate)) || registry.urlFor('/contact-us/#book-a-demo') || '/contact-us/#book-a-demo';
 
+// The page being viewed, for the active state: a link is current when it points at this path (ignoring any #hash),
+// and a dropdown is current when one of its links is.
+const here = Astro.url.pathname.replace(/\/?$/, '/');
+const isHere = (href: string | null) => Boolean(href) && href!.split('#')[0].replace(/\/?$/, '/') === here;
+
 const primary = nav.primary
   .map((item) => ({
     ...item,
     top: item.href ? link(item.href) : null,
     groups: (item.groups ?? [])
-      .map((g) => ({ ...g, links: g.links.map((l) => ({ ...l, ...link(l.href) })).filter((l) => l.href) }))
+      .map((g) => ({ ...g, links: g.links.map((l) => ({ ...l, ...link(l.href) })).map((l) => ({ ...l, current: isHere(l.href) })).filter((l) => l.href) }))
       .filter((g) => g.links.length),
   }))
-  .filter((item) => item.groups.length || item.top?.href);
+  .filter((item) => item.groups.length || item.top?.href)
+  .map((item) => ({ ...item, current: item.groups.length ? item.groups.some((g) => g.links.some((l) => l.current)) : isHere(item.top!.href) }));
 const missingClass = !isProduction ? 'nav-missing' : '';
+
 ---
 
-<header class="sticky top-0 z-40 border-b border-line bg-surface">
-  <div class="container-page flex h-16 items-center gap-4 md:h-[4.5rem]">
-    <a href="/" class="shrink-0" aria-label="EasyClinic home">
-      <Image src={logo} alt={site.logoAlt} width={162} height={32} loading="eager" fetchpriority="high" class="h-8 w-auto" />
+<header class="site-header sticky top-0 z-40 bg-surface" data-header>
+  {/* Wider than the page container (container-wide, shared with the footer). On desktop a three-column grid keeps
+      the menu centred on the page, with the logo left and the actions right. */}
+  <div class="header-row container-wide flex items-center gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+    <a href="/" class="shrink-0 justify-self-start" aria-label="Easy Clinic home">
+      {/* Served at the source's full 400px so it stays sharp at 220px on high-density screens. */}
+      <Image src={logo} alt={site.logoAlt} width={400} height={79} loading="eager" fetchpriority="high" class="header-logo h-auto" />
     </a>
 
-    <nav aria-label="Main" class="ml-4 hidden md:block">
+    {/* The menu fits on one line from 1200px (lg); below that the drawer takes over. */}
+    <nav aria-label="Main" class="hidden lg:block">
       <ul class="flex items-center gap-1">
         {
           primary.map((item) => (
             <li class="relative">
               {item.groups.length ? (
                 <details data-menu="dropdown" class="nav-dd group">
-                  <summary class="flex list-none items-center gap-1 rounded-control px-3 py-2 font-medium text-ink-heading hover:bg-surface-muted [&::-webkit-details-marker]:hidden">
+                  <summary class:list={['nav-item flex list-none items-center gap-1 whitespace-nowrap rounded-control px-2 py-2 text-base font-medium min-[90rem]:px-3 [&::-webkit-details-marker]:hidden', item.current ? 'is-current text-blue-700' : 'text-ink-heading']}>
                     {item.label}
                     <Icon name="chevron-down" size={16} class="transition-transform group-open:rotate-180" />
                   </summary>
                   <div
                     class:list={[
                       'absolute left-0 top-full z-50 mt-2 rounded-card border border-line bg-surface p-5 shadow-[0_12px_32px_-12px_rgb(10_37_64/0.25)]',
-                      item.groups.length > 2 ? 'w-[min(56rem,calc(100vw-3rem))]' : item.groups.length === 2 ? 'w-[40rem]' : 'w-[22rem]',
+                      item.groups.length > 2 ? 'w-[min(60rem,calc(100vw-3rem))]' : item.groups.length === 2 ? 'w-[46rem]' : 'w-[26rem]',
                     ]}
                   >
                     <div class:list={['grid gap-6', item.groups.length >= 4 ? 'grid-cols-4' : item.groups.length === 3 ? 'grid-cols-3' : item.groups.length === 2 ? 'grid-cols-2' : 'grid-cols-1']}>
                       {item.groups.map((group) => (
                         <div>
-                          <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">{group.title}</p>
+                          <p class="mb-2 text-base font-semibold uppercase tracking-wide text-black">{group.title}</p>
                           <ul class="space-y-1">
                             {group.links.map((l) => (
                               <li>
-                                <a href={l.href} class:list={['flex gap-2.5 rounded-control p-2 no-underline hover:bg-surface-alt', l.missing && missingClass]}>
-                                  {l.icon && <Icon name={l.icon} size={18} class="mt-0.5 text-blue-600" />}
+                                <a
+                                  href={l.href}
+                                  aria-current={l.current ? 'page' : undefined}
+                                  class:list={['group/link flex gap-3 rounded-control p-2 no-underline transition-colors hover:bg-blue-50', l.current && 'bg-blue-50', l.missing && missingClass]}
+                                >
+                                  {l.icon && <Icon name={l.icon} size={22} class="mt-px text-blue-600 transition-transform group-hover/link:scale-110" />}
                                   <span>
-                                    <span class="block text-sm font-semibold text-ink-heading">{l.label}</span>
-                                    {l.description && <span class="block text-sm leading-snug text-ink-muted">{l.description}</span>}
+                                    <span class:list={['block text-base font-semibold leading-snug transition-colors group-hover/link:text-blue-700', l.current ? 'text-blue-700' : 'text-ink-heading']}>{l.label}</span>
+                                    {l.description && <span class="mt-0.5 block text-[0.9375rem] leading-snug text-ink-muted">{l.description}</span>}
                                   </span>
                                 </a>
                               </li>
@@ -91,8 +106,17 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                   </div>
                 </details>
               ) : (
-                <a href={item.top!.href} class:list={['block rounded-control px-3 py-2 font-medium text-ink-heading no-underline hover:bg-surface-muted', item.top!.missing && missingClass]}>
-                  {item.label}
+                <a
+                  href={item.top!.href}
+                  aria-current={item.current ? 'page' : undefined}
+                  class:list={[
+                    'nav-item relative block whitespace-nowrap rounded-control px-2 py-2 text-base font-medium no-underline min-[90rem]:px-3',
+                    item.current ? 'is-current text-blue-700' : item.badge ? 'text-blue-600' : 'text-ink-heading',
+                    item.top!.missing && missingClass,
+                  ]}
+                >
+                  <span class:list={[item.badge && 'nav-gradient']}>{item.label}</span>
+                  {item.badge && <span class="nav-badge absolute -top-1.5 right-0 translate-x-1/3">{item.badge}</span>}
                 </a>
               )}
             </li>
@@ -101,18 +125,15 @@ const missingClass = !isProduction ? 'nav-missing' : '';
       </ul>
     </nav>
 
-    <div class="ml-auto flex items-center gap-2">
-      <a href={site.appLoginUrl} class="btn btn-ghost hidden sm:inline-flex" rel="noopener">Log in</a>
-      <a href={whatsappHref} class="btn btn-ghost hidden !px-3 lg:inline-flex" data-track="whatsapp_click" data-label="header" rel="noopener" aria-label="Chat with us on WhatsApp">
-        <Icon name="brand-whatsapp" size={20} class="text-whatsapp" />
-      </a>
+    <div class="ml-auto flex items-center gap-2 justify-self-end">
+      <a href={site.appLoginUrl} class="btn btn-outline hidden sm:inline-flex" rel="noopener">Login</a>
       <a href={demoHref} class="btn btn-cta hidden sm:inline-flex" data-track="cta_click" data-label="header book a demo">Book a demo</a>
 
-      <details data-menu="drawer" class="md:hidden">
+      <details data-menu="drawer" class="lg:hidden">
         <summary class="btn btn-ghost list-none !px-2.5 [&::-webkit-details-marker]:hidden" aria-label="Menu">
           <Icon name="menu" size={24} />
         </summary>
-        <div class="fixed inset-x-0 bottom-0 top-16 z-50 overflow-y-auto border-t border-line bg-surface px-4 pb-24 pt-2">
+        <div class="fixed inset-x-0 bottom-0 top-[var(--header-h)] z-50 overflow-y-auto border-t border-line bg-surface px-4 pb-24 pt-2">
           <nav aria-label="Main">
             <ul class="divide-y divide-line">
               {
@@ -120,7 +141,7 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                   item.groups.length ? (
                     <li>
                       <details class="group/m">
-                        <summary class="flex min-h-12 list-none items-center justify-between py-3 font-semibold text-ink-heading [&::-webkit-details-marker]:hidden">
+                        <summary class:list={['flex min-h-12 list-none items-center justify-between py-3 font-semibold [&::-webkit-details-marker]:hidden', item.current ? 'text-blue-700' : 'text-ink-heading']}>
                           {item.label}
                           <Icon name="chevron-down" size={18} class="transition-transform group-open/m:rotate-180" />
                         </summary>
@@ -130,7 +151,7 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                             <ul>
                               {group.links.map((l) => (
                                 <li>
-                                  <a href={l.href} class:list={['block min-h-11 py-2.5 text-ink no-underline', l.missing && missingClass]}>
+                                  <a href={l.href} aria-current={l.current ? 'page' : undefined} class:list={['block min-h-11 py-2.5 no-underline', l.current ? 'font-semibold text-blue-700' : 'text-ink', l.missing && missingClass]}>
                                     {l.label}
                                   </a>
                                 </li>
@@ -142,8 +163,9 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                     </li>
                   ) : (
                     <li>
-                      <a href={item.top!.href} class:list={['flex min-h-12 items-center py-3 font-semibold text-ink-heading no-underline', item.top!.missing && missingClass]}>
-                        {item.label}
+                      <a href={item.top!.href} aria-current={item.current ? 'page' : undefined} class:list={['flex min-h-12 items-center gap-2 py-3 font-semibold no-underline', item.current ? 'text-blue-700' : item.badge ? 'text-blue-600' : 'text-ink-heading', item.top!.missing && missingClass]}>
+                        <span class:list={[item.badge && 'nav-gradient']}>{item.label}</span>
+                        {item.badge && <span class="nav-badge">{item.badge}</span>}
                       </a>
                     </li>
                   ),
@@ -173,6 +195,109 @@ const missingClass = !isProduction ? 'nav-missing' : '';
   .nav-missing {
     text-decoration: underline dotted;
     text-underline-offset: 0.25em;
+  }
+  /* Header size: 86px with a 220px logo, shrinking to 72px and 188px once the page has scrolled (header.ts sets
+     data-scrolled). Phones keep a 64px header and a 162px logo. The drawer opens below whichever height is set. */
+  .site-header {
+    --header-h: 4rem;
+    --logo-w: 162px;
+  }
+  @media (width >= 60rem) {
+    .site-header {
+      --header-h: 5.375rem;
+      --logo-w: 220px;
+    }
+    .site-header[data-scrolled] {
+      --header-h: 4.5rem;
+      --logo-w: 188px;
+    }
+  }
+  /* No bottom border; a soft shadow once the page has scrolled. */
+  .site-header {
+    transition: box-shadow 200ms ease;
+  }
+  .site-header[data-scrolled] {
+    box-shadow: 0 30px 30px 0 rgb(0 0 0 / 0.1);
+  }
+  .header-row {
+    height: var(--header-h);
+    transition: height 200ms ease;
+  }
+  .header-logo {
+    width: var(--logo-w);
+    transition: width 200ms ease;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .header-row,
+    .header-logo {
+      transition: none;
+    }
+  }
+
+  /* Top-level menu items: blue on hover, while a dropdown is open, and on the current page. */
+  .nav-item {
+    transition: color 150ms ease;
+  }
+  .nav-item:hover,
+  .nav-item:focus-visible,
+  details[open] > .nav-item {
+    color: var(--color-blue-600);
+  }
+  .nav-item.is-current {
+    color: var(--color-blue-700);
+  }
+
+  /* A highlighted menu label (one with a badge, Cura AI): teal-to-blue gradient text. Both ends pass contrast on
+     white; the plain colour underneath shows if background-clip: text is not supported. */
+  .nav-gradient {
+    color: var(--color-blue-600);
+    background: linear-gradient(90deg, var(--color-teal-700), var(--color-blue-600));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  a:hover .nav-gradient {
+    background: linear-gradient(90deg, #035f58, var(--color-blue-700));
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* The "New" tag on a menu item: a teal pill that pulses, with a ring rippling out on each beat. The pill keeps
+     its colour throughout (white on teal-700 passes contrast); only its size and the glow move. */
+  .nav-badge {
+    display: inline-block;
+    padding: 0.125rem 0.4375rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, var(--color-teal-700), var(--color-blue-600));
+    border: 1px solid rgb(255 255 255 / 0.85);
+    color: #fff;
+    font-size: 0.5rem; /* 8px */
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px -2px rgb(4 122 113 / 0.6);
+    animation: nav-badge-blink 1.6s ease-in-out infinite;
+  }
+  @keyframes nav-badge-blink {
+    0%,
+    100% {
+      scale: 1;
+      box-shadow:
+        0 2px 8px -2px rgb(4 122 113 / 0.6),
+        0 0 0 0 rgb(4 189 175 / 0.6);
+    }
+    50% {
+      scale: 1.12;
+      box-shadow:
+        0 2px 10px -2px rgb(4 122 113 / 0.7),
+        0 0 0 6px rgb(4 189 175 / 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-badge {
+      animation: none;
+    }
   }
   :global(html.drawer-open) {
     overflow: hidden;

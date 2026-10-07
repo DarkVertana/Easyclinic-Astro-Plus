@@ -27,7 +27,7 @@ const sides = [
     {
       sides.map((side) => (
         <div class:list={['card flex flex-col overflow-hidden border-t-4 text-ink', side.accent]}>
-          <h3 class="flex items-center gap-3 px-5 pt-5 pb-4 font-sans text-lg font-semibold leading-snug sm:px-6">
+          <h3 class="flex items-center gap-3 px-5 pt-5 pb-4 font-display text-lg font-semibold leading-snug sm:px-6">
             {side.icon && (
               <span class:list={['flex size-10 shrink-0 items-center justify-center rounded-full', side.badge]}>
                 <Icon name={side.icon} size={20} />

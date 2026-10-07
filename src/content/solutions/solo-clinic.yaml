@@ -13,7 +13,7 @@ h1: Clinic software built for one doctor
 linkLabel: Solo doctor clinic
 eyebrow: For solo and single-doctor clinics
 openingAnswer: >-
-  EasyClinic is clinic software for a small clinic with one doctor: it finishes the note and the
+  Easy Clinic is clinic software for a small clinic with one doctor: it finishes the note and the
   prescription with the visit and raises the bill from the same screen, so your evenings are not spent
   catching up. It costs {price:usd.professional.annual} per doctor per month on the Professional plan,
   billed annually, with the reception licence included.
@@ -25,7 +25,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/16_Portal.png'
-  alt: 'EasyClinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
+  alt: 'Easy Clinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
   frame: none
 ctas:
   primary:
@@ -34,13 +34,13 @@ ctas:
   secondary:
     label: See solo pricing
     href: /pricing/
-  whatsapp: Hi, I run a one-doctor clinic and was reading the EasyClinic solo clinic page. I would like to book a 20-minute demo.
+  whatsapp: Hi, I run a one-doctor clinic and was reading the Easy Clinic solo clinic page. I would like to book a 20-minute demo.
 
 sections:
   - discriminant: dayTimeline
     value:
       id: a-tuesday
-      heading: A Tuesday with and without EasyClinic
+      heading: A Tuesday with and without Easy Clinic
       intro: >-
         Same clinic, same patients. What changes is where the paperwork goes, and whether it follows
         you home.
@@ -87,11 +87,11 @@ sections:
   - discriminant: painBlocks
     value:
       id: three-pains
-      heading: What EasyClinic fixes first
+      heading: What Easy Clinic fixes first
       intro: >-
         If you run your own clinic you already know where the day goes. The notes get finished at 9pm.
         Three of the 4pm patients did not turn up and nobody called them. The receipt book and the bank
-        balance disagree by a few hundred rupees and nobody knows why. EasyClinic fixes those three things
+        balance disagree by a few hundred rupees and nobody knows why. Easy Clinic fixes those three things
         first, and the rest of the product can wait until you want it.
       items:
         - heading: Why charting takes your evenings
@@ -110,7 +110,7 @@ sections:
             The appointment was booked two weeks ago and the patient forgot. The slot sits empty while a
             walk-in waits, and a reminder call only happens when the desk has a spare minute.
           fix: >-
-            EasyClinic reminds booked patients by SMS or email before the visit, and on WhatsApp on the
+            Easy Clinic reminds booked patients by SMS or email before the visit, and on WhatsApp on the
             Premium plan. The day's list shows everyone who was booked, so the desk can call anyone who has
             not come in the same afternoon.
           href: /features/appointment-scheduling/
@@ -226,13 +226,13 @@ sections:
         longer.
 
 faq:
-  - question: Is EasyClinic overkill for a solo doctor clinic?
+  - question: Is Easy Clinic overkill for a solo doctor clinic?
     answer: >-
       No, the Professional plan is the one built for a doctor running their own clinic with a receptionist,
       and you can start with the chart and the appointment book and leave the rest until you want it. If
       your clinic is one doctor with no staff and no plans to grow, a free EMR may be enough, and we will
       tell you so.
-  - question: How much does EasyClinic cost for one doctor?
+  - question: How much does Easy Clinic cost for one doctor?
     answer: >-
       One doctor on the Professional plan pays {price:usd.professional.annual} a month billed annually,
       or {price:usd.professional.quarterly} billed quarterly, and the reception licence is included, so a
@@ -241,17 +241,17 @@ faq:
       training cost nothing extra.
   - question: Is there a free trial?
     answer: >-
-      No, EasyClinic does not offer a free trial. The demo runs on your own patient flow instead, following
+      No, Easy Clinic does not offer a free trial. The demo runs on your own patient flow instead, following
       one patient from the walk-in to the bill the way your clinic works. If you go ahead, there is no
       binding contract, so you are not locked in while you find out whether it suits you.
   - question: Do I need IT staff to set it up?
     answer: >-
-      No, EasyClinic is cloud-based, so there is no server in the clinic to install or look after. Our team
+      No, Easy Clinic is cloud-based, so there is no server in the clinic to install or look after. Our team
       trains you and your receptionist in a personalised programme over {fact:trainingDays} days, and after
       that support is unlimited, by phone or in writing, at no extra cost.
-  - question: Does EasyClinic work without the internet?
+  - question: Does Easy Clinic work without the internet?
     answer: >-
-      No, EasyClinic is cloud-based and does not run fully offline today, so the clinic needs an internet
+      No, Easy Clinic is cloud-based and does not run fully offline today, so the clinic needs an internet
       connection. If your line drops often, that is a real limit to weigh before you choose it, and a
       second connection, even a phone hotspot, is worth keeping for the days it goes down.
   - question: Does it work if I later open a second location?
@@ -262,11 +262,11 @@ faq:
   - question: Can I use my own prescription layout?
     answer: >-
       Yes, on the Premium plan, which includes your own clinical forms and print layouts; Professional
-      does not include them. The customisation options already inside EasyClinic cost nothing extra on
+      does not include them. The customisation options already inside Easy Clinic cost nothing extra on
       either plan.
   - question: Can I take my data with me if I leave?
     answer: >-
-      Yes, you can take your data with you if you stop using EasyClinic, and there is no binding contract
+      Yes, you can take your data with you if you stop using Easy Clinic, and there is no binding contract
       to wait out first. What we may and may not do with it is set out in our [privacy policy](/privacy/).
 
 links:
@@ -290,7 +290,7 @@ links:
     - href: /open-a-clinic-in-india/
 
 closing:
-  heading: See a day like yours on EasyClinic
+  heading: See a day like yours on Easy Clinic
   body: >-
     In 20 minutes we follow one patient through a one-doctor clinic, from the walk-in to the evening close.
     If a call is too much today, send us a WhatsApp message from this page instead.
@@ -323,7 +323,7 @@ notes:
   - 'Cura AI drafting during the consult with review and sign follows spec 4.1 (/ai row), spec 12 (draft SOAP note in a "review and sign" state) and plans.yaml (Cura AI note drafting on Professional).'
   - '"When you grow": a second consulting room is stated only as not changing the plan (pricing is per doctor, and Professional covers one location). Whether Professional schedules rooms separately is not confirmed, so room scheduling is not claimed. Per-location fees and whether a doctor working at two branches needs a second licence are unknown and not stated.'
   - 'Testimonial tl-prabhu has city null; it renders without a city in production. Add the city (spec 5.5 item 6 asks for specialty and city).'
-  - 'FAQ left out for lack of a confirmed fact: mobile app for the doctor, e-prescription legality by country, data export format and timing on leaving, refund of unused months on annual billing, and how long a custom prescription layout takes to build. The data answer says only that you can take your data (no format, no ownership wording) and points to the privacy policy (/privacy/) for what EasyClinic may do with it, as /questions-to-ask-your-clinic-emr-software-provider/ does. The setup question was reworded to "Do I need IT staff to set it up?" because who performs setup beyond training and support is not confirmed.'
+  - 'FAQ left out for lack of a confirmed fact: mobile app for the doctor, e-prescription legality by country, data export format and timing on leaving, refund of unused months on annual billing, and how long a custom prescription layout takes to build. The data answer says only that you can take your data (no format, no ownership wording) and points to the privacy policy (/privacy/) for what Easy Clinic may do with it, as /questions-to-ask-your-clinic-emr-software-provider/ does. The setup question was reworded to "Do I need IT staff to set it up?" because who performs setup beyond training and support is not confirmed.'
   - 'Offline FAQ follows the live site ("does not run fully offline today"). The self-hosted option mentioned on the live Kenya listicle is not offered here because it is unconfirmed and not a solo-clinic plan.'
   - 'Step list note: goLiveDays (3, "in as little as 3 days" on /kenyademo/) conflicts with the "2 to 4 week setup" on the live Kenya listicle (facts.yaml note). Typical go-live time, and what makes a clinic slower, are unknown, so the note says only that yours may take longer. Day 3 and day 4 step bodies describe only the session names from the live /pricing/ FAQ.'
   - 'Related links follow spec 5.5 item 9. The buyer''s country page is fixed to India until a geo-selected link exists; /features/billing/ is linked from the timeline, pains and day-one rows.'

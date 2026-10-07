@@ -1,43 +1,159 @@
 ---
 import { getRegistry } from '../../lib/content/registry';
 import Icon from '../ui/Icon.astro';
+import Flag from '../ui/Flag.astro';
 
 interface Props {
   heading: string;
   links: Array<{ href: string; label?: string; description?: string }>;
+  /** Show country pages as a row of flag pills above the cards (the home page) instead of as cards. */
+  countryPills?: boolean;
 }
 
-const { heading, links } = Astro.props;
+const { heading, links, countryPills = false } = Astro.props;
 const registry = await getRegistry();
+// A country page shows its flag; other targets get an icon for what they are.
+const ICONS: [string, string][] = [
+  ['/features/', 'layers'],
+  ['/ai/', 'sparkles'],
+  ['/curapilot/', 'stethoscope'],
+  ['/trust/', 'shield-check'],
+  ['/pricing/', 'wallet'],
+  ['/solutions/', 'building-2'],
+  ['/compare/', 'list-checks'],
+  ['/blog/', 'file-text'],
+];
+const iconFor = (href: string) => ICONS.find(([prefix]) => href.startsWith(prefix))?.[1] ?? 'arrow-up-right';
 // Curated next steps (spec 2.9), replacing the shared "Explore the rest of the platform" block.
 const items = links
   .map((l) => {
     const target = registry.get(l.href.split('#')[0]);
     const href = registry.urlFor(l.href);
-    return href ? { href, label: l.label ?? target?.label ?? l.href, description: l.description ?? target?.data.summary, missing: !target } : null;
+    const country = (target?.data as { country?: { id: string } } | undefined)?.country?.id;
+    return href
+      ? { href, label: l.label ?? target?.label ?? l.href, description: l.description ?? target?.data.summary, missing: !target, country, icon: iconFor(l.href) }
+      : null;
   })
   .filter((l): l is NonNullable<typeof l> => l !== null);
+// Markets Easy Clinic serves without a country page yet: until each page is built, the pill goes to the
+// countries hub (the old /emr-software-in-*/ URLs redirect there too). Move one into the page's related
+// links, with its own page, once that page is published.
+const OTHER_MARKETS: [string, string][] = [
+  ['ET', 'Ethiopia'],
+  ['FJ', 'Fiji'],
+  ['GH', 'Ghana'],
+  ['MY', 'Malaysia'],
+  ['MV', 'Maldives'],
+  ['MU', 'Mauritius'],
+  ['QA', 'Qatar'],
+  ['RW', 'Rwanda'],
+  ['SC', 'Seychelles'],
+  ['SO', 'Somalia'],
+  ['ZA', 'South Africa'],
+  ['SR', 'Suriname'],
+  ['TZ', 'Tanzania'],
+  ['TT', 'Trinidad and Tobago'],
+  ['UG', 'Uganda'],
+];
+const hubHref = registry.urlFor('/countries/');
+const otherPills =
+  countryPills && hubHref ? OTHER_MARKETS.map(([country, name]) => ({ href: hubHref, label: `EMR Software in ${name}`, country })) : [];
+// Every market in one alphabetical row; the UAE sorts by its full name.
+const sortName = (label: string) => label.replace('EMR Software in ', '').replace(/^UAE$/, 'United Arab Emirates');
+const pills = countryPills
+  ? [...items.filter((i) => i.country).map((i) => ({ href: i.href, label: i.label, country: i.country! })), ...otherPills].sort((a, b) =>
+      sortName(a.label).localeCompare(sortName(b.label)),
+    )
+  : [];
+const cards = countryPills ? items.filter((i) => !i.country) : items;
 ---
 
 {
   items.length > 0 && (
-    <nav aria-labelledby="related-heading" class="section-y bg-surface">
+    <nav aria-labelledby="related-heading" class:list={['section-y bg-surface', countryPills && 'pb-0!']}>
       <div class="container-page">
-        <h2 id="related-heading" class="text-2xl md:text-3xl">{heading}</h2>
-        <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
-            <li>
-              <a href={item.href} class:list={['card group flex h-full flex-col p-5 no-underline hover:border-blue-500', item.missing && 'border-dashed border-line-strong']}>
-                <span class="flex items-center justify-between gap-2 font-semibold text-ink-heading">
+        {/* On the home page a hairline closes the section, as wide as the content rather than the screen. */}
+        <div class:list={[countryPills && 'border-b border-[#c7c7c7] pb-14 md:pb-20']}>
+        <h2 id="related-heading" class:list={['text-2xl md:text-3xl', countryPills && 'text-center']}>{heading}</h2>
+        {pills.length > 0 && (
+          <ul class="mt-8 flex flex-wrap justify-center gap-3" aria-label="Easy Clinic by country">
+            {pills.map((item) => (
+              <li>
+                <a href={item.href} class="country-pill group inline-flex min-h-11 items-center gap-2.5 rounded-full py-1.5 pr-5 pl-2 font-medium text-ink-heading no-underline">
+                  <Flag code={item.country} size={28} class="ring-1 ring-line" />
                   {item.label}
-                  <Icon name="arrow-right" size={18} class="text-blue-600 transition-transform group-hover:translate-x-0.5" />
+                  <Icon name="arrow-right" size={15} class="text-blue-600 transition-transform duration-150 group-hover:translate-x-0.5" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+        {cards.length > 0 && (
+        <ul class:list={['grid gap-4 sm:grid-cols-2', pills.length > 0 ? 'mt-6' : 'mt-8', cards.length % 4 === 0 ? 'lg:grid-cols-4' : 'lg:grid-cols-3']}>
+          {cards.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={['related-card group flex h-full items-center gap-4 rounded-card border bg-surface p-5 no-underline', item.missing && 'border-dashed']}
+              >
+                {item.country ? (
+                  <Flag code={item.country} size={40} class="ring-1 ring-line" />
+                ) : (
+                  <span class="related-card__icon flex size-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700" aria-hidden="true">
+                    <Icon name={item.icon} size={19} />
+                  </span>
+                )}
+                <span class="min-w-0 flex-1">
+                  <span class="flex items-center justify-between gap-2 font-semibold text-ink-heading group-hover:text-blue-700">
+                    {item.label}
+                    <Icon name="arrow-right" size={16} class="shrink-0 text-ink-muted transition-[translate,color] duration-150 group-hover:translate-x-1 group-hover:text-blue-700" />
+                  </span>
+                  {item.description && (
+                    <span class="mt-1 block truncate text-sm leading-[1.55] text-ink-muted">{item.description}</span>
+                  )}
                 </span>
-                {item.description && <span class="mt-2 text-sm text-ink-muted">{item.description}</span>}
               </a>
             </li>
           ))}
         </ul>
+        )}
+        </div>
       </div>
     </nav>
   )
 }
+
+<style>
+  .related-card {
+    border-color: #c7c7c7;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease;
+  }
+  /* A light wash and a soft blue edge; the arrow nudges right. */
+  .related-card:hover,
+  .related-card:focus-visible {
+    background: #f7fbff;
+    border-color: var(--color-blue-200);
+  }
+  .country-pill {
+    border: 1.5px solid var(--color-blue-500);
+    background: var(--surface);
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease;
+  }
+  .country-pill:hover,
+  .country-pill:focus-visible {
+    background: #f7fbff;
+    border-color: var(--color-blue-700);
+    color: var(--color-blue-700);
+  }
+  .related-card__icon {
+    transition: background-color 200ms ease;
+  }
+  .related-card:hover .related-card__icon {
+    background: var(--color-blue-100);
+  }
+</style>

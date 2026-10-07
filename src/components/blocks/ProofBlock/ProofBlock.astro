@@ -42,32 +42,49 @@ const citations = [...new Map(figureRows.filter((f) => f.citation).map((f) => [f
   {
     variant === 'study' && (
       <div>
-        <dl class:list={['grid gap-4', figureRows.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : figureRows.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2']}>
+        <dl class:list={['grid gap-5', figureRows.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : figureRows.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2']}>
           {figureRows.map((f) => (
-            <div class="card p-6">
+            <div class="stat-card card relative flex flex-col p-6 md:p-7">
               <dt class="sr-only">{f.label}</dt>
-              <dd>
-                <span class="block font-display text-4xl font-semibold text-blue-700 md:text-5xl">{f.value}</span>
-                <span class="mt-2 block font-semibold text-ink-heading">{f.label}</span>
-                <span class="mt-1 block text-sm text-ink-muted">{f.context}</span>
+              <dd class="flex flex-1 flex-col">
+                <span class="block font-display text-[2.75rem] leading-none font-normal text-blue-700 md:text-[3.25rem]">{f.value}</span>
+                <span class="mt-3 block text-[1.0625rem] font-semibold text-ink-heading">{f.label}</span>
+                <span class="mt-4 block min-h-[calc(1.6em*2)] border-t border-line pt-4 text-sm leading-[1.6] text-ink-muted">{f.context}</span>
               </dd>
             </div>
           ))}
         </dl>
-        {body && <Md text={body} class="mt-6 max-w-[42rem]" />}
-        {citations.length > 0 && (
-          <p class="mt-5 text-sm text-ink-muted">
-            Source:{' '}
-            {citations.map((c, i) => (
-              <>
-                {i > 0 && '; '}
-                <a href={c.url} rel="noopener">
-                  {c.citation}
-                </a>
-              </>
-            ))}
-            .
-          </p>
+        {(body || citations.length > 0 || link) && (
+          <div class="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-10">
+            {body && <Md text={body} class="max-w-[46rem] leading-relaxed" />}
+            {(citations.length > 0 || link) && (
+              <aside class="self-start rounded-card border border-[#c7c7c7] bg-surface p-6">
+                {citations.length > 0 && (
+                  <>
+                    <p class="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
+                      <Icon name="file-text" size={16} class="text-blue-700" />
+                      Source
+                    </p>
+                    <p class="mt-2 text-sm leading-relaxed">
+                      {citations.map((c, i) => (
+                        <>
+                          {i > 0 && '; '}
+                          <a href={c.url} rel="noopener">
+                            {c.citation}
+                          </a>
+                        </>
+                      ))}
+                    </p>
+                  </>
+                )}
+                {link && registry.urlFor(link.href) && (
+                  <div class:list={[citations.length > 0 && 'mt-5']}>
+                    <Button {...link} variant="outline" class="w-full" />
+                  </div>
+                )}
+              </aside>
+            )}
+          </div>
         )}
       </div>
     )
@@ -114,5 +131,15 @@ const citations = [...new Map(figureRows.filter((f) => f.citation).map((f) => [f
     )
   }
 
-  {link && registry.urlFor(link.href) && <div class="mt-8"><Button {...link} variant="outline" /></div>}
+  {variant !== 'study' && link && registry.urlFor(link.href) && <div class="mt-8"><Button {...link} variant="outline" /></div>}
 </Section>
+
+<style>
+  .stat-card {
+    border-color: #c7c7c7;
+    transition: border-color 150ms ease;
+  }
+  .stat-card:hover {
+    border-color: var(--color-blue-500);
+  }
+</style>

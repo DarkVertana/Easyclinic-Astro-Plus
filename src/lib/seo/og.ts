@@ -5,8 +5,8 @@
  * production, the deployment's own URL on a Vercel preview: src/pages/og/_origin.ts). Pages outside the registry
  * (404, gone, demo) keep the static /og/default.png.
  *
- * Layout: navy card, the EasyClinic wordmark as text, the eyebrow (the page's own, else the post topic, else
- * the family), the page title without the ": EasyClinic" suffix in Fraunces, and the teal journey line.
+ * Layout: navy card, the Easy Clinic wordmark as text, the eyebrow (the page's own, else the post topic, else
+ * the family), the page title without the ": Easy Clinic" suffix in Fraunces, and the teal journey line.
  * No photos. Satori lays the card out and turns the text into paths; resvg rasterises the SVG. Both run at
  * build time only (the route is prerendered), so none of this reaches the browser or the server function.
  *
@@ -51,7 +51,7 @@ export const OG_COLORS = {
 /** Shown above the headline when the page has no eyebrow of its own (posts use their /blog/ topic). */
 export const FAMILY_LABELS: Record<Family, string> = {
   home: 'Clinic management software',
-  hub: 'EasyClinic',
+  hub: 'Easy Clinic',
   feature: 'Features',
   solution: 'Solutions',
   selector: 'Find your fit',
@@ -59,10 +59,10 @@ export const FAMILY_LABELS: Record<Family, string> = {
   curapilot: 'CuraPilot',
   trust: 'Trust and security',
   integrations: 'Integrations',
-  switch: 'Switching to EasyClinic',
+  switch: 'Switching to Easy Clinic',
   customers: 'Customers',
   specialty: 'Specialties',
-  country: 'EasyClinic by country',
+  country: 'Easy Clinic by country',
   countryDemo: 'Book a demo',
   pricing: 'Pricing',
   listicle: 'Guides',
@@ -86,7 +86,7 @@ export const HEADLINE_SIZES = [72, 66, 60, 54, 48, 44] as const;
 export const MAX_LINES = 3;
 
 export interface OgCard {
-  /** The page title, as written (tokens resolved); the ": EasyClinic" suffix and placeholder marks are removed. */
+  /** The page title, as written (tokens resolved); the ": Easy Clinic" suffix and placeholder marks are removed. */
   title: string;
   eyebrow: string;
 }
@@ -100,10 +100,10 @@ export interface HeadlineFit {
   clamped: boolean;
 }
 
-/** The page title without the brand suffix (": EasyClinic", " | EasyClinic", " - EasyClinic"). */
+/** The page title without the brand suffix (": Easy Clinic", " | Easy Clinic", " - Easy Clinic"). */
 export function ogHeadline(title: string): string {
   const clean = stripSentinels(title).replace(/\s+/g, ' ').trim();
-  return clean.replace(/\s*(?::|\||-|–|—)\s*EasyClinic$/i, '').trim() || clean;
+  return clean.replace(/\s*(?::|\||-|–|—)\s*Easy ?Clinic$/i, '').trim() || clean;
 }
 
 /** The page's eyebrow, else its /blog/ topic, else the family label. */
@@ -217,7 +217,7 @@ function cardNode(card: OgCard, fit: HeadlineFit): Node {
     },
     [
       h('div', { display: 'flex', justifyContent: 'space-between', alignItems: 'center' }, [
-        h('div', { fontSize: 36, letterSpacing: -0.5, color: OG_COLORS.headline }, 'EasyClinic'),
+        h('div', { fontSize: 36, letterSpacing: -0.5, color: OG_COLORS.headline }, 'Easy Clinic'),
         h('div', { fontSize: 22, color: OG_COLORS.muted }, 'easyclinic.io'),
       ]),
       h('div', { display: 'flex', flexDirection: 'column', justifyContent: 'center', flexGrow: 1, paddingBottom: JOURNEY_HEIGHT - 30 }, [

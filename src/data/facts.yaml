@@ -3,7 +3,7 @@
 # states publicly were confirmed as of 2026-09-26 (owner decision: publish with public facts).
 facts:
   doctors:
-    label: doctors use EasyClinic
+    label: doctors use Easy Clinic
     value: 5,000+
     source: Live site (/pricing/, homepage), September 2026
     asOf: 2026-09-26
@@ -28,7 +28,7 @@ facts:
     source: Live site (homepage, /kenyademo/)
     asOf: 2026-09-26
   retention:
-    label: of customers have used EasyClinic for more than five years
+    label: of customers have used Easy Clinic for more than five years
     value: 92%
     source: Live /about-us/ counter, September 2026
     asOf: 2026-09-26
@@ -39,7 +39,7 @@ facts:
     source: Live /about-us/ counter, September 2026
     asOf: 2026-09-26
   largestChain:
-    label: locations in the largest chain on EasyClinic
+    label: locations in the largest chain on Easy Clinic
     value: 100+
     source: Live homepage ("From Solo Clinics to 100+ Locations")
     asOf: 2026-09-26

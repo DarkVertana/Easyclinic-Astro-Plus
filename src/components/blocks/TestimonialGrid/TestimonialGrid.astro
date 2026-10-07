@@ -51,7 +51,7 @@ const STYLED_PERSONAS: string[] = ['solo', 'polyclinic', 'chain', 'hospital-opd'
 const unstyled = PERSONAS.filter((p) => !STYLED_PERSONAS.includes(p));
 if (unstyled.length) throw new Error(`testimonialGrid: add a :has() rule for ${unstyled.join(', ')} in TestimonialGrid.astro`);
 
-const COUNTRY_NAMES: Record<string, string> = { in: 'India', ke: 'Kenya', my: 'Malaysia', zw: 'Zimbabwe' };
+const COUNTRY_NAMES: Record<string, string> = { au: 'Australia', in: 'India', ke: 'Kenya', my: 'Malaysia', zw: 'Zimbabwe' };
 const countryRecords = new Map((await getCollection('countries')).map((c) => [c.id, c.data.name]));
 const countryName = (code: string) => countryRecords.get(code) ?? COUNTRY_NAMES[code] ?? code.toUpperCase();
 

@@ -32,7 +32,7 @@ ctas:
   secondary:
     label: See every feature
     href: /features/
-  whatsapp: Hi, I was reading the EasyClinic clinic software glossary and would like to book a 20-minute demo.
+  whatsapp: Hi, I was reading the Easy Clinic clinic software glossary and would like to book a 20-minute demo.
 
 sections:
   - discriminant: glossaryList
@@ -607,10 +607,10 @@ links:
   related:
     - href: /features/
       label: All features
-      description: Every part of EasyClinic, from the front desk to the claim, with a page for each.
+      description: Every part of Easy Clinic, from the front desk to the claim, with a page for each.
     - href: /trust/
       label: Security and compliance
-      description: Where patient data is hosted, and the status and date EasyClinic gives for each regulator.
+      description: Where patient data is hosted, and the status and date Easy Clinic gives for each regulator.
     - href: /start-a-clinic/
       label: Start a clinic
       description: Licensing and opening costs for a new clinic, country by country.
@@ -618,7 +618,7 @@ links:
 closing:
   heading: See how the terms fit a working clinic
   body: >-
-    In 20 minutes we walk one patient through EasyClinic, from the front desk to the bill, and answer your
+    In 20 minutes we walk one patient through Easy Clinic, from the front desk to the bill, and answer your
     questions about how it fits your clinic and your country's rules.
   primary:
     label: Book a 20-minute demo
@@ -628,19 +628,19 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The definitions put the four countries EasyClinic sells in side by side in a clinic's own terms: the two
+    The definitions put the four countries Easy Clinic sells in side by side in a clinic's own terms: the two
     meanings of DHA in Dubai and Kenya, the bill of supply that GST-exempt consultations need, the NABIDH
     connection DHA checks before a Dubai licence is activated, and the ODPC registration every Kenyan clinic
-    owes whatever its size. Little of it rests on EasyClinic's own experience.
+    owes whatever its size. Little of it rests on Easy Clinic's own experience.
   readsMachineWritten: >-
     Forty definitions of similar length that open with what the term is and close with what it means for a
     clinic will read as generated, so the read-aloud pass should vary the endings and check that no
-    definition drifts into describing EasyClinic.
+    definition drifts into describing Easy Clinic.
 
 notes:
   - 'Spec 5.19 asks for forty definitions of 60 to 100 words with an anchor each and a link to the deeper page; there are exactly 40, each with an id (the anchor), an href, and a source for every regulator, law, scheme, platform and standard. Descriptive terms (claim denial, clinic management software, e-prescription, no-show, OPD, revenue leakage, token system) carry no source.'
   - 'Terms trimmed from the brief''s list: practice management is the aka of clinic management software; IPD is defined inside OPD; recall campaign was dropped. "Revenue cycle" became "Revenue leakage" because spec 4.5 rule 2 says the phrase "revenue cycle management" appears only on /features/revenue-management/.'
-  - 'No definition states or implies EasyClinic''s status with any regulator, exchange or integration (all unknown). The Kenya insurer names on /kenyademo/ (Jubilee, AAR, CIC, Britam, Resolution via SLADE) are left out of the SLADE entry because they describe EasyClinic''s integration claims, not SLADE itself.'
+  - 'No definition states or implies Easy Clinic''s status with any regulator, exchange or integration (all unknown). The Kenya insurer names on /kenyademo/ (Jubilee, AAR, CIC, Britam, Resolution via SLADE) are left out of the SLADE entry because they describe Easy Clinic''s integration claims, not SLADE itself.'
   - 'Link targets follow spec 4.5: TPA, HMO, SHA, SLADE, eClaimLink and pre-authorisation go to /features/insurance-claims/ (rule 2); GST, eTIMS and M-Pesa go to /features/billing/; denials and leakage go to /features/revenue-management/; ABDM goes to /trust/ (rule 6); WhatsApp API and templates go to /features/whatsapp/ (rule 3). /clinic-management-software-uae/ is planned as a draft; until it publishes, production drops those four links (registry urlFor returns null) and the terms render with the official source link only.'
   - 'Sources re-fetched and checked 26 Sep 2026 by an adversarial fact-check pass. ABDM, ABHA, HPR: NHA "brief guide on ABDM and its building blocks" on abdm.gov.in (14-digit ABHA, earlier Health ID, PHR address xyz@abdm, voluntary participation, HPR covers doctors of modern medicine, dentistry and the Ayush systems with nurses and others to follow, HPR does not replace council registration, no HPR fee, only ABDM-enrolled doctors access records from other providers, a private facility joining ABDM needs its professionals on HPR); launch 27 Sep 2021 from PIB (PRID 1758502). M1 (ABHA creation and verification), M2 (HIP, linking records) and M3 (HIU, consent-based fetch) checked on sandbox.abdm.gov.in milestone docs. HFR: hfr and hpr portals both redirect to nhpr.abdm.gov.in (National Healthcare Providers Registry); facility types, voluntary enrolment and verified or self-declared status from the building-blocks guide. HPR source moved from the NHPR portal (a script-only page) to the building-blocks guide, which holds every HPR claim. ABDM FHIR R4 profiles: nrces.in FHIR IG for ABDM.'
   - 'DPDP: PIB explainer of 17 Nov 2025 (Act 11 Aug 2023; 18-month phased compliance; penalties up to ₹250 crore for security safeguards) and the Rules themselves, G.S.R. 846(E) in the Gazette of India of 13 Nov 2025 (MeitY PDF linked in the definition). The PIB explainer says the Rules were notified on 14 Nov 2025 and the Gazette is dated 13 Nov 2025, so the definition gives only the month, as /patient-data-privacy-laws-in-india/ does. Rule 1(4) brings rules 3, 5 to 16, 22 and 23 (among them notice, safeguards, breach reporting, contact, rights and grievances) into force eighteen months after publication, so the definition says most duties start in May 2027, as /features/patient-engagement/ and /healthcare-cybersecurity-protecting-clinics-and-hospitals-in-the-digital-age/ do. The 90-day cap is rule 14(3), on the grievance redressal period; the PIB explainer applies it to rights requests, so the definition follows the Rules. A proposal to shorten the phase-in (reported Jan 2026) has no located amending instrument; re-check before May 2027.'

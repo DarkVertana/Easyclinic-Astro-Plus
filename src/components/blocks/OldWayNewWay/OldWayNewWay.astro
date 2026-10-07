@@ -13,17 +13,17 @@ const { id, eyebrow, heading, intro, tone, old, next, ctx } = Astro.props;
 // Photos never sit in a browser or phone frame.
 const framed = (media: MediaProps): MediaProps => (media.kind === 'photo' ? { ...media, frame: 'none' } : media);
 
-// Spec 12: generated imagery may set the scene for the old way only. The EasyClinic side shows the
+// Spec 12: generated imagery may set the scene for the old way only. The Easy Clinic side shows the
 // product, so a generated image there is held back: a placeholder in preview, a failed build when published.
 const nextMediaNote = next.media ? requireConfirmed(Astro, `product screenshot, not generated imagery, for "${next.title}"`, !next.media.aiGenerated) : '';
 const nextMedia = next.media && !next.media.aiGenerated ? framed(next.media) : null;
-const sizes = '(min-width: 75rem) 560px, (min-width: 60rem) 45vw, 100vw';
+const sizes = '(min-width: 90rem) 690px, (min-width: 75rem) 560px, (min-width: 60rem) 45vw, 100vw';
 ---
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center>
   <div class="grid overflow-hidden rounded-card border border-line md:grid-cols-2">
     <div class="flex flex-col bg-surface-muted p-6 text-ink sm:p-8 lg:p-10">
-      <h3 class="font-sans text-xl font-semibold text-ink-heading">{old.title}</h3>
+      <h3 class="font-display text-xl font-semibold text-ink-heading">{old.title}</h3>
       <ul class="mt-5 grid gap-3">
         {
           old.items.map((item) => (
@@ -50,7 +50,7 @@ const sizes = '(min-width: 75rem) 560px, (min-width: 60rem) 45vw, 100vw';
       >
         <Icon name="arrow-right" size={20} class="rotate-90 md:rotate-0" />
       </span>
-      <h3 class="font-sans text-xl font-semibold text-white">{next.title}</h3>
+      <h3 class="font-display text-xl font-semibold text-white">{next.title}</h3>
       <ul class="mt-5 grid gap-3">
         {
           next.items.map((item) => (

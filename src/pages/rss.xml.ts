@@ -57,10 +57,10 @@ export const GET: APIRoute = async () => {
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>EasyClinic blog</title>
+    <title>Easy Clinic blog</title>
     <link>${esc(abs('/blog/'))}</link>
     <atom:link href="${esc(abs('/rss.xml'))}" rel="self" type="application/rss+xml" />
-    <description>EasyClinic’s guides and posts for clinic owners, newest first.</description>
+    <description>Easy Clinic’s guides and posts for clinic owners, newest first.</description>
     <language>en-gb</language>
 ${newest ? `    <lastBuildDate>${rfc822(newest)}</lastBuildDate>\n` : ''}${items.join('\n')}
   </channel>

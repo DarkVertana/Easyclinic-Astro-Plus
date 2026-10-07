@@ -18,7 +18,7 @@ const single = layout === 'single' || testimonials.length === 1;
     ) : (
       <div class:list={['grid gap-5', testimonials.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3']}>
         {testimonials.map((t) => (
-          <Quote testimonial={t} pull={usePullQuote} />
+          <Quote testimonial={t} pull={usePullQuote} lines={usePullQuote ? undefined : 4} />
         ))}
       </div>
     )

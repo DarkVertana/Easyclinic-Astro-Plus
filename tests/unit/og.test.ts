@@ -25,7 +25,7 @@ import { FAMILIES } from '../../src/schemas/constants.ts';
 const PNG_SIGNATURE = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];
 
 const SHORT = 'Pricing, per doctor per month';
-const SIXTY = 'Clinic Software Cost in India: EasyClinic Pricing in INR now';
+const SIXTY = 'Clinic Software Cost in India: Easy Clinic Pricing in INR 26';
 const LONG = 'Clinic software cost in India and Kenya: what ₹1,499 and KES 2,500 per doctor per month buy, and what a second branch adds';
 
 describe('OG image paths', () => {
@@ -43,11 +43,11 @@ describe('OG image paths', () => {
 
 describe('OG card text', () => {
   it('drops the brand suffix and placeholder marks from the title', () => {
-    expect(ogHeadline('Telemedicine Software for Doctors: EasyClinic')).toBe('Telemedicine Software for Doctors');
-    expect(ogHeadline('Clinic Software | EasyClinic')).toBe('Clinic Software');
-    expect(ogHeadline('EasyClinic Pricing: Per Doctor, Per Month')).toBe('EasyClinic Pricing: Per Doctor, Per Month');
-    expect(ogHeadline('EasyClinic')).toBe('EasyClinic');
-    expect(ogHeadline('Plans from ⟦[price]⟧ a month: EasyClinic')).toBe('Plans from [price] a month');
+    expect(ogHeadline('Telemedicine Software for Doctors: Easy Clinic')).toBe('Telemedicine Software for Doctors');
+    expect(ogHeadline('Clinic Software | Easy Clinic')).toBe('Clinic Software');
+    expect(ogHeadline('Easy Clinic Pricing: Per Doctor, Per Month')).toBe('Easy Clinic Pricing: Per Doctor, Per Month');
+    expect(ogHeadline('Easy Clinic')).toBe('Easy Clinic');
+    expect(ogHeadline('Plans from ⟦[price]⟧ a month: Easy Clinic')).toBe('Plans from [price] a month');
   });
 
   it('uses the page eyebrow, then the post topic, then the family', () => {
@@ -111,7 +111,7 @@ describe('OG renderer', () => {
   }
 
   it('renders a short title at the largest size', async () => {
-    const card = { title: `${SHORT}: EasyClinic`, eyebrow: 'Pricing' };
+    const card = { title: `${SHORT}: Easy Clinic`, eyebrow: 'Pricing' };
     const { fit, missing } = await renderOgSvg(card);
     expect(fit).toEqual({ text: SHORT, size: HEADLINE_SIZES[0], lines: 1, clamped: false });
     expect(missing).toEqual([]);

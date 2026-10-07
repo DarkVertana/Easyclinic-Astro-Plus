@@ -15,12 +15,12 @@ h1: Clinic management software for clinics in India
 linkLabel: Clinic software in India
 eyebrow: India
 openingAnswer: >-
-  EasyClinic is clinic management software for India that runs the appointment book, the prescription,
+  Easy Clinic is clinic management software for India that runs the appointment book, the prescription,
   the bill and the patient reminder from one login, at {price:inr.professional.annual} per doctor per
   month on the annual Professional plan. It comes from a Kolkata company that has been running clinics
   since {fact:founded}, and {fact:doctors} doctors across {fact:cities} cities use it today.
 summary: >-
-  What EasyClinic costs in rupees, the status and date of each ABDM milestone and of GST invoicing, and
+  What Easy Clinic costs in rupees, the status and date of each ABDM milestone and of GST invoicing, and
   who to call in Kolkata.
 author: null
 lastUpdated: 2026-09-26
@@ -40,7 +40,7 @@ ctas:
   secondary:
     label: See prices in rupees
     href: /pricing/india/
-  whatsapp: Hi, I was reading the EasyClinic page on clinic management software in India and would like a demo for my clinic.
+  whatsapp: Hi, I was reading the Easy Clinic page on clinic management software in India and would like a demo for my clinic.
 
 sections:
   # Block 2: local proof strip. The template also puts the bare contact card in the hero.
@@ -63,7 +63,7 @@ sections:
       intro: |
         ABDM, the Ayushman Bharat Digital Mission, comes in three milestones, and a software vendor can have finished one without the next. **M1** is the ABHA number: creating or verifying the patient's health ID at the front desk and saving it on their record. **M2** links each visit's prescription and reports to that ABHA, so the patient sees them in their health records app. **M3** is the exchange: with the patient's consent, their records from other ABDM-linked facilities come into your chart.
 
-        Each row below gives its status (Live, In certification, Planned or Not applicable) and the date it was last checked. If anything else on this page seems to claim more than the table, go by the table. Some of the work stays with the clinic whatever software it uses: the clinic registers on the Health Facility Registry and every doctor on the Healthcare Professionals Registry, and [what help EasyClinic gives Indian clinics with HFR and HPR registration]. Under the DPDP Act 2023 your clinic is the data fiduciary and EasyClinic processes patient data on its behalf, so the privacy notice and the grievance contact are yours to publish.
+        Each row below gives its status (Live, In certification, Planned or Not applicable) and the date it was last checked. If anything else on this page seems to claim more than the table, go by the table. Some of the work stays with the clinic whatever software it uses: the clinic registers on the Health Facility Registry and every doctor on the Healthcare Professionals Registry, and [what help Easy Clinic gives Indian clinics with HFR and HPR registration]. Under the DPDP Act 2023 your clinic is the data fiduciary and Easy Clinic processes patient data on its behalf, so the privacy notice and the grievance contact are yours to publish.
 
         What ABDM compliant EMR software means in practice, and the same table for every country, is on the [trust page](/trust/).
       countries: [in]
@@ -110,7 +110,7 @@ sections:
           media:
             kind: screenshot
             needed: 'Day-end cash close: cash, card and UPI totals with a variance line (spec 12)'
-            alt: The EasyClinic day-end cash close, with cash, card and UPI totals and a variance line
+            alt: The Easy Clinic day-end cash close, with cash, card and UPI totals and a variance line
             caption: Each payment mode and the variance, shown before the cash counter shuts for the day.
             frame: browser
         - heading: Tally export for your CA
@@ -123,15 +123,15 @@ sections:
             href: /integrations/
         - heading: E-prescriptions and the NMC guidelines
           body: >-
-            The prescription prints with [fields on an EasyClinic e-prescription, such as registration
+            The prescription prints with [fields on an Easy Clinic e-prescription, such as registration
             number and signature], and goes to the patient on paper, or on WhatsApp on the Premium plan.
             For video consults, the NMC Telemedicine Practice Guidelines set which medicines can be
-            prescribed at a first consult and which only at a follow-up; [what EasyClinic checks against
+            prescribed at a first consult and which only at a follow-up; [what Easy Clinic checks against
             the NMC medicine lists, as of date]. Following those lists stays the doctor's responsibility.
           media:
             kind: screenshot
             needed: 'Thirty-second prescription: the Rx screen mid-entry with a drug interaction warning, Hindi print option visible (spec 12)'
-            alt: The EasyClinic prescription screen mid-entry, with a drug interaction warning and a print language option
+            alt: The Easy Clinic prescription screen mid-entry, with a drug interaction warning and a print language option
             caption: A prescription mid-entry, with a drug interaction flagged before it prints.
             frame: browser
           link:
@@ -144,15 +144,15 @@ sections:
       id: offline-mobile-languages
       heading: Offline, mobile, WhatsApp and prescription languages
       body: |
-        **Internet.** EasyClinic runs in the browser over the internet, and it does not run fully offline today. If the line drops in the middle of a consult, [what is saved and what is lost when the connection drops mid-consult]. Keep a mobile hotspot beside the reception computer. A hospital OPD that cannot depend on one line can ask about running EasyClinic on its own server: [self-hosted option for Indian clinics: which plans, what it costs and what still needs the internet].
+        **Internet.** Easy Clinic runs in the browser over the internet, and it does not run fully offline today. If the line drops in the middle of a consult, [what is saved and what is lost when the connection drops mid-consult]. Keep a mobile hotspot beside the reception computer. A hospital OPD that cannot depend on one line can ask about running Easy Clinic on its own server: [self-hosted option for Indian clinics: which plans, what it costs and what still needs the internet].
 
         **Phone and tablet.** The doctor can write a prescription on a phone or a tablet, away from the desk; [doctor app: Android, iOS or mobile browser only]. On the Enterprise plan patients get their own app and portal for booking and reports.
 
         **Prescription languages.** Prescriptions print in English and in [prescription languages besides English], so the patient reads the dosage and the advice in the language they read at home. [How the regional-language text is produced: saved templates or translation].
 
-        **WhatsApp first.** On Premium and Enterprise, the appointment reminder and the prescription go to the patient on WhatsApp, and the patient can reply to confirm the visit. On Professional, reminders go by SMS and email. [WhatsApp sender for Indian clinics: the clinic's own number or EasyClinic's, and who pays the message charges].
+        **WhatsApp first.** On Premium and Enterprise, the appointment reminder and the prescription go to the patient on WhatsApp, and the patient can reply to confirm the visit. On Professional, reminders go by SMS and email. [WhatsApp sender for Indian clinics: the clinic's own number or Easy Clinic's, and who pays the message charges].
       aside: >-
-        **Where it stops.** EasyClinic does not run fully offline today. [Which tasks still work without
+        **Where it stops.** Easy Clinic does not run fully offline today. [Which tasks still work without
         internet, if any]. If your clinic loses its line for hours at a time, tell us before you buy, and we
         will show you what the screen does when the connection goes.
       width: measure
@@ -170,7 +170,7 @@ sections:
             One doctor and a receptionist, with no IT staff to call when something breaks. The thirty-second
             prescription comes from saved shortcuts and the bill comes from the visit, so the evening is no
             longer spent finishing notes.
-          example: Dr Manish Bhatia runs Asha Homeopathy Medical Center in Jaipur and has used EasyClinic for more than 10 years.
+          example: Dr Manish Bhatia runs Asha Homeopathy Medical Center in Jaipur and has used Easy Clinic for more than 10 years.
           href: /solutions/solo-clinic/
         - persona: polyclinic
           title: Polyclinics and specialist centres
@@ -178,42 +178,42 @@ sections:
             One record for every specialist the patient sees, with shared rooms and slots. Roles decide who
             sees what: the reception login books and bills, but it cannot open the EMR or write a
             prescription.
-          example: Aditya Women and Infertility Clinic, an obstetrics and fertility centre in Hyderabad, has run on EasyClinic since 2012.
+          example: Aditya Women and Infertility Clinic, an obstetrics and fertility centre in Hyderabad, has run on Easy Clinic since 2012.
           href: /solutions/polyclinic/
         - persona: chain
           title: Clinic chains
           body: >-
             Central price lists, standard SOPs, stock moved between branches and a morning view of each
             branch's KPIs. Branch drift shows up in the numbers before it shows up in patient complaints.
-          example: '[Indian clinic chain on EasyClinic: name, city and number of branches]'
+          example: '[Indian clinic chain on Easy Clinic: name, city and number of branches]'
           href: /solutions/clinic-chain/
         - persona: hospital-opd
           title: Hospital OPDs and nursing homes
           body: >-
             Token queues and doctor schedules at the front desk, pharmacy and lab turnaround behind it, TPA
-            claims from the same bill and a daily view of throughput. EasyClinic runs the outpatient side
+            claims from the same bill and a daily view of throughput. Easy Clinic runs the outpatient side
             and is not a full hospital information system.
-          example: Dr Prantar Chakrabarti at the Institute of Hematology and Transfusion Medicine has used EasyClinic since 2008.
+          example: Dr Prantar Chakrabarti at the Institute of Hematology and Transfusion Medicine has used Easy Clinic since 2008.
           href: /solutions/hospital-opd/
 
   # Block 7: local testimonial (assigned to this page only).
   - discriminant: testimonialRow
     value:
       id: hyderabad-clinic
-      heading: A hospital director on EasyClinic
+      heading: A hospital director on Easy Clinic
       items: [tarun-mishra]
       layout: single
       usePullQuote: true
 
 faqHeading: Questions Indian clinic owners ask
 faq:
-  - question: Which ABDM milestones does EasyClinic support today?
+  - question: Which ABDM milestones does Easy Clinic support today?
     answer: >-
       M1, creating and verifying the patient's ABHA number, is [ABDM M1 status as of date]; M2, linking
       health records to the ABHA, is [ABDM M2 status as of date]; and M3, health information exchange, is
       [ABDM M3 status as of date]. The compliance table on this page carries the same status and date for
       each milestone. Until a milestone shows Live with a date, plan your clinic as if it is not available.
-  - question: How much does EasyClinic cost in India?
+  - question: How much does Easy Clinic cost in India?
     answer: >-
       Professional costs {price:inr.professional.annual} and Premium {price:inr.premium.annual} per doctor
       per month when paid annually, or {price:inr.professional.quarterly} and
@@ -222,46 +222,46 @@ faq:
       lists every add-on.
   - question: Is GST included in the price, and do patient bills show GST?
     answer: >-
-      [Whether INR plan prices include 18% GST or it is added] on EasyClinic's invoice to your clinic. On
+      [Whether INR plan prices include 18% GST or it is added] on Easy Clinic's invoice to your clinic. On
       the bills you give patients, GST invoicing with the HSN or SAC code and the GST amount on taxable
       lines such as pharmacy sales is [GST invoicing status as of date], the same as the GST row in the
       compliance table.
-  - question: Does EasyClinic work offline when the internet goes down?
+  - question: Does Easy Clinic work offline when the internet goes down?
     answer: >-
-      No, EasyClinic does not run fully offline today. [What still works without internet, and what is
+      No, Easy Clinic does not run fully offline today. [What still works without internet, and what is
       saved when the connection drops mid-consult]. We suggest a mobile hotspot as a backup line, and a
-      clinic that loses its line for hours at a time can ask about running EasyClinic on its own server:
+      clinic that loses its line for hours at a time can ask about running Easy Clinic on its own server:
       [self-hosted option for Indian clinics: which plans, what it costs and what still needs the
       internet].
-  - question: How is EasyClinic different from Practo Ray?
+  - question: How is Easy Clinic different from Practo Ray?
     answer: >-
-      [The main difference between EasyClinic and Practo Ray, from the comparison page verdict]. The
-      [EasyClinic vs Practo Ray](/easyclinic-vs-practo/) page puts published price, WhatsApp, billing and
+      [The main difference between Easy Clinic and Practo Ray, from the comparison page verdict]. The
+      [Easy Clinic vs Practo Ray](/easyclinic-vs-practo/) page puts published price, WhatsApp, billing and
       GST, and multi-branch support side by side, with a source and a date for every cell, and says what
       moving your records across involves.
-  - question: How does EasyClinic compare with HealthPlix?
+  - question: How does Easy Clinic compare with HealthPlix?
     answer: >-
-      [The main difference between EasyClinic and HealthPlix, from the comparison page verdict]. The
-      [EasyClinic vs HealthPlix](/easyclinic-vs-healthplix/) page compares the two on published price, AI
+      [The main difference between Easy Clinic and HealthPlix, from the comparison page verdict]. The
+      [Easy Clinic vs HealthPlix](/easyclinic-vs-healthplix/) page compares the two on published price, AI
       documentation, billing and GST, and patient discovery, with a source and a date for every cell.
   - question: Can prescriptions print in Hindi or other Indian languages?
     answer: >-
-      EasyClinic prints prescriptions in English and in [prescription languages besides English]. If your
+      Easy Clinic prints prescriptions in English and in [prescription languages besides English]. If your
       patients read a language that is not on that list, ask before you sign up, because adding one takes
       [time to add a prescription language].
   - question: Is patient data stored in India?
     answer: >-
       Patient data for Indian clinics is hosted in [hosting region and provider for Indian clinics]. Under
-      the DPDP Act 2023 your clinic is the data fiduciary and EasyClinic processes the data on its behalf.
-      If you leave, [what data you get back on leaving, in what format, and how long EasyClinic keeps a
+      the DPDP Act 2023 your clinic is the data fiduciary and Easy Clinic processes the data on its behalf.
+      If you leave, [what data you get back on leaving, in what format, and how long Easy Clinic keeps a
       copy].
-  - question: Are EasyClinic e-prescriptions valid under NMC rules?
+  - question: Are Easy Clinic e-prescriptions valid under NMC rules?
     answer: >-
-      [Whether an EasyClinic e-prescription carries everything the NMC guidelines ask for, as of date],
-      and every prescription prints [fields on an EasyClinic e-prescription, such as registration number
+      [Whether an Easy Clinic e-prescription carries everything the NMC guidelines ask for, as of date],
+      and every prescription prints [fields on an Easy Clinic e-prescription, such as registration number
       and signature]. For teleconsults, the NMC Telemedicine Practice Guidelines limit which medicines you can
       prescribe at a first consult, and following those lists stays the doctor's responsibility; [what
-      EasyClinic checks against the NMC medicine lists].
+      Easy Clinic checks against the NMC medicine lists].
   - question: How long does it take to go live?
     answer: >-
       At the fastest, a clinic is live {fact:goLiveDays} days after the demo. Training runs over
@@ -275,12 +275,12 @@ links:
   related:
     - href: /best-clinic-management-software-india/
       label: Best clinic management software in India
-      description: A ranked comparison of the options for Indian clinics, EasyClinic included, with prices and ABDM status checked and dated.
+      description: A ranked comparison of the options for Indian clinics, Easy Clinic included, with prices and ABDM status checked and dated.
     - href: /easyclinic-vs-practo/
-      label: EasyClinic vs Practo Ray
+      label: Easy Clinic vs Practo Ray
       description: Published price, WhatsApp, billing and GST, and multi-branch support side by side, and what moving your records takes.
     - href: /pricing/india/
-      label: EasyClinic prices in rupees
+      label: Easy Clinic prices in rupees
       description: Every plan and add-on in INR, and what a five-doctor polyclinic pays each month.
     - href: /indiademo/
       label: Book a demo in India
@@ -290,10 +290,10 @@ links:
       description: What ABDM compliant EMR software means, and the status and date of every regulator we work with.
 
 closing:
-  heading: See EasyClinic run a day at your clinic
+  heading: See Easy Clinic run a day at your clinic
   body: >-
     Book 20 minutes with the India team, or call {contact:in.phone}. Bring what your front desk does on a
-    busy morning and we will show each step in EasyClinic, including where it stops.
+    busy morning and we will show each step in Easy Clinic, including where it stops.
   primary:
     label: Book a 20-minute demo in India
     href: /indiademo/
@@ -302,7 +302,7 @@ closing:
     href: /pricing/india/
 
 notes:
-  - 'Title claim: "ABDM Ready" comes from the spec 4.2 row. Before publishing it must match the ABDM M1 status in src/data/regulators/in-abdm-m1.yaml. If M1 is not Live with a date, retitle, e.g. "Clinic Management Software in India: EasyClinic".'
+  - 'Title claim: "ABDM Ready" comes from the spec 4.2 row. Before publishing it must match the ABDM M1 status in src/data/regulators/in-abdm-m1.yaml. If M1 is not Live with a date, retitle, e.g. "Clinic Management Software in India: Easy Clinic".'
   - 'H1 follows the 4.2 row. Spec 5.13 block 1 asks for the regulator in the H1; add ABDM to the H1 only once M1 is Live.'
   - 'Meta description rewritten from the 4.2 row ("ABDM-ready EMR, GST billing, UPI and WhatsApp") so it states no ABDM, GST or UPI status in text, and leads with the head keyword. It is 119 characters with tokens expanded and 154 as written; the linter measures the written form, so keep both under 155. Restore the row wording once in-abdm-m1, in-gst and UPI are Live.'
   - 'Secondary keyword "ABDM compliant EMR" left off on purpose: 4.5 rule 6 gives it to /trust/. This page mentions it once, in passing, in the compliance block and the /trust/ related link.'

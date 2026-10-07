@@ -19,5 +19,5 @@ function side(label: string, description: string) {
  */
 export const oldWayNewWay = defineBlock('oldWayNewWay', 'Old way, new way', {
   old: side('Old way', 'Each item shows a cross. Generated imagery may set the scene on this side only (tick "AI-generated image").'),
-  next: side('New way', 'The EasyClinic way; each item shows a tick. Media here must be a product screenshot: a generated image is held back and blocks publishing.'),
+  next: side('New way', 'The Easy Clinic way; each item shows a tick. Media here must be a product screenshot: a generated image is held back and blocks publishing.'),
 });

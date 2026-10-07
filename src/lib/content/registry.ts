@@ -197,10 +197,11 @@ async function build(): Promise<Registry> {
   if (structural.length) throw new Error(`Content registry errors:\n  - ${structural.join('\n  - ')}`);
 
   // Cross-entry checks.
-  // Each testimonial sits on the one landing page it praises (spec 2.4); /customers/ may show all of them.
+  // Each testimonial sits on the one landing page it praises (spec 2.4); /customers/ may show all of them,
+  // and so may the home page's testimonial wall (owner decision 2026-10-07).
   const testimonialPages = new Map<string, PageRecord[]>();
   for (const record of records) {
-    if (record.path === '/customers/' || record.family === 'kitchenSink') continue;
+    if (record.path === '/customers/' || record.path === '/' || record.family === 'kitchenSink') continue;
     for (const id of new Set(referencedIds(record.data, 'testimonials'))) {
       testimonialPages.set(id, [...(testimonialPages.get(id) ?? []), record]);
     }

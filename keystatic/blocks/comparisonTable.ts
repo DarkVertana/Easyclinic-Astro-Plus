@@ -10,9 +10,9 @@ export const comparisonTable = defineBlock('comparisonTable', 'Comparison table'
   columns: list(
     group('Column', {
       name: text('Name', { required: true, description: 'The product in this column, as the header shows it.' }),
-      us: flag('This column is EasyClinic', {
+      us: flag('This column is Easy Clinic', {
         zodDefault: false,
-        description: 'Highlights the column. Cells in the EasyClinic column need no source; every other column’s cells do.',
+        description: 'Highlights the column. Cells in the Easy Clinic column need no source; every other column’s cells do.',
       }),
     }),
     { label: 'Columns', min: 2, max: 8, itemLabel: (props) => props.fields.name.value || 'Column' },

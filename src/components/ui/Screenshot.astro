@@ -28,12 +28,15 @@ interface Props {
   zoomable?: boolean;
   /** A raised white card with a soft shadow, for the hero. */
   elevated?: boolean;
-  /** With `elevated`: on large screens the card fills its parent's height and the screenshot scales to fit. */
+  /** On large screens the image area fills its parent's height: a card (`elevated`) is covered edge to edge; without
+      a card the whole image is shown, scaled to fit. */
   fill?: boolean;
+  /** The hero image: a 3px #c7c7c7 border, 18px radius and a soft shadow around the image itself. */
+  outlined?: boolean;
 }
 
-const { media, priority = false, sizes = '(min-width: 75rem) 600px, (min-width: 60rem) 50vw, 100vw', class: className, compact = false, zoomable = false, elevated = false, fill = false } = Astro.props;
-const filled = elevated && fill;
+const { media, priority = false, sizes = '(min-width: 90rem) 720px, (min-width: 75rem) 600px, (min-width: 60rem) 50vw, 100vw', class: className, compact = false, zoomable = false, elevated = false, fill = false, outlined = false } = Astro.props;
+const filled = fill;
 const frame = media.frame;
 const phoneWidth = compact ? 'max-w-[9.5rem]' : 'max-w-[18rem]';
 const ratio = frame === 'phone' ? `aspect-[390/844] ${phoneWidth} mx-auto` : 'aspect-[1440/900]';
@@ -44,15 +47,18 @@ const full = zoomable && media.src ? await getImage({ src: media.src, format: 'w
 <figure class:list={['m-0', filled && 'lg:relative', className]}>
   <div
     class:list={[
-      'overflow-hidden bg-surface',
+      !outlined && 'overflow-hidden',
+      (frame !== 'none' || elevated) && 'bg-surface',
       frame === 'browser' && 'rounded-card border border-line',
       elevated && [
         'rounded-2xl shadow-[0_30px_60px_-25px_rgb(10_37_64/0.35),0_10px_24px_-12px_rgb(10_37_64/0.18)] ring-1 ring-navy-900/5',
       ],
       filled && [
-        // Fills the hero column without adding to its height (the text sets it); the screenshot covers the card
-        // edge to edge, and the lightbox shows the whole image.
+        // Fills the hero column without adding to its height (the text sets it).
         'lg:absolute lg:inset-0 lg:flex lg:flex-col',
+        // An outlined image is sized to its own shape inside the area, so the border hugs it, and sits on the
+        // area's bottom edge (the hero's CTAs).
+        outlined && 'lg:items-center lg:justify-end',
       ],
       frame === 'phone' && ['mx-auto border-navy-900', compact ? 'max-w-[9.5rem] rounded-[1.25rem] border-4' : 'max-w-[18rem] rounded-[2rem] border-[6px]'],
     ]}
@@ -98,9 +104,17 @@ const full = zoomable && media.src ? await getImage({ src: media.src, format: 'w
           alt={media.alt}
           formats={['avif', 'webp']}
           sizes={sizes}
-          widths={[480, 768, 1080, 1440]}
+          widths={priority ? [480, 768, 1080, 1440, 1920] : [480, 768, 1080, 1440]}
+          quality={priority ? 95 : undefined}
           priority={priority}
-          class="block h-auto w-full"
+          fit={filled && !elevated && !outlined ? 'contain' : undefined}
+          position={filled && !outlined ? (elevated ? (media.kind === 'photo' ? 'center' : 'left top') : 'center') : undefined}
+          pictureAttributes={filled && outlined ? { class: 'contents' } : undefined}
+          class:list={[
+            'block h-auto w-full',
+            outlined && 'rounded-[18px] border-[3px] border-[#c7c7c7] shadow-[0_14px_36px_-14px_rgb(10_37_64/0.35)]',
+            filled && (outlined ? 'lg:h-auto! lg:max-h-full lg:w-auto lg:max-w-full' : ['lg:absolute lg:inset-0 lg:h-full!', elevated ? 'lg:object-cover' : 'lg:object-contain']),
+          ]}
         />
       ) : (
         <div

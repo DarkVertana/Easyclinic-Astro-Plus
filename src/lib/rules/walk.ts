@@ -52,7 +52,7 @@ const SKIP_KEYS = new Set([
   'needed',
 ]);
 
-const VERBATIM_KEYS = new Set(['quote', 'pullQuote']);
+const VERBATIM_KEYS = new Set(['quote', 'pullQuote', 'cardQuote']);
 
 function isReference(value: Record<string, unknown>): boolean {
   const keys = Object.keys(value);

@@ -6,13 +6,13 @@ secondaryKeywords:
   - laboratory information system
   - LIS software
   - pathology lab software
-title: 'Lab Management Software for Clinics: EasyClinic'
+title: 'Lab Management Software for Clinics: Easy Clinic'
 metaDescription: 'Lab management software for clinics: order tests from the chart and get results back into the record, with reports sent on WhatsApp.'
 h1: Lab orders and results, inside the EMR
 linkLabel: Lab orders and results
 eyebrow: Lab
 openingAnswer: >-
-  EasyClinic is lab management software for clinics: the doctor orders the test from the chart, and the
+  Easy Clinic is lab management software for clinics: the doctor orders the test from the chart, and the
   result comes back into the same patient record with abnormal values flagged. Lab reports in the chart
   come with Premium, at {price:usd.premium.annual} per doctor per month billed annually, and lab
   management with Enterprise or as an add-on.
@@ -24,7 +24,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: ../../assets/images/products/1-6.png
-  alt: EasyClinic clinical dashboard with total, first and repeat visits, charts of top diagnoses and chief complaints, the top ten medications, and patients by gender and age
+  alt: Easy Clinic clinical dashboard with total, first and repeat visits, charts of top diagnoses and chief complaints, the top ten medications, and patients by gender and age
   frame: none
 ctas:
   primary:
@@ -33,7 +33,7 @@ ctas:
   secondary:
     label: Compare plans and prices
     href: /pricing/
-  whatsapp: Hi, I was reading the EasyClinic lab page and would like to see a test ordered from the chart and the result coming back in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic lab page and would like to see a test ordered from the chart and the result coming back in a demo.
 
 sections:
   - discriminant: painBlocks
@@ -74,7 +74,7 @@ sections:
             from several visits and reads the numbers across. The trend gets worked out in the doctor's
             head, in the middle of a consult.
           fix: >-
-            Lab values stay on the patient's record visit after visit, and EasyClinic draws them as lab
+            Lab values stay on the patient's record visit after visit, and Easy Clinic draws them as lab
             charts beside the vitals, so the trend is on one screen.
 
   - discriminant: flowDiagram
@@ -138,7 +138,7 @@ sections:
             the same way, whoever was on the bench that day.
         - heading: The report on the patient's phone
           body: >-
-            The report can go to the patient on WhatsApp from EasyClinic, so the patient has it at the
+            The report can go to the patient on WhatsApp from Easy Clinic, so the patient has it at the
             follow-up and at any other doctor they see. How the messages are set up is covered on the
             WhatsApp page.
           plan: premium
@@ -149,11 +149,11 @@ sections:
           body: >-
             A report from an outside lab can be scanned and uploaded to the patient's record as a file,
             where it sits beside the results from your own lab. A direct feed from an outside lab's own
-            system into EasyClinic would be integration work, scoped as a project, and this page does not
+            system into Easy Clinic would be integration work, scoped as a project, and this page does not
             name any outside lab as connected.
         - heading: Your lab machines, connected by project
           body: >-
-            A connection between EasyClinic and your lab analysers is integration work, scoped for your
+            A connection between Easy Clinic and your lab analysers is integration work, scoped for your
             machines as a project. It comes with Enterprise, under integrations and custom features, or as
             an add-on on Professional and Premium. Which machines can be connected, and how long the work
             takes, is worked out in that scoping.
@@ -213,9 +213,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        These are EasyClinic's public ratings on Capterra and Google, for the whole product rather than
+        These are Easy Clinic's public ratings on Capterra and Google, for the whole product rather than
         the lab alone. We do not yet have a quote from a clinic lab's own staff to put on this page.
       variant: badges
       badges:
@@ -240,7 +240,7 @@ faq:
       and a report from an outside lab can be scanned and uploaded to the patient's record beside them. A
       direct feed from an outside lab's own system would be integration work, scoped as a project, and
       this page does not name any outside lab as connected.
-  - question: Can EasyClinic connect to our lab analysers?
+  - question: Can Easy Clinic connect to our lab analysers?
     answer: >-
       Connecting your analysers is integration work, scoped for your machines as a project, and it comes
       with Enterprise or as an add-on on Professional and Premium. Which analysers can be connected, and
@@ -264,7 +264,7 @@ faq:
       as an add-on on Professional and Premium, so a clinic on Premium can add it without changing plan.
   - question: Can the lab keep stock of its reagents?
     answer: >-
-      Yes, reagents and lab supplies can be kept in EasyClinic's inventory, which comes with Enterprise
+      Yes, reagents and lab supplies can be kept in Easy Clinic's inventory, which comes with Enterprise
       or as part of the pharmacy and inventory add-on on Professional and Premium. How batches and
       reorders work is covered on the [pharmacy and inventory page](/features/pharmacy-and-inventory/).
 
@@ -272,19 +272,19 @@ links:
   hub: /features/
   related:
     - href: /solutions/solo-clinic/
-      label: EasyClinic for a solo doctor
+      label: Easy Clinic for a solo doctor
       description: One doctor and a receptionist, on the Professional plan, with no IT staff to call.
     - href: /solutions/polyclinic/
-      label: EasyClinic for a polyclinic
+      label: Easy Clinic for a polyclinic
       description: Every specialist reads the same lab report on one shared chart.
     - href: /solutions/clinic-chain/
-      label: EasyClinic for a clinic chain
+      label: Easy Clinic for a clinic chain
       description: One central chart across every branch, with clinical SOPs tracked branch by branch.
     - href: /solutions/hospital-opd/
-      label: EasyClinic for a hospital OPD
+      label: Easy Clinic for a hospital OPD
       description: The OPD on one patient record, with the pharmacy and the lab working from the consult.
     - href: /solutions/ngo-clinics/
-      label: EasyClinic for NGO and mission clinics
+      label: Easy Clinic for NGO and mission clinics
       description: Clinic records and programme reports in the shape donors ask for.
     - href: /features/emr/
       label: EMR and e-prescriptions
@@ -313,7 +313,7 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: >-
     Only the plan split for the lab (reports in the chart on Premium, lab management on Enterprise or as
-    an add-on) and the barcode or QR sample labels come from EasyClinic's own pricing and pathology
+    an add-on) and the barcode or QR sample labels come from Easy Clinic's own pricing and pathology
     pages, and nothing on the page is local to one country, because no outside lab connection has a
     confirmed status to name.
   readsMachineWritten: >-

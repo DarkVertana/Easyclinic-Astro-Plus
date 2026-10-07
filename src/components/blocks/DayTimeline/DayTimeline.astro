@@ -15,7 +15,7 @@ const inverse = sectionTone === 'inverse';
 const registry = await getRegistry();
 
 /*
- * Spec 5.5, "A Tuesday with and without EasyClinic": a timed vertical timeline. Each entry is a list
+ * Spec 5.5, "A Tuesday with and without Easy Clinic": a timed vertical timeline. Each entry is a list
  * item whose h3 starts with its <time>, followed by the two versions of that moment as a description
  * list (label, text), so every "before" and "after" is labelled for screen readers at every width.
  *
@@ -59,7 +59,7 @@ const items = entries.map((entry) => {
       {
         items.map((item) => (
           <li class="dtl-entry">
-            <h3 class:list={['font-sans text-lg font-semibold leading-snug', inverse && 'text-white']}>
+            <h3 class:list={['font-display text-lg font-semibold leading-snug', inverse && 'text-white']}>
               {item.datetime ? (
                 <time datetime={item.datetime} class:list={['dtl-time', inverse ? 'text-teal-50 md:text-ink-heading' : 'text-teal-700 md:text-ink-heading']}>
                   {item.time}

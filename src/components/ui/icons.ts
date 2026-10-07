@@ -4,7 +4,7 @@
  * Add a name to the brace list to make it available.
  */
 const lucide = import.meta.glob(
-  '/node_modules/lucide-static/icons/{chevron-down,chevron-right,arrow-right,arrow-up-right,menu,x,phone,mail,map-pin,check,circle-check,clock,calendar,calendar-clock,external-link,info,triangle-alert,circle-dashed,circle-dot,shield-check,badge-check,minus,plus,star,quote,file-text,users,building-2,hospital,stethoscope,pill,flask-conical,video,message-circle,chart-column,network,receipt,wallet,lock,globe,circle-play,search,user-round,languages,wifi-off,smartphone,layout-dashboard,clipboard-list,heart-handshake,file-check,trending-down,trending-up,circle-x,circle-help,notebook-pen,repeat,banknote,landmark,scan-line,layers,route,timer,sparkles,download,list-checks,hand-coins,package,boxes,activity,baby,heart,eye,bone,brain,zoom-in}.svg',
+  '/node_modules/lucide-static/icons/{chevron-down,chevron-right,arrow-right,arrow-up-right,menu,x,phone,mail,map-pin,check,circle-check,clock,calendar,calendar-clock,external-link,info,triangle-alert,circle-dashed,circle-dot,shield-check,badge-check,minus,plus,star,quote,file-text,users,building-2,hospital,stethoscope,pill,flask-conical,video,message-circle,chart-column,network,receipt,wallet,lock,globe,circle-play,search,user-round,languages,wifi-off,smartphone,layout-dashboard,clipboard-list,heart-handshake,file-check,trending-down,trending-up,circle-x,circle-help,notebook-pen,repeat,banknote,landmark,scan-line,layers,route,timer,sparkles,download,list-checks,hand-coins,package,boxes,activity,baby,heart,eye,bone,brain,zoom-in,arrow-up,trophy,concierge-bell,clipboard-plus}.svg',
   { query: '?raw', import: 'default', eager: true },
 ) as Record<string, string>;
 

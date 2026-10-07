@@ -1,0 +1,118 @@
+---
+import Icon from '../ui/Icon.astro';
+
+/**
+ * Home page feature cloud, below the award strip: every module as a pill linking to its feature page
+ * (the features hub when a module has no page of its own), then a pricing link.
+ */
+const features: { label: string; href: string }[] = [
+  { label: 'General & Specialist EMR', href: '/features/emr/' },
+  { label: 'AI Automation', href: '/ai/' },
+  { label: 'Inventory & Logistics', href: '/features/pharmacy-and-inventory/' },
+  { label: 'Pharmacy Management', href: '/features/pharmacy-and-inventory/' },
+  { label: 'Appointment Scheduling', href: '/features/appointment-scheduling/' },
+  { label: 'Teleconsultation', href: '/features/telehealth/' },
+  { label: 'Billing & Payments', href: '/features/billing/' },
+  { label: 'Insurance & Payor Claims', href: '/features/insurance-claims/' },
+  { label: 'WhatsApp, Email, SMS Integrations', href: '/features/whatsapp/' },
+  { label: 'Lab Reporting', href: '/features/lab/' },
+  { label: 'Security & Role Access Control', href: '/features/' },
+  { label: 'Multi-Location Central Control', href: '/features/multi-location/' },
+  { label: 'Reports, BI & Analytics', href: '/features/reports-and-dashboards/' },
+  { label: 'Workflow Manager', href: '/features/' },
+  { label: '3rd Party API Integration', href: '/features/' },
+  { label: 'Staff & User Management', href: '/features/' },
+];
+---
+
+<section id="features-overview" aria-labelledby="features-overview-heading" class="section-y pt-[30px]!">
+  <div class="container-page">
+    <h2 id="features-overview-heading" class="text-center min-[80rem]:whitespace-nowrap">
+      Packed with features &ndash; you can choose what your clinic needs
+    </h2>
+
+    <ul class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:mt-12">
+      {
+        features.map((f) => (
+          <li>
+            <a href={f.href} class="feature-chip">
+              <span class="feature-chip__check" aria-hidden="true">
+                <Icon name="check" size={12} />
+              </span>
+              {f.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href="/pricing/" class="btn btn-outline rounded-full px-8">
+          View pricing
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .feature-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1.125rem 0.5rem 0.75rem;
+    border: 1.5px solid var(--color-blue-500);
+    border-radius: 9999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease,
+      translate 150ms ease;
+  }
+
+  .feature-chip:hover {
+    background: var(--color-blue-50);
+    border-color: var(--color-blue-700);
+    color: var(--color-blue-700);
+    translate: 0 -2px;
+  }
+
+  @media (max-width: 39.99rem) {
+    .feature-chip {
+      min-height: 2.5rem;
+      padding: 0.375rem 0.875rem 0.375rem 0.5rem;
+      font-size: var(--text-sm);
+    }
+  }
+
+  .feature-chip__check {
+    display: grid;
+    place-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: #00c554;
+    color: var(--color-white);
+    transition: scale 150ms ease;
+  }
+
+  .feature-chip:hover .feature-chip__check {
+    scale: 1.1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .feature-chip,
+    .feature-chip__check {
+      transition: none;
+    }
+    .feature-chip:hover {
+      translate: none;
+    }
+  }
+</style>

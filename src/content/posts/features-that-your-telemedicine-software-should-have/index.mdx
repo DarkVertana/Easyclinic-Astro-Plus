@@ -24,9 +24,9 @@ ctas:
     label: Book a 20-minute demo
     href: /contact-us/#book-a-demo
   secondary:
-    label: See how a video consult runs on EasyClinic
+    label: See how a video consult runs on Easy Clinic
     href: /features/telehealth/
-  whatsapp: Hi, I was reading the EasyClinic checklist on choosing telemedicine software and would like to see a video consult in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic checklist on choosing telemedicine software and would like to see a video consult in a demo.
 faqHeading: Questions doctors ask before choosing telemedicine software
 faq:
   - question: What features should telemedicine software have?
@@ -38,7 +38,7 @@ faq:
   - question: Does the patient need to download an app for a video consult?
     answer: >-
       It depends on the software, because some need an app and others run in the phone's web browser. On
-      EasyClinic the patient and the doctor both join from a web browser on a phone or a computer, so
+      Easy Clinic the patient and the doctor both join from a web browser on a phone or a computer, so
       neither installs anything.
   - question: Can I use WhatsApp video calls instead of telemedicine software?
     answer: >-
@@ -50,16 +50,16 @@ faq:
     answer: >-
       Before is simpler, because a fee paid at booking does not need chasing after the call. Choose
       software that takes the payment when the consult is booked and records it on the patient's bill; on
-      EasyClinic that needs the Premium plan, which includes online payments.
+      Easy Clinic that needs the Premium plan, which includes online payments.
   - question: What happens if the internet drops during a video consult?
     answer: >-
       The call stops until the connection comes back, so agree with the patient before you start how you
-      will reach them if it drops, such as a phone call to their number. EasyClinic does not run fully
+      will reach them if it drops, such as a phone call to their number. Easy Clinic does not run fully
       offline today, so both the doctor and the patient need a working connection.
   - question: How much does telemedicine software cost?
     answer: >-
       Vendors price it differently, so compare the price per doctor per month with video included rather
-      than the entry price. On EasyClinic, video consults come with Premium, at {price:usd.premium.annual}
+      than the entry price. On Easy Clinic, video consults come with Premium, at {price:usd.premium.annual}
       per doctor per month billed annually ({price:inr.premium.annual} in India), which also includes
       online payments and WhatsApp messages.
 links:
@@ -67,7 +67,7 @@ links:
   related:
     - href: /features/telehealth/
       label: Telehealth
-      description: How a video consult runs on EasyClinic, from booking to the prescription on the patient's record.
+      description: How a video consult runs on Easy Clinic, from booking to the prescription on the patient's record.
     - href: /features/appointment-scheduling/
       label: Appointment scheduling
       description: One calendar for walk-ins and booked slots, video consults included, with a reminder before each visit.
@@ -75,12 +75,12 @@ links:
       label: EMR and e-prescriptions
       description: The patient record and the prescription that a video consult writes to, the same as a clinic visit.
     - href: /pricing/
-      label: EasyClinic prices
+      label: Easy Clinic prices
       description: What each plan costs per doctor per month. Video consults and online payments start on Premium.
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
-  onlyUsCouldWrite: The EasyClinic section rests on EasyClinic's own telehealth and pricing facts (the browser join, the remote-consult line on the prescription, video and online payments on Premium), and the Uganda example paraphrases the medical council's own licensing requirements.
+  onlyUsCouldWrite: The Easy Clinic section rests on Easy Clinic's own telehealth and pricing facts (the browser join, the remote-consult line on the prescription, video and online payments on Premium), and the Uganda example paraphrases the medical council's own licensing requirements.
   readsMachineWritten: A checklist of questions under numbered headings reads like many vendor buying guides, and the advice to test on a cheap phone over mobile data is common sense rather than something we measured. There is no named clinic, no quote from a doctor who runs video consults and no measured figure, so a doctor who does video follow-ups should read it aloud before it is treated as final.
 notes:
   - Imported from https://www.easyclinic.io/features-that-your-telemedicine-software-should-have/ (published 2023-12-13, modified 2026-07-12). Refreshed to spec 5.19 on 2026-09-26 as a vendor-neutral buyer checklist (the spec 9.3 checklist-post pattern).
@@ -88,12 +88,12 @@ notes:
   - 'Cut from the import. Product claims: "you can set up your virtual clinic within a minute"; "all-in-one-solution"; "It can also be integrated with third parties" and "integrated with radiology and diagnostic lab partners so that reports can be directly uploaded" (integration status is unknown); "built on a robust and secure technology platform. Patient information ... is safe. It is not misused or sold" (no confirmed security detail, and the privacy policy''s clause on de-identified data is open with legal, so the post makes no "never sold" promise); "Custom EMR templates for different kinds of practice" (specialty templates are a Premium item in plans.yaml but not needed for a video consult); "simplifies billing", "prepare financial reports with ease"; "leaving staff for more important work" and "reducing the workload of your staff" (unmeasured). Unsourced claims: "Face-to-face interaction instils more confidence in patients", "it will improve the quality of diagnosis", "After the pandemic, telehealth consultations have become quite popular" and "patients now prefer online appointments instead of offline". Also cut: the "In today''s world" opener, the "Easy Clinic" spelling, the em dash, "robust", links with the anchor "telemedicine software" to the home page, the /features/ link and the old post /questions-to-ask-your-clinic-emr-software-provider/. The import had no statistics, anecdotes or study figures.'
   - 'Kept from the import, reworked as buyer questions: audio and video calls; prescriptions shared on WhatsApp or printed; online fees collected before or after the consult, with no excess commission and prompt transfer to the bank; scheduling with online booking and automatic reminders.'
   - 'Legal: the Uganda example (telemedicine licensed only as part of a clinic the UMDPC licenses, for patients seen in person within the previous 12 months) was checked against the UMDPC "Requirements for different categories of registration and licensure", section 23, https://umdpc.go.ug/downloads/requirements/requirements.pdf, fetched 2026-09-26, and is linked in the sentence. No Indian rule is stated: the NMC Telemedicine Practice Guidelines PDFs on nmc.org.in returned 404 and https://www.mohfw.gov.in/pdf/Telemedicine.pdf returned an HTML page on 2026-09-26, so the post only points to /features/telehealth/, which summarises the guidelines. The import made no legal statement to correct.'
-  - 'Sources for EasyClinic facts: src/content/features/telehealth.yaml and its notes (video consult booked through the appointment module, built-in video and chat, doctor and patient join from a web browser with nothing to install, prescription on the patient record with a line saying the consult was remote, sent on WhatsApp as the consult ends or by SMS or email, online fee payment at booking); src/data/plans.yaml (video consultations, online payments and WhatsApp on Premium; SMS and email reminders on every plan; portal and app on Enterprise); migration/research/facts.md (does not run fully offline today). Body prices ($99, ₹1,999) are plain text because tokens do not work in MDX bodies; update them by hand if the Premium price changes.'
-  - 'Fact-check pass 2026-09-26 (original re-fetched from the WordPress API; UMDPC requirements PDF and live https://www.easyclinic.io/patient-engagement-at-easyclinic/ re-fetched). The Uganda sentence now says patients seen in person "by the same practice" within the previous 12 months, because section 23 scope (c) ties the in-person consultation to the practitioner "or another practitioner in the same practice", not to any clinic. The editorial pass now says the Uganda example paraphrases the Council''s requirements rather than quoting them. Every EasyClinic statement in the body matches the live teleconsultation block (in-built video and chat; consults created through the appointment module with online fee payment; web browser on a computer or phone with no additional software; prescription sent via WhatsApp, SMS or email with a remote-consult disclaimer) and plans.yaml.'
+  - 'Sources for Easy Clinic facts: src/content/features/telehealth.yaml and its notes (video consult booked through the appointment module, built-in video and chat, doctor and patient join from a web browser with nothing to install, prescription on the patient record with a line saying the consult was remote, sent on WhatsApp as the consult ends or by SMS or email, online fee payment at booking); src/data/plans.yaml (video consultations, online payments and WhatsApp on Premium; SMS and email reminders on every plan; portal and app on Enterprise); migration/research/facts.md (does not run fully offline today). Body prices ($99, ₹1,999) are plain text because tokens do not work in MDX bodies; update them by hand if the Premium price changes.'
+  - 'Fact-check pass 2026-09-26 (original re-fetched from the WordPress API; UMDPC requirements PDF and live https://www.easyclinic.io/patient-engagement-at-easyclinic/ re-fetched). The Uganda sentence now says patients seen in person "by the same practice" within the previous 12 months, because section 23 scope (c) ties the in-person consultation to the practitioner "or another practitioner in the same practice", not to any clinic. The editorial pass now says the Uganda example paraphrases the Council''s requirements rather than quoting them. Every Easy Clinic statement in the body matches the live teleconsultation block (in-built video and chat; consults created through the appointment module with online fee payment; web browser on a computer or phone with no additional software; prescription sent via WhatsApp, SMS or email with a remote-consult disclaimer) and plans.yaml.'
   - 'Left out as unknown: call recording, video behaviour on a weak connection, named payment gateways and their charges, refund handling, how the patient receives the join link, whether patients can book a video slot themselves on Premium, data hosting regions and export format.'
 ---
 
-If you have tried video consults on your own phone, you know it works for a while. The trouble starts when the clinic needs a record of the call or a copy of the prescription. This checklist is what to test before you pay for telemedicine software. It applies to any vendor, EasyClinic included.
+If you have tried video consults on your own phone, you know it works for a while. The trouble starts when the clinic needs a record of the call or a copy of the prescription. This checklist is what to test before you pay for telemedicine software. It applies to any vendor, Easy Clinic included.
 
 ## Read your country's rules first
 
@@ -106,7 +106,7 @@ The rules decide which consults you may hold by video, and so which features you
 - What happens when the line drops? Can the patient rejoin the same consult, or do you start again?
 - Does the call run inside the software, or does the software hand you off to a separate video app whose history the clinic does not keep?
 
-<InlineCta heading="See one video consult from booking to prescription." href="/features/telehealth/" label="Read how video consults work on EasyClinic">On EasyClinic's Premium plan, a video consult is booked on the same calendar as clinic visits, and the patient joins from a web browser with nothing to install. The prescription is written on the patient's record.</InlineCta>
+<InlineCta heading="See one video consult from booking to prescription." href="/features/telehealth/" label="Read how video consults work on Easy Clinic">On Easy Clinic's Premium plan, a video consult is booked on the same calendar as clinic visits, and the patient joins from a web browser with nothing to install. The prescription is written on the patient's record.</InlineCta>
 
 ## 2. The prescription
 
@@ -140,13 +140,13 @@ The rules decide which consults you may hold by video, and so which features you
 
 Video is sometimes sold as part of a higher plan rather than on its own. Compare the price per doctor per month with video included, rather than the entry price. Ask whether online payments and WhatsApp messages come in the same plan, because you will probably want the fee paid online and the prescription sent on WhatsApp.
 
-## Where EasyClinic fits
+## Where Easy Clinic fits
 
-On EasyClinic, video consults come with the Premium plan, at $99 per doctor per month billed annually (₹1,999 in India). Against the checklist:
+On Easy Clinic, video consults come with the Premium plan, at $99 per doctor per month billed annually (₹1,999 in India). Against the checklist:
 
-- The call is booked through the appointment calendar, beside clinic visits, and runs on EasyClinic's built-in video and chat. The doctor and the patient join from a web browser on a phone or a computer, with nothing to install.
+- The call is booked through the appointment calendar, beside clinic visits, and runs on Easy Clinic's built-in video and chat. The doctor and the patient join from a web browser on a phone or a computer, with nothing to install.
 - The prescription is written on the patient's record with a line saying the consult was held remotely. It goes to the patient on WhatsApp as soon as the consult ends, or by SMS or email instead.
 - The fee can be paid online when the consult is booked, because Premium includes online payments.
 - The follow-up goes on the same calendar, as a clinic visit or another video consult. The reminder before it goes by SMS and email on every plan, and on WhatsApp on Premium.
 
-Two limits. EasyClinic is cloud software and does not run fully offline today, so both ends of the call need an internet connection. We have not published how the video behaves on a weak connection, so when you see the demo, ask to join a test call from a phone on mobile data.
+Two limits. Easy Clinic is cloud software and does not run fully offline today, so both ends of the call need an internet connection. We have not published how the video behaves on a weak connection, so when you see the demo, ask to join a test call from a phone on mobile data.

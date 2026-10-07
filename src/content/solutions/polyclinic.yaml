@@ -5,7 +5,7 @@ secondaryKeywords:
   - multi-specialty clinic software
   - polyclinic EMR
   - polyclinic software India
-title: 'Polyclinic Management Software: EasyClinic'
+title: 'Polyclinic Management Software: Easy Clinic'
 metaDescription: >-
   Polyclinic management software with one record for every specialist and one calendar for shared
   rooms, from {price:usd.premium.annual} per doctor a month.
@@ -14,7 +14,7 @@ linkLabel: Polyclinic
 eyebrow: For polyclinics and group practices
 openingAnswer: >-
   Polyclinic management software puts every specialist on one shared patient chart and books doctors and
-  shared rooms on one calendar, with a role on every login deciding who sees what. EasyClinic's Premium
+  shared rooms on one calendar, with a role on every login deciding who sees what. Easy Clinic's Premium
   plan for group practices costs {price:usd.premium.annual} per doctor per month billed annually
   ({price:inr.premium.annual} in India).
 summary: >-
@@ -25,7 +25,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/Prescription-3-2.png'
-  alt: 'An EasyClinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
   frame: none
 ctas:
   primary:
@@ -34,7 +34,7 @@ ctas:
   secondary:
     label: See Premium pricing
     href: /pricing/#plans
-  whatsapp: Hi, I was reading the EasyClinic polyclinic page and would like to book a demo for our clinic.
+  whatsapp: Hi, I was reading the Easy Clinic polyclinic page and would like to book a demo for our clinic.
 
 sections:
   - discriminant: painBlocks
@@ -196,9 +196,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        {fact:retention} of EasyClinic's customers have used it for more than five years. These are its
+        {fact:retention} of Easy Clinic's customers have used it for more than five years. These are its
         public ratings.
       variant: badges
       badges:
@@ -264,7 +264,7 @@ links:
       label: Reports and dashboards
       description: The owner's morning numbers, with dashboards and reports on every plan.
     - href: /pricing/
-      label: EasyClinic pricing
+      label: Easy Clinic pricing
       description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
     - href: /dental-emr-software/
     - href: /pricing/india/
@@ -284,7 +284,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The reception rule from EasyClinic's own price list (the included reception login cannot open the EMR
+    The reception rule from Easy Clinic's own price list (the included reception login cannot open the EMR
     or issue a prescription) and the split between what Premium includes for a polyclinic and what it adds
     as a module.
   readsMachineWritten: >-
@@ -296,7 +296,7 @@ notes:
   - 'Hero screenshot left out (no heroMedia on published pages): spec 12 "Resource calendar: doctors, rooms and devices in columns", 4 doctors, 3 rooms, one device. Add it when the screen exists.'
   - 'Spec 5.6 item 3 asks for a dental and a dermatology screenshot in "One record, many workflows". Left out; add as media on the first feature row when the screens exist.'
   - 'Roles matrix shows only two rows. The reception rule is from the live /pricing/ FAQ; the six roles come from spec 5.6 and the spec 12 screen list, and staff logins from plans.yaml ("Logins for your staff"). In the prescription row, the nurse, pharmacist and accountant "no" cells and the owner "Only if also a doctor" cell are conservative generic defaults, not confirmed product settings. Rows for booking, opening the chart, dispensing and seeing reports are left out until product confirms the default permissions of the owner, nurse, pharmacist and accountant roles, and whether a clinic can change them. Add the spec 12 "Roles and permissions matrix" screenshot too.'
-  - 'FAQ left out for lack of facts: "revenue split by doctor" (needs whether reports show revenue per doctor and whether EasyClinic calculates a consultant''s share) and "migration from two systems" (needs what is imported from which systems, how long it takes and what it costs).'
+  - 'FAQ left out for lack of facts: "revenue split by doctor" (needs whether reports show revenue per doctor and whether Easy Clinic calculates a consultant''s share) and "migration from two systems" (needs what is imported from which systems, how long it takes and what it costs).'
   - 'Unknown and not stated: the licence rule for visiting or part-time doctors, nurses, pharmacists and accountants; how many reception logins a clinic gets; what a second location costs; add-on prices for pharmacy and lab; which specialty templates exist (a named, countable list, spec 5.11); which plan includes the rooms and devices columns in the resource calendar.'
   - 'Conflict to settle: live /pricing/ says Enterprise is best for "multi-location clinic chains, polyclinics and nursing homes"; plans.yaml says Premium is for group practices that share one front door, and the spec CTA is "See Premium pricing". This page follows plans.yaml.'
   - 'Badge ratings use {fact:capterraRating} and {fact:googleRating} (tokens resolve in badge ratings, as on every specialty page). Review counts are unknown (facts capterraReviews and googleReviews are null) and are left out.'

@@ -25,7 +25,7 @@ import { normalizePath } from '../integrations/routes-core.ts';
 import { LEGACY_CSV, LegacyInventory, parseSitemap, toLegacyPath, writeLegacyCsv } from './lib/legacy.ts';
 
 const ORIGIN = 'https://www.easyclinic.io';
-const USER_AGENT = 'EasyClinic site migration (Astro rebuild)';
+const USER_AGENT = 'Easy Clinic site migration (Astro rebuild)';
 const PAUSE_MS = 750;
 const dryRun = process.argv.includes('--dry-run');
 

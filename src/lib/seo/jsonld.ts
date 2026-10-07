@@ -121,7 +121,7 @@ export function softwareApplication(site: SiteData, offerList: Offer[]): Obj<Sof
   return {
     '@type': 'SoftwareApplication',
     '@id': id(site, 'software'),
-    name: 'EasyClinic',
+    name: 'Easy Clinic',
     applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'Clinic management software',
     operatingSystem: 'Web browser',

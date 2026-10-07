@@ -59,7 +59,7 @@ const columns = cards.length === 2 || cards.length === 4 ? 'sm:grid-cols-2' : ca
               card.missing && 'border-dashed border-line-strong',
             ]}
           >
-            <h3 class="font-sans text-lg font-semibold leading-snug">
+            <h3 class="font-display text-lg font-semibold leading-snug">
               {/* The link's ::after covers the card, so the whole card is the tap target. */}
               <a href={card.href} class="link-plain after:absolute after:inset-0 after:rounded-card">
                 {card.label}

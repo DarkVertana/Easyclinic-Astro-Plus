@@ -7,13 +7,13 @@ secondaryKeywords:
   - AI EMR software
   - clinic software for doctors
   - cloud clinic software
-title: 'Clinic Management Software for Doctors: EasyClinic'
+title: 'Clinic Management Software for Doctors: Easy Clinic'
 metaDescription: 'Clinic management software for India, Kenya, the UAE and Nigeria: appointments, EMR, billing, pharmacy and WhatsApp in one system, since {fact:founded}.'
 h1: AI EMR, EHR & Clinic Management Software
 linkLabel: Home
 eyebrow: For clinics in India, Kenya, the UAE and Nigeria
 openingAnswer: >-
-  EasyClinic is clinic management software that runs appointments, the EMR, billing, pharmacy and lab
+  Easy Clinic is clinic management software that runs appointments, the EMR, billing, pharmacy and lab
   in one cloud system, used by solo doctors, polyclinics, clinic chains and hospital OPDs in
   {fact:countries} countries. In a 2025 study of {fig:visits} visits at Penda Health clinics in Nairobi,
   clinicians with AI Consult.
@@ -24,8 +24,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: ../../assets/images/products/9_01_Inventory.png
-  alt: EasyClinic inventory screens showing a products and services list, medicine stock with low-stock and reorder flags, units of measure for purchase and sale, and an order versus consumption chart
+  src: ../../assets/images/AI-suggestions-1.png
+  alt: Easy Clinic inventory screens showing a products and services list, medicine stock with low-stock and reorder flags, units of measure for purchase and sale, and an order versus consumption chart
   frame: none
 heroStrip:
   ratings: true
@@ -37,36 +37,28 @@ ctas:
   secondary:
     label: See pricing
     href: /pricing/
-  whatsapp: Hi, I was on the EasyClinic home page and would like to book a 20-minute demo for my clinic.
+  whatsapp: Hi, I was on the Easy Clinic home page and would like to book a 20-minute demo for my clinic.
 
 sections:
   - discriminant: personaRouter
     value:
       id: pick-your-clinic
-      heading: Pick your clinic
-      intro: >-
-        EasyClinic has run clinics since {fact:founded}, from one-doctor practices to a chain of
-        {fact:largestChain} locations. Find the one that sounds like yours.
       items:
         - persona: solo
-          title: I run my own clinic
-          body: One doctor and a receptionist, with no IT staff to call. The prescription takes thirty seconds and the notes are done before you go home.
+          title: Solo Practice
+          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist, all on one simple system.
           href: /solutions/solo-clinic/
         - persona: polyclinic
-          title: We share one front door
-          body: Specialists sharing rooms and a reception desk. Every doctor writes on the same patient record, and roles decide who sees what.
+          title: Specialist Poly Clinic
+          body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
           href: /solutions/polyclinic/
         - persona: chain
-          title: We run many branches
-          body: One central chart and one set of SOPs across every branch, with branch KPIs side by side so drift shows up early.
+          title: Clinic Chains
+          body: Suitable for clinic chains across multiple locations that need centralised management and custom business processes.
           href: /solutions/clinic-chain/
-        - persona: hospital-opd
-          title: We run a hospital OPD
-          body: A token queue that keeps the OPD moving, and claims that start at the prescription rather than at the billing counter.
-          href: /solutions/hospital-opd/
         - persona: ngo
-          title: We run an NGO or mission clinic
-          body: Patient records, and the visit and stock reports built from them, for programme clinics and mission hospitals.
+          title: NGO Clinic
+          body: Suitable for non-profit and mission-driven healthcare organisations that operate fixed or mobile clinics, with records and stock reports.
           href: /solutions/ngo-clinics/
 
   - discriminant: oldWayNewWay
@@ -77,12 +69,12 @@ sections:
       old:
         title: The old way
         items:
-          - A paper register at the desk that only the receptionist can read
-          - Appointment reminders sent from someone's personal WhatsApp, when they remember
-          - Billing in an Excel sheet that never quite matches the cash drawer
-          - Three logins for three systems, and every patient typed in twice
+          - A paper register at the desk that only the receptionist can read, so the doctor keeps asking who is next
+          - Appointment reminders sent from someone's personal WhatsApp, when they remember to send them at all
+          - Billing in an Excel sheet that never quite matches the cash drawer at the end of the day
+          - Three logins for three systems, every patient typed in twice
       next:
-        title: The EasyClinic way
+        title: The Easy Clinic way
         items:
           - One patient list that the desk and the doctor both see, updated as each patient moves through the clinic
           - WhatsApp reminders that the software sends on a schedule, so nobody uses a personal phone
@@ -96,28 +88,28 @@ sections:
       intro: Follow one patient through the clinic. Every step writes to the same record, so nobody retypes a name or an amount.
       steps:
         - label: Book
-          body: The patient books online or at the desk, and walk-ins join the same list as booked slots.
+          body: The patient books online or at the desk, and walk-ins join the same list as booked slots, so the queue is one list.
           href: /features/appointment-scheduling/
         - label: Arrive
-          body: Reception registers the patient once and checks the insurer or TPA plan before the consult, so the claim starts clean.
+          body: Reception registers the patient once and checks the insurer or TPA plan first, so the claim starts clean.
           href: /features/insurance-claims/
         - label: Consult
-          body: Past visits and lab results sit on one chart. Order a test from it and the result comes back into the chart, flagged if it is abnormal.
+          body: Past visits and lab results sit on one chart. Order a test from it and the result returns there, flagged if abnormal.
           href: /features/lab/
         - label: Prescribe
-          body: A prescription takes about thirty seconds, with a drug-interaction check. Cura AI can draft the note for the doctor to review and sign.
+          body: A prescription takes about thirty seconds, with a drug-interaction check. Cura AI drafts the note for the doctor to sign.
           href: /features/emr/
         - label: Pay
-          body: The invoice builds itself from what was ordered in the consult, and the receipt goes out on WhatsApp.
+          body: The invoice builds itself from what was ordered in the consult, and the receipt goes out to the patient on WhatsApp.
           href: /features/billing/
         - label: Dispense
-          body: The pharmacy dispenses from the prescription on screen, with batch and expiry tracked, so stock falls as medicines leave the counter.
+          body: The pharmacy dispenses from the prescription on screen, with batch and expiry tracked, so stock updates as it goes.
           href: /features/pharmacy-and-inventory/
         - label: Follow up
-          body: The reminder for the next visit and the lab report reach the patient on WhatsApp, sent by the clinic software on a schedule.
+          body: The next-visit reminder and the lab report reach the patient on WhatsApp, sent by the software on a schedule.
           href: /features/whatsapp/
         - label: Report
-          body: At the end of the day the owner reads the day-end financial report, for one branch or all of them, and sees on the claims dashboard where each claim stands.
+          body: At day end the owner reads the financial report for one branch or all of them, and sees where each claim stands.
           href: /features/reports-and-dashboards/
 
   - discriminant: moduleGrid
@@ -128,8 +120,8 @@ sections:
       columns: 4
       items:
         - title: Front desk
-          icon: calendar-clock
-          outcome: Walk-ins and booked slots share one calendar, and reminders go out on WhatsApp without anyone picking up a phone.
+          icon: concierge-bell
+          outcome: Walk-ins and booked slots share one calendar, with reminders sent on WhatsApp.
           links:
             - label: Appointment scheduling
               href: /features/appointment-scheduling/
@@ -138,8 +130,8 @@ sections:
             - label: Telehealth
               href: /features/telehealth/
         - title: Chart
-          icon: notebook-pen
-          outcome: The note finishes with the visit, and the lab and the pharmacy work from the same chart the doctor writes in.
+          icon: clipboard-plus
+          outcome: The note finishes with the visit, and the lab and pharmacy work from one chart.
           links:
             - label: EMR and e-prescriptions
               href: /features/emr/
@@ -148,8 +140,8 @@ sections:
             - label: Pharmacy and inventory
               href: /features/pharmacy-and-inventory/
         - title: Money
-          icon: receipt
-          outcome: Every order becomes an invoice, and the owner sees unbilled work and denied claims before the month ends.
+          icon: banknote
+          outcome: Every order becomes an invoice, and unbilled work and denied claims show early.
           links:
             - label: Billing
               href: /features/billing/
@@ -158,8 +150,8 @@ sections:
             - label: Revenue management
               href: /features/revenue-management/
         - title: Growth
-          icon: chart-column
-          outcome: Recall campaigns tell patients when their review is due, and the owner checks the morning numbers for every branch on one screen.
+          icon: trending-up
+          outcome: Recalls bring patients back, and every branch's numbers sit on one screen.
           links:
             - label: Patient engagement
               href: /features/patient-engagement/
@@ -180,7 +172,7 @@ sections:
         - treatment-errors
         - history-errors
       body: |
-        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on EasyClinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's EasyClinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
+        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on Easy Clinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's Easy Clinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
 
         The results are published as a preprint on arXiv, not in a journal.
       link:
@@ -190,7 +182,7 @@ sections:
   - discriminant: pricingCards
     value:
       id: pricing
-      heading: What EasyClinic costs
+      heading: What Easy Clinic costs
       intro: Per doctor per month, shown here in US dollars. Every plan includes unlimited support and training, and prices in rupees are on the [pricing page](/pricing/).
       currency: usd
       switcher: false
@@ -205,14 +197,20 @@ sections:
   - discriminant: testimonialRow
     value:
       id: customers
-      heading: From a solo orthopaedic practice to a healthcare group
-      intro: One quote from each kind of clinic, exactly as the customer wrote it.
+      heading: From a solo orthopaedic practice to a city hospital
+      intro: Nine doctors on Easy Clinic, each quote exactly as the doctor wrote it.
       items:
+        - prantar-chakrabarti
+        - seetha-lakshmi-kolanakuduru
+        - tl-prabhu
+        - jj-thakkar
+        - v-ramanathan
+        - sb-bhattacharyya
+        - manish-bhatia
         - chao-rochek-buragohain
-        - siddhartha-ghosh
-        - hisham-ismail
+        - tarun-mishra
       layout: row
-      usePullQuote: true
+      usePullQuote: false
 
   - discriminant: stepList
     value:
@@ -247,29 +245,29 @@ faq:
       insurance claims and reports. What sets it apart from a plain EMR is that the front desk and the till
       work on the same record as the chart, so a booking turns into a visit and the visit into an invoice
       without anyone typing the patient in twice.
-  - question: Is EasyClinic an EMR or a full hospital information system?
+  - question: Is Easy Clinic an EMR or a full hospital information system?
     answer: >-
-      EasyClinic is AI EMR software with the front desk, billing, pharmacy and lab built around it, not a full
+      Easy Clinic is AI EMR software with the front desk, billing, pharmacy and lab built around it, not a full
       hospital information system. It covers outpatient clinics, hospital OPDs, day care and nursing homes,
       but it does not run inpatient wards or operating theatres, so a hospital that needs those runs
-      EasyClinic in the OPD beside a separate inpatient system.
-  - question: How much does EasyClinic cost?
+      Easy Clinic in the OPD beside a separate inpatient system.
+  - question: How much does Easy Clinic cost?
     answer: >-
-      EasyClinic costs {price:usd.professional.annual} per doctor per month on Professional and
+      Easy Clinic costs {price:usd.professional.annual} per doctor per month on Professional and
       {price:usd.premium.annual} on Premium when billed annually, or {price:usd.professional.quarterly} and
       {price:usd.premium.quarterly} billed quarterly. In India the annual prices are
       {price:inr.professional.annual} and {price:inr.premium.annual}. Enterprise, for clinic chains and
       hospital OPDs, is quoted for your network, and every plan includes the reception login with no setup fee.
       Pharmacy, lab management, insurance claims and integrations come with Enterprise, and a clinic on
       Professional or Premium can add them to its plan.
-  - question: Does EasyClinic work offline?
+  - question: Does Easy Clinic work offline?
     answer: >-
-      EasyClinic does not run fully offline today, because the cloud version needs an internet connection.
-      EasyClinic also offers a self-hosted option, where the system runs on
-      the clinic's own server rather than in EasyClinic's cloud.
+      Easy Clinic does not run fully offline today, because the cloud version needs an internet connection.
+      Easy Clinic also offers a self-hosted option, where the system runs on
+      the clinic's own server rather than in Easy Clinic's cloud.
   - question: Am I locked into a contract?
     answer: >-
-      No, there is no binding contract on any EasyClinic plan and no setup fee, so you use it for as long as
+      No, there is no binding contract on any Easy Clinic plan and no setup fee, so you use it for as long as
       it suits your clinic. On Professional and Premium you pay per doctor per month, billed annually or
       quarterly.
   - question: Do I have to use the AI?
@@ -277,12 +275,12 @@ faq:
       No, the EMR works without Cura AI: you write the note and the prescription yourself, with shortcuts
       set up for the way you prescribe, and the prescription goes out exactly as it would with the AI. Cura AI (documentation) comes with every plan,
       and when you use it, it drafts the note for you to review and sign.
-  - question: Can EasyClinic run more than one clinic location?
+  - question: Can Easy Clinic run more than one clinic location?
     answer: >-
-      Yes, EasyClinic runs more than one location on the Premium and Enterprise plans, but not on
+      Yes, Easy Clinic runs more than one location on the Premium and Enterprise plans, but not on
       Professional, which covers a single location. A clinic on Professional that opens a second branch
       moves up to Premium, and Enterprise adds central control and SOP tracking across branches. The
-      largest chain on EasyClinic has {fact:largestChain} locations.
+      largest chain on Easy Clinic has {fact:largestChain} locations.
   - question: How long does it take to go live?
     answer: >-
       A clinic can go from demo to live in as little as {fact:goLiveDays} days, and staff training is
@@ -292,34 +290,23 @@ faq:
 links:
   related:
     - href: /clinic-management-software-india/
-      label: EasyClinic in India
-      description: Prices in rupees, and what ABDM asks of an Indian clinic.
+      label: EMR Software in India
+      description: Prices in rupees, and ABDM.
     - href: /emr-software-in-kenya/
-      label: EasyClinic in Kenya
-      description: What SHA and eTIMS ask of a Kenyan clinic, and a Kenyan number to call.
-    - href: /clinic-management-software-uae/
-      label: EasyClinic in the UAE
-      description: What NABIDH in Dubai and Malaffi in Abu Dhabi ask of a clinic.
+      label: EMR Software in Kenya
+      description: SHA, eTIMS and a local line.
     - href: /hospital-management-software-nigeria/
-      label: EasyClinic in Nigeria
-      description: HMO claims, and what the Nigeria Data Protection Act asks of a clinic.
-    - href: /features/
-      label: Every module
-      description: Twelve modules in the order a patient moves through the clinic.
-    - href: /ai/
-      label: Cura AI
-      description: What each Cura AI feature does, and which plan includes the note drafting.
-    - href: /curapilot/
-      label: CuraPilot
-      description: EasyClinic's clinical copilot, and the Penda Health study in detail.
-    - href: /trust/
-      label: Trust and compliance
-      description: How EasyClinic handles patient data, and the rules in each country.
+      label: EMR Software in Nigeria
+      description: HMO claims and data rules.
+    - href: /clinic-management-software-uae/
+      label: EMR Software in UAE
+      description: What NABIDH and Malaffi ask.
+  relatedHeading: Choose your country to see features for your clinic's needs
 
 closing:
-  heading: See your own clinic's day on EasyClinic
+  heading: See your own clinic's day on Easy Clinic
   body: >-
-    In 20 minutes we walk through a day like yours on EasyClinic, from the first booking to the evening cash
+    In 20 minutes we walk through a day like yours on Easy Clinic, from the first booking to the evening cash
     close. If a call is too much today, send us a WhatsApp message instead.
   primary:
     label: Book a 20-minute demo
@@ -331,15 +318,15 @@ closing:
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
-  onlyUsCouldWrite: 'The Penda Health study of 39,849 visits in Nairobi, where Penda has run on EasyClinic since 2017, and the four-day training path with its minutes, are specific to EasyClinic, but as a home page for four countries and every clinic size it carries almost nothing specific to one clinic type or one country.'
+  onlyUsCouldWrite: 'The Penda Health study of 39,849 visits in Nairobi, where Penda has run on Easy Clinic since 2017, and the four-day training path with its minutes, are specific to Easy Clinic, but as a home page for four countries and every clinic size it carries almost nothing specific to one clinic type or one country.'
   readsMachineWritten: 'The definition answer to "What is clinic management software?" and the evenly matched old-way and new-way lists read like SEO copy, and with no screenshots yet the journey steps describe screens a doctor cannot see.'
 
 notes:
-  - 'Title shortened from the spec 4.1 title (62 characters) to 50: "Clinic Management Software for Doctors: EasyClinic".'
+  - 'Title shortened from the spec 4.1 title (62 characters) to 50: "Clinic Management Software for Doctors: Easy Clinic".'
   - 'Published 2026-09-26 with confirmed facts only (owner decision). Screenshots removed because none exist yet; restore when captured (briefs in spec 12 and in git history before this pass): hero Today view (14 appointments, two walk-ins, one video consult, one no-show; phone capture too); old-way generated desk image oldway-desk-01.webp (aiGenerated: true, caption says it is not a customer''s clinic); journey steps: patient app booking (phone), payor coverage check at registration, lab order with an abnormal flag, thirty-second prescription with an interaction warning and Hindi print option, INR invoice with GST lines and a part payment, pharmacy dispensing with an expiring batch, WhatsApp reminder thread (phone), owner dashboard with the eight morning numbers.'
   - 'Regulator strip (spec 5.1 item 6; was in-abdm-m1, ke-sha, ke-etims, ae-nabidh, ae-malaffi, ng-ndpa, placed after the training steps, linking to /trust/) and heroStrip.regulators (in-abdm-m1, ke-sha, ae-nabidh, ng-ndpa) removed for publication: every regulator state in src/data/regulators is null. Restore both when each regulator has a state and date. Use the spec heading "Built for your regulator" only if every listed regulator is Live. Spec 5.1 also names NHIA. The country and trust related-link descriptions were reworded so they no longer promise a status.'
   - 'FAQ "Who owns the patient data, and what happens to it if we leave?" (spec 5.1 item 9) was replaced with "Am I locked into a contract?" because data ownership, export format, notice period, refunds and any export fee are not confirmed. Restore it when /trust/ or /privacy/ states the export policy.'
-  - 'Facts still missing that would strengthen the FAQ: what a second branch adds to the bill (per doctor, per location or both; the live Kenya listicle says "per user and per location"); add-on prices (null in every currency); which inpatient systems EasyClinic has run beside and what they exchange; how Cura AI is switched on or off, per doctor or per clinic; typical go-live time with data migration; what keeps working offline and what syncs, and the self-hosted option''s plans and cost.'
+  - 'Facts still missing that would strengthen the FAQ: what a second branch adds to the bill (per doctor, per location or both; the live Kenya listicle says "per user and per location"); add-on prices (null in every currency); which inpatient systems Easy Clinic has run beside and what they exchange; how Cura AI is switched on or off, per doctor or per clinic; typical go-live time with data migration; what keeps working offline and what syncs, and the self-hosted option''s plans and cost.'
   - 'goLiveDays (3) is phrased "in as little as 3 days", the live /kenyademo/ wording; the live Kenya listicle says "2 to 4 week setup" (facts.yaml note). Keep the phrasing if the listicle is rebuilt. The earlier line "moving years of records across from another system takes longer" was cut from the step note and the go-live FAQ: no source says so, and the /kenyademo/ 3-day path lists data migration as one of its steps. Restore it with a number when the typical go-live time with data migration is supplied. The step note now carries the live pricing FAQ pen-and-paper promise ("2 hours / 10 patient records").'
   - 'Offline FAQ uses the live Kenya listicle wording ("does not run fully offline today") and its statement that a self-hosted option exists. It does not claim the self-hosted option works without internet.'
   - 'Spec 6.3 and 5.1 copy says "published in Nature Medicine" and "peer-reviewed". The 39,849-visit study is an arXiv preprint (korom-2025 in study.yaml). Every study mention here says "studied" and "preprint". Do not equate AI Consult with CuraPilot until product confirms (study.yaml note).'
@@ -347,7 +334,7 @@ notes:
   - 'H1 now uses the spec 5.1 promise ("the desk, the chart, the till and the pharmacy"), four items, instead of the spec 4.1 group of three.'
   - 'Switch the secondary CTA (hero and closing) to "See the product in 6 minutes" when the six-minute tour ships (spec 12, The tour; section 11 UX direction 1).'
   - 'Founder block (section 11 item 9: Girish Mohata and the 2003 story, one photo) is left out on purpose. Spec 12 says it does not run until a real photograph of Girish Mohata exists. Add it after the testimonials when the photo arrives.'
-  - 'Live counter (section 11 item 6, "appointments booked on EasyClinic this week") is left out: there is no product data feed yet.'
+  - 'Live counter (section 11 item 6, "appointments booked on Easy Clinic this week") is left out: there is no product data feed yet.'
   - 'Resources teaser (spec 5.1 item 10, ContentCards "Latest guides", three) is left out until the guides are built. Add it after the training steps.'
   - 'Section 11 item 5 asks for Dr Korom''s one-line quote in the study block. The Korom testimonials (robert-korom-partner, robert-korom-reliability) are not assigned to this page; decide whether one moves here.'
   - 'All three testimonials (chao-rochek-buragohain, siddhartha-ghosh, hisham-ismail) have city null, so production shows no city; section 11 asks for a city on each home quote. Hisham Ismail is Qualitas Health, Malaysia.'
@@ -357,8 +344,8 @@ notes:
   - 'Directory pages (/doctors/, /clinics/) are out of scope and not linked from this page.'
   - 'Meta description opens with the head keyword; 152 characters as written, 142 after token expansion.'
   - 'Fact check 2026-09-26 (live pages fetched with curl): the journey step "Report" said the owner sees revenue, collections, no-shows and pending claims on one dashboard, by doctor or by branch. No live product page or confirmed fact states collections, no-shows or pending claims as report figures, or any per-doctor split (only the /healthcare-dashboard-software/ blog lists no-show rate and revenue per clinician, as generic KPI advice and an anonymous case study). It now says what live /ceo-landing-page/ (end-of-day financial reports "clinic and organization wide") and live /features/ (daily financial reports; "Claim Status Tracking Dashboard") state, matching /features/reports-and-dashboards/. The Growth card line "morning numbers for every branch on one screen" stays: live /kenyademo/ says "One clinic or fifteen ... One screen" and "Every location. One morning view".'
-  - 'Audit 2026-09-27: heroStrip.study set to false, as on /ai/ and /kenyademo/. Its line ("AI copilot studied on ... visits") linked to /curapilot/, which with the related link "EasyClinic''s clinical copilot" implied CuraPilot was the studied tool; the rules forbid that. The opening answer now names AI Consult. Hero.astro''s strip line now reads "AI Consult studied on ... visits in an EasyClinic record" and links to /curapilot/#study, so a page that turns the strip back on no longer implies CuraPilot was studied.'
-  - 'Audit 2026-09-27: study block trimmed to the confirmed facts (the tool studied was AI Consult, embedded in the EasyClinic record); "checked the clinicians'' work as they went" is not in the page-writing-rules confirmed list, and /ai/ cut it for the same reason. "Independent physicians rated the visits" now reads "a random sample of the visit records": the paper''s panel rated 5,666 of the 39,849 visits (study.yaml scope, verified 2026-09-27).'
+  - 'Audit 2026-09-27: heroStrip.study set to false, as on /ai/ and /kenyademo/. Its line ("AI copilot studied on ... visits") linked to /curapilot/, which with the related link "Easy Clinic''s clinical copilot" implied CuraPilot was the studied tool; the rules forbid that. The opening answer now names AI Consult. Hero.astro''s strip line now reads "AI Consult studied on ... visits in an Easy Clinic record" and links to /curapilot/#study, so a page that turns the strip back on no longer implies CuraPilot was studied.'
+  - 'Audit 2026-09-27: study block trimmed to the confirmed facts (the tool studied was AI Consult, embedded in the Easy Clinic record); "checked the clinicians'' work as they went" is not in the page-writing-rules confirmed list, and /ai/ cut it for the same reason. "Independent physicians rated the visits" now reads "a random sample of the visit records": the paper''s panel rated 5,666 of the 39,849 visits (study.yaml scope, verified 2026-09-27).'
   - 'Audit 2026-09-27: pen-and-paper promise changed from "two hours and ten patient records" to "two hours, or ten patient records", matching /switch/, /pricing/india/, /kenyademo/ and /features/emr/. The live source ("2 hours / 10 patient records") is ambiguous; the company should confirm what the slash means.'
-  - 'Audit 2026-09-27: the contract FAQ no longer ends "and EasyClinic never sells or discloses your clinic''s data". The published /privacy/ allows disclosure (section 3(a)) and says your information may not always remain private, /about-us/ dropped "never disclose" for the same reason, and the clause did not answer the lock-in question.'
+  - 'Audit 2026-09-27: the contract FAQ no longer ends "and Easy Clinic never sells or discloses your clinic''s data". The published /privacy/ allows disclosure (section 3(a)) and says your information may not always remain private, /about-us/ dropped "never disclose" for the same reason, and the clause did not answer the lock-in question.'
   - 'Audit 2026-09-27: (1) The NGO persona card no longer says "Visit and stock reports by programme, in the shape donors ask for": whether visits can be tagged by programme or grant is unknown (ngo-clinics.yaml note) and the /solutions/ hub NGO card makes no donor-reporting claim. Restore "by programme" only after product confirms programme tagging. (2) The "Do I have to use the AI?" FAQ no longer says you write notes "from your own templates", which implied templates on every plan; plans.yaml puts specialty templates and your own forms on Premium. It now uses the /features/emr/ shortcuts wording. (3) The /ai/ related-link description no longer says /ai/ gives the plan for each AI feature: /ai/ says only the note drafting is on the published price list.'

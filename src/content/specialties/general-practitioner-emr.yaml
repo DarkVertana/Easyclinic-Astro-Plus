@@ -13,7 +13,7 @@ secondaryKeywords:
   - family physician EMR
   - family medicine EMR software
   - general practice EMR
-title: 'EMR Software for General Practitioners: EasyClinic'
+title: 'EMR Software for General Practitioners: Easy Clinic'
 metaDescription: >-
   EMR for general practitioners and family physicians: history and immunisations on one facesheet,
   vitals charted over years, from {price:usd.professional.annual} a doctor a month.
@@ -34,7 +34,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/Prescription-3-2.png'
-  alt: 'An EasyClinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
   frame: none
 ctas:
   primary:
@@ -43,7 +43,7 @@ ctas:
   secondary:
     label: See Professional pricing
     href: /pricing/#plans
-  whatsapp: Hi, I was reading the EasyClinic page for general practitioners and would like to book a demo for my practice.
+  whatsapp: Hi, I was reading the Easy Clinic page for general practitioners and would like to book a demo for my practice.
 
 sections:
   - discriminant: painBlocks
@@ -192,10 +192,10 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
         We do not yet have a general practitioner's account of this chart to put on this page. These are
-        EasyClinic's public ratings on Capterra and Google, from clinics of every kind.
+        Easy Clinic's public ratings on Capterra and Google, from clinics of every kind.
       variant: badges
       badges:
         - label: Capterra
@@ -207,7 +207,7 @@ sections:
   - discriminant: stepList
     value:
       id: training
-      heading: How long does it take to learn EasyClinic?
+      heading: How long does it take to learn Easy Clinic?
       intro: >-
         About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
         session is 20 to 40 minutes, short enough to fit between the morning and evening clinics, so the
@@ -232,7 +232,7 @@ sections:
 
 faqHeading: Questions general practitioners ask
 faq:
-  - question: Which EasyClinic plan does a general practice need, and what does it cost?
+  - question: Which Easy Clinic plan does a general practice need, and what does it cost?
     answer: >-
       Professional, the plan meant for general practitioners and physicians, costs
       {price:inr.professional.annual} per doctor per month billed annually in India or
@@ -248,17 +248,17 @@ faq:
       vitals and other clinical parameters charted visit by visit on the patient's record. On Premium, lab
       reports come into the chart and their values are charted too, and you can have your own template for
       each condition you see often.
-  - question: Does EasyClinic remind patients about check-ups and vaccinations?
+  - question: Does Easy Clinic remind patients about check-ups and vaccinations?
     answer: >-
       Yes, the EMR sends alerts when an annual check-up or a vaccination is due, and a follow-up set during
       the consult brings the patient an automated reminder. Appointment reminders go by SMS and email on
       every plan, and by WhatsApp on Premium.
-  - question: I have years of paper files. Can they go into EasyClinic?
+  - question: I have years of paper files. Can they go into Easy Clinic?
     answer: >-
       Yes, as scans: documents and images can be uploaded to each patient's record, so pages from the old
       file sit beside the new visits. The history you want on the facesheet, such as chronic conditions and
       immunisations, goes in through the intake form, which you can fill in at the patient's next visit.
-  - question: Can I dispense medicines from my clinic with EasyClinic?
+  - question: Can I dispense medicines from my clinic with Easy Clinic?
     answer: >-
       Yes, but not on Professional or Premium alone: pharmacy and inventory come with Enterprise, or as a
       module added to Professional or Premium. With it, medicines are dispensed from the doctor's
@@ -269,9 +269,9 @@ faq:
       a computer or a phone, and the fee can be collected online when the consult is booked. The
       prescription is sent to the patient afterwards and carries a line saying the consult was held
       remotely.
-  - question: Does EasyClinic work without an internet connection?
+  - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No, EasyClinic is cloud software and does not run fully offline today, so plan for a working
+      No, Easy Clinic is cloud software and does not run fully offline today, so plan for a working
       connection in the consulting room. If the line at your clinic drops often, keep a backup connection,
       such as a mobile hotspot.
   - question: Do I have to use the AI?
@@ -285,11 +285,11 @@ links:
   relatedHeading: Where general practitioners go next
   related:
     - href: /solutions/solo-clinic/
-      label: EasyClinic for a solo doctor clinic
+      label: Easy Clinic for a solo doctor clinic
       description: For a doctor running their own clinic with a receptionist, on the Professional plan.
     - href: /clinic-management-software-india/
       label: Clinic management software in India
-      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
     - href: /emr-software-in-kenya/
       label: Clinic software in Kenya
       description: What a clinic in Kenya needs from its software, with prescriptions in English and Swahili.
@@ -297,11 +297,11 @@ links:
       label: The EMR and e-prescriptions
       description: The chart and the prescription on every plan, with Cura AI drafting the note.
     - href: /pricing/
-      label: EasyClinic pricing
+      label: Easy Clinic pricing
       description: Professional at {price:usd.professional.annual} per doctor per month, and what Premium adds.
 
 closing:
-  heading: See a general practice visit on EasyClinic
+  heading: See a general practice visit on Easy Clinic
   body: >-
     In 20 minutes we follow one patient from the token at the desk through the facesheet and the
     prescription to the follow-up reminder. If a call is too much today, send us a WhatsApp message from
@@ -317,7 +317,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The history intake fields and the check-up and vaccination alerts come from EasyClinic's own general
+    The history intake fields and the check-up and vaccination alerts come from Easy Clinic's own general
     practitioner and family physician pages, and the plan split a GP meets is stated as it is: the EMR on
     Professional, the dispensary only on Enterprise or as a module.
   readsMachineWritten: >-
@@ -327,7 +327,7 @@ editorialPass:
 
 notes:
   - 'Grounding: stated plainly on the live /general-practitioner-emr/ and /family-physician-emr/ pages (retrieved 2026-09-26): customisable intake forms capturing chronic conditions, family and social history, obs-gynae details, substance use, alternative therapies, COVID history and immunisations, fed into the face sheet; auto-generated summaries and facesheets; charts of vitals, lab reports and clinical parameters; point-and-click documentation of chief complaints, history and vitals with auto-complete notes, diagnoses, investigations, referrals, follow-ups and patient guidelines; referral management, automated follow-up, drug interaction check, triage, image and document upload, multilingual prescriptions; prescriptions shared by print, WhatsApp, SMS or email; templates for common family medicine conditions (diabetes, hypertension, respiratory infections) and preventive care reminders for annual check-ups, vaccinations and screenings (family physician page); the FAQ lines on long-term tracking of diabetes and hypertension and on vaccinations and routine check-ups; token numbers, first-come-first-serve, docket numbers and priority patients, queue status and waiting times; one-click billing from a service list, part payments, refunds and invoice voiding with authorisation, discount authorisation, receipts by WhatsApp, SMS or email; video consults in the browser with online fees and a remote-consult line on the prescription. "Professional, the plan meant for general practitioners and physicians" rests on the live /pricing/ "Best suited for: general practitioners and physicians" (facts.md section 1); plans.yaml bestFor says "A doctor running their own clinic, with a receptionist", which is size wording owned by /solutions/solo-clinic/, so it is not quoted here.'
-  - 'Recruit a named general practitioner testimonial (spec 5.15 item 9): a named GP or family physician on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow, ideally about the facesheet, chronic-condition charts or referrals. Dr Sanjay Teotia (general physician) is already placed on pricing/india.yaml, and his quote is about ease of use rather than a GP feature, so he is not used here. Until then the proof block is the Capterra and Google badges with no count (review counts are null in facts.yaml).'
+  - 'Recruit a named general practitioner testimonial (spec 5.15 item 9): a named GP or family physician on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow, ideally about the facesheet, chronic-condition charts or referrals. Dr Sanjay Teotia (general physician) is already placed on pricing/india.yaml, and his quote is about ease of use rather than a GP feature, so he is not used here. Until then the proof block is the Capterra and Google badges with no count (review counts are null in facts.yaml).'
   - 'Plan placement (company to confirm): plans.yaml puts "Patient records and the EMR" and "E-prescriptions" on Professional but does not say whether the intake form, the facesheet, vitals charts, preventive care alerts, referral management, triage, the drug interaction check or bilingual prescriptions are on Professional. The live GP page lists them in its general EMR section, so those rows carry no plan badge and the featureRows intro names only what Premium adds; nothing says the unbadged rows are on Professional. The family medicine condition templates are shown as Premium (specialty EMR templates and your own clinical forms in plans.yaml); if they are on Professional, drop the badge. Whether SMS and email delivery of prescriptions and receipts is on Professional is also unconfirmed (plans.yaml names only SMS and email reminders).'
   - 'Spec 5.15 template items left out for lack of a public fact (company to-do): (3) screenshots of each chart object; (4) a timed walkthrough of the most common GP visit (the walk-in section is untimed); (5) GP templates and forms named and counted (the live page names only diabetes, hypertension and respiratory infections, "such as", so no dataTable); (6) devices used in general practice, such as BP monitors, glucometers or ECG machines, and whether any connect (section left out); (8) which note types Cura AI drafts for a GP visit, with one example note; (9) the named GP testimonial above. Also to confirm: whether preventive care alerts follow a national immunisation schedule (India UIP, Kenya KEPI) or are set per patient, and by which channel they go out; whether a nurse or clinical assistant doing triage and vitals needs a paid licence; which prescription languages exist beyond English and Swahili.'
   - 'Dropped from the live pages: "Create and share in 30 seconds" and "invoices ready in less than 10 seconds" (unmeasured here); the two comparison tables ("Easy Clinic vs Other EMR" and "EMR Software Comparison for General Practitioner Clinics", unsourced competitor cells); "over 100 graphical dashboards"; "Reduces no-shows" (noShowReduction is null); AI-powered diagnostic support, differential diagnoses and ADR alerts (CuraPilot claims); AI-powered wait time management and AI two-way messaging; "Inventory for medicines & supplies Built-in" and the FAQ "Inventory management is included" (plans.yaml puts pharmacy and inventory on Enterprise or as a module; the page says so in the dispensing FAQ); patient self check-in and self-service intake on the phone (the patient portal and app are Enterprise; plan unclear); the "Advanced EMR for specialists" list (medical calculators, side-by-side past records, nurse intake, tabular Rx, growth and progress charts), because the live /pricing/ names "Advanced EMR for Specialists" as a Premium inclusion and the items are not tied to a plan; the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial); the shared testimonials (placed on other pages); HR, roster, incentive and commission plans, data warehouse, Power BI and Azure Data Factory (not GP-specific and plan unknown); "Where clinics lose time" filler (replaced by four GP-specific pains).'

@@ -5,6 +5,9 @@ import Hero from '../components/frame/Hero.astro';
 import FAQ from '../components/frame/FAQ.astro';
 import RelatedLinks from '../components/frame/RelatedLinks.astro';
 import CTABand from '../components/frame/CTABand.astro';
+import AwardRecognition from '../components/frame/AwardRecognition.astro';
+import FeatureChips from '../components/frame/FeatureChips.astro';
+import WhatIsEasyClinic from '../components/frame/WhatIsEasyClinic.astro';
 import Sections from '../components/blocks/Sections.astro';
 import ContactCard from '../components/blocks/ContactCard/ContactCard.astro';
 import { getEntry } from 'astro:content';
@@ -29,7 +32,7 @@ const jsonLd = await pageGraph(record, trail);
 const countryId = d.country?.id;
 const site = (await getEntry('site', 'site'))!.data;
 const countryData = countryId ? (await getEntry('countries', countryId))?.data : undefined;
-const whatsappText = d.ctas.whatsapp ?? `Hi, I was reading about EasyClinic (${record.label}) and would like a demo.`;
+const whatsappText = d.ctas.whatsapp ?? `Hi, I was reading about Easy Clinic (${record.label}) and would like a demo.`;
 const whatsappHref = `https://wa.me/${countryData?.contact.whatsapp ?? site.whatsapp}?text=${encodeURIComponent(whatsappText)}`;
 const ctx: Omit<BlockContext, 'index'> = {
   path: record.path,
@@ -64,13 +67,19 @@ const heroContact = (record.family === 'country' || record.family === 'countryDe
     ctas={d.ctas}
     heroMedia={d.heroMedia}
     heroStrip={d.heroStrip}
+    narrowLede={record.path === '/'}
     largeHeading={['feature', 'solution', 'specialty', 'ai', 'curapilot'].includes(record.family) || ['/solutions/', '/specialties/', '/countries/', '/pricing/', '/compare/', '/customers/', '/start-a-clinic/', '/switch/', '/blog/'].includes(record.path)}
     byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
   >
     {heroContact && <div slot="aside" class="mt-6"><ContactCard country={d.country!} showClients={false} ctx={{ ...ctx, index: -1 }} /></div>}
   </Hero>
+  {record.path === '/' && <AwardRecognition />}
+  {record.path === '/' && <FeatureChips />}
+  {record.path === '/' && <WhatIsEasyClinic />}
   <Sections sections={d.sections} ctx={ctx} />
-  <FAQ heading={d.faqHeading} items={d.faq} tone={d.sections.length % 2 === 0 ? 'plain' : 'wash'} />
-  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} />
+  {/* The home page puts its related links before the FAQ; every other page keeps the FAQ first. */}
+  {record.path === '/' && <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} countryPills />}
+  <FAQ heading={d.faqHeading} items={d.faq} tone={d.sections.length % 2 === 0 ? 'plain' : 'wash'} whatsappHref={whatsappHref} />
+  {record.path !== '/' && <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} />}
   {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}
 </BaseLayout>

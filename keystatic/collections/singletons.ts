@@ -75,7 +75,7 @@ export const singletons = {
     path: 'src/data/site',
     format: { data: 'yaml' },
     schema: {
-      name: choice('Name', ['EasyClinic'], { initial: 'EasyClinic' }, { labels: { EasyClinic: 'EasyClinic' } }),
+      name: choice('Name', ['Easy Clinic'], { initial: 'Easy Clinic' }, { labels: { 'Easy Clinic': 'Easy Clinic' } }),
       legalName: text('Legal name', { required: true }),
       url: url('URL', { required: true }),
       canonicalHost: text('Canonical host', { required: true }),
@@ -136,7 +136,7 @@ export const singletons = {
           published: date('Published', { required: true }),
           peerReviewed: flag('Peer reviewed', { initial: false }),
           scope: text('Scope', { required: true, multiline: true }),
-          easyclinicRole: unknown(text('EasyClinic’s role', { multiline: true })),
+          easyclinicRole: unknown(text('Easy Clinic’s role', { multiline: true })),
           verifiedOn: unknown(date('Verified on', { description: 'Re-verify before publishing any page that cites it.' })),
         }),
         { label: 'Publications', itemLabel: (props) => props.fields.id.value || 'Publication' },
@@ -217,6 +217,7 @@ export const singletons = {
         group('Menu', {
           label: text('Label', { required: true }),
           href: path('Link'),
+          badge: text('Badge', { description: 'A short tag beside the label, such as "New".' }),
           groups: list(
             group('Group', { title: text('Title', { required: true }), links: navLinks('Links', 1) }),
             { label: 'Groups', itemLabel: (props) => props.fields.title.value || 'Group' },

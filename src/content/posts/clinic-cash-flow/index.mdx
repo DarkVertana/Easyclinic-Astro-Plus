@@ -28,7 +28,7 @@ ctas:
   secondary:
     label: See how part payments and the day-end close work
     href: /features/billing/
-  whatsapp: Hi, I was reading the EasyClinic post on clinic cash flow and would like to see part payments and the day-end close in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic post on clinic cash flow and would like to see part payments and the day-end close in a demo.
 faq:
   - question: Why is my clinic busy but always short of cash?
     answer: >-
@@ -50,7 +50,7 @@ faq:
       Check each payment mode on its own every evening: count the drawer against the cash recorded, and
       match the UPI credits in the bank account or UPI app against the UPI payments recorded. A payment
       entered under the wrong mode shows as one mode short and the other over by the same amount.
-  - question: Can patients pay for a package in instalments on EasyClinic?
+  - question: Can patients pay for a package in instalments on Easy Clinic?
     answer: >-
       Yes, on Premium and Enterprise, which include package treatments: a package can be billed in one
       visit or across several, with its payment spread over the visits. Premium is
@@ -63,7 +63,7 @@ faq:
       billed annually, payments are taken at the desk and recorded against the bill.
   - question: Will this replace my accountant?
     answer: >-
-      No: EasyClinic holds the bills and payments, and on Professional and Premium your accountant keeps
+      No: Easy Clinic holds the bills and payments, and on Professional and Premium your accountant keeps
       the books in the software they use now. Financial accounting comes with Enterprise, and reports
       export to Excel for the accountant to work on.
 links:
@@ -79,13 +79,13 @@ links:
       label: Reports and dashboards
       description: The owner's morning numbers, with reports that export to Excel.
     - href: /pricing/india/
-      label: EasyClinic prices in India
+      label: Easy Clinic prices in India
       description: What each plan costs per doctor per month in rupees, and which plans include packages and online payments.
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The EasyClinic lines come from its own product pages and price list (part payments on the bill,
+    The Easy Clinic lines come from its own product pages and price list (part payments on the bill,
     packages spread over visits on Premium, the till balanced across payment modes, M-Pesa at the Kenyan
     desk, no full offline mode), and the UPI payment written down as cash is a scene from an Indian
     counter; the rest is general collections practice.
@@ -99,10 +99,10 @@ notes:
   - 'Owner /features/billing/ and topic from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"), kept by the 2026-09-26 triage; marketing has not confirmed the decision. The post owns "clinic cash flow" and does not target "medical billing software for clinics" (the billing page) or cash-variance tracing (the revenue page, linked instead). Primary CTA is /indiademo/ because the post is written for clinics in India (UPI, rupees).'
   - 'Merge (2026-09-26 triage): /modern-convenience-how-online-payments-improve-the-patient-experience-in-clinics/ and /mobile-payments-for-ugandan-clinics/ merge into this post. Kept from them: online payments on Premium (the only confirmed online-payment fact) and a short mobile-money section on matching each transaction reference to a bill; nothing else in either was sourced. Their 301s to /clinic-cash-flow/ need their manifest rows changed to a merge with this target and confirmed by marketing (scripts/posts-redirects.ts); no redirectFrom is set here, because both are still draft pages and a redirect source that shadows a built page fails the build.'
   - 'Cut from the import. AI framing: the title "How AI and UPI Are Getting Clinics Paid Faster In 2026?" (question-bait with a year), "AI-driven automation and India''s UPI infrastructure are closing that gap in 2026", "AI-driven collection" and the "With AI and UPI collection" table column. Unsourced trend claims and their links: "UPI now handles the overwhelming majority of India''s retail digital transactions" (policyedge.in), "families still put off costly treatments over the upfront amount" (cxotoday.com), the "patient payments" link to a PMC article that supported no sentence, "Treatments increasingly come in packages", "Three things are widening the gap", the "Cash Flow Trends Worth a Clinic''s Attention" list and "Collecting at the point of care is the single biggest improvement most clinics can make"; each was cut rather than re-sourced. Invented outcomes: the "What Clinics Notice After Implementation" table and "What owners repeat most often is simpler: the money they earned finally started reaching the bank" (no owner or clinic named). Unconfirmed product claims: "a bill and a UPI payment can be raised and settled at the desk in seconds", "Outstanding dues are tracked automatically, and gentle reminders go out", "Payments across cash, UPI, and card are reconciled against the bills raised" automatically, "a real-time view shows exactly what''s been billed, collected, and still outstanding", "recurring UPI mandates", "Live dashboards showing billed, collected, and outstanding amounts" (reports-and-dashboards.yaml records collections against billed as unconfirmed), and the link to /ai-billing-automation-for-surgery. Also cut: the 10-question body FAQ (rewritten as seven frontmatter FAQs), the conclusion and "Take the Next Step".'
-  - 'Law and regulation, corrected by cutting: the import said EasyClinic "handles payment data in line with India''s tightening security rules and DPDP", and its FAQ said payment data "should be handled in line with India''s tightening standards, including stronger authentication rules and DPDP-aligned data care". Both imply a compliance status that is unknown (docs/briefs/page-writing-rules.md: compliance status is unknown everywhere; migration/research/facts.md section 7: the live India page calls DPDP alignment work unfinished), and the "stronger authentication rules" had no source. The live India page, https://www.easyclinic.io/emr-software-in-india/ (fetched 2026-09-26), says "Work to align Easy Clinic with the Digital Personal Data Protection Act 2023 is in progress", so the import''s claim was also contradicted by EasyClinic''s own page. No statement of what the DPDP Act or RBI requires was kept, so no official regulator page needed fetching.'
-  - 'Sources for EasyClinic facts: src/content/features/billing.yaml, grounded in the live /features/ billing section and /appointment-scheduling-at-easy-clinic/ (bill and payment from the appointment screen in one click; lab orders and procedures as invoice lines; part payments and advances with the balance shown at once; package treatments billable in one visit or across several with payment amortisation; write-off control under authorisation; till balanced across payment modes with an audit trail; end-of-day report of cash transactions; cash register access by role; M-Pesa or cash at the Kenyan desk recorded on the bill); plans.yaml (packages and online payments on Premium, financial accounting on Enterprise, billing and payments on every plan); reports-and-dashboards.yaml (export to Excel; end-of-day financial reports for the whole clinic); facts.md (does not run fully offline today). UPI is written only as a way patients pay a clinic: src/data/countries/in.yaml has UPI state null, so nothing says EasyClinic takes or connects to UPI. MTN Mobile Money is named as a service patients use in Uganda (confirmed on https://www.mtn.co.ug/momo/, fetched 2026-09-26), with no EasyClinic claim there.'
+  - 'Law and regulation, corrected by cutting: the import said Easy Clinic "handles payment data in line with India''s tightening security rules and DPDP", and its FAQ said payment data "should be handled in line with India''s tightening standards, including stronger authentication rules and DPDP-aligned data care". Both imply a compliance status that is unknown (docs/briefs/page-writing-rules.md: compliance status is unknown everywhere; migration/research/facts.md section 7: the live India page calls DPDP alignment work unfinished), and the "stronger authentication rules" had no source. The live India page, https://www.easyclinic.io/emr-software-in-india/ (fetched 2026-09-26), says "Work to align Easy Clinic with the Digital Personal Data Protection Act 2023 is in progress", so the import''s claim was also contradicted by Easy Clinic''s own page. No statement of what the DPDP Act or RBI requires was kept, so no official regulator page needed fetching.'
+  - 'Sources for Easy Clinic facts: src/content/features/billing.yaml, grounded in the live /features/ billing section and /appointment-scheduling-at-easy-clinic/ (bill and payment from the appointment screen in one click; lab orders and procedures as invoice lines; part payments and advances with the balance shown at once; package treatments billable in one visit or across several with payment amortisation; write-off control under authorisation; till balanced across payment modes with an audit trail; end-of-day report of cash transactions; cash register access by role; M-Pesa or cash at the Kenyan desk recorded on the bill); plans.yaml (packages and online payments on Premium, financial accounting on Enterprise, billing and payments on every plan); reports-and-dashboards.yaml (export to Excel; end-of-day financial reports for the whole clinic); facts.md (does not run fully offline today). UPI is written only as a way patients pay a clinic: src/data/countries/in.yaml has UPI state null, so nothing says Easy Clinic takes or connects to UPI. MTN Mobile Money is named as a service patients use in Uganda (confirmed on https://www.mtn.co.ug/momo/, fetched 2026-09-26), with no Easy Clinic claim there.'
   - 'The opening scene is a general pattern written in the present tense, not one clinic''s story, and the example amounts are illustrations. No study figure, testimonial or proof block (posts carry none). No heroMedia or media: screenshots do not exist yet.'
-  - 'Fact check 2026-09-26 (adversarial pass against the live WordPress post, re-fetched from wp-json, and the published feature pages). No statistic, trend claim or named source survives from the import; every EasyClinic line was traced to billing.yaml, plans.yaml, reports-and-dashboards.yaml or facts.md. Changed: the opening scene was told in the past tense as one clinic''s month ("The appointment book was full all month"), which reads as an unnamed clinic''s story, so it is now a general pattern ("Your appointment book can be full"). The InlineCta said each advance "is recorded against the bill", which billing.yaml''s editor pass removed because an advance can come before the bill; it now uses the billing page wording (EasyClinic records each advance and part payment), and the billing related-link description says "at the desk" instead of "on the bill". The claim that the revenue management page shows how a short drawer "is traced to one counter" was cut: billing.yaml records that the live pages say only that cash-register access is set by role and that the end-of-day report snapshots the cash transactions; the sentence now follows the billing page wording. Airtel Money was cut from the mobile-money section: it came from the Uganda post, and no page fetched on 2026-09-26 confirmed it (airtel.co.ug renders no text without JavaScript), so it was cut rather than kept from memory; MTN Mobile Money is confirmed on https://www.mtn.co.ug/momo/. The DPDP note now cites the live India page URL.'
+  - 'Fact check 2026-09-26 (adversarial pass against the live WordPress post, re-fetched from wp-json, and the published feature pages). No statistic, trend claim or named source survives from the import; every Easy Clinic line was traced to billing.yaml, plans.yaml, reports-and-dashboards.yaml or facts.md. Changed: the opening scene was told in the past tense as one clinic''s month ("The appointment book was full all month"), which reads as an unnamed clinic''s story, so it is now a general pattern ("Your appointment book can be full"). The InlineCta said each advance "is recorded against the bill", which billing.yaml''s editor pass removed because an advance can come before the bill; it now uses the billing page wording (Easy Clinic records each advance and part payment), and the billing related-link description says "at the desk" instead of "on the bill". The claim that the revenue management page shows how a short drawer "is traced to one counter" was cut: billing.yaml records that the live pages say only that cash-register access is set by role and that the end-of-day report snapshots the cash transactions; the sentence now follows the billing page wording. Airtel Money was cut from the mobile-money section: it came from the Uganda post, and no page fetched on 2026-09-26 confirmed it (airtel.co.ug renders no text without JavaScript), so it was cut rather than kept from memory; MTN Mobile Money is confirmed on https://www.mtn.co.ug/momo/. The DPDP note now cites the live India page URL.'
 ---
 
 Your appointment book can be full all month and the bank balance still tight at month end. A few patients say they will pay next time. A course of physiotherapy is paid for half. A small balance is written off because nobody wants to ask twice, and the drawer and the UPI app never quite match the bills.
@@ -125,7 +125,7 @@ Each leak is small on its own.
 - **Treatment put off.** A family cannot pay the full amount up front, so a procedure the patient needs is postponed, and the income moves to a later month or to another clinic.
 - **Balances written off by default.** A few hundred rupees here and there are dropped because chasing them feels awkward, without anyone deciding to drop them.
 
-<InlineCta heading="Keep every part payment on the bill." href="/features/billing/" label="See how part payments work">EasyClinic records each advance and part payment, and whoever is at the desk sees the balance as soon as the patient's bill is opened.</InlineCta>
+<InlineCta heading="Keep every part payment on the bill." href="/features/billing/" label="See how part payments work">Easy Clinic records each advance and part payment, and whoever is at the desk sees the balance as soon as the patient's bill is opened.</InlineCta>
 
 ## Collect before the patient leaves
 
@@ -136,7 +136,7 @@ The easiest balance to collect is the one that never opens.
 - Take an advance when a procedure is booked, and record it against the bill.
 - Make paying quick. A UPI QR code at the counter means a patient who came without cash can still pay before leaving.
 
-In EasyClinic, the desk bills and takes payment from the appointment screen in one click, and the tests and procedures the doctor ordered arrive on the invoice as lines. On the Premium plan, online payments let a patient pay without coming to the counter, for example when a video consult is booked.
+In Easy Clinic, the desk bills and takes payment from the appointment screen in one click, and the tests and procedures the doctor ordered arrive on the invoice as lines. On the Premium plan, online payments let a patient pay without coming to the counter, for example when a video consult is booked.
 
 ## Follow up what is still owed
 
@@ -144,7 +144,7 @@ Some balances will stay open, and each one needs someone responsible for it. Giv
 
 Decide the write-off rule in advance. For example, a balance under an amount you choose is written off after two reminders. Then balances are written off on purpose, by someone you allowed, and not by forgetting.
 
-In EasyClinic, the balance shows on the patient's bill as soon as it is opened, so the desk sees it when the patient comes back. Write-offs go through authorisation, so only someone the owner allows can write a balance off.
+In Easy Clinic, the balance shows on the patient's bill as soon as it is opened, so the desk sees it when the patient comes back. Write-offs go through authorisation, so only someone the owner allows can write a balance off.
 
 ## Packages and big treatments
 
@@ -155,7 +155,7 @@ A package paid over several sessions is a loan from the clinic to the patient un
 - Collect each instalment before the session it pays for.
 - If a patient needs longer to pay than the course of treatment lasts, write that agreement down separately and review it monthly.
 
-In EasyClinic, package treatments come with Premium and Enterprise. A package can be billed in one visit or across several, with its payment spread over the visits. Professional does not include packages.
+In Easy Clinic, package treatments come with Premium and Enterprise. A package can be billed in one visit or across several, with its payment spread over the visits. Professional does not include packages.
 
 ## Match each payment mode to the bills every evening
 
@@ -168,13 +168,13 @@ At closing, check each payment mode on its own.
 
 A payment recorded under the wrong mode shows up as one mode short and another over by the same amount. That is a recording mistake. On the evening it happens it is easy to find, and at month end it may never be found.
 
-In EasyClinic, the till is balanced across payment modes with an audit trail of every transaction, and the end-of-day report gives a snapshot of the day's cash transactions to count the drawer against. Access to the cash register is set by role. Tracing a gap between the drawer and the report is covered on the [revenue management page](/features/revenue-management/).
+In Easy Clinic, the till is balanced across payment modes with an audit trail of every transaction, and the end-of-day report gives a snapshot of the day's cash transactions to count the drawer against. Access to the cash register is set by role. Tracing a gap between the drawer and the report is covered on the [revenue management page](/features/revenue-management/).
 
 ## If your patients pay by mobile money
 
 The same rule holds where patients pay by mobile money, such as M-Pesa in Kenya or MTN Mobile Money in Uganda. The money lands on the clinic's phone or till statement, and the bill is at the desk. Match each transaction reference to a bill the same evening. Otherwise a payment a relative sent from another town sits on the statement as a credit nobody can explain.
 
-In Kenya, a patient can pay at the EasyClinic desk by M-Pesa or in cash, and the payment is recorded on their bill, which shows what is still owed. The [Kenya demo page](/kenyademo/) covers EasyClinic for Kenyan clinics.
+In Kenya, a patient can pay at the Easy Clinic desk by M-Pesa or in cash, and the payment is recorded on their bill, which shows what is still owed. The [Kenya demo page](/kenyademo/) covers Easy Clinic for Kenyan clinics.
 
 ## The owner's four weekly numbers
 
@@ -183,10 +183,10 @@ In Kenya, a patient can pay at the EasyClinic desk by M-Pesa or in cash, and the
 3. Package balances still to be collected.
 4. The cash gap for each counter, day by day.
 
-These start from the bills and payments at the desk. In EasyClinic, the end-of-day financial reports run for the whole clinic, and reports export to Excel, where the weekly sheet can be built.
+These start from the bills and payments at the desk. In Easy Clinic, the end-of-day financial reports run for the whole clinic, and reports export to Excel, where the weekly sheet can be built.
 
 ## What software does not fix
 
 Software records the money and shows the gap. It does not have the conversation about money before a procedure, and it cannot make a treatment affordable for a patient who cannot pay.
 
-EasyClinic also needs the internet to record a payment, because it does not run fully offline today. Keep a paper slip at the desk for the minutes the line is down, and enter those payments when it comes back. The [billing page](/features/billing/) shows how part payments and the day-end close work at the desk.
+Easy Clinic also needs the internet to record a payment, because it does not run fully offline today. Keep a paper slip at the desk for the minutes the line is down, and enter those payments when it comes back. The [billing page](/features/billing/) shows how part payments and the day-end close work at the desk.

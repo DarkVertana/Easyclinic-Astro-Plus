@@ -4,7 +4,7 @@ headKeyword: how to start a clinic
 secondaryKeywords: [clinic licence guides, clinic setup cost]
 title: 'Start a Clinic: Licences, Costs and Setup by Country'
 metaDescription: Guides to opening a clinic in Kenya, India, Uganda, Nigeria, Ethiopia, Rwanda and Malaysia, from the licence application to the first patient.
-h1: Start a clinic, country by country
+h1: Start a clinic, country by country, step by step
 linkLabel: Start a clinic
 openingAnswer: These guides take you from the licence application to the first patient in seven countries, one country at a time, with two at the end that apply anywhere. Between them they cover the licences and what a clinic costs to set up, and most end with choosing software so the front desk works on day one.
 summary: Licences and setup costs for opening a clinic in Kenya, India, Uganda, Nigeria, Ethiopia, Rwanda and Malaysia.
@@ -13,16 +13,16 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: ../../assets/images/resources/15_Workflow.png
-  alt: "EasyClinic visit workflow settings, with the queue steps from waiting for the doctor to the pharmacy, the roles for each step and a visit's activity log"
+  alt: "Easy Clinic visit workflow settings, with the queue steps from waiting for the doctor to the pharmacy, the roles for each step and a visit's activity log"
   frame: none
 ctas:
   primary: { label: Book a 20-minute demo, href: /contact-us/#book-a-demo }
   secondary: { label: See pricing, href: /pricing/ }
-  whatsapp: Hi, I am opening a clinic and would like to see EasyClinic before the first patient.
+  whatsapp: Hi, I am opening a clinic and would like to see Easy Clinic before the first patient.
 links:
   related:
     - { href: /solutions/solo-clinic/, description: What a one-doctor clinic needs from software on day one. }
-    - { href: /pricing/, description: What EasyClinic costs per doctor per month. }
+    - { href: /pricing/, description: What Easy Clinic costs per doctor per month. }
     - { href: /contact-us/, description: Book a demo or call the team in Kolkata. }
 sections:
   - discriminant: hubGrid
@@ -86,7 +86,7 @@ sections:
             - { href: /clinic-break-even-point/ }
   - discriminant: proofBlock
     value:
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       variant: badges
       badges:
         - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
@@ -94,21 +94,21 @@ sections:
 faq:
   - question: When should a new clinic choose its software?
     answer: Before the first patient walks in, because registration, the appointment book and billing all start on day one, and moving a running clinic off paper later takes longer than starting on software.
-  - question: How long does it take to get EasyClinic running in a new clinic?
+  - question: How long does it take to get Easy Clinic running in a new clinic?
     answer: Training runs over {fact:trainingDays} short sessions of about two hours in total, and the fastest clinics go live in as little as {fact:goLiveDays} days after the demo.
-  - question: What does EasyClinic cost for a clinic with one doctor?
+  - question: What does Easy Clinic cost for a clinic with one doctor?
     answer: The Professional plan is {price:usd.professional.annual} per doctor per month billed annually, or {price:inr.professional.annual} in India, and a login for your receptionist is included.
   - question: Do I need any IT staff to run clinic software?
-    answer: No, EasyClinic runs in the cloud in a web browser, so there is no server to buy, and support and training are included in every plan at no extra charge.
+    answer: No, Easy Clinic runs in the cloud in a web browser, so there is no server to buy, and support and training are included in every plan at no extra charge.
   - question: Can I start small and add doctors or branches later?
     answer: Yes, you pay per doctor, so a second doctor adds one licence, and the Premium plan covers more than one location on the same patient record.
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
-  onlyUsCouldWrite: 'The hub groups EasyClinic''s own setup guides and posts by the seven countries they cover, and most of them end with the software choice for opening day.'
+  onlyUsCouldWrite: 'The hub groups Easy Clinic''s own setup guides and posts by the seven countries they cover, and most of them end with the software choice for opening day.'
   readsMachineWritten: 'The card descriptions are short and functional; an editor may want one line of first-hand advice from someone who has opened a clinic.'
 notes:
-  - 'Audit 2026-09-27: the proof heading was "Clinics that started on EasyClinic", but the block shows only EasyClinic''s overall Capterra and Google ratings, which do not come from clinics that opened on it. It now reads "How clinics rate EasyClinic" (the /compare/ and /solutions/polyclinic/ wording), and the ratings are {fact:capterraRating} and {fact:googleRating} instead of plain 4.9 and 4.8.'
+  - 'Audit 2026-09-27: the proof heading was "Clinics that started on Easy Clinic", but the block shows only Easy Clinic''s overall Capterra and Google ratings, which do not come from clinics that opened on it. It now reads "How clinics rate Easy Clinic" (the /compare/ and /solutions/polyclinic/ wording), and the ratings are {fact:capterraRating} and {fact:googleRating} instead of plain 4.9 and 4.8.'
   - 'Audit 2026-09-27: the hub now links the nine published posts with topic start-a-clinic, which had no inbound link except /blog/ (spec 2.9). Kenya and India groups gained the country posts; Rwanda (/clinic-in-rwanda/) and Malaysia (/clinic-in-malaysia/) have their own sections; the country-neutral checklist and break-even posts sit under "Before you open, anywhere". The posts stay in the posts collection (owner /countries/, /kenyademo/, /pricing/india/ or /solutions/solo-clinic/). New cards carry no label or description, so each shows the post''s own linkLabel and summary and no new claim is added.'
   - 'Audit 2026-09-27: meta description, summary, opening answer and onlyUsCouldWrite now name seven countries. The opening answer no longer says each guide covers registration, costs and software (the added posts do not); "most end with choosing software" holds for 14 of the 19 linked pages (checked 2026-09-27: the ten guides, the Rwanda and Malaysia posts, /clinic-setup-cost-in-india/ and /healthcare-startup-in-kenya/). The audit''s suggested meta ("licences, setup costs and software") was not used because it is a group of three.'
   - 'Audit 2026-09-27: the Ethiopia card description changed from "Ministry of Health registration" to "The clinic licence", because /clinic-in-ethiopia/ no longer sends a private clinic to the federal Ministry of Health: the Ministry''s regulatory office licenses the health institutions under the federal government and supports the regional health regulatory bodies (https://www.moh.gov.et/directorates/Health_and_Health_Related_Institutions_Regulatory, fetched 2026-09-27).'

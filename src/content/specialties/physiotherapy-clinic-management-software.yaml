@@ -9,7 +9,7 @@ secondaryKeywords:
   - physiotherapy clinic software
   - physiotherapy clinic management software
   - physiotherapy EMR software
-title: 'Physiotherapy Practice Management Software: EasyClinic'
+title: 'Physiotherapy Practice Management Software: Easy Clinic'
 metaDescription: >-
   Physiotherapy practice management software with session-wise treatment plans, and courses billed as
   packages on Premium from {price:usd.premium.annual} per doctor a month.
@@ -17,7 +17,7 @@ h1: Software for physiotherapy clinics
 linkLabel: Physiotherapy
 eyebrow: For physiotherapy clinics
 openingAnswer: >-
-  EasyClinic is physiotherapy practice management software that keeps each patient's session-wise
+  Easy Clinic is physiotherapy practice management software that keeps each patient's session-wise
   treatment plan and progress against goals on one record. Premium bills a whole course of sessions as one
   package, at {price:usd.premium.annual} per doctor per month billed annually ({price:inr.premium.annual}
   in India), with no setup fee.
@@ -29,7 +29,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/18_User.png'
-  alt: 'EasyClinic user settings: staff with their roles and specialties, a doctor''s profile, role permissions and the weekly roster for a location'
+  alt: 'Easy Clinic user settings: staff with their roles and specialties, a doctor''s profile, role permissions and the weekly roster for a location'
   frame: none
 ctas:
   primary:
@@ -38,7 +38,7 @@ ctas:
   secondary:
     label: See what Premium includes
     href: /pricing/#plans
-  whatsapp: Hi, I was reading the EasyClinic physiotherapy page and would like to book a demo for our clinic.
+  whatsapp: Hi, I was reading the Easy Clinic physiotherapy page and would like to book a demo for our clinic.
 
 sections:
   - discriminant: painBlocks
@@ -151,9 +151,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        We do not yet have a physiotherapist's own words to put on this page. These are EasyClinic's
+        We do not yet have a physiotherapist's own words to put on this page. These are Easy Clinic's
         public ratings, from clinics of every kind.
       variant: badges
       badges:
@@ -166,7 +166,7 @@ sections:
   - discriminant: stepList
     value:
       id: training
-      heading: How long does it take to learn EasyClinic?
+      heading: How long does it take to learn Easy Clinic?
       intro: >-
         About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
         session is 20 to 40 minutes, short enough to fit between the morning and evening lists, so the
@@ -193,7 +193,7 @@ sections:
 
 faqHeading: Questions physiotherapy clinic owners ask
 faq:
-  - question: What does EasyClinic cost for a physiotherapy clinic?
+  - question: What does Easy Clinic cost for a physiotherapy clinic?
     answer: >-
       Premium, the plan with package treatments and specialty templates, costs {price:inr.premium.annual}
       per doctor per month billed annually in India, or {price:usd.premium.annual} in US dollars.
@@ -220,11 +220,11 @@ faq:
       Yes, on Premium, which includes video consultations: the therapist and the patient join from a web
       browser on a computer or a phone, with nothing to install. The fee can be collected online when the
       session is booked.
-  - question: Does EasyClinic work without an internet connection?
+  - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
       the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
-      system runs on the clinic's own server rather than in EasyClinic's cloud.
+      system runs on the clinic's own server rather than in Easy Clinic's cloud.
 
 links:
   hub: /specialties/
@@ -240,7 +240,7 @@ links:
       description: The price per doctor per month, and what Premium adds for specialists.
 
 closing:
-  heading: See a course of sessions on EasyClinic
+  heading: See a course of sessions on Easy Clinic
   body: >-
     In 20 minutes we follow one patient from the first assessment through a package of sessions, on a demo
     clinic set up like yours. If a call is too much today, send us a WhatsApp message from this page
@@ -257,7 +257,7 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: >-
     The ticked package card and the exercise sheet that leaves in the patient's pocket are physiotherapy
-    problems, and every capability comes from EasyClinic's own physiotherapy pages, with a plan named only
+    problems, and every capability comes from Easy Clinic's own physiotherapy pages, with a plan named only
     where plans.yaml names one; nothing on the page is specific to one country beyond the rupee price.
   readsMachineWritten: >-
     The page has no named physiotherapist, no screenshot and no number measured in a physiotherapy
@@ -265,12 +265,12 @@ editorialPass:
     outcome measure is named and that sending home exercises to the patient on WhatsApp is not mentioned.
 
 notes:
-  - 'Recruit a physiotherapist testimonial (spec 2.4 and 5.15 item 9): a named physiotherapist or physiotherapy clinic owner on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no physiotherapist quote exists yet. Capterra and Google review counts are null in facts.yaml, so the badges show no count.'
+  - 'Recruit a physiotherapist testimonial (spec 2.4 and 5.15 item 9): a named physiotherapist or physiotherapy clinic owner on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no physiotherapist quote exists yet. Capterra and Google review counts are null in facts.yaml, so the badges show no count.'
   - 'Spec 5.15 must-have "home-exercise sharing on WhatsApp" is left out: neither live physiotherapy page says the exercise plan can be sent to the patient on WhatsApp (the live EMR page says only that prescriptions can be shared by print, WhatsApp, SMS or email, and that therapists can create and store exercise plans). Company to confirm whether the exercise plan goes to the patient on WhatsApp, with pictures or videos or as text only, and on which plan (WhatsApp messages are Premium in plans.yaml). Then add a feature row and a FAQ.'
   - 'Spec 5.15 must-have "outcome scores": the live page says only "Track patient goals (e.g., pain reduction, mobility improvement) and monitor their progress over time". Company to confirm which named outcome measures (for example VAS or NPRS for pain, ODI, NDI, LEFS) exist as ready physiotherapy templates, and whether a score is charted as a trend across sessions (the live page lists "Growth & Progress charts" without detail). The spec 12 screenshot "Physiotherapy session plan with outcome score" (six sessions, one score) depends on it. Until then the goals row offers only the Premium form builder for a clinic''s own paper scoring form.'
   - 'Company to confirm: how physiotherapists and physiotherapy assistants are licensed under per-doctor pricing (the page keeps the price list wording "per doctor per month" and adds no FAQ on it); whether a package shows sessions used and remaining; whether session-wise treatment plans, goal tracking, exercise plans and recurring-session booking are on Professional or need Premium (the live page lists them in the general EMR and scheduling sections, so the page gives them no plan badge, and the featureRows intro says only that Premium includes every row, not that unbadged rows are on Professional; specialty templates and your own forms are Premium per plans.yaml); what Cura AI drafts for a physiotherapy session, with one example note (spec 5.15 item 8); any devices or integrations used in physiotherapy (spec 5.15 item 6, section left out).'
   - 'Not carried over from the live pages: the /physiotherapy-emr-software/ "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" (other published pages say there is no free trial; resolve before anything about trials goes on this page); its "Inventory for equipment & supplies built-in" (plans.yaml puts inventory in Enterprise or as an add-on); the competitor comparison tables with unsourced cells; "over 100 graphical dashboards"; "invoices ready in less than 10 seconds"; "Reduces no-shows" (no measured figure; noShowReduction is null); AI diagnostic support. From the /physiotherapy-clinic-management-software/ blog: ABHA-compatible identity mapping (compliance status is unknown), predictive analytics, posture and gait analysis, flagging overdue follow-ups, and the three unnamed case studies.'
-  - 'Editor pass 2026-09-26: the opening answer and summary now tie only packages to Premium (the earlier "EasyClinic does this on its Premium plan" implied treatment plans and goals need Premium); the Cura AI row uses the site wording "drafts the note for review and sign" and no longer says it drafts "from the consultation"; the offline FAQ uses the home page wording (self-hosted option exists) instead of Enterprise private cloud hosting, which does not help a clinic without internet; the unsourced "a clinic bringing years of records across takes longer" was cut from the step note, as on the home page; the related-link and cost FAQ triads were cut to pairs.'
+  - 'Editor pass 2026-09-26: the opening answer and summary now tie only packages to Premium (the earlier "Easy Clinic does this on its Premium plan" implied treatment plans and goals need Premium); the Cura AI row uses the site wording "drafts the note for review and sign" and no longer says it drafts "from the consultation"; the offline FAQ uses the home page wording (self-hosted option exists) instead of Enterprise private cloud hosting, which does not help a clinic without internet; the unsourced "a clinic bringing years of records across takes longer" was cut from the step note, as on the home page; the related-link and cost FAQ triads were cut to pairs.'
   - 'No heroMedia and no media: screenshots do not exist yet. Hero when captured: the session-wise treatment plan with a score over six sessions (spec 12 list). The four pains are illustrative physiotherapy clinic situations, not customers, and "ten sessions" and "11am" are examples.'
   - 'Title 54 characters; meta description 148 characters with the token resolved. The spec 4.3 H1 "Software for physiotherapy clinics" is used rather than the spec 5.15 template form. Spec 5.15 item 11 asks for links to the two most relevant country pages as well; links.related follows the brief (solo clinic, clinic chain, scheduling, pricing). Add /clinic-management-software-india/ when the physiotherapy customer base by country is known.'
   - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits in the offline and package FAQs) until the testimonial arrives.

@@ -5,23 +5,23 @@
 # so the guide group is not called "most-read" anywhere on the page; see notes.
 status: published
 path: /resources/
-headKeyword: EasyClinic resources
+headKeyword: Easy Clinic resources
 secondaryKeywords:
-  - EasyClinic site map
-  - EasyClinic pages by country
-title: 'EasyClinic Resources: Pages by Country and Specialty'
+  - Easy Clinic site map
+  - Easy Clinic pages by country
+title: 'Easy Clinic Resources: Pages by Country and Specialty'
 metaDescription: >-
-  EasyClinic resources: pages for clinics in India, Kenya, the UAE and Nigeria, 14 specialties, clinic types
+  Easy Clinic resources: pages for clinics in India, Kenya, the UAE and Nigeria, 14 specialties, clinic types
   from solo to hospital OPD, and setup guides.
-h1: Find the EasyClinic pages for your clinic
+h1: Find the Easy Clinic pages for your clinic
 linkLabel: Resources
 eyebrow: Resources
 openingAnswer: >-
-  Start from your country or your specialty: India, Kenya, the UAE and Nigeria have EasyClinic pages of their
+  Start from your country or your specialty: India, Kenya, the UAE and Nigeria have Easy Clinic pages of their
   own, and so do 14 specialties from ayurveda to physiotherapy. Or start from the kind of clinic you run, from a
   one-doctor clinic to a hospital OPD, and if you are opening one, four start-a-clinic guides follow.
 summary: >-
-  EasyClinic pages sorted by country and specialty and by the kind of clinic you run, with four start-a-clinic
+  Easy Clinic pages sorted by country and specialty and by the kind of clinic you run, with four start-a-clinic
   guides and links to the rest of the site.
 author: subhashish-saha
 lastUpdated: 2026-09-26
@@ -32,7 +32,7 @@ ctas:
   secondary:
     label: See prices per doctor
     href: /pricing/
-  whatsapp: Hi, I was on the EasyClinic resources page and would like help finding the right page for my clinic.
+  whatsapp: Hi, I was on the Easy Clinic resources page and would like help finding the right page for my clinic.
 
 sections:
   - discriminant: hubGrid
@@ -40,7 +40,7 @@ sections:
       id: countries
       heading: By country
       intro: >-
-        Clinics in {fact:countries} countries run on EasyClinic. Prices are published in rupees for India and in
+        Clinics in {fact:countries} countries run on Easy Clinic. Prices are published in rupees for India and in
         US dollars, and no other local-currency price is published yet. A clinic anywhere else can book a demo from the [countries page](/countries/#book-a-demo).
       columns: 3
       groups:
@@ -69,7 +69,7 @@ sections:
             - href: /kenyademo/
               description: A 20-minute demo that runs from the booking to the M-Pesa payment.
             - href: /best-clinic-management-software-kenya/
-              description: Seven systems ranked, plus EasyClinic unranked, with the SHA certification rule explained.
+              description: Seven systems ranked, plus Easy Clinic unranked, with the SHA certification rule explained.
             - href: /easyclinic-vs-kenyaemr/
               description: A sourced side-by-side table, and what each costs a private clinic.
             - href: /privacy/kenya/
@@ -87,7 +87,7 @@ sections:
             - href: /pricing/nigeria/
             - href: /nigeriademo/
             - href: /best-clinic-management-software-nigeria/
-              description: Six systems ranked, plus EasyClinic unranked, with what each says about HMO claims.
+              description: Six systems ranked, plus Easy Clinic unranked, with what each says about HMO claims.
             - href: /privacy/nigeria/
         - title: Every other country
           items:
@@ -202,7 +202,7 @@ sections:
         - title: Choosing and switching
           items:
             - href: /compare/
-              description: EasyClinic against one product or a longer list, with each competitor fact sourced and dated.
+              description: Easy Clinic against one product or a longer list, with each competitor fact sourced and dated.
             - href: /customers/
               description: Reviews in customers' own words, from doctors in India to Penda Health in Nairobi.
             - href: /switch/
@@ -218,7 +218,7 @@ sections:
         - title: The company
           items:
             - href: /about-us/
-              description: Who makes EasyClinic, the people who lead it, the Kolkata office and what the company will not do.
+              description: Who makes Easy Clinic, the people who lead it, the Kolkata office and what the company will not do.
             - href: /contact-us/
               description: The phone and WhatsApp number for India, the Kenya number, the Kolkata address and a demo form.
             - href: /careers/
@@ -228,9 +228,9 @@ sections:
   - discriminant: prose
     value:
       id: customers-help
-      heading: Already running your clinic on EasyClinic?
+      heading: Already running your clinic on Easy Clinic?
       body: >-
-        How-to articles for clinics already on EasyClinic are in the [help centre](https://help.easyclinic.io/),
+        How-to articles for clinics already on Easy Clinic are in the [help centre](https://help.easyclinic.io/),
         and you log in at [app.easyclinic.io](https://app.easyclinic.io/). Support and training are unlimited on
         every plan, and the [contact page](/contact-us/) has the phone and WhatsApp number for India and the
         number for Kenya.
@@ -239,7 +239,7 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
         The Capterra link opens the reviews behind the score, so you can read what clinics wrote rather than rely
         on the number.
@@ -259,7 +259,7 @@ links:
 closing:
   heading: Cannot find the page for your clinic?
   body: >-
-    Tell us where your clinic is and how many doctors work there. In a 20-minute demo we show EasyClinic on a
+    Tell us where your clinic is and how many doctors work there. In a 20-minute demo we show Easy Clinic on a
     clinic set up like yours and say which plan fits.
   primary:
     label: Book a 20-minute demo
@@ -272,7 +272,7 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The page sorts EasyClinic's own pages for the four countries it writes for and admits that prices are
+    The page sorts Easy Clinic's own pages for the four countries it writes for and admits that prices are
     published only in rupees and US dollars, though it names no person and nothing on it comes from running a
     clinic.
   readsMachineWritten: >-
@@ -289,10 +289,10 @@ notes:
   - 'Specialty group: all 14 pages in src/content/specialties (all published), in alphabetical order by label, plus /specialties/. The opening answer counts them ("14 specialties from ayurveda to physiotherapy"); recount if a specialty page is added or dropped. Hrefs match /specialties/ and nav.yaml. The intro price sentence is the one on /solutions/; "each tooth in a dental chart" and "each IVF cycle" come from the dental and IVF summaries.'
   - 'Clinic-type group: the five solution pages and /solutions/. The intro plan sentence follows the /solutions/ opening answer and plan table. The hospital OPD card keeps the page''s own limit ("Inpatient wards are out of scope"). The NGO card is a draft and drops out in production, so the opening answer says "from a one-doctor clinic to a hospital OPD" and counts no clinic types.'
   - 'The rest of the site: the brief asked for /features/, /pricing/, /compare/, /blog/, /start-a-clinic/, /glossary/, /customers/ and /about-us/. /ai/, /curapilot/, /switch/, /contact-us/, /careers/ and the drafts /integrations/, /trust/ and /partner-with-ec/ were added so the sitemap reaches every top-level section in spec 3.1. Not linked: /doctors/ and /clinics/ (owner decision, never linked), /kitchen-sink/, and the privacy and terms pages, which sit in the footer legal row on every page (the intro says so). /pricing/ description follows the /pricing/ summary (prices as tokens); /customers/ description follows its summary.'
-  - 'Help section: help.easyclinic.io and app.easyclinic.io are site.yaml helpUrl and appLoginUrl (also the nav Help centre link). "Support and training are unlimited on every plan" is plans.yaml ("Unlimited support and training" on all three plans). The contact page summary names the EasyClinic phone and WhatsApp number (the India +91 number in site.yaml) and the Kenya number. No names, roles or hours.'
+  - 'Help section: help.easyclinic.io and app.easyclinic.io are site.yaml helpUrl and appLoginUrl (also the nav Help centre link). "Support and training are unlimited on every plan" is plans.yaml ("Unlimited support and training" on all three plans). The contact page summary names the Easy Clinic phone and WhatsApp number (the India +91 number in site.yaml) and the Kenya number. No names, roles or hours.'
   - 'Section id "specialties" matches the staging footer link /resources#specialties (migration/research/brand.md section 8; the live footer in section 5 has no /resources/ link), so that link lands on the right section. The staging footer also linked /resources#comparisons; comparisons are reached here through the country groups and the /compare/ card, and there is no section with that id.'
   - 'No FAQ. Spec 2.5 says a page with no true FAQs leaves the section out, and spec 6.4 drops routing questions ("Where next?"), which is all a sitemap would carry; the country and specialty questions ("my country is not listed", "my specialty is not listed") are answered on /countries/ and /specialties/. The hub family allows no FAQ or 5 to 8 questions (FAMILY_RULES.hub in src/lib/rules/audit.ts); this page has none.'
-  - 'Title 52 characters, with the head keyword first; meta description 151 characters with no tokens; H1 plain. Spec section 4 has no row for this page. Head keyword "EasyClinic resources" does not collide with any other page as of 2026-09-26 (/customers/ owns "EasyClinic reviews", /blog/ "clinic management blog", /glossary/ "clinic software glossary"). The opening answer is two sentences, with the country list and the specialty count as its numbers.'
+  - 'Title 52 characters, with the head keyword first; meta description 151 characters with no tokens; H1 plain. Spec section 4 has no row for this page. Head keyword "Easy Clinic resources" does not collide with any other page as of 2026-09-26 (/customers/ owns "Easy Clinic reviews", /blog/ "clinic management blog", /glossary/ "clinic software glossary"). The opening answer is two sentences, with the country list and the specialty count as its numbers.'
   - 'Footer: "All resources" added as the first link of the footer Resources group in src/data/nav.yaml. Header: "All resources" is the last link of the Resources dropdown (audit 2026-09-27), as "All specialties" and "All countries" are in theirs, so it shows in the mobile menu too; the dropdown item itself still has no href.'
-  - 'Audit 2026-09-27: deleted ", and four of those countries have pages of their own" from the By country intro, because all four country pages are drafts and drop out in production. Restore it when they publish. The opening answer and meta ("India, Kenya, the UAE and Nigeria have EasyClinic pages of their own") still hold in production through the four published listicles and the India and Kenya demo pages.'
+  - 'Audit 2026-09-27: deleted ", and four of those countries have pages of their own" from the By country intro, because all four country pages are drafts and drop out in production. Restore it when they publish. The opening answer and meta ("India, Kenya, the UAE and Nigeria have Easy Clinic pages of their own") still hold in production through the four published listicles and the India and Kenya demo pages.'
   - 'Audit 2026-09-27: the footer was the only link to this page. It is now also linked from the header Resources dropdown (a seventh item after the six in spec 3.3, following the "All specialties" and "All countries" items) and from the /blog/ related links.'

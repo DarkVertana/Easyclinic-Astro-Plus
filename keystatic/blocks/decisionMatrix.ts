@@ -7,9 +7,9 @@ import { defineBlock, flag, group, list, stringList, text } from '../fields.ts';
 export const decisionMatrix = defineBlock('decisionMatrix', 'Decision matrix', {
   options: list(
     group('Option', {
-      title: text('Title', { required: true, description: 'E.g. "Choose EasyClinic if".' }),
+      title: text('Title', { required: true, description: 'E.g. "Choose Easy Clinic if".' }),
       items: stringList('Reasons', 'Reason', { md: true, min: 2, max: 8 }),
-      us: flag('This option is EasyClinic', { zodDefault: false, description: 'Highlights the card.' }),
+      us: flag('This option is Easy Clinic', { zodDefault: false, description: 'Highlights the card.' }),
     }),
     { label: 'Options', min: 2, max: 4, itemLabel: (props) => props.fields.title.value || 'Option' },
   ),

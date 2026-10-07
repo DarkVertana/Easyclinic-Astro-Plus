@@ -4,7 +4,7 @@ import { isoDate, md } from '../../../schemas/fields';
 import { SLUG_ID } from '../../../schemas/patterns';
 
 /**
- * Per-vendor sections for listicles (spec 5.14: 120 to 180 words each, pros and cons, EasyClinic treated
+ * Per-vendor sections for listicles (spec 5.14: 120 to 180 words each, pros and cons, Easy Clinic treated
  * with the same structure). Competitor facts carry a source and a checked-on date, as ComparisonTable cells do;
  * unknowns say "Not published" rather than "Check".
  */

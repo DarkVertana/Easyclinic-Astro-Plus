@@ -25,7 +25,7 @@ type Part = { text: string; href?: string; datetime?: string };
 
 // Spec 5.14: every competitor fact is sourced and dated. A competitor fact without a source or a
 // checked-on date renders a placeholder and blocks publishing; "Not published" needs the date it was
-// checked (spec 5.16) but has nothing to link to. EasyClinic's own facts may omit both.
+// checked (spec 5.16) but has nothing to link to. Easy Clinic's own facts may omit both.
 function provenance(vendor: string, strict: boolean, f: (typeof vendors)[number]['facts'][number]): Part[] {
   const notPublished = /^\s*not published/i.test(f.value);
   const source: Part | null = f.source
@@ -85,7 +85,7 @@ const showIndex = cards.length >= 4;
           <header>
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
               <VendorHeading id={v.headingId}>{v.label}</VendorHeading>
-              {/* Disclosure only: EasyClinic gets the same structure and weight as every other vendor (spec 5.14). */}
+              {/* Disclosure only: Easy Clinic gets the same structure and weight as every other vendor (spec 5.14). */}
               {v.us && (
                 <span class="inline-flex items-center rounded-full border border-line-strong bg-surface-muted px-2.5 py-0.5 font-sans text-xs font-semibold text-ink-muted">
                   Our product

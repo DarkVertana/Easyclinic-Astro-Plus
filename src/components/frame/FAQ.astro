@@ -1,30 +1,74 @@
 ---
 import Md from '../ui/Md.astro';
 import Icon from '../ui/Icon.astro';
+import { getRegistry } from '../../lib/content/registry';
 
 interface Props {
   heading: string;
   items: Array<{ question: string; answer: string }>;
   tone?: 'plain' | 'wash';
+  /** Click-to-chat link for the "still have a question" box; left out, the box offers the contact page only. */
+  whatsappHref?: string;
 }
 
-const { heading, items, tone = 'plain' } = Astro.props;
+const { heading, items, tone = 'plain', whatsappHref } = Astro.props;
+const registry = await getRegistry();
+const contactHref = registry.urlFor('/contact-us/');
 ---
 
 {
   items.length > 0 && (
     <section id="faq" aria-labelledby="faq-heading" class:list={['section-y', tone === 'wash' ? 'bg-surface-alt' : 'bg-surface']}>
-      <div class="container-measure">
-        <h2 id="faq-heading">{heading}</h2>
-        {/* Answers are in the server HTML; <details> only collapses them visually (spec 7.1). */}
-        <div class="mt-8 divide-y divide-line border-y border-line">
-          {items.map((item) => (
-            <details class="group py-1" data-faq>
-              <summary class="flex min-h-12 cursor-pointer list-none items-start justify-between gap-4 py-4 [&::-webkit-details-marker]:hidden">
-                <h3 class="font-sans text-lg font-semibold leading-snug text-ink-heading">{item.question}</h3>
-                <Icon name="plus" size={20} class="mt-1 text-blue-600 transition-transform group-open:rotate-45" />
+      {/* Wide screens: heading and the "still have a question" box on the left, questions on the right.
+          Phones: heading, questions, then the box. */}
+      <div class="container-page grid gap-8 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-0">
+        <div class="lg:col-start-1 lg:row-start-1">
+          <p class="eyebrow mb-2">FAQ</p>
+          <h2 id="faq-heading">{heading}</h2>
+          <p class="mt-4 text-ink-muted">
+            Short answers to the questions we hear most, before and after a demo.
+          </p>
+        </div>
+          {(whatsappHref || contactHref) && (
+            <div class="order-last self-start rounded-card border border-[#c7c7c7] bg-surface p-6 lg:order-none lg:col-start-1 lg:row-start-2 lg:mt-8">
+              <span class="flex size-10 items-center justify-center rounded-full bg-blue-50 text-blue-700" aria-hidden="true">
+                <Icon name="message-circle" size={20} />
+              </span>
+              <p class="mt-4 font-display text-lg font-semibold text-ink-heading">Still have a question?</p>
+              <p class="mt-1 text-sm leading-relaxed text-ink-muted">Ask the team that sets up and supports your clinic.</p>
+              <div class="mt-5 flex flex-wrap gap-3">
+                {whatsappHref && (
+                  <a
+                    href={whatsappHref}
+                    rel="noopener"
+                    class="btn rounded-full bg-whatsapp px-5 text-white no-underline hover:text-white hover:brightness-110"
+                    data-track="whatsapp_click"
+                    data-label="FAQ: still have a question"
+                  >
+                    <Icon name="brand-whatsapp" size={18} />
+                    WhatsApp us
+                  </a>
+                )}
+                {contactHref && (
+                  <a href={contactHref} class="btn btn-outline rounded-full px-5" data-track="cta_click" data-label="FAQ: contact us">
+                    Contact us
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
+        {/* Right: one card per question. Answers are in the server HTML; <details> only collapses them visually (spec 7.1). */}
+        <div class="flex flex-col gap-3 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          {items.map((item, i) => (
+            <details class="faq-item group rounded-card border bg-surface" data-faq open={i === 0}>
+              <summary class="flex min-h-12 cursor-pointer list-none items-center gap-4 px-5 py-4 md:px-6 md:py-5 [&::-webkit-details-marker]:hidden">
+                <h3 class="flex-1 font-sans text-[19px] leading-snug font-semibold text-ink-heading">{item.question}</h3>
+                <span class="faq-toggle flex size-8 shrink-0 items-center justify-center rounded-full border border-[#c7c7c7] text-blue-700" aria-hidden="true">
+                  <Icon name="plus" size={16} class="transition-transform duration-200 group-open:rotate-45" />
+                </span>
               </summary>
-              <Md text={item.answer} class="pb-5 text-ink" />
+              <Md text={item.answer} class="px-5 pb-5 leading-relaxed text-ink-muted md:pr-16 md:pl-6" />
             </details>
           ))}
         </div>
@@ -32,3 +76,36 @@ const { heading, items, tone = 'plain' } = Astro.props;
     </section>
   )
 }
+
+<style>
+  .faq-item {
+    border-color: #c7c7c7;
+    transition:
+      border-color 200ms ease,
+      background-color 200ms ease;
+  }
+  .faq-item:hover {
+    border-color: var(--color-blue-200);
+  }
+  /* The open question: a soft blue edge and wash, and a filled toggle. */
+  .faq-item[open] {
+    border-color: var(--color-blue-200);
+    background: #f7fbff;
+  }
+  .faq-toggle {
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease;
+  }
+  .faq-item[open] .faq-toggle {
+    background: var(--color-blue-700);
+    border-color: var(--color-blue-700);
+    color: var(--color-white);
+  }
+  .faq-item summary:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-card);
+  }
+</style>

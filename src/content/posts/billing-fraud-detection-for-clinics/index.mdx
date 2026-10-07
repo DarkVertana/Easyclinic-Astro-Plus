@@ -28,7 +28,7 @@ ctas:
   secondary:
     label: See how discounts and refunds are authorised
     href: /features/billing/
-  whatsapp: Hi, I was reading the EasyClinic post on billing fraud detection and would like to see discount approvals and the day-end close in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic post on billing fraud detection and would like to see discount approvals and the day-end close in a demo.
 faq:
   - question: Is billing fraud detection worth doing in a small clinic?
     answer: >-
@@ -42,7 +42,7 @@ faq:
   - question: Will approvals slow down the front desk?
     answer: >-
       Only on the bills that need one: a bill at the list price needs no approval, so the desk waits only
-      when money comes off a bill or goes back to a patient. On EasyClinic's Enterprise plan, a workflow
+      when money comes off a bill or goes back to a patient. On Easy Clinic's Enterprise plan, a workflow
       rule can set a limit so that only discounts above it wait for approval.
   - question: What if the review flags an honest member of staff?
     answer: >-
@@ -54,7 +54,7 @@ faq:
       No, the day-end close compares the drawer with the bills, so cash taken without a bill leaves
       nothing to count against. A receipt from the system for every patient makes it harder, because a
       patient who expects one on their phone notices when it does not arrive.
-  - question: Which EasyClinic plan does a clinic chain need for these controls?
+  - question: Which Easy Clinic plan does a clinic chain need for these controls?
     answer: >-
       Premium runs more than one location, and Enterprise adds central control of every location and
       workflow rules, such as approval for a discount above a limit. Premium is
@@ -70,7 +70,7 @@ links:
       label: Revenue management
       description: Unbilled visits and cash variance, found before the month closes.
     - href: /solutions/clinic-chain/
-      label: EasyClinic for a clinic chain
+      label: Easy Clinic for a clinic chain
       description: Central control of every branch, with a price list for each location.
     - href: /features/reports-and-dashboards/
       label: Reports and dashboards
@@ -79,23 +79,23 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The EasyClinic lines come from its own product pages (discounts, write-offs, refunds and voided bills
+    The Easy Clinic lines come from its own product pages (discounts, write-offs, refunds and voided bills
     under authorisation, role-based access to the cash register, the till's audit trail and the Enterprise
     discount limit), while the counter scenes and the pilot would fit any clinic finance guide.
   readsMachineWritten: >-
-    The four controls follow the same pattern and each ends on an EasyClinic paragraph, which a finance
+    The four controls follow the same pattern and each ends on an Easy Clinic paragraph, which a finance
     head reading aloud may hear as a template. No clinic or finance head is named and no measured
     figure is given, so the post needs a chain's read-aloud before it meets the spec 6.5 bar.
 notes:
   - Imported from https://www.easyclinic.io/billing-fraud-detection-for-clinics/ (published 2026-01-15, modified 2026-07-12) with scripts/import-wp.ts. Refreshed to spec 5.19 on 2026-09-26.
   - 'Owner /features/billing/ and topic from migration/posts-manifest.csv (KEEP-buyer, proposed decision "keep"), kept by the 2026-09-26 triage; marketing has not confirmed the decision. The post owns "billing fraud detection for clinics" and does not target "medical billing software for clinics" (the billing page) or leakage and cash-variance tracing (the revenue page, linked instead).'
-  - 'Cut from the import. Invented story: the "Executive Fraud Case Study" about an unnamed large clinic chain, with its outcomes ("Unauthorised discounts dropped sharply", "Refund abuse was eliminated", "Daily cash mismatches reduced significantly", "margins recovered without increasing headcount", "staff adoption was smooth", "Within the first month"); no chain is named and no source exists. Unsourced claims: "In most clinic chains, it happens quietly", "Fraud rarely appears in totals", "Strong controls do not slow operations", the FAQ answer "No automated controls actually speed up workflows", "Clinic chains using EasyClinic clinic management software prove that...". Unconfirmed product claims: a named EasyClinic "pricing engine" applying prices by patient category, service type and payment rules; "One-Click Day Closing" in which "the system reconciles totals automatically and flags mismatches immediately"; "Daily exception reports" and "exception alerts" reviewed "from a single dashboard" across locations; "Overrides are logged with reason codes"; "reviewed in real time"; every transaction carrying payment method and linked invoice. Also cut: the keyword-stuffed bold "billing fraud detection for clinics" (repeated through the text), links from that phrase to the home page and /features/ plus a bare IP address (143.198.231.228), the "Why Controls Empower Teams" heading (banned word), "modern" framework lines, the "Frequently Asked Questions for AI Featured Snippets" heading and its eight one-line answers (rewritten as six frontmatter FAQs), the "Final Thought" and the conclusion.'
+  - 'Cut from the import. Invented story: the "Executive Fraud Case Study" about an unnamed large clinic chain, with its outcomes ("Unauthorised discounts dropped sharply", "Refund abuse was eliminated", "Daily cash mismatches reduced significantly", "margins recovered without increasing headcount", "staff adoption was smooth", "Within the first month"); no chain is named and no source exists. Unsourced claims: "In most clinic chains, it happens quietly", "Fraud rarely appears in totals", "Strong controls do not slow operations", the FAQ answer "No automated controls actually speed up workflows", "Clinic chains using Easy Clinic clinic management software prove that...". Unconfirmed product claims: a named Easy Clinic "pricing engine" applying prices by patient category, service type and payment rules; "One-Click Day Closing" in which "the system reconciles totals automatically and flags mismatches immediately"; "Daily exception reports" and "exception alerts" reviewed "from a single dashboard" across locations; "Overrides are logged with reason codes"; "reviewed in real time"; every transaction carrying payment method and linked invoice. Also cut: the keyword-stuffed bold "billing fraud detection for clinics" (repeated through the text), links from that phrase to the home page and /features/ plus a bare IP address (143.198.231.228), the "Why Controls Empower Teams" heading (banned word), "modern" framework lines, the "Frequently Asked Questions for AI Featured Snippets" heading and its eight one-line answers (rewritten as six frontmatter FAQs), the "Final Thought" and the conclusion.'
   - 'Law and regulation: the import stated none, and none is stated here. No legal correction was needed.'
-  - 'Kept from the import and reworked: the five ways money goes missing, the four controls (price rules, approvals, day-end close, exception review), the two-week pilot in four steps and the warning signs. The exception review is written as the owner''s weekly practice, not as an EasyClinic report, because no live page names an exception report; the EasyClinic paragraph says only what is sourced (audit logs for each user, the till audit trail, reports exported to Excel and PDF).'
-  - 'Sources for EasyClinic facts: src/content/features/billing.yaml, grounded in the live /features/ billing section (service list prices, a changed price shown in billing at once, discount authorisation with write-off and void control, refunds and voided invoices "with proper authorization", till management balancing payment modes with an audit trail, receipts by SMS, email or WhatsApp) and the live /revenue-management/ page (cash register access by role, cash in and out tracked for daily reconciliation, end-of-day report of cash transactions, price lists by location and customer category, discounts for patient segments); src/content/features/reports-and-dashboards.yaml (audit logs for each user, audit trail for key transactions, export to Excel and PDF); src/content/features/multi-location.yaml (Enterprise workflow rule: a discount above the limit waits for approval from the person head office names); plans.yaml (Premium more than one location, Enterprise central control and workflow rules, WhatsApp on Premium).'
+  - 'Kept from the import and reworked: the five ways money goes missing, the four controls (price rules, approvals, day-end close, exception review), the two-week pilot in four steps and the warning signs. The exception review is written as the owner''s weekly practice, not as an Easy Clinic report, because no live page names an exception report; the Easy Clinic paragraph says only what is sourced (audit logs for each user, the till audit trail, reports exported to Excel and PDF).'
+  - 'Sources for Easy Clinic facts: src/content/features/billing.yaml, grounded in the live /features/ billing section (service list prices, a changed price shown in billing at once, discount authorisation with write-off and void control, refunds and voided invoices "with proper authorization", till management balancing payment modes with an audit trail, receipts by SMS, email or WhatsApp) and the live /revenue-management/ page (cash register access by role, cash in and out tracked for daily reconciliation, end-of-day report of cash transactions, price lists by location and customer category, discounts for patient segments); src/content/features/reports-and-dashboards.yaml (audit logs for each user, audit trail for key transactions, export to Excel and PDF); src/content/features/multi-location.yaml (Enterprise workflow rule: a discount above the limit waits for approval from the person head office names); plans.yaml (Premium more than one location, Enterprise central control and workflow rules, WhatsApp on Premium).'
   - 'Illustrative scenes (a 20% discount, a refund in cash, a bill voided at six in the evening) are labelled as examples in the text, not measured figures. No study figure, testimonial or proof block (posts carry none). No heroMedia or media: screenshots do not exist yet.'
   - 'Merge (2026-09-26 triage): /ensuring-financial-integrity-with-advanced-clinic-accounting/ merges into this post. Nothing was carried over, because what survived its triage (till summaries, discrepancy flags, audit trails, role permissions) is already here or on /features/billing/, and its other claims (GAAP-compliant tracking, QuickBooks and Zoho exports, tax-system integration, M-Pesa and Airtel tracking) have no confirmed source. Its 301 to this post needs its row in migration/posts-manifest.csv (now "keep", owner /features/revenue-management/) changed to a merge with this target and confirmed by marketing; no redirectFrom is set here while it is still a draft page.'
-  - 'Fact check 2026-09-26 (adversarial pass against the live WordPress post, re-fetched from wp-json, and the published feature pages). No statistic, law or named source survives from the import; every EasyClinic line was traced to billing.yaml, revenue-management.yaml, reports-and-dashboards.yaml, multi-location.yaml or plans.yaml. Changed: the opening answer listed "cash that never reaches the day''s total" among what the four controls catch, which contradicted the limits section (cash taken with no bill leaves nothing to count against); it now says a drawer that is short at closing, which the evening count does catch. The claim that the revenue management page shows how a short drawer "is traced to one counter" (body and related-link description) was cut: billing.yaml records that the live /features/ and /revenue-management/ pages say only that cash-register access is set by role and that the end-of-day report snapshots the cash transactions, not that each counter has its own register; the sentence now follows the billing page wording. The audit sentence named three audit records in a row; it now names the user audit log and the till audit trail.'
+  - 'Fact check 2026-09-26 (adversarial pass against the live WordPress post, re-fetched from wp-json, and the published feature pages). No statistic, law or named source survives from the import; every Easy Clinic line was traced to billing.yaml, revenue-management.yaml, reports-and-dashboards.yaml, multi-location.yaml or plans.yaml. Changed: the opening answer listed "cash that never reaches the day''s total" among what the four controls catch, which contradicted the limits section (cash taken with no bill leaves nothing to count against); it now says a drawer that is short at closing, which the evening count does catch. The claim that the revenue management page shows how a short drawer "is traced to one counter" (body and related-link description) was cut: billing.yaml records that the live /features/ and /revenue-management/ pages say only that cash-register access is set by role and that the end-of-day report snapshots the cash transactions, not that each counter has its own register; the sentence now follows the billing page wording. The audit sentence named three audit records in a row; it now names the user audit log and the till audit trail.'
 ---
 
 On the day it happens, billing fraud at a clinic looks like an ordinary bill. A regular patient gets 20% off. A consultation is billed at last year's price. A refund goes back in cash, and a bill is voided at six in the evening. Each of these examples can be honest, and the owner's problem is that the honest ones and the dishonest ones look the same until somebody lines them up.
@@ -112,7 +112,7 @@ This post is for the owner of a single clinic and for the finance head of a chai
 
 Without controls, an honest mistake and a deliberate one leave the same gap in the takings, and the owner cannot tell them apart. That is why the controls below are about the system rather than about any one person. When prices are unclear, staff improvise. When the cash is checked only at month end, nobody remembers the day it went missing.
 
-<InlineCta heading="See how a discount gets authorised." href="/features/billing/" label="See how the billing desk works">In EasyClinic, discounts and voided bills go through authorisation, and the till keeps an audit trail of every transaction.</InlineCta>
+<InlineCta heading="See how a discount gets authorised." href="/features/billing/" label="See how the billing desk works">In Easy Clinic, discounts and voided bills go through authorisation, and the till keeps an audit trail of every transaction.</InlineCta>
 
 ## Prices the desk picks from a list
 
@@ -120,7 +120,7 @@ The first control takes one decision away from the counter: what to charge. Ever
 
 A chain adds one rule. Each branch charges from the list that applies to it, so a scan does not cost one thing at one branch because a receptionist remembers an old price.
 
-In EasyClinic, each service and item has its price on the service list, and a price changed on the list shows on the next bill. Each branch can have its own price list, and prices and discounts can be set for a category of patients. Running more than one location needs Premium or Enterprise.
+In Easy Clinic, each service and item has its price on the service list, and a price changed on the list shows on the next bill. Each branch can have its own price list, and prices and discounts can be set for a category of patients. Running more than one location needs Premium or Enterprise.
 
 ## Approval before money comes off a bill
 
@@ -130,7 +130,7 @@ Ask for the reason in words. "Regular patient" is a reason you can review later,
 
 Set the limit where it catches what matters. If the owner has to approve every small rounding, approvals turn into a rubber stamp and stop catching anything.
 
-In EasyClinic, discounts, write-offs, refunds and voided invoices go through authorisation. On the Enterprise plan, a workflow rule can set a discount limit, so a larger discount waits for approval from the person head office names.
+In Easy Clinic, discounts, write-offs, refunds and voided invoices go through authorisation. On the Enterprise plan, a workflow rule can set a discount limit, so a larger discount waits for approval from the person head office names.
 
 ## A cash count against the system every evening
 
@@ -138,7 +138,7 @@ The third control is the day-end close. At closing, the cash in the drawer is co
 
 A single short day is usually a mistake. The same counter short every week is worth a conversation.
 
-In EasyClinic, access to the cash register is set by role, so only the staff you allow can take money on it. Cash coming in and going out is tracked through the day, and the till is balanced across payment modes. The end-of-day report gives a snapshot of the day's cash transactions to count the drawer against. Tracing a gap between the drawer and the report is covered on the [revenue management page](/features/revenue-management/).
+In Easy Clinic, access to the cash register is set by role, so only the staff you allow can take money on it. Cash coming in and going out is tracked through the day, and the till is balanced across payment modes. The end-of-day report gives a snapshot of the day's cash transactions to count the drawer against. Tracing a gap between the drawer and the report is covered on the [revenue management page](/features/revenue-management/).
 
 ## A weekly review of the exceptions, by user
 
@@ -154,7 +154,7 @@ Compare people who do the same job on the same shifts. A receptionist who gives 
 
 Look only at the flags. Reviewing the exceptions keeps the review short, and it keeps suspicion off the staff whose bills are in order.
 
-EasyClinic keeps an audit log for each user, and the till keeps an audit trail of every transaction, so a discount or a refund can be traced to the login that made it. Reports export to Excel and PDF for the review. Someone still has to read the list and ask the questions.
+Easy Clinic keeps an audit log for each user, and the till keeps an audit trail of every transaction, so a discount or a refund can be traced to the login that made it. Reports export to Excel and PDF for the review. Someone still has to read the list and ask the questions.
 
 ## Test the controls in a two-week pilot
 
@@ -176,7 +176,7 @@ Tell the staff about the pilot before it starts. The controls are there so that 
 
 ## What the controls cannot catch
 
-Cash taken with no bill leaves nothing to count against. One defence is a receipt from the system for every patient, because a patient who is used to getting one notices when it does not come. EasyClinic can send the receipt to the patient's phone by SMS or email, or on WhatsApp with Premium.
+Cash taken with no bill leaves nothing to count against. One defence is a receipt from the system for every patient, because a patient who is used to getting one notices when it does not come. Easy Clinic can send the receipt to the patient's phone by SMS or email, or on WhatsApp with Premium.
 
 Two people who approve each other's discounts can defeat any approval rule. In a chain, the person who approves should not be the person who bills, and the weekly review should go to someone outside the branch.
 

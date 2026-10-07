@@ -47,7 +47,7 @@ import {
 } from './lib/wp-convert.ts';
 
 const ROOT = process.cwd();
-const UA = { 'user-agent': 'EasyClinic site migration (Astro rebuild)' };
+const UA = { 'user-agent': 'Easy Clinic site migration (Astro rebuild)' };
 
 const argv = process.argv.slice(2);
 const flag = (name: string) => argv.includes(name);

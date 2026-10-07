@@ -48,10 +48,10 @@ describe('banned words and patterns (spec 6.2)', () => {
     expect(rules('5,000+ doctors · 18 countries · Since 2003')).toContain('shared-block');
   });
   it('enforces naming', () => {
-    expect(rules('Easy Clinic is great')).toContain('naming');
+    expect(rules('EasyClinic is great')).toContain('naming');
     expect(rules('Includes the AI Assistant')).toContain('naming');
-    expect(rules('EasyClinic with Cura AI and CuraPilot')).not.toContain('naming');
-    expect(rules('Novel Medicare Solutions Pvt Ltd, trading as EasyClinic')).not.toContain('naming');
+    expect(rules('Easy Clinic with Cura AI and CuraPilot')).not.toContain('naming');
+    expect(rules('Novel Medicare Solutions Pvt Ltd, trading as Easy Clinic')).not.toContain('naming');
   });
   it('rejects exclamation marks but not markdown images', () => {
     expect(rules('Book now!')).toContain('exclamation');

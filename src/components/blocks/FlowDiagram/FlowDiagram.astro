@@ -50,7 +50,7 @@ const exampleColumns =
             {step.number}
           </span>
           <div class="flow-text">
-            <h3 class:list={['font-sans text-lg font-semibold leading-snug', inverse && 'text-white']}>{step.label}</h3>
+            <h3 class:list={['font-display text-lg font-semibold leading-snug', inverse && 'text-white']}>{step.label}</h3>
             {step.body && <Md text={step.body} minHeading={4} class:list={['mt-1', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
             {step.check && (
               <p
@@ -87,11 +87,11 @@ const exampleColumns =
   {
     examples.length > 0 && (
       <div class="mt-12 md:mt-16">
-        <h3 class:list={['font-sans text-lg font-semibold', inverse && 'text-white']}>Examples by country</h3>
+        <h3 class:list={['font-display text-lg font-semibold', inverse && 'text-white']}>Examples by country</h3>
         <ul class:list={['mt-5 grid gap-5', exampleColumns]}>
           {examples.map((example) => (
             <li class:list={['rounded-card border p-6', inverse ? 'border-white/15 bg-white/5' : 'border-line bg-surface text-ink']}>
-              <h4 class:list={['font-sans text-base font-semibold', inverse && 'text-white']}>{example.country}</h4>
+              <h4 class:list={['font-display text-base font-semibold', inverse && 'text-white']}>{example.country}</h4>
               <Md text={example.body} minHeading={5} class:list={['mt-2', inverse && 'text-ink-inverse-muted']} />
             </li>
           ))}

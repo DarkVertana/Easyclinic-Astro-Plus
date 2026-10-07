@@ -15,7 +15,7 @@ const inverse = sectionTone === 'inverse';
 /*
  * Spec 5.14 item 4, 5.16 item 2, 7.3: one column per product, one row per thing compared. Every
  * competitor cell carries its source and the date it was checked; the schema refuses a competitor fact
- * without them, and "Check" as a value. The products get equal columns. EasyClinic's column has a light
+ * without them, and "Check" as a value. The products get equal columns. Easy Clinic's column has a light
  * tint and an icon beside its name; the name says whose column it is, so nothing rests on colour.
  *
  * Never a sideways scroll (spec 7.5): below the width at which every column still has room, the table
@@ -32,7 +32,7 @@ const names = columns.map((c) => c.name);
 const caption = heading ? undefined : `Comparison of ${names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names.at(-1)}` : names[0]}`;
 
 // A screen reader hears the column's name; when the name is a product (CuraPilot) rather than the company, say whose it is.
-const usSuffix = (name: string) => (/easyclinic/i.test(name) ? '' : ' (EasyClinic)');
+const usSuffix = (name: string) => (/easy ?clinic/i.test(name) ? '' : ' (Easy Clinic)');
 
 // One cell per column. The schema already requires this; a short row still renders a placeholder under
 // the right header rather than shifting cells, and blocks publishing.
@@ -173,7 +173,7 @@ const body = rows.map((row) => ({
     }
   }
 
-  /* EasyClinic's column: a light tint, and a brand rule over its name (the icon sits beside it). */
+  /* Easy Clinic's column: a light tint, and a brand rule over its name (the icon sits beside it). */
   .ct .ct-us {
     background: var(--surface-alt);
   }

@@ -3,11 +3,11 @@ import { block } from '../../../schemas/block-base';
 import { internalPath, md } from '../../../schemas/fields';
 import { TIME_24H } from '../../../schemas/patterns';
 
-/** Spec 5.5: "A Tuesday with and without EasyClinic", a timed vertical timeline. */
+/** Spec 5.5: "A Tuesday with and without Easy Clinic", a timed vertical timeline. */
 export const schema = () =>
   block('dayTimeline', {
-    beforeLabel: z.string().default('Without EasyClinic'),
-    afterLabel: z.string().default('With EasyClinic'),
+    beforeLabel: z.string().default('Without Easy Clinic'),
+    afterLabel: z.string().default('With Easy Clinic'),
     entries: z
       .array(
         z.object({

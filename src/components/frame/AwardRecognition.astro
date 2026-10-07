@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../ui/Icon.astro';
+import siliconindia from '../../assets/images/siliconindia-1536x400.webp';
+
+/**
+ * Award and press recognition, shown on the home page straight after the hero: the award on the left,
+ * the publication's pull quote and masthead on the right.
+ */
+interface Props {
+  award?: string;
+  year?: string;
+  quote?: string;
+}
+
+const {
+  award = 'Best AI-Powered EMR & Clinic Management Software',
+  year = '2026',
+  quote = 'Easy Clinic has spent over two decades building what began as a simple idea: technology should empower clinicians, not burden them.',
+} = Astro.props;
+---
+
+<section id="recognition" aria-labelledby="recognition-heading" class="section-y">
+  <h2 id="recognition-heading" class="sr-only">Awards and recognition</h2>
+  <div class="container-page grid items-center gap-8 md:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] md:gap-16">
+    <div class="flex flex-col items-center rounded-card border border-[#c7c7c7] px-6 py-8 text-center">
+      <Icon name="trophy" size={54} class="text-amber-400" />
+      <p class="mt-4 max-w-[16rem] leading-snug font-semibold text-ink-heading">{award} {year}</p>
+    </div>
+
+    <figure class="max-w-[48rem]">
+      <blockquote class="text-[21px] leading-relaxed text-ink-heading">
+        <p>&ldquo;{quote}&rdquo;</p>
+      </blockquote>
+      <figcaption class="mt-4 flex justify-center">
+        <Image src={siliconindia} alt="siliconindia" width={192} height={50} class="h-auto w-[140px] md:w-[150px]" />
+      </figcaption>
+    </figure>
+  </div>
+</section>

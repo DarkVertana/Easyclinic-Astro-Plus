@@ -10,7 +10,7 @@ export const clinicTypes = defineBlock('clinicTypes', 'Clinic types', {
   items: list(
     group('Clinic type', {
       persona: choice('Persona', PERSONAS, { required: true }, { labels: PERSONA_LABELS, description: 'Which rung of the clinic ladder this card is for. Sets the card icon.' }),
-      title: text('Title', { required: true, description: 'Also the link text: "<title>: how EasyClinic works for you".' }),
+      title: text('Title', { required: true, description: 'Also the link text: "<title>: how Easy Clinic works for you".' }),
       body: md('Body', { required: true }),
       example: md('Local example', { description: 'Shown in a "Local example" box under the body.' }),
       href: path('Link', { required: true, description: 'The page for this clinic type, e.g. /solutions/solo-clinic/.' }),

@@ -6,15 +6,15 @@ secondaryKeywords:
   - NABIDH approved EMR
   - EMR data security
   - SHA ready clinic software
-title: 'Security and Compliance: EasyClinic'
+title: 'Security and Compliance: Easy Clinic'
 metaDescription: >-
   What ABDM compliant EMR software means, where patient data is hosted, who can see it, and the status
   and date for ABDM, SHA, NABIDH and NDPA.
-h1: How EasyClinic keeps patient data safe and compliant
+h1: How Easy Clinic keeps patient data safe and compliant
 linkLabel: Security and compliance
 eyebrow: Trust and security
 openingAnswer: >-
-  ABDM integration for EMR software comes in three milestones, and EasyClinic's status is [ABDM M1 status
+  ABDM integration for EMR software comes in three milestones, and Easy Clinic's status is [ABDM M1 status
   as of date] for M1 (ABHA numbers), [ABDM M2 status as of date] for M2 (linking records) and [ABDM M3
   status as of date] for M3 (fetching records from other facilities). The table below gives a status and
   a date for each regulator and data law that touches clinic software in India, Kenya, the UAE and
@@ -32,7 +32,7 @@ ctas:
   secondary:
     label: Read the privacy policy
     href: /privacy/
-  whatsapp: Hi, I was reading the EasyClinic security and compliance page and have a question about my clinic's data.
+  whatsapp: Hi, I was reading the Easy Clinic security and compliance page and have a question about my clinic's data.
 
 sections:
   # The master table (spec 2.6). Status and dates render from src/data/regulators/*.yaml (all 22 are null today).
@@ -41,7 +41,7 @@ sections:
       id: compliance-by-country
       heading: Regulators and data laws by country, with status and date
       intro: |
-        Every row carries one of four states and the date it was last checked. **Live** means it works today, with the integration or certificate named. **In certification** names the body doing the checking and the quarter a decision is expected. **Planned** gives the quarter the work is due. **Not applicable** means the rule does not apply to software like EasyClinic.
+        Every row carries one of four states and the date it was last checked. **Live** means it works today, with the integration or certificate named. **In certification** names the body doing the checking and the quarter a decision is expected. **Planned** gives the quarter the work is due. **Not applicable** means the rule does not apply to software like Easy Clinic.
 
         ABDM has a row for each milestone, because a vendor can finish one without the next. Each country page repeats its own rows from this table, and if another page on this site seems to claim more than the table, go by the table.
       countries: [in, ke, ae, ng]
@@ -53,10 +53,10 @@ sections:
       id: hosting
       heading: Where your data is hosted
       intro: >-
-        EasyClinic is cloud software. The table gives the region where each country's patient records are
+        Easy Clinic is cloud software. The table gives the region where each country's patient records are
         kept and where the backup copies go. If the law in your country asks for health data to stay inside
         it, as the UAE's ICT Health Law does, check your row before you sign.
-      caption: Hosting and backup regions for EasyClinic clinics, by country
+      caption: Hosting and backup regions for Easy Clinic clinics, by country
       columns:
         - Clinics in
         - Patient records hosted in
@@ -76,7 +76,7 @@ sections:
           - '[Backup region for Nigerian clinics]'
       note: >-
         On the Enterprise plan a clinic can ask for private cloud hosting. For larger clinics and groups
-        that want to keep data on their own infrastructure, EasyClinic also offers a self-hosted option.
+        that want to keep data on their own infrastructure, Easy Clinic also offers a self-hosted option.
         [Which plans the self-hosted option is on, and who is responsible for its backups].
 
   - discriminant: featureRows
@@ -84,17 +84,17 @@ sections:
       id: protection
       heading: How data is protected
       intro: >-
-        Our pricing page says EasyClinic protects electronic data against unauthorised access with "bank
+        Our pricing page says Easy Clinic protects electronic data against unauthorised access with "bank
         level security". Each row below says what that means in practice.
       items:
         - heading: How data is encrypted
           body: >-
-            [How data is encrypted between your browser and EasyClinic: protocol and version]. [How stored
+            [How data is encrypted between your browser and Easy Clinic: protocol and version]. [How stored
             patient records are encrypted, and who holds the keys]. [Whether attachments such as scanned
             reports and X-rays are encrypted the same way].
         - heading: Backups and restores
           body: >-
-            [How often EasyClinic backs up clinic data, and how long each backup is kept]. [Where backups are
+            [How often Easy Clinic backs up clinic data, and how long each backup is kept]. [Where backups are
             stored, and whether apart from the main servers]. [Whether restores are tested, and the date of
             the last test]. [Whether a clinic can get a deleted record back, how it asks, and how long it
             takes].
@@ -108,19 +108,19 @@ sections:
             plans].
         - heading: The audit log
           body: >-
-            EasyClinic keeps an audit log on the patient record, and Cura AI keeps its own, so there is a
+            Easy Clinic keeps an audit log on the patient record, and Cura AI keeps its own, so there is a
             record of what it suggested. [What the log records for each entry, how long it is kept, and who
             at the clinic can read it].
-        - heading: Who at EasyClinic can open your data
+        - heading: Who at Easy Clinic can open your data
           body: >-
-            [Which EasyClinic staff can open a clinic's data, for what reason, and whether the clinic is told
+            [Which Easy Clinic staff can open a clinic's data, for what reason, and whether the clinic is told
             each time]. Our pricing page puts the rule plainly: "We never misuse, sell or in any way disclose
             your data for any commercial gains."
         - heading: Uptime, and what to do when the internet drops
           body: >-
-            EasyClinic was available [measured uptime and period]. [How uptime is measured, and whether the
+            Easy Clinic was available [measured uptime and period]. [How uptime is measured, and whether the
             figure is published]. [When planned maintenance runs in each country, and how clinics are told].
-            EasyClinic does not run fully offline today, so a clinic whose line drops often should keep a
+            Easy Clinic does not run fully offline today, so a clinic whose line drops often should keep a
             mobile hotspot beside the reception computer as a backup connection.
 
   - discriminant: prose
@@ -128,11 +128,11 @@ sections:
       id: your-data-your-exit
       heading: Your data, your exit
       body: |
-        The patient records in EasyClinic belong to your clinic. Under India's DPDP Act the clinic is the data fiduciary and EasyClinic processes the data on its behalf, and [data processing agreement: whether EasyClinic signs one with every clinic, and in which countries].
+        The patient records in Easy Clinic belong to your clinic. Under India's DPDP Act the clinic is the data fiduciary and Easy Clinic processes the data on its behalf, and [data processing agreement: whether Easy Clinic signs one with every clinic, and in which countries].
 
         There is no binding contract, so your clinic can leave when it chooses. [Notice period and refunds on cancelling].
 
-        When you leave, you get [what a leaving clinic gets back: patient records, prescriptions, bills and attachments] as [export format], within [days to deliver the export]. [Export fee, if any]. [Whether and when EasyClinic deletes its copy after the export, and when the backups that hold it expire].
+        When you leave, you get [what a leaving clinic gets back: patient records, prescriptions, bills and attachments] as [export format], within [days to deliver the export]. [Export fee, if any]. [Whether and when Easy Clinic deletes its copy after the export, and when the backups that hold it expire].
       aside: >-
         **"Your data belongs only to you."** That line is on our pricing page today. [Whether the customer
         contract says the same, and in which clause].
@@ -145,7 +145,7 @@ sections:
       intro: >-
         Each of the four countries has at least one data law that puts duties on your clinic, whatever
         software it uses. This is what each asks, in short. The country privacy pages go further, and
-        EasyClinic's own status against each law is in the compliance table at the top of this page.
+        Easy Clinic's own status against each law is in the compliance table at the top of this page.
       caption: Data protection laws that apply to clinics in India, Kenya, the UAE and Nigeria
       columns:
         - Country
@@ -157,7 +157,7 @@ sections:
           - Digital Personal Data Protection Act, 2023 (DPDP)
           - >-
             Notice, consent, breach reporting and a grievance contact. Your clinic is the data fiduciary and
-            EasyClinic processes data on its behalf, so the privacy notice your patients read is yours to
+            Easy Clinic processes data on its behalf, so the privacy notice your patients read is yours to
             publish.
           - '[Privacy in India](/privacy/india/)'
         - - Kenya
@@ -195,17 +195,17 @@ sections:
       id: security-contact
       heading: Security contact
       body: |
-        If you find a security problem in EasyClinic, write to [security contact email] with what you found and how to repeat it. [How soon EasyClinic acknowledges a report, and whether it runs a disclosure programme].
+        If you find a security problem in Easy Clinic, write to [security contact email] with what you found and how to repeat it. [How soon Easy Clinic acknowledges a report, and whether it runs a disclosure programme].
 
-        [Whether EasyClinic tells a clinic when a breach touches its data, and within how many hours]. Your clinic needs to hear quickly, because under most of the laws in the table above, reporting a breach is the clinic's duty. For anything else about your clinic's data, call {contact:in.phone} or write to {contact:in.email} in India, and call {contact:ke.phone} in Kenya. [Contact for clinics in the UAE and Nigeria].
+        [Whether Easy Clinic tells a clinic when a breach touches its data, and within how many hours]. Your clinic needs to hear quickly, because under most of the laws in the table above, reporting a breach is the clinic's duty. For anything else about your clinic's data, call {contact:in.phone} or write to {contact:in.email} in India, and call {contact:ke.phone} in Kenya. [Contact for clinics in the UAE and Nigeria].
       width: measure
 
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        {fact:retention} of EasyClinic's customers have used it for more than five years, and these are its
+        {fact:retention} of Easy Clinic's customers have used it for more than five years, and these are its
         public ratings.
       variant: badges
       badges:
@@ -217,11 +217,11 @@ sections:
 
 faqHeading: Questions clinic owners ask about their data
 faq:
-  - question: Who owns the patient data in EasyClinic?
+  - question: Who owns the patient data in Easy Clinic?
     answer: >-
-      Your clinic owns its patient records, and EasyClinic keeps them on your clinic's behalf. Our pricing
+      Your clinic owns its patient records, and Easy Clinic keeps them on your clinic's behalf. Our pricing
       page says it plainly: "Your data belongs only to you." Under India's DPDP Act the clinic is the data
-      fiduciary and EasyClinic the processor, and [data processing agreement: whether EasyClinic signs one
+      fiduciary and Easy Clinic the processor, and [data processing agreement: whether Easy Clinic signs one
       with every clinic, and in which countries].
   - question: Where is my clinic's data hosted?
     answer: >-
@@ -234,9 +234,9 @@ faq:
     answer: >-
       Yes, a clinic that leaves gets [what a leaving clinic gets back: patient records, prescriptions, bills
       and attachments] as [export format], within [days to deliver the export]. There is no binding
-      contract to wait out, and [notice period and refunds on cancelling]. [Whether and when EasyClinic
+      contract to wait out, and [notice period and refunds on cancelling]. [Whether and when Easy Clinic
       deletes its copy after the export].
-  - question: Which ABDM milestones does EasyClinic support today?
+  - question: Which ABDM milestones does Easy Clinic support today?
     answer: >-
       M1, creating and verifying the patient's ABHA number, is [ABDM M1 status as of date]; M2, linking each
       visit's records to the ABHA, is [ABDM M2 status as of date]; and M3, fetching a patient's records from
@@ -246,22 +246,22 @@ faq:
   - question: Is Cura AI trained on my patients' data?
     answer: >-
       No, patient data is not used to train Cura AI, whether it comes from your clinic or any other. When
-      Cura AI drafts a note, [what patient data leaves EasyClinic for the AI model, which provider processes
+      Cura AI drafts a note, [what patient data leaves Easy Clinic for the AI model, which provider processes
       it and in which country].
-  - question: Which security certifications does EasyClinic hold?
+  - question: Which security certifications does Easy Clinic hold?
     answer: >-
-      [ISO 27001, SOC 2 or other security certification EasyClinic holds, with the certifying body and
+      [ISO 27001, SOC 2 or other security certification Easy Clinic holds, with the certifying body and
       date, or none]. This page names a certificate only with the body that issued it and the date, the
       same rule the compliance table follows.
-  - question: What is EasyClinic's uptime?
+  - question: What is Easy Clinic's uptime?
     answer: >-
-      EasyClinic was available [measured uptime and period]. [How uptime is measured, and whether the
+      Easy Clinic was available [measured uptime and period]. [How uptime is measured, and whether the
       figure is published]. [When planned maintenance runs in each country, and how clinics are told].
-      EasyClinic does not run fully offline today, so keep a mobile hotspot beside the reception computer
+      Easy Clinic does not run fully offline today, so keep a mobile hotspot beside the reception computer
       as a backup line.
   - question: Which other companies process my clinic's data?
     answer: >-
-      EasyClinic uses [sub-processors, such as hosting, SMS, WhatsApp, email, payment and AI providers, with
+      Easy Clinic uses [sub-processors, such as hosting, SMS, WhatsApp, email, payment and AI providers, with
       the country where each processes data]. [How clinics are told before a new sub-processor is added,
       and whether they can object].
 
@@ -269,7 +269,7 @@ links:
   related:
     - href: /privacy/
       label: Privacy policy
-      description: How EasyClinic collects and uses personal data, with a page for each of India, Kenya, the UAE and Nigeria.
+      description: How Easy Clinic collects and uses personal data, with a page for each of India, Kenya, the UAE and Nigeria.
     - href: /integrations/
       label: Integrations and API
       description: Connections to labs, payments, messaging and national health systems, and what each one does.
@@ -298,7 +298,7 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: >-
     The reception login that runs the front desk but is kept out of the EMR, and the four countries' data
-    laws set side by side with the UAE rule that keeps health data in the country, come from EasyClinic's
+    laws set side by side with the UAE rule that keeps health data in the country, come from Easy Clinic's
     own pricing page and markets, but every hosting, encryption, backup and uptime fact is still in
     brackets.
   readsMachineWritten: >-
@@ -308,15 +308,15 @@ editorialPass:
     an EMR through ABDM.
 
 notes:
-  - 'Head keyword: the spec 4.1 row gives "HIPAA compliant EMR software", but 4.5 rule 6 gives "ABDM compliant EMR software" to /trust/, so it is the head keyword here and appears in the opening answer and meta. HIPAA is also left out of secondaryKeywords: the live site says EasyClinic "meets international privacy and data security standards such as HIPAA, PCI-DSS, and GDPR" (/clinic-chain-software/, /hospital-opd-nursing-home-software/) and the homepage says "Compliance with: ABHA, HIPAA, GDPR"; none of it is verified and none of it is repeated. Target HIPAA only once the company states its HIPAA position with evidence.'
+  - 'Head keyword: the spec 4.1 row gives "HIPAA compliant EMR software", but 4.5 rule 6 gives "ABDM compliant EMR software" to /trust/, so it is the head keyword here and appears in the opening answer and meta. HIPAA is also left out of secondaryKeywords: the live site says Easy Clinic "meets international privacy and data security standards such as HIPAA, PCI-DSS, and GDPR" (/clinic-chain-software/, /hospital-opd-nursing-home-software/) and the homepage says "Compliance with: ABHA, HIPAA, GDPR"; none of it is verified and none of it is repeated. Target HIPAA only once the company states its HIPAA position with evidence.'
   - 'Status: draft. All 22 rows in src/data/regulators have state and asOf null, and hosting, encryption, backups, uptime, certification, sub-processor, export and security-contact facts are unknown. The publish rules forbid regulatorTable on pages meant to publish; this page exists to hold the master table (spec 2.6), so it stays draft until the rows carry states and dates.'
-  - 'Title and H1 are the spec 4.1 row. "Keeps patient data safe and compliant" implies a compliance status; if most regulator rows are not Live when the page is ready, consider "How EasyClinic handles patient data, and where compliance stands". Meta description rewritten from the 4.1 row to lead with the head keyword; "NDPA support" became "status and date for ... NDPA", because NDPA is a law, not something a vendor supports (141 characters).'
+  - 'Title and H1 are the spec 4.1 row. "Keeps patient data safe and compliant" implies a compliance status; if most regulator rows are not Live when the page is ready, consider "How Easy Clinic handles patient data, and where compliance stands". Meta description rewritten from the 4.1 row to lead with the head keyword; "NDPA support" became "status and date for ... NDPA", because NDPA is a law, not something a vendor supports (141 characters).'
   - 'Uptime: the live /curapilot/ "99.97% uptime over 9 years" has no public source (facts.md section 4) and is not written; it is [measured uptime and period]. Spec 5.3 moves the figure here. Before it is written it needs an internal measurement the company stands behind (study.yaml internalSource: description, period, approvedBy) or a claimsReview sign-off, because the claims rule rejects it as text.'
   - 'Proof: badges via {fact:capterraRating} (4.9) and {fact:googleRating} (4.8), with {fact:retention}; review counts are null in facts.yaml (spec 2.4 wants the count). The Korom reliability quote ("our total unplanned downtime across nine years has been measured in hours") is the natural proof for this page, but robert-korom-reliability is assigned to /kenyademo/; decide whether it moves here once the uptime figure is measured.'
   - 'Sources, re-checked against live /pricing/ on 26 Sep 2026. The security FAQ reads: "Easy Clinic has been designed on a very secure platform which protects electronic data against unauthorised access with bank level security. Your data belongs only to you. We never misuse, sell or in any way disclose your data for any commercial gains." The quote is now given in full: the earlier draft cut "for any commercial gains", which turned a promise about commercial use into a promise of no disclosure at all. The reception FAQ ("perform all activities like Patient Registration, Appointment scheduling, Billing and payment ... not allowed to use the EMR or issue prescriptions. You can choose to have a clinical assistant or nurse role as a user who can complete some of your EMR records") is the source for the reception and nurse rows. No binding contracts, same FAQ. Staff logins, plans.yaml ("Logins for your staff"). Private cloud hosting on request, plans.yaml (Enterprise, live "Custom or Private Cloud Hosting"). Self-hosted option and "does not run fully offline today", live /best-clinic-management-software-kenya/ ("For larger clinics and groups that prefer to keep data on their own infrastructure, Easy Clinic also offers a self-hosted deployment option"); "cloud software", same page ("Easy Clinic is cloud-based"). Audit log and Cura AI suggestion log, spec 5.2 and the published /ai/ wording; what the log records is a placeholder (the /ai/ adversarial pass removed the same detail). Cura AI not trained on patient data, spec 5.2 and /ai/. Clinic as DPDP data fiduciary, src/data/regulators/in-dpdp.yaml.'
   - 'Data ownership is sourced ("Your data belongs only to you", live /pricing/). Export on leaving ("Yes" in the FAQ) follows the page brief only; the company must confirm it, the format and the contract clause before publishing. The home page dropped its ownership FAQ until /trust/ or /privacy/ states the export policy (home.yaml notes).'
-  - 'Adversarial pass (26 Sep) turned unsourced commitments into placeholders: deletion of a leaving clinic''s data within a set number of days, breach notice to clinics within a set number of hours, backups and restore tests as stated practice, encryption in transit and at rest as stated fact (including a heading that asserted it), the audit log recording "who changed a record and when", and the "Uptime, measured" heading. The certifications FAQ no longer says a standard missing from the answer is one EasyClinic does not claim; that is a company position to state, not the page''s.'
-  - 'Law summaries paraphrase src/data/regulators (in-dpdp, ke-dpa, ke-digital-health-act, ae-pdpl, ng-ndpa) and describe each law only, never EasyClinic''s status. The UAE row splits the roles because the PDPL (Federal Decree-Law No. 45 of 2021) leaves out health data that has its own law, which is what the ICT Health Law is. "Under most of the laws in the table above, reporting a breach is the clinic''s duty" says "most" because the ICT Health Law''s breach duty was not checked. A lawyer should review the table before publishing (the note carries a placeholder for the reviewer).'
+  - 'Adversarial pass (26 Sep) turned unsourced commitments into placeholders: deletion of a leaving clinic''s data within a set number of days, breach notice to clinics within a set number of hours, backups and restore tests as stated practice, encryption in transit and at rest as stated fact (including a heading that asserted it), the audit log recording "who changed a record and when", and the "Uptime, measured" heading. The certifications FAQ no longer says a standard missing from the answer is one Easy Clinic does not claim; that is a company position to state, not the page''s.'
+  - 'Law summaries paraphrase src/data/regulators (in-dpdp, ke-dpa, ke-digital-health-act, ae-pdpl, ng-ndpa) and describe each law only, never Easy Clinic''s status. The UAE row splits the roles because the PDPL (Federal Decree-Law No. 45 of 2021) leaves out health data that has its own law, which is what the ICT Health Law is. "Under most of the laws in the table above, reporting a breach is the clinic''s duty" says "most" because the ICT Health Law''s breach duty was not checked. A lawyer should review the table before publishing (the note carries a placeholder for the reviewer).'
   - 'Spec 5.17 also asks for ISO or SOC status and a sub-processor list. Both are FAQ placeholders only. When the company supplies them, add a dataTable "Companies that process your clinic''s data" (company, what it does, country) after the protection rows, and name any certificate with its body and date.'
   - 'Security contact: src/data/site.yaml has hello@easyclinic.io only; no security address, disclosure process or breach-notice commitment is on file. UAE and Nigeria have no contact in src/data/countries, hence the placeholder. {contact:ke.email} is not used here because it renders the Kenya contact''s personal address, which carries the first name of a contact who is not cleared to publish (countries/ke.yaml publishName is null); Kenya gets {contact:ke.phone} only until a role address exists.'
   - 'Links to /privacy/ and the four /privacy/<country>/ pages, /integrations/ and /contact-us/#book-a-demo follow the spec URLs; pages that do not exist yet show as link warnings and are hidden in production.'

@@ -8,16 +8,16 @@ secondaryKeywords:
   - neurology EHR
   - neurology clinic software
   - EMR for neurologists
-title: 'Neurology EMR Software: EasyClinic'
+title: 'Neurology EMR Software: Easy Clinic'
 metaDescription: >-
   Neurology EMR software: epilepsy and migraine templates, and EEG and MRI reports in the patient's
   file. Premium is {price:inr.premium.annual} a doctor a month, billed yearly.
-h1: EMR for neurology clinics
+h1: "EMR for neurology clinics, from epilepsy to Parkinson's"
 linkLabel: Neurology
 eyebrow: For neurology clinics
 openingAnswer: >-
   A neurology clinic needs examination templates for conditions it follows for years, such as epilepsy and
-  Parkinson's disease, and EEG and MRI reports in the same file as the visits. EasyClinic's Premium plan
+  Parkinson's disease, and EEG and MRI reports in the same file as the visits. Easy Clinic's Premium plan
   has both, at {price:inr.premium.annual} per doctor per month billed annually in India or
   {price:usd.premium.annual}, with the reception login included.
 summary: >-
@@ -28,7 +28,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: '../../assets/images/solutions/Examination-3-1.png'
-  alt: 'An EasyClinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+  alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
   frame: none
 ctas:
   primary:
@@ -37,7 +37,7 @@ ctas:
   secondary:
     label: See Premium pricing
     href: /pricing/#plans
-  whatsapp: Hi, I was reading the EasyClinic neurology page and would like to book a demo for our clinic.
+  whatsapp: Hi, I was reading the Easy Clinic neurology page and would like to book a demo for our clinic.
 
 sections:
   - discriminant: painBlocks
@@ -192,9 +192,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        We do not yet have a neurologist's own words to put on this page. These are EasyClinic's public
+        We do not yet have a neurologist's own words to put on this page. These are Easy Clinic's public
         ratings on Capterra and Google.
       variant: badges
       badges:
@@ -207,7 +207,7 @@ sections:
   - discriminant: stepList
     value:
       id: training
-      heading: How long does it take to learn EasyClinic?
+      heading: How long does it take to learn Easy Clinic?
       intro: >-
         About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
         session is 20 to 40 minutes, short enough to fit between the morning and evening clinics, so the
@@ -234,7 +234,7 @@ sections:
 
 faqHeading: Questions neurologists ask
 faq:
-  - question: Which EasyClinic plan does a neurology clinic need, and what does it cost?
+  - question: Which Easy Clinic plan does a neurology clinic need, and what does it cost?
     answer: >-
       Premium, because the neurological examination templates are specialty EMR templates and those start
       on Premium: {price:inr.premium.annual} per doctor per month billed annually in India or
@@ -252,7 +252,7 @@ faq:
     answer: >-
       Yes, EEG, MRI, CT and other diagnostic reports are stored in the patient's file, uploaded as images or
       documents beside the visits. Past records open side by side with today's visit.
-  - question: Can EasyClinic connect to our EEG machine or the imaging centre's system?
+  - question: Can Easy Clinic connect to our EEG machine or the imaging centre's system?
     answer: >-
       Not out of the box: no plan comes with a ready connection to an EEG machine or an imaging system, so
       EEG and scan reports go into the patient's file as uploaded images or documents. Connecting a device
@@ -274,11 +274,11 @@ faq:
       Yes, a clinical assistant or nurse can do the intake before the consult, and the history taken on the
       intake form goes onto the patient's facesheet. Each person logs in as themselves and the role on the login decides what
       they can open; the reception login included in the price cannot open the EMR or issue a prescription.
-  - question: Does EasyClinic work without an internet connection?
+  - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No, EasyClinic does not run fully offline today: the cloud version needs an internet connection, so
+      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
       the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
-      system runs on the clinic's own server rather than in EasyClinic's cloud.
+      system runs on the clinic's own server rather than in Easy Clinic's cloud.
 
 links:
   hub: /specialties/
@@ -294,19 +294,19 @@ links:
       description: For a neurology OPD in a hospital or nursing home, from the queue to the pharmacy.
     - href: /clinic-management-software-india/
       label: Clinic management software in India
-      description: What EasyClinic costs in rupees, and how an Indian clinic's day runs on it.
+      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
     - href: /emr-software-in-kenya/
       label: Clinic software in Kenya
-      description: How a clinic in Kenya runs on EasyClinic, with M-Pesa at the desk.
+      description: How a clinic in Kenya runs on Easy Clinic, with M-Pesa at the desk.
     - href: /features/emr/
       label: The EMR and e-prescriptions
       description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
     - href: /pricing/
-      label: EasyClinic pricing
+      label: Easy Clinic pricing
       description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
 
 closing:
-  heading: See a neurology follow-up on EasyClinic
+  heading: See a neurology follow-up on Easy Clinic
   body: >-
     Book a demo and ask to see an examination template and a patient's EEG and MRI reports in the file, or
     compare what Premium includes, plan by plan, on the pricing page.
@@ -323,7 +323,7 @@ editorialPass:
   onlyUsCouldWrite: >-
     The named condition templates, EEG and MRI reports kept in the patient's file, and the plan split a
     neurologist actually meets (templates and video follow-ups on Premium, a device connection only as scoped integration work)
-    come from EasyClinic's own neurology page and plans.yaml; nothing on the page is specific to one country
+    come from Easy Clinic's own neurology page and plans.yaml; nothing on the page is specific to one country
     beyond the rupee price.
   readsMachineWritten: >-
     The page has no named neurologist, no screenshot and no number measured in a neurology clinic, the four
@@ -332,7 +332,7 @@ editorialPass:
 
 notes:
   - 'Grounding: examination templates for common conditions "like" migraine, epilepsy, Parkinson''s disease, multiple sclerosis and neuropathy; storage of EEG, MRI, CT and other diagnostic records in patient files; long-term tracking of epilepsy, stroke recovery and Parkinson''s disease; medication and treatment plan tracking; longitudinal visit data on one screen; side-by-side past records; image and document upload; auto-generated summaries and facesheets; customisable intake forms (history fields as listed); clinical assistant or nurse intake (the page does not say what the intake covers, so vitals are not claimed); collaborative case notes; multilingual prescriptions sent by print, WhatsApp, SMS or email; drug interaction check (listed by name only, so the page says no more than that); vitals and lab charts; video consultations in the browser with online fees and a remote-consult disclaimer on the prescription; resource booking (equipment or assistants) inside the appointment slot; service list billing with part and advance payments; automated follow-up reminders; role-based access. All stated plainly on the live /neurology-emr/ page (retrieved 2026-09-26). Plan placement follows plans.yaml (specialty templates, own forms and print layouts, video, WhatsApp and lab reports on Premium; integrations on Enterprise or as an add-on).'
-  - 'Recruit a named neurology testimonial (spec 5.15 item 9): a named neurologist or neurology clinic on EasyClinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no neurologist quote exists yet. Review counts are null in facts.yaml, so the badges show no count. The four testimonials on the live page (two psychiatrists, a general physician, an ophthalmologist) are not neurology quotes and are assigned to other pages.'
+  - 'Recruit a named neurology testimonial (spec 5.15 item 9): a named neurologist or neurology clinic on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no neurologist quote exists yet. Review counts are null in facts.yaml, so the badges show no count. The four testimonials on the live page (two psychiatrists, a general physician, an ophthalmologist) are not neurology quotes and are assigned to other pages.'
   - 'Spec 5.15 has no must-have row for neurology, so the company to-do follows the template items: (3) a screenshot of each chart object; (4) a timed walkthrough of the most common neurology visit; (5) the full list of neurology examination templates, named and counted, with the fields in each (the live page names five as examples, "like migraines, epilepsy...", so the page gives no count); (6) integrations and devices: whether EEG, EMG or nerve conduction machines connect, and whether MRI and CT are stored as file uploads only or can be viewed as DICOM (the page says "uploaded" and "stored in the patient''s file" only); (7) any neurology billing packages (the live page mentions package amortisation only in general terms, so the page has no package row); (8) which neurology note types Cura AI drafts, with one example note; (9) the testimonial above.'
   - 'Company to confirm for neurology: whether a seizure diary or seizure-frequency chart exists (the brief allowed it only if stated; the live page does not state it); headache diaries; standard scales as templates (for example NIHSS for stroke, MMSE or MoCA for cognition, EDSS for multiple sclerosis, UPDRS for Parkinson''s disease); a stroke template (the live page names stroke recovery under long-term tracking but not among the templates); how nerve conduction and EMG results are documented; which languages multilingual prescriptions support.'
   - 'Company to confirm plan placement: the live page lists side-by-side past records, clinical assistant or nurse intake, the longitudinal view and collaborative case notes under "Advanced EMR for specialists", which /pricing/ names as a Premium inclusion, while image and document upload, the drug interaction check, vitals and lab charts and custom examination forms sit in its general EMR section. The page gives these rows no plan badge, and the featureRows intro says only that Premium includes every row. Also confirm whether customising the intake form and sending prescriptions by SMS or email need Premium, and whether an EEG technician or clinical assistant needs a paid licence under per-doctor pricing.'

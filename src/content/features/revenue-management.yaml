@@ -5,13 +5,13 @@ secondaryKeywords:
   - revenue leakage in clinics
   - claims denial management
   - RCM software for clinics
-title: 'Clinic Revenue Cycle Management: EasyClinic'
-metaDescription: 'Clinic revenue cycle management in EasyClinic: find unbilled orders, wrong prices, cash variance and denied claims before the month closes.'
+title: 'Clinic Revenue Cycle Management: Easy Clinic'
+metaDescription: 'Clinic revenue cycle management in Easy Clinic: find unbilled orders, wrong prices, cash variance and denied claims before the month closes.'
 h1: Catch revenue leakage before month end
 linkLabel: Revenue management
 eyebrow: Revenue management
 openingAnswer: >-
-  EasyClinic's revenue cycle management puts a control on each of the four places a clinic's revenue
+  Easy Clinic's revenue cycle management puts a control on each of the four places a clinic's revenue
   leaks: unbilled orders, wrong prices, cash that does not balance at day end and denied claims. Billing
   comes with every plan, from {price:usd.professional.annual} per doctor per month billed annually, and
   the claim reports with insurance claims.
@@ -32,7 +32,7 @@ ctas:
   secondary:
     label: Compare plans and prices
     href: /pricing/
-  whatsapp: Hi, I was reading the EasyClinic revenue management page and would like to see the day-end cash close and the denial report in a demo.
+  whatsapp: Hi, I was reading the Easy Clinic revenue management page and would like to see the day-end cash close and the denial report in a demo.
 
 sections:
   - discriminant: painBlocks
@@ -99,7 +99,7 @@ sections:
       id: price-lists
       heading: Price lists by location, payer, package and patient category
       intro: >-
-        A price typed at the desk is only as right as the memory of whoever types it. In EasyClinic the
+        A price typed at the desk is only as right as the memory of whoever types it. In Easy Clinic the
         bill takes its price from the list that applies to that patient. Where a list needs a particular
         plan, the row says so.
       items:
@@ -198,7 +198,7 @@ sections:
       heading: A leakage audit you can run on last month's figures
       intro: >-
         You can run these four checks before you choose any software, from the registers and the receipt
-        book if that is what you have. Each step says where the same check sits in EasyClinic. For what each
+        book if that is what you have. Each step says where the same check sits in Easy Clinic. For what each
         billing mistake looks like at the desk, and the check that catches it, read our post on
         [clinic billing mistakes](/avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/).
       steps:
@@ -206,38 +206,38 @@ sections:
           meta: Unbilled orders
           body: >-
             Take every lab test and procedure ordered last month and find the bill it went on. Anything
-            without one is revenue the clinic earned and never asked for. In EasyClinic, the visits with
+            without one is revenue the clinic earned and never asked for. In Easy Clinic, the visits with
             no bill against them are already on a report.
         - title: Check prices against the list
           meta: Wrong price list
           body: >-
             Pick twenty bills from different days and check each price against the list for that branch
-            and that payer. In EasyClinic the check moves to the price lists themselves, because each
+            and that payer. In Easy Clinic the check moves to the price lists themselves, because each
             bill takes its price from them.
         - title: Add up the day-end differences
           meta: Cash variance
           body: >-
             Add up the gap between cash counted and cash billed for each counter, day by day. A single
             short day is usually a mistake, and the same counter short every week is worth a
-            conversation. In EasyClinic, each register has its own end-of-day report to count the drawer
+            conversation. In Easy Clinic, each register has its own end-of-day report to count the drawer
             against.
         - title: List denied and unpaid claims
           meta: Denied claims
           body: >-
             List every claim denied last month, and every claim still unpaid after your payers' usual
-            payment time. Each one is money for work already done. In EasyClinic, the denial and ageing
+            payment time. Each one is money for work already done. In Easy Clinic, the denial and ageing
             reports hold both lists.
       note: >-
-        This page gives no figure for what an audit usually finds, because EasyClinic has not published
+        This page gives no figure for what an audit usually finds, because Easy Clinic has not published
         a measured leakage rate across the clinics that use it.
 
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How EasyClinic is rated on Capterra and Google
+      heading: How Easy Clinic is rated on Capterra and Google
       intro: >-
         The Capterra link opens the reviews themselves, so you can read what reviewers wrote about
-        EasyClinic before you book a demo.
+        Easy Clinic before you book a demo.
       variant: badges
       badges:
         - label: Capterra
@@ -272,16 +272,16 @@ faq:
       end-of-day report, so a short drawer is traced to one counter on the evening it happens rather
       than at month end. Because access to each register is set by role, the staff allowed to use that
       counter are known too.
-  - question: How much will EasyClinic cut our denied claims?
+  - question: How much will Easy Clinic cut our denied claims?
     answer: >-
       We do not publish a percentage for that, because we have no measured figure across our clinics
       that we can source. What changes is when the problems are found: coverage is checked against the
       patient's payer plan at the time of care, and the denial report lists the denied claims, so you
       can measure your own denial rate from the first month and see whether it falls.
-  - question: Does EasyClinic do our month-end accounts?
+  - question: Does Easy Clinic do our month-end accounts?
     answer: >-
       Only on Enterprise, which includes financial accounting; Professional and Premium do not. On
-      those plans EasyClinic holds the bills and payments, and your accountant keeps the books in the
+      those plans Easy Clinic holds the bills and payments, and your accountant keeps the books in the
       software they use now. A connection to your accounting system can be scoped as a project under
       the integrations add-on.
   - question: Which plan do I need for revenue management?
@@ -302,19 +302,19 @@ links:
   hub: /features/
   related:
     - href: /solutions/solo-clinic/
-      label: EasyClinic for a solo doctor
+      label: Easy Clinic for a solo doctor
       description: One doctor and a receptionist on the Professional plan, with billing included and no IT staff to call.
     - href: /solutions/polyclinic/
-      label: EasyClinic for a polyclinic
+      label: Easy Clinic for a polyclinic
       description: Several specialists billing from one front desk, on one patient record.
     - href: /solutions/clinic-chain/
-      label: EasyClinic for a clinic chain
+      label: Easy Clinic for a clinic chain
       description: Central control of every branch, with a price list for each location.
     - href: /solutions/hospital-opd/
-      label: EasyClinic for a hospital OPD
+      label: Easy Clinic for a hospital OPD
       description: The OPD on one patient record, from the registration queue to the payer's claim.
     - href: /solutions/ngo-clinics/
-      label: EasyClinic for NGO and mission clinics
+      label: Easy Clinic for NGO and mission clinics
       description: Clinic records and programme reports in the shape donors ask for.
     - href: /features/billing/
       label: Billing
@@ -343,9 +343,9 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    Every control on the page comes from EasyClinic's own live revenue page or the spec, such as lab and
+    Every control on the page comes from Easy Clinic's own live revenue page or the spec, such as lab and
     procedure orders becoming invoice lines and each cash register closing with its own end-of-day
-    report, and every plan boundary comes from EasyClinic's own price list.
+    report, and every plan boundary comes from Easy Clinic's own price list.
   readsMachineWritten: >-
     The leak scenes, such as the April fee change and the drawer short every Friday, are labelled
     illustrations rather than a named clinic's story, and with no named person and no measured leakage or
@@ -356,12 +356,12 @@ notes:
   - 'Title 43 characters. Meta 139 characters, rewritten from the spec 4.1 wording ("See unbilled visits, denied claims and cash variance before month end.") to lead with the head keyword, name all four leaks and avoid a group of three.'
   - '"Revenue cycle management" appears only on this page (spec 4.5 rule 2): in the title, meta and opening answer.'
   - 'Cannibalisation (4.5 rule 2): invoice formats, GST and the till mechanics stay on /features/billing/; payer linking at registration, subscription categories, coverage and claim submission (TPA, HMO, SHA) stay on /features/insurance-claims/. Each gets one paragraph here (prose "billing-and-claims") plus a link. This page keeps leakage, denials and ageing.'
-  - 'Leakage audit blog link: spec 4.1 says an EasyClinic post already ranks but names no URL; spec 3.6 names "revenue leaks" among the posts that rank, so the stepList intro links /avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/ (added in the 2026-09-27 audit; it was left out until then). Spec 9.3 item 7 ("Where clinics lose revenue: a leakage audit you can run in one afternoon") is still a planned post, not a published one; the audit stays a stepList.'
+  - 'Leakage audit blog link: spec 4.1 says an Easy Clinic post already ranks but names no URL; spec 3.6 names "revenue leaks" among the posts that rank, so the stepList intro links /avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/ (added in the 2026-09-27 audit; it was left out until then). Spec 9.3 item 7 ("Where clinics lose revenue: a leakage audit you can run in one afternoon") is still a planned post, not a published one; the audit stays a stepList.'
   - 'Capabilities taken from the live /revenue-management/ page (re-fetched 2026-09-26): lab and procedure work orders becoming invoice lines as they are processed; price lists by payer, location and customer category; discounts for patient segments; new prices reflected in billing at once; cash registers that track cash in and out for daily reconciliation, with role-based access and end-of-day reports of cash transactions; end-of-day financial reports clinic- and organisation-wide; role-based access to reports; automated generation and distribution of reports; coverage validated at the time of care. Ageing and denial reports, unbilled visits and price lists by package come from spec 4.1 and 5.11.'
   - 'Editor pass 2026-09-26 removed claims the sources do not make: that the denial report shows each claim''s reason (no source says a denial reason is captured); that the end-of-day report itself shows the cash variance (the live page says it snapshots cash transactions, so the page now says the drawer is counted against it); that head office controls every branch''s price lists on Enterprise (plans.yaml says "Central control of every location", so that wording is used); "on a schedule" for reports (the live page says automated generation and distribution); "ordered in the chart" (the live page says lab orders and procedures, not where they are ordered).'
   - 'Plan tags only where plans.yaml is explicit or the dependency is certain: payer price lists (claims add-on body in plans.yaml), package treatments (Premium), and the ageing and denial reports, tagged Enterprise because they report on payer claims, which need insurance claims (Enterprise, add-on on Professional and Premium). Which plan carries location price lists, patient-category pricing, the unbilled-visits report, cash registers and automated reports is not stated, so those rows carry no tag.'
   - 'The month-end FAQ mentions the integrations add-on only as plans.yaml words it (connections to an accounting system, scoped per project, on Professional and Premium); no named accounting integration or its status is stated.'
-  - 'Left out for lack of a confirmed fact: a measured number for any of the four leaks (spec 5.11 asks for one "where measured"); the 34% denied-claims and 23% to under 4% rejection figures (no public source, facts.md section 4); the spec 5.11 FAQ on revenue per doctor (no confirmed report; also left out of clinic-chain.yaml); report columns and ageing buckets; denial reason capture; how package sessions are tracked (open question on the physiotherapy page); whether EasyClinic works denied claims on the clinic''s behalf; Tally or accounting export (integration status unknown).'
+  - 'Left out for lack of a confirmed fact: a measured number for any of the four leaks (spec 5.11 asks for one "where measured"); the 34% denied-claims and 23% to under 4% rejection figures (no public source, facts.md section 4); the spec 5.11 FAQ on revenue per doctor (no confirmed report; also left out of clinic-chain.yaml); report columns and ageing buckets; denial reason capture; how package sessions are tracked (open question on the physiotherapy page); whether Easy Clinic works denied claims on the clinic''s behalf; Tally or accounting export (integration status unknown).'
   - 'Left out from the live page as unsourced marketing: "faster reimbursement cycles", "revenue impact analysis", "significantly reducing claim rejections", and the "14-Day Free Trial" / "30-Day Money Back Guarantee" line on the live dashboards page (not in the confirmed facts).'
   - 'Orders-inventory integration (product usage reflected on the invoice) is on the live page but needs inventory, which is Enterprise or an add-on; left for /features/pharmacy-and-inventory/.'
   - 'No testimonials (all placed elsewhere). Proof is the ratings badge block; review counts are unknown (facts.yaml capterraReviews and googleReviews are null), so no count is shown.'

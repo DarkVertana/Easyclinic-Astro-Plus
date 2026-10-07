@@ -39,7 +39,7 @@ const hasHeader = Boolean(eyebrow || heading || intro);
       >
         {eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
         {heading && (
-          <h2 id={headingId} class:list={[longForm ? 'font-sans text-lg font-semibold leading-snug' : 'text-xl leading-tight md:text-2xl']}>
+          <h2 id={headingId} class:list={[longForm ? 'font-display text-lg font-semibold leading-snug' : 'text-xl leading-tight md:text-2xl']}>
             {heading}
           </h2>
         )}

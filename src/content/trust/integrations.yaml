@@ -6,9 +6,9 @@ secondaryKeywords:
   - EMR API integration
   - clinic software integrations
   - lab and pharmacy integration
-title: EasyClinic Integrations and API
+title: Easy Clinic Integrations and API
 metaDescription: >-
-  EMR integration with EasyClinic by category and country, from M-Pesa and SLADE in Kenya to WhatsApp and
+  EMR integration with Easy Clinic by category and country, from M-Pesa and SLADE in Kenya to WhatsApp and
   Power BI, with what each does and its status.
 h1: Integrations and API
 linkLabel: Integrations and API
@@ -19,7 +19,7 @@ openingAnswer: >-
   of the 15 are live, as of date], and each card below says what the connection does for your clinic, with
   its status and the date it was checked.
 summary: >-
-  What each EasyClinic integration does for a clinic, from M-Pesa and SLADE in Kenya to WhatsApp and Power
+  What each Easy Clinic integration does for a clinic, from M-Pesa and SLADE in Kenya to WhatsApp and Power
   BI, with its status and date, and how to ask for a connection that is not listed.
 author: subhashish-saha
 lastUpdated: 2026-09-26
@@ -30,7 +30,7 @@ ctas:
   secondary:
     label: Read the security and compliance page
     href: /trust/
-  whatsapp: Hi, I was reading the EasyClinic integrations page and want to ask about connecting a system to EasyClinic.
+  whatsapp: Hi, I was reading the Easy Clinic integrations page and want to ask about connecting a system to Easy Clinic.
 
 sections:
   - discriminant: prose
@@ -38,7 +38,7 @@ sections:
       id: how-to-read
       heading: How to read this directory
       body: |
-        Each integration sits in one category, from payments and insurance claims to messaging and other EMRs, and carries one of three statuses with the date it was last checked. **Live** means clinics use the connection today. **Beta** means [what beta means at EasyClinic, and which clinics can use a beta connection]. **Planned** means clinics cannot use it yet, and [the quarter each planned connection is due]. If another page on this site seems to promise more than the card here, go by the card.
+        Each integration sits in one category, from payments and insurance claims to messaging and other EMRs, and carries one of three statuses with the date it was last checked. **Live** means clinics use the connection today. **Beta** means [what beta means at Easy Clinic, and which clinics can use a beta connection]. **Planned** means clinics cannot use it yet, and [the quarter each planned connection is due]. If another page on this site seems to promise more than the card here, go by the card.
 
         This page covers software connections. Regulators and data laws, including India's ABDM milestones, are on the [security and compliance page](/trust/) with a status and date for each. Some Kenyan cards, such as SHA e-claims and eTIMS, appear there too, because each is a government system and a software connection at once.
       width: measure
@@ -57,15 +57,15 @@ sections:
   - discriminant: proofBlock
     value:
       id: penda-health
-      heading: An outside tool running inside an EasyClinic record
+      heading: An outside tool running inside an Easy Clinic record
       variant: study
       figures:
         - visits
       body: >-
-        Penda Health has kept its patient records in EasyClinic since 2017. Its AI tool, AI Consult, is built
+        Penda Health has kept its patient records in Easy Clinic since 2017. Its AI tool, AI Consult, is built
         into that record: each time a clinician finishes a field such as the diagnosis or the medicines, the
         record calls AI Consult in the background. Penda Health and OpenAI studied it during real consultations
-        at 15 clinics in Nairobi. The paper studied the tool rather than the connection, and it names EasyClinic
+        at 15 clinics in Nairobi. The paper studied the tool rather than the connection, and it names Easy Clinic
         as the record the tool is built into.
       link:
         label: Read how the study was run
@@ -76,9 +76,9 @@ sections:
       id: api-and-fhir
       heading: The API and FHIR
       body: |
-        EasyClinic names HL7 and FHIR for health records, and DICOM for medical images, among the open standards it is built on, and third-party API integration is one of its modules. A list of standards does not tell your developer what they can connect to, so this is what we can say about the API itself.
+        Easy Clinic names HL7 and FHIR for health records, and DICOM for medical images, among the open standards it is built on, and third-party API integration is one of its modules. A list of standards does not tell your developer what they can connect to, so this is what we can say about the API itself.
 
-        [Whether EasyClinic offers an API that a clinic's own developer can use, and on which plans]. [FHIR version, and the resources EasyClinic can send and receive, such as Patient and Observation]. [How a developer gets credentials, and whether there is a sandbox to test against].
+        [Whether Easy Clinic offers an API that a clinic's own developer can use, and on which plans]. [FHIR version, and the resources Easy Clinic can send and receive, such as Patient and Observation]. [How a developer gets credentials, and whether there is a sandbox to test against].
 
         If you are building a connection for a clinic or a lab, use the form below and name the system you want to connect when we call you back.
       aside: >-
@@ -107,17 +107,17 @@ faq:
       SMART, SHA e-claims, eTIMS, DHIS2 reporting, KenyaEMR and OpenMRS. WhatsApp is on our Kenya list too and
       sits with the cards for every country. Each card gives its status and the date it was checked, so plan
       your clinic around the ones marked Live.
-  - question: Does EasyClinic have an API?
+  - question: Does Easy Clinic have an API?
     answer: >-
-      [Whether EasyClinic offers an API that a clinic's own developer can use today, and on which plans].
-      EasyClinic names HL7 and FHIR among the open standards it is built on and lists third-party API
+      [Whether Easy Clinic offers an API that a clinic's own developer can use today, and on which plans].
+      Easy Clinic names HL7 and FHIR among the open standards it is built on and lists third-party API
       integration among its modules. Documentation: [link to the API and FHIR documentation, or the address a
       developer writes to for it].
-  - question: Does EasyClinic support FHIR, and which version?
+  - question: Does Easy Clinic support FHIR, and which version?
     answer: >-
-      EasyClinic names FHIR among the open standards it is built on, and the version and resources it supports
-      are [FHIR version, and the resources EasyClinic can send and receive]. If you are asking because of
-      India's ABDM, EasyClinic's status on each ABDM milestone is on the [security and compliance
+      Easy Clinic names FHIR among the open standards it is built on, and the version and resources it supports
+      are [FHIR version, and the resources Easy Clinic can send and receive]. If you are asking because of
+      India's ABDM, Easy Clinic's status on each ABDM milestone is on the [security and compliance
       page](/trust/).
   - question: What does it cost to connect a system that is not listed?
     answer: >-
@@ -125,25 +125,25 @@ faq:
       integration project is priced, with a typical range], and Enterprise, which is priced on quote, includes
       integrations and custom features. Each add-on connection is scoped for your clinic as a project, and the
       build takes [typical time from scoping to a working connection].
-  - question: Can EasyClinic take results straight from our lab analysers?
+  - question: Can Easy Clinic take results straight from our lab analysers?
     answer: >-
-      [Which lab analyser and radiology device makes and models EasyClinic has connected, as of date]. Lab
+      [Which lab analyser and radiology device makes and models Easy Clinic has connected, as of date]. Lab
       analysers and radiology devices have a card in the directory under labs and devices, and on Professional
       and Premium a new machine is connected through the integrations add-on, so have the make and model to
       hand when we call you back.
-  - question: Can we keep KenyaEMR and use EasyClinic as well?
+  - question: Can we keep KenyaEMR and use Easy Clinic as well?
     answer: >-
-      [Whether a facility can run KenyaEMR and EasyClinic side by side today, and what data moves between
-      them]. KenyaEMR is in the directory with its status, and our [comparison of EasyClinic and
+      [Whether a facility can run KenyaEMR and Easy Clinic side by side today, and what data moves between
+      them]. KenyaEMR is in the directory with its status, and our [comparison of Easy Clinic and
       KenyaEMR](/easyclinic-vs-kenyaemr/) sets out which of the two fits a Kenyan facility.
-  - question: Does EasyClinic connect to Tally?
+  - question: Does Easy Clinic connect to Tally?
     answer: >-
       Tally is not in this directory, because we do not name it, or any other accounting package, as a
-      connection. [Whether EasyClinic has connected Tally for any clinic, and on what terms]. A connection to
+      connection. [Whether Easy Clinic has connected Tally for any clinic, and on what terms]. A connection to
       your accounting software is scoped as a project, so name Tally when we call you back.
-  - question: Which payment gateways does EasyClinic work with?
+  - question: Which payment gateways does Easy Clinic work with?
     answer: >-
-      [Payment gateways EasyClinic uses for online payments in each country, as of date]. In Kenya the
+      [Payment gateways Easy Clinic uses for online payments in each country, as of date]. In Kenya the
       directory also lists M-Pesa at the desk, and online payments come with the Premium and Enterprise plans.
 
 links:
@@ -165,7 +165,7 @@ links:
       description: Lab orders from the chart, and results back in the patient's record.
     - href: /emr-software-in-kenya/
       label: Clinic software in Kenya
-      description: What EasyClinic does for clinics in Kenya, and who to call there.
+      description: What Easy Clinic does for clinics in Kenya, and who to call there.
 
 closing:
   heading: Tell us which system your clinic needs connected
@@ -184,8 +184,8 @@ editorialPass:
   on: 2026-09-26
   onlyUsCouldWrite: >-
     The Kenyan connections a clinic in Nairobi deals with, M-Pesa at the desk, claims through SLADE and SMART,
-    SHA and eTIMS, sit beside the Power BI warehouse EasyClinic runs for clinic groups, and the proof is AI
-    Consult running inside Penda Health's EasyClinic record; but every status is still in brackets, so the page
+    SHA and eTIMS, sit beside the Power BI warehouse Easy Clinic runs for clinic groups, and the proof is AI
+    Consult running inside Penda Health's Easy Clinic record; but every status is still in brackets, so the page
     cannot yet tell a clinic what works today.
   readsMachineWritten: >-
     Fifteen one-sentence card descriptions of the same length and shape may read as generated, the generic
@@ -195,24 +195,24 @@ editorialPass:
 notes:
   - 'Status: draft. All 15 files in src/data/integrations have state and asOf null, because integration status is unknown everywhere (docs/briefs/page-writing-rules.md), so every directory card shows a status placeholder. The page publishes only when each entry has a state and a date, the API and pricing placeholders are filled, and legal has read the SHA, eTIMS and third-party wording below. No regulatorStrip, regulatorTable, heroStrip or heroMedia.'
   - 'Sources, fetched 2026-09-26 with curl plus tag strip: https://www.easyclinic.io/ , https://www.easyclinic.io/kenyademo/ , https://www.easyclinic.io/pricing/ , https://www.easyclinic.io/revenue-management/ , https://www.easyclinic.io/payor-management/ , https://www.easyclinic.io/pathology-emr/ , https://www.easyclinic.io/curapilot/ , https://www.easyclinic.io/features/ , https://www.easyclinic.io/reports-and-dashboards/ and https://www.easyclinic.io/page-sitemap.xml . https://www.easyclinic.io/indiademo/ returned 404 on the live site. The page sitemap (119 pages) has no integrations page, so there is no live /integrations/ URL to redirect. /revenue-management/ and /payor-management/ name no outside system (only internal "work order" and "orders-inventory" integration and payor set-up). Each data file records its own source URLs in a comment at the top.'
-  - 'Review pass (adversarial, 2026-09-26) re-fetched every source above plus https://www.easyclinic.io/emr-software-in-kenya/ , /emr-software-in-india/ , /emr-software-in-uae/ , /emr-software-in-nigeria/ , /best-clinic-management-software-kenya/ , /best-clinic-management-software-india/ , /best-clinic-management-software-uae/ , /best-clinic-management-software-nigeria/ , /custom-healthcare-software-development/ and https://arxiv.org/html/2507.16947 . Changes: opening answer no longer says "on its own website" (this page is the website); meta cut from a group of three; API section and FAQs 2 and 3 now attribute HL7, FHIR and DICOM ("EasyClinic names ... among the open standards it is built on") instead of stating support as fact; FAQ 2 no longer tells a developer to ask for documentation on the demo call (a discuss-on-the-call answer that implied documentation exists); FAQ 3 no longer implies ABDM requires FHIR (an unsourced rule claim); FAQ 4 no longer implies Enterprise integrations cost nothing (Enterprise is priced on quote); the plan paragraph in the intro was cut (it repeated the request section); the closing no longer promises "we will tell you its status" on a call; FAQ 5 on lab analysers added (spec meta names labs); the SMART card no longer claims a cover check on the SMART card (no live page says so; the earlier wording came from this rebuild''s own /emr-software-in-kenya/ draft); SHA and eTIMS comments now cite /best-clinic-management-software-kenya/ for "Not yet" and "Soon" (they are not on /emr-software-in-kenya/); DHIS2 and Azure Data Factory cards lost "ready"; the proof block uses the paper''s own description of how AI Consult is called from the EasyClinic record.'
+  - 'Review pass (adversarial, 2026-09-26) re-fetched every source above plus https://www.easyclinic.io/emr-software-in-kenya/ , /emr-software-in-india/ , /emr-software-in-uae/ , /emr-software-in-nigeria/ , /best-clinic-management-software-kenya/ , /best-clinic-management-software-india/ , /best-clinic-management-software-uae/ , /best-clinic-management-software-nigeria/ , /custom-healthcare-software-development/ and https://arxiv.org/html/2507.16947 . Changes: opening answer no longer says "on its own website" (this page is the website); meta cut from a group of three; API section and FAQs 2 and 3 now attribute HL7, FHIR and DICOM ("Easy Clinic names ... among the open standards it is built on") instead of stating support as fact; FAQ 2 no longer tells a developer to ask for documentation on the demo call (a discuss-on-the-call answer that implied documentation exists); FAQ 3 no longer implies ABDM requires FHIR (an unsourced rule claim); FAQ 4 no longer implies Enterprise integrations cost nothing (Enterprise is priced on quote); the plan paragraph in the intro was cut (it repeated the request section); the closing no longer promises "we will tell you its status" on a call; FAQ 5 on lab analysers added (spec meta names labs); the SMART card no longer claims a cover check on the SMART card (no live page says so; the earlier wording came from this rebuild''s own /emr-software-in-kenya/ draft); SHA and eTIMS comments now cite /best-clinic-management-software-kenya/ for "Not yet" and "Soon" (they are not on /emr-software-in-kenya/); DHIS2 and Azure Data Factory cards lost "ready"; the proof block uses the paper''s own description of how AI Consult is called from the Easy Clinic record.'
   - 'Directory scope, 15 entries. Kenya (8): M-Pesa, SLADE, SMART, SHA e-claims and eTIMS (the /kenyademo/ list in page-writing-rules; WhatsApp from that list applies in every country), DHIS2 and MOH 705 reports (/kenyademo/ modules, /curapilot/ list), KenyaEMR and OpenMRS (/curapilot/ list). Not tied to one country (7): WhatsApp, SMS and email, online payment gateway, lab analysers and radiology devices, accounting and ERP software, Power BI, Azure Data Factory, each labelled an integration on a live page; WhatsApp and SMS and email are also in the "WhatsApp, Email, SMS Integrations" module line on the live India, UAE and Nigeria pages. Left out on purpose: HL7, FHIR, DICOM and "Open APIs" (standards, covered in the API section); ABHA and ABDM (named on /features/, the home page and /custom-healthcare-software-development/ as a standard; its three milestones live in src/data/regulators/in-abdm-m1 to m3 and on /trust/, which owns "ABDM compliant EMR" under spec 4.5, and one card cannot carry three states); CRM (listed on /features/ and /custom-healthcare-software-development/, but no directory category fits); barcode sample tracking (a lab feature on /features/lab/); "Third Party Lab Tie-up" (a referral arrangement, not a named connection); an existing HIS (plans.yaml add-on wording only, mentioned in the request section).'
   - 'PRODUCT: supply state (live, beta or planned) and asOf for each file: mpesa, slade, smart, sha, etims, dhis2, kenyaemr, openmrs, whatsapp, sms-and-email, online-payments, lab-devices, accounting-software, power-bi, azure-data-factory. sha, etims and dhis2 must carry the same state and date as src/data/regulators/ke-sha.yaml, ke-etims.yaml and ke-moh-reporting.yaml. The live site conflicts on SHA and eTIMS (/kenyademo/ lists both as integrations and says "eTIMS compliant"; its SHA block says "In development"; the /best-clinic-management-software-kenya/ FAQ says "Not yet" and its comparison table says "Soon" for both), so nothing was inferred. Marketing lines that state a status were not used either: /best-clinic-management-software-kenya/ says "M-Pesa, Cura AI and WhatsApp reminders are all live today", /emr-software-in-kenya/ says "built-in MPesa integration", and /best-clinic-management-software-india/ says HL7, FHIR and DICOM "are already live". Confirm or correct each with a date.'
   - 'PRODUCT: opening answer [How many of the 15 are live, as of date] and FAQ 1 [Which of the Kenya integrations are live, as of date]. If entries are added or removed, the counts 15, 8 and 7 in the opening answer and FAQ 1 change with them.'
-  - 'PRODUCT: [what beta means at EasyClinic, and which clinics can use a beta connection] and [the quarter each planned connection is due]. Developer gap: integrationSchema has no expected field and IntegrationDirectory passes none to StatusChip, so a Planned card cannot show its quarter as spec 2.6 asks.'
-  - 'PRODUCT: API section, FAQ 2 and FAQ 3: [whether EasyClinic offers an API that a clinic''s own developer can use, and on which plans]; [FHIR version, and the resources EasyClinic can send and receive]; [how a developer gets credentials, and whether there is a sandbox]; [link to the API and FHIR documentation, or the address a developer writes to] (API section aside and FAQ 2). The live site says only "built on open API standards" with HL7, DICOM and FHIR (/features/), "3rd Party API Integration" as a module (/), and "supports HL7, FHIR, DICOM and ABHA" (/custom-healthcare-software-development/ FAQ); the page attributes these and repeats no more. The /curapilot/ list ("HL7 FHIR", "Open APIs") is left out because it says CuraPilot "connects to" them, a status claim. /features/ "integrate effortlessly with any third-party solution or hardware" is not carried over.'
+  - 'PRODUCT: [what beta means at Easy Clinic, and which clinics can use a beta connection] and [the quarter each planned connection is due]. Developer gap: integrationSchema has no expected field and IntegrationDirectory passes none to StatusChip, so a Planned card cannot show its quarter as spec 2.6 asks.'
+  - 'PRODUCT: API section, FAQ 2 and FAQ 3: [whether Easy Clinic offers an API that a clinic''s own developer can use, and on which plans]; [FHIR version, and the resources Easy Clinic can send and receive]; [how a developer gets credentials, and whether there is a sandbox]; [link to the API and FHIR documentation, or the address a developer writes to] (API section aside and FAQ 2). The live site says only "built on open API standards" with HL7, DICOM and FHIR (/features/), "3rd Party API Integration" as a module (/), and "supports HL7, FHIR, DICOM and ABHA" (/custom-healthcare-software-development/ FAQ); the page attributes these and repeats no more. The /curapilot/ list ("HL7 FHIR", "Open APIs") is left out because it says CuraPilot "connects to" them, a status claim. /features/ "integrate effortlessly with any third-party solution or hardware" is not carried over.'
   - 'PRODUCT: request section and FAQ 4: [how an integration project is priced, with a typical range] (add-on prices in src/data/prices are null), [typical time from scoping to a working connection] and [how long scoping takes]. Whether Enterprise integrations are also scoped as projects (plans.yaml says only that Enterprise includes them).'
-  - 'PRODUCT, per card: whether M-Pesa payments reach EasyClinic automatically (countries/ke.yaml names Daraja, Till and Paybill, state null) or are entered at the desk; whether the DHIS2 figures are sent to Kenya''s DHIS2 instance or prepared for the clinic to enter; what the SMART connection does (the live site says only "SMART" and "SMART e-claiming", so the card describes the claim; add a cover check at the desk only if the connection does one); what data moves between EasyClinic and KenyaEMR or OpenMRS, and whether OpenMRS applies outside Kenya (set to Kenya because the live list is Kenyan); whether WhatsApp, SMS and email, online payments, Power BI and Azure Data Factory apply in every country (set so because plans.yaml is shared by every currency and the country pages carry the messaging line); whether Power BI and Azure Data Factory are Enterprise only (the live /reports-and-dashboards/ and the rebuilt /features/reports-and-dashboards/ put the warehouse on Enterprise; the cards do not say so).'
-  - 'PRODUCT: FAQ 5 [which lab analyser and radiology device makes and models EasyClinic has connected, as of date]; FAQ 6 [whether a facility can run KenyaEMR and EasyClinic side by side today, and what data moves between them]; FAQ 7 [whether EasyClinic has connected Tally for any clinic, and on what terms]; FAQ 8 [payment gateways EasyClinic uses for online payments in each country, as of date]. No gateway is named on the live site for any country (/emr-software-in-nigeria/ says only "the gateways clinics already use").'
+  - 'PRODUCT, per card: whether M-Pesa payments reach Easy Clinic automatically (countries/ke.yaml names Daraja, Till and Paybill, state null) or are entered at the desk; whether the DHIS2 figures are sent to Kenya''s DHIS2 instance or prepared for the clinic to enter; what the SMART connection does (the live site says only "SMART" and "SMART e-claiming", so the card describes the claim; add a cover check at the desk only if the connection does one); what data moves between Easy Clinic and KenyaEMR or OpenMRS, and whether OpenMRS applies outside Kenya (set to Kenya because the live list is Kenyan); whether WhatsApp, SMS and email, online payments, Power BI and Azure Data Factory apply in every country (set so because plans.yaml is shared by every currency and the country pages carry the messaging line); whether Power BI and Azure Data Factory are Enterprise only (the live /reports-and-dashboards/ and the rebuilt /features/reports-and-dashboards/ put the warehouse on Enterprise; the cards do not say so).'
+  - 'PRODUCT: FAQ 5 [which lab analyser and radiology device makes and models Easy Clinic has connected, as of date]; FAQ 6 [whether a facility can run KenyaEMR and Easy Clinic side by side today, and what data moves between them]; FAQ 7 [whether Easy Clinic has connected Tally for any clinic, and on what terms]; FAQ 8 [payment gateways Easy Clinic uses for online payments in each country, as of date]. No gateway is named on the live site for any country (/emr-software-in-nigeria/ says only "the gateways clinics already use").'
   - 'PRODUCT and developer: spec 5.17 asks for a request form. The only form block allowed on trust pages is demoForm, which has no field for the system to connect, so the request section uses it and asks the visitor to name the system on the callback. Add a "system you want connected" field, or a request variant of demoForm, before publishing.'
   - 'PRODUCT: the country filter appears only when two or more countries have their own entries. Only Kenya has any, so the filter does not render; the country line on each card (Kenya, or every country) carries the country dimension of spec 5.17 until India, UAE or Nigeria entries exist.'
   - 'OWNER DECISION (spec 5.19): /custom-healthcare-software-development/ is live and names integrations with "labs, devices, insurance, CRM and financial systems using open APIs". The spec keeps it as /services/custom-development/ only with two real case studies and API specifics, "otherwise fold into /integrations". No case studies are on record, so the fold is in src/data/redirects.yaml (2026-09-26): /custom-healthcare-software-development/ 301s here, with /features/ as the fallback while this page is a draft. Do not also add it to redirectFrom (a duplicate source fails the build). If the owner supplies two case studies and API specifics, build /services/custom-development/ and repoint that row instead.'
   - 'LEGAL: whether a vendor may describe SHA e-claims and eTIMS connections publicly before accreditation or approval, and the wording to use (the live /kenyademo/ says SHA claims are moving into "certified hospital management systems"). The page and cards describe what each connection does and state no status.'
   - 'LEGAL: third-party names on the page and cards: M-Pesa (Safaricom), SLADE, SMART, WhatsApp and Meta, Power BI and Azure Data Factory (Microsoft), KenyaEMR, OpenMRS, Tally (FAQ 7), and Penda Health and OpenAI (proof block). Confirm each may be named this way and whether a non-affiliation line is needed.'
-  - 'LEGAL: patient data leaves EasyClinic through several of these connections (insurer claims, tax invoices, Ministry of Health reports, WhatsApp and SMS messages). That belongs on /trust/ and the privacy pages, not here; confirm the /trust/ sub-processor list covers the messaging and payment providers once they are named.'
+  - 'LEGAL: patient data leaves Easy Clinic through several of these connections (insurer claims, tax invoices, Ministry of Health reports, WhatsApp and SMS messages). That belongs on /trust/ and the privacy pages, not here; confirm the /trust/ sub-processor list covers the messaging and payment providers once they are named.'
   - 'COUNTRY LEAD (Kenya): which insurers are reached through SLADE (the card names the five on /kenyademo/: Jubilee, AAR, CIC, Britam, Resolution; the /kenyademo/ modules card names four and the live /emr-software-in-kenya/ says "50+ insurers"), whether all five still take claims through SLADE, and which insurers use SMART; the Till or Paybill set-up a clinic needs for M-Pesa; what a clinic needs for SHA e-claims (ke-sha.yaml says a contracted SHA facility with a valid facility code).'
-  - 'COUNTRY LEADS (India, UAE, Nigeria): the integrations EasyClinic supports in each country, such as payment gateways, TPA or HMO claim portals and national systems (NABIDH, Malaffi, Riayati and NHIA are regulator rows on /trust/). The live India, UAE and Nigeria pages name no country-specific integration (only the shared "WhatsApp, Email, SMS Integrations" and "3rd Party API Integration" module lines), so the directory has none; add one file per integration with its country code once named.'
+  - 'COUNTRY LEADS (India, UAE, Nigeria): the integrations Easy Clinic supports in each country, such as payment gateways, TPA or HMO claim portals and national systems (NABIDH, Malaffi, Riayati and NHIA are regulator rows on /trust/). The live India, UAE and Nigeria pages name no country-specific integration (only the shared "WhatsApp, Email, SMS Integrations" and "3rd Party API Integration" module lines), so the directory has none; add one file per integration with its country code once named.'
   - 'Title and H1 are the spec 4.1 row. The spec meta ("Payment gateways, labs, Tally, Power BI, WhatsApp and FHIR APIs, with the status of each") names Tally and FHIR APIs, which the live site does not name as connections, so the meta is rewritten from the directory with the head keyword first. "lab and pharmacy integration" stays in secondaryKeywords from the spec, though no pharmacy integration is named.'
-  - 'Proof: proofBlock study variant with {fig:visits} only (korom-2025, verifiedOn 2026-09-26). The paper (https://arxiv.org/html/2507.16947, re-read 2026-09-26) says "A cloud-hosted electronic medical record (EMR), Easy Clinic, was introduced in 2017", "AI Consult is embedded in Penda''s cloud-hosted EMR (Easy Clinic). The EMR triggers AI Consult calls", and that it runs "whenever the user finishes typing and navigates away from a critical field (i.e., chief complaint, clinical notes, investigations, diagnosis, and medications)". The paper calls it "Penda''s AI Consult tool", hence "its AI tool". It also says "AI Consult was developed in partnership with Penda''s EMR vendor and Penda''s clinical quality and IT teams"; that vendor is EasyClinic, and the live home page says "From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot". PRODUCT and LEGAL: the proof block does not yet say EasyClinic helped build the connection; approve that wording (and record claimsReview) if the company wants it said. The tool is AI Consult, never Cura AI or CuraPilot. No outcome figures are used; they belong to /curapilot/.'
+  - 'Proof: proofBlock study variant with {fig:visits} only (korom-2025, verifiedOn 2026-09-26). The paper (https://arxiv.org/html/2507.16947, re-read 2026-09-26) says "A cloud-hosted electronic medical record (EMR), Easy Clinic, was introduced in 2017", "AI Consult is embedded in Penda''s cloud-hosted EMR (Easy Clinic). The EMR triggers AI Consult calls", and that it runs "whenever the user finishes typing and navigates away from a critical field (i.e., chief complaint, clinical notes, investigations, diagnosis, and medications)". The paper calls it "Penda''s AI Consult tool", hence "its AI tool". It also says "AI Consult was developed in partnership with Penda''s EMR vendor and Penda''s clinical quality and IT teams"; that vendor is Easy Clinic, and the live home page says "From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot". PRODUCT and LEGAL: the proof block does not yet say Easy Clinic helped build the connection; approve that wording (and record claimsReview) if the company wants it said. The tool is AI Consult, never Cura AI or CuraPilot. No outcome figures are used; they belong to /curapilot/.'
   - 'Cannibalisation: regulator and data-law status stays on /trust/ (this page points there for ABDM and says some Kenyan cards appear in both). The KenyaEMR FAQ links to /easyclinic-vs-kenyaemr/, which owns that comparison. /features/whatsapp/ owns WhatsApp API and template detail; the card says only what WhatsApp does for the clinic.'
   - 'Links: /trust/ is a draft, so its links are hidden in production until it publishes. The CTAs point to the in-page form (#request-an-integration). The path is /integrations/ from the file name (trust prefix /), so no path field is set.'

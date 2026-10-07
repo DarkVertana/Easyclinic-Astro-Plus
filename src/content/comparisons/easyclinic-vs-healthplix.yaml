@@ -1,27 +1,27 @@
 # /easyclinic-vs-healthplix/ (spec 4.3 row, 5.16 comparison pages, section 11 Healthie structure).
 # Every HealthPlix fact was read on 2026-09-26 from the URL in its cell or link, and every URL is in the
-# sources block. EasyClinic facts come only from docs/briefs/page-writing-rules.md, plans.yaml and
+# sources block. Easy Clinic facts come only from docs/briefs/page-writing-rules.md, plans.yaml and
 # migration/research/facts.md.
 status: published
-headKeyword: EasyClinic vs HealthPlix
+headKeyword: Easy Clinic vs HealthPlix
 secondaryKeywords:
   - HealthPlix review
   - HealthPlix pricing
-title: EasyClinic vs HealthPlix (2026)
+title: Easy Clinic vs HealthPlix (2026)
 metaDescription: >-
-  HealthPlix Pro is ₹12,000 a year before GST; EasyClinic starts at {price:inr.professional.annual} per
+  HealthPlix Pro is ₹12,000 a year before GST; Easy Clinic starts at {price:inr.professional.annual} per
   doctor a month. Price, AI, offline use and switching, each fact sourced.
-h1: EasyClinic vs HealthPlix
-linkLabel: EasyClinic vs HealthPlix
+h1: Easy Clinic vs HealthPlix
+linkLabel: Easy Clinic vs HealthPlix
 eyebrow: Compared for clinics in India
 openingAnswer: >-
   HealthPlix, which calls itself a doctor-first EMR, suits a doctor who wants the lower published price,
   ₹12,000 a year for its Pro plan before GST, and a prescription pad that keeps working offline when the
-  clinic internet drops. EasyClinic suits a polyclinic that dispenses medicines or bills TPAs, and a chain
+  clinic internet drops. Easy Clinic suits a polyclinic that dispenses medicines or bills TPAs, and a chain
   run from one office: plans start at {price:inr.professional.annual} per doctor per month with a reception
   login, and pharmacy and claims come with Enterprise or as add-ons.
 summary: >-
-  HealthPlix and EasyClinic compared on price in rupees, AI, offline use, billing and branches, with a
+  HealthPlix and Easy Clinic compared on price in rupees, AI, offline use, billing and branches, with a
   source and a date for every HealthPlix fact.
 author: subhashish-saha
 lastUpdated: 2026-09-26
@@ -32,7 +32,7 @@ ctas:
   secondary:
     label: See prices in rupees
     href: /pricing/india/
-  whatsapp: Hi, I was reading the EasyClinic vs HealthPlix comparison and would like a 20-minute demo for my clinic.
+  whatsapp: Hi, I was reading the Easy Clinic vs HealthPlix comparison and would like a 20-minute demo for my clinic.
 
 sections:
   - discriminant: dataTable
@@ -42,7 +42,7 @@ sections:
       intro: >-
         The short answer depends on who works in your clinic and what it does besides the consult. On what
         each company publishes today, HealthPlix is the better fit for four of these seven clinic types and
-        EasyClinic for two. For a doctor with a receptionist, it turns on what HealthPlix charges for a staff
+        Easy Clinic for two. For a doctor with a receptionist, it turns on what HealthPlix charges for a staff
         login. The HealthPlix facts behind each row are sourced in the side-by-side table and the sources
         list below.
       caption: The better fit by clinic type, on each company's published facts as of 26 September 2026
@@ -58,44 +58,44 @@ sections:
           - Either, depending on staff logins
           - >-
             HealthPlix's pricing page says the doctor's staff can use its billing on both plans, and every
-            EasyClinic plan includes a reception login. HealthPlix does not publish whether a staff login
+            Easy Clinic plan includes a reception login. HealthPlix does not publish whether a staff login
             costs extra, so ask before you compare totals.
         - - A specialist consulting at two or three clinics
           - HealthPlix, on price
           - >-
-            HealthPlix Elite, at ₹18,000 a year before GST, includes a multi-clinic setup. EasyClinic runs
+            HealthPlix Elite, at ₹18,000 a year before GST, includes a multi-clinic setup. Easy Clinic runs
             more than one location on Premium at {price:inr.premium.annual} per doctor per month.
         - - A clinic where the internet drops during OPD hours
           - HealthPlix
-          - HealthPlix has had an offline EMR since October 2023. EasyClinic does not run fully offline today.
+          - HealthPlix has had an offline EMR since October 2023. Easy Clinic does not run fully offline today.
         - - A hospital or nursing home with beds
           - HealthPlix
           - >-
-            HealthPlix sells an IPD module for admissions and bed allocation. EasyClinic runs the OPD, and
+            HealthPlix sells an IPD module for admissions and bed allocation. Easy Clinic runs the OPD, and
             inpatient wards are out of its scope.
         - - A polyclinic with a pharmacy counter or TPA patients
-          - EasyClinic
+          - Easy Clinic
           - >-
-            Pharmacy, inventory, lab management and insurance claims come with EasyClinic Enterprise, or
+            Pharmacy, inventory, lab management and insurance claims come with Easy Clinic Enterprise, or
             as add-ons on Professional and Premium. HealthPlix's pricing page lists none of them, and its
             SoftwareSuggest profile lists inventory and lab integration but not pharmacy or claims.
         - - A chain of clinics run from one office
-          - EasyClinic
+          - Easy Clinic
           - >-
             Enterprise adds central control and SOP tracking across branches, and the largest chain on
-            EasyClinic has {fact:largestChain} locations. HealthPlix's pricing page lists a multi-clinic
+            Easy Clinic has {fact:largestChain} locations. HealthPlix's pricing page lists a multi-clinic
             setup on Elite, with one login for all the clinics.
 
   - discriminant: comparisonTable
     value:
       id: side-by-side
-      heading: EasyClinic and HealthPlix side by side
+      heading: Easy Clinic and HealthPlix side by side
       intro: >-
-        EasyClinic publishes this page, so each HealthPlix cell links to the page it was read from on 26
+        Easy Clinic publishes this page, so each HealthPlix cell links to the page it was read from on 26
         September 2026. HealthPlix publishes its plan table as an image on its pricing page; we read a green
         tick as included in that plan and a grey tick as not included.
       columns:
-        - name: EasyClinic
+        - name: Easy Clinic
           us: true
         - name: HealthPlix
       rows:
@@ -186,7 +186,7 @@ sections:
               checkedOn: 2026-09-26
         - label: When the internet drops
           cells:
-            - value: EasyClinic does not run fully offline today. The cloud version needs a working internet line.
+            - value: Easy Clinic does not run fully offline today. The cloud version needs a working internet line.
             - value: >-
                 An offline EMR, launched in October 2023: doctors open records and write prescriptions
                 without internet, and the data syncs to the cloud when the connection returns.
@@ -194,7 +194,7 @@ sections:
               checkedOn: 2026-09-26
         - label: Inpatient wards (IPD)
           cells:
-            - value: Out of scope. EasyClinic runs the OPD, and a hospital with beds keeps a separate system for its wards.
+            - value: Out of scope. Easy Clinic runs the OPD, and a hospital with beds keeps a separate system for its wards.
             - value: An IPD module for hospitals that handles patient admissions and bed allocation.
               source: https://www.healthplix.com/healthplix-hospital-management-software
               checkedOn: 2026-09-26
@@ -225,7 +225,7 @@ sections:
               source: https://demo.healthplix.com/sandboxRegistration.php?specialty=cardiologist
               checkedOn: 2026-09-26
       note: >-
-        Review scores are not a row because EasyClinic's review counts are not shown on this page. For
+        Review scores are not a row because Easy Clinic's review counts are not shown on this page. For
         HealthPlix on 26 September 2026: 4.3 out of 5 from 6 reviews on
         [Techjockey](https://www.techjockey.com/detail/healthplix), 4.5 out of 5 from 4 reviews on
         [SoftwareSuggest](https://www.softwaresuggest.com/healthplix), and no reviews yet on its
@@ -241,7 +241,7 @@ sections:
         rather than a demo checklist, on both systems. Each cell says what the company publishes for that
         test and the plan it needs.
       columns:
-        - name: EasyClinic
+        - name: Easy Clinic
           us: true
         - name: HealthPlix
       rows:
@@ -290,9 +290,9 @@ sections:
       body: |
         HealthPlix publishes two clinic plans on its [pricing page](https://www.healthplix.com/pricing-1): Pro at ₹12,000 a year and Elite at ₹18,000 a year, both excluding 18% GST. That works out to ₹1,000 and ₹1,500 a month, or ₹14,160 and ₹21,240 a year once GST is added. The page does not say whether the price is per doctor or per clinic, and the prices are yearly. Elite is the plan with the Plix AI prescription checks, the multi-clinic setup, the booking website, Robin analytics, 5,000 message credits and priority support. A hospital that wants IPD or PlixConnect, HealthPlix's patient engagement product, is quoted separately.
 
-        EasyClinic Professional costs {price:inr.professional.annual} and Premium {price:inr.premium.annual} per doctor per month billed annually, or {price:inr.professional.quarterly} and {price:inr.premium.quarterly} billed quarterly. Enterprise, for chains and hospital OPDs, is quoted. Every plan includes a reception login and unlimited support and training, with no setup fee and no binding contract.
+        Easy Clinic Professional costs {price:inr.professional.annual} and Premium {price:inr.premium.annual} per doctor per month billed annually, or {price:inr.professional.quarterly} and {price:inr.premium.quarterly} billed quarterly. Enterprise, for chains and hospital OPDs, is quoted. Every plan includes a reception login and unlimited support and training, with no setup fee and no binding contract.
 
-        For one doctor, HealthPlix Pro is the lowest price on this page. For a clinic with several doctors, ask HealthPlix whether its price is per doctor before you compare totals, and ask us for the GST line on an EasyClinic quote.
+        For one doctor, HealthPlix Pro is the lowest price on this page. For a clinic with several doctors, ask HealthPlix whether its price is per doctor before you compare totals, and ask us for the GST line on an Easy Clinic quote.
       width: measure
 
   - discriminant: prose
@@ -302,13 +302,13 @@ sections:
       body: |
         HealthPlix states on its [pricing page](https://www.healthplix.com/pricing-1) that it "is ABDM compliant EMR", and its [patient app page](https://www.healthplix.com/patientapp-healthplix) announces that HealthPlix ABHA is live. Its [home page](https://www.healthplix.com/) says it is "ISO 27001:2022 & HIPAA Certified" and lists NABH, ISO, RSSDI, HIPAA and ABDM under the line "Certified by the Highest Standards in Healthcare". These are HealthPlix's own statements as they read on 26 September 2026. We have not seen the certificates.
 
-        ABDM comes in milestones, and a vendor can have finished one without the next: M1 is creating or verifying the patient's ABHA number, M2 links each visit's records to it, and M3 brings records in from other facilities with the patient's consent. Whichever vendor you choose, EasyClinic included, get the milestone it has finished and the date in writing before you sign.
+        ABDM comes in milestones, and a vendor can have finished one without the next: M1 is creating or verifying the patient's ABHA number, M2 links each visit's records to it, and M3 brings records in from other facilities with the patient's consent. Whichever vendor you choose, Easy Clinic included, get the milestone it has finished and the date in writing before you sign.
       width: measure
 
   - discriminant: decisionMatrix
     value:
       id: choose
-      heading: Choose HealthPlix or EasyClinic
+      heading: Choose HealthPlix or Easy Clinic
       intro: >-
         Both lists are written the same way: the situation, then the published fact that decides it.
       options:
@@ -318,7 +318,7 @@ sections:
               Your clinic internet drops during OPD hours. HealthPlix [launched an offline
               EMR](https://blogs.healthplix.com/product-updates/revolutionizing-healthcare-the-launch-of-offline-emr-for-doctors-in-india/)
               in October 2023 that keeps records and prescriptions working and syncs when the line returns.
-              EasyClinic does not run fully offline today.
+              Easy Clinic does not run fully offline today.
             - >-
               You are one doctor and price decides it. [Pro is ₹12,000 a year and Elite ₹18,000 a
               year](https://www.healthplix.com/pricing-1) before 18% GST, which is ₹1,000 and ₹1,500 a
@@ -333,17 +333,17 @@ sections:
             - >-
               Your hospital has beds. HealthPlix sells an [IPD
               module](https://www.healthplix.com/healthplix-hospital-management-software) for admissions
-              and bed allocation, and EasyClinic stops at the OPD.
+              and bed allocation, and Easy Clinic stops at the OPD.
             - >-
               You want to try the EMR for your specialty yourself. HealthPlix runs a [demo
               sandbox](https://demo.healthplix.com/sandboxSpecialities.php) by specialty that you open with
-              your phone number, and EasyClinic has no free trial.
-        - title: Choose EasyClinic if
+              your phone number, and Easy Clinic has no free trial.
+        - title: Choose Easy Clinic if
           us: true
           items:
             - >-
               You want the receptionist's login priced and limited in writing. A reception login is included
-              in every EasyClinic plan, and it books and bills but cannot open the EMR or write a
+              in every Easy Clinic plan, and it books and bills but cannot open the EMR or write a
               prescription. HealthPlix's [pricing page](https://www.healthplix.com/pricing-1) says the
               doctor's staff can use its billing, but not whether a staff login costs extra.
             - >-
@@ -355,20 +355,20 @@ sections:
               come with Enterprise, or as add-ons on Professional and Premium.
             - >-
               You run a chain of branches from one office. Enterprise adds central control and SOP tracking
-              across branches, and the largest chain on EasyClinic has {fact:largestChain} locations.
+              across branches, and the largest chain on Easy Clinic has {fact:largestChain} locations.
               HealthPlix's [Elite plan](https://www.healthplix.com/pricing-1) lists a multi-clinic setup
               with one login for all the clinics.
             - >-
               You want training and support in the price. Training is {fact:trainingDays} short sessions,
               about two hours in total, and support is unlimited on every plan.
             - >-
-              You want software clinics stay on. {fact:retention} of EasyClinic customers have used it for
-              more than five years, and EasyClinic has run clinics since {fact:founded}.
+              You want software clinics stay on. {fact:retention} of Easy Clinic customers have used it for
+              more than five years, and Easy Clinic has run clinics since {fact:founded}.
 
   - discriminant: stepList
     value:
       id: switching
-      heading: Moving from HealthPlix to EasyClinic
+      heading: Moving from HealthPlix to Easy Clinic
       intro: >-
         Your records are the part of the move that needs planning, so the export from HealthPlix comes
         first. From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
@@ -395,7 +395,7 @@ sections:
             and your clinic staff.
         - title: Data migration
           body: >-
-            We move your patient list into EasyClinic, so a returning patient is found by name at the desk
+            We move your patient list into Easy Clinic, so a returning patient is found by name at the desk
             instead of being registered again.
       note: >-
         Going live in as little as {fact:goLiveDays} days is the fastest case, and yours may take longer.
@@ -405,9 +405,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: EasyClinic's public ratings
+      heading: Easy Clinic's public ratings
       intro: >-
-        No clinic that moved from HealthPlix is quoted on this page. These are EasyClinic's public ratings,
+        No clinic that moved from HealthPlix is quoted on this page. These are Easy Clinic's public ratings,
         from clinics of every kind.
       variant: badges
       badges:
@@ -470,29 +470,29 @@ sections:
         - label: 'Capterra: HealthPlix, no reviews yet'
           url: https://www.capterra.com/p/10005728/HealthPlix/
           accessed: 2026-09-26
-        - label: 'EasyClinic pricing page: prices in rupees, reception licence, contracts'
+        - label: 'Easy Clinic pricing page: prices in rupees, reception licence, contracts'
           url: https://www.easyclinic.io/pricing/
           accessed: 2026-09-26
 
 faqHeading: Questions from clinics on HealthPlix
 faq:
-  - question: Is HealthPlix cheaper than EasyClinic?
+  - question: Is HealthPlix cheaper than Easy Clinic?
     answer: >-
       For one doctor, yes: HealthPlix Pro is ₹12,000 a year before 18% GST, or ₹1,000 a month, against
-      {price:inr.professional.annual} per doctor per month for EasyClinic Professional billed annually.
+      {price:inr.professional.annual} per doctor per month for Easy Clinic Professional billed annually.
       HealthPlix's pricing page does not say whether its price is per doctor, so for a clinic with several
-      doctors ask HealthPlix before you compare totals. EasyClinic's price includes a reception login and
+      doctors ask HealthPlix before you compare totals. Easy Clinic's price includes a reception login and
       unlimited support and training.
     lastVerified: 2026-09-26
-  - question: Does EasyClinic work offline like HealthPlix?
+  - question: Does Easy Clinic work offline like HealthPlix?
     answer: >-
-      No, EasyClinic does not run fully offline today, and this is where HealthPlix is ahead. HealthPlix
+      No, Easy Clinic does not run fully offline today, and this is where HealthPlix is ahead. HealthPlix
       launched an offline EMR in October 2023 that lets doctors open records and write prescriptions
       without internet and syncs the data when the connection returns, and its home page still calls it an
       online and offline EMR. HealthPlix does not publish which plan includes offline use. If your clinic
       loses its line for hours at a time, weigh that before anything else on this page.
     lastVerified: 2026-09-26
-  - question: Does EasyClinic have an AI scribe like HealthPlix's H.A.L.O?
+  - question: Does Easy Clinic have an AI scribe like HealthPlix's H.A.L.O?
     answer: >-
       Yes, Cura AI (documentation) is included from the Professional plan: it listens to the consult and
       drafts the note and prescription in the chart for the doctor to confirm. HealthPlix's H.A.L.O records
@@ -505,20 +505,20 @@ faq:
       They stay with HealthPlix until you export them, so ask for the export before you cancel. HealthPlix's
       terms of service say that on termination it will, at its discretion, make reasonable efforts to let
       you take a backup or export in a suitable electronic format, and that your access ends on
-      termination. We then move your patient list into EasyClinic as part of going live; agree in writing
+      termination. We then move your patient list into Easy Clinic as part of going live; agree in writing
       which other parts of the export come across.
     lastVerified: 2026-09-26
   - question: What is the biggest risk in switching from HealthPlix?
     answer: >-
       The first week at a new prescription screen is the biggest risk. HealthPlix advertises a prescription
       in 30 seconds, and a doctor with years of habits there will be slower on any new screen until the
-      new habits form, which is why EasyClinic training is spread over {fact:trainingDays} short sessions of
+      new habits form, which is why Easy Clinic training is spread over {fact:trainingDays} short sessions of
       about two hours in total. If you are on Elite and patients book through your Google Business Profile
       or the HealthPlix booking website, change that booking link on the day you switch.
     lastVerified: 2026-09-26
-  - question: Am I locked into a contract with EasyClinic?
+  - question: Am I locked into a contract with Easy Clinic?
     answer: >-
-      No, there is no binding contract on any EasyClinic plan, and you can pay quarterly, at
+      No, there is no binding contract on any Easy Clinic plan, and you can pay quarterly, at
       {price:inr.professional.quarterly} per doctor per month on Professional, rather than for a year at a
       time. HealthPlix's published prices are yearly.
     lastVerified: 2026-09-26
@@ -532,13 +532,13 @@ links:
       description: Other software clinics consider alongside HealthPlix, each with a sourced price and a checked date.
     - href: /clinic-management-software-india/
       label: Clinic software in India
-      description: What EasyClinic costs in rupees and how Indian clinics of each size use it.
+      description: What Easy Clinic costs in rupees and how Indian clinics of each size use it.
     - href: /pricing/india/
-      label: EasyClinic prices in rupees
+      label: Easy Clinic prices in rupees
       description: Prices per doctor per month in rupees, and what each plan includes.
     - href: /switch/
-      label: Switching to EasyClinic
-      description: How a clinic moves to EasyClinic from another system, step by step.
+      label: Switching to Easy Clinic
+      description: How a clinic moves to Easy Clinic from another system, step by step.
 
 closing:
   heading: Run the four clinic tests on your own day
@@ -568,16 +568,16 @@ editorialPass:
 
 notes:
   - 'Research, 2026-09-26. HealthPlix pricing: /pricing-1 shows only "Contact Sales" as text; the plans are in the image "Pricing Page.png" (https://static.wixstatic.com/media/aa75ca_601b93fde5c14b808ba667fb16b8ffb8~mv2.png), read in full: Pro Plan "Rs 12,000/ yr", Elite Plan "Rs 18,000/ yr", "(Prices are excluding 18% GST)", "Custom Hospital Plans: If you need access of IPD and PlixConnect(CRM) ... product@healthplix.com". Green tick read as included, grey as not included (Priority Support row confirms the reading: grey for Pro, "Always Highest Priority" for Elite). Nothing on the image or page says per doctor or per clinic. Directories disagree with the vendor: Capterra and Techjockey say "Contact vendor for pricing" / "Price Available on Request"; the page uses the vendor image.'
-  - 'Review scores: Techjockey 4.3 out of 5, "6 Ratings & 6 Reviews" (JSON-LD ratingValue 4.31, reviewCount 6); SoftwareSuggest "4.5 /5 Based on 4 Reviews"; Capterra "Based on 0 user reviews" (read with WebFetch; curl returned 403). G2 (https://www.g2.com/products/healthplix/reviews) and Software Advice returned 403 to both curl and WebFetch, so no G2 figure is used. The review row is dropped from the table (brief: EasyClinic review counts unknown) and the HealthPlix figures sit in the table note instead. Add a review row with both counts once capterraReviews and googleReviews are in facts.yaml.'
-  - 'Rows dropped because EasyClinic''s answer is not confirmed: ABDM and certifications (HealthPlix claims ABDM compliance, "ISO 27001:2022 & HIPAA Certified", and lists NABH, ISO, RSSDI, HIPPA [sic] and ABDM; reported in their own section as HealthPlix statements), GST on patient invoices (neither company publishes it; HealthPlix says only "Billing Management"), prescription languages (HealthPlix: 14; EasyClinic Indian list unknown, so it is not used as a "choose HealthPlix if" reason either), mobile app (HealthPlix SPOT; EasyClinic doctor app unknown), review scores. The ABDM section advises getting milestones in writing from every vendor, EasyClinic included, and states no EasyClinic status. Restore an ABDM row when src/data/regulators/in-abdm-* has a status and date.'
-  - 'Not used on purpose. (1) HealthPlix terms clause 9: the fee "is substantially subsidised" and "the Platforms may display advertisements within the product interface" on all tiers. (2) Clauses 5 and 6: HealthPlix may use and owns de-identified data "without the need for patient consent". Both are sourced, but using either would imply EasyClinic does the opposite, and EasyClinic''s own global privacy policy (src/content/legal/privacy.mdx section 2(d)) says it "may collect, analyse, use, publish, create and sell de-identified information", and section 3(c) claims a right to use e-prescriptions. The Kenya-only section of that policy says the opposite, and the live pricing FAQ says "We never misuse, sell or in any way disclose your data". Company to reconcile before any page makes a data-use claim; if EasyClinic shows no in-product ads, a sourced ads row could be added.'
+  - 'Review scores: Techjockey 4.3 out of 5, "6 Ratings & 6 Reviews" (JSON-LD ratingValue 4.31, reviewCount 6); SoftwareSuggest "4.5 /5 Based on 4 Reviews"; Capterra "Based on 0 user reviews" (read with WebFetch; curl returned 403). G2 (https://www.g2.com/products/healthplix/reviews) and Software Advice returned 403 to both curl and WebFetch, so no G2 figure is used. The review row is dropped from the table (brief: Easy Clinic review counts unknown) and the HealthPlix figures sit in the table note instead. Add a review row with both counts once capterraReviews and googleReviews are in facts.yaml.'
+  - 'Rows dropped because Easy Clinic''s answer is not confirmed: ABDM and certifications (HealthPlix claims ABDM compliance, "ISO 27001:2022 & HIPAA Certified", and lists NABH, ISO, RSSDI, HIPPA [sic] and ABDM; reported in their own section as HealthPlix statements), GST on patient invoices (neither company publishes it; HealthPlix says only "Billing Management"), prescription languages (HealthPlix: 14; Easy Clinic Indian list unknown, so it is not used as a "choose HealthPlix if" reason either), mobile app (HealthPlix SPOT; Easy Clinic doctor app unknown), review scores. The ABDM section advises getting milestones in writing from every vendor, Easy Clinic included, and states no Easy Clinic status. Restore an ABDM row when src/data/regulators/in-abdm-* has a status and date.'
+  - 'Not used on purpose. (1) HealthPlix terms clause 9: the fee "is substantially subsidised" and "the Platforms may display advertisements within the product interface" on all tiers. (2) Clauses 5 and 6: HealthPlix may use and owns de-identified data "without the need for patient consent". Both are sourced, but using either would imply Easy Clinic does the opposite, and Easy Clinic''s own global privacy policy (src/content/legal/privacy.mdx section 2(d)) says it "may collect, analyse, use, publish, create and sell de-identified information", and section 3(c) claims a right to use e-prescriptions. The Kenya-only section of that policy says the opposite, and the live pricing FAQ says "We never misuse, sell or in any way disclose your data". Company to reconcile before any page makes a data-use claim; if Easy Clinic shows no in-product ads, a sourced ads row could be added.'
   - 'HealthPlix H.A.L.O: the /halo page gives no plan or price, and it is not on the pricing image. The hospital page claims H.A.L.O "Helps hospitals offer 20% more appointments per doctor" and PlixConnect "at least a 60% increase in the revenue"; neither figure has a published method, so neither is repeated. The offline EMR blog claims doctors "see at least 10% more patients daily"; not repeated for the same reason.'
   - 'HealthPlix offline: the October 2023 blog is the only description of how it works; the home page today says "India''s Largest Online & Offline EMR". Which plan includes offline use is not published (the pricing image does not list it), so no cell ties offline to Pro or Elite. If HealthPlix withdraws offline mode, the offline row, the verdict row, one decision item and a FAQ change.'
   - 'HealthPlix pharmacy and lab: healthplix.com product and pricing pages name neither; the SoftwareSuggest listing (claimed by HealthPlix, overview provided by HealthPlix) lists Inventory Management and Lab Integration, so that is the cited source. The Techjockey review summary says users want better pharmacy management; not used (review opinion).'
   - 'HealthPlix facts not used: 45 million patients on the demo sandbox (4.5 crore) against 60 million+ on the home page (the page uses the home page); 12,000+ doctors in 300 cities in the 2023 blog (superseded); the FAQ page answers are loaded by script and were not readable; trust.healthplix.com ("Trust Vault") and ayushman-bharat.healthplix.com render client-side and returned no content. The demo sandbox was re-checked on 2026-09-26: picking a specialty opens sandboxRegistration.php, which asks for name, phone number and clinic pin code and sends login details by OTP, so the page now says you open it with your phone number.'
-  - 'Adversarial fact check, 2026-09-26 (every cited URL re-fetched; pricing image re-read in full). Changed: (1) the verdict row for a doctor with a receptionist went from "EasyClinic" to "Either": HealthPlix''s pricing image says "Doctor''s staff can use this for all billing needs of the clinic" on both plans, and its EMR page (https://www.healthplix.com/healthplixemr) says the platform switches between doctor, nurse, admin and IPD staff profiles, so calling EasyClinic the better fit rested only on HealthPlix not publishing a staff-login price; the verdict intro count and the matching "Choose EasyClinic if" item were rewritten to match. (2) The opening answer no longer says EasyClinic suits "a clinic run by a team rather than a doctor alone", which implied HealthPlix does not; it now names the two verdict rows EasyClinic wins (pharmacy or TPA polyclinic, chain). (3) "Toll-free" was removed from the HealthPlix support cell: the contact page lists "Doctor Support : 18001020127" without calling it toll-free. (4) The polyclinic and chain verdict rows now state what HealthPlix does publish (SoftwareSuggest inventory and lab integration; Elite multi-clinic setup). (5) Disclosure "EasyClinic publishes this page" added to the side-by-side intro, as on the Practo page. (6) The offline FAQ adds that the home page still says "Online & Offline EMR" and that no plan is named for offline use. Confirmed unchanged: prices and GST line, every Plix AI and Grow Your Practice tick, H.A.L.O wording, SPOT wording, IPD wording, ABDM and certificate quotes, terms clause 8, Techjockey 4.3 from 6 (JSON-LD reviewCount 6), SoftwareSuggest 4.5 from 4, Capterra 0 reviews (WebFetch; curl 403). EasyClinic''s own Capterra listing read 4.9 from 11 reviews on 2026-09-26; the count is not used because capterraReviews is not a confirmed fact yet.'
-  - 'EasyClinic facts used, with their source: prices and reception login rule (live /pricing/, re-read 2026-09-26, and tokens); plan inclusions and add-ons (plans.yaml); no setup fee, no binding contract (plans.yaml conditions, live FAQ); training breakdown and 20-minute demo wording (published /indiademo/); "We move your existing data into EasyClinic" (published /indiademo/); the go-live note says only "yours may take longer", because no source says what slows go-live (audit 2026-09-27); inpatient out of scope (published /solutions/hospital-opd/); Cura AI drafting and CuraPilot flagging a missed diagnosis (spec 1.2 and 5.2, published /ai/); does not run fully offline (facts.md); no free trial (spec 1.2, decided 23 September); retention, founded, largest chain (facts tokens).'
-  - 'Migration: spec 5.16 asks what is imported and how long. Neither is confirmed (the /indiademo/ notes say the same), so the step note admits it rather than using a placeholder. Supply: which HealthPlix records EasyClinic imports (patients, visits, prescriptions, uploaded reports, bills), the formats it accepts, the usual time for a one-doctor clinic and for a polyclinic, and whether migration is included in the plan price; then rewrite the step and the "records" FAQ and link /switch/ in the step note.'
+  - 'Adversarial fact check, 2026-09-26 (every cited URL re-fetched; pricing image re-read in full). Changed: (1) the verdict row for a doctor with a receptionist went from "Easy Clinic" to "Either": HealthPlix''s pricing image says "Doctor''s staff can use this for all billing needs of the clinic" on both plans, and its EMR page (https://www.healthplix.com/healthplixemr) says the platform switches between doctor, nurse, admin and IPD staff profiles, so calling Easy Clinic the better fit rested only on HealthPlix not publishing a staff-login price; the verdict intro count and the matching "Choose Easy Clinic if" item were rewritten to match. (2) The opening answer no longer says Easy Clinic suits "a clinic run by a team rather than a doctor alone", which implied HealthPlix does not; it now names the two verdict rows Easy Clinic wins (pharmacy or TPA polyclinic, chain). (3) "Toll-free" was removed from the HealthPlix support cell: the contact page lists "Doctor Support : 18001020127" without calling it toll-free. (4) The polyclinic and chain verdict rows now state what HealthPlix does publish (SoftwareSuggest inventory and lab integration; Elite multi-clinic setup). (5) Disclosure "Easy Clinic publishes this page" added to the side-by-side intro, as on the Practo page. (6) The offline FAQ adds that the home page still says "Online & Offline EMR" and that no plan is named for offline use. Confirmed unchanged: prices and GST line, every Plix AI and Grow Your Practice tick, H.A.L.O wording, SPOT wording, IPD wording, ABDM and certificate quotes, terms clause 8, Techjockey 4.3 from 6 (JSON-LD reviewCount 6), SoftwareSuggest 4.5 from 4, Capterra 0 reviews (WebFetch; curl 403). Easy Clinic''s own Capterra listing read 4.9 from 11 reviews on 2026-09-26; the count is not used because capterraReviews is not a confirmed fact yet.'
+  - 'Easy Clinic facts used, with their source: prices and reception login rule (live /pricing/, re-read 2026-09-26, and tokens); plan inclusions and add-ons (plans.yaml); no setup fee, no binding contract (plans.yaml conditions, live FAQ); training breakdown and 20-minute demo wording (published /indiademo/); "We move your existing data into Easy Clinic" (published /indiademo/); the go-live note says only "yours may take longer", because no source says what slows go-live (audit 2026-09-27); inpatient out of scope (published /solutions/hospital-opd/); Cura AI drafting and CuraPilot flagging a missed diagnosis (spec 1.2 and 5.2, published /ai/); does not run fully offline (facts.md); no free trial (spec 1.2, decided 23 September); retention, founded, largest chain (facts tokens).'
+  - 'Migration: spec 5.16 asks what is imported and how long. Neither is confirmed (the /indiademo/ notes say the same), so the step note admits it rather than using a placeholder. Supply: which HealthPlix records Easy Clinic imports (patients, visits, prescriptions, uploaded reports, bills), the formats it accepts, the usual time for a one-doctor clinic and for a polyclinic, and whether migration is included in the plan price; then rewrite the step and the "records" FAQ and link /switch/ in the step note.'
   - 'FAQ "Is HealthPlix cheaper" and the verdict table rely on the current token values (Professional annual above ₹1,000). Recheck both if INR prices change. The pricing prose computes ₹1,000 and ₹1,500 a month and ₹14,160 and ₹21,240 a year with GST from HealthPlix''s published figures.'
   - 'Title (31 characters) and H1 follow spec 4.3. Meta description written to stay under 155 characters with the token expanded. No heroMedia or media: screenshots do not exist yet. No testimonial is assigned to this page, so the proof block is the Capterra and Google badges without counts (capterraReviews and googleReviews are null). Related links follow the brief; /compare/healthplix-alternatives/, /clinic-management-software-india/ and /switch/ are not yet published, and /trust/ is draft, so it is not linked.'
   - 'Audit 2026-09-27: the step list note no longer says "a clinic with years of records to move takes longer", because no source says what slows go-live (the same line was cut on /kenyademo/, /switch/, /indiademo/ and home). It now says only that yours may take longer.'

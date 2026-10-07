@@ -3,7 +3,7 @@ import { date, defineBlock, flag, group, int, list, md, stringList, text, url } 
 
 /**
  * `vendorList` section (Zod: src/components/blocks/VendorList/schema.ts): one section per vendor for listicles
- * (spec 5.14), EasyClinic with the same structure as everyone else. Rules Zod checks and this form cannot (the build
+ * (spec 5.14), Easy Clinic with the same structure as everyone else. Rules Zod checks and this form cannot (the build
  * and the dev preview toolbar report them): no fact reads "Check", and every competitor fact has a source and a
  * checked-on date unless it reads "Not published".
  */
@@ -18,7 +18,7 @@ export const vendorList = defineBlock('vendorList', 'Vendor list', {
       }),
       name: text('Name', { required: true }),
       rank: int('Rank', { min: 1, description: 'Shown before the name ("1. Practo"). Leave empty for an unranked list.' }),
-      us: flag('This vendor is EasyClinic', { zodDefault: false, description: 'Marks the section as ours. EasyClinic’s own facts need no source.' }),
+      us: flag('This vendor is Easy Clinic', { zodDefault: false, description: 'Marks the section as ours. Easy Clinic’s own facts need no source.' }),
       bestFor: text('Best for', { required: true, description: 'Shown as "Best for: …".' }),
       url: url('Website'),
       body: md('Body', { required: true, description: '120 to 180 words (spec 5.14).' }),

@@ -71,7 +71,7 @@ export function pageFields<E extends Record<string, ComponentSchema>>(family: Pa
     eyebrow: text('Eyebrow'),
     openingAnswer: md('Opening answer', { required: true, description: 'Two sentences that answer the page’s query, with a number where one exists.' }),
     summary: text('Summary', { max: 220, multiline: true, description: 'Card and related-link description.' }),
-    author: unknown(ref('Author', 'authors', { description: 'A named person, never "EasyClinic Team". Empty means not yet known.' })),
+    author: unknown(ref('Author', 'authors', { description: 'A named person, never "Easy Clinic Team". Empty means not yet known.' })),
     reviewedBy: ref('Reviewed by', 'authors'),
     country: ref('Country', 'countries'),
     lastUpdated: unknown(date('Last updated', { description: 'Empty means not yet known.' })),

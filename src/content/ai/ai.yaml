@@ -7,15 +7,15 @@ secondaryKeywords:
   - AI scribe for doctors
   - AI clinical notes
   - AI receptionist for clinics
-title: 'Cura AI: AI Medical Scribe and Clinic Assistant: EasyClinic'
+title: 'Cura AI: AI Medical Scribe and Clinic Assistant: Easy Clinic'
 metaDescription: >-
-  Cura AI is EasyClinic's AI medical scribe: it drafts the consult note and prescription while you talk,
+  Cura AI is Easy Clinic's AI medical scribe: it drafts the consult note and prescription while you talk,
   for you to confirm. Included in Professional.
 h1: An AI scribe that writes the note as you consult
 linkLabel: Cura AI
-eyebrow: Cura AI, the AI inside EasyClinic
+eyebrow: Cura AI, the AI inside Easy Clinic
 openingAnswer: >-
-  Cura AI is EasyClinic's AI medical scribe: it listens to the consult and drafts the note and
+  Cura AI is Easy Clinic's AI medical scribe: it listens to the consult and drafts the note and
   prescription in the chart for you to confirm. Note drafting is listed as Cura AI (documentation) in the
   Professional plan, at {price:usd.professional.annual} per doctor per month billed annually, and it also
   answers the phone and WhatsApp.
@@ -27,7 +27,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: ../../assets/images/curapilot/AI-suggestions-1.png
-  alt: An EasyClinic visit with the chief complaints, vitals and diagnosis, and a suggestion set of investigations, medications and guidelines for the diagnosis picked
+  alt: An Easy Clinic visit with the chief complaints, vitals and diagnosis, and a suggestion set of investigations, medications and guidelines for the diagnosis picked
   frame: none
 ctas:
   primary:
@@ -36,7 +36,7 @@ ctas:
   secondary:
     label: Read the study
     href: /curapilot/
-  whatsapp: Hi, I was reading about Cura AI on the EasyClinic site and would like to see the AI scribe in a 20-minute demo.
+  whatsapp: Hi, I was reading about Cura AI on the Easy Clinic site and would like to see the AI scribe in a 20-minute demo.
 
 sections:
   - discriminant: featureRows
@@ -44,7 +44,7 @@ sections:
       id: six-jobs
       heading: Six jobs Cura AI does in the clinic
       intro: >-
-        Cura AI is the name for every AI feature inside EasyClinic, so each job below happens in the
+        Cura AI is the name for every AI feature inside Easy Clinic, so each job below happens in the
         system the desk and the doctor already use. Only the note drafting appears on the published
         price list, as Cura AI (documentation) in Professional.
       items:
@@ -80,7 +80,7 @@ sections:
             href: /features/billing/
         - heading: Predicts stockouts
           body: >-
-            For a clinic that dispenses from EasyClinic, Cura AI compares how fast each medicine is going
+            For a clinic that dispenses from Easy Clinic, Cura AI compares how fast each medicine is going
             out with the stock that is left, and warns you before one runs out. That leaves time to
             reorder before a patient is sent away without it.
           link:
@@ -88,7 +88,7 @@ sections:
             href: /features/pharmacy-and-inventory/
         - heading: Summarises the day for the owner
           body: >-
-            At the end of the day, Cura AI writes the owner a short summary of the day from EasyClinic's
+            At the end of the day, Cura AI writes the owner a short summary of the day from Easy Clinic's
             reports. You read the day in a few sentences and open a report only when something in the
             summary needs a closer look.
 
@@ -112,7 +112,7 @@ sections:
           country.
       note: >-
         **What it does not do:** Cura AI does not work offline. It needs an internet connection, and
-        EasyClinic itself does not run fully offline today.
+        Easy Clinic itself does not run fully offline today.
 
   - discriminant: proofBlock
     value:
@@ -125,7 +125,7 @@ sections:
         - diagnostic-errors
         - treatment-errors
       body: |
-        In a 2025 preprint written with OpenAI, Penda Health studied {fig:visits} patient visits at 15 of its clinics in Nairobi. The tool it measured was AI Consult, a copilot embedded in the EasyClinic record Penda has used since 2017. Independent physicians rated a random sample of the visit records, and those where the clinician had AI Consult showed fewer errors on the measures above.
+        In a 2025 preprint written with OpenAI, Penda Health studied {fig:visits} patient visits at 15 of its clinics in Nairobi. The tool it measured was AI Consult, a copilot embedded in the Easy Clinic record Penda has used since 2017. Independent physicians rated a random sample of the visit records, and those where the clinician had AI Consult showed fewer errors on the measures above.
 
         The study measured clinical errors, not note drafting, and it is a preprint on arXiv rather than a journal article.
       link:
@@ -138,7 +138,7 @@ sections:
       heading: Cura AI or a standalone AI scribe
       intro: >-
         A standalone AI scribe is a separate app that drafts the consult note. Cura AI does the same job
-        inside EasyClinic, so the difference is what happens to the note afterwards.
+        inside Easy Clinic, so the difference is what happens to the note afterwards.
       caption: Cura AI compared with a standalone AI scribe app, question by question
       columns:
         - Question
@@ -146,7 +146,7 @@ sections:
         - A standalone AI scribe
       rows:
         - - Where does the draft note go?
-          - Into the patient's EasyClinic chart, beside the prescription and past visits.
+          - Into the patient's Easy Clinic chart, beside the prescription and past visits.
           - Into the scribe's own app, and from there into your EMR if the two connect.
         - - Do I copy and paste between apps?
           - No, the draft is already in the chart when you open it.
@@ -158,10 +158,10 @@ sections:
           - Included in Professional, at {price:usd.professional.annual} per doctor per month billed annually, with the EMR.
           - Priced separately from your EMR.
         - - Can I keep the EMR I already have?
-          - Cura AI writes into EasyClinic's own chart, as part of the EasyClinic subscription.
+          - Cura AI writes into Easy Clinic's own chart, as part of the Easy Clinic subscription.
           - Yes, if the scribe connects to your EMR, or by copy and paste.
         - - What if I consult at more than one clinic?
-          - It works where the clinic runs EasyClinic.
+          - It works where the clinic runs Easy Clinic.
           - It can go with you from clinic to clinic, whatever system each one runs.
       note: >-
         Standalone scribes differ from one another, so this compares the two kinds of product rather than a
@@ -178,7 +178,7 @@ faq:
     answer: >-
       Professional includes it, listed as Cura AI (documentation), at {price:usd.professional.annual} per
       doctor per month billed annually or {price:inr.professional.annual} in India. Premium and Enterprise
-      include everything in Professional, so the note drafting comes with every EasyClinic plan. It is the
+      include everything in Professional, so the note drafting comes with every Easy Clinic plan. It is the
       only Cura AI feature named on the published price list.
   - question: Does the doctor approve the note?
     answer: >-
@@ -190,18 +190,18 @@ faq:
       one of the four rules Cura AI is designed around, set out above under how Cura AI stays safe.
   - question: Does Cura AI work offline?
     answer: >-
-      No, Cura AI needs an internet connection, and EasyClinic as a whole does not run fully offline
+      No, Cura AI needs an internet connection, and Easy Clinic as a whole does not run fully offline
       today. If the connection at your clinic drops often, weigh that before you plan a busy clinic around
       AI-drafted notes.
   - question: Is Cura AI the same thing as CuraPilot?
     answer: >-
-      No, Cura AI is the name for every AI feature in EasyClinic, and CuraPilot is one of them: the
+      No, Cura AI is the name for every AI feature in Easy Clinic, and CuraPilot is one of them: the
       clinical copilot that flags a missed diagnosis during the consult. The AI scribe on this page is
       part of Cura AI, and CuraPilot has [its own page](/curapilot/).
   - question: Was the AI scribe tested in the Penda Health study?
     answer: >-
-      No, the 2025 study measured AI Consult, a copilot embedded in Penda Health's EasyClinic record, and
-      it counted clinical errors, not note drafting. EasyClinic has not published a measured figure for
+      No, the 2025 study measured AI Consult, a copilot embedded in Penda Health's Easy Clinic record, and
+      it counted clinical errors, not note drafting. Easy Clinic has not published a measured figure for
       the time Cura AI saves per note.
 
 links:
@@ -213,7 +213,7 @@ links:
       label: EMR and e-prescriptions
       description: The chart and prescription Cura AI writes into, and how they work without the AI.
     - href: /pricing/
-      label: EasyClinic pricing
+      label: Easy Clinic pricing
       description: Per doctor per month, from {price:usd.professional.annual} on Professional, which includes Cura AI (documentation).
     - href: /trust/
       label: Trust and security
@@ -224,7 +224,7 @@ links:
 closing:
   heading: See Cura AI in a 20-minute demo
   body: >-
-    In 20 minutes we show you a consult on EasyClinic and where Cura AI does its work in it. If a call is
+    In 20 minutes we show you a consult on Easy Clinic and where Cura AI does its work in it. If a call is
     too much today, send us a WhatsApp message instead.
   primary:
     label: Book a 20-minute demo
@@ -237,8 +237,8 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    The Penda Health study on the EasyClinic record Penda has used since 2017, and Cura AI (documentation)
-    on the Professional price list beside the EMR, are specific to EasyClinic, though nothing on the page
+    The Penda Health study on the Easy Clinic record Penda has used since 2017, and Cura AI (documentation)
+    on the Professional price list beside the EMR, are specific to Easy Clinic, though nothing on the page
     is specific to one clinic type or one country.
   readsMachineWritten: >-
     The six job descriptions share one shape and describe screens a doctor cannot see yet, no named doctor
@@ -253,7 +253,7 @@ notes:
   - 'Job mechanisms are written in plain words from spec 1.2, 4.1 and 5.2 only. Adversarial pass (26 Sep) removed: the AI reception answering "from the same calendar your receptionist books into" (calendar access unconfirmed), "bill lines" in bill coding, "the reorder goes in" (implied automatic reordering), example contents of the owner summary (patients seen, cash collected), the audit log being something "the clinic can look back through", and "checked clinicians'' work" as a description of AI Consult (not in the allowed facts).'
   - 'Left out for lack of a confirmed fact: which languages and accents the scribe handles, Hindi and Swahili status, accuracy, minutes saved per note, whether the AI reception books, reschedules or hands over to staff, how and when the owner summary is delivered, the stockout warning lead time (the 45-day figure has no source), specialty templates for AI notes, and whether Cura AI is switched on per doctor or per clinic.'
   - 'Spec 5.2 FAQ direction also lists languages and accents, Hindi and Swahili status, accuracy and specialty templates; all four are unknown and left out. Add them when product supplies the answers.'
-  - 'Whether Cura AI (documentation) can be bought for an EMR other than EasyClinic is unknown, so the comparison row says only that it writes into EasyClinic''s chart as part of the subscription, and never says "no". Spec 5.3 says CuraPilot sits on EasyClinic or an existing HIS; that is not repeated here.'
+  - 'Whether Cura AI (documentation) can be bought for an EMR other than Easy Clinic is unknown, so the comparison row says only that it writes into Easy Clinic''s chart as part of the subscription, and never says "no". Spec 5.3 says CuraPilot sits on Easy Clinic or an existing HIS; that is not repeated here.'
   - 'Comparison rows about standalone scribes are hedged ("often", "if the two connect", "can") and name no vendor, because the dataTable has no per-row source or checked-on date (spec 7.2 comparison fields). The billing row no longer says standalone scribes "usually" do not code, since some may.'
   - 'The study body says AI Consult and never equates it with Cura AI or CuraPilot (study.yaml note: confirm whether CuraPilot is AI Consult). Figures are visits, diagnostic-errors and treatment-errors via study.yaml. The 108-physician panel is described as "independent physicians" without the number, because the lint claims rule expects research figures as study.yaml tokens.'
   - 'Left out until they exist: hero ambient-note demo video (spec 5.2 item 1), one screenshot per job (spec 12), a measured minutes-per-note figure and a doctor quote about documentation (spec 5.2 proof). No testimonial is assigned to this page.'

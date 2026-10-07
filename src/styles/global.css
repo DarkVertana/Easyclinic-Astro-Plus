@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * EasyClinic design tokens (spec 7.5, section 11).
+ * Easy Clinic design tokens (spec 7.5, section 11).
  * Brand values come from the live site's Elementor kit and logo (migration/research/brand.md).
  * Contrast pairs are checked by tests/unit/contrast.test.ts, which parses this file.
  */
@@ -57,19 +57,23 @@
   --color-red-700: #b42318;
   --color-whatsapp: #128c4a; /* darker than #25D366 so the white glyph meets 3:1 */
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  /* Typography follows the live site (www.easyclinic.io): Varela Round for headings, Poppins for everything else. */
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-varela-round), ui-rounded, ui-sans-serif, system-ui, sans-serif;
 
   --radius-card: 0.75rem;
   --radius-control: 0.5rem;
 
-  --container-page: 75rem; /* 1200 */
+  --container-page: 90rem; /* 1440, the same as the header and footer */
+  --container-wide: 90rem; /* 1440: header and footer */
   --container-measure: 45rem; /* 720 */
 
-  /* 16px base, 1.25 ratio */
+  /* 16px base, 1.25 ratio. Body copy is 17px (--text-body); the live site's paragraphs are 19px on a 32px line,
+     which is the lede here. */
   --text-xs: 0.8rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
+  --text-body: 1.0625rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5625rem;
   --text-2xl: 1.953rem;
@@ -83,7 +87,7 @@
   --surface-muted: var(--color-grey-50);
   --surface-inverse: var(--color-navy-950);
   --ink: var(--color-grey-900);
-  --ink-heading: var(--color-navy-900);
+  --ink-heading: var(--color-navy-900); /* #0a2540, the logo wordmark */
   --ink-muted: var(--color-grey-600);
   --ink-inverse: var(--color-white);
   --ink-inverse-muted: #c9cfdb;
@@ -184,40 +188,86 @@
     background: var(--surface);
     color: var(--ink);
     font-family: var(--font-sans);
-    font-size: var(--text-base);
-    line-height: 1.6;
+    font-size: var(--text-body);
+    line-height: 1.7;
   }
   nav.container-page.pt-5.text-sm {
     display: none;
 }
+
+  /* Heading hierarchy (live site: H1 47-60px, H2 40-47px, H3 27px, H4 18-21px, H6 17px; all Varela Round 600). */
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5,
+  h6 {
     color: var(--ink-heading);
     font-family: var(--font-display);
     font-weight: 600;
-    line-height: 1.15;
+    line-height: 1.2;
+    letter-spacing: normal;
     text-wrap: balance;
   }
   h1 {
-    font-size: clamp(2rem, 1.35rem + 2.6vw, var(--text-4xl));
-    letter-spacing: -0.01em;
+    font-size: clamp(2.125rem, 1.45rem + 2.6vw, 3rem);
   }
   h2 {
-    font-size: clamp(1.625rem, 1.25rem + 1.5vw, var(--text-3xl));
-    letter-spacing: -0.005em;
+    font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
   }
   h3 {
-    font-size: clamp(1.25rem, 1.1rem + 0.6vw, var(--text-xl));
+    font-size: clamp(1.3125rem, 1.15rem + 0.6vw, 1.6875rem);
     line-height: 1.25;
   }
   h4 {
-    font-size: var(--text-lg);
+    font-size: 1.3125rem;
+    line-height: 1.25;
+  }
+  h5 {
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+  h6 {
+    font-size: var(--text-body);
     line-height: 1.3;
   }
   p {
     text-wrap: pretty;
+  }
+  /* Important text: semibold, in the heading colour. */
+  strong,
+  b {
+    font-weight: 600;
+    color: var(--ink-heading);
+  }
+  small {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+  figcaption {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--ink-muted);
+  }
+  label {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink-heading);
+  }
+  input,
+  select,
+  textarea,
+  button {
+    font-family: inherit;
+  }
+  input,
+  select,
+  textarea {
+    font-size: var(--text-base);
+    color: var(--ink);
+  }
+  ::placeholder {
+    color: var(--color-grey-400);
   }
   a {
     color: var(--link);
@@ -257,14 +307,25 @@
   }
 }
 
+/* The page container: 1440px wide in all, its side padding included (1392px of content on a wide screen). */
 @utility container-page {
   width: 100%;
-  max-width: calc(var(--container-page) + 2rem);
+  max-width: var(--container-page);
   margin-inline: auto;
   padding-inline: 1rem;
   @media (width >= 40rem) {
     padding-inline: 1.5rem;
-    max-width: calc(var(--container-page) + 3rem);
+  }
+}
+
+/* The header and footer: the same 1440px box as container-page, padding included. */
+@utility container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
   }
 }
 
@@ -346,9 +407,10 @@
     text-transform: uppercase;
     color: var(--color-blue-700);
   }
+  /* The paragraph under a page heading: the live site's paragraph size, 19px on a 32px line. */
   .lede {
-    font-size: var(--text-lg);
-    line-height: 1.55;
+    font-size: 1.1875rem;
+    line-height: 1.68;
     color: var(--ink);
   }
   .link-plain {
@@ -418,6 +480,17 @@
     background: var(--surface-muted);
     padding: 0.1em 0.3em;
     border-radius: 4px;
+  }
+
+  /* The platform name in the hero's rating pills: a yellow tag with a dashed outline. Styled like the preview
+     placeholder highlight below, but a plain span, so it is never counted as a missing fact. */
+  .rating-platform {
+    background: #ffe066;
+    color: #3d2a00;
+    outline: 2px dashed #b88600;
+    outline-offset: 1px;
+    border-radius: 2px;
+    padding-inline: 0.2em;
   }
 
   /* Placeholder highlight in preview builds (see PreviewToolbar). */

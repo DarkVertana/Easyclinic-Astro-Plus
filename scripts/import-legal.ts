@@ -12,8 +12,8 @@ import { gfm } from 'turndown-plugin-gfm';
 import { stringify } from 'yaml';
 
 const PAGES = [
-  { slug: 'privacy-policy', file: 'privacy.mdx', path: '/privacy/', title: 'Privacy Policy: EasyClinic', h1: 'Privacy policy', linkLabel: 'Privacy', headKeyword: 'EasyClinic privacy policy', meta: 'How Novel Medicare Solutions Pvt Ltd, the company behind EasyClinic, collects, uses and protects personal data on this website and in the product.' },
-  { slug: 'terms-of-service', file: 'terms.mdx', path: '/terms/', title: 'Terms of Service: EasyClinic', h1: 'Terms of service', linkLabel: 'Terms', headKeyword: 'EasyClinic terms of service', meta: 'The terms of service that apply when you use the EasyClinic website and software from Novel Medicare Solutions Pvt Ltd.' },
+  { slug: 'privacy-policy', file: 'privacy.mdx', path: '/privacy/', title: 'Privacy Policy: Easy Clinic', h1: 'Privacy policy', linkLabel: 'Privacy', headKeyword: 'Easy Clinic privacy policy', meta: 'How Novel Medicare Solutions Pvt Ltd, the company behind Easy Clinic, collects, uses and protects personal data on this website and in the product.' },
+  { slug: 'terms-of-service', file: 'terms.mdx', path: '/terms/', title: 'Terms of Service: Easy Clinic', h1: 'Terms of service', linkLabel: 'Terms', headKeyword: 'Easy Clinic terms of service', meta: 'The terms of service that apply when you use the Easy Clinic website and software from Novel Medicare Solutions Pvt Ltd.' },
 ];
 
 const td = new TurndownService({ headingStyle: 'atx', bulletListMarker: '-' });
@@ -27,7 +27,7 @@ const mdxSafe = (md: string) =>
 
 mkdirSync(join(process.cwd(), 'src/content/legal'), { recursive: true });
 for (const page of PAGES) {
-  const res = await fetch(`https://www.easyclinic.io/wp-json/wp/v2/pages?slug=${page.slug}&_fields=modified,content`, { headers: { 'user-agent': 'EasyClinic site migration' } });
+  const res = await fetch(`https://www.easyclinic.io/wp-json/wp/v2/pages?slug=${page.slug}&_fields=modified,content`, { headers: { 'user-agent': 'Easy Clinic site migration' } });
   const [wp] = (await res.json()) as Array<{ modified: string; content: { rendered: string } }>;
   const html = wp.content.rendered.replace(/href="https?:\/\/(?:www\.)?easyclinic\.io(\/[^"#?]*)?([^"]*)"/g, (_, p = '/', rest) => `href="${p.endsWith('/') ? p : `${p}/`}${rest}"`);
   const body = mdxSafe(td.turndown(html))
@@ -43,7 +43,7 @@ for (const page of PAGES) {
     metaDescription: page.meta,
     h1: page.h1,
     linkLabel: page.linkLabel,
-    openingAnswer: `This is the ${page.h1.toLowerCase()} of Novel Medicare Solutions Pvt Ltd, the company behind EasyClinic, as published on easyclinic.io.`,
+    openingAnswer: `This is the ${page.h1.toLowerCase()} of Novel Medicare Solutions Pvt Ltd, the company behind Easy Clinic, as published on easyclinic.io.`,
     author: null,
     lastUpdated: wp.modified.slice(0, 10),
     ctas: { primary: { label: 'Contact us about this policy', href: '/contact-us/' } },

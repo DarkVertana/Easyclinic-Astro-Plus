@@ -102,7 +102,7 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
       if (leaf.path === 'lastUpdated' && !rules.author) continue;
       const message =
         leaf.path === 'author'
-          ? 'Named author required: a clinician, the product lead or a country lead, never "EasyClinic Team" (spec 2.7)'
+          ? 'Named author required: a clinician, the product lead or a country lead, never "Easy Clinic Team" (spec 2.7)'
           : leaf.path === 'lastUpdated'
             ? 'Last-updated date required (spec 2.7)'
             : `Unknown fact at ${leaf.path}; the company must supply it`;
@@ -145,7 +145,11 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
   }
 
   const testimonials = countTestimonials(data.sections);
-  if (testimonials > 3) err('testimonials', 'sections', `${testimonials} testimonials on one page; never more than three (spec 7.3)`);
+  // Owner decision 2026-10-07: the home page shows the nine-card testimonial wall from the live site.
+  const testimonialCap = data.path === '/' ? 9 : 3;
+  if (testimonials > testimonialCap) {
+    err('testimonials', 'sections', `${testimonials} testimonials on one page; never more than ${testimonialCap} (spec 7.3)`);
+  }
 
   if (rules.editorialPass && !data.editorialPass) {
     err('editorial-pass', 'editorialPass', "Record the editor's two-question pass before publishing (spec 6.5)");

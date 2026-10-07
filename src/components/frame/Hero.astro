@@ -2,7 +2,7 @@
 import { getEntries, getEntry, type ReferenceDataEntry } from 'astro:content';
 import type { MediaProps } from '../ui/Screenshot.astro';
 import { getRegistry } from '../../lib/content/registry';
-import { need, optional, unconfirmed } from '../../lib/content/need';
+import { need, unconfirmed } from '../../lib/content/need';
 import Button from '../ui/Button.astro';
 import Md from '../ui/Md.astro';
 import Screenshot from '../ui/Screenshot.astro';
@@ -17,25 +17,26 @@ interface Props {
   ctas: { primary: { label: string; href: string; event?: string }; secondary?: { label: string; href: string; event?: string } };
   heroMedia?: MediaProps;
   heroStrip?: { regulators: ReferenceDataEntry<'regulators'>[]; ratings: boolean; study: boolean };
+  /** A narrower answer paragraph (40rem), so it wraps to the planned number of lines (the home page). */
+  narrowLede?: boolean;
   /** The feature-page hero: a heading written to fit two lines, and a screenshot card as tall as the text. */
   largeHeading?: boolean;
   byline?: { author: ReferenceDataEntry<'authors'> | null; reviewedBy?: ReferenceDataEntry<'authors'>; lastUpdated: Date | null };
 }
 
-const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, byline } = Astro.props;
+const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline } = Astro.props;
 const registry = await getRegistry();
 const regulators = heroStrip?.regulators.length ? await getEntries(heroStrip.regulators) : [];
 const facts = heroStrip?.ratings ? (await getEntry('facts', 'facts'))!.data.facts : null;
 const study = heroStrip?.study ? (await getEntry('study', 'study'))!.data : null;
 
-function rating(ratingId: string, countId: string, platform: string) {
+// The rating and the platform ("4.9 on Capterra reviews"); review counts are not shown in the hero.
+function rating(ratingId: string, platform: string) {
   const r = facts![ratingId];
-  const c = facts![countId];
   const value = need(Astro, `${platform} rating`, r?.value);
-  const count = optional(`${platform} review count`, c?.value);
-  return { value: unconfirmed(Astro, `${platform} rating as-of date`, value, Boolean(r?.asOf)), count, platform };
+  return { value: unconfirmed(Astro, `${platform} rating as-of date`, value, Boolean(r?.asOf)), platform };
 }
-const ratings = facts ? [rating('capterraRating', 'capterraReviews', 'Capterra'), rating('googleRating', 'googleReviews', 'Google')] : [];
+const ratings = facts ? [rating('capterraRating', 'Capterra'), rating('googleRating', 'Google')] : [];
 
 let studyLine: string | null = null;
 if (study) {
@@ -43,33 +44,31 @@ if (study) {
   const publication = study.publications.find((p) => p.id === visits?.source);
   if (visits && publication) {
     // Names the studied tool (AI Consult), never CuraPilot or Cura AI (page-writing-rules; audit 2026-09-27).
-    studyLine = `AI Consult ${unconfirmed(Astro, 'study citation verification', `studied on ${visits.value} visits in an EasyClinic record`, Boolean(publication.verifiedOn))}`;
+    studyLine = `AI Consult ${unconfirmed(Astro, 'study citation verification', `studied on ${visits.value} visits in an Easy Clinic record`, Boolean(publication.verifiedOn))}`;
   }
 }
 const trustHref = registry.urlFor('/trust/');
 // The /curapilot/ studyCard (id: study) says the paper names AI Consult, not CuraPilot.
 const studyHref = registry.urlFor('/curapilot/#study');
-// A hero with an aside (the country pages' contact card) splits its text column: the heading, answer and CTAs sit
-// beside the media card, which ends at the CTAs, and the aside and byline run on below.
-// (The template always passes the slot, sometimes empty, so check what it renders.)
+// A hero with media splits its text column: the heading, answer and CTAs sit beside the image, which runs from the top
+// of the h1 to the bottom of the CTAs, and anything else (the country contact card, the ratings strip, the byline)
+// runs on below. (The template always passes the aside slot, sometimes empty, so check what it renders.)
 const aside = Astro.slots.has('aside') ? (await Astro.slots.render('aside')).trim() : '';
-// The ratings or status strip under the CTAs on a two-line-heading hero (pricing, IVF) splits it the same way.
-const strip = regulators.length > 0 || ratings.length > 0 || Boolean(studyLine);
-const split = Boolean(heroMedia) && (aside !== '' || (largeHeading && strip));
-const fill = largeHeading || split;
+const split = Boolean(heroMedia);
+const fill = split;
 ---
 
-<section class="overflow-x-clip border-b border-line bg-gradient-to-b from-blue-50 to-surface">
+<section class="overflow-x-clip rounded-t-[30px] border-b border-line bg-gradient-to-b from-blue-50 to-surface">
   <div
     class:list={[
       'container-page grid items-center gap-10 pt-10 pb-10 md:pt-14',
-      heroMedia ? ['md:pb-16 lg:grid-cols-[1.2fr_1fr] lg:gap-x-12 lg:gap-y-0', fill ? 'lg:items-stretch' : 'lg:items-start'] : 'md:pb-16',
+      heroMedia ? ['md:pb-16 lg:grid-cols-[1.2fr_1fr] lg:gap-x-0 lg:gap-y-0', fill ? 'lg:items-stretch' : 'lg:items-start'] : 'md:pb-16',
     ]}
   >
     <div class="max-w-[44rem] lg:col-start-1 lg:row-start-1">
       {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
-      <h1 class:list={['tracking-[-0.02em]', largeHeading ? 'lg:text-[2.75rem] lg:leading-[1.12]' : 'lg:text-[2.875rem]']}>{h1}</h1>
-      <Md text={openingAnswer} class="lede mt-5 text-ink" />
+      <h1 class:list={[largeHeading ? 'lg:text-[2.75rem] lg:leading-[1.12]' : 'lg:text-[2.875rem]']}>{h1}</h1>
+      <Md text={openingAnswer} class:list={['lede mt-5 text-ink', narrowLede && 'lg:max-w-[40rem]']} />
       <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <Button {...ctas.primary} variant="cta" />
         {ctas.secondary && <Button {...ctas.secondary} variant="outline" />}
@@ -95,16 +94,16 @@ const fill = largeHeading || split;
               </li>
             ))}
             {ratings.map((r) => (
-              <li class="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2.5 py-1 text-sm">
+              <li class="inline-flex items-center gap-1.5 rounded-full border border-[#c7c7c7] bg-surface px-2.5 py-1 text-sm">
                 <Icon name="star" size={16} class="fill-star text-star" />
                 <span class="font-semibold text-ink-heading">{r.value}</span>
                 <span class="text-ink-muted">
-                  on {r.platform}{r.count && ` (${r.count} reviews)`}
+                  on <span class="rating-platform">{r.platform}</span> reviews
                 </span>
               </li>
             ))}
             {studyLine && (
-              <li class="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2.5 py-1 text-sm">
+              <li class="inline-flex items-center gap-1.5 rounded-full border border-[#c7c7c7] bg-surface px-2.5 py-1 text-sm">
                 <Icon name="stethoscope" size={16} class="text-teal-700" />
                 {studyHref ? <a href={studyHref}>{studyLine}</a> : <span>{studyLine}</span>}
               </li>
@@ -118,14 +117,13 @@ const fill = largeHeading || split;
 
     {
       heroMedia && (
-        // On large screens the card starts at the top of the h1 (past the eyebrow's line, 1.25rem, its mb-3 and
-        // the h1's half-leading) and, when it fills, ends at the byline, or at the CTAs on a split hero. On wide
-        // screens it also grows a little into the page margin, so the text column (and its line count) stays put.
+        // No card: the image sits straight on the hero. On large screens its area starts at the top of the h1 (past
+        // the eyebrow's line, 1.25rem, its mb-3 and the h1's half-leading) and, when it fills, ends at the byline, or
+        // at the CTAs on a split hero, with the whole image scaled to fit.
         <Screenshot
           media={heroMedia}
           priority
-          zoomable
-          elevated
+          outlined
           fill={fill}
           sizes="(min-width: 60rem) 1080px, 100vw"
           class:list={[
@@ -133,7 +131,6 @@ const fill = largeHeading || split;
             'lg:col-start-2',
             split ? 'lg:row-start-1' : 'lg:row-[1/span_2]',
             fill && (eyebrow ? 'lg:h-[calc(100%-2.375rem)]' : 'lg:h-[calc(100%-0.375rem)]'),
-            'min-[88rem]:w-[106%]',
           ]}
         />
       )

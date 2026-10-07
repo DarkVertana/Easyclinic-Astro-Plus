@@ -33,7 +33,7 @@ const cols =
           <span class="mb-4 flex size-11 items-center justify-center rounded-full bg-blue-50 text-blue-700">
             <Icon name={card.icon} size={22} />
           </span>
-          <h3 class="font-sans text-lg font-semibold">{card.title}</h3>
+          <h3 class="font-display text-lg font-semibold">{card.title}</h3>
           <Md text={card.body} class="mt-2 text-ink-muted" />
           {card.example && (
             <div class="mt-4 rounded-control border-l-4 border-journey bg-surface-muted px-4 py-3 text-sm text-ink">
@@ -47,7 +47,7 @@ const cols =
           {card.url && (
             <p class="mt-auto pt-5">
               <a href={card.url} class="inline-flex min-h-11 items-center gap-1.5 font-semibold">
-                <span>{card.title}: how EasyClinic works for you</span>
+                <span>{card.title}: how Easy Clinic works for you</span>
                 <Icon name="arrow-right" size={18} />
               </a>
             </p>

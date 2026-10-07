@@ -4,13 +4,13 @@ headKeyword: multi-location clinic management software
 secondaryKeywords:
   - multi-clinic software
   - multi-site practice management software
-title: 'Multi-Location Clinic Software: EasyClinic'
+title: 'Multi-Location Clinic Software: Easy Clinic'
 metaDescription: 'Multi-location clinic management software: one login and one patient record for every branch, and on Enterprise, price lists and SOPs set at head office.'
 h1: One system for every clinic location
 linkLabel: Multi-location clinic software
 eyebrow: Multi-location
 openingAnswer: >-
-  Every branch is a location in one EasyClinic account, from a second clinic to a chain of
+  Every branch is a location in one Easy Clinic account, from a second clinic to a chain of
   {fact:largestChain}, so each patient has one record and each doctor one login. More than one location
   comes with Premium, at {price:usd.premium.annual} per doctor per month billed annually, and Enterprise
   adds central control.
@@ -22,7 +22,7 @@ lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
   src: ../../assets/images/products/19_Multi_location.png
-  alt: EasyClinic multi-location screens around a clinic illustration, showing the list of locations, adding a new clinic, switching location, a dashboard filtered by location and a stock transfer between clinics
+  alt: Easy Clinic multi-location screens around a clinic illustration, showing the list of locations, adding a new clinic, switching location, a dashboard filtered by location and a stock transfer between clinics
   frame: none
 ctas:
   primary:
@@ -31,7 +31,7 @@ ctas:
   secondary:
     label: Compare plans and prices
     href: /pricing/
-  whatsapp: Hi, I was reading the EasyClinic multi-location page and would like to see how our branches would sit in one account.
+  whatsapp: Hi, I was reading the Easy Clinic multi-location page and would like to see how our branches would sit in one account.
 
 sections:
   - discriminant: painBlocks
@@ -49,7 +49,7 @@ sections:
             registered as new. Her blood pressure readings and her last prescriptions are across town, so
             the doctor starts from what she remembers.
           fix: >-
-            Every branch is a location in the same EasyClinic account, so she has one record. The doctor
+            Every branch is a location in the same Easy Clinic account, so she has one record. The doctor
             at the new branch opens the chart the main clinic has been writing in.
         - heading: The new branch charges last year's fee
           body: >-
@@ -168,7 +168,7 @@ sections:
   - discriminant: stepList
     value:
       id: new-branch
-      heading: Opening a new branch on EasyClinic
+      heading: Opening a new branch on Easy Clinic
       intro: >-
         The steps are the same for the second branch and the twentieth. How long each takes depends on the
         branch, so this list gives the order rather than a date.
@@ -210,9 +210,9 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
-      heading: How clinics rate EasyClinic
+      heading: How clinics rate Easy Clinic
       intro: >-
-        The largest chain on EasyClinic has {fact:largestChain} locations. These are EasyClinic's public
+        The largest chain on Easy Clinic has {fact:largestChain} locations. These are Easy Clinic's public
         ratings.
       variant: badges
       badges:
@@ -227,7 +227,7 @@ sections:
       id: plans
       heading: What more than one location costs
       intro: >-
-        EasyClinic is priced per doctor per month, and the plan decides whether you can run more than one
+        Easy Clinic is priced per doctor per month, and the plan decides whether you can run more than one
         location. The reception login is included on every plan, and there is no contract.
       caption: Locations and prices by plan, per doctor per month on annual billing
       columns:
@@ -259,7 +259,7 @@ faq:
       No: the second branch is added as a new location in the account you already use, so its doctors
       open the same patient records from the first day. Professional covers one location, so a clinic on
       Professional moves to Premium, which covers more than one, at {price:usd.premium.annual} per doctor
-      per month billed annually or {price:inr.premium.annual} in India. EasyClinic's published prices are
+      per month billed annually or {price:inr.premium.annual} in India. Easy Clinic's published prices are
       per doctor, with no separate line for a branch; Enterprise has no list price and is quoted for each
       group.
   - question: When does a group of clinics need Enterprise rather than Premium?
@@ -280,7 +280,7 @@ faq:
       a branch that already has her record.
   - question: Does each branch need its own server?
     answer: >-
-      No: EasyClinic is cloud software, so every branch works in the same account over the internet, and
+      No: Easy Clinic is cloud software, so every branch works in the same account over the internet, and
       Enterprise offers private cloud hosting on request. It does not run fully offline today, so each
       branch needs a working connection, and a backup such as a mobile hotspot is worth keeping for the day
       the main line drops.
@@ -294,19 +294,19 @@ links:
   hub: /features/
   related:
     - href: /solutions/solo-clinic/
-      label: EasyClinic for a solo doctor
+      label: Easy Clinic for a solo doctor
       description: One doctor on the Professional plan, with a second branch added later in the same account.
     - href: /solutions/polyclinic/
-      label: EasyClinic for a polyclinic
+      label: Easy Clinic for a polyclinic
       description: One record shared by every specialist, with roles that decide who sees what.
     - href: /solutions/clinic-chain/
-      label: EasyClinic for a clinic chain
+      label: Easy Clinic for a clinic chain
       description: SOP tracking and stock transfers across branches, for chains of 2 to {fact:largestChain} locations.
     - href: /solutions/hospital-opd/
-      label: EasyClinic for a hospital OPD
+      label: Easy Clinic for a hospital OPD
       description: The OPD on one patient record, from the registration queue to the pharmacy.
     - href: /solutions/ngo-clinics/
-      label: EasyClinic for NGO and mission clinics
+      label: Easy Clinic for NGO and mission clinics
       description: Clinic records and programme reports in the shape donors ask for.
     - href: /pricing/
       label: Pricing and the Enterprise plan
@@ -335,8 +335,8 @@ editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: >-
-    How EasyClinic's price list splits locations between plans, and the four clinic types head office can
-    give their own access (owned, franchise, mobile medical unit, associate), come from EasyClinic's own
+    How Easy Clinic's price list splits locations between plans, and the four clinic types head office can
+    give their own access (owned, franchise, mobile medical unit, associate), come from Easy Clinic's own
     price list and live chain page.
   readsMachineWritten: >-
     The pain scenes are labelled illustrations rather than a named customer's story, and the page has no
