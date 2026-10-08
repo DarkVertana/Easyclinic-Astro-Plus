@@ -71,13 +71,13 @@ const hasRoleLine = Boolean(rolePrefix || roleTag);
   ) : (
     <figure class="mx-auto flex h-full max-w-[48rem] flex-col text-center">
       <Icon name="quote" size={36} class="mx-auto text-teal-500" />
-      <blockquote class="mt-3 font-display text-2xl leading-snug text-ink-heading md:text-3xl">
+      <blockquote class="mt-3 font-display text-2xl leading-snug text-ink-heading md:text-[28px]">
         <p>{text}</p>
       </blockquote>
       <figcaption class="mt-6 text-sm">
         <span class="block font-semibold text-ink-heading">{t.name}</span>
         <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) ? `, ${t.specialty}` : ''}</span>
-        {place && <span class="block text-ink-muted">{place}</span>}
+        {place && <span class="mt-1 block text-ink-muted"><span class="byline-tag">{place}</span></span>}
         {t.customerSince && <span class="block text-ink-muted">Using Easy Clinic since {t.customerSince}</span>}
         {consent && <span class="mt-1 block text-xs">{consent}</span>}
       </figcaption>

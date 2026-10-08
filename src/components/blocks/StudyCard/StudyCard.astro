@@ -117,7 +117,7 @@ const subheading = ['font-sans text-base font-semibold', inverse && 'text-white'
               {figureRows.map((f) => (
                 <div class="flex flex-col">
                   <dt class:list={['order-2 mt-2 font-semibold', inverse ? 'text-white' : 'text-ink-heading']}>{f.label}</dt>
-                  <dd class:list={['order-1 font-display text-4xl leading-none font-semibold', inverse ? 'text-white' : 'text-blue-700']}>{f.value}</dd>
+                  <dd class:list={['order-1 font-display text-[2.75rem] leading-none font-normal md:text-[3.25rem]', inverse ? 'text-white' : 'text-blue-700']}>{f.value}</dd>
                   <dd class:list={['order-3 mt-1 text-sm', muted]}>{f.context}</dd>
                 </div>
               ))}

@@ -1,0 +1,49 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'capabilityList'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, groups, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+const inverse = sectionTone === 'inverse';
+
+// Numbers run straight through the groups: 01 to 11, not restarting per group.
+let n = 0;
+const numbered = groups.map((group) => ({
+  ...group,
+  items: group.items.map((item) => ({ ...item, number: String(++n).padStart(2, '0') })),
+}));
+---
+
+<!-- An index, not cards: one row per group under a rule, the group name on the left, its items in two columns. -->
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} class={inverse ? undefined : "!bg-[#f7f8fa]"}>
+  <div class:list={['divide-y border-y', inverse ? 'divide-white/15 border-white/15' : 'divide-line border-line']}>
+    {
+      numbered.map((group) => (
+        <div class="grid gap-6 py-9 lg:grid-cols-[13rem_1fr] lg:gap-12">
+          <div>
+            <h3 class:list={['text-xs font-semibold uppercase tracking-[0.1em]', inverse ? 'text-teal-500' : 'text-blue-700']}>{group.label}</h3>
+            <p class:list={['mt-1.5 text-sm', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']}>
+              {group.items.length === 1 ? '1 capability' : `${group.items.length} capabilities`}
+            </p>
+          </div>
+          <ol role="list" class="grid gap-x-12 gap-y-7 sm:grid-cols-2">
+            {group.items.map((item) => (
+              <li class="flex gap-4">
+                <span class:list={['w-6 shrink-0 pt-0.5 font-display text-sm font-semibold tabular-nums', inverse ? 'text-white/50' : 'text-ink-muted']} aria-hidden="true">
+                  {item.number}
+                </span>
+                <div>
+                  <h4 class:list={['font-display text-[1.0625rem] font-semibold leading-snug', inverse ? 'text-white' : 'text-ink-heading']}>{item.title}</h4>
+                  <Md text={item.body} class:list={['mt-1.5 text-[0.9375rem] leading-relaxed', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      ))
+    }
+  </div>
+</Section>

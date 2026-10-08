@@ -10,6 +10,7 @@ export const schema = (ctx: SchemaContext) =>
       .array(
         z.object({
           heading: z.string(),
+          icon: z.string().optional(),
           body: md,
           bullets: z.array(z.string()).default([]),
           media: optionalMedia(ctx),

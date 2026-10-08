@@ -32,10 +32,101 @@ const rows = items.map((item) => ({
   tag: item.plan ? planTag(item.plan) : null,
   flip: item.media ? mediaCount++ % 2 === 1 : false,
   showLink: Boolean(item.link && registry.urlFor(item.link.href)),
+  linkHref: item.link ? registry.urlFor(item.link.href) : undefined,
 }));
+
+// With no screenshot to sit beside, full-width rows leave the right side empty, so the section renders as a
+// ruled grid: each item sits under a top rule, with no box. Three across only when the count fills whole rows
+// and no item carries a bullet list.
+const grid = rows.every((row) => !row.media);
+const threeUp = rows.length % 3 === 0 && rows.every((row) => row.bullets.length === 0);
+// Exactly three items with no media: one panel split into three columns by rules, each with its checklist.
+const panel = grid && rows.length === 3;
 ---
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+  {panel ? (
+    <ul
+      role="list"
+      class:list={[
+        'grid overflow-hidden rounded-[1.25rem] border lg:grid-cols-3',
+        inverse ? 'divide-y divide-white/15 border-white/15 bg-white/5 lg:divide-x lg:divide-y-0' : 'divide-y divide-line border-line bg-surface shadow-[0_1px_2px_rgb(10_37_64/0.04),0_12px_32px_-16px_rgb(10_37_64/0.14)] lg:divide-x lg:divide-y-0',
+      ]}
+    >
+      {rows.map((row) => (
+        <li class="flex flex-col p-7 sm:p-8">
+          {row.icon && (
+            <span class:list={['mb-6 flex size-11 items-center justify-center rounded-xl border', inverse ? 'border-white/20 text-teal-500' : 'border-line bg-surface text-blue-700 shadow-[0_1px_2px_rgb(10_37_64/0.06),0_6px_14px_-6px_rgb(10_37_64/0.18)]']}>
+              <Icon name={row.icon} size={20} />
+            </span>
+          )}
+          <h3 class:list={['text-xl leading-snug', inverse && '!text-white']}>{row.heading}</h3>
+          {row.tag && <p class:list={['mt-1 text-sm font-medium', inverse ? 'text-teal-500' : 'text-teal-700']}>{row.tag}</p>}
+          <Md text={row.body} class:list={['mt-2.5 text-[0.9375rem] leading-relaxed', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />
+          {row.bullets.length > 0 && (
+            <ul role="list" class:list={['mt-6 grid gap-3 border-t pt-6', inverse ? 'border-white/15' : 'border-line']}>
+              {row.bullets.map((bullet) => (
+                <li class="flex items-start gap-2.5 text-[0.9375rem] leading-snug">
+                  <span class:list={['mt-0.5 flex size-[18px] shrink-0 items-center justify-center rounded-full', inverse ? 'bg-white/10 text-teal-500' : 'bg-blue-50 text-blue-700']}>
+                    <Icon name="check" size={12} />
+                  </span>
+                  <span class:list={[inverse && 'text-ink-inverse-muted']}>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {row.showLink && row.link && (
+            <a href={row.linkHref} class:list={['group mt-auto inline-flex items-center gap-1 pt-6 text-sm font-semibold no-underline hover:underline', inverse && '!text-white']} data-track="cta_click" data-label={row.link.label}>
+              {row.link.label}
+              <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  ) : grid ? (
+    <ul role="list" class:list={['grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:gap-x-14', threeUp && 'lg:grid-cols-3']}>
+      {rows.map((row) => (
+        <li
+          class:list={[
+            // The first row needs no rule above it: one item on phones, two from sm, three on lg when three across.
+            'flex flex-col border-t-2 pt-6 first:border-t-0 first:pt-0 sm:[&:nth-child(-n+2)]:border-t-0 sm:[&:nth-child(-n+2)]:pt-0',
+            threeUp && 'lg:[&:nth-child(3)]:border-t-0 lg:[&:nth-child(3)]:pt-0',
+            inverse ? 'border-white/20' : 'border-line',
+          ]}
+        >
+          <div class="flex items-start gap-3">
+            {row.icon && <Icon name={row.icon} size={22} class:list={['mt-0.5', inverse ? 'text-teal-500' : 'text-blue-700']} />}
+            <h3 class:list={['text-lg leading-snug', inverse && '!text-white']}>{row.heading}</h3>
+          </div>
+          <Md text={row.body} class:list={['mt-3 text-[0.9375rem] leading-relaxed', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />
+          {row.bullets.length > 0 && (
+            <ul class="mt-4 grid gap-2">
+              {row.bullets.map((bullet) => (
+                <li class="flex items-start gap-2 text-[0.9375rem]">
+                  <Icon name="check" size={18} class:list={['mt-0.5', inverse ? 'text-teal-500' : 'text-success']} />
+                  <span class:list={[inverse && 'text-ink-inverse-muted']}>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {(row.tag || (row.showLink && row.link)) && (
+            <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-4 text-sm">
+              {row.tag && (
+                <span class:list={['font-medium', inverse ? 'text-teal-500' : 'text-teal-700']}>{row.tag}</span>
+              )}
+              {row.showLink && row.link && (
+                <a href={row.linkHref} class:list={['group inline-flex items-center gap-1 font-semibold no-underline hover:underline', inverse && '!text-white']} data-track="cta_click" data-label={row.link.label}>
+                  {row.link.label}
+                  <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />
+                </a>
+              )}
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  ) : (
   <div class="grid gap-16 md:gap-20">
     {
       rows.map((row) => (
@@ -76,4 +167,5 @@ const rows = items.map((item) => ({
       ))
     }
   </div>
+  )}
 </Section>

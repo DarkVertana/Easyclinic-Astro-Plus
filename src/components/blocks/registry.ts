@@ -32,6 +32,8 @@ import PlanMatrix from './PlanMatrix/PlanMatrix.astro';
 import PricingCards from './PricingCards/PricingCards.astro';
 import ProofBlock from './ProofBlock/ProofBlock.astro';
 import Prose from './Prose/Prose.astro';
+import SplitContent from './SplitContent/SplitContent.astro';
+import CapabilityList from './CapabilityList/CapabilityList.astro';
 import RegulatorStrip from './RegulatorStrip/RegulatorStrip.astro';
 import RegulatorTable from './RegulatorTable/RegulatorTable.astro';
 import ScopeBox from './ScopeBox/ScopeBox.astro';
@@ -74,6 +76,8 @@ export const BLOCKS = {
   pricingCards: PricingCards,
   proofBlock: ProofBlock,
   prose: Prose,
+  splitContent: SplitContent,
+  capabilityList: CapabilityList,
   regulatorStrip: RegulatorStrip,
   regulatorTable: RegulatorTable,
   scopeBox: ScopeBox,

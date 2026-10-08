@@ -87,6 +87,16 @@ export default defineConfig({
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['ui-rounded', 'ui-sans-serif', 'system-ui', 'sans-serif'],
     },
+    {
+      // Accent words in some headings (blue italic, e.g. the showcase "& other systems"). Italic only, not preloaded.
+      provider: fontProviders.fontsource(),
+      name: 'Instrument Serif',
+      cssVariable: '--font-instrument-serif',
+      weights: [400],
+      styles: ['italic'],
+      subsets: ['latin'],
+      fallbacks: ['Georgia', 'serif'],
+    },
   ],
   security: {
     csp: {
@@ -95,7 +105,7 @@ export default defineConfig({
         `img-src 'self' ${GA4.img.join(' ')}`,
         "font-src 'self'",
         `connect-src 'self' ${GA4.connect.join(' ')}`,
-        `frame-src 'self' ${GA4.frame.join(' ')}`,
+        `frame-src 'self' https://www.youtube-nocookie.com ${GA4.frame.join(' ')}`,
         "object-src 'none'",
         "base-uri 'self'",
         "form-action 'self'",

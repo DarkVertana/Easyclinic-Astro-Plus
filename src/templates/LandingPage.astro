@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/frame/Breadcrumbs.astro';
 import Hero from '../components/frame/Hero.astro';
 import FAQ from '../components/frame/FAQ.astro';
 import RelatedLinks from '../components/frame/RelatedLinks.astro';
+import ProblemList from '../components/frame/ProblemList.astro';
 import CTABand from '../components/frame/CTABand.astro';
 import AwardRecognition from '../components/frame/AwardRecognition.astro';
 import FeatureChips from '../components/frame/FeatureChips.astro';
@@ -77,9 +78,9 @@ const heroContact = (record.family === 'country' || record.family === 'countryDe
   {record.path === '/' && <FeatureChips />}
   {record.path === '/' && <WhatIsEasyClinic />}
   <Sections sections={d.sections} ctx={ctx} />
-  {/* The home page puts its related links before the FAQ; every other page keeps the FAQ first. */}
-  {record.path === '/' && <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} countryPills />}
-  <FAQ heading={d.faqHeading} items={d.faq} tone={d.sections.length % 2 === 0 ? 'plain' : 'wash'} whatsappHref={whatsappHref} />
-  {record.path !== '/' && <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} />}
+  {/* Related links come before the FAQ, so the FAQ sits directly above the closing CTA band. */}
+  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} countryPills={record.path === '/'} />
+  {d.problems && d.problems.items.length > 0 && <ProblemList {...d.problems} />}
+  <FAQ heading={d.faqHeading} items={d.faq} tone="plain" whatsappHref={whatsappHref} />
   {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}
 </BaseLayout>

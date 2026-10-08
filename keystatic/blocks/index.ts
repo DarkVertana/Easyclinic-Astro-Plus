@@ -40,6 +40,8 @@ import { planMatrix } from './planMatrix.ts';
 import { pricingCards } from './pricingCards.ts';
 import { proofBlock } from './proofBlock.ts';
 import { prose } from './prose.ts';
+import { splitContent } from './splitContent.ts';
+import { capabilityList } from './capabilityList.ts';
 import { regulatorStrip } from './regulatorStrip.ts';
 import { regulatorTable } from './regulatorTable.ts';
 import { scopeBox } from './scopeBox.ts';
@@ -81,6 +83,8 @@ export const KS_BLOCKS = {
   pricingCards,
   proofBlock,
   prose,
+  splitContent,
+  capabilityList,
   regulatorStrip,
   regulatorTable,
   scopeBox,

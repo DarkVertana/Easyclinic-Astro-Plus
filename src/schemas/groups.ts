@@ -15,6 +15,9 @@ export const CTA_PRESENT_IF = ['label', 'href', 'event'] as const;
 export const NAV_LINK_PRESENT_IF = ['label', 'href', 'description', 'icon'] as const;
 export const HERO_STRIP_PRESENT_IF = ['regulators', 'ratings', 'study'] as const;
 export const CLOSING_PRESENT_IF = ['heading', 'body', 'primary'] as const;
+export const SHOWCASE_PRESENT_IF = ['heading', 'intro'] as const;
+export const ORBIT_PRESENT_IF = ['center'] as const;
+export const PROBLEMS_PRESENT_IF = ['heading', 'intro'] as const;
 export const EDITORIAL_PASS_PRESENT_IF = ['by', 'on', 'onlyUsCouldWrite', 'readsMachineWritten'] as const;
 export const CLAIMS_REVIEW_PRESENT_IF = ['by', 'on'] as const;
 
@@ -31,6 +34,9 @@ export const OPTIONAL_GROUP_KEYS: Readonly<Record<string, readonly string[]>> = 
   footerLink: NAV_LINK_PRESENT_IF,
   heroStrip: HERO_STRIP_PRESENT_IF,
   closing: CLOSING_PRESENT_IF,
+  showcase: SHOWCASE_PRESENT_IF,
+  orbit: ORBIT_PRESENT_IF,
+  problems: PROBLEMS_PRESENT_IF,
   editorialPass: EDITORIAL_PASS_PRESENT_IF,
   claimsReview: CLAIMS_REVIEW_PRESENT_IF,
 };

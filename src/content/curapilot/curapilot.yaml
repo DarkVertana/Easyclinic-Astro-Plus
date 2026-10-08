@@ -51,26 +51,25 @@ sections:
             No single visit holds enough information. A diagnosis can stay hidden across months of
             visits, sometimes at more than one facility, unless someone reads the record as one story.
           fix: >-
-            CuraPilot reads the patient's past visits during the consult and flags patterns that no single
-            visit shows. In the Penda Health preprint, clinicians who had AI Consult, a copilot inside their
-            Easy Clinic record, made {fig:diagnostic-errors} fewer diagnostic errors. The paper does not name
-            CuraPilot.
+            CuraPilot reads past visits during the consult and flags patterns no single visit shows. In the
+            Penda Health preprint, clinicians with AI Consult in their Easy Clinic record made
+            {fig:diagnostic-errors} fewer diagnostic errors; the paper does not name CuraPilot.
         - heading: 'Operations: stockouts found too late'
           body: >-
             A medicine shortage usually shows up when the patient is already at the counter, not weeks
             before. The signal is there in what each store dispenses, but it is scattered across sites.
           fix: >-
-            Cura AI's stock prediction compares what each store dispenses with the stock that is left and
-            shows a shortage while there is still time to reorder. We have no published measurement of how far this cuts stockouts, so this page gives no
-            figure.
+            For clinics that dispense from Easy Clinic, Cura AI's stock prediction compares what each store
+            dispenses with the stock left, and shows a shortage while there is still time to reorder. Its
+            effect on stockouts is not yet measured.
         - heading: 'Revenue: claims lost at the prescription'
           body: >-
             Treatments get written without anyone checking what the patient's plan covers. The denial is
             decided in the consulting room, weeks before billing sees it.
           fix: >-
             Each claim is checked against the payer's rules before it leaves the facility, so an error is
-            found while it can still be fixed. As with stock, we have no published measurement of the
-            effect, so this page gives no figure.
+            found while it can still be fixed, not weeks later when the denial comes back to billing. Its
+            effect on claim denials is not yet measured.
 
   - discriminant: featureRows
     value:
@@ -82,32 +81,40 @@ sections:
         signs is the same line the claim is checked against and the pharmacy reorders from.
       items:
         - heading: Clinical intelligence
-          body: >-
-            Guidance at the point of care, drawn from the patient in front of you rather than a generic
-            checklist.
+          icon: stethoscope
+          body: Guidance at the point of care, drawn from the patient in front of you.
           bullets:
-            - Protocol-based decision support during the consult, using this patient's own record
-            - Drug interaction and allergy checks before a prescription is finalised
-            - A flag on any dose that looks wrong before the prescription goes out
-            - Pattern recognition across visits, connecting symptoms that no single encounter would reveal
-            - Lab and radiology results in the consult, with abnormal findings flagged
+            - Decision support during the consult, from this patient's own record
+            - Drug interaction and allergy checks before the prescription is final
+            - Abnormal lab and radiology results flagged in the consult
+          link:
+            label: See the EMR it reads from
+            href: /features/emr/
         - heading: Operational intelligence
-          body: The pharmacy shelf and every branch dashboard read from the same record. Stock prediction is a Cura AI job.
+          icon: boxes
+          body: The pharmacy shelf and every branch dashboard read from the same record.
           bullets:
-            - Cura AI's stock prediction, from how fast each medicine goes out against the stock left
-            - Live dashboards across every facility, showing what is happening now rather than last month
+            - Stock prediction, a Cura AI job, from how fast each medicine goes out
+            - Live dashboards across every facility, showing today rather than last month
+            - An end-of-day summary for the owner, written by Cura AI from the day's reports
           link:
             label: See Cura AI stock prediction
             href: /ai/
         - heading: Financial intelligence
-          body: Claims checked before they leave, and a view of the whole network for leadership.
+          icon: wallet
+          body: Claims checked before they leave, and one view of the network for leadership.
           bullets:
-            - Every claim checked against the payer's rules before it leaves the facility
-            - Network-wide performance for leadership, with facility comparisons and trends
+            - Every claim checked against the payer's rules before it leaves
+            - Network-wide performance, with facility comparisons and trends
+            - Bill codes suggested by Cura AI from the diagnosis and services in the note
+          link:
+            label: See insurance claims
+            href: /features/insurance-claims/
 
   - discriminant: flowDiagram
     value:
       id: consult
+      eyebrow: In the consult
       heading: What changes for the clinician during a consult
       intro: >-
         The consult runs as before, in the record the clinician already uses. What changes is the flags
@@ -115,26 +122,26 @@ sections:
       steps:
         - label: Open the visit
           body: >-
-            The clinician opens the visit as usual. CuraPilot reads the same record, including past visits
-            and lab results.
+            The clinician opens the visit as usual. CuraPilot reads the same record as the consult goes on,
+            with past visits and lab results already in it.
         - label: A pattern is flagged
           body: >-
-            If something runs across earlier visits, CuraPilot raises it as an alert. For example, fatigue,
-            weight gain, headaches and blurred vision noted again and again over months of visits, which no
-            single visit would connect.
+            When symptoms repeat across earlier visits, such as fatigue and blurred vision over months,
+            CuraPilot raises an alert for the clinician.
           check: Advisory by design
         - label: The prescription is checked
           body: >-
-            Before the prescription is finalised, CuraPilot checks it against the patient's allergies and
-            other medicines. A dose that looks wrong is flagged too.
+            Before it is final, the prescription is checked against the patient's allergies and other
+            medicines. A dose that looks wrong is flagged.
         - label: The clinician decides
           body: >-
-            Every flag is advice. The clinician acts on it or dismisses it, and the visit carries on.
+            Every flag is advice, not an order. The clinician acts on it or dismisses it, and the visit
+            carries on as normal from there.
           check: Clinician decides
         - label: The claim goes out checked
           body: >-
             When the visit is billed, the claim is checked against the payer's rules before it leaves the
-            facility.
+            facility, not after a denial comes back.
 
   - discriminant: studyCard
     value:
@@ -173,9 +180,10 @@ sections:
       layout: single
       usePullQuote: false
 
-  - discriminant: prose
+  - discriminant: splitContent
     value:
       id: where-it-runs
+      eyebrow: Integration
       heading: Where CuraPilot runs
       body: >-
         CuraPilot sits on Easy Clinic, or on top of an existing hospital information system. On Easy Clinic
@@ -185,6 +193,17 @@ sections:
 
         This page gives the approach, not a list of named systems. If your clinics run another system, name
         it when you ask for a proof of concept.
+      link:
+        label: Book a demo
+        href: /contact-us/#book-a-demo
+      secondary:
+        label: Contact us
+        href: /contact-us/
+      media:
+        kind: screenshot
+        src: ../../assets/images/curapilot/AI-suggestions-1.png
+        alt: An Easy Clinic visit with the chief complaints, vitals and diagnosis, and a suggestion set of investigations, medications and guidelines for the diagnosis picked
+        frame: none
 
   - discriminant: stepList
     value:
@@ -211,6 +230,52 @@ sections:
       note: >-
         CuraPilot is not part of any plan on the [price list](/pricing/), and this page does not publish its
         price or the price of a proof of concept.
+
+  - discriminant: capabilityList
+    value:
+      id: capabilities
+      eyebrow: Capabilities
+      heading: Eleven capabilities, one intelligence layer
+      intro: >-
+        CuraPilot is not a single feature. It covers clinical, operational and financial work, all from the
+        same record the clinic already uses.
+      groups:
+        - label: Clinical
+          items:
+            - title: Clinical decision support
+              body: Guidance at the point of care, drawn from this patient's own record.
+            - title: Safety alerts
+              body: >-
+                Drug interaction and allergy checks before the prescription is final, and a flag on any dose
+                that looks wrong.
+            - title: Diagnostic analysis
+              body: Patterns across visits that no single visit shows, raised as an alert during the consult.
+            - title: Voice documentation
+              body: >-
+                Talk through the consult and Cura AI drafts the note and prescription in the chart, for the
+                doctor to confirm.
+            - title: Lab and radiology results
+              body: Results in the consult, with abnormal findings flagged.
+        - label: Operations
+          items:
+            - title: Stock prediction
+              body: >-
+                How fast each medicine goes out, set against the stock left, so a shortage shows while there
+                is time to reorder.
+            - title: Operations analytics
+              body: Live dashboards across every facility, showing today rather than last month.
+        - label: Finance and leadership
+          items:
+            - title: Claim checks
+              body: Every claim checked against the payer's rules before it leaves the facility.
+            - title: Executive insights
+              body: Network-wide performance for leadership, with facility comparisons and trends.
+        - label: Patients
+          items:
+            - title: Patient engagement
+              body: Follow-ups and reminders for patients, sent from the same record as the visit.
+            - title: Telemedicine
+              body: Video consults in the same record, so the patient's history is open during the call.
 
 faq:
   - question: Does CuraPilot replace our EMR?
@@ -260,12 +325,17 @@ links:
     - href: /features/emr/
       label: EMR and e-prescriptions
       description: The patient record and prescription that CuraPilot works inside.
-    - href: /solutions/clinic-chain/
-      label: Software for clinic chains
-      description: One record and one set of SOPs across every branch.
-    - href: /emr-software-in-kenya/
-      label: Easy Clinic in Kenya
-      description: Clinic software for Kenya, where Penda Health runs on Easy Clinic.
+    - href: /pricing/
+      label: Easy Clinic pricing
+      description: Per doctor per month, from {price:usd.professional.annual} on Professional, which includes Cura AI (documentation).
+    - href: /trust/
+      label: Trust and security
+      description: Where your data lives and who can see it.
+    - href: /ai-emr-software-vs-traditional-emr/
+    - href: /clinic-workflow-automation/
+    - href: /compare/
+    - href: /customers/
+    - href: /start-a-clinic/
 
 closing:
   heading: Try CuraPilot on your own clinics for 90 days
@@ -296,6 +366,7 @@ notes:
   - 'FAQs left out for lack of a confirmed fact: "Is it available in Kenya, India, UAE and Nigeria?", "How is it priced?", "What data leaves the clinic?". Replaced with "Did the study test CuraPilot?" and "Has the study been published in a journal?" (the plain form of "Is the study peer reviewed?", which the claims lint blocks as text).'
   - 'Walkthrough ("What changed for the clinician") has no screenshot: spec 12 asks for a live alert capture. Add media to the flowDiagram step "A pattern is flagged" when it exists. The example symptoms come from the mock alert on the live page and are illustrative.'
   - 'Operational and financial features: stock prediction now follows spec 1.2 and /ai/ and is named as a Cura AI job (audit 2026-09-27). Claim checks stay unnamed here, since spec 4.1''s /curapilot meta says CuraPilot flags claim errors during the consult. The rows stay because spec 5.3 says to keep this section; if product decides CuraPilot owns stock prediction, reword this row and the /ai/ "Predicts stockouts" row together.'
+  - 'Capability list (8 Oct): the staging "11 capabilities" are back as an index after the proof of concept, worded from facts already on this page and /ai/. Dropped from the staging copy: "45 days before" (no source), "AI-assisted during the call" for telemedicine, "chronic disease monitoring" and "advice in the patient''s language" (unconfirmed). Voice documentation is described as the Cura AI scribe.'
   - 'Staging "intelligence layer" bullets for voice commands, telemedicine and patient engagement are dropped: they overlap Cura AI and feature pages. The staging "drug interaction, allergy and dose" bullet is split in two to avoid a group of three.'
   - 'CTA "Download the study summary" (gated PDF) replaced with "Read the study" linking to arXiv, because no PDF exists yet. Dr Korom video (spec proof, VideoObject schema) left out: none exists.'
   - 'links.hub not set: /ai/ now has a content entry (ai.yaml), but the site tree (spec 3.1) lists /ai and /curapilot as siblings under AI. Set hub: /ai/ if the breadcrumb should run Cura AI > CuraPilot.'

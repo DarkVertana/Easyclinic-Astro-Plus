@@ -17,29 +17,33 @@ const blocks = items.map((item) => {
   const linkLabel = url
     ? item.linkLabel || need(Astro, `link text for ${item.href}`, registry.get(item.href!.split('#')[0])?.label)
     : null;
-  return { ...item, url, linkLabel };
+  // "Clinical: blind spots across visits" shows "Clinical" as a small label above the title.
+  const split = item.heading.match(/^([^:]{2,24}):\s+(.+)$/);
+  return { ...item, url, linkLabel, kicker: split?.[1] ?? null, title: split ? split[2].charAt(0).toUpperCase() + split[2].slice(1) : item.heading };
 });
 const columns = blocks.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
 ---
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <!-- Each card spans two rows of a subgrid, so the "What changes" panels start at the same height. -->
   <ul class:list={['grid gap-5', columns]}>
     {
       blocks.map((block) => (
-        <li class="card flex h-full flex-col overflow-hidden text-ink">
-          <div class="p-6">
-            <h3 class="font-display text-lg font-semibold leading-snug">{block.heading}</h3>
-            <Md text={block.body} class="mt-3 text-ink-muted" />
+        <li class="row-span-2 grid grid-rows-subgrid gap-0 overflow-hidden rounded-card border border-line bg-surface text-ink shadow-[0_1px_2px_rgb(10_37_64/0.04)]">
+          <div class="p-6 sm:p-7">
+            {block.kicker && <p class="text-xs font-semibold uppercase tracking-[0.08em] text-blue-700">{block.kicker}</p>}
+            <h3 class:list={['font-display text-xl font-semibold leading-snug', block.kicker && 'mt-1.5']}>{block.title}</h3>
+            <Md text={block.body} class="mt-3 text-[0.9375rem] leading-relaxed text-ink-muted" />
           </div>
-          {(block.fix || block.url) && (
-            <div class:list={['mt-auto px-6 pb-5', block.fix ? 'border-t border-line bg-surface-alt pt-5' : 'pt-0']}>
+          {(block.fix || block.url) ? (
+            <div class:list={['px-6 pb-6 sm:px-7', block.fix ? 'border-t border-line bg-surface-muted pt-5' : 'pt-0']}>
               {block.fix && (
                 <>
-                  <h4 class="flex items-center gap-2 font-display text-base font-semibold text-success">
-                    <Icon name="circle-check" size={18} />
+                  <h4 class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-success">
+                    <Icon name="circle-check" size={15} />
                     What changes
                   </h4>
-                  <Md text={block.fix} class="mt-2" />
+                  <Md text={block.fix} class="mt-2.5 text-[0.9375rem] leading-relaxed text-ink" />
                 </>
               )}
               {block.url && (
@@ -49,7 +53,7 @@ const columns = blocks.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
                 </a>
               )}
             </div>
-          )}
+          ) : <div />}
         </li>
       ))
     }

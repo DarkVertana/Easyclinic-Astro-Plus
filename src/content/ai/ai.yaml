@@ -49,6 +49,7 @@ sections:
         price list, as Cura AI (documentation) in Professional.
       items:
         - heading: Writes the note while you talk
+          icon: notebook-pen
           plan: professional
           body: >-
             Cura AI listens to the consultation and drafts the note and the prescription in the
@@ -58,11 +59,13 @@ sections:
             label: See the EMR it writes into
             href: /features/emr/
         - heading: Answers the phone and WhatsApp
+          icon: message-circle
           body: >-
             This is the AI reception. Cura AI answers when patients ring the clinic or write to it on
             WhatsApp, so a patient gets a reply while your receptionist is busy with the person standing
             at the desk.
         - heading: Flags a missed diagnosis
+          icon: stethoscope
           body: >-
             This job belongs to CuraPilot, the clinical copilot among the Cura AI features. During the
             consult it reads the patient's chart and flags a diagnosis that may have been missed. The
@@ -71,6 +74,7 @@ sections:
             label: See what CuraPilot does
             href: /curapilot/
         - heading: Codes the bill
+          icon: receipt
           body: >-
             Cura AI reads the diagnosis and the services in the note and suggests the codes for the
             bill, so the invoice starts from what happened in the consult. The codes stay suggestions
@@ -79,6 +83,7 @@ sections:
             label: See how billing works
             href: /features/billing/
         - heading: Predicts stockouts
+          icon: package
           body: >-
             For a clinic that dispenses from Easy Clinic, Cura AI compares how fast each medicine is going
             out with the stock that is left, and warns you before one runs out. That leaves time to
@@ -87,6 +92,7 @@ sections:
             label: See pharmacy and inventory
             href: /features/pharmacy-and-inventory/
         - heading: Summarises the day for the owner
+          icon: chart-column
           body: >-
             At the end of the day, Cura AI writes the owner a short summary of the day from Easy Clinic's
             reports. You read the day in a few sentences and open a report only when something in the
@@ -165,8 +171,8 @@ sections:
           - It can go with you from clinic to clinic, whatever system each one runs.
       note: >-
         Standalone scribes differ from one another, so this compares the two kinds of product rather than a
-        named vendor. If all you want is a faster note in the EMR you already use, a standalone scribe may
-        suit you better.
+        named vendor. ==If all you want is a faster note in the EMR you already use, a standalone scribe may
+        suit you better.==
 
 faqHeading: Questions doctors ask about Cura AI
 faq:
@@ -220,6 +226,35 @@ links:
       description: Where your data lives and who can see it.
     - href: /ai-emr-software-vs-traditional-emr/
     - href: /clinic-workflow-automation/
+    - href: /compare/
+    - href: /customers/
+    - href: /start-a-clinic/
+
+problems:
+  eyebrow: The problem
+  heading: Three invisible leaks in
+  headingAccent: every clinic
+  intro: >-
+    Better outcomes rarely come from a bigger budget or newer software. They come from the clinical,
+    operational and financial sides of a clinic working from the same record.
+  items:
+    - title: Clinical blind spots
+      icon: stethoscope
+      body: >-
+        No single visit holds the whole picture. A diagnosis can hide across visits and across months, and a
+        clinician who sees one visit at a time treats the symptom in front of them.
+      stat: '{fig:diagnostic-errors}'
+      statLabel: fewer diagnostic errors with AI Consult in the Penda Health study
+    - title: Operational gaps
+      icon: package
+      body: >-
+        A medicine runs out when the patient is already at the counter, not weeks before. The numbers that
+        would have warned you exist, but they sit in different reports.
+    - title: Revenue leakage
+      icon: receipt
+      body: >-
+        A bill is often lost at the prescription, not in billing: a treatment the patient's plan does not
+        cover is prescribed, and the claim comes back denied weeks later.
 
 closing:
   heading: See Cura AI in a 20-minute demo

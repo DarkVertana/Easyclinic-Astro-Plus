@@ -16,6 +16,22 @@ export function renderMarkdown(text: string, options: MarkdownOptions = {}): str
   const { inline = false, urlFor = (p) => p, minHeading = 3 } = options;
   const marked = new Marked({ gfm: true, breaks: false, async: false });
   marked.use({
+    // ==text== renders as <mark>, a highlighted phrase (styled in global.css under .prose-md mark).
+    extensions: [
+      {
+        name: 'highlight',
+        level: 'inline',
+        start: (src: string) => src.indexOf('=='),
+        tokenizer(this: { lexer: { inlineTokens(src: string): Tokens.Generic[] } }, src: string) {
+          const match = /^==(?!=)([^=\n]+?)==/.exec(src);
+          if (!match) return undefined;
+          return { type: 'highlight', raw: match[0], tokens: this.lexer.inlineTokens(match[1]) };
+        },
+        renderer(this: { parser: { parseInline(tokens: Tokens.Generic[]): string } }, token: Tokens.Generic) {
+          return `<mark>${this.parser.parseInline(token.tokens ?? [])}</mark>`;
+        },
+      },
+    ],
     renderer: {
       link(this: { parser: { parseInline(tokens: Tokens.Generic[]): string } }, token: Tokens.Link) {
         const label = this.parser.parseInline(token.tokens);

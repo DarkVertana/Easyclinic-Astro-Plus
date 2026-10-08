@@ -42,6 +42,8 @@ export const BLOCK_NAMES = [
   'pricingCards',
   'proofBlock',
   'prose',
+  'splitContent',
+  'capabilityList',
   'regulatorStrip',
   'regulatorTable',
   'scopeBox',
@@ -63,7 +65,7 @@ const CORE: Blocks = ['prose', 'featureRows', 'painBlocks', 'moduleGrid', 'proof
 const FEATURE: Blocks = [...CORE, 'regulatorStrip', 'regulatorTable', 'rolesMatrix'];
 const SOLUTION: Blocks = [...CORE, 'dayTimeline', 'rolesMatrix', 'regulatorStrip', 'pricingCards', 'clinicTypes'];
 const HUB: Blocks = ['hubGrid', 'demoForm', 'journeyDiagram', 'moduleGrid', 'prose', 'proofBlock', 'testimonialRow', 'planMatrix', 'dataTable', 'personaRouter', 'featureRows', 'inlineCta', 'postIndex'];
-const AI: Blocks = [...CORE, 'studyCard', 'regulatorStrip'];
+const AI: Blocks = [...CORE, 'studyCard', 'regulatorStrip', 'splitContent', 'capabilityList'];
 const TRUST: Blocks = [...CORE, 'regulatorTable', 'regulatorStrip', 'studyCard', 'integrationDirectory', 'demoForm'];
 const SPECIALTY: Blocks = [...CORE, 'dayTimeline'];
 const COMPARISON: Blocks = ['comparisonTable', 'decisionMatrix', 'vendorList', 'sourceList', 'prose', 'painBlocks', 'stepList', 'dataTable', 'scopeBox', 'proofBlock', 'testimonialRow', 'inlineCta', 'featureRows'];

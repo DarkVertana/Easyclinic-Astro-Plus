@@ -21,7 +21,7 @@ const exclusion = variant !== 'limits';
   <div
     class:list={[
       'rounded-card border p-6 text-ink md:p-8',
-      exclusion ? 'border-warning/40 bg-warning-bg' : 'border-line-strong bg-surface-muted',
+      exclusion ? 'border-warning/40 bg-warning-bg' : 'border-line-strong bg-surface',
     ]}
   >
     <ul class:list={['grid gap-x-10 gap-y-4', items.length > 3 ? 'md:grid-cols-2' : 'max-w-[46rem]']}>

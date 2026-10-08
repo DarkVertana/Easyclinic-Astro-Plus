@@ -50,16 +50,16 @@ const exampleColumns =
             {step.number}
           </span>
           <div class="flow-text">
-            <h3 class:list={['font-display text-lg font-semibold leading-snug', inverse && 'text-white']}>{step.label}</h3>
-            {step.body && <Md text={step.body} minHeading={4} class:list={['mt-1', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+            <h3 class:list={['font-display text-lg font-semibold leading-snug lg:min-h-[2.75em]', inverse && 'text-white']}>{step.label}</h3>
+            {step.body && <Md text={step.body} minHeading={4} class:list={['mt-2 text-[0.9375rem] leading-relaxed lg:mt-1', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
             {step.check && (
               <p
                 class:list={[
-                  'mt-3 inline-flex items-start gap-1.5 rounded-control border px-2.5 py-1 text-sm font-medium',
+                  'mt-4 inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold',
                   inverse ? 'border-white/25 bg-white/10 text-white' : 'border-teal-500/50 bg-teal-50 text-teal-700',
                 ]}
               >
-                <Icon name="shield-check" size={16} class="mt-0.5" />
+                <Icon name="shield-check" size={14} />
                 <span>{step.check}</span>
               </p>
             )}

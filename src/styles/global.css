@@ -91,7 +91,7 @@
   --ink-muted: var(--color-grey-600);
   --ink-inverse: var(--color-white);
   --ink-inverse-muted: #c9cfdb;
-  --border: var(--color-grey-200);
+  --border: #c7c7c7;
   --border-strong: var(--color-grey-400);
   --link: var(--color-blue-600);
   --link-hover: var(--color-blue-800);
@@ -461,6 +461,16 @@
   [data-tone='inverse'] .prose-md strong,
   [data-tone='inverse'] .prose-md a {
     color: var(--ink-inverse);
+  }
+  /* ==text== in markdown: a yellow tag with a dashed amber outline. */
+  .prose-md mark {
+    background: #fcd970;
+    color: var(--ink-heading);
+    padding: 0.05em 0.35em;
+    border: 1.5px dashed #b07d00;
+    border-radius: 0.3em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
   .prose-md h3,
   .prose-md h4 {

@@ -2,15 +2,26 @@
 import type { SectionValue } from '../../../schemas/sections';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
+import Button from '../../ui/Button.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'prose'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, body, aside, width, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, body, aside, width, link, secondary, ctx } = Astro.props;
 ---
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width={width === 'measure' && !aside ? 'measure' : 'page'}>
   <div class:list={[aside ? 'grid gap-8 lg:grid-cols-[1.6fr_1fr]' : '']}>
-    <Md text={body} class="max-w-[42rem] text-lg leading-relaxed" />
+    <div>
+      <Md text={body} class="max-w-[42rem] text-lg leading-relaxed" />
+      {
+        (link || secondary) && (
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            {link && <Button {...link} variant="cta" />}
+            {secondary && <Button {...secondary} variant="outline" />}
+          </div>
+        )
+      }
+    </div>
     {aside && <aside class="card h-fit bg-surface p-6"><Md text={aside} /></aside>}
   </div>
 </Section>

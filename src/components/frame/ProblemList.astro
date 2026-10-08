@@ -1,0 +1,58 @@
+---
+import Md from '../ui/Md.astro';
+import Icon from '../ui/Icon.astro';
+
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  headingAccent?: string;
+  intro?: string;
+  items: { title: string; body: string; icon?: string; stat?: string; statLabel?: string }[];
+}
+
+const { eyebrow, heading, headingAccent, intro, items } = Astro.props;
+---
+
+<!-- Heading on the left (sticky on wide screens); numbered problems on the right, separated by rules. -->
+<section id="problems" aria-labelledby="problems-heading" class="section-y bg-surface-muted" data-tone="wash">
+  <div class="container-page grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-20">
+    <div class="lg:sticky lg:top-28 lg:self-start">
+      {
+        eyebrow && (
+          <p class="eyebrow">{eyebrow}</p>
+        )
+      }
+      <h2 id="problems-heading" class:list={['text-[2rem] leading-tight sm:text-[2.5rem]', eyebrow && 'mt-3']}>
+        {headingAccent ? `${heading} ${headingAccent}` : heading}
+      </h2>
+      {intro && <Md text={intro} class="lede mt-5 text-ink-muted" />}
+    </div>
+
+    <ol role="list" class="divide-y divide-line">
+      {
+        items.map((item, i) => (
+          <li class="grid grid-cols-[auto_1fr] gap-5 py-8 first:pt-0 last:pb-0 sm:gap-6">
+            <div class="flex flex-col items-center gap-3">
+              <span class="flex size-12 items-center justify-center rounded-xl border border-line bg-surface text-blue-700 shadow-[0_1px_2px_rgb(10_37_64/0.06),0_6px_14px_-6px_rgb(10_37_64/0.18)]">
+                <Icon name={item.icon ?? 'circle-dot'} size={22} />
+              </span>
+              <span class="font-display text-sm font-semibold text-ink-muted" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+            <div>
+              <h3 class="text-xl leading-snug">{item.title}</h3>
+              <Md text={item.body} class="mt-2 leading-relaxed text-ink-muted" />
+              {
+                item.stat && (
+                  <p class="mt-4 inline-flex items-baseline gap-3 rounded-full border border-line bg-surface px-4 py-1.5">
+                    <span class="font-display text-lg font-semibold text-ink-heading">{item.stat}</span>
+                    {item.statLabel && <span class="text-sm text-ink-muted">{item.statLabel}</span>}
+                  </p>
+                )
+              }
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
