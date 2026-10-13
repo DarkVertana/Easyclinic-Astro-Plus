@@ -10,14 +10,10 @@ import { toneFor, type BlockContext } from '../types';
 type Props = SectionValue<'featureTabs'> & { ctx: BlockContext };
 const { id, eyebrow, heading, intro, tone, tabs, ctx } = Astro.props;
 
-// One accent for every tab: the brand coral (--color-coral-500), as on the live site's feature tabs.
-const ACCENTS = ['#f36a34'];
-
 const registry = await getRegistry();
 const base = id ?? 'feature-tabs';
 const panels = tabs.map((tab, i) => ({
   ...tab,
-  accent: ACCENTS[i % ACCENTS.length],
   cardId: `${base}-card-${i}`,
   url: tab.link ? registry.urlFor(tab.link.href) : null,
   // Screenshots are full of small UI text, so offer widths up to the source size and let 2x screens take the sharpest one.
@@ -31,11 +27,10 @@ const panels = tabs.map((tab, i) => ({
       Phones get a compact card (screenshot on top, tighter type) so a card fits on screen. */}
   <div class="feature-stack" data-feature-stack>
     {
-      panels.map((tab, i) => (
+      panels.map((tab) => (
         <article
           id={tab.cardId}
           aria-label={tab.label}
-          style={`--accent: ${tab.accent}; --i: ${i}`}
           class="feature-panel rounded-[20px] bg-surface p-2.5 sm:rounded-[28px] sm:p-4"
         >
           <div class:list={['grid gap-2 sm:gap-4', tab.media?.src && 'md:grid-cols-2']}>
@@ -182,11 +177,30 @@ const panels = tabs.map((tab, i) => ({
       padding-bottom: 2rem;
     }
   }
+  /* No inline style attributes: the production Content-Security-Policy allows only hashed styles, so a
+     style="" on the card is dropped. The accent and each card's place in the stack live here instead. */
   .feature-panel {
+    --accent: var(--color-coral-500);
+    --i: 0;
     position: sticky;
     top: calc(var(--stack-top) + var(--i) * var(--stack-step));
     border: 1px solid #c7c7c7;
     transform-origin: 50% 0;
+  }
+  .feature-panel:nth-child(2) {
+    --i: 1;
+  }
+  .feature-panel:nth-child(3) {
+    --i: 2;
+  }
+  .feature-panel:nth-child(4) {
+    --i: 3;
+  }
+  .feature-panel:nth-child(5) {
+    --i: 4;
+  }
+  .feature-panel:nth-child(6) {
+    --i: 5;
   }
 
   /* Screenshot sizing per screen:

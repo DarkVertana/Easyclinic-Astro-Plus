@@ -61,7 +61,6 @@ const hasRoleLine = Boolean(rolePrefix || roleTag);
       <blockquote
         class="quote-text mt-4 text-[15px] leading-[1.75] text-ink"
         data-lines={lines}
-        style={lines ? `--lines: ${lines}` : undefined}
         title={lines ? t.quote : undefined}
       >
         <p>
@@ -118,7 +117,23 @@ const hasRoleLine = Boolean(rolePrefix || roleTag);
   .quote-card:hover {
     border-color: var(--color-blue-500);
   }
-  /* A fixed number of lines: clipped with an ellipsis, and padded so short quotes take the same height. */
+  /* A fixed number of lines: clipped with an ellipsis, and padded so short quotes take the same height.
+     The count comes from data-lines, not an inline style: the production Content-Security-Policy drops style="". */
+  .quote-text[data-lines='2'] {
+    --lines: 2;
+  }
+  .quote-text[data-lines='3'] {
+    --lines: 3;
+  }
+  .quote-text[data-lines='4'] {
+    --lines: 4;
+  }
+  .quote-text[data-lines='5'] {
+    --lines: 5;
+  }
+  .quote-text[data-lines='6'] {
+    --lines: 6;
+  }
   .quote-text[data-lines] {
     display: -webkit-box;
     -webkit-box-orient: vertical;
