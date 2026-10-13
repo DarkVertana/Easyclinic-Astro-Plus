@@ -43,6 +43,9 @@ sections:
   - discriminant: personaRouter
     value:
       id: pick-your-clinic
+      eyebrow: Pick your clinic
+      heading: "Choose your Clinic Type for\nFeatures that suit you"
+      intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
       items:
         - persona: solo
           title: Solo Practice
@@ -179,20 +182,108 @@ sections:
         label: Read how the study was run
         href: /curapilot/
 
-  - discriminant: pricingCards
+  - discriminant: featureTabs
     value:
-      id: pricing
-      heading: What Easy Clinic costs
-      intro: Per doctor per month, shown here in US dollars. Every plan includes unlimited support and training, and prices in rupees are on the [pricing page](/pricing/).
-      currency: usd
-      switcher: false
-      showConditions: true
-      planCta:
-        label: See the full price list
-        href: /pricing/
-      enterpriseCta:
-        label: Get an Enterprise quote
-        href: /contact-us/#book-a-demo
+      id: features
+      eyebrow: Features
+      heading: Clinic Management Software Features That Drive Smarter Care
+      editorNote: Tab text from the live easyclinic.io home page (2026-10-09), with banned words (seamless, streamline, comprehensive, end-to-end) reworded.
+      tabs:
+        - label: Clinic Management
+          icon: hospital
+          body: From solo practices to clinic chains, Easy Clinic simplifies operations, speeds up patient flow, and delivers complete visibility - while enhancing the patient experience.
+          capabilities:
+            - label: Smart Appointment Scheduling
+              icon: calendar-clock
+            - label: Billing, Payments & Financial Transactions
+              icon: receipt
+            - label: Multi-Layered Access Control
+              icon: shield-check
+            - label: Patient Engagement from Booking to Follow-up
+              icon: message-circle-heart
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic appointment calendar for two doctors with day visits, an appointment card, a token list and a reminder
+            frame: none
+          link:
+            label: Learn more
+            href: /features/appointment-scheduling/
+        - label: EMR
+          icon: file-heart
+          body: Easy Clinic's EMR combines the simplicity of paper with the power of intelligent digital tools - fast, intuitive, and fully customizable across specialties.
+          capabilities:
+            - label: Customised EMR Templates
+              icon: layout-template
+            - label: AI-Powered Documentation Assistance
+              icon: sparkles
+            - label: 30-Second Prescriptions
+              icon: timer
+            - label: Complete Medical History Record
+              icon: history
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic visit record with chief complaints, vitals, diagnosis, medications with dosage options, a language picker for printing and a blood sugar chart
+            frame: none
+          link:
+            label: Learn more
+            href: /features/emr/
+        - label: Inventory & Pharmacy
+          icon: pill
+          body: Easy Clinic's Inventory and Pharmacy module manages everything from procurement to dispensing - with full traceability, automation, and control. It ensures accuracy, cost-efficiency, and transparency.
+          capabilities:
+            - label: Full Inventory Management
+              icon: boxes
+            - label: AI-Assisted Reorder Management
+              icon: refresh-cw
+            - label: Pilferage Prevention & Internal Controls
+              icon: shield-alert
+            - label: Real-Time Tracking & Alerts
+              icon: bell-ring
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic inventory screens with products and services, stock levels with low-stock and reorder flags, units of measure and an order versus consumption chart
+            frame: none
+          link:
+            label: Learn more
+            href: /features/pharmacy-and-inventory/
+        - label: AI & Automation
+          icon: brain-circuit
+          body: Easy Clinic uses AI and automation to simplify workflows, reduce errors, and ensure consistency across locations - enhancing decision-making, compliance, and efficiency at scale.
+          capabilities:
+            - label: AI as a Clinical Decision-Making Partner
+              icon: brain
+            - label: AI-Assisted Patient Intake & Triage
+              icon: clipboard-plus
+            - label: Compliance & SOP Monitoring
+              icon: list-checks
+            - label: Fraud Prevention & Pilferage Control
+              icon: scan-eye
+          media:
+            src: ../../assets/images/tabs/18_User.png
+            alt: Easy Clinic user management with roles, appointment permissions by role and a weekly doctor roster
+            frame: none
+          link:
+            label: Learn more
+            href: /curapilot/
+        - label: BI & Reporting
+          icon: chart-pie
+          body: Easy Clinic's Reports and Dashboard module blends efficiency with insight - organising data and delivering powerful, automated reports to drive smarter decisions at any scale.
+          capabilities:
+            - label: Customizable Dashboards & Reports
+              icon: layout-dashboard
+            - label: AI-Powered Analysis
+              icon: sparkles
+            - label: Enterprise-Scale Data Integration
+              icon: database
+            - label: Automated Reporting
+              icon: file-chart-column
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic dashboards with patients by specialisation, top diagnoses, patients by week, invoices by status and today's report
+            frame: none
+          link:
+            label: Learn more
+            href: /features/reports-and-dashboards/
 
   - discriminant: testimonialRow
     value:
@@ -304,7 +395,7 @@ links:
   relatedHeading: Choose your country to see features for your clinic's needs
 
 closing:
-  heading: See your own clinic's day on Easy Clinic
+  heading: See for yourself - try Easy Clinic absolutely free
   body: >-
     In 20 minutes we walk through a day like yours on Easy Clinic, from the first booking to the evening cash
     close. If a call is too much today, send us a WhatsApp message instead.

@@ -16,11 +16,32 @@ const single = layout === 'single' || testimonials.length === 1;
     single ? (
       <Quote testimonial={testimonials[0]} pull={usePullQuote} size="large" />
     ) : (
-      <div class:list={['grid gap-5', testimonials.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3']}>
+      /* Phones: a row you swipe, snapping card by card, running to the screen edges with the next card peeking in.
+         Tablets: a grid of two cards a row. From 960px: three a row (two when there are only two). */
+      <div
+        tabindex="0"
+        aria-label={heading ? `${heading}: testimonials` : 'Testimonials'}
+        class:list={[
+          'quote-track -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pt-1 pb-2',
+          'sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:p-0',
+          testimonials.length > 2 && 'md:grid-cols-3',
+        ]}
+      >
         {testimonials.map((t) => (
-          <Quote testimonial={t} pull={usePullQuote} lines={usePullQuote ? undefined : 4} />
+          <div class="w-[86%] max-w-[26rem] shrink-0 snap-start sm:w-auto sm:max-w-none">
+            <Quote testimonial={t} pull={usePullQuote} lines={usePullQuote ? undefined : 4} />
+          </div>
         ))}
       </div>
     )
   }
 </Section>
+
+<style>
+  /* The swipe row on phones has no visible scrollbar; the peeking card shows there is more. */
+  .quote-track {
+    scrollbar-width: none;
+  }
+  .quote-track::-webkit-scrollbar {
+    display: none;
+  }</style>

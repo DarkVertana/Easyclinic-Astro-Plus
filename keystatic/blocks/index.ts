@@ -48,6 +48,7 @@ import { scopeBox } from './scopeBox.ts';
 import { stepList } from './stepList.ts';
 import { testimonialRow } from './testimonialRow.ts';
 import { chipCloud } from './chipCloud.ts';
+import { featureTabs } from './featureTabs.ts';
 
 export const KS_BLOCKS = {
   addOns,
@@ -91,4 +92,5 @@ export const KS_BLOCKS = {
   stepList,
   testimonialRow,
   chipCloud,
+  featureTabs,
 } satisfies Record<BlockName, KsBlock>;

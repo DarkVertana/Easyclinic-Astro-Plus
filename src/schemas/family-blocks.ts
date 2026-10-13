@@ -50,12 +50,13 @@ export const BLOCK_NAMES = [
   'stepList',
   'testimonialRow',
   'chipCloud',
+  'featureTabs',
 ] as const;
 export type BlockName = (typeof BLOCK_NAMES)[number];
 
 type Blocks = readonly BlockName[];
 
-const HOME: Blocks = ['personaRouter', 'chipCloud', 'oldWayNewWay', 'journeyDiagram', 'moduleGrid', 'proofBlock', 'regulatorStrip', 'testimonialRow', 'stepList', 'pricingCards', 'prose', 'contentCards', 'dataTable', 'featureRows', 'scopeBox'];
+const HOME: Blocks = ['personaRouter', 'chipCloud', 'featureTabs', 'oldWayNewWay', 'journeyDiagram', 'moduleGrid', 'proofBlock', 'regulatorStrip', 'testimonialRow', 'stepList', 'pricingCards', 'prose', 'contentCards', 'dataTable', 'featureRows', 'scopeBox'];
 const PRICING: Blocks = ['pricingCards', 'planMatrix', 'addOns', 'costExamples', 'stepList', 'testimonialRow', 'proofBlock', 'prose', 'dataTable', 'scopeBox', 'regulatorStrip'];
 const COUNTRY: Blocks = ['contactCard', 'regulatorTable', 'regulatorStrip', 'countryMoney', 'clinicTypes', 'testimonialRow', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'painBlocks', 'stepList', 'moduleGrid', 'scopeBox'];
 const COUNTRY_DEMO: Blocks = ['demoForm', 'contactCard', 'painBlocks', 'moduleGrid', 'dataTable', 'regulatorTable', 'regulatorStrip', 'testimonialRow', 'stepList', 'proofBlock', 'prose', 'featureRows'];

@@ -42,6 +42,7 @@ import { schema as scopeBox } from '../components/blocks/ScopeBox/schema';
 import { schema as stepList } from '../components/blocks/StepList/schema';
 import { schema as testimonialRow } from '../components/blocks/TestimonialRow/schema';
 import { schema as chipCloud } from '../components/blocks/ChipCloud/schema';
+import { schema as featureTabs } from '../components/blocks/FeatureTabs/schema';
 
 /** Every section type, keyed by its discriminant. blocks/registry.ts maps the same keys to components. */
 export const BLOCK_SCHEMAS = {
@@ -86,6 +87,7 @@ export const BLOCK_SCHEMAS = {
   stepList,
   testimonialRow,
   chipCloud,
+  featureTabs,
 } as const;
 
 export type BlockName = keyof typeof BLOCK_SCHEMAS;

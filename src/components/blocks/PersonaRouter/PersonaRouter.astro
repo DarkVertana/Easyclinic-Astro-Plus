@@ -34,7 +34,7 @@ const COLUMNS: Record<number, string> = {
 };
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center>
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
   <ul class:list={['grid gap-4', COLUMNS[cards.length]]}>
     {
       cards.map((card) => (

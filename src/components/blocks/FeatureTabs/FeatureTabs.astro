@@ -1,0 +1,266 @@
+---
+import { Image } from 'astro:assets';
+import type { SectionValue } from '../../../schemas/sections';
+import { getRegistry } from '../../../lib/content/registry';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import Md from '../../ui/Md.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'featureTabs'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, tabs, ctx } = Astro.props;
+
+// One accent for every tab: the brand coral (--color-coral-500), as on the live site's feature tabs.
+const ACCENTS = ['#f36a34'];
+
+const registry = await getRegistry();
+const base = id ?? 'feature-tabs';
+const panels = tabs.map((tab, i) => ({
+  ...tab,
+  accent: ACCENTS[i % ACCENTS.length],
+  cardId: `${base}-card-${i}`,
+  url: tab.link ? registry.urlFor(tab.link.href) : null,
+  // Screenshots are full of small UI text, so offer widths up to the source size and let 2x screens take the sharpest one.
+  shotWidths: tab.media?.src ? [...new Set([720, 1080, 1440, tab.media.src.width].filter((w) => w <= tab.media!.src!.width))] : [],
+}));
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center>
+  {/* Cards stack as you scroll, on every screen size: each one sticks a little lower than the one before,
+      the next card slides up over it, and the cards underneath shrink so their top edges peek out as a stack.
+      Phones get a compact card (screenshot on top, tighter type) so a card fits on screen. */}
+  <div class="feature-stack" data-feature-stack>
+    {
+      panels.map((tab, i) => (
+        <article
+          id={tab.cardId}
+          aria-label={tab.label}
+          style={`--accent: ${tab.accent}; --i: ${i}`}
+          class="feature-panel rounded-[20px] bg-surface p-2.5 sm:rounded-[28px] sm:p-4"
+        >
+          <div class:list={['grid gap-2 sm:gap-4', tab.media?.src && 'md:grid-cols-2']}>
+            <div class="feature-body flex flex-col justify-center px-2 pt-2 pb-3 sm:px-5 sm:py-6 md:py-8 md:pr-6 md:pl-4 lg:py-10 lg:pr-8 lg:pl-6">
+              <p class="feature-accent flex items-center gap-2 text-sm font-semibold tracking-[0.08em] uppercase">
+                {tab.icon && <Icon name={tab.icon} size={16} />}
+                {tab.label}
+              </p>
+              <Md text={tab.body} class="mt-2.5 text-[0.9375rem] leading-[1.6] text-ink-heading sm:mt-4 sm:text-[1.0625rem] sm:leading-[1.7] lg:text-[1.125rem]" />
+
+              <div class="feature-divider mt-4 border-t pt-4 sm:mt-8 sm:pt-6">
+                <p class="text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">{tab.capabilitiesLabel}</p>
+                <ul class="mt-3 grid gap-x-6 gap-y-2.5 sm:mt-4 sm:grid-cols-2 sm:gap-y-4">
+                  {tab.capabilities.map((item) => (
+                    <li class="flex items-start gap-2.5 sm:gap-3">
+                      <span class="feature-cap__icon flex size-8 shrink-0 items-center justify-center rounded-lg sm:size-10 sm:rounded-xl">
+                        <Icon name={item.icon ?? 'check'} size={19} />
+                      </span>
+                      <span class="pt-1.5 text-[14px] leading-snug font-semibold text-ink-heading sm:pt-[0.55rem] sm:text-[15px]">{item.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {tab.url && tab.link && (
+                <a
+                  href={tab.url}
+                  class="feature-link group mt-4 inline-flex items-center gap-2 self-start text-[15px] font-semibold no-underline sm:mt-8 sm:text-base"
+                  data-track="cta_click"
+                  data-label={tab.link.event ?? `Feature tabs: ${tab.label}`}
+                >
+                  {tab.link.label}
+                  <span class="sr-only">about {tab.label}</span>
+                  <Icon name="arrow-right" size={16} class="transition-transform duration-150 group-hover:translate-x-1" />
+                </a>
+              )}
+            </div>
+
+            {/* Screenshot on top on phones and in the left half from tablets up, unframed and at its own shape
+                (the screenshots mix portrait and landscape), scaled to fit and never cropped. */}
+            {tab.media?.src && (
+              <div class="feature-media order-first flex items-center justify-center p-1 sm:p-2 lg:p-4">
+                <Image
+                  src={tab.media.src}
+                  alt={tab.media.alt}
+                  widths={tab.shotWidths}
+                  sizes="(min-width: 75rem) 720px, (min-width: 60rem) 50vw, 100vw"
+                  quality={100}
+                  layout="none"
+                  loading="lazy"
+                  class="feature-shot block h-auto w-auto max-w-full object-contain"
+                />
+              </div>
+            )}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</Section>
+
+<script>
+  // Two jobs, on every screen size:
+  // 1. Where to stick. Each card sticks at its CSS top (under the header, a step lower per card). A card taller
+  //    than the space below that line gets a higher (even negative) top, so it scrolls until its bottom is in
+  //    view before it sticks and the next card covers it; nothing is ever hidden.
+  // 2. The stack look. As each later card slides up over a stuck card, the covered card shrinks a little,
+  //    scaling from its top edge, so the cards behind peek out narrower. Skipped when reduced motion is set.
+  const STEP = 0.04;
+  const GAP_BELOW = 12;
+  const motion = window.matchMedia('(prefers-reduced-motion: no-preference)');
+
+  for (const stack of document.querySelectorAll<HTMLElement>('[data-feature-stack]')) {
+    const cards = [...stack.querySelectorAll<HTMLElement>('.feature-panel')];
+    let tops: number[] = [];
+    let queued = false;
+
+    const place = () => {
+      for (const card of cards) card.style.top = '';
+      tops = cards.map((card) => {
+        const cssTop = parseFloat(getComputedStyle(card).top);
+        return Math.min(cssTop, window.innerHeight - card.offsetHeight - GAP_BELOW);
+      });
+      cards.forEach((card, i) => (card.style.top = `${tops[i]}px`));
+      scale();
+    };
+
+    const scale = () => {
+      queued = false;
+      if (!motion.matches) {
+        for (const card of cards) card.style.transform = '';
+        return;
+      }
+      const rects = cards.map((card) => card.getBoundingClientRect());
+      cards.forEach((card, i) => {
+        // How far each later card has travelled over this one, 0 (not yet) to 1 (stuck on top of it).
+        let depth = 0;
+        for (let j = i + 1; j < cards.length; j++) {
+          const travel = (rects[j].top - tops[j]) / card.offsetHeight;
+          depth += Math.min(1, Math.max(0, 1 - travel));
+        }
+        card.style.transform = depth ? `scale(${1 - depth * STEP})` : '';
+      });
+    };
+    const queue = () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(scale);
+      }
+    };
+
+    window.addEventListener('scroll', queue, { passive: true });
+    motion.addEventListener('change', queue);
+    // Card heights change with the window and as the lazy screenshots load.
+    const observer = new ResizeObserver(place);
+    for (const card of cards) observer.observe(card);
+    window.addEventListener('resize', place);
+    place();
+  }
+</script>
+
+<style>
+  /* Sticky line and step per screen size: below the 64px phone header, then the 72px desktop header once the
+     page has scrolled. */
+  .feature-stack {
+    --stack-top: 4.75rem;
+    --stack-step: 0.75rem;
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  @media (min-width: 60rem) {
+    .feature-stack {
+      --stack-top: 5.75rem;
+      --stack-step: 1rem;
+      gap: 2.5rem;
+    }
+  }
+  @media (min-width: 75rem) {
+    .feature-stack {
+      --stack-top: 6.5rem;
+      --stack-step: 1.25rem;
+      gap: 3rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .feature-panel {
+    position: sticky;
+    top: calc(var(--stack-top) + var(--i) * var(--stack-step));
+    border: 1px solid #c7c7c7;
+    transform-origin: 50% 0;
+  }
+
+  /* Screenshot sizing per screen:
+     - phones and tablets (stacked card): full card width in a 16:10 frame, anchored to the top of the screenshot,
+       so every card's image is the same shape and nothing floats in empty space;
+     - 960-1199px (two columns, narrow): fills its whole column, again anchored to the top;
+     - 1200px and up: the whole screenshot, scaled to fit the column and the window height, never cropped. */
+  .feature-shot {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 12px;
+  }
+  @media (min-width: 40rem) {
+    .feature-shot {
+      border-radius: 16px;
+    }
+  }
+  @media (min-width: 60rem) and (max-width: 74.99rem) {
+    .feature-media {
+      position: relative;
+      min-height: 22rem;
+    }
+    .feature-shot {
+      position: absolute;
+      inset: 0.5rem;
+      width: calc(100% - 1rem);
+      height: calc(100% - 1rem);
+      aspect-ratio: auto;
+      object-position: top left;
+      border-radius: 18px;
+    }
+  }
+  @media (min-width: 75rem) {
+    .feature-shot {
+      width: auto;
+      max-height: min(480px, calc(100vh - 17rem));
+      aspect-ratio: auto;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+  }
+  /* Short desktop windows: tighter text padding so the text column fits too. */
+  @media (min-width: 60rem) and (max-height: 52rem) {
+    .feature-body {
+      padding-block: 1rem;
+    }
+  }
+  .feature-divider {
+    border-color: rgb(10 37 64 / 0.1);
+  }
+  .feature-cap__icon {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+  /* The eyebrow above the body takes the accent colour. */
+  .feature-accent {
+    color: var(--accent);
+  }
+  /* "Learn more" uses the site's solid-button blue (--color-blue-700, #005bb0). */
+  .feature-link {
+    color: var(--color-blue-700);
+  }
+  .feature-link:hover {
+    color: var(--color-blue-700);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Small UI text in the screenshots: keep the browser from smoothing it while it downscales. */
+  .feature-shot {
+    image-rendering: -webkit-optimize-contrast;
+    border: 3px solid #c7c7c7;
+  }
+</style>

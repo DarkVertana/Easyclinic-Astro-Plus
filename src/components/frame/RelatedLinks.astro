@@ -82,7 +82,6 @@ const cards = countryPills ? items.filter((i) => !i.country) : items;
                 <a href={item.href} class="country-pill group inline-flex min-h-11 items-center gap-2.5 rounded-full py-1.5 pr-5 pl-2 font-medium text-ink-heading no-underline">
                   <Flag code={item.country} size={28} class="ring-1 ring-line" />
                   {item.label}
-                  <Icon name="arrow-right" size={15} class="text-blue-600 transition-transform duration-150 group-hover:translate-x-0.5" />
                 </a>
               </li>
             ))}

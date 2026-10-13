@@ -28,7 +28,8 @@ const toneClass = { plain: 'bg-surface', wash: 'bg-surface-alt', inverse: 'bg-su
           {eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
           {heading && (
             <H id={headingId} class:list={[tone === 'inverse' && '!text-white']}>
-              {heading}
+              {/* A line break in the heading text starts a new line on screen. */}
+              {heading.split('\n').map((line, i) => (i > 0 ? [<br />, line] : line))}
             </H>
           )}
           {intro && <Md text={intro} class:list={['lede mt-4', tone === 'inverse' ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
