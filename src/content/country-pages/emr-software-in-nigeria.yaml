@@ -1,0 +1,273 @@
+# /emr-software-in-nigeria/: built on the /emr-software-in-kenya/ structure (local proof strip, rules, billing and
+# claims, connectivity with an honest limit, clinic types, proof, the study), with copy from the live page of the
+# same URL (fetched 2026-10-14). Unconfirmed claims are removed (owner decision 2026-10-14; see notes). The fuller
+# draft /hospital-management-software-nigeria/ stays a draft; links to it now point here.
+status: published
+country: ng
+headKeyword: EMR software in Nigeria
+secondaryKeywords:
+  - AI EMR software Nigeria
+  - clinic management software Nigeria
+  - HMO claims software Nigeria
+title: AI EMR Software in Nigeria | Easy Clinic
+metaDescription: >-
+  AI EMR and clinic management software for clinics, hospitals and multi-branch groups in Lagos, Abuja, Ibadan,
+  Port Harcourt and across Nigeria.
+h1: AI EMR software for clinics and hospitals in Nigeria
+linkLabel: EMR software in Nigeria
+eyebrow: Best EMR software in Nigeria 2026
+openingAnswer: >-
+  AI EMR software in Nigeria is a cloud platform that captures, stores and manages patient data, with AI handling
+  the documentation, scheduling, billing and follow-up that slow a clinic down. What sets the bar here is money and
+  compliance: each visit has to become a clean HMO claim, and the records have to stand up to the Nigeria Data
+  Protection Act 2023.
+summary: >-
+  How Easy Clinic runs a Nigerian clinic, how HMO claims come from the visit, what the NHIA and the NDPA ask of
+  your clinic, and who to contact.
+author: subhashish-saha
+lastUpdated: 2026-10-14
+heroMedia:
+  kind: photo
+  src: ../../assets/images/countries/nigeria.webp
+  alt: A doctor at a clinic in Nigeria
+  frame: none
+heroStrip:
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+  whatsapp: Hi, I was reading the Easy Clinic page on EMR software in Nigeria and would like a demo for my clinic.
+
+sections:
+  # Block 2: local proof strip. The template also puts the bare contact card in the hero; this section renders the
+  # rest (cities) from src/data/countries/ng.yaml.
+  - discriminant: contactCard
+    value:
+      id: nigeria-team
+      heading: Easy Clinic in Nigeria, and how to reach the team
+      intro: >-
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you book
+        one. Easy Clinic pulls AI EMR, clinic management software and EHR software into one platform for Nigerian
+        providers, from a busy GP practice in Lagos to a multi-branch group across Abuja, Ibadan and Port Harcourt,
+        with guided onboarding from paper to digital.
+      tone: plain
+      country: ng
+      showClients: false
+
+  # Block 3: rules. A plain table of what each one asks of the clinic. The ng-* regulator files carry no state or
+  # date yet, so a regulatorTable would render unknown statuses, which fail a published build.
+  - discriminant: dataTable
+    value:
+      id: rules-in-nigeria
+      eyebrow: Rules in Nigeria
+      heading: What HMOs, the NHIA and the NDPA ask of your clinic
+      intro: >-
+        Nigerian clinics are moving to AI EMR software because revenue, regulation and competition are tightening at
+        once. HMOs control much of the income, so claims decide cash flow, and the Nigeria Data Protection Act 2023
+        now places real duties on patient data.
+      tone: wash
+      columns: [Rule or payer, What it asks of your clinic]
+      rows:
+        - ['**HMOs**', 'An encounter form and claim pack for each visit, paid by capitation or fee-for-service depending on the HMO and the enrollee''s plan.']
+        - ['**NHIA**', 'The National Health Insurance Authority accredits HMOs and sets the scheme the clinic claims under.']
+        - ['**Nigeria Data Protection Act 2023**', 'Health data is sensitive personal data, supervised by the Nigeria Data Protection Commission.']
+      note: >-
+        Easy Clinic's own NHIA and NDPA status is not stated on this page. Ask the team before you buy, and plan your
+        clinic's NDPA duties whatever software you use.
+
+  # Block 4: billing and claims, as a card grid (no prices: the NGN price list is not filled in).
+  - discriminant: moduleGrid
+    value:
+      id: billing-and-claims
+      eyebrow: Claims and billing
+      heading: HMO claims, billing and records at a Nigerian clinic
+      intro: >-
+        Every plan is priced per doctor per month; see the [pricing page](/pricing/) for current plans. These are the
+        parts of Easy Clinic a Nigerian clinic uses every day.
+      tone: plain
+      columns: 2
+      items:
+        - title: HMO claims from the visit
+          icon: shield-check
+          outcome: >-
+            Each visit becomes an HMO claim with the capitation or fee-for-service detail that HMO pays on. HMO claims
+            come with the Enterprise plan, or with the claims add-on on Professional and Premium.
+          href: /features/insurance-claims/
+        - title: Digital patient records with AI EMR software
+          icon: file-text
+          outcome: Store full histories, prescriptions and lab reports, and open any patient file instantly during a consultation.
+          href: /features/emr/
+        - title: Pharmacy stock across branches
+          icon: pill
+          outcome: Pharmacy stock is tracked across branches, with automatic reorder.
+          href: /features/pharmacy-and-inventory/
+        - title: One dashboard for every branch
+          icon: chart-column
+          outcome: >-
+            One dashboard shows revenue, HMO receivables and patient flow, with one real-time view across clinics in
+            Lagos, Abuja and Port Harcourt.
+          href: /features/reports-and-dashboards/
+
+  # Block 5: daily care and connectivity, with the honest limit in the aside.
+  - discriminant: prose
+    value:
+      id: teleconsultation-and-ai
+      heading: Teleconsultation, AI notes and multi-branch groups
+      tone: wash
+      body: |
+        **Teleconsultation.** Teleconsultation extends care beyond the clinic walls, alongside in-person appointment scheduling.
+
+        **AI notes.** AI drafts the notes and prescriptions, so staff type less, and the AI EMR engine writes automatic reminders and visit summaries.
+
+        **Reminders.** Patients expect reminders, and appointment and follow-up reminders go out over WhatsApp, SMS and email, so no-shows and missed follow-ups stop climbing.
+
+        **Multi-branch groups.** Multi-branch groups need one central system: records, pharmacy and billing stop sitting in separate tools, and doctors open full patient histories instantly at any branch.
+      aside: >-
+        **Where it stops.** Easy Clinic runs in the browser over the internet and does not run fully offline today.
+        Keep a second line at the reception desk, and if your clinic loses its connection for long periods, tell us
+        before you buy.
+      width: measure
+
+  # Block 6: the clinic types.
+  - discriminant: clinicTypes
+    value:
+      id: clinic-types
+      heading: Solo clinics to hospital groups in Nigeria
+      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
+      tone: plain
+      items:
+        - persona: solo
+          title: Solo practice
+          body: For physicians running their own clinic, with or without a receptionist. Simple EMR, scheduling and billing in one place.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: Specialist polyclinic
+          body: For OPD practices and polyclinics with several doctors. Add pharmacy and lab modules as you grow.
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: Clinic chains
+          body: >-
+            For clinic groups across Lagos, Abuja, Ibadan, Port Harcourt and beyond that need central management and
+            custom workflows.
+          href: /solutions/clinic-chain/
+        - persona: ngo
+          title: NGO clinic
+          body: For non-profit and mission-driven clinics, fixed or mobile, that need affordable digital records.
+          href: /features/
+
+  # Proof: rating badges (no Nigerian testimonial is on record, so this takes the Kenya testimonial slot).
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      eyebrow: Reviews
+      heading: Clinics trust us. The industry awards us.
+      tone: wash
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}' }
+
+  # Proof: the Penda Health study, from study.yaml.
+  - discriminant: proofBlock
+    value:
+      id: ai-clinical-pilot
+      eyebrow: AI clinical pilot
+      heading: We built the platform behind the world's largest AI clinical pilot
+      tone: plain
+      variant: study
+      figures: [visits, diagnostic-errors]
+      body: >-
+        Join the clinics and hospitals that trust Easy Clinic to run daily care. From prompt engineering to frontline
+        integration, Easy Clinic powered the AI Copilot used with OpenAI across {fig:visits} patient visits at Penda
+        Health's clinics in Nairobi. This is just the beginning.
+      link:
+        label: Read the article by OpenAI
+        href: https://openai.com/index/ai-clinical-copilot-penda-health/
+
+faqHeading: Questions Nigerian clinic owners ask
+faq:
+  - question: Is Easy Clinic suitable for clinics in Lagos, Abuja and across Nigeria?
+    answer: >-
+      Yes. Easy Clinic works for clinics, hospitals and multi-branch groups in Lagos, Abuja, Ibadan, Port Harcourt
+      and across Nigeria.
+  - question: Does Easy Clinic handle HMO claims?
+    answer: >-
+      Yes. Easy Clinic prepares HMO claims with capitation and fee-for-service detail from the visit, cutting the
+      manual work. HMO claims come with the Enterprise plan, or with the claims add-on on Professional and Premium.
+  - question: Is Easy Clinic compliant with the Nigeria Data Protection Act 2023?
+    answer: >-
+      Easy Clinic's NDPA status is not stated on this page, so ask the team before you buy. Under the Act, health
+      data is sensitive personal data, and your clinic's duties to the Nigeria Data Protection Commission apply
+      whatever software you use.
+  - question: Can a multi-branch group run every branch on one system?
+    answer: >-
+      Yes. One dashboard shows revenue, HMO receivables and patient flow across every branch, and records, pharmacy
+      and billing sit in one system instead of separate tools.
+  - question: Can patients book teleconsultations through Easy Clinic?
+    answer: >-
+      Yes. Teleconsultation extends care beyond the clinic walls, alongside in-person appointment scheduling at each
+      branch.
+  - question: Does Easy Clinic track pharmacy stock across branches?
+    answer: Yes. Pharmacy stock is tracked across branches, with automatic reorder alerts before a branch runs out.
+  - question: Does Easy Clinic help doctors with notes and prescriptions?
+    answer: >-
+      Yes. AI drafts the notes and prescriptions, so staff type less, and the AI EMR engine writes reminders and
+      visit summaries automatically.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No. Easy Clinic runs in the browser over the internet and does not run fully offline today, so keep a second
+      line at the reception desk.
+  - question: How can clinics in Nigeria get started?
+    answer: Book a free demo to see it in daily use, with guided onboarding from paper to digital.
+
+links:
+  hub: /countries/
+  relatedHeading: Where Nigerian clinic owners go next
+  related:
+    - href: /best-clinic-management-software-nigeria/
+      description: A ranked comparison of clinic software for private clinics in Nigeria.
+    - href: /features/insurance-claims/
+      label: Insurance and HMO claims
+      description: How claims move from the bill the front desk raised.
+    - href: /solutions/clinic-chain/
+      label: Clinic chains
+      description: Central records, price lists and reports across every branch.
+    - href: /pricing/
+      label: Easy Clinic pricing
+      description: See our plans and pick what fits your clinic.
+
+closing:
+  heading: See Easy Clinic run a day at your clinic
+  body: >-
+    Book 20 minutes with the Easy Clinic team, or write to hello@easyclinic.io. Bring what your front desk does on a
+    busy morning, from the booking to the HMO claim, and we will show each step in Easy Clinic, including where it
+    stops.
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-10-14
+  onlyUsCouldWrite: >-
+    HMO claims with capitation and fee-for-service detail and the plans they come with (plans.yaml), the NHIA and the
+    NDPA 2023, and the cities from Lagos to Port Harcourt come from Easy Clinic's own records and live Nigeria page.
+  readsMachineWritten: >-
+    The teleconsultation and AI copy is generic; a human pass should add what a Lagos HMO clinic's day looks like.
+
+notes:
+  - 'Structure follows /emr-software-in-kenya/ as the Malaysia, Maldives and Mauritius pages do: hero with contact card, local proof strip (contactCard, cities only), rules (dataTable; ng-* regulator files have no state or date), money (moduleGrid of claims and billing; prices/ngn.yaml is not filled in), connectivity prose with a "where it stops" aside, clinic types, rating badges in the testimonial slot (no Nigerian testimonial on record; every testimonial on the live page is placed elsewhere, spec 2.4), the study, FAQ, related links, closing.'
+  - 'Kept, because the repo confirms it: HMO claims (plans.yaml: "Insurance, TPA and HMO claims" on Enterprise, and the claims add-on on Professional and Premium), with the capitation or fee-for-service detail the draft /hospital-management-software-nigeria/ also states.'
+  - 'Owner decision 2026-10-14: unconfirmed claims are removed. Cut: "keeps HMO claims clean" and "reconciles what each HMO actually pays" as product promises; "audit-ready records under the NDPA 2023", NDPA alignment and the NDPA FAQ answer "Yes" (ng-ndpa has no state; the FAQ now says the status is not stated); naira billing, online payment gateways and "plans are priced in naira" (Paystack and Flutterwave have no state in countries/ng.yaml).'
+  - 'Added from the repo, not the live page: "does not run fully offline today" (migration/research/facts.md), in the aside and an FAQ; the NHIA row (regulators/ng-nhia.yaml).'
+  - 'Copy errors on the live page corrected: "clinic groups across Port Louis, Curepipe" (Mauritius; now Lagos, Abuja, Ibadan and Port Harcourt). Banned words removed ("seamless", "streamline", "comprehensive", "end-to-end", "robust"); "EasyClinic" written as "Easy Clinic"; "proven results" cut (claims rule).'
+  - 'FAQ: the live page has five questions; country pages carry 8 to 10. Kept: cities, HMO claims (trimmed), get started (without naira). Rewritten honestly: NDPA. Added from the live page''s own lines: multi-branch, teleconsultation, pharmacy across branches, AI notes, and an offline answer.'
+  - 'Contact: no Nigeria contact is on record; src/data/countries/ng.yaml now names the Easy Clinic support team and its main line. /nigeriademo/ and /pricing/nigeria/ are drafts, so the demo CTAs go to the countries page form and pricing to /pricing/.'

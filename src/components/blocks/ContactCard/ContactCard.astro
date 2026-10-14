@@ -36,7 +36,9 @@ function callName(name: string): string {
   const parts = name.trim().split(/\s+/);
   return /^(dr|mr|mrs|ms|prof)\.?$/i.test(parts[0]) && parts.length > 1 ? parts.slice(0, 2).join(' ') : parts[0];
 }
-const firstName = optionalConfirmed(nameLabel, contact.name ? callName(contact.name) : null, consent);
+// A team rather than a person ("Easy Clinic support team") is never addressed by first name.
+const personal = Boolean(contact.name) && !/\bteam\b/i.test(contact.name!);
+const firstName = optionalConfirmed(nameLabel, personal ? callName(contact.name!) : null, consent);
 const role = optional(`${country.name} contact role`, contact.role);
 const phone = need(Astro, `${country.name} contact phone`, contact.phone);
 const telHref = contact.phone ? `tel:${contact.phone.replace(/[^\d+]/g, '')}` : null;

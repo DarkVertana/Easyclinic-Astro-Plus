@@ -23,6 +23,17 @@ primary:
           - { label: Appointment scheduling, href: /features/appointment-scheduling/, icon: calendar-clock }
   - label: Pricing
     href: /pricing/
+  # Until the country pages are published, production drops their links and this falls back to a plain link to /countries/.
+  - label: Country
+    href: /countries/
+    groups:
+      - title: Clinic software by country
+        links:
+          - { label: India, href: /best-clinic-management-software-india/, description: 'ABDM-ready clinic software', flag: IN }
+          - { label: Kenya, href: /best-clinic-management-software-kenya/, description: 'SHA-ready clinic software', flag: KE }
+          - { label: United Arab Emirates, href: /best-clinic-management-software-uae/, description: 'Clinic software for Dubai and the UAE', flag: AE }
+          - { label: Nigeria, href: /best-clinic-management-software-nigeria/, description: 'Clinic and hospital OPD software', flag: NG }
+    footerLink: { label: All countries, href: /countries/ }
   - label: About us
     href: /about-us/
   - label: Resources

@@ -1,0 +1,30 @@
+name: Ethiopia
+code: ET
+# No birr price list exists; prices are quoted in US dollars, as for other markets without their own currency file.
+currency: USD
+dialCode: '+251'
+timezone: Africa/Addis_Ababa
+flagship: false
+contact:
+  # No Ethiopia contact or office on record: the card names the Easy Clinic support team and its main line,
+  # the contact the live Ethiopia page gives (hello@easyclinic.io).
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: null
+pages:
+  country: /emr-software-in-ethiopia/
+  listicle: /best-clinic-management-software-ethiopia/
+cities: [Addis Ababa, Dire Dawa, Bahir Dar, Hawassa]
+clients: []
+payments: []
+insurers: []
+languages: []
+taxInvoicing: null
+notes:
+  - 'Created 2026-10-14 for /emr-software-in-ethiopia/. Cities are the ones the live Ethiopia page names. Telebirr, CBE Birr, ETB billing and an Amharic interface are claimed on the live page but unconfirmed, so payments and languages are left empty.'

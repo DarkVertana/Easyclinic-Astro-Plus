@@ -1,0 +1,277 @@
+# /emr-software-in-maldives/: built on the /emr-software-in-kenya/ structure (local proof strip, rules, billing
+# and records, connectivity with an honest limit, clinic types, proof, the study), with copy from the live page of
+# the same URL (fetched 2026-10-14). Unconfirmed claims are removed (owner decision 2026-10-14; see notes).
+status: published
+country: mv
+headKeyword: EMR software in the Maldives
+secondaryKeywords:
+  - AI EMR software Maldives
+  - clinic management software Maldives
+  - clinic software Male
+title: AI EMR Software in the Maldives | Easy Clinic
+metaDescription: >-
+  AI EMR and clinic management software for clinics, resort health centres and island hospitals in Male,
+  Hulhumale, Addu City and across the atolls.
+h1: AI EMR software for clinics in the Maldives
+linkLabel: EMR software in the Maldives
+eyebrow: Best EMR software in the Maldives 2026
+openingAnswer: >-
+  AI EMR software in the Maldives is a cloud platform that records, stores and manages patient data, with AI
+  handling documentation, scheduling, billing and follow-up. For Maldivian clinics the real test is geography:
+  one patient record has to hold up whether the visit happens in Male, on a resort island or on a distant
+  atoll.
+summary: >-
+  How Easy Clinic connects island clinics, what Aasandha and the Ministry of Health ask of your clinic,
+  teleconsultation across atolls, and who to contact.
+author: subhashish-saha
+lastUpdated: 2026-10-14
+heroMedia:
+  kind: photo
+  src: ../../assets/images/countries/country.webp
+  alt: A smiling doctor in a white coat touching a clinic icon on a screen in front of her
+  frame: none
+heroStrip:
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+  whatsapp: Hi, I was reading the Easy Clinic page on EMR software in the Maldives and would like a demo for my clinic.
+
+sections:
+  # Block 2: local proof strip. The template also puts the bare contact card in the hero; this section renders
+  # the rest (cities) from src/data/countries/mv.yaml.
+  - discriminant: contactCard
+    value:
+      id: maldives-team
+      heading: Easy Clinic in the Maldives, and how to reach the team
+      intro: >-
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you
+        book one. Easy Clinic ties AI EMR, clinic management software and EHR software into one platform for
+        Maldivian providers, whether you run a clinic in Male, a resort health centre or a small facility on a
+        distant atoll, with guided onboarding from paper to digital.
+      tone: plain
+      country: mv
+      showClients: false
+
+  # Block 3: rules. A plain table of what each one asks of the clinic; no Easy Clinic status is claimed because
+  # none is on record (no mv-* files in src/data/regulators/).
+  - discriminant: dataTable
+    value:
+      id: rules-in-maldives
+      eyebrow: Rules in the Maldives
+      heading: What Aasandha and the Ministry of Health ask of your clinic
+      intro: >-
+        Geography, insurance and patient expectations all push Maldivian clinics the same way. Care is delivered
+        across scattered islands, so paper and desktop-only systems cannot keep up, and patients now expect the
+        same digital experience they get everywhere else.
+      tone: wash
+      columns: [Scheme or rule, What it asks of your clinic]
+      rows:
+        - ['**Aasandha**', 'Clean, traceable and auditable billing for every claim the clinic sends.']
+        - ['**Ministry of Health reporting**', 'Centralised reporting from every site the clinic runs.']
+        - ['**Patient data protection**', 'Records kept private across every island site.']
+      note: >-
+        Easy Clinic's own Aasandha claims and reporting status is not stated on this page. Ask the team before you
+        buy, and plan your Aasandha claims outside Easy Clinic until the team confirms otherwise.
+
+  # Block 4: billing and records, as a card grid (no prices: no rufiyaa price list exists).
+  - discriminant: moduleGrid
+    value:
+      id: billing-and-records
+      eyebrow: Records and billing
+      heading: Patient records, billing and AI notes across island sites
+      intro: >-
+        Every plan is priced per doctor per month; see the [pricing page](/pricing/) for current plans. These are
+        the parts of Easy Clinic a Maldivian clinic uses every day.
+      tone: plain
+      columns: 2
+      items:
+        - title: Patient records that travel between islands
+          icon: file-text
+          outcome: >-
+            Complete histories, prescriptions, lab reports and follow-ups sit in one record that doctors open
+            during any consultation, at any of the clinic's sites.
+          href: /features/emr/
+        - title: Invoices and payments
+          icon: receipt
+          outcome: >-
+            Invoicing and payments are automated, cutting manual errors while keeping a record of every visit.
+          href: /features/billing/
+        - title: Pharmacy stock across sites
+          icon: pill
+          outcome: Pharmacy stock is tracked across sites, with automatic reorder alerts.
+          href: /features/pharmacy-and-inventory/
+        - title: AI-assisted documentation
+          icon: sparkles
+          outcome: >-
+            Easy Clinic drafts notes, suggests templates and generates prescriptions in seconds, freeing clinicians
+            from repetitive typing.
+          href: /ai/
+
+  # Block 5: connectivity and communication, with the honest limit in the aside.
+  - discriminant: prose
+    value:
+      id: atolls-and-connectivity
+      heading: Teleconsultation across atolls, reminders and the internet
+      tone: wash
+      body: |
+        **Teleconsultation.** Teleconsultation links patients on outer atolls to doctors in Male, so care reaches patients far from the nearest clinic.
+
+        **One view across islands.** Easy Clinic connects island clinics through cloud EMR systems, with remote care and centralised data management. Owners see revenue and patient flow across every island, and the same record serves a clinic in Male and a resort health centre.
+
+        **Reminders.** Appointment and follow-up reminders go out through built-in WhatsApp, SMS and email, so no-shows and missed follow-ups fall.
+
+        **Resort guests.** Resort guests expect digital records, and the visit note, prescription and invoice come from the same record.
+      aside: >-
+        **Where it stops.** Easy Clinic runs in the browser over the internet and does not run fully offline today.
+        If your island clinic loses its connection for long periods, tell us before you buy, and we will show you
+        what the screen does when the connection goes.
+      width: measure
+
+  # Block 6: the clinic types.
+  - discriminant: clinicTypes
+    value:
+      id: clinic-types
+      heading: Solo clinics to island clinic groups in the Maldives
+      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
+      tone: plain
+      items:
+        - persona: solo
+          title: Solo practice
+          body: For physicians running their own clinic, with or without a receptionist. Simple EMR, scheduling and billing in one place.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: Specialist polyclinic
+          body: For OPD practices and polyclinics with several doctors. Add pharmacy and lab modules as you grow.
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: Clinic chains
+          body: >-
+            For clinic groups across Male, Hulhumale, Addu City and the atolls that need central management and
+            custom workflows.
+          href: /solutions/clinic-chain/
+        - persona: ngo
+          title: NGO clinic
+          body: For non-profit and mission-driven clinics, fixed or mobile, that need affordable digital records.
+          href: /features/
+
+  # Proof: rating badges (no Maldivian testimonial is on record, so this takes the Kenya testimonial slot).
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      eyebrow: Reviews
+      heading: Clinics trust us. The industry awards us.
+      tone: wash
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}' }
+
+  # Proof: the Penda Health study, from study.yaml.
+  - discriminant: proofBlock
+    value:
+      id: ai-clinical-pilot
+      eyebrow: AI clinical pilot
+      heading: We built the platform behind the world's largest AI clinical pilot
+      tone: plain
+      variant: study
+      figures: [visits, diagnostic-errors]
+      body: >-
+        Join the clinics and hospitals that trust Easy Clinic to run daily care. From prompt engineering to
+        frontline integration, Easy Clinic powered the AI Copilot used with OpenAI across {fig:visits} patient
+        visits at Penda Health's clinics in Nairobi. This is just the beginning.
+      link:
+        label: Read the article by OpenAI
+        href: https://openai.com/index/ai-clinical-copilot-penda-health/
+
+faqHeading: Questions Maldivian clinic owners ask
+faq:
+  - question: Is Easy Clinic suitable for clinics in Male and other islands in the Maldives?
+    answer: >-
+      Yes. Easy Clinic works for clinics, resort health centres and island hospitals in Male, Hulhumale, Addu
+      City and across the atolls.
+  - question: Does Easy Clinic work offline for island clinics with weak internet?
+    answer: >-
+      No. Easy Clinic runs in the browser over the internet and does not run fully offline today, so each site
+      needs a working connection. If your clinic loses its line for long periods, tell the team before you buy.
+  - question: Can Easy Clinic connect clinics on different islands?
+    answer: >-
+      Yes. Easy Clinic connects island clinics through cloud EMR systems, with one patient record and
+      centralised data management, and owners see revenue and patient flow across every island.
+  - question: Can patients on outer atolls see a doctor in Male?
+    answer: >-
+      Yes. Teleconsultation links patients on outer atolls to doctors in Male, alongside in-person appointment
+      scheduling at each clinic.
+  - question: Does Easy Clinic track pharmacy stock across island sites?
+    answer: Yes. Pharmacy stock is tracked across sites, with automatic reorder alerts before a site runs out.
+  - question: Does Easy Clinic help doctors with notes and prescriptions?
+    answer: >-
+      Yes. Easy Clinic drafts notes, suggests templates and generates prescriptions in seconds, so staff spend
+      less time typing.
+  - question: Does Easy Clinic send appointment reminders?
+    answer: >-
+      Yes. Appointment and follow-up reminders go out through built-in WhatsApp, SMS and email, which helps
+      when no-shows and missed follow-ups are rising.
+  - question: Is patient data private on Easy Clinic?
+    answer: >-
+      Yes. Role-based access keeps records private across every island site. We do not misuse, sell or pry on
+      your patient, clinical, financial or administrative data, and all records belong only to you.
+  - question: How can clinics in the Maldives get started?
+    answer: Book a free demo to see the platform in daily use, with guided onboarding from paper to digital.
+
+links:
+  hub: /countries/
+  relatedHeading: Where Maldivian clinic owners go next
+  related:
+    - href: /best-clinic-management-software-maldives/
+      label: Best clinic software in the Maldives
+      description: Three clinic systems ranked for a clinic in the Maldives, plus Easy Clinic unranked, with which handle Aasandha.
+    - href: /countries/
+      label: Book a demo from the Maldives
+      description: Clinics outside India and Kenya book a demo from the countries page.
+    - href: /features/emr/
+      label: EMR features in detail
+      description: Templates, 30-second prescriptions and the full medical history record.
+    - href: /solutions/clinic-chain/
+      label: Clinic chains
+      description: Central records, price lists and reports across every site.
+    - href: /pricing/
+      label: Easy Clinic pricing
+      description: See our plans and pick what fits your clinic.
+
+closing:
+  heading: See Easy Clinic run a day at your island clinic
+  body: >-
+    Book 20 minutes with the Easy Clinic team, or write to hello@easyclinic.io. Bring what your front desk does
+    on a busy morning, from the booking to the invoice, and we will show each step in Easy Clinic, including
+    where it stops.
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-10-14
+  onlyUsCouldWrite: >-
+    The island geography (Male, Hulhumale, Addu City, resort health centres and outer atolls), Aasandha and
+    Ministry of Health reporting, and teleconsultation from the atolls to Male come from Easy Clinic's own live
+    Maldives page.
+  readsMachineWritten: >-
+    The records and billing cards are generic; a human pass should add what a Maldivian resort or atoll clinic's
+    day looks like.
+
+notes:
+  - 'Structure follows /emr-software-in-kenya/ as /emr-software-in-malaysia/ does: hero with contact card, local proof strip (contactCard, cities only), rules (dataTable; no mv-* regulator files exist), money (moduleGrid of records and billing; no rufiyaa price list), connectivity prose with a "where it stops" aside, clinic types, proof, the study, FAQ, related links, closing. The testimonial slot holds rating badges because no Maldivian testimonial is on record and every testimonial on the live page is placed elsewhere (spec 2.4).'
+  - 'Owner decision 2026-10-14: unconfirmed claims are removed. Cut: "works online or offline" (H1), offline mode, "even with no signal", "syncs the moment the connection returns" (migration/research/facts.md: Easy Clinic does not run fully offline today; the offline FAQ now answers No); "can be set up for Aasandha workflows" and automated Aasandha claims; English and Dhivehi; rufiyaa pricing. Aasandha and Ministry of Health reporting are described as what they ask of the clinic, with no Easy Clinic status claimed.'
+  - 'Copy errors on the live page corrected: "Local Payments and MUR Billing ... Maldivian rupees ... MCB Juice" (Mauritian currency and wallet; cut), "clinic groups across Port Louis, Curepipe" (Mauritius; now Male, Hulhumale, Addu City and the atolls), and "Care That Reaches the Outer Atolls" whose body repeated the AI documentation card (now the teleconsultation line).'
+  - 'FAQ: the live page has five questions; country pages carry 8 to 10. Kept: Male and other islands, get started (without rufiyaa). Rewritten honestly: offline (now No). Cut: Aasandha, Dhivehi. Added from the live page''s own lines: connecting islands (its positioning line), atoll teleconsultation, pharmacy across sites, AI notes, reminders, data privacy (its security line and data promise; "consent handling and audit trails" left out as unconfirmed).'
+  - 'Edits the publish rules required: banned words removed ("seamless", "streamline", "comprehensive", "end-to-end", "robust"); "EasyClinic" written as "Easy Clinic"; "proven results" cut (claims rule).'
+  - 'Contact: no Maldives contact or office is on record (src/data/countries/mv.yaml); the card names the Easy Clinic support team and its main line. There is no Maldives demo page; demo CTAs go to the countries page demo form.'

@@ -5,6 +5,7 @@ import logo from '../../assets/logo/easyclinic-logo.png';
 import { getRegistry } from '../../lib/content/registry';
 import { isProduction } from '../../lib/content/stage';
 import Icon from '../ui/Icon.astro';
+import Flag from '../ui/Flag.astro';
 
 interface Props {
   /** Country id of the current page, used to route "Book a demo" to the local demo page. */
@@ -49,15 +50,16 @@ const missingClass = !isProduction ? 'nav-missing' : '';
 
 <header class="site-header sticky top-0 z-40 bg-surface" data-header>
   {/* Wider than the page container (container-wide, shared with the footer). On desktop a three-column grid keeps
-      the menu centred on the page, with the logo left and the actions right. */}
-  <div class="header-row container-wide flex items-center gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+      the logo left and the actions right; from 1440px the side columns are equal so the menu sits at the page centre,
+      below that they fit their content so the menu has the room it needs. */}
+  <div class="header-row container-wide flex items-center gap-4 lg:grid lg:grid-cols-[auto_minmax(0,1fr)_auto] min-[90rem]:grid-cols-[1fr_auto_1fr]">
     <a href="/" class="shrink-0 justify-self-start" aria-label="Easy Clinic home">
       {/* Served at the source's full 400px so it stays sharp at 220px on high-density screens. */}
       <Image src={logo} alt={site.logoAlt} width={400} height={79} loading="eager" fetchpriority="high" class="header-logo h-auto" />
     </a>
 
     {/* The menu fits on one line from 1200px (lg); below that the drawer takes over. */}
-    <nav aria-label="Main" class="hidden lg:block">
+    <nav aria-label="Main" class="hidden justify-self-center lg:block">
       <ul class="flex items-center gap-1">
         {
           primary.map((item) => (
@@ -86,7 +88,11 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                                   aria-current={l.current ? 'page' : undefined}
                                   class:list={['group/link flex gap-3 rounded-control p-2 no-underline transition-colors hover:bg-blue-50', l.current && 'bg-blue-50', l.missing && missingClass]}
                                 >
-                                  {l.icon && <Icon name={l.icon} size={22} class="mt-px text-blue-600 transition-transform group-hover/link:scale-110" />}
+                                  {l.flag ? (
+                                    <Flag code={l.flag} size={28} class="self-center transition-transform group-hover/link:scale-110" />
+                                  ) : (
+                                    l.icon && <Icon name={l.icon} size={22} class="mt-px text-blue-600 transition-transform group-hover/link:scale-110" />
+                                  )}
                                   <span>
                                     <span class:list={['block text-base font-semibold leading-snug transition-colors group-hover/link:text-blue-700', l.current ? 'text-blue-700' : 'text-ink-heading']}>{l.label}</span>
                                     {l.description && <span class="mt-0.5 block text-[0.9375rem] leading-snug text-ink-muted">{l.description}</span>}
@@ -99,7 +105,7 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                       ))}
                     </div>
                     {item.footerLink && link(item.footerLink.href).href && (
-                      <a href={link(item.footerLink.href).href} class="mt-4 inline-flex items-center gap-1 border-t border-line pt-4 text-sm font-semibold">
+                      <a href={link(item.footerLink.href).href} class="mt-4 flex w-full items-center gap-1 border-t border-line px-2 pt-4 text-sm font-semibold">
                         {item.footerLink.label} <Icon name="arrow-right" size={16} />
                       </a>
                     )}
@@ -126,8 +132,8 @@ const missingClass = !isProduction ? 'nav-missing' : '';
     </nav>
 
     <div class="ml-auto flex items-center gap-2 justify-self-end">
-      <a href={site.appLoginUrl} class="btn btn-outline hidden sm:inline-flex" rel="noopener">Login</a>
-      <a href={demoHref} class="btn btn-cta hidden sm:inline-flex" data-track="cta_click" data-label="header book a demo">Book a demo</a>
+      <a href={site.appLoginUrl} class="btn btn-outline hidden whitespace-nowrap sm:inline-flex" rel="noopener">Login</a>
+      <a href={demoHref} class="btn btn-cta hidden whitespace-nowrap sm:inline-flex" data-track="cta_click" data-label="header book a demo">Book a demo</a>
 
       <details data-menu="drawer" class="lg:hidden">
         <summary class="btn btn-ghost list-none !px-2.5 [&::-webkit-details-marker]:hidden" aria-label="Menu">
@@ -151,7 +157,8 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                             <ul>
                               {group.links.map((l) => (
                                 <li>
-                                  <a href={l.href} aria-current={l.current ? 'page' : undefined} class:list={['block min-h-11 py-2.5 no-underline', l.current ? 'font-semibold text-blue-700' : 'text-ink', l.missing && missingClass]}>
+                                  <a href={l.href} aria-current={l.current ? 'page' : undefined} class:list={['flex min-h-11 items-center gap-3 py-2.5 no-underline', l.current ? 'font-semibold text-blue-700' : 'text-ink', l.missing && missingClass]}>
+                                    {l.flag && <Flag code={l.flag} size={24} />}
                                     {l.label}
                                   </a>
                                 </li>
@@ -159,6 +166,11 @@ const missingClass = !isProduction ? 'nav-missing' : '';
                             </ul>
                           </div>
                         ))}
+                        {item.footerLink && link(item.footerLink.href).href && (
+                          <a href={link(item.footerLink.href).href} class="mb-3 inline-flex min-h-11 items-center gap-1 text-sm font-semibold">
+                            {item.footerLink.label} <Icon name="arrow-right" size={16} />
+                          </a>
+                        )}
                       </details>
                     </li>
                   ) : (

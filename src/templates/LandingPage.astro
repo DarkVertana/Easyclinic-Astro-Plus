@@ -8,6 +8,7 @@ import ProblemList from '../components/frame/ProblemList.astro';
 import CTABand from '../components/frame/CTABand.astro';
 import AwardRecognition from '../components/frame/AwardRecognition.astro';
 import FeatureChips from '../components/frame/FeatureChips.astro';
+import ClientLogos from '../components/frame/ClientLogos.astro';
 import WhatIsEasyClinic from '../components/frame/WhatIsEasyClinic.astro';
 import Sections from '../components/blocks/Sections.astro';
 import ContactCard from '../components/blocks/ContactCard/ContactCard.astro';
@@ -76,6 +77,7 @@ const heroContact = (record.family === 'country' || record.family === 'countryDe
   </Hero>
   {record.path === '/' && <AwardRecognition />}
   {record.path === '/' && <FeatureChips />}
+  {record.path === '/' && <ClientLogos />}
   {record.path === '/' && <WhatIsEasyClinic />}
   <Sections sections={d.sections} ctx={ctx} />
   {/* Related links come before the FAQ, so the FAQ sits directly above the closing CTA band. */}

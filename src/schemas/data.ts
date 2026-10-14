@@ -251,6 +251,8 @@ const navLink = z.strictObject({
   href,
   description: z.string().optional(),
   icon: z.string().optional(),
+  /** ISO 3166-1 alpha-2 code: shows that country's flag in place of an icon (the Country menu). */
+  flag: z.string().optional(),
 });
 
 export const navSchema = z.object({

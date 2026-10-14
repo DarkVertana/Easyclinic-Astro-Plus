@@ -58,17 +58,18 @@ const contactHref = registry.urlFor('/contact-us/');
             </div>
           )}
 
-        {/* Right: one card per question. Answers are in the server HTML; <details> only collapses them visually (spec 7.1). */}
-        <div class="flex flex-col gap-3 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-[35px]">
+        {/* Right: one row per question, divided by a hairline. Answers are in the server HTML; <details> only collapses them visually (spec 7.1). */}
+        <div class="flex flex-col lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-[35px]">
           {items.map((item, i) => (
-            <details class="faq-item group rounded-card border bg-surface" data-faq open={i === 0}>
-              <summary class="flex min-h-12 cursor-pointer list-none items-center gap-4 px-5 py-4 md:px-6 md:py-5 [&::-webkit-details-marker]:hidden">
+            <details class="faq-item group" data-faq open={i === 0}>
+              <summary class="flex min-h-12 cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden">
                 <h3 class="flex-1 font-sans text-[19px] leading-snug font-semibold text-ink-heading">{item.question}</h3>
-                <span class="faq-toggle flex size-8 shrink-0 items-center justify-center rounded-full border border-[#c7c7c7] text-blue-700" aria-hidden="true">
-                  <Icon name="plus" size={16} class="transition-transform duration-200 group-open:rotate-45" />
+                <span class="faq-toggle flex size-9 shrink-0 items-center justify-center rounded-full" aria-hidden="true">
+                  <Icon name="plus" size={18} class="group-open:hidden" />
+                  <Icon name="minus" size={18} class="hidden group-open:block" />
                 </span>
               </summary>
-              <Md text={item.answer} class="px-5 pb-5 leading-relaxed text-ink-muted md:pr-16 md:pl-6" />
+              <Md text={item.answer} class="pb-5 leading-relaxed text-ink-muted md:pr-14" />
             </details>
           ))}
         </div>
@@ -79,33 +80,32 @@ const contactHref = registry.urlFor('/contact-us/');
 
 <style>
   .faq-item {
-    border-color: #c7c7c7;
-    transition:
-      border-color 200ms ease,
-      background-color 200ms ease;
+    border-bottom: 1px solid #d5d8dc;
   }
-  .faq-item:hover {
-    border-color: var(--color-blue-200);
-  }
-  /* The open question: a soft blue edge and wash, and a filled toggle. */
-  .faq-item[open] {
-    border-color: var(--color-blue-200);
-    background: #f7fbff;
-  }
+  /* Closed: a soft blue disc with a brand-blue plus. Open: a solid brand-blue disc with a white minus. */
   .faq-toggle {
+    background: var(--color-blue-50);
+    color: var(--color-blue-700);
+    box-shadow: inset 0 0 0 1px var(--color-blue-100);
     transition:
       background-color 200ms ease,
-      border-color 200ms ease,
-      color 200ms ease;
+      color 200ms ease,
+      box-shadow 200ms ease;
+  }
+  .faq-item:not([open]) summary:hover .faq-toggle {
+    background: var(--color-blue-100);
   }
   .faq-item[open] .faq-toggle {
-    background: var(--color-blue-700);
-    border-color: var(--color-blue-700);
+    background: var(--cta-bg);
     color: var(--color-white);
+    box-shadow: none;
+  }
+  .faq-item summary:hover h3 {
+    color: var(--color-blue-700);
   }
   .faq-item summary:focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
-    border-radius: var(--radius-card);
+    border-radius: var(--radius-control);
   }
 </style>

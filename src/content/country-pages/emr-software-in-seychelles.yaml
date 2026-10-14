@@ -1,0 +1,251 @@
+# /emr-software-in-seychelles/: built on the /emr-software-in-kenya/ structure as /emr-software-in-qatar/ is (local proof
+# strip, a comparison in the rules slot, billing and records, connectivity with an honest limit, clinic types, proof,
+# the study), with copy from the live page of the same URL (fetched 2026-10-14). Unconfirmed claims are removed.
+status: published
+country: sc
+headKeyword: EMR software in Seychelles
+secondaryKeywords:
+  - AI EMR software Seychelles
+  - clinic management software Seychelles
+  - clinic software Victoria
+title: AI EMR Software in Seychelles | Easy Clinic
+metaDescription: >-
+  Secure cloud-based AI EMR software for private clinics, speciality medical centres and healthcare providers in Victoria, Mahé, Praslin and La Digue.
+h1: Advanced AI EMR software in Seychelles for clinics and hospitals
+linkLabel: EMR software in Seychelles
+eyebrow: Best EMR software in Seychelles 2026
+openingAnswer: >-
+  Easy Clinic provides secure cloud-based AI EMR software for private clinics, speciality medical centres and
+  healthcare providers across Victoria, Mahé, Praslin and La Digue. It combines automation, structured
+  documentation, analytics and workflow management into one EMR software platform for clinics across the
+  islands.
+summary: >-
+  How Easy Clinic runs a clinic in Seychelles, how it compares with EHR and basic clinic software, multi-branch clinics,
+  teleconsultation, and who to contact.
+author: subhashish-saha
+lastUpdated: 2026-10-14
+heroMedia:
+  kind: photo
+  src: ../../assets/images/countries/country.webp
+  alt: A smiling doctor in a white coat touching a clinic icon on a screen in front of her
+  frame: none
+heroStrip:
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+  whatsapp: Hi, I was reading the Easy Clinic page on EMR software in Seychelles and would like a demo for my clinic.
+
+sections:
+  - discriminant: contactCard
+    value:
+      id: seychelles-team
+      heading: Easy Clinic in Seychelles, and how to reach the team
+      intro: >-
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you book
+        one. From clinics in Victoria to healthcare facilities across Mahé and Praslin, Easy Clinic provides one EMR software platform, with onboarding, training and ongoing support.
+      tone: plain
+      country: sc
+      showClients: false
+
+  # Kenya: regulators. The live page names no Seychelles rule or status, so this slot carries its comparison.
+  - discriminant: dataTable
+    value:
+      id: emr-vs-ehr
+      eyebrow: AI EMR and clinic software
+      heading: What is AI EMR software, and how is it different from EHR software?
+      intro: >-
+        AI EMR software in Seychelles goes beyond traditional EHR software and standalone clinic management software.
+        While conventional EHR software focuses on storing patient records digitally, **AI EMR software integrates
+        clinical workflows, billing, analytics and communication tools into one system.**
+      tone: wash
+      caption: EHR software vs clinic management software vs AI EMR software in Seychelles
+      columns: [Feature, Traditional EHR software, Basic clinic management software, AI EMR software (Easy Clinic)]
+      rows:
+        - [Patient records, Digital storage only, Limited integration, '**Fully integrated AI EMR system**']
+        - [Automation, Minimal, Partial, '**Advanced AI automation**']
+        - [Billing and payments, Manual or semi-digital, Moderate, '**Fully automated and accurate**']
+        - [Inventory management, Not included, Basic tracking, '**Real-time monitoring with alerts**']
+        - [Multi-location support, Difficult, Partial, '**Fully centralised control**']
+        - [Analytics, Basic report, Limited insights, '**Advanced dashboards and insights**']
+        - [Communication, Not integrated, Limited, '**SMS, WhatsApp, email and teleconsultation**']
+        - [Scalability, Low, Moderate, '**High for clinics and hospitals**']
+
+  - discriminant: moduleGrid
+    value:
+      id: billing-and-records
+      eyebrow: Records and billing
+      heading: Records, billing and stock at a clinic in Seychelles
+      intro: >-
+        Seychelles' healthcare system needs efficient and connected solutions to manage patient care across limited but geographically distributed facilities. Every plan is priced per doctor per month; see the [pricing page](/pricing/) for current plans.
+      tone: plain
+      columns: 2
+      items:
+        - title: Digital patient records with AI EMR software
+          icon: file-text
+          outcome: >-
+            Store complete patient histories digitally, including consultations, prescriptions and reports, and open
+            accurate information instantly for continuity of care.
+          href: /features/emr/
+        - title: Simplified billing
+          icon: receipt
+          outcome: Generate invoices instantly and track payments clearly, reducing billing errors.
+          href: /features/billing/
+        - title: Inventory and pharmacy
+          icon: pill
+          outcome: Track medicines and medical supplies in real time, with alerts for low stock and expiries.
+          href: /features/pharmacy-and-inventory/
+        - title: Insights through analytics
+          icon: chart-column
+          outcome: Built-in analytics show patient visits, revenue trends and staff productivity for informed decisions.
+          href: /features/reports-and-dashboards/
+
+  - discriminant: prose
+    value:
+      id: teleconsultation-and-branches
+      heading: Teleconsultation, reminders and multi-branch clinics
+      tone: wash
+      body: |
+        **Teleconsultation.** Teleconsultation enables remote care across the islands, which supports island-based healthcare delivery.
+
+        **Reminders.** Appointment scheduling is automated, with SMS and WhatsApp reminders that reduce missed visits, because patients expect faster service and digital communication.
+
+        **Multi-branch clinics.** Clinics operating across different islands manage operations through one central dashboard, with patient records accessible across facilities and islands.
+
+        **Patient histories.** Doctors access patient histories instantly through AI EMR software during consultations, and role-based access control keeps patient data secure.
+      aside: >-
+        **Where it stops.** Easy Clinic runs in the browser over the internet and does not run fully offline today.
+        If your clinic loses its connection for long periods, tell us before you buy.
+      width: measure
+
+  - discriminant: clinicTypes
+    value:
+      id: clinic-types
+      heading: Clinics to island clinic groups in Seychelles
+      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
+      tone: plain
+      items:
+        - persona: solo
+          title: Solo practice
+          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: Specialist polyclinic
+          body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: Clinic chains
+          body: Suitable for clinic groups across Mahé, Praslin and La Digue that need centralised management and custom business processes.
+          href: /solutions/clinic-chain/
+        - persona: ngo
+          title: NGO clinic
+          body: Suitable for non-profit and mission-driven healthcare organisations that operate fixed or mobile clinics.
+          href: /features/
+
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      eyebrow: Reviews
+      heading: Clinics trust us. The industry awards us.
+      tone: wash
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}' }
+
+  - discriminant: proofBlock
+    value:
+      id: ai-clinical-pilot
+      eyebrow: AI clinical pilot
+      heading: We built the platform behind the world's largest AI clinical pilot
+      tone: plain
+      variant: study
+      figures: [visits, diagnostic-errors]
+      body: >-
+        From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot used with OpenAI across
+        {fig:visits} patient visits at Penda Health's clinics in Nairobi. This is just the beginning.
+      link:
+        label: Read the article by OpenAI
+        href: https://openai.com/index/ai-clinical-copilot-penda-health/
+
+faqHeading: Questions clinic owners in Seychelles ask
+faq:
+  - question: 'Is Easy Clinic suitable for clinics in Victoria and Mahé?'
+    answer: 'Yes. Easy Clinic works for clinics in Victoria, Mahé, Praslin and La Digue as well as healthcare facilities across Seychelles.'
+  - question: 'Can Easy Clinic manage clinics across multiple islands?'
+    answer: 'Yes. Clinics operating across different islands can manage operations through one central EMR software dashboard.'
+  - question: Is patient data secure on Easy Clinic EMR systems?
+    answer: >-
+      Yes. Easy Clinic uses secure cloud infrastructure and role-based access to protect patient data. We do not
+      misuse, sell or pry on your data, and all records belong only to you.
+  - question: Does Easy Clinic support telemedicine in Seychelles?
+    answer: Yes. Clinics can offer teleconsultations and remote follow-ups for patients who cannot reach the clinic.
+  - question: Can Easy Clinic integrate SMS and WhatsApp communication?
+    answer: Yes. Clinics can send appointment reminders and patient updates through integrated messaging tools.
+  - question: Does Easy Clinic support inventory and pharmacy management?
+    answer: Yes. Clinics can manage medicine stock and receive alerts for low stock and expiries, reducing wastage.
+  - question: What is the difference between AI EMR software and EHR software?
+    answer: >-
+      AI EMR software includes automation, analytics and intelligent workflows, while EHR software mainly focuses
+      on storing patient records.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No. Easy Clinic runs in the browser over the internet and does not run fully offline today, so each clinic
+      needs a working connection.
+  - question: Can clinics in Seychelles transition easily from paper systems to AI EMR software?
+    answer: >-
+      Yes. Easy Clinic provides onboarding, training and ongoing support to ensure a smooth transition from manual
+      systems to digital healthcare platforms.
+
+links:
+  hub: /countries/
+  relatedHeading: Where clinic owners in Seychelles go next
+  related:
+    - href: /best-clinic-management-software-seychelles/
+      label: Best clinic software in Seychelles
+      description: Three clinic systems ranked for a clinic in Seychelles, plus Easy Clinic unranked, from AI scribes to on-premise.
+    - href: /countries/
+      label: Book a demo from Seychelles
+      description: Clinics outside India and Kenya book a demo from the countries page.
+    - href: /features/emr/
+      label: EMR features in detail
+      description: Templates, 30-second prescriptions and the full medical history record.
+    - href: /solutions/clinic-chain/
+      label: Clinic chains
+      description: Central records, price lists and reports across every branch.
+    - href: /pricing/
+      label: Easy Clinic pricing
+      description: See our plans and pick what fits your clinic.
+
+closing:
+  heading: See Easy Clinic run a day at your clinic
+  body: >-
+    Book 20 minutes with the Easy Clinic team, or write to hello@easyclinic.io. Bring what your front desk does on a
+    busy morning, from the booking to the invoice, and we will show each step in Easy Clinic, including where it
+    stops.
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-10-14
+  onlyUsCouldWrite: >-
+    The places (Victoria, Mahé, Praslin, La Digue) and the Seychellois healthcare context come from Easy Clinic's own live Seychelles page.
+  readsMachineWritten: >-
+    Most of the live Seychelles page is generic; a human pass should add Seychellois detail (the payers and rules a local
+    clinic deals with).
+
+notes:
+  - 'Structure follows /emr-software-in-qatar/ (Kenya structure). The rules slot carries the live page''s comparison table because the live page names no Seychelles regulator or payer and no sc-* regulator files exist. Rating badges take the testimonial slot (every testimonial on the live page is placed elsewhere, spec 2.4).'
+  - 'Edits the publish rules required: banned words removed ("seamless", "streamline", "comprehensive", "end-to-end", "robust", "revolutionise", "world-class", "modern clinics"); "EasyClinic" written as "Easy Clinic"; "proven results" cut (claims rule); FAQ questions end with a question mark. Added from the repo: "does not run fully offline today" (migration/research/facts.md). '
+  - 'FAQ: 8 of the live page''s questions plus an offline answer; left out the ones that repeat another answer.'
+  - 'Contact: no Seychelles contact or office is on record (src/data/countries/sc.yaml); demo CTAs go to the countries page form.'

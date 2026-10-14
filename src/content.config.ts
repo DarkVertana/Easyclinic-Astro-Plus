@@ -1,4 +1,4 @@
-// Schema revision 2026-10-08g (problems, showcase and closing fields, 9 related links). Astro rebuilds its content cache only when this
+// Schema revision 2026-10-14n (nav link flag field; Ethiopia, Fiji, Ghana, Malaysia, Maldives, Mauritius, Qatar, Rwanda, Seychelles and Somalia country data). Astro rebuilds its content cache only when this
 // file changes, not when src/schemas/* does: bump this line after a schema change so new fields reach the pages.
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';

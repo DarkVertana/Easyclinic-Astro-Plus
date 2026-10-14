@@ -1,0 +1,275 @@
+# /emr-software-in-mauritius/: built on the /emr-software-in-kenya/ structure (local proof strip, rules, billing
+# and claims, connectivity with an honest limit, clinic types, proof, the study), with copy from the live page of
+# the same URL (fetched 2026-10-14). Unconfirmed claims are removed (owner decision 2026-10-14; see notes).
+status: published
+country: mu
+headKeyword: EMR software in Mauritius
+secondaryKeywords:
+  - AI EMR software Mauritius
+  - clinic management software Mauritius
+  - clinic software Port Louis
+title: AI EMR Software in Mauritius | Easy Clinic
+metaDescription: >-
+  AI EMR and clinic management software for clinics, polyclinics and hospitals in Port Louis, Curepipe,
+  Quatre Bornes and across Mauritius.
+h1: AI EMR software for clinics in Mauritius
+linkLabel: EMR software in Mauritius
+eyebrow: Best EMR software in Mauritius 2026
+openingAnswer: >-
+  AI EMR software in Mauritius is a cloud platform that records, stores and manages patient data, and uses AI
+  to handle routine clinical and admin work. Instead of separate tools for records, scheduling, billing and
+  pharmacy, a clinic in Port Louis or Curepipe runs everything from a single login, and Easy Clinic adds AI on
+  top, so notes, reminders and reports happen automatically.
+summary: >-
+  How Easy Clinic runs a Mauritian clinic, what the Data Protection Act 2017 asks of your clinic, insurance
+  claims, medical tourism patients, and who to contact.
+author: subhashish-saha
+lastUpdated: 2026-10-14
+heroMedia:
+  kind: photo
+  src: ../../assets/images/countries/country.webp
+  alt: A smiling doctor in a white coat touching a clinic icon on a screen in front of her
+  frame: none
+heroStrip:
+  ratings: true
+  study: false
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+  whatsapp: Hi, I was reading the Easy Clinic page on EMR software in Mauritius and would like a demo for my clinic.
+
+sections:
+  # Block 2: local proof strip. The template also puts the bare contact card in the hero; this section renders
+  # the rest (cities) from src/data/countries/mu.yaml.
+  - discriminant: contactCard
+    value:
+      id: mauritius-team
+      heading: Easy Clinic in Mauritius, and how to reach the team
+      intro: >-
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you
+        book one. Whether you run a solo clinic in Port Louis or a multi-location group across the island, Easy
+        Clinic scales with you.
+      tone: plain
+      country: mu
+      showClients: false
+
+  # Block 3: rules. A plain table of what each one asks of the clinic; no Easy Clinic status is claimed because
+  # none is on record (no mu-* files in src/data/regulators/).
+  - discriminant: dataTable
+    value:
+      id: rules-in-mauritius
+      eyebrow: Rules in Mauritius
+      heading: Mauritian rules and what each one asks of your clinic
+      intro: >-
+        Mauritius has growing demand for healthcare, driven by local patients and a strong medical tourism
+        sector. Clinics are moving off paper to stay competitive and to meet the rules on patient data.
+      tone: wash
+      columns: [Rule, What it asks of your clinic]
+      rows:
+        - ['**Data Protection Act 2017**', 'Rules on how the clinic holds and protects patient data.']
+        - ['**Ministry of Health and Wellness guidance**', 'Data protection and structured reporting standards for the clinic.']
+      note: >-
+        Easy Clinic's own compliance status for each rule is not stated on this page. Ask the team before you
+        buy, and plan your clinic's Data Protection Act duties whatever software you use.
+
+  # Block 4: billing and claims, as a card grid (no prices: no Mauritian rupee price list exists).
+  - discriminant: moduleGrid
+    value:
+      id: billing-and-claims
+      eyebrow: Billing and claims
+      heading: Billing, insurance claims and records at a Mauritian clinic
+      intro: >-
+        Every plan is priced per doctor per month; see the [pricing page](/pricing/) for current plans. These are
+        the parts of Easy Clinic a Mauritian clinic uses every day.
+      tone: plain
+      columns: 2
+      items:
+        - title: Insurance and payor claims
+          icon: shield-check
+          outcome: >-
+            Insurance and payor claims management is part of Easy Clinic's clinic management features, so billing
+            and claims no longer take too long to reconcile.
+          href: /features/insurance-claims/
+        - title: Digital patient records with AI EMR software
+          icon: file-text
+          outcome: >-
+            Capture records, prescriptions, vitals and lab results in one place, and open any patient file
+            instantly during a consultation.
+          href: /features/emr/
+        - title: Inventory and pharmacy
+          icon: pill
+          outcome: Track medicines and supplies in real time, with low-stock alerts and expiry monitoring.
+          href: /features/pharmacy-and-inventory/
+        - title: Reports without manual work
+          icon: chart-column
+          outcome: >-
+            Dashboards show patient trends, clinic performance and revenue at a glance, so nobody builds reports by
+            hand.
+          href: /features/reports-and-dashboards/
+
+  # Block 5: medical tourism, communication and connectivity, with the honest limit in the aside.
+  - discriminant: prose
+    value:
+      id: tourism-and-teleconsultation
+      heading: Medical tourism patients, teleconsultation and reminders
+      tone: wash
+      body: |
+        **Medical tourism.** Medical tourism patients expect digital records and fast reports, and the visit note, prescription and invoice come from the same record.
+
+        **Teleconsultation.** Teleconsultation connects patients across the island and outer regions, alongside in-person appointment scheduling.
+
+        **Reminders.** Patients today expect fast prescriptions, WhatsApp reminders and instant access to their treatment history. Appointment and follow-up reminders go out automatically via WhatsApp, SMS and email.
+
+        **AI on top.** The AI EMR engine drafts notes, sends reminders and writes visit summaries automatically, so automation covers staff shortages and less time goes on admin.
+      aside: >-
+        **Where it stops.** Easy Clinic runs in the browser over the internet and does not run fully offline today.
+        If your clinic loses its connection for long periods, tell us before you buy.
+      width: measure
+
+  # Block 6: the clinic types.
+  - discriminant: clinicTypes
+    value:
+      id: clinic-types
+      heading: Solo clinics to clinic chains in Mauritius
+      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
+      tone: plain
+      items:
+        - persona: solo
+          title: Solo practice
+          body: For physicians running their own clinic, with or without a receptionist. Simple EMR, scheduling and billing in one place.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: Specialist polyclinic
+          body: For OPD practices and polyclinics with several doctors. Add pharmacy and lab modules as you grow.
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: Clinic chains
+          body: >-
+            For clinic groups across Port Louis, Curepipe, Quatre Bornes, Beau Bassin-Rose Hill and beyond that need
+            central management and custom workflows, with centralised visibility into every patient, prescription
+            and treatment plan.
+          href: /solutions/clinic-chain/
+        - persona: ngo
+          title: NGO clinic
+          body: For non-profit and mission-driven clinics, fixed or mobile, that need affordable digital records.
+          href: /features/
+
+  # Proof: rating badges (no Mauritian testimonial is on record, so this takes the Kenya testimonial slot).
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      eyebrow: Reviews
+      heading: Clinics trust us. The industry awards us.
+      tone: wash
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}' }
+
+  # Proof: the Penda Health study, from study.yaml.
+  - discriminant: proofBlock
+    value:
+      id: ai-clinical-pilot
+      eyebrow: AI clinical pilot
+      heading: We built the platform behind the world's largest AI clinical pilot
+      tone: plain
+      variant: study
+      figures: [visits, diagnostic-errors]
+      body: >-
+        Join the clinics and hospitals that trust Easy Clinic to run daily care. From prompt engineering to
+        frontline care, Easy Clinic powered the AI Copilot used with OpenAI across {fig:visits} patient visits at
+        Penda Health's clinics in Nairobi.
+      link:
+        label: Read the article by OpenAI
+        href: https://openai.com/index/ai-clinical-copilot-penda-health/
+
+faqHeading: Questions Mauritian clinic owners ask
+faq:
+  - question: Is Easy Clinic suitable for clinics in Port Louis and across Mauritius?
+    answer: >-
+      Yes. Easy Clinic works for clinics, polyclinics and hospitals in Port Louis, Curepipe, Quatre Bornes,
+      Beau Bassin-Rose Hill, Vacoas-Phoenix, Mahébourg and across the island.
+  - question: Does Easy Clinic support insurance and payor claims in Mauritius?
+    answer: Yes, Easy Clinic includes insurance and payor claims management as part of its clinic management features.
+  - question: Can patients book teleconsultations through Easy Clinic?
+    answer: >-
+      Yes, Easy Clinic supports teleconsultation alongside in-person appointment scheduling, connecting patients
+      across the island and outer regions.
+  - question: Is Easy Clinic suitable for a single-doctor clinic in Mauritius?
+    answer: Yes, Easy Clinic works for solo practitioners as well as large multi-location hospital groups.
+  - question: Does Easy Clinic handle pharmacy, billing and patient reminders?
+    answer: >-
+      Yes. It tracks inventory with low-stock alerts, automates billing, and sends reminders over WhatsApp, SMS
+      and email.
+  - question: Can Easy Clinic generate reports on clinic performance?
+    answer: >-
+      Yes, Easy Clinic provides reports on patient visits, revenue and clinic performance, so owners see clinic
+      performance without building reports by hand.
+  - question: Is patient data secure on Easy Clinic?
+    answer: >-
+      Yes, Easy Clinic is a secure, cloud-based platform designed to protect sensitive patient health
+      information. We do not misuse, sell or pry on your data, and all records belong only to you.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No. Easy Clinic runs in the browser over the internet and does not run fully offline today, so each clinic
+      needs a working connection.
+  - question: How much does Easy Clinic cost for a clinic in Mauritius?
+    answer: >-
+      Every plan is priced per doctor per month, and the pricing page lists current plans. Book a demo for a
+      quote based on your clinic size and the modules you need.
+
+links:
+  hub: /countries/
+  relatedHeading: Where Mauritian clinic owners go next
+  related:
+    - href: /best-clinic-management-software-mauritius/
+      label: Best clinic software in Mauritius
+      description: Four clinic systems ranked for a clinic in Mauritius, plus Easy Clinic unranked, from AI scribes to on-premise hospitals.
+    - href: /countries/
+      label: Book a demo from Mauritius
+      description: Clinics outside India and Kenya book a demo from the countries page.
+    - href: /features/insurance-claims/
+      label: Insurance and payor claims
+      description: How claims move from the bill the front desk raised.
+    - href: /solutions/clinic-chain/
+      label: Clinic chains
+      description: Central records, price lists and reports across every branch.
+    - href: /pricing/
+      label: Easy Clinic pricing
+      description: See our plans and pick what fits your clinic.
+
+closing:
+  heading: See Easy Clinic run a day at your clinic
+  body: >-
+    Book 20 minutes with the Easy Clinic team, or write to hello@easyclinic.io. Bring what your front desk does
+    on a busy morning, from the booking to the insurance claim, and we will show each step in Easy Clinic,
+    including where it stops.
+  primary:
+    label: Book a 20-minute demo
+    href: /countries/#book-a-demo
+  secondary:
+    label: View pricing
+    href: /pricing/
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-10-14
+  onlyUsCouldWrite: >-
+    The medical tourism demand, the Data Protection Act 2017 and Ministry of Health and Wellness guidance, and
+    the towns from Port Louis to Mahébourg come from Easy Clinic's own live Mauritius page.
+  readsMachineWritten: >-
+    The billing cards and FAQ answers are generic; a human pass should add what a Mauritian clinic's day looks
+    like.
+
+notes:
+  - 'Structure follows /emr-software-in-kenya/ as /emr-software-in-malaysia/ and /emr-software-in-maldives/ do: hero with contact card, local proof strip (contactCard, cities only), rules (dataTable; no mu-* regulator files exist), money (moduleGrid of billing and claims; no MUR price list), connectivity prose with a "where it stops" aside, clinic types, rating badges in the testimonial slot (no Mauritian testimonial on record; every testimonial on the live page is placed elsewhere, spec 2.4), the study, FAQ, related links, closing.'
+  - 'Owner decision 2026-10-14: unconfirmed claims are removed. Cut: "DPA 2017 compliance built in", "encryption and access controls aligned with the DPA 2017" and the compliance FAQ answer "Yes"; English and French care and the bilingual FAQ; MUR billing, MCB Juice and "plans are priced in Mauritian rupees"; "the same AI EMR engine runs for clinics in Mauritius today" (no Mauritian client is on record). The Act is described as a rule for the clinic, with no Easy Clinic status claimed.'
+  - 'Added from the repo, not the live page: "does not run fully offline today" (migration/research/facts.md), in the aside and an FAQ.'
+  - 'Edits the publish rules required: banned words removed ("seamless", "modern clinics", "robust"); "EasyClinic" written as "Easy Clinic"; "proven results" cut (claims rule); headings in sentence case.'
+  - 'FAQ: 9 of the live page''s 13 plus the offline answer, leaving out compliance, bilingual, Vacoas-Phoenix and Mahébourg (folded into the first answer) and the separate pharmacy and reminders questions (the combined one is kept).'
+  - 'Home page: the home related links already hold nine (the schema maximum), so Mauritius stays in the RelatedLinks OTHER_MARKETS pills, which now link to this page instead of the countries hub.'
+  - 'Contact: no Mauritius contact or office is on record (src/data/countries/mu.yaml); the card names the Easy Clinic support team and its main line. There is no Mauritius demo page; demo CTAs go to the countries page demo form.'

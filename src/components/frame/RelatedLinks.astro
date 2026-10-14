@@ -35,29 +35,26 @@ const items = links
       : null;
   })
   .filter((l): l is NonNullable<typeof l> => l !== null);
-// Markets Easy Clinic serves without a country page yet: until each page is built, the pill goes to the
-// countries hub (the old /emr-software-in-*/ URLs redirect there too). Move one into the page's related
-// links, with its own page, once that page is published.
-const OTHER_MARKETS: [string, string][] = [
-  ['ET', 'Ethiopia'],
-  ['FJ', 'Fiji'],
-  ['GH', 'Ghana'],
-  ['MY', 'Malaysia'],
-  ['MV', 'Maldives'],
-  ['MU', 'Mauritius'],
-  ['QA', 'Qatar'],
-  ['RW', 'Rwanda'],
-  ['SC', 'Seychelles'],
-  ['SO', 'Somalia'],
-  ['ZA', 'South Africa'],
-  ['SR', 'Suriname'],
-  ['TZ', 'Tanzania'],
-  ['TT', 'Trinidad and Tobago'],
-  ['UG', 'Uganda'],
+// Markets not in the page's related links (the home page holds nine, the schema maximum). A market with its
+// own country page names it as the third value and the pill links there once that page is published;
+// the rest go to the countries hub (the old /emr-software-in-*/ URLs redirect there too).
+const OTHER_MARKETS: [string, string, string?][] = [
+  ['MU', 'Mauritius', '/emr-software-in-mauritius/'],
+  ['QA', 'Qatar', '/emr-software-in-qatar/'],
+  ['RW', 'Rwanda', '/emr-software-in-rwanda/'],
+  ['SC', 'Seychelles', '/emr-software-in-seychelles/'],
+  ['SO', 'Somalia', '/emr-software-in-somalia/'],
+  ['ZA', 'South Africa', '/emr-software-in-south-africa/'],
+  ['SR', 'Suriname', '/emr-software-in-suriname/'],
+  ['TZ', 'Tanzania', '/emr-software-in-tanzania/'],
+  ['TT', 'Trinidad and Tobago', '/emr-software-in-trinidad-and-tobago/'],
+  ['UG', 'Uganda', '/emr-software-in-uganda/'],
 ];
 const hubHref = registry.urlFor('/countries/');
 const otherPills =
-  countryPills && hubHref ? OTHER_MARKETS.map(([country, name]) => ({ href: hubHref, label: `EMR Software in ${name}`, country })) : [];
+  countryPills && hubHref
+    ? OTHER_MARKETS.map(([country, name, page]) => ({ href: (page && registry.urlFor(page)) || hubHref, label: `EMR Software in ${name}`, country }))
+    : [];
 // Every market in one alphabetical row; the UAE sorts by its full name.
 const sortName = (label: string) => label.replace('EMR Software in ', '').replace(/^UAE$/, 'United Arab Emirates');
 const pills = countryPills

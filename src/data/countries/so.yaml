@@ -1,0 +1,30 @@
+name: Somalia
+code: SO
+# No local price list exists; prices are quoted in US dollars, as for other markets without their own currency file.
+currency: USD
+dialCode: '+252'
+timezone: Africa/Mogadishu
+flagship: false
+contact:
+  # No Somalia contact or office on record: the card names the Easy Clinic support team and its main line,
+  # the contact the live Somalia page gives (hello@easyclinic.io).
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: null
+pages:
+  country: /emr-software-in-somalia/
+  listicle: /best-clinic-management-software-somalia/
+cities: [Mogadishu, Hargeisa, Bosaso, Kismayo, Baidoa]
+clients: []
+payments: []
+insurers: []
+languages: []
+taxInvoicing: null
+notes:
+  - 'Created 2026-10-14 for /emr-software-in-somalia/. Cities are the ones the live Somalia page names.'

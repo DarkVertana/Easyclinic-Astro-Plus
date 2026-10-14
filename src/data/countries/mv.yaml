@@ -1,0 +1,30 @@
+name: Maldives
+code: MV
+# No rufiyaa price list exists; prices are quoted in US dollars, as for other markets without their own currency file.
+currency: USD
+dialCode: '+960'
+timezone: Indian/Maldives
+flagship: false
+contact:
+  # No Maldives contact or office on record: the card names the Easy Clinic support team and its main line,
+  # the contact the live Maldives page gives (hello@easyclinic.io).
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: null
+pages:
+  country: /emr-software-in-maldives/
+  listicle: /best-clinic-management-software-maldives/
+cities: [Male, Hulhumale, Addu City]
+clients: []
+payments: []
+insurers: []
+languages: []
+taxInvoicing: null
+notes:
+  - 'Created 2026-10-14 for /emr-software-in-maldives/. Cities are the ones the live Maldives page names. Offline mode, Aasandha claims, Dhivehi, rufiyaa billing and MCB Juice are claimed on the live page but unconfirmed (MCB Juice and "MUR" are Mauritian), so payments, insurers and languages are left empty.'

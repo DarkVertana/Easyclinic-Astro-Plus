@@ -64,6 +64,7 @@ const navLinkFields = (required: boolean) => ({
   href: link('Link', { required }),
   description: text('Description'),
   icon: text('Icon', { description: 'Lucide icon name, e.g. calendar-clock.' }),
+  flag: text('Flag', { description: 'Two-letter country code, e.g. KE. Shows the flag in place of the icon.' }),
 });
 const navLink = () => group('Link', navLinkFields(true));
 const navLinks = (label: string, min?: number) =>

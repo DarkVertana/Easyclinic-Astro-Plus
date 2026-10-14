@@ -7,10 +7,21 @@ flagship: true
 # contact.email: "Contact support at hello@easyclinic.io" on https://www.easyclinic.io/emr-software-in-nigeria/
 # (fetched 2026-09-26). It is the company-wide support address, not a Nigeria-based contact; replace it when
 # one exists. Everything else in contact is unknown: the live Nigeria page gives no name, phone or hours.
-contact: { name: null, publishName: null, role: null, phone: null, whatsapp: null, email: hello@easyclinic.io, hours: null, callbackWindow: null }
+# 2026-10-14: with no Nigeria contact on record, the card names the Easy Clinic support team and its main line (as
+# for the other markets without a local team), so /emr-software-in-nigeria/ can publish. Replace when a Nigeria
+# contact exists.
+contact:
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
 office: null
 pages:
-  country: /hospital-management-software-nigeria/
+  country: /emr-software-in-nigeria/
   demo: /nigeriademo/
   pricing: /pricing/nigeria/
   listicle: /best-clinic-management-software-nigeria/

@@ -12,7 +12,7 @@
 
 export const MEDIA_PRESENT_IF = ['alt', 'src', 'needed', 'caption', 'videoUrl'] as const;
 export const CTA_PRESENT_IF = ['label', 'href', 'event'] as const;
-export const NAV_LINK_PRESENT_IF = ['label', 'href', 'description', 'icon'] as const;
+export const NAV_LINK_PRESENT_IF = ['label', 'href', 'description', 'icon', 'flag'] as const;
 export const HERO_STRIP_PRESENT_IF = ['regulators', 'ratings', 'study'] as const;
 export const CLOSING_PRESENT_IF = ['heading', 'body', 'primary'] as const;
 export const SHOWCASE_PRESENT_IF = ['heading', 'intro'] as const;

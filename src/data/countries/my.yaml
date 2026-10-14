@@ -1,0 +1,32 @@
+name: Malaysia
+code: MY
+# No ringgit price list exists, and the USD price is not confirmed for Malaysia (posts/clinic-in-malaysia notes).
+currency: USD
+dialCode: '+60'
+timezone: Asia/Kuala_Lumpur
+flagship: false
+contact:
+  # No Malaysia contact or office on record: the card names the Easy Clinic support team and its main line,
+  # the contact the live Malaysia page gives (hello@easyclinic.io).
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: null
+pages:
+  country: /emr-software-in-malaysia/
+  listicle: /best-clinic-management-software-malaysia/
+cities: [Kuala Lumpur, Petaling Jaya, Johor Bahru, Penang, Ipoh, Kota Kinabalu, Kuching]
+# Qualitas Health: testimonials/hisham-ismail.yaml (Group CIO, Malaysia, consent on file).
+clients:
+  - Qualitas Health
+payments: []
+insurers: []
+languages: []
+taxInvoicing: null
+notes:
+  - 'Created 2026-10-14 for /emr-software-in-malaysia/. Cities are the ones the live Malaysia page names. FPX, DuitNow, MYR billing and Malay, Mandarin and Tamil support are claimed on the live page but unconfirmed, so payments and languages are left empty.'

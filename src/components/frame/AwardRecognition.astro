@@ -4,8 +4,8 @@ import Icon from '../ui/Icon.astro';
 import siliconindia from '../../assets/images/siliconindia-1536x400.webp';
 
 /**
- * Award and press recognition, shown on the home page straight after the hero: the award on the left,
- * the publication's pull quote and masthead on the right.
+ * Award and press recognition, shown on the home page straight after the hero: one panel with the award as a
+ * badge on the left and the publication's pull quote and masthead on the right. Stacks, centred, on phones.
  */
 interface Props {
   award?: string;
@@ -22,19 +22,280 @@ const {
 
 <section id="recognition" aria-labelledby="recognition-heading" class="section-y">
   <h2 id="recognition-heading" class="sr-only">Awards and recognition</h2>
-  <div class="container-page grid items-center gap-8 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)] sm:gap-8 md:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] md:gap-16">
-    <div class="flex flex-col items-center rounded-card border border-[#c7c7c7] px-5 py-7 text-center md:px-6 md:py-8">
-      <Icon name="trophy" size={54} class="text-amber-400" />
-      <p class="mt-4 max-w-[16rem] text-[15px] leading-snug md:text-base font-semibold text-ink-heading">{award} {year}</p>
-    </div>
+  <div class="container-page">
+    <div class="recognition">
+      <div class="recognition__award">
+        <span class="recognition__medal" aria-hidden="true">
+          <span class="recognition__rays"></span>
+          <span class="recognition__spark recognition__spark--1"><svg viewBox="0 0 10 10"><path d="M5 0c.4 2.6 1.4 4 5 5-3.6 1-4.6 2.4-5 5-.4-2.6-1.4-4-5-5 3.6-1 4.6-2.4 5-5Z" fill="currentColor" /></svg></span>
+          <span class="recognition__spark recognition__spark--2"><svg viewBox="0 0 10 10"><path d="M5 0c.4 2.6 1.4 4 5 5-3.6 1-4.6 2.4-5 5-.4-2.6-1.4-4-5-5 3.6-1 4.6-2.4 5-5Z" fill="currentColor" /></svg></span>
+          <span class="recognition__spark recognition__spark--3"><svg viewBox="0 0 10 10"><path d="M5 0c.4 2.6 1.4 4 5 5-3.6 1-4.6 2.4-5 5-.4-2.6-1.4-4-5-5 3.6-1 4.6-2.4 5-5Z" fill="currentColor" /></svg></span>
+          {/* Solid amber trophy: cup, stem and base filled, handles as strokes. */}
+          <svg class="recognition__trophy" viewBox="3.4 2.2 17.2 19.6" width="48" height="48" fill="none">
+            <path d="M6.6 5.2H4.4v1.4a3.6 3.6 0 0 0 3.4 3.6M17.4 5.2h2.2v1.4a3.6 3.6 0 0 1-3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M6.5 3h11v5.2a5.5 5.5 0 0 1-11 0V3Z" fill="currentColor" />
+            <path d="M10.9 13.4h2.2v3.6h-2.2z" fill="currentColor" />
+            <path d="M8 20.2a2.7 2.7 0 0 1 2.7-2.7h2.6a2.7 2.7 0 0 1 2.7 2.7V21H8v-.8Z" fill="currentColor" />
+          </svg>
+        </span>
+        <div>
+          <p class="recognition__chip">
+            <Icon name="sparkles" size={14} />
+            Award winner {year}
+          </p>
+          <p class="recognition__title">{award}</p>
+        </div>
+      </div>
 
-    <figure class="max-w-[48rem]">
-      <blockquote class="text-[19px] leading-relaxed text-ink-heading md:text-[21px]">
-        <p>&ldquo;{quote}&rdquo;</p>
-      </blockquote>
-      <figcaption class="mt-4 flex justify-center">
-        <Image src={siliconindia} alt="siliconindia" width={192} height={50} class="h-auto w-[140px] md:w-[150px]" />
-      </figcaption>
-    </figure>
+      <span class="recognition__divider" aria-hidden="true"></span>
+
+      <figure class="recognition__quote">
+        <span class="recognition__mark" aria-hidden="true">&ldquo;</span>
+        <blockquote>
+          <p>{quote}</p>
+        </blockquote>
+        <figcaption class="recognition__source">
+          <span class="recognition__pill">
+            <span>Featured in</span>
+            <span class="recognition__sep" aria-hidden="true"></span>
+            <Image src={siliconindia} alt="siliconindia" width={192} height={50} class="h-auto w-[112px] md:w-[128px]" />
+          </span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
+
+<style>
+  /* A white panel with a dot grid on the quote side; navy text, a gold medal. */
+  .recognition {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    gap: 1.75rem;
+    padding: 2.25rem 1.25rem;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-blue-100);
+    background: var(--color-white);
+    color: var(--ink-heading);
+    text-align: center;
+  }
+  .recognition::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(rgb(0 105 204 / 0.24) 1px, transparent 1px);
+    background-size: 18px 18px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 60%);
+    mask-image: linear-gradient(90deg, transparent, #000 60%);
+  }
+
+  .recognition__award {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  /* Medal: a white disc with a gold border; slow-turning gold rays and three twinkling sparkles behind the trophy. */
+  .recognition__medal {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 999px;
+    background: var(--color-white);
+    border: 2px solid #ffd98f;
+    box-shadow: 0 0 0 6px rgb(255 179 62 / 0.12);
+  }
+  .recognition__rays {
+    position: absolute;
+    inset: 4px;
+    border-radius: 999px;
+    background:
+      radial-gradient(circle, rgb(255 179 62 / 0.28) 0 30%, transparent 62%),
+      repeating-conic-gradient(rgb(255 179 62 / 0.22) 0deg 9deg, transparent 9deg 30deg);
+    -webkit-mask-image: radial-gradient(circle, #000 35%, transparent 72%);
+    mask-image: radial-gradient(circle, #000 35%, transparent 72%);
+    animation: recognition-spin 16s linear infinite;
+  }
+  .recognition__trophy {
+    position: relative;
+    color: var(--color-amber-400);
+    filter: drop-shadow(0 2px 3px rgb(224 134 0 / 0.3));
+  }
+  .recognition__spark {
+    position: absolute;
+    display: block;
+    color: var(--color-amber-500);
+    animation: recognition-twinkle 2.4s ease-in-out infinite;
+  }
+  .recognition__spark svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .recognition__spark--1 {
+    top: 12px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+  }
+  .recognition__spark--2 {
+    bottom: 17px;
+    left: 13px;
+    width: 9px;
+    height: 9px;
+    animation-delay: 0.8s;
+  }
+  .recognition__spark--3 {
+    top: 19px;
+    left: 18px;
+    width: 7px;
+    height: 7px;
+    animation-delay: 1.6s;
+  }
+  @keyframes recognition-spin {
+    to {
+      rotate: 360deg;
+    }
+  }
+  @keyframes recognition-twinkle {
+    0%,
+    100% {
+      opacity: 0.25;
+      scale: 0.6;
+    }
+    50% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .recognition__rays,
+    .recognition__spark {
+      animation: none;
+    }
+    .recognition__spark {
+      opacity: 0.8;
+    }
+  }
+  .recognition__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    /* The trophy's amber, with navy text for contrast (the site's amber CTA pairing). */
+    background: var(--color-amber-400);
+    border: 1px solid var(--color-amber-500);
+    color: var(--color-navy-900);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .recognition__title {
+    margin-top: 0.625rem;
+    max-width: 20rem;
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.45;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Phones: no divider; the quotation mark separates award and quote. */
+  .recognition__divider {
+    display: none;
+  }
+
+  .recognition__quote {
+    position: relative;
+    margin: 0;
+  }
+  .recognition__mark {
+    display: block;
+    height: 3rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 6rem;
+    line-height: 1;
+    color: var(--color-teal-500); /* #04bdaf */
+    pointer-events: none;
+  }
+  .recognition__quote blockquote {
+    position: relative;
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: var(--ink-heading);
+  }
+
+  /* Source: "Featured in" and the masthead together in a white pill, centred under the quote. */
+  .recognition__source {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .recognition__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1.125rem;
+    border-radius: 999px;
+    background: var(--color-white);
+    border: 1px solid var(--color-blue-100);
+    color: var(--color-grey-600);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .recognition__sep {
+    width: 1px;
+    height: 1.25rem;
+    background: var(--color-grey-200);
+  }
+
+  /* Tablet and up: award and quote side by side with a vertical divider. */
+  @media (min-width: 48rem) {
+    .recognition {
+      grid-template-columns: minmax(0, 18rem) auto minmax(0, 1fr);
+      align-items: center;
+      gap: 2.5rem;
+      padding: 2.75rem 2.5rem;
+    }
+    .recognition__divider {
+      display: block;
+      width: 1px;
+      height: 100%;
+      min-height: 9rem;
+      background: linear-gradient(180deg, transparent, var(--color-blue-200), transparent);
+    }
+    .recognition__quote blockquote {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Wide screens: the medal beside the award text. */
+  @media (min-width: 80rem) {
+    .recognition {
+      grid-template-columns: minmax(0, 28rem) auto minmax(0, 1fr);
+      gap: 3.5rem;
+      padding: 3rem 3.5rem;
+    }
+    .recognition__award {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: left;
+    }
+    .recognition__quote blockquote {
+      font-size: 1.375rem;
+    }
+  }
+</style>

@@ -1,0 +1,30 @@
+name: Suriname
+code: SR
+# No local price list exists; prices are quoted in US dollars, as for other markets without their own currency file.
+currency: USD
+dialCode: '+597'
+timezone: America/Paramaribo
+flagship: false
+contact:
+  # No Suriname contact or office on record: the card names the Easy Clinic support team and its main line,
+  # the contact the live Suriname page gives (hello@easyclinic.io).
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: null
+pages:
+  country: /emr-software-in-suriname/
+  listicle: /best-clinic-management-software-suriname/
+cities: [Paramaribo, Lelydorp, Nieuw Nickerie, Moengo]
+clients: []
+payments: []
+insurers: []
+languages: []
+taxInvoicing: null
+notes:
+  - 'Created 2026-10-14 for /emr-software-in-suriname/. Cities are the ones the live Suriname page names.'

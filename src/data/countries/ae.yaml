@@ -5,11 +5,13 @@ dialCode: '+971'
 timezone: Asia/Dubai
 flagship: true
 contact:
-  name: null
-  publishName: null
+  # 2026-10-14: with no UAE contact on record, the card names the Easy Clinic support team and its main line, so
+  # /emr-software-in-uae/ can publish. Replace when a UAE contact exists.
+  name: Easy Clinic support team
+  publishName: true
   role: null
-  phone: null
-  whatsapp: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
   # Source: https://www.easyclinic.io/emr-software-in-uae/ ("Contact support at hello@easyclinic.io"),
   # read 2026-09-26. It is the company-wide support address (in.yaml and ng.yaml use it too), not a
   # UAE-based contact; replace it when one exists. The live UAE page gives no UAE phone, name or office.
@@ -18,7 +20,7 @@ contact:
   callbackWindow: null
 office: null
 pages:
-  country: /clinic-management-software-uae/
+  country: /emr-software-in-uae/
   demo: /uaedemo/
   pricing: /pricing/uae/
   listicle: /best-clinic-management-software-uae/

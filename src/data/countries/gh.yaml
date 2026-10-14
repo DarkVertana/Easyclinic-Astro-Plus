@@ -1,0 +1,31 @@
+name: Ghana
+code: GH
+# No cedi price list exists; prices are quoted in US dollars, as for other markets without their own currency file.
+currency: USD
+dialCode: '+233'
+timezone: Africa/Accra
+flagship: false
+contact:
+  # No Ghana contact or office on record: the card names the Easy Clinic support team and its main line,
+  # the contact the live Ghana page gives (hello@easyclinic.io).
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: null
+pages:
+  country: /emr-software-in-ghana/
+  listicle: /best-clinic-management-software-ghana/
+cities: [Accra, Kumasi, Tamale, Takoradi, Cape Coast, Ho]
+clients: []
+# The live Ghana page lists MTN MoMo, Vodafone Cash, AirtelTigo Money and GhanaPay QR as planned, not live.
+payments: []
+insurers: []
+languages: []
+taxInvoicing: null
+notes:
+  - 'Created 2026-10-14 for /emr-software-in-ghana/. Cities are the ones the live Ghana page names.'

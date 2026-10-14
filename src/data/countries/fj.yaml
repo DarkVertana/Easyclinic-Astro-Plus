@@ -1,0 +1,30 @@
+name: Fiji
+code: FJ
+# No Fiji dollar price list exists; prices are quoted in US dollars, as for other markets without their own currency file.
+currency: USD
+dialCode: '+679'
+timezone: Pacific/Fiji
+flagship: false
+contact:
+  # No Fiji contact or office on record: the card names the Easy Clinic support team and its main line,
+  # the contact the live Fiji page gives (hello@easyclinic.io).
+  name: Easy Clinic support team
+  publishName: true
+  role: null
+  phone: '+91 91477 70277'
+  whatsapp: '919147770277'
+  email: hello@easyclinic.io
+  hours: null
+  callbackWindow: null
+office: null
+pages:
+  country: /emr-software-in-fiji/
+  listicle: /best-clinic-management-software-fiji/
+cities: [Suva, Nadi, Lautoka, Labasa]
+clients: []
+payments: []
+insurers: []
+languages: []
+taxInvoicing: null
+notes:
+  - 'Created 2026-10-14 for /emr-software-in-fiji/. Cities are the ones the live Fiji page names.'
