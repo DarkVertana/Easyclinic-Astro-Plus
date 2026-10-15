@@ -1,4 +1,4 @@
-import { defineBlock, list, md, stringList, text } from '../fields.ts';
+import { defineBlock, flag, list, md, stringList, text } from '../fields.ts';
 
 /**
  * `dataTable` section (Zod: src/components/blocks/DataTable/schema.ts): a generic table that stacks into cards on
@@ -17,4 +17,5 @@ export const dataTable = defineBlock('dataTable', 'Data table', {
     },
   ),
   note: md('Note', { description: 'Shown under the table.' }),
+  wideIntro: flag('Full-width heading and intro', { zodDefault: false }),
 });

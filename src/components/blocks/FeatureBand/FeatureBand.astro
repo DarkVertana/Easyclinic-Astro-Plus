@@ -1,0 +1,94 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+
+type Props = SectionValue<'featureBand'> & { ctx: unknown };
+const { id, heading, badge, items } = Astro.props;
+const headingId = id ? `${id}-heading` : undefined;
+---
+
+<!-- A dark band whatever the page's alternating tone: badge, heading, then the features in a bordered row
+     (one a row on phones, two on tablets, all in one row from lg). -->
+<section id={id} aria-labelledby={heading ? headingId : undefined} class="feature-band section-y" data-tone="inverse">
+  <div class="container-page">
+    {badge && <p class="feature-band__badge">{badge}</p>}
+    {heading && <h2 id={headingId} class="mt-5 text-[1.875rem] leading-[1.15] !text-white sm:text-[2.25rem] lg:text-[2.75rem]">{heading}</h2>}
+
+    <ul class:list={['feature-band__grid', `feature-band__grid--${items.length}`]}>
+      {
+        items.map((item) => (
+          <li class="feature-band__item">
+            <h3 class="text-[1.0625rem] leading-snug !text-white">{item.title}</h3>
+            <p class="mt-3 text-[0.9375rem] leading-[1.7] text-[#c3cfe2]">{item.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .feature-band {
+    background:
+      radial-gradient(60% 120% at 100% 0%, rgb(0 128 246 / 0.18), transparent 60%),
+      linear-gradient(120deg, #0d1f3c 0%, #142c55 100%);
+  }
+
+  .feature-band__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4375rem 1rem;
+    border: 1px solid rgb(45 212 191 / 0.45);
+    border-radius: 9999px;
+    background: rgb(45 212 191 / 0.1);
+    color: #5eead4;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* The outer border plus 1px gaps over a line-coloured background draw every divider, at any column count. */
+  .feature-band__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1px;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid rgb(255 255 255 / 0.16);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  @media (min-width: 60rem) {
+    .feature-band__grid {
+      margin-top: 2.5rem;
+    }
+    background: rgb(255 255 255 / 0.16);
+  }
+  .feature-band__item {
+    padding: 1.5rem 1.25rem;
+    background: #12284c;
+  }
+  @media (min-width: 40rem) {
+    .feature-band__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .feature-band__grid--3 .feature-band__item:last-child {
+      grid-column: 1 / -1;
+    }
+    .feature-band__item {
+      padding: 1.75rem 1.75rem;
+    }
+  }
+  @media (min-width: 75rem) {
+    .feature-band__grid--3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .feature-band__grid--4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .feature-band__grid--3 .feature-band__item:last-child {
+      grid-column: auto;
+    }
+  }
+</style>

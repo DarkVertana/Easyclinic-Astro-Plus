@@ -1,0 +1,387 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import Icon from '../ui/Icon.astro';
+import americares from '../../assets/images/client-logo/1a.jpg';
+import penda from '../../assets/images/client-logo/2a.jpg';
+import cimas from '../../assets/images/client-logo/3aaa.jpg';
+import qualitas from '../../assets/images/client-logo/5a.jpg';
+import northStar from '../../assets/images/client-logo/7a.jpg';
+import who from '../../assets/images/client-logo/6a.jpg';
+import caringMinds from '../../assets/images/client-logo/Caring-Mindsa.jpg';
+import germanOsteo from '../../assets/images/client-logo/German-Osteoa.jpg';
+import sethGsKem from '../../assets/images/client-logo/SETH-G-S-K-E-M-HOSPITAL.jpg';
+import daleView from '../../assets/images/client-logo/THE-DALE-VIEWa.jpg';
+
+/**
+ * Below the hero on pages with a `trustSection` (the Kenya listicle first): what the clinic gets as chips, then
+ * the reach numbers, client logos and three doctors' words. Quotes are the opening sentences of each
+ * testimonial, verbatim, with one phrase marked.
+ */
+interface Props {
+  chips: string[];
+  heading: string;
+  ratingNote?: string;
+}
+
+const { chips, heading, ratingNote } = Astro.props;
+
+const stats = [
+  { value: '5,000+', label: 'Doctors' },
+  { value: '200+', label: 'Cities' },
+  { value: '18+', label: 'Countries' },
+  { value: '200K', label: 'Prescriptions a day' },
+  { value: '4.8', label: 'rated on SoftwareSuggest' },
+];
+
+const logos = [
+  { src: penda, alt: 'Penda Health' },
+  { src: americares, alt: 'AmeriCares' },
+  { src: cimas, alt: 'CIMAS' },
+  { src: northStar, alt: 'North Star Alliance' },
+  { src: qualitas, alt: 'Qualitas Health' },
+  { src: who, alt: 'World Health Organization' },
+  { src: caringMinds, alt: 'Caring Minds Institute of Mental Health' },
+  { src: germanOsteo, alt: 'German Osteo Care' },
+  { src: sethGsKem, alt: 'Seth GS Medical College and KEM Hospital' },
+  { src: daleView, alt: 'The Dale View, Punalal' },
+];
+
+const picks = [
+  { id: 'tarun-mishra', sentences: 2, mark: 'is very easy, user friendly with world class technology' },
+  { id: 'manish-bhatia', sentences: 3, mark: 'improves my work efficiency, record management, and accounting' },
+  { id: 'chao-rochek-buragohain', sentences: 2, mark: 'software is really user friendly and customizable' },
+];
+
+const quotes = (
+  await Promise.all(
+    picks.map(async (p) => {
+      const t = (await getEntry('testimonials', p.id))?.data;
+      if (!t || !t.consentOnFile) return null;
+      const flat = t.quote.replace(/\s+/g, ' ').trim();
+      const text = (flat.match(/[^.!?]+[.!?]+/g) ?? [flat]).slice(0, p.sentences).join('').trim();
+      const at = text.indexOf(p.mark);
+      if (at < 0) throw new Error(`TrustSection: "${p.mark}" is not in ${p.id}'s quote`);
+      return {
+        before: text.slice(0, at),
+        mark: p.mark,
+        after: text.slice(at + p.mark.length),
+        name: t.name,
+        role: [t.role, t.clinic].filter(Boolean).join(', '),
+      };
+    }),
+  )
+).filter((q) => q !== null);
+---
+
+<section aria-labelledby="trust-chips-heading" class="py-12 md:py-16">
+  <div class="container-page">
+    <h2 id="trust-chips-heading" class="text-center text-[1.625rem] leading-[1.3] sm:text-[2rem] md:text-[2.25rem]">
+      Everything your clinic runs on, in
+      <span class="relative inline-block whitespace-nowrap">
+        one system
+        <svg class="trust-swoosh" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 8 C 50 3, 130 2, 197 6" />
+          <path d="M30 12 C 80 8, 140 8, 180 10" />
+        </svg>
+      </span>
+    </h2>
+
+    <ul class="mx-auto mt-7 flex max-w-[64rem] flex-wrap justify-center gap-2 md:mt-8">
+      {
+        chips.map((chip) => (
+          <li class="trust-chip">
+            <span class="trust-chip__check" aria-hidden="true">
+              <Icon name="check" size={10} />
+            </span>
+            {chip}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-12 md:mt-16">
+      <div class="flex flex-col gap-3 border-b-2 border-ink-heading pb-5 md:flex-row md:items-end md:justify-between md:gap-10">
+        <h2 id="trust-heading" class="max-w-[40rem] text-[1.75rem] leading-[1.2] md:text-[2.25rem]">{heading}</h2>
+        {ratingNote && <p class="text-sm text-ink md:pb-2 md:text-base">{ratingNote}</p>}
+      </div>
+
+      <dl class="trust-stats">
+        {
+          stats.map((s) => (
+            <div class="trust-stat">
+              <dt class="trust-stat__label">{s.label}</dt>
+              <dd class="trust-stat__value">{s.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      {/* The set is rendered twice so the loop is seamless; the copy is hidden from assistive tech. */}
+      <div class="trust-logos mt-10 md:mt-12" aria-label="Clinics and organisations using Easy Clinic" role="region">
+        <div class="trust-logos__track">
+          {
+            [0, 1].map((copy) => (
+              <ul class="trust-logos__set" aria-hidden={copy === 1 ? 'true' : undefined} data-copy={copy}>
+                {logos.map((logo) => (
+                  <li class="trust-logos__item">
+                    <Image
+                      src={logo.src}
+                      alt={copy === 1 ? '' : logo.alt}
+                      widths={[200, 400]}
+                      sizes="(min-width: 60rem) 200px, 30vw"
+                      loading="lazy"
+                      class="trust-logos__img"
+                    />
+                  </li>
+                ))}
+              </ul>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-8 md:mt-12 md:grid-cols-3 md:gap-6 lg:gap-8">
+        {
+          quotes.map((q) => (
+            <figure class="m-0 border-t-2 border-blue-500 pt-5">
+              <blockquote class="m-0 text-[1.0625rem] leading-[1.75] text-ink">
+                {/* One line: a line break around the mark would render as a space before the full stop. */}
+                <p>{q.before}<mark class="trust-mark">{q.mark}</mark>{q.after}</p>
+              </blockquote>
+              <figcaption class="mt-5">
+                <span class="block font-semibold text-ink-heading">{q.name}</span>
+                <span class="mt-1 block text-ink-muted">{q.role}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-swoosh {
+    position: absolute;
+    left: -2%;
+    bottom: -0.38em;
+    width: 104%;
+    height: 0.42em;
+    overflow: visible;
+  }
+  .trust-swoosh path {
+    fill: none;
+    stroke: var(--color-blue-500);
+    stroke-width: 3;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* Compact outlined pills with a solid green tick (the design reference). */
+  .trust-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+    padding: 0.375rem 0.875rem 0.375rem 0.4375rem;
+    border: 1px solid var(--color-blue-500);
+    border-radius: 9999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .trust-chip__check {
+    display: grid;
+    place-items: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: #3ec26f;
+    color: var(--color-white);
+  }
+  @media (max-width: 39.99rem) {
+    .trust-chip {
+      font-size: 0.8125rem;
+      padding: 0.3125rem 0.75rem 0.3125rem 0.375rem;
+    }
+  }
+
+  /* Logo strip: --per logos in view at once, sliding right to left; hover pauses it. */
+  .trust-logos {
+    --per: 2.5;
+    --gap: 1.5rem;
+    container-type: inline-size;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .trust-logos__track {
+    display: flex;
+    width: max-content;
+    animation: trust-logos-scroll 40s linear infinite;
+  }
+  .trust-logos:hover .trust-logos__track {
+    animation-play-state: paused;
+  }
+  .trust-logos__set {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--gap);
+    margin: 0;
+    padding: 0 var(--gap) 0 0;
+    list-style: none;
+  }
+  .trust-logos__item {
+    flex-shrink: 0;
+    width: calc(100cqi / var(--per) - var(--gap));
+    aspect-ratio: 12 / 5;
+  }
+  .trust-logos__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  @media (min-width: 40rem) {
+    .trust-logos {
+      --per: 4;
+      --gap: 2.5rem;
+    }
+  }
+  @media (min-width: 60rem) {
+    .trust-logos {
+      --per: 5;
+      --gap: 3rem;
+    }
+  }
+  @media (min-width: 75rem) {
+    .trust-logos {
+      --per: 6;
+    }
+  }
+  @keyframes trust-logos-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trust-logos {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .trust-logos__track {
+      display: block;
+      width: auto;
+      animation: none;
+    }
+    .trust-logos__set {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 1.5rem;
+      padding: 0;
+    }
+    .trust-logos__item {
+      width: 160px;
+    }
+    .trust-logos__set[data-copy='1'] {
+      display: none;
+    }
+  }
+
+  /* Phones: soft cards two a row, the rating a full-width card. From 640px: one row of five with dividers,
+     numbers scaling up to the desktop size at lg. */
+  .trust-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0 0;
+  }
+  .trust-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.125rem 0.5rem;
+    border: 1px solid #e3ecfa;
+    border-radius: 16px;
+    background: #f5f9ff;
+    text-align: center;
+  }
+  .trust-stat:last-child {
+    grid-column: 1 / -1;
+  }
+  .trust-stat__value {
+    order: 1;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--ink-heading);
+  }
+  .trust-stat__label {
+    order: 2;
+    margin-top: 0.375rem;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    color: var(--ink-muted);
+  }
+  @media (min-width: 40rem) {
+    .trust-stats {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 0;
+    }
+    .trust-stat,
+    .trust-stat:last-child {
+      grid-column: auto;
+      /* Numbers on one line even when a label wraps to two. */
+      justify-content: flex-start;
+      padding: 1.5rem 0.5rem;
+      border: 0;
+      border-radius: 0;
+      background: none;
+    }
+    .trust-stat + .trust-stat {
+      border-left: 1px solid var(--color-line);
+    }
+    .trust-stat__value {
+      font-size: 1.75rem;
+    }
+    .trust-stat__label {
+      font-size: 0.8125rem;
+    }
+  }
+  @media (min-width: 60rem) {
+    .trust-stat__value {
+      font-size: 2.125rem;
+    }
+    .trust-stat__label {
+      font-size: 0.9375rem;
+    }
+  }
+  @media (min-width: 75rem) {
+    .trust-stat,
+    .trust-stat:last-child {
+      padding-block: 2rem;
+    }
+    .trust-stat__value {
+      font-size: 2.375rem;
+    }
+    .trust-stat__label {
+      font-size: 1rem;
+    }
+  }
+
+  .trust-mark {
+    background: linear-gradient(transparent 8%, #fdeb8c 8%, #fdeb8c 92%, transparent 92%);
+    color: inherit;
+    padding: 0 0.0625rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+</style>

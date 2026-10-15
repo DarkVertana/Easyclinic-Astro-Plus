@@ -12,7 +12,8 @@ const { id, eyebrow, heading, intro, tone, body, aside, width, link, secondary, 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width={width === 'measure' && !aside ? 'measure' : 'page'}>
   <div class:list={[aside ? 'grid gap-8 lg:grid-cols-[1.6fr_1fr]' : '']}>
     <div>
-      <Md text={body} class="max-w-[42rem] text-lg leading-relaxed" />
+      {/* A wide section without an aside runs the body the full page width; otherwise it keeps a reading measure. */}
+      <Md text={body} class:list={['leading-relaxed', width === 'wide' && !aside ? 'max-w-none text-[1.0625rem] sm:text-lg' : 'max-w-[42rem] text-lg']} />
       {
         (link || secondary) && (
           <div class="mt-8 flex flex-wrap items-center gap-3">

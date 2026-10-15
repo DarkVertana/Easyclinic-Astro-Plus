@@ -20,7 +20,7 @@ const role = authorData ? authorData.role : null;
 <p class:list={['text-sm text-ink-muted', className]}>
   <span>By <span class="font-semibold text-ink">{name}</span>{role && `, ${role}`}</span>
   {reviewer && <span> · Reviewed by {reviewer.name}</span>}
-  <span>
+  <span class="whitespace-nowrap">
     · Last updated
     {lastUpdated ? <time datetime={isoDate(lastUpdated)}>{formatDate(lastUpdated)}</time> : need(Astro, 'last-updated date', null)}
   </span>

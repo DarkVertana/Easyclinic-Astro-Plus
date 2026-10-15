@@ -1,4 +1,5 @@
 import type { SchemaContext } from 'astro:content';
+import { z } from 'astro/zod';
 import { block } from '../../../schemas/block-base';
 import { md, media, optionalCta } from '../../../schemas/fields';
 
@@ -9,4 +10,8 @@ export const schema = (ctx: SchemaContext) =>
     link: optionalCta,
     secondary: optionalCta,
     media: media(ctx),
+    /** The heading centred above both columns instead of at the top of the text column. */
+    centerHeading: z.boolean().default(false),
+    /** The image in the left column on wide screens (below lg it still follows the text). */
+    mediaFirst: z.boolean().default(false),
   });

@@ -43,6 +43,7 @@ export const BLOCK_NAMES = [
   'proofBlock',
   'prose',
   'splitContent',
+  'featureBand',
   'capabilityList',
   'regulatorStrip',
   'regulatorTable',
@@ -91,7 +92,8 @@ export const FAMILY_BLOCKS = {
   guide: GUIDE,
   post: GUIDE,
   comparison: COMPARISON,
-  listicle: COMPARISON,
+  /** Listicles add splitContent for the "why clinics need it" text-and-image section. */
+  listicle: [...COMPARISON, 'splitContent', 'featureBand'],
   customers: CUSTOMERS,
   legal: ['prose', 'dataTable'],
   glossary: ['glossaryList', 'prose'],

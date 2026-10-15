@@ -33,6 +33,7 @@ import PricingCards from './PricingCards/PricingCards.astro';
 import ProofBlock from './ProofBlock/ProofBlock.astro';
 import Prose from './Prose/Prose.astro';
 import SplitContent from './SplitContent/SplitContent.astro';
+import FeatureBand from './FeatureBand/FeatureBand.astro';
 import CapabilityList from './CapabilityList/CapabilityList.astro';
 import RegulatorStrip from './RegulatorStrip/RegulatorStrip.astro';
 import RegulatorTable from './RegulatorTable/RegulatorTable.astro';
@@ -78,6 +79,7 @@ export const BLOCKS = {
   proofBlock: ProofBlock,
   prose: Prose,
   splitContent: SplitContent,
+  featureBand: FeatureBand,
   capabilityList: CapabilityList,
   regulatorStrip: RegulatorStrip,
   regulatorTable: RegulatorTable,

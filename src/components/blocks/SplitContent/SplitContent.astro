@@ -7,17 +7,29 @@ import Screenshot from '../../ui/Screenshot.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'splitContent'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, body, link, secondary, media, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, body, link, secondary, media, centerHeading, mediaFirst, ctx } = Astro.props;
+const topHeading = centerHeading && heading;
 ---
 
 <!-- Two columns on wide screens: the heading, text and buttons on the left; the image on the right. -->
 <Section id={id} tone={toneFor(tone, ctx.index)}>
+  {
+    topHeading && (
+      <div class="mx-auto mb-8 text-center md:mb-12">
+        {eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
+        {/* One line from lg: the size scales with the viewport up to the usual 40px. */}
+        <h2 id={id ? `${id}-heading` : undefined} class="lg:text-[min(3.1vw,2.5rem)]">{heading}</h2>
+      </div>
+    )
+  }
+  {/* Side by side from lg. Below that the centred-heading layout stacks as one centred reading column. */}
   <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    {/* Stacked (below lg): the text runs the full width, the image smaller and centred beneath it. */}
     <div>
-      {eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
-      {heading && <h2 id={id ? `${id}-heading` : undefined}>{heading}</h2>}
-      {intro && <Md text={intro} class="lede mt-4 text-ink-muted" />}
-      <Md text={body} class:list={['max-w-[42rem] text-lg leading-relaxed', (heading || intro) && 'mt-6']} />
+      {!topHeading && eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
+      {!topHeading && heading && <h2 id={id ? `${id}-heading` : undefined}>{heading}</h2>}
+      {intro && <Md text={intro} class:list={['lede text-ink-muted', !topHeading && 'mt-4', topHeading && 'split-intro']} />}
+      <Md text={body} class:list={['leading-relaxed', topHeading ? 'max-w-none lg:max-w-[42rem]' : 'max-w-[42rem]', topHeading ? 'split-points text-[1.0625rem] sm:text-lg' : 'text-lg', ((heading && !topHeading) || intro) && 'mt-6']} />
       {
         (link || secondary) && (
           <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -27,8 +39,21 @@ const { id, eyebrow, heading, intro, tone, body, link, secondary, media, ctx } =
         )
       }
     </div>
-    <div class="overflow-hidden rounded-2xl shadow-[0_24px_60px_-24px_rgb(10_37_64/0.35)]">
+    {/* Never wider than the image itself, so a small screenshot is not stretched (and blurred) when the columns stack. */}
+    <div class:list={['w-full overflow-hidden rounded-2xl shadow-[0_24px_60px_-24px_rgb(10_37_64/0.35)]', mediaFirst ? 'lg:order-first lg:justify-self-start' : 'lg:justify-self-end', topHeading ? 'max-w-none lg:max-w-[var(--img-w,100%)]' : 'max-w-[var(--img-w,100%)]']} style={media.src ? `--img-w:${media.src.width}px` : undefined}>
       <Screenshot media={{ ...media, frame: 'none' }} sizes="(min-width: 75rem) 640px, (min-width: 60rem) 50vw, 100vw" />
     </div>
   </div>
 </Section>
+
+<style is:global>
+  /* Phones: smaller point headings and intro so they keep their weight without crowding the narrow column. */
+  @media (max-width: 39.99rem) {
+    .split-points h3 {
+      font-size: 1.1875rem;
+    }
+    .split-intro {
+      font-size: 1.0625rem;
+    }
+  }
+</style>

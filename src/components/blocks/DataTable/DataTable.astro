@@ -6,7 +6,7 @@ import Md from '../../ui/Md.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'dataTable'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, caption, columns, rows, note, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, caption, columns, rows, note, wideIntro, ctx } = Astro.props;
 const sectionTone = toneFor(tone, ctx.index);
 
 // Accessible name: the visible caption when set, else the section heading (by reference when it has an id).
@@ -26,7 +26,7 @@ const body = rows.map((row, r) => ({
 }));
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} wideHeader={wideIntro}>
   {/* Explicit roles keep table semantics when the cells are display:block below 640px (Safari drops them). */}
   <table
     class:list={['dt', columns.length >= 5 && 'dt-dense']}
@@ -192,5 +192,21 @@ const body = rows.map((row, r) => ({
       font-weight: 600;
       color: var(--ink-muted);
     }
+  }
+</style>
+
+<style is:global>
+  /* A highlighted phrase in a table cell: yellow with a red dashed outline, the row's key finding. */
+  .dt mark {
+    /* Moves to the next line as a whole; wraps inside only when longer than the cell. */
+    display: inline-block;
+    max-width: 100%;
+    background: #fff3b0;
+    color: var(--ink-heading);
+    padding: 0.05em 0.35em;
+    border: 1.5px dashed #d93025;
+    border-radius: 0.3em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 </style>

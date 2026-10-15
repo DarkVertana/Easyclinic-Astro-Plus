@@ -35,6 +35,7 @@ import { schema as pricingCards } from '../components/blocks/PricingCards/schema
 import { schema as proofBlock } from '../components/blocks/ProofBlock/schema';
 import { schema as prose } from '../components/blocks/Prose/schema';
 import { schema as splitContent } from '../components/blocks/SplitContent/schema';
+import { schema as featureBand } from '../components/blocks/FeatureBand/schema';
 import { schema as capabilityList } from '../components/blocks/CapabilityList/schema';
 import { schema as regulatorStrip } from '../components/blocks/RegulatorStrip/schema';
 import { schema as regulatorTable } from '../components/blocks/RegulatorTable/schema';
@@ -80,6 +81,7 @@ export const BLOCK_SCHEMAS = {
   proofBlock,
   prose,
   splitContent,
+  featureBand,
   capabilityList,
   regulatorStrip,
   regulatorTable,

@@ -32,6 +32,60 @@ export const pageBase = (ctx: SchemaContext) =>
     reviewedBy: reference('authors').optional(),
     lastUpdated: isoDate.nullable(),
     heroMedia: optionalMedia(ctx),
+    /** An image card beside the hero text, with the reach line under the CTAs (the country listicles). */
+    heroPanel: z
+      .object({
+        src: ctx.image(),
+        alt: z.string().min(1),
+        /** Ends the reach line after "10+ years". */
+        yearsIn: z.string().default('in clinic software'),
+      })
+      .optional(),
+    /** The section straight after the hero: feature chips, reach numbers, client logos and three quotes. */
+    trustSection: z
+      .object({
+        chips: z.array(z.string().min(2)).min(1).max(12),
+        heading: z.string().min(10),
+        ratingNote: z.string().optional(),
+      })
+      .optional(),
+    /** After the trust section: a claims path as steps, an honest note on what is live, and a standards panel. */
+    readinessSection: z
+      .object({
+        heading: z.string().min(10),
+        intro: z.string().optional(),
+        steps: z.array(z.object({ title: z.string().min(2), body: z.string().min(10) })).min(2).max(6),
+        noteHeading: z.string().min(5),
+        note: md,
+        /** An image shown beside the note in place of the drawn standards panel. */
+        image: z.object({ src: ctx.image(), alt: z.string().min(1) }).optional(),
+        panelHeading: z.string().min(5).optional(),
+        panelIntro: z.string().optional(),
+        items: z.array(z.object({ name: z.string().min(2), status: z.string().min(2), live: z.boolean().default(true) })).max(10).default([]),
+        badges: z.array(z.object({ name: z.string().min(2), status: z.string().min(2) })).max(4).default([]),
+      })
+      .optional(),
+    /** After the readiness section: an optional proof card, then a dark card with four features and a CTA. */
+    platformSection: z
+      .object({
+        proof: z
+          .object({
+            eyebrow: z.string().min(2),
+            heading: z.string().min(10),
+            body: z.string().min(20),
+            link: z.object({ label: z.string().min(2), href: z.string().min(1) }),
+          })
+          .optional(),
+        badge: z.string().optional(),
+        heading: z.string().min(10),
+        intro: z.string().min(20),
+        features: z.array(z.object({ icon: z.string().min(2), title: z.string().min(2), body: z.string().min(10) })).min(2).max(4),
+        footnote: z.string().optional(),
+        cta: z.object({ label: z.string().min(2), href: z.string().min(1) }),
+        /** Below the dark card: a bold lead paragraph, then body paragraphs (one per array item). */
+        story: z.object({ lead: z.string().min(20), body: z.array(z.string().min(10)).min(1).max(4) }).optional(),
+      })
+      .optional(),
     /** Compliance and rating strip under the hero CTAs (section 11). */
     heroStrip: optionalGroup(
       z.object({

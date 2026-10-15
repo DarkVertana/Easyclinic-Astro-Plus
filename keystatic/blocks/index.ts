@@ -41,6 +41,7 @@ import { pricingCards } from './pricingCards.ts';
 import { proofBlock } from './proofBlock.ts';
 import { prose } from './prose.ts';
 import { splitContent } from './splitContent.ts';
+import { featureBand } from './featureBand.ts';
 import { capabilityList } from './capabilityList.ts';
 import { regulatorStrip } from './regulatorStrip.ts';
 import { regulatorTable } from './regulatorTable.ts';
@@ -85,6 +86,7 @@ export const KS_BLOCKS = {
   proofBlock,
   prose,
   splitContent,
+  featureBand,
   capabilityList,
   regulatorStrip,
   regulatorTable,

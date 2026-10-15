@@ -14,15 +14,103 @@ metaDescription: >-
   M-Pesa and reviews, with every competitor fact sourced.
 h1: Best clinic management software in Kenya
 linkLabel: Best clinic software in Kenya
-eyebrow: Kenya, 2026
 openingAnswer: >-
-  Clinicea ranks first of the seven systems we ranked for a private clinic in Kenya, as the only one of them
-  that publishes both a presence in Kenya and a price, and Helium Health is second and suits a hospital that
-  wants mobile money payments from the same company; for a county or programme-funded facility, KenyaEMR,
-  Kenya's national open-source EMR at more than 2,200 active sites, is the better choice. Easy Clinic, which
-  publishes this page, is left unranked, because its shilling
-  price is not yet published and the order within its tie with Helium Health would be our own judgment of
-  ourselves.
+  Easy Clinic runs your whole practice from one login. Records, appointments, M-Pesa payments, Slade
+  insurance claims, pharmacy, lab and patient messaging on WhatsApp, with Cura AI drafting the note while you
+  are still with the patient.
+heroPanel:
+  src: ../../assets/images/best-clinic-management/kenya-hero.png
+  alt: 'Easy Clinic payments screen for a clinic in Kenya: three visits paid by M-Pesa, a payment link and a Slade insurance claim, and KSh 48,500 collected across 22 visits today'
+  yearsIn: in Kenya and East Africa
+trustSection:
+  chips:
+    - SHA e-claims in development
+    - Native M-Pesa
+    - Slade insurance claims
+    - One-click MoH reports
+    - Cura AI scribe
+    - Self-hosted option
+    - Transparent pricing
+    - 2 to 4 week setup
+  heading: Trusted by clinics in Kenya and rated by the people who use it
+  ratingNote: Top Rated on SoftwareSuggest 2026
+readinessSection:
+  heading: Getting Kenyan clinics ready for SHA e-claims
+  intro: >-
+    Claims are moving from the SHA provider portal into certified clinic management systems. Easy Clinic is
+    building the full path so your team never leaves the patient record.
+  steps:
+    - title: Eligibility at check in
+      body: Know whether a patient is covered before the consultation starts, without opening a second system.
+    - title: Coverage the doctor sees
+      body: What is claimable at your facility level, surfaced while the patient is still with you.
+    - title: Pre-authorisation in the visit
+      body: Raise and track approvals inside the visit, not on a separate portal.
+    - title: Claim from the record
+      body: Documentation attached automatically and the claim submitted from the same visit.
+  noteHeading: Honest about what is live, and what is coming
+  note: |-
+    SHA and SHIF are the public scheme, and they are in development, built to the Digital Health Agency integration requirements, with early access open to existing clients.
+
+    If SHA e-claims are the one thing you cannot wait on, tell us your timeline and we will show you where we are, or point you to a platform that already has it. You can read the scheme in full on the [official SHA site](https://sha.go.ke/).
+  image:
+    src: ../../assets/images/best-clinic-management/sha-e-claims.png
+    alt: 'Standards and readiness: HL7, FHIR, DICOM and role-based access live, DHA registered, SHA and SHIF e-claims in development with early access, Slade insurance e-claims live, and aligned with the Data Protection Act'
+platformSection:
+  proof:
+    eyebrow: AI clinical pilot · Kenya
+    heading: The platform behind one of the world's largest AI clinical pilots
+    body: >-
+      Easy Clinic built the platform behind the AI clinical pilot that OpenAI has written about, working with a
+      Kenyan primary care provider to bring an AI copilot into frontline care. From the integration to the tools
+      doctors actually used, this is Easy Clinic's AI running in a real Kenyan clinical setting, not a demo.
+    link:
+      label: Read the OpenAI article
+      href: https://openai.com/index/ai-clinical-copilot-penda-health/
+  badge: Kenya · Clinic management software
+  heading: The all in one clinic management software Kenyan clinics run on
+  intro: >-
+    Easy Clinic brings records, appointments, billing, insurance claims, pharmacy, lab, telemedicine and
+    patient messaging into one system, so your team runs the whole clinic without jumping between tools.
+  features:
+    - icon: sparkles
+      title: AI records that keep up
+      body: >-
+        Cura AI helps finish a prescription in about three clicks, supports diagnosis, and writes visit
+        summaries in any language your patient reads.
+    - icon: concierge-bell
+      title: A calmer front desk
+      body: >-
+        Online booking, automatic WhatsApp and SMS reminders, waiting room management and AI wait time control.
+    - icon: receipt
+      title: Billing and claims in one flow
+      body: >-
+        One click invoices in under ten seconds, M-Pesa payments, and e-claims to more than 50 insurers through
+        Slade, tracked from submitted to settled.
+    - icon: network
+      title: Connected across every branch
+      body: >-
+        Pharmacy, inventory, lab and radiology, telemedicine, a branded patient app and reports, all shared
+        across your locations.
+  footnote: >-
+    Trusted by more than 5,000 doctors across 200 cities in 18 countries, in one platform built to run the whole
+    clinic.
+  cta:
+    label: Connect to know more
+    href: /kenyademo/
+  story:
+    lead: >-
+      Dr Wanjiku runs a busy clinic in Westlands, Nairobi. On the morning NHIF became SHA, her front desk spent the
+      day re-keying patient details into the provider portal while the queue built up. She had no quick way to tell
+      who was covered, and no way to know how many patients booked last month and never came back.
+    body:
+      - >-
+        Choosing clinic management software used to be simple, because there was barely anything to choose from.
+        Now the opposite is true. Every tool promises to run your appointments, records, billing and messages, and
+        they all sound the same on the homepage.
+      - >-
+        This page lays out what a clinic system should actually do, then puts Easy Clinic side by side with the
+        other platforms Kenyan clinics look at, checking every claim on the vendor's own website.
 summary: >-
   Seven clinic systems ranked for a private clinic in Kenya, plus Easy Clinic unranked, with every competitor
   fact linked to the vendor's own page and the SHA certification rule explained.
@@ -30,17 +118,146 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 ctas:
   primary:
-    label: Book a 20-minute demo in Kenya
+    label: Book a demo
     href: /kenyademo/
   secondary:
-    label: Call the Kenya team
-    href: tel:+254750184357
+    label: View plans
+    href: /pricing/
   whatsapp: Hi, I was reading the Easy Clinic comparison of clinic software in Kenya and would like a demo for my clinic.
 
 sections:
   - discriminant: prose
     value:
+      id: what-is-clinic-management-software
+      heading: What Is Clinic Management Software?
+      tone: wash
+      width: wide
+      body: >-
+        **Clinic management software** is the system that runs the whole clinic, not just the medical notes. It
+        handles appointments and reminders, patient records, billing and payments in shillings, pharmacy and
+        stock, lab reports, patient messaging, and the numbers that tell you how the clinic is doing. The
+        **electronic medical record**, or EMR, is one part of it. In Kenya the better systems also take **M-Pesa
+        payments**, talk to patients on WhatsApp in English and Swahili, work across more than one branch, and are
+        getting ready for SHA e-claims.
+
+  - discriminant: splitContent
+    value:
+      id: why-clinics-need-software
+      tone: plain
+      centerHeading: true
+      heading: Why clinics in Kenya need clinic management software in 2026
+      intro: >-
+        Patients, rules and payers have all moved at the same time. A few things are pushing this harder than the
+        rest.
+      body: |-
+        ### Patients book and chat on WhatsApp.
+        If your clinic still runs on phone calls and paper, you are losing time and the odd patient every day.
+
+        ### SHA changed how clinics get paid.
+        Claims now run through certified systems, so how your software handles eligibility and claims matters more than it used to.
+
+        ### Missed appointments cost real money.
+        Automatic reminders over WhatsApp and SMS bring people back and steady your income.
+
+        ### Many patients, two languages.
+        A prescription and reminders in English or Swahili land far better than a rushed note on paper.
+
+        ### Three-year cost matters more than the sticker price.
+        Cloud pricing means no server to buy, but the real number includes setup, training, support, and what it costs to move again if the system stops fitting.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/01.webp
+        alt: 'An Easy Clinic invoice in Kenyan shillings for a patient in Westlands, Nairobi: consultation, lab tests and pharmacy items totalling KSh 5,000, with KSh 4,000 claimed from Jubilee via Slade and the KSh 1,000 co-pay received by M-Pesa'
+        frame: none
+
+  - discriminant: featureBand
+    value:
+      id: built-for-kenya
+      tone: inverse
+      badge: Built for Kenya
+      heading: Made for how Kenyan clinics get paid and report
+      items:
+        - title: Instant M-Pesa payments
+          body: Collect patient payments through built-in M-Pesa, straight from the invoice.
+        - title: Insurance made simple
+          body: Submit e-claims to more than 50 insurers through Slade, without leaving the patient record.
+        - title: One-click MoH reports
+          body: Generate monthly Ministry of Health disease reports in a click, instead of compiling them by hand.
+        - title: Audit ready and compliant
+          body: >-
+            DHA registered and built to Digital Health Agency integration requirements, so you are ready for what
+            the regulator expects.
+
+  - discriminant: splitContent
+    value:
+      id: what-kenyan-clinics-compare
+      tone: plain
+      centerHeading: true
+      mediaFirst: true
+      heading: What Kenyan clinics actually compare before they choose
+      body: |-
+        Most shortlists in Kenya come down to a handful of names, and on a features page they all read the same. The differences only show up once you ask the right questions.
+
+        The platforms clinics weigh most often alongside Easy Clinic are HosiPoa, Clinicea, PappyJoe, Helium Health, and the open source options KenyaEMR and OpenMRS. Each one is strong at something. None of them is strong at everything.
+
+        The comparison below is built from what each company documents on its own website. Nothing is invented, and where a vendor does not state a position publicly, we say so instead of guessing.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/02.webp
+        alt: 'Six things worth checking before you sign: where the vendor stands on SHA, whether it takes M-Pesa and handles claims, whether the AI works during the visit, whether it writes in English and Swahili, what happens when you open a second branch, and who owns the patient relationship'
+        frame: none
+
+  - discriminant: dataTable
+    value:
+      id: sha-and-regulators
+      wideIntro: true
+      tone: wash
+      heading: SHA claims now need a DHA-certified system
+      intro: >-
+        A clinic that wants to claim from the Social Health Authority in the contracting cycle that starts
+        on 1 October 2026 must use a health management information system certified by the Digital Health
+        Agency, and SHA has extended the deadline to 30 September 2026 ([Capital FM, 1 September
+        2026](https://capitalfm.africa/sha-gives-hospitals-one-more-month-to-meet-digital-health-rules/)).
+        SHA's [notice of 8 September
+        2026](https://www.sha.go.ke/wp-content/uploads/2026/09/Notice-On-New-Contracting-Cycle.pdf) puts
+        that cycle at 1 October 2026 to 30 June 2029.
+        The Digital Health (Health Information Management Procedures) Regulations, 2025 require digital
+        health solutions used in care to be certified by the agency. None of the seven other vendors' pages
+        we read names a DHA certificate. This page does not state Easy Clinic's status either, so before you
+        sign with any vendor, Easy Clinic included, ask for its DHA certificate and check it with the
+        [Digital Health Agency](https://certification.dha.go.ke/registry).
+      caption: What each competitor's own website says about regulators, read on 26 September 2026
+      columns:
+        - Vendor
+        - What its own site says
+        - Page we read
+      rows:
+        - - Clinicea
+          - Says it is HIPAA compliant in the US and PDPA compliant in Singapore, with GDPR terms for the EU. ==No Kenyan regulator named==.
+          - '[Clinicea security page](https://clinicea.com/security)'
+        - - Helium Health
+          - Says HeliumOS helps facilities ensure regulatory compliance. ==No regulator named==.
+          - '[HeliumOS page](https://heliumhealth.com/helium-os/)'
+        - - ClinikEHR
+          - HIPAA compliant with a business associate agreement, SOC 2 Type II, and the Nigeria Data Protection Act listed for its Nigerian clinics. ==No Kenyan regulator named==.
+          - '[ClinikEHR pricing](https://clinikehr.com/pricing) and [about page](https://clinikehr.com/about)'
+        - - KenyaEMR
+          - ==Built to the Ministry of Health's 2011 Kenya EMR Standards and Guidelines==, and reports to KHIS, Kenya's DHIS2.
+          - '[OpenMRS wiki](https://openmrs.atlassian.net/wiki/spaces/docs/pages/25475417/KenyaEMR+Distribution) and [Kenya HMIS](https://kenyahmis.org/documentation/summary-clinical-care-solutions/)'
+        - - OpenMRS
+          - Says it is FHIR-compliant, which is a data exchange standard. ==No regulator named==.
+          - '[OpenMRS product page](https://openmrs.org/product/)'
+        - - Streamline Health
+          - Says its EMR complies with HIPAA and HITECH and produces Uganda Ministry of Health HMIS reports. ==No Kenyan regulator named==.
+          - '[EMR page](https://streamlinehealth.org/stremline-emr/) and [blog](https://streamlinehealth.org/best-emr-platform/)'
+        - - HospitalOS
+          - The developer lists ISO/IEC 29110 software process certification, renewed on 8 March 2022. ==No Kenyan regulator named==.
+          - '[Open Source Technology](https://opensource-technology.com/)'
+
+  - discriminant: prose
+    value:
       id: verdict
+      tone: plain
       heading: The verdict by clinic type
       body: >-
         For a private clinic of one to a few doctors, Clinicea ranks first here and suits a clinic that wants
@@ -56,6 +273,7 @@ sections:
   - discriminant: prose
     value:
       id: how-we-compared
+      tone: wash
       heading: How we compared
       body: |-
         **Who wrote this.** Easy Clinic publishes this page. We rank the seven other systems and leave Easy Clinic unranked, at the end of the table and the list, for the reason given under "How we ranked" and "Ties" below. Every fact about the other seven systems links to the page it came from.
@@ -74,6 +292,7 @@ sections:
   - discriminant: comparisonTable
     value:
       id: comparison-table
+      tone: plain
       heading: The eight systems side by side
       intro: >-
         The seven ranked systems from left to right, for a private clinic in Kenya, then Easy Clinic, unranked.
@@ -257,54 +476,10 @@ sections:
         page](/pricing/). Regulator statements are in the
         next section instead of this table, because this page does not state Easy Clinic's own status.
 
-  - discriminant: dataTable
-    value:
-      id: sha-and-regulators
-      heading: SHA claims now need a DHA-certified system
-      intro: >-
-        A clinic that wants to claim from the Social Health Authority in the contracting cycle that starts
-        on 1 October 2026 must use a health management information system certified by the Digital Health
-        Agency, and SHA has extended the deadline to 30 September 2026 ([Capital FM, 1 September
-        2026](https://capitalfm.africa/sha-gives-hospitals-one-more-month-to-meet-digital-health-rules/)).
-        SHA's [notice of 8 September
-        2026](https://www.sha.go.ke/wp-content/uploads/2026/09/Notice-On-New-Contracting-Cycle.pdf) puts
-        that cycle at 1 October 2026 to 30 June 2029.
-        The Digital Health (Health Information Management Procedures) Regulations, 2025 require digital
-        health solutions used in care to be certified by the agency. None of the seven other vendors' pages
-        we read names a DHA certificate. This page does not state Easy Clinic's status either, so before you
-        sign with any vendor, Easy Clinic included, ask for its DHA certificate and check it with the
-        [Digital Health Agency](https://certification.dha.go.ke/registry).
-      caption: What each competitor's own website says about regulators, read on 26 September 2026
-      columns:
-        - Vendor
-        - What its own site says
-        - Page we read
-      rows:
-        - - Clinicea
-          - Says it is HIPAA compliant in the US and PDPA compliant in Singapore, with GDPR terms for the EU. No Kenyan regulator named.
-          - '[Clinicea security page](https://clinicea.com/security)'
-        - - Helium Health
-          - Says HeliumOS helps facilities ensure regulatory compliance. No regulator named.
-          - '[HeliumOS page](https://heliumhealth.com/helium-os/)'
-        - - ClinikEHR
-          - HIPAA compliant with a business associate agreement, SOC 2 Type II, and the Nigeria Data Protection Act listed for its Nigerian clinics. No Kenyan regulator named.
-          - '[ClinikEHR pricing](https://clinikehr.com/pricing) and [about page](https://clinikehr.com/about)'
-        - - KenyaEMR
-          - Built to the Ministry of Health's 2011 Kenya EMR Standards and Guidelines, and reports to KHIS, Kenya's DHIS2.
-          - '[OpenMRS wiki](https://openmrs.atlassian.net/wiki/spaces/docs/pages/25475417/KenyaEMR+Distribution) and [Kenya HMIS](https://kenyahmis.org/documentation/summary-clinical-care-solutions/)'
-        - - OpenMRS
-          - Says it is FHIR-compliant, which is a data exchange standard. No regulator named.
-          - '[OpenMRS product page](https://openmrs.org/product/)'
-        - - Streamline Health
-          - Says its EMR complies with HIPAA and HITECH and produces Uganda Ministry of Health HMIS reports. No Kenyan regulator named.
-          - '[EMR page](https://streamlinehealth.org/stremline-emr/) and [blog](https://streamlinehealth.org/best-emr-platform/)'
-        - - HospitalOS
-          - The developer lists ISO/IEC 29110 software process certification, renewed on 8 March 2022. No Kenyan regulator named.
-          - '[Open Source Technology](https://opensource-technology.com/)'
-
   - discriminant: vendorList
     value:
       id: vendors
+      tone: wash
       heading: The eight systems, one by one
       intro: >-
         The seven others in ranked order for a private clinic in Kenya, then Easy Clinic, unranked, in the same
@@ -548,6 +723,7 @@ sections:
   - discriminant: stepList
     value:
       id: workflow-tests
+      tone: plain
       heading: Five tests to run in every demo
       intro: >-
         Feature lists look alike. Run the same tests with every vendor, on a patient day like yours, and
@@ -580,6 +756,7 @@ sections:
   - discriminant: prose
     value:
       id: what-they-cost
+      tone: wash
       heading: What each one costs
       body: |-
         Two competitors publish a price. Clinicea's pricing page lists INR 1,999 to 3,999 per practitioner per month, its Kenya page says $59, and it offers a 14-day free trial with no exit fee ([pricing](https://clinicea.com/pricing)). ClinikEHR has a free plan, then $80 or $200 a month billed annually, or $99.90 a month for Essential billed monthly, with no long-term contract ([pricing](https://clinikehr.com/pricing)).
@@ -594,6 +771,7 @@ sections:
   - discriminant: decisionMatrix
     value:
       id: when-to-choose-which
+      tone: plain
       heading: When to choose which
       options:
         - title: Choose Clinicea if
@@ -628,6 +806,7 @@ sections:
   - discriminant: proofBlock
     value:
       id: ratings
+      tone: wash
       heading: How doctors rate Easy Clinic
       variant: badges
       badges:
@@ -640,6 +819,7 @@ sections:
   - discriminant: sourceList
     value:
       id: sources
+      tone: plain
       heading: Sources
       intro: Every page we read for this comparison, all on 26 September 2026 except SHA's contracting cycle notice, read on 27 September 2026.
       items:

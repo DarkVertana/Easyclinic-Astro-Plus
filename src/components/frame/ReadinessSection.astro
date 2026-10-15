@@ -1,0 +1,219 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Md from '../ui/Md.astro';
+import Icon from '../ui/Icon.astro';
+
+/**
+ * Below the trust section on pages with a `readinessSection` (the Kenya listicle first): the steps of a
+ * claims path as numbered cards, then an honest note on what is live beside a standards panel. Items that are
+ * not live yet are drawn dashed, so the status reads without colour alone.
+ */
+interface Props {
+  heading: string;
+  intro?: string;
+  steps: { title: string; body: string }[];
+  noteHeading: string;
+  note: string;
+  image?: { src: ImageMetadata; alt: string };
+  panelHeading?: string;
+  panelIntro?: string;
+  items: { name: string; status: string; live: boolean }[];
+  badges: { name: string; status: string }[];
+}
+
+const { heading, intro, steps, noteHeading, note, image, panelHeading, panelIntro, items, badges } = Astro.props;
+---
+
+<section aria-labelledby="readiness-heading" class="readiness py-14 md:py-20">
+  <div class="container-page">
+    <div class="max-w-[52rem]">
+      <h2 id="readiness-heading" class="text-[1.75rem] leading-[1.2] md:text-[2.25rem]">{heading}</h2>
+      {intro && <p class="mt-4 text-[1.0625rem] leading-[1.7] text-ink">{intro}</p>}
+    </div>
+
+    <ol class="readiness-steps">
+      {
+        steps.map((step, i) => (
+          <li class="readiness-step">
+            <span class="readiness-step__num" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="mt-4 text-[1.125rem] leading-snug">
+              <span class="sr-only">Step {i + 1}: </span>
+              {step.title}
+            </h3>
+            <p class="mt-2 text-[0.9375rem] leading-[1.65] text-ink-muted">{step.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    {/* An image scales, so it sits beside the note from md; the drawn panel needs the room of lg. */}
+    <div
+      class:list={[
+        'mt-12 grid items-center gap-8 md:mt-16 lg:grid-cols-[1fr_minmax(0,34rem)] lg:gap-16',
+        image && 'md:grid-cols-[1fr_minmax(0,26rem)] md:gap-10',
+      ]}
+    >
+      <div class="max-w-[42rem]">
+        <h3 class="text-[1.375rem] leading-snug md:text-[1.625rem]">{noteHeading}</h3>
+        <Md text={note} class="readiness-note mt-4 text-[1.0625rem] leading-[1.75] text-ink" />
+      </div>
+
+      {
+        image ? (
+          <div class="w-full max-w-[42rem] md:justify-self-end lg:max-w-[34rem]">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              widths={[400, image.src.width]}
+              sizes="(min-width: 75rem) 544px, (min-width: 60rem) 416px, (min-width: 45rem) 672px, 100vw"
+              loading="lazy"
+              class="block h-auto w-full rounded-[24px] border border-[#c7c7c7] shadow-[0_1px_2px_rgb(16_42_84/0.04),0_24px_48px_-28px_rgb(16_42_84/0.2)]"
+            />
+          </div>
+        ) : (
+        <div class="readiness-panel">
+          <h3 class="text-[1.125rem] leading-snug">{panelHeading}</h3>
+          {panelIntro && <p class="mt-1 text-sm text-ink-muted">{panelIntro}</p>}
+
+          <ul class="mt-5 grid grid-cols-1 gap-2.5 min-[24rem]:grid-cols-2" aria-label={panelHeading}>
+            {
+              items.map((item) => (
+                <li class:list={['readiness-item', !item.live && 'readiness-item--pending']}>
+                  <span class="flex items-center gap-2 font-semibold text-ink-heading">
+                    <Icon name={item.live ? 'circle-check' : 'circle-dashed'} size={16} class={item.live ? 'text-[#00a046]' : 'text-ink-muted'} />
+                    {item.name}
+                  </span>
+                  <span class="mt-1 block pl-6 text-[0.8125rem] text-ink-muted">{item.status}</span>
+                </li>
+              ))
+            }
+          </ul>
+
+          {
+            badges.length > 0 && (
+              <ul class="mt-4 flex flex-wrap gap-2.5 border-t border-line pt-4" aria-label="Integrations and compliance">
+                {badges.map((b) => (
+                  <li class="readiness-badge">
+                    <span class="block font-semibold text-ink-heading">{b.name}</span>
+                    <span class="block text-[0.8125rem] text-ink-muted">{b.status}</span>
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+        </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .readiness {
+    background: #f4f7fb;
+    border-block: 1px solid #e6edf6;
+  }
+
+  /* Phones: one column; tablets: two; from lg: four in a row with a line joining the numbers. */
+  .readiness-steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media (min-width: 40rem) {
+    .readiness-steps {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 2.5rem;
+    }
+  }
+  @media (min-width: 75rem) {
+    .readiness-steps {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .readiness-steps::before {
+      content: '';
+      position: absolute;
+      top: 2.75rem;
+      left: 2rem;
+      right: 2rem;
+      border-top: 2px dashed #7fa6d6;
+    }
+  }
+
+  .readiness-step {
+    position: relative;
+    padding: 1.5rem;
+    border: 1px solid #e3eaf5;
+    border-radius: 20px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04);
+  }
+  .readiness-step__num {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: var(--color-blue-500);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    box-shadow: 0 0 0 5px var(--surface);
+  }
+
+  .readiness-note :global(p + p) {
+    margin-top: 1rem;
+  }
+  .readiness-note :global(a) {
+    color: var(--color-blue-700);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .readiness-panel {
+    padding: 1.5rem;
+    border: 1px solid #e3eaf5;
+    border-radius: 24px;
+    background: var(--surface);
+    box-shadow:
+      0 1px 2px rgb(16 42 84 / 0.04),
+      0 24px 48px -28px rgb(16 42 84 / 0.2);
+  }
+  @media (min-width: 40rem) {
+    .readiness-panel {
+      padding: 1.75rem;
+    }
+  }
+
+  .readiness-item {
+    padding: 0.875rem 1rem;
+    border: 1px solid #e3ecf8;
+    border-radius: 14px;
+    background: #f5f9ff;
+    font-size: 0.9375rem;
+  }
+  .readiness-item--pending {
+    border-style: dashed;
+    border-color: #c9d4e3;
+    background: var(--surface);
+  }
+
+  .readiness-badge {
+    flex: 1 1 10rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e3eaf5;
+    border-radius: 14px;
+    font-size: 0.9375rem;
+  }
+</style>

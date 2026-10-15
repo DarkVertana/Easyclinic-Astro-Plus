@@ -1,0 +1,257 @@
+---
+import Icon from '../ui/Icon.astro';
+import { getRegistry } from '../../lib/content/registry';
+
+/**
+ * After the readiness section on pages with a `platformSection` (the Kenya listicle first): an optional proof card
+ * (the AI clinical pilot), then a dark card naming the platform, four things it does, and a closing line with a CTA.
+ */
+interface Props {
+  proof?: { eyebrow: string; heading: string; body: string; link: { label: string; href: string } };
+  badge?: string;
+  heading: string;
+  intro: string;
+  features: { icon: string; title: string; body: string }[];
+  footnote?: string;
+  cta: { label: string; href: string };
+  story?: { lead: string; body: string[] };
+}
+
+const { proof, badge, heading, intro, features, footnote, cta, story } = Astro.props;
+const registry = await getRegistry();
+const ctaHref = cta.href.startsWith('/') ? registry.urlFor(cta.href) : cta.href;
+---
+
+<section aria-labelledby="platform-heading" class="py-14 md:py-20">
+  <div class="container-page flex flex-col gap-8 md:gap-10">
+    {
+      proof && (
+        <div class="platform-proof">
+          <div class="max-w-[44rem]">
+            <p class="text-xs font-semibold tracking-[0.12em] text-blue-700 uppercase">{proof.eyebrow}</p>
+            <h2 class="mt-3 text-[1.5rem] leading-[1.25] md:text-[1.875rem]">{proof.heading}</h2>
+            <p class="mt-4 text-[1rem] leading-[1.75] text-ink md:text-[1.0625rem]">{proof.body}</p>
+          </div>
+          <a href={proof.link.href} class="platform-proof__link" rel="noopener" target="_blank" data-track="cta_click" data-label={proof.link.label}>
+            {proof.link.label}
+            <Icon name="arrow-up-right" size={18} />
+          </a>
+        </div>
+      )
+    }
+
+    <div class="platform-card">
+      <div class="px-5 pt-7 pb-8 sm:px-8 md:px-10 md:pt-10">
+        {badge && <p class="platform-badge"><span aria-hidden="true" class="platform-badge__dot"></span>{badge}</p>}
+        <h2 id="platform-heading" class="mt-5 max-w-[48rem] text-[1.75rem] leading-[1.2] !text-white md:text-[2.5rem]">{heading}</h2>
+        <p class="mt-4 max-w-[40rem] text-[1rem] leading-[1.75] text-[#c9d6ea] md:text-[1.0625rem]">{intro}</p>
+      </div>
+
+      <ul class="platform-features">
+        {
+          features.map((f) => (
+            <li class="platform-feature">
+              <span class="platform-feature__icon" aria-hidden="true">
+                <Icon name={f.icon} size={18} />
+              </span>
+              <h3 class="mt-4 text-[1.0625rem] leading-snug !text-white">{f.title}</h3>
+              <p class="mt-2 text-[0.9375rem] leading-[1.7] text-[#b4c4dc]">{f.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="flex flex-col gap-5 px-5 py-6 sm:px-8 md:flex-row md:items-center md:justify-between md:px-10">
+        {footnote && <p class="max-w-[42rem] text-[0.9375rem] leading-[1.6] text-[#b4c4dc]">{footnote}</p>}
+        {
+          ctaHref && (
+            <a href={ctaHref} class="platform-cta" data-track="cta_click" data-label={cta.label}>
+              {cta.label}
+              <Icon name="arrow-right" size={18} />
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    {
+      story && (
+        <div class="pt-2 md:pt-4">
+          <p class="text-[1.0625rem] leading-[1.7] font-semibold text-ink-heading md:text-[1.25rem]">{story.lead}</p>
+          {story.body.map((para) => (
+            <p class="mt-4 text-[1rem] leading-[1.8] text-ink md:text-[1.125rem]">{para}</p>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .platform-proof {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.75rem 1.25rem;
+    border: 1px solid var(--color-blue-500);
+    border-radius: 24px;
+    background: var(--surface);
+  }
+  @media (min-width: 40rem) {
+    .platform-proof {
+      padding: 2.25rem 2rem;
+    }
+  }
+  @media (min-width: 60rem) {
+    .platform-proof {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 2.5rem;
+    }
+  }
+  .platform-proof__link {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--color-blue-700);
+    border-radius: 9999px;
+    color: var(--color-blue-700);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+  }
+  .platform-proof__link:hover {
+    background: var(--color-blue-50);
+  }
+  @media (min-width: 60rem) {
+    .platform-proof__link {
+      align-self: center;
+    }
+  }
+
+  .platform-card {
+    overflow: hidden;
+    border-radius: 28px;
+    background:
+      radial-gradient(70% 90% at 100% 0%, rgb(0 128 246 / 0.22), transparent 60%),
+      linear-gradient(160deg, #0d2747 0%, #0a1d36 100%);
+  }
+
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.875rem;
+    border: 1px solid rgb(45 212 191 / 0.45);
+    border-radius: 9999px;
+    background: rgb(45 212 191 / 0.08);
+    color: #5eead4;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .platform-badge__dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 9999px;
+    background: #2dd4bf;
+  }
+
+  /* Phones: one per row; tablets: two; from lg: four. Dividers are 1px lines between cells. */
+  .platform-features {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-block: 1px solid rgb(255 255 255 / 0.1);
+    background: rgb(255 255 255 / 0.03);
+  }
+  .platform-feature {
+    padding: 1.5rem 1.25rem;
+  }
+  .platform-feature + .platform-feature {
+    border-top: 1px solid rgb(255 255 255 / 0.1);
+  }
+  @media (min-width: 40rem) {
+    .platform-features {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .platform-feature {
+      padding: 1.75rem 2rem;
+    }
+    .platform-feature + .platform-feature {
+      border-top: 0;
+    }
+    .platform-feature:nth-child(even) {
+      border-left: 1px solid rgb(255 255 255 / 0.1);
+    }
+    .platform-feature:nth-child(n + 3) {
+      border-top: 1px solid rgb(255 255 255 / 0.1);
+    }
+  }
+  @media (min-width: 75rem) {
+    .platform-features {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .platform-feature {
+      padding: 2rem 1.75rem;
+    }
+    .platform-feature:nth-child(n + 3) {
+      border-top: 0;
+    }
+    .platform-feature + .platform-feature {
+      border-left: 1px solid rgb(255 255 255 / 0.1);
+    }
+  }
+  .platform-feature__icon {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 10px;
+    background: rgb(0 128 246 / 0.18);
+    color: #7cc0ff;
+  }
+
+  /* Teal with navy text: white on this teal falls short of 4.5:1. */
+  .platform-cta {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.5rem;
+    padding: 0.8125rem 1.375rem;
+    border-radius: 12px;
+    background: #2dd4bf;
+    color: #062a3a;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background-color 150ms ease,
+      translate 150ms ease;
+  }
+  .platform-cta:hover {
+    background: #5eead4;
+    translate: 0 -1px;
+  }
+  @media (min-width: 60rem) {
+    .platform-cta {
+      align-self: center;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .platform-cta {
+      transition: none;
+    }
+    .platform-cta:hover {
+      translate: none;
+    }
+  }
+</style>

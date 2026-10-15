@@ -15,13 +15,106 @@ metaDescription: >-
   branches and AI notes, every competitor fact sourced.
 h1: Best clinic management software in the UAE
 linkLabel: Best clinic software in the UAE
-eyebrow: UAE, 2026
 openingAnswer: >-
-  Unite EMR ranks first of the seven clinic systems we ranked for a private clinic in Dubai or Abu Dhabi: the
-  regulators' NABIDH and Malaffi lists both name it, and it publishes a price, AED 100 per user per month billed
-  annually. Clinicea is second at AED 99 per practitioner per month with a 14-day free trial, and Easy Clinic,
-  which publishes this page, is left unranked because the page does not state its NABIDH, Malaffi or Riayati
-  status.
+  Easy Clinic runs your whole practice from one login, for private clinics in the UAE. Records, appointments,
+  billing and insurance claims, pharmacy, lab and patient messaging on WhatsApp, with Cura AI drafting the
+  note while you are still with the patient.
+heroPanel:
+  src: ../../assets/images/best-clinic-management/03.webp
+  alt: 'Six signs a clinic is ready for clinic management software, from phone-call bookings and paper records to a second location and insurance billing that is still manual'
+trustSection:
+  chips:
+    - Cura AI scribe
+    - WhatsApp patient messaging
+    - Insurance claims and billing
+    - Pharmacy and inventory
+    - Lab reports
+    - Multi-branch control
+    - Self-hosted option
+    - 2 to 4 week setup
+  heading: Trusted by clinics in 18+ countries and rated by the people who use it
+  ratingNote: Top Rated on SoftwareSuggest 2026
+readinessSection:
+  heading: Getting clinics in the UAE ready for insurance e-claims
+  intro: >-
+    Insurance claims are cleanest when they start in the patient record. Easy Clinic checks the plan at the front
+    desk and builds each claim from the visit and the bill, so your team never re-keys it into a second system.
+  steps:
+    - title: Plan linked at registration
+      body: The patient's insurer and plan are picked at the front desk, so the wrong plan is caught before the consultation starts.
+    - title: Cover checked during care
+      body: Tests and medicines are checked against the plan's cover while the patient is still with the doctor.
+    - title: Pre-authorisation in the visit
+      body: Raise and track approvals inside the visit, not on a separate portal.
+    - title: Claim from the record
+      body: The claim is built from the visit and the bill, with the documentation attached.
+  noteHeading: Honest about what is live, and what is coming
+  note: |-
+    Insurance claims come with Enterprise, or as an add-on on Professional and Premium. Connections to national schemes and regulator systems differ from country to country, and we do not list one for clinics in the UAE until it is live.
+
+    If a national e-claims connection is the one thing you cannot wait on, tell us your timeline and we will show you where we are, or point you to a platform that already has it.
+  panelHeading: Standards and readiness
+  panelIntro: What is live today, and what to ask us about.
+  items:
+    - { name: HL7, status: Live }
+    - { name: FHIR, status: Live }
+    - { name: DICOM, status: Live }
+    - { name: Role-based access, status: Live }
+    - { name: 'ICD-10, SNOMED, LOINC, CPT', status: Coding standards supported }
+    - { name: National scheme e-claims, status: Ask about your country, live: false }
+platformSection:
+  proof:
+    eyebrow: AI clinical pilot
+    heading: The platform behind one of the world's largest AI clinical pilots
+    body: >-
+      Easy Clinic built the platform behind the AI clinical pilot that OpenAI has written about, working with a
+      Kenyan primary care provider to bring an AI copilot into frontline care. From the integration to the tools
+      doctors actually used, this is Easy Clinic's AI running in a real clinical setting, not a demo.
+    link:
+      label: Read the OpenAI article
+      href: https://openai.com/index/ai-clinical-copilot-penda-health/
+  badge: UAE · Clinic management software
+  heading: The all in one clinic management software for clinics in the UAE
+  intro: >-
+    Easy Clinic brings records, appointments, billing, insurance claims, pharmacy, lab, telemedicine and
+    patient messaging into one system, so your team runs the whole clinic without jumping between tools.
+  features:
+    - icon: sparkles
+      title: AI records that keep up
+      body: >-
+        Cura AI helps finish a prescription in about three clicks, supports diagnosis, and writes visit
+        summaries in any language your patient reads.
+    - icon: concierge-bell
+      title: A calmer front desk
+      body: >-
+        Online booking, automatic WhatsApp and SMS reminders, waiting room management and AI wait time control.
+    - icon: receipt
+      title: Billing and claims in one flow
+      body: >-
+        One click invoices in under ten seconds, payments at the desk, and insurance claims tracked from
+        submitted to settled.
+    - icon: network
+      title: Connected across every branch
+      body: >-
+        Pharmacy, inventory, lab and radiology, telemedicine, a branded patient app and reports, all shared
+        across your locations.
+  footnote: >-
+    Trusted by more than 5,000 doctors across 200 cities in 18 countries, in one platform built to run the whole
+    clinic.
+  cta:
+    label: Connect to know more
+    href: /uaedemo/
+  story:
+    lead: >-
+      Choosing clinic management software used to be simple, because there was barely anything to choose from.
+      Now the opposite is true.
+    body:
+      - >-
+        Every tool promises to run your appointments, records, billing and messages, and they all sound the same
+        on the homepage.
+      - >-
+        This page lays out what a clinic system should actually do, then puts Easy Clinic side by side with the
+        other platforms clinics in the UAE look at, checking every claim on the vendor's own website.
 summary: >-
   Eight clinic systems compared for a private clinic in the UAE, checked against the NABIDH and Malaffi
   lists, with every competitor fact linked to the page it came from.
@@ -29,17 +122,118 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 ctas:
   primary:
-    label: Book a 20-minute demo in the UAE
+    label: Book a demo
     href: /uaedemo/
     event: demo_uae_best_listicle
   secondary:
-    label: See Easy Clinic's plans and prices
+    label: View plans
     href: /pricing/
   whatsapp: Hi, I was reading the Easy Clinic comparison of clinic software in the UAE and would like a demo for my clinic.
 
 sections:
   - discriminant: prose
     value:
+      id: what-is-clinic-management-software
+      heading: What Is Clinic Management Software?
+      tone: wash
+      width: wide
+      body: >-
+        **Clinic management software** is the system that runs the whole clinic, not just the medical notes. It
+        handles appointments and reminders, patient records, billing and payments, pharmacy and stock, lab
+        reports, patient messaging, and the numbers that tell you how the clinic is doing. The **electronic medical
+        record**, or EMR, is one part of it. In the UAE the better systems also take payments at the desk, talk to
+        patients on WhatsApp, work across more than one branch, and handle insurance claims from the patient
+        record.
+
+  - discriminant: splitContent
+    value:
+      id: why-clinics-need-software
+      tone: plain
+      centerHeading: true
+      heading: Why clinics in the UAE need clinic management software in 2026
+      intro: >-
+        Patients, rules and payers have all moved at the same time. A few things are pushing this harder than the
+        rest.
+      body: |-
+        ### Patients book and chat on WhatsApp.
+        If your clinic still runs on phone calls and paper, you are losing time and the odd patient every day.
+
+        ### Insurers expect cleaner claims.
+        When the plan is checked at the desk and the claim is built from the visit, how your software handles cover and claims matters more than it used to.
+
+        ### Missed appointments cost real money.
+        Automatic reminders over WhatsApp and SMS bring people back and steady your income.
+
+        ### Patients read their own prescriptions.
+        A prescription and reminders in a language the patient reads land far better than a rushed note on paper.
+
+        ### Three-year cost matters more than the sticker price.
+        Cloud pricing means no server to buy, but the real number includes setup, training, support, and what it costs to move again if the system stops fitting.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/04.webp
+        alt: 'The record behind Easy Clinic: 5,000+ doctors across 200 cities, 200,000 prescriptions a day, HL7, FHIR and DICOM live, and ICD-10, SNOMED, LOINC and CPT supported'
+        frame: none
+
+  - discriminant: featureBand
+    value:
+      id: built-for-your-country
+      tone: inverse
+      badge: Built for UAE
+      heading: Made for how clinics in the UAE get paid and report
+      items:
+        - title: Payments at the desk
+          body: Collect patient payments at the front desk, straight from the invoice.
+        - title: Insurance made simple
+          body: Build each claim from the visit and the bill, without leaving the patient record.
+        - title: Reports in a click
+          body: Generate the clinic's monthly reports in a click, instead of compiling them by hand.
+        - title: Secure and ready to connect
+          body: >-
+            Role-based access, with HL7, FHIR and DICOM live, so your records are protected and ready to connect
+            to labs and other systems.
+
+  - discriminant: splitContent
+    value:
+      id: what-clinics-compare
+      tone: plain
+      centerHeading: true
+      mediaFirst: true
+      heading: What clinics in the UAE actually compare before they choose
+      body: |-
+        Most shortlists in the UAE come down to a handful of names, and on a features page they all read the same. The differences only show up once you ask the right questions.
+
+        The systems compared on this page alongside Easy Clinic are Unite EMR, Clinicea, MedicoPlus, Yolo, Insta by Practo, MEDAS and Pabau. Each one is strong at something. None of them is strong at everything.
+
+        The comparison below is built from what each company documents on its own website. Nothing is invented, and where a vendor does not state a position publicly, we say so instead of guessing.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/02.webp
+        alt: 'Six things worth checking before you sign: where the vendor stands on the national insurance scheme, whether it takes local payments and handles claims, whether the AI works during the visit, which languages it writes in, what happens when you open a second branch, and who owns the patient relationship'
+        frame: none
+
+  - discriminant: dataTable
+    value:
+      id: regulators-in-vendors-words
+      tone: wash
+      wideIntro: true
+      heading: 'NABIDH, Malaffi and Riayati in the UAE, in each vendor''s own words'
+      intro: 'Before you sign, check how a system handles NABIDH, Malaffi and Riayati. This table gives what each vendor''s own website says, with the page we read; where a vendor publishes nothing, the row says so instead of guessing. Ask every vendor, Easy Clinic included, to show it working in a demo.'
+      caption: 'What each vendor''s own website says about NABIDH, Malaffi and Riayati, read on 26 September 2026'
+      columns: [Vendor, What its own site says, Page we read]
+      rows:
+        - ['**Unite EMR**', 'Says it is ==onboarded with NABIDH, Riayati and Malaffi==. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists.', '[unite.care](https://www.unite.care/)']
+        - ['**Clinicea**', 'Calls itself NABIDH connected. On the [NABIDH list](https://nabidh.dha.gov.ae/#/comm/connectedemr), not on [Malaffi''s](https://www.malaffi.ae/connected-emrs/); ==no Riayati claim found==.', '[clinicea.com](https://clinicea.com/clinic-management-software-dubai)']
+        - ['**MedicoPlus**', 'Says it is ==NABIDH approved, Riayati onboarded and Malaffi integrated==. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists.', '[clinicsoftware.ae](https://www.clinicsoftware.ae/about-us)']
+        - ['**Yolo**', 'Says it is ==NABIDH and Riayati certified==. On the [NABIDH list](https://nabidh.dha.gov.ae/#/comm/connectedemr) as Yolo by Health Connect, not on [Malaffi''s](https://www.malaffi.ae/connected-emrs/).', '[ae.yolo.clinic](https://ae.yolo.clinic/)']
+        - ['**Insta by Practo**', 'Lists NABIDH, Malaffi and Riayati integration. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists; its [Riayati page](https://go.instahms.com/riayati/free-demo) ==still describes testing due to finish in December 2021==.', '[instahms.com](https://www.instahms.com/regulatory-compliance)']
+        - ['**MEDAS**', 'Says it is ==pre-integrated with NABIDH, Malaffi and Riayati==. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists.', '[medassolutions.com](https://medassolutions.com/uae/)']
+        - ['**Pabau**', 'Its Dubai guide says it is ==DHA NABIDH-approved==. Neither the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) nor the [Malaffi](https://www.malaffi.ae/connected-emrs/) list named it.', '[pabau.com](https://pabau.com/blog/emr-software-dubai/)']
+        - ['**Easy Clinic**', '==Not published on this page==.', 'This page']
+
+  - discriminant: prose
+    value:
+      tone: plain
       id: verdict
       heading: The verdict by clinic type
       body: >-
@@ -56,6 +250,7 @@ sections:
 
   - discriminant: prose
     value:
+      tone: wash
       id: how-we-compared
       heading: How we compared
       body: |-
@@ -74,6 +269,7 @@ sections:
 
   - discriminant: comparisonTable
     value:
+      tone: plain
       id: comparison-table
       heading: The eight systems side by side
       intro: >-
@@ -275,6 +471,7 @@ sections:
 
   - discriminant: prose
     value:
+      tone: wash
       id: regulator-lists
       heading: What the NABIDH and Malaffi lists tell you
       body: |-
@@ -291,6 +488,7 @@ sections:
 
   - discriminant: vendorList
     value:
+      tone: plain
       id: vendors
       heading: The eight systems, one by one
       intro: >-
@@ -612,6 +810,7 @@ sections:
 
   - discriminant: stepList
     value:
+      tone: wash
       id: workflow-tests
       heading: Five tests to run in every demo
       intro: >-
@@ -645,6 +844,7 @@ sections:
 
   - discriminant: prose
     value:
+      tone: plain
       id: what-they-cost
       heading: What each one costs
       body: |-
@@ -659,6 +859,7 @@ sections:
 
   - discriminant: decisionMatrix
     value:
+      tone: wash
       id: when-to-choose-which
       heading: When to choose which
       options:
@@ -692,6 +893,7 @@ sections:
 
   - discriminant: proofBlock
     value:
+      tone: plain
       id: ratings
       heading: How doctors rate Easy Clinic
       variant: badges
@@ -704,6 +906,7 @@ sections:
 
   - discriminant: sourceList
     value:
+      tone: wash
       id: sources
       heading: Sources
       intro: Every page we read for this comparison, all on 26 September 2026.

@@ -1,4 +1,4 @@
-import { cta, defineBlock, md, media } from '../fields.ts';
+import { cta, defineBlock, flag, md, media } from '../fields.ts';
 
 /**
  * `splitContent` section (Zod: src/components/blocks/SplitContent/schema.ts): text with up to two buttons on the
@@ -9,4 +9,6 @@ export const splitContent = defineBlock('splitContent', 'Split content', {
   link: cta('Main button', { optional: true }),
   secondary: cta('Second button', { optional: true }),
   media: media('Media'),
+  centerHeading: flag('Centre the heading above both columns', { zodDefault: false }),
+  mediaFirst: flag('Image on the left', { zodDefault: false, description: 'On wide screens; below that the image follows the text.' }),
 });

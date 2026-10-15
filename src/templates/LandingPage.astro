@@ -10,6 +10,10 @@ import AwardRecognition from '../components/frame/AwardRecognition.astro';
 import FeatureChips from '../components/frame/FeatureChips.astro';
 import ClientLogos from '../components/frame/ClientLogos.astro';
 import WhatIsEasyClinic from '../components/frame/WhatIsEasyClinic.astro';
+import HeroPanel from '../components/frame/HeroPanel.astro';
+import TrustSection from '../components/frame/TrustSection.astro';
+import ReadinessSection from '../components/frame/ReadinessSection.astro';
+import PlatformSection from '../components/frame/PlatformSection.astro';
 import Sections from '../components/blocks/Sections.astro';
 import ContactCard from '../components/blocks/ContactCard/ContactCard.astro';
 import { getEntry } from 'astro:content';
@@ -46,6 +50,8 @@ const ctx: Omit<BlockContext, 'index'> = {
 };
 // Country pages carry the local contact card in the hero (section 11, "Country pages").
 const heroContact = (record.family === 'country' || record.family === 'countryDemo') && d.country;
+// A hero panel (the country listicles) puts an image card beside the text and a reach line under the CTAs.
+const heroPanel = d.heroPanel;
 ---
 
 <BaseLayout
@@ -70,11 +76,36 @@ const heroContact = (record.family === 'country' || record.family === 'countryDe
     heroMedia={d.heroMedia}
     heroStrip={d.heroStrip}
     narrowLede={record.path === '/'}
-    largeHeading={['feature', 'solution', 'specialty', 'ai', 'curapilot'].includes(record.family) || ['/solutions/', '/specialties/', '/countries/', '/pricing/', '/compare/', '/customers/', '/start-a-clinic/', '/switch/', '/blog/'].includes(record.path)}
+    largeHeading={Boolean(heroPanel) || ['feature', 'solution', 'specialty', 'ai', 'curapilot'].includes(record.family) || ['/solutions/', '/specialties/', '/countries/', '/pricing/', '/compare/', '/customers/', '/start-a-clinic/', '/switch/', '/blog/'].includes(record.path)}
     byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
   >
+    {heroPanel && <HeroPanel slot="media" src={heroPanel.src} alt={heroPanel.alt} />}
+    {
+      heroPanel && (
+        <ul slot="stats" class="mt-7 grid grid-cols-[auto_auto] justify-start gap-x-8 gap-y-2 text-base text-ink min-[45rem]:flex min-[45rem]:flex-wrap min-[45rem]:gap-x-3" aria-label="Easy Clinic in numbers">
+          {[
+            ['200+', 'cities'],
+            ['5000+', 'doctors'],
+            ['18+', 'countries'],
+            ['10+ years', heroPanel.yearsIn],
+          ].map(([n, label], i) => (
+            // Two columns (the last item on its own row) on phones; one line with separators from 720px, except beside
+            // the image on tablets (md), where the last item takes its own line.
+            <li class:list={['flex items-center gap-3 min-[45rem]:whitespace-nowrap', i === 3 && 'col-span-2 md:basis-full lg:basis-auto']}>
+              {i > 0 && <span class:list={['hidden text-[#b4bdca] min-[45rem]:inline', i === 3 && 'md:hidden lg:inline']} aria-hidden="true">|</span>}
+              <span>
+                <strong class="font-semibold text-ink-heading">{n}</strong> {label}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
     {heroContact && <div slot="aside" class="mt-6"><ContactCard country={d.country!} showClients={false} ctx={{ ...ctx, index: -1 }} /></div>}
   </Hero>
+  {d.trustSection && <TrustSection {...d.trustSection} />}
+  {d.readinessSection && <ReadinessSection {...d.readinessSection} />}
+  {d.platformSection && <PlatformSection {...d.platformSection} />}
   {record.path === '/' && <AwardRecognition />}
   {record.path === '/' && <FeatureChips />}
   {record.path === '/' && <ClientLogos />}
