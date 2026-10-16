@@ -7,7 +7,7 @@ import Screenshot from '../../ui/Screenshot.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'splitContent'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, body, link, secondary, media, centerHeading, mediaFirst, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, body, link, secondary, media, centerHeading, mediaFirst, alignTop, stickyMedia, ctx } = Astro.props;
 const topHeading = centerHeading && heading;
 ---
 
@@ -23,7 +23,7 @@ const topHeading = centerHeading && heading;
     )
   }
   {/* Side by side from lg. Below that the centred-heading layout stacks as one centred reading column. */}
-  <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+  <div class:list={['grid gap-10 lg:grid-cols-2 lg:gap-16', alignTop ? 'items-start' : 'items-center']}>
     {/* Stacked (below lg): the text runs the full width, the image smaller and centred beneath it. */}
     <div>
       {!topHeading && eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
@@ -40,7 +40,7 @@ const topHeading = centerHeading && heading;
       }
     </div>
     {/* Never wider than the image itself, so a small screenshot is not stretched (and blurred) when the columns stack. */}
-    <div class:list={['w-full overflow-hidden rounded-2xl shadow-[0_24px_60px_-24px_rgb(10_37_64/0.35)]', mediaFirst ? 'lg:order-first lg:justify-self-start' : 'lg:justify-self-end', topHeading ? 'max-w-none lg:max-w-[var(--img-w,100%)]' : 'max-w-[var(--img-w,100%)]']} style={media.src ? `--img-w:${media.src.width}px` : undefined}>
+    <div class:list={['w-full overflow-hidden rounded-2xl shadow-[0_24px_60px_-24px_rgb(10_37_64/0.35)]', mediaFirst ? 'lg:order-first lg:justify-self-start' : 'lg:justify-self-end', stickyMedia && 'lg:sticky lg:top-24 lg:self-start', topHeading ? 'max-w-none lg:max-w-[var(--img-w,100%)]' : 'max-w-[var(--img-w,100%)]']} style={media.src ? `--img-w:${media.src.width}px` : undefined}>
       <Screenshot media={{ ...media, frame: 'none' }} sizes="(min-width: 75rem) 640px, (min-width: 60rem) 50vw, 100vw" />
     </div>
   </div>

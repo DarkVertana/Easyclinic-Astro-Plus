@@ -1,0 +1,85 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'specialtyGrid'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, groups, ctx } = Astro.props;
+---
+
+{/* One group a row on phones, two on tablets, four from lg; each a heading over a blue rule and a ticked list. */}
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} wideHeader>
+  <div class="sg-grid">
+    {
+      groups.map((group) => (
+        <div class="sg-group">
+          <h3 class="sg-label">{group.label}</h3>
+          <ul class="sg-list">
+            {group.items.map((item) => (
+              <li class="sg-item">
+                <span class="sg-check" aria-hidden="true">
+                  <Icon name="check" size={11} />
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .sg-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+  @media (min-width: 40rem) {
+    .sg-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem 2.5rem;
+    }
+  }
+  @media (min-width: 75rem) {
+    .sg-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 3rem 2.5rem;
+    }
+  }
+  .sg-label {
+    padding-bottom: 0.625rem;
+    border-bottom: 2px solid var(--color-blue-700);
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  .sg-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .sg-item {
+    display: grid;
+    grid-template-columns: 1.125rem minmax(0, 1fr);
+    column-gap: 0.625rem;
+    align-items: start;
+    color: var(--ink-heading);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .sg-check {
+    display: grid;
+    place-items: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-top: 0.15rem;
+    border-radius: 9999px;
+    background: #00c554;
+    color: var(--color-white);
+  }
+</style>

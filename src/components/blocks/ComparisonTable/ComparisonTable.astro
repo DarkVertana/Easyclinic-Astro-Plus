@@ -8,7 +8,7 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'comparisonTable'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, columns, rows, note, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, columns, rows, note, clean, ctx } = Astro.props;
 const sectionTone = toneFor(tone, ctx.index);
 const inverse = sectionTone === 'inverse';
 
@@ -52,8 +52,8 @@ const body = rows.map((row) => ({
 }));
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
-  <div class="ct-wrap" data-fit={fit}>
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} wideHeader={clean}>
+  <div class="ct-wrap" data-fit={fit} data-clean={clean ? '' : undefined}>
     <table class="ct" role="table" aria-labelledby={labelledBy} aria-label={label}>
       {caption && <caption class="sr-only">{caption}</caption>}
       <thead role="rowgroup">
@@ -91,7 +91,7 @@ const body = rows.map((row) => ({
                 <td role="cell" data-label={cell.column} class:list={[cell.us && 'ct-us']}>
                   <div class="ct-cell">
                     {cell.value ? <Md text={cell.value} inline class="[&_a]:underline" /> : cell.placeholder}
-                    {(cell.source || cell.checkedOn) && (
+                    {!clean && (cell.source || cell.checkedOn) && (
                       <span class="ct-meta">
                         {cell.source && (
                           <a href={cell.source} rel="noopener" class="ct-src">
@@ -114,7 +114,7 @@ const body = rows.map((row) => ({
       </tbody>
     </table>
   </div>
-  {note && <Md text={note} class:list={['mt-4 max-w-[46rem] text-sm', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+  {note && <Md text={note} class:list={['mt-4 text-sm', !clean && 'max-w-[46rem]', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
 </Section>
 
 <style>
@@ -171,6 +171,40 @@ const body = rows.map((row) => ({
       padding-inline: 0.75rem;
       font-size: var(--text-sm, 0.875rem);
     }
+  }
+
+  /* Clean look: rounder card, a soft shadow, a tinted header, roomier cells and zebra rows. */
+  .ct-wrap[data-clean] {
+    border-color: #e3eaf5;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 18px 40px -28px rgb(16 42 84 / 0.25);
+  }
+  [data-clean] .ct :is(th, td) {
+    border-top-color: #edf1f7;
+  }
+  [data-clean] .ct thead th {
+    padding-block: 1rem;
+    background: #f2f7ff;
+    font-size: 0.9375rem;
+  }
+  [data-clean] .ct tbody th {
+    color: var(--ink-heading);
+  }
+  [data-clean] .ct tbody tr:nth-child(even) :is(th, td):not(.ct-us) {
+    background: #fafcff;
+  }
+  @media (width >= 60rem) {
+    [data-clean] .ct :is(tbody th, td) {
+      padding-block: 1.125rem;
+      line-height: 1.6;
+    }
+  }
+  [data-clean] .ct .ct-us {
+    background: #eaf3ff;
+  }
+  [data-clean] .ct thead .ct-us {
+    color: var(--color-blue-700);
+    box-shadow: inset 0 3px 0 var(--color-blue-500);
   }
 
   /* Easy Clinic's column: a light tint, and a brand rule over its name (the icon sits beside it). */
@@ -392,5 +426,18 @@ const body = rows.map((row) => ({
       font-weight: 600;
       line-height: 1.5rem;
     }
+  }
+</style>
+
+<style is:global>
+  /* A highlighted phrase in a comparison cell: yellow with a red dashed outline, kept whole on one line where it fits. */
+  .ct mark {
+    display: inline-block;
+    max-width: 100%;
+    background: #fff3b0;
+    color: var(--ink-heading);
+    padding: 0.05em 0.35em;
+    border: 1.5px dashed #d93025;
+    border-radius: 0.3em;
   }
 </style>

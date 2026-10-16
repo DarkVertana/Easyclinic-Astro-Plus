@@ -14,4 +14,8 @@ export const schema = (ctx: SchemaContext) =>
     centerHeading: z.boolean().default(false),
     /** The image in the left column on wide screens (below lg it still follows the text). */
     mediaFirst: z.boolean().default(false),
+    /** Columns line up at the top on wide screens instead of being centred against each other. */
+    alignTop: z.boolean().default(false),
+    /** On wide screens the image stays in view (below the sticky header) while the text column scrolls. */
+    stickyMedia: z.boolean().default(false),
   });

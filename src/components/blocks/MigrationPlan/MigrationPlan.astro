@@ -1,0 +1,266 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'migrationPlan'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, steps, stats, systems, note, ctx } = Astro.props;
+---
+
+{/*
+  Steps as numbered cards joined by a dashed line on wide screens, then the timings strip, then what comes
+  across from each old system: a table from 640px, one card per system below that.
+*/}
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} wideHeader>
+  <ol class:list={['mp-steps', `mp-steps--${steps.length}`]}>
+    {
+      steps.map((step, i) => (
+        <li class="mp-step">
+          <span class="mp-step__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <div class="mp-step__text">
+            <h3 class="text-[1.125rem] leading-snug">
+              <span class="sr-only">Step {i + 1}: </span>
+              {step.title}
+            </h3>
+            <p class="mt-2 text-[0.9375rem] leading-[1.65] text-ink-muted">{step.body}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+
+  {
+    stats.length > 0 && (
+      <dl class="mp-stats">
+        {stats.map((s) => (
+          <div class="mp-stat">
+            <dt class="order-2 mt-1 text-sm text-ink-muted md:text-[0.9375rem]">{s.label}</dt>
+            <dd class="order-1 m-0 font-display text-[1.375rem] leading-tight font-semibold text-ink-heading md:text-[1.5rem]">{s.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+
+  {
+    systems.length > 0 && (
+      <div class="mp-table" role="table" aria-label="What comes across from your current system">
+        <div class="mp-row mp-row--head" role="row">
+          <span role="columnheader">Your current system</span>
+          <span role="columnheader">What comes across</span>
+          <span role="columnheader">What we look at closely</span>
+        </div>
+        {systems.map((s) => (
+          <div class="mp-row" role="row">
+            <span role="rowheader" class="mp-name">{s.name}</span>
+            <span role="cell" class="mp-cell" data-label="What comes across">
+              <Icon name="check" size={16} class="mp-cell__icon text-[#00a046]" />
+              {s.comesAcross}
+            </span>
+            <span role="cell" class="mp-cell" data-label="What we look at closely">
+              <Icon name="scan-eye" size={16} class="mp-cell__icon text-blue-700" />
+              {s.lookAt}
+            </span>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  {note && <Md text={note} class="mt-5 text-sm text-ink-muted" />}
+</Section>
+
+<style>
+  /* Steps as a timeline, not cards. Below lg: a vertical line down the left joining the numbers, text beside them.
+     From lg: the numbers sit on one horizontal line, each step's text under its number. */
+  .mp-steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mp-steps::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    left: calc(1.5rem - 1px);
+    border-left: 2px solid #cfe0f7;
+  }
+  .mp-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    column-gap: 1.25rem;
+    align-items: start;
+    align-content: start;
+  }
+  .mp-step__num {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: var(--color-blue-500);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow:
+      0 0 0 6px var(--surface),
+      0 8px 18px -8px rgb(0 91 176 / 0.55);
+  }
+  .mp-step__text {
+    padding-top: 0.25rem;
+  }
+  @media (min-width: 40rem) {
+    .mp-step__text {
+      max-width: 40rem;
+    }
+  }
+  @media (min-width: 75rem) {
+    .mp-steps--3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .mp-steps--4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .mp-steps--5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .mp-steps {
+      gap: 2.5rem;
+    }
+    .mp-steps::before {
+      top: 1.5rem;
+      bottom: auto;
+      left: 1.5rem;
+      right: 1.5rem;
+      border-left: 0;
+      border-top: 2px solid #cfe0f7;
+    }
+    /* The line stops at the last number: one column's width (less the gaps) minus half a number, from the right. */
+    .mp-steps--3::before {
+      right: calc((100% - 5rem) / 3 - 1.5rem);
+    }
+    .mp-steps--4::before {
+      right: calc((100% - 7.5rem) / 4 - 1.5rem);
+    }
+    .mp-steps--5::before {
+      right: calc((100% - 10rem) / 5 - 1.5rem);
+    }
+    .mp-step {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 1.25rem;
+    }
+    .mp-step__text {
+      padding-top: 0;
+    }
+  }
+
+  /* Timings: stacked on phones, one row with dividers from 640px. Dividers are 1px gaps over the line colour. */
+  .mp-stats {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1px;
+    margin: 2.5rem 0 0;
+    overflow: hidden;
+    border: 1px solid #d6e4f8;
+    border-radius: 18px;
+    background: #d6e4f8;
+  }
+  @media (min-width: 40rem) {
+    .mp-stats {
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+      grid-template-columns: none;
+    }
+  }
+  .mp-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.25rem 1rem;
+    background: #f2f7ff;
+    text-align: center;
+  }
+
+  /* Systems table: three columns from 640px; below that each system is a card with labelled lines. */
+  .mp-table {
+    margin-top: 1.5rem;
+    overflow: hidden;
+    border: 1px solid #e3eaf5;
+    border-radius: 18px;
+    background: var(--surface);
+  }
+  .mp-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.625rem;
+    padding: 1.125rem 1.25rem;
+  }
+  .mp-row + .mp-row {
+    border-top: 1px solid #edf1f7;
+  }
+  .mp-row--head {
+    display: none;
+  }
+  .mp-name {
+    font-weight: 600;
+    color: var(--ink-heading);
+  }
+  .mp-cell {
+    display: grid;
+    grid-template-columns: 1rem minmax(0, 1fr);
+    column-gap: 0.625rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .mp-cell::before {
+    content: attr(data-label);
+    grid-column: 1 / -1;
+    margin-bottom: 0.125rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-blue-700);
+  }
+  .mp-cell :global(.mp-cell__icon) {
+    margin-top: 0.25rem;
+  }
+  @media (min-width: 40rem) {
+    .mp-row {
+      grid-template-columns: minmax(9rem, 0.7fr) minmax(0, 1.5fr) minmax(0, 1.5fr);
+      gap: 1.5rem;
+      align-items: start;
+      padding: 1rem 1.5rem;
+    }
+    .mp-row:nth-child(even):not(.mp-row--head) {
+      background: #f8fbff;
+    }
+    .mp-row--head {
+      display: grid;
+      padding-block: 0.875rem;
+      background: #f2f7ff;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-blue-700);
+    }
+    .mp-row--head span:first-child {
+      color: var(--ink-heading);
+    }
+    .mp-cell::before {
+      display: none;
+    }
+  }
+</style>

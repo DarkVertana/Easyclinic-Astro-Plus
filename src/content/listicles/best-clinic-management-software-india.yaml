@@ -127,6 +127,9 @@ ctas:
     href: /pricing/
   whatsapp: Hi, I was reading the comparison of clinic management software in India and would like to see Easy Clinic on my clinic's patient flow.
 
+nearbySection:
+  heading: Clinic management software in nearby markets
+  body: 'Comparing options across more than one country? See our guides to [clinic management software in the Maldives](/best-clinic-management-software-maldives/), [clinic management software in the UAE](/best-clinic-management-software-uae/) and [clinic management software in Malaysia](/best-clinic-management-software-malaysia/), or browse [all our country guides](/countries/).'
 sections:
   - discriminant: prose
     value:
@@ -227,40 +230,91 @@ sections:
         - ['**Practo Ray**', 'Says ==Ray is ABDM and UHI compliant== and explains ABHA numbers, but claims no NHA certification. DPDP Act not named; cites HIPAA-compliant hosting.', '[practo.com](https://www.practo.com/providers/abdm)']
         - ['**Easy Clinic**', '==Not published== on this page. Ask us, as you would any vendor, to show how it handles ABDM and the DPDP Act in a demo.', 'This page']
 
-  - discriminant: prose
+  - discriminant: migrationPlan
     value:
+      id: moving-your-clinic
       tone: plain
-      id: verdict
-      heading: The short answer, by type of clinic
-      body: >-
-        If you are one doctor and the price matters most, Doctors App charges ₹10,999 a year before GST with
-        two staff logins, and HealthPlix, at ₹12,000, describes itself as an online and offline EMR. If your
-        patients already book you on Practo.com, Practo Ray has Practo.com integration on both plans, and if
-        you also run a lab and pharmacy counter, or inpatient beds, MocDoc and Healthray sell those modules
-        alongside their clinic software. For a clinic of two or more doctors, or a group opening branches, that
-        wants the appointment book, the chart, the bill and WhatsApp reminders in one login with training and
-        support included, we would choose Easy Clinic, and we say that as the company that makes it.
+      heading: Bringing your clinic across, without losing a thing
+      intro: >-
+        Most clinics we onboard are moving off something that stopped fitting. Here is how the move works, and
+        what is different depending on where you are coming from.
+      steps:
+        - title: We take the export
+          body: You give us access or a file. We pull patient records, visit history, billing and stock out of your current system.
+        - title: We map and import
+          body: Your fields get matched to ours and checked with you before anything goes live. Duplicates and gaps are cleaned on the way in.
+        - title: Your team trains
+          body: Front desk, doctors and pharmacy each get a session on their own part of the day, with a named specialist on hand.
+        - title: You go live
+          body: We run both systems in parallel for the first few days, so nothing is lost while your staff settle in.
+      stats:
+        - { value: 2 to 4 weeks, label: 'Single clinic, start to live' }
+        - { value: 4 to 6 weeks, label: Multi-branch clinics and chains }
+        - { value: No data loss, label: Parallel running until you sign off }
+      systems:
+        - name: 'DocEngage'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'Doctors App'
+          comesAcross: 'Patient records, clinical notes and billing history.'
+          lookAt: 'Field mapping is agreed with you first, since layouts differ between systems.'
+        - name: 'HealthPlix'
+          comesAcross: 'Patient records, appointments and invoices.'
+          lookAt: 'Fields without a direct equivalent are agreed with you before anything is imported.'
+        - name: 'Healthray'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'MocDoc'
+          comesAcross: 'Patient records, clinical notes and billing history.'
+          lookAt: 'Field mapping is agreed with you first, since layouts differ between systems.'
+        - name: 'Practo Ray'
+          comesAcross: 'Patient records, appointments and invoices.'
+          lookAt: 'Fields without a direct equivalent are agreed with you before anything is imported.'
+        - name: 'Excel or paper'
+          comesAcross: 'Patient master list, visit history and stock data.'
+          lookAt: 'Column headings and duplicate patient entries get cleaned before import. Usually the quickest route of all.'
+        - name: 'An older on-premise system'
+          comesAcross: 'A full database export.'
+          lookAt: 'We review how the old system stored things before we commit to a date, rather than guessing.'
+      note: Every migration comes with a named implementation specialist, not a help article.
 
-  - discriminant: prose
+  - discriminant: featureBand
     value:
-      tone: wash
-      id: how-we-compared
-      heading: How we compared them
-      body: |
-        We read each vendor's own website on 26 September 2026, including price lists and help articles, and took review scores, with the number of reviews behind them, from Capterra, SoftwareSuggest and Techjockey. Every competitor fact in the table and in the vendor sections links to the page it came from. Where a vendor does not publish something, the cell says "Not published" with the date we looked.
-
-        We compared what an Indian clinic owner asks about first: the published price and how it is counted, WhatsApp reminders, AI help with the clinical note, running more than one branch, and what happens when the internet drops. We did not run a trial of each product, so nothing here rates speed or ease of use. The four tests further down are how to judge that on your own clinic's day.
-
-        The six competitors are Practo Ray, HealthPlix, MocDoc, Healthray, Doctors App and DocEngage. In the vendor sections they follow Easy Clinic in alphabetical order, with no ranking between them, because the right one depends on your clinic.
+      id: your-data-stays-yours
+      tone: inverse
+      badge: No lock-in
+      heading: Your data stays yours
+      intro: >-
+        Your patient records belong to your clinic. Not to us, and not to a marketplace. Here is what that means
+        in practice.
+      items:
+        - title: Export your records
+          body: Your records in a standard format, on your schedule, with export to Excel and PDF built in.
+        - title: The patient relationship is yours
+          body: >-
+            Your patients belong to your practice, not to a directory that also sells appointments to the clinic
+            down the road.
+        - title: Role-based access
+          body: Front desk, doctors, pharmacy and accounts each see what their job needs and nothing more.
+        - title: Nothing shared with aggregators
+          body: Your patient data is not sold, pooled or surfaced in a marketplace for commercial gain.
+        - title: An audit trail behind every record
+          body: Who viewed what, and when, available to you as the practice owner.
+        - title: No contract trap
+          body: >-
+            There are no binding contracts. If Easy Clinic stops fitting your clinic, you can leave with everything
+            you put in.
 
   - discriminant: comparisonTable
     value:
+      clean: true
       tone: plain
       id: side-by-side
-      heading: Seven options side by side
-      intro: >-
-        Each competitor cell links to the page it came from, read on 26 September 2026. Easy Clinic's column
-        comes from our own price list and plans.
+      heading: Six options side by side
+      intro: Easy Clinic comes first; the other columns keep the order used on the rest of this page. DocEngage is
+        covered in the vendor list below. Every competitor fact was read on the vendor's own site on 26
+        September 2026. Easy Clinic's column comes
+        from our own price list and plans.
       columns:
         - name: Easy Clinic
           us: true
@@ -269,14 +323,12 @@ sections:
         - name: MocDoc
         - name: Healthray
         - name: Doctors App
-        - name: DocEngage
       rows:
         - label: Best for
           cells:
-            - value: >-
-                Clinics of two or more doctors, polyclinics and groups adding branches that want the desk, the
-                chart, the bill and the reminders in one login.
-            - value: Clinics whose patients already book on Practo.com; both Ray plans include Practo.com integration.
+            - value: Clinics of two or more doctors, polyclinics and groups adding branches that want the desk, the chart,
+                the bill and the reminders in one login.
+            - value: Clinics whose patients already book on Practo.com; both Ray plans include ==Practo.com integration==.
               source: https://www.practo.com/providers/clinics/ray/plans
               checkedOn: 2026-09-26
             - value: A doctor who wants a fast prescription in the patient's language, online or offline.
@@ -285,24 +337,20 @@ sections:
             - value: Clinics that also run a lab and pharmacy, or inpatient beds; MocDoc sells software for each.
               source: https://mocdoc.com/
               checkedOn: 2026-09-26
-            - value: Clinics that may grow into a hospital; IPD, wards and TPA can be switched on without migrating.
+            - value: Clinics that may grow into a hospital; IPD, wards and TPA can be switched on ==without migrating==.
               source: https://healthray.com/clinic-management-software/
               checkedOn: 2026-09-26
-            - value: One doctor who wants a low yearly price with staff logins included; Doctors App also sells an AI scribe.
+            - value: One doctor who wants a low yearly price with ==staff logins included==; Doctors App also sells an AI
+                scribe.
               source: https://doctorsapp.in/
-              checkedOn: 2026-09-26
-            - value: Clinics that run their own marketing and want a healthcare CRM from the same vendor.
-              source: https://www.docengage.in/
               checkedOn: 2026-09-26
         - label: Published price and how it is counted
           cells:
-            - value: >-
-                Per doctor per month: {price:inr.professional.annual} on Professional or
-                {price:inr.premium.annual} on Premium billed annually, {price:inr.professional.quarterly} or
-                {price:inr.premium.quarterly} billed quarterly. Reception login included; Enterprise on a quote.
-            - value: >-
-                Per plan per month: CM Atom ₹999 on a one-year term, up to 50 doctors. Clinic Management
-                ₹1,499 on one year or ₹999 on four years, unlimited doctors.
+            - value: "Per doctor per month: {price:inr.professional.annual} on Professional or {price:inr.premium.annual} on
+                Premium billed annually, {price:inr.professional.quarterly} or {price:inr.premium.quarterly}
+                billed quarterly. Reception login included; Enterprise on a quote."
+            - value: "Per plan per month: CM Atom ₹999 on a one-year term, up to 50 doctors. Clinic Management ₹1,499 on one
+                year or ₹999 on four years, unlimited doctors."
               source: https://www.practo.com/providers/clinics/ray/plans
               checkedOn: 2026-09-26
             - value: ₹12,000 a year (Pro) or ₹18,000 a year (Elite), before 18% GST. Hospital plans on a quote.
@@ -311,34 +359,25 @@ sections:
             - value: Not published (checked 26 September 2026). No price appears on MocDoc's clinic software page.
               source: https://mocdoc.com/clinic-management-software
               checkedOn: 2026-09-26
-            - value: >-
-                Per care centre, up to 10 users: ₹30,000 a year (Clinical Management Basic) or ₹36,000
-                (Advanced, with EMR and pharmacy), billed yearly, taxes extra. The same plan cards also show
-                ₹499 or ₹699 per user per month, billed annually, without saying which applies.
+            - value: "Per care centre, up to 10 users: ₹30,000 a year (Clinical Management Basic) or ₹36,000 (Advanced, with
+                EMR and pharmacy), billed yearly, taxes extra. The same plan cards also show ₹499 or ₹699 per
+                user per month, billed annually, without saying which applies."
               source: https://healthray.com/pricing/
               checkedOn: 2026-09-26
-            - value: >-
-                Per doctor per year: ₹10,999 (Silver, two staff logins) or ₹16,999 (Gold, three staff logins),
-                before 18% GST.
+            - value: "Per doctor per year: ₹10,999 (Silver, two staff logins) or ₹16,999 (Gold, three staff logins), before
+                18% GST."
               source: https://doctorsapp.in/
-              checkedOn: 2026-09-26
-            - value: >-
-                Per user per month, billed annually: ₹499 (Clinical Management Basic) or ₹699 (Advanced, with
-                EMR and pharmacy). Or per care centre, up to 10 users: ₹30,000 or ₹36,000 a year. Taxes extra.
-              source: https://www.docengage.in/pricing
               checkedOn: 2026-09-26
         - label: WhatsApp to patients
           cells:
             - value: WhatsApp reminders and messages on Premium and Enterprise; SMS and email reminders on every plan.
-            - value: >-
-                Not published (checked 26 September 2026). The Ray plans list SMS confirmations, reminders and
+            - value: Not published (checked 26 September 2026). The Ray plans list SMS confirmations, reminders and
                 follow-ups, with 3,000 or 8,000 free SMS, and do not mention WhatsApp.
               source: https://www.practo.com/providers/clinics/ray/plans
               checkedOn: 2026-09-26
-            - value: >-
-                The SPOT mobile app sends digital prescriptions to patients by SMS or WhatsApp. Neither
-                [published plan](https://www.healthplix.com/pricing-1) names WhatsApp; Elite includes 5,000
-                credits for patient messages without naming the channel.
+            - value: The SPOT mobile app sends digital prescriptions to patients by SMS or WhatsApp. Neither [published
+                plan](https://www.healthplix.com/pricing-1) names WhatsApp; Elite includes 5,000 credits for
+                patient messages without naming the channel.
               source: https://www.healthplix.com/spot-mobile-emr
               checkedOn: 2026-09-26
             - value: Appointment notifications by SMS, WhatsApp and email.
@@ -347,28 +386,22 @@ sections:
             - value: Automated SMS and WhatsApp reminders, and SMS or WhatsApp alerts from the lab module.
               source: https://healthray.com/clinic-management-software/
               checkedOn: 2026-09-26
-            - value: >-
-                WhatsApp message credits, limited on Silver and included on Gold; on Gold the clinic's own
-                WhatsApp number can be connected as needed.
+            - value: WhatsApp message credits, limited on Silver and included on Gold; on Gold the clinic's own WhatsApp
+                number can be connected as needed.
               source: https://doctorsapp.in/
-              checkedOn: 2026-09-26
-            - value: WhatsApp listed among integrations, with SMS, email and IVR.
-              source: https://www.docengage.in/clinic-master
               checkedOn: 2026-09-26
         - label: AI for the clinical note
           cells:
-            - value: Cura AI note drafting on every plan, including Professional.
+            - value: Cura AI note drafting on every plan, ==including Professional==.
             - value: Not published (checked 26 September 2026). The Ray overview and plans pages list no AI note drafting.
               source: https://www.practo.com/providers/clinics/ray/plans
               checkedOn: 2026-09-26
-            - value: >-
-                H.A.L.O records the consultation and drafts the transcript, summary and prescription. More AI
-                tools on Elite.
+            - value: H.A.L.O records the consultation and drafts the transcript, summary and prescription. More AI tools on
+                Elite.
               source: https://www.healthplix.com/halo
               checkedOn: 2026-09-26
-            - value: >-
-                Clinical decision support for hypertension, diabetes and lipids, built on AIIMS guidance. AI
-                note drafting is not described on the pages we read.
+            - value: Clinical decision support for hypertension, diabetes and lipids, built on ==AIIMS guidance==. AI note
+                drafting is not described on the pages we read.
               source: https://mocdoc.com/clinical-decision-support-system
               checkedOn: 2026-09-26
             - value: Voice-to-note transcription, listed under AI assistance.
@@ -377,14 +410,10 @@ sections:
             - value: AI scribe that turns a spoken consultation into SOAP notes.
               source: https://doctorsapp.in/
               checkedOn: 2026-09-26
-            - value: Not published (checked 26 September 2026). The clinic page describes speciality favourites and templates.
-              source: https://www.docengage.in/clinic-master
-              checkedOn: 2026-09-26
         - label: More than one branch
           cells:
-            - value: >-
-                More than one location from Premium. Enterprise adds central control of every location; the
-                largest chain on Easy Clinic has {fact:largestChain} locations.
+            - value: More than one location from Premium. Enterprise adds central control of every location; the largest
+                chain on Easy Clinic has {fact:largestChain} locations.
             - value: One Ray account can hold several practices, switched from the top-right menu.
               source: https://help.practo.com/practo-ray/navigation/
               checkedOn: 2026-09-26
@@ -400,18 +429,14 @@ sections:
             - value: Not published (checked 26 September 2026). Each clinic plan covers one doctor.
               source: https://doctorsapp.in/
               checkedOn: 2026-09-26
-            - value: Multi-centre scheduling and a rate card per location.
-              source: https://www.docengage.in/clinic-master
-              checkedOn: 2026-09-26
         - label: When the internet drops
           cells:
             - value: Does not run fully offline today. Enterprise can be hosted on a private cloud.
-            - value: >-
-                The Android app works offline for the schedule and patient records; new bills and reminders
-                need a connection (help article dated 2016).
+            - value: The Android app works offline for the schedule and patient records; new bills and reminders need a
+                connection (help article dated 2016).
               source: https://help.practo.com/practo-ray/app/how-to-access-ray-offline/
               checkedOn: 2026-09-26
-            - value: Describes itself as an online and offline EMR.
+            - value: Describes itself as an ==online and offline EMR==.
               source: https://www.healthplix.com/
               checkedOn: 2026-09-26
             - value: Not published (checked 26 September 2026). MocDoc describes itself as cloud-based.
@@ -423,12 +448,9 @@ sections:
             - value: Not published (checked 26 September 2026). Doctors App describes a cloud-based platform.
               source: https://doctorsapp.in/
               checkedOn: 2026-09-26
-            - value: Not published (checked 26 September 2026).
-              source: https://www.docengage.in/clinic-master
-              checkedOn: 2026-09-26
         - label: Doctors using it, by the vendor's count
           cells:
-            - value: '{fact:doctors} doctors in {fact:cities} cities.'
+            - value: "{fact:doctors} doctors in {fact:cities} cities."
             - value: 50,000+ doctors in 5 countries.
               source: https://www.practo.com/providers/clinics/ray
               checkedOn: 2026-09-26
@@ -444,30 +466,124 @@ sections:
             - value: 5,000+ doctors across 18 specialities.
               source: https://doctorsapp.in/
               checkedOn: 2026-09-26
-            - value: Not published (checked 26 September 2026).
-              source: https://www.docengage.in/
-              checkedOn: 2026-09-26
-      note: >-
-        Prices are list prices as each vendor publishes them: some are per doctor, some per plan, per user or
-        per care centre, and some are before 18% GST, so compare the yearly total for your own clinic. ABDM claims and
-        review scores are in each vendor's section below rather than in this table: this page does not state
-        Easy Clinic's ABDM status or review count, and a row with a blank Easy Clinic cell would not be a fair
-        comparison.
+      note: "Prices are list prices as each vendor publishes them: some are per doctor, some per plan, per user or
+        per care centre, and some are before 18% GST, so compare the yearly total for your own clinic. ABDM
+        claims and review scores are in each vendor's section below rather than in this table: this page does
+        not state Easy Clinic's ABDM status or review count, and a row with a blank Easy Clinic cell would not
+        be a fair comparison."
+
+  - discriminant: prose
+    value:
+      id: which-one-fits
+      tone: wash
+      width: wide
+      heading: So which one fits your clinic?
+      body: |-
+        If you run a public or donor funded facility, a national or open-source system may be built for that world. If you need a national insurance scheme connected today, check which of the systems above already has it, and we will say so rather than waste your time.
+
+        Where Easy Clinic makes most sense is a growing private clinic that wants to run the whole practice in one place. Cura AI in the room with the patient. Payments and insurance claims from inside the record. Reminders and prescriptions over WhatsApp. Appointments, records, billing, pharmacy, lab and reports in a single system that does not need replacing when you open the second branch.
+
+        The fastest way to know is to watch it run on your own workflow for fifteen minutes.
+      link:
+        label: Book a demo
+        href: /indiademo/
+
+  - discriminant: specialtyGrid
+    value:
+      id: built-for-your-speciality
+      tone: plain
+      heading: Built for how your speciality actually works
+      intro: >-
+        A dermatologist does not write a prescription the way a paediatrician does. Easy Clinic ships with
+        templates, prescription formats and case sheets built per speciality, so the system fits your consultation
+        instead of the other way round.
+      groups:
+        - label: Primary care
+          items: [General practitioner, Family medicine, OPD and walk-in practice]
+        - label: Dental
+          items: [General dentistry, Orthodontics]
+        - label: Skin and aesthetics
+          items: [Dermatology, Cosmetic and aesthetic medicine, Trichology, Laser and hair removal, Plastic surgery]
+        - label: Women's health
+          items: [Obstetrics and gynaecology, IVF and fertility]
+        - label: Child health
+          items: [Paediatrics, Neonatology]
+        - label: Medical specialities
+          items: [Cardiology, Diabetology and endocrinology, Gastroenterology, Nephrology, Neurology, Oncology, Pulmonology, Rheumatology]
+        - label: Surgical specialities
+          items: [ENT, Ophthalmology, Orthopaedics, Urology, General surgery]
+        - label: Mental health
+          items: [Psychiatry, Psychology]
+
+  - discriminant: splitContent
+    value:
+      id: when-to-switch
+      tone: wash
+      centerHeading: true
+      heading: When should a clinic in India switch to new software?
+      body: |-
+        The honest answer is that you switch the moment admin starts stealing time from patients.
+
+        Most clinics do not move because of one dramatic failure. They move because the small costs add up, the front desk is always behind, and nobody can say with confidence how the practice is actually doing.
+      link:
+        label: Book a demo
+        href: /indiademo/
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/01.webp
+        alt: 'An Easy Clinic invoice for a patient visit: consultation, lab tests and pharmacy items, with the insurance share claimed, the co-pay received and the balance settled'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: how-easy-clinic-stands-out
+      tone: plain
+      centerHeading: true
+      mediaFirst: true
+      alignTop: true
+      stickyMedia: true
+      heading: How Easy Clinic stands out for clinics in India
+      intro: >-
+        Easy Clinic earns its place by running the whole clinic in one place, with AI doing the heavy lifting.
+        Four things do most of the work.
+      body: |-
+        ### One system, front desk to back office
+        Appointments, records, billing, insurance claims, scheduling, pharmacy, stock, lab and radiology, reports, a no-code workflow builder and a branded patient app, all under one login.
+
+        ### Cura AI where it counts.
+        The AI helps finish a prescription in about three clicks, supports diagnosis, and runs wait time management, stock reorder and two-way patient messages.
+
+        ### Built for how your clinic pays and talks.
+        Payments and insurance claims from inside the record, and reminders and prescriptions over WhatsApp, SMS and email.
+
+        ### Made to grow.
+        One shared view across branches, plus a data warehouse for chains. HL7, FHIR and DICOM are live today.
+
+        Behind the features sits a long track record. Easy Clinic serves more than 5,000 doctors across 200 cities in 18 countries, handles over 200,000 prescriptions a day, and has supported clinics for more than 10 years.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/kenya-hero.png
+        alt: 'Easy Clinic payments screen: the day''s visits with their payment status, and the day''s collected total'
+        frame: none
 
   - discriminant: prose
     value:
       tone: wash
-      id: pricing
-      heading: How the published prices compare
-      body: |
-        The seven vendors count their prices in different ways, so line them up for your own clinic before you compare. Easy Clinic charges per doctor per month, {price:inr.professional.annual} on annual Professional, with the reception login included. [Practo Ray](https://www.practo.com/providers/clinics/ray/plans) charges one monthly price per plan with a limit on doctors, ₹999 a month for up to 50 doctors on CM Atom, so at list price Ray costs less than Easy Clinic from the first doctor, and the gap grows with every doctor you add. [DocEngage](https://www.docengage.in/pricing) opens its price list per user, ₹699 a month billed annually on the clinic plan with the EMR, and also prices each care centre at ₹36,000 a year for up to 10 users. [Healthray](https://healthray.com/pricing/) shows the same two figures on one card without saying which applies. Both charge extra providers and the patient app on top. [MocDoc](https://mocdoc.com/clinic-management-software) does not publish prices.
-
-        For one doctor, [Doctors App](https://doctorsapp.in/) (₹10,999 a year with two staff logins) and [HealthPlix](https://www.healthplix.com/pricing-1) (₹12,000 a year) also publish lower prices than Easy Clinic, both before 18% GST. Doctors App's plans cover one doctor each; HealthPlix's pricing page does not say how many doctors a plan covers. DocEngage's per-user price comes to ₹8,388 a year for one login on the plan with the EMR, so ask how it counts front-desk logins. From three doctors, the ₹36,000 per-centre price is also below Easy Clinic Professional.
-
-        Ask every vendor for one number: the yearly total with tax for your doctors and front-desk staff, with the modules you will use in the first year, such as pharmacy or WhatsApp.
+      id: verdict
+      width: wide
+      heading: The short answer, by type of clinic
+      body: >-
+        If you are one doctor and the price matters most, Doctors App charges ₹10,999 a year before GST with
+        two staff logins, and HealthPlix, at ₹12,000, describes itself as an online and offline EMR. If your
+        patients already book you on Practo.com, Practo Ray has Practo.com integration on both plans, and if
+        you also run a lab and pharmacy counter, or inpatient beds, MocDoc and Healthray sell those modules
+        alongside their clinic software. For a clinic of two or more doctors, or a group opening branches, that
+        wants the appointment book, the chart, the bill and WhatsApp reminders in one login with training and
+        support included, we would choose Easy Clinic, and we say that as the company that makes it.
 
   - discriminant: vendorList
     value:
+      clean: true
       tone: plain
       id: vendors
       heading: Each option in detail
@@ -777,223 +893,18 @@ sections:
               source: https://www.softwaresuggest.com/practoray
               checkedOn: 2026-09-26
 
-  - discriminant: stepList
+  - discriminant: prose
     value:
       tone: wash
-      id: four-tests
-      heading: Four tests to run in every demo
-      intro: >-
-        A feature list will not tell you how the software feels on a Monday morning. Run the same four tests
-        on each vendor you shortlist, with your own receptionist at the keyboard and a real day's patient list.
-      steps:
-        - title: Front desk test
-          body: >-
-            Book a walk-in and a WhatsApp request into the same hour, then move one of them. Watch whether the
-            receptionist needs a second screen or a personal phone to do it.
-        - title: Doctor context test
-          body: >-
-            Open a returning patient's chart and time how long it takes to see the last prescription and the
-            last lab result. If an AI note tool is offered, dictate one real consultation and read every line
-            it wrote before you would sign it.
-        - title: Follow-up test
-          body: >-
-            Set a follow-up for next Tuesday and a repeat prescription, then ask who sends the reminder, on
-            which channel, and whether the doctor has to leave the consultation to do it.
-        - title: Owner visibility test
-          body: >-
-            Ask for yesterday's visits and collections by payment mode, doctor by doctor, and last week's
-            no-shows. If it takes more than a minute or an export to Excel, you will be doing it by hand at
-            every month end.
+      id: pricing
+      width: wide
+      heading: How the published prices compare
+      body: |
+        The seven vendors count their prices in different ways, so line them up for your own clinic before you compare. Easy Clinic charges per doctor per month, {price:inr.professional.annual} on annual Professional, with the reception login included. [Practo Ray](https://www.practo.com/providers/clinics/ray/plans) charges one monthly price per plan with a limit on doctors, ₹999 a month for up to 50 doctors on CM Atom, so at list price Ray costs less than Easy Clinic from the first doctor, and the gap grows with every doctor you add. [DocEngage](https://www.docengage.in/pricing) opens its price list per user, ₹699 a month billed annually on the clinic plan with the EMR, and also prices each care centre at ₹36,000 a year for up to 10 users. [Healthray](https://healthray.com/pricing/) shows the same two figures on one card without saying which applies. Both charge extra providers and the patient app on top. [MocDoc](https://mocdoc.com/clinic-management-software) does not publish prices.
 
-  - discriminant: decisionMatrix
-    value:
-      tone: plain
-      id: which-to-choose
-      heading: Which one to choose
-      intro: >-
-        Four groups, because several of the seven solve the same problem. Pick the list that sounds most like
-        your clinic.
-      options:
-        - title: Choose Easy Clinic if
-          us: true
-          items:
-            - >-
-              You want the appointment book, the prescription, the bill and the reminders in one login, with a
-              reception login included in the per-doctor price.
-            - >-
-              You are opening a second branch: Premium covers more than one location, and Enterprise adds
-              central control of every location.
-            - You want Cura AI note drafting on every plan, from {price:inr.professional.annual} per doctor per month.
-            - >-
-              Your staff need training: {fact:trainingDays} short sessions of about two hours in all, then
-              support by phone, email and chat.
-            - You do not want a contract or a setup fee.
-        - title: Choose Practo Ray if
-          items:
-            - Your patients already book you on Practo.com, since both Ray plans include Practo.com integration.
-            - >-
-              You have several doctors and want one price for all of them: CM Atom is ₹999 a month for up to
-              50 doctors on a one-year term.
-            - SMS reminders are enough, with 3,000 or 8,000 free SMS depending on the plan.
-            - >-
-              You want patients to pay online before the visit through Ray Payment Solution, at 1.8% to 2% a
-              transaction.
-            - You want to try it first, with a 7-day free trial that has the features of the top plan.
-        - title: Choose HealthPlix or Doctors App if
-          items:
-            - >-
-              You are one doctor and want a low yearly price: ₹10,999 on Doctors App Silver with two staff
-              logins, or ₹12,000 on HealthPlix Pro, both before 18% GST.
-            - Your internet drops often, since HealthPlix describes itself as an online and offline EMR.
-            - Your patients want the prescription in their own language, which both say they print in 14 languages.
-            - You want an appointment booking website included, on HealthPlix Elite or Doctors App Gold.
-        - title: Choose MocDoc or Healthray if
-          items:
-            - >-
-              You run inpatient beds, or a lab and pharmacy, alongside the clinic, since both sell those modules
-              as well as clinic software.
-            - >-
-              You want ABHA creation at the front desk, which both say is built in, and you will check it on a
-              test patient.
-            - 'You want a price per centre rather than per doctor, as Healthray publishes: ₹36,000 a year for up to 10 users on the plan with the EMR.'
-            - You need on-premise or hybrid hosting, which Healthray offers.
-            - You want a vendor with a longer review record, such as MocDoc HMS at 4.9 from 44 reviews on Capterra.
+        For one doctor, [Doctors App](https://doctorsapp.in/) (₹10,999 a year with two staff logins) and [HealthPlix](https://www.healthplix.com/pricing-1) (₹12,000 a year) also publish lower prices than Easy Clinic, both before 18% GST. Doctors App's plans cover one doctor each; HealthPlix's pricing page does not say how many doctors a plan covers. DocEngage's per-user price comes to ₹8,388 a year for one login on the plan with the EMR, so ask how it counts front-desk logins. From three doctors, the ₹36,000 per-centre price is also below Easy Clinic Professional.
 
-  - discriminant: proofBlock
-    value:
-      tone: wash
-      id: ratings
-      heading: How Easy Clinic's customers rate it
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-      body: >-
-        {fact:retention} of Easy Clinic's customers have used it for more than five years, and support and
-        training satisfaction stands at {fact:supportSatisfaction}.
-
-  - discriminant: scopeBox
-    value:
-      tone: plain
-      id: limits
-      heading: What this comparison does not tell you
-      variant: limits
-      items:
-        - >-
-          We read each vendor's website and review listings on 26 September 2026 and did not trial the products,
-          so nothing here rates speed or ease of use.
-        - >-
-          Competitor features and claims, ABDM compliance included, are as each vendor states them on its own
-          site; we have not tested them.
-        - >-
-          Review counts are small, from none to 44 per listing, so a handful of clinics can move a score.
-        - >-
-          Prices are list prices. Vendors may discount, and some add GST and extra-provider charges on top.
-        - >-
-          Easy Clinic's column uses only facts from our own price list and plans. The page gives Easy Clinic's
-          Capterra and Google ratings without a review count and does not state its ABDM status, so neither has
-          a row in the table; the Capterra link shows the current count.
-
-  - discriminant: sourceList
-    value:
-      tone: wash
-      id: sources
-      heading: Sources
-      intro: Every page below was read on 26 September 2026.
-      items:
-        - label: 'Practo: Ray overview'
-          url: https://www.practo.com/providers/clinics/ray
-          accessed: 2026-09-26
-        - label: 'Practo: Ray plans and pricing'
-          url: https://www.practo.com/providers/clinics/ray/plans
-          accessed: 2026-09-26
-        - label: 'Practo Help: navigating Ray and switching practices'
-          url: https://help.practo.com/practo-ray/navigation/
-          accessed: 2026-09-26
-        - label: 'Practo Help: accessing Ray offline with the smartphone app'
-          url: https://help.practo.com/practo-ray/app/how-to-access-ray-offline/
-          accessed: 2026-09-26
-        - label: 'Practo Help: communicating with staff and patients'
-          url: https://help.practo.com/practo-ray/communication/communications/
-          accessed: 2026-09-26
-        - label: 'Practo Help: Ray subscription agreement'
-          url: https://help.practo.com/practo-instruction-and-policies/click-wrap-subscription-agreement-ray/
-          accessed: 2026-09-26
-        - label: 'Capterra: Ray reviews'
-          url: https://www.capterra.com/p/167778/Ray/
-          accessed: 2026-09-26
-        - label: 'SoftwareSuggest: Practo Ray reviews'
-          url: https://www.softwaresuggest.com/practoray
-          accessed: 2026-09-26
-        - label: 'HealthPlix: home page'
-          url: https://www.healthplix.com/
-          accessed: 2026-09-26
-        - label: 'HealthPlix: pricing'
-          url: https://www.healthplix.com/pricing-1
-          accessed: 2026-09-26
-        - label: 'HealthPlix: H.A.L.O'
-          url: https://www.healthplix.com/halo
-          accessed: 2026-09-26
-        - label: 'HealthPlix: SPOT mobile EMR'
-          url: https://www.healthplix.com/spot-mobile-emr
-          accessed: 2026-09-26
-        - label: 'Capterra: HealthPlix'
-          url: https://www.capterra.com/p/10005728/HealthPlix/
-          accessed: 2026-09-26
-        - label: 'SoftwareSuggest: HealthPlix reviews'
-          url: https://www.softwaresuggest.com/healthplix
-          accessed: 2026-09-26
-        - label: 'MocDoc: home page'
-          url: https://mocdoc.com/
-          accessed: 2026-09-26
-        - label: 'MocDoc: clinic management software'
-          url: https://mocdoc.com/clinic-management-software
-          accessed: 2026-09-26
-        - label: 'MocDoc: ABDM compliant software'
-          url: https://mocdoc.com/abdm-compliant-software
-          accessed: 2026-09-26
-        - label: 'MocDoc: clinical decision support system'
-          url: https://mocdoc.com/clinical-decision-support-system
-          accessed: 2026-09-26
-        - label: 'Capterra: MocDoc HMS'
-          url: https://www.capterra.com/p/161290/MocDoc-HMS/
-          accessed: 2026-09-26
-        - label: 'Healthray: home page'
-          url: https://healthray.com/
-          accessed: 2026-09-26
-        - label: 'Healthray: clinic management software'
-          url: https://healthray.com/clinic-management-software/
-          accessed: 2026-09-26
-        - label: 'Healthray: pricing'
-          url: https://healthray.com/pricing/
-          accessed: 2026-09-26
-        - label: 'SoftwareSuggest: Healthray HIMS'
-          url: https://www.softwaresuggest.com/healthray
-          accessed: 2026-09-26
-        - label: 'Capterra: Healthray'
-          url: https://www.capterra.com/p/10014971/Healthray/
-          accessed: 2026-09-26
-        - label: 'Doctors App: home page and clinic pricing'
-          url: https://doctorsapp.in/
-          accessed: 2026-09-26
-        - label: 'Techjockey: Doctors App'
-          url: https://www.techjockey.com/detail/doctors-app
-          accessed: 2026-09-26
-        - label: 'DocEngage: home page'
-          url: https://www.docengage.in/
-          accessed: 2026-09-26
-        - label: 'DocEngage: clinic software'
-          url: https://www.docengage.in/clinic-master
-          accessed: 2026-09-26
-        - label: 'DocEngage: pricing'
-          url: https://www.docengage.in/pricing
-          accessed: 2026-09-26
-        - label: 'SoftwareSuggest: DocEngage EHR'
-          url: https://www.softwaresuggest.com/docengage
-          accessed: 2026-09-26
+        Ask every vendor for one number: the yearly total with tax for your doctors and front-desk staff, with the modules you will use in the first year, such as pharmacy or WhatsApp.
 
 faqHeading: Questions clinic owners ask
 faq:

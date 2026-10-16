@@ -128,6 +128,9 @@ ctas:
     href: /pricing/
   whatsapp: Hi, I was reading the Easy Clinic comparison of clinic software in Fiji and would like a demo for my clinic.
 
+nearbySection:
+  heading: Clinic management software in nearby markets
+  body: 'Comparing options across more than one country? See our guides to [clinic management software in the Maldives](/best-clinic-management-software-maldives/), [clinic management software in Mauritius](/best-clinic-management-software-mauritius/) and [clinic management software in Seychelles](/best-clinic-management-software-seychelles/), or browse [all our country guides](/countries/).'
 sections:
   - discriminant: prose
     value:
@@ -225,67 +228,102 @@ sections:
         - ['**SoftNet**', 'Not published. Its product page mentions ==SSL and SOC 2 compliance== and says it stores insurance data. It names no Fijian regulator, insurance scheme or privacy law.', '[softnetsolutions.com.fj](https://softnetsolutions.com.fj/service/hospital-and-patient-management-software/)']
         - ['**Easy Clinic**', '==Not published== on this page. Ask us, as you would any vendor, to show how it handles health regulators, insurance and data protection in a demo.', 'This page']
 
-  - discriminant: prose
+  - discriminant: migrationPlan
     value:
+      id: moving-your-clinic
       tone: plain
-      id: verdict
-      heading: The verdict by clinic type
-      body: >-
-        For a clinic or hospital that wants VAT billing linked to FRCS, WhatsApp notifications and several sites
-        under one login, MocDoc ranks first here, though it publishes no price and its office is in Chennai. For a
-        facility that would rather pay once and run the software on its own server, Smart Hospital Manager, second,
-        sells a lifetime licence. For a hospital that wants a supplier in Suva, SoftNet, third, is the only one of the
-        four with a Fiji office. Easy Clinic, unranked here, suits a connected private clinic or group that wants
-        Cura AI to draft the note and WhatsApp reminders on one cloud system, once you have its price in Fiji dollars.
-      width: measure
+      heading: Bringing your clinic across, without losing a thing
+      intro: >-
+        Most clinics we onboard are moving off something that stopped fitting. Here is how the move works, and
+        what is different depending on where you are coming from.
+      steps:
+        - title: We take the export
+          body: You give us access or a file. We pull patient records, visit history, billing and stock out of your current system.
+        - title: We map and import
+          body: Your fields get matched to ours and checked with you before anything goes live. Duplicates and gaps are cleaned on the way in.
+        - title: Your team trains
+          body: Front desk, doctors and pharmacy each get a session on their own part of the day, with a named specialist on hand.
+        - title: You go live
+          body: We run both systems in parallel for the first few days, so nothing is lost while your staff settle in.
+      stats:
+        - { value: 2 to 4 weeks, label: 'Single clinic, start to live' }
+        - { value: 4 to 6 weeks, label: Multi-branch clinics and chains }
+        - { value: No data loss, label: Parallel running until you sign off }
+      systems:
+        - name: 'MocDoc'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'Smart Hospital Manager'
+          comesAcross: 'Patient records, clinical notes and billing history.'
+          lookAt: 'Field mapping is agreed with you first, since layouts differ between systems.'
+        - name: 'SoftNet'
+          comesAcross: 'Patient records, appointments and invoices.'
+          lookAt: 'Fields without a direct equivalent are agreed with you before anything is imported.'
+        - name: 'Excel or paper'
+          comesAcross: 'Patient master list, visit history and stock data.'
+          lookAt: 'Column headings and duplicate patient entries get cleaned before import. Usually the quickest route of all.'
+        - name: 'An older on-premise system'
+          comesAcross: 'A full database export.'
+          lookAt: 'We review how the old system stored things before we commit to a date, rather than guessing.'
+      note: Every migration comes with a named implementation specialist, not a help article.
 
-  - discriminant: prose
+  - discriminant: featureBand
     value:
-      tone: wash
-      id: how-we-compared
-      heading: How we compared
-      body: |-
-        **Who wrote this.** Easy Clinic publishes this page. We rank the three other systems and leave Easy Clinic unranked, at the end of the table and the list. Every fact about the other three links to the page it came from.
-
-        **When and where.** We read each vendor's own website on 14 October 2026, starting from the Fiji page each one publishes or links. Where a vendor's pages did not say, the cell reads "Not published" with the date. G2 and Capterra could not be read on that date, so this page gives no independent review score for any of the four.
-
-        **What we compared.** A Fiji presence the vendor publishes, the pricing model and any published price, WhatsApp messages to patients, running more than one site, AI note drafting, and where the software runs.
-
-        **How we ranked.** We weighed two checks first, a Fiji presence the vendor publishes and a published price, then three daily features: WhatsApp messages to patients, more than one site and AI note drafting. All three publish a Fiji presence, and none publishes a price. MocDoc has two of the daily features, so it ranks first; Smart Hospital Manager mentions different locations, one daily feature, so it is second; SoftNet names none of the three, so it is third.
-
-        **Why Easy Clinic is unranked.** Easy Clinic publishes all three daily features but has no published price in Fiji dollars. As on our other country comparisons, we do not place ourselves in a ranking we wrote while our local price is unpublished.
-
-        **What this page leaves out.** Easy Clinic's cells come from its published plans and its US dollar price list. It names no FRCS VAT Monitoring System link and no mobile money such as M-PAiSA or MyCash, and neither do the other three on the pages we read, except MocDoc's VAT link.
-      width: measure
+      id: your-data-stays-yours
+      tone: inverse
+      badge: No lock-in
+      heading: Your data stays yours
+      intro: >-
+        Your patient records belong to your clinic. Not to us, and not to a marketplace. Here is what that means
+        in practice.
+      items:
+        - title: Export your records
+          body: Your records in a standard format, on your schedule, with export to Excel and PDF built in.
+        - title: The patient relationship is yours
+          body: >-
+            Your patients belong to your practice, not to a directory that also sells appointments to the clinic
+            down the road.
+        - title: Role-based access
+          body: Front desk, doctors, pharmacy and accounts each see what their job needs and nothing more.
+        - title: Nothing shared with aggregators
+          body: Your patient data is not sold, pooled or surfaced in a marketplace for commercial gain.
+        - title: An audit trail behind every record
+          body: Who viewed what, and when, available to you as the practice owner.
+        - title: No contract trap
+          body: >-
+            There are no binding contracts. If Easy Clinic stops fitting your clinic, you can leave with everything
+            you put in.
 
   - discriminant: comparisonTable
     value:
+      clean: true
       tone: plain
       id: comparison-table
       heading: The four systems side by side
-      intro: >-
-        The three ranked systems from left to right, for a clinic in Fiji, then Easy Clinic, unranked. Each competitor
-        cell links to the page it came from, read on 14 October 2026.
+      intro: Easy Clinic, unranked, comes first, then MocDoc, ranked first; the other columns follow the ranking.
+        Every competitor fact was read on the vendor's own site on 14 October 2026.
       columns:
-        - { name: MocDoc }
-        - { name: Smart Hospital Manager }
-        - { name: SoftNet }
-        - { name: Easy Clinic, us: true }
+        - name: Easy Clinic
+          us: true
+        - name: MocDoc
+        - name: Smart Hospital Manager
+        - name: SoftNet
       rows:
         - label: Best for
           cells:
+            - value: Connected private clinics, from one doctor to a group, that want ==AI notes and WhatsApp==
             - value: Facilities from 10 beds to 300 or more, standalone clinics, labs and specialty centres
               source: https://mocdoc.com/fiji
               checkedOn: 2026-10-14
             - value: Clinics of any size that want to pay once and host the software themselves
               source: https://smarthospitalmanager.com/
               checkedOn: 2026-10-14
-            - value: Hospitals of any size that want a Fiji-based supplier
+            - value: Hospitals of any size that want a ==Fiji-based supplier==
               source: https://softnetsolutions.com.fj/service/hospital-and-patient-management-software/
               checkedOn: 2026-10-14
-            - value: Connected private clinics, from one doctor to a group, that want AI notes and WhatsApp
         - label: Fiji presence, as published
           cells:
+            - value: A [Fiji page](/emr-software-in-fiji/); no office or named client in Fiji
             - value: A Fiji page naming Suva, Lautoka and Nadi; its office and phone are in Chennai, India
               source: https://mocdoc.com/fiji
               checkedOn: 2026-10-14
@@ -295,17 +333,18 @@ sections:
             - value: An office at 72 Kula Street, Samabula, Suva, and a Fiji phone number
               source: https://softnetsolutions.com.fj/contact/
               checkedOn: 2026-10-14
-            - value: A [Fiji page](/emr-software-in-fiji/); no office or named client in Fiji
         - label: Pricing model and published price
           cells:
+            - value: Per doctor per month; the Fiji dollar price is not yet published. The US dollar list on the [pricing
+                page](/pricing/) starts at {price:usd.professional.annual} billed annually
             - value: Not published (a demo request only, 14 October 2026)
-            - value: A one-time lifetime licence, self-hosted, with no price published
+            - value: A ==one-time lifetime licence==, self-hosted, with no price published
               source: https://smarthospitalmanager.com/pages/managementsoftware/fiji/
               checkedOn: 2026-10-14
             - value: Not published (a quote request only, 14 October 2026)
-            - value: Per doctor per month; the Fiji dollar price is not yet published. The US dollar list on the [pricing page](/pricing/) starts at {price:usd.professional.annual} billed annually
         - label: WhatsApp messages to patients
           cells:
+            - value: Reminders and messages on Premium; SMS and email on Professional
             - value: Automated notifications for registrations, appointments and billing by SMS, email or WhatsApp
               source: https://mocdoc.com/clinic-management-software
               checkedOn: 2026-10-14
@@ -315,9 +354,9 @@ sections:
             - value: Not published. E-prescriptions go to patients by SMS or email
               source: https://softnetsolutions.com.fj/service/hospital-and-patient-management-software/
               checkedOn: 2026-10-14
-            - value: Reminders and messages on Premium; SMS and email on Professional
         - label: More than one site
           cells:
+            - value: From Premium; the largest chain on Easy Clinic has {fact:largestChain} locations
             - value: Central management of several clinics or facilities across Fiji, with unified reporting
               source: https://mocdoc.com/fiji
               checkedOn: 2026-10-14
@@ -327,35 +366,143 @@ sections:
             - value: Not published. It says it scales from a single clinic to a multi-speciality hospital
               source: https://softnetsolutions.com.fj/service/hospital-and-patient-management-software/
               checkedOn: 2026-10-14
-            - value: From Premium; the largest chain on Easy Clinic has {fact:largestChain} locations
         - label: AI documentation
           cells:
+            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
             - value: Not published. Its Fiji page has an AI heading but names no AI feature
               source: https://mocdoc.com/fiji
               checkedOn: 2026-10-14
             - value: Not published (no AI on the pages we read, 14 October 2026)
             - value: Not published (no AI on the pages we read, 14 October 2026)
-            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
         - label: VAT and where it runs
           cells:
-            - value: Cloud; billing linked to FRCS's VAT Monitoring System
+            - value: Cloud, in a web browser; no VAT Monitoring System link named, and it does not run fully offline today
+            - value: Cloud; billing linked to FRCS's ==VAT Monitoring System==
               source: https://mocdoc.com/fiji
               checkedOn: 2026-10-14
             - value: On-premise, installed on your own server; no VAT link named
               source: https://smarthospitalmanager.com/pages/managementsoftware/fiji/
               checkedOn: 2026-10-14
-            - value: Installed on the hospital's servers; FRCS accreditation is named for its POS product, not the hospital software
+            - value: Installed on the hospital's servers; FRCS accreditation is named for its POS product, not the hospital
+                software
               source: https://softnetsolutions.com.fj/
               checkedOn: 2026-10-14
-            - value: Cloud, in a web browser; no VAT Monitoring System link named, and it does not run fully offline today
-      note: >-
-        "Not published" means the vendor's own pages did not say on 14 October 2026. Easy Clinic's cells come from its
-        published plans: WhatsApp messages and more than one location start on Premium, whose Fiji dollar price is not
-        yet published; the US dollar list is on the [pricing page](/pricing/).
+      note: "\"Not published\" means the vendor's own pages did not say on 14 October 2026. Easy Clinic's cells come
+        from its published plans: WhatsApp messages and more than one location start on Premium, whose Fiji
+        dollar price is not yet published; the US dollar list is on the [pricing page](/pricing/)."
+
+  - discriminant: prose
+    value:
+      id: which-one-fits
+      tone: wash
+      width: wide
+      heading: So which one fits your clinic?
+      body: |-
+        If you run a public or donor funded facility, a national or open-source system may be built for that world. If you need a national insurance scheme connected today, check which of the systems above already has it, and we will say so rather than waste your time.
+
+        Where Easy Clinic makes most sense is a growing private clinic that wants to run the whole practice in one place. Cura AI in the room with the patient. Payments and insurance claims from inside the record. Reminders and prescriptions over WhatsApp. Appointments, records, billing, pharmacy, lab and reports in a single system that does not need replacing when you open the second branch.
+
+        The fastest way to know is to watch it run on your own workflow for fifteen minutes.
+      link:
+        label: Book a demo
+        href: /countries/#book-a-demo
+
+  - discriminant: specialtyGrid
+    value:
+      id: built-for-your-speciality
+      tone: plain
+      heading: Built for how your speciality actually works
+      intro: >-
+        A dermatologist does not write a prescription the way a paediatrician does. Easy Clinic ships with
+        templates, prescription formats and case sheets built per speciality, so the system fits your consultation
+        instead of the other way round.
+      groups:
+        - label: Primary care
+          items: [General practitioner, Family medicine, OPD and walk-in practice]
+        - label: Dental
+          items: [General dentistry, Orthodontics]
+        - label: Skin and aesthetics
+          items: [Dermatology, Cosmetic and aesthetic medicine, Trichology, Laser and hair removal, Plastic surgery]
+        - label: Women's health
+          items: [Obstetrics and gynaecology, IVF and fertility]
+        - label: Child health
+          items: [Paediatrics, Neonatology]
+        - label: Medical specialities
+          items: [Cardiology, Diabetology and endocrinology, Gastroenterology, Nephrology, Neurology, Oncology, Pulmonology, Rheumatology]
+        - label: Surgical specialities
+          items: [ENT, Ophthalmology, Orthopaedics, Urology, General surgery]
+        - label: Mental health
+          items: [Psychiatry, Psychology]
+
+  - discriminant: splitContent
+    value:
+      id: when-to-switch
+      tone: wash
+      centerHeading: true
+      heading: When should a clinic in Fiji switch to new software?
+      body: |-
+        The honest answer is that you switch the moment admin starts stealing time from patients.
+
+        Most clinics do not move because of one dramatic failure. They move because the small costs add up, the front desk is always behind, and nobody can say with confidence how the practice is actually doing.
+      link:
+        label: Book a demo
+        href: /countries/#book-a-demo
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/01.webp
+        alt: 'An Easy Clinic invoice for a patient visit: consultation, lab tests and pharmacy items, with the insurance share claimed, the co-pay received and the balance settled'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: how-easy-clinic-stands-out
+      tone: plain
+      centerHeading: true
+      mediaFirst: true
+      alignTop: true
+      stickyMedia: true
+      heading: How Easy Clinic stands out for clinics in Fiji
+      intro: >-
+        Easy Clinic earns its place by running the whole clinic in one place, with AI doing the heavy lifting.
+        Four things do most of the work.
+      body: |-
+        ### One system, front desk to back office
+        Appointments, records, billing, insurance claims, scheduling, pharmacy, stock, lab and radiology, reports, a no-code workflow builder and a branded patient app, all under one login.
+
+        ### Cura AI where it counts.
+        The AI helps finish a prescription in about three clicks, supports diagnosis, and runs wait time management, stock reorder and two-way patient messages.
+
+        ### Built for how your clinic pays and talks.
+        Payments and insurance claims from inside the record, and reminders and prescriptions over WhatsApp, SMS and email.
+
+        ### Made to grow.
+        One shared view across branches, plus a data warehouse for chains. HL7, FHIR and DICOM are live today.
+
+        Behind the features sits a long track record. Easy Clinic serves more than 5,000 doctors across 200 cities in 18 countries, handles over 200,000 prescriptions a day, and has supported clinics for more than 10 years.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/kenya-hero.png
+        alt: 'Easy Clinic payments screen: the day''s visits with their payment status, and the day''s collected total'
+        frame: none
+
+  - discriminant: prose
+    value:
+      tone: wash
+      id: verdict
+      heading: The verdict by clinic type
+      body: >-
+        For a clinic or hospital that wants VAT billing linked to FRCS, WhatsApp notifications and several sites
+        under one login, MocDoc ranks first here, though it publishes no price and its office is in Chennai. For a
+        facility that would rather pay once and run the software on its own server, Smart Hospital Manager, second,
+        sells a lifetime licence. For a hospital that wants a supplier in Suva, SoftNet, third, is the only one of the
+        four with a Fiji office. Easy Clinic, unranked here, suits a connected private clinic or group that wants
+        Cura AI to draft the note and WhatsApp reminders on one cloud system, once you have its price in Fiji dollars.
+      width: wide
 
   - discriminant: vendorList
     value:
-      tone: wash
+      clean: true
+      tone: plain
       id: vendors
       heading: The four systems, one by one
       intro: >-
@@ -460,35 +607,6 @@ sections:
             - label: US dollar list
               value: From {price:usd.professional.annual} per doctor per month billed annually, on the [pricing page](/pricing/)
 
-  - discriminant: stepList
-    value:
-      tone: plain
-      id: workflow-tests
-      heading: Five tests to run in every demo
-      intro: >-
-        Feature lists look alike. Run the same tests with every vendor, on a patient day like yours.
-      steps:
-        - title: VAT test
-          body: >-
-            Raise an invoice and ask to see how it reaches FRCS's VAT Monitoring System. MocDoc names that link; ask
-            the other three, Easy Clinic included, to show it before you sign.
-        - title: Doctor context test
-          body: >-
-            Open a returning patient and dictate a note. Easy Clinic (Cura AI) publishes note drafting; we found none
-            on the other three systems' pages.
-        - title: Connection test
-          body: >-
-            Pull the network cable halfway through a consult. Easy Clinic and MocDoc run in the cloud; Smart Hospital
-            Manager and SoftNet run on your own server instead.
-        - title: Follow-up test
-          body: >-
-            Send a reminder to a patient's phone and ask which channel it uses and which plan it needs. On Easy
-            Clinic, WhatsApp starts on Premium and SMS and email come with Professional.
-        - title: Cost test
-          body: >-
-            Ask for the full price in Fiji dollars, including setup, moving your records across and, for a server you
-            host, the machine, backups and staff time.
-
   - discriminant: prose
     value:
       tone: wash
@@ -500,60 +618,7 @@ sections:
         Easy Clinic's Fiji dollar price is not yet published, so this page gives no Easy Clinic price for Fiji. Its US dollar list on the [pricing page](/pricing/) is {price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, both billed annually, with no setup fee and no binding contract.
 
         A pay-once licence on your own server adds the server, backups, updates and staff time; a cloud subscription folds those in. Ask every vendor for a quote in Fiji dollars and compare the total over a few years.
-      width: measure
-
-  - discriminant: decisionMatrix
-    value:
-      tone: plain
-      id: when-to-choose-which
-      heading: When to choose which
-      options:
-        - title: Choose MocDoc if
-          items:
-            - You want billing linked to FRCS's VAT Monitoring System named on the vendor's own page.
-            - You run several clinics or facilities and want unified reporting.
-            - You are comfortable with a supplier whose office is in India.
-        - title: Choose Smart Hospital Manager or SoftNet if
-          items:
-            - You want the software and patient data on your own server, which both offer.
-            - You would rather pay once, which Smart Hospital Manager's lifetime licence offers.
-            - You want a supplier with an office in Suva, which SoftNet has.
-        - title: Choose Easy Clinic if
-          us: true
-          items:
-            - You run a connected private clinic, from one doctor to several branches, and want one cloud system.
-            - Your doctors want Cura AI to listen to the consult and draft the note.
-            - Your patients read WhatsApp more than SMS, and you are ready for Premium.
-            - You will get the Fiji dollar price in writing, and confirm VAT handling, before you sign.
-
-  - discriminant: proofBlock
-    value:
-      tone: wash
-      id: ratings
-      heading: How doctors rate Easy Clinic
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: sourceList
-    value:
-      tone: plain
-      id: sources
-      heading: Sources
-      intro: Every page we read for this comparison, all on 14 October 2026.
-      items:
-        - { label: 'MocDoc: Fiji', url: 'https://mocdoc.com/fiji', accessed: 2026-10-14 }
-        - { label: 'MocDoc: clinic management software', url: 'https://mocdoc.com/clinic-management-software', accessed: 2026-10-14 }
-        - { label: 'Smart Hospital Manager: Fiji', url: 'https://smarthospitalmanager.com/pages/managementsoftware/fiji/', accessed: 2026-10-14 }
-        - { label: 'Smart Hospital Manager: homepage', url: 'https://smarthospitalmanager.com/', accessed: 2026-10-14 }
-        - { label: 'SoftNet: hospital and patient management software', url: 'https://softnetsolutions.com.fj/service/hospital-and-patient-management-software/', accessed: 2026-10-14 }
-        - { label: 'SoftNet: contact', url: 'https://softnetsolutions.com.fj/contact/', accessed: 2026-10-14 }
-        - { label: 'SoftNet: homepage', url: 'https://softnetsolutions.com.fj/', accessed: 2026-10-14 }
-        - { label: 'Capterra: Easy Clinic reviews', url: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/', accessed: 2026-10-14 }
+      width: wide
 
 faq:
   - question: Is this ranking biased, since Easy Clinic publishes it?

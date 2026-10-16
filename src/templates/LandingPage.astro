@@ -14,6 +14,8 @@ import HeroPanel from '../components/frame/HeroPanel.astro';
 import TrustSection from '../components/frame/TrustSection.astro';
 import ReadinessSection from '../components/frame/ReadinessSection.astro';
 import PlatformSection from '../components/frame/PlatformSection.astro';
+import Section from '../components/ui/Section.astro';
+import Md from '../components/ui/Md.astro';
 import Sections from '../components/blocks/Sections.astro';
 import ContactCard from '../components/blocks/ContactCard/ContactCard.astro';
 import { getEntry } from 'astro:content';
@@ -113,6 +115,13 @@ const heroPanel = d.heroPanel;
   <Sections sections={d.sections} ctx={ctx} />
   {/* Related links come before the FAQ, so the FAQ sits directly above the closing CTA band. */}
   <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} countryPills={record.path === '/'} />
+  {
+    d.nearbySection && (
+      <Section id="nearby-markets" heading={d.nearbySection.heading} tone="wash" wideHeader>
+        <Md text={d.nearbySection.body} class="nearby-body max-w-[56rem] text-[1.0625rem] leading-relaxed text-ink sm:text-lg" />
+      </Section>
+    )
+  }
   {d.problems && d.problems.items.length > 0 && <ProblemList {...d.problems} />}
   <FAQ heading={d.faqHeading} items={d.faq} tone="plain" whatsappHref={whatsappHref} />
   {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}

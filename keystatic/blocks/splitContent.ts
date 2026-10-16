@@ -10,5 +10,7 @@ export const splitContent = defineBlock('splitContent', 'Split content', {
   secondary: cta('Second button', { optional: true }),
   media: media('Media'),
   centerHeading: flag('Centre the heading above both columns', { zodDefault: false }),
+  stickyMedia: flag('Keep the image in view while the text scrolls', { zodDefault: false, description: 'Wide screens only.' }),
+  alignTop: flag('Align the columns at the top', { zodDefault: false }),
   mediaFirst: flag('Image on the left', { zodDefault: false, description: 'On wide screens; below that the image follows the text.' }),
 });

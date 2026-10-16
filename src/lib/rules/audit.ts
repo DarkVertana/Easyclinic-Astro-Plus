@@ -35,7 +35,9 @@ export const FAMILY_RULES: Record<string, FamilyRules> = {
   // Spec 5.13: country pages carry 8 to 10 FAQs in the country's own terms.
   country: { ...LANDING, faq: [8, 10] },
   countryDemo: { ...LANDING, faq: [5, 8] },
-  listicle: LANDING,
+  // Owner decision 2026-10-16: listicles drop the ratings proof block; their proof is the trust section's
+  // testimonials and the platform section's AI pilot card, which sit outside `sections`.
+  listicle: { ...LANDING, proof: false },
   comparison: { ...LANDING, faq: [5, 8] },
   company: { faq: [5, 8], author: true, proof: false, editorialPass: true },
   legal: { faq: null, author: false, proof: false, editorialPass: false },

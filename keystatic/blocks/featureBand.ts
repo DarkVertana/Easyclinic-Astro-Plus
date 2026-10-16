@@ -11,6 +11,6 @@ export const featureBand = defineBlock('featureBand', 'Feature band', {
       title: text('Title', { required: true }),
       body: text('Text', { required: true, multiline: true }),
     }),
-    { label: 'Features', min: 2, max: 4, itemLabel: (props) => props.fields.title.value || 'Feature' },
+    { label: 'Features', min: 2, max: 6, itemLabel: (props) => props.fields.title.value || 'Feature' },
   ),
 });

@@ -1,8 +1,9 @@
 ---
 import type { SectionValue } from '../../../schemas/sections';
+import Md from '../../ui/Md.astro';
 
 type Props = SectionValue<'featureBand'> & { ctx: unknown };
-const { id, heading, badge, items } = Astro.props;
+const { id, heading, intro, badge, items } = Astro.props;
 const headingId = id ? `${id}-heading` : undefined;
 ---
 
@@ -12,6 +13,7 @@ const headingId = id ? `${id}-heading` : undefined;
   <div class="container-page">
     {badge && <p class="feature-band__badge">{badge}</p>}
     {heading && <h2 id={headingId} class="mt-5 text-[1.875rem] leading-[1.15] !text-white sm:text-[2.25rem] lg:text-[2.75rem]">{heading}</h2>}
+    {intro && <Md text={intro} class="mt-4 max-w-[46rem] text-[1.0625rem] leading-[1.7] text-[#c9d6ea]" />}
 
     <ul class:list={['feature-band__grid', `feature-band__grid--${items.length}`]}>
       {
@@ -55,7 +57,7 @@ const headingId = id ? `${id}-heading` : undefined;
     margin: 2rem 0 0;
     padding: 0;
     list-style: none;
-    border: 1px solid rgb(255 255 255 / 0.16);
+    border: 1px solid rgb(255 255 255 / 0.22);
     border-radius: 16px;
     overflow: hidden;
   }
@@ -63,7 +65,7 @@ const headingId = id ? `${id}-heading` : undefined;
     .feature-band__grid {
       margin-top: 2.5rem;
     }
-    background: rgb(255 255 255 / 0.16);
+    background: rgb(255 255 255 / 0.22);
   }
   .feature-band__item {
     padding: 1.5rem 1.25rem;
@@ -86,6 +88,10 @@ const headingId = id ? `${id}-heading` : undefined;
     }
     .feature-band__grid--4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .feature-band__grid--5,
+    .feature-band__grid--6 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .feature-band__grid--3 .feature-band__item:last-child {
       grid-column: auto;

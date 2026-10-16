@@ -86,6 +86,8 @@ export const pageBase = (ctx: SchemaContext) =>
         story: z.object({ lead: z.string().min(20), body: z.array(z.string().min(10)).min(1).max(4) }).optional(),
       })
       .optional(),
+    /** A short text section straight after "Where to go next", e.g. links to nearby markets. */
+    nearbySection: z.object({ heading: z.string().min(5), body: md }).optional(),
     /** Compliance and rating strip under the hero CTAs (section 11). */
     heroStrip: optionalGroup(
       z.object({

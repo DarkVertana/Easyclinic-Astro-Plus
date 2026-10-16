@@ -44,4 +44,5 @@ export const vendorList = defineBlock('vendorList', 'Vendor list', {
       },
     },
   ),
+  clean: flag('Clean look', { zodDefault: false, description: 'Header band with a rank badge, tinted strengths and limits panels, and fact tiles.' }),
 });

@@ -130,6 +130,9 @@ ctas:
     href: /pricing/
   whatsapp: Hi, I was reading the Easy Clinic comparison of clinic software in the UAE and would like a demo for my clinic.
 
+nearbySection:
+  heading: Clinic management software in nearby markets
+  body: 'Comparing options across more than one country? See our guides to [clinic management software in Qatar](/best-clinic-management-software-qatar/), [clinic management software in India](/best-clinic-management-software-india/) and [clinic management software in the Maldives](/best-clinic-management-software-maldives/), or browse [all our country guides](/countries/).'
 sections:
   - discriminant: prose
     value:
@@ -231,111 +234,155 @@ sections:
         - ['**Pabau**', 'Its Dubai guide says it is ==DHA NABIDH-approved==. Neither the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) nor the [Malaffi](https://www.malaffi.ae/connected-emrs/) list named it.', '[pabau.com](https://pabau.com/blog/emr-software-dubai/)']
         - ['**Easy Clinic**', '==Not published on this page==.', 'This page']
 
-  - discriminant: prose
+  - discriminant: migrationPlan
     value:
+      id: moving-your-clinic
       tone: plain
-      id: verdict
-      heading: The verdict by clinic type
-      body: >-
-        For a single clinic in Dubai, shortlist Unite and Clinicea: both are on the NABIDH list of tested
-        systems and both publish a price in dirhams, and Clinicea adds a free trial and 4.8 on Capterra from
-        43 reviews. For a group with branches in Dubai and Abu Dhabi, or a medical centre that runs its own
-        lab and pharmacy, look at the four systems named on both the NABIDH and Malaffi lists, which are
-        Unite, MedicoPlus, Insta by Practo and MEDAS, and expect all but Unite to quote rather than publish a
-        price. For a clinic that puts WhatsApp reminders and patient marketing first, Yolo is on the NABIDH
-        list and Pabau has 4.7 on Capterra from 652 reviews but was on neither list on 26 September 2026, and
-        Easy Clinic, unranked here, fits a clinic that wants Cura AI to draft notes on every plan, provided you
-        get its status for your emirate in writing before you sign.
-      width: measure
+      heading: Bringing your clinic across, without losing a thing
+      intro: >-
+        Most clinics we onboard are moving off something that stopped fitting. Here is how the move works, and
+        what is different depending on where you are coming from.
+      steps:
+        - title: We take the export
+          body: You give us access or a file. We pull patient records, visit history, billing and stock out of your current system.
+        - title: We map and import
+          body: Your fields get matched to ours and checked with you before anything goes live. Duplicates and gaps are cleaned on the way in.
+        - title: Your team trains
+          body: Front desk, doctors and pharmacy each get a session on their own part of the day, with a named specialist on hand.
+        - title: You go live
+          body: We run both systems in parallel for the first few days, so nothing is lost while your staff settle in.
+      stats:
+        - { value: 2 to 4 weeks, label: 'Single clinic, start to live' }
+        - { value: 4 to 6 weeks, label: Multi-branch clinics and chains }
+        - { value: No data loss, label: Parallel running until you sign off }
+      systems:
+        - name: 'Unite EMR'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'Clinicea'
+          comesAcross: 'Patient records, clinical notes and billing history.'
+          lookAt: 'Field mapping is agreed with you first, since layouts differ between systems.'
+        - name: 'MedicoPlus'
+          comesAcross: 'Patient records, appointments and invoices.'
+          lookAt: 'Fields without a direct equivalent are agreed with you before anything is imported.'
+        - name: 'Yolo'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'Insta by Practo'
+          comesAcross: 'Patient records, clinical notes and billing history.'
+          lookAt: 'Field mapping is agreed with you first, since layouts differ between systems.'
+        - name: 'MEDAS'
+          comesAcross: 'Patient records, appointments and invoices.'
+          lookAt: 'Fields without a direct equivalent are agreed with you before anything is imported.'
+        - name: 'Pabau'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'Excel or paper'
+          comesAcross: 'Patient master list, visit history and stock data.'
+          lookAt: 'Column headings and duplicate patient entries get cleaned before import. Usually the quickest route of all.'
+        - name: 'An older on-premise system'
+          comesAcross: 'A full database export.'
+          lookAt: 'We review how the old system stored things before we commit to a date, rather than guessing.'
+      note: Every migration comes with a named implementation specialist, not a help article.
 
-  - discriminant: prose
+  - discriminant: featureBand
     value:
-      tone: wash
-      id: how-we-compared
-      heading: How we compared
-      body: |-
-        **Who wrote this.** Easy Clinic publishes this page. We rank the seven other systems and leave Easy Clinic unranked, at the end of the table and the list, because the first thing we ranked on is the regulators' own lists, and this page does not state Easy Clinic's NABIDH, Malaffi or Riayati status. Every fact about the other seven links to the page it came from.
-
-        **When and where.** We read each vendor's own website on 26 September 2026, and two lists the regulators publish. The DHA's [NABIDH site](https://nabidh.dha.gov.ae/#/comm/connectedemr) lists 68 EMR systems "tested for connectivity with NABIDH". [Malaffi's list](https://www.malaffi.ae/connected-emrs/) names 72 systems that have at least one client connected and have met its interoperability requirements for that client, and Malaffi adds that this does not mean they meet every other Department of Health requirement. The Ministry of Health and Prevention's list of systems connected to Riayati did not load for us on 26 September 2026, so every Riayati statement here is the vendor's own. Review scores come from Capterra, with the number of reviews. Where a vendor's pages did not say, the cell reads "Not published".
-
-        **What we compared.** What each vendor says about NABIDH, Malaffi and Riayati against the two lists, a UAE office, the pricing model and any published price, WhatsApp messages to patients, running more than one branch, AI note drafting, and a review score with its count.
-
-        **How we ranked.** For a private clinic in Dubai, where most of these vendors compete, we weighed a place on the NABIDH list first and a published price second, then the daily features in the table below. A place on Malaffi's list as well, which matters to a group that also runs in Abu Dhabi, and independent reviews broke ties. Clinicea sits above MedicoPlus because it publishes a price. MedicoPlus sits above Yolo because Malaffi's list also names it, and Yolo sits above Insta by Practo and MEDAS because it publishes WhatsApp reminders as well as multi-clinic support. Pabau is last because neither list named it.
-
-        **How we chose the eight.** [SoftwareSuggest's UAE category](https://www.softwaresuggest.com/clinic-management-software/uae) was led on 26 September 2026 by products with five reviews or fewer, so we started from the two regulator lists and chose systems that publish a UAE page or a UAE office, then added Pabau, which publishes a Dubai guide to NABIDH and has 652 reviews on Capterra.
-
-        **What this page leaves out.** Easy Clinic's cells come from its published plans and prices and its UAE page. The page gives Easy Clinic's Capterra rating without a review count, gives no price in dirhams because none is published yet, and does not state Easy Clinic's regulator status. We did not trial any of the products.
-      width: measure
+      id: your-data-stays-yours
+      tone: inverse
+      badge: No lock-in
+      heading: Your data stays yours
+      intro: >-
+        Your patient records belong to your clinic. Not to us, and not to a marketplace. Here is what that means
+        in practice.
+      items:
+        - title: Export your records
+          body: Your records in a standard format, on your schedule, with export to Excel and PDF built in.
+        - title: The patient relationship is yours
+          body: >-
+            Your patients belong to your practice, not to a directory that also sells appointments to the clinic
+            down the road.
+        - title: Role-based access
+          body: Front desk, doctors, pharmacy and accounts each see what their job needs and nothing more.
+        - title: Nothing shared with aggregators
+          body: Your patient data is not sold, pooled or surfaced in a marketplace for commercial gain.
+        - title: An audit trail behind every record
+          body: Who viewed what, and when, available to you as the practice owner.
+        - title: No contract trap
+          body: >-
+            There are no binding contracts. If Easy Clinic stops fitting your clinic, you can leave with everything
+            you put in.
 
   - discriminant: comparisonTable
     value:
+      clean: true
       tone: plain
       id: comparison-table
-      heading: The eight systems side by side
-      intro: >-
-        The seven ranked systems from left to right, for a private clinic in Dubai, then Easy Clinic, unranked.
-        Each competitor cell links to the page it came from, read on 26 September 2026.
+      heading: The six systems side by side
+      intro: Easy Clinic, unranked, comes first, then Unite EMR, ranked first; the other columns follow the ranking.
+        MEDAS and Pabau are covered in the vendor list below. Every competitor fact was read on the vendor's
+        own site on 26 September 2026.
       columns:
-        - { name: Unite EMR }
-        - { name: Clinicea }
-        - { name: MedicoPlus }
-        - { name: Yolo }
-        - { name: Insta by Practo }
-        - { name: MEDAS }
-        - { name: Pabau }
-        - { name: Easy Clinic, us: true }
+        - name: Easy Clinic
+          us: true
+        - name: Unite EMR
+        - name: Clinicea
+        - name: MedicoPlus
+        - name: Yolo
+        - name: Insta by Practo
       rows:
         - label: Best for
           cells:
+            - value: Clinics and groups that want Cura AI note drafting on every plan and ==a price per doctor==
             - value: Small and medium clinics and healthcare chains
               source: https://www.uniteemr.com/
               checkedOn: 2026-09-26
-            - value: Growing clinics and chains, per [its homepage](https://clinicea.com/); the Dubai clinics it names include dental and aesthetic clinics
+            - value: Growing clinics and chains, per [its homepage](https://clinicea.com/); the Dubai clinics it names
+                include dental and aesthetic clinics
               source: https://clinicea.com/clinic-management-software-dubai
               checkedOn: 2026-09-26
-            - value: Medical centres and private hospitals that want cloud or on-premise hosting
+            - value: Medical centres and private hospitals that want ==cloud or on-premise hosting==
               source: https://www.clinicsoftware.ae/pricing
               checkedOn: 2026-09-26
-            - value: Clinics that want WhatsApp reminders and patient marketing in one system
+            - value: Clinics that want WhatsApp reminders and ==patient marketing== in one system
               source: https://ae.yolo.clinic/
               checkedOn: 2026-09-26
-            - value: Polyclinics and hospitals billing insurers in more than one emirate
+            - value: Polyclinics and hospitals billing insurers in ==more than one emirate==
               source: https://www.instahms.com/regulatory-compliance
               checkedOn: 2026-09-26
-            - value: Polyclinics and healthcare chains with multiple branches
-              source: https://medassolutions.com/products/e-clinic.html
-              checkedOn: 2026-09-26
-            - value: Clinics and med spas, priced by team size
-              source: https://pabau.com/blog/emr-software-dubai/
-              checkedOn: 2026-09-26
-            - value: Clinics and groups that want Cura AI note drafting on every plan and a price per doctor
         - label: NABIDH, Malaffi and Riayati, as published
           cells:
-            - value: Says it is onboarded with NABIDH, Riayati and Malaffi. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists
+            - value: Not published on this page
+            - value: Says it is onboarded with NABIDH, Riayati and Malaffi. Named on the
+                [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and
+                [Malaffi](https://www.malaffi.ae/connected-emrs/) lists
               source: https://www.unite.care/
               checkedOn: 2026-09-26
-            - value: Calls itself NABIDH connected. On the [NABIDH list](https://nabidh.dha.gov.ae/#/comm/connectedemr), not on [Malaffi's](https://www.malaffi.ae/connected-emrs/); no Riayati claim found
+            - value: Calls itself NABIDH connected. On the [NABIDH list](https://nabidh.dha.gov.ae/#/comm/connectedemr), not
+                on [Malaffi's](https://www.malaffi.ae/connected-emrs/); no Riayati claim found
               source: https://clinicea.com/clinic-management-software-dubai
               checkedOn: 2026-09-26
-            - value: Says it is NABIDH approved, Riayati onboarded and Malaffi integrated. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists
+            - value: Says it is NABIDH approved, Riayati onboarded and Malaffi integrated. Named on the
+                [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and
+                [Malaffi](https://www.malaffi.ae/connected-emrs/) lists
               source: https://www.clinicsoftware.ae/about-us
               checkedOn: 2026-09-26
-            - value: Says it is NABIDH and Riayati certified. On the [NABIDH list](https://nabidh.dha.gov.ae/#/comm/connectedemr) as Yolo by Health Connect, not on [Malaffi's](https://www.malaffi.ae/connected-emrs/)
+            - value: Says it is NABIDH and Riayati certified. On the [NABIDH
+                list](https://nabidh.dha.gov.ae/#/comm/connectedemr) as Yolo by Health Connect, not on
+                [Malaffi's](https://www.malaffi.ae/connected-emrs/)
               source: https://ae.yolo.clinic/
               checkedOn: 2026-09-26
-            - value: Lists NABIDH, Malaffi and Riayati integration. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists; its [Riayati page](https://go.instahms.com/riayati/free-demo) still describes testing due to finish in December 2021
+            - value: Lists NABIDH, Malaffi and Riayati integration. Named on the
+                [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and
+                [Malaffi](https://www.malaffi.ae/connected-emrs/) lists; its [Riayati
+                page](https://go.instahms.com/riayati/free-demo) still describes testing due to finish in
+                December 2021
               source: https://www.instahms.com/regulatory-compliance
               checkedOn: 2026-09-26
-            - value: Says it is pre-integrated with NABIDH, Malaffi and Riayati. Named on the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) and [Malaffi](https://www.malaffi.ae/connected-emrs/) lists
-              source: https://medassolutions.com/uae/
-              checkedOn: 2026-09-26
-            - value: Its Dubai guide says it is DHA NABIDH-approved. Neither the [NABIDH](https://nabidh.dha.gov.ae/#/comm/connectedemr) nor the [Malaffi](https://www.malaffi.ae/connected-emrs/) list named it
-              source: https://pabau.com/blog/emr-software-dubai/
-              checkedOn: 2026-09-26
-            - value: Not published on this page
         - label: UAE office, as published
           cells:
-            - value: Dubai Digital Park, Dubai Silicon Oasis; [its timeline](https://www.unite.care/about-us) dates its Dubai operations to 2020
+            - value: None published; the office is in Kolkata, and the UAE page gives hello@easyclinic.io for support
+            - value: ==Dubai Digital Park==, Dubai Silicon Oasis; [its timeline](https://www.unite.care/about-us) dates its
+                Dubai operations to 2020
               source: https://www.unite.care/pricing
               checkedOn: 2026-09-26
             - value: Compass Building, Al Hamra Industrial Zone-FZ, Ras Al Khaimah
@@ -344,26 +391,27 @@ sections:
             - value: Office 204, Mozna Building, Al Nahda, Dubai; developers in Kochi, India
               source: https://www.clinicsoftware.ae/about-us
               checkedOn: 2026-09-26
-            - value: None on [Yolo's UAE site](https://ae.yolo.clinic/about-us/), which gives Wuppertal, Germany. Health Connect, named with it on the NABIDH list, sells Yolo from Mazaya Centre, Sheikh Zayed Road, Dubai
+            - value: None on [Yolo's UAE site](https://ae.yolo.clinic/about-us/), which gives Wuppertal, Germany. Health
+                Connect, named with it on the NABIDH list, sells Yolo from Mazaya Centre, Sheikh Zayed Road,
+                Dubai
               source: https://www.healthconnect.ae/clinic-management-system-y-o-l-o/
               checkedOn: 2026-09-26
             - value: A Dubai office, with Bangalore and Riyadh
               source: https://www.instahms.com/faq
               checkedOn: 2026-09-26
-            - value: Teams in Dubai and Abu Dhabi
-              source: https://medassolutions.com/uae/
-              checkedOn: 2026-09-26
-            - value: Not published (26 September 2026)
-            - value: None published; the office is in Kolkata, and the UAE page gives hello@easyclinic.io for support
         - label: Pricing model and published price
           cells:
-            - value: Per user per month, AED 100 (Professional) or AED 120 (Enterprise) billed annually, plus a one-time onboarding fee
+            - value: Per doctor per month, from {price:usd.professional.annual} billed annually; the price in dirhams is not
+                yet published on [Easy Clinic's pricing page](/pricing/)
+            - value: Per user per month, AED 100 (Professional) or AED 120 (Enterprise) billed annually, plus a one-time
+                onboarding fee
               source: https://www.unite.care/pricing
               checkedOn: 2026-09-26
             - value: AED 99 per practitioner per month, a signup offer with no setup or training charge
               source: https://clinicea.com/clinic-management-software-dubai
               checkedOn: 2026-09-26
-            - value: Not published. Quoted on facility type, users, modules and branches, as a subscription or a one-time licence
+            - value: Not published. Quoted on facility type, users, modules and branches, as a subscription or a one-time
+                licence
               source: https://www.clinicsoftware.ae/pricing
               checkedOn: 2026-09-26
             - value: Not published. Its FAQ says prices vary by country
@@ -372,15 +420,9 @@ sections:
             - value: Not published. Quoted by users, centres, modules and hosting
               source: https://www.instahms.com/faq
               checkedOn: 2026-09-26
-            - value: Not published (26 September 2026)
-              source: https://medassolutions.com/products/e-clinic.html
-              checkedOn: 2026-09-26
-            - value: Not published for the UAE. Per-user plans by team size, with prices by region for the UK, the US, Canada, Australia and the EU
-              source: https://pabau.com/pricing/
-              checkedOn: 2026-09-26
-            - value: Per doctor per month, from {price:usd.professional.annual} billed annually; the price in dirhams is not yet published on [Easy Clinic's pricing page](/pricing/)
         - label: WhatsApp messages to patients
           cells:
+            - value: Reminders and messages on Premium; SMS and email on Professional
             - value: A WhatsApp integration, sold as a paid add-on on any plan
               source: https://www.unite.care/pricing
               checkedOn: 2026-09-26
@@ -396,19 +438,13 @@ sections:
             - value: Not published. Notifications go by SMS and email, with two-way SMS to confirm or cancel
               source: https://www.instahms.com/patient-administration
               checkedOn: 2026-09-26
-            - value: Not published. WhatsApp is listed as a support channel
-              source: https://medassolutions.com/products/e-clinic.html
-              checkedOn: 2026-09-26
-            - value: WhatsApp Business with the Engage Plus add-on, priced per location
-              source: https://pabau.com/pricing/
-              checkedOn: 2026-09-26
-            - value: Reminders and messages on Premium; SMS and email on Professional
         - label: More than one branch
           cells:
+            - value: More than one location from Premium; central control of every location on Enterprise
             - value: Branches can be added mid-subscription, each with a one-time onboarding charge
               source: https://www.unite.care/pricing
               checkedOn: 2026-09-26
-            - value: A clinic-chain control panel that sets up tens of clinics from head office
+            - value: A clinic-chain control panel that sets up ==tens of clinics== from head office
               source: https://clinicea.com/clinic-chain-software
               checkedOn: 2026-09-26
             - value: Multi-branch control, sold as an add-on module
@@ -420,15 +456,9 @@ sections:
             - value: One system across centres in different emirates and health authority standards
               source: https://www.instahms.com/regulatory-compliance
               checkedOn: 2026-09-26
-            - value: Built for healthcare chains with multiple branches
-              source: https://medassolutions.com/products/e-clinic.html
-              checkedOn: 2026-09-26
-            - value: Several locations on Enterprise, for 16 or more users; other plans are priced per location
-              source: https://pabau.com/pricing/
-              checkedOn: 2026-09-26
-            - value: More than one location from Premium; central control of every location on Enterprise
         - label: AI documentation
           cells:
+            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
             - value: Unite Scribe AI is on its homepage, but its pricing FAQ says the beta is not yet released
               source: https://www.unite.care/pricing
               checkedOn: 2026-09-26
@@ -440,15 +470,10 @@ sections:
             - value: Not published. It lists a Nuance Dragon speech-to-text integration for note taking
               source: https://www.instahms.com/integrations
               checkedOn: 2026-09-26
-            - value: Not published. The doctors' workbench lists speech-to-text
-              source: https://medassolutions.com/products/e-clinic.html
-              checkedOn: 2026-09-26
-            - value: Pabau Scribe turns the consultation into structured notes, listed on the [pricing page](https://pabau.com/pricing/) as unlimited and free
-              source: https://pabau.com/features/ai-medical-scribe/
-              checkedOn: 2026-09-26
-            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
         - label: Review score, with count
           cells:
+            - value: "{fact:capterraRating} on [Capterra](https://www.capterra.com/p/10026882/Easy-Clinic/reviews/); this
+                page does not give the count, which the linked page shows"
             - value: Not published (no directory review page we could read, 26 September 2026)
             - value: 4.8 on Capterra from 43 reviews
               source: https://www.capterra.com/p/131430/Clinicea/reviews/
@@ -458,36 +483,125 @@ sections:
             - value: 3.6 on Capterra from 34 reviews
               source: https://www.capterra.com/p/130501/Insta-HMS/reviews/
               checkedOn: 2026-09-26
-            - value: Not published (no directory reviews found, 26 September 2026)
-            - value: 4.7 on Capterra from 652 reviews
-              source: https://www.capterra.com/p/140062/Pabau-CRM/reviews/
-              checkedOn: 2026-09-26
-            - value: '{fact:capterraRating} on [Capterra](https://www.capterra.com/p/10026882/Easy-Clinic/reviews/); this page does not give the count, which the linked page shows'
-      note: >-
-        "Not published" means the vendor's own pages did not say on 26 September 2026. A place on the NABIDH
+      note: "\"Not published\" means the vendor's own pages did not say on 26 September 2026. A place on the NABIDH
         or Malaffi list is the regulator's statement; everything else in the regulator row is the vendor's.
-        Easy Clinic's cells come from its published plans: WhatsApp messages and more than one location start on
-        Premium ({price:usd.premium.annual} per doctor per month billed annually).
+        Easy Clinic's cells come from its published plans: WhatsApp messages and more than one location start
+        on Premium ({price:usd.premium.annual} per doctor per month billed annually)."
+
+  - discriminant: prose
+    value:
+      id: which-one-fits
+      tone: wash
+      width: wide
+      heading: So which one fits your clinic?
+      body: |-
+        If you run a public or donor funded facility, a national or open-source system may be built for that world. If you need a national insurance scheme connected today, check which of the systems above already has it, and we will say so rather than waste your time.
+
+        Where Easy Clinic makes most sense is a growing private clinic that wants to run the whole practice in one place. Cura AI in the room with the patient. Payments and insurance claims from inside the record. Reminders and prescriptions over WhatsApp. Appointments, records, billing, pharmacy, lab and reports in a single system that does not need replacing when you open the second branch.
+
+        The fastest way to know is to watch it run on your own workflow for fifteen minutes.
+      link:
+        label: Book a demo
+        href: /uaedemo/
+
+  - discriminant: specialtyGrid
+    value:
+      id: built-for-your-speciality
+      tone: plain
+      heading: Built for how your speciality actually works
+      intro: >-
+        A dermatologist does not write a prescription the way a paediatrician does. Easy Clinic ships with
+        templates, prescription formats and case sheets built per speciality, so the system fits your consultation
+        instead of the other way round.
+      groups:
+        - label: Primary care
+          items: [General practitioner, Family medicine, OPD and walk-in practice]
+        - label: Dental
+          items: [General dentistry, Orthodontics]
+        - label: Skin and aesthetics
+          items: [Dermatology, Cosmetic and aesthetic medicine, Trichology, Laser and hair removal, Plastic surgery]
+        - label: Women's health
+          items: [Obstetrics and gynaecology, IVF and fertility]
+        - label: Child health
+          items: [Paediatrics, Neonatology]
+        - label: Medical specialities
+          items: [Cardiology, Diabetology and endocrinology, Gastroenterology, Nephrology, Neurology, Oncology, Pulmonology, Rheumatology]
+        - label: Surgical specialities
+          items: [ENT, Ophthalmology, Orthopaedics, Urology, General surgery]
+        - label: Mental health
+          items: [Psychiatry, Psychology]
+
+  - discriminant: splitContent
+    value:
+      id: when-to-switch
+      tone: wash
+      centerHeading: true
+      heading: When should a clinic in the UAE switch to new software?
+      body: |-
+        The honest answer is that you switch the moment admin starts stealing time from patients.
+
+        Most clinics do not move because of one dramatic failure. They move because the small costs add up, the front desk is always behind, and nobody can say with confidence how the practice is actually doing.
+      link:
+        label: Book a demo
+        href: /uaedemo/
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/01.webp
+        alt: 'An Easy Clinic invoice for a patient visit: consultation, lab tests and pharmacy items, with the insurance share claimed, the co-pay received and the balance settled'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: how-easy-clinic-stands-out
+      tone: plain
+      centerHeading: true
+      mediaFirst: true
+      alignTop: true
+      stickyMedia: true
+      heading: How Easy Clinic stands out for clinics in the UAE
+      intro: >-
+        Easy Clinic earns its place by running the whole clinic in one place, with AI doing the heavy lifting.
+        Four things do most of the work.
+      body: |-
+        ### One system, front desk to back office
+        Appointments, records, billing, insurance claims, scheduling, pharmacy, stock, lab and radiology, reports, a no-code workflow builder and a branded patient app, all under one login.
+
+        ### Cura AI where it counts.
+        The AI helps finish a prescription in about three clicks, supports diagnosis, and runs wait time management, stock reorder and two-way patient messages.
+
+        ### Built for how your clinic pays and talks.
+        Payments and insurance claims from inside the record, and reminders and prescriptions over WhatsApp, SMS and email.
+
+        ### Made to grow.
+        One shared view across branches, plus a data warehouse for chains. HL7, FHIR and DICOM are live today.
+
+        Behind the features sits a long track record. Easy Clinic serves more than 5,000 doctors across 200 cities in 18 countries, handles over 200,000 prescriptions a day, and has supported clinics for more than 10 years.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/kenya-hero.png
+        alt: 'Easy Clinic payments screen: the day''s visits with their payment status, and the day''s collected total'
+        frame: none
 
   - discriminant: prose
     value:
       tone: wash
-      id: regulator-lists
-      heading: What the NABIDH and Malaffi lists tell you
-      body: |-
-        Almost every vendor on this page says it works with NABIDH, and two of them make claims the regulators' own lists contradict. Pabau's Dubai guide says the DHA publishes no list of connected systems, but the NABIDH site has an "Available EMRs" page listing 68 systems tested for connectivity, and Pabau is not on it. MedicoPlus calls itself Dubai's only DHA-certified NABIDH connected EMR, and it is one of those 68.
-
-        **Dubai.** NABIDH is the Dubai Health Authority's platform for sharing patient records between public and private facilities. To join, a facility asks for a readiness assessment, signs an onboarding agreement with the DHA, tests its EMR's connection on the developer portal and is given a launch date ([NABIDH onboarding and readiness](https://nabidh.dha.gov.ae/#/comm/readiness)).
-
-        **Abu Dhabi.** The Department of Health requires every licensed facility, apart from exempt ones such as military and university clinics, to connect to Malaffi. A facility that has not connected cannot renew its licence, and one with a Daman agreement cannot submit claims until it connects. Connecting needs an accession agreement, a security assessment, an HL7-capable EMR and an SDWAN line from Etisalat ([Malaffi: facilities required to connect](https://www.malaffi.ae/providers/facilities-required-to-connect/)).
-
-        **Sharjah and the Northern Emirates.** Riayati is the National Unified Medical Record run by the Ministry of Health and Prevention, and since January 2023 it has been linked with NABIDH and Malaffi ([Department of Health, 31 January 2023](https://www.doh.gov.ae/en/news/uae-health-authorities-announce-successful-integration-between-riayati-malaffi-and-nabidh)). We could not read the ministry's list of connected systems, so ask any vendor that claims Riayati for a live facility in Sharjah or Ajman you can call.
-
-        Before you sign with any vendor, Easy Clinic included, find its name on the list for your emirate and ask for the date your own facility would go live.
-      width: measure
+      id: verdict
+      heading: The verdict by clinic type
+      body: >-
+        For a single clinic in Dubai, shortlist Unite and Clinicea: both are on the NABIDH list of tested
+        systems and both publish a price in dirhams, and Clinicea adds a free trial and 4.8 on Capterra from
+        43 reviews. For a group with branches in Dubai and Abu Dhabi, or a medical centre that runs its own
+        lab and pharmacy, look at the four systems named on both the NABIDH and Malaffi lists, which are
+        Unite, MedicoPlus, Insta by Practo and MEDAS, and expect all but Unite to quote rather than publish a
+        price. For a clinic that puts WhatsApp reminders and patient marketing first, Yolo is on the NABIDH
+        list and Pabau has 4.7 on Capterra from 652 reviews but was on neither list on 26 September 2026, and
+        Easy Clinic, unranked here, fits a clinic that wants Cura AI to draft notes on every plan, provided you
+        get its status for your emirate in writing before you sign.
+      width: wide
 
   - discriminant: vendorList
     value:
+      clean: true
       tone: plain
       id: vendors
       heading: The eight systems, one by one
@@ -808,43 +922,9 @@ sections:
             - label: NABIDH, Malaffi and Riayati
               value: Not published on this page
 
-  - discriminant: stepList
-    value:
-      tone: wash
-      id: workflow-tests
-      heading: Five tests to run in every demo
-      intro: >-
-        Feature lists look alike. Run the same tests with every vendor, on a patient day like yours, and count
-        the screens each one needs.
-      steps:
-        - title: Front desk test
-          body: >-
-            Register a walk-in from an Emirates ID card with an insurance card, and collect the patient's
-            co-payment. Unite, MedicoPlus, Insta by Practo and MEDAS publish Emirates ID registration; ask the
-            others to show it.
-        - title: Exchange test
-          body: >-
-            Ask the vendor to send one visit to NABIDH or Malaffi and show you the acknowledgement for it. Then
-            find the vendor's name on the regulator's list yourself, and for Riayati, ask for a live facility in
-            the Northern Emirates you can call.
-        - title: Doctor context test
-          body: >-
-            Open a returning patient and look for the last prescription and lab results beside the history.
-            Then dictate a note: Easy Clinic (Cura AI) and Pabau (Pabau Scribe) publish AI note drafting, Insta by
-            Practo and MEDAS list speech-to-text, and Unite's Scribe AI is not yet released.
-        - title: Follow-up test
-          body: >-
-            Send a reminder and a prescription to a patient's phone, and ask which channel it uses and what it
-            costs. WhatsApp is a paid add-on on Unite and Pabau, and on Easy Clinic it starts on Premium.
-        - title: Claims test
-          body: >-
-            Build a claim from the bill and ask how it reaches eClaimLink in Dubai or Shafafiya in Abu Dhabi.
-            Unite (on Enterprise) and Insta by Practo publish both; ask every other vendor, Easy Clinic included,
-            to show the submission rather than describe it.
-
   - discriminant: prose
     value:
-      tone: plain
+      tone: wash
       id: what-they-cost
       heading: What each one costs
       body: |-
@@ -855,107 +935,7 @@ sections:
         MedicoPlus, Yolo, Insta by Practo and MEDAS quote on request. [MedicoPlus](https://www.clinicsoftware.ae/pricing) offers a subscription or a one-time on-premise licence with annual maintenance, and includes its NABIDH and Riayati connections in the implementation.
 
         Count the logins before you compare. Unite prices every user, so two doctors and two receptionists are four users. Clinicea prices each practitioner, and its Dubai page does not say what a front-desk login costs. Easy Clinic prices each doctor and includes a reception login. Then add any onboarding fee and the WhatsApp add-on.
-      width: measure
-
-  - discriminant: decisionMatrix
-    value:
-      tone: wash
-      id: when-to-choose-which
-      heading: When to choose which
-      options:
-        - title: Choose Unite EMR or Clinicea if
-          items:
-            - Your clinic is in Dubai and you want a price in dirhams before the first call, from AED 100 per user on Unite or AED 99 per practitioner on Clinicea, per month.
-            - You also run a branch in Abu Dhabi and want a vendor on both regulator lists, which Unite is and Clinicea is not.
-            - You claim from insurers through eClaimLink or Shafafiya and will take Unite's Enterprise plan.
-            - You want to try the software first, on Clinicea's 14-day free trial with no credit card.
-            - You weigh independent reviews, where Clinicea has 4.8 on Capterra from 43 reviews.
-        - title: Choose MedicoPlus, Insta by Practo or MEDAS if
-          items:
-            - You run a medical centre with lab, radiology and pharmacy on the same system.
-            - You want the option of hosting on your own servers, which MedicoPlus and Insta by Practo both offer.
-            - Your group has branches in Dubai and Abu Dhabi, and you want a vendor on both regulator lists with a UAE office.
-            - You are ready to ask for a quote, since none of the three publishes a price.
-        - title: Choose Yolo or Pabau if
-          items:
-            - WhatsApp reminders and patient marketing matter to you as much as the chart, and you will take a quote.
-            - Your clinic is in Dubai only and you want a system on the NABIDH list, which names Yolo and not Pabau.
-            - You want AI notes now, and Pabau lists Pabau Scribe as unlimited and free.
-            - You run an aesthetic or wellness practice and weigh reviews, where Pabau has 4.7 on Capterra from 652 reviews.
-            - You want staff time tracking and payroll in the same system, which Yolo lists.
-        - title: Choose Easy Clinic if
-          us: true
-          items:
-            - Your doctors want Cura AI to listen to the consult and draft the note, on every plan from Professional.
-            - You want a published price per doctor with a reception login included, and no setup fee or binding contract.
-            - You run, or plan, branches in more than one emirate, on Premium, or on Enterprise for central control of every location.
-            - You have Easy Clinic's NABIDH, Malaffi or Riayati status for your emirate, with a date, in writing before you sign.
-
-  - discriminant: proofBlock
-    value:
-      tone: plain
-      id: ratings
-      heading: How doctors rate Easy Clinic
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: sourceList
-    value:
-      tone: wash
-      id: sources
-      heading: Sources
-      intro: Every page we read for this comparison, all on 26 September 2026.
-      items:
-        - { label: 'DHA NABIDH: available EMRs, tested for connectivity', url: 'https://nabidh.dha.gov.ae/#/comm/connectedemr', accessed: 2026-09-26 }
-        - { label: 'DHA NABIDH: onboarding and readiness', url: 'https://nabidh.dha.gov.ae/#/comm/readiness', accessed: 2026-09-26 }
-        - { label: 'Malaffi: connected EMR systems', url: 'https://www.malaffi.ae/connected-emrs/', accessed: 2026-09-26 }
-        - { label: 'Malaffi: facilities required to connect', url: 'https://www.malaffi.ae/providers/facilities-required-to-connect/', accessed: 2026-09-26 }
-        - { label: 'Department of Health Abu Dhabi: integration of Riayati, Malaffi and Nabidh (31 January 2023)', url: 'https://www.doh.gov.ae/en/news/uae-health-authorities-announce-successful-integration-between-riayati-malaffi-and-nabidh', accessed: 2026-09-26 }
-        - { label: 'SoftwareSuggest: clinic management software in the UAE', url: 'https://www.softwaresuggest.com/clinic-management-software/uae', accessed: 2026-09-26 }
-        - { label: 'Unite EMR: homepage', url: 'https://www.uniteemr.com/', accessed: 2026-09-26 }
-        - { label: 'Unite: homepage', url: 'https://www.unite.care/', accessed: 2026-09-26 }
-        - { label: 'Unite: pricing and FAQ', url: 'https://www.unite.care/pricing', accessed: 2026-09-26 }
-        - { label: 'Unite: about us', url: 'https://www.unite.care/about-us', accessed: 2026-09-26 }
-        - { label: 'Clinicea: clinic management software in Dubai', url: 'https://clinicea.com/clinic-management-software-dubai', accessed: 2026-09-26 }
-        - { label: 'Clinicea: homepage', url: 'https://clinicea.com/', accessed: 2026-09-26 }
-        - { label: 'Clinicea: pricing', url: 'https://clinicea.com/pricing', accessed: 2026-09-26 }
-        - { label: 'Clinicea: EMR', url: 'https://clinicea.com/emr', accessed: 2026-09-26 }
-        - { label: 'Clinicea: clinic chains', url: 'https://clinicea.com/clinic-chain-software', accessed: 2026-09-26 }
-        - { label: 'Clinicea: contact addresses', url: 'https://clinicea.com/contactus', accessed: 2026-09-26 }
-        - { label: 'Capterra: Clinicea reviews', url: 'https://www.capterra.com/p/131430/Clinicea/reviews/', accessed: 2026-09-26 }
-        - { label: 'MedicoPlus: homepage', url: 'https://www.clinicsoftware.ae/', accessed: 2026-09-26 }
-        - { label: 'MedicoPlus: pricing', url: 'https://www.clinicsoftware.ae/pricing', accessed: 2026-09-26 }
-        - { label: 'MedicoPlus: about us', url: 'https://www.clinicsoftware.ae/about-us', accessed: 2026-09-26 }
-        - { label: 'MedicoPlus: NABIDH integration', url: 'https://www.clinicsoftware.ae/nabidh-integration', accessed: 2026-09-26 }
-        - { label: 'MedicoPlus: multi-branch clinic management', url: 'https://www.clinicsoftware.ae/multi-branch-clinic-management', accessed: 2026-09-26 }
-        - { label: 'Yolo: UAE homepage', url: 'https://ae.yolo.clinic/', accessed: 2026-09-26 }
-        - { label: 'Yolo: clinic management software (UAE)', url: 'https://ae.yolo.clinic/clinic-management-software/', accessed: 2026-09-26 }
-        - { label: 'Yolo: FAQ', url: 'https://ae.yolo.clinic/faq/', accessed: 2026-09-26 }
-        - { label: 'Yolo: about us', url: 'https://ae.yolo.clinic/about-us/', accessed: 2026-09-26 }
-        - { label: 'Health Connect: clinic management system (YOLO)', url: 'https://www.healthconnect.ae/clinic-management-system-y-o-l-o/', accessed: 2026-09-26 }
-        - { label: 'Insta by Practo: homepage', url: 'https://www.instahms.com/', accessed: 2026-09-26 }
-        - { label: 'Insta by Practo: FAQ', url: 'https://www.instahms.com/faq', accessed: 2026-09-26 }
-        - { label: 'Insta by Practo: regulatory compliance', url: 'https://www.instahms.com/regulatory-compliance', accessed: 2026-09-26 }
-        - { label: 'Insta by Practo: patient administration', url: 'https://www.instahms.com/patient-administration', accessed: 2026-09-26 }
-        - { label: 'Insta by Practo: integrations', url: 'https://www.instahms.com/integrations', accessed: 2026-09-26 }
-        - { label: 'Insta by Practo: polyclinics', url: 'https://www.instahms.com/polyclinics', accessed: 2026-09-26 }
-        - { label: 'Insta by Practo: Riayati integration', url: 'https://go.instahms.com/riayati/free-demo', accessed: 2026-09-26 }
-        - { label: 'Capterra: Insta reviews', url: 'https://www.capterra.com/p/130501/Insta-HMS/reviews/', accessed: 2026-09-26 }
-        - { label: 'MEDAS: homepage', url: 'https://medassolutions.com/', accessed: 2026-09-26 }
-        - { label: 'MEDAS: UAE', url: 'https://medassolutions.com/uae/', accessed: 2026-09-26 }
-        - { label: 'MEDAS: E-Clinic', url: 'https://medassolutions.com/products/e-clinic.html', accessed: 2026-09-26 }
-        - { label: 'Pabau: pricing', url: 'https://pabau.com/pricing/', accessed: 2026-09-26 }
-        - { label: 'Pabau: AI medical scribe', url: 'https://pabau.com/features/ai-medical-scribe/', accessed: 2026-09-26 }
-        - { label: 'Pabau: NABIDH integration', url: 'https://pabau.com/integrations/nabidh/', accessed: 2026-09-26 }
-        - { label: 'Pabau: best EMR software in Dubai', url: 'https://pabau.com/blog/emr-software-dubai/', accessed: 2026-09-26 }
-        - { label: 'Capterra: Pabau reviews', url: 'https://www.capterra.com/p/140062/Pabau-CRM/reviews/', accessed: 2026-09-26 }
-        - { label: 'Easy Clinic: EMR software in the UAE (archived 13 May 2026)', url: 'https://web.archive.org/web/20260513165039/https://www.easyclinic.io/emr-software-in-uae/', accessed: 2026-09-27 }
-        - { label: 'Capterra: Easy Clinic reviews', url: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/', accessed: 2026-09-26 }
+      width: wide
 
 faq:
   - question: Is this ranking biased, since Easy Clinic publishes it?

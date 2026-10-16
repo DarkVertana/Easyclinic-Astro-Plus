@@ -34,6 +34,8 @@ import ProofBlock from './ProofBlock/ProofBlock.astro';
 import Prose from './Prose/Prose.astro';
 import SplitContent from './SplitContent/SplitContent.astro';
 import FeatureBand from './FeatureBand/FeatureBand.astro';
+import MigrationPlan from './MigrationPlan/MigrationPlan.astro';
+import SpecialtyGrid from './SpecialtyGrid/SpecialtyGrid.astro';
 import CapabilityList from './CapabilityList/CapabilityList.astro';
 import RegulatorStrip from './RegulatorStrip/RegulatorStrip.astro';
 import RegulatorTable from './RegulatorTable/RegulatorTable.astro';
@@ -80,6 +82,8 @@ export const BLOCKS = {
   prose: Prose,
   splitContent: SplitContent,
   featureBand: FeatureBand,
+  migrationPlan: MigrationPlan,
+  specialtyGrid: SpecialtyGrid,
   capabilityList: CapabilityList,
   regulatorStrip: RegulatorStrip,
   regulatorTable: RegulatorTable,

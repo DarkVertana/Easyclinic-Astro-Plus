@@ -36,6 +36,8 @@ import { schema as proofBlock } from '../components/blocks/ProofBlock/schema';
 import { schema as prose } from '../components/blocks/Prose/schema';
 import { schema as splitContent } from '../components/blocks/SplitContent/schema';
 import { schema as featureBand } from '../components/blocks/FeatureBand/schema';
+import { schema as migrationPlan } from '../components/blocks/MigrationPlan/schema';
+import { schema as specialtyGrid } from '../components/blocks/SpecialtyGrid/schema';
 import { schema as capabilityList } from '../components/blocks/CapabilityList/schema';
 import { schema as regulatorStrip } from '../components/blocks/RegulatorStrip/schema';
 import { schema as regulatorTable } from '../components/blocks/RegulatorTable/schema';
@@ -82,6 +84,8 @@ export const BLOCK_SCHEMAS = {
   prose,
   splitContent,
   featureBand,
+  migrationPlan,
+  specialtyGrid,
   capabilityList,
   regulatorStrip,
   regulatorTable,

@@ -128,6 +128,9 @@ ctas:
     href: /pricing/
   whatsapp: Hi, I was reading the Easy Clinic comparison of clinic software in South Africa and would like a demo for my practice.
 
+nearbySection:
+  heading: Clinic management software in nearby markets
+  body: 'Comparing options across more than one country? See our guides to [clinic management software in Mauritius](/best-clinic-management-software-mauritius/), [clinic management software in Nigeria](/best-clinic-management-software-nigeria/) and [clinic management software in Kenya](/best-clinic-management-software-kenya/), or browse [all our country guides](/countries/).'
 sections:
   - discriminant: prose
     value:
@@ -224,9 +227,244 @@ sections:
         - ['**GoodX**', '==Real-time switching of claims to medical aids== such as Discovery, Medscheme, MHG and Bestmed.', '[goodx.co.za](https://goodx.co.za/features/)']
         - ['**Easy Clinic**', '==Not published== (no medical aid switching named, 14 October 2026)', 'This page']
 
+  - discriminant: migrationPlan
+    value:
+      id: moving-your-clinic
+      tone: plain
+      heading: Bringing your clinic across, without losing a thing
+      intro: >-
+        Most clinics we onboard are moving off something that stopped fitting. Here is how the move works, and
+        what is different depending on where you are coming from.
+      steps:
+        - title: We take the export
+          body: You give us access or a file. We pull patient records, visit history, billing and stock out of your current system.
+        - title: We map and import
+          body: Your fields get matched to ours and checked with you before anything goes live. Duplicates and gaps are cleaned on the way in.
+        - title: Your team trains
+          body: Front desk, doctors and pharmacy each get a session on their own part of the day, with a named specialist on hand.
+        - title: You go live
+          body: We run both systems in parallel for the first few days, so nothing is lost while your staff settle in.
+      stats:
+        - { value: 2 to 4 weeks, label: 'Single clinic, start to live' }
+        - { value: 4 to 6 weeks, label: Multi-branch clinics and chains }
+        - { value: No data loss, label: Parallel running until you sign off }
+      systems:
+        - name: 'MocDoc'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'GoodX'
+          comesAcross: 'Patient records, clinical notes and billing history.'
+          lookAt: 'Field mapping is agreed with you first, since layouts differ between systems.'
+        - name: 'Excel or paper'
+          comesAcross: 'Patient master list, visit history and stock data.'
+          lookAt: 'Column headings and duplicate patient entries get cleaned before import. Usually the quickest route of all.'
+        - name: 'An older on-premise system'
+          comesAcross: 'A full database export.'
+          lookAt: 'We review how the old system stored things before we commit to a date, rather than guessing.'
+      note: Every migration comes with a named implementation specialist, not a help article.
+
+  - discriminant: featureBand
+    value:
+      id: your-data-stays-yours
+      tone: inverse
+      badge: No lock-in
+      heading: Your data stays yours
+      intro: >-
+        Your patient records belong to your clinic. Not to us, and not to a marketplace. Here is what that means
+        in practice.
+      items:
+        - title: Export your records
+          body: Your records in a standard format, on your schedule, with export to Excel and PDF built in.
+        - title: The patient relationship is yours
+          body: >-
+            Your patients belong to your practice, not to a directory that also sells appointments to the clinic
+            down the road.
+        - title: Role-based access
+          body: Front desk, doctors, pharmacy and accounts each see what their job needs and nothing more.
+        - title: Nothing shared with aggregators
+          body: Your patient data is not sold, pooled or surfaced in a marketplace for commercial gain.
+        - title: An audit trail behind every record
+          body: Who viewed what, and when, available to you as the practice owner.
+        - title: No contract trap
+          body: >-
+            There are no binding contracts. If Easy Clinic stops fitting your clinic, you can leave with everything
+            you put in.
+
+  - discriminant: comparisonTable
+    value:
+      clean: true
+      tone: plain
+      id: comparison-table
+      heading: The three systems side by side
+      intro: Easy Clinic, unranked, comes first, then MocDoc, ranked first; the other columns follow the ranking.
+        Every competitor fact was read on the vendor's own site on 14 October 2026.
+      columns:
+        - name: Easy Clinic
+          us: true
+        - name: MocDoc
+        - name: GoodX
+      rows:
+        - label: South African presence, as published
+          cells:
+            - value: A [South Africa page](/emr-software-in-south-africa/); no office or named client in South Africa
+            - value: A South Africa page; its office is in Chennai, India
+              source: https://mocdoc.com/south-africa
+              checkedOn: 2026-10-14
+            - value: Head office in Brummeria, Pretoria; founded in 1985
+              source: https://goodx.co.za/contact/
+              checkedOn: 2026-10-14
+        - label: Pricing model and published price
+          cells:
+            - value: Per doctor per month; the rand price is not yet published. The US dollar list on the [pricing
+                page](/pricing/) starts at {price:usd.professional.annual} billed annually
+            - value: Hospital system from $4,200 a year (up to 10 users), plus onboarding from $800; no clinic price found
+              source: https://mocdoc.com/util/hms-pricing
+              checkedOn: 2026-10-14
+            - value: Not published. Flexible plans by demo or quote; payment links are pay-per-use
+              source: https://goodx.co.za/
+              checkedOn: 2026-10-14
+        - label: Medical aid claims
+          cells:
+            - value: Not published (no medical aid switching named, 14 October 2026)
+            - value: Not published for switching. It names pre-authorisation, claims and TPA management
+              source: https://mocdoc.com/hospital-insurance-billing-management-system
+              checkedOn: 2026-10-14
+            - value: ==Real-time switching== of claims to medical aids such as Discovery, Medscheme, MHG and Bestmed
+              source: https://goodx.co.za/features/
+              checkedOn: 2026-10-14
+        - label: WhatsApp to patients
+          cells:
+            - value: Reminders and messages on Premium; SMS and email on Professional
+            - value: Confirmations and reminders by SMS, email and WhatsApp
+              source: https://mocdoc.com/south-africa
+              checkedOn: 2026-10-14
+            - value: Not published. Reminders go by SMS or email
+              source: https://goodx.co.za/
+              checkedOn: 2026-10-14
+        - label: More than one branch
+          cells:
+            - value: From Premium; the largest chain on Easy Clinic has {fact:largestChain} locations
+            - value: Central management of multi-location clinics
+              source: https://mocdoc.com/clinic-management-software
+              checkedOn: 2026-10-14
+            - value: Not published. It names multi-diary setup and large multi-disciplinary practices
+              source: https://goodx.co.za/features/
+              checkedOn: 2026-10-14
+        - label: AI documentation
+          cells:
+            - value: Cura AI listens to the consult and ==drafts the note== for the doctor to confirm, on every plan
+            - value: Not published (no AI on the pages we read, 14 October 2026)
+            - value: Not published (no AI on the pages we read, 14 October 2026)
+        - label: POPIA and coding
+          cells:
+            - value: No POPIA position named on this page
+            - value: Supports data privacy measures ==required under POPIA==; ICD-10 and ICD-9 codes
+              source: https://mocdoc.com/south-africa
+              checkedOn: 2026-10-14
+            - value: POPIA compliant and ISO 27001; ICD-10 diagnosis coding
+              source: https://goodx.co.za/features/
+              checkedOn: 2026-10-14
+      note: "\"Not published\" means the vendor's own pages did not say on 14 October 2026. GoodX also lists video
+        consultations; MocDoc lists Afrikaans and isiZulu among its languages. All three are web or cloud
+        systems."
+
   - discriminant: prose
     value:
+      id: which-one-fits
+      tone: wash
+      width: wide
+      heading: So which one fits your clinic?
+      body: |-
+        If you run a public or donor funded facility, a national or open-source system may be built for that world. If you need a national insurance scheme connected today, check which of the systems above already has it, and we will say so rather than waste your time.
+
+        Where Easy Clinic makes most sense is a growing private clinic that wants to run the whole practice in one place. Cura AI in the room with the patient. Payments and insurance claims from inside the record. Reminders and prescriptions over WhatsApp. Appointments, records, billing, pharmacy, lab and reports in a single system that does not need replacing when you open the second branch.
+
+        The fastest way to know is to watch it run on your own workflow for fifteen minutes.
+      link:
+        label: Book a demo
+        href: /countries/#book-a-demo
+
+  - discriminant: specialtyGrid
+    value:
+      id: built-for-your-speciality
       tone: plain
+      heading: Built for how your speciality actually works
+      intro: >-
+        A dermatologist does not write a prescription the way a paediatrician does. Easy Clinic ships with
+        templates, prescription formats and case sheets built per speciality, so the system fits your consultation
+        instead of the other way round.
+      groups:
+        - label: Primary care
+          items: [General practitioner, Family medicine, OPD and walk-in practice]
+        - label: Dental
+          items: [General dentistry, Orthodontics]
+        - label: Skin and aesthetics
+          items: [Dermatology, Cosmetic and aesthetic medicine, Trichology, Laser and hair removal, Plastic surgery]
+        - label: Women's health
+          items: [Obstetrics and gynaecology, IVF and fertility]
+        - label: Child health
+          items: [Paediatrics, Neonatology]
+        - label: Medical specialities
+          items: [Cardiology, Diabetology and endocrinology, Gastroenterology, Nephrology, Neurology, Oncology, Pulmonology, Rheumatology]
+        - label: Surgical specialities
+          items: [ENT, Ophthalmology, Orthopaedics, Urology, General surgery]
+        - label: Mental health
+          items: [Psychiatry, Psychology]
+
+  - discriminant: splitContent
+    value:
+      id: when-to-switch
+      tone: wash
+      centerHeading: true
+      heading: When should a clinic in South Africa switch to new software?
+      body: |-
+        The honest answer is that you switch the moment admin starts stealing time from patients.
+
+        Most clinics do not move because of one dramatic failure. They move because the small costs add up, the front desk is always behind, and nobody can say with confidence how the practice is actually doing.
+      link:
+        label: Book a demo
+        href: /countries/#book-a-demo
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/01.webp
+        alt: 'An Easy Clinic invoice for a patient visit: consultation, lab tests and pharmacy items, with the insurance share claimed, the co-pay received and the balance settled'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: how-easy-clinic-stands-out
+      tone: plain
+      centerHeading: true
+      mediaFirst: true
+      alignTop: true
+      stickyMedia: true
+      heading: How Easy Clinic stands out for clinics in South Africa
+      intro: >-
+        Easy Clinic earns its place by running the whole clinic in one place, with AI doing the heavy lifting.
+        Four things do most of the work.
+      body: |-
+        ### One system, front desk to back office
+        Appointments, records, billing, insurance claims, scheduling, pharmacy, stock, lab and radiology, reports, a no-code workflow builder and a branded patient app, all under one login.
+
+        ### Cura AI where it counts.
+        The AI helps finish a prescription in about three clicks, supports diagnosis, and runs wait time management, stock reorder and two-way patient messages.
+
+        ### Built for how your clinic pays and talks.
+        Payments and insurance claims from inside the record, and reminders and prescriptions over WhatsApp, SMS and email.
+
+        ### Made to grow.
+        One shared view across branches, plus a data warehouse for chains. HL7, FHIR and DICOM are live today.
+
+        Behind the features sits a long track record. Easy Clinic serves more than 5,000 doctors across 200 cities in 18 countries, handles over 200,000 prescriptions a day, and has supported clinics for more than 10 years.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/kenya-hero.png
+        alt: 'Easy Clinic payments screen: the day''s visits with their payment status, and the day''s collected total'
+        frame: none
+
+  - discriminant: prose
+    value:
+      tone: wash
       id: verdict
       heading: The verdict by practice type
       body: >-
@@ -236,102 +474,12 @@ sections:
         a hospital, lab or multi-location group that wants WhatsApp notifications and a published hospital price, MocDoc
         is the wider cloud suite, though it names no medical aid switching. Easy Clinic, unranked here, suits a practice
         that wants Cura AI to draft the note, but it names no medical aid switching today.
-      width: measure
-
-  - discriminant: prose
-    value:
-      tone: wash
-      id: how-we-compared
-      heading: How we compared
-      body: |-
-        **Who wrote this.** Easy Clinic publishes this page. We rank the two other systems and leave Easy Clinic unranked, at the end of the table and the list. Every fact about the other two links to the page it came from.
-
-        **When and where.** We read each vendor's own website on 14 October 2026. Where a vendor's pages did not say, the cell reads "Not published" with the date. Capterra and G2 could not be read on that date. GoodX's HelloPeter page showed one review, too few to use.
-
-        **How we ranked.** We weighed two checks first, a South African presence and a published price, then four daily features: real-time medical aid switching, WhatsApp to patients, more than one branch and AI note drafting. MocDoc publishes a South Africa page and a hospital price, WhatsApp and multi-location support, two checks and two features. GoodX has a South African office and switching, one check and one feature, because it publishes no price. So MocDoc ranks first on these checks, and the verdict above says plainly why a medical aid practice may still choose GoodX.
-
-        **Why Easy Clinic is unranked.** Easy Clinic publishes three daily features but no medical aid switching and no rand price. We do not place ourselves in a ranking we wrote while our local price is unpublished.
-      width: measure
-
-  - discriminant: comparisonTable
-    value:
-      tone: plain
-      id: comparison-table
-      heading: The three systems side by side
-      intro: >-
-        The two ranked systems, then Easy Clinic, unranked. Each competitor cell links to the page it came from, read on 14
-        October 2026.
-      columns:
-        - { name: MocDoc }
-        - { name: GoodX }
-        - { name: Easy Clinic, us: true }
-      rows:
-        - label: South African presence, as published
-          cells:
-            - value: A South Africa page; its office is in Chennai, India
-              source: https://mocdoc.com/south-africa
-              checkedOn: 2026-10-14
-            - value: Head office in Brummeria, Pretoria; founded in 1985
-              source: https://goodx.co.za/contact/
-              checkedOn: 2026-10-14
-            - value: A [South Africa page](/emr-software-in-south-africa/); no office or named client in South Africa
-        - label: Pricing model and published price
-          cells:
-            - value: Hospital system from $4,200 a year (up to 10 users), plus onboarding from $800; no clinic price found
-              source: https://mocdoc.com/util/hms-pricing
-              checkedOn: 2026-10-14
-            - value: Not published. Flexible plans by demo or quote; payment links are pay-per-use
-              source: https://goodx.co.za/
-              checkedOn: 2026-10-14
-            - value: Per doctor per month; the rand price is not yet published. The US dollar list on the [pricing page](/pricing/) starts at {price:usd.professional.annual} billed annually
-        - label: Medical aid claims
-          cells:
-            - value: Not published for switching. It names pre-authorisation, claims and TPA management
-              source: https://mocdoc.com/hospital-insurance-billing-management-system
-              checkedOn: 2026-10-14
-            - value: Real-time switching of claims to medical aids such as Discovery, Medscheme, MHG and Bestmed
-              source: https://goodx.co.za/features/
-              checkedOn: 2026-10-14
-            - value: Not published (no medical aid switching named, 14 October 2026)
-        - label: WhatsApp to patients
-          cells:
-            - value: Confirmations and reminders by SMS, email and WhatsApp
-              source: https://mocdoc.com/south-africa
-              checkedOn: 2026-10-14
-            - value: Not published. Reminders go by SMS or email
-              source: https://goodx.co.za/
-              checkedOn: 2026-10-14
-            - value: Reminders and messages on Premium; SMS and email on Professional
-        - label: More than one branch
-          cells:
-            - value: Central management of multi-location clinics
-              source: https://mocdoc.com/clinic-management-software
-              checkedOn: 2026-10-14
-            - value: Not published. It names multi-diary setup and large multi-disciplinary practices
-              source: https://goodx.co.za/features/
-              checkedOn: 2026-10-14
-            - value: From Premium; the largest chain on Easy Clinic has {fact:largestChain} locations
-        - label: AI documentation
-          cells:
-            - value: Not published (no AI on the pages we read, 14 October 2026)
-            - value: Not published (no AI on the pages we read, 14 October 2026)
-            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
-        - label: POPIA and coding
-          cells:
-            - value: Supports data privacy measures required under POPIA; ICD-10 and ICD-9 codes
-              source: https://mocdoc.com/south-africa
-              checkedOn: 2026-10-14
-            - value: POPIA compliant and ISO 27001; ICD-10 diagnosis coding
-              source: https://goodx.co.za/features/
-              checkedOn: 2026-10-14
-            - value: No POPIA position named on this page
-      note: >-
-        "Not published" means the vendor's own pages did not say on 14 October 2026. GoodX also lists video consultations;
-        MocDoc lists Afrikaans and isiZulu among its languages. All three are web or cloud systems.
+      width: wide
 
   - discriminant: vendorList
     value:
-      tone: wash
+      clean: true
+      tone: plain
       id: vendors
       heading: The three systems, one by one
       intro: The two others in ranked order, then Easy Clinic, unranked, in the same format.
@@ -407,57 +555,21 @@ sections:
             - label: US dollar list
               value: From {price:usd.professional.annual} per doctor per month billed annually, on the [pricing page](/pricing/)
 
-  - discriminant: decisionMatrix
+  - discriminant: prose
     value:
-      tone: plain
-      id: when-to-choose-which
-      heading: When to choose which
-      options:
-        - title: Choose GoodX if
-          items:
-            - Most of your income comes from medical aids and you need real-time switching.
-            - You want a South African company with a long track record.
-            - You need ICD-10 coding and POPIA named by the vendor.
-        - title: Choose MocDoc if
-          items:
-            - You run a hospital, lab or multi-location group.
-            - You want WhatsApp notifications and a published hospital price.
-        - title: Choose Easy Clinic if
-          us: true
-          items:
-            - Your doctors want Cura AI to listen to the consult and draft the note.
-            - Your income is mostly private pay rather than medical aid claims, or you switch claims elsewhere.
-            - You will get the rand price in writing before you sign.
-
-  - discriminant: proofBlock
-    value:
+      id: what-they-cost
       tone: wash
-      id: ratings
-      heading: How doctors rate Easy Clinic
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      width: wide
+      heading: What each one costs
+      body: |-
+        What each competitor publishes about its price, read on 14 October 2026:
 
-  - discriminant: sourceList
-    value:
-      tone: plain
-      id: sources
-      heading: Sources
-      intro: Every page we read for this comparison, all on 14 October 2026.
-      items:
-        - { label: 'MocDoc: South Africa', url: 'https://mocdoc.com/south-africa', accessed: 2026-10-14 }
-        - { label: 'MocDoc: clinic management software', url: 'https://mocdoc.com/clinic-management-software', accessed: 2026-10-14 }
-        - { label: 'MocDoc: insurance billing', url: 'https://mocdoc.com/hospital-insurance-billing-management-system', accessed: 2026-10-14 }
-        - { label: 'MocDoc: hospital system pricing', url: 'https://mocdoc.com/util/hms-pricing', accessed: 2026-10-14 }
-        - { label: 'GoodX: homepage', url: 'https://goodx.co.za/', accessed: 2026-10-14 }
-        - { label: 'GoodX: features', url: 'https://goodx.co.za/features/', accessed: 2026-10-14 }
-        - { label: 'GoodX: about us', url: 'https://goodx.co.za/about-us/', accessed: 2026-10-14 }
-        - { label: 'GoodX: contact', url: 'https://goodx.co.za/contact/', accessed: 2026-10-14 }
-        - { label: 'Capterra: Easy Clinic reviews', url: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/', accessed: 2026-10-14 }
+        - **MocDoc:** Hospital system from $4,200 a year (up to 10 users), plus onboarding from $800; no clinic price found ([mocdoc.com](https://mocdoc.com/util/hms-pricing)).
+        - **GoodX:** Not published. Flexible plans by demo or quote; payment links are pay-per-use ([goodx.co.za](https://goodx.co.za/)).
+
+        Easy Clinic's rand price is not yet published, so this page gives no Easy Clinic price in South Africa. Its US dollar list on the [pricing page](/pricing/) is {price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, both billed annually, with no setup fee and no binding contract.
+
+        A pay-once licence on your own server adds the server, backups, updates and staff time; a subscription folds those in. Ask every vendor for a quote in rand and compare the total over a few years.
 
 faq:
   - question: Is this ranking biased, since Easy Clinic publishes it?

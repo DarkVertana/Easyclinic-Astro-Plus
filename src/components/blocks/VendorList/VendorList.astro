@@ -8,7 +8,7 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'vendorList'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, vendors, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, vendors, clean, ctx } = Astro.props;
 const sectionTone = toneFor(tone, ctx.index);
 const inverse = sectionTone === 'inverse';
 
@@ -78,13 +78,19 @@ const showIndex = cards.length >= 4;
     )
   }
 
-  <div class="grid gap-6">
+  <div class="grid gap-6" data-clean={clean ? '' : undefined}>
     {
       cards.map((v) => (
-        <article id={v.id} aria-labelledby={v.headingId} class="vl-card card p-6 text-ink md:p-8">
-          <header>
+        <article id={v.id} aria-labelledby={v.headingId} class:list={['vl-card card text-ink', clean ? 'vl-clean' : 'p-6 md:p-8', clean && v.us && 'vl-us']}>
+          <header class:list={[clean && 'vl-head']}>
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
-              <VendorHeading id={v.headingId}>{v.label}</VendorHeading>
+              {clean && (
+                <span class="vl-rank" aria-hidden="true">
+                  {v.rank ?? <Icon name="circle-dot" size={18} />}
+                </span>
+              )}
+              <VendorHeading id={v.headingId}>{clean ? v.name : v.label}</VendorHeading>
+              {clean && v.rank && <span class="sr-only">, ranked {v.rank}</span>}
               {/* Disclosure only: Easy Clinic gets the same structure and weight as every other vendor (spec 5.14). */}
               {v.us && (
                 <span class="inline-flex items-center rounded-full border border-line-strong bg-surface-muted px-2.5 py-0.5 font-sans text-xs font-semibold text-ink-muted">
@@ -97,7 +103,7 @@ const showIndex = cards.length >= 4;
             </p>
             {v.url && (
               <p>
-                <a href={v.url} rel="noopener" class="inline-flex min-h-11 items-center gap-1.5 font-semibold">
+                <a href={v.url} rel="noopener" class:list={['inline-flex min-h-11 items-center gap-1.5 font-semibold', clean && 'vl-site']}>
                   <span>{v.name} website</span>
                   <Icon name="arrow-up-right" size={16} />
                 </a>
@@ -105,30 +111,31 @@ const showIndex = cards.length >= 4;
             )}
           </header>
 
-          <Md text={v.body} class:list={['max-w-[46rem]', v.url ? 'mt-2' : 'mt-4']} minHeading={SubHeading === 'h4' ? 4 : 3} />
+          <div class:list={[clean && 'vl-main']}>
+          <Md text={v.body} class:list={[clean ? 'max-w-[60rem]' : 'max-w-[46rem]', clean ? '' : v.url ? 'mt-2' : 'mt-4']} minHeading={SubHeading === 'h4' ? 4 : 3} />
 
-          <div class="mt-6 grid gap-6 border-t border-line pt-6 md:grid-cols-2 md:gap-10">
-            <div>
+          <div class:list={['mt-6 grid gap-6 md:grid-cols-2', clean ? 'md:gap-5' : 'border-t border-line pt-6 md:gap-10']}>
+            <div class:list={[clean && 'vl-panel vl-panel--pros']}>
               <SubHeading id={`${v.id}-strengths`} class="font-sans text-base font-semibold">
                 Strengths
               </SubHeading>
               <ul class="mt-3 space-y-2" aria-labelledby={`${v.id}-strengths`}>
                 {v.pros.map((item) => (
                   <li class="flex gap-2.5">
-                    <Icon name="check" size={18} class="mt-1 text-success" />
+                    {clean ? <span class="vl-ico vl-ico--pro" aria-hidden="true"><Icon name="check" size={12} /></span> : <Icon name="check" size={18} class="mt-1 text-success" />}
                     <Md text={item} inline />
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
+            <div class:list={[clean && 'vl-panel vl-panel--cons']}>
               <SubHeading id={`${v.id}-limits`} class="font-sans text-base font-semibold">
                 Limits
               </SubHeading>
               <ul class="mt-3 space-y-2" aria-labelledby={`${v.id}-limits`}>
                 {v.cons.map((item) => (
                   <li class="flex gap-2.5">
-                    <Icon name="minus" size={18} class="mt-1 text-ink-muted" />
+                    {clean ? <span class="vl-ico vl-ico--con" aria-hidden="true"><Icon name="minus" size={12} /></span> : <Icon name="minus" size={18} class="mt-1 text-ink-muted" />}
                     <Md text={item} inline />
                   </li>
                 ))}
@@ -137,11 +144,11 @@ const showIndex = cards.length >= 4;
           </div>
 
           {v.facts.length > 0 && (
-            <div class="mt-6 border-t border-line pt-6">
+            <div class:list={['mt-6', !clean && 'border-t border-line pt-6']}>
               <SubHeading class="font-sans text-base font-semibold">Key facts</SubHeading>
-              <dl class="mt-3 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+              <dl class:list={['mt-3 grid sm:grid-cols-2 lg:grid-cols-3', clean ? 'gap-3' : 'gap-x-8 gap-y-4']}>
                 {v.facts.map((f) => (
-                  <div>
+                  <div class:list={[clean && 'vl-fact']}>
                     <dt class="text-sm font-semibold text-ink-muted">{f.label}</dt>
                     <dd class="mt-0.5">
                       <Md text={f.value} inline class="font-semibold text-ink-heading" />
@@ -165,6 +172,7 @@ const showIndex = cards.length >= 4;
               </dl>
             </div>
           )}
+          </div>
         </article>
       ))
     }
@@ -172,6 +180,116 @@ const showIndex = cards.length >= 4;
 </Section>
 
 <style>
+  /* Clean look. */
+  .vl-clean {
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e3eaf5;
+    border-radius: 20px;
+    box-shadow:
+      0 1px 2px rgb(16 42 84 / 0.04),
+      0 18px 40px -30px rgb(16 42 84 / 0.3);
+  }
+  .vl-clean.vl-us {
+    border: 1.5px solid var(--color-blue-500);
+  }
+  .vl-head {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1.25rem 1.25rem 1rem;
+    border-bottom: 1px solid #e8eef7;
+    background: linear-gradient(180deg, #f3f8ff, #ffffff);
+  }
+  .vl-us .vl-head {
+    background: linear-gradient(180deg, #e6f1ff, #ffffff);
+  }
+  .vl-rank {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background: var(--color-blue-500);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .vl-site {
+    min-height: 2.5rem;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+    border: 1px solid #c9dcf5;
+    border-radius: 9999px;
+    background: var(--surface);
+    font-size: 0.9375rem;
+    text-decoration: none;
+  }
+  .vl-site:hover {
+    border-color: var(--color-blue-500);
+  }
+  .vl-main {
+    padding: 1.25rem;
+  }
+  @media (min-width: 40rem) {
+    .vl-head {
+      padding: 1.5rem 2rem 1.25rem;
+    }
+    .vl-main {
+      padding: 1.5rem 2rem 2rem;
+    }
+  }
+  @media (min-width: 60rem) {
+    .vl-head {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: 2rem;
+    }
+    .vl-head > p:last-child:has(.vl-site) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+    .vl-site {
+      margin-top: 0;
+    }
+  }
+  .vl-panel {
+    padding: 1.125rem 1.25rem;
+    border: 1px solid;
+    border-radius: 14px;
+  }
+  .vl-panel--pros {
+    border-color: #cdeed9;
+    background: #f3fbf6;
+  }
+  .vl-panel--cons {
+    border-color: #f6dfbf;
+    background: #fffaf2;
+  }
+  .vl-ico {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.2rem;
+    border-radius: 9999px;
+    color: var(--color-white);
+  }
+  .vl-ico--pro {
+    background: #00a046;
+  }
+  .vl-ico--con {
+    background: #d98a1c;
+  }
+  .vl-fact {
+    padding: 0.875rem 1rem;
+    border: 1px solid #e3ecf8;
+    border-radius: 12px;
+    background: #f7faff;
+  }
+
   /* The cards stay light on an inverse section, so markdown keeps its normal colours rather than the
      inverse section's white. */
   .vl-card :global(.prose-md strong) {

@@ -39,4 +39,5 @@ export const comparisonTable = defineBlock('comparisonTable', 'Comparison table'
     { label: 'Rows', min: 2, itemLabel: (props) => props.fields.label.value || 'Row' },
   ),
   note: md('Note', { description: 'Shown under the table.' }),
+  clean: flag('Clean look', { zodDefault: false, description: 'Hides the per-cell Source and checked lines, widens the intro and note, and uses the lighter table style.' }),
 });

@@ -131,6 +131,9 @@ ctas:
     href: /pricing/
   whatsapp: Hi, I was reading the Easy Clinic comparison of clinic software in Uganda and would like a demo for my clinic.
 
+nearbySection:
+  heading: Clinic management software in nearby markets
+  body: 'Comparing options across more than one country? See our guides to [clinic management software in Kenya](/best-clinic-management-software-kenya/), [clinic management software in Tanzania](/best-clinic-management-software-tanzania/) and [clinic management software in Rwanda](/best-clinic-management-software-rwanda/), or browse [all our country guides](/countries/).'
 sections:
   - discriminant: prose
     value:
@@ -228,52 +231,91 @@ sections:
         - ['**Smart Hospital Manager**', 'Not published. Its Uganda page ==names no Ministry of Health, HMIS, NHIS== or data-protection law; it offers audit trails, role-based access and patient data on the clinic''s own server.', '[smarthospitalmanager.com](https://smarthospitalmanager.com/pages/managementsoftware/uganda/)']
         - ['**Easy Clinic**', '==Not published== on this page. Ask us, as you would any vendor, to show how it handles HMIS reporting, insurance and data protection in a demo.', 'This page']
 
-  - discriminant: prose
+  - discriminant: migrationPlan
     value:
+      id: moving-your-clinic
       tone: plain
-      id: verdict
-      heading: The verdict by clinic type
-      body: >-
-        For a practice that wants a published price and AI note drafting, Zanda ranks first here, though it is built for
-        allied health practices and names no Uganda presence or mobile money. For a small or medium clinic in Kampala that
-        takes MTN or Airtel Money and copes with intermittent internet, Kico Web Design, second, builds a custom system to
-        a quote. For a facility that would rather pay once and host it, Smart Hospital Manager, third, sells a lifetime
-        licence. Easy Clinic, unranked here, suits a connected clinic that wants Cura AI to draft the note and WhatsApp
-        reminders, but it names no mobile money today.
-      width: measure
+      heading: Bringing your clinic across, without losing a thing
+      intro: >-
+        Most clinics we onboard are moving off something that stopped fitting. Here is how the move works, and
+        what is different depending on where you are coming from.
+      steps:
+        - title: We take the export
+          body: You give us access or a file. We pull patient records, visit history, billing and stock out of your current system.
+        - title: We map and import
+          body: Your fields get matched to ours and checked with you before anything goes live. Duplicates and gaps are cleaned on the way in.
+        - title: Your team trains
+          body: Front desk, doctors and pharmacy each get a session on their own part of the day, with a named specialist on hand.
+        - title: You go live
+          body: We run both systems in parallel for the first few days, so nothing is lost while your staff settle in.
+      stats:
+        - { value: 2 to 4 weeks, label: 'Single clinic, start to live' }
+        - { value: 4 to 6 weeks, label: Multi-branch clinics and chains }
+        - { value: No data loss, label: Parallel running until you sign off }
+      systems:
+        - name: 'Zanda'
+          comesAcross: 'Patient records, appointment history and billing data.'
+          lookAt: 'We review the export before we quote a date, so nothing is lost in the move.'
+        - name: 'Kico Web Design'
+          comesAcross: 'Patient records, clinical notes and billing history.'
+          lookAt: 'Field mapping is agreed with you first, since layouts differ between systems.'
+        - name: 'Smart Hospital Manager'
+          comesAcross: 'Patient records, appointments and invoices.'
+          lookAt: 'Fields without a direct equivalent are agreed with you before anything is imported.'
+        - name: 'Excel or paper'
+          comesAcross: 'Patient master list, visit history and stock data.'
+          lookAt: 'Column headings and duplicate patient entries get cleaned before import. Usually the quickest route of all.'
+        - name: 'An older on-premise system'
+          comesAcross: 'A full database export.'
+          lookAt: 'We review how the old system stored things before we commit to a date, rather than guessing.'
+      note: Every migration comes with a named implementation specialist, not a help article.
 
-  - discriminant: prose
+  - discriminant: featureBand
     value:
-      tone: wash
-      id: how-we-compared
-      heading: How we compared
-      body: |-
-        **Who wrote this.** Easy Clinic publishes this page. We rank the three other systems and leave Easy Clinic unranked, at the end of the table and the list. Every fact about the other three links to the page it came from.
-
-        **When and where.** We read each vendor's own website on 14 October 2026. Where a vendor's pages did not say, the cell reads "Not published" with the date. Capterra and G2 could not be read on that date, so this page gives no independent review score.
-
-        **How we ranked.** We weighed two checks first, a Uganda presence and a published price, then four daily features: mobile money, WhatsApp to patients, more than one location and AI note drafting. Each competitor meets one of the two checks: Zanda a price, Kico Web Design and Smart Hospital Manager a Uganda presence. Zanda has two daily features, locations and AI, so it ranks first. Kico Web Design and Smart Hospital Manager have one each; the tie-break, an office in Uganda, puts Kico Web Design second.
-
-        **Why Easy Clinic is unranked.** Easy Clinic publishes three daily features but no mobile money and no shilling price. We do not place ourselves in a ranking we wrote while our local price is unpublished.
-      width: measure
+      id: your-data-stays-yours
+      tone: inverse
+      badge: No lock-in
+      heading: Your data stays yours
+      intro: >-
+        Your patient records belong to your clinic. Not to us, and not to a marketplace. Here is what that means
+        in practice.
+      items:
+        - title: Export your records
+          body: Your records in a standard format, on your schedule, with export to Excel and PDF built in.
+        - title: The patient relationship is yours
+          body: >-
+            Your patients belong to your practice, not to a directory that also sells appointments to the clinic
+            down the road.
+        - title: Role-based access
+          body: Front desk, doctors, pharmacy and accounts each see what their job needs and nothing more.
+        - title: Nothing shared with aggregators
+          body: Your patient data is not sold, pooled or surfaced in a marketplace for commercial gain.
+        - title: An audit trail behind every record
+          body: Who viewed what, and when, available to you as the practice owner.
+        - title: No contract trap
+          body: >-
+            There are no binding contracts. If Easy Clinic stops fitting your clinic, you can leave with everything
+            you put in.
 
   - discriminant: comparisonTable
     value:
+      clean: true
       tone: plain
       id: comparison-table
       heading: The four systems side by side
-      intro: >-
-        The three ranked systems, then Easy Clinic, unranked. Each competitor cell links to the page it came from, read on 14
-        October 2026.
+      intro: Easy Clinic, unranked, comes first, then Zanda, ranked first; the other columns follow the ranking.
+        Every competitor fact was read on the vendor's own site on 14 October 2026.
       columns:
-        - { name: Zanda }
-        - { name: Kico Web Design }
-        - { name: Smart Hospital Manager }
-        - { name: Easy Clinic, us: true }
+        - name: Easy Clinic
+          us: true
+        - name: Zanda
+        - name: Kico Web Design
+        - name: Smart Hospital Manager
       rows:
         - label: Best for
           cells:
-            - value: Allied health professionals
+            - value: Connected private clinics, from one doctor to a group, that want ==AI notes and WhatsApp==
+            - value: ==Allied health professionals==
               source: https://zandahealth.com/clinic-management-software/
               checkedOn: 2026-10-14
             - value: Small and medium clinics that need the core of a hospital system, built to order
@@ -282,9 +324,9 @@ sections:
             - value: Dental, skin care, aesthetic and other clinics, and independent practitioners
               source: https://smarthospitalmanager.com/
               checkedOn: 2026-10-14
-            - value: Connected private clinics, from one doctor to a group, that want AI notes and WhatsApp
         - label: Uganda presence, as published
           cells:
+            - value: A [Uganda page](/emr-software-in-uganda/); no office or named client in Uganda
             - value: Not published. Its region list names South Africa as its only African option
               source: https://zandahealth.com/pricing/
               checkedOn: 2026-10-14
@@ -294,33 +336,35 @@ sections:
             - value: A Uganda page; no Uganda office or client named
               source: https://smarthospitalmanager.com/pages/managementsoftware/uganda/
               checkedOn: 2026-10-14
-            - value: A [Uganda page](/emr-software-in-uganda/); no office or named client in Uganda
         - label: Pricing model and published price
           cells:
-            - value: Starter US$19 a month for one practitioner; Growth US$49 plus US$19 per extra practitioner; AI Pro add-on US$19 per user
+            - value: Per doctor per month; the shilling price is not yet published. The US dollar list on the [pricing
+                page](/pricing/) starts at {price:usd.professional.annual} billed annually
+            - value: Starter US$19 a month for one practitioner; Growth US$49 plus US$19 per extra practitioner; AI Pro
+                add-on US$19 per user
               source: https://zandahealth.com/pricing/
               checkedOn: 2026-10-14
             - value: Not published. Each project is quoted on scope
               source: https://kicowebdesign.com/services/clinic-management-software
               checkedOn: 2026-10-14
-            - value: A one-time lifetime licence with no monthly fees; no price published
+            - value: A one-time lifetime licence with ==no monthly fees==; no price published
               source: https://smarthospitalmanager.com/pages/managementsoftware/uganda/
               checkedOn: 2026-10-14
-            - value: Per doctor per month; the shilling price is not yet published. The US dollar list on the [pricing page](/pricing/) starts at {price:usd.professional.annual} billed annually
         - label: Mobile money
           cells:
+            - value: Not published (no mobile money named, 14 October 2026)
             - value: Not published. Card payments go through Stripe
               source: https://zandahealth.com/pricing/
               checkedOn: 2026-10-14
-            - value: MTN Money and Airtel Money integrated for consultations and drugs
+            - value: ==MTN Money and Airtel Money== integrated for consultations and drugs
               source: https://kicowebdesign.com/services/clinic-management-software
               checkedOn: 2026-10-14
             - value: Not published. It names payment gateways generally
               source: https://smarthospitalmanager.com/
               checkedOn: 2026-10-14
-            - value: Not published (no mobile money named, 14 October 2026)
         - label: WhatsApp to patients
           cells:
+            - value: Reminders and messages on Premium; SMS and email on Professional
             - value: Not published. Reminders by SMS or email
               source: https://zandahealth.com/pricing/
               checkedOn: 2026-10-14
@@ -330,9 +374,9 @@ sections:
             - value: Not published. Its feature list names an SMS gateway
               source: https://smarthospitalmanager.com/
               checkedOn: 2026-10-14
-            - value: Reminders and messages on Premium; SMS and email on Professional
         - label: More than one location
           cells:
+            - value: From Premium; the largest chain on Easy Clinic has {fact:largestChain} locations
             - value: Multiple locations on Growth; one physical location on Starter
               source: https://zandahealth.com/pricing/
               checkedOn: 2026-10-14
@@ -340,17 +384,17 @@ sections:
             - value: Says it works for clinics with many practitioners or different locations
               source: https://smarthospitalmanager.com/
               checkedOn: 2026-10-14
-            - value: From Premium; the largest chain on Easy Clinic has {fact:largestChain} locations
         - label: AI documentation
           cells:
+            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
             - value: AI Scribe records, transcribes and drafts notes after each session
               source: https://zandahealth.com/pricing/
               checkedOn: 2026-10-14
             - value: Not published (no AI on the pages we read, 14 October 2026)
             - value: Not published (no AI on the pages we read, 14 October 2026)
-            - value: Cura AI listens to the consult and drafts the note for the doctor to confirm, on every plan
         - label: Where it runs
           cells:
+            - value: Cloud, in a web browser; it does not run fully offline today
             - value: Cloud, with nothing to install
               source: https://zandahealth.com/clinic-management-software/
               checkedOn: 2026-10-14
@@ -360,14 +404,121 @@ sections:
             - value: On-premise, self-hosted on your own server
               source: https://smarthospitalmanager.com/pages/managementsoftware/uganda/
               checkedOn: 2026-10-14
-            - value: Cloud, in a web browser; it does not run fully offline today
-      note: >-
-        "Not published" means the vendor's own pages did not say on 14 October 2026. Zanda also offers telehealth as an
-        add-on. None of the four names URA EFRIS e-invoicing.
+      note: "\"Not published\" means the vendor's own pages did not say on 14 October 2026. Zanda also offers
+        telehealth as an add-on. None of the four names URA EFRIS e-invoicing."
+
+  - discriminant: prose
+    value:
+      id: which-one-fits
+      tone: wash
+      width: wide
+      heading: So which one fits your clinic?
+      body: |-
+        If you run a public or donor funded facility, a national or open-source system may be built for that world. If you need a national insurance scheme connected today, check which of the systems above already has it, and we will say so rather than waste your time.
+
+        Where Easy Clinic makes most sense is a growing private clinic that wants to run the whole practice in one place. Cura AI in the room with the patient. Payments and insurance claims from inside the record. Reminders and prescriptions over WhatsApp. Appointments, records, billing, pharmacy, lab and reports in a single system that does not need replacing when you open the second branch.
+
+        The fastest way to know is to watch it run on your own workflow for fifteen minutes.
+      link:
+        label: Book a demo
+        href: /countries/#book-a-demo
+
+  - discriminant: specialtyGrid
+    value:
+      id: built-for-your-speciality
+      tone: plain
+      heading: Built for how your speciality actually works
+      intro: >-
+        A dermatologist does not write a prescription the way a paediatrician does. Easy Clinic ships with
+        templates, prescription formats and case sheets built per speciality, so the system fits your consultation
+        instead of the other way round.
+      groups:
+        - label: Primary care
+          items: [General practitioner, Family medicine, OPD and walk-in practice]
+        - label: Dental
+          items: [General dentistry, Orthodontics]
+        - label: Skin and aesthetics
+          items: [Dermatology, Cosmetic and aesthetic medicine, Trichology, Laser and hair removal, Plastic surgery]
+        - label: Women's health
+          items: [Obstetrics and gynaecology, IVF and fertility]
+        - label: Child health
+          items: [Paediatrics, Neonatology]
+        - label: Medical specialities
+          items: [Cardiology, Diabetology and endocrinology, Gastroenterology, Nephrology, Neurology, Oncology, Pulmonology, Rheumatology]
+        - label: Surgical specialities
+          items: [ENT, Ophthalmology, Orthopaedics, Urology, General surgery]
+        - label: Mental health
+          items: [Psychiatry, Psychology]
+
+  - discriminant: splitContent
+    value:
+      id: when-to-switch
+      tone: wash
+      centerHeading: true
+      heading: When should a clinic in Uganda switch to new software?
+      body: |-
+        The honest answer is that you switch the moment admin starts stealing time from patients.
+
+        Most clinics do not move because of one dramatic failure. They move because the small costs add up, the front desk is always behind, and nobody can say with confidence how the practice is actually doing.
+      link:
+        label: Book a demo
+        href: /countries/#book-a-demo
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/04.webp
+        alt: 'The record behind Easy Clinic: 5,000+ doctors across 200 cities, 200,000 prescriptions a day, HL7, FHIR and DICOM live, and ICD-10, SNOMED, LOINC and CPT supported'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: how-easy-clinic-stands-out
+      tone: plain
+      centerHeading: true
+      mediaFirst: true
+      alignTop: true
+      stickyMedia: true
+      heading: How Easy Clinic stands out for clinics in Uganda
+      intro: >-
+        Easy Clinic earns its place by running the whole clinic in one place, with AI doing the heavy lifting.
+        Four things do most of the work.
+      body: |-
+        ### One system, front desk to back office
+        Appointments, records, billing, insurance claims, scheduling, pharmacy, stock, lab and radiology, reports, a no-code workflow builder and a branded patient app, all under one login.
+
+        ### Cura AI where it counts.
+        The AI helps finish a prescription in about three clicks, supports diagnosis, and runs wait time management, stock reorder and two-way patient messages.
+
+        ### Built for how your clinic pays and talks.
+        Payments and insurance claims from inside the record, and reminders and prescriptions over WhatsApp, SMS and email.
+
+        ### Made to grow.
+        One shared view across branches, plus a data warehouse for chains. HL7, FHIR and DICOM are live today.
+
+        Behind the features sits a long track record. Easy Clinic serves more than 5,000 doctors across 200 cities in 18 countries, handles over 200,000 prescriptions a day, and has supported clinics for more than 10 years.
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/kenya-hero.png
+        alt: 'Easy Clinic payments screen: the day''s visits with their payment status, and the day''s collected total'
+        frame: none
+
+  - discriminant: prose
+    value:
+      tone: wash
+      id: verdict
+      heading: The verdict by clinic type
+      body: >-
+        For a practice that wants a published price and AI note drafting, Zanda ranks first here, though it is built for
+        allied health practices and names no Uganda presence or mobile money. For a small or medium clinic in Kampala that
+        takes MTN or Airtel Money and copes with intermittent internet, Kico Web Design, second, builds a custom system to
+        a quote. For a facility that would rather pay once and host it, Smart Hospital Manager, third, sells a lifetime
+        licence. Easy Clinic, unranked here, suits a connected clinic that wants Cura AI to draft the note and WhatsApp
+        reminders, but it names no mobile money today.
+      width: wide
 
   - discriminant: vendorList
     value:
-      tone: wash
+      clean: true
+      tone: plain
       id: vendors
       heading: The four systems, one by one
       intro: The three others in ranked order for a clinic in Uganda, then Easy Clinic, unranked, in the same format.
@@ -464,54 +615,22 @@ sections:
             - label: US dollar list
               value: From {price:usd.professional.annual} per doctor per month billed annually, on the [pricing page](/pricing/)
 
-  - discriminant: decisionMatrix
+  - discriminant: prose
     value:
-      tone: plain
-      id: when-to-choose-which
-      heading: When to choose which
-      options:
-        - title: Choose Zanda if
-          items:
-            - You run an allied health practice and want a published monthly price.
-            - You want an AI scribe and several locations.
-        - title: Choose Kico Web Design or Smart Hospital Manager if
-          items:
-            - Your patients pay by MTN or Airtel Money, which Kico Web Design integrates.
-            - Your internet is intermittent and you want a system built for it.
-            - You would rather pay once and host it, which Smart Hospital Manager offers.
-        - title: Choose Easy Clinic if
-          us: true
-          items:
-            - Your doctors want Cura AI to listen to the consult and draft the note.
-            - Your patients read WhatsApp more than SMS, and you are ready for Premium.
-            - You will confirm how mobile money is recorded and get the shilling price in writing before you sign.
-
-  - discriminant: proofBlock
-    value:
+      id: what-they-cost
       tone: wash
-      id: ratings
-      heading: How doctors rate Easy Clinic
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      width: wide
+      heading: What each one costs
+      body: |-
+        What each competitor publishes about its price, read on 14 October 2026:
 
-  - discriminant: sourceList
-    value:
-      tone: plain
-      id: sources
-      heading: Sources
-      intro: Every page we read for this comparison, all on 14 October 2026.
-      items:
-        - { label: 'Zanda: clinic management software', url: 'https://zandahealth.com/clinic-management-software/', accessed: 2026-10-14 }
-        - { label: 'Zanda: pricing', url: 'https://zandahealth.com/pricing/', accessed: 2026-10-14 }
-        - { label: 'Kico Web Design: clinic management software', url: 'https://kicowebdesign.com/services/clinic-management-software', accessed: 2026-10-14 }
-        - { label: 'Smart Hospital Manager: Uganda', url: 'https://smarthospitalmanager.com/pages/managementsoftware/uganda/', accessed: 2026-10-14 }
-        - { label: 'Smart Hospital Manager: homepage', url: 'https://smarthospitalmanager.com/', accessed: 2026-10-14 }
-        - { label: 'Capterra: Easy Clinic reviews', url: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/', accessed: 2026-10-14 }
+        - **Zanda:** Starter US$19 a month for one practitioner; Growth US$49 plus US$19 per extra practitioner; AI Pro add-on US$19 per user ([zandahealth.com](https://zandahealth.com/pricing/)).
+        - **Kico Web Design:** Not published. Each project is quoted on scope ([kicowebdesign.com](https://kicowebdesign.com/services/clinic-management-software)).
+        - **Smart Hospital Manager:** A one-time lifetime licence with no monthly fees; no price published ([smarthospitalmanager.com](https://smarthospitalmanager.com/pages/managementsoftware/uganda/)).
+
+        Easy Clinic's shilling price is not yet published, so this page gives no Easy Clinic price in Uganda. Its US dollar list on the [pricing page](/pricing/) is {price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, both billed annually, with no setup fee and no binding contract.
+
+        A pay-once licence on your own server adds the server, backups, updates and staff time; a subscription folds those in. Ask every vendor for a quote in shillings and compare the total over a few years.
 
 faq:
   - question: Is this ranking biased, since Easy Clinic publishes it?

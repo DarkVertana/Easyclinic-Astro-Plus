@@ -18,6 +18,9 @@ export const schema = () =>
     columns: z.array(z.object({ name: z.string(), us: z.boolean().default(false) })).min(2).max(8),
     rows: z.array(z.object({ label: z.string(), cells: z.array(cell) })).min(2),
     note: md.optional(),
+    /** Cleaner look: no per-cell source and date lines (the data stays, and the page's source list carries it),
+        a full-width intro and note, and a lighter table style. */
+    clean: z.boolean().default(false),
   }).superRefine((b, ctx) => {
     const { columns, rows } = b.value;
     rows.forEach((row, r) => {

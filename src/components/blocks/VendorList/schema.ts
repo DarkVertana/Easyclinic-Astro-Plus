@@ -27,6 +27,8 @@ export const schema = () =>
       )
       .min(2)
       .max(10),
+    /** Card look with a header band, rank badge, tinted strengths and limits panels and fact tiles. */
+    clean: z.boolean().default(false),
   }).superRefine((b, ctx) => {
     b.value.vendors.forEach((v, n) => {
       v.facts.forEach((f, i) => {
