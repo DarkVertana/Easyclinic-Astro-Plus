@@ -193,6 +193,12 @@ importers:
       astro:
         specifier: 7.3.5
         version: 7.3.5(@types/node@24.13.6)(@vercel/functions@3.9.9(ws@8.21.3))(idb-keyval@6.3.0)(jiti@2.7.0)(yaml@2.9.1)
+      flag-icons:
+        specifier: 7.5.0
+        version: 7.5.0
+      libphonenumber-js:
+        specifier: 1.13.14
+        version: 1.13.14
       lucide-static:
         specifier: ^1.48.0
         version: 1.48.0
@@ -2253,6 +2259,9 @@ packages:
     resolution: {integrity: sha512-a6h2nTrgB3g5Wrn4au9Ux4kMk7IJtyF6oA8uGn+mk3weLZssUtc1cp6meHIzzuW2o1srrBAxzkmXLbqjRkgB6w==}
     engines: {node: ^20.19.0 || >=22.12.0}
 
+  flag-icons@7.5.0:
+    resolution: {integrity: sha512-kd+MNXviFIg5hijH766tt+3x76ele1AXlo4zDdCxIvqWZhKt4T83bOtxUOOMlTx/EcFdUMH5yvQgYlFh1EqqFg==}
+
   flattie@1.1.1:
     resolution: {integrity: sha512-9UbaD6XdAL97+k/n+N7JwX46K/M6Zc6KcFYskrYL8wbBV/Uyk0CTAMY0VT+qiK5PM7AIc9aTWYtq65U7T+aCNQ==}
     engines: {node: '>=8'}
@@ -2489,6 +2498,9 @@ packages:
     resolution: {integrity: sha512-DeXj9X5xDCjgKLU/7RR+/HQEVzuuEUiwldwOGsHK/sfAfELGWEyTcf0x+uOvCvK3O2zPmZePXWL85vtia6GyZw==}
     engines: {node: '>=16'}
     hasBin: true
+
+  libphonenumber-js@1.13.14:
+    resolution: {integrity: sha512-llihgCcx0BFLksecLP+x1J+6JDE1GsXS1RN/LoPF6qcwpeQcnjj0lcvZxY8AzbEpYwyZWPZW/nDuqkqzm3amiw==}
 
   lighthouse-logger@2.0.2:
     resolution: {integrity: sha512-vWl2+u5jgOQuZR55Z1WM0XDdrJT6mzMP8zHUct7xTlWhuQs+eV0g+QL0RQdFjT54zVmbhLCP8vIVpy1wGn/gCg==}
@@ -5758,6 +5770,8 @@ snapshots:
 
   find-proc@0.2.0: {}
 
+  flag-icons@7.5.0: {}
+
   flattie@1.1.1: {}
 
   fontace@0.4.1:
@@ -5950,6 +5964,8 @@ snapshots:
   lib0@0.2.117:
     dependencies:
       isomorphic.js: 0.2.5
+
+  libphonenumber-js@1.13.14: {}
 
   lighthouse-logger@2.0.2:
     dependencies:
