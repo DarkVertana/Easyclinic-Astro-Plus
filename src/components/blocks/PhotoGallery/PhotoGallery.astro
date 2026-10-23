@@ -46,14 +46,14 @@ const SPAN = { normal: '', wide: 'md:col-span-2', large: 'col-span-2 md:row-span
 
   <dialog class="gallery-dialog" data-gallery-dialog aria-label="Photo viewer">
     <figure class="m-0 flex h-full flex-col items-center justify-center gap-3">
-      <img data-full alt="" class="max-h-[80vh] w-auto max-w-full rounded-xl" />
+      <img data-full alt="" width="1600" height="1000" class="h-auto max-h-[80vh] w-auto max-w-full rounded-xl" />
       <figcaption class="text-center text-sm text-white/80" data-caption></figcaption>
     </figure>
     <button type="button" class="gallery-ctl top-4 right-4" data-close aria-label="Close photo viewer"><Icon name="x" size={22} /></button>
     <button type="button" class="gallery-ctl top-1/2 left-3 -translate-y-1/2" data-prev aria-label="Previous photo"><Icon name="chevron-right" size={24} class="rotate-180" /></button>
     <button type="button" class="gallery-ctl top-1/2 right-3 -translate-y-1/2" data-next aria-label="Next photo"><Icon name="chevron-right" size={24} /></button>
   </dialog>
-  <script type="application/json" data-gallery-photos set:html={JSON.stringify(photos.map((p, i) => ({ src: full[i].src, alt: p.alt })))} />
+  <script type="application/json" data-gallery-photos set:html={JSON.stringify(photos.map((p, i) => ({ src: full[i].src, alt: p.alt, width: full[i].attributes.width, height: full[i].attributes.height })))} />
 </Section>
 
 <script>
@@ -62,13 +62,17 @@ const SPAN = { normal: '', wide: 'md:col-span-2', large: 'col-span-2 md:row-span
     const dialog = section?.querySelector<HTMLDialogElement>('[data-gallery-dialog]');
     const data = section?.querySelector('[data-gallery-photos]')?.textContent;
     if (!dialog || !data) continue;
-    const photos: { src: string; alt: string }[] = JSON.parse(data);
+    const photos: { src: string; alt: string; width?: number; height?: number }[] = JSON.parse(data);
     const img = dialog.querySelector<HTMLImageElement>('[data-full]')!;
     const caption = dialog.querySelector<HTMLElement>('[data-caption]')!;
     let at = 0;
     const show = (i: number) => {
       at = (i + photos.length) % photos.length;
       img.src = photos[at].src;
+      if (photos[at].width && photos[at].height) {
+        img.width = photos[at].width!;
+        img.height = photos[at].height!;
+      }
       img.alt = photos[at].alt;
       caption.textContent = `${photos[at].alt} (${at + 1} of ${photos.length})`;
     };
