@@ -1,0 +1,193 @@
+---
+import { DEMO_SPECIALTIES } from '../../../schemas/constants';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import CountryCodePicker from '../../ui/CountryCodePicker.astro';
+
+/**
+ * The short contact form on /contact-us/ (owner decision 2026-10-23): name, email, phone, speciality and a note, in
+ * a white card beside a help panel with contact rows. It posts to the same /demo/submit/ handler as the full demo
+ * form, marked formVariant=contact so the handler does not ask for clinic, practice type, locations or country.
+ */
+interface Props {
+  id: string;
+  page: string;
+  pageCountry?: string;
+  formTitle?: string;
+  help?: { heading: string; body?: string; rows: { icon: string; title: string; body: string }[] };
+}
+
+const { id, page, pageCountry, formTitle, help } = Astro.props;
+const helpId = `${id}-help-heading`;
+const f = (name: string) => ({ id: `contact-${name}`, error: `contact-${name}-error` });
+---
+
+{/* Form card and help panel side by side from 960px; stacked below that, help panel first so the contact details
+    are the first thing a phone visitor sees. */}
+<section id={id} aria-labelledby={help ? helpId : undefined} class="contact-band section-y">
+  <div class="container-page grid grid-cols-[minmax(0,1fr)] items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-12 lg:gap-16">
+    <form method="post" action="/demo/submit/" data-demo-form class="contact-card order-last grid grid-cols-[minmax(0,1fr)] gap-4 rounded-2xl border border-line bg-surface p-6 sm:p-9 md:order-none" aria-describedby="contact-form-note">
+      <input type="hidden" name="formVariant" value="contact" />
+      <input type="hidden" name="page" value={page} />
+      {pageCountry && <input type="hidden" name="pageCountry" value={pageCountry} />}
+      <input type="hidden" name="startedAt" value="" />
+      <div class="hidden" aria-hidden="true">
+        <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      {formTitle && <h2 class="mb-2 font-display text-xl leading-snug font-semibold text-ink-heading sm:text-2xl">{formTitle}</h2>}
+
+      <div class="grid gap-1">
+        <label for={f('name').id} class="sr-only">Name (required)</label>
+        <input id={f('name').id} name="name" type="text" required autocomplete="name" placeholder="Name*" class="cfield" aria-describedby={f('name').error} />
+        <p id={f('name').error} data-error-for="name" class="cfield-error" hidden></p>
+      </div>
+
+      <div class="grid gap-1">
+        <label for={f('email').id} class="sr-only">Email (required)</label>
+        <input id={f('email').id} name="email" type="email" required autocomplete="email" placeholder="Email*" class="cfield" aria-describedby={f('email').error} />
+        <p id={f('email').error} data-error-for="email" class="cfield-error" hidden></p>
+      </div>
+
+      <div class="grid gap-1">
+        <div class="cfield-group flex">
+          <CountryCodePicker id="contact-dialCode" name="dialCode" defaultCountry={pageCountry ?? 'IN'} />
+          <label for={f('phone').id} class="sr-only">Phone number without the country code (required)</label>
+          {/* Browsers compile `pattern` with the RegExp v flag, where ( ) and - must be escaped inside [ ]. */}
+          <input id={f('phone').id} name="phone" type="tel" required inputmode="tel" autocomplete="tel-national" pattern="[\d\s\(\)\-]{6,20}" placeholder="Phone*" class="cfield-phone" aria-describedby={f('phone').error} />
+        </div>
+        <p id={f('phone').error} data-error-for="phone" class="cfield-error" hidden></p>
+      </div>
+
+      <div class="grid gap-1">
+        <label for={f('specialty').id} class="sr-only">Speciality</label>
+        <select id={f('specialty').id} name="specialty" class="cfield cfield-select" aria-describedby={f('specialty').error}>
+          <option value="" selected>Speciality</option>
+          {DEMO_SPECIALTIES.map((s) => <option value={s}>{s}</option>)}
+        </select>
+        <p id={f('specialty').error} data-error-for="specialty" class="cfield-error" hidden></p>
+      </div>
+
+      <div class="grid gap-1">
+        <label for={f('note').id} class="sr-only">Note or comment</label>
+        <textarea id={f('note').id} name="note" rows="4" maxlength="2000" placeholder="Note or Comment" class="cfield min-h-28 resize-y" aria-describedby={f('note').error}></textarea>
+        <p id={f('note').error} data-error-for="note" class="cfield-error" hidden></p>
+      </div>
+
+      <div class="mt-1 flex flex-wrap items-center gap-4">
+        <button type="submit" class="btn btn-cta w-full sm:w-auto" data-label="contact form submit">Submit</button>
+        <p data-form-status role="status" aria-live="polite" class="text-sm text-ink-muted"></p>
+      </div>
+      <p id="contact-form-note" class="text-sm text-ink-muted">We use these details only to get back to you.</p>
+    </form>
+
+    {
+      help && (
+        <div class="md:pt-4">
+          <h2 id={helpId} class="lg:text-[2.75rem] lg:leading-[1.12]">{help.heading}</h2>
+          {help.body && <Md text={help.body} class="mt-5 text-[1.0625rem] leading-relaxed text-ink" />}
+          {help.rows.length > 0 && (
+            <ul class="mt-10 grid gap-6">
+              {help.rows.map((r) => (
+                <li class="flex items-start gap-4 sm:gap-5">
+                  <span class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-[0_10px_20px_-10px_rgb(0_91_176/0.7)] sm:size-14" aria-hidden="true">
+                    <Icon name={r.icon} size={24} />
+                  </span>
+                  <div class="min-w-0 pt-1">
+                    <h3 class="font-sans text-base font-semibold text-ink-heading">{r.title}</h3>
+                    <div class="contact-row mt-1 text-[0.9375rem] leading-relaxed text-ink"><Md text={r.body} /></div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<script>
+  import '../../../scripts/demo-form';
+</script>
+
+<style>
+  .contact-band {
+    background: var(--surface);
+  }
+  .contact-card {
+    box-shadow: 0 24px 60px -32px rgb(10 37 64 / 0.35);
+  }
+  .cfield,
+  .cfield-group {
+    width: 100%;
+    min-height: 3rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface);
+    color: var(--ink);
+    transition:
+      border-color 0.15s,
+      box-shadow 0.15s;
+  }
+  .cfield {
+    padding: 0.75rem 0.875rem;
+  }
+  .cfield::placeholder,
+  .cfield-phone::placeholder {
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+  .cfield:focus,
+  .cfield-group:focus-within {
+    border-color: var(--color-blue-600);
+    box-shadow: 0 0 0 3px rgb(0 105 204 / 0.15);
+    outline: none;
+  }
+  .cfield-select {
+    appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+  }
+  .cfield-select:has(option[value='']:checked) {
+    color: var(--ink-muted);
+  }
+  /* The code picker and number share one bordered box, which anchors the picker's list. */
+  .cfield-group {
+    position: relative;
+  }
+  .cfield-phone {
+    flex: 1 1 0;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+    background: transparent;
+    padding: 0.75rem 0.875rem;
+    color: var(--ink);
+  }
+  .cfield-phone:focus {
+    outline: none;
+  }
+  .cfield[aria-invalid='true'],
+  .cfield-group:has([aria-invalid='true']) {
+    border-color: var(--danger);
+  }
+  .cfield-error {
+    color: var(--danger);
+    font-size: var(--text-sm);
+  }
+  .contact-row :global(.prose-md > p + p) {
+    margin-top: 0.25rem;
+  }
+  .contact-row :global(.prose-md a) {
+    color: var(--color-blue-600);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .contact-row :global(.prose-md a:hover) {
+    text-decoration: underline;
+  }
+</style>

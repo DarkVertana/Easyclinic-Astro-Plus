@@ -5,7 +5,7 @@ import logo from '../../assets/logo/easyclinic-logo-white.png';
 import { getRegistry } from '../../lib/content/registry';
 import Icon from '../ui/Icon.astro';
 import Flag from '../ui/Flag.astro';
-import LinkList from './FooterLinks.astro';
+import FooterGroupBody from './FooterGroupBody.astro';
 
 const nav = (await getEntry('nav', 'nav'))!.data;
 const site = (await getEntry('site', 'site'))!.data;
@@ -18,10 +18,22 @@ const links = (list: (typeof nav.footer)[number]['links']) =>
 const groups = nav.footer
   .map((g) => ({ ...g, links: links(g.links), sections: g.sections.map((s) => ({ ...s, links: links(s.links) })).filter((s) => s.links.length) }))
   .filter((g) => g.links.length || g.sections.length);
+// Below 1200px a "continued" column (the second half of a long list on desktop) folds back into its group, so phones
+// and tablets get one Specialties group, not two.
+const merged = groups.reduce<typeof groups>((acc, g) => {
+  const prev = acc[acc.length - 1];
+  if (g.continued && prev) acc[acc.length - 1] = { ...prev, links: [...prev.links, ...g.links], sections: [...prev.sections, ...g.sections] };
+  else acc.push(g);
+  return acc;
+}, []);
 const legal = nav.legal.map((l) => ({ ...l, href: resolve(l.href) })).filter((l) => l.href);
 
-// Country phone numbers (spec 3.3): the country and its number, for every flagship country that has one.
+// Country phone numbers (spec 3.3): India and Kenya only, the two countries with their own office and number
+// (owner decision 2026-10-23; the UAE and Nigeria use the India number).
+const FOOTER_PHONES = ['in', 'ke'];
 const contacts = countries
+  .filter((c) => FOOTER_PHONES.includes(c.data.code.toLowerCase()))
+  .sort((a, b) => FOOTER_PHONES.indexOf(a.data.code.toLowerCase()) - FOOTER_PHONES.indexOf(b.data.code.toLowerCase()))
   .map((c) => ({ country: c.data.name, code: c.data.code, phone: c.data.contact.phone }))
   .filter((c): c is { country: string; code: string; phone: string } => Boolean(c.phone));
 const SOCIAL: Record<string, string> = { linkedin: 'LinkedIn', youtube: 'YouTube', facebook: 'Facebook', instagram: 'Instagram', x: 'X' };
@@ -32,18 +44,21 @@ const year = new Date().getFullYear();
   <h2 id="footer-heading" class="sr-only">Site links and contacts</h2>
   <div class="container-wide py-14 md:py-16">
     <div class="grid gap-10 lg:grid-cols-[1.1fr_3fr]">
-      <div>
-        <Image src={logo} alt={site.logoAlt} width={400} height={79} class="h-auto w-[188px]" />
-        <p class="mt-4 max-w-xs text-[0.9375rem] leading-relaxed">
+      {/* Tablets (640-1199px): the two paragraphs side by side and the contacts in a row under them, so the brand
+          block uses the full width instead of a narrow column beside empty space. */}
+      <div class="sm:grid sm:grid-cols-2 sm:gap-x-10 lg:block">
+        <Image src={logo} alt={site.logoAlt} width={400} height={79} class="h-auto w-[188px] sm:col-span-2" />
+        <p class="mt-4 max-w-xs text-[0.9375rem] leading-relaxed sm:max-w-none lg:max-w-xs">
           Easy Clinic is a secure and versatile healthcare software platform combining Electronic Medical Records (EMR), Practice
           Management, and Clinic Administration tools, designed for physicians, specialists, polyclinics, nursing homes, and
           multi-location clinic networks.
         </p>
-        <p class="mt-3 max-w-xs text-[0.9375rem] leading-relaxed">
+        <p class="mt-3 max-w-xs text-[0.9375rem] leading-relaxed sm:mt-4 sm:max-w-none lg:mt-3 lg:max-w-xs">
           Built for an exceptional user experience, Easy Clinic integrates AI and automation to reduce clinical errors, enhance
           patient engagement, simplify documentation, and deliver intelligent, workflow-driven care across all levels of
           practice, boosting patient care and increasing revenues.
         </p>
+        <div class="sm:col-span-2 sm:flex sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-8 lg:block">
         <address class="mt-5 text-sm not-italic leading-relaxed">
           {site.address.street}, {site.address.city} {site.address.postalCode}, India<br />
           <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="text-white">{site.phone}</a> ·
@@ -60,22 +75,47 @@ const year = new Date().getFullYear();
             ))
           }
         </ul>
+        </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+      {/* Phones: one tap-to-open section per group. */}
+      <div class="sm:hidden">
+        {
+          merged.map((group) => (
+            <details class="footer-acc border-t border-white/10 last:border-b">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-white [&::-webkit-details-marker]:hidden">
+                {group.title}
+                <Icon name="chevron-down" size={20} class="footer-acc__chev text-white/70 transition-transform" />
+              </summary>
+              <nav aria-label={group.title} class="pb-6">
+                <FooterGroupBody links={group.links} sections={group.sections} />
+              </nav>
+            </details>
+          ))
+        }
+      </div>
+
+      {/* Tablets: the groups two by two, long lists in two columns. */}
+      <div class="hidden gap-x-10 gap-y-10 sm:grid sm:grid-cols-2 lg:hidden">
+        {
+          merged.map((group) => (
+            <nav aria-label={group.title}>
+              <p class="mb-4 font-display text-[1.3125rem] leading-tight font-semibold text-white">{group.title}</p>
+              <FooterGroupBody links={group.links} sections={group.sections} split />
+            </nav>
+          ))
+        }
+      </div>
+
+      {/* Desktop: five columns, a long list continuing in the next column under a hidden repeat of its title. */}
+      <div class="hidden grid-cols-5 gap-8 lg:grid">
         {
           groups.map((group) => (
             <nav aria-label={group.continued ? `${group.title} (continued)` : group.title}>
-              <p class:list={['mb-4 font-display text-[1.3125rem] leading-tight font-semibold text-white', group.continued && 'sm:invisible']} aria-hidden={group.continued ? 'true' : undefined}>
+              <p class:list={['mb-4 font-display text-[1.3125rem] leading-tight font-semibold text-white', group.continued && 'invisible']} aria-hidden={group.continued ? 'true' : undefined}>
                 {group.title}
               </p>
-              {group.links.length > 0 && <LinkList links={group.links} />}
-              {group.sections.map((section, i) => (
-                <>
-                  <p class:list={['mb-2.5 text-base font-semibold text-white', (i > 0 || group.links.length > 0) && 'mt-5']}>{section.title}</p>
-                  <LinkList links={section.links} />
-                </>
-              ))}
+              <FooterGroupBody links={group.links} sections={group.sections} />
             </nav>
           ))
         }
@@ -138,6 +178,9 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
+  .footer-acc[open] :global(.footer-acc__chev) {
+    transform: rotate(180deg);
+  }
   .footer-marquee-track {
     animation: footer-marquee 40s linear infinite;
   }

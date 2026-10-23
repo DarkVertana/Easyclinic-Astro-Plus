@@ -3,26 +3,157 @@ import type { SectionValue } from '../../../schemas/sections';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
 import Button from '../../ui/Button.astro';
+import Screenshot from '../../ui/Screenshot.astro';
+import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'prose'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, body, aside, width, link, secondary, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, body, aside, width, link, secondary, media, ctx } = Astro.props;
+
+// Beside an image, an aside written only as "- Key **Value**" lines becomes an icon list; the icon comes from the key.
+const FACT_ICONS: [RegExp, string][] = [
+  [/licen[cs]e|doctor/i, 'user-round'],
+  [/reception|front desk/i, 'concierge-bell'],
+  [/branch|location/i, 'building-2'],
+  [/fee|price|cost|setup/i, 'tags'],
+];
+const factLines = media && aside ? aside.trim().split(/\r?\n/).filter((l) => l.trim()) : [];
+const facts = factLines.every((l) => /^- .+ \*\*.+\*\*$/.test(l.trim()))
+  ? factLines.map((l) => {
+      const [, key, value] = l.trim().match(/^- (.+?) \*\*(.+)\*\*$/)!;
+      return { key, value, icon: FACT_ICONS.find(([re]) => re.test(key))?.[1] ?? 'circle-check' };
+    })
+  : [];
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width={width === 'measure' && !aside ? 'measure' : 'page'}>
-  <div class:list={[aside ? 'grid gap-8 lg:grid-cols-[1.6fr_1fr]' : '']}>
-    <div>
-      {/* A wide section without an aside runs the body the full page width; otherwise it keeps a reading measure. */}
-      <Md text={body} class:list={['leading-relaxed', width === 'wide' && !aside ? 'max-w-none text-[1.0625rem] sm:text-lg' : 'max-w-[42rem] text-lg']} />
-      {
-        (link || secondary) && (
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            {link && <Button {...link} variant="cta" />}
-            {secondary && <Button {...secondary} variant="outline" />}
-          </div>
-        )
-      }
-    </div>
-    {aside && <aside class="card h-fit bg-surface p-6"><Md text={aside} /></aside>}
-  </div>
-</Section>
+{
+  media ? (
+    // With an image: the body as labelled rows (each paragraph's opening bold words are its label) and the aside as
+    // key facts with icons, beside the image.
+    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width="page">
+      <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
+        <div>
+          <div class="prose-rows text-[1.0625rem] leading-relaxed"><Md text={body} /></div>
+          {aside && (
+            facts.length > 0 ? (
+              <dl class="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                {facts.map((f) => (
+                  <div class="flex items-start gap-3.5">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700" aria-hidden="true">
+                      <Icon name={f.icon} size={20} />
+                    </span>
+                    <div>
+                      <dt class="text-sm text-ink-muted">{f.key}</dt>
+                      <dd class="mt-0.5 font-semibold text-ink-heading">{f.value}</dd>
+                    </div>
+                  </div>
+                ))}
+              </dl>
+            ) : (
+              <aside class="prose-facts mt-10">
+                <Md text={aside} />
+              </aside>
+            )
+          )}
+          {(link || secondary) && (
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              {link && <Button {...link} variant="cta" />}
+              {secondary && <Button {...secondary} variant="outline" />}
+            </div>
+          )}
+        </div>
+        <Screenshot
+          media={{ ...media, frame: 'none' }}
+          sizes="(min-width: 75rem) 600px, (min-width: 60rem) 45vw, 100vw"
+          class="mx-auto w-full max-w-[40rem] [&_img]:rounded-xl [&_img]:border [&_img]:border-line"
+        />
+      </div>
+    </Section>
+  ) : (
+    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width={width === 'measure' && !aside ? 'measure' : 'page'}>
+      <div class:list={[aside ? 'grid gap-8 lg:grid-cols-[1.6fr_1fr]' : '']}>
+        <div>
+          {/* A wide section without an aside runs the body the full page width; otherwise it keeps a reading measure. */}
+          <Md text={body} class:list={['leading-relaxed', width === 'wide' && !aside ? 'max-w-none text-[1.0625rem] sm:text-lg' : 'max-w-[42rem] text-lg']} />
+          {
+            (link || secondary) && (
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                {link && <Button {...link} variant="cta" />}
+                {secondary && <Button {...secondary} variant="outline" />}
+              </div>
+            )
+          }
+        </div>
+        {aside && <aside class="card h-fit bg-surface p-6"><Md text={aside} /></aside>}
+      </div>
+    </Section>
+  )
+}
+
+<style>
+  /* Labelled rows: each paragraph's opening bold words sit in a label column, rows split by hairlines. */
+  .prose-rows :global(p) {
+    margin: 0;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--color-line);
+    color: var(--color-ink-muted);
+  }
+  .prose-rows :global(p:last-child) {
+    border-bottom: 1px solid var(--color-line);
+  }
+  .prose-rows :global(p > strong:first-child) {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--ink-heading);
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  @media (min-width: 40rem) {
+    .prose-rows :global(p) {
+      position: relative;
+      padding-left: 9rem;
+    }
+    .prose-rows :global(p > strong:first-child) {
+      position: absolute;
+      left: 0;
+      top: 1.5rem;
+      margin: 0;
+    }
+  }
+
+  /* Key facts: a bordered table of cells split by hairlines (the 1px gap shows the line colour behind), each a
+     small key with its bold value below. */
+  .prose-facts :global(ul) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-line);
+  }
+  @media (min-width: 64rem) {
+    .prose-facts :global(ul) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .prose-facts :global(li) {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    background: var(--color-surface);
+    color: var(--color-ink-muted);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+  .prose-facts :global(li strong) {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--ink-heading);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+</style>

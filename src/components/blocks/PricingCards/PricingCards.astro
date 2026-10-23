@@ -2,7 +2,6 @@
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
 import { BILLING_PERIODS, CURRENCIES, type BillingPeriod, type PlanId } from '../../../schemas/constants';
-import { getRegistry } from '../../../lib/content/registry';
 import { need, optional, unconfirmed } from '../../../lib/content/need';
 import { isProduction } from '../../../lib/content/stage';
 import { annualSaving, formatMoney } from '../../../lib/format/money';
@@ -16,7 +15,6 @@ const { id, eyebrow, heading, intro, tone, currency, switcher, showConditions, p
 
 type Price = CollectionEntry<'prices'>['data'];
 
-const registry = await getRegistry();
 const plans = (await getEntry('plans', 'plans'))?.data;
 if (!plans) throw new Error(`pricingCards on ${ctx.path}: src/data/plans.yaml is missing`);
 const base = (await getEntry(currency))?.data;
@@ -87,8 +85,14 @@ const taxNotes = currencies.map((p) => ({
   text: optional(`${p.currency} tax note`, p.taxNote),
 }));
 
-// Switcher extras: links to the static country pricing pages, and the time-zone map the script uses
-// for a first-visit default. Both come from the country records, not from this component.
+// The square icon badge before each plan name.
+const PLAN_BADGE: Record<string, { icon: string; bg: string; fill: boolean }> = {
+  professional: { icon: 'star', bg: 'bg-[#c9cbd1]', fill: true },
+  premium: { icon: 'crown', bg: 'bg-[#fbb917]', fill: true },
+  enterprise: { icon: 'gem', bg: 'bg-[#8b6fd6]', fill: false },
+};
+
+// Switcher extra: the time-zone map the script uses for a first-visit default, from the country records.
 const TZ_ALIASES: Record<string, string[]> = { 'Asia/Kolkata': ['Asia/Calcutta'] };
 const countryRows = switcher
   ? await Promise.all(
@@ -97,10 +101,6 @@ const countryRows = switcher
         .map(async (p) => ({ currency: p.currency, country: (await getEntry('countries', p.country!))?.data })),
     )
   : [];
-const countryLinks = countryRows.flatMap(({ country }) => {
-  const href = country?.pages.pricing ? registry.urlFor(country.pages.pricing) : null;
-  return country && href ? [{ href, label: `${country.name} pricing` }] : [];
-});
 const zones = Object.fromEntries(
   countryRows.flatMap(({ currency: code, country }) =>
     country ? [country.timezone, ...(TZ_ALIASES[country.timezone] ?? [])].map((tz): [string, string] => [tz, code]) : [],
@@ -152,17 +152,6 @@ const zones = Object.fromEntries(
                 ))}
               </div>
             </fieldset>
-            {countryLinks.length > 0 && (
-              <ul class="mt-2 flex flex-wrap gap-x-5 text-sm">
-                {countryLinks.map((l) => (
-                  <li>
-                    <a href={l.href} class:list={['inline-flex min-h-11 items-center', inverse && 'text-ink-inverse underline']}>
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         )
       }
@@ -197,14 +186,13 @@ const zones = Object.fromEntries(
       {
         cards.map(({ plan, quote, variants, cta }) => (
           <li class:list={['card flex flex-col p-6 text-ink', plan.highlight && 'border-2 border-blue-700']}>
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <h3 class="font-display text-xl font-semibold">{plan.name}</h3>
-              {plan.highlight && (
-                <p class="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-navy-900">
-                  <Icon name="star" size={14} />
-                  <span>{plan.highlight}</span>
-                </p>
+            <div class="flex items-center gap-3">
+              {PLAN_BADGE[plan.id] && (
+                <span class:list={['flex size-10 shrink-0 items-center justify-center rounded-[10px] text-white', PLAN_BADGE[plan.id].bg]} aria-hidden="true">
+                  <Icon name={PLAN_BADGE[plan.id].icon} size={22} class={PLAN_BADGE[plan.id].fill ? 'fill-white' : undefined} />
+                </span>
               )}
+              <h3 class="font-display text-xl font-semibold uppercase">{plan.name}</h3>
             </div>
             <p class="mt-2 text-ink-muted">{plan.bestFor}</p>
 

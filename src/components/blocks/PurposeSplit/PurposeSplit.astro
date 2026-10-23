@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'purposeSplit'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, image, imageAlt, items, ctx } = Astro.props;
+---
+
+{/* Phones: photo, then the cards stacked. Tablets (640-959px): cards two across, the photo full width below them. From 960px: photo on
+    the left, as tall as the cards beside it (cropped to fill, not stretched). */}
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <div class="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-stretch md:gap-12 lg:gap-16">
+    {/* From 960px the photo is taken out of flow inside its cell, so the cards alone set the row height. */}
+    <div class="relative mx-auto w-full max-w-[36rem] sm:order-last sm:max-w-none md:order-none">
+      <Image
+        src={image}
+        alt={imageAlt}
+        widths={[480, 640, 960]}
+        sizes="(min-width: 60rem) 560px, (min-width: 40rem) 36rem, 100vw"
+        class="h-auto w-full rounded-2xl object-cover shadow-[0_24px_60px_-28px_rgb(10_37_64/0.4)] md:absolute md:inset-0 md:h-full!"
+      />
+    </div>
+    <ul class="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
+      {
+        items.map((item) => (
+          <li class="purpose-card flex flex-col gap-4 rounded-2xl border border-line bg-surface p-6 sm:p-7">
+            <span class="flex size-14 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-[0_10px_20px_-10px_rgb(0_91_176/0.7)]" aria-hidden="true">
+              <Icon name={item.icon} size={28} />
+            </span>
+            <div>
+              <h3 class="font-display text-xl font-semibold text-ink-heading">{item.title}</h3>
+              <Md text={item.body} class="mt-2 leading-relaxed text-ink-muted" />
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>
+
+<style>
+  .purpose-card {
+    box-shadow: 0 10px 30px -20px rgb(10 37 64 / 0.3);
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  @media (hover: hover) {
+    .purpose-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 44px -24px rgb(10 37 64 / 0.4);
+    }
+  }
+</style>

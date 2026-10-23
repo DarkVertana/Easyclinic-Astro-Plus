@@ -1,0 +1,235 @@
+---
+import { getCountries, getCountryCallingCode } from 'libphonenumber-js/min';
+import Icon from './Icon.astro';
+
+/**
+ * A country calling-code picker with flags: a button showing the chosen flag, opening a list of every country
+ * (flag, name, code) with the chosen one ticked. It submits the code as `name` (e.g. "+91") and the country as
+ * `${name}Country` (e.g. "IN"). Dial codes come from libphonenumber-js, names from the browser-independent
+ * Intl.DisplayNames at build time, and flags from flag-icons, served from this site (the CSP allows only that).
+ *
+ * Keyboard: Enter, Space or the down arrow opens it; the arrows move; Enter picks; Escape closes; typing letters
+ * jumps to a country.
+ */
+interface Props {
+  name: string;
+  /** ISO 3166-1 alpha-2 code selected first. */
+  defaultCountry?: string;
+  id: string;
+}
+
+const { name, defaultCountry = 'IN', id } = Astro.props;
+
+const flags = import.meta.glob<string>('/node_modules/flag-icons/flags/4x3/*.svg', { query: '?url', import: 'default', eager: true });
+const flagUrl = (iso: string) => flags[`/node_modules/flag-icons/flags/4x3/${iso.toLowerCase()}.svg`];
+const regionName = new Intl.DisplayNames(['en'], { type: 'region' });
+
+const countries = getCountries()
+  .map((iso) => ({ iso, name: regionName.of(iso) ?? iso, code: `+${getCountryCallingCode(iso)}`, flag: flagUrl(iso) }))
+  .filter((c) => c.flag)
+  .sort((a, b) => a.name.localeCompare(b.name, 'en'));
+const selected = countries.find((c) => c.iso === defaultCountry.toUpperCase()) ?? countries.find((c) => c.iso === 'IN')!;
+const listId = `${id}-list`;
+---
+
+<div class="ccp" data-ccp>
+  <input type="hidden" name={name} value={selected.code} data-ccp-code />
+  <input type="hidden" name={`${name}Country`} value={selected.iso} data-ccp-iso />
+  <button
+    type="button"
+    id={id}
+    class="ccp-button"
+    aria-haspopup="listbox"
+    aria-expanded="false"
+    aria-controls={listId}
+    aria-label={`Country code: ${selected.name} (${selected.code})`}
+    data-ccp-button
+  >
+    <img src={selected.flag} alt="" width="24" height="18" class="ccp-flag" data-ccp-flag />
+    <Icon name="chevron-down" size={14} class="ccp-caret" />
+  </button>
+  <ul id={listId} role="listbox" tabindex="-1" aria-label="Country code" class="ccp-list" hidden data-ccp-list>
+    {
+      countries.map((c) => (
+        <li
+          role="option"
+          id={`${id}-${c.iso}`}
+          aria-selected={c.iso === selected.iso ? 'true' : 'false'}
+          data-iso={c.iso}
+          data-code={c.code}
+          data-name={c.name}
+          data-flag={c.flag}
+          class="ccp-option"
+        >
+          <img src={c.flag} alt="" width="24" height="18" loading="lazy" class="ccp-flag" />
+          <span class="min-w-0 truncate">
+            {c.name} <span class="ccp-code">({c.code})</span>
+          </span>
+          <span class="ccp-tick" aria-hidden="true">
+            <Icon name="check" size={12} />
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-ccp]')) {
+    const button = root.querySelector<HTMLButtonElement>('[data-ccp-button]')!;
+    const list = root.querySelector<HTMLUListElement>('[data-ccp-list]')!;
+    const code = root.querySelector<HTMLInputElement>('[data-ccp-code]')!;
+    const iso = root.querySelector<HTMLInputElement>('[data-ccp-iso]')!;
+    const flag = root.querySelector<HTMLImageElement>('[data-ccp-flag]')!;
+    const options = [...list.querySelectorAll<HTMLLIElement>('[role="option"]')];
+    let active = Math.max(0, options.findIndex((o) => o.getAttribute('aria-selected') === 'true'));
+    let typed = '';
+    let typedAt = 0;
+
+    const highlight = (i: number) => {
+      options[active]?.classList.remove('is-active');
+      active = (i + options.length) % options.length;
+      const o = options[active];
+      o.classList.add('is-active');
+      list.setAttribute('aria-activedescendant', o.id);
+      o.scrollIntoView({ block: 'nearest' });
+    };
+    const open = () => {
+      list.hidden = false;
+      button.setAttribute('aria-expanded', 'true');
+      highlight(options.findIndex((o) => o.getAttribute('aria-selected') === 'true'));
+      list.focus();
+    };
+    const close = (refocus = true) => {
+      list.hidden = true;
+      button.setAttribute('aria-expanded', 'false');
+      if (refocus) button.focus();
+    };
+    const choose = (i: number) => {
+      options.forEach((o) => o.setAttribute('aria-selected', 'false'));
+      const o = options[i];
+      o.setAttribute('aria-selected', 'true');
+      code.value = o.dataset.code!;
+      iso.value = o.dataset.iso!;
+      flag.src = o.dataset.flag!;
+      button.setAttribute('aria-label', `Country code: ${o.dataset.name} (${o.dataset.code})`);
+      close();
+    };
+
+    button.addEventListener('click', () => (list.hidden ? open() : close()));
+    button.addEventListener('keydown', (e) => {
+      if (['ArrowDown', 'ArrowUp'].includes(e.key)) {
+        e.preventDefault();
+        open();
+      }
+    });
+    list.addEventListener('click', (e) => {
+      const o = (e.target as Element).closest<HTMLLIElement>('[role="option"]');
+      if (o) choose(options.indexOf(o));
+    });
+    list.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') highlight(active + 1);
+      else if (e.key === 'ArrowUp') highlight(active - 1);
+      else if (e.key === 'Home') highlight(0);
+      else if (e.key === 'End') highlight(options.length - 1);
+      else if (e.key === 'Enter' || e.key === ' ') choose(active);
+      else if (e.key === 'Escape') close();
+      else if (e.key === 'Tab') close(false);
+      else if (e.key.length === 1 && /\S/.test(e.key)) {
+        // Type-ahead: letters typed within a second build up a prefix.
+        typed = (Date.now() - typedAt < 1000 ? typed : '') + e.key.toLowerCase();
+        typedAt = Date.now();
+        const i = options.findIndex((o) => o.dataset.name!.toLowerCase().startsWith(typed));
+        if (i >= 0) highlight(i);
+      } else return;
+      e.preventDefault();
+    });
+    document.addEventListener('click', (e) => {
+      if (!list.hidden && !root.contains(e.target as Node)) close(false);
+    });
+  }
+</script>
+
+<style>
+  .ccp {
+    position: static;
+    display: flex;
+    flex: 0 0 auto;
+  }
+  .ccp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    height: 100%;
+    padding: 0 0.625rem 0 0.75rem;
+    border-right: 1px solid var(--border);
+    border-radius: 0.5rem 0 0 0.5rem;
+    color: var(--ink-muted);
+  }
+  .ccp-button:focus-visible {
+    outline: 2px solid var(--color-blue-600);
+    outline-offset: -2px;
+  }
+  .ccp-button[aria-expanded='true'] :global(.ccp-caret) {
+    transform: rotate(180deg);
+  }
+  .ccp-flag {
+    width: 1.5rem;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 0.08);
+  }
+  /* A compact panel under the flag: 20rem wide, never wider than the phone box. */
+  .ccp-list {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    z-index: 30;
+    width: 20rem;
+    max-width: 100%;
+    max-height: 15rem;
+    margin: 0;
+    padding: 0.25rem 0;
+    overflow-y: auto;
+    list-style: none;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface);
+    box-shadow: 0 16px 40px -16px rgb(10 37 64 / 0.35);
+  }
+  .ccp-list:focus {
+    outline: none;
+  }
+  .ccp-option {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--ink-heading);
+    cursor: pointer;
+  }
+  .ccp-option:hover,
+  .ccp-option.is-active {
+    background: var(--color-surface-muted);
+  }
+  .ccp-code {
+    color: var(--ink-muted);
+  }
+  .ccp-tick {
+    display: none;
+    margin-left: auto;
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: var(--ink-heading);
+    color: #fff;
+  }
+  .ccp-option[aria-selected='true'] .ccp-tick {
+    display: inline-flex;
+  }
+</style>

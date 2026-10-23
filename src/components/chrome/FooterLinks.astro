@@ -4,12 +4,13 @@ import { isProduction } from '../../lib/content/stage';
 /** One list of footer links. A link to a page that does not exist yet is dotted in preview. */
 interface Props {
   links: { label: string; href: string | null; missing: boolean }[];
+  class?: string;
 }
 
-const { links } = Astro.props;
+const { links, class: className } = Astro.props;
 ---
 
-<ul class="space-y-2.5 text-[0.9375rem]">
+<ul class:list={['space-y-2.5 text-[0.9375rem]', className]}>
   {
     links.map((l) => (
       <li>

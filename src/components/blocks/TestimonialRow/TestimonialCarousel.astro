@@ -1,0 +1,190 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import bandImage from '../../../assets/images/pricing/sl_021921_40900_13.jpg';
+import { requireConfirmed } from '../../../lib/content/need';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+  testimonials: CollectionEntry<'testimonials'>[];
+}
+
+const { id, eyebrow, heading, intro, testimonials } = Astro.props;
+const headingId = id ? `${id}-heading` : undefined;
+
+// `photo` is a file name in src/assets/images/testimonials (as in Quote.astro).
+const photos = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/testimonials/*.{webp,jpg,jpeg,png}', { eager: true });
+
+const slides = testimonials.map((entry) => {
+  const t = entry.data;
+  requireConfirmed(Astro, `consent on file for ${t.name}'s testimonial`, t.consentOnFile);
+  const photo = t.photo ? photos[`/src/assets/images/testimonials/${t.photo}`]?.default : undefined;
+  if (t.photo && !photo) throw new Error(`testimonial "${entry.id}": photo "${t.photo}" not found in src/assets/images/testimonials`);
+  // The pull quote is the yellow tag and the `underline` phrases the red dashes; each must be verbatim in the quote.
+  const quote = t.quote.replace(/\s+/g, ' ').trim();
+  const marks: { start: number; end: number; kind: 'mark' | 'flag' }[] = [];
+  const place = (phrase: string | undefined, kind: 'mark' | 'flag') => {
+    const text = phrase?.replace(/\s+/g, ' ').trim();
+    if (!text) return;
+    const start = quote.indexOf(text);
+    if (start < 0) throw new Error(`testimonial "${entry.id}": "${text}" is not verbatim in the quote`);
+    const end = start + text.length;
+    if (!marks.some((m) => start < m.end && end > m.start)) marks.push({ start, end, kind });
+  };
+  place(t.pullQuote, 'mark');
+  (t.underline ?? []).forEach((phrase) => place(phrase, 'flag'));
+  marks.sort((a, b) => a.start - b.start);
+  const parts: { text: string; kind: 'plain' | 'mark' | 'flag' }[] = [];
+  let cursor = 0;
+  for (const m of marks) {
+    parts.push({ text: quote.slice(cursor, m.start), kind: 'plain' }, { text: quote.slice(m.start, m.end), kind: m.kind });
+    cursor = m.end;
+  }
+  parts.push({ text: quote.slice(cursor), kind: 'plain' });
+  // Role, clinic and city, as on the live site: "Pulmonologist", not "Pulmonologist, Pulmonology".
+  const roleLine = [t.role === 'Doctor' ? null : t.role, t.clinic, t.city].filter(Boolean).join(', ');
+  const initials = t.name.replace(/^Dr\.?\s+/, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join('');
+  return { key: entry.id, name: t.name, photo, parts, roleLine, initials };
+});
+const many = slides.length > 1;
+---
+
+<section id={id} aria-labelledby={heading ? headingId : undefined} class="relative isolate overflow-hidden py-10" data-tone="plain">
+  {/* The medical-cross image alone, centred, with no tint. */}
+  <Image src={bandImage} alt="" widths={[768, 1280, 1920]} sizes="100vw" class="absolute inset-0 -z-10 h-full! w-full object-cover object-center" />
+  <div class="container-page relative grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-0">
+    {/* A soft shadow keeps the white text legible where it crosses the pale parts of the image. */}
+    <header class="[text-shadow:0_1px_14px_rgb(3_70_100/0.45)]">
+      {eyebrow && <p class="eyebrow mb-2 !text-white">{eyebrow}</p>}
+      {heading && <h2 id={headingId} class="!text-white">{heading}</h2>}
+      {intro && <Md text={intro} class="lede mt-4 max-w-[30rem] text-white" />}
+    </header>
+
+    <div class="relative min-w-0" data-carousel aria-roledescription="carousel" aria-label={heading ? `${heading}: testimonials` : 'Testimonials'}>
+      <div class="quote-slides flex snap-x snap-mandatory overflow-x-auto rounded-2xl bg-surface shadow-[0_30px_60px_-30px_rgb(4_40_60/0.55)]" data-track tabindex="0">
+        {
+          slides.map((s, i) => (
+            <figure
+              class="m-0 flex w-full shrink-0 snap-center flex-col p-7 pb-[5.25rem]"
+              aria-roledescription="slide"
+              aria-label={`${i + 1} of ${slides.length}`}
+              data-slide
+            >
+              <blockquote class="m-0 text-[15px] leading-[1.75] text-ink sm:text-base sm:leading-[1.75]">
+                <p>
+                  {s.parts.map((part) =>
+                    part.kind === 'mark' ? <mark class="quote-mark">{part.text}</mark> : part.kind === 'flag' ? <span class="quote-flag">{part.text}</span> : part.text,
+                  )}
+                </p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center gap-4">
+                {s.photo ? (
+                  <Image src={s.photo} alt="" width={128} height={128} layout="none" class="size-14 shrink-0 rounded-full object-cover ring-2 ring-teal-50 ring-offset-2" />
+                ) : (
+                  <span class="flex size-14 shrink-0 items-center justify-center rounded-full bg-teal-50 font-display text-lg font-semibold text-teal-700" aria-hidden="true">
+                    {s.initials}
+                  </span>
+                )}
+                <span class="min-w-0">
+                  <span class="block font-display text-lg leading-snug font-semibold text-ink-heading">{s.name}</span>
+                  {s.roleLine && <span class="mt-1 block text-sm leading-relaxed text-ink-muted">{s.roleLine}</span>}
+                  <span class="mt-1.5 flex gap-0.5" aria-hidden="true">
+                    {[1, 2, 3, 4, 5].map(() => <Icon name="star" size={18} class="fill-star text-star" />)}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+
+      {
+        many && (
+          <>
+            {/* The arrows in the card's bottom-right corner, 28px in from the edges like the text. */}
+            <div class="absolute right-7 bottom-7 flex items-center gap-2">
+              <button type="button" class="quote-arrow" data-prev aria-label="Previous testimonial">
+                <Icon name="chevron-right" size={20} class="rotate-180" />
+              </button>
+              <button type="button" class="quote-arrow" data-next aria-label="Next testimonial">
+                <Icon name="chevron-right" size={20} />
+              </button>
+            </div>
+          </>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  // The arrows scroll the track a slide at a time; swiping and the keyboard scroll it natively. It moves on
+  // by itself every 7 seconds unless the visitor prefers reduced motion, and pauses while hovered or focused.
+  for (const root of document.querySelectorAll<HTMLElement>('[data-carousel]')) {
+    const track = root.querySelector<HTMLElement>('[data-track]');
+    const count = root.querySelectorAll('[data-slide]').length;
+    if (!track || count < 2) continue;
+    const current = () => Math.round(track.scrollLeft / track.clientWidth);
+    const go = (i: number) => track.scrollTo({ left: ((i + count) % count) * track.clientWidth, behavior: 'smooth' });
+    root.querySelector('[data-prev]')?.addEventListener('click', () => go(current() - 1));
+    root.querySelector('[data-next]')?.addEventListener('click', () => go(current() + 1));
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let paused = false;
+      root.addEventListener('mouseenter', () => (paused = true));
+      root.addEventListener('mouseleave', () => (paused = false));
+      root.addEventListener('focusin', () => (paused = true));
+      root.addEventListener('focusout', () => (paused = false));
+      setInterval(() => !paused && !document.hidden && go(current() + 1), 7000);
+    }
+  }
+</script>
+
+<style>
+  .quote-slides {
+    scrollbar-width: none;
+  }
+  .quote-slides::-webkit-scrollbar {
+    display: none;
+  }
+  /* The key sentence as the site's yellow tag with a dashed amber outline (as ==text== in markdown). */
+  .quote-mark {
+    background: #fff3b0;
+    color: var(--ink-heading);
+    padding: 0.05em 0.3em;
+    border: 1.5px dashed #b07d00;
+    border-radius: 0.3em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  /* Red dashes under the phrases the doctor stresses. */
+  .quote-flag {
+    color: var(--ink-heading);
+    text-decoration: underline dashed #d93025;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+  .quote-arrow {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-line);
+    border-radius: 9999px;
+    color: var(--ink-heading);
+    transition:
+      background 0.15s,
+      border-color 0.15s;
+  }
+  .quote-arrow:hover,
+  .quote-arrow:focus-visible {
+    background: var(--color-surface-muted);
+    border-color: var(--color-line-strong);
+  }
+</style>

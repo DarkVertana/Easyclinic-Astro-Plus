@@ -34,8 +34,8 @@ editorialPass:
     AI and still need the read-aloud pass.
 heroMedia:
   kind: screenshot
-  src: ../../assets/images/pricing/Payor-7.png
-  alt: An Easy Clinic patient profile with the patient's details, a summary of the last visit and the insurer, membership number and cover category on file
+  src: ../../assets/images/pricing/9_01_Inventory.png
+  alt: An Easy Clinic location price list with procedures, investigations and medicines, each showing its base price, any markup or markdown and the applied price
   frame: none
 heroStrip:
   ratings: true
@@ -120,6 +120,15 @@ links:
     - href: /switch/
       label: Switching to Easy Clinic
       description: The four steps from the demo to your first day, and what changes for a clinic on paper or other software.
+helpBand:
+  heading: Not sure which plan is right for you?
+  body: >-
+    If you have any questions, or prefer to explore our plans with an expert, you can sign up for a
+    personalised demo.
+  cta:
+    label: Contact us
+    href: /contact-us/
+  image: ../../assets/images/aboutus/not-sure-which-plan.png
 closing:
   heading: Get the monthly total for your clinic in 20 minutes
   body: >-
@@ -160,7 +169,7 @@ sections:
         Every price is per doctor, and your receptionist's login costs nothing.
       currency: usd
       switcher: true
-      showConditions: true
+      showConditions: false
       planCta:
         label: Start with {plan}
         href: /contact-us/#book-a-demo
@@ -207,7 +216,7 @@ sections:
       intro: >-
         The bigger modules, pharmacy and lab management among them, come with Enterprise. On
         Professional and Premium you can add them one at a time, from the modules listed below.
-      open: false
+      open: true
   - discriminant: addOns
     value:
       id: add-ons
@@ -221,18 +230,21 @@ sections:
       id: licences
       heading: Who needs a licence, and which plans cover more than one location
       body: |
-        You pay one licence for each doctor who uses Easy Clinic, and every plan price is per doctor per month, whether you are billed annually or quarterly.
+        **Doctors** You pay one licence for each doctor who uses Easy Clinic, and every plan price is per doctor per month, whether you are billed annually or quarterly.
 
-        Your receptionist does not need one. A reception login is included in the price of every plan, and the person at the front desk books appointments and takes payments on it. It cannot open the EMR or issue a prescription.
+        **Reception** Your receptionist does not need one. A reception login is included in the price of every plan, and the person at the front desk books appointments and takes payments on it. It cannot open the EMR or issue a prescription.
 
-        Professional covers one location. Premium and Enterprise cover more than one, and Enterprise adds central control of every branch.
+        **Locations** Professional covers one location. Premium and Enterprise cover more than one, and Enterprise adds central control of every branch.
       aside: |
-        **In short**
-
-        - Each doctor: one licence.
-        - A reception login: included.
-        - A second branch: Premium or Enterprise.
-        - Setup: no fee.
+        - Licences **One per doctor**
+        - Reception login **Included**
+        - Second branch **Premium or Enterprise**
+        - Setup fee **None**
+      media:
+        kind: screenshot
+        src: ../../assets/images/best-clinic-management/03.webp
+        alt: Six signs it is time for clinic software, from phone bookings and paper records to opening a second location and manual claims
+        frame: none
   - discriminant: stepList
     value:
       id: training
@@ -262,9 +274,9 @@ sections:
       id: free-or-paid
       heading: Free EMR or paid clinic software
       intro: >-
-        Open-source EMRs such as OpenMRS and OpenEMR cost nothing to license, and for some clinics they
-        are the right choice. The cost moves to the server and to the person you call when it stops
-        working. This is where the money goes on each side.
+        Open-source EMRs such as OpenMRS and OpenEMR ==cost nothing to license== and suit some clinics.
+        The cost moves to the server and the person you call when it breaks. Here is where the
+        money goes.
       caption: A free or open-source EMR compared with Easy Clinic
       columns:
         - What you are paying for
@@ -272,26 +284,26 @@ sections:
         - Easy Clinic
       rows:
         - - The software licence
-          - Nothing.
-          - '{price:usd.professional.annual} per doctor per month on Professional, billed annually.'
+          - ==Nothing==.
+          - '=={price:usd.professional.annual} per doctor per month== on Professional, billed annually.'
         - - Hosting
-          - Your own server, or a hosting partner you pay separately.
-          - Hosted by Easy Clinic and included in the price. Enterprise can have a private cloud on request.
+          - Your own server, or ^^a hosting partner you pay separately^^.
+          - Hosted by Easy Clinic and ==included in the price==. Enterprise can have a private cloud on request.
         - - Setup and training
-          - You or a local IT partner install and configure it.
-          - No setup fee, and four days of training for you and your staff.
+          - ^^You or a local IT partner install^^ and configure it.
+          - ==No setup fee==, and four days of training for you and your staff.
         - - Support
-          - Community forums, or a paid support contract with a partner.
-          - Unlimited support by phone and chat on every plan.
+          - Community forums, or ^^a paid support contract^^ with a partner.
+          - ==Unlimited support== by phone and chat on every plan.
         - - Appointments and billing
-          - Varies by project. Check that billing works the way your clinic invoices and gets paid.
-          - On every plan, with a reception login at no charge.
+          - ^^Varies by project^^. Check that ^^billing works^^ the way your clinic invoices and gets paid.
+          - ==On every plan==, with a reception login at no charge.
         - - WhatsApp reminders
-          - A WhatsApp Business API provider, connected by someone technical.
-          - On Premium and Enterprise. Professional sends SMS and email reminders.
+          - A WhatsApp Business API provider, ^^connected by someone technical^^.
+          - ==On Premium and Enterprise==. Professional sends SMS and email reminders.
         - - Who it suits
-          - A programme with its own IT team, or one doctor with no staff and no plans to grow.
-          - A private clinic that wants the chart and the till on one login, and someone to call.
+          - A programme with ^^its own IT team^^, or ^^one doctor^^ with no staff and no plans to grow.
+          - A private clinic that wants ==the chart and the till on one login==, and someone to call.
       note: >-
         KenyaEMR, used in many Kenyan public facilities, is a distribution of OpenMRS. Hosting and
         support costs for any open-source EMR depend on who you hire to run it. The
@@ -299,10 +311,11 @@ sections:
   - discriminant: testimonialRow
     value:
       id: customers
-      heading: Doctors who have used it for years
-      intro: Two doctors in India on why they stayed, in their own words.
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
       items:
         - manish-bhatia
         - premanand-raya
-      layout: row
+        - nrp-chandra-balaji
+      layout: carousel
       usePullQuote: false

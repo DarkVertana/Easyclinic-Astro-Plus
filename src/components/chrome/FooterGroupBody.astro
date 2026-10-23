@@ -1,0 +1,24 @@
+---
+import LinkList from './FooterLinks.astro';
+
+type Link = { label: string; href: string | null; missing: boolean };
+interface Props {
+  links: Link[];
+  sections: { title: string; links: Link[] }[];
+  /** Run long lists in two columns (the tablet footer). */
+  split?: boolean;
+}
+
+const { links, sections, split = false } = Astro.props;
+const cols = (n: number) => (split && n > 10 ? 'columns-2 gap-x-6 [&>li]:break-inside-avoid' : undefined);
+---
+
+{links.length > 0 && <LinkList links={links} class={cols(links.length)} />}
+{
+  sections.map((section, i) => (
+    <>
+      <p class:list={['mb-2.5 text-base font-semibold text-white', (i > 0 || links.length > 0) && 'mt-5']}>{section.title}</p>
+      <LinkList links={section.links} class={cols(section.links.length)} />
+    </>
+  ))
+}

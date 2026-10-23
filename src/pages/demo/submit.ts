@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { CRM_WEBHOOK_TOKEN, CRM_WEBHOOK_URL, DEMO_REF_SECRET } from 'astro:env/server';
-import { demoRequest } from '../../lib/crm/schema';
+import { DIAL_CODES, demoRequest } from '../../lib/crm/schema';
 import { createRef } from '../../lib/crm/ref';
 import { sendToCrm } from '../../lib/crm/send';
 import { isProduction } from '../../lib/content/stage';
@@ -32,12 +32,17 @@ export const POST: APIRoute = async ({ request }) => {
 
   const lead = parsed.data;
   const countries = await getCollection('countries');
-  const countryId = lead.pageCountry || countries.find((c) => c.data.name === lead.country)?.id || '';
+  // The short contact form has no country field, so fall back to the country of the dial code.
+  const dial = DIAL_CODES.find((d) => d.code === lead.dialCode);
+  const dialCountry = lead.dialCodeCountry?.toLowerCase() || (dial && 'country' in dial ? dial.country : '');
+  const countryId = lead.pageCountry || countries.find((c) => c.data.name === lead.country)?.id || dialCountry;
 
   // Spam traps: a filled honeypot, or a form submitted within 3 seconds of loading. Bots get the same
   // confirmation page but no signed reference, so no lead is sent and no conversion is counted.
   const spam = Boolean(lead.website) || (lead.startedAt !== undefined && Date.now() - lead.startedAt < 3000);
-  const params = new URLSearchParams({ c: countryId, pt: lead.practiceType, l: lead.locations, from: lead.page });
+  const params = new URLSearchParams({ c: countryId, from: lead.page });
+  if (lead.practiceType) params.set('pt', lead.practiceType);
+  if (lead.locations) params.set('l', lead.locations);
   let location = `/demo/confirmation/?${params}`;
 
   if (!spam) {

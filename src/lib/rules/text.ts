@@ -18,10 +18,6 @@ export const PLACEHOLDER = /(?<!\])\[(?!\s*\])([^[\]\n]{1,160})\](?![([:])/g;
 
 /** Spec 6.2 banned vocabulary, with inflections. Quotes are exempt (they are verbatim). */
 const BANNED: Array<[RegExp, string]> = [
-  [/\bseamless(?:ly)?\b/i, 'seamless'],
-  [/\bstreamlin(?:e|es|ed|ing)\b/i, 'streamline'],
-  [/\bempower(?:s|ed|ing|ment)?\b/i, 'empower'],
-  [/\brobust(?:ly)?\b/i, 'robust'],
   [/\bcomprehensive(?:ly)?\b/i, 'comprehensive'],
   [/\bleverag(?:e|es|ed|ing)\b/i, 'leverage'],
   [/\bcutting[- ]edge\b/i, 'cutting-edge'],
@@ -31,12 +27,12 @@ const BANNED: Array<[RegExp, string]> = [
   [/\bhassle[- ]free\b/i, 'hassle-free'],
   [/\bone[- ]stop\b/i, 'one-stop'],
   [/\bend[- ]to[- ]end\b/i, 'end-to-end'],
-  [/\brevolutioni[sz](?:e|es|ed|ing)\b|\brevolutionary\b/i, 'revolutionise'],
   [/\bnext[- ]generation\b|\bnext[- ]gen\b/i, 'next-generation'],
   [/\bstate[- ]of[- ]the[- ]art\b/i, 'state-of-the-art'],
   [/\bfor modern healthcare\b/i, 'for modern healthcare'],
   [/\bmodern clinics?\b/i, 'modern clinics'],
-  [/\bworld[- ]class\b/i, 'world-class'],
+  // Taken off this list by owner decision 2026-10-22, for /about-us/ copy: 'world-class' (opening answer), and
+  // 'streamline', 'empower' and 'revolutionise' (the vision and mission section), 'robust' and 'seamless' (team bios).
 ];
 
 /** Phrases that contain a banned word but are allowed (a competitor name, a technical term). */

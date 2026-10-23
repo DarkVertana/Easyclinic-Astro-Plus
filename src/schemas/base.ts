@@ -160,6 +160,16 @@ export const pageBase = (ctx: SchemaContext) =>
       }),
       SHOWCASE_PRESENT_IF,
     ),
+    /** After the related links: an illustration beside a short question, a line of help and one button. */
+    helpBand: z
+      .object({
+        heading: z.string().min(5),
+        body: md.optional(),
+        cta,
+        image: ctx.image(),
+        imageAlt: z.string().default(''),
+      })
+      .optional(),
     /** Closing CTA band. Copy is per page; there is no shared closing block (spec 2.11). */
     closing: optionalGroup(
       z.object({

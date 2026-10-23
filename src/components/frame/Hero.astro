@@ -19,12 +19,14 @@ interface Props {
   heroStrip?: { regulators: ReferenceDataEntry<'regulators'>[]; ratings: boolean; study: boolean };
   /** A narrower answer paragraph (40rem), so it wraps to the planned number of lines (the home page). */
   narrowLede?: boolean;
+  /** No gap between the text and image columns on wide screens (the home page). */
+  noColumnGap?: boolean;
   /** The feature-page hero: a heading written to fit two lines, and a screenshot card as tall as the text. */
   largeHeading?: boolean;
   byline?: { author: ReferenceDataEntry<'authors'> | null; reviewedBy?: ReferenceDataEntry<'authors'>; lastUpdated: Date | null };
 }
 
-const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline } = Astro.props;
+const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline, noColumnGap = false } = Astro.props;
 const registry = await getRegistry();
 const regulators = heroStrip?.regulators.length ? await getEntries(heroStrip.regulators) : [];
 const facts = heroStrip?.ratings ? (await getEntry('facts', 'facts'))!.data.facts : null;
@@ -50,27 +52,24 @@ if (study) {
 const trustHref = registry.urlFor('/trust/');
 // The /curapilot/ studyCard (id: study) says the paper names AI Consult, not CuraPilot.
 const studyHref = registry.urlFor('/curapilot/#study');
-// A hero with media splits its text column: the heading, answer and CTAs sit beside the image, which runs from the top
-// of the h1 to the bottom of the CTAs, and anything else (the country contact card, the ratings strip, the byline)
-// runs on below. (The template always passes the aside slot, sometimes empty, so check what it renders.)
+// A hero with media sets its whole text column (heading, answer, CTAs, contact card, ratings strip, byline) beside the
+// image, which is centred against it. (The template always passes the aside slot, sometimes empty, so check what it renders.)
 const aside = Astro.slots.has('aside') ? (await Astro.slots.render('aside')).trim() : '';
 // An image panel for the right column, and a stats line under the CTAs. With a panel the text sits in rows 2 and 3
 // of four, so the two 1fr rows centre it against the panel. It goes side by side from md
 // (960px), as the panel is narrow enough to share the row with the text.
 const media = Astro.slots.has('media') ? (await Astro.slots.render('media')).trim() : '';
 const stats = Astro.slots.has('stats') ? (await Astro.slots.render('stats')).trim() : '';
-const split = Boolean(heroMedia);
-const fill = split;
 ---
 
 <section class="overflow-x-clip rounded-t-[30px] border-b border-line bg-gradient-to-b from-blue-50 to-surface">
   <div
     class:list={[
       'container-page grid items-center gap-10 pt-10 pb-10 md:pt-14',
-      media ? 'md:grid-cols-[1.05fr_1fr] md:grid-rows-[1fr_auto_auto_1fr] md:items-start md:gap-x-10 md:gap-y-0 md:pb-16 lg:gap-x-16' : heroMedia ? ['md:pb-16 lg:grid-cols-[1.2fr_1fr] lg:gap-x-0 lg:gap-y-0', fill ? 'lg:items-stretch' : 'lg:items-start'] : 'md:pb-16',
+      media ? 'md:grid-cols-[1.05fr_1fr] md:grid-rows-[1fr_auto_auto_1fr] md:items-start md:gap-x-10 md:gap-y-0 md:pb-16 lg:gap-x-16' : heroMedia ? ['md:pb-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-y-0 lg:items-center', noColumnGap ? 'lg:gap-x-0' : 'lg:gap-x-12 xl:gap-x-16'] : 'md:pb-16',
     ]}
   >
-    <div class:list={['max-w-[44rem] lg:col-start-1', media ? 'md:col-start-1 md:row-start-2' : 'lg:row-start-1']}>
+    <div class:list={['max-w-[44rem] lg:col-start-1', media ? 'md:col-start-1 md:row-start-2' : 'lg:row-start-1 lg:self-end']}>
       {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
       <h1 class:list={[media && 'md:text-[2.375rem] md:leading-[1.15]', largeHeading ? 'lg:text-[2.75rem] lg:leading-[1.12]' : 'lg:text-[2.875rem]']}>{h1}</h1>
       <Md text={openingAnswer} class:list={['lede mt-5 text-ink', narrowLede && 'lg:max-w-[40rem]', media && 'md:text-[1.0625rem] lg:text-[1.1875rem]']} />
@@ -81,8 +80,10 @@ const fill = split;
       {stats && <Fragment set:html={stats} />}
     </div>
 
-    {/* The grid's row gap would open up between the CTAs and what follows them; -mt-10 takes it back. */}
-    <div class:list={['-mt-10 max-w-[44rem] lg:col-start-1 lg:mt-0', media ? 'md:col-start-1 md:row-start-3 md:mt-0' : 'lg:row-start-2']}>
+    {/* The grid's row gap would open up between the CTAs and what follows them; -mt-10 takes it back. Beside an image
+        the two rows stretch to its height, so the text hugs the boundary between them (self-end, self-start) and the
+        pair stays together, centred against the image. */}
+    <div class:list={['-mt-10 max-w-[44rem] lg:col-start-1 lg:mt-0', media ? 'md:col-start-1 md:row-start-3 md:mt-0' : 'lg:row-start-2 lg:self-start']}>
       {aside && <Fragment set:html={aside} />}
 
       {
@@ -125,20 +126,20 @@ const fill = split;
 
     {
       heroMedia && (
-        // No card: the image sits straight on the hero. On large screens its area starts at the top of the h1 (past
-        // the eyebrow's line, 1.25rem, its mb-3 and the h1's half-leading) and, when it fills, ends at the byline, or
-        // at the CTAs on a split hero, with the whole image scaled to fit.
+        // No card: the image sits straight on the hero, centred against the whole text column (h1 to byline) at its
+        // natural shape and in full, on a soft blue glow.
         <Screenshot
           media={heroMedia}
           priority
-          outlined
-          fill={fill}
-          sizes="(min-width: 60rem) 1080px, 100vw"
+          outlined={heroMedia.kind !== 'illustration'}
+          sizes="(min-width: 90rem) 680px, (min-width: 60rem) 48vw, 100vw"
           class:list={[
-            eyebrow ? 'lg:mt-[2.375rem]' : 'lg:mt-[0.375rem]',
-            'lg:col-start-2',
-            split ? 'lg:row-start-1' : 'lg:row-[1/span_2]',
-            fill && (eyebrow ? 'lg:h-[calc(100%-2.375rem)]' : 'lg:h-[calc(100%-0.375rem)]'),
+            'relative isolate',
+            "before:absolute before:-inset-6 before:-z-10 before:rounded-[48px] before:bg-gradient-to-br before:from-blue-200/70 before:via-blue-100/50 before:to-teal-50/60 before:blur-2xl before:content-['']",
+            'lg:col-start-2 lg:row-[1/span_2] lg:self-center',
+            // Stacked (below 1200px), a photo or illustration stays at most 36rem wide, in line with the text above it;
+            // a screenshot keeps the full width so its detail stays readable.
+            heroMedia.kind !== 'screenshot' && 'w-full max-w-[36rem] lg:max-w-none',
           ]}
         />
       )

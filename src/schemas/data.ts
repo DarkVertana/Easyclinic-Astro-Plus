@@ -226,6 +226,8 @@ export const testimonialSchema = z.object({
   quote: z.string(),
   /** A one-line version for large single-quote layouts (section 11). Must be a verbatim excerpt. */
   pullQuote: z.string().optional(),
+  /** Verbatim phrases of the quote underlined in red dashes where the quote is shown in full (the pricing slider). */
+  underline: z.array(z.string()).default([]),
   /** A shorter version for fixed-height cards: verbatim pieces of the quote joined by " … " where sentences are left out. */
   cardQuote: z.string().optional(),
   outcome: unknown(z.string()),

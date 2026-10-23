@@ -22,6 +22,10 @@ export async function sendToCrm(lead: DemoRequest, options: { url?: string; toke
     practiceType: lead.practiceType,
     locations: lead.locations,
     country: lead.country,
+    specialty: lead.specialty || undefined,
+    note: lead.note || undefined,
+    phoneCountry: lead.dialCodeCountry,
+    form: lead.formVariant,
     page: lead.page,
   };
   if (!options.url) {

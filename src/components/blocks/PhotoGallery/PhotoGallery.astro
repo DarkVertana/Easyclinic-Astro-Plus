@@ -1,0 +1,163 @@
+---
+import { Image, getImage } from 'astro:assets';
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'photoGallery'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, photos, ctx } = Astro.props;
+
+// A large copy of each photo for the lightbox.
+const full = await Promise.all(photos.map((p) => getImage({ src: p.image, width: Math.min(p.image.width, 1600), format: 'webp', quality: 85 })));
+const SPAN = { normal: '', wide: 'md:col-span-2', large: 'col-span-2 md:row-span-2' } as const;
+---
+
+{/* A bento grid: two columns on phones and tablets (a large photo runs across both), four from 960px with large
+    photos 2 by 2 and wide ones 2 across; dense packing fills the gaps. Each photo opens in a lightbox. */}
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center wideHeader class="gallery-section">
+  <ul class="gallery-grid grid grid-flow-row-dense grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4" data-gallery>
+    {
+      photos.map((p, i) => (
+        <li class:list={['min-w-0', SPAN[p.size]]}>
+          <button
+            type="button"
+            class="group relative block size-full overflow-hidden rounded-2xl bg-surface-muted"
+            data-open={i}
+            aria-label={`View photo ${i + 1} of ${photos.length}: ${p.alt}`}
+          >
+            <Image
+              src={p.image}
+              alt=""
+              widths={[400, 800, 1200]}
+              sizes={p.size === 'large' ? '(min-width: 60rem) 50vw, 100vw' : p.size === 'wide' ? '(min-width: 60rem) 50vw, 50vw' : '(min-width: 60rem) 25vw, 50vw'}
+              loading="lazy"
+              class="h-full! w-full object-cover object-center! transition-transform duration-500 group-hover:scale-105"
+            />
+            <span class="absolute inset-0 bg-gradient-to-t from-navy-900/40 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
+            <span class="absolute right-3 bottom-3 flex size-9 items-center justify-center rounded-full bg-white/90 text-ink-heading opacity-0 shadow transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true">
+              <Icon name="zoom-in" size={18} />
+            </span>
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+
+  <dialog class="gallery-dialog" data-gallery-dialog aria-label="Photo viewer">
+    <figure class="m-0 flex h-full flex-col items-center justify-center gap-3">
+      <img data-full alt="" class="max-h-[80vh] w-auto max-w-full rounded-xl" />
+      <figcaption class="text-center text-sm text-white/80" data-caption></figcaption>
+    </figure>
+    <button type="button" class="gallery-ctl top-4 right-4" data-close aria-label="Close photo viewer"><Icon name="x" size={22} /></button>
+    <button type="button" class="gallery-ctl top-1/2 left-3 -translate-y-1/2" data-prev aria-label="Previous photo"><Icon name="chevron-right" size={24} class="rotate-180" /></button>
+    <button type="button" class="gallery-ctl top-1/2 right-3 -translate-y-1/2" data-next aria-label="Next photo"><Icon name="chevron-right" size={24} /></button>
+  </dialog>
+  <script type="application/json" data-gallery-photos set:html={JSON.stringify(photos.map((p, i) => ({ src: full[i].src, alt: p.alt })))} />
+</Section>
+
+<script>
+  for (const grid of document.querySelectorAll<HTMLElement>('[data-gallery]')) {
+    const section = grid.closest('section');
+    const dialog = section?.querySelector<HTMLDialogElement>('[data-gallery-dialog]');
+    const data = section?.querySelector('[data-gallery-photos]')?.textContent;
+    if (!dialog || !data) continue;
+    const photos: { src: string; alt: string }[] = JSON.parse(data);
+    const img = dialog.querySelector<HTMLImageElement>('[data-full]')!;
+    const caption = dialog.querySelector<HTMLElement>('[data-caption]')!;
+    let at = 0;
+    const show = (i: number) => {
+      at = (i + photos.length) % photos.length;
+      img.src = photos[at].src;
+      img.alt = photos[at].alt;
+      caption.textContent = `${photos[at].alt} (${at + 1} of ${photos.length})`;
+    };
+    grid.querySelectorAll<HTMLButtonElement>('[data-open]').forEach((b) =>
+      b.addEventListener('click', () => {
+        show(Number(b.dataset.open));
+        dialog.showModal();
+      }),
+    );
+    dialog.querySelector('[data-prev]')?.addEventListener('click', () => show(at - 1));
+    dialog.querySelector('[data-next]')?.addEventListener('click', () => show(at + 1));
+    dialog.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
+    // A click on the backdrop (the dialog itself, outside the photo and controls) closes it.
+    dialog.addEventListener('click', (e) => e.target === dialog && dialog.close());
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(at - 1);
+      if (e.key === 'ArrowRight') show(at + 1);
+    });
+  }
+</script>
+
+<style>
+  /* The heading is a long sentence: it runs the full width and steps down in size below 960px so it stays at
+     three lines on tablets and short on phones. */
+  :global(.gallery-section h2) {
+    font-size: 1.375rem;
+    line-height: 1.3;
+    /* Fill each line to the full width (not the site's balanced, shorter lines), without a lone last word. */
+    text-wrap: pretty;
+  }
+  @media (min-width: 40rem) {
+    :global(.gallery-section h2) {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 60rem) {
+    :global(.gallery-section h2) {
+      font-size: revert-layer;
+      line-height: revert-layer;
+    }
+  }
+  /* The forced line break in the heading (after "standards") only fits from 1440px; narrower, it would add a fourth
+     line, so there the heading wraps on its own. */
+  @media (max-width: 89.99rem) {
+    :global(.gallery-section h2 br) {
+      display: none;
+    }
+  }
+  /* Row height sets the tile size; spans make the bento shapes. */
+  .gallery-grid {
+    grid-auto-rows: 9rem;
+  }
+  @media (min-width: 40rem) {
+    .gallery-grid {
+      grid-auto-rows: 12rem;
+    }
+  }
+  @media (min-width: 60rem) {
+    .gallery-grid {
+      grid-auto-rows: 13.5rem;
+    }
+  }
+  .gallery-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    padding: 3.5rem 3.5rem 2rem;
+    border: 0;
+    background: rgb(9 7 39 / 0.94);
+  }
+  .gallery-dialog::backdrop {
+    background: transparent;
+  }
+  .gallery-ctl {
+    position: absolute;
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 0.12);
+    color: #fff;
+    transition: background 0.15s;
+  }
+  .gallery-ctl:hover,
+  .gallery-ctl:focus-visible {
+    background: rgb(255 255 255 / 0.25);
+  }
+</style>

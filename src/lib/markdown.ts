@@ -31,6 +31,34 @@ export function renderMarkdown(text: string, options: MarkdownOptions = {}): str
           return `<mark>${this.parser.parseInline(token.tokens ?? [])}</mark>`;
         },
       },
+      {
+        // ^^text^^ renders as a red dashed underline, a cost or catch to notice (global.css, .prose-md .flag).
+        name: 'flag',
+        level: 'inline',
+        start: (src: string) => src.indexOf('^^'),
+        tokenizer(this: { lexer: { inlineTokens(src: string): Tokens.Generic[] } }, src: string) {
+          const match = /^\^\^(?!\^)([^^\n]+?)\^\^/.exec(src);
+          if (!match) return undefined;
+          return { type: 'flag', raw: match[0], tokens: this.lexer.inlineTokens(match[1]) };
+        },
+        renderer(this: { parser: { parseInline(tokens: Tokens.Generic[]): string } }, token: Tokens.Generic) {
+          return `<span class="flag">${this.parser.parseInline(token.tokens ?? [])}</span>`;
+        },
+      },
+      {
+        // ::text:: renders as the yellow tag with a red dashed outline (global.css, .prose-md mark.mark-red).
+        name: 'markRed',
+        level: 'inline',
+        start: (src: string) => src.indexOf('::'),
+        tokenizer(this: { lexer: { inlineTokens(src: string): Tokens.Generic[] } }, src: string) {
+          const match = /^::(?!:)([^:\n]+?)::/.exec(src);
+          if (!match) return undefined;
+          return { type: 'markRed', raw: match[0], tokens: this.lexer.inlineTokens(match[1]) };
+        },
+        renderer(this: { parser: { parseInline(tokens: Tokens.Generic[]): string } }, token: Tokens.Generic) {
+          return `<mark class="mark-red">${this.parser.parseInline(token.tokens ?? [])}</mark>`;
+        },
+      },
     ],
     renderer: {
       link(this: { parser: { parseInline(tokens: Tokens.Generic[]): string } }, token: Tokens.Link) {

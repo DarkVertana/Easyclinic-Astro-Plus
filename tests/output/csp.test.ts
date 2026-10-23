@@ -147,6 +147,8 @@ describe('Content-Security-Policy in the built pages', () => {
           const value = attr(m[0], name);
           if (!value) continue;
           for (const url of value.split(',').map((v) => v.trim().split(/\s+/)[0])) {
+            // The one third-party frame: the office maps on /contact-us/ (owner decision 2026-10-23; frame-src www.google.com).
+            if (m[1].toLowerCase() === 'iframe' && name === 'src' && url.startsWith('https://www.google.com/maps?')) continue;
             if (!url.startsWith('/') || url.startsWith('//')) problems.push(`${file}: <${m[1]} ${name}> loads ${url.slice(0, 60)}`);
           }
         }

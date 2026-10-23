@@ -52,6 +52,14 @@ import { stepList } from './stepList.ts';
 import { testimonialRow } from './testimonialRow.ts';
 import { chipCloud } from './chipCloud.ts';
 import { featureTabs } from './featureTabs.ts';
+import { purposeSplit } from './purposeSplit.ts';
+import { logoSlider } from './logoSlider.ts';
+import { valueGrid } from './valueGrid.ts';
+import { statBand } from './statBand.ts';
+import { teamGrid } from './teamGrid.ts';
+import { spotlight } from './spotlight.ts';
+import { photoGallery } from './photoGallery.ts';
+import { officeCards } from './officeCards.ts';
 
 export const KS_BLOCKS = {
   addOns,
@@ -99,4 +107,12 @@ export const KS_BLOCKS = {
   testimonialRow,
   chipCloud,
   featureTabs,
+  purposeSplit,
+  logoSlider,
+  valueGrid,
+  statBand,
+  teamGrid,
+  spotlight,
+  photoGallery,
+  officeCards,
 } satisfies Record<BlockName, KsBlock>;

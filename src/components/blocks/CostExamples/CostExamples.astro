@@ -5,6 +5,7 @@ import { need, unconfirmed } from '../../../lib/content/need';
 import { formatMoney } from '../../../lib/format/money';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'costExamples'> & { ctx: BlockContext };
@@ -36,41 +37,102 @@ const rows = examples.map((ex) => {
     meta: `${doctors}, ${plural(ex.locations, 'location', 'locations')}, ${plan.name} plan`,
     monthly: monthly !== null ? money(monthly) : null,
     yearly: monthly !== null ? money(monthly * 12) : null,
-    sum: unit !== null && monthly !== null ? `${doctors} × ${money(unit)} = ${money(monthly)} per month` : null,
     missing: quote || unit !== null ? null : need(Astro, `${price.currency} ${plan.name} ${period} price`, null),
+    unitPrice: unit !== null ? money(unit) : null,
   };
 });
+
+// The plan colours match the badges on the pricing cards; the icon reads the clinic's size.
+const PLAN_STYLE: Record<string, { icon: string; badge: string; fill: boolean }> = {
+  professional: { icon: 'star', badge: 'bg-[#c9cbd1]', fill: true },
+  premium: { icon: 'crown', badge: 'bg-[#fbb917]', fill: true },
+  enterprise: { icon: 'gem', badge: 'bg-[#8b6fd6]', fill: false },
+};
+const sizeIcon = (doctors: number, locations: number) => (locations > 1 ? 'building-2' : doctors > 1 ? 'hospital' : 'stethoscope');
+// With three examples the middle one is the page's subject (a clinic flanked by a smaller and a larger one for scale).
+const featured = rows.length === 3 ? 1 : -1;
 ---
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
-  <ul class:list={['grid gap-5', rows.length === 1 ? 'max-w-[32rem]' : rows.length === 2 ? 'md:grid-cols-2' : rows.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3']}>
+  <ul class:list={['grid items-stretch gap-6', rows.length === 1 ? 'max-w-[32rem]' : rows.length === 2 ? 'md:grid-cols-2' : rows.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3 md:items-center']}>
     {
-      rows.map((row) => (
-        <li class="card flex flex-col p-6 text-ink">
-          <h3 class="font-display text-lg font-semibold">{row.title}</h3>
-          <p class="mt-1 text-sm text-ink-muted">{row.meta}</p>
+      rows.map((row, i) => {
+        const style = PLAN_STYLE[row.plan];
+        const isFeatured = i === featured;
+        return (
+          <li
+            class:list={[
+              'relative flex flex-col overflow-hidden rounded-2xl border bg-surface text-ink transition-shadow',
+              isFeatured
+                ? 'border-2 border-blue-700 shadow-[0_24px_48px_-20px_rgb(10_37_64/0.35)] md:py-3'
+                : 'border-line shadow-[0_10px_30px_-18px_rgb(10_37_64/0.25)]',
+            ]}
+          >
+            {isFeatured && (
+              <p class="absolute top-0 right-0 inline-flex items-center gap-1.5 rounded-bl-xl bg-blue-700 px-3 py-1 text-xs font-semibold tracking-wide text-white uppercase">
+                <Icon name="trophy" size={14} />
+                Most chosen
+              </p>
+            )}
 
-          {row.quote ? (
-            <p class="mt-5 font-display text-3xl font-semibold text-ink-heading">On quote</p>
-          ) : row.missing ? (
-            <p class="mt-5">{row.missing}</p>
-          ) : (
-            <dl class="mt-5 space-y-4">
-              <div>
-                <dt class="text-sm font-semibold text-ink-heading">Per month, {BILLED[period]}</dt>
-                <dd class="font-display text-3xl font-semibold text-ink-heading">{row.monthly}</dd>
-                <dd class="mt-1 text-sm text-ink-muted">{row.sum}</dd>
+            <div class="flex items-start gap-3 px-6 pt-6">
+              <span class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700" aria-hidden="true">
+                <Icon name={sizeIcon(row.doctors, row.locations)} size={22} />
+              </span>
+              <div class="min-w-0">
+                <h3 class="font-display text-lg leading-snug font-semibold text-ink-heading">{row.title}</h3>
+                <p class="sr-only">{row.meta}</p>
+                <ul class="mt-2 flex flex-wrap gap-1.5 text-xs font-semibold text-ink-heading" aria-hidden="true">
+                  <li class="inline-flex items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1">
+                    <Icon name="users" size={13} />
+                    {plural(row.doctors, 'doctor', 'doctors')}
+                  </li>
+                  <li class="inline-flex items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1">
+                    <Icon name="map-pin" size={13} />
+                    {plural(row.locations, 'location', 'locations')}
+                  </li>
+                  <li class="inline-flex items-center gap-1.5 rounded-full bg-surface-muted py-1 pr-2.5 pl-1">
+                    {style && (
+                      <span class:list={['flex size-4 items-center justify-center rounded-[5px] text-white', style.badge]}>
+                        <Icon name={style.icon} size={10} class={style.fill ? 'fill-white' : undefined} />
+                      </span>
+                    )}
+                    {row.planName}
+                  </li>
+                </ul>
               </div>
-              <div>
-                <dt class="text-sm font-semibold text-ink-heading">Per year</dt>
-                <dd class="font-display text-2xl font-semibold text-ink-heading">{row.yearly}</dd>
-              </div>
-            </dl>
-          )}
+            </div>
 
-          {row.note && <Md text={row.note} class="mt-5 border-t border-line pt-4 text-sm text-ink-muted" />}
-        </li>
-      ))
+            <div class:list={['mx-6 mt-5 rounded-xl p-5', isFeatured ? 'bg-blue-50' : 'bg-surface-muted']}>
+              {row.quote ? (
+                <>
+                  <p class="text-sm font-semibold text-ink-muted">Price</p>
+                  <p class="mt-1 font-display text-3xl font-semibold text-ink-heading">On quote</p>
+                  <p class="mt-2 text-sm text-ink-muted">Scoped to your branches and integrations</p>
+                </>
+              ) : row.missing ? (
+                <p>{row.missing}</p>
+              ) : (
+                <dl>
+                  <div>
+                    <dt class="text-sm font-semibold text-ink-muted">Per month, {BILLED[period]}</dt>
+                    <dd class="mt-1 font-display text-4xl leading-none font-semibold text-ink-heading">{row.monthly}</dd>
+                    <dd class="mt-2 inline-flex rounded-md bg-surface px-2 py-1 text-xs text-ink-muted ring-1 ring-line">
+                      {plural(row.doctors, 'doctor', 'doctors')} × {row.unitPrice}
+                    </dd>
+                  </div>
+                  <div class="mt-4 flex items-baseline justify-between gap-3 border-t border-line pt-3">
+                    <dt class="text-sm font-semibold text-ink-muted">Per year</dt>
+                    <dd class="font-display text-xl font-semibold text-ink-heading">{row.yearly}</dd>
+                  </div>
+                </dl>
+              )}
+            </div>
+
+            {row.note && <Md text={row.note} class="px-6 pt-5 pb-6 text-sm leading-relaxed text-ink-muted" />}
+          </li>
+        );
+      })
     }
   </ul>
 </Section>

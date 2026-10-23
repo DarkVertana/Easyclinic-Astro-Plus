@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import Flag from '../../ui/Flag.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'officeCards'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, offices, note, backgroundImage, ctx } = Astro.props;
+
+const mapsSearch = (q: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+// z=14 shows the neighbourhood around the pin; Google's default for an address is street level, too close.
+const mapsEmbed = (q: string) => `https://www.google.com/maps?q=${encodeURIComponent(q)}&z=14&output=embed`;
+const tel = (phone: string) => `tel:${phone.replace(/[^\d+]/g, '')}`;
+---
+
+{/* One card per office, two across from 960px. Each card opens with its Google map, loaded lazily as it nears the
+    screen (owner decision 2026-10-23). */}
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} class={backgroundImage ? 'relative isolate overflow-hidden' : undefined}>
+  {backgroundImage && <Image src={backgroundImage} alt="" widths={[768, 1280, 1920]} sizes="100vw" loading="lazy" class="absolute inset-0 -z-10 h-full! w-full object-cover object-center!" />}
+  <ul class="grid gap-6 md:grid-cols-2 lg:gap-8">
+    {
+      offices.map((o) => (
+        <li class="office-card flex flex-col overflow-hidden rounded-2xl border border-line bg-surface">
+          <div class="office-map relative aspect-[16/9] bg-blue-50">
+            <iframe
+              src={mapsEmbed(o.mapQuery)}
+              title={`Map of the Easy Clinic office in ${o.city}`}
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="absolute inset-0 h-full w-full border-0"
+            ></iframe>
+          </div>
+
+          <div class="flex flex-1 flex-col p-6 sm:p-7">
+            <div class="flex items-center gap-3">
+              <Flag code={o.flag} size={32} />
+              <div>
+                <h3 class="font-display text-xl leading-tight font-semibold text-ink-heading">{o.country}</h3>
+                <p class="text-sm text-ink-muted">{o.city}</p>
+              </div>
+            </div>
+
+            <ul class="office-lines mt-5 grid gap-3 border-t border-line pt-5 text-[0.9375rem]">
+              <li class="flex gap-3">
+                <Icon name="map-pin" size={18} class="mt-0.5 shrink-0 text-blue-600" />
+                <Md text={o.address} class="min-w-0 leading-relaxed text-ink" />
+              </li>
+              {o.phone && (
+                <li class="flex items-center gap-3">
+                  <Icon name="phone" size={18} class="shrink-0 text-blue-600" />
+                  <a href={tel(o.phone)} class="font-semibold no-underline hover:underline" data-track="cta_click" data-label={`call ${o.country} office`}>{o.phone}</a>
+                  {o.whatsapp && (
+                    <a href={o.whatsapp} rel="noopener" class="inline-flex items-center gap-1 rounded-full bg-[#e7f8ee] px-2.5 py-0.5 text-xs font-semibold text-[#128c4a] no-underline hover:underline">
+                      <Icon name="brand-whatsapp" size={12} />
+                      WhatsApp
+                    </a>
+                  )}
+                </li>
+              )}
+              {o.email && (
+                <li class="flex items-center gap-3">
+                  <Icon name="mail" size={18} class="shrink-0 text-blue-600" />
+                  <a href={`mailto:${o.email}`} class="min-w-0 font-semibold break-all no-underline hover:underline">{o.email}</a>
+                </li>
+              )}
+            </ul>
+
+            <a href={mapsSearch(o.mapQuery)} rel="noopener" target="_blank" class="btn btn-outline mt-6 self-start">
+              <Icon name="navigation" size={16} />
+              Get directions
+              <span class="sr-only">to the {o.city} office (opens Google Maps in a new tab)</span>
+            </a>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+  {note && <Md text={note} class="mt-6 text-sm text-ink-muted" />}
+</Section>
+
+<style>
+  .office-card {
+    box-shadow: 0 12px 32px -24px rgb(10 37 64 / 0.35);
+  }
+  .office-lines :global(.prose-md p) {
+    margin: 0;
+  }
+</style>

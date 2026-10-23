@@ -20,7 +20,7 @@
   --color-black: #000000;
 
   /* Brand blue. 500 is the live brand colour: decoration, focus rings, large text only (3.9:1 on white). */
-  --color-blue-50: #eff7ff;
+  --color-blue-50: #EAF5FF;
   --color-blue-100: #d7e8fc;
   --color-blue-200: #b5e1ff;
   --color-blue-500: #0080f6;
@@ -464,13 +464,24 @@
   }
   /* ==text== in markdown: a yellow tag with a dashed amber outline. */
   .prose-md mark {
-    background: #fcd970;
+    background: #fff3b0;
     color: var(--ink-heading);
     padding: 0.05em 0.35em;
     border: 1.5px dashed #b07d00;
     border-radius: 0.3em;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+  }
+  /* ::text:: in markdown: the same yellow tag with a red dashed outline. */
+  .prose-md mark.mark-red {
+    border-color: #d93025;
+  }
+  /* ^^text^^ in markdown: a red dashed underline for a cost or catch. */
+  .prose-md .flag {
+    color: var(--ink-heading);
+    text-decoration: underline dashed #d93025;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
   }
   .prose-md h3,
   .prose-md h4 {

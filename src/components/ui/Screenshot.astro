@@ -6,7 +6,7 @@ import Icon from './Icon.astro';
 import Md from './Md.astro';
 
 export interface MediaProps {
-  kind: 'screenshot' | 'photo' | 'video';
+  kind: 'screenshot' | 'photo' | 'video' | 'illustration';
   src?: ImageMetadata;
   needed?: string;
   alt: string;
@@ -31,7 +31,7 @@ interface Props {
   /** On large screens the image area fills its parent's height: a card (`elevated`) is covered edge to edge; without
       a card the whole image is shown, scaled to fit. */
   fill?: boolean;
-  /** The hero image: a 3px #c7c7c7 border, 18px radius and a soft shadow around the image itself. */
+  /** The hero image: a 3px #c7c7c7 border and 18px radius, no shadow. */
   outlined?: boolean;
 }
 
@@ -112,7 +112,7 @@ const full = zoomable && media.src ? await getImage({ src: media.src, format: 'w
           pictureAttributes={filled && outlined ? { class: 'contents' } : undefined}
           class:list={[
             'block h-auto w-full',
-            outlined && 'rounded-[18px] border-[3px] border-[#c7c7c7] shadow-[0_14px_36px_-14px_rgb(10_37_64/0.35)]',
+            outlined && 'rounded-[18px] border-[3px] border-[#c7c7c7]',
             filled && (outlined ? 'lg:h-auto! lg:max-h-full lg:w-auto lg:max-w-full' : ['lg:absolute lg:inset-0 lg:h-full!', elevated ? 'lg:object-cover' : 'lg:object-contain']),
           ]}
         />

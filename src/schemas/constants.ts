@@ -20,13 +20,13 @@ export const AUTHOR_KINDS = ['clinician', 'product', 'country-lead', 'founder', 
 
 /** Section background: sections alternate white and a light wash (section 11). */
 export const TONES = ['plain', 'wash', 'inverse'] as const;
-export const MEDIA_KINDS = ['screenshot', 'photo', 'video'] as const;
+export const MEDIA_KINDS = ['screenshot', 'photo', 'video', 'illustration'] as const;
 export const MEDIA_FRAMES = ['browser', 'phone', 'none'] as const;
 export const PROOF_VARIANTS = ['study', 'customer', 'badges', 'screenshot'] as const;
 export const PROSE_WIDTHS = ['measure', 'wide'] as const;
 export const SCOPE_VARIANTS = ['notFor', 'isNot', 'limits'] as const;
 /** single: one large quote alone (section 11); row: up to three cards. */
-export const TESTIMONIAL_LAYOUTS = ['row', 'single'] as const;
+export const TESTIMONIAL_LAYOUTS = ['row', 'single', 'carousel'] as const;
 
 /**
  * Editor-only keys: never rendered, so the rules engine (src/lib/rules/walk.ts), the token resolver
@@ -45,6 +45,25 @@ export type Currency = (typeof CURRENCIES)[number];
 /** Spec 7.9: demo form options, in this order. */
 export const PRACTICE_TYPES = ['Solo practice', 'Specialist clinic', 'Clinic group', 'Hospital or specialist centre', 'Health NGO'] as const;
 export const LOCATION_BANDS = ['1', '2 to 5', '6 to 15', '15+'] as const;
+/** The Speciality dropdown on the short contact form (/contact-us/). */
+export const DEMO_SPECIALTIES = [
+  'General practice',
+  'Dental',
+  'Dermatology',
+  'ENT',
+  'Cardiology',
+  'Ophthalmology',
+  'Orthopaedics',
+  'Paediatrics',
+  'Obstetrics and gynaecology',
+  'IVF and fertility',
+  'Mental health',
+  'Neurology',
+  'Physiotherapy',
+  'Ayurveda',
+  'Multi-speciality',
+  'Other',
+] as const;
 
 export const PLAN_IDS = ['professional', 'premium', 'enterprise'] as const;
 export type PlanId = (typeof PLAN_IDS)[number];

@@ -9,20 +9,22 @@ secondaryKeywords:
 title: 'About Easy Clinic: Clinic Software Since {fact:founded}'
 metaDescription: >-
   Easy Clinic is made by Novel Medicare Solutions Pvt Ltd in Kolkata and has run clinics since
-  {fact:founded}. Who leads it, and two things we will not do.
-h1: About Easy Clinic
+  {fact:founded}. Our vision, values and the team who lead it.
+h1: Commitment to Simplify Your Clinic Operations
 linkLabel: About us
-eyebrow: Novel Medicare Solutions Pvt Ltd, Kolkata
+eyebrow: Novel Medicare Solutions Private Limited
 openingAnswer: >-
-  Easy Clinic is clinic management software made by Novel Medicare Solutions Pvt Ltd, a Kolkata company,
-  and it has been running doctors' clinics since {fact:founded}. Today {fact:doctors} doctors in
-  {fact:countries} countries use it, from one-doctor practices in India to Penda Health's clinics in
-  Nairobi.
+  Established in 2003, Easy Clinic has grown into a leading provider of premium medical software, serving thousands across 18 countries. Renowned for our user-friendly, world-class healthcare solutions and unmatched customer support, we’ve consistently delivered excellence and affordability, earning high praise from our global user base.
 summary: >-
-  Who makes Easy Clinic, how long it has run clinics, the five people who lead it, the Kolkata office, and
-  the two things the company will not do.
+  Who makes Easy Clinic, how long it has run clinics, its vision and values, and the five people who lead
+  it.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: illustration
+  src: ../../assets/images/aboutus/not-sure-which-plan.png
+  alt: Illustration of a woman working on a laptop, with a question mark in a speech bubble
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo
@@ -33,12 +35,112 @@ ctas:
   whatsapp: Hi, I was reading the Easy Clinic About page and would like to book a 20-minute demo for my clinic.
 
 sections:
+  - discriminant: purposeSplit
+    value:
+      id: vision-and-mission
+      image: ../../assets/images/aboutus/5-1.png
+      imageAlt: A doctor typing on a laptop that shows an Easy Clinic patient profile, with the last visit summary and vitals
+      items:
+        - icon: eye
+          title: Vision
+          body: >-
+            To be the leading provider of innovative healthcare management solutions, revolutionising the way
+            clinics operate and enhancing the quality of patient care globally.
+        - icon: globe
+          title: Mission
+          body: >-
+            Our mission at Easy Clinic is to empower healthcare organisations with advanced, intuitive software
+            solutions that streamline clinic operations and improve patient outcomes. By harnessing the power of
+            AI, we aim to foster a more efficient, integrated and smart healthcare ecosystem.
+  - discriminant: logoSlider
+    value:
+      id: organisations
+      heading: Empowering Healthcare Organisations Worldwide
+      logos:
+        - image: ../../assets/images/organizations/Samonnoy-Clinic-Dr.Chinmay-Natha.jpg
+          name: Samonnoy Clinic
+        - image: ../../assets/images/organizations/Sri-Swasthyaa-Clinic-Dr.S-Rajassria.jpg
+          name: Sri Swasthyaa Clinic
+        - image: ../../assets/images/organizations/DAYANAND-EDUCATION-SOCIETYa.jpg
+          name: Dayanand Education Society
+        - image: ../../assets/images/organizations/DR-AMIT-AROSKARa.jpg
+          name: Aamod
+        - image: ../../assets/images/organizations/DR-PRANTAR-CHAKRABORTYa.jpg
+          name: Blood@Prantar.In
+        - image: ../../assets/images/organizations/Premier-Hospital-Dr.Mahesh-Mardaa.jpg
+          name: Premier Hospital
+        - image: ../../assets/images/organizations/Caring-Mindsa.jpg
+          name: Caring Minds Institute of Mental Health
+        - image: ../../assets/images/organizations/German-Osteoa.jpg
+          name: German Osteo Care
+        - image: ../../assets/images/organizations/1a.jpg
+          name: AmeriCares
+        - image: ../../assets/images/organizations/2a.jpg
+          name: Penda Health
+        - image: ../../assets/images/organizations/3a.jpg
+          name: CIMAS
+        - image: ../../assets/images/organizations/5a.jpg
+          name: Qualitas Health
+        - image: ../../assets/images/organizations/6a.jpg
+          name: World Health Organization
+  - discriminant: valueGrid
+    value:
+      id: values
+      eyebrow: Our values
+      heading: 'Values That Shape Us: Our Commitment to You and Healthcare'
+      items:
+        - icon: lightbulb
+          title: Innovation
+          body: >-
+            At Easy Clinic, we believe in the power of innovation to transform healthcare. We are constantly exploring new technologies and methodologies to enhance our solutions, ensuring that our clients are always at the forefront of healthcare management.
+        - icon: handshake
+          title: Integrity
+          body: >-
+            We operate with the highest standards of integrity and transparency. Our commitment to ethical practices is unwavering, as we believe it is the foundation of trust and long-lasting relationships with our clients.
+        - icon: chart-line
+          title: Excellence
+          body: >-
+            Excellence is at the heart of everything we do. From our products to our customer service, we strive for perfection, ensuring that every interaction with Easy Clinic is a testament to our dedication to quality.
+        - icon: users
+          title: Collaboration
+          body: >-
+            We understand that the best solutions are created when brilliant minds work together. Collaboration, both within our team and with our clients, is key to developing innovative solutions that truly meet the needs of healthcare providers.
+        - icon: user-round
+          title: Customer Success
+          body: >-
+            Our commitment extends beyond delivering solutions; we are dedicated to the success and growth of our clients' businesses. We tailor our solutions to empower them, ensuring that our partnership contributes to their growth and the enhancement of healthcare services they provide.
+        - icon: move
+          title: Adaptability
+          body: >-
+            The healthcare industry is ever-evolving, and so are we. Our commitment to adaptability means we are always ready to respond to changing market needs, ensuring that our clients stay competitive and relevant.
   - discriminant: prose
     value:
       id: story
       heading: Running clinics since {fact:founded}
+      width: wide
       body: |-
         Easy Clinic has been running doctors' clinics since {fact:founded}. Two customers quoted on our [customers page](/customers/) have used it since 2008 and 2012: Dr Prantar Chakrabarti, a haematologist at the Institute of Hematology and Transfusion Medicine, and Aditya Women and Infertility Clinic in Hyderabad. Today Easy Clinic runs in the cloud and clinics sign in at [app.easyclinic.io](https://app.easyclinic.io/). It is used in {fact:countries} countries, by clinics that range from one doctor and a receptionist to a chain of {fact:largestChain} locations. In Nairobi, Penda Health has kept its clinic records on Easy Clinic since 2017, and in 2025 researchers at Penda Health and OpenAI published a preprint on {fig:visits} of its patient visits, in which an AI tool called AI Consult ran inside that record.
+
+  - discriminant: statBand
+    value:
+      id: numbers
+      heading: Dedicated to Crafting Ultimate Experience
+      body: >-
+        At Easy Clinic, we are dedicated to crafting the ultimate experience in healthcare management. Our
+        relentless pursuit of innovation and user-centric design ensures that every interaction with our software
+        improves efficiency, enhances care, and exceeds expectations.
+      stats:
+        - value: 20+
+          label: Years of industry expertise, honed to unparalleled perfection
+        - value: '{fact:retention}'
+          label: Customers who have been using our solutions for over 5 years.
+        - value: '{fact:customWorkflows}'
+          label: Custom workflows built to meet the unique needs of our clients.
+        - value: '{fact:supportSatisfaction}'
+          label: Customer satisfaction rate for our support and training services
+      note: >-
+        These are Easy Clinic's own figures. We have not published how or when the retention, workflow and
+        satisfaction figures were measured, so treat them as our own count.
 
   - discriminant: dataTable
     value:
@@ -50,103 +152,136 @@ sections:
         - What happened
       rows:
         - - '{fact:founded}'
-          - Easy Clinic is established and starts running doctors' clinics.
+          - Easy Clinic ==is established== and ^^starts running doctors' clinics^^.
         - - '2008'
-          - Dr Prantar Chakrabarti, a haematologist at the Institute of Hematology and Transfusion Medicine, starts using Easy Clinic.
+          - ==Dr Prantar Chakrabarti==, a haematologist at the Institute of Hematology and Transfusion Medicine, ^^starts using Easy Clinic^^.
         - - '2012'
-          - Aditya Women and Infertility Clinic, an obstetrics and fertility clinic in Hyderabad, starts using Easy Clinic.
+          - ==Aditya Women and Infertility Clinic==, an obstetrics and fertility clinic in Hyderabad, ^^starts using Easy Clinic^^.
         - - '2017'
-          - Penda Health in Nairobi introduces Easy Clinic as the cloud-hosted record for its clinics.
+          - ==Penda Health in Nairobi== introduces Easy Clinic as ^^the cloud-hosted record^^ for its clinics.
         - - '2025'
-          - Researchers at Penda Health and OpenAI publish a preprint on {fig:visits} patient visits at 15 Penda clinics, comparing clinicians with and without AI Consult, an AI tool embedded in the Easy Clinic record.
+          - Researchers at ==Penda Health and OpenAI== publish a preprint on ^^{fig:visits} patient visits^^ at 15 Penda clinics, comparing clinicians with and without AI Consult, an AI tool embedded in the Easy Clinic record.
       note: >-
-        The founding year is our own. The 2008 and 2012 dates are the customers' own, from Dr Chakrabarti
-        and from Dr Seetha Lakshmi Kolanakuduru at Aditya. The 2017 and 2025 dates come from the paper,
+        The founding year is our own. The 2008 and 2012 dates are the customers' own, from ::Dr Chakrabarti::
+        and from ::Dr Seetha Lakshmi Kolanakuduru:: at Aditya. The 2017 and 2025 dates come from the paper,
         [arXiv:2507.16947](https://arxiv.org/abs/2507.16947).
 
-  - discriminant: dataTable
-    value:
-      id: numbers
-      heading: Easy Clinic in four numbers
-      columns:
-        - Number
-        - What it counts
-      rows:
-        - - '{fact:doctors}'
-          - Doctors who use Easy Clinic
-        - - '{fact:cities}'
-          - Cities those doctors work in
-        - - '{fact:retention}'
-          - Customers who have used Easy Clinic for more than five years
-        - - '{fact:supportSatisfaction}'
-          - Customers satisfied with our support and training
-      note: >-
-        All four are Easy Clinic's own figures, as we stated them in September 2026. We have not published
-        how or when the retention and satisfaction figures were measured, so treat them as our own count.
-
-  - discriminant: dataTable
+  - discriminant: teamGrid
     value:
       id: leadership
-      heading: Who runs Easy Clinic
-      intro: Five people lead the company.
-      columns:
-        - Name
-        - Role
-        - Background
-      rows:
-        - - Girish Mohata
-          - Founder and CEO
-          - Founded Easy Clinic and leads it as chief executive.
-        - - Mrinal Pasari
-          - Co-founder
-          - A solution and enterprise architect with 20 years of experience in enterprise application development, in fields from banking to healthcare.
-        - - Vikas Malpani
-          - Director, business growth and strategy
-          - An entrepreneur and business strategist who leads the company's growth.
-        - - Gaurab Chatterjee
-          - Head of software development
-          - At Easy Clinic since 2010, with over 16 years in software development and a background in Microsoft technologies.
-        - - Subhashish Saha
-          - Head of customer success
-          - At Easy Clinic since 2012, leading the team that supports the clinics using it.
+      heading: Meet the Easy Clinic Dream Team
+      members:
+        - image: ../../assets/images/team/Girish_Mohata1.jpg
+          name: Girish Mohata
+          role: 'Founder & CEO'
+          linkedin: https://www.linkedin.com/in/gmohata/
+          bio: >-
+            Girish is Founder & CEO at Easy Clinic, that has been powering some of the largest and most complex healthcare clinics across the globe. His innovative leadership and strategic vision have enabled him to build and exit multiple tech companies profitably in the past.
+        - image: ../../assets/images/team/Mrinal_Pasari1.jpg
+          name: Mrinal Pasari
+          role: 'Co-Founder'
+          linkedin: https://www.linkedin.com/in/mrinalpasari/
+          bio: >-
+            Mrinal is a Co-Founder and Solution Architect Enterprise Architect with 20 years of experience in enterprise application development for banking, insurance, healthcare, logistic, telecommunication, media, production and ERP domains.
+        - image: ../../assets/images/team/Vikas_Malpani1.jpg
+          name: Vikas Malpani
+          role: 'Director - Business Growth & Strategy'
+          linkedin: https://www.linkedin.com/in/vikasmalpani/
+          bio: >-
+            Vikas is a celebrated entrepreneur and accomplished business strategist, revered for his outstanding leadership skills and forward-thinking vision. His passion for innovation and value creation through technology shines through in all his ventures.
+        - image: ../../assets/images/team/Gaurab.png
+          name: Gaurab Chatterjee
+          role: 'Head of Software Development'
+          linkedin: https://www.linkedin.com/in/gaurabchatterjee/
+          bio: >-
+            Gaurab is a highly skilled and motivated technology specialist with over 16 years of experience encompassing all stages of the Software Development Life Cycle (SDLC). Possessing a robust foundation in Microsoft technologies, he has led the delivery of numerous large scale projects in his role at Easy Clinic since 2010.
+        - image: ../../assets/images/team/Subhashish.png
+          name: Subhashish Saha
+          role: 'Head of Customer Success'
+          linkedin: https://www.linkedin.com/in/subhashishsaha/
+          bio: >-
+            Subhashish has been at the forefront of customer satisfaction at Easy Clinic since 2012. With an unwavering commitment to excellence and a deep understanding of client needs, Subhashish leads his team to ensure that each Easy Clinic user experiences seamless service and unparalleled support.
+        - image: ../../assets/images/team/Clients.png
+          illustration: true
+          name: Our Esteemed Clients
+          role: 'Chief Product Officers'
+          bio: >-
+            At Easy Clinic, our Chief Product Officer is uniquely embodied by our 5000+ users. Their invaluable feedback and diverse experiences are the driving force behind our product development and innovation. Their insights and needs directly influence our roadmap, making our users the true architects of the Easy Clinic experience.
 
-  - discriminant: prose
+  - discriminant: spotlight
     value:
       id: research
       heading: The Penda Health study, and our part in it
-      body: |-
-        In July 2025, researchers at Penda Health and OpenAI published a preprint on arXiv, [AI-based Clinical Decision Support for Primary Care: A Real-World Study](https://arxiv.org/abs/2507.16947) (Korom and others). It compared {fig:visits} patient visits at 15 Penda Health clinics in Nairobi by clinicians with and without AI Consult, an AI tool embedded in Penda's Easy Clinic record. Independent physicians rated a random sample of the visit records, and clinicians with AI Consult made {fig:diagnostic-errors} fewer diagnostic errors and {fig:treatment-errors} fewer treatment errors.
-
-        Our part, as the paper tells it, is the record. It names Easy Clinic as the cloud-hosted record Penda introduced in 2017, which supports all of its patient visits, and it does not name any other Easy Clinic product. The paper is a preprint that has not been through a journal's review, and its figures are errors that physicians judged from visit records, not measures of how patients fared afterwards.
-      aside: >-
-        The [CuraPilot page](/curapilot/) covers the study in more detail, including what it did and did
-        not test.
-
-  - discriminant: featureRows
-    value:
-      id: what-we-will-not-do
-      heading: What we will not do
-      intro: Two promises a clinic can hold us to.
-      items:
-        - heading: We will not sell patient data
+      paper:
+        badge: Preprint, not yet reviewed by a journal
+        title: 'AI-based Clinical Decision Support for Primary Care: A Real-World Study'
+        href: https://arxiv.org/abs/2507.16947
+        meta: Korom and others · Penda Health and OpenAI · arXiv, July 2025
+        linkLabel: Read the paper on arXiv
+      stats:
+        - value: '{fig:visits}'
+          label: patient visits compared
+        - value: '15'
+          label: Penda Health clinics in Nairobi
+        - value: '{fig:diagnostic-errors}'
+          label: fewer diagnostic errors with AI Consult
+        - value: '{fig:treatment-errors}'
+          label: fewer treatment errors with AI Consult
+      points:
+        - icon: flask-conical
+          title: The study
           body: >-
-            We never sell patient data, and we do not misuse the records a clinic keeps in Easy Clinic.
-        - heading: We will not lock you in with a contract
+            In July 2025, researchers at Penda Health and OpenAI published a preprint on arXiv. It compared
+            {fig:visits} patient visits at 15 Penda Health clinics in Nairobi by clinicians with and without AI
+            Consult, an AI tool embedded in Penda's Easy Clinic record. Independent physicians rated a random
+            sample of the visit records, and clinicians with AI Consult made {fig:diagnostic-errors} fewer
+            diagnostic errors and {fig:treatment-errors} fewer treatment errors.
+        - icon: database
+          title: Our part
           body: >-
-            There is no binding contract on any plan and no setup fee, so a clinic can use Easy Clinic for
-            as long as it is happy with it, and stop when it is not.
+            Our part, as the paper tells it, is the record. It names Easy Clinic as the cloud-hosted record Penda
+            introduced in 2017, which supports all of its patient visits, and it does not name any other Easy
+            Clinic product.
+      caveat: >-
+        The paper is a preprint that has not been through a journal's review, and its figures are errors that
+        physicians judged from visit records, not measures of how patients fared afterwards.
+      link:
+        label: More on the study on the CuraPilot page
+        href: /curapilot/
 
-  - discriminant: prose
+  - discriminant: photoGallery
     value:
-      id: where-we-are
-      heading: Where to find us
-      body: |-
-        Our office is at 30 Circus Avenue, Kolkata 700017, West Bengal, India. Clinics in India can call {contact:in.phone}, and clinics in Kenya have their own line on {contact:ke.phone}.
-
-        Outside India, Penda Health in Nairobi and CIMAS Health in Zimbabwe both use Easy Clinic.
-      aside: >-
-        **Looking for work?** The [careers page](/careers/) says whether we are hiring and how to send us
-        your CV.
+      id: gallery
+      eyebrow: Life at Easy Clinic
+      heading: "Easy Clinic is the result of a team devoted to the pursuit of excellence, meticulously crafting each aspect to set new standards \nin healthcare solutions."
+      photos:
+        - image: ../../assets/images/gallery/20221023_112815.jpg
+          size: large
+          alt: The Easy Clinic team together outdoors at a festive celebration
+        - image: ../../assets/images/gallery/IMG-20170311-WA0018.jpg
+          size: normal
+          alt: Easy Clinic colleagues taking a selfie at a Holi celebration
+        - image: ../../assets/images/gallery/IMG_1697.jpg
+          size: normal
+          alt: Easy Clinic representatives with guests at a formal event
+        - image: ../../assets/images/gallery/20230113_113214.jpg
+          size: wide
+          alt: The Easy Clinic team outdoors at a team day
+        - image: ../../assets/images/gallery/IMG-20221023-WA0026.jpg
+          size: normal
+          alt: Easy Clinic team members dressed for a festive celebration
+        - image: ../../assets/images/gallery/IMG_2626.jpg
+          size: normal
+          alt: The Easy Clinic team at the company stand at a healthcare exhibition
+        - image: ../../assets/images/gallery/20161028_120544.jpg
+          size: wide
+          alt: The Easy Clinic team in traditional dress at an office celebration
+        - image: ../../assets/images/gallery/20171018_142219.jpg
+          size: wide
+          alt: The Easy Clinic team gathered in the office
+        - image: ../../assets/images/gallery/20200211_121802.jpg
+          size: wide
+          alt: Easy Clinic team members in a meeting around the boardroom table
 
 faqHeading: Questions about the company
 faq:

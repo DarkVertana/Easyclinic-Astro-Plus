@@ -7,10 +7,11 @@ import { optional, optionalConfirmed } from '../../../lib/content/need';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
 import Icon from '../../ui/Icon.astro';
+import ContactForm from './ContactForm.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'demoForm'> & { ctx: BlockContext };
-const { id = 'book-a-demo', eyebrow, heading, intro, tone, country, promise, ctx } = Astro.props;
+const { id = 'book-a-demo', eyebrow, heading, intro, tone, country, promise, variant, formTitle, help, ctx } = Astro.props;
 
 const countryId = country?.id ?? ctx.country;
 const countryData = countryId ? (await getEntry('countries', countryId))?.data : undefined;
@@ -23,6 +24,9 @@ const callPhone = contact?.phone ?? null;
 const f = (name: string) => ({ id: `demo-${name}`, error: `demo-${name}-error` });
 ---
 
+{variant === 'contact' ? (
+<ContactForm id={id} page={ctx.path} pageCountry={countryId} formTitle={formTitle} help={help} />
+) : (
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
   <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
     <form method="post" action="/demo/submit/" data-demo-form class="card grid gap-5 p-5 sm:p-7" aria-describedby="demo-form-note">
@@ -128,6 +132,7 @@ const f = (name: string) => ({ id: `demo-${name}`, error: `demo-${name}-error` }
     </aside>
   </div>
 </Section>
+)}
 
 <script>
   import '../../../scripts/demo-form';

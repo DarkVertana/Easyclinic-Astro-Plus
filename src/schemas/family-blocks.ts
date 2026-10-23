@@ -54,6 +54,14 @@ export const BLOCK_NAMES = [
   'testimonialRow',
   'chipCloud',
   'featureTabs',
+  'purposeSplit',
+  'logoSlider',
+  'valueGrid',
+  'statBand',
+  'teamGrid',
+  'spotlight',
+  'photoGallery',
+  'officeCards',
 ] as const;
 export type BlockName = (typeof BLOCK_NAMES)[number];
 
@@ -63,7 +71,7 @@ const HOME: Blocks = ['personaRouter', 'chipCloud', 'featureTabs', 'oldWayNewWay
 const PRICING: Blocks = ['pricingCards', 'planMatrix', 'addOns', 'costExamples', 'stepList', 'testimonialRow', 'proofBlock', 'prose', 'dataTable', 'scopeBox', 'regulatorStrip'];
 const COUNTRY: Blocks = ['contactCard', 'regulatorTable', 'regulatorStrip', 'countryMoney', 'clinicTypes', 'testimonialRow', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'painBlocks', 'stepList', 'moduleGrid', 'scopeBox'];
 const COUNTRY_DEMO: Blocks = ['demoForm', 'contactCard', 'painBlocks', 'moduleGrid', 'dataTable', 'regulatorTable', 'regulatorStrip', 'testimonialRow', 'stepList', 'proofBlock', 'prose', 'featureRows'];
-const COMPANY: Blocks = ['prose', 'demoForm', 'contactCard', 'dataTable', 'stepList', 'testimonialRow', 'proofBlock', 'moduleGrid', 'featureRows', 'contentCards'];
+const COMPANY: Blocks = ['purposeSplit', 'logoSlider', 'valueGrid', 'statBand', 'teamGrid', 'spotlight', 'photoGallery', 'officeCards', 'prose', 'demoForm', 'contactCard', 'dataTable', 'stepList', 'testimonialRow', 'proofBlock', 'moduleGrid', 'featureRows', 'contentCards'];
 
 const CORE: Blocks = ['prose', 'featureRows', 'painBlocks', 'moduleGrid', 'proofBlock', 'testimonialRow', 'stepList', 'dataTable', 'scopeBox', 'contentCards', 'flowDiagram', 'splitTable', 'inlineCta'];
 const FEATURE: Blocks = [...CORE, 'regulatorStrip', 'regulatorTable', 'rolesMatrix'];

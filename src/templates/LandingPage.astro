@@ -6,6 +6,7 @@ import FAQ from '../components/frame/FAQ.astro';
 import RelatedLinks from '../components/frame/RelatedLinks.astro';
 import ProblemList from '../components/frame/ProblemList.astro';
 import CTABand from '../components/frame/CTABand.astro';
+import HelpBand from '../components/frame/HelpBand.astro';
 import AwardRecognition from '../components/frame/AwardRecognition.astro';
 import FeatureChips from '../components/frame/FeatureChips.astro';
 import ClientLogos from '../components/frame/ClientLogos.astro';
@@ -78,6 +79,7 @@ const heroPanel = d.heroPanel;
     heroMedia={d.heroMedia}
     heroStrip={d.heroStrip}
     narrowLede={record.path === '/'}
+    noColumnGap={record.path === '/'}
     largeHeading={Boolean(heroPanel) || ['feature', 'solution', 'specialty', 'ai', 'curapilot'].includes(record.family) || ['/solutions/', '/specialties/', '/countries/', '/pricing/', '/compare/', '/customers/', '/start-a-clinic/', '/switch/', '/blog/'].includes(record.path)}
     byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
   >
@@ -114,7 +116,8 @@ const heroPanel = d.heroPanel;
   {record.path === '/' && <WhatIsEasyClinic />}
   <Sections sections={d.sections} ctx={ctx} />
   {/* Related links come before the FAQ, so the FAQ sits directly above the closing CTA band. */}
-  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} countryPills={record.path === '/'} />
+  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} countryPills={record.path === '/'} tinted={record.path === '/about-us/'} />
+  {d.helpBand && <HelpBand {...d.helpBand} />}
   {
     d.nearbySection && (
       <Section id="nearby-markets" heading={d.nearbySection.heading} tone="wash" wideHeader>

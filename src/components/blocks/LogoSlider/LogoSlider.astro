@@ -1,0 +1,141 @@
+---
+import { Image } from 'astro:assets';
+import type { SectionValue } from '../../../schemas/sections';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import type { BlockContext } from '../types';
+
+type Props = SectionValue<'logoSlider'> & { ctx: BlockContext };
+const { id, heading, intro, logos } = Astro.props;
+const headingId = id ? `${id}-heading` : undefined;
+---
+
+{/* A centred heading over a row of logos: five in view from 960px, three from 640px, two on phones. The row glides
+    slowly and without a break (the set is rendered twice so the loop is seamless); the arrows nudge it a logo at a
+    time and it swipes. With reduced motion it stays still. */}
+<section id={id} aria-labelledby={heading ? headingId : undefined} class="section-y bg-surface-alt">
+  <div class="container-page">
+    {heading && <h2 id={headingId} class="text-center">{heading}</h2>}
+    {intro && <Md text={intro} class="lede mx-auto mt-4 max-w-[46rem] text-center text-ink-muted" />}
+
+    <div class="relative mt-10 px-10 md:mt-14 md:px-14" data-logo-slider aria-roledescription="carousel" aria-label={heading ?? 'Organisations using Easy Clinic'}>
+      <ul class="logo-track flex overflow-x-auto" data-track tabindex="0">
+        {
+          [0, 1].map((copy) =>
+            logos.map((logo) => (
+              <li class="logo-item flex shrink-0 items-center justify-center px-3 sm:px-5" data-item aria-hidden={copy === 1 ? 'true' : undefined}>
+                <Image
+                  src={logo.image}
+                  alt={copy === 1 ? '' : logo.name}
+                  widths={[240, 480]}
+                  sizes="(min-width: 60rem) 220px, (min-width: 40rem) 30vw, 45vw"
+                  loading="lazy"
+                  class="h-auto max-h-28 w-full rounded-lg object-contain"
+                />
+              </li>
+            )),
+          )
+        }
+      </ul>
+      <button type="button" class="logo-arrow left-0" data-prev aria-label="Previous logos">
+        <Icon name="chevron-right" size={32} class="rotate-180" />
+      </button>
+      <button type="button" class="logo-arrow right-0" data-next aria-label="Next logos">
+        <Icon name="chevron-right" size={32} />
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // A slow, continuous glide (about 30px a second). The logos are listed twice, so when the first set has scrolled
+  // out of view the position wraps back by one set and the loop shows no seam. Hovering or focusing pauses it; an
+  // arrow click nudges it one logo and the glide picks up from there.
+  const SPEED = 30;
+  for (const root of document.querySelectorAll<HTMLElement>('[data-logo-slider]')) {
+    const track = root.querySelector<HTMLElement>('[data-track]');
+    const items = root.querySelectorAll<HTMLElement>('[data-item]');
+    if (!track || items.length < 2) continue;
+    const setWidth = () => track.scrollWidth / 2;
+    const step = () => items[0].offsetWidth;
+    let pos = 0;
+    let paused = false;
+    let nudging = 0;
+    const wrap = () => {
+      const w = setWidth();
+      if (pos >= w) pos -= w;
+      if (pos < 0) pos += w;
+    };
+    const nudge = (dir: 1 | -1) => {
+      pos = track.scrollLeft;
+      if (dir < 0 && pos < step()) {
+        pos += setWidth();
+        track.scrollLeft = pos;
+      }
+      track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+      nudging = performance.now() + 600;
+    };
+    root.querySelector('[data-next]')?.addEventListener('click', () => nudge(1));
+    root.querySelector('[data-prev]')?.addEventListener('click', () => nudge(-1));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) continue;
+    root.addEventListener('mouseenter', () => (paused = true));
+    root.addEventListener('mouseleave', () => (paused = false));
+    root.addEventListener('focusin', () => (paused = true));
+    root.addEventListener('focusout', () => (paused = false));
+    track.addEventListener('touchstart', () => (paused = true), { passive: true });
+    track.addEventListener('touchend', () => setTimeout(() => (paused = false), 1500), { passive: true });
+    let last = performance.now();
+    const tick = (now: number) => {
+      const dt = Math.min(now - last, 100) / 1000;
+      last = now;
+      if (now < nudging || paused || document.hidden) {
+        pos = track.scrollLeft;
+      } else {
+        pos += SPEED * dt;
+        wrap();
+        track.scrollLeft = pos;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+</script>
+
+<style>
+  .logo-track {
+    scrollbar-width: none;
+  }
+  .logo-track::-webkit-scrollbar {
+    display: none;
+  }
+  .logo-item {
+    width: 50%;
+  }
+  @media (min-width: 40rem) {
+    .logo-item {
+      width: calc(100% / 3);
+    }
+  }
+  @media (min-width: 60rem) {
+    .logo-item {
+      width: 20%;
+    }
+  }
+  .logo-arrow {
+    position: absolute;
+    top: 50%;
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: #c4c9d1;
+    transform: translateY(-50%);
+    transition: color 0.15s;
+  }
+  .logo-arrow:hover,
+  .logo-arrow:focus-visible {
+    color: var(--ink-heading);
+  }
+</style>

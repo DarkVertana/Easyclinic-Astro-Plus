@@ -1,0 +1,30 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Button from '../ui/Button.astro';
+import Md from '../ui/Md.astro';
+
+interface Props {
+  heading: string;
+  body?: string;
+  cta: { label: string; href: string; event?: string };
+  image: ImageMetadata;
+  imageAlt?: string;
+}
+
+const { heading, body, cta, image, imageAlt = '' } = Astro.props;
+---
+
+{/* An illustration beside a short question, one line of help and one button. Below md the image sits above. */}
+<section id="help" aria-labelledby="help-heading" class="bg-surface-alt pt-4 pb-4 md:pb-0">
+  <div class="container-page grid items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
+    <Image src={image} alt={imageAlt} widths={[480, 740]} quality={90} sizes="(min-width: 60rem) 560px, 100vw" class="mx-auto h-auto w-full max-w-[24rem]! md:max-w-[35rem]!" />
+    <div class="max-w-[34rem]">
+      <h2 id="help-heading">{heading}</h2>
+      {body && <Md text={body} class="lede mt-4 text-ink-muted" />}
+      <div class="mt-7">
+        <Button {...cta} variant="cta" />
+      </div>
+    </div>
+  </div>
+</section>

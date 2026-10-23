@@ -35,6 +35,14 @@ import { schema as pricingCards } from '../components/blocks/PricingCards/schema
 import { schema as proofBlock } from '../components/blocks/ProofBlock/schema';
 import { schema as prose } from '../components/blocks/Prose/schema';
 import { schema as splitContent } from '../components/blocks/SplitContent/schema';
+import { schema as purposeSplit } from '../components/blocks/PurposeSplit/schema';
+import { schema as logoSlider } from '../components/blocks/LogoSlider/schema';
+import { schema as valueGrid } from '../components/blocks/ValueGrid/schema';
+import { schema as statBand } from '../components/blocks/StatBand/schema';
+import { schema as teamGrid } from '../components/blocks/TeamGrid/schema';
+import { schema as spotlight } from '../components/blocks/Spotlight/schema';
+import { schema as photoGallery } from '../components/blocks/PhotoGallery/schema';
+import { schema as officeCards } from '../components/blocks/OfficeCards/schema';
 import { schema as featureBand } from '../components/blocks/FeatureBand/schema';
 import { schema as migrationPlan } from '../components/blocks/MigrationPlan/schema';
 import { schema as specialtyGrid } from '../components/blocks/SpecialtyGrid/schema';
@@ -94,6 +102,14 @@ export const BLOCK_SCHEMAS = {
   testimonialRow,
   chipCloud,
   featureTabs,
+  purposeSplit,
+  logoSlider,
+  valueGrid,
+  statBand,
+  teamGrid,
+  spotlight,
+  photoGallery,
+  officeCards,
 } as const;
 
 export type BlockName = keyof typeof BLOCK_SCHEMAS;

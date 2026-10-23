@@ -33,6 +33,14 @@ import PricingCards from './PricingCards/PricingCards.astro';
 import ProofBlock from './ProofBlock/ProofBlock.astro';
 import Prose from './Prose/Prose.astro';
 import SplitContent from './SplitContent/SplitContent.astro';
+import PurposeSplit from './PurposeSplit/PurposeSplit.astro';
+import LogoSlider from './LogoSlider/LogoSlider.astro';
+import ValueGrid from './ValueGrid/ValueGrid.astro';
+import StatBand from './StatBand/StatBand.astro';
+import TeamGrid from './TeamGrid/TeamGrid.astro';
+import Spotlight from './Spotlight/Spotlight.astro';
+import PhotoGallery from './PhotoGallery/PhotoGallery.astro';
+import OfficeCards from './OfficeCards/OfficeCards.astro';
 import FeatureBand from './FeatureBand/FeatureBand.astro';
 import MigrationPlan from './MigrationPlan/MigrationPlan.astro';
 import SpecialtyGrid from './SpecialtyGrid/SpecialtyGrid.astro';
@@ -92,4 +100,12 @@ export const BLOCKS = {
   testimonialRow: TestimonialRow,
   chipCloud: ChipCloud,
   featureTabs: FeatureTabs,
+  purposeSplit: PurposeSplit,
+  logoSlider: LogoSlider,
+  valueGrid: ValueGrid,
+  statBand: StatBand,
+  teamGrid: TeamGrid,
+  spotlight: Spotlight,
+  photoGallery: PhotoGallery,
+  officeCards: OfficeCards,
 } satisfies Record<BlockName, unknown>;

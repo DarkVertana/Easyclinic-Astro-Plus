@@ -1,0 +1,94 @@
+---
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
+import Button from '../../ui/Button.astro';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'spotlight'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, paper, stats, points, caveat, link, ctx } = Astro.props;
+---
+
+{/* A dark card for the paper (badge, title linked to the source, figures) beside labelled points and a caveat.
+    Side by side from 960px; stacked, card first, below that. */}
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+  <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-12 lg:gap-16">
+    <article class="spotlight-card relative overflow-hidden rounded-2xl bg-navy-900 p-7 text-white sm:p-9">
+      {
+        paper.badge && (
+          <p class="inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 px-3 py-1 text-xs font-semibold tracking-wide text-amber-400 uppercase ring-1 ring-amber-400/30">
+            <Icon name="triangle-alert" size={14} />
+            {paper.badge}
+          </p>
+        )
+      }
+      <h3 class="mt-5 font-display text-xl leading-snug font-semibold !text-white sm:text-2xl">
+        <a href={paper.href} rel="noopener" class="text-white no-underline decoration-white/50 underline-offset-4 hover:underline">{paper.title}</a>
+      </h3>
+      {paper.meta && <p class="mt-2 text-sm text-white/70">{paper.meta}</p>}
+
+      {
+        stats.length > 0 && (
+          <dl class="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10">
+            {stats.map((s) => (
+              <div class="flex flex-col gap-1.5 bg-navy-900 p-4 sm:p-5">
+                <dt class="order-last text-sm leading-snug text-white/70">{s.label}</dt>
+                <dd class="m-0 font-display text-3xl leading-none font-semibold text-teal-500 sm:text-4xl">
+                  <Md text={s.value} inline />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
+
+      <a href={paper.href} rel="noopener" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white no-underline hover:underline">
+        {paper.linkLabel}
+        <Icon name="arrow-up-right" size={16} />
+      </a>
+    </article>
+
+    <div class="flex flex-col gap-6">
+      <ul class="flex flex-col gap-6">
+        {
+          points.map((p) => (
+            <li class="flex gap-4">
+              <span class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-surface text-blue-700 shadow-sm ring-1 ring-line" aria-hidden="true">
+                <Icon name={p.icon} size={22} />
+              </span>
+              <div>
+                <h3 class="font-display text-lg font-semibold text-ink-heading">{p.title}</h3>
+                <Md text={p.body} class="mt-1.5 leading-relaxed text-ink-muted" />
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+      {
+        caveat && (
+          <aside class="flex gap-3 rounded-xl border border-amber-400/40 bg-warning-bg p-4 text-sm leading-relaxed text-ink">
+            <Icon name="info" size={18} class="mt-0.5 shrink-0 text-warning" />
+            <Md text={caveat} />
+          </aside>
+        )
+      }
+      {link && <div><Button {...link} variant="outline" /></div>}
+    </div>
+  </div>
+</Section>
+
+<style>
+  /* A soft glow in the corner of the paper card. */
+  .spotlight-card::before {
+    content: '';
+    position: absolute;
+    top: -6rem;
+    right: -6rem;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgb(4 189 175 / 0.35), transparent 70%);
+    pointer-events: none;
+  }
+</style>

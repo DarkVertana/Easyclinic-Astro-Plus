@@ -8,9 +8,11 @@ interface Props {
   links: Array<{ href: string; label?: string; description?: string }>;
   /** Show country pages as a row of flag pills above the cards (the home page) instead of as cards. */
   countryPills?: boolean;
+  /** The light-blue section background instead of white (/about-us/). */
+  tinted?: boolean;
 }
 
-const { heading, links, countryPills = false } = Astro.props;
+const { heading, links, countryPills = false, tinted = false } = Astro.props;
 const registry = await getRegistry();
 // A country page shows its flag; other targets get an icon for what they are.
 const ICONS: [string, string][] = [
@@ -67,7 +69,7 @@ const cards = countryPills ? items.filter((i) => !i.country) : items;
 
 {
   items.length > 0 && (
-    <nav aria-labelledby="related-heading" class:list={['section-y bg-surface', countryPills && 'pb-0!']}>
+    <nav aria-labelledby="related-heading" class:list={['section-y', tinted ? 'bg-surface-alt' : 'bg-surface', countryPills && 'pb-0!']}>
       <div class="container-page">
         {/* On the home page a hairline closes the section, as wide as the content rather than the screen. */}
         <div class:list={[countryPills && 'border-b border-[#c7c7c7] pb-14 md:pb-20']}>

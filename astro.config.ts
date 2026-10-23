@@ -105,7 +105,8 @@ export default defineConfig({
         `img-src 'self' ${GA4.img.join(' ')}`,
         "font-src 'self'",
         `connect-src 'self' ${GA4.connect.join(' ')}`,
-        `frame-src 'self' https://www.youtube-nocookie.com ${GA4.frame.join(' ')}`,
+        // www.google.com: the click-to-load office maps on /contact-us/ (owner decision 2026-10-23).
+        `frame-src 'self' https://www.youtube-nocookie.com https://www.google.com ${GA4.frame.join(' ')}`,
         "object-src 'none'",
         "base-uri 'self'",
         "form-action 'self'",

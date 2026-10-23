@@ -3,6 +3,7 @@ import { getEntries } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
 import Section from '../../ui/Section.astro';
 import Quote from '../../ui/Quote.astro';
+import TestimonialCarousel from './TestimonialCarousel.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'testimonialRow'> & { ctx: BlockContext };
@@ -11,6 +12,7 @@ const testimonials = await getEntries(items);
 const single = layout === 'single' || testimonials.length === 1;
 ---
 
+{layout === 'carousel' ? <TestimonialCarousel id={id} eyebrow={eyebrow} heading={heading} intro={intro} testimonials={testimonials} /> : (
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center={single}>
   {
     single ? (
@@ -36,6 +38,7 @@ const single = layout === 'single' || testimonials.length === 1;
     )
   }
 </Section>
+)}
 
 <style>
   /* The swipe row on phones has no visible scrollbar; the peeking card shows there is more. */
