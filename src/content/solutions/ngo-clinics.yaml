@@ -1,6 +1,6 @@
 # NGO and mission clinics (spec 5.10; keyword row 4.2; FAQ replacements 6.4). Draft: spec 5.10 asks for NGO
 # pricing "in numbers [decide before launch]", which is not decided. Keep the page lean (search demand is low).
-status: draft
+status: published
 headKeyword: clinic software for NGO and mission hospitals
 secondaryKeywords:
   - NGO clinic management software
@@ -16,9 +16,9 @@ eyebrow: For NGO clinics and mission hospitals
 openingAnswer: >-
   Easy Clinic is clinic software for NGO clinics and mission hospitals: each visit and bill is recorded
   once, and donor reports, from patients by site to a day-end financial report, are built from those
-  records. NGO pricing is [NGO tier or discount, in numbers], and every site needs an internet connection.
+  records. Every site needs an internet connection.
 summary: >-
-  Clinic records and the reports donors ask for, for NGO clinics and mission hospitals, with NGO pricing
+  Clinic records and the reports donors ask for, for NGO clinics and mission hospitals, with the prices
   and the connectivity limits stated plainly.
 author: subhashish-saha
 lastUpdated: 2026-09-26
@@ -88,18 +88,12 @@ sections:
 
         On Premium and Enterprise every site works in the same account, so what a site records shows on the programme's dashboards in real time, and head office does not wait for a site to send its figures in. The dashboards open on a phone too, and the phone needs a connection as well. If an outreach camp has no signal at all, Easy Clinic is the wrong tool for the camp itself today.
 
-        [The slowest connection a site can work on, measured, and whether private cloud hosting on Enterprise keeps a site running when its internet drops].
-
   - discriminant: prose
     value:
       id: pricing
       heading: What Easy Clinic costs an NGO clinic
       body: |-
-        [NGO tier or discount, in numbers, and which organisations qualify].
-
-        For comparison, the standard plans are priced per doctor per month, with no setup fee and no contract. Professional costs {price:usd.professional.annual} billed annually ({price:inr.professional.annual} in India) and covers one location. Premium, at {price:usd.premium.annual} ({price:inr.premium.annual} in India), covers more than one, so a programme with several sites starts there. Enterprise, which adds the pharmacy and central control of every location, is quoted for each organisation. Every plan includes a reception login and unlimited support and training.
-
-        [How a nurse or clinical officer who sees patients on their own is licensed, and at what price].
+        The price list has no separate NGO plan, so ask us about your programme. The standard plans are priced per doctor per month, with no setup fee and no contract. Professional costs {price:usd.professional.annual} billed annually ({price:inr.professional.annual} in India) and covers one location. Premium, at {price:usd.premium.annual} ({price:inr.premium.annual} in India), covers more than one, so a programme with several sites starts there. Enterprise, which adds the pharmacy and central control of every location, is quoted for each organisation. Every plan includes a reception login and unlimited support and training.
 
   - discriminant: prose
     value:
@@ -151,7 +145,7 @@ faqHeading: Questions NGO and mission clinics ask
 faq:
   - question: Is there a discount for NGOs and mission clinics?
     answer: >-
-      [NGO tier or discount, in numbers, and which organisations qualify]. Without it, Easy Clinic costs
+      The price list has no separate NGO plan, so ask us about your programme. On the standard plans, Easy Clinic costs
       {price:usd.professional.annual} per doctor per month billed annually on Professional
       ({price:inr.professional.annual} in India), with no setup fee and no contract, and support and
       training are included.
@@ -163,8 +157,7 @@ faq:
   - question: Can the figures go into DHIS2 or a donor's portal?
     answer: >-
       In Kenya, the MOH 705 and DHIS2 reports are built from the visits already recorded, so nobody tallies
-      the register at month end. [Whether Easy Clinic submits the figures to DHIS2 directly or the clinic
-      uploads them, as of date]. For a donor's own portal, reports export to Excel and PDF for your
+      the register at month end. For a donor's own portal, reports export to Excel and PDF for your
       team to upload, and a direct connection to a particular system is custom development: part of
       Enterprise, or scoped per project as a module on Professional and Premium.
   - question: Can one account run several programme sites?
@@ -181,8 +174,7 @@ faq:
       named account manager.
   - question: Which languages does Easy Clinic work in?
     answer: >-
-      [Languages the Easy Clinic screens are available in, and prescription languages beyond English and
-      Swahili]. In Kenya, prescriptions print in English and Swahili, so the patient reads the dosage in
+      In Kenya, prescriptions print in English and Swahili, so the patient reads the dosage in
       the language they use at home.
 
 links:
@@ -238,6 +230,7 @@ editorialPass:
     a grant report.
 
 notes:
+  - 'Published 2026-10-23 (owner request, so the home page NGO card links here live). Six placeholders were taken out rather than filled, so nothing unconfirmed is stated: the NGO tier or discount (opening answer, pricing section, discount FAQ, which now say the price list has no separate NGO plan), the slowest workable connection and Enterprise offline behaviour, how a nurse or clinical officer is licensed and priced, whether DHIS2 submission is direct, and the screen and prescription languages beyond English and Swahili. Add each back when the company confirms it.'
   - 'Status draft: spec 5.10 item 4 wants an NGO tier or discount "in numbers [decide before launch]". Placeholders to fill before publishing: the NGO tier or discount and who qualifies (opening answer, pricing section, first FAQ); how a nurse or clinical officer who sees patients alone is licensed (pricing section; pricing/main.yaml also lists the licence rule for nurses as unknown); the screen and prescription languages (last FAQ); the slowest connection a site can work on and whether private cloud hosting keeps a site running offline (connectivity section); whether Easy Clinic submits to DHIS2 directly or the clinic uploads (DHIS2 FAQ). Everything else uses confirmed facts only, so the page can publish once those five are supplied.'
   - 'Grounding: live /ngo-landing-page/ fetched 2026-09-26 (it 301s here per src/data/redirects.yaml, so no redirectFrom). Used from it: end-of-day financial reports clinic- and organisation-wide covering all transactions; role-based access control; automated generation and distribution of reports; centralised patient records across locations. Report library, filters, Excel and PDF export, custom reports, access by department, audit logs, inventory reports and real-time dashboards on a phone follow the grounding recorded on /features/reports-and-dashboards/ (live /features/ and /reports-and-dashboards/). Plans from plans.yaml. Reception rule, no contract, support channels, four-day training and "does not run fully offline today" from facts.md. MOH 705 and DHIS2 for Kenya from live /kenyademo/ ("MOH 705 and DHIS2 done automatically"), worded as on /kenyademo/ in this repo.'
   - 'Left out of the live NGO page: tracking donor contributions and fund usage, fundraising campaign management and "increased funding from donors" (no detail of what is recorded; confirm with product before any donor-tracking claim); AI clinician assistant, AI-generated reporting, predictive health-risk AI and AI inventory demand forecasting (not in plans.yaml under those names); automated vaccination and medication-refill reminders (plans.yaml has SMS and email reminders only); staff burnout and turnover claims (unmeasured); "Join 5000+ Doctors" stat line; "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" (conflicts with published pages that say there is no free trial).'
