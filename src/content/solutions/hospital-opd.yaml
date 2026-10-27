@@ -36,6 +36,54 @@ ctas:
   whatsapp: Hi, I was reading the Easy Clinic hospital OPD page and would like to book an OPD walkthrough for our hospital.
 
 sections:
+  - discriminant: dayTimeline
+    value:
+      id: a-tuesday
+      heading: A Tuesday in the OPD, with and without Easy Clinic
+      intro: >-
+        Same OPD, same patients, same registration desk. What changes is how many times a name is typed,
+        and whether the claim is still paper at the end of the week.
+      entries:
+        - time: '10:00'
+          title: The registration rush
+          before: >-
+            Walk-ins queue beside patients who booked and expect to go first. Every name typed at the desk
+            is typed again at billing, and insured patients reach the doctor before anyone has checked their
+            plan.
+          after: >-
+            Walk-ins sit beside booked appointments on one calendar that the desk and the doctors share.
+            Reception registers each patient once and checks the insurer or TPA plan before the consult.
+          href: /features/appointment-scheduling/
+        - time: '11:20'
+          title: The prescription leaves the consulting room
+          before: >-
+            The patient walks a handwritten prescription to the pharmacy counter, and the pharmacist phones
+            the consulting room to read it. The lab starts its clock when the paper slip arrives.
+          after: >-
+            On Enterprise, or with the pharmacy and lab add-ons on Professional or Premium, the pharmacy
+            dispenses from the prescription on its screen, with batch and expiry tracked. Tests are ordered
+            from the chart, and the result comes back into the record the doctor opens at the follow-up.
+          href: /features/pharmacy-and-inventory/
+        - time: '15:00'
+          title: The claim pack
+          before: >-
+            The claim is put together at the billing counter by someone who was not in the consulting room.
+            Nobody can fix a wrong plan picked at registration, and the TPA or HMO sends the claim back.
+          after: >-
+            With payer claims, which come with Enterprise or as an add-on, the claim started at
+            registration and the prescription and pre-authorisation were added on the way. The claim pack
+            is built from the visit and the invoice, and the billing desk submits it to the payer.
+          href: /features/insurance-claims/
+        - time: '18:30'
+          title: Closing the day
+          before: >-
+            The week's claims are still a pile of paper at the billing counter, and which payer still owes
+            what is a question nobody can answer before the weekend.
+          after: >-
+            When a payer pays, the payment is matched against its claim and the claims dashboard shows where
+            each claim stands. Revenue and claim status are in the view the owner opens the next morning.
+          href: /features/reports-and-dashboards/
+
   - discriminant: painBlocks
     value:
       id: where-opd-breaks
@@ -44,87 +92,228 @@ sections:
         A clinic with two doctors can run on a register and a good receptionist. An OPD where several
         departments share one registration desk and one pharmacy counter cannot.
       items:
-        - heading: The front desk sets the pace for the whole OPD
+        - heading: The front desk sets the pace
           body: >-
-            OPD throughput is decided at the registration counter before any doctor sees a patient. At
-            ten in the morning the queue mixes walk-ins with patients who booked and expect to go first.
-            Every name typed at the desk is typed again at billing, and insured patients reach the doctor
-            before anyone has checked their plan.
+            At ten in the morning the queue mixes walk-ins with patients who booked and expect to go first.
+            Every name typed at the desk is typed again at billing, and nobody checks the plan before the
+            consult.
           fix: >-
-            Walk-ins sit beside booked appointments on one calendar that the desk and the doctors share.
-            Reception registers each patient once and checks the insurer or TPA plan before the consult.
-            Billing then works from the same record.
+            Walk-ins sit beside booked appointments on one calendar the desk and the doctors share. Reception
+            registers each patient once and checks the insurer or TPA plan before the consult.
           href: /features/appointment-scheduling/
           linkLabel: Appointments and walk-ins
-        - heading: The prescription reaches the pharmacy and the lab late
+        - heading: The pharmacy and lab hear late
           body: >-
-            The patient walks a handwritten prescription to the pharmacy counter, and the pharmacist
-            either reads it or phones the consulting room. The lab starts its clock when the paper slip
-            arrives, whenever that is, and by the follow-up visit the report is in the patient's bag or
-            lost.
+            The patient walks a handwritten prescription to the pharmacy, and the pharmacist phones the
+            consulting room to read it. The lab starts its clock when the paper slip arrives.
           fix: >-
-            The pharmacy dispenses from the prescription on its screen, with batch and expiry tracked and
-            a reorder point before a medicine runs out. Tests are ordered from the chart and samples
-            tracked in the lab, so the result comes back into the record the doctor opens at the
-            follow-up.
+            The pharmacy dispenses from the prescription on its screen, with batch and expiry tracked. Tests are
+            ordered from the chart, and the result comes back into the record.
           href: /features/pharmacy-and-inventory/
           linkLabel: Pharmacy and inventory
         - heading: Claims die after the consult
           body: >-
-            The claim is put together at the billing counter, often days later, by someone who was not in
-            the consulting room. By then nobody can fix a wrong plan picked at registration or a
-            pre-authorisation that was never attached, and the TPA or HMO sends the claim back.
+            The claim is put together at the billing counter, often days later, by someone who was not in the
+            consulting room. A wrong plan cannot be fixed by then, and the TPA or HMO sends it back.
           fix: >-
-            The claim starts at registration, when the plan is linked and coverage checked, and the
-            prescription and the pre-authorisation add to it on the way. The claim pack is built from the
-            visit and the invoice, and reconciliation shows which payer still owes what.
+            The claim starts at registration, when the plan is linked and coverage checked. The claim pack is
+            built from the visit and the invoice, and reconciliation shows which payer still owes what.
           href: /features/insurance-claims/
           linkLabel: Insurance claims
 
-  - discriminant: flowDiagram
+  - discriminant: featureRows
     value:
-      id: claims-flow
-      heading: From registration to claim submission
+      id: day-one
+      heading: What an OPD gets on Easy Clinic
       intro: >-
-        Each step writes to the same claim, so the billing desk finishes a claim that started at the
-        registration counter instead of building one from paper at the end of the week. The payers change
-        from country to country and the steps stay the same. The examples below name who pays in each
-        country; they are payer examples, not a list of Easy Clinic connections.
-      steps:
-        - label: Register
-          body: Reception registers the patient once, and walk-ins and booked patients join the same OPD list.
-        - label: Link the plan
-          body: The patient's payer is linked to the record at the desk, with that payer's own price list.
-          check: Catches the wrong plan
-        - label: Check coverage
-          body: Coverage is checked while the patient is still at the desk, before the consult.
-        - label: Prescribe within formulary
-          body: The doctor prescribes and orders tests from the chart against what the plan covers, so an uncovered item is caught in the consulting room instead of at billing.
-          check: Catches items the plan does not cover
-        - label: Pre-authorise
-          body: Where the payer asks for pre-authorisation, it is attached to the claim at this step, not searched for at the billing counter.
-          check: Catches a missing pre-authorisation
-        - label: Invoice
-          body: The invoice builds from what was ordered in the consult, priced from that payer's price list.
-        - label: Submit
-          body: The claim pack is built from the visit and the invoice, and the billing desk submits it to the payer.
-        - label: Reconcile
-          body: When the payer pays, the payment is matched against the claim, and the claims dashboard shows where each claim stands.
-      examples:
-        - country: India
-          body: TPAs acting for insurers, and corporate panels where the employer settles the bill.
-        - country: Kenya
-          body: SHA, and private insurers such as Jubilee, AAR, CIC, Britam and Resolution.
-        - country: UAE
+        Everything below comes with Enterprise, the plan built for hospital OPDs and nursing homes, quoted
+        for your hospital. On Professional or Premium, the pharmacy, lab and payer claims can be added.
+      items:
+        - heading: Registration and the OPD calendar
+          icon: calendar-clock
+          plan: enterprise
           body: >-
-            Insurers, which in Dubai receive claims and prior authorisations through DHA eClaimLink, the
-            Dubai Health Authority's electronic claims system.
-        - country: Nigeria
-          body: HMOs, and the NHIA (National Health Insurance Authority).
+            Walk-ins sit beside booked appointments on one calendar the desk and the doctors share, and
+            reception registers each patient once.
+          bullets:
+            - Appointment scheduling and walk-ins
+            - SMS and email reminders
+            - A reception login in every plan
+          link:
+            label: See how scheduling works
+            href: /features/appointment-scheduling/
+        - heading: The pharmacy and its stock
+          icon: pill
+          plan: enterprise
+          body: >-
+            The pharmacy dispenses from the prescription on its screen, with batch and expiry tracked,
+            instead of phoning the consulting room to read it.
+          bullets:
+            - Pharmacy
+            - Inventory and stock transfers
+            - Batch and expiry tracking
+          link:
+            label: See how the pharmacy works
+            href: /features/pharmacy-and-inventory/
+        - heading: Lab orders and results
+          icon: flask-conical
+          plan: enterprise
+          body: >-
+            Tests are ordered from the chart, and the result comes back into the record the doctor opens at
+            the follow-up.
+          bullets:
+            - Lab management
+            - Tests ordered from the chart
+            - Results back in the record
+          link:
+            label: See how lab management works
+            href: /features/lab/
+        - heading: Payer claims from desk to payment
+          icon: file-check
+          plan: enterprise
+          body: >-
+            The plan is linked and coverage checked at registration. The claim pack is built from the visit
+            and the invoice, and each payment is reconciled.
+          bullets:
+            - Insurance, TPA and HMO claims
+            - A price list for each payer
+            - Claims dashboard and reconciliation
+          link:
+            label: See how insurance claims work
+            href: /features/insurance-claims/
+
+  - discriminant: splitContent
+    value:
+      id: opd-workflow
+      tone: wash
+      heading: Built for a busy hospital OPD
+      centerHeading: true
+      compact: true
+      alignTop: true
+      body: |-
+        ### One registration across departments
+        Every department writes on the same patient record, so a patient referred from medicine to orthopaedics is seen there without being registered again.
+
+        ### Specialty templates per department
+        On Premium and Enterprise, each department keeps its own specialty templates while all of them write to one patient record.
+
+        ### Logins that match each role
+        Every member of staff signs in with their own login, and the role decides the screens. Reception, included with every plan, cannot open the EMR.
+
+        ### Pharmacy and lab on the same record
+        With Enterprise, or the add-ons on Professional or Premium, the pharmacy works from the prescription and lab results return to the chart.
+
+        ### Payer claims built from the visit
+        With Enterprise or the claims add-on, each payer has its own price list, coverage is checked at the desk and payments are reconciled.
+
+        ### Workflow rules and central control
+        Workflow rules come with Enterprise, alongside central control of every location for a hospital running OPDs on more than one site.
+      chips:
+        - Walk-ins and appointments
+        - SMS and email reminders
+        - Reception login included
+        - Department specialty templates
+        - Batch and expiry tracking
+        - Price list per payer
+        - Claims dashboard
+        - Payment reconciliation
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/2_EMR.png
+        alt: 'The Easy Clinic EMR: a signed prescription beside a summary of the last visit and the patient facesheet, with a Complete Blood Count trend chart below'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customer
+      heading: Dr Prantar Chakrabarti on working with Easy Clinic
+      intro: Dr Prantar Chakrabarti is a haematologist at the Institute of Hematology and Transfusion Medicine, and has used Easy Clinic since 2008.
+      items:
+        - prantar-chakrabarti
+      layout: single
+      usePullQuote: false
+
+  - discriminant: splitContent
+    value:
+      id: video-consults
+      tone: wash
+      heading: Teleconsultation, Video consult & Online fees collection
+      intro: Video consultations and online fee payment come with the Premium plan.
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitTable
+    value:
+      id: plans
+      heading: What each plan covers for a hospital OPD
+      intro: >-
+        Enterprise is the plan built for hospital OPDs and nursing homes, quoted for your hospital. The pharmacy, lab and payer claims can also be added to Professional or Premium.
+      left:
+        title: Included in every plan
+        icon: circle-check
+        items:
+          - Patient records and the EMR
+          - E-prescriptions
+          - Cura AI (documentation)
+          - Billing and payments
+          - Appointment scheduling
+          - Dashboards and reports
+          - Logins for your staff
+          - SMS and email reminders
+      right:
+        title: Included in Premium
+        icon: badge-check
+        items:
+          - Specialty EMR templates
+          - Your own clinical forms and print layouts
+          - Package treatments
+          - Lab reports in the chart
+          - WhatsApp reminders and messages
+          - Online payments
+          - More than one location
+          - A named account manager
+      more:
+        - title: Added as a module, or included in Enterprise
+          icon: layers
+          items:
+            - 'Pharmacy and inventory: dispense from the prescription, with batch and expiry tracked'
+            - 'Lab management: orders from the chart and sample tracking'
+            - Insurance and payer claims
+            - Integrations and custom development
+        - title: Enterprise also adds
+          icon: crown
+          items:
+            - Clinical SOP tracking across branches
+            - Financial accounting
+            - A reporting server and custom analytics
+            - Workflow rules
+            - Patient portal and app
+            - Central control of every location
+            - Private cloud hosting on request
 
   - discriminant: prose
     value:
       id: departments
+      width: wide
       heading: Departments and staff access
       body: |-
         A hospital OPD is several clinics sharing one registration desk. Every department on Easy Clinic writes on the same patient record, so the physician sees what orthopaedics prescribed last month, and a patient sent from one department to another is not registered twice. On Premium and Enterprise each department keeps its own specialty templates.
@@ -133,33 +322,119 @@ sections:
 
         Enterprise adds workflow rules and central control of every location, for a hospital that runs OPDs in more than one place. It also adds financial accounting and a reporting server with custom analytics.
 
-  - discriminant: scopeBox
+  - discriminant: flowDiagram
     value:
-      id: not-in-scope
-      heading: What Easy Clinic does not run in a hospital
+      id: claims-flow
+      wideIntro: true
+      heading: From registration to claim submission
       intro: >-
-        Easy Clinic stops at the ward door. If your hospital or nursing home admits patients, the inpatient
-        side needs its own system, and Easy Clinic runs the OPD and day care beside it.
-      variant: isNot
-      items:
-        - '**Inpatient wards.** Admissions, bed management, ward rounds and nursing charts are out of scope.'
-        - '**Operating theatres.** Theatre scheduling and the theatre''s own records are out of scope.'
-        - '**Intensive care.** ICU charting and monitoring are out of scope.'
-        - '**A full hospital information system.** Easy Clinic does not replace an HIS. It covers the outpatient side, with pharmacy, lab, billing and insurance claims.'
-      note: >-
-        Connecting Easy Clinic to the inpatient system you already run is an integration project, scoped for
-        your hospital and that system. Integrations come with Enterprise, or as an add-on on Professional
-        and Premium.
+        Each step writes to the same claim, so the billing desk finishes a claim that started at the
+        registration counter instead of building one from paper at the end of the week. The payers change
+        from country to country and the steps stay the same.
+      steps:
+        - label: Register
+          body: Reception registers the patient once, and walk-ins and booked patients join the same OPD list.
+        - label: Link the plan
+          body: The patient's payer is linked to the record at the desk, with that payer's own price list.
+        - label: Check coverage
+          body: Coverage is checked while the patient is still at the desk, before the consult.
+        - label: Prescribe within formulary
+          body: The doctor prescribes and orders tests against what the plan covers, so an uncovered item is caught before billing.
+        - label: Pre-authorise
+          body: Where the payer asks for pre-authorisation, it is attached to the claim here, not searched for at billing.
+        - label: Invoice
+          body: The invoice builds from what was ordered in the consult, priced from that payer's price list.
+        - label: Submit
+          body: The claim pack is built from the visit and the invoice, and the billing desk submits it to the payer.
+        - label: Reconcile
+          body: Each payment is matched to its claim, and the claims dashboard shows where every claim stands.
 
-  - discriminant: testimonialRow
+  - discriminant: splitContent
     value:
-      id: customer
-      heading: Dr Prantar Chakrabarti, on Easy Clinic since 2008
-      intro: A haematologist at the Institute of Hematology and Transfusion Medicine, on the features he likes most.
+      id: billing-payments
+      heading: Billing, Payments & Reconciliation made really simple
+      intro: Billing and payments come with every plan. Online payments and WhatsApp come with Premium, and financial accounting with Enterprise.
+      centerHeading: true
+      compact: true
+      alignTop: true
+      stickyMedia: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your practice, enhancing the professional appearance of your invoices and receipts.
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: featureRows
+    value:
+      id: when-you-grow
+      heading: When the OPD grows
+      intro: >-
+        Every department joins the same patient record, so the hospital adds to Easy Clinic instead of changing systems.
       items:
-        - prantar-chakrabarti
-      layout: single
-      usePullQuote: true
+        - heading: A new department opens
+          icon: hospital
+          body: >-
+            It writes on the same patient record as every other department, so a referred patient is not registered twice.
+          bullets:
+            - One registration across departments
+            - Specialty templates on Premium and Enterprise
+            - Logins that match each role
+          link:
+            label: See how the EMR works
+            href: /features/emr/
+        - heading: Pharmacy, lab and claims are added
+          icon: layers
+          body: >-
+            They come with Enterprise, or can be added to Professional or Premium one at a time.
+          bullets:
+            - Pharmacy and inventory
+            - Lab management
+            - Insurance, TPA and HMO claims
+          link:
+            label: See pharmacy and inventory
+            href: /features/pharmacy-and-inventory/
+        - heading: OPDs in more than one place
+          icon: network
+          body: >-
+            Enterprise adds workflow rules and central control of every location.
+          bullets:
+            - Workflow rules
+            - Central control of every location
+            - Financial accounting
+          link:
+            label: See what each plan includes
+            href: /pricing/#plans
 
 faqHeading: Questions hospital and nursing home owners ask
 faq:
@@ -255,6 +530,14 @@ editorialPass:
     experience.
 
 notes:
+  - 'Sections removed 2026-10-27 at the owner''s request: not-in-scope.'
+  - 'Section when-you-grow (featureRows, three-card panel) added 2026-10-26 at the owner''s request to match /solutions/solo-clinic/, placed after billing-payments. Each card restates facts already on this page or in plans.yaml.'
+  - 'Section billing-payments (splitContent, compact, sticky image) added 2026-10-26 at the owner''s request, copied from /solutions/solo-clinic/ with the same wording and image (Invoice_Feature_01.png), placed after the step-by-step flow. The same checks apply as noted there: the "less than 10 seconds" line is unsourced, profit and loss rests on Enterprise financial accounting, and payment suggestions, the tax definition module and package amortisation are not confirmed elsewhere on the site.'
+  - 'Claims flow: the payer examples by country (India, Kenya, UAE, Nigeria) and the intro sentence pointing to them were removed 2026-10-26 at the owner''s request.'
+  - 'Plans section (splitTable plans, four cards) added 2026-10-26 at the owner''s request to match /solutions/polyclinic/, placed after the video-consults section. The cards come from plans.yaml (Professional, Premium, the module add-ons and Enterprise includes); only the heading and intro are written for this page.'
+  - 'Section video-consults (splitContent) added 2026-10-26 at the owner''s request, copied from /solutions/solo-clinic/ with the same wording and image (3_Video_consultent.png), placed after the testimonial as there. Every point is grounded on /features/telehealth/; the intro states the Premium gating (plans.yaml).'
+  - 'Testimonial restyled 2026-10-26 to match /solutions/solo-clinic/ (single, full quote, placed after the advanced section): the existing testimonial (prantar-chakrabarti) moved here and shown as the full quote instead of the pull quote.'
+  - 'The advanced section image was changed to 2_EMR.png on 2026-10-26 at the owner''s request, to match /solutions/solo-clinic/.'
   - 'Published 2026-09-26 with confirmed facts only (owner decision). Sources: plans.yaml (Enterprise inclusions, add-ons and conditions), spec 5.8 and 5.11 (scope statement, claim journey steps, payer names), facts.md (reception licence rule, no binding contract, no full offline, self-hosted option), facts.yaml (prescriptionsDaily).'
   - 'Spec 5.8 item 2 (throughput with a measured number: patients per doctor per hour, or minutes from registration to consult) is left out: no measured figure exists. Add a section after the hero once one is supplied.'
   - 'heroMedia left out: no screenshots exist yet. Spec 5.8 and section 11 ask for a queue and token board screenshot in the hero.'
@@ -274,3 +557,6 @@ notes:
   - 'Both CTAs go to /contact-us/#book-a-demo, as the Enterprise CTAs on home and pricing do. Point "Get an Enterprise quote" at a dedicated quote form if one is built.'
   - 'editorialPass is an AI review. A human editor still needs to read the page aloud (spec 6.5), rewrite or cut anything in readsMachineWritten, and update editorialPass.'
   - 'Fact check 2026-09-26 (live pages fetched with curl): the Reconcile step named a "pending claims report" and the reports related link said "Revenue by doctor and pending claims". No live product page or confirmed fact states a pending claims report or a per-doctor revenue split (only the /healthcare-dashboard-software/ blog mentions revenue per clinician, as generic KPI advice and an anonymous case study). The step now names the claims dashboard, as live /features/ and /hospital-opd-nursing-home-software/ do ("Claim Status Tracking Dashboard"), with reconciliation from plans.yaml (claims add-on); the link says revenue and claim status, as live /kenyademo/ does ("Revenue, claims, diagnoses and stock visible before the first patient walks in"), matching /features/reports-and-dashboards/.'
+  - 'dayTimeline added 2026-10-26 to match /solutions/solo-clinic/. Every entry restates claims already on this page: 10:00 rests on painBlocks item 1 (walk-ins beside booked appointments on one shared calendar, register once, plan checked before the consult) and flowDiagram Register and Check coverage; 11:20 on painBlocks item 2 and the pharmacy and lab FAQ (Enterprise inclusions, add-ons on Professional and Premium; batch and expiry, tests ordered from the chart, results back in the record); 15:00 on painBlocks item 3, the flowDiagram Pre-authorise and Submit steps and the insurance FAQ (claims on Enterprise or as an add-on; the billing desk submits the claim pack, no electronic submission implied); 18:30 on the flowDiagram Reconcile step (claims dashboard) and the reports related link (revenue and claim status, plans.yaml "Dashboards and reports" on every plan). No token display, throughput figure, per-doctor productivity, payer integration, inpatient or offline claim is made.'
+  - 'featureRows added 2026-10-26 to match /solutions/solo-clinic/. Every card restates claims already on this page or in plans.yaml: all four are Enterprise inclusions (plans.yaml), so the shared plan tag is hidden and the intro names Enterprise, quoted for the hospital (pricing FAQ), with pharmacy, lab and payer claims as add-ons on Professional and Premium (pharmacy and lab FAQ, insurance FAQ, plans.yaml addons). Registration rests on painBlocks item 1 (walk-ins beside booked appointments on one shared calendar, register once), plans.yaml "Appointment scheduling and walk-ins" and "SMS and email reminders", and the departments prose (reception login with every plan); pharmacy on painBlocks item 2 (dispenses from the prescription, batch and expiry) and plans.yaml "Inventory and stock transfers"; lab on painBlocks item 2 and the dayTimeline 11:20 entry (tests ordered from the chart, result back in the record); claims on painBlocks item 3, the insurance FAQ and the flowDiagram (plan linked and coverage checked at registration, a price list per payer, claim pack from the visit and the invoice, reconciliation, claims dashboard). No token display, throughput figure, per-doctor number, electronic payer submission, payer integration, inpatient, HR or offline claim is made.'
+  - 'Section opd-workflow (splitContent) added 2026-10-26 to match /solutions/solo-clinic/, with Prescription-4-3.png (swapped from 15_Workflow.png, already the hero image) beside it; the alt text quotes no times or names from the screenshot. Each point restates this page: one registration across departments and specialty templates on Premium and Enterprise from the departments prose and the departments FAQ; role logins and the reception rule from the departments prose and plans.yaml; pharmacy and lab from painBlocks item 2 and the pharmacy and lab FAQ (Enterprise, add-ons on Professional and Premium); payer claims from the insurance FAQ and the flowDiagram (price list per payer, coverage at the desk, reconciliation); workflow rules and central control from the departments prose and plans.yaml (Enterprise). Chips come from featureRows bullets, the departments prose and the flowDiagram. Nothing is said about what the workflow rules configure, step timings, token display, throughput, payer integration, inpatient care or offline use.'

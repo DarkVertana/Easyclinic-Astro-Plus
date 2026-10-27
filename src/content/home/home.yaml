@@ -1,4 +1,4 @@
-# Home page (spec 5.1, with the revised section order in section 11 "Content direction, page by page").
+﻿# Home page (spec 5.1, with the revised section order in section 11 "Content direction, page by page").
 status: published
 path: /
 headKeyword: clinic management software
@@ -11,11 +11,9 @@ title: 'Clinic Management Software for Doctors: Easy Clinic'
 metaDescription: 'Clinic management software for India, Kenya, the UAE and Nigeria: appointments, EMR, billing, pharmacy and WhatsApp in one system, since {fact:founded}.'
 h1: AI EMR, EHR & Clinic Management Software
 linkLabel: Home
-eyebrow: For clinics in India, Kenya, the UAE and Nigeria
+eyebrow: For clinics and hospital OPDs in 18 countries
 openingAnswer: >-
-  Easy Clinic runs appointments, the EMR, billing, pharmacy and lab in one cloud system, used by solo
-  doctors, polyclinics, clinic chains and hospital OPDs in {fact:countries} countries. Training is included
-  in every plan, and there is no setup fee.
+  Easy Clinic runs appointments, the EMR, billing, pharmacy and lab in one cloud system. Solo doctors, polyclinics, clinic chains and hospital OPDs use it in 18 countries. Training is included in every plan.
 summary: >-
   Clinic management software for appointments, the EMR, billing, pharmacy and lab, from one-doctor
   practices to a chain of {fact:largestChain} locations.
@@ -51,7 +49,7 @@ sections:
           body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist, all on one simple system.
           href: /solutions/solo-clinic/
         - persona: polyclinic
-          title: Specialist Poly Clinic
+          title: Specialist Polyclinic
           body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
           href: /solutions/polyclinic/
         - persona: chain
@@ -60,7 +58,7 @@ sections:
           href: /solutions/clinic-chain/
         - persona: ngo
           title: NGO Clinic
-          body: Suitable for non-profit and mission-driven healthcare organisations that operate fixed or mobile clinics, with records and stock reports.
+          body: Suitable for non-profit and mission-driven healthcare organisations that operate one or more clinic sites, with records and stock reports.
           href: /solutions/ngo-clinics/
 
   - discriminant: oldWayNewWay
@@ -105,7 +103,7 @@ sections:
           body: The invoice builds itself from what was ordered in the consult, and the receipt goes out to the patient on WhatsApp.
           href: /features/billing/
         - label: Dispense
-          body: The pharmacy dispenses from the prescription on screen, with batch and expiry tracked, so stock updates as it goes.
+          body: The pharmacy dispenses from the prescription on screen, with expiry dates tracked, so stock updates as it goes.
           href: /features/pharmacy-and-inventory/
         - label: Follow up
           body: The next-visit reminder and the lab report reach the patient on WhatsApp, sent by the software on a schedule.
@@ -118,7 +116,7 @@ sections:
     value:
       id: modules
       heading: Everything the clinic runs on, in four groups
-      intro: Twelve modules, grouped the way a clinic is run.
+      intro: The modules, grouped the way a clinic is run.
       columns: 4
       items:
         - title: Front desk
@@ -129,7 +127,7 @@ sections:
               href: /features/appointment-scheduling/
             - label: WhatsApp
               href: /features/whatsapp/
-            - label: Telehealth
+            - label: Telemedicine
               href: /features/telehealth/
         - title: Chart
           icon: clipboard-plus
@@ -149,7 +147,7 @@ sections:
               href: /features/billing/
             - label: Insurance claims
               href: /features/insurance-claims/
-            - label: Revenue management
+            - label: Financial accounting
               href: /features/revenue-management/
         - title: Growth
           icon: trending-up
@@ -190,7 +188,7 @@ sections:
       tabs:
         - label: Clinic Management
           icon: hospital
-          body: From solo practices to clinic chains, Easy Clinic simplifies operations, speeds up patient flow, and delivers complete visibility - while enhancing the patient experience.
+          body: From solo practices to clinic chains, Easy Clinic simplifies operations, speeds up patient flow, and gives you complete visibility, while improving the patient experience.
           capabilities:
             - label: Smart Appointment Scheduling
               icon: calendar-clock
@@ -209,7 +207,7 @@ sections:
             href: /features/appointment-scheduling/
         - label: EMR
           icon: file-heart
-          body: Easy Clinic's EMR combines the simplicity of paper with the power of intelligent digital tools - fast, intuitive, and fully customizable across specialties.
+          body: Easy Clinic's EMR combines the simplicity of paper with smart digital tools. It is fast, easy to learn, and customisable for each speciality.
           capabilities:
             - label: Customised EMR Templates
               icon: layout-template
@@ -228,13 +226,13 @@ sections:
             href: /features/emr/
         - label: Inventory & Pharmacy
           icon: pill
-          body: Easy Clinic's Inventory and Pharmacy module manages everything from procurement to dispensing - with full traceability, automation, and control. It ensures accuracy, cost-efficiency, and transparency.
+          body: Easy Clinic's Inventory and Pharmacy module manages everything from procurement to dispensing, with stock tracked at every step. It helps you keep stock accurate and costs in check.
           capabilities:
             - label: Full Inventory Management
               icon: boxes
             - label: AI-Assisted Reorder Management
               icon: refresh-cw
-            - label: Pilferage Prevention & Internal Controls
+            - label: Barcode Support
               icon: shield-alert
             - label: Real-Time Tracking & Alerts
               icon: bell-ring
@@ -247,15 +245,15 @@ sections:
             href: /features/pharmacy-and-inventory/
         - label: AI & Automation
           icon: brain-circuit
-          body: Easy Clinic uses AI and automation to simplify workflows, reduce errors, and ensure consistency across locations - enhancing decision-making, compliance, and efficiency at scale.
+          body: Easy Clinic uses AI and automation to simplify workflows and keep every location working the same way. Repetitive work moves off your team, and the doctor stays in charge of every decision.
           capabilities:
-            - label: AI as a Clinical Decision-Making Partner
+            - label: Cura AI Documentation Assistant
               icon: brain
-            - label: AI-Assisted Patient Intake & Triage
+            - label: AI-Assisted Stock Reorder
               icon: clipboard-plus
-            - label: Compliance & SOP Monitoring
+            - label: SOP & Patient Safety Monitoring
               icon: list-checks
-            - label: Fraud Prevention & Pilferage Control
+            - label: No-Code Workflow Automation
               icon: scan-eye
           media:
             src: ../../assets/images/tabs/18_User.png
@@ -266,11 +264,11 @@ sections:
             href: /curapilot/
         - label: BI & Reporting
           icon: chart-pie
-          body: Easy Clinic's Reports and Dashboard module blends efficiency with insight - organising data and delivering powerful, automated reports to drive smarter decisions at any scale.
+          body: Easy Clinic's Reports and Dashboard module organises your data and delivers automated reports, so you can make better decisions at any scale.
           capabilities:
-            - label: Customizable Dashboards & Reports
+            - label: Customisable Dashboards & Reports
               icon: layout-dashboard
-            - label: AI-Powered Analysis
+            - label: Power BI Integration
               icon: sparkles
             - label: Enterprise-Scale Data Integration
               icon: database
@@ -288,7 +286,7 @@ sections:
     value:
       id: customers
       heading: From a solo orthopaedic practice to a city hospital
-      intro: Nine doctors on Easy Clinic, each quote exactly as the doctor wrote it.
+      intro: Nine doctors on Easy Clinic, in their own words. Shortened quotes are marked with
       items:
         - prantar-chakrabarti
         - seetha-lakshmi-kolanakuduru
@@ -323,10 +321,9 @@ sections:
           meta: Day 4, 20 minutes
           body: The shortcuts and templates that make a busy afternoon faster, once the basics are routine.
       note: >-
-        A clinic can go from demo to live in as little as {fact:goLiveDays} days. If you write prescriptions
-        on paper today, give us two hours, or ten patient records, and we promise to make your prescription
-        writing faster.
+        If you write prescriptions on paper today, bring a real case to your demo. We will write the same prescription on Easy Clinic while you watch, so you can judge the time difference yourself.
 
+faqHeading: You Have Questions, We Have Answers
 faq:
   - question: What is clinic management software?
     answer: >-
@@ -337,45 +334,34 @@ faq:
       without anyone typing the patient in twice.
   - question: Is Easy Clinic an EMR or a full hospital information system?
     answer: >-
-      Easy Clinic is AI EMR software with the front desk, billing, pharmacy and lab built around it, not a full
-      hospital information system. It covers outpatient clinics, hospital OPDs, day care and nursing homes,
-      but it does not run inpatient wards or operating theatres, so a hospital that needs those runs
-      Easy Clinic in the OPD beside a separate inpatient system.
+      Easy Clinic is clinic management software with a full EMR built in. It runs appointments, the chart,
+      billing, pharmacy, lab and reports for clinics, polyclinics, clinic chains, hospital OPDs and nursing
+      homes. It is not a full inpatient hospital information system.
   - question: How much does Easy Clinic cost?
     answer: >-
-      Easy Clinic costs {price:usd.professional.annual} per doctor per month on Professional and
-      {price:usd.premium.annual} on Premium when billed annually, or {price:usd.professional.quarterly} and
-      {price:usd.premium.quarterly} billed quarterly. In India the annual prices are
-      {price:inr.professional.annual} and {price:inr.premium.annual}. Enterprise, for clinic chains and
-      hospital OPDs, is quoted for your network, and every plan includes the reception login with no setup fee.
-      Pharmacy, lab management, insurance claims and integrations come with Enterprise, and a clinic on
-      Professional or Premium can add them to its plan.
+      Easy Clinic is priced per doctor, with three plans: Professional, Premium and Enterprise. Prices vary by
+      country and plan. See the current prices for your country on our plans page, or book a demo and we will
+      recommend the right plan for your clinic.
   - question: Does Easy Clinic work offline?
     answer: >-
-      Easy Clinic does not run fully offline today, because the cloud version needs an internet connection.
-      Easy Clinic also offers a self-hosted option, where the system runs on
-      the clinic's own server rather than in Easy Clinic's cloud.
+      Easy Clinic is cloud software, so it needs an internet connection. It runs in a web browser, so any
+      device with a connection can use it.
   - question: Am I locked into a contract?
     answer: >-
-      No, there is no binding contract on any Easy Clinic plan and no setup fee, so you use it for as long as
-      it suits your clinic. On Professional and Premium you pay per doctor per month, billed annually or
-      quarterly.
+      Your plan terms are set out when you sign up. Ask us in your demo and we will walk you through the
+      billing options for your country.
   - question: Do I have to use the AI?
     answer: >-
-      No, the EMR works without Cura AI: you write the note and the prescription yourself, with shortcuts
-      set up for the way you prescribe, and the prescription goes out exactly as it would with the AI. Cura AI (documentation) comes with every plan,
-      and when you use it, it drafts the note for you to review and sign.
+      No. Cura AI is there to save time, for example by drafting a note for you to check and sign. You can use
+      the EMR, billing and every other module without it. The doctor always makes the final decision.
   - question: Can Easy Clinic run more than one clinic location?
     answer: >-
-      Yes, Easy Clinic runs more than one location on the Premium and Enterprise plans, but not on
-      Professional, which covers a single location. A clinic on Professional that opens a second branch
-      moves up to Premium, and Enterprise adds central control and SOP tracking across branches. The
-      largest chain on Easy Clinic has {fact:largestChain} locations.
+      Yes. Multi-location management lets you run every branch from one system, with central data and
+      reports.
   - question: How long does it take to go live?
     answer: >-
-      A clinic can go from demo to live in as little as {fact:goLiveDays} days, and staff training is
-      {fact:trainingDays} short sessions, about two hours in total. Support and training stay unlimited on
-      every plan after you go live.
+      Training takes about two hours, spread over four days. If you are moving from another system, we can
+      import your existing records.
 
 links:
   related:
@@ -409,7 +395,7 @@ links:
   relatedHeading: Choose your country to see features for your clinic's needs
 
 closing:
-  heading: See for yourself - try Easy Clinic absolutely free
+  heading: See for yourself. Book a free demo of Easy Clinic.
   body: >-
     In 20 minutes we walk through a day like yours on Easy Clinic, from the first booking to the evening cash
     close. If a call is too much today, send us a WhatsApp message instead.

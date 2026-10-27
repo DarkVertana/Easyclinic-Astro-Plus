@@ -3,23 +3,26 @@ import { Image } from 'astro:assets';
 import Button from '../ui/Button.astro';
 import Md from '../ui/Md.astro';
 import frontDesk from '../../assets/images/stomatolog-nurse-tooth-clinic-checking-patient-appointment-looking-computer-monitor-stomatology-assistant-teeth-doctor-discussing-reception-dental-office_482257-11962-1.jpg';
+import { getCollection } from 'astro:content';
 
 interface Props {
+  /** Fallback only: every page shows the home page's closing block (home.yaml), so editing it there changes the band site-wide. */
   closing: { heading: string; body?: string; primary: { label: string; href: string; event?: string }; secondary?: { label: string; href: string; event?: string } };
   /** No longer shown in the band (the floating WhatsApp button covers it); kept so callers need not change. */
   whatsappHref?: string;
 }
-const { closing } = Astro.props;
+const [home] = await getCollection('home');
+const closing = home?.data.closing ?? Astro.props.closing;
 
 /** How the demo runs; shown in the booking card. */
 const steps = ['Pick a time that suits your clinic', 'We walk through a day like yours', 'Ask anything, with no obligation to buy'];
 
-/** What a clinic gets; wording from the live site's closing section. */
+/** What a clinic gets. */
 const benefits = [
-  'A product and a team dedicated to your success',
-  'An easy-to-use system that makes your work faster and smarter',
-  'Software that is flexible and fits into your workflows',
-  'A robust technical framework built on modern technology',
+  'Your whole team is trained before you go live',
+  'Records can be imported from your old system',
+  'Built on a low-code platform, so it fits your workflows',
+  'Your patient data belongs to your clinic',
 ];
 ---
 

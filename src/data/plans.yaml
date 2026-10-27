@@ -91,7 +91,7 @@ matrix:
 addons:
   - id: pharmacy
     name: Pharmacy and inventory
-    body: Dispense from the prescription, track batch and expiry, and reorder before you run out.
+    body: Dispense from the prescription, track expiry dates, and reorder before you run out.
     availableOn: [professional, premium]
   - id: lab
     name: Lab management
@@ -99,7 +99,7 @@ addons:
     availableOn: [professional, premium]
   - id: claims
     name: Insurance and payer claims
-    body: Payer price lists, coverage checks at registration, claim packs and reconciliation.
+    body: Bulk claim submission, claim tracking, and co-pays and deductions worked out automatically.
     availableOn: [professional, premium]
   - id: integrations
     name: Integrations and custom development

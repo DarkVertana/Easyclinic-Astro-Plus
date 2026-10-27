@@ -8,4 +8,6 @@ export const schema = () =>
     steps: z.array(z.object({ label: z.string(), body: md.optional(), check: z.string().optional() })).min(3).max(10),
     /** Optional per-country examples under the flow, e.g. the payers each market uses. */
     examples: z.array(z.object({ country: z.string(), body: md })).default([]),
+    /** The heading and intro run the full container width instead of a reading measure. */
+    wideIntro: z.boolean().default(false),
   });

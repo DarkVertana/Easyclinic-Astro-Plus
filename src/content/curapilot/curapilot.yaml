@@ -13,10 +13,10 @@ h1: An AI copilot for doctors that reads past visits
 linkLabel: CuraPilot
 eyebrow: CuraPilot, the clinical copilot from Easy Clinic
 openingAnswer: >-
-  CuraPilot is Easy Clinic's AI copilot for doctors: it reads past visits and checks the prescription in
-  the consult, and the doctor decides each flag. In a 2025 Penda Health and OpenAI preprint of
+  CuraPilot is Easy Clinic's AI copilot for doctors. It reads past visits and checks the prescription
+  during the consult, and the doctor decides on each flag. In a 2025 Penda Health and OpenAI preprint of
   {fig:visits} visits on Easy Clinic, clinicians with AI Consult made {fig:diagnostic-errors} fewer
-  diagnostic errors; the paper does not name CuraPilot.
+  diagnostic errors. The paper does not name CuraPilot.
 summary: >-
   Easy Clinic's AI copilot for doctors, and what the Penda Health study of {fig:visits} visits in Nairobi
   did and did not measure.
@@ -53,7 +53,7 @@ sections:
           fix: >-
             CuraPilot reads past visits during the consult and flags patterns no single visit shows. In the
             Penda Health preprint, clinicians with AI Consult in their Easy Clinic record made
-            {fig:diagnostic-errors} fewer diagnostic errors; the paper does not name CuraPilot.
+            {fig:diagnostic-errors} fewer diagnostic errors. the paper does not name CuraPilot.
         - heading: 'Operations: stockouts found too late'
           body: >-
             A medicine shortage usually shows up when the patient is already at the counter, not weeks
@@ -201,7 +201,7 @@ sections:
         href: /contact-us/
       media:
         kind: screenshot
-        src: ../../assets/images/curapilot/AI-suggestions-1.png
+        src: ../../assets/images/curapilot/curapilt-integartion.png
         alt: An Easy Clinic visit with the chief complaints, vitals and diagnosis, and a suggestion set of investigations, medications and guidelines for the diagnosis picked
         frame: none
 
@@ -277,6 +277,7 @@ sections:
             - title: Telemedicine
               body: Video consults in the same record, so the patient's history is open during the call.
 
+faqHeading: You Have Questions, We Have Answers
 faq:
   - question: Does CuraPilot replace our EMR?
     answer: >-
@@ -285,57 +286,60 @@ faq:
       prescriptions stay in that system.
   - question: What did the Penda Health study show?
     answer: >-
-      The 2025 preprint by Penda Health and OpenAI found that clinicians who had AI Consult made
-      {fig:diagnostic-errors} fewer diagnostic errors and {fig:treatment-errors} fewer treatment errors
-      than clinicians without it, across {fig:visits} visits at 15 clinics in Nairobi. The biggest drop
-      was in history-taking errors, {fig:history-errors} fewer, as rated by 108 independent physicians on a
-      random sample of the visit records.
+      Clinicians using an AI copilot made fewer errors. In a 2025 preprint, Penda Health and OpenAI
+      studied {fig:visits} visits at 15 clinics in Nairobi. Visits with AI Consult had
+      {fig:diagnostic-errors} fewer diagnostic errors and {fig:treatment-errors} fewer treatment errors,
+      as rated by independent physicians.
   - question: Did the study test CuraPilot?
     answer: >-
-      Not by name: the paper studied AI Consult, a copilot inside Penda's Easy Clinic record, and does not
-      name CuraPilot. Easy Clinic built that record, and Penda Health has used it since 2017.
+      No. The study tested AI Consult, a copilot built by Penda Health and OpenAI that ran inside Penda's
+      Easy Clinic record. The paper does not name CuraPilot. CuraPilot is Easy Clinic's own copilot, and
+      no published study has measured it yet.
   - question: Does the clinician stay in control?
     answer: >-
-      Yes, CuraPilot is advisory by design. It raises a flag during the consult, and the clinician decides
-      whether to act on it, so the diagnosis and the prescription stay the clinician's.
+      Yes. Every CuraPilot flag is advice, not an order. The clinician reads it, then acts on it or
+      dismisses it, and the visit carries on as normal. Nothing changes in the record without the
+      clinician's decision.
   - question: What happens when the clinician disagrees with a flag?
     answer: >-
-      The clinician dismisses it and carries on with the visit as they judge best. A flag is a second
-      opinion to weigh, and the decision stays with the clinician.
+      The clinician dismisses it and carries on. A flag never blocks the prescription or the visit. The
+      final decision on diagnosis and treatment always stays with the clinician.
   - question: Does CuraPilot work with the EMR we already use?
     answer: >-
-      CuraPilot is built to sit on Easy Clinic or on top of an existing hospital information system. This
-      page does not list named systems, so name yours when you ask for a proof of concept.
+      It can. CuraPilot runs on Easy Clinic, or on top of an existing hospital information system. Name
+      the system your clinics use when you ask for a proof of concept, and we will confirm how it
+      connects.
   - question: Has the study been published in a journal?
     answer: >-
-      No, the {fig:visits}-visit study is a preprint that has not yet been through a journal's review. It
-      was posted on arXiv (2507.16947) in July 2025, and its figures measure errors as physicians judged
-      them from visit records rather than how patients fared afterwards.
+      Not as a full paper. The study is a preprint on arXiv (arXiv:2507.16947), posted on 22 July 2025. A
+      short abstract appeared in a 2026 supplement of Population Medicine. The full paper has not been
+      through a journal's peer review.
   - question: How long does a proof of concept take?
     answer: >-
-      A proof of concept takes 90 days in four stages: Understand in weeks 1 to 3, Deploy in weeks 4 to 6,
-      Measure in weeks 7 to 10, and Decide from week 11. The results are measured on your own clinics'
-      data, against your own baseline.
+      90 days, in four stages. We record your baseline, CuraPilot goes live, results are measured on your
+      own data, and then you decide whether to keep it.
 
 links:
   related:
     - href: /ai/
       label: Cura AI
-      description: The AI scribe that writes the note while you see the patient, and the other Cura AI features.
+      description: The AI scribe that writes the note while you see the patient, for you to check and sign.
     - href: /features/emr/
       label: EMR and e-prescriptions
-      description: The patient record and prescription that CuraPilot works inside.
+      description: The patient record and prescription that CuraPilot works from.
     - href: /pricing/
       label: Easy Clinic pricing
-      description: Per doctor per month, from {price:usd.professional.annual} on Professional, which includes Cura AI (documentation).
-    - href: /trust/
-      label: Trust and security
-      description: Where your data lives and who can see it.
+      description: 'Per doctor plans: Professional, Premium and Enterprise, priced for your country.'
     - href: /ai-emr-software-vs-traditional-emr/
+      description: What published research says about AI scribes and the time they save doctors.
     - href: /clinic-workflow-automation/
+      description: A practical order for handing a clinic's routine jobs to software.
     - href: /compare/
+      description: All nine Easy Clinic comparison pages, against one product or several.
     - href: /customers/
+      description: Reviews from Easy Clinic customers in their own words.
     - href: /start-a-clinic/
+      description: Licences and setup costs for opening a clinic in Kenya, India and other markets.
 
 closing:
   heading: Try CuraPilot on your own clinics for 90 days
@@ -356,6 +360,7 @@ editorialPass:
   readsMachineWritten: 'The three leaks and the three intelligence rows keep the old page''s template shape, the consult walkthrough describes an alert a doctor cannot yet see in a screenshot, and the "does not name CuraPilot" caveat repeats in several places.'
 
 notes:
+  - 'FAQ answers 2 to 8 replaced 2026-10-27 at the owner''s request. Figures stay as {fig:} tokens (study.yaml korom-2025). Check before publishing: the "short abstract in a 2026 supplement of Population Medicine" is not in study.yaml and has not been verified; add it as a publication with verifiedOn before relying on it. "No published study has measured it yet" and "Nothing changes in the record without the clinician''s decision" are the owner''s wording.'
   - 'Title changed from spec 4.1 ("CuraPilot: AI Clinical Copilot Proven on 39,849 Visits"): "proven" is banned and the study did not measure CuraPilot by name. H1 changed from "The AI copilot studied on 39,849 patient visits" for the same reason.'
   - 'Spec 5.3 promise ("the only clinic AI whose outcomes were measured on real visits and peer-reviewed") is not used: the 39,849-visit study is a preprint (korom-2025, peerReviewed false), it measured AI Consult, and "the only" has no source.'
   - 'Study honesty: the paper names AI Consult, embedded in Penda''s Easy Clinic EMR since 2017. It does not name CuraPilot (study.yaml note: confirm whether CuraPilot is AI Consult). If product confirms they are the same system, the opening answer, painBlocks clinical fix, studyCard intro and limits, and the "Did the study test CuraPilot?" FAQ can be rewritten.'

@@ -31,10 +31,13 @@ const legal = nav.legal.map((l) => ({ ...l, href: resolve(l.href) })).filter((l)
 // Country phone numbers (spec 3.3): India and Kenya only, the two countries with their own office and number
 // (owner decision 2026-10-23; the UAE and Nigeria use the India number).
 const FOOTER_PHONES = ['in', 'ke'];
+// The footer shows Kenya's general line (owner request 2026-10-27, as on /contact-us/); ke.yaml keeps the named
+// Kenya contact's own number, which the Kenya pages use.
+const FOOTER_PHONE_OVERRIDE: Record<string, string> = { ke: '+254 762 907 500' };
 const contacts = countries
   .filter((c) => FOOTER_PHONES.includes(c.data.code.toLowerCase()))
   .sort((a, b) => FOOTER_PHONES.indexOf(a.data.code.toLowerCase()) - FOOTER_PHONES.indexOf(b.data.code.toLowerCase()))
-  .map((c) => ({ country: c.data.name, code: c.data.code, phone: c.data.contact.phone }))
+  .map((c) => ({ country: c.data.name, code: c.data.code, phone: FOOTER_PHONE_OVERRIDE[c.data.code.toLowerCase()] ?? c.data.contact.phone }))
   .filter((c): c is { country: string; code: string; phone: string } => Boolean(c.phone));
 const SOCIAL: Record<string, string> = { linkedin: 'LinkedIn', youtube: 'YouTube', facebook: 'Facebook', instagram: 'Instagram', x: 'X' };
 const year = new Date().getFullYear();
@@ -54,9 +57,8 @@ const year = new Date().getFullYear();
           multi-location clinic networks.
         </p>
         <p class="mt-3 max-w-xs text-[0.9375rem] leading-relaxed sm:mt-4 sm:max-w-none lg:mt-3 lg:max-w-xs">
-          Built for an exceptional user experience, Easy Clinic integrates AI and automation to reduce clinical errors, enhance
-          patient engagement, simplify documentation, and deliver intelligent, workflow-driven care across all levels of
-          practice, boosting patient care and increasing revenues.
+          Built for an easy user experience, Easy Clinic uses AI and automation to simplify documentation, improve patient
+          engagement and support the way your clinic already works, across every size of practice.
         </p>
         <div class="sm:col-span-2 sm:flex sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-8 lg:block">
         <address class="mt-5 text-sm not-italic leading-relaxed">

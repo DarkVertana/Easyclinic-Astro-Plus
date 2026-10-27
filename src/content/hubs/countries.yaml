@@ -20,12 +20,7 @@ ctas:
   secondary: { label: See pricing, href: /pricing/ }
   whatsapp: Hi, I run a clinic outside India and Kenya and would like to see Easy Clinic.
 links:
-  related:
-    - { href: /pricing/, description: Prices per doctor per month in US dollars and rupees. }
-    - { href: /start-a-clinic/, description: 'Licences, costs and setup, country by country.' }
-    - { href: /contact-us/, description: Call or write to the team in Kolkata. }
-    - { href: /clinic-in-malaysia/ }
-    - { href: /clinic-in-rwanda/ }
+  related: []
 sections:
   - discriminant: hubGrid
     value:
@@ -35,13 +30,15 @@ sections:
         - title: India
           items:
             - { href: /emr-software-in-india/ }
-            - { href: /indiademo/ }
+            - href: /indiademo/
+              description: A 20-minute demo that follows your clinic's own patient flow, then four short training sessions before your clinic goes live.
             - { href: /best-clinic-management-software-india/ }
             - { href: /pricing/india/ }
         - title: Kenya
           items:
             - { href: /emr-software-in-kenya/ }
-            - { href: /kenyademo/ }
+            - href: /kenyademo/
+              description: A 20-minute demo that follows your clinic's patient flow from the booking to the M-Pesa payment, then four short training sessions before your clinic goes live.
             - { href: /best-clinic-management-software-kenya/ }
             - { href: /pricing/kenya/ }
         - title: United Arab Emirates
@@ -62,7 +59,8 @@ sections:
             - { href: /best-clinic-management-software-ethiopia/ }
         - title: Fiji
           items:
-            - { href: /emr-software-in-fiji/ }
+            - href: /emr-software-in-fiji/
+              description: Cloud-based AI EMR software for private clinics, speciality centres and hospitals across Suva, Nadi, Lautoka, Labasa and island communities.
             - { href: /best-clinic-management-software-fiji/ }
         - title: Ghana
           items:
@@ -103,7 +101,8 @@ sections:
         - title: Suriname
           items:
             - { href: /emr-software-in-suriname/ }
-            - { href: /best-clinic-management-software-suriname/ }
+            - href: /best-clinic-management-software-suriname/
+              description: Three clinic systems ranked for a clinic in Suriname, plus Easy Clinic unranked, with every competitor fact linked to the vendor's own page.
         - title: Tanzania
           items:
             - { href: /emr-software-in-tanzania/ }
@@ -116,36 +115,54 @@ sections:
           items:
             - { href: /emr-software-in-uganda/ }
             - { href: /best-clinic-management-software-uganda/ }
-  - discriminant: proofBlock
-    value:
-      heading: Rated by the doctors who use it
-      variant: badges
-      badges:
-        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
-        - { label: Google, rating: '{fact:googleRating}' }
   - discriminant: demoForm
     value:
       id: book-a-demo
-      heading: Your country is not listed
-      intro: Tell us where your clinic is and how it runs, and the demo uses a clinic set up like yours.
-      promise: Easy Clinic runs in the cloud, so a clinic anywhere with an internet connection can use it. Prices are per doctor per month, with no setup fee and no contract.
+      variant: contact
+      formTitle: Tell us your convenient time and we'll connect with you.
+      help:
+        heading: Need some help?
+        body: >-
+          Questions or concerns? Our support team answers by phone, email and chat. You talk to a person who knows Easy Clinic, not an automated menu. Tell us your clinic's name and what you need, and we will help you sort it out.
+        rows:
+          - icon: mail
+            title: Email Us
+            body: >-
+              [hello@easyclinic.io](mailto:hello@easyclinic.io) | [kenya@easyclinic.io](mailto:kenya@easyclinic.io)
+          - icon: phone
+            title: Call Us
+            body: |-
+              **India:** [+91 91477 70277](tel:+919147770277)
+
+              **Kenya:** [+254 762 907 500](tel:+254762907500)
+          - icon: map-pin
+            title: Address
+            body: |-
+              **India:** 30 Circus Avenue, Kolkata - 700017, India
+
+              **Kenya:** Spring Valley Business Park, Westlands, Nairobi, Kenya
+faqHeading: You Have Questions, We Have Answers
 faq:
   - question: Can a clinic outside India and Kenya use Easy Clinic?
     answer: Yes, Easy Clinic runs in the cloud in a web browser, and clinics in {fact:countries} countries use it today, so a clinic anywhere with an internet connection can run on it.
   - question: What does Easy Clinic cost outside India?
-    answer: Prices are published in US dollars, with Professional at {price:usd.professional.annual} and Premium at {price:usd.premium.annual} per doctor per month billed annually, and Enterprise is priced on a quote.
-  - question: Do I need a server or IT staff?
-    answer: No, Easy Clinic runs in the cloud in a web browser, so there is nothing to install, and updates arrive every month without an engineer visiting the clinic.
+    answer: Easy Clinic is priced per doctor per month. Outside India, Professional is {price:usd.professional.annual} and Premium is {price:usd.premium.annual} per doctor per month, billed annually. Enterprise, for clinic chains, is priced on a quote. Local taxes are extra.
   - question: What training does a clinic in another country get?
-    answer: Training runs over {fact:trainingDays} short sessions of about two hours in total, and support by phone, email and chat is included in every plan.
+    answer: The same as every clinic. Training takes about two hours over four days, run online for you and your staff. It is included in every plan, and support continues by phone, email and chat after you go live.
   - question: Is there a free trial?
-    answer: There is no free trial, and the demo runs on a clinic set up like yours so you see your own patient flow before you decide.
+    answer: The way to try Easy Clinic is a free 20-minute demo, set up around a clinic like yours. Ask in the demo about trying it with your own team before you sign up.
 editorialPass:
   by: 'Claude (AI review; human read-aloud pass pending)'
   on: 2026-09-26
   onlyUsCouldWrite: 'The page groups Easy Clinic''s own pages by country and points every other country to a form, which is where the retired micro-market pages now land.'
   readsMachineWritten: 'Nothing is specific to one country beyond the links grouped under India, Kenya, the UAE and Nigeria; the form carries the rest.'
 notes:
+  - 'FAQ set to exactly four questions 2026-10-27 at the owner''s request (server and contact questions removed, training question restored, trial answer word for word). Owner-decision exceptions added: audit.ts lets /countries/ carry four FAQs, and text.ts allowlists "Ask in the demo about trying it with your own team" past the non-answer rule.'
+  - 'FAQ "What training does a clinic in another country get?" removed 2026-10-27 at the owner''s request and replaced with "Who do I contact from another country?" so the hub keeps five FAQs; it uses the contact details shown in this page''s form section, including the Kenya number +254 762 907 500 from the help panel, which differs from src/data/countries/ke.yaml (+254 750 184 357); confirm which Kenya number is current. The free-trial answer keeps "During the demo, ask" (owner choice), which passes the non-answer rule.'
+  - 'FAQ answers 2, 4 and 5 replaced 2026-10-27 at the owner''s request. "Ask in the demo" was reworded to "During the demo, ask" because the non-answer rule blocks it. Check before publishing: "Local taxes are extra" is not confirmed (prices/inr.yaml says whether prices include GST is not yet confirmed, and no other currency states it); "run online" training is the owner''s wording; the trial line must not suggest a free trial exists (owner decision: no free trial).'
+  - 'Related links ("Where to go next": /pricing/, /start-a-clinic/, /contact-us/, /clinic-in-malaysia/, /clinic-in-rwanda/) removed 2026-10-27 at the owner''s request.'
+  - 'Section "Rated by the doctors who use it" (proofBlock) removed 2026-10-27 at the owner''s request.'
+  - 'The closing demoForm ("Your country is not listed") was replaced 2026-10-27 at the owner''s request with the contact-variant form used on /contact-us/ (form card plus "Need some help?" with email, phone and both office addresses).'
   - 'Audit 2026-09-27: the meta description, opening answer, summary, FAQ 1 and editorial pass no longer say that India, Kenya, the UAE and Nigeria each have a country page. All four country pages are drafts and only rupee and US dollar prices are published. Restore the four-country wording when the country pages publish.'
   - 'Audit 2026-09-27: the demo-form intro and the training FAQ no longer say the demo and training run on a video call; no confirmed fact says how either is delivered (facts-needed NG2, and /indiademo/ avoids it too). The training question now asks what, not how. Add "video call" back once the company confirms it.'
   - 'Audit 2026-09-27: "18 countries" in the meta and the Capterra and Google badge ratings are now {fact:countries}, {fact:capterraRating} and {fact:googleRating}, so they follow facts.yaml.'

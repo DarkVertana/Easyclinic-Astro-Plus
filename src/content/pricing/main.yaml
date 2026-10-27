@@ -47,7 +47,7 @@ ctas:
     label: Compare every feature
     href: /pricing/#compare
   whatsapp: Hi, I am on the Easy Clinic pricing page and would like the monthly price for my clinic.
-faqHeading: Questions clinic owners ask about price
+faqHeading: You Have Questions, We Have Answers
 faq:
   - question: How long does it take to learn Easy Clinic, and what support comes after?
     answer: >-
@@ -58,47 +58,37 @@ faq:
       a named account manager.
   - question: Am I locked into any contracts?
     answer: >-
-      No, there is no contract on any plan and no setup fee, so you can use Easy Clinic for as long as
-      it works for your clinic and stop when it does not. If you would rather not pay for a year up
-      front, quarterly billing is {price:usd.professional.quarterly} per doctor per month on
-      Professional and {price:usd.premium.quarterly} on Premium.
+      You choose annual or quarterly billing when you sign up. Annual billing costs less per month. Your
+      plan terms are set out in our [Terms of Service](/terms/), and we walk you through them before you
+      sign.
   - question: Do I pay a licence for my receptionist?
     answer: >-
-      No, a reception login is included in the price of every plan, so a clinic with one doctor and
-      one receptionist pays for one licence. The reception login is for the front desk and cannot open
-      the EMR or write a prescription.
+      No. A reception login is included in every plan. Your receptionist can book appointments and take
+      payments, but cannot open the EMR or issue a prescription. You pay one licence for each doctor.
   - question: Does Easy Clinic still work if I open a second branch?
     answer: >-
-      Yes, on Premium and Enterprise, which both cover more than one location; Professional covers
-      one. A solo clinic on Professional that opens a second branch moves up to Premium, where the plan
-      price is {price:usd.premium.annual} per doctor per month billed annually. A chain that wants
-      central control of every branch, with clinical SOP tracking across them, moves to Enterprise,
-      which is priced on a quote.
+      Yes, on Premium or Enterprise. Professional covers one location. Premium covers more than one, and
+      Enterprise adds central control and SOP tracking across every branch.
   - question: Why pay when there are free EMRs?
     answer: >-
-      A free EMR costs nothing to license, and the cost moves to the server it runs on and to the person
-      you call when the printer will not talk to the system. The
-      {price:usd.professional.annual} Professional plan includes unlimited support and training and a
-      reception login. If your clinic is one doctor with no staff and no plans to grow, a free EMR may
-      be enough, and we will say so on the call.
+      A free EMR has no licence fee, but you pay for the server, setup and support yourself. Easy Clinic
+      includes hosting, training and support in the per-doctor price, with appointments and billing on the
+      same record. The table above shows where the money goes.
   - question: Can I use my own prescription layout, and does it cost extra?
     answer: >-
-      Yes, on Premium and Enterprise, where your own clinical forms and print layouts are part of the
-      plan and cost nothing extra. The customisation options already in the product carry no charge
-      on any plan, and a feature built only for your clinic is scoped and priced as custom
-      development. Professional does not include your own forms or print layouts.
+      Yes, on Premium and Enterprise. Your own clinical forms and print layouts are part of those plans,
+      so there is no extra charge. Professional uses the standard prescription layout.
   - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No, Easy Clinic does not run fully offline today, so a clinic whose internet line often drops
-      should plan for a backup connection. A mobile data connection kept for that belongs in the
-      budget alongside the licences.
+      No. Easy Clinic is cloud software, so it needs an internet connection. It runs in a web browser on
+      any device with a connection.
   - question: Is there a discount for paying annually?
     answer: >-
-      Yes, annual billing is the discount: Professional is {price:usd.professional.annual} per doctor
-      per month billed annually against {price:usd.professional.quarterly} billed quarterly, and
-      Premium is {price:usd.premium.annual} against {price:usd.premium.quarterly}. In India the same
-      pairs are {price:inr.professional.annual} against {price:inr.professional.quarterly} on
-      Professional, and {price:inr.premium.annual} against {price:inr.premium.quarterly} on Premium.
+      Yes. Annual billing costs 20% to 23% less than quarterly, depending on the plan and currency. In
+      rupees, Professional is {price:inr.professional.annual} per doctor per month billed annually,
+      against {price:inr.professional.quarterly} billed quarterly. Premium is {price:inr.premium.annual}
+      against {price:inr.premium.quarterly}.
+
 links:
   relatedHeading: Local prices, and the next questions
   related:
@@ -113,13 +103,13 @@ links:
       description: 'Reviews from doctors in India to Penda Health in Nairobi, with the Capterra and Google ratings.'
     - href: /features/billing/
       label: Billing
-      description: 'Bills built from the doctor''s orders, part payments and refunds, and an end-of-day report when the till closes.'
+      description: 'Bills built from the doctor''s orders, part payments and refunds, and an end-of-day report that matches the cash drawer.'
     - href: /solutions/clinic-chain/
       label: Clinic chains
-      description: 'One central chart, stock transfers and a morning dashboard, for chains of 2 to {fact:largestChain} locations.'
+      description: 'One central chart, stock transfers and a morning dashboard, for chains of two or more locations.'
     - href: /switch/
       label: Switching to Easy Clinic
-      description: 'The four steps from the demo to your first day, and what changes for a clinic on paper or other software.'
+      description: 'The four steps from the demo to your first day, and what changes for a clinic on paper or another system.'
 helpBand:
   heading: Not sure which plan is right for you?
   body: >-
@@ -141,6 +131,7 @@ closing:
     label: See the prices in rupees
     href: /pricing/india/
 notes:
+  - 'FAQ answers 2 to 8 replaced 2026-10-27 at the owner''s request. Rupee prices are {price:} tokens (prices/inr.yaml); "20% to 23%" matches the published USD and INR annual-versus-quarterly gaps (20.0% to 23.3%). The offline answer no longer mentions the self-hosted option.'
   - 'Published on 2026-09-26 with confirmed facts only, without waiting for the fact sheet. Restore these when the company confirms them: support hours and time zones; refunds on unused months of annual billing; the export format for patient records on leaving and how long data is kept after cancelling; how many reception logins a clinic gets; the licence rule for nurses, pharmacists and visiting or part-time doctors; what counts as a location, whether there is a per-location fee and whether a doctor at two branches needs two licences; how long a prescription template takes to build and who builds it; what a Professional clinic can change on the printed prescription; whether INR prices include GST; KES, AED and NGN prices; NGO pricing; WhatsApp per-message charges; the data migration price; an indicative Enterprise range per doctor; add-on prices (the add-on cards show none in production).'
   - 'FAQ changes for publication: "What does a second branch cost?" became "Does Easy Clinic still work if I open a second branch?" (spec 6.4 keep list) until the per-location fee is confirmed; "Which currency will I be billed in, and are taxes included?" was replaced by the offline question; the data-on-leaving half of the contracts question and the NGO half of the discount question were cut. Spec 5.12 wants them back, with "what happens on cancelling", once the facts arrive. The free-EMR table lost its "Your data when you leave" row for the same reason.'
   - 'Meta description follows the spec 4.1 row minus "See local prices": the lint counts the raw string, and with price tokens the full spec text is 167 characters (it renders at about 98). "Per doctor per month" is carried by the title.'
@@ -242,7 +233,7 @@ sections:
         - Setup fee **None**
       media:
         kind: screenshot
-        src: ../../assets/images/best-clinic-management/03.webp
+        src: ../../assets/images/best-clinic-management/licence-pricing.png
         alt: Six signs it is time for clinic software, from phone bookings and paper records to opening a second location and manual claims
         frame: none
   - discriminant: stepList
@@ -266,8 +257,7 @@ sections:
           meta: Day 4 · 20 minutes
           body: The shortcuts that make the chart fast. Dr Premanand Raya, a pulmonologist, types a full prescription in half a minute with them.
       note: >-
-        If you write prescriptions by hand today, give us 2 hours, or 10 of your patient records, and we
-        promise to make your prescription writing faster. What changes when you move from paper or
+        If you write prescriptions by hand today, bring a real case to your demo. We will write the same prescription on Easy Clinic while you watch, so you can judge the time difference yourself. What changes when you move from paper or
         another system is covered on the [switching page](/switch/).
   - discriminant: dataTable
     value:
@@ -302,7 +292,7 @@ sections:
           - A WhatsApp Business API provider, ^^connected by someone technical^^.
           - ==On Premium and Enterprise==. Professional sends SMS and email reminders.
         - - Who it suits
-          - A programme with ^^its own IT team^^, or ^^one doctor^^ with no staff and no plans to grow.
+          - A programme with ^^its own IT team^^, or a single doctor who is happy to manage the setup.
           - A private clinic that wants ==the chart and the till on one login==, and someone to call.
       note: >-
         KenyaEMR, used in many Kenyan public facilities, is a distribution of OpenMRS. Hosting and

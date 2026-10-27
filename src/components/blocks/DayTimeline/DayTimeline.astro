@@ -19,12 +19,12 @@ const registry = await getRegistry();
  * item whose h3 starts with its <time>, followed by the two versions of that moment as a description
  * list (label, text), so every "before" and "after" is labelled for screen readers at every width.
  *
- * Phones and tablets: one column. The teal journey line (section 11) runs down the left through a dot
- * at each time, and "before" stacks above "after".
- * md and up: time column | before | after. The times sit in pills on the line, the two lanes are
- * headed once at the top (a visual repeat of the per-entry labels, which become visually hidden), and
- * an entry with no "before" leaves that lane empty. When no entry has a "before", "after" takes the
- * full width and keeps its visible label.
+ * The two versions share one card: "before" muted, "after" tinted with the journey teal, split by a
+ * hairline. Phones and tablets: one column, the teal journey line down the left through a dot at each
+ * time, "before" stacked above "after", each with its own label.
+ * 60rem and up: time column | card (before | after). The times sit in solid pills on the line, the two
+ * lanes are headed once at the top with chips (a visual repeat of the per-entry labels, which become
+ * visually hidden). When no entry has a "before", "after" takes the full width and keeps its label.
  */
 const lanes = entries.some((entry) => entry.before) ? 2 : 1;
 
@@ -46,9 +46,12 @@ const items = entries.map((entry) => {
   <div class="dtl-wrap">
     {
       lanes === 2 && (
-        <div class="dtl-lanes font-sans text-sm font-semibold" aria-hidden="true">
-          <p class:list={['border-b-2 border-line-strong pb-2', inverse ? 'text-ink-inverse-muted' : 'text-ink-muted']}>{beforeLabel}</p>
-          <p class:list={['flex items-center gap-1.5 border-b-2 border-journey pb-2', inverse ? 'text-white' : 'text-teal-700']}>
+        <div class="dtl-lanes" aria-hidden="true">
+          <p class="dtl-chip dtl-chip--before">
+            <Icon name="circle-x" size={16} />
+            <span>{beforeLabel}</span>
+          </p>
+          <p class="dtl-chip dtl-chip--after">
             <Icon name="circle-check" size={16} />
             <span>{afterLabel}</span>
           </p>
@@ -59,23 +62,18 @@ const items = entries.map((entry) => {
       {
         items.map((item) => (
           <li class="dtl-entry">
-            <h3 class:list={['font-display text-lg font-semibold leading-snug', inverse && 'text-white']}>
+            <h3 class:list={['font-display text-lg font-semibold leading-snug', inverse ? 'text-white' : 'text-ink-heading']}>
               {item.datetime ? (
-                <time datetime={item.datetime} class:list={['dtl-time', inverse ? 'text-teal-50 md:text-ink-heading' : 'text-teal-700 md:text-ink-heading']}>
+                <time datetime={item.datetime} class="dtl-time">
                   {item.time}
                 </time>
               ) : (
                 <span class="block text-sm font-normal">{item.timeError}</span>
               )}{' '}
               {item.url ? (
-                <a
-                  href={item.url}
-                  class:list={[
-                    'inline-block py-2.5 -my-2.5 underline decoration-journey decoration-2 underline-offset-4',
-                    inverse ? 'text-white hover:text-blue-200' : 'text-ink-heading hover:text-link',
-                  ]}
-                >
-                  {item.title}
+                <a href={item.url} class:list={['dtl-link group', inverse ? 'text-white hover:text-blue-200' : 'text-ink-heading hover:text-link']}>
+                  <span>{item.title}</span>
+                  <Icon name="arrow-right" size={18} class="text-teal-700 transition-transform group-hover:translate-x-0.5" />
                 </a>
               ) : (
                 <span>{item.title}</span>
@@ -83,16 +81,19 @@ const items = entries.map((entry) => {
             </h3>
             <dl class="dtl-compare">
               {item.before && (
-                <div class="dtl-card dtl-before rounded-card border border-line bg-surface-muted text-ink-muted">
-                  <dt class:list={['text-sm font-semibold', lanes === 2 && 'md:sr-only']}>{beforeLabel}</dt>
+                <div class="dtl-card dtl-before">
+                  <dt class:list={['dtl-label', lanes === 2 && 'md:sr-only']}>
+                    <Icon name="circle-x" size={15} />
+                    <span>{beforeLabel}</span>
+                  </dt>
                   <dd>
                     <Md text={item.before} />
                   </dd>
                 </div>
               )}
-              <div class="dtl-card dtl-after rounded-card border border-line bg-surface text-ink">
-                <dt class:list={['flex items-center gap-1.5 text-sm font-semibold text-teal-700', lanes === 2 && 'md:sr-only']}>
-                  <Icon name="circle-check" size={16} />
+              <div class="dtl-card dtl-after">
+                <dt class:list={['dtl-label', lanes === 2 && 'md:sr-only']}>
+                  <Icon name="circle-check" size={15} />
                   <span>{afterLabel}</span>
                 </dt>
                 <dd>
@@ -111,7 +112,8 @@ const items = entries.map((entry) => {
   .dtl-wrap {
     --dot: 0.875rem; /* the dot on the line, phones and tablets */
     --dot-y: 0.1875rem; /* dot top: centred on the first line of the time (text-sm, 1.25rem line) */
-    --rail: 2rem; /* width taken by the line and dot */
+    --rail: 1.75rem; /* width taken by the line and dot */
+    --after-bg: color-mix(in srgb, var(--journey) 7%, var(--surface));
   }
 
   .dtl {
@@ -122,32 +124,36 @@ const items = entries.map((entry) => {
   .dtl-entry {
     position: relative;
     padding-left: var(--rail);
-    padding-bottom: 2rem;
+    padding-bottom: 2.25rem;
   }
   .dtl-entry:last-child {
     padding-bottom: 0;
   }
 
-  /* The line: from this entry's marker to the next one's. Decoration only, never moves. */
+  /* The line: from this entry's marker to the next one's. Decoration only. */
   .dtl-entry:not(:last-child)::before {
     content: '';
     position: absolute;
     top: calc(var(--dot-y) + var(--dot) / 2);
     bottom: calc(-1 * (var(--dot-y) + var(--dot) / 2));
     left: calc(var(--dot) / 2 - 1px);
-    border-left: 2px solid var(--journey);
+    border-left: 2px solid color-mix(in srgb, var(--journey) 45%, transparent);
     pointer-events: none;
   }
 
   .dtl-time {
     display: block;
     width: fit-content;
-    margin-bottom: 0.125rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-teal-700);
+    font-family: var(--font-sans);
     font-size: var(--text-sm);
+    font-weight: 700;
     line-height: 1.25rem;
+    letter-spacing: 0.02em;
     font-variant-numeric: tabular-nums;
   }
-  /* The dot, positioned against the entry (the time is not positioned on phones). */
+  /* The dot, positioned against the entry: a solid teal disc with a soft halo. */
   .dtl-time::before {
     content: '';
     position: absolute;
@@ -156,26 +162,65 @@ const items = entries.map((entry) => {
     left: 0;
     width: var(--dot);
     height: var(--dot);
-    border: 2px solid var(--journey);
     border-radius: 9999px;
-    background: var(--surface);
+    background: var(--journey);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--journey) 18%, var(--surface));
   }
 
+  .dtl-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    text-decoration: none;
+  }
+  .dtl-link:hover > span {
+    text-decoration: underline;
+    text-decoration-color: var(--journey);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  /* Before and after share one card: muted above (or left), teal-tinted below (or right). */
   .dtl-compare {
     display: grid;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
+    margin-top: 0.875rem;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--surface);
+    box-shadow:
+      0 1px 2px rgb(16 24 40 / 0.04),
+      0 6px 18px -8px rgb(16 24 40 / 0.1);
   }
   .dtl-card {
-    padding: 1rem 1.25rem;
+    padding: 1.125rem 1.375rem;
+    line-height: 1.65;
   }
   .dtl-card > dd {
-    margin-top: 0.375rem;
+    margin-top: 0.5rem;
   }
-  /* "After" is the emphasised lane: a white card with the journey colour down its edge. */
+  .dtl-before {
+    background: var(--surface-muted);
+    color: var(--ink-muted);
+  }
   .dtl-after {
-    border-left-color: var(--journey);
-    box-shadow: inset 4px 0 0 var(--journey);
+    background: var(--after-bg);
+    color: var(--ink);
+  }
+  .dtl-before + .dtl-after {
+    border-top: 1px solid var(--line);
+  }
+  .dtl-label {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .dtl-after .dtl-label {
+    color: var(--color-teal-700);
   }
   /* Markdown inside the cards keeps dark ink on inverse sections (the cards stay light). */
   .dtl-card :global(.prose-md strong) {
@@ -187,6 +232,28 @@ const items = entries.map((entry) => {
 
   .dtl-lanes {
     display: none;
+  }
+  .dtl-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    padding: 0.4rem 0.875rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .dtl-chip--before {
+    border: 1px solid var(--line);
+    background: var(--surface-muted);
+    color: var(--ink-muted);
+  }
+  .dtl-chip--after {
+    border: 1px solid color-mix(in srgb, var(--journey) 35%, transparent);
+    background: var(--after-bg);
+    color: var(--color-teal-700);
   }
 
   @media (width >= 60rem) {
@@ -200,14 +267,16 @@ const items = entries.map((entry) => {
     .dtl-lanes {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: var(--gap);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       padding-left: calc(var(--timecol) + var(--gap));
+    }
+    .dtl-chip {
+      margin-left: 1.5rem;
     }
 
     .dtl-entry {
       padding-left: calc(var(--timecol) + var(--gap));
-      padding-bottom: 2.5rem;
+      padding-bottom: 2.75rem;
     }
     .dtl-entry:not(:last-child)::before {
       top: calc(var(--pill-y) + var(--pill) / 2);
@@ -215,7 +284,7 @@ const items = entries.map((entry) => {
       left: calc(var(--timecol) / 2 - 1px);
     }
 
-    /* The time moves into its own column, as a pill on the line. */
+    /* The time moves into its own column, as a solid pill on the line. */
     .dtl-time {
       position: absolute;
       z-index: 1;
@@ -225,14 +294,14 @@ const items = entries.map((entry) => {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 4.25rem;
+      min-width: 4.5rem;
       height: var(--pill);
       margin: 0;
       padding-inline: 0.75rem;
-      border: 2px solid var(--journey);
       border-radius: 9999px;
-      background: var(--surface);
-      font-size: var(--text-base);
+      background: var(--color-teal-700);
+      color: #fff;
+      box-shadow: 0 0 0 4px var(--surface);
     }
     .dtl-time::before {
       content: none;
@@ -240,10 +309,16 @@ const items = entries.map((entry) => {
 
     .dtl[data-lanes='2'] .dtl-compare {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: var(--gap);
     }
     .dtl[data-lanes='2'] .dtl-after {
       grid-column: 2;
+    }
+    .dtl[data-lanes='2'] .dtl-before + .dtl-after {
+      border-top: 0;
+      border-left: 1px solid var(--line);
+    }
+    .dtl[data-lanes='2'] .dtl-card {
+      padding: 1.375rem 1.5rem;
     }
     .dtl[data-lanes='2'] .dtl-card > dd {
       margin-top: 0;

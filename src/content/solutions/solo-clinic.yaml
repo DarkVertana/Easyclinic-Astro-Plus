@@ -9,14 +9,11 @@ title: Clinic Software for Solo and Single-Doctor Practices
 metaDescription: >-
   Appointments, notes, bills and reminders for one-doctor clinics, no IT staff. Four days of training,
   from {price:usd.professional.annual} a doctor a month.
-h1: Clinic software built for one doctor
+h1: Clinic Management Software Built for Individual Doctor
 linkLabel: Solo doctor clinic
 eyebrow: For solo and single-doctor clinics
 openingAnswer: >-
-  Easy Clinic is clinic software for a small clinic with one doctor: it finishes the note and the
-  prescription with the visit and raises the bill from the same screen, so your evenings are not spent
-  catching up. It costs {price:usd.professional.annual} per doctor per month on the Professional plan,
-  billed annually, with the reception licence included.
+  Discover the perfect blend of simplicity, efficiency, and innovation with Easy Clinic, with features specifically designed for individual doctor clinics. Our doctor clinic software not only streamlines clinical tasks but also simplifies administrative workflows, making life easier for receptionists and assistants, ensuring a smooth and coordinated clinic experience for both staff and patients.
 summary: >-
   One doctor and a receptionist, with no IT staff: the note finished with the visit and the bill raised
   from the consult, from {price:usd.professional.annual} per doctor per month.
@@ -24,7 +21,7 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/16_Portal.png'
+  src: '../../assets/images/solutions/Prescription-3-2.png'
   alt: 'Easy Clinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
   frame: none
 ctas:
@@ -110,9 +107,8 @@ sections:
             The appointment was booked two weeks ago and the patient forgot. The slot sits empty while a
             walk-in waits, and a reminder call only happens when the desk has a spare minute.
           fix: >-
-            Easy Clinic reminds booked patients by SMS or email before the visit, and on WhatsApp on the
-            Premium plan. The day's list shows everyone who was booked, so the desk can call anyone who has
-            not come in the same afternoon.
+            Easy Clinic reminds booked patients by SMS or email, and on WhatsApp on the Premium plan. The
+            day's list shows who was booked, so the desk can call anyone who has not come in.
           href: /features/appointment-scheduling/
           linkLabel: How scheduling and reminders work
         - heading: Why billing is done after the fact
@@ -136,6 +132,7 @@ sections:
         and no contract.
       items:
         - heading: The chart and the prescription
+          icon: notebook-pen
           plan: professional
           body: >-
             The patient's record and the e-prescription sit side by side, and Cura AI drafts the note while
@@ -148,6 +145,7 @@ sections:
             label: See how the EMR works
             href: /features/emr/
         - heading: The appointment book and reminders
+          icon: calendar-clock
           plan: professional
           body: >-
             Walk-ins and booked patients on one list for the day, with reminders sent to patients by SMS and
@@ -159,6 +157,7 @@ sections:
             label: See how scheduling works
             href: /features/appointment-scheduling/
         - heading: Billing and the day's numbers
+          icon: receipt
           plan: professional
           body: >-
             Bills raised from the consult with payments recorded against them, and the day's takings on a
@@ -170,60 +169,273 @@ sections:
             label: See how billing works
             href: /features/billing/
         - heading: A login for your receptionist, and people to call
+          icon: users
           plan: professional
           body: >-
-            The reception licence is included in the price. Your receptionist books patients and takes
-            payments, but cannot open the EMR or write a prescription. When something does not work, you can
-            call or write to support as often as you need, at no extra cost.
+            The reception login is in the price: your receptionist books and takes payments but cannot open
+            the EMR. Support is unlimited, at no extra cost.
           bullets:
             - Logins for your staff
             - Unlimited support and training
+          link:
+            label: See what every plan includes
+            href: /pricing/
 
-  - discriminant: prose
+  - discriminant: splitContent
     value:
-      id: when-you-grow
-      heading: When you grow
+      id: advanced-emr
+      tone: wash
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      compact: true
+      alignTop: true
       body: |-
-        When a second doctor joins, you add a licence at the same per-doctor price and they work on the same patient records from their first morning. Nothing is migrated and the clinic does not change systems.
+        ### Specialty-Oriented Design
+        Tailored for specialists, super-specialists, and clinic chains, addressing diverse healthcare needs.
 
-        A second consulting room in the same clinic does not change the plan either. You pay per doctor, and it is still one location.
+        ### AI-Driven Diagnostic Support
+        Intelligent AI assistance for differential diagnosis and warning against adverse drug events, crucial for patients with multiple chronic conditions.
 
-        A second location is where the plan changes. Professional covers one location. Premium, at {price:usd.premium.annual} per doctor per month billed annually, covers more than one, and adds WhatsApp reminders and your own prescription layouts. You move up a plan on the same system with the same records, and there is no contract to break on the way.
-      aside: >-
-        Planning more than a few branches? The [clinic chain page](/solutions/clinic-chain/) covers central
-        control of every location on the Enterprise plan.
+        ### Customizable Template and Form Builder
+        Easily match any paper forms with our flexible template builder, ensuring a smooth digital transition.
+
+        ### Patient Data Visualization
+        Single-screen access to longitudinal patient visit data, enhancing the efficiency of patient care.
+
+        ### Efficient Access to Common Resources
+        Quick access to frequently used medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Seamless Care Team Collaboration
+        Facilitates effective communication and coordination between nurses, doctors, and other caregivers for integrated patient care.
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/2_EMR.png
+        alt: 'The Easy Clinic EMR: a signed prescription beside a summary of the last visit and the patient facesheet, with a Complete Blood Count trend chart below'
+        frame: none
 
   - discriminant: testimonialRow
     value:
       id: customer
-      heading: From a paper clinic to a paperless one
+      heading: Prashanthi Clinic on working with Easy Clinic
+      intro: Dr T. L. Prabhu is chief physician and managing director at Prashanthi Clinic, which went from paper to paperless on Easy Clinic.
       items:
         - tl-prabhu
       layout: single
+      usePullQuote: false
 
-  - discriminant: stepList
+  - discriminant: splitContent
     value:
-      id: learning-path
-      heading: Four days to learn it, about two hours in all
+      id: video-consults
+      tone: wash
+      heading: Teleconsultation, Video consult & Online fees collection
+      intro: Video consultations and online fee payment come with the Premium plan.
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitTable
+    value:
+      id: plans
+      heading: What Professional covers, and what you can add
       intro: >-
-        Training is a personalised programme for you and your clinic staff, spread over
-        {fact:trainingDays} days so the clinic keeps seeing patients while you learn.
+        Professional is the plan for a doctor running their own clinic, with a receptionist. Premium and Enterprise add more when the clinic grows, and the bigger modules can be added one at a time.
+      left:
+        title: Included in every plan
+        icon: circle-check
+        items:
+          - Patient records and the EMR
+          - E-prescriptions
+          - Cura AI (documentation)
+          - Billing and payments
+          - Appointment scheduling
+          - Dashboards and reports
+          - Logins for your staff
+          - SMS and email reminders
+      right:
+        title: Included in Premium
+        icon: badge-check
+        items:
+          - Specialty EMR templates
+          - Your own clinical forms and print layouts
+          - Package treatments
+          - Lab reports in the chart
+          - WhatsApp reminders and messages
+          - Online payments
+          - More than one location
+          - A named account manager
+      more:
+        - title: Added as a module, or included in Enterprise
+          icon: layers
+          items:
+            - 'Pharmacy and inventory: dispense from the prescription, with batch and expiry tracked'
+            - 'Lab management: orders from the chart and sample tracking'
+            - Insurance and payer claims
+            - Integrations and custom development
+        - title: Enterprise also adds
+          icon: crown
+          items:
+            - Clinical SOP tracking across branches
+            - Financial accounting
+            - A reporting server and custom analytics
+            - Workflow rules
+            - Patient portal and app
+            - Central control of every location
+            - Private cloud hosting on request
+
+  - discriminant: prose
+    value:
+      id: staff-access
+      width: wide
+      heading: Staff and access
+      body: |-
+        A clinic with one doctor usually runs with a receptionist beside them, and both work on the same patient records. The doctor writes the note and the prescription; the receptionist books patients and takes payments.
+
+        Each member of staff has their own login, and the role decides which screens they see. A reception login comes with every plan, and reception cannot open the EMR or write a prescription.
+
+        Training and support are unlimited on every plan, so a new receptionist can be shown the system after you go live at no extra cost.
+
+  - discriminant: flowDiagram
+    value:
+      id: day-flow
+      wideIntro: true
+      heading: From the first booking to the day-end close
+      intro: >-
+        Every step writes to the same patient record, so the bill, the note and the day's numbers come from what was done in the consult, not from a register filled in at night.
       steps:
-        - title: Basic training
-          meta: Day 1, 40 minutes
-          body: You and your receptionist learn the screens you each use every day, at the desk and in the consulting room.
-        - title: EMR scenario training
-          meta: Day 2, 40 minutes
-          body: You work through the chart and the prescription on the kinds of cases your clinic sees.
-        - title: Practice exercises
-          meta: Day 3, 20 minutes
-          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
-        - title: Road to expertise
-          meta: Day 4, 20 minutes
-          body: The last session moves you from the basics to the shortcuts that make prescribing quicker.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days, and yours may take
-        longer.
+        - label: Book
+          body: "Walk-ins and booked patients join one list for the day, kept by the front desk."
+        - label: Remind
+          body: "Booked patients get a reminder by SMS or email, and on WhatsApp on the Premium plan."
+        - label: Check in
+          body: "Last visit's notes are on the chart before the doctor calls the patient in."
+        - label: Consult
+          body: "The note and the prescription are written together during the consult, with Cura AI drafting the note."
+        - label: Prescribe
+          body: "Shortcuts fill in the medicines you prescribe most, and the prescription is signed on screen."
+        - label: Bill
+          body: "The bill is raised from what was recorded in the consult, before the patient reaches the desk."
+        - label: Take payment
+          body: "Each payment is recorded against its bill at the front desk."
+        - label: Close the day
+          body: "The day-end close shows what came in against what was billed."
+
+  - discriminant: splitContent
+    value:
+      id: billing-payments
+      heading: Billing, Payments & Reconciliation made really simple
+      intro: Billing and payments come with every plan. Online payments and WhatsApp come with Premium, and financial accounting with Enterprise.
+      centerHeading: true
+      compact: true
+      alignTop: true
+      stickyMedia: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your practice, enhancing the professional appearance of your invoices and receipts.
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: featureRows
+    value:
+      id: when-you-grow
+      heading: When you grow
+      intro: >-
+        Easy Clinic grows with the clinic. Nothing is migrated, the clinic does not change systems, and there
+        is no contract to break on the way.
+      items:
+        - heading: A second doctor joins
+          icon: users
+          body: >-
+            You add a licence at the same per-doctor price, and they work on the same patient records from
+            their first morning.
+          bullets:
+            - Same per-doctor price
+            - Same patient records
+            - Nothing to migrate
+          link:
+            label: See the per-doctor prices
+            href: /pricing/
+        - heading: A second consulting room
+          icon: building-2
+          body: >-
+            A second room in the same clinic does not change the plan. You pay per doctor, and it is still one
+            location.
+          bullets:
+            - No change of plan
+            - Still one location
+            - Priced per doctor
+          link:
+            label: See what each plan includes
+            href: /pricing/#plans
+        - heading: A second location
+          icon: network
+          body: >-
+            This is where the plan changes. Professional covers one location; Premium, at
+            {price:usd.premium.annual} per doctor per month billed annually, covers more than one.
+          bullets:
+            - Same system, same records
+            - WhatsApp reminders on Premium
+            - Your own prescription layouts on Premium
+          link:
+            label: Planning several branches? See clinic chains
+            href: /solutions/clinic-chain/
 
 faq:
   - question: Is Easy Clinic overkill for a solo doctor clinic?
@@ -314,6 +526,14 @@ editorialPass:
     read-aloud pass should check the page sounds like a clinic owner talking and not a brochure.
 
 notes:
+  - 'Sections removed 2026-10-27 at the owner''s request: learning-path.'
+  - 'When you grow was rebuilt 2026-10-26 at the owner''s request from prose into a three-card featureRows panel (second doctor, second room, second location). Wording is the old prose split across the cards; the aside about clinic chains became the third card''s link.'
+  - 'Section billing-payments (splitContent, compact) added 2026-10-26 at the owner''s request, wording and image (Invoice_Feature_01.png) as supplied, placed after the day-flow section. Check before publishing: "Invoices are ready in less than 10 seconds" is listed elsewhere as unsourced marketing that was left out of the live pages; "Comprehensive" was cut from "Financial Reporting" (banned word); profit and loss analysis rests on Financial accounting, an Enterprise inclusion; online payments and WhatsApp are Premium, which the added intro line states; payment suggestions, the custom tax definition module and amortisation for package treatments are not yet confirmed anywhere else on the site. Headings use title case and US spelling as supplied.'
+  - 'Section day-flow (flowDiagram, eight steps, wide intro) added 2026-10-26 at the owner''s request to match the hospital-opd claims flow, placed after the staff-access section. Every step restates facts already on this page or in plans.yaml.'
+  - 'Section staff-access (prose, wide) added 2026-10-26 at the owner''s request to match the hospital-opd departments section, placed after the plans cards. Every sentence restates facts already on this page or in plans.yaml (role logins, the reception login on every plan that cannot open the EMR, and the page''s own access, branch or site facts).'
+  - 'Plans section (splitTable plans, four cards) added 2026-10-26 at the owner''s request to match /solutions/polyclinic/, placed after the video-consults section. The cards come from plans.yaml (Professional, Premium, the module add-ons and Enterprise includes); only the heading and intro are written for this page.'
+  - 'Section video-consults (splitContent) added 2026-10-26 at the owner''s request, wording and image (3_Video_consultent.png) as supplied. Every point is grounded on /features/telehealth/ (built-in video and chat, browser on phone or computer with nothing to install, online fee payment at booking, prescription marked as held remotely, sent by WhatsApp, SMS or email). The intro adds the Premium gating that page states (plans.yaml: video consultations on Premium and Enterprise). Headings use title case and US-style wording as supplied.'
+  - 'Section advanced-emr (splitContent) added 2026-10-26 at the owner''s request, wording and image (2_EMR.png) as supplied. Check before publishing: "AI-Driven Diagnostic Support" (differential diagnosis, adverse drug event warnings) and the "ADR alerts" and "Medical calculators" chips were dropped from /cardiology-emr/ as unconfirmed CuraPilot claims and unnamed calculators; "Comprehensive" was cut from "Patient Data Visualization" because it is on the banned-words list; the headings use title case and US spelling (Customizable, Visualization) where the rest of the site uses sentence case and British spelling.'
   - 'Hero screenshot (spec 5.5 item 1: single screen with today''s list, chart and invoice) is left out: no screenshots exist yet. Add heroMedia from the spec 12 Today view and thirty-second prescription captures when they are taken.'
   - 'Spec 5.5 CTA "See the product in 6 minutes" is left out until the tour ships (spec 12, The tour). Add it as the secondary hero CTA then, and link it from the free-trial FAQ.'
   - 'Opening answer changed from spec 5.5: "reminds patients on WhatsApp" is not true at the $79 price, because WhatsApp reminders are Premium only in plans.yaml (Professional has SMS and email). The group of three was also cut. "Raises the bill from the same screen" rests on the spec 5.5 hero (today''s list, chart and invoice on one screen) and the spec 5.11 billing page (invoice from EMR orders).'

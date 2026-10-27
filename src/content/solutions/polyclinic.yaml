@@ -37,6 +37,54 @@ ctas:
   whatsapp: Hi, I was reading the Easy Clinic polyclinic page and would like to book a demo for our clinic.
 
 sections:
+  - discriminant: dayTimeline
+    value:
+      id: a-tuesday
+      heading: A Tuesday at a polyclinic, with and without Easy Clinic
+      intro: >-
+        Same building, same doctors, same patients. What changes is whether the chart, the rooms and the
+        bill follow the patient from one specialist to the next.
+      entries:
+        - time: '09:00'
+          title: One desk, several doctors
+          before: >-
+            Each consultant keeps a diary. The receptionist flicks between them to find the physician a
+            free slot, and nobody can see who has the procedure room at 3pm.
+          after: >-
+            The front desk books every doctor and every shared room from one resource calendar, each in its
+            own column, and sees the procedure room is taken at 3pm before it offers the slot to anyone else.
+          href: /features/appointment-scheduling/
+        - time: '11:30'
+          title: A referral down the corridor
+          before: >-
+            The physician sends the patient to the skin specialist with a slip of paper. The patient tells
+            her history again, and the second doctor prescribes without knowing what the first one gave.
+          after: >-
+            The physician's notes and prescriptions stay on the one patient chart, so the skin specialist
+            opens the visit with them already there. Nobody copies a letter across, and on Premium any lab
+            reports are in the same chart.
+          href: /features/emr/
+        - time: '12:15'
+          title: At the pharmacy counter
+          before: >-
+            The patient reaches the counter with a slip the pharmacist has to read twice, and the stock book
+            will be brought up to date on Saturday, if at all.
+          after: >-
+            With the pharmacy module, the pharmacist dispenses from the prescription on screen and tracks
+            batch and expiry, so the reorder goes out before the shelf is empty. Pharmacy is included in
+            Enterprise, or added to Premium as a module.
+          href: /features/pharmacy-and-inventory/
+        - time: '18:30'
+          title: One counter closes
+          before: >-
+            The patient who saw the physician and then the dentist paid at two counters, and a part payment
+            from the morning sits on a scrap of paper that nobody can match to a bill.
+          after: >-
+            Every specialist's patients paid at one front desk, orders written in the chart became lines on
+            the invoice, and each part payment was recorded against its bill. Billing can be kept
+            department-wise, so each specialty's bills sit under its own department.
+          href: /features/billing/
+
   - discriminant: painBlocks
     value:
       id: where-it-breaks
@@ -45,37 +93,32 @@ sections:
         In a polyclinic, the time goes missing between the doctors: in the chart one specialist cannot
         see, and in the room two of them booked for the same hour.
       items:
-        - heading: Each specialist keeps their own notes
+        - heading: Notes stay with each specialist
           body: >-
-            The gynaecologist keeps her notes in one system and the skin specialist writes on paper, and
-            neither has seen the other's. A patient who sees two of them in the same
-            month tells her history twice, and the second doctor prescribes without knowing what the first
-            one gave.
+            The gynaecologist keeps her notes in one system and the skin specialist writes on paper. A patient
+            who sees both tells her history twice, and the second doctor prescribes without the first one's
+            list.
           fix: >-
-            Every specialist writes on one patient chart, so the second doctor opens the visit with the
-            first doctor's notes and prescriptions already there. On Premium, lab reports come into the
-            same chart.
+            Every specialist writes on one patient chart, so the second doctor opens the visit with the first
+            doctor's notes and prescriptions already there. On Premium, lab reports come into the same chart.
           href: /features/emr/
           linkLabel: Read how the chart works
-        - heading: The shared room gets booked twice
+        - heading: The shared room is double-booked
           body: >-
-            Two consultants share the procedure room on Thursday afternoons, and each keeps a diary. At 3pm
-            both patients arrive for the same room, one of them after fasting since morning, and the front
-            desk finds out when the second one sits down in the corridor.
+            Two consultants share the procedure room on Thursday afternoons, and each keeps a diary. At 3pm both
+            patients arrive for the same room, and the front desk finds out in the corridor.
           fix: >-
-            One resource calendar shows doctors and shared rooms side by side in columns. The front desk
-            sees that the procedure room is taken at 3pm before it offers the slot to anyone else.
+            One resource calendar shows doctors and shared rooms side by side in columns. The front desk sees
+            that the procedure room is taken at 3pm before it offers the slot to anyone else.
           href: /features/appointment-scheduling/
           linkLabel: Read how the calendar works
         - heading: The pharmacy lags behind the visit
           body: >-
-            The patient reaches the counter with a slip the pharmacist has to read twice, and the stock book
-            is brought up to date on Saturday, if at all. On Tuesday the strip the doctor has just prescribed
-            turns out to be gone.
+            The patient reaches the counter with a slip the pharmacist has to read twice, and the stock book is
+            brought up to date on Saturday, if at all.
           fix: >-
-            With the pharmacy module, the pharmacist dispenses from the prescription on screen and tracks
-            batch and expiry, so the reorder goes out before the shelf is empty. Pharmacy is included in
-            Enterprise, or added to Premium as a module.
+            With the pharmacy module, the pharmacist dispenses from the prescription on screen and tracks batch
+            and expiry. Pharmacy is included in Enterprise, or added to Premium as a module.
           href: /features/pharmacy-and-inventory/
           linkLabel: Read how dispensing works
 
@@ -88,81 +131,132 @@ sections:
         one history, whichever specialists they see.
       items:
         - heading: Specialty templates on one chart
+          icon: notebook-pen
           plan: premium
           body: >-
-            On Premium, specialists write in specialty EMR templates, and every template writes to the same
-            patient chart. The dermatologist's notes and the physician's prescriptions sit in one history,
-            and the next doctor opens it before the patient sits down.
+            Specialists write in specialty EMR templates, and every template writes to the same patient chart,
+            so the next doctor opens one history before the patient sits down.
+          bullets:
+            - Specialty EMR templates
+            - One patient history across specialists
+          link:
+            label: See how the EMR works
+            href: /features/emr/
         - heading: Your own forms and print layouts
+          icon: file-text
           plan: premium
           body: >-
-            Where a department needs a form of its own, Premium includes your clinic's own clinical forms
-            and print layouts, so the prescription and the report come out the way your clinic sets them.
-            Changes made with the product's own customisation options carry no charge.
+            Where a department needs a form of its own, your clinic's own clinical forms and print layouts
+            make the prescription and the report come out the way you set them.
+          bullets:
+            - Your own clinical forms
+            - Your own print layouts
+            - No charge for the product's own customisation options
+          link:
+            label: See how the chart works
+            href: /features/emr/
         - heading: Lab reports in the same chart
+          icon: flask-conical
           plan: premium
           body: >-
-            Lab reports come into the patient's chart on Premium, so every specialist who opens the chart
-            reads the same result. Full lab management, with orders from the chart and sample tracking, is
-            part of Enterprise or a module you add to Premium.
+            Lab reports come into the patient's chart, so every specialist who opens the chart reads the same
+            result.
+          bullets:
+            - Lab reports in the patient chart
+            - Full lab management on Enterprise, or as a module
+          link:
+            label: See how the lab works
+            href: /features/lab/
         - heading: Doctors and shared rooms on one calendar
+          icon: calendar-clock
           body: >-
-            The resource calendar puts each doctor and each shared room in its own column. Whoever books the
-            procedure room sees every slot already taken in it, on the same screen as the doctors' lists.
+            The resource calendar puts each doctor and each shared room in its own column, so whoever books the
+            procedure room sees every slot already taken.
+          bullets:
+            - A column for each doctor and each shared room
+            - Room bookings on the same screen as the doctors' lists
+          link:
+            label: See how scheduling works
+            href: /features/appointment-scheduling/
 
-  - discriminant: rolesMatrix
+  - discriminant: splitContent
     value:
-      id: who-sees-what
-      heading: Who sees what
-      intro: >-
-        Each person in the clinic logs in as themselves, and the role on that login decides what they can
-        open. Doctors are licensed one by one, and the front desk works on a reception login that comes
-        with the plan.
-      roles:
-        - Owner
-        - Doctor
-        - Nurse
-        - Reception
-        - Pharmacist
-        - Accountant
-      rows:
-        - permission: Has a login of their own
-          cells:
-            - true
-            - 'Yes, one licence each'
-            - true
-            - 'Yes, included in the price'
-            - true
-            - true
-        - permission: Issues prescriptions
-          cells:
-            - 'Only if also a doctor'
-            - true
-            - false
-            - false
-            - false
-            - false
-      note: >-
-        The reception login is included in every plan, and it cannot open the EMR or issue a
-        prescription. Prescriptions are written on a doctor's login.
+      id: specialty-emr
+      tone: wash
+      heading: An EMR for every specialty
+      centerHeading: true
+      compact: true
+      alignTop: true
+      body: |-
+        ### Specialty templates, one chart
+        On Premium, each specialist writes in a specialty EMR template, and every template saves to the same patient history.
 
-  - discriminant: prose
-    value:
-      id: billing
-      heading: Shared billing and package treatments
-      body: |
-        One front desk takes payments for every specialist in the building, so the patient who saw the physician and then the dentist pays at one counter. Orders written in the chart become lines on the invoice, and a part payment is recorded against the bill it belongs to.
+        ### Your own forms and print layouts
+        On Premium, a department without a ready template can use a clinical form of its own, and prints come out the way you set them.
 
-        On Premium the receipt can go to the patient on WhatsApp, and the bill can be paid online. Billing can be kept department-wise, so each specialty's bills sit under its own department.
+        ### Referrals without a letter
+        The second specialist opens a chart that already holds the first visit's notes and prescriptions, so the patient does not repeat her history.
 
-        Package treatments come with Premium. A course of treatment spread over several visits, such as a set of physiotherapy sessions or a dental treatment plan, is billed as one package instead of visit by visit.
-      aside: |
-        **On Premium**
+        ### Shared rooms on one calendar
+        Each doctor and each shared room has a column of its own, so the front desk sees a taken procedure room before offering the slot.
 
-        - Package treatments
-        - Online payments
-        - Receipts and reminders on WhatsApp
+        ### Dispensing from the prescription
+        With the pharmacy module, the pharmacist works from the doctor's prescription and tracks batch and expiry. Included in Enterprise, or added to Premium.
+
+        ### One counter for every specialist
+        Chart orders become invoice lines, part payments are recorded against their bill, and billing can be kept department-wise.
+      chips:
+        - Specialty EMR templates
+        - Your own clinical forms
+        - Your own print layouts
         - Lab reports in the chart
+        - Resource calendar
+        - Role-based logins
+        - Department-wise billing
+        - Package treatments
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/2_EMR.png
+        alt: 'The Easy Clinic EMR: a signed prescription beside a summary of the last visit and the patient facesheet, with a Complete Blood Count trend chart below'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customer
+      heading: Global Eye Hospital on working with Easy Clinic
+      intro: Dr Siddhartha Ghosh is a senior ophthalmologist at Global Eye Hospital, on the EMR he and his colleagues write in.
+      items:
+        - siddhartha-ghosh
+      layout: single
+      usePullQuote: false
+
+  - discriminant: splitContent
+    value:
+      id: video-consults
+      tone: wash
+      heading: Teleconsultation, Video consult & Online fees collection
+      intro: Video consultations and online fee payment come with the Premium plan.
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
 
   - discriminant: splitTable
     value:
@@ -172,7 +266,20 @@ sections:
         Premium is the plan for group practices that share one front door. The bigger modules come with
         Enterprise, or can be added to Premium one at a time when the clinic starts to need them.
       left:
+        title: Included in every plan
+        icon: circle-check
+        items:
+          - Patient records and the EMR
+          - E-prescriptions
+          - Cura AI (documentation)
+          - Billing and payments
+          - Appointment scheduling
+          - Dashboards and reports
+          - Logins for your staff
+          - SMS and email reminders
+      right:
         title: Included in Premium
+        icon: badge-check
         items:
           - Specialty EMR templates
           - Your own clinical forms and print layouts
@@ -182,31 +289,148 @@ sections:
           - Online payments
           - More than one location
           - A named account manager
-      right:
-        title: Added as a module, or included in Enterprise
-        items:
-          - 'Pharmacy and inventory: dispense from the prescription, with batch and expiry tracked'
-          - 'Lab management: orders from the chart and sample tracking'
-          - Insurance and payer claims
-          - Integrations and custom development
-      note: >-
-        Enterprise includes all four and adds central control of every location. It is priced on a quote
-        for your clinic.
+      more:
+        - title: Added as a module, or included in Enterprise
+          icon: layers
+          items:
+            - 'Pharmacy and inventory: dispense from the prescription, with batch and expiry tracked'
+            - 'Lab management: orders from the chart and sample tracking'
+            - Insurance and payer claims
+            - Integrations and custom development
+        - title: Enterprise also adds
+          icon: crown
+          items:
+            - Clinical SOP tracking across branches
+            - Financial accounting
+            - A reporting server and custom analytics
+            - Workflow rules
+            - Patient portal and app
+            - Central control of every location
+            - Private cloud hosting on request
 
-  - discriminant: proofBlock
+  - discriminant: prose
     value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
+      id: staff-access
+      width: wide
+      heading: Departments and staff access
+      body: |-
+        A polyclinic is several specialists sharing one front desk. Every specialist writes on the same patient chart, so the second doctor opens the visit with the first doctor's notes already there, and on Premium each specialty keeps its own EMR templates.
+
+        Each person logs in as themselves, and the role on that login decides what they can open. Doctors are licensed one by one, and the front desk works on a reception login that comes with the plan.
+
+        Billing can be kept department-wise, so each specialty's bills sit under its own department, and the front desk books every doctor and shared room from one calendar.
+
+  - discriminant: flowDiagram
+    value:
+      id: patient-flow
+      wideIntro: true
+      heading: From the front desk to one bill
       intro: >-
-        {fact:retention} of Easy Clinic's customers have used it for more than five years. These are its
-        public ratings.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+        One front desk, several specialists and one chart, so the patient pays once for everything done that day.
+      steps:
+        - label: Book
+          body: "The front desk books every doctor and every shared room from one resource calendar."
+        - label: Register
+          body: "The patient is registered once, on one chart every specialist writes on."
+        - label: Consult
+          body: "On Premium, each specialist writes in their own specialty EMR template."
+        - label: Refer
+          body: "The second specialist opens the visit with the first doctor's notes and prescriptions already there."
+        - label: Lab reports
+          body: "On Premium, lab reports come into the same chart for every specialist to read."
+        - label: Dispense
+          body: "With the pharmacy module, the pharmacist dispenses from the prescription on screen."
+        - label: Bill
+          body: "Orders written in the chart become lines on the invoice, kept department-wise."
+        - label: Pay
+          body: "The patient pays at one front desk, and each part payment is recorded against its bill."
+
+  - discriminant: splitContent
+    value:
+      id: billing-payments
+      heading: Billing, Payments & Reconciliation made really simple
+      intro: Billing and payments come with every plan. Online payments and WhatsApp come with Premium, and financial accounting with Enterprise.
+      centerHeading: true
+      compact: true
+      alignTop: true
+      stickyMedia: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your practice, enhancing the professional appearance of your invoices and receipts.
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: featureRows
+    value:
+      id: when-you-grow
+      heading: When the polyclinic grows
+      intro: >-
+        A new specialist or room joins the same chart and the same calendar, so the clinic grows without changing systems.
+      items:
+        - heading: A new specialist joins
+          icon: users
+          body: >-
+            You add a licence at the same per-doctor price, and on Premium they write in their own specialty template on the same chart.
+          bullets:
+            - Same per-doctor price
+            - Their own specialty template
+            - The same patient chart
+          link:
+            label: See the per-doctor prices
+            href: /pricing/
+        - heading: A new shared room
+          icon: calendar-clock
+          body: >-
+            The room gets its own column on the resource calendar, beside the doctors who use it.
+          bullets:
+            - A column for each room
+            - Booked from the front desk
+            - Taken slots shown before booking
+          link:
+            label: See how scheduling works
+            href: /features/appointment-scheduling/
+        - heading: Pharmacy and lab are added
+          icon: layers
+          body: >-
+            They come with Enterprise, or can be added to Premium as modules when the clinic needs them.
+          bullets:
+            - Pharmacy and inventory
+            - Lab management
+            - Insurance and payer claims
+          link:
+            label: See how the lab works
+            href: /features/lab/
 
 faqHeading: Questions polyclinic owners ask
 faq:
@@ -292,6 +516,15 @@ editorialPass:
     testimonial yet the page rests on ratings; a doctor may also find the two-row roles matrix thin.
 
 notes:
+  - 'Sections removed 2026-10-27 at the owner''s request: who-sees-what, billing, ratings.'
+  - 'Section when-you-grow (featureRows, three-card panel) added 2026-10-26 at the owner''s request to match /solutions/solo-clinic/, placed after billing-payments. Each card restates facts already on this page or in plans.yaml.'
+  - 'Section billing-payments (splitContent, compact, sticky image) added 2026-10-26 at the owner''s request, copied from /solutions/solo-clinic/ with the same wording and image (Invoice_Feature_01.png), placed after the step-by-step flow. The same checks apply as noted there: the "less than 10 seconds" line is unsourced, profit and loss rests on Enterprise financial accounting, and payment suggestions, the tax definition module and package amortisation are not confirmed elsewhere on the site.'
+  - 'Section patient-flow (flowDiagram, eight steps, wide intro) added 2026-10-26 at the owner''s request to match the hospital-opd claims flow, placed after the staff-access section. Every step restates facts already on this page or in plans.yaml.'
+  - 'Section staff-access (prose, wide) added 2026-10-26 at the owner''s request to match the hospital-opd departments section, placed after the plans cards. Every sentence restates facts already on this page or in plans.yaml (role logins, the reception login on every plan that cannot open the EMR, and the page''s own access, branch or site facts).'
+  - 'Plans section (splitTable plans) extended 2026-10-26 at the owner''s request to four cards: every plan (plans.yaml Professional includes), Premium, modules or Enterprise, and Enterprise also adds (plans.yaml Enterprise includes not already on the modules card). The note now says Enterprise includes everything above and is quoted.'
+  - 'Section video-consults (splitContent) added 2026-10-26 at the owner''s request, copied from /solutions/solo-clinic/ with the same wording and image (3_Video_consultent.png), placed after the testimonial as there. Every point is grounded on /features/telehealth/; the intro states the Premium gating (plans.yaml).'
+  - 'Testimonial section added 2026-10-26 to match /solutions/solo-clinic/ (single, full quote, after the advanced section): siddhartha-ghosh added at the owner''s request (persona hospital-opd; the only unused testimonial that speaks to the EMR). Global Eye Hospital is not a polyclinic, so the intro does not call it one. Swap in a polyclinic customer''s quote when one is supplied.'
+  - 'The advanced section image was changed to 2_EMR.png on 2026-10-26 at the owner''s request, to match /solutions/solo-clinic/.'
   - 'Recruit a polyclinic testimonial (spec 5.6 names Dr Kolanakuduru, now placed on the IVF page). Until then the proof block is the Capterra and Google badges, and the page has no named person (spec 6.5 pass test).'
   - 'Hero screenshot left out (no heroMedia on published pages): spec 12 "Resource calendar: doctors, rooms and devices in columns", 4 doctors, 3 rooms, one device. Add it when the screen exists.'
   - 'Spec 5.6 item 3 asks for a dental and a dermatology screenshot in "One record, many workflows". Left out; add as media on the first feature row when the screens exist.'
@@ -305,3 +538,5 @@ notes:
   - 'Audit 2026-09-27: badge ratings were plain 4.9 and 4.8 and are now fact tokens, so they follow facts.yaml. Related links gained /dental-emr-software/ (spec 5.6 section 3 names dental) and /pricing/india/, the only published country page for now (all four country pages are drafts), with href only so each card takes the target''s own linkLabel and summary.'
   - 'The old /polyclinic-software/ URL already redirects here in src/data/redirects.yaml, so there is no redirectFrom on this page.'
   - 'Fact check (2026-09-26): the resource calendar with doctors and rooms in columns rests on spec 5.6, 5.11 (appointment scheduling promise) and the spec 12 screen list; receipts on WhatsApp, invoices from chart orders and part payments rest on spec 5.11 (billing) and spec 12; department-wise billing rests on the spec 4.2 meta description. Removed in this pass: "most of the lost time" (unsourced share), "print on your letterhead" and "sees the clash" (implied features not in any source).'
+  - 'dayTimeline "A Tuesday at a polyclinic" added 2026-10-26 to match /solutions/solo-clinic/. Each entry restates what this page already says: 09:00 rests on the shared-room pain block, the calendar feature row and the "one front desk" FAQ (no plan named, since which plan includes the rooms columns is unknown); 11:30 on the referral FAQ and the specialist-notes pain block, with lab reports on Premium; 12:15 on the pharmacy pain block (module on Premium, included in Enterprise); 18:30 on the billing prose (one front desk, chart orders on the invoice, part payments, department-wise billing). Left out for lack of facts: revenue or a day''s report split by doctor, collections and no-shows, and the solo page''s "billed next to what came in" report line, which this page does not state.'
+  - 'splitContent "An EMR for every specialty" (id specialty-emr) added 2026-10-26 to match the advanced-emr section on /solutions/solo-clinic/, with Examination-3-1.png (a skin examination template, choosing skin texture from a list). Each point restates this page: specialty templates and own forms and print layouts on Premium (feature rows, FAQ); referrals (referral FAQ, specialist-notes pain block); shared rooms (calendar feature row and pain block, no plan named); pharmacy module on Premium or in Enterprise (pharmacy pain block); one counter, chart orders on the invoice, part payments and department-wise billing (billing prose). Chips come from the feature rows, the plans table, the roles section and the billing prose. Left out: the solo page''s AI diagnostic support, ADR alerts and medical calculators (unconfirmed), any named or counted list of specialty templates (unknown), and longitudinal data visualisation and care team collaboration, which this page does not state.'

@@ -36,7 +36,8 @@ const BANNED: Array<[RegExp, string]> = [
 ];
 
 /** Phrases that contain a banned word but are allowed (a competitor name, a technical term). */
-const ALLOWLIST = [/\bStreamline Health\b/g, /\bend-to-end encrypt(?:ed|ion)\b/gi];
+// Owner decision 2026-10-27: the /countries/ free-trial answer keeps "Ask in the demo about trying it with your own team".
+const ALLOWLIST = [/\bStreamline Health\b/g, /\bend-to-end encrypt(?:ed|ion)\b/gi, /\bAsk in the demo about trying it with your own team\b/g];
 
 const NON_ANSWER = /\bconfirm(?:ed)?(?: it)? (?:in|during) (?:the |a )?demo\b|\bdiscuss(?:ed)? on the call\b|\b(?:work )?in progress\b|\bcoming soon\b|\bask (?:us )?in (?:the |a )?demo\b/i;
 

@@ -29,26 +29,36 @@ ctas:
     label: WhatsApp us
     href: https://wa.me/919147770277
   whatsapp: Hi, I was on the Easy Clinic contact page and would like to book a demo for my clinic.
-faqHeading: Questions people ask before they get in touch
+faqHeading: You Have Questions, We Have Answers
+
 faq:
   - question: I already use Easy Clinic and something is not working. Who do I contact?
     answer: |
       Start at the help centre, [help.easyclinic.io](https://help.easyclinic.io/), and for anything the articles do not answer, call {contact:in.phone} or email hello@easyclinic.io with your clinic's name. Support is included in every plan at no extra charge, and Premium and Enterprise clinics also have a named account manager to go to. Please do not use the demo form on this page for support, because it books demos and does not open a support request.
   - question: Will I be tied into a contract if I go ahead after the demo?
-    answer: |
-      No, there is no binding contract and no setup fee, so you can use Easy Clinic for as long as you are happy with it. Professional and Premium are priced per doctor per month and billed annually or quarterly: in India, Professional is {price:inr.professional.annual} per doctor per month on annual billing or {price:inr.professional.quarterly} on quarterly billing. A login for your receptionist is included in that price, though the receptionist cannot open the EMR or write prescriptions.
+    answer: >-
+      You choose annual or quarterly billing when you sign up. Annual billing costs less per month. Your
+      plan terms are set out in our [Terms of Service](/terms/), and we walk you through them before you
+      sign.
   - question: How soon could my clinic be running on Easy Clinic after the demo?
-    answer: |
-      Clinics can go live in as little as {fact:goLiveDays} days after the demo. Training for you and your clinic staff takes {fact:trainingDays} days and two hours in all: 40 minutes of basic training on day 1, 40 minutes of EMR scenario training on day 2, 20 minutes of practice exercises on day 3 and 20 minutes on the road to expertise on day 4. There is no charge for the training.
+    answer: >-
+      Training takes about two hours, spread over four days, for you and your staff. We agree your go-live
+      date with you after the demo. If you are moving from another system, we can import your existing
+      records first.
   - question: We still write prescriptions on paper. Is a demo worth our time?
-    answer: |
-      Yes, and clinics on paper get a specific promise from us: give us 2 hours, or 10 patient records, and we will make your prescription writing faster. The demo itself takes 20 minutes, and there is no binding contract, so you decide after it whether those 2 hours are worth giving.
+    answer: >-
+      Yes. Bring a real case to the demo. We will write the same prescription on Easy Clinic while you
+      watch, so you can judge the time difference yourself. Many clinics on Easy Clinic moved straight
+      from paper.
   - question: Does Easy Clinic work without an internet connection?
-    answer: |
-      No, Easy Clinic does not run fully offline today, so your clinic needs a working internet connection to use it. You and your staff sign in at [app.easyclinic.io](https://app.easyclinic.io/), so if your line drops often, mobile data on a spare phone or a dongle is worth keeping as a backup.
+    answer: >-
+      No. Easy Clinic is cloud software, so it needs an internet connection. It runs in a web browser on
+      any device with a connection, at the clinic or away from it.
   - question: I want to partner with Easy Clinic or resell it. Who do I talk to?
-    answer: |
-      Email hello@easyclinic.io with your company name and the countries you cover, and say whether you want to [partner with Easy Clinic](/partner-with-ec/) or resell it. Please use email rather than the demo form, because the form is set up for clinics booking a demo.
+    answer: >-
+      Email [hello@easyclinic.io](mailto:hello@easyclinic.io) with your company name, the countries you
+      work in and the clinics you serve. Our team will pass it to the right person and get back to you.
+
 links:
   related: []
 closing:
@@ -66,6 +76,7 @@ editorialPass:
   onlyUsCouldWrite: The Kolkata office at 30 Circus Avenue with the India and Kenya lines side by side, and the promise of faster prescribing to clinics on paper in exchange for 2 hours or 10 patient records, are specific to how Easy Clinic works with clinics in India and Kenya.
   readsMachineWritten: With no named person to call, no hours and no call-back time, the contact table and the demo form promise can read like a switchboard, and the FAQ answers are all much the same length.
 notes:
+  - 'FAQ answers 2 to 6 replaced 2026-10-27 at the owner''s request. "Many clinics on Easy Clinic moved straight from paper" rests on testimonials such as tl-prabhu (paper to paperless); no count is claimed. The offline answer no longer mentions the self-hosted option.'
   - 'Contact form (2026-10-23, owner request): the short form (name, email, phone, speciality, note) with a help panel, per the owner''s screenshot. The Kenya phone, email and Nairobi address in the help panel (+254 762907500, kenya@easyclinic.io, Spring Valley Business Park) come from that screenshot and differ from src/data/countries/ke.yaml (+254 750 184 357, walter@easyclinic.io), which the Kenya pages still use; the office cards (Call us in India or Kenya) on this page use the screenshot details too. The office maps load Google Maps only on a click (frame-src www.google.com in astro.config.ts). Owner: use the screenshot on this page for now; reconcile ke.yaml when confirmed. The screenshot''s Cloudflare check is not built: the form keeps the honeypot and 3-second spam traps.'
   - 'Spec 5.19 /contact-us/, 7.9 (demo form) and section 11 UX 3. LocalBusiness schema is added automatically for this page (spec 2.10).'
   - 'Published 2026-09-26 with confirmed facts only (owner decision). Taken out until the fact sheet answers them: the call-back window, contact names and hours, demo and prescription languages, the cities the team visits in person, and the booking calendar. Each can come back as a line or an FAQ once confirmed.'
@@ -91,9 +102,7 @@ sections:
       help:
         heading: Need some help?
         body: >-
-          Questions? Concerns? Whatever it is, Easy Clinic does real time support and customer service the
-          perfect way. No more long waits, call center like attitude or robot answering services. Our support team
-          is available via phone, email and chat to quickly and decisively resolve any issues.
+          Questions or concerns? Our support team answers by phone, email and chat. You talk to a person who knows Easy Clinic, not an automated menu. Tell us your clinic's name and what you need, and we will help you sort it out.
         rows:
           - icon: mail
             title: Email Us
@@ -104,11 +113,11 @@ sections:
             body: |-
               **India:** [+91 91477 70277](tel:+919147770277)
 
-              **Kenya:** [+254 762907500](tel:+254762907500)
+              **Kenya:** [+254 762 907 500](tel:+254762907500)
           - icon: map-pin
             title: Address
             body: |-
-              **India:** 30 Circus Avenue, Kolkata - 700 017, India
+              **India:** 30 Circus Avenue, Kolkata - 700017, India
 
               **Kenya:** Spring Valley Business Park, Westlands, Nairobi, Kenya
   - discriminant: officeCards
@@ -127,7 +136,7 @@ sections:
           country: Kenya
           city: Nairobi
           address: Spring Valley Business Park, Westlands, Nairobi, Kenya
-          phone: '+254 762907500'
+          phone: '+254 762 907 500'
           email: kenya@easyclinic.io
           mapQuery: Spring Valley Business Park, Westlands, Nairobi, Kenya
       backgroundImage: ../../assets/images/blue-abstract-gradient-wave-wallpaper.jpg

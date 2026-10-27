@@ -19,20 +19,24 @@ interface Props {
   heroStrip?: { regulators: ReferenceDataEntry<'regulators'>[]; ratings: boolean; study: boolean };
   /** A narrower answer paragraph (40rem), so it wraps to the planned number of lines (the home page). */
   narrowLede?: boolean;
-  /** No gap between the text and image columns on wide screens (the home page). */
+  /** No gap between the text and image columns on wide screens. */
   noColumnGap?: boolean;
+  /** The text column (heading, answer, CTAs, ratings) runs the full width of its grid column beside the image (the home page). */
+  fullWidthText?: boolean;
+  /** The hero image without its grey border (owner request 2026-10-27: /contact-us/). */
+  plainImage?: boolean;
   /** The feature-page hero: a heading written to fit two lines, and a screenshot card as tall as the text. */
   largeHeading?: boolean;
   byline?: { author: ReferenceDataEntry<'authors'> | null; reviewedBy?: ReferenceDataEntry<'authors'>; lastUpdated: Date | null };
 }
 
-const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline, noColumnGap = false } = Astro.props;
+const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline, noColumnGap = false, fullWidthText = false, plainImage = false } = Astro.props;
 const registry = await getRegistry();
 const regulators = heroStrip?.regulators.length ? await getEntries(heroStrip.regulators) : [];
 const facts = heroStrip?.ratings ? (await getEntry('facts', 'facts'))!.data.facts : null;
 const study = heroStrip?.study ? (await getEntry('study', 'study'))!.data : null;
 
-// The rating and the platform ("4.9 on Capterra reviews"); review counts are not shown in the hero.
+// The rating and the platform ("4.9 on Capterra"); review counts are not shown in the hero.
 function rating(ratingId: string, platform: string) {
   const r = facts![ratingId];
   const value = need(Astro, `${platform} rating`, r?.value);
@@ -62,14 +66,14 @@ const media = Astro.slots.has('media') ? (await Astro.slots.render('media')).tri
 const stats = Astro.slots.has('stats') ? (await Astro.slots.render('stats')).trim() : '';
 ---
 
-<section class="overflow-x-clip rounded-t-[30px] border-b border-line bg-gradient-to-b from-blue-50 to-surface">
+<section class="overflow-x-clip rounded-t-[30px] bg-[var(--hero-bg)] lg:flex lg:min-h-[620px] lg:items-center">
   <div
     class:list={[
-      'container-page grid items-center gap-10 pt-10 pb-10 md:pt-14',
+      'container-page grid w-full items-center gap-10 pt-10 pb-10 md:pt-14',
       media ? 'md:grid-cols-[1.05fr_1fr] md:grid-rows-[1fr_auto_auto_1fr] md:items-start md:gap-x-10 md:gap-y-0 md:pb-16 lg:gap-x-16' : heroMedia ? ['md:pb-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-y-0 lg:items-center', noColumnGap ? 'lg:gap-x-0' : 'lg:gap-x-12 xl:gap-x-16'] : 'md:pb-16',
     ]}
   >
-    <div class:list={['max-w-[44rem] lg:col-start-1', media ? 'md:col-start-1 md:row-start-2' : 'lg:row-start-1 lg:self-end']}>
+    <div class:list={['max-w-[44rem] lg:col-start-1', fullWidthText && 'lg:max-w-none', media ? 'md:col-start-1 md:row-start-2' : 'lg:row-start-1 lg:self-end']}>
       {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
       <h1 class:list={[media && 'md:text-[2.375rem] md:leading-[1.15]', largeHeading ? 'lg:text-[2.75rem] lg:leading-[1.12]' : 'lg:text-[2.875rem]']}>{h1}</h1>
       <Md text={openingAnswer} class:list={['lede mt-5 text-ink', narrowLede && 'lg:max-w-[40rem]', media && 'md:text-[1.0625rem] lg:text-[1.1875rem]']} />
@@ -83,7 +87,7 @@ const stats = Astro.slots.has('stats') ? (await Astro.slots.render('stats')).tri
     {/* The grid's row gap would open up between the CTAs and what follows them; -mt-10 takes it back. Beside an image
         the two rows stretch to its height, so the text hugs the boundary between them (self-end, self-start) and the
         pair stays together, centred against the image. */}
-    <div class:list={['-mt-10 max-w-[44rem] lg:col-start-1 lg:mt-0', media ? 'md:col-start-1 md:row-start-3 md:mt-0' : 'lg:row-start-2 lg:self-start']}>
+    <div class:list={['-mt-10 max-w-[44rem] lg:col-start-1 lg:mt-0', fullWidthText && 'lg:max-w-none', media ? 'md:col-start-1 md:row-start-3 md:mt-0' : 'lg:row-start-2 lg:self-start']}>
       {aside && <Fragment set:html={aside} />}
 
       {
@@ -105,7 +109,7 @@ const stats = Astro.slots.has('stats') ? (await Astro.slots.render('stats')).tri
                 <Icon name="star" size={16} class="fill-star text-star" />
                 <span class="font-semibold text-ink-heading">{r.value}</span>
                 <span class="text-ink-muted">
-                  on <span class="rating-platform">{r.platform}</span> reviews
+                  on <span class="rating-platform">{r.platform}</span>
                 </span>
               </li>
             ))}
@@ -127,15 +131,15 @@ const stats = Astro.slots.has('stats') ? (await Astro.slots.render('stats')).tri
     {
       heroMedia && (
         // No card: the image sits straight on the hero, centred against the whole text column (h1 to byline) at its
-        // natural shape and in full, on a soft blue glow.
+        // natural shape and in full, with no glow or shadow behind it.
         <Screenshot
           media={heroMedia}
           priority
-          outlined={heroMedia.kind !== 'illustration'}
+          outlined={heroMedia.kind !== 'illustration' && !plainImage}
           sizes="(min-width: 90rem) 680px, (min-width: 60rem) 48vw, 100vw"
           class:list={[
-            'relative isolate',
-            "before:absolute before:-inset-6 before:-z-10 before:rounded-[48px] before:bg-gradient-to-br before:from-blue-200/70 before:via-blue-100/50 before:to-teal-50/60 before:blur-2xl before:content-['']",
+            'relative',
+            plainImage && '[&_img]:rounded-[18px]',
             'lg:col-start-2 lg:row-[1/span_2] lg:self-center',
             // Stacked (below 1200px), a photo or illustration stays at most 36rem wide, in line with the text above it;
             // a screenshot keeps the full width so its detail stays readable.

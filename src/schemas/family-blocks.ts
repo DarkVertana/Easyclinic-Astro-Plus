@@ -75,7 +75,7 @@ const COMPANY: Blocks = ['purposeSplit', 'logoSlider', 'valueGrid', 'statBand', 
 
 const CORE: Blocks = ['prose', 'featureRows', 'painBlocks', 'moduleGrid', 'proofBlock', 'testimonialRow', 'stepList', 'dataTable', 'scopeBox', 'contentCards', 'flowDiagram', 'splitTable', 'inlineCta'];
 const FEATURE: Blocks = [...CORE, 'regulatorStrip', 'regulatorTable', 'rolesMatrix'];
-const SOLUTION: Blocks = [...CORE, 'dayTimeline', 'rolesMatrix', 'regulatorStrip', 'pricingCards', 'clinicTypes'];
+const SOLUTION: Blocks = [...CORE, 'dayTimeline', 'rolesMatrix', 'regulatorStrip', 'pricingCards', 'clinicTypes', 'splitContent'];
 const HUB: Blocks = ['hubGrid', 'demoForm', 'journeyDiagram', 'moduleGrid', 'prose', 'proofBlock', 'testimonialRow', 'planMatrix', 'dataTable', 'personaRouter', 'featureRows', 'inlineCta', 'postIndex'];
 const AI: Blocks = [...CORE, 'studyCard', 'regulatorStrip', 'splitContent', 'capabilityList'];
 const TRUST: Blocks = [...CORE, 'regulatorTable', 'regulatorStrip', 'studyCard', 'integrationDirectory', 'demoForm'];

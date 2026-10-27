@@ -128,7 +128,8 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
   if (faq.length > 0) {
     if (!rules.faq) err('faq', 'faq', 'This page family carries no FAQ');
     else {
-      const [min, max] = rules.faq;
+      // Owner decision 2026-10-27: /countries/ carries four FAQs.
+      const [min, max] = data.path === '/countries/' ? [4, rules.faq[1]] : rules.faq;
       if (faq.length < min || faq.length > max) {
         err('faq', 'faq', `FAQ has ${faq.length} questions; this family needs ${min} to ${max}, or none (spec 2.5)`);
       }
@@ -141,7 +142,9 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
     });
   }
 
-  if (rules.proof) {
+  // Owner decision 2026-10-27: /countries/ drops its ratings proof block; the page ends on the contact form.
+  const proofExempt = new Set(['/countries/']);
+  if (rules.proof && !proofExempt.has(data.path as string)) {
     const hasProof = (data.sections ?? []).some((s) => PROOF_BLOCKS.has(s.discriminant));
     if (!hasProof) err('proof', 'sections', 'Every page carries one proof block that belongs to it (spec 2.4)');
   }

@@ -129,6 +129,15 @@ editorialPass:
     a named chain, and the page has no measured chain outcome yet; replace them when a chain customer
     supplies a real case and a number.
 notes:
+  - 'Sections removed 2026-10-27 at the owner''s request: central-and-local, roll-out.'
+  - 'Section when-you-grow (featureRows, three-card panel) added 2026-10-26 at the owner''s request to match /solutions/solo-clinic/, placed after billing-payments. Each card restates facts already on this page or in plans.yaml.'
+  - 'Section billing-payments (splitContent, compact, sticky image) added 2026-10-26 at the owner''s request, copied from /solutions/solo-clinic/ with the same wording and image (Invoice_Feature_01.png), placed after the step-by-step flow. The same checks apply as noted there: the "less than 10 seconds" line is unsourced, profit and loss rests on Enterprise financial accounting, and payment suggestions, the tax definition module and package amortisation are not confirmed elsewhere on the site.'
+  - 'Section chain-flow (flowDiagram, eight steps, wide intro) added 2026-10-26 at the owner''s request to match the hospital-opd claims flow, placed after the staff-access section. Every step restates facts already on this page or in plans.yaml.'
+  - 'Section staff-access (prose, wide) added 2026-10-26 at the owner''s request to match the hospital-opd departments section, placed after the plans cards. Every sentence restates facts already on this page or in plans.yaml (role logins, the reception login on every plan that cannot open the EMR, and the page''s own access, branch or site facts).'
+  - 'Plans section (splitTable plans, four cards) added 2026-10-26 at the owner''s request to match /solutions/polyclinic/, placed after the video-consults section. The cards come from plans.yaml (Professional, Premium, the module add-ons and Enterprise includes); only the heading and intro are written for this page.'
+  - 'Section video-consults (splitContent) added 2026-10-26 at the owner''s request, copied from /solutions/solo-clinic/ with the same wording and image (3_Video_consultent.png), placed after the testimonial as there. Every point is grounded on /features/telehealth/; the intro states the Premium gating (plans.yaml).'
+  - 'Testimonial restyled 2026-10-26 to match /solutions/solo-clinic/ (single, full quote, placed after the advanced section): the existing testimonial (foster-akaketwa) moved here and restyled; its old intro, which listed Premier Hospital, Ross Clinics, Seth GS KEM Hospital, German Osteo, Caring Minds and Penda Health, was replaced by one line about the speaker.'
+  - 'The advanced section image was changed to 2_EMR.png on 2026-10-26 at the owner''s request, to match /solutions/solo-clinic/.'
   - >-
     Spec 5.7 asks for the 67% stockout and 45-day prediction figures (cross-branch inventory) and the 34%
     denied-claims figure (revenue leakage). None has a public source (facts.md section 4), so both rows
@@ -178,7 +187,62 @@ notes:
     the per-doctor bullet (patients per doctor per hour, from the spec 5.11 eight morning numbers) was
     removed in the 2026-09-27 audit.
   - 'Audit 2026-09-27: the "Every branch on one morning screen" row no longer names collections against billing, stock days left, claims pending or patients per doctor per hour, and the per-doctor bullet is gone. No live product page or confirmed fact states them, /features/reports-and-dashboards/ leaves them out, and home, the /features/ hub and /indiademo/ dropped them in their fact checks. The row now names what /features/reports-and-dashboards/ grounds (revenue by branch, then stock and claim status where the chain runs those modules, as that page''s limits box says), written as two sentences to avoid a list of three; "one screen" rests on live /kenyademo/. Restore the spec 5.11 numbers here and on /features/reports-and-dashboards/ only after product confirms them.'
+  - >-
+    dayTimeline added 2026-10-26 to match /solutions/solo-clinic/. Each entry rests on this page's own
+    text: 08:30 on the "Head office hears about Tuesday on Wednesday" pain and the "Every branch on one
+    morning screen" row (revenue by branch only, none of the numbers the 2026-09-27 audit removed); 10:15
+    on "The patient starts again at every door" and the two-branch FAQ (Premium covers more than one
+    location); 13:00 on the "Stock that moves between branches" row (Enterprise); 18:30 on the day-end
+    cash close bullet of the revenue row and the "Tuesday on Wednesday" fix. No collections against
+    billing, stock days left, claims pending, per-doctor numbers or offline working, and no plan named for
+    the cash close, since /features/revenue-management/ does not gate it.
+  - 'Advanced section (splitContent advanced-emr) added 2026-10-26 to match /solutions/solo-clinic/, with the image 14_Dashboard (1).jpg (reports dashboard; no figures from it are quoted). The points rest on this page''s own text: one chart and one login on the two-login FAQ and "History stays at one branch"; SOP tracking (Enterprise) on the standardise-care FAQ and the splitTable note; templates and formulary on the franchise FAQ and splitTable; the dashboard on the "Every branch on one morning screen" row (revenue by branch, stock and claim status only where the chain runs those modules, none of the numbers the 2026-09-27 audit removed); stock transfers (Enterprise) on the stock row; revenue control on the revenue row, with price lists under Enterprise central control and the cash close left ungated as /features/revenue-management/ leaves it. The solo-clinic differential diagnosis, adverse drug event, ADR and form-builder points are not carried over.'
 sections:
+  - discriminant: dayTimeline
+    value:
+      id: a-tuesday
+      heading: A Tuesday across your branches, with and without Easy Clinic
+      intro: >-
+        Same branches, same patients. What changes is how much of the day head office can see, and how
+        soon.
+      entries:
+        - time: '08:30'
+          title: The morning numbers
+          before: >-
+            Last night's figures arrived on WhatsApp, each branch laid out its own way. Someone at head office
+            is still adding them up, and no two branches count a visit the same way.
+          after: >-
+            The owner opens the dashboard and sees the branches side by side, starting with revenue for each
+            branch, counted the same way everywhere from what each branch entered.
+          href: /features/reports-and-dashboards/
+        - time: '10:15'
+          title: A patient at a second branch
+          before: >-
+            A patient seen at the north branch last month walks into the south branch. The doctor takes the
+            history again and repeats last month's blood test.
+          after: >-
+            The notes and lab reports from the north branch are on the same chart, so the second doctor starts
+            from last month's visit. Premium and Enterprise both cover more than one location.
+          href: /features/multi-location/
+        - time: '13:00'
+          title: One branch runs short
+          before: >-
+            One branch is out of an antibiotic that another branch holds in quantity. The pharmacist phones
+            around, and the stock moves with nothing written down at either end.
+          after: >-
+            The stock moves on a transfer that takes it off one branch's count and onto the other's, and
+            reorder alerts flag the item before the shelf is empty. Stock transfers come with Enterprise.
+          href: /features/pharmacy-and-inventory/
+        - time: '18:30'
+          title: Every till closes
+          before: >-
+            One branch's till closes a little short again. The figure reaches head office tomorrow, and nobody
+            there sees the pattern.
+          after: >-
+            Each branch runs its day-end cash close with the variance shown, and head office reads the same
+            figures the branch entered, without waiting for the evening message.
+          href: /features/revenue-management/
+
   - discriminant: painBlocks
     value:
       id: what-breaks
@@ -187,106 +251,78 @@ sections:
         With one clinic the owner sees everything from the consulting room. From the second branch on, head
         office runs the chain on phone calls and spreadsheets, and these are the first things to slip.
       items:
-        - heading: Care drifts from branch to branch
+        - heading: Care drifts between branches
           body: >-
             The protocol written at head office is followed to the letter at the flagship and loosely three
-            branches away. One branch's diabetes review includes the foot check and the HbA1c; another's is a
-            repeat prescription. Nobody at head office knows which until a patient complains.
+            branches away. Nobody at head office knows which until a patient complains.
           fix: >-
-            Head office writes the SOP once and every branch works from the same template and checklist.
-            Clinical SOP tracking shows adherence as a percentage for each branch, so drift turns up as a
-            number before it turns up as a complaint.
-        - heading: Head office hears about Tuesday on Wednesday
+            Every branch works from the same SOP template and checklist. Clinical SOP tracking shows adherence
+            for each branch, so drift shows up as a number before it shows up as a complaint.
+        - heading: Head office hears a day late
           body: >-
-            Each branch manager sends the day's figures after closing, on WhatsApp or in a spreadsheet laid
-            out their own way. By the time someone at head office has added them up, the short till and the
-            empty shelf are a day old, and no two branches count a visit the same way.
+            Each branch manager sends the day's figures after closing, laid out their own way. By the time head
+            office has added them up, the short till and the empty shelf are a day old.
           fix: >-
-            Every branch bills and dispenses in the same Easy Clinic system, so head office reads the figures
-            each branch entered, counted the same way everywhere, without waiting for the evening message or
-            retyping a spreadsheet. The KPI dashboard puts the branches side by side.
+            Every branch bills and dispenses in the same system, so head office reads the figures each branch
+            entered, counted the same way. The KPI dashboard puts the branches side by side.
           href: /features/reports-and-dashboards/
           linkLabel: See the morning numbers by branch
-        - heading: The patient starts again at every door
+        - heading: History stays at one branch
           body: >-
-            A patient seen at your north branch walks into the south branch with the same complaint and none
-            of the history. The doctor takes the history again and repeats the blood test done last month,
-            and the patient wonders what the chain is for.
+            A patient seen at your north branch walks into the south branch with none of the history. The doctor
+            takes it again and repeats last month's blood test.
           fix: >-
             One central chart serves every branch. The notes and lab reports from the north branch are on the
             same record at the south branch, so the second doctor starts from last month's visit.
           href: /features/multi-location/
           linkLabel: How one record works across branches
-  - discriminant: splitTable
-    value:
-      id: central-and-local
-      heading: Central control, local flexibility
-      intro: >-
-        Head office holds what has to be the same at every branch. The branch keeps what depends on its own
-        doctors and its own neighbourhood.
-      left:
-        title: Head office sets
-        items:
-          - Clinical SOPs, and the tracking that shows which branches follow them
-          - Price lists for every branch and every payer
-          - The formulary each branch pharmacy dispenses from
-          - Note and prescription templates
-      right:
-        title: Each branch adjusts
-        items:
-          - Appointment slots
-          - Doctor timings
-          - Staff and shifts
-          - Local promotions
-      note: SOP tracking and central control of every location come with the Enterprise plan.
   - discriminant: featureRows
     value:
       id: one-record
       heading: What head office gets from one record
       items:
         - heading: Every branch on one morning screen
+          icon: layout-dashboard
           body: >-
-            The owner's dashboard puts the branches side by side, starting with revenue for each branch.
-            Where the chain runs pharmacy and claims, each branch's stock and the status of its claims sit
-            beside it, so a branch that falls behind shows up on the same screen as the branches that are on
-            track.
+            The owner's dashboard puts the branches side by side, starting with revenue for each branch, so a
+            branch that falls behind shows up beside the ones on track.
           bullets:
+            - Stock and claim status beside it, where the chain runs those modules
             - Custom analytics on a reporting server, on Enterprise
           link:
             label: See the reports and dashboards
             href: /features/reports-and-dashboards/
         - heading: Stock that moves between branches
+          icon: boxes
           body: >-
-            Each branch pharmacy dispenses from the prescription and tracks every batch and its expiry. When
-            one branch runs short of an antibiotic that another holds in quantity, the stock moves on a
-            transfer that takes it off one branch's count and onto the other's. Reorder alerts flag an item
-            before the shelf is empty.
+            When one branch runs short of a medicine another holds, the stock moves on a transfer that updates
+            both branches' counts.
           bullets:
             - Batch and expiry tracked at every branch
+            - Reorder alerts before the shelf is empty
             - Transfers recorded at the sending and the receiving branch
           plan: enterprise
           link:
             label: See pharmacy and inventory
             href: /features/pharmacy-and-inventory/
-        - heading: A new branch goes live on the same record
+        - heading: A new branch opens ready to go
+          icon: building-2
           body: >-
-            Whether you own the new branch or a franchisee does, it opens on the SOPs, price lists, formulary
-            and templates head office has already set, so nobody sets them up again for the new branch. Its
-            staff take the same four-day training as every other branch, and the branch appears on the
-            owner's dashboard beside the rest.
+            Owned or franchised, a new branch opens on the SOPs, price lists, formulary and templates head
+            office has already set.
           bullets:
             - Head office settings in place before the first patient
+            - On the owner's dashboard beside the other branches
             - The same four-day training at every branch
           plan: enterprise
           link:
             label: See how branches share one record
             href: /features/multi-location/
-        - heading: Revenue that leaks between the chart and the bank
+        - heading: Revenue that leaks at the handover
+          icon: hand-coins
           body: >-
-            In a chain, money goes missing where one person hands work to the next. A dressing ordered in the
-            chart never reaches the bill. One branch charges last year's price for a scan. A claim comes back
-            denied and waits in a tray, and the till at one branch closes a little short every Friday without
-            anyone at head office seeing the pattern.
+            Money goes missing where one person hands work to the next: a dressing that never reaches the bill,
+            last year's price for a scan, a denied claim left in a tray.
           bullets:
             - Orders in the chart carried through to the bill
             - Price lists set by head office for every branch
@@ -296,42 +332,257 @@ sections:
           link:
             label: See revenue management
             href: /features/revenue-management/
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      tone: wash
+      heading: Advanced EMR for clinic chains
+      centerHeading: true
+      compact: true
+      alignTop: true
+      body: |-
+        ### One chart at every branch
+        A patient's notes and lab reports go with them from branch to branch, and a doctor who works at two branches signs in once.
+
+        ### SOPs tracked branch by branch
+        Head office writes each clinical SOP once. On Enterprise, adherence shows for every branch, so drift is visible before a patient complains.
+
+        ### Templates and formulary set centrally
+        Every branch writes notes on the same templates and dispenses from the same formulary, owned and franchised branches alike.
+
+        ### Branches side by side on one dashboard
+        The owner sees revenue for each branch counted the same way, with stock and claim status where the chain runs those modules.
+
+        ### Stock transfers between branches
+        Medicine moves on a transfer recorded at both ends, with batch, expiry and reorder alerts at every branch. Transfers come with Enterprise.
+
+        ### Revenue control at every counter
+        On Enterprise, head office sets price lists for each branch and payer. Chart orders carry through to the bill, and each till closes with the variance shown.
+      chips:
+        - One central chart
+        - One doctor login
+        - SOP adherence tracking
+        - Shared formulary
+        - Branch KPI dashboard
+        - Stock transfers
+        - Reorder alerts
+        - Day-end cash close
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/2_EMR.png
+        alt: 'The Easy Clinic EMR: a signed prescription beside a summary of the last visit and the patient facesheet, with a Complete Blood Count trend chart below'
+        frame: none
+
+
   - discriminant: testimonialRow
     value:
       id: customers
-      heading: A health group in Zimbabwe on building its operations around Easy Clinic
-      intro: >-
-        Clinics and hospitals on Easy Clinic include Premier Hospital, Ross Clinics, Seth GS KEM Hospital,
-        German Osteo and Caring Minds. In Nairobi, Penda Health has run its clinics on Easy Clinic since
-        2017.
+      heading: CIMAS Health on working with Easy Clinic
+      intro: Foster Akaketwa is group CIO at CIMAS Health, a health group in Zimbabwe that has built its operations around Easy Clinic.
       items:
         - foster-akaketwa
       layout: single
-  - discriminant: stepList
+      usePullQuote: false
+
+  - discriminant: splitContent
     value:
-      id: roll-out
-      heading: How a chain moves onto Easy Clinic
+      id: video-consults
+      tone: wash
+      heading: Teleconsultation, Video consult & Online fees collection
+      intro: Video consultations and online fee payment come with the Premium plan.
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitTable
+    value:
+      id: plans
+      heading: What each plan covers for a clinic chain
       intro: >-
-        Branches go live in the order you choose, and each one joins the same record as the branches before
-        it.
+        A second branch starts on Premium, which covers more than one location. Enterprise adds central control of every branch, and the bigger modules can also be added to Premium one at a time.
+      left:
+        title: Included in every plan
+        icon: circle-check
+        items:
+          - Patient records and the EMR
+          - E-prescriptions
+          - Cura AI (documentation)
+          - Billing and payments
+          - Appointment scheduling
+          - Dashboards and reports
+          - Logins for your staff
+          - SMS and email reminders
+      right:
+        title: Included in Premium
+        icon: badge-check
+        items:
+          - Specialty EMR templates
+          - Your own clinical forms and print layouts
+          - Package treatments
+          - Lab reports in the chart
+          - WhatsApp reminders and messages
+          - Online payments
+          - More than one location
+          - A named account manager
+      more:
+        - title: Added as a module, or included in Enterprise
+          icon: layers
+          items:
+            - 'Pharmacy and inventory: dispense from the prescription, with batch and expiry tracked'
+            - 'Lab management: orders from the chart and sample tracking'
+            - Insurance and payer claims
+            - Integrations and custom development
+        - title: Enterprise also adds
+          icon: crown
+          items:
+            - Clinical SOP tracking across branches
+            - Financial accounting
+            - A reporting server and custom analytics
+            - Workflow rules
+            - Patient portal and app
+            - Central control of every location
+            - Private cloud hosting on request
+
+  - discriminant: prose
+    value:
+      id: staff-access
+      width: wide
+      heading: Branches and staff access
+      body: |-
+        Every branch writes on one central chart. A doctor who moves between branches signs in with one login and sees the same patient record at each, so a patient seen on Monday at one branch and on Thursday at another has one chart.
+
+        Each member of staff has their own login, and the role decides which screens they see. A reception login comes with every plan, and reception cannot open the EMR or write a prescription. Each branch keeps its own appointment slots, doctor timings, and staff and shifts.
+
+        Head office sets the clinical SOPs, price lists, formulary and templates for every branch. SOP tracking and central control of every location come with the Enterprise plan.
+
+  - discriminant: flowDiagram
+    value:
+      id: chain-flow
+      wideIntro: true
+      heading: From head office settings to the morning report
+      intro: >-
+        Head office sets the rules once and every branch works to them, so the owner reads every branch counted the same way.
       steps:
-        - title: Demo for head office
+        - label: Set the SOPs
+          body: "Head office writes each clinical SOP once, and every branch works from the same template."
+        - label: Set prices
+          body: "Price lists for every branch and every payer, and the formulary, are set by head office."
+        - label: Open a branch
+          body: "A new branch, owned or franchised, opens on the settings head office has already made."
+        - label: Register
+          body: "Every branch writes on one central chart, so a patient is registered once for the whole chain."
+        - label: Treat
+          body: "A doctor who works at two branches signs in with one login and sees the same record at each."
+        - label: Move stock
+          body: "Stock moves between branches on a transfer recorded at both ends, on Enterprise."
+        - label: Close the till
+          body: "Each branch closes its day with the variance shown."
+        - label: Review
+          body: "The owner's dashboard puts the branches side by side, starting with revenue for each."
+
+  - discriminant: splitContent
+    value:
+      id: billing-payments
+      heading: Billing, Payments & Reconciliation made really simple
+      intro: Billing and payments come with every plan. Online payments and WhatsApp come with Premium, and financial accounting with Enterprise.
+      centerHeading: true
+      compact: true
+      alignTop: true
+      stickyMedia: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your practice, enhancing the professional appearance of your invoices and receipts.
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: featureRows
+    value:
+      id: when-you-grow
+      heading: When the chain grows
+      intro: >-
+        Every branch joins the same system and the same record, so the chain grows without anyone setting it up again.
+      items:
+        - heading: A new branch opens
+          icon: building-2
           body: >-
-            Head office sees the central chart and the branch dashboard, and brings the questions its own
-            network raises, such as how franchise branches fit in or which payers each branch bills.
-        - title: Map the branches
+            Owned or franchised, it opens on the SOPs, price lists, formulary and templates head office has already set.
+          bullets:
+            - Settings in place before the first patient
+            - The same four-day training
+            - On the owner's dashboard beside the rest
+          link:
+            label: See how branches share one record
+            href: /features/multi-location/
+        - heading: A doctor works at two branches
+          icon: users
           body: >-
-            Together we list every branch, owned or franchised, and decide setting by setting what head office
-            holds and what each branch keeps. The SOPs, price lists, formulary and templates are then set once,
-            at the centre.
-        - title: Train each branch
-          meta: '{fact:trainingDays} days, about two hours in all'
+            They sign in with one login and see the same patient record at each branch.
+          bullets:
+            - One login
+            - One chart for each patient
+            - The same record at each branch
+          link:
+            label: See how the EMR works
+            href: /features/emr/
+        - heading: Head office needs control
+          icon: layout-dashboard
           body: >-
-            Each branch's staff take the four-day path: basic training on day 1 (40 minutes), EMR scenarios on
-            day 2 (40 minutes), practice exercises on day 3 (20 minutes) and the road to expertise on day 4 (20
-            minutes). Training is included at no extra charge.
-        - title: Go live, branch by branch
-          body: >-
-            Each branch goes live on the same record as the others and joins the owner's dashboard beside
-            them. Support is included on every plan at no extra charge, and Premium and Enterprise include a
-            named account manager.
+            Enterprise adds SOP tracking across branches and central control of every location.
+          bullets:
+            - Clinical SOP tracking
+            - Central control of every location
+            - A reporting server and custom analytics
+          link:
+            label: See what each plan includes
+            href: /pricing/#plans
+

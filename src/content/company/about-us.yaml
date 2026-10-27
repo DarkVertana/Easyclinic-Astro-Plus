@@ -14,7 +14,9 @@ h1: Commitment to Simplify Your Clinic Operations
 linkLabel: About us
 eyebrow: Novel Medicare Solutions Private Limited
 openingAnswer: >-
-  Established in 2003, Easy Clinic has grown into a leading provider of premium medical software, serving thousands across 18 countries. Renowned for our user-friendly, world-class healthcare solutions and unmatched customer support, we’ve consistently delivered excellence and affordability, earning high praise from our global user base.
+  Easy Clinic was established in {fact:founded}. Today more than 5,000 doctors in {fact:countries} countries use
+  it to run appointments, patient records, billing and pharmacy in one system. We build it to be easy to
+  learn, and we support every clinic that runs on it.
 summary: >-
   Who makes Easy Clinic, how long it has run clinics, its vision and values, and the five people who lead
   it.
@@ -49,9 +51,7 @@ sections:
         - icon: globe
           title: Mission
           body: >-
-            Our mission at Easy Clinic is to empower healthcare organisations with advanced, intuitive software
-            solutions that streamline clinic operations and improve patient outcomes. By harnessing the power of
-            AI, we aim to foster a more efficient, integrated and smart healthcare ecosystem.
+            Our mission at Easy Clinic is to empower healthcare organisations with advanced, intuitive software solutions that make clinic operations simpler and support better patient care. By harnessing the power of AI, we aim to foster a more efficient, integrated and smart healthcare ecosystem.
   - discriminant: logoSlider
     value:
       id: organisations
@@ -119,28 +119,25 @@ sections:
       heading: Running clinics since {fact:founded}
       width: wide
       body: |-
-        Easy Clinic has been running doctors' clinics since {fact:founded}. Two customers quoted on our [customers page](/customers/) have used it since 2008 and 2012: Dr Prantar Chakrabarti, a haematologist at the Institute of Hematology and Transfusion Medicine, and Aditya Women and Infertility Clinic in Hyderabad. Today Easy Clinic runs in the cloud and clinics sign in at [app.easyclinic.io](https://app.easyclinic.io/). It is used in {fact:countries} countries, by clinics that range from one doctor and a receptionist to a chain of {fact:largestChain} locations. In Nairobi, Penda Health has kept its clinic records on Easy Clinic since 2017, and in 2025 researchers at Penda Health and OpenAI published a preprint on {fig:visits} of its patient visits, in which an AI tool called AI Consult ran inside that record.
+        Easy Clinic has been running doctors' clinics since {fact:founded}. Two customers quoted on our [customers page](/customers/) have used it since 2008 and 2012: Dr Prantar Chakrabarti, a haematologist at the Institute of Hematology and Transfusion Medicine, and Aditya Women and Infertility Clinic in Hyderabad. Today Easy Clinic runs in the cloud and clinics sign in at [app.easyclinic.io](https://app.easyclinic.io/). It is used in {fact:countries} countries, by clinics that range from one doctor and a receptionist to multi-location clinic chains. In Nairobi, Penda Health has kept its clinic records on Easy Clinic since 2017, and in 2025 researchers at Penda Health and OpenAI published a preprint on {fig:visits} of its patient visits, in which an AI tool called AI Consult ran inside that record.
 
   - discriminant: statBand
     value:
       id: numbers
-      heading: Dedicated to Crafting Ultimate Experience
+      heading: Dedicated to Making Clinic Work Easier
       body: >-
-        At Easy Clinic, we are dedicated to crafting the ultimate experience in healthcare management. Our
-        relentless pursuit of innovation and user-centric design ensures that every interaction with our software
-        improves efficiency, enhances care, and exceeds expectations.
+        At Easy Clinic, we design every screen around how doctors and their teams actually work. The aim is
+        simple: less time on the software, and more time with patients.
       stats:
-        - value: 20+
-          label: Years of industry expertise, honed to unparalleled perfection
-        - value: '{fact:retention}'
-          label: Customers who have been using our solutions for over 5 years.
-        - value: '{fact:customWorkflows}'
-          label: Custom workflows built to meet the unique needs of our clients.
-        - value: '{fact:supportSatisfaction}'
-          label: Customer satisfaction rate for our support and training services
-      note: >-
-        These are Easy Clinic's own figures. We have not published how or when the retention, workflow and
-        satisfaction figures were measured, so treat them as our own count.
+        - value: '{fact:founded}'
+          label: The year Easy Clinic was established
+        - value: '{fact:doctors}'
+          label: Doctors who run their clinics on Easy Clinic
+        - value: 200+
+          label: Cities with clinics on Easy Clinic
+        - value: '{fact:countries}'
+          label: Countries where Easy Clinic is used
+      note: Easy Clinic's own figures, as of 2026.
 
   - discriminant: dataTable
     value:
@@ -176,37 +173,37 @@ sections:
           role: 'Founder & CEO'
           linkedin: https://www.linkedin.com/in/gmohata/
           bio: >-
-            Girish is Founder & CEO at Easy Clinic, that has been powering some of the largest and most complex healthcare clinics across the globe. His innovative leadership and strategic vision have enabled him to build and exit multiple tech companies profitably in the past.
+            Girish is Founder and CEO of Easy Clinic, which clinics, polyclinics and clinic chains use in 18 countries. Before Easy Clinic, he built and exited several technology companies.
         - image: ../../assets/images/team/Mrinal_Pasari1.jpg
           name: Mrinal Pasari
           role: 'Co-Founder'
           linkedin: https://www.linkedin.com/in/mrinalpasari/
           bio: >-
-            Mrinal is a Co-Founder and Solution Architect Enterprise Architect with 20 years of experience in enterprise application development for banking, insurance, healthcare, logistic, telecommunication, media, production and ERP domains.
+            Mrinal is a Co-Founder of Easy Clinic and an enterprise solution architect with 20 years of experience in enterprise application development for banking, insurance, healthcare, logistic, telecommunication, media, production and ERP domains.
         - image: ../../assets/images/team/Vikas_Malpani1.jpg
           name: Vikas Malpani
           role: 'Director - Business Growth & Strategy'
           linkedin: https://www.linkedin.com/in/vikasmalpani/
           bio: >-
-            Vikas is a celebrated entrepreneur and accomplished business strategist, revered for his outstanding leadership skills and forward-thinking vision. His passion for innovation and value creation through technology shines through in all his ventures.
+            Vikas is an entrepreneur and business strategist who leads growth and strategy at Easy Clinic. His focus is on creating value for clinics through technology.
         - image: ../../assets/images/team/Gaurab.png
           name: Gaurab Chatterjee
           role: 'Head of Software Development'
           linkedin: https://www.linkedin.com/in/gaurabchatterjee/
           bio: >-
-            Gaurab is a highly skilled and motivated technology specialist with over 16 years of experience encompassing all stages of the Software Development Life Cycle (SDLC). Possessing a robust foundation in Microsoft technologies, he has led the delivery of numerous large scale projects in his role at Easy Clinic since 2010.
+            Gaurab is a highly skilled and motivated technology specialist with over 16 years of experience encompassing all stages of the Software Development Life Cycle (SDLC). Possessing a strong foundation in Microsoft technologies, he has led the delivery of numerous large-scale projects in his role at Easy Clinic since 2010.
         - image: ../../assets/images/team/Subhashish.png
           name: Subhashish Saha
           role: 'Head of Customer Success'
           linkedin: https://www.linkedin.com/in/subhashishsaha/
           bio: >-
-            Subhashish has been at the forefront of customer satisfaction at Easy Clinic since 2012. With an unwavering commitment to excellence and a deep understanding of client needs, Subhashish leads his team to ensure that each Easy Clinic user experiences seamless service and unparalleled support.
+            Subhashish has led customer success at Easy Clinic since 2012. He and his team make sure every clinic is set up, trained and supported long after it goes live.
         - image: ../../assets/images/team/Clients.png
           illustration: true
           name: Our Esteemed Clients
           role: 'Chief Product Officers'
           bio: >-
-            At Easy Clinic, our Chief Product Officer is uniquely embodied by our 5000+ users. Their invaluable feedback and diverse experiences are the driving force behind our product development and innovation. Their insights and needs directly influence our roadmap, making our users the true architects of the Easy Clinic experience.
+            At Easy Clinic, our Chief Product Officer is uniquely embodied by our 5,000+ doctors. Their invaluable feedback and diverse experiences are the driving force behind our product development and innovation. Their insights and needs directly influence our roadmap, making our users the true architects of the Easy Clinic experience.
 
   - discriminant: spotlight
     value:
@@ -253,7 +250,7 @@ sections:
     value:
       id: gallery
       eyebrow: Life at Easy Clinic
-      heading: "Easy Clinic is the result of a team devoted to the pursuit of excellence, meticulously crafting each aspect to set new standards \nin healthcare solutions."
+      heading: Easy Clinic is built by a team that works with clinics every day, from the first demo to years after go-live.
       photos:
         - image: ../../assets/images/gallery/20221023_112815.jpg
           size: large
@@ -283,31 +280,32 @@ sections:
           size: wide
           alt: Easy Clinic team members in a meeting around the boardroom table
 
-faqHeading: Questions about the company
+faqHeading: You Have Questions, We Have Answers
 faq:
   - question: Who owns Easy Clinic?
     answer: >-
-      Easy Clinic is owned and made by Novel Medicare Solutions Pvt Ltd, a private limited company based in
-      Kolkata, India. Girish Mohata founded it and is its chief executive, and Mrinal Pasari is a
-      co-founder.
+      Easy Clinic is owned and made by Novel Medicare Solutions Pvt Ltd, a private limited company based
+      in Kolkata, India. Girish Mohata founded it and is its chief executive, and Mrinal Pasari is a
+      co-founder. In Kenya, Easy Clinic works through its Kenyan company, Novel Software Solutions Private
+      Ltd.
   - question: Where is Easy Clinic based?
     answer: >-
-      Easy Clinic is based in Kolkata, at 30 Circus Avenue, Kolkata 700017. Clinics in India can call
-      {contact:in.phone} and clinics in Kenya have their own line on {contact:ke.phone}; the
-      [contact page](/contact-us/) lists both with their email addresses.
+      Easy Clinic is based in Kolkata, India, at 30 Circus Avenue, Kolkata 700017. It also has a Kenyan
+      company, Novel Software Solutions Private Ltd, and a Kenya phone line for clinics there. Clinics in
+      {fact:countries} countries use Easy Clinic.
   - question: How long has Easy Clinic been running clinics?
     answer: >-
-      Easy Clinic has been running clinics since {fact:founded}, which is more than 20 years.
-      {fact:retention} of its customers have used it for more than five years, and Penda Health in
-      Nairobi has used it as the record for its clinics since 2017.
+      Since {fact:founded}, when Easy Clinic was established. Some customers have used it for well over a
+      decade. Dr Prantar Chakrabarti, a haematologist, has used it since 2008.
   - question: Is Easy Clinic a startup?
     answer: >-
-      No, Easy Clinic has been running clinics since {fact:founded}. Its head of software development has
-      been with the company since 2010 and its head of customer success since 2012.
+      No. Easy Clinic has been running since {fact:founded}, and more than 5,000 doctors in
+      {fact:countries} countries use it today. It is still founder-led, with Girish Mohata as chief
+      executive.
   - question: Does Easy Clinic sell patient data?
     answer: >-
-      No, Easy Clinic never sells patient data, and we do not misuse the records a clinic keeps in
-      Easy Clinic.
+      No. Patient data belongs to the clinic that records it. Easy Clinic stores it to run the software
+      for that clinic. How data is handled is set out in our privacy policy.
 
 links:
   related:
@@ -319,10 +317,10 @@ links:
       description: Whether we are hiring, and how to send us your CV.
     - href: /contact-us/
       label: Contact us
-      description: The India and Kenya phone numbers, their email addresses, the Kolkata office and a form to book a demo.
+      description: The India and Kenya phone numbers, their email addresses and our office address.
     - href: /curapilot/
       label: CuraPilot
-      description: Easy Clinic's clinical copilot. The page also covers the Penda Health preprint on AI Consult.
+      description: Easy Clinic's clinical copilot. The page also covers the Penda Health study in full.
 
 closing:
   heading: See Easy Clinic set up for a clinic like yours
@@ -348,6 +346,7 @@ editorialPass:
     should check the page sounds like someone from the company talking.
 
 notes:
+  - 'FAQ answers replaced 2026-10-27 at the owner''s request. Check before publishing: (1) the Kenyan company, Novel Software Solutions Private Ltd, comes from the Kenya privacy policy and still awaits the Kenya country lead''s confirmation (privacy/kenya.mdx note); (2) "Patient data belongs to the clinic that records it" is not confirmed elsewhere (home.yaml note on data ownership); (3) the data answer says No while the global privacy policy, section 2 clause (d), allows selling de-identified information (see the LEGAL note), so "privacy policy" is left unlinked until that clause is fixed.'
   - 'Published 2026-09-26 with confirmed facts only (owner decision). Grounded on the live /about-us/ page (re-fetched 2026-09-26; counters in the HTML are 20, 92, 500 and 98). Live copy dropped as old boilerplate (spec 5.19): the vision, mission and six values, "Dream Team", "Chief Product Officers", "revolutionising", "empower", "seamless", "world-class", "unparalleled", and the "try Easy Clinic absolutely free" line (no free trial exists).'
   - 'Fact-check pass 2026-09-26 removed: the 2003 row''s claim that Novel Medicare Solutions Pvt Ltd made Easy Clinic in 2003 (the company''s name and incorporation date for that year are not sourced); "keeps no server of its own" (Enterprise offers custom or private cloud hosting); "without a contract holding them" after the retention figure (whether long-standing customers ever had contracts is unknown); the visit advice "call first so the person you want to meet is in"; "organisations as different as" (unsourced characterisation); "No open roles right now" in the careers link (the careers page owns that fact). The story now links to /customers/ rather than putting customer names on solution and specialty page links. The meta description no longer repeats the doctors and countries pair (spec 2.11 stat line).'
   - 'Leadership: names and roles from src/data/authors. No photos (none exist) and no LinkedIn URLs (all null), though spec 5.19 asks for both. Backgrounds keep only plain statements from the live page: Mrinal Pasari (solution and enterprise architect, 20 years, enterprise application development for banking to healthcare), Vikas Malpani (entrepreneur and business strategist), Gaurab Chatterjee (since 2010, over 16 years, Microsoft technologies), Subhashish Saha (since 2012, leads his team). Left out: Girish Mohata "build and exit multiple tech companies profitably" (unverified) and the puffery around Vikas Malpani. Add a verified line for Girish when supplied. Spec 12 founder block needs a real photograph of Girish Mohata.'

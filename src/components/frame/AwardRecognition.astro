@@ -16,7 +16,7 @@ interface Props {
 const {
   award = 'Best AI-Powered EMR & Clinic Management Software',
   year = '2026',
-  quote = 'Easy Clinic has spent over two decades building what began as a simple idea: technology should empower clinicians, not burden them.',
+  quote = 'Since 2003, Easy Clinic has been building on a simple idea: technology should empower clinicians, not burden them.',
 } = Astro.props;
 ---
 
@@ -27,9 +27,6 @@ const {
       <div class="recognition__award">
         <span class="recognition__medal" aria-hidden="true">
           <span class="recognition__rays"></span>
-          <span class="recognition__spark recognition__spark--1"><svg viewBox="0 0 10 10"><path d="M5 0c.4 2.6 1.4 4 5 5-3.6 1-4.6 2.4-5 5-.4-2.6-1.4-4-5-5 3.6-1 4.6-2.4 5-5Z" fill="currentColor" /></svg></span>
-          <span class="recognition__spark recognition__spark--2"><svg viewBox="0 0 10 10"><path d="M5 0c.4 2.6 1.4 4 5 5-3.6 1-4.6 2.4-5 5-.4-2.6-1.4-4-5-5 3.6-1 4.6-2.4 5-5Z" fill="currentColor" /></svg></span>
-          <span class="recognition__spark recognition__spark--3"><svg viewBox="0 0 10 10"><path d="M5 0c.4 2.6 1.4 4 5 5-3.6 1-4.6 2.4-5 5-.4-2.6-1.4-4-5-5 3.6-1 4.6-2.4 5-5Z" fill="currentColor" /></svg></span>
           {/* Solid amber trophy: cup, stem and base filled, handles as strokes. */}
           <svg class="recognition__trophy" viewBox="3.4 2.2 17.2 19.6" width="48" height="48" fill="none">
             <path d="M6.6 5.2H4.4v1.4a3.6 3.6 0 0 0 3.4 3.6M17.4 5.2h2.2v1.4a3.6 3.6 0 0 1-3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
@@ -98,7 +95,7 @@ const {
     align-items: center;
     gap: 1rem;
   }
-  /* Medal: a white disc with a gold border; slow-turning gold rays and three twinkling sparkles behind the trophy. */
+  /* Medal: a white disc with a gold border; slow-turning gold rays behind the trophy. */
   .recognition__medal {
     position: relative;
     display: grid;
@@ -127,60 +124,14 @@ const {
     color: var(--color-amber-400);
     filter: drop-shadow(0 2px 3px rgb(224 134 0 / 0.3));
   }
-  .recognition__spark {
-    position: absolute;
-    display: block;
-    color: var(--color-amber-500);
-    animation: recognition-twinkle 2.4s ease-in-out infinite;
-  }
-  .recognition__spark svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  .recognition__spark--1 {
-    top: 12px;
-    right: 15px;
-    width: 12px;
-    height: 12px;
-  }
-  .recognition__spark--2 {
-    bottom: 17px;
-    left: 13px;
-    width: 9px;
-    height: 9px;
-    animation-delay: 0.8s;
-  }
-  .recognition__spark--3 {
-    top: 19px;
-    left: 18px;
-    width: 7px;
-    height: 7px;
-    animation-delay: 1.6s;
-  }
   @keyframes recognition-spin {
     to {
       rotate: 360deg;
     }
   }
-  @keyframes recognition-twinkle {
-    0%,
-    100% {
-      opacity: 0.25;
-      scale: 0.6;
-    }
-    50% {
-      opacity: 1;
-      scale: 1;
-    }
-  }
   @media (prefers-reduced-motion: reduce) {
-    .recognition__rays,
-    .recognition__spark {
+    .recognition__rays {
       animation: none;
-    }
-    .recognition__spark {
-      opacity: 0.8;
     }
   }
   .recognition__chip {

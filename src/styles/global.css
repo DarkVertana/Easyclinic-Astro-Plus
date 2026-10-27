@@ -84,6 +84,7 @@
 :root {
   --surface: var(--color-white);
   --surface-alt: var(--color-blue-50);
+  --hero-bg: #eaf2ff; /* every page hero; change it here to restyle them all */
   --surface-muted: var(--color-grey-50);
   --surface-inverse: var(--color-navy-950);
   --ink: var(--color-grey-900);
@@ -117,6 +118,7 @@
 [data-theme='dark'] {
   --surface: #0d1320;
   --surface-alt: #111b2e;
+  --hero-bg: #111b2e;
   --surface-muted: #151d2c;
   --surface-inverse: #05070f;
   --ink: #e8ebf1;
