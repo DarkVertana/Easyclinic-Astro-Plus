@@ -9,6 +9,7 @@ import CTABand from '../components/frame/CTABand.astro';
 import HelpBand from '../components/frame/HelpBand.astro';
 import AwardRecognition from '../components/frame/AwardRecognition.astro';
 import FeatureChips from '../components/frame/FeatureChips.astro';
+import Certification from '../components/frame/Certification.astro';
 import ClientLogos from '../components/frame/ClientLogos.astro';
 import WhatIsEasyClinic from '../components/frame/WhatIsEasyClinic.astro';
 import HeroPanel from '../components/frame/HeroPanel.astro';
@@ -112,6 +113,7 @@ const heroPanel = d.heroPanel;
   {d.platformSection && <PlatformSection {...d.platformSection} />}
   {record.path === '/' && <AwardRecognition />}
   {record.path === '/' && <FeatureChips />}
+  {record.path === '/' && <Certification />}
   {record.path === '/' && <ClientLogos />}
   {record.path === '/' && <WhatIsEasyClinic />}
   <Sections sections={d.sections} ctx={ctx} />

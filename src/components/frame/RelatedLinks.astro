@@ -41,24 +41,24 @@ const items = links
 // own country page names it as the third value and the pill links there once that page is published;
 // the rest go to the countries hub (the old /emr-software-in-*/ URLs redirect there too).
 const OTHER_MARKETS: [string, string, string?][] = [
-  ['MU', 'Mauritius', '/emr-software-in-mauritius/'],
-  ['QA', 'Qatar', '/emr-software-in-qatar/'],
-  ['RW', 'Rwanda', '/emr-software-in-rwanda/'],
-  ['SC', 'Seychelles', '/emr-software-in-seychelles/'],
-  ['SO', 'Somalia', '/emr-software-in-somalia/'],
-  ['ZA', 'South Africa', '/emr-software-in-south-africa/'],
-  ['SR', 'Suriname', '/emr-software-in-suriname/'],
-  ['TZ', 'Tanzania', '/emr-software-in-tanzania/'],
-  ['TT', 'Trinidad and Tobago', '/emr-software-in-trinidad-and-tobago/'],
-  ['UG', 'Uganda', '/emr-software-in-uganda/'],
+  ['MU', 'Mauritius', '/best-clinic-management-software-mauritius/'],
+  ['QA', 'Qatar', '/best-clinic-management-software-qatar/'],
+  ['RW', 'Rwanda', '/best-clinic-management-software-rwanda/'],
+  ['SC', 'Seychelles', '/best-clinic-management-software-seychelles/'],
+  ['SO', 'Somalia', '/best-clinic-management-software-somalia/'],
+  ['ZA', 'South Africa', '/best-clinic-management-software-south-africa/'],
+  ['SR', 'Suriname', '/best-clinic-management-software-suriname/'],
+  ['TZ', 'Tanzania', '/best-clinic-management-software-tanzania/'],
+  ['TT', 'Trinidad and Tobago', '/best-clinic-management-software-trinidad-and-tobago/'],
+  ['UG', 'Uganda', '/best-clinic-management-software-uganda/'],
 ];
 const hubHref = registry.urlFor('/countries/');
 const otherPills =
   countryPills && hubHref
-    ? OTHER_MARKETS.map(([country, name, page]) => ({ href: (page && registry.urlFor(page)) || hubHref, label: `EMR Software in ${name}`, country }))
+    ? OTHER_MARKETS.map(([country, name, page]) => ({ href: (page && registry.urlFor(page)) || hubHref, label: `Best Clinic Software in ${name}`, country }))
     : [];
 // Every market in one alphabetical row; the UAE sorts by its full name.
-const sortName = (label: string) => label.replace('EMR Software in ', '').replace(/^UAE$/, 'United Arab Emirates');
+const sortName = (label: string) => label.replace('Clinic Software in ', '').replace(/^UAE$/, 'United Arab Emirates');
 const pills = countryPills
   ? [...items.filter((i) => i.country).map((i) => ({ href: i.href, label: i.label, country: i.country! })), ...otherPills].sort((a, b) =>
       sortName(a.label).localeCompare(sortName(b.label)),
