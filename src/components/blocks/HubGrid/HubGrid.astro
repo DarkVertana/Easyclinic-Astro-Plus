@@ -7,7 +7,7 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'hubGrid'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, groups, columns, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, groups, columns, layout = 'cards', ctx } = Astro.props;
 const sectionTone = toneFor(tone, ctx.index);
 
 const registry = await getRegistry();
@@ -63,11 +63,87 @@ const GRID = {
   3: 'sm:grid-cols-2 lg:grid-cols-3',
   4: 'sm:grid-cols-2 lg:grid-cols-4',
 }[columns];
+
+// Panels layout: groups alternate blue and green (owner request 2026-10-30: #EAF5FF blue-50 for 1 and 3, #e8f5ee green-50 for 2 and 4).
+const ACCENTS = [
+  { tint: 'bg-blue-50', chip: 'bg-white text-blue-700', ink: 'text-blue-700' },
+  { tint: 'bg-green-50', chip: 'bg-white text-green-700', ink: 'text-green-700' },
+];
+const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
 {
   visibleGroups.length > 0 && (
     <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+      {layout === 'panels' ? (
+        <div class="grid gap-5 md:gap-6">
+          {visibleGroups.map(({ title, titleId, CardHeading, cards }, g) => {
+            const accent = ACCENTS[g % ACCENTS.length];
+            return (
+              <div
+                class:list={[
+                  'overflow-hidden rounded-[18px] border border-line bg-surface text-ink',
+                  title && 'lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] xl:grid-cols-[19rem_minmax(0,1fr)]',
+                ]}
+              >
+                {title && (
+                  // Phones and tablets: a header strip over the rows. Wide screens: a label column beside them.
+                  <div class:list={['flex items-center gap-4 px-5 py-4 sm:px-6 lg:flex-col lg:items-start lg:justify-between lg:gap-8 lg:p-8', accent.tint]}>
+                    <div class="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-5">
+                      <span class:list={['flex size-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold tabular-nums shadow-sm lg:size-12 lg:text-base', accent.chip]} aria-hidden="true">
+                        {pad(g + 1)}
+                      </span>
+                      <GroupHeading id={titleId} class="text-xl leading-tight text-ink-heading lg:text-2xl">
+                        {title}
+                      </GroupHeading>
+                    </div>
+                    <p class:list={['ml-auto text-sm font-medium lg:ml-0', accent.ink]}>
+                      {cards.length} {cards.length === 1 ? 'module' : 'modules'}
+                    </p>
+                  </div>
+                )}
+                <ul class="divide-y divide-line" aria-labelledby={title ? titleId : undefined}>
+                  {cards.map((card) => (
+                    <li
+                      class:list={[
+                        'group relative flex gap-4 px-5 py-5 transition-colors hover:bg-grey-50 focus-within:bg-grey-50 sm:gap-5 sm:px-6 lg:px-8 lg:py-6',
+                        card.missing && 'border-dashed',
+                      ]}
+                    >
+                      {card.icon && (
+                        <span class:list={['flex size-11 shrink-0 items-center justify-center rounded-control', accent.tint, accent.ink]}>
+                          <Icon name={card.icon} size={22} />
+                        </span>
+                      )}
+                      <div class="min-w-0 flex-1">
+                        <CardHeading class="font-sans text-base font-semibold leading-snug sm:text-lg">
+                          {/* The link's ::after covers the row, so the whole row is one tap target. */}
+                          <a href={card.href} class="link-plain after:absolute after:inset-0 hover:no-underline" aria-describedby={card.noteId}>
+                            {card.label}
+                          </a>
+                        </CardHeading>
+                        {card.description && <p class="mt-1.5 text-[0.9375rem] leading-relaxed text-ink-muted">{card.description}</p>}
+                        {card.missing && (
+                          <p id={card.noteId} class="mt-2 flex items-center gap-1.5 text-sm font-medium text-warning">
+                            <Icon name="circle-dashed" size={16} />
+                            <span>Not built yet</span>
+                          </p>
+                        )}
+                      </div>
+                      <span
+                        class="hidden size-9 shrink-0 items-center justify-center self-center rounded-full border border-line text-link transition-colors group-hover:border-blue-500 group-hover:bg-blue-500 group-hover:text-white sm:flex"
+                        aria-hidden="true"
+                      >
+                        <Icon name="arrow-right" size={18} class="transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
       <div class="grid gap-10 md:gap-12">
         {visibleGroups.map(({ title, titleId, CardHeading, cards }) => (
           <div>
@@ -113,6 +189,7 @@ const GRID = {
           </div>
         ))}
       </div>
+      )}
     </Section>
   )
 }

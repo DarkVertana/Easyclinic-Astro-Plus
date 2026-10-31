@@ -37,7 +37,52 @@ const BANNED: Array<[RegExp, string]> = [
 
 /** Phrases that contain a banned word but are allowed (a competitor name, a technical term). */
 // Owner decision 2026-10-27: the /countries/ free-trial answer keeps "Ask in the demo about trying it with your own team".
-const ALLOWLIST = [/\bStreamline Health\b/g, /\bend-to-end encrypt(?:ed|ion)\b/gi, /\bAsk in the demo about trying it with your own team\b/g];
+// Owner decision 2026-10-30: the /features/ opening answer keeps "Unlock the efficiency" and "Leverage AI insights".
+const ALLOWLIST = [
+  /\bStreamline Health\b/g,
+  /\bend-to-end encrypt(?:ed|ion)\b/gi,
+  /\bAsk in the demo about trying it with your own team\b/g,
+  /\bUnlock the efficiency of your healthcare practice\b/g,
+  /\bLeverage AI insights\b/g,
+  // Owner decision 2026-10-30: the /features/ EMR and billing sections keep "Comprehensive Medical History Record", "comprehensive review", "Comprehensive Patient Data Visualization" and "Comprehensive Financial Reporting".
+  /\bComprehensive Medical History Record\b/g,
+  /\bcomprehensive review of case histories\b/g,
+  /\bComprehensive Patient Data Visualization\b/g,
+  /\bComprehensive Financial Reporting\b/g,
+  // Owner decision 2026-10-30: the /features/ financial accounting section keeps "comprehensive security measures" and "Comprehensive till management".
+  /\bcomprehensive security measures\b/g,
+  /\bComprehensive till management\b/g,
+  // Owner decision 2026-10-30: the /features/ module sections (appointments to communication) keep their copy as written.
+  /\bComprehensive Appointment & Resource Scheduling\b/g,
+  /\bComprehensive Appointment Dashboard\b/g,
+  /\bComprehensive Inventory Management\b/g,
+  /\bcomprehensive view of stock movement\b/g,
+  /\bComprehensive Logistics Processes\b/g,
+  /\bend-to-end logistics\b/g,
+  /\bcomprehensive stock counts\b/g,
+  /\bEnd-to-End Laboratory and Radiology Management\b/g,
+  /\bcomprehensive management for in-house laboratories\b/g,
+  /\bComprehensive User Management\b/g,
+  /\bComprehensive Cross-Location Analytics\b/g,
+  /\bComprehensive Transaction Management\b/g,
+  /\bComprehensive Patient Engagement Platform\b/g,
+  /\bleverage existing technologies\b/g,
+  /\bcomprehensive data compatibility\b/g,
+  // Owner decision 2026-10-30: the /features/patient-engagement/ hero keeps "cutting-edge patient engagement features".
+  /\bcutting-edge patient engagement features\b/g,
+  // Owner decision 2026-10-30: the /features/reports-and-dashboards/ hero keeps "Elevate your clinic’s operational efficiency" and "comprehensive reporting tools".
+  /\bElevate your clinic[’']s operational efficiency\b/g,
+  /\bcomprehensive reporting tools\b/g,
+  // Owner decision 2026-10-30: the /features/reports-and-dashboards/ ETL section keeps "End-to-End Data Integration" and "Leverage ETL tools".
+  /\bEnd-to-End Data Integration\b/g,
+  /\bLeverage ETL tools\b/g,
+  // Owner decision 2026-10-30: the /features/insurance-claims/ coverage section keeps its heading "Comprehensive Coverage Management".
+  /\bComprehensive Coverage Management\b/g,
+  // Owner decision 2026-10-31: the /features/revenue-management/ reports section keeps its heading.
+  /\bComprehensive Financial Reports and Dashboards\b/g,
+  // Owner decision 2026-10-31: the /features/appointment-scheduling/ dashboard section keeps its heading.
+  /\bComprehensive Appointment Dashboard for Efficient Daily Operations\b/g,
+];
 
 const NON_ANSWER = /\bconfirm(?:ed)?(?: it)? (?:in|during) (?:the |a )?demo\b|\bdiscuss(?:ed)? on the call\b|\b(?:work )?in progress\b|\bcoming soon\b|\bask (?:us )?in (?:the |a )?demo\b/i;
 

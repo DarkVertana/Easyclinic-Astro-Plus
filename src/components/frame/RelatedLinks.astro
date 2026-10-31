@@ -25,7 +25,28 @@ const ICONS: [string, string][] = [
   ['/compare/', 'list-checks'],
   ['/blog/', 'file-text'],
 ];
-const iconFor = (href: string) => ICONS.find(([prefix]) => href.startsWith(prefix))?.[1] ?? 'arrow-up-right';
+// Pages with an icon of their own, matched before the prefixes above, so a row of solution or feature cards
+// does not repeat one icon (owner request 2026-10-30).
+const PAGE_ICONS: Record<string, string> = {
+  '/solutions/solo-clinic/': 'user-round',
+  '/solutions/polyclinic/': 'users',
+  '/solutions/clinic-chain/': 'network',
+  '/solutions/hospital-opd/': 'hospital',
+  '/solutions/ngo-clinics/': 'heart-handshake',
+  '/features/appointment-scheduling/': 'calendar-clock',
+  '/features/emr/': 'notebook-pen',
+  '/features/billing/': 'receipt',
+  '/features/insurance-claims/': 'shield-check',
+  '/features/lab/': 'flask-conical',
+  '/features/pharmacy-and-inventory/': 'pill',
+  '/features/whatsapp/': 'message-circle',
+  '/features/telehealth/': 'video',
+  '/features/patient-engagement/': 'message-circle-heart',
+  '/features/reports-and-dashboards/': 'chart-column',
+  '/features/revenue-management/': 'trending-up',
+  '/features/multi-location/': 'map-pin',
+};
+const iconFor = (href: string) => PAGE_ICONS[href.split('#')[0]] ?? ICONS.find(([prefix]) => href.startsWith(prefix))?.[1] ?? 'arrow-up-right';
 // Curated next steps (spec 2.9), replacing the shared "Explore the rest of the platform" block.
 const items = links
   .map((l) => {

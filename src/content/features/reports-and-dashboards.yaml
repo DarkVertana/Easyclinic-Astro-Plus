@@ -1,5 +1,7 @@
 # Reports and dashboards feature page (spec 5.11 "/features/reports-and-dashboards", keyword row in 4.1, cannibalisation rules 4.5.2 and 4.5.7).
 status: published
+# Explicit so the proof-block exemption in src/lib/rules/audit.ts can match this page (owner decision 2026-10-30).
+path: /features/reports-and-dashboards/
 headKeyword: clinic dashboard software
 secondaryKeywords:
   - clinic KPI dashboard
@@ -8,14 +10,11 @@ secondaryKeywords:
   - doctor productivity report
 title: 'Clinic Dashboard and Reports Software: Easy Clinic'
 metaDescription: "Clinic dashboard software for the owner's morning numbers: revenue by branch, the day's appointments, stock and claim status, with reports for each role."
-h1: The numbers a clinic owner checks daily
+h1: Simplify Your Clinic Operations with Real-Time
 linkLabel: Reports and dashboards
 eyebrow: Reports and dashboards
 openingAnswer: >-
-  Easy Clinic's clinic dashboard software shows the owner's morning numbers live: revenue for each branch
-  and the group, the day's appointments with each visit's status and, where those modules run, stock and
-  claims. Dashboards and reports come with every plan, from {price:usd.professional.annual} per doctor per
-  month billed annually.
+  Discover the perfect blend of efficiency and innovation with Easy Clinic’s Reports and Dashboard module. Tailored for clinics of all sizes, our module not only streamlines data management but also provides deep insights into your clinic’s performance. Elevate your clinic’s operational efficiency and decision-making with our intuitive dashboards and comprehensive reporting tools.
 summary: >-
   Live dashboards for revenue by branch, the day's appointments, stock and claims, with reports for each
   role and a data warehouse on Enterprise.
@@ -182,26 +181,32 @@ sections:
     value:
       id: getting-reports-out
       heading: Getting the numbers to the people who need them
+      layout: bento
       items:
         - heading: Reports that go out by themselves
+          icon: send
           body: >-
             Reports can be generated and distributed automatically, so the people who read them have the
             latest figures without anyone compiling them by hand.
         - heading: Filters, and reports of your own
+          icon: search
           body: >-
             Dashboards can be set to the metrics that matter most to your clinic, and reports take filters
             and search parameters of your own, so they show what you need to see. Where the library does not
             have the report you need, a custom report can be created for it.
         - heading: Excel and PDF
+          icon: download
           body: >-
             Reports export to Excel and PDF, for the accountant who works in a spreadsheet and for keeping a
             copy of each month's figures after the month has closed.
         - heading: Who sees which report
+          icon: lock
           body: >-
             Each login sees the reports its role allows, and access can be narrowed further by department.
             A chain can give its owned clinics, franchisees, mobile medical units and associate clinics
             different levels of access, and audit logs keep a record of what each user did.
         - heading: On your phone
+          icon: smartphone
           body: >-
             The dashboards open on a phone or a tablet as well as the office computer. Easy Clinic is cloud
             software and does not run fully offline today, so the phone needs a connection to show the
@@ -211,6 +216,10 @@ sections:
     value:
       id: data-warehouse
       heading: On Enterprise, a data warehouse for large clinic chains
+      width: wide
+      link:
+        label: See what Enterprise includes
+        href: /pricing/#compare
       body: >-
         Enterprise includes a dedicated reporting server with custom business analytics, and a data
         warehouse meant for large clinic chains. Data from Easy Clinic, and from other sources such as
@@ -224,45 +233,115 @@ sections:
         are the ones inside Easy Clinic, and they export to Excel or PDF when you need the figures somewhere
         else.
 
-  - discriminant: scopeBox
+  - discriminant: splitContent
     value:
-      id: limits
-      heading: What to know before you rely on the dashboards
-      variant: limits
-      items:
-        - >-
-          **More than one branch needs Premium.** Professional covers one location, so revenue by branch
-          starts on Premium, and central control of every location comes with Enterprise.
-        - >-
-          **Stock and claims need their modules.** The inventory and claims dashboards come with pharmacy
-          and inventory and with insurance claims, each part of Enterprise or added to Professional or
-          Premium as a module.
-        - >-
-          **The warehouse is Enterprise only.** On Professional and Premium, figures leave
-          Easy Clinic as Excel or PDF exports.
-        - >-
-          **It needs a connection.** Easy Clinic is cloud software and does not run fully offline today, so
-          the dashboard needs a working connection to show the day's figures.
-        - >-
-          **No measured time saving.** We have not published a measured figure for the hours the reports
-          save an owner or an accountant, so we do not quote one.
+      id: real-time-insights
+      heading: 'Real-Time Data Visualization: 30 Second Insights'
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Access critical data instantly with real-time visualization. Our module offers quick access to patient statistics, financial reports, and operational metrics, enabling prompt and informed decisions.
 
-  - discriminant: proofBlock
+        ### Customizable Dashboards
+        Tailor your dashboards to focus on the metrics that matter most to your clinic. Whether it's patient care outcomes or financial performance, get a clear view at a glance.
+
+        ### Automated Reporting
+        Automate the generation and distribution of reports, ensuring that your team always has the latest data without the hassle of manual compilation.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/3.png
+        alt: 'An Easy Clinic diagnosis dashboard: visits by city, the top diagnoses across clinic cities, referral status, diagnoses by age group and gender, and visits by screening test and satisfaction score'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      body: >-
-        These are Easy Clinic's public ratings. One customer, a haematologist who has used Easy Clinic since
-        2008, wrote about the reporting side: "The features I like the most are: Data handling and
-        analytical tools available to generate information from the patient's data." His full testimonial
-        is on the [hospital OPD page](/solutions/hospital-opd/).
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      id: actionable-intelligence
+      heading: Transforming Data into Actionable Intelligence
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Easy Clinic gives the flexibility to define own ETL processes (extract, transform, load) via Azure data pipelines that can help you save time, reduce errors, and improve data quality and consistency. ETL tools can also handle complex data transformations.
+
+        ### Enterprise-Scale End-to-End Data Integration
+        Seamlessly consolidate data from multiple sources like databases, files, web services, or APIs, to a common destination, such as a data warehouse, a data lake, or a cloud platform using Azure Data Factory and SQL-based ETL/ELT processes. Our robust pipelines ensure accurate and timely data flow for real-time decision-making.
+
+        ### Use ETL for Visual Insights with Power BI
+        Leverage ETL tools to extract, transform, and load data from multiple sources like sales, marketing, or finance into a centralized data warehouse. Connect this refined data to Power BI for creating customizable dashboards and reports, enabling you to visualize insights through charts, graphs, and tables. Share and collaborate on these insights with stakeholders to drive better decision-making.
+
+        ### Reliable Data for Better Insights
+        Enhance data quality by eliminating errors, duplicates, and inconsistencies. Centralize and standardize data from multiple sources, ensuring seamless accessibility and accurate reporting.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/4.png
+        alt: 'An Easy Clinic advanced visit dashboard: visits by city, the top chief complaints, top ordered lab tests, top prescribed medications and the top diagnoses across age groups'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: operational-efficiency
+      heading: Enhanced Operational Efficiency Streamline Your Workflow
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Reduce manual tasks and streamline operations with automated data management and reporting, allowing your staff to focus on patient care.
+
+        ### Improve Clinic Performance
+        Use our tools to continuously monitor and enhance your clinic's performance, ensuring that you meet and exceed your operational goals.
+
+        ### Success Story: Qualitas Health
+        Qualitas Health, one of Malaysia's largest clinic chains, improved their operational efficiency and patient satisfaction by implementing Easy Clinic's Reports and Dashboard module.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: existing-systems
+      heading: Seamless Integration Compatible with Existing Systems
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Our Reports and Dashboard module integrates seamlessly with your existing EMR and practice management systems, ensuring a smooth transition without disrupting your operations.
+
+        ### Multi-Platform Access
+        Access reports and dashboards from any device, be it desktop, tablet, or mobile. Stay connected to your clinic's data wherever you are.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/2-2.png
+        alt: 'An Easy Clinic finance dashboard: revenue, outstanding amount and total visits, revenue by service, and revenue by day of the week'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scalability
+      heading: Scalability for Growth Adapt to Your Needs
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Whether you're a single clinic or a large network, our module scales with your growth. Add new clinics and users easily as your practice expands.
+
+        ### Future-Ready
+        Built with future growth in mind, our system supports the addition of new features and capabilities, ensuring your clinic stays ahead of the curve.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/1-8.png
+        alt: 'Revenue distribution across the top five clinics of a chain in Malaysia, as a pie chart and a table of total visit revenue per clinic'
+        frame: none
 
 faqHeading: Questions clinic owners ask about reports
 faq:
@@ -362,6 +441,8 @@ editorialPass:
     screenshot, no owner's quote of its own and fewer than half of the spec's eight morning numbers.
 
 notes:
+  - 'Section limits (What to know before you rely on the dashboards) removed 2026-10-30 at the owner''s request.'
+  - 'Section ratings (How clinics rate Easy Clinic) removed 2026-10-30 at the owner''s request; the page is exempt from the proof-block rule in src/lib/rules/audit.ts.'
   - 'Title 49 characters (spec 4.1 title kept); meta 153 characters. Meta rewritten from the spec 4.1 wording: "no-shows", "doctor productivity" and "in one morning view" were dropped because no live page states a no-show figure, a per-doctor revenue report or a single screen holding every number. H1 kept from spec 4.1.'
   - 'Editor pass 2026-09-26 (fact check against live pages re-fetched with curl the same day): removed "revenue by doctor" (opening answer, summary, morning-view row, report table, FAQ, polyclinic link description) and "no-show rate" (opening answer, pain block, morning-view row, report table). Neither is stated plainly on a live product page; the only source was the /healthcare-dashboard-software/ blog, whose KPI lists are generic advice and an anonymous case study, and sibling pages (clinic-chain.yaml, revenue-management.yaml, polyclinic.yaml, hospital-opd.yaml notes) already treat revenue per doctor as unconfirmed. The spec 5.11 FAQ "revenue per doctor per branch" is asked here as "last month''s revenue for each branch", which the live pages support; the doctor split is left out until product confirms it.'
   - 'Also tightened in that pass: "on one screen" removed from the opening answer (the live pages describe several dashboards: appointment, inventory, claims, bird''s-eye); "every report takes filters ... to the branch and the dates" cut to "reports take filters and search parameters of your own" (live wording); the audit FAQ no longer says the log shows who made each entry on a patient''s record (not on a live page) and ties workflow step records to Enterprise (plans.yaml "Workflow rules"); "Full financial accounting" became "Financial accounting" (live says "Advanced Financial Accounting", plans.yaml says "Financial accounting"); the CMO row says chief medical officers oversee SOP adherence (live) rather than per-branch adherence; the head-office central-access bullet was cut from the Premium-tagged row because central control is Enterprise; the report table column is now "Where it comes from" so trend charts, P&L and custom reports are not given a plan the pricing page does not state.'

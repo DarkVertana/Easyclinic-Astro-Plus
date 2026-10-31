@@ -3,10 +3,11 @@ import type { SectionValue } from '../../../schemas/sections';
 import { need } from '../../../lib/content/need';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
+import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'dataTable'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, caption, columns, rows, note, wideIntro, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, caption, columns, rows, note, wideIntro, variant = 'default', ctx } = Astro.props;
 const sectionTone = toneFor(tone, ctx.index);
 
 // Accessible name: the visible caption when set, else the section heading (by reference when it has an id).
@@ -24,12 +25,82 @@ const body = rows.map((row, r) => ({
   overflow:
     row.length > columns.length ? need(Astro, `row ${r + 1} has ${row.length} cells for ${columns.length} columns`, null) : null,
 }));
+
+// Plans variant: a cell that starts with a status word shows that status as a chip, and whatever follows the
+// first comma ("scoped per project") as a small note under it.
+const STATUS = [
+  { re: /^included\b/i, kind: 'yes', label: 'Included', icon: 'check' },
+  { re: /^add-on\b/i, kind: 'addon', label: 'Add-on', icon: 'plus' },
+  { re: /^not included\b/i, kind: 'no', label: 'Not included', icon: 'minus' },
+] as const;
+// Clean variant: "Head office" and "The branch" (who sets a rule in a group of clinics) show as chips.
+function ownerCell(text: string | null) {
+  if (!text) return null;
+  const t = text.trim();
+  if (/^head office(\s|$)/i.test(t)) return { kind: 'hq', label: 'Head office', icon: 'building-2', note: t.replace(/^head office\s*/i, '') };
+  if (/^the branch$/i.test(t)) return { kind: 'branch', label: 'The branch', icon: 'map-pin', note: '' };
+  return null;
+}
+// Tiers variant: which column is the price (shown large), and an icon for each tier in order.
+const priceCol = columns.findIndex((col) => /price/i.test(col));
+const TIER_ICONS = ['user-round', 'building-2', 'network', 'crown'];
+function splitPrice(text: string) {
+  const i = text.indexOf(',');
+  return i < 0 ? { main: text, rest: '' } : { main: text.slice(0, i), rest: text.slice(i + 1).trim() };
+}
+function planCell(text: string | null) {
+  if (!text) return null;
+  const hit = STATUS.find((st) => st.re.test(text.trim()));
+  if (!hit) return null;
+  const rest = text.trim().replace(hit.re, '').replace(/^[,\s]+/, '');
+  return { ...hit, note: rest ? rest.charAt(0).toUpperCase() + rest.slice(1) : '' };
+}
 ---
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} wideHeader={wideIntro}>
+  {variant === 'tiers' ? (
+    // One plan per column from lg: name, price, the other facts as labelled lines, the last cell as its
+    // description. Below lg the plans stack, each a full-width panel.
+    <ul role="list" class="tiers" aria-labelledby={labelledBy} aria-label={label}>
+      {rows.map((row, r) => {
+        const price = priceCol > 0 && row[priceCol] ? splitPrice(row[priceCol]) : null;
+        const last = columns.length - 1;
+        return (
+          <li class="tier">
+            <div class="tier__head">
+              <span class="tier__icon" aria-hidden="true"><Icon name={TIER_ICONS[r % TIER_ICONS.length]} size={22} /></span>
+              <h3 class="tier__name"><Md text={row[0]} inline /></h3>
+            </div>
+            {price && (
+              <p class="tier__price">
+                <span class="tier__label">{columns[priceCol]}</span>
+                <span class="tier__amount"><Md text={price.main} inline /></span>
+                {price.rest && <span class="tier__price-note"><Md text={price.rest} inline /></span>}
+              </p>
+            )}
+            <dl class="tier__facts">
+              {columns.map((col, c) =>
+                c === 0 || c === priceCol || c === last ? null : (
+                  <div class="tier__fact">
+                    <dt>{col}</dt>
+                    <dd><span class="tier__chip"><Icon name="map-pin" size={14} /><Md text={row[c]} inline /></span></dd>
+                  </div>
+                ),
+              )}
+            </dl>
+            <div class="tier__body">
+              <p class="tier__label">{columns[last]}</p>
+              <Md text={row[last]} inline as="p" class="tier__text" />
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  ) : (
+  <>
   {/* Explicit roles keep table semantics when the cells are display:block below 640px (Safari drops them). */}
   <table
-    class:list={['dt', columns.length >= 5 && 'dt-dense']}
+    class:list={variant === 'figures' ? ['dt-figures'] : variant === 'plans' ? ['dt-plans'] : ['dt', columns.length >= 5 && 'dt-dense', variant === 'clean' && 'dt-clean']}
     role="table"
     aria-labelledby={labelledBy}
     aria-label={label}
@@ -51,7 +122,29 @@ const body = rows.map((row, r) => ({
         body.map((row) => (
           <tr role="row">
             {row.cells.map((cell, c) => {
-              const content = cell.md ? <Md text={cell.md} inline /> : cell.placeholder;
+              const status = variant === 'plans' && c > 0 ? planCell(cell.md) : null;
+              const owner = variant === 'clean' && c > 0 ? ownerCell(cell.md) : null;
+              const content = owner ? (
+                <span class="owner-cell">
+                  <span class:list={['owner-chip', `owner-chip--${owner.kind}`]}>
+                    <Icon name={owner.icon} size={14} />
+                    {owner.label}
+                  </span>
+                  {owner.note && <span class="plan-note">{owner.note.charAt(0).toUpperCase() + owner.note.slice(1)}</span>}
+                </span>
+              ) : status ? (
+                <span class="plan-cell">
+                  <span class:list={['plan-chip', `plan-chip--${status.kind}`]}>
+                    <span class="plan-chip__icon" aria-hidden="true"><Icon name={status.icon} size={12} /></span>
+                    {status.label}
+                  </span>
+                  {status.note && <span class="plan-note">{status.note}</span>}
+                </span>
+              ) : cell.md ? (
+                <Md text={cell.md} inline />
+              ) : (
+                cell.placeholder
+              );
               const last = c === row.cells.length - 1 && row.overflow;
               return c === 0 ? (
                 <th scope="row" role="rowheader" data-label={columns[c] || undefined}>
@@ -70,7 +163,9 @@ const body = rows.map((row, r) => ({
       }
     </tbody>
   </table>
-  {note && <Md text={note} class:list={['mt-4 max-w-[46rem] text-sm', sectionTone === 'inverse' ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+  </>
+  )}
+  {note && <Md text={note} class:list={['mt-4 text-sm', variant !== 'default' ? 'mt-6 max-w-none' : 'max-w-[46rem]', sectionTone === 'inverse' ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
 </Section>
 
 <style>
@@ -193,6 +288,669 @@ const body = rows.map((row, r) => ({
       color: var(--ink-muted);
     }
   }
+</style>
+
+<style>
+  /* Clean variant, wide screens: soft card table, tinted header and first column, set column widths. */
+  .dt-clean {
+    border-color: #e3eaf5;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 18px 40px -28px rgb(16 42 84 / 0.25);
+    overflow: hidden;
+  }
+
+  .dt-clean caption {
+    padding-bottom: 1rem;
+  }
+
+  .dt-clean thead th {
+    padding: 1rem 1.5rem;
+    background: var(--color-blue-50);
+    color: var(--color-blue-800);
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .dt-clean thead th:first-child,
+  .dt-clean thead th:last-child {
+    border-radius: 0;
+  }
+
+  .dt-clean tbody th,
+  .dt-clean tbody td {
+    padding: 1.5rem;
+    line-height: 1.65;
+    border-top-color: #e3eaf5;
+  }
+
+  .dt-clean tbody th {
+    width: 13%;
+    background: #f7faff;
+    font-size: 1.125rem;
+    border-right: 1px solid #e3eaf5;
+  }
+
+  .dt-clean tbody td:nth-child(2) {
+    width: 30%;
+    font-weight: 500;
+    color: var(--ink-heading);
+  }
+
+  .dt-clean tbody td:last-child {
+    color: var(--ink-muted);
+  }
+
+  .dt-clean tbody tr:nth-child(even) td {
+    background: #fcfdff;
+  }
+
+  /* On a light-blue (wash) section the pale header and first column would blend into the background, so the
+     header turns navy with white titles and the first column a neutral grey. */
+  :global([data-tone='wash']) .dt-clean {
+    border-color: var(--color-grey-200);
+  }
+
+  :global([data-tone='wash']) .dt-clean thead th {
+    background: var(--color-navy-900);
+    color: var(--color-white);
+  }
+
+  :global([data-tone='wash']) .dt-clean tbody th {
+    background: var(--color-grey-50);
+    border-color: var(--color-grey-200);
+  }
+
+  :global([data-tone='wash']) .dt-clean tbody th,
+  :global([data-tone='wash']) .dt-clean tbody td {
+    border-top-color: var(--color-grey-200);
+  }
+
+  :global([data-tone='wash']) .dt-clean tbody tr:nth-child(even) td {
+    background: var(--color-grey-50);
+  }
+
+  /* Below 1024px each row becomes a card: the first cell as a tinted header, the rest labelled underneath. */
+  @media (width < 64rem) {
+    .dt-clean,
+    .dt-clean caption,
+    .dt-clean tbody,
+    .dt-clean tr,
+    .dt-clean th,
+    .dt-clean td {
+      display: block;
+    }
+
+    .dt-clean {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .dt-clean thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .dt-clean tbody tr {
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid #e3eaf5;
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 14px 32px -26px rgb(16 42 84 / 0.25);
+    }
+
+    .dt-clean tbody tr + tr {
+      margin-top: 1.25rem;
+    }
+
+    .dt-clean tbody th,
+    .dt-clean tbody td,
+    .dt-clean tbody td:nth-child(2) {
+      width: auto;
+      padding: 1rem 1.25rem 0;
+      border: 0;
+      background: transparent;
+      font-size: var(--text-base, 1rem);
+    }
+
+    .dt-clean tbody tr:nth-child(even) td {
+      background: transparent;
+    }
+
+    .dt-clean tbody td:last-child {
+      padding-bottom: 1.25rem;
+    }
+
+    :global([data-tone='wash']) .dt-clean tbody th {
+      background: var(--color-navy-900);
+      color: var(--color-white);
+    }
+
+    :global([data-tone='wash']) .dt-clean tbody th,
+    :global([data-tone='wash']) .dt-clean tbody th :global(a) {
+      color: var(--color-white) !important;
+    }
+
+    :global([data-tone='wash']) .dt-clean tbody tr:nth-child(even) td {
+      background: transparent;
+    }
+
+    .dt-clean tbody th {
+      margin: 0;
+      padding: 0.875rem 1.25rem;
+      background: var(--color-blue-50);
+      border-bottom: 1px solid #e3eaf5;
+      font-size: 1.125rem;
+    }
+
+    /* The country is the card's title, so it needs no "Country" label above it. */
+    .dt.dt-clean tbody th[data-label]::before {
+      content: none;
+      display: none;
+    }
+
+    .dt-clean tbody td[data-label]::before {
+      content: attr(data-label);
+      content: attr(data-label) / '';
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-blue-700);
+    }
+  }
+
+  /* Figures variant: a worked sum. It stays a table at every width; the number columns are right aligned and
+     tabular, the formula in brackets is lighter, and the last two rows (a loss, then a gain) are highlighted. */
+  .dt-figures {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-grey-200);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 18px 40px -28px rgb(16 42 84 / 0.25);
+    color: var(--ink);
+    text-align: left;
+  }
+
+  .dt-figures caption {
+    caption-side: top;
+    padding-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--ink-heading);
+  }
+
+  .dt-figures th,
+  .dt-figures td {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+    border-top: 1px solid #e3eaf5;
+  }
+
+  .dt-figures thead th {
+    border-top: 0;
+    background: var(--color-navy-900);
+    color: var(--color-white);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .dt-figures thead th:first-child {
+    border-top-left-radius: 17px;
+  }
+
+  .dt-figures thead th:last-child {
+    border-top-right-radius: 17px;
+  }
+
+  .dt-figures tbody tr:last-child > :first-child {
+    border-bottom-left-radius: 17px;
+  }
+
+  .dt-figures tbody tr:last-child > :last-child {
+    border-bottom-right-radius: 17px;
+  }
+
+  .dt-figures thead th:not(:first-child),
+  .dt-figures tbody td {
+    width: 22%;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .dt-figures tbody th {
+    font-weight: 500;
+    color: var(--ink-heading);
+  }
+
+  .dt-figures tbody td {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-heading);
+  }
+
+  .dt-figures tbody tr:nth-child(even) > * {
+    background: var(--color-grey-50);
+  }
+
+  /* The loss over the month, then what is won back: the stripes carry on, the figures are coloured. */
+  .dt-figures tbody tr:nth-last-child(2) td {
+    color: var(--color-red-700);
+  }
+
+  .dt-figures tbody tr:last-child td {
+    color: var(--color-green-700);
+  }
+
+  .dt-figures tbody tr:nth-last-child(-n + 2) th,
+  .dt-figures tbody tr:nth-last-child(-n + 2) td {
+    font-weight: 700;
+  }
+
+  @media (width < 40rem) {
+    .dt-figures th,
+    .dt-figures td {
+      padding: 0.75rem 0.875rem;
+    }
+
+    .dt-figures thead th {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+    }
+
+    .dt-figures tbody th {
+      font-size: 0.9375rem;
+    }
+
+    .dt-figures tbody td {
+      font-size: 0.9375rem;
+    }
+  }
+
+  /* Plans variant: a plan matrix. Plan columns centred with status chips; on a tinted section the header is navy.
+     Below 768px each feature becomes a card listing the plans, each plan with its chip. */
+  .dt-plans {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-grey-200);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 18px 40px -28px rgb(16 42 84 / 0.25);
+    color: var(--ink);
+    text-align: left;
+  }
+
+  .dt-plans caption {
+    caption-side: top;
+    padding-bottom: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--ink-heading);
+  }
+
+  .dt-plans th,
+  .dt-plans td {
+    padding: 1.125rem 1.5rem;
+    vertical-align: middle;
+    border-top: 1px solid var(--color-grey-200);
+  }
+
+  .dt-plans thead th {
+    border-top: 0;
+    background: var(--color-navy-900);
+    color: var(--color-white);
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .dt-plans thead th:first-child {
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.75);
+  }
+
+  .dt-plans thead th:not(:first-child),
+  .dt-plans tbody td {
+    width: 20%;
+    text-align: center;
+  }
+
+  .dt-plans tbody th {
+    font-weight: 600;
+    color: var(--ink-heading);
+    line-height: 1.45;
+  }
+
+  .dt-plans tbody tr:nth-child(even) > * {
+    background: var(--color-grey-50);
+  }
+
+  .plan-cell {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .plan-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem 0.25rem 0.375rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .plan-chip__icon {
+    display: grid;
+    place-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999px;
+    color: var(--color-white);
+  }
+
+  .plan-chip--yes {
+    background: var(--color-green-50);
+    color: var(--color-green-700);
+  }
+
+  .plan-chip--yes .plan-chip__icon {
+    background: #00c554;
+  }
+
+  .plan-chip--addon {
+    background: var(--color-amber-100);
+    color: var(--color-yellow-800);
+  }
+
+  .plan-chip--addon .plan-chip__icon {
+    background: var(--color-amber-500);
+  }
+
+  .plan-chip--no {
+    background: var(--color-grey-100);
+    color: var(--color-grey-600);
+  }
+
+  .plan-chip--no .plan-chip__icon {
+    background: var(--color-grey-400);
+  }
+
+  .plan-note {
+    max-width: 12rem;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    color: var(--ink-muted);
+  }
+
+  @media (width < 48rem) {
+    .dt-plans,
+    .dt-plans caption,
+    .dt-plans tbody,
+    .dt-plans tr,
+    .dt-plans th,
+    .dt-plans td {
+      display: block;
+    }
+
+    .dt-plans {
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .dt-plans thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .dt-plans tbody tr {
+      overflow: hidden;
+      border: 1px solid var(--color-grey-200);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 14px 32px -26px rgb(16 42 84 / 0.25);
+    }
+
+    .dt-plans tbody tr + tr {
+      margin-top: 1rem;
+    }
+
+    .dt-plans tbody tr:nth-child(even) > * {
+      background: transparent;
+    }
+
+    .dt-plans tbody th {
+      padding: 0.875rem 1.25rem;
+      border: 0;
+      background: var(--color-navy-900) !important;
+      color: var(--color-white);
+    }
+
+    .dt-plans tbody td {
+      display: flex;
+      width: auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 1.25rem;
+      text-align: right;
+    }
+
+    .dt-plans tbody td:first-of-type {
+      border-top: 0;
+    }
+
+    .dt-plans tbody td::before {
+      content: attr(data-label);
+      content: attr(data-label) / '';
+      font-weight: 600;
+      color: var(--ink-heading);
+      text-align: left;
+    }
+
+    .plan-cell {
+      align-items: flex-end;
+    }
+
+    .plan-note {
+      text-align: right;
+    }
+  }
+
+  /* A who-sets-what table: the label column needs room, the chip column little. */
+  @media (width >= 64rem) {
+    .dt-clean:has(.owner-chip) tbody th {
+      width: 24%;
+    }
+
+    .dt-clean:has(.owner-chip) tbody td:nth-child(2) {
+      width: 20%;
+    }
+  }
+
+  /* Clean variant: who sets a rule, as a chip. */
+  .owner-cell {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+  }
+
+  .owner-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-width: 8.5rem;
+    justify-content: center;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .owner-chip--hq {
+    background: var(--color-blue-50);
+    color: var(--color-blue-700);
+    box-shadow: inset 0 0 0 1px rgb(0 128 246 / 0.35);
+  }
+
+  .owner-chip--branch {
+    background: var(--color-teal-50);
+    color: var(--color-teal-700);
+    box-shadow: inset 0 0 0 1px rgb(4 189 175 / 0.35);
+  }
+
+  /* Tiers variant: plans side by side from lg, stacked below. */
+  .tiers {
+    display: grid;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (width >= 64rem) {
+    .tiers {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  .tier {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-grey-200);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 18px 40px -28px rgb(16 42 84 / 0.28);
+  }
+
+  .tier__head {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 1.5rem 1.75rem 0;
+  }
+
+  .tier__icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: 0.875rem;
+    background: var(--color-blue-50);
+    color: var(--color-blue-600);
+    box-shadow: inset 0 0 0 1px rgb(0 128 246 / 0.2);
+  }
+
+  .tier__name {
+    margin: 0;
+    font-size: 1.375rem;
+    line-height: 1.2;
+    color: var(--ink-heading);
+  }
+
+  .tier__price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 1.25rem 1.75rem 0;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-grey-200);
+  }
+
+  .tier__amount {
+    font-family: var(--font-display, inherit);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink-heading);
+  }
+
+  .tier__price-note {
+    font-size: 0.9375rem;
+    color: var(--ink-muted);
+  }
+
+  .tier__facts {
+    margin: 1.25rem 1.75rem 0;
+  }
+
+  .tier__price .tier__label {
+    display: block;
+    margin-bottom: 0.125rem;
+  }
+
+  .tier__fact dt,
+  .tier__label {
+    margin: 0 0 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-blue-700);
+  }
+
+  .tier__fact dd {
+    margin: 0;
+  }
+
+  .tier__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    background: var(--color-teal-50);
+    color: var(--color-teal-700);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .tier__body {
+    flex: 1;
+    margin: 1.25rem 1.75rem 1.75rem;
+  }
+
+  .tier__text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
 </style>
 
 <style is:global>

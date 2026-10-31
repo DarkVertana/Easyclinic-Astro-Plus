@@ -10,13 +10,16 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'contentCards'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, items, variant = 'default', ctx } = Astro.props;
 
 interface Card {
   href: string;
   label: string;
   description?: string;
   updated: Date | null;
+  icon?: string;
+  /** Minutes to read the target's body at 220 words a minute (pages with an MDX body only). */
+  minutes: number | null;
   /** The target page has no content entry yet (preview only). */
   missing: boolean;
 }
@@ -26,13 +29,16 @@ type CardSource = Pick<z.infer<ReturnType<typeof pageBase>>, 'summary' | 'lastUp
 
 const registry = await getRegistry();
 const cards = items.flatMap((item): Card[] => {
+  // Info cards carry their own text and link nowhere.
+  if (variant === 'info') return [{ href: '', label: item.label ?? '', description: item.description, updated: null, icon: item.icon, minutes: null, missing: false }];
+  if (!item.href) return [];
   const href = registry.urlFor(item.href);
   // Not rendered in this stage (a draft, or a page that does not exist, in production).
   if (!href) return [];
   const target = registry.get(item.href.split('#')[0]);
   if (!target) {
     if (isProduction) return [];
-    return [{ href, label: item.label ?? item.href, description: item.description, updated: null, missing: true }];
+    return [{ href, label: item.label ?? item.href, description: item.description, updated: null, icon: item.icon, minutes: null, missing: true }];
   }
   const data = target.data as CardSource;
   return [
@@ -41,16 +47,98 @@ const cards = items.flatMap((item): Card[] => {
       label: item.label ?? target.label,
       description: item.description ?? data.summary,
       updated: data.lastUpdated,
+      icon: item.icon,
+      minutes: typeof target.entry.body === 'string' && target.entry.body.trim() ? Math.max(1, Math.round(target.entry.body.split(/\s+/).length / 220)) : null,
       missing: false,
     },
   ];
 });
+// Articles style: each card's band takes the next tint in turn.
+const TINTS = ['bg-blue-50 text-blue-700', 'bg-green-50 text-green-700', 'bg-teal-50 text-teal-700'];
 const columns = cards.length === 2 || cards.length === 4 ? 'sm:grid-cols-2' : cards.length === 1 ? 'max-w-[28rem]' : 'sm:grid-cols-2 md:grid-cols-3';
 ---
 
 {
   cards.length > 0 && (
     <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+      {variant === 'info' ? (
+        <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {cards.map((card, i) => (
+            <li class="flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-surface text-ink shadow-[0_1px_2px_rgb(10_37_64/0.04),0_14px_34px_-26px_rgb(10_37_64/0.3)]">
+              <div class:list={['relative flex h-24 items-center px-6 sm:h-28', TINTS[i % TINTS.length]]} aria-hidden="true">
+                <span class="grid size-14 place-items-center rounded-2xl bg-white shadow-[0_6px_16px_-8px_rgb(10_37_64/0.35)]">
+                  <Icon name={card.icon ?? 'circle-check'} size={26} />
+                </span>
+                <span class="absolute top-4 right-5 font-display text-4xl font-semibold tabular-nums opacity-15">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="font-display text-lg leading-snug font-semibold text-ink-heading sm:text-xl">{card.label}</h3>
+                {card.description && <p class="mt-2.5 text-[0.9375rem] leading-relaxed text-ink-muted">{card.description}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : variant === 'articles' ? (
+        <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {cards.map((card, i) => (
+            <li
+              class:list={[
+                'group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-surface text-ink shadow-[0_1px_2px_rgb(10_37_64/0.04),0_14px_34px_-26px_rgb(10_37_64/0.3)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_2px_4px_rgb(10_37_64/0.05),0_24px_48px_-28px_rgb(10_37_64/0.4)] focus-within:border-blue-500 motion-reduce:transition-none motion-reduce:hover:translate-y-0',
+                card.missing && 'border-dashed border-line-strong',
+              ]}
+            >
+              {/* Tinted band with the topic icon: these articles have no cover images. */}
+              <div class:list={['relative flex h-28 items-center px-6 sm:h-32', TINTS[i % TINTS.length]]} aria-hidden="true">
+                <span class="grid size-14 place-items-center rounded-2xl bg-white shadow-[0_6px_16px_-8px_rgb(10_37_64/0.35)]">
+                  <Icon name={card.icon ?? 'file-text'} size={26} />
+                </span>
+                <span class="absolute top-4 right-5 font-display text-4xl font-semibold tabular-nums opacity-15">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="flex flex-wrap items-center gap-x-2 text-xs font-semibold tracking-[0.06em] text-ink-muted uppercase">
+                  <span class="text-blue-700">Article</span>
+                  {card.minutes && (
+                    <>
+                      <span aria-hidden="true">·</span>
+                      <span class="inline-flex items-center gap-1">
+                        <Icon name="clock" size={13} />
+                        {card.minutes} min read
+                      </span>
+                    </>
+                  )}
+                </p>
+                <h3 class="mt-3 font-display text-lg leading-snug font-semibold text-ink-heading sm:text-xl">
+                  {/* The link's ::after covers the card, so the whole card is the tap target. */}
+                  <a href={card.href} class="link-plain after:absolute after:inset-0 after:rounded-[18px] hover:no-underline">
+                    {card.label}
+                  </a>
+                </h3>
+                {card.description && <p class="mt-2.5 mb-5 line-clamp-3 text-[0.9375rem] leading-relaxed text-ink-muted">{card.description}</p>}
+                {card.missing && (
+                  <p class="mt-3 flex items-center gap-1.5 text-sm font-medium text-warning">
+                    <Icon name="triangle-alert" size={16} />
+                    <span>Page not built yet</span>
+                  </p>
+                )}
+                <div class="mt-auto flex items-center justify-between gap-3 border-t border-line pt-4 text-sm">
+                  {card.updated ? (
+                    <span class="inline-flex items-center gap-1.5 text-ink-muted">
+                      <Icon name="calendar" size={14} />
+                      <time datetime={isoDate(card.updated)}>{formatDate(card.updated)}</time>
+                    </span>
+                  ) : (
+                    <span />
+                  )}
+                  <span class="inline-flex items-center gap-1 font-semibold text-link" aria-hidden="true">
+                    Read article
+                    <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
       <ul class:list={['grid gap-5', columns]}>
         {cards.map((card) => (
           <li
@@ -83,6 +171,7 @@ const columns = cards.length === 2 || cards.length === 4 ? 'sm:grid-cols-2' : ca
           </li>
         ))}
       </ul>
+      )}
     </Section>
   )
 }

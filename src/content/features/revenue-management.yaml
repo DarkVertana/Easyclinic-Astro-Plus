@@ -1,5 +1,7 @@
 # Revenue management feature page (spec 5.11 "/features/revenue-management", keyword row in 4.1, cannibalisation rule 4.5.2).
 status: published
+# Explicit so the proof-block exemption in src/lib/rules/audit.ts can match this page (owner decision 2026-10-31).
+path: /features/revenue-management/
 headKeyword: clinic revenue cycle management
 secondaryKeywords:
   - revenue leakage in clinics
@@ -56,8 +58,6 @@ sections:
             Lab orders and procedures become lines on the patient's invoice as they are done, without
             anyone carrying the order to the desk. The visits with no bill against them are on a report
             the owner can check on any day of the month.
-          href: /features/billing/
-          linkLabel: How orders become invoice lines
         - heading: How does a bill end up at the wrong price?
           body: >-
             The consultation fee went up in April, and one receptionist still types the old one. A
@@ -79,8 +79,6 @@ sections:
             day with an end-of-day report of its own transactions. Count the drawer against that report
             and a gap shows the same evening, and because access to each register is set by role, the
             gap points to one counter and the staff allowed to use it.
-          href: /features/billing/
-          linkLabel: How the day-end close works
         - heading: What happens to a claim after the payer denies it?
           body: >-
             The denial arrives weeks after the visit with a reason code nobody at the desk recognises,
@@ -91,96 +89,55 @@ sections:
             Denied claims are listed on the denial report, and the ageing report shows the claims still
             unpaid and how long each has waited. Both are there before month end, so the claims worth
             resubmitting are found while there is still time.
-          href: /features/insurance-claims/
-          linkLabel: How claims are checked before they leave
 
   - discriminant: featureRows
     value:
       id: price-lists
       heading: Price lists by location, payer, package and patient category
+      layout: grid
       intro: >-
         A price typed at the desk is only as right as the memory of whoever types it. In Easy Clinic the
         bill takes its price from the list that applies to that patient. Where a list needs a particular
         plan, the row says so.
       items:
         - heading: A price list for each location
+          icon: map-pin
           body: >-
             Each branch can have its own price list, so a scan costs what that branch charges and not
             what the first clinic charged when the system was set up. Running more than one location
             needs Premium or Enterprise, and Enterprise adds central control of every location from
             head office.
-          link:
-            label: See how one system runs every branch
-            href: /features/multi-location/
         - heading: A price list for each payer
+          icon: shield-check
           body: >-
             A corporate client or an insurer can have its own rates, applied once the patient's payer is
             linked to the record at registration, so the employer's patient is not billed at the walk-in
             rate. Payer price lists come with insurance claims, which is part of Enterprise and an add-on
             on Professional or Premium.
-          plan: enterprise
-          link:
-            label: Read how payer plans are set up
-            href: /features/insurance-claims/
         - heading: A price for each package
+          icon: package
           body: >-
             A package of treatment has its own price on the list, so the patient is billed the package
             price the clinic set rather than one worked out at the desk. Package treatments come with
             Premium and Enterprise.
-          plan: premium
         - heading: Prices and discounts for a category of patient
+          icon: users
           body: >-
             Prices and discounts can be set for a category of patients, such as your own staff or the
             members of a scheme you run, so the desk applies the discount the owner decided on. A price
             changed on any list shows on the next bill.
 
-  - discriminant: featureRows
-    value:
-      id: reports
-      heading: The reports an owner checks before month end
-      intro: >-
-        Denial management starts with knowing which claims were denied. The ageing and denial reports
-        work on payer claims, so they need insurance claims, which is part of Enterprise and an add-on
-        on Professional or Premium.
-      items:
-        - heading: Visits with no bill against them
-          body: >-
-            A visit where the patient was seen and nothing was billed shows up before month end, so the
-            desk can raise the missing bill while the patient is still easy to reach. Each line on it is
-            money for work the clinic has already done.
-        - heading: The day-end close for every cash register
-          body: >-
-            Each register closes the day with its own end-of-day report of the cash taken and paid out,
-            and the end-of-day report also runs for the whole clinic or, with more than one location,
-            across the organisation. A drawer that does not match its register is found the same
-            evening.
-        - heading: Claims the payer turned down
-          body: >-
-            The denial report lists the claims payers have turned down, so someone can work through them
-            while a resubmission is still possible and write off the rest on purpose rather than by
-            default. Counting them each month gives your own denial rate, which is the number to watch.
-          plan: enterprise
-        - heading: What each payer owes, and for how long
-          body: >-
-            The ageing report sorts unpaid claims by how long each has waited for payment, so the oldest
-            money is chased first and a slow payer shows up before month end.
-          plan: enterprise
-        - heading: Who can see the money
-          body: >-
-            Access to the financial reports and to each cash register is set by role. The clinic's
-            revenue can stay with the owner and the accountant while the front desk still takes payments.
-        - heading: Reports that arrive without being run
-          body: >-
-            Reports can be generated and sent out automatically, so the day-end totals reach the owner
-            without anyone running them by hand.
-          link:
-            label: Read about reports and dashboards
-            href: /features/reports-and-dashboards/
-
   - discriminant: prose
     value:
       id: billing-and-claims
       heading: Where billing and claims fit
+      width: wide
+      link:
+        label: See how billing works
+        href: /features/billing/
+      secondary:
+        label: See how insurance claims work
+        href: /features/insurance-claims/
       body: >-
         Every control on this page rests on billing: the bill built from the visit, and the payment
         taken against it at the counter. Billing and payments come with every plan, and the [billing
@@ -192,67 +149,194 @@ sections:
         This page picks up once the payer answers: the denied claim, and the payment that has not
         arrived.
 
-  - discriminant: stepList
+  - discriminant: splitContent
     value:
-      id: leakage-audit
-      heading: A leakage audit you can run on last month's figures
-      intro: >-
-        You can run these four checks before you choose any software, from the registers and the receipt
-        book if that is what you have. Each step says where the same check sits in Easy Clinic. For what each
-        billing mistake looks like at the desk, and the check that catches it, read our post on
-        [clinic billing mistakes](/avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/).
-      steps:
-        - title: Match orders to bills
-          meta: Unbilled orders
-          body: >-
-            Take every lab test and procedure ordered last month and find the bill it went on. Anything
-            without one is revenue the clinic earned and never asked for. In Easy Clinic, the visits with
-            no bill against them are already on a report.
-        - title: Check prices against the list
-          meta: Wrong price list
-          body: >-
-            Pick twenty bills from different days and check each price against the list for that branch
-            and that payer. In Easy Clinic the check moves to the price lists themselves, because each
-            bill takes its price from them.
-        - title: Add up the day-end differences
-          meta: Cash variance
-          body: >-
-            Add up the gap between cash counted and cash billed for each counter, day by day. A single
-            short day is usually a mistake, and the same counter short every week is worth a
-            conversation. In Easy Clinic, each register has its own end-of-day report to count the drawer
-            against.
-        - title: List denied and unpaid claims
-          meta: Denied claims
-          body: >-
-            List every claim denied last month, and every claim still unpaid after your payers' usual
-            payment time. Each one is money for work already done. In Easy Clinic, the denial and ageing
-            reports hold both lists.
-      note: >-
-        This page gives no figure for what an audit usually finds, because Easy Clinic has not published
-        a measured leakage rate across the clinics that use it.
+      id: order-management
+      heading: Order Management for Invoice Automation
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Efficiently track orders and automate billing workflows. Generate invoices automatically based on predefined payor rules, ensuring faster and more accurate billing. Say goodbye to manual errors and delays in payment processing.
 
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How Easy Clinic is rated on Capterra and Google
-      intro: >-
-        The Capterra link opens the reviews themselves, so you can read what reviewers wrote about
-        Easy Clinic before you book a demo.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+        ### Real-Time Work Order integration and Tracking
+        Whether it's lab order or procedure, monitor each work orders and integrate with invoices in real time as they're processed to generate corresponding invoice lines automatically and reduce manual data entry.
 
-  - discriminant: contentCards
+        ### Error-Free Billing With Customized Invoicing Rules
+        By pre-defining payor contracts and billing rules, invoices generated are accurate, reducing the risk of rejected claims due to inconsistencies or errors.
+
+        ### Orders-Inventory Integration:
+        Sync with inventory systems to reflect product usage in real-time, ensuring accurate invoicing and inventory management.
+
+        ### Faster Reimbursement Cycles:
+        Automated invoicing means your clinic sends claims to payors faster, leading to quicker reimbursements and improved cash flow.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/ORD1.png
+        alt: 'An Easy Clinic patient profile with the summary of the last visit and the patient''s payors, membership number, subscription category and expiry date'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: further-reading
-      heading: Further reading
-      items:
-        - href: /avoiding-revenue-leaks-top-billing-mistakes-clinics-must-avoid/
-        - href: /strategic-efficiency-should-your-clinic-outsource-non-core-tasks/
+      id: payor-management
+      heading: Payor Management and Claim Streamlining
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Easily add and manage multiple payors in just a few clicks. Create customized profiles to streamline the onboarding process and minimize errors.
+
+        ### Add Payors in Minutes:
+        With Easy Clinic, onboarding new insurance or corporate payors is a breeze. You can add payors to the system with just a few clicks, ensuring all details like billing rates, contract terms, and coverage information are entered once and applied automatically across all patient interactions.
+
+        ### Customizable Plans for Different Payors:
+        Easily create and manage subscription categories for various payors. Each category can include different services, coverage levels, and restrictions based on the payor's contract, giving you flexibility in handling multiple payor agreements seamlessly.
+
+        ### Simplified Management of Benefits:
+        Automatically track and apply different service limits, benefit coverage, and payment rates for various payors, reducing complexity and ensuring smooth billing.
+
+        ### Tailored to Your Clinic's Needs:
+        Customize these categories to match the specific needs of your clinic and patients, allowing for a better-managed payor ecosystem.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/CR3.png
+        alt: 'Setting a category rule in Easy Clinic: maximum cover, co-pay amount and percentage, and patient rules by gender, age range and patient category'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: coverage-management
+      heading: Comprehensive Coverage Management
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Assign specific coverage categories to payors, reducing claim rejections by ensuring that only covered services are billed. The system validates each claim in real-time, preventing errors.
+
+        ### Assign Specific Coverage:
+        Manage different coverage levels for various payors with ease. Whether it's a corporate health plan or an insurance provider, you can assign exact coverage types, including exclusions and service limitations, to prevent billing errors.
+
+        ### Billing Transparency:
+        With clear coverage information tied to each payor, your staff can quickly determine what is covered under a patient's plan, improving transparency and reducing confusion during billing.
+
+        ### Avoid Claim Rejections:
+        By validating coverage at the time of care, the system helps avoid submitting claims for uncovered services, significantly reducing claim rejections and administrative burden.
+
+        ### Automate Patient-to-Payor Linking:
+        Automatically link patients to their respective payor plans upon registration, ensuring the correct payor rules are applied to each patient's billing cycle from the start.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Payor-5.png
+        alt: 'Payor exclusions in Easy Clinic: excluded clinics, product categories, individual products such as X-rays and medicines, and clinic types'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: dynamic-pricing
+      heading: Dynamic Pricing
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Supports flexible pricing plans using context based pricelists that enhances profitability and offers great flexibility to offer services to various categories of customers, payors and location based pricing.
+
+        ### Targeted Discounts and Offers
+        Provide personalized discounts for specific patient segments, boosting patient loyalty and retention while maximizing revenue.
+
+        ### Automated Pricing Updates
+        Reflect new prices instantly in billing and invoicing to prevent discrepancies and ensure transparency.
+
+        ### Revenue Impact Analysis
+        Analyze the effect of different pricing strategies on overall revenue to understand the financial benefits of dynamic pricing.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/7_Invoice.png
+        alt: 'Easy Clinic payor management: a payor category with invoice limits and exclusions, claim charts and gauges, and a TPA selling price list'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: cash-registers
+      heading: Cash Registers
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Simplify cash handling and improve financial accuracy.
+
+        ### Automated Cash Reconciliation
+        Automatically track cash inflows and outflows, reducing the time and effort needed for daily reconciliations.
+
+        ### Role-Based Access Control
+        Set permissions for cash register access to maintain security and ensure accountability.
+
+        ### End-of-Day Reporting
+        Generate detailed end-of-day reports, providing a snapshot of cash transactions and aiding in financial transparency and accountability.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/CR3.png
+        alt: 'Balancing a cash register in Easy Clinic: the expected and actual balance, the variance and a reason for it, over the cash register overview'
+        frame: none
+
+  - discriminant: prose
+    value:
+      id: cash-and-reports
+      heading: Where the cash counter and the reports fit
+      width: wide
+      link:
+        label: See how reports and dashboards work
+        href: /features/reports-and-dashboards/
+      secondary:
+        label: Compare plans and prices
+        href: /pricing/
+      body: >-
+        The cash counter is where the third leak shows. Each cash register records the cash that comes in
+        and goes out through it, and closes the day with an end-of-day report of its own transactions.
+        Because access to each register is set by role, a drawer that does not match its report points to
+        one counter and the staff allowed to use it, on the same evening rather than at month end.
+
+
+        The owner reads the money side in the reports and dashboards: revenue for each branch and for the
+        group, the visits with no bill against them, and the claims still waiting for the payer. Dashboards
+        and reports come with every plan, and the [reports and dashboards page](/features/reports-and-dashboards/)
+        covers what each one shows and who can open it.
+
+  - discriminant: splitContent
+    value:
+      id: financial-reports
+      heading: Comprehensive Financial Reports and Dashboards
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Access critical financial data instantly with real-time visualization. Our module offers quick access to financial reports, and operational metrics, enabling prompt and informed decisions.
+
+        ### Customizable Dashboards
+        Tailor your dashboards to focus on the metrics that matter most to your clinic. Whether it's financial performance or day to day reporting, get a clear view at a glance.
+
+        ### Role-Based Access Control
+        Set permissions for access to maintain security and ensure accountability.
+
+        ### End-of-Day Reporting
+        Generate detailed end-of-day financial reports clinic and organization wide, providing a snapshot of all transactions and aiding in financial transparency and accountability.
+
+        ### Automated Reporting
+        Automate the generation and distribution of reports, ensuring that your team always has the latest data without the hassle of manual compilation.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/5.png
+        alt: 'An Easy Clinic financial dashboard: total visit revenue, total cost and average cost per visit, revenue by city and clinic, department revenue and cost of treatment, and revenue by chronic illness'
+        frame: none
 
 faqHeading: Questions owners ask about revenue management
 faq:
@@ -353,6 +437,7 @@ editorialPass:
     real customer case is added.
 
 notes:
+  - 'Sections reports, leakage-audit, ratings and further-reading removed 2026-10-31 at the owner''s request; the page is exempt from the proof-block rule in src/lib/rules/audit.ts.'
   - 'Title 43 characters. Meta 139 characters, rewritten from the spec 4.1 wording ("See unbilled visits, denied claims and cash variance before month end.") to lead with the head keyword, name all four leaks and avoid a group of three.'
   - '"Revenue cycle management" appears only on this page (spec 4.5 rule 2): in the title, meta and opening answer.'
   - 'Cannibalisation (4.5 rule 2): invoice formats, GST and the till mechanics stay on /features/billing/; payer linking at registration, subscription categories, coverage and claim submission (TPA, HMO, SHA) stay on /features/insurance-claims/. Each gets one paragraph here (prose "billing-and-claims") plus a link. This page keeps leakage, denials and ageing.'

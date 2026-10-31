@@ -13,9 +13,11 @@ interface Props {
   heading?: string;
   intro?: string;
   testimonials: CollectionEntry<'testimonials'>[];
+  /** Draw the red dashed underline under each testimonial's `underline` phrases. */
+  underlines?: boolean;
 }
 
-const { id, eyebrow, heading, intro, testimonials } = Astro.props;
+const { id, eyebrow, heading, intro, testimonials, underlines = true } = Astro.props;
 const headingId = id ? `${id}-heading` : undefined;
 
 // `photo` is a file name in src/assets/images/testimonials (as in Quote.astro).
@@ -38,7 +40,7 @@ const slides = testimonials.map((entry) => {
     if (!marks.some((m) => start < m.end && end > m.start)) marks.push({ start, end, kind });
   };
   place(t.pullQuote, 'mark');
-  (t.underline ?? []).forEach((phrase) => place(phrase, 'flag'));
+  if (underlines) (t.underline ?? []).forEach((phrase) => place(phrase, 'flag'));
   marks.sort((a, b) => a.start - b.start);
   const parts: { text: string; kind: 'plain' | 'mark' | 'flag' }[] = [];
   let cursor = 0;

@@ -1,5 +1,5 @@
 import { PLAN_IDS } from '../../src/schemas/constants.ts';
-import { cta, defineBlock, group, list, md, media, optionalChoice, stringList, text } from '../fields.ts';
+import { choice, cta, defineBlock, flag, group, list, md, media, optionalChoice, stringList, text } from '../fields.ts';
 
 /**
  * `featureRows` section (Zod: src/components/blocks/FeatureRows/schema.ts): heading, body, ticked bullets and an
@@ -19,4 +19,6 @@ export const featureRows = defineBlock('featureRows', 'Feature rows', {
     }),
     { label: 'Rows', min: 1, max: 8, itemLabel: (props) => props.fields.heading.value || 'Row' },
   ),
+  layout: choice('Layout', ['auto', 'list', 'bento', 'grid'] as const, { zodDefault: 'auto' }, { description: 'Auto: rows with media, or a card grid without. List: ruled rows. Bento: icon cards that fill every row. Grid: two across, split by rules.' }),
+  wideIntro: flag('Full-width heading and intro', { zodDefault: false }),
 });

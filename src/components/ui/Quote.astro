@@ -12,9 +12,11 @@ interface Props {
   size?: 'card' | 'large';
   /** Card only: show at most this many lines of the quote, with every card the same height of text. */
   lines?: number;
+  /** Large only: show the specialty as the yellow tag with a red dashed outline (owner request 2026-10-31: /features/emr/). */
+  tagSpecialty?: boolean;
 }
 
-const { testimonial, pull = true, size = 'card', lines } = Astro.props;
+const { testimonial, pull = true, size = 'card', lines, tagSpecialty = false } = Astro.props;
 const t = testimonial.data;
 // A fixed-height card uses the shorter card quote when there is one; every piece of it must be verbatim.
 const flatQuote = t.quote.replace(/\s+/g, ' ');
@@ -89,7 +91,7 @@ const hasRoleLine = Boolean(rolePrefix || roleTag);
       </blockquote>
       <figcaption class="mt-6 text-sm">
         <span class="block font-semibold text-ink-heading">{t.name}</span>
-        <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) ? `, ${t.specialty}` : ''}</span>
+        <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) && (<>, {tagSpecialty ? <span class="byline-tag">{t.specialty}</span> : t.specialty}</>)}</span>
         {place && <span class="mt-1 block text-ink-muted"><span class="byline-tag">{place}</span></span>}
         {t.customerSince && <span class="block text-ink-muted">Using Easy Clinic since {t.customerSince}</span>}
         {consent && <span class="mt-1 block text-xs">{consent}</span>}

@@ -1,5 +1,7 @@
 # Pharmacy and inventory feature page (spec 5.11 "/features/pharmacy-and-inventory", keyword row in 4.1).
 status: published
+# Explicit so the proof-block exemption in src/lib/rules/audit.ts can match this page (owner decision 2026-10-31).
+path: /features/pharmacy-and-inventory/
 headKeyword: pharmacy management software for clinics
 secondaryKeywords:
   - clinic inventory management software
@@ -23,7 +25,7 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: ../../assets/images/products/11_Pharmacy_2.png
+  src: ../../assets/images/solutions/9_01_Inventory.png
   alt: Easy Clinic pharmacy dispensing screen with a medicine picked by batch, expiry and stock on hand, the patient's open prescriptions with refills due, and the pharmacy workflow settings
   frame: none
 ctas:
@@ -53,8 +55,6 @@ sections:
             The prescription written in the EMR appears on the pharmacy screen, so nothing is retyped.
             The doctor sees the stock on hand while prescribing and can pick an alternative before the
             patient reaches the counter.
-          href: /features/emr/
-          linkLabel: How the prescription is written
         - heading: The antibiotic runs out on a Saturday
           body: >-
             Nobody noticed the last strips going, because the stock book was last updated on Friday
@@ -84,7 +84,7 @@ sections:
       id: prescription-to-shelf
       heading: From the prescription back to the shelf
       intro: >-
-        One medicine's path through the clinic, and the checks the software makes on the way.
+        One medicine's path through the clinic, from the doctor's prescription back to the shelf.
       steps:
         - label: Prescribe
           body: The doctor writes the prescription in the EMR and sees what is in stock while prescribing.
@@ -92,12 +92,10 @@ sections:
           body: The prescription goes to the pharmacy screen by itself, without being printed or retyped.
         - label: Dispense
           body: The pharmacist dispenses from the prescription on screen, and the batch nearest its expiry date is put forward first.
-          check: A warning and a check for controlled medicines
         - label: Bill
           body: The medicines dispensed go on the patient's bill and come off the stock count.
         - label: Reorder
           body: When an item falls below its reorder level, an alert goes out and a purchase order is raised in one click.
-          check: Suggested reorder quantity
         - label: Receive
           body: The delivery is received by scanning barcodes or importing a file, and a split order or a shortfall is recorded at goods receipt.
 
@@ -120,9 +118,6 @@ sections:
             - A warning and a check before a controlled medicine is dispensed
             - Refills tracked for the next visit, with a reminder to the patient to collect them
             - Over-the-counter products added at the time of dispensing
-          link:
-            label: See how the prescription is written
-            href: /features/emr/
         - heading: Batch expiry and reorder points
           body: >-
             Each batch is tracked with its expiry date. At the time of sale the counter is warned about
@@ -132,6 +127,8 @@ sections:
           bullets:
             - Alerts when stock runs low or a batch nears its expiry date
             - Expiry reports
+            - The batch nearest its expiry put forward first at the counter
+            - Reorder level and quantity suggested from past use and lead times
         - heading: Suppliers and purchase orders
           body: >-
             Your suppliers are kept in Easy Clinic, and a requisition or purchase order is raised in one
@@ -141,6 +138,8 @@ sections:
           bullets:
             - Separate units for buying and selling, such as a box bought and a strip sold
             - Stock uploaded or adjusted in bulk from a file
+            - Purchase orders raised in one click, checked against reorder levels
+            - Deliveries received by barcode or file, with split orders and shortfalls
         - heading: Stock transfers between branches
           body: >-
             When one branch runs short of a medicine that another holds in quantity, a transfer takes it
@@ -150,19 +149,20 @@ sections:
           bullets:
             - Transfers recorded at the sending and the receiving branch
             - More than one warehouse, with central distribution to the branches
+            - Each transfer tracked until the other branch books it in
+            - An audit log for every step of a transfer
           plan: enterprise
-          link:
-            label: Read how Easy Clinic runs a chain
-            href: /solutions/clinic-chain/
         - heading: The retail counter and tax on medicines
           body: >-
             The pharmacy can serve a patient who has not seen the doctor today, and a patient collecting
             a refill does not wait in the appointment queue. The pharmacist can look up the price of any
             item and give a patient a quote before the visit. Each item is marked taxable or
             non-taxable, and the tax you define for it is applied when it is sold.
-          link:
-            label: See how the bill is made
-            href: /features/billing/
+          bullets:
+            - Patients served at the counter without seeing the doctor that day
+            - Refills collected without joining the appointment queue
+            - Price look-up and a quote for the patient before the visit
+            - Each item marked taxable or non-taxable, with your tax applied
         - heading: Materials for dental and dermatology clinics
           body: >-
             The inventory also holds what a clinic uses rather than sells. A dental clinic keeps its
@@ -173,57 +173,48 @@ sections:
           bullets:
             - Products grouped in categories, with fields of your own
             - Consumables deducted with the service they belong to
-        - heading: Stock counts and adjustments
-          body: >-
-            A stock count can be quick or full, and the count can be repeated before any variance is
-            finalised. Adjustments for shortfalls, excess stock, expired products and damaged products
-            need authorisation and leave an audit log, and staff roles, such as a pharmacist role,
-            decide what each person can do in the inventory.
-          bullets:
-            - Reports on stock movement, stock levels, cost of goods sold and fast- and slow-moving items
-            - Approval steps with more than one level, where you want them
-          link:
-            label: See the reports and dashboards
-            href: /features/reports-and-dashboards/
+            - Dental materials and supplies kept in the same inventory
+            - Skincare products held alongside medicines
 
-  - discriminant: scopeBox
+  - discriminant: dataTable
     value:
-      id: limits
-      heading: Two things to know before you plan around it
-      variant: limits
-      items:
-        - >-
-          **It is a module on Professional and Premium.** Neither plan includes pharmacy and inventory as
-          it comes. You add the module, or move to Enterprise, which includes it along with stock
-          transfers between branches and has no list price, so each clinic gets a quote.
-        - >-
-          **It does not run fully offline today.** Easy Clinic is cloud software, so a pharmacy counter on
-          an unreliable line needs a backup connection, such as a mobile hotspot, before the first day of
-          dispensing.
-
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
+      id: plans
+      heading: Which plan includes what for the pharmacy
       intro: >-
-        We do not yet have a pharmacist's own words to put on this page. These are Easy Clinic's public
-        ratings, from clinics of every kind.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: contentCards
-    value:
-      id: further-reading
-      heading: Further reading
-      items:
-        - href: /inventory-management-for-rural-clinics/
-        - href: /smarter-stocks-bigger-savings-how-clinic-inventory-management-helps-cut-costs/
-        - href: /clinic-inventory-management-system/
+        Pharmacy and inventory comes with Enterprise, and on Professional or Premium it is added as a
+        module. Each row here follows the plan list on the pricing page.
+      wideIntro: true
+      variant: plans
+      columns:
+        - What the pharmacy needs
+        - Professional
+        - Premium
+        - Enterprise
+      rows:
+        - - 'Pharmacy and inventory: stock, batches, expiry and reorder points'
+          - Add-on
+          - Add-on
+          - Included
+        - - Dispensing from the doctor's prescription
+          - Add-on, with pharmacy and inventory
+          - Add-on, with pharmacy and inventory
+          - Included
+        - - Suppliers, purchase orders and goods receipt
+          - Add-on, with pharmacy and inventory
+          - Add-on, with pharmacy and inventory
+          - Included
+        - - Stock transfers between branches
+          - Not included
+          - Not included
+          - Included
+        - - Billing and payments at the counter
+          - Included
+          - Included
+          - Included
+      note: >-
+        Professional costs {price:usd.professional.annual} and Premium {price:usd.premium.annual} per
+        doctor per month billed annually ({price:inr.professional.annual} and {price:inr.premium.annual}
+        in India). Enterprise is priced on a quote. [Compare every plan](/pricing/).
 
 faqHeading: Questions clinic owners ask about the pharmacy
 faq:
@@ -319,6 +310,7 @@ editorialPass:
     because no pharmacy testimonial or stockout number has a source yet.
 
 notes:
+  - 'Sections limits, ratings and further-reading removed 2026-10-31 at the owner''s request; the page is exempt from the proof-block rule in src/lib/rules/audit.ts.'
   - 'Title 55 characters; meta rewritten from the spec 4.1 wording ("Dispense from the prescription, track batch and expiry, and move stock between branches"), a group of three, to lead with the head keyword and name two things.'
   - 'Grounding: capability statements come from the live /features/ page (inventory, logistics and pharmacy sections, repeated word for word on /clinic-chain-software/, /hospital-opd-nursing-home-software/ and /polyclinic-software/), the /dental-emr-software/ and /dermatology-emr-software/ FAQs (dental materials; creams, skincare products and supplies), and /kenyademo/ ("Prescription reaches pharmacy instantly", "Pharmacy stock dispensed without billing"). The blog posts /integrated-pharmacy-management/ and /clinic-inventory-management-system/ were read; nothing is used from them that /features/ does not also say.'
   - 'Left out for lack of a confirmed fact: the 67% stockout reduction, the 45-day shortage prediction and "28 organisations" (no public source, facts.md section 4); "over 100 graphical dashboards"; the anonymous clinic-chain case study and its outcomes; the "Label Printing and Regulatory Compliance" and "ensuring compliance" wording, and the blog claims about CDSCO and state drug control guidelines (compliance status unknown); supplier "integration options for real-time checks" (integration status unknown); tag-only items with no description on the live page (home delivery, online payment, ADR alert, drug information, brand substitution); FIFO and FEFO wording and multilingual labels (blog only).'

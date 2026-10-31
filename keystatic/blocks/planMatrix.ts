@@ -6,4 +6,5 @@ import { defineBlock, flag } from '../fields.ts';
  */
 export const planMatrix = defineBlock('planMatrix', 'Plan comparison table', {
   open: flag('Open by default', { zodDefault: false, description: 'Show the table expanded. Otherwise it is collapsed behind its summary.' }),
+  wideIntro: flag('Full-width heading and intro', { zodDefault: false }),
 });

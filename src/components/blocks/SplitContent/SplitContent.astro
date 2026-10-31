@@ -8,8 +8,11 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'splitContent'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, body, link, secondary, media, centerHeading, mediaFirst, alignTop, stickyMedia, chips = [], chipsLabel, compact = false, featureList = false, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, body, link, secondary, media, media2, mediaTop = false, centerHeading, headingAccent, mediaFirst, alignTop, stickyMedia, chips = [], chipsLabel, compact = false, featureList = false, narrowMedia = false, ctx } = Astro.props;
 const topHeading = centerHeading && heading;
+// The heading split around its accent phrase, which renders in teal (teal-700, so it keeps 3:1 contrast at heading size).
+const accentAt = heading && headingAccent ? heading.indexOf(headingAccent) : -1;
+const headingParts = accentAt >= 0 ? [heading!.slice(0, accentAt), headingAccent!, heading!.slice(accentAt + headingAccent!.length)] : null;
 
 // Compact: the body's "### Title" + text pairs become a two-column grid of points, each with a check marker.
 const points = compact
@@ -31,16 +34,22 @@ const points = compact
       <div class:list={['mx-auto text-center', compact ? 'mb-10 md:mb-14' : 'mb-8 md:mb-12']}>
         {eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
         {/* One line from lg: the size scales with the viewport up to the usual 40px. */}
-        <h2 id={id ? `${id}-heading` : undefined} class="lg:text-[min(3.1vw,2.5rem)]">{heading}</h2>
+        <h2 id={id ? `${id}-heading` : undefined} class="lg:text-[min(3.1vw,2.5rem)]">
+          {headingParts ? <>{headingParts[0]}<span class="text-teal-700">{headingParts[1]}</span>{headingParts[2]}</> : heading}
+        </h2>
       </div>
     )
   }
   {/* Side by side from lg. Below that the centred-heading layout stacks as one centred reading column. */}
-  <div class:list={['grid gap-10', compact ? 'lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12 xl:gap-16' : featureList ? (mediaFirst ? 'lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12 xl:gap-16' : 'lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-12 xl:gap-16') : 'lg:grid-cols-2 lg:gap-16', alignTop ? 'items-start' : 'items-center']}>
+  <div class:list={['grid gap-10', mediaTop ? '' : compact ? 'lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12 xl:gap-16' : narrowMedia ? (mediaFirst ? 'lg:grid-cols-[minmax(0,9fr)_minmax(0,11fr)] lg:gap-12 xl:gap-16' : 'lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)] lg:gap-12 xl:gap-16') : featureList ? (mediaFirst ? 'lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12 xl:gap-16' : 'lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-12 xl:gap-16') : 'lg:grid-cols-2 lg:gap-16', alignTop ? 'items-start' : 'items-center']}>
     {/* Stacked (below lg): the text runs the full width, the image smaller and centred beneath it. */}
     <div>
       {!topHeading && eyebrow && <p class="eyebrow mb-2">{eyebrow}</p>}
-      {!topHeading && heading && <h2 id={id ? `${id}-heading` : undefined}>{heading}</h2>}
+      {!topHeading && heading && (
+        <h2 id={id ? `${id}-heading` : undefined}>
+          {headingParts ? <>{headingParts[0]}<span class="text-teal-700">{headingParts[1]}</span>{headingParts[2]}</> : heading}
+        </h2>
+      )}
       {intro && <Md text={intro} class:list={['lede text-ink-muted', !topHeading && 'mt-4', topHeading && 'split-intro']} />}
       {
         compact ? (
@@ -62,15 +71,33 @@ const points = compact
             text={body}
             class:list={[
               'leading-relaxed',
-              topHeading ? 'max-w-none lg:max-w-[42rem]' : 'max-w-[42rem]',
-              featureList ? 'split-list text-base text-ink sm:text-[1.0625rem]' : topHeading ? 'split-points text-[1.0625rem] sm:text-lg' : 'text-lg',
+              narrowMedia ? 'max-w-none' : topHeading ? 'max-w-none lg:max-w-[42rem]' : 'max-w-[42rem]',
+              featureList ? ['split-list text-base text-ink sm:text-[1.0625rem]', narrowMedia && 'split-list-large', mediaTop && 'split-list-cols'] : topHeading ? 'split-points text-[1.0625rem] sm:text-lg' : 'text-lg',
               ((heading && !topHeading) || intro) && 'mt-6',
             ]}
           />
         )
       }
       {
-        chips.length > 0 && (
+        chips.length > 0 && narrowMedia ? (
+          // The 45/55 layout (/features/ EMR): the label leads the run as a pill styled like the chips (19px text, no check), then the chips with a soft
+          // border and a green (#00c554) check.
+          <ul role="list" class="mt-8 flex flex-wrap gap-2.5 sm:gap-3">
+            {chipsLabel && (
+              <li class="inline-flex items-center rounded-full border border-grey-200 bg-surface px-[15px] py-[10px] text-[1.1875rem] leading-5 font-semibold text-ink-heading">
+                {chipsLabel}
+              </li>
+            )}
+            {chips.map((chip) => (
+              <li class="inline-flex items-center gap-2.5 rounded-full border border-grey-200 bg-surface px-[15px] py-[10px] text-base leading-[1.25] font-semibold text-ink-heading">
+                <span class="grid size-5 shrink-0 place-items-center rounded-full bg-[#00c554] text-white" aria-hidden="true">
+                  <Icon name="check" size={12} />
+                </span>
+                {chip}
+              </li>
+            ))}
+          </ul>
+        ) : chips.length > 0 && (
           <div class:list={[compact ? 'mt-9 border-t border-blue-200/70 pt-7' : 'mt-6']}>
             {chipsLabel && <p class="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-blue-700">{chipsLabel}</p>}
             <ul role="list" class="flex flex-wrap gap-2">
@@ -104,8 +131,14 @@ const points = compact
           <Screenshot media={{ ...media, frame: 'none' }} sizes="(min-width: 80rem) 600px, (min-width: 60rem) 48vw, 100vw" />
         </div>
       ) : featureList ? (
-        <div class:list={['w-full overflow-hidden rounded-2xl border-2 border-[#c7c7c7] bg-surface shadow-[0_2px_6px_rgb(10_37_64/0.05),0_20px_44px_-24px_rgb(10_37_64/0.25)] max-[48rem]:order-first', mediaFirst && 'lg:order-first', stickyMedia && 'lg:sticky lg:top-24 lg:self-start']}>
-          <Screenshot media={{ ...media, frame: 'none' }} sizes="(min-width: 80rem) 680px, (min-width: 60rem) 52vw, 100vw" />
+        // One bordered card per image; a second image (media2) stacks under the first. Image on top (mediaTop): the
+        // cards run the full width above the text at every size.
+        <div class:list={['grid w-full gap-5', mediaTop ? 'order-first' : 'max-[48rem]:order-first', mediaFirst && 'lg:order-first', stickyMedia && 'lg:sticky lg:top-24 lg:self-start']}>
+          {[media, media2].filter(Boolean).map((m) => (
+            <div class="w-full overflow-hidden rounded-2xl border-2 border-[#c7c7c7] bg-surface shadow-[0_2px_6px_rgb(10_37_64/0.05),0_20px_44px_-24px_rgb(10_37_64/0.25)]">
+              <Screenshot media={{ ...m!, frame: 'none' }} sizes={mediaTop ? '(min-width: 80rem) 1280px, 100vw' : '(min-width: 80rem) 680px, (min-width: 60rem) 52vw, 100vw'} />
+            </div>
+          ))}
         </div>
       ) : (
         <div class:list={['overflow-hidden rounded-2xl shadow-[0_24px_60px_-24px_rgb(10_37_64/0.35)]', mediaFirst ? 'lg:order-first lg:justify-self-start' : 'lg:justify-self-end', stickyMedia && 'lg:sticky lg:top-24 lg:self-start', 'w-full', topHeading && 'lg:max-w-[37rem]']}>
@@ -132,6 +165,28 @@ const points = compact
   }
   @media (max-width: 39.99rem) {
     .split-list h3 {
+      font-size: 1.1875rem;
+    }
+  }
+  /* Image on top (/features/ inventory): the points flow down two columns from md, a heading never parted from its text. */
+  @media (min-width: 48rem) {
+    .split-list-cols {
+      columns: 2;
+      column-gap: 4rem;
+    }
+    .split-list-cols h3 {
+      break-after: avoid;
+    }
+    .split-list-cols p {
+      break-inside: avoid;
+    }
+  }
+  /* The 45/55 layout (/features/ EMR): larger point headings (27px) and text (19px) from tablet width up. */
+  @media (min-width: 40rem) {
+    .split-list-large h3 {
+      font-size: 1.6875rem;
+    }
+    .split-list-large p {
       font-size: 1.1875rem;
     }
   }

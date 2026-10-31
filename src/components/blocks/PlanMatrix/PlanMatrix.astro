@@ -7,7 +7,7 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'planMatrix'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, open, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, open, wideIntro, ctx } = Astro.props;
 
 const registry = await getRegistry();
 const data = (await getEntry('plans', 'plans'))?.data;
@@ -24,7 +24,7 @@ const groups = data.matrix.map((group) => ({
 }));
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)}>
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} wideHeader={wideIntro}>
   {/* Open in the DOM, collapsed by <details> (spec 7.3). */}
   <details class="group card text-ink" open={open}>
     <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 [&::-webkit-details-marker]:hidden">

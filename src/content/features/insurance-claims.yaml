@@ -1,6 +1,8 @@
 # Insurance claims feature page (spec 5.11 "/features/insurance-claims", keyword row in 4.1, cannibalisation rule 4.5.2).
 # Replaces live /payor-management/ and /insurance-claim-management-system/ (redirects in src/data/redirects.yaml).
 status: published
+# Explicit so the proof-block exemption in src/lib/rules/audit.ts can match this page (owner decision 2026-10-30).
+path: /features/insurance-claims/
 headKeyword: insurance claims software for clinics
 secondaryKeywords:
   - TPA software for hospitals
@@ -10,13 +12,11 @@ title: 'TPA and HMO Claims Software for Clinics: Easy Clinic'
 metaDescription: >-
   Insurance claims software for clinics: the plan is checked at registration, and each cashless TPA or
   HMO claim is built from the visit and the bill.
-h1: TPA and HMO claims without a second system
+h1: Effortless Payor Management with Easy Clinic
 linkLabel: Insurance claims
 eyebrow: Insurance claims
 openingAnswer: >-
-  Easy Clinic is insurance claims software that catches three mistakes before a claim leaves: the wrong
-  plan picked at registration, a test or medicine the plan does not cover, and a pre-authorisation nobody
-  raised. Claims come with Enterprise, or as an add-on on Professional and Premium.
+  Managing corporate and insurance payors can be a complex task, especially for clinics handling high patient volumes. Easy Clinic’s Payor Management Module simplifies this process, automating tasks and ensuring accuracy, so your clinic can focus on delivering quality patient care while streamlining operations.
 summary: >-
   Claims that are clean before they leave: the plan is linked at the desk, and orders are checked
   against the plan's cover at the time of care.
@@ -24,7 +24,7 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: ../../assets/images/products/17_Integration.png
+  src: ../../assets/images/solutions/Payor-7-1.png
   alt: Easy Clinic API documentation for AI tasks and appointment booking, with the logos of the health data standards it names
   frame: none
 ctas:
@@ -79,36 +79,6 @@ sections:
             visit. A missing approval shows while the patient is still in the clinic, not when the payer
             rejects the claim.
 
-  - discriminant: flowDiagram
-    value:
-      id: claim-journey
-      heading: How a claim is built, from registration to the payer's payment
-      intro: >-
-        Every step adds to one claim, so the claim the billing desk submits is the one reception started.
-        The steps with a check are where the mistakes above get caught.
-      steps:
-        - label: Register
-          body: Reception registers the patient once, and the details typed at the desk are the ones that reach the claim.
-        - label: Link the plan
-          body: >-
-            The patient is linked to their payer and plan category. A company's employees and their
-            dependants are linked to the company in the same way.
-          check: Catches the wrong plan
-        - label: Check coverage
-          body: Staff can see what the plan covers, with its exclusions and the patient's co-payment, from the moment the plan is linked.
-        - label: Prescribe within the plan
-          body: The doctor orders medicines and tests from the chart, and the orders are checked against what the plan covers.
-          check: Catches items the plan does not cover
-        - label: Pre-authorise
-          body: Where the payer needs to approve first, the approval is recorded against the visit before the invoice is built.
-          check: Catches a missing pre-authorisation
-        - label: Invoice
-          body: The bill is built from what was ordered, at the payer's own rates, with the patient's share split from the payer's.
-        - label: Submit
-          body: The claim is built from the visit and the bill, and the billing desk submits it to the payer, one at a time or in a batch.
-        - label: Reconcile
-          body: When the payer pays, the payment is settled against its claims, and the claims it has not paid still show as open.
-
   - discriminant: featureRows
     value:
       id: payer-setup
@@ -116,18 +86,22 @@ sections:
       intro: >-
         This setup is what makes the checks above work. It is part of the claims module, which comes with
         Enterprise and can be added to Professional or Premium.
+      layout: bento
       items:
         - heading: A profile for each payer
+          icon: building-2
           body: >-
             Each insurer, TPA, HMO or company that pays for its staff is set up once, with its rates, its
             contract terms, the services it covers and its payment terms. From then on every patient linked
             to it is billed on those terms, instead of on what the receptionist remembers.
         - heading: Plan categories inside each payer
+          icon: layers
           body: >-
             One insurer can sell several plans, so each payer holds its own plan categories, and members
             can be sorted into more than one level. Each category sets the services covered, the
             exclusions, the invoicing limits and the co-payment.
         - heading: The payer's price list on the bill
+          icon: tags
           body: >-
             Each payer can have its own price list, and Easy Clinic picks it when a linked patient is billed,
             so nobody types a TPA rate at the counter. The invoice itself, with its tax, is covered on the
@@ -136,10 +110,12 @@ sections:
             label: Read how billing works
             href: /features/billing/
         - heading: One visit, two payers
+          icon: hand-coins
           body: >-
             A visit can be billed to more than one payer, and the co-payment and deductions are worked out
             on the bill. The patient pays their share at the desk and the rest goes on the claim.
         - heading: When a patient's cover changes
+          icon: refresh-cw
           body: >-
             Reception updates the patient's payer or plan when their cover changes, whether they moved
             insurer or joined a new plan, and the next bill follows the new plan.
@@ -148,6 +124,8 @@ sections:
     value:
       id: payers-by-country
       heading: Who pays a clinic's claims in each country
+      wideIntro: true
+      variant: clean
       intro: >-
         The payers change from market to market while the steps above stay the same. This table lists who
         pays a clinic's claims in India, Kenya, the UAE and Nigeria. It is not a list of Easy Clinic
@@ -185,43 +163,132 @@ sections:
         Any of these payers can be set up in Easy Clinic as a payer profile with its plans and price list,
         as described above. That is billing setup, not an electronic connection to the payer.
 
-  - discriminant: prose
+  - discriminant: splitContent
     value:
-      id: claims-sent-back
-      heading: Claims sent back, read payer by payer
-      body: >-
-        The claims dashboard shows the status of every claim, so the billing desk can see which claims a
-        payer has sent back without waiting for month end. Reading them payer by payer shows whether they
-        share a cause in that payer's setup, such as a plan category missing a service or a price list that
-        was not updated after the payer changed its rates. Correct the setup once and the next claims go
-        out on the corrected terms.
+      id: quick-payor-setup
+      mediaStage: true
+      heading: Quick Payor Setup
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Easily add and manage multiple payors in just a few clicks. Create customized profiles to streamline the onboarding process and minimize errors.
 
+        ### Add Payors in Minutes:
+        With Easy Clinic, onboarding new insurance or corporate payors is a breeze. You can add payors to the system with just a few clicks, ensuring all details like billing rates, contract terms, and coverage information are entered once and applied automatically across all patient interactions.
 
-        This page covers why claims come back and how to stop them at the desk. The clinic's denial rate
-        over time, and the ageing of what each payer owes, are on the
-        [revenue management page](/features/revenue-management/).
+        ### Customized Profiles for Each Payor:
+        Create detailed, customized profiles for each payor, including specific services covered, payment terms, and other critical details, ensuring consistency and reducing the risk of manual errors.
 
-  - discriminant: proofBlock
+        ### Improved Efficiency:
+        Streamline administrative tasks by minimizing repetitive data entry and speeding up the setup process for new payors.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Payor-1.png
+        alt: 'Editing a payor cover category in Easy Clinic: the category code and name, annual, invoice and co-pay limits, a fixed fee and the applicable subscription categories'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: ratings
-      heading: Easy Clinic's public ratings
-      intro: >-
-        Easy Clinic has not published a measured figure for claim rejections, so the proof on this page is
-        its public ratings. The Capterra link opens the reviews themselves.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      id: invoice-generation
+      mediaStage: true
+      heading: Seamless Invoice Generation
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Generate invoices automatically based on predefined payor rules, ensuring faster and more accurate billing. Say goodbye to manual errors and delays in payment processing.
 
-  - discriminant: contentCards
+        ### Error-Free Billing:
+        By pre-defining payor contracts and billing rules, invoices generated are accurate, reducing the risk of rejected claims due to inconsistencies or errors.
+
+        ### Faster Reimbursement Cycles:
+        Automated invoicing means your clinic sends claims to payors faster, leading to quicker reimbursements and improved cash flow.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Payor-11.png
+        alt: 'An Easy Clinic invoice billed to a payor: the patient''s membership, annual and invoice limits, the invoice lines, and the split between insurance and co-pay'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: further-reading
-      heading: Further reading
-      items:
-        - href: /nhif-in-kenya/
+      id: subscription-categories
+      heading: Flexible Subscription Categories
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Manage different subscription plans for each payor, allowing you to handle various coverage types and benefit limits efficiently, all tailored to your clinic's needs.
+
+        ### Customizable Plans for Different Payors:
+        Easily create and manage subscription categories for various payors. Each category can include different services, coverage levels, and restrictions based on the payor's contract, giving you flexibility in handling multiple payor agreements seamlessly.
+
+        ### Simplified Management of Benefits:
+        Automatically track and apply different service limits, benefit coverage, and payment rates for various payors, reducing complexity and ensuring smooth billing.
+
+        ### Tailored to Your Clinic's Needs:
+        Customize these categories to match the specific needs of your clinic and patients, allowing for a better-managed payor ecosystem.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Payor-4.png
+        alt: 'Setting a category rule in Easy Clinic: maximum cover, co-pay amount and percentage, and patient rules by gender, age range and patient category'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: coverage-management
+      heading: Comprehensive Coverage Management
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Assign specific coverage categories to payors, reducing claim rejections by ensuring that only covered services are billed. The system validates each claim in real-time, preventing errors.
+
+        ### Assign Specific Coverage:
+        Manage different coverage levels for various payors with ease. Whether it's a corporate health plan or an insurance provider, you can assign exact coverage types, including exclusions and service limitations, to prevent billing errors.
+
+        ### Billing Transparency:
+        With clear coverage information tied to each payor, your staff can quickly determine what is covered under a patient's plan, improving transparency and reducing confusion during billing.
+
+        ### Avoid Claim Rejections:
+        By validating coverage at the time of care, the system helps avoid submitting claims for uncovered services, significantly reducing claim rejections and administrative burden.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Payor-5.png
+        alt: 'Payor exclusions in Easy Clinic: excluded clinics, product categories, individual products such as X-rays and medicines, and clinic types'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: patient-association
+      heading: Streamlined Patient Association
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Automatically link patients to their respective payor plans, ensuring that coverage details are applied correctly from the start, improving billing accuracy and speeding up the claims process.
+
+        ### Automate Patient-to-Payor Linking:
+        Automatically link patients to their respective payor plans upon registration, ensuring the correct payor rules are applied to each patient's billing cycle from the start.
+
+        ### Accurate Claims Submission:
+        With the correct payor linked to each patient, the system ensures that claims are submitted with the correct billing and coverage details, minimizing manual errors and increasing claim acceptance rates.
+
+        ### Real-Time Updates:
+        Easily update patient-payor associations when needed, ensuring accurate billing if a patient's coverage changes or if they are added to a new payor plan.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Payor-6.png
+        alt: 'Editing a member in Easy Clinic: personal details, membership number and expiry, subscription category, and the principal member for a dependant'
+        frame: none
 
 faqHeading: Questions clinics ask about insurance claims
 faq:
@@ -325,6 +392,8 @@ editorialPass:
     billing manager's read-aloud.
 
 notes:
+  - 'Section claims-sent-back (Claims sent back, read payer by payer) removed 2026-10-30 at the owner''s request.'
+  - 'Sections claim-journey (How a claim is built), ratings (Easy Clinic''s public ratings) and further-reading removed 2026-10-30 at the owner''s request; the page is exempt from the proof-block rule in src/lib/rules/audit.ts.'
   - 'Title 51 characters and H1 exactly as spec 4.1. The spec title does not contain the head keyword, so "insurance claims software for clinics" opens the meta description and the opening answer.'
   - 'Meta rewritten from the spec 4.1 wording ("Submit cashless claims, track TPA approvals and reconcile HMO and SHA payments from your own system"): reconciling SHA payments from your own system states an SHA capability whose status is unknown, and the three verbs are a group of three. The rewrite keeps "cashless", TPA and HMO.'
   - 'Proof: the 34% denied-claims figure (live /curapilot/) and "Rejections fell from 23% to under 4% in one quarter" have no public source (facts.md section 4), so the proof block is the badges variant and the proof intro says no rejection figure is published. Replace with a measured rejection rate by payer and a finance-manager quote when either exists (spec 5.11).'

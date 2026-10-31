@@ -7,16 +7,16 @@ import TestimonialCarousel from './TestimonialCarousel.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'testimonialRow'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, items, layout, usePullQuote, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, items, layout, usePullQuote, underlines, tagSpecialty, ctx } = Astro.props;
 const testimonials = await getEntries(items);
 const single = layout === 'single' || testimonials.length === 1;
 ---
 
-{layout === 'carousel' ? <TestimonialCarousel id={id} eyebrow={eyebrow} heading={heading} intro={intro} testimonials={testimonials} /> : (
+{layout === 'carousel' ? <TestimonialCarousel id={id} eyebrow={eyebrow} heading={heading} intro={intro} testimonials={testimonials} underlines={underlines} /> : (
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} center={single}>
   {
     single ? (
-      <Quote testimonial={testimonials[0]} pull={usePullQuote} size="large" />
+      <Quote testimonial={testimonials[0]} pull={usePullQuote} size="large" tagSpecialty={tagSpecialty} />
     ) : (
       /* Phones: a row you swipe, snapping card by card, running to the screen edges with the next card peeking in.
          Tablets: a grid of two cards a row. From 960px: three a row (two when there are only two). */

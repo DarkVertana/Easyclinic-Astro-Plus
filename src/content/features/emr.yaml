@@ -76,7 +76,7 @@ sections:
       heading: How the note and the prescription get written
       intro: >-
         What happens on screen from the moment the patient sits down. Where a part needs the Premium plan,
-        the row says so.
+        its text says so.
       items:
         - heading: A prescription written from your own shortcuts
           body: >-
@@ -87,13 +87,17 @@ sections:
           bullets:
             - Printed for the patient, or sent on WhatsApp on the Premium plan
             - Bilingual prescriptions in English and Swahili for clinics in Kenya
-          plan: professional
+          link:
+            label: See how prescriptions reach the patient
+            href: /features/patient-engagement/
         - heading: Templates for your specialty
           body: >-
             On Premium the chart comes with specialty EMR templates. Your clinic can also have its own
             clinical forms and print layouts, and the customisation comes without charges. Professional
             includes the EMR and e-prescriptions, without the specialty templates.
-          plan: premium
+          bullets:
+            - Specialty EMR templates come with the Premium plan
+            - Your own clinical forms and print layouts, without charges
           link:
             label: Compare what each plan includes
             href: /pricing/
@@ -102,12 +106,20 @@ sections:
             When two medicines on the prescription interact, the prescription screen warns you while you
             are still writing it. The change gets made in the consulting room, before the prescription
             reaches the pharmacy.
+          bullets:
+            - The warning shows while the prescription is still being written
+            - The change is made before the prescription reaches the pharmacy
+          link:
+            label: See how the pharmacy dispenses it
+            href: /features/pharmacy-and-inventory/
         - heading: Cura AI drafts the note
           body: >-
             Cura AI (documentation) is included in every plan. It drafts a SOAP note beside the consult,
             and the draft stays a draft until you review it and sign. It is optional, so a doctor who would
             rather write every note writes it in the same chart without the AI.
-          plan: professional
+          bullets:
+            - Included in every plan
+            - The draft stays a draft until you review it and sign
           link:
             label: Read what Cura AI does
             href: /ai/
@@ -116,15 +128,23 @@ sections:
             Scanned reports and images attach to the patient's record and sit beside the visits written in
             Easy Clinic, so an old discharge summary or an X-ray is on the same record as today's note. On
             Premium, lab reports come into the chart as well.
+          bullets:
+            - Old discharge summaries and X-rays sit beside today's note
+            - Lab reports come into the chart on the Premium plan
+          link:
+            label: See how lab results reach the chart
+            href: /features/lab/
         - heading: Who can open the chart, and who wrote in it
           body: >-
             Logins for your staff come with every plan. The reception login included in the price is not
             allowed into the EMR and cannot issue prescriptions, and an audit log shows who made each entry
             on a patient's record.
-        - heading: On your phone
-          body: >-
-            Easy Clinic works on any device, so the chart and the prescription open on a phone as well as on
-            the consulting-room computer. It is cloud software and does not run fully offline today.
+          bullets:
+            - Staff logins come with every plan
+            - An audit log shows who made each entry
+          link:
+            label: See how access works across branches
+            href: /features/multi-location/
 
   - discriminant: testimonialRow
     value:
@@ -133,16 +153,18 @@ sections:
       items:
         - nrp-chandra-balaji
       layout: single
+      tagSpecialty: true
 
   - discriminant: dataTable
     value:
       id: country-rules
       heading: E-prescription rules by country
+      wideIntro: true
+      variant: clean
       intro: >-
         Each country has its own body that registers doctors and sets rules for how they prescribe. This is
         who that is in India, Kenya, the UAE and Nigeria, and what each asks for in general terms. Each
         country page covers the detail.
-      caption: Who sets the prescribing rules in each country, and what they ask for
       columns:
         - Country
         - Who sets the rules
@@ -175,36 +197,6 @@ sections:
         This table describes the rules and says nothing about where Easy Clinic stands on them. This page
         does not state Easy Clinic's status, so ask us for the status and date of each rule that applies
         to your clinic, and get it in writing.
-
-  - discriminant: stepList
-    value:
-      id: training
-      heading: 'Training takes {fact:trainingDays} days, about two hours in all'
-      intro: >-
-        The training is set up for you and your clinic staff, and day 2 is the one spent on the EMR. After
-        it, support stays unlimited on every plan.
-      steps:
-        - title: Basic training
-          meta: Day 1, 40 minutes
-          body: Finding your way around Easy Clinic, for you and the staff who will use it.
-        - title: EMR scenario training
-          meta: Day 2, 40 minutes
-          body: The chart and the prescription, worked through as clinical scenarios.
-        - title: Practice exercises
-          meta: Day 3, 20 minutes
-          body: Exercises to practise on, so the first real patient is not your first attempt.
-        - title: Road to expertise
-          meta: Day 4, 20 minutes
-          body: The faster ways of working, once the basics are routine.
-
-  - discriminant: contentCards
-    value:
-      id: further-reading
-      heading: Further reading
-      items:
-        - href: /questions-to-ask-your-clinic-emr-software-provider/
-        - href: /abdm-compliance/
-        - href: /clinic-compliance-checklist/
 
 faqHeading: Questions doctors ask about the EMR
 faq:
@@ -274,9 +266,6 @@ links:
     - href: /ai/
       label: Cura AI
       description: What each AI feature does, and which plan includes it.
-    - href: /trust/
-      label: Trust and compliance
-      description: Where Easy Clinic stands on ABDM and on each country's prescribing rules.
 
 closing:
   heading: See the prescription screen before you decide
@@ -303,6 +292,8 @@ editorialPass:
     screenshot exists yet.
 
 notes:
+  - 'Sections training and further-reading removed 2026-10-31 at the owner''s request.'
+  - 'Section how-it-works: card "On your phone" and the plan tags removed 2026-10-31 at the owner''s request; each card now has two points and a link.'
   - 'Title 55 characters; meta 143 characters (no tokens). Meta rewritten from the spec 4.1 wording ("Write the note, print or WhatsApp the prescription and keep every visit on one record") to lead with the head keyword and avoid a group of three.'
   - 'Secondary keyword "ABDM ready EMR" (spec 4.1) left off on purpose: 4.5 rule 6 gives ABDM-compliant EMR terms to /trust/. ABDM appears once, in the last FAQ, describing the milestones from src/data/regulators (in-abdm-m1..m3) and pointing to /trust/ with no status.'
   - 'No heroMedia and no media objects: screenshots do not exist yet (page-writing rules). When the spec 12 captures exist, add the thirty-second prescription screen (Rx mid-entry with an interaction warning, phone too) as hero and the Cura AI note draft to the Cura AI row.'

@@ -199,13 +199,13 @@ async function build(): Promise<Registry> {
   // Cross-entry checks.
   // Each testimonial sits on the one landing page it praises (spec 2.4); /customers/ may show all of them,
   // and so may the home page's testimonial wall (owner decision 2026-10-07) and the /pricing/ testimonial slider
-  // (owner decision 2026-10-22).
+  // (owner decision 2026-10-22), and the /features/ testimonial slider, the same three as /pricing/ (owner decision 2026-10-30).
   // Testimonials the owner has cleared for more than one page: tl-prabhu on /solutions/solo-clinic/ and
   // /solutions/ngo-clinics/ (owner decision 2026-10-26).
   const sharedTestimonials = new Set(['tl-prabhu']);
   const testimonialPages = new Map<string, PageRecord[]>();
   for (const record of records) {
-    if (record.path === '/customers/' || record.path === '/' || record.path === '/pricing/' || record.family === 'kitchenSink') continue;
+    if (record.path === '/customers/' || record.path === '/' || record.path === '/pricing/' || record.path === '/features/' || record.family === 'kitchenSink') continue;
     for (const id of new Set(referencedIds(record.data, 'testimonials'))) {
       if (sharedTestimonials.has(id)) continue;
       testimonialPages.set(id, [...(testimonialPages.get(id) ?? []), record]);

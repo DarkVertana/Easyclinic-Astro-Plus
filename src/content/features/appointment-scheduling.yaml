@@ -1,6 +1,8 @@
 # Appointment scheduling feature page (spec 5.11 "/features/appointment-scheduling", keyword row 4.1, cannibalisation 4.5).
 # Replaces the live /appointment-scheduling-at-easy-clinic/ (redirect already in src/data/redirects.yaml).
 status: published
+# Explicit so the proof-block exemption in src/lib/rules/audit.ts can match this page (owner decision 2026-10-31).
+path: /features/appointment-scheduling/
 headKeyword: clinic appointment scheduling software
 secondaryKeywords:
   - patient appointment software
@@ -86,6 +88,8 @@ sections:
     value:
       id: what-no-shows-cost
       heading: How much do no-shows cost a clinic?
+      wideIntro: true
+      variant: figures
       intro: >-
         Take an example clinic with 20 booked slots a day and a 15% no-show rate: three slots sit empty
         every day. With a ₹500 consult fee that is ₹1,500 of fees lost a day, or ₹36,000 over a 24-day
@@ -128,8 +132,8 @@ sections:
       id: how-it-works
       heading: How the calendar works, from the booking to the bill
       intro: >-
-        What the front desk works from all day. The calendar and its walk-ins come with every plan, and a
-        row tagged with a higher plan needs that plan. The full list per plan is on the
+        What the front desk works from all day. The calendar and its walk-ins come with every plan, and where a
+        row needs a higher plan, its text says so. The full list per plan is on the
         [pricing page](/pricing/).
       items:
         - heading: Doctors and consulting rooms on one calendar
@@ -138,26 +142,29 @@ sections:
             doctor's preferences, so the full-time physician and the Tuesday-evening surgeon sit side by
             side. Consulting rooms and other resources are scheduled on the same screen as the
             appointments, and a change made at the desk shows on the calendar straight away.
+          link:
+            label: Read what the doctor sees in the EMR
+            href: /features/emr/
         - heading: Walk-ins beside booked slots
           body: >-
             Walk-ins join the same calendar as booked appointments, so the day runs from one list. When a
             patient needs to be seen sooner, the desk can move them up the queue by need or by appointment
             type.
-          plan: professional
+          link:
+            label: See what every plan includes
+            href: /pricing/
         - heading: Reminders by SMS and email on every plan
           body: >-
             Reminders go out automatically, days or hours before the visit, at the times the clinic sets.
             Easy Clinic tracks which patients have acknowledged their reminder, so the desk spends its calls
             on the patients who have not.
-          plan: professional
           link:
-            label: Read the sample reminders
-            href: /features/appointment-scheduling/#reminder-samples
+            label: Read how patients are kept in touch
+            href: /features/patient-engagement/
         - heading: Reminders on WhatsApp
           body: >-
             On Premium, reminders also reach the patient on WhatsApp, sent from the clinic software instead
             of from the receptionist's own phone.
-          plan: premium
           link:
             label: Read how WhatsApp messages are sent
             href: /features/whatsapp/
@@ -166,11 +173,13 @@ sections:
             The appointment screen shows where each patient is in the visit, from check-in until they
             leave, so the desk knows who is still waiting. When the doctor runs late, waiting patients are
             told of the change to their wait automatically, instead of queueing at the counter to ask.
+          link:
+            label: See the day's figures on the dashboard
+            href: /features/reports-and-dashboards/
         - heading: From the appointment to the bill
           body: >-
             When the consult ends, the bill and the payment are done from the appointment screen in one
             click. Day-end reports give the owner a summary of the day.
-          plan: professional
           link:
             label: Read how billing works
             href: /features/billing/
@@ -178,7 +187,6 @@ sections:
           body: >-
             Patients book their own appointments online through the patient portal and app, which come with
             Enterprise, so the desk no longer takes every booking by phone.
-          plan: enterprise
           link:
             label: Read what the patient portal does
             href: /features/patient-engagement/
@@ -188,43 +196,18 @@ sections:
             place and keep the same scheduling rules at each. Resources can also be shared between
             locations. A second location needs Premium, and central control of every location comes with
             Enterprise.
-          plan: premium
           link:
             label: Read how multi-location works
             href: /features/multi-location/
-
-  - discriminant: dataTable
-    value:
-      id: reminder-samples
-      heading: What a reminder can say
-      intro: >-
-        Two sample reminders, written for this page with made-up names and times. The clinic chooses how
-        long before the visit its reminders go out.
-      caption: Sample reminder messages, one for India and one for Kenya
-      columns:
-        - Sample
-        - When it goes
-        - Message
-      rows:
-        - - India, by SMS (every plan)
-          - The evening before
-          - >-
-            Reminder from Dr Anita Rao's clinic: your appointment is tomorrow, Thursday, at 4:30pm. If you
-            cannot come, please call the clinic so the slot can go to another patient.
-        - - Kenya, on WhatsApp (Premium)
-          - Two hours before
-          - >-
-            Hello Mary, this is a reminder from Dr Otieno's clinic. Your appointment is today at 11:00am.
-            If you are running late or cannot come, please let the front desk know.
-      note: >-
-        These are samples written for this page, not Easy Clinic's own wording, and the doctors and the
-        patient are made up. How WhatsApp messages are sent from the clinic software is on the
-        [WhatsApp page](/features/whatsapp/).
 
   - discriminant: prose
     value:
       id: teleconsults
       heading: Teleconsults on the same calendar
+      width: wide
+      link:
+        label: See how teleconsults work
+        href: /features/telehealth/
       body: >-
         On Premium, a video consult is booked through the same appointment screen as a clinic visit, so it
         takes its slot on the doctor's calendar, with the option of collecting the fee online. The doctor
@@ -232,53 +215,163 @@ sections:
         install. How the consult itself runs, from the call to the prescription, is on the
         [telehealth page](/features/telehealth/).
 
-  - discriminant: scopeBox
+  - discriminant: splitContent
     value:
-      id: limits
-      heading: What to know before you book a demo
-      variant: limits
-      items:
-        - >-
-          Easy Clinic is cloud software and does not run fully offline today. If the line at your clinic
-          drops often, arrange a backup connection for the front desk, such as a mobile hotspot, before you
-          go live.
-        - >-
-          WhatsApp reminders are not on the Professional plan. Professional sends reminders by SMS and
-          email, and WhatsApp starts on Premium.
-        - >-
-          Patients book themselves through the patient portal and app, which come with Enterprise. Video
-          consults need Premium.
-        - >-
-          This page quotes no figure for fewer no-shows, because Easy Clinic has not published a measured
-          one.
-      note: >-
-        Each plan's full list is on the [pricing page](/pricing/).
+      id: user-friendly-scheduling
+      heading: User-Friendly Appointment Scheduling for Ease and Efficiency
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Enhance clinic operations and optimize patient scheduling with Easy Clinic's Appointment Management Module, a powerful tool designed to streamline workflows and improve patient satisfaction.
 
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: What clinics rate Easy Clinic
-      body: >-
-        These are Easy Clinic's public ratings, and the Capterra reviews behind the first one are open to
-        read before you book a demo.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+        ### Centralized Appointment Management
+        View, manage, and adjust daily schedules from one place to keep operations smooth.
 
-  - discriminant: contentCards
+        ### Single Dashboard View
+        Monitor all appointments, patient statuses, and resources from a centralized dashboard.
+
+        ### Real-Time Updates
+        Instantly see and adjust scheduling changes to keep up with the clinic's pace.
+
+        ### Quick Appointment Booking
+        Quickly book appointments, reducing the time staff spends on scheduling.
+
+        ### Adaptable Schedule Templates
+        Customize schedules based on the clinic's operating hours and doctors' preferences.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: further-reading
-      heading: Further reading
-      items:
-        - href: /online-appointment-booking-system/
-        - href: /top-strategies-for-reducing-patient-no-shows/
-        - href: /smarter-scheduling-happier-patients-elevating-healthcare-operations-through-optimized-appointments/
-        - href: /how-to-make-your-waiting-room-more-patient-friendly/
-        - href: /doctor-personal-branding/
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/3_Video_consultent.png
+        alt: 'An Easy Clinic teleconsultation: the doctor on a video call beside the visit notes, diagnosis and medications, with an online payment request and the patient facesheet'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: automated-reminders
+      heading: Automated Patient Reminders to Reduce No-Shows
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Boost attendance rates and reduce appointment gaps with automated reminders sent directly to patients.
+
+        ### Multi-Channel Reminders
+        Send reminders via SMS, email, or in-app notifications to ensure patients are reminded in their preferred way.
+
+        ### Customizable Reminder Schedules
+        Schedule reminders days or hours before appointments to minimize no-shows.
+
+        ### Patient Acknowledgment Tracking
+        Track which patients have acknowledged their reminders, providing an extra layer of assurance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/img3-1.png
+        alt: 'Easy Clinic communication settings: email, SMS and WhatsApp templates by module and event, with an appointment reminder and a prescription sent to a patient''s phone'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: waiting-room
+      heading: Advanced Waiting Room Management for a Streamlined Experience
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Manage the waiting room more effectively with real-time status updates and patient flow management.
+
+        ### Real-Time Queue Status
+        Keep patients informed about waiting times, reducing frustrations and improving satisfaction.
+
+        ### Efficient Wait Time Alerts
+        Automatically update patients on any changes to their wait time, allowing them to adjust accordingly.
+
+        ### Queue Prioritization
+        Prioritize based on patient needs or appointment types to ensure smooth and equitable flow.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/2.png
+        alt: 'The Easy Clinic day visits list beside the calendar: each patient''s appointment and arrival time, waiting and attending status, priority flags and a token list'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: self-service
+      heading: Streamlined Patient Self-Service Options for Increased Engagement
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Empower patients with self-service options that allow them to take control of their appointment experience.
+
+        ### Online Appointment Booking
+        Patients can schedule appointments online, freeing up front-desk staff time.
+
+        ### Pre-Visit Onboarding
+        Allow patients to complete intake forms in advance, saving time during check-in.
+
+        ### Remote Check-In
+        Patients check in from their device, speeding up their waiting room process and enhancing convenience.
+      media:
+        kind: screenshot
+        src: ../../assets/images/products/img5.png
+        alt: Easy Clinic patient list and patient profile, with a WhatsApp enrolment link, an online booking page showing clinic visit slots, and the patient registration form on a phone
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: appointment-dashboard
+      heading: Comprehensive Appointment Dashboard for Efficient Daily Operations
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        Keep the clinic running smoothly with a dashboard that centralizes all appointments and provides real-time updates.
+
+        ### Appointment and Visit Tracking
+        View patients' statuses throughout their visits, from check-in to discharge.
+
+        ### Billing and Payment Updates
+        Quick 1-Click billing and payments straight from appointment screen minimizing administrative tasks.
+
+        ### Day-End Reports
+        Access end-of-day summaries for accurate record-keeping and staff analysis.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/4 (1).png
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
 
 faqHeading: Questions front desks and clinic owners ask
 faq:
@@ -369,6 +462,7 @@ editorialPass:
     no no-show figure or front-desk quote yet, and no calendar screenshot.
 
 notes:
+  - 'Sections reminder-samples, limits, ratings and further-reading removed 2026-10-31 at the owner''s request; the page is exempt from the proof-block rule in src/lib/rules/audit.ts.'
   - 'Title 50 characters (spec 4.1 wording). Meta 147 characters, rewritten from the spec 4.1 wording ("Book, reschedule and remind patients on WhatsApp and SMS...") to avoid a group of three and to put WhatsApp on Premium, per plans.yaml.'
   - 'H1 kept from spec 4.1 ("Appointment scheduling that cuts no-shows"); the live page itself says "Automated Patient Reminders to Reduce No-Shows". No measured figure backs it: facts.yaml noShowReduction is null, so the opening answer carries the plan price as its number instead of the spec 5.11 "measured no-show reduction", and the worked-example note and the limits box say no figure is published. When a real percentage is supplied, add it to the opening answer as {fact:noShowReduction} and consider a study-style proof.'
   - 'Worked no-show example (spec 5.11): 20 slots, 15% no-show, fees of ₹500 and KES 1,500 chosen for round arithmetic, labelled as an illustration in the intro, the caption, the row labels and the note. 24 working days = six days a week for four weeks. The fees are not a survey of what clinics charge.'

@@ -10,4 +10,8 @@ export const schema = () =>
         heading on a teal band beside one quote at a time. */
     layout: z.enum(TESTIMONIAL_LAYOUTS).default('row'),
     usePullQuote: z.boolean().default(true),
+    /** Carousel: draw the red dashed underline under each testimonial's `underline` phrases. Off on /features/ and /pricing/. */
+    underlines: z.boolean().default(true),
+    /** Single quote: show the doctor's specialty as the yellow tag with a red dashed outline. */
+    tagSpecialty: z.boolean().default(false),
   });

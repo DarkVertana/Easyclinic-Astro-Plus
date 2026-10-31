@@ -8,4 +8,6 @@ export const testimonialRow = defineBlock('testimonialRow', 'Testimonials', {
     labels: { row: 'Row: cards three to a row', single: 'Single: one large quote on its own', carousel: 'Carousel: heading on a teal band, one quote at a time' },
   }),
   usePullQuote: flag('Use pull quotes', { zodDefault: true, description: "Show a testimonial's short pull quote where it has one, instead of the full quote." }),
+  underlines: flag('Underline key phrases', { zodDefault: true, description: "Carousel only: the red dashed underline under each testimonial's underline phrases." }),
+  tagSpecialty: flag('Highlight the specialty', { zodDefault: false, description: "Single quote only: the doctor's specialty as a yellow tag with a red dashed outline." }),
 });

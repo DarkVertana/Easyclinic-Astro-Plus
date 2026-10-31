@@ -143,7 +143,9 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
   }
 
   // Owner decision 2026-10-27: /countries/ drops its ratings proof block; the page ends on the contact form.
-  const proofExempt = new Set(['/countries/']);
+  // Owner decision 2026-10-30: /features/, /features/patient-engagement/, /features/reports-and-dashboards/ and /features/insurance-claims/ drop their ratings proof blocks.
+  // Owner decision 2026-10-31: /features/revenue-management/ /features/appointment-scheduling/, /features/billing/, /features/lab/, /features/multi-location/ and /features/pharmacy-and-inventory/ drop their ratings proof blocks.
+  const proofExempt = new Set(['/countries/', '/features/', '/features/patient-engagement/', '/features/reports-and-dashboards/', '/features/insurance-claims/', '/features/revenue-management/', '/features/appointment-scheduling/', '/features/billing/', '/features/lab/', '/features/multi-location/', '/features/pharmacy-and-inventory/']);
   if (rules.proof && !proofExempt.has(data.path as string)) {
     const hasProof = (data.sections ?? []).some((s) => PROOF_BLOCKS.has(s.discriminant));
     if (!hasProof) err('proof', 'sections', 'Every page carries one proof block that belongs to it (spec 2.4)');

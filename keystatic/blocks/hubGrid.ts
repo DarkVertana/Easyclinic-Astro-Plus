@@ -1,4 +1,4 @@
-import { defineBlock, group, int, list, path, text } from '../fields.ts';
+import { choice, defineBlock, group, int, list, path, text } from '../fields.ts';
 
 /**
  * `hubGrid` section (Zod: src/components/blocks/HubGrid/schema.ts): hub listings (spec 2.9: every hub links down to
@@ -22,4 +22,5 @@ export const hubGrid = defineBlock('hubGrid', 'Hub grid', {
     { label: 'Groups', min: 1, itemLabel: (props) => props.fields.title.value || 'Group' },
   ),
   columns: int('Columns', { min: 2, max: 4, zodDefault: 3, description: 'Cards per row on wide screens (2 to 4). Empty: 3.' }),
+  layout: choice('Layout', ['cards', 'panels'] as const, { zodDefault: 'cards' }, { description: 'Cards: a grid under each group title. Panels: one panel per group, its title beside a list of rows (the features hub).' }),
 });

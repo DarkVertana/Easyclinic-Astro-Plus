@@ -17,4 +17,6 @@ export const schema = () =>
       )
       .min(1),
     columns: z.union([z.literal(2), z.literal(3), z.literal(4)]).default(3),
+    /** `cards`: a grid of cards under each group title. `panels`: one panel per group, its title beside a list of rows. */
+    layout: z.enum(['cards', 'panels']).default('cards'),
   });

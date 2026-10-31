@@ -9,20 +9,24 @@ title: 'Clinic Management Software Features: Easy Clinic'
 metaDescription: >-
   Clinic management software features in twelve modules: scheduling, EMR, billing, pharmacy, lab,
   claims, WhatsApp and reports, with what each plan includes.
-h1: Clinic management software features, from the first booking to the owner's report
+h1: Features of Easy Clinic that will make you go WOW
 linkLabel: All features
 eyebrow: Twelve modules on one patient record
 openingAnswer: >-
-  Easy Clinic's features come as twelve modules that follow a patient through the clinic, from the
-  booking and the thirty-second prescription to the claim and the owner's report, all on one patient
-  record. Appointments, the EMR, billing, dashboards and Cura AI note drafting come
-  with every plan from {price:usd.professional.annual} per doctor per month billed annually, and
-  pharmacy, lab management, insurance claims and integrations come with Enterprise or as add-ons.
+  Unlock the efficiency of your healthcare practice with Easy Clinic’s all-in-one EMR, Clinic
+  Management & Automation software. Streamline clinical care, inventory, pharmacy operations, and
+  financials with our user-friendly system. Leverage AI insights and business analytics for smarter
+  decisions. Easy Clinic transforms your practice management into an intuitive, integrated experience.
 summary: >-
   Twelve modules in the order a patient moves through the clinic, from the booking and the prescription
   to the claim and the owner's report, with the plan that includes each.
 author: subhashish-saha
 lastUpdated: 2026-09-26
+heroMedia:
+  kind: illustration
+  src: '../../assets/images/solutions/SoP.jpg'
+  alt: 'Illustration of a patient shaking hands with a doctor stepping out of a phone, surrounded by floating health records and charts'
+  frame: none
 ctas:
   primary:
     label: Book a 20-minute demo
@@ -33,39 +37,6 @@ ctas:
   whatsapp: Hi, I was on the Easy Clinic features page and would like to book a 20-minute demo for my clinic.
 
 sections:
-  - discriminant: journeyDiagram
-    value:
-      id: patient-journey
-      heading: One patient, from the booking to the owner's report
-      intro: >-
-        Follow one patient through the clinic. Each step below opens the module that runs it, and every
-        step writes to the same record, so nobody types a name or an amount twice.
-      steps:
-        - label: Book
-          body: The desk books the patient into a slot, and walk-ins join the same list, so the clinic keeps one register for the day.
-          href: /features/appointment-scheduling/
-        - label: Arrive
-          body: Reception registers the patient once. For an insured patient, the payer's plan and coverage are checked here, before the consult.
-          href: /features/insurance-claims/
-        - label: Consult
-          body: Past visits and lab results sit on one chart. Tests ordered from it come back into the same chart, with abnormal values flagged.
-          href: /features/lab/
-        - label: Prescribe
-          body: A prescription takes about thirty seconds, with a drug-interaction check as you write. Cura AI can draft the note, and you confirm it.
-          href: /features/emr/
-        - label: Pay
-          body: The invoice is built from what was ordered in the consult, part payments included, and the receipt can go to the patient on WhatsApp.
-          href: /features/billing/
-        - label: Dispense
-          body: The pharmacist dispenses from the prescription on screen, with batch and expiry recorded, so the stock count falls as medicines leave the counter.
-          href: /features/pharmacy-and-inventory/
-        - label: Follow up
-          body: The reminder for the next visit and the lab report reach the patient on WhatsApp, sent by the software rather than from a personal phone.
-          href: /features/whatsapp/
-        - label: Report
-          body: Each morning the owner sees revenue and the status of every claim on one screen, for one branch or all of them.
-          href: /features/reports-and-dashboards/
-
   - discriminant: hubGrid
     value:
       id: modules
@@ -74,6 +45,7 @@ sections:
         The front desk, the chart, the money and growth. Every module writes to the same patient record,
         so the name typed at reception is the name on the bill and on the claim.
       columns: 3
+      layout: panels
       groups:
         - title: Front desk
           items:
@@ -136,6 +108,8 @@ sections:
     value:
       id: plans
       heading: What each plan includes
+      open: true
+      wideIntro: true
       intro: >-
         Professional is {price:usd.professional.annual} and Premium is {price:usd.premium.annual} per
         doctor per month, billed annually, and Enterprise is priced on a quote. Pharmacy, lab
@@ -143,29 +117,847 @@ sections:
         Premium you can add them one at a time. Prices in rupees, and the quarterly prices, are on the
         [pricing page](/pricing/).
 
-  - discriminant: prose
+  - discriminant: splitContent
     value:
-      id: integrations
-      heading: Integrations
-      body: >-
-        A clinic rarely runs on one system alone. A connection to your own lab machines or to an existing
-        hospital system is scoped per project. It comes with Enterprise, and on Professional or Premium it
-        is an add-on.
+      id: emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### 30 Second Prescription
+        Generate detailed prescriptions in just 30 seconds and provide instantly in any language via print or WhatsApp, SMS, or Email.
 
-  - discriminant: proofBlock
+        ### Customised EMR
+        Tailored EMR to suit every doctor's specialty, workflow, and preferences, ensuring a personalised experience.
+
+        ### AI-Powered Assistance
+        With an AI assistant, complete prescriptions in three clicks, saving time on your documentation processes.
+
+        ### Visual Health Trend Analysis
+        Display vitals, lab reports, and clinical parameters as charts and graphs for easy visualisation of patient's health trends.
+
+        ### Efficient Patient Summaries
+        Quick access to auto-generated patient summary and facesheet for a comprehensive review of case histories, saving valuable time and presenting important data intelligently.
+
+        ### Efficient Point and Click Input
+        Utilises a simple point-and-click UI for recording chief complaints, medical history, vitals, and more. Includes customizable examination forms, auto-complete notes, diagnosis, medications, investigations, referral, follow-up, and patient guidelines. Offers the flexibility to choose specific controls without navigating through lengthy screens.
+
+        ### Comprehensive Medical History Record
+        Record the Medical History of a patient in your own custom intake form. It can be as detailed or short as you want. Details of chronic illnesses, family, social and obs-gynae history, substance use, alternative therapies, COVID history, and immunizations can be recorded. These details are then displayed as part of the patient's face sheet, saving a lot of time in subsequent visits.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in detail
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/1_EMR.png
+        alt: 'The Easy Clinic EMR: chief complaints, vitals, clinical notes, diagnosis and medications on one screen, with a prescription language picker, a dosage selector and a fasting blood sugar trend chart'
+        frame: none
+
+  - discriminant: testimonialRow
     value:
-      id: ratings
-      heading: How Easy Clinic is rated on Capterra and Google
-      intro: >-
-        The Capterra link opens the reviews themselves, so you can read what reviewers wrote before you
-        book a demo.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Oriented Design
+        Tailored for specialists, super-specialists, and clinic chains, addressing diverse healthcare needs. [Choose your specialty](/specialties/) for a focussed read.
+
+        ### AI-Driven Diagnostic Support
+        Intelligent AI assistance for differential diagnosis and warning against adverse drug events, crucial for patients with multiple chronic conditions.
+
+        ### Customizable Template and Form Builder
+        Easily match any paper forms with our flexible template builder, ensuring a smooth digital transition.
+
+        ### Comprehensive Patient Data Visualization
+        Single-screen access to longitudinal patient visit data, enhancing the efficiency of patient care.
+
+        ### Efficient Access to Common Resources
+        Quick access to frequently used medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Seamless Care Team Collaboration
+        Facilitates effective communication and coordination between nurses, doctors, and other caregivers for integrated patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/2_EMR-853x1024.png
+        alt: 'The Easy Clinic EMR for specialists: a signed prescription beside a summary of the last visit and the patient facesheet, with a Complete Blood Count trend chart and results table below'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: financial-accounting
+      heading: Advanced Financial accounting
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Robust Security Controls
+        Ensures comprehensive security measures to prevent fraudulent transactions and unauthorised discounts, safeguarding financial integrity.
+
+        ### Third-Party Payor Management
+        Efficiently manage dealings with insurance companies, corporate tie-ups, TPAs, and e-claiming processes for streamlined financial operations.
+
+        ### Customizable Billing Workflows
+        Create or modify workflows to centralise and ensure accuracy in billing for various services like consultations, pharmacy, lab tests, procedures, vaccinations, and teleconsultations.
+
+        ### Dynamic Price List Module
+        Advanced price list module enables management of multiple price lists based on payor, location, customer type, clinician, and visit type, with automated price selection to eliminate manual input errors.
+
+        ### Detailed Till Management
+        Comprehensive till management for balancing various payment modes such as cash, credit, and online payments, complete with a detailed audit trail for transaction accountability.
+
+        ### Seamless Integration with Financial Software
+        Offers integration capabilities with third-party financial software solutions, enhancing the efficiency of your financial ecosystem.
+      chipsLabel: And more...
+      chips:
+        - Cost of Goods Sold
+        - Cash Balance
+        - Aging Report
+        - Dynamic Location Based Billing
+        - CPOE Billing
+        - Advance Payments
+        - Credit Limits
+        - Doctor Specific Price List
+        - Write-off & Void Control
+      link:
+        label: Click to read financial accounting features in detail
+        href: /features/billing/
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/6_Invoice_1.png
+        alt: 'Easy Clinic invoice settings: role permissions for administrators, doctors and nurses, invoice permissions with PII masking, and an invoice workflow with the roles that can activate, access and be assigned each step'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/3_Video_consultent.png
+        alt: 'An Easy Clinic teleconsultation: the doctor on a video call beside the visit notes, diagnosis and medications, with an online payment request and the patient facesheet'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: insurance
+      heading: Insurance and 3rd Party Payor Management
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Third-Party Payors and Custom Price Lists
+        Set up insurance, corporate, TPA, or any other third-party payor, with the ability to assign custom price lists for their members, ensuring tailored billing options.
+
+        ### Membership Category and Billing Rules Creation
+        Create membership categories with specific invoicing limits, co-payment rules, and define what's included or excluded in the coverage.
+
+        ### Defined Claim Submission and Settlement Protocols
+        Establish clear protocols for claim submissions and settlements, accommodating both electronic and manual claiming processes.
+
+        ### Automated Billing for Accurate Claims
+        Automate billing with correct items and prices to reduce the likelihood of claim rejections or delays, enhancing the efficiency of the claims process.
+
+        ### Claim Status Tracking Dashboard
+        Monitor the status of claims through an easy-to-use dashboard, providing real-time updates and oversight.
+
+        ### Integration with Electronic Claim Platforms
+        Easy Clinic is developed with a focus on integration, able to connect with various electronic claiming platforms, offering flexibility and adaptability to diverse healthcare billing environments.
+      chipsLabel: And more...
+      chips:
+        - Bulk Claim Submission
+        - Bulk Payment Settlement
+        - Claim Tracking
+        - Multi-Payor Billing in Single Visit
+        - Automated Co-Pay and Deductions
+        - Corporate Clients as Payor
+        - Employee & Dependant management
+        - Multi-Level Member Classification
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/7_Invoice.png
+        alt: 'Easy Clinic payor management: a payor category with invoice limits and exclusions, claim charts and gauges, and a TPA selling price list'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: appointments
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing doctors to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: inventory
+      heading: Efficient Inventory management
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      mediaTop: true
+      alignTop: true
+      body: |-
+        ### Comprehensive Inventory Management
+        Manages products, services, packages, and consumables with multi-level categorisation and custom fields.
+
+        ### Seamless EMR Integration
+        Integrates smoothly from EMR prescription to billing and pharmacy dispensing, enhancing workflow efficiency.
+
+        ### Stock Availability in Real Time
+        Offers doctors a real-time view of stock availability at the time of prescribing including options to search for alternatives.
+
+        ### Detailed Unit of Measure (UOM) Capabilities
+        Allows for defining multiple units or pack sizes for each product, tailored for each transaction type, whether for purchase or sale. This feature brings in versatility and precision in inventory management.
+
+        ### Automatic Deduction of Consumables
+        Consumables or non-billables that are part of a service, package or product are automatically adjusted, maintaining accurate stock levels.
+
+        ### AI-Assisted Reorder Management
+        AI assistant helps define reorder levels and quantities based on past trends and lead times, optimising stock management.
+
+        ### Powerful Price List Management
+        Manages unique price lists for different payors, patient types, or locations without manual input, minimising errors.
+
+        ### Automatic Tracking with Alerts
+        Tracks drugs, supplies, and equipment in real time, with alerts for low supply levels, expiration dates, and reorder times.
+
+        ### Custom Package Treatments
+        Allows creation of bespoke package treatments with multiple items, billable in one visit or across multiple visits.
+
+        ### Barcode Support for Efficiency
+        Supports barcodes to expedite inventory transactions, including scanning vendor barcodes or generating custom ones.
+
+        ### Role-Based Access Control
+        Ensures fine-grained access control based on user roles, coupled with a complete transaction audit for security.
+
+        ### Bulk Inventory Upload
+        Facilitates uploading or adjusting inventory in bulk via file upload for streamlined management.
+
+        ### Advanced Inventory Reporting and Dashboard
+        Provides a comprehensive view of stock movement, current stock levels, cost of goods sold, and analysis of fast vs slow-moving items, seasonal trends, etc., through a detailed reporting and dashboard module.
+      chipsLabel: And more...
+      chips:
+        - Package Pricing
+        - Separate Purchase & Sales Units
+        - Internal Barcode
+        - Product Classification
+        - Taxable vs Non Taxable
+        - Payor Price List
+        - Location Price List
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/9_01_Inventory.png
+        alt: 'Easy Clinic inventory: products and services, a stock list with low-stock and reorder flags, purchase and selling units of measure, and an order versus consumption chart'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: logistics
+      heading: Streamlined Logistics and Stock Movement
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive Logistics Processes
+        Manages end-to-end logistics including requisition requests, purchase orders, goods receipt, returns, stock transfers, stocktaking, and stock adjustments.
+
+        ### Supplier and Vendor Management
+        Offers the ability to manage suppliers and vendors, with integration options for real-time checks on lead time, stock availability, and pricing.
+
+        ### Efficient Requisition and Purchase Orders
+        Generate requisitions or purchase orders with a single click, incorporating checks on reorder levels, preferred vendors, purchase prices, and lead times.
+
+        ### Advanced Goods Receipt Module
+        Enables fast goods intake using barcodes or file import and supports split orders, free samples, shortfalls, etc.
+
+        ### Streamlined Stock Transfers
+        Easily transfer stock between locations or from a central warehouse to different clinics, with complete tracking and audit logs for goods sent, in transit, and received.
+
+        ### Stock take Flexibility
+        Conduct quick or comprehensive stock counts with options to iterate counts before finalising any stock variance.
+
+        ### Stock Adjustment with Authorisation
+        Perform stock adjustments for shortfalls, excess, expired or damaged products, with proper authorisation checks and audit logs.
+
+        ### Fool-Proof Workflow Engine for Internal Control
+        Easy Clinic is equipped with a robust workflow engine that mandates the review and verification of all inventory movements and transactions. This system allows for multiple levels of checks as needed, along with a customizable approval step.
+      chipsLabel: And more...
+      chips:
+        - Pharmacy Low Stock Order Book
+        - Multi Level Authorisation
+        - Complete Logistics Modules
+        - Multiple Warehouse
+        - Centralised Distribution
+        - Cost Control through AI
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/10_01_Logistics.png
+        alt: 'Easy Clinic purchase orders: a purchase order with its items and amounts, an opening balance notice, and fill rate, stock accuracy and capacity charts'
+        frame: none
+      media2:
+        kind: screenshot
+        src: ../../assets/images/solutions/10_02_Logistics.png
+        alt: 'An Easy Clinic requisition and purchase order with goods receipt details, defect rate, on-time supplies and lead time figures, and supplier availability charts'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: pharmacy
+      heading: Integrated Pharmacy & Simplified Dispensing
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Seamless Prescription Transfer
+        Enables automatic transfer of prescriptions from doctors to the pharmacy for quick and accurate dispensing.
+
+        ### Refill Order Tracking and Reminders
+        Tracks refill orders for patient's subsequent visits and sends automated reminders to patients for refill collection.
+
+        ### Label Printing and Regulatory Compliance
+        Provides options to print labels and other necessary regulatory forms, ensuring compliance with healthcare regulations.
+
+        ### Expiry Management
+        Features expiry reports and warnings at the time of sale, with automatic prioritisation of product batches nearing expiry.
+
+        ### Pre-Visit Price Look-up and Quoting
+        Allows pharmacists to look up prices and details of all pharmacy items and generate quotes for patients prior to their visit.
+
+        ### Controlled Medication Alerts
+        Includes warnings and checks for dispensing regulated or controlled medications, enhancing patient safety.
+
+        ### OTC Product
+        Provides the ability to add over-the-counter (OTC) products at the time of dispensing, enhancing the range of services offered by the pharmacy.
+
+        ### Stand-Alone Dispensing and Refill Collection
+        The pharmacy module can function independently for dispensing or refill collection, without the need to go through the EMR management or appointment queue. This facilitates quicker service for patients requiring only pharmacy services.
+      chipsLabel: And more...
+      chips:
+        - Low Stock Alert
+        - Barcode support
+        - Brand Substitution
+        - Drug Information
+        - ADR Alert
+        - Refill Management
+        - Home Delivery
+        - Online Payment
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/11_Pharmacy_2.png
+        alt: 'The Easy Clinic pharmacy: dispensing from a prescription with batch and expiry, a medicine label, an expiring list, monthly progress and today''s report'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: lab
+      heading: Lab management & reporting
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### End-to-End Laboratory and Radiology Management
+        Offers comprehensive management for in-house laboratories or radiology departments, covering all processes from order requests to reporting, using streamlined workflows. Also facilitates management of tie-ups or referrals with third-party labs.
+
+        ### Direct Order Request Routing
+        Physician EMR lab orders and requests are directly routed to the lab, eliminating the need for manual input and ensuring seamless integration.
+
+        ### Automated Lab Test Billing
+        Implements a customizable workflow for lab test billing, for example automatically adding tests to invoice upon sample collection, streamlining the billing process.
+
+        ### Controlled Specimen to Reporting Process
+        Manages all steps from specimen collection to reporting, controlled and authenticated by self-defined workflow steps for accuracy and compliance.
+
+        ### Custom Templates for Results with Abnormal Value Flagging
+        Utilises individual templates for each investigation to record results, including seamless flagging of abnormal values for enhanced clarity and precision.
+
+        ### Graphical Visualisation of Lab Results
+        Enables lab result values to be visualised as graphs, facilitating easy longitudinal comparison and interpretation.
+
+        ### Device and Software Integration
+        Easy Clinic's Lab module offers integration capabilities with various devices or dedicated lab management software, facilitated through its extensible platform. This flexibility allows for a seamless connection and data exchange between different systems, enhancing the lab's operational efficiency.
+      chipsLabel: And more...
+      chips:
+        - Device Integration
+        - Radiology Imaging
+        - Third Party Lab Tie-up
+        - Reports Inbox
+        - Direct Patient Messaging
+        - Sample Collection
+        - Consumables Management
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/12_Investigation_1.png
+        alt: 'Easy Clinic lab orders: investigations ordered from the chart with specimen and lab, a test picker with prices, and the order status list'
+        frame: none
+      media2:
+        kind: screenshot
+        src: ../../assets/images/solutions/12_Investigation_2.png
+        alt: 'Easy Clinic lab results: a Complete Blood Count with abnormal values, a result entry form, and the lab workflow settings'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: workflow
+      heading: Workflow Manager for Custom Process Steps
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive Transaction Management
+        Allows organisations to define and manage steps for complex or controlled transactions with authorisation provided at the role or user level. Examples include the process from creation to approval of a Purchase Order, or steps for granting discounts beyond standard limits or for creating a visit linked to a 3rd party payor.
+
+        ### Sophisticated No-Code Workflow Creation
+        Enables the creation of intricate workflows using a no-code graphical designer, automating both human- and system-based processes with features like action, transition, synchronisation, and subprocess management.
+
+        ### Role-Based Access Control
+        Implements role-based access control to protect sensitive information within workflows, customising visibility and edit permissions for each user or role.
+
+        ### Complete Audit Logs
+        Maintains complete audit logs, providing detailed insights on which user accessed or completed a step in the workflow, including date and time tracking.
+      chipsLabel: And more...
+      chips:
+        - Control each step of a Transaction
+        - Manual to Automated Process Steps
+        - Integrated with Security & Authorisation
+        - Unlimited Permutations
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/15_Workflow.png
+        alt: 'The Easy Clinic workflow editor: the steps of a visit, the roles that can activate and access each step, operations and transitions, and an activity log with durations'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: patient-engagement
+      heading: Patient Engagement, Portal and Mobile App
+      intro: Engaging patients with your clinic is key to ensuring their satisfaction, better clinical outcomes, and increased marketing and referrals for your services. Easy Clinic automates many administrative tasks, saving significant time for healthcare providers.
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive Patient Engagement Platform
+        Streamlines and automates patient interactions, offering features like medical record access, appointment booking, medication ordering, lab visit scheduling, online payment, and feedback provision.
+
+        ### Self-Registration and Family Account Management
+        Patients can self-register and manage accounts for themselves and family members, with a single account catering to all.
+
+        ### Custom Forms for Patient Intake
+        Offers the ability for patients to fill out custom intake or consent forms during initial or subsequent visits.
+
+        ### Flexible Appointment and Queue Management
+        Patients can book appointments or add themselves to a queue in walk-in clinic models, with features for self check-in and real-time queue progress tracking.
+
+        ### Access to Medical Records and Orders
+        Enables patients to view past prescriptions, lab reports, and medicine orders, centralising their healthcare information.
+
+        ### Educational Material and Notifications
+        Allows clinics to publish clinical guidelines or patient education material, notifying patients when relevant content is available.
+
+        ### Customisable Monitoring Plans
+        Doctors can set up custom monitoring plans, especially beneficial for chronic patients, with reminders for patient inputs and abnormal value alerts on the monitoring dashboard.
+
+        ### Feedback Mechanism via Multiple Channels
+        Provides a simple feedback mechanism for patients through WhatsApp, SMS, or the patient portal, with options to share feedback publicly or keep it internal.
+
+        ### Custom Branding for Patient Portal and App
+        The patient portal, mobile app, and communication numbers can all be custom branded to reflect your clinic's identity, providing a consistent and personalised experience for patients.
+      chipsLabel: And more...
+      chips:
+        - Online Appointment Booking
+        - Past Visit Records
+        - Medication Reminders
+        - Mobile App or Browser Compatible
+        - Two-Way SMS
+        - Automated WhatsApp Assistant
+      link:
+        label: Read more about Easy Clinic's patient engagement & app offering
+        href: /features/patient-engagement/
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/16_Portal.png
+        alt: 'Easy Clinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: interoperability
+      heading: Easy Clinic Interoperability, Integrations and Customisations
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Interoperability
+        Easy Clinic is designed with a strong focus on interoperability, and built on open API standards. This approach ensures seamless communication and data exchange between different healthcare systems and applications. By adhering to these standards, Easy Clinic facilitates efficient, accurate, and secure sharing of patient data, which is essential for coordinated care and improved health outcomes.
+
+        ### Integrations
+        At the core of Easy Clinic's functionality is its ability to integrate effortlessly with any third-party solution or hardware. This capability means that whether it's connecting with advanced diagnostic equipment, insurance systems, CRM solutions, or any other specialised software, Easy Clinic can synchronise and function harmoniously with these tools. Such integrations are pivotal for clinics and hospitals looking to leverage existing technologies, thereby enhancing their service offerings and operational efficiencies.
+
+        ### Support for Multiple Coding Standards
+        Easy Clinic is equipped with built-in features to support various coding standards, including ICD-10, SNOMED, LOINC, and CPT, ensuring comprehensive data compatibility and adherence to global healthcare coding practices.
+
+        ### Customisations
+        Developed on a proprietary low-code platform, Easy Clinic offers unparalleled customisation possibilities. This unique aspect allows for the development of bespoke features and functionalities tailored to the specific needs of enterprise clients. Whether it's adapting to specific workflow requirements, incorporating unique data fields, or integrating custom-built modules, Easy Clinic's low-code platform enables rapid and efficient customisations. This adaptability ensures that healthcare providers can have a system that not only meets their current needs but is also scalable and flexible enough to evolve with their future requirements.
+      chipsLabel: And more...
+      chips:
+        - HL7
+        - DICOM
+        - FHIR
+        - ABHA
+        - HIPAA
+        - GDPR
+        - CRM
+        - Financial ERP
+        - Messaging & Communication
+        - Lab Software
+        - Radiology Devices
+        - One size does not fit all
+        - Unique customisations
+        - Free from bloated hard coding
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/17_Integration.png
+        alt: 'Easy Clinic open APIs for AI processes and appointments, with HL7, DICOM, FHIR, ABHA, HIPAA, GDPR, SNOMED, ICD-10, LOINC and CPT marks'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: security
+      heading: User Access, Data Security and Compliance
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Advanced User Access Control
+        This feature manages access rights across all data and functions based on user roles. It ensures security and efficiency by maintaining an audit trail for all key transactions.
+
+        ### Role Customization with Enhanced Security
+        Allows for the creation of various roles like Administrator, Doctor, Pharmacist, etc. with the option to customise access with fine-grained security settings based on specific needs.
+
+        ### Robust Data Protection
+        Data within Easy Clinic is protected using industry leading security standards, ensuring high-level encryption both in transit and for stored data.
+
+        ### Strict Data Privacy and Ownership
+        Adheres to a strict policy of data privacy, ensuring that client data, both identifying and non-identifying, is never misused or shared with anyone. The data exclusively belongs to the client.
+
+        ### Global Compliance Standards
+        Meets international privacy and data security standards such as HIPAA, PCI-DSS, and GDPR, ensuring global compliance and data protection.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/18_Security.png
+        alt: 'Easy Clinic permission management: role permissions for administrators, doctors and nurses, PII settings, invoice permissions and an advanced role permission grid, with HIPAA, PCI DSS and GDPR marks'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: multi-location
+      heading: Centralised Control & Scalability for multi-location clinics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Management Across Locations
+        Offers a centralised solution for managing multiple clinic locations, ensuring consistent and unified operational control.
+
+        ### Scalable Infrastructure for Growth
+        Designed to easily scale up, accommodating the growth and expansion of clinic chains without compromising on performance or functionality.
+
+        ### Centralised Data Access and Reporting
+        Provides central access to patient records, financial data, and operational reports across all locations, enhancing decision-making and administrative efficiency.
+
+        ### Streamlined Multi-Site Operations
+        Facilitates streamlined operations across different sites, from appointment scheduling to inventory management, ensuring uniformity in processes and patient experience.
+
+        ### Integrated Communication for Cohesive Functioning
+        Enables integrated communication channels within the system, fostering cohesive functioning and collaboration among various clinic locations.
+
+        ### Local & Global Expansion Capability
+        Easy Clinic is adept at scaling operations from a single clinic to a widespread chain, whether nationally or internationally, accommodating the dynamic growth needs of healthcare providers.
+
+        ### Versatile Clinic Management
+        Facilitates the creation, monitoring, and management of various clinic types, including owned clinics, franchisees, mobile medical units, and associate clinics. Offers customizable access levels to data and features within Easy Clinic for each type of clinic, ensuring tailored operational control.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/19_Multi_location.png
+        alt: 'Easy Clinic for multiple locations: a clinic location list, adding a new clinic, a tenant and location picker, a dashboard filtered by location, and a stock transfer between clinics'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
 
 faq:
   - question: Can I change the EMR to fit the way I write notes?
@@ -206,23 +998,7 @@ faq:
       also get the MOH 705 and DHIS2 reports from the same records.
 
 links:
-  relatedHeading: The same modules, set up for your kind of clinic
-  related:
-    - href: /solutions/solo-clinic/
-      label: Solo doctor clinic
-      description: One doctor and a receptionist, on the Professional plan from {price:usd.professional.annual} per doctor per month.
-    - href: /solutions/polyclinic/
-      label: Polyclinic
-      description: Specialists who share rooms and one patient record, with roles that decide who sees what.
-    - href: /solutions/clinic-chain/
-      label: Clinic chain
-      description: One chart and one set of SOPs across every branch; the largest chain on Easy Clinic has {fact:largestChain} locations.
-    - href: /solutions/hospital-opd/
-      label: Hospital OPD and nursing home
-      description: Queues, pharmacy, lab and claims for a busy outpatient department.
-    - href: /solutions/ngo-clinics/
-      label: NGO and mission clinics
-      description: Patient records and reports for programme clinics and mission hospitals.
+  related: []
 
 closing:
   heading: See the modules your clinic would use

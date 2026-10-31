@@ -25,12 +25,14 @@ interface Props {
   fullWidthText?: boolean;
   /** The hero image without its grey border (owner request 2026-10-27: /contact-us/). */
   plainImage?: boolean;
+  /** A hero image with 18px corners, full width when stacked and capped at 36rem beside the text, so a near-square illustration sits level with it (owner request 2026-10-30: /features/). */
+  compactImage?: boolean;
   /** The feature-page hero: a heading written to fit two lines, and a screenshot card as tall as the text. */
   largeHeading?: boolean;
   byline?: { author: ReferenceDataEntry<'authors'> | null; reviewedBy?: ReferenceDataEntry<'authors'>; lastUpdated: Date | null };
 }
 
-const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline, noColumnGap = false, fullWidthText = false, plainImage = false } = Astro.props;
+const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline, noColumnGap = false, fullWidthText = false, plainImage = false, compactImage = false } = Astro.props;
 const registry = await getRegistry();
 const regulators = heroStrip?.regulators.length ? await getEntries(heroStrip.regulators) : [];
 const facts = heroStrip?.ratings ? (await getEntry('facts', 'facts'))!.data.facts : null;
@@ -139,11 +141,13 @@ const stats = Astro.slots.has('stats') ? (await Astro.slots.render('stats')).tri
           sizes="(min-width: 90rem) 680px, (min-width: 60rem) 48vw, 100vw"
           class:list={[
             'relative',
-            plainImage && '[&_img]:rounded-[18px]',
+            (plainImage || compactImage) && '[&_img]:rounded-[18px]',
+            compactImage && 'max-w-none lg:max-w-[36rem] lg:justify-self-end',
             'lg:col-start-2 lg:row-[1/span_2] lg:self-center',
             // Stacked (below 1200px), a photo or illustration stays at most 36rem wide, in line with the text above it;
             // a screenshot keeps the full width so its detail stays readable.
-            heroMedia.kind !== 'screenshot' && 'w-full max-w-[36rem] lg:max-w-none',
+            heroMedia.kind !== 'screenshot' && !compactImage && 'w-full max-w-[36rem] lg:max-w-none',
+            compactImage && 'w-full',
           ]}
         />
       )

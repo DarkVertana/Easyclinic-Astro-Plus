@@ -81,6 +81,7 @@ const heroPanel = d.heroPanel;
     heroStrip={d.heroStrip}
     fullWidthText={record.path === '/'}
     plainImage={record.path === '/contact-us/'}
+    compactImage={record.path === '/features/'}
     largeHeading={Boolean(heroPanel) || ['feature', 'solution', 'specialty', 'ai', 'curapilot'].includes(record.family) || ['/solutions/', '/specialties/', '/countries/', '/pricing/', '/compare/', '/customers/', '/start-a-clinic/', '/switch/', '/blog/'].includes(record.path)}
     byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
   >
