@@ -20,6 +20,7 @@ import Section from '../components/ui/Section.astro';
 import Md from '../components/ui/Md.astro';
 import Sections from '../components/blocks/Sections.astro';
 import ContactCard from '../components/blocks/ContactCard/ContactCard.astro';
+import BlogLead from '../components/blocks/PostIndex/BlogLead.astro';
 import { getEntry } from 'astro:content';
 import { getRegistry, type PageRecord } from '../lib/content/registry';
 import { breadcrumbTrail } from '../lib/seo/breadcrumbs';
@@ -86,6 +87,8 @@ const heroPanel = d.heroPanel;
     byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
   >
     {heroPanel && <HeroPanel slot="media" src={heroPanel.src} alt={heroPanel.alt} />}
+    {/* The blog's hero shows the newest guide in place of an image. */}
+    {record.path === '/blog/' && <BlogLead slot="media" />}
     {
       heroPanel && (
         <ul slot="stats" class="mt-7 grid grid-cols-[auto_auto] justify-start gap-x-8 gap-y-2 text-base text-ink min-[45rem]:flex min-[45rem]:flex-wrap min-[45rem]:gap-x-3" aria-label="Easy Clinic in numbers">

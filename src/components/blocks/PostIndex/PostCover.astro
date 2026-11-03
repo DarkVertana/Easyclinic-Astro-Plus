@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import type { Cover } from './covers';
+
+/**
+ * A card's cover at 16:9. A photo fills the frame; a product screenshot sits inset on the brand wash, cropped at
+ * the right and bottom like a window seen from its corner. Decorative (empty alt): the card's title names the guide.
+ */
+interface Props {
+  cover: Cover;
+  sizes: string;
+  /** The hero's lead card: loads first instead of lazily. */
+  priority?: boolean;
+  class?: string;
+}
+const { cover, sizes, priority = false, class: className } = Astro.props;
+const widths = [400, 640, 960];
+---
+
+<div class:list={['relative aspect-[16/9] overflow-hidden bg-surface-alt', className]}>
+  {
+    cover.kind === 'photo' ? (
+      <Image
+        src={cover.src}
+        alt=""
+        widths={widths}
+        sizes={sizes}
+        format="webp"
+        quality={75}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : 'auto'}
+        class="post-cover-img absolute inset-0 size-full object-cover"
+      />
+    ) : (
+      <Image
+        src={cover.src}
+        alt=""
+        widths={widths}
+        sizes={sizes}
+        format="webp"
+        quality={80}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : 'auto'}
+        class="post-cover-img absolute left-[8%] top-[12%] w-[118%] max-w-none rounded-tl-[10px] bg-white shadow-[0_0_0_1px_var(--border),0_12px_32px_-12px_rgb(10_37_64/0.25)]"
+      />
+    )
+  }
+</div>

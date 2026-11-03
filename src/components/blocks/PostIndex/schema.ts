@@ -23,6 +23,6 @@ export const schema = () =>
         }),
       )
       .default([]),
-    /** Show the "Jump to a topic" links once at least this many topic groups are on the page. */
+    /** Show the topic filter once at least this many topic groups are on the page. */
     jumpLinksFrom: z.number().int().min(2).default(3),
   });

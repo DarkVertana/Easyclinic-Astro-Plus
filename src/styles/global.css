@@ -419,6 +419,32 @@
     color: inherit;
     text-decoration: none;
   }
+  /* A card that is one link: its title link (.card-link-title) stretches over it with ::after. Hover, pressed and
+     focus belong to the whole card. */
+  .card-link {
+    transition: border-color 120ms ease, box-shadow 120ms ease;
+  }
+  .card-link:hover {
+    border-color: var(--color-blue-500);
+    box-shadow: 0 1px 2px rgb(10 37 64 / 0.04), 0 8px 24px -8px rgb(10 37 64 / 0.12);
+  }
+  .card-link:hover .card-link-title {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+  .card-link:hover .card-link-arrow {
+    color: var(--link);
+  }
+  .card-link:active {
+    border-color: var(--link-hover);
+  }
+  .card-link:has(.card-link-title:focus-visible) {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+  .card-link-title:focus-visible {
+    outline: none;
+  }
   .link-plain:hover {
     color: var(--link-hover);
     text-decoration: underline;
