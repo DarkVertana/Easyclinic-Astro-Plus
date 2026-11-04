@@ -19,9 +19,10 @@ const role = authorData ? authorData.role : null;
 
 <p class:list={['text-sm text-ink-muted', className]}>
   <span>By <span class="font-semibold text-ink">{name}</span>{role && `, ${role}`}</span>
-  {reviewer && <span> · Reviewed by {reviewer.name}</span>}
-  <span class="whitespace-nowrap">
-    · Last updated
+  {/* Below 640px each fact takes its own line, so no separator dot starts a line. */}
+  {reviewer && <span class="block sm:inline"><span class="hidden sm:inline"> · </span>Reviewed by {reviewer.name}</span>}
+  <span class="block whitespace-nowrap sm:inline">
+    <span class="hidden sm:inline">·</span> Last updated
     {lastUpdated ? <time datetime={isoDate(lastUpdated)}>{formatDate(lastUpdated)}</time> : need(Astro, 'last-updated date', null)}
   </span>
 </p>

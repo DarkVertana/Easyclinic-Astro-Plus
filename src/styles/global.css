@@ -482,6 +482,10 @@
   .prose-md a {
     text-decoration: underline;
   }
+  /* Cards inside an article (InlineCta) carry buttons, not text links. */
+  .prose-md .not-prose a {
+    text-decoration: none;
+  }
   .prose-md strong {
     font-weight: 600;
     color: var(--ink-heading);

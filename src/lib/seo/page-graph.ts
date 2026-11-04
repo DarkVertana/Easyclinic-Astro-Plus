@@ -64,7 +64,8 @@ export async function pageGraph(record: PageRecord, trail: Crumb[]): Promise<Rec
     });
   }
   if (hasBreadcrumb) nodes.push(breadcrumbList(site, url, trail));
-  if (d.faq.length) nodes.push(faqPage(url, d.faq));
+  // Posts end with the article (GuidePage.astro shows no FAQ there), so they carry no FAQPage either.
+  if (d.faq.length && record.family !== 'post') nodes.push(faqPage(url, d.faq));
   if (record.path === '/contact-us/') nodes.push(localBusiness(site));
   if (record.path === '/about-us/') {
     const founders = (await getCollection('authors')).filter((a) => /founder/i.test(a.data.role)).map((a) => a.data.name);
