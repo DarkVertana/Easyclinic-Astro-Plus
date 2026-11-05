@@ -1,7 +1,7 @@
 # /general-practitioner-emr/ (spec 5.15 SpecialtyPage template). There is no spec 4.3 keyword row and no
 # spec 5.15 must-have row for general practice, so the head keyword, title and H1 follow the Phase 3 brief.
-# The staging audit keeps this slug and merges /family-physician-emr/ into it (301 already in
-# src/data/redirects.yaml). Spec 4.5 rule 5: this page owns the GP and family physician specialty terms;
+# The staging audit kept this slug and merged /family-physician-emr/ into it; since 2026-11-05 /family-physician-emr/ is its own
+# page again (owner request) and owns the family physician terms. Spec 4.5 rule 5: this page owns the GP specialty terms;
 # /solutions/solo-clinic/ owns the size terms (solo, single-doctor, small clinic), which are not used here.
 # Grounding: capability statements the live /general-practitioner-emr/ and /family-physician-emr/ pages make
 # plainly (retrieved 2026-09-26), plans.yaml, and the live /pricing/ line that Professional is "best suited
@@ -10,21 +10,15 @@ status: published
 headKeyword: EMR for general practitioners
 secondaryKeywords:
   - GP EMR software
-  - family physician EMR
-  - family medicine EMR software
   - general practice EMR
 title: 'EMR Software for General Practitioners: Easy Clinic'
 metaDescription: >-
   EMR for general practitioners and family physicians: history and immunisations on one facesheet,
   vitals charted over years, from {price:usd.professional.annual} a doctor a month.
-h1: EMR for general practitioners and family physicians
+h1: "Optimize Your General Practice with Easy Clinic’s EMR"
 linkLabel: General practice
 eyebrow: For general practitioners and family physicians
-openingAnswer: >-
-  A general practitioner needs the long view: the whole history on one facesheet, including immunisations
-  and chronic conditions such as diabetes, with check-up reminders and referrals written in the consult.
-  The EMR comes with every plan, from {price:inr.professional.annual} per doctor per month in India or
-  {price:usd.professional.annual}, billed annually.
+openingAnswer: "Simplify patient management, from consultations to follow-ups, with our complete EMR. Stay organized with digital records, automated reminders, and streamlined workflows, enabling you to focus more on patient care with our EMR for General Practitioner solution."
 summary: >-
   The whole history on one facesheet, vitals charted over the years, referrals written in the consult and
   reminders for check-ups, with the EMR on every plan from {price:usd.professional.annual} per doctor per
@@ -33,8 +27,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/Prescription-3-2.png'
-  alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -51,9 +45,8 @@ sections:
       id: where-a-general-practice-loses-track
       heading: Where a general practice loses track
       intro: >-
-        A general practice sees the same patients for years, for a cough one month and a blood pressure
-        review the next. Most of what goes wrong is history that does not follow the patient into the
-        consulting room.
+        A general practice sees the same patients for years, for a cough one month and a blood pressure review<br class="hidden lg:inline">
+        the next. Most of what goes wrong is history that does not follow the patient into the consulting room.
       items:
         - heading: The history is in last year's file
           body: >-
@@ -64,8 +57,6 @@ sections:
             The history is taken once and kept. Chronic conditions, family and social history, substance
             use and immunisations go into the intake form and onto the patient's facesheet, which is in
             front of you at every follow-up.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: Blood pressure readings on the back of old prescriptions
           body: >-
             A patient with hypertension comes in every two months. Each reading is on that visit's
@@ -83,8 +74,6 @@ sections:
             Set the follow-up in the consult and the patient is reminded automatically, and the EMR can send
             alerts when an annual check-up or a vaccination is due. Reminders go by SMS and email on every
             plan, and by WhatsApp on Premium.
-          href: /features/patient-engagement/
-          linkLabel: Read how reminders and recalls work
         - heading: The referral goes out on a prescription slip
           body: >-
             You send a patient to a cardiologist with a note on the back of a prescription slip. The report
@@ -103,53 +92,62 @@ sections:
         The EMR and e-prescriptions come with every plan, starting with Professional. Your own templates
         and lab reports in the chart come with Premium, at {price:inr.premium.annual} per doctor per month
         in India or {price:usd.premium.annual} in US dollars, billed annually.
+      layout: grid
       items:
         - heading: The facesheet and the history
+          icon: file-heart
           body: >-
             The history is taken on an intake form, as detailed or as brief as you want it, and what it
             records lands on the patient's facesheet. The facesheet and the auto-generated summary put the
             key facts in front of you at every follow-up, and each past visit stays on the same record
             with its diagnosis and treatment.
           bullets:
-            - Chronic conditions, with family and social history
-            - Substance use and obs-gynae details
-            - Immunisations and COVID history
-            - Alternative therapies the patient uses
+            - History taken on an intake form, detailed or brief
+            - Each past visit kept with its diagnosis and treatment
         - heading: Chronic conditions over the years
+          icon: activity
           body: >-
             Patients with diabetes or hypertension are tracked over the long term. Vitals and other clinical
             parameters are charted visit by visit, so a change in treatment can be read against the trend.
             On Premium, lab reports come into the chart and their values are charted as well.
+          bullets:
+            - Diabetes and hypertension tracked over the long term
+            - On Premium, lab values charted beside the vitals
         - heading: Follow-ups and check-ups
+          icon: bell-ring
           body: >-
             The follow-up is set during the consult, and the patient gets an automated reminder before it
             is due. The EMR also sends alerts when an annual check-up or a vaccination is due. Appointment
             reminders go by SMS and email on every plan, and by WhatsApp on Premium.
-          link:
-            label: Read how reminders and recalls work
-            href: /features/patient-engagement/
+          bullets:
+            - An automated reminder before each follow-up is due
+            - Reminders by SMS and email, and WhatsApp on Premium
         - heading: Referrals and reports from outside
+          icon: route
           body: >-
             Referrals are written in the consult and managed from the patient's record, so the referral
             stays with the rest of the history. Reports and images that come back from a specialist or a
             scan centre are uploaded to the same record.
+          bullets:
+            - Referrals written in the consult and kept on the record
+            - Specialist and scan centre reports uploaded to the record
         - heading: Your own templates for the conditions you see most
-          plan: premium
+          icon: layout-template
           body: >-
             Family practice has its regular conditions, such as diabetes or a respiratory infection, and a
             template for each saves writing the same note from scratch. On Premium you can have a template
             for each of them, and turn your paper forms into digital ones with the form builder.
-          link:
-            label: Compare what each plan includes
-            href: /pricing/
+          bullets:
+            - A template for each condition you see most, on Premium
+            - Paper forms turned into digital ones with the form builder
         - heading: Cura AI drafts the note
-          plan: professional
+          icon: sparkles
           body: >-
             Cura AI (documentation) comes with every plan. It drafts the visit note for you to review and
             sign, and it is optional: a doctor who prefers to write every note writes it in the same chart.
-          link:
-            label: Read what Cura AI does
-            href: /ai/
+          bullets:
+            - Drafts the visit note for you to review and sign
+            - Optional for a doctor who prefers to write every note
 
   - discriminant: featureRows
     value:
@@ -158,8 +156,12 @@ sections:
       intro: >-
         A general practice sees many of its patients without a booking, so the visit starts at the desk
         and ends with the next appointment. The appointment book and billing come with every plan.
+      tone: plain
+      layout: list
+      linkArrow: false
       items:
         - heading: 'At the desk: the token and the queue'
+          icon: calendar-clock
           body: >-
             A walk-in gets a token number and joins the day's list beside the booked patients, first come
             first served, and a patient who needs to be seen sooner can be moved up as a priority. The desk
@@ -168,20 +170,24 @@ sections:
             label: Read how the appointment book works
             href: /features/appointment-scheduling/
         - heading: 'Before the consult: triage'
+          icon: activity
           body: >-
             Triage is part of the EMR, for deciding who needs to be seen first when the waiting room is
             full.
         - heading: 'In the consult: point and click'
+          icon: notebook-pen
           body: >-
             The chief complaint, the history, the vitals and the examination are recorded by pointing and
             clicking, with auto-complete for notes and diagnoses. Investigations, referrals, the follow-up
             date and advice for the patient are added in the same consult.
         - heading: The prescription, checked and sent
+          icon: pill
           body: >-
             The prescription is written on the same record, with the drug interaction check built into the
             EMR. It can be printed, or sent to the patient by SMS or email and, on Premium, by WhatsApp, and
             it can be bilingual, such as English and Swahili for clinics in Kenya.
         - heading: 'Back at the desk: the bill'
+          icon: receipt
           body: >-
             The receptionist raises the bill in one click from the clinic's service list, and on Premium the
             receipt goes to the patient on WhatsApp. Part payments are recorded against the bill, and a refund or a discount goes through only with authorisation.
@@ -189,117 +195,410 @@ sections:
             label: Read how billing works
             href: /features/billing/
 
-  - discriminant: proofBlock
+  - discriminant: splitContent
     value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        We do not yet have a general practitioner's account of this chart to put on this page. These are
-        Easy Clinic's public ratings on Capterra and Google, from clinics of every kind.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Create and Share in 30 Seconds
+        Generate detailed prescriptions in just 30 seconds and instantly share them via print, WhatsApp, SMS, or email, available in any language.
 
-  - discriminant: stepList
+        ### Personalized General Practitioner EMR
+        Tailored to your specialty, workflow, and preferences, ensuring a seamless and efficient experience.
+
+        ### AI-Driven Efficiency
+        Streamline your documentation and save time with an AI-driven assistant for quick and accurate prescription creation.
+
+        ### Visual Health Insights: Track Patient Trends with Charts and Graphs
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters using intuitive charts and graphs to improve patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently highlight key patient information for quick and easy reference.
+
+        ### Simplified Point-and-Click Interface
+        Easily document chief complaints, medical history, vitals, and more with a user-friendly interface. Enjoy features like custom exam forms, auto-complete notes, diagnoses, prescriptions, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating complex screens.
+
+        ### Complete Medical History: Customizable Intake Forms for General Practitioner Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic conditions, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient’s face sheet for quick and easy reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: training
-      heading: How long does it take to learn Easy Clinic?
-      intro: >-
-        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
-        session is 20 to 40 minutes, short enough to fit between the morning and evening clinics, so the
-        practice keeps seeing patients while the team learns.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
-          body: >-
-            The screens the front desk and the doctors use every day. Bring your receptionist, whose login
-            is part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
-          body: You work through the chart and the prescription on the kinds of cases your clinic sees.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note and prescription quicker, once the basics have become habit.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for General Practitioners
+        Customized to meet the specific needs of General Practitioner clinic chains.
 
-faqHeading: Questions general practitioners ask
+        ### AI-Powered Diagnostic Support
+        Use intelligent AI for differential diagnoses and real-time alerts on adverse drug events, designed for General Practitioner patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Effortlessly Digitize Paper Forms
+        Easily convert your paper forms into digital templates with our flexible, user-friendly builder.
+
+        ### Complete Patient Data at a Glance
+        Access the complete patient visit history on a single screen, enhancing efficiency and streamlining care.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders to streamline care.
+
+        ### Effortless Care Team Collaboration
+        Facilitates efficient communication and coordination among nurses, General Practitioners, and other healthcare providers to ensure complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both General Practitioners and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks.Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your General Practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing General Practitioners to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables General Practitioner patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any General Practitioner clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple General Practitioner clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large General Practitioner clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling General Practitioner clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for General Practitioner clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: Which Easy Clinic plan does a general practice need, and what does it cost?
-    answer: >-
-      Professional, the plan meant for general practitioners and physicians, costs
-      {price:inr.professional.annual} per doctor per month billed annually in India or
-      {price:inr.professional.quarterly} billed quarterly, and {price:usd.professional.annual} or
-      {price:usd.professional.quarterly} in US dollars. It includes the EMR, e-prescriptions, Cura AI,
-      billing and the appointment book, and the price includes a reception login, with no setup fee or
-      binding contract. Premium, at {price:inr.premium.annual} or {price:usd.premium.annual} billed
-      annually, adds WhatsApp messages, video consultations, lab reports in the chart and your own
-      templates and forms.
-  - question: Can I track patients with diabetes and hypertension over the years?
-    answer: >-
-      Yes, chronic conditions such as diabetes and hypertension are tracked over the long term, with
-      vitals and other clinical parameters charted visit by visit on the patient's record. On Premium, lab
-      reports come into the chart and their values are charted too, and you can have your own template for
-      each condition you see often.
-  - question: Does Easy Clinic remind patients about check-ups and vaccinations?
-    answer: >-
-      Yes, the EMR sends alerts when an annual check-up or a vaccination is due, and a follow-up set during
-      the consult brings the patient an automated reminder. Appointment reminders go by SMS and email on
-      every plan, and by WhatsApp on Premium.
-  - question: I have years of paper files. Can they go into Easy Clinic?
-    answer: >-
-      Yes, as scans: documents and images can be uploaded to each patient's record, so pages from the old
-      file sit beside the new visits. The history you want on the facesheet, such as chronic conditions and
-      immunisations, goes in through the intake form, which you can fill in at the patient's next visit.
-  - question: Can I dispense medicines from my clinic with Easy Clinic?
-    answer: >-
-      Yes, but not on Professional or Premium alone: pharmacy and inventory come with Enterprise, or as a
-      module added to Professional or Premium. With it, medicines are dispensed from the doctor's
-      prescription and tracked by batch and expiry date.
-  - question: Can I see follow-up patients by video?
-    answer: >-
-      Yes, on Premium, which includes video consultations: you and the patient join from a web browser on
-      a computer or a phone, and the fee can be collected online when the consult is booked. The
-      prescription is sent to the patient afterwards and carries a line saying the consult was held
-      remotely.
-  - question: Does Easy Clinic work without an internet connection?
-    answer: >-
-      No, Easy Clinic is cloud software and does not run fully offline today, so plan for a working
-      connection in the consulting room. If the line at your clinic drops often, keep a backup connection,
-      such as a mobile hotspot.
-  - question: Do I have to use the AI?
-    answer: >-
-      No, Cura AI (documentation) is optional. It comes with every plan and drafts the visit note for you
-      to review and sign, but a doctor who prefers to write every note writes it in the same chart without
-      it.
+  - question: "What is the best EMR software for general practitioner clinics?"
+    answer: "The best EMR software for GP clinics should support general consultations, patient history tracking, prescriptions, and preventive care. Easy Clinic is designed to manage the complete workflow of general practitioner clinics."
+  - question: "Does Easy Clinic support AI EMR for GP clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic track a complete patient history?"
+    answer: "Yes. Easy Clinic allows clinics to maintain detailed patient records, including past visits, diagnoses, and treatments."
+  - question: "Does Easy Clinic support chronic disease management?"
+    answer: "Yes. Easy Clinic supports long-term tracking for conditions like diabetes, hypertension, and other chronic illnesses."
+  - question: "Can Easy Clinic track preventive care and vaccinations?"
+    answer: "Yes. Clinics can manage vaccinations, routine check-ups, and preventive care plans."
+  - question: "Does Easy Clinic support prescriptions and treatment plans?"
+    answer: "Yes. Doctors can create and manage prescriptions easily."
+  - question: "Does Easy Clinic support billing and payment tracking?"
+    answer: "Yes. Billing, invoicing, and payment management are included."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Can multiple doctors use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, treatments, and revenue."
 
 links:
   hub: /specialties/
-  relatedHeading: Where general practitioners go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/solo-clinic/
-      label: Easy Clinic for a solo doctor clinic
-      description: For a doctor running their own clinic with a receptionist, on the Professional plan.
-    - href: /emr-software-in-india/
-      label: Clinic management software in India
-      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
-    - href: /emr-software-in-kenya/
-      label: Clinic software in Kenya
-      description: What a clinic in Kenya needs from its software, with prescriptions in English and Swahili.
-    - href: /features/emr/
-      label: The EMR and e-prescriptions
-      description: The chart and the prescription on every plan, with Cura AI drafting the note.
-    - href: /pricing/
-      label: Easy Clinic pricing
-      description: Professional at {price:usd.professional.annual} per doctor per month, and what Premium adds.
-
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: 'For the family doctor who keeps each family member''s care on their own record.'
+      icon: heart-handshake
+    - href: /pediatric-emr/
+      label: Paediatric EMR
+      description: 'For the children''s clinic with growth charts and a vaccine schedule by age.'
+      icon: baby
+    - href: /diabetology-emr-software/
+      label: Diabetology EMR
+      description: For the diabetes clinic that follows sugar trends and foot and eye checks.
+      icon: chart-pie
+    - href: /cardiology-emr/
+      label: Cardiology EMR
+      description: For the cardiology clinic that follows ECG reports and blood pressure trends.
+      icon: heart
+    - href: /mental-health/
+      label: Mental health EMR
+      description: For psychiatrists and psychologists, with session notes and dose changes.
+      icon: brain
+    - href: /pathology-emr/
+      label: Pathology EMR
+      description: For the pathology lab, from the test order to the report on the chart.
+      icon: file-check
 closing:
   heading: See a general practice visit on Easy Clinic
   body: >-
@@ -326,6 +625,18 @@ editorialPass:
     list.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Grounding: stated plainly on the live /general-practitioner-emr/ and /family-physician-emr/ pages (retrieved 2026-09-26): customisable intake forms capturing chronic conditions, family and social history, obs-gynae details, substance use, alternative therapies, COVID history and immunisations, fed into the face sheet; auto-generated summaries and facesheets; charts of vitals, lab reports and clinical parameters; point-and-click documentation of chief complaints, history and vitals with auto-complete notes, diagnoses, investigations, referrals, follow-ups and patient guidelines; referral management, automated follow-up, drug interaction check, triage, image and document upload, multilingual prescriptions; prescriptions shared by print, WhatsApp, SMS or email; templates for common family medicine conditions (diabetes, hypertension, respiratory infections) and preventive care reminders for annual check-ups, vaccinations and screenings (family physician page); the FAQ lines on long-term tracking of diabetes and hypertension and on vaccinations and routine check-ups; token numbers, first-come-first-serve, docket numbers and priority patients, queue status and waiting times; one-click billing from a service list, part payments, refunds and invoice voiding with authorisation, discount authorisation, receipts by WhatsApp, SMS or email; video consults in the browser with online fees and a remote-consult line on the prescription. "Professional, the plan meant for general practitioners and physicians" rests on the live /pricing/ "Best suited for: general practitioners and physicians" (facts.md section 1); plans.yaml bestFor says "A doctor running their own clinic, with a receptionist", which is size wording owned by /solutions/solo-clinic/, so it is not quoted here.'
   - 'Recruit a named general practitioner testimonial (spec 5.15 item 9): a named GP or family physician on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow, ideally about the facesheet, chronic-condition charts or referrals. Dr Sanjay Teotia (general physician) is already placed on pricing/india.yaml, and his quote is about ease of use rather than a GP feature, so he is not used here. Until then the proof block is the Capterra and Google badges with no count (review counts are null in facts.yaml).'
   - 'Plan placement (company to confirm): plans.yaml puts "Patient records and the EMR" and "E-prescriptions" on Professional but does not say whether the intake form, the facesheet, vitals charts, preventive care alerts, referral management, triage, the drug interaction check or bilingual prescriptions are on Professional. The live GP page lists them in its general EMR section, so those rows carry no plan badge and the featureRows intro names only what Premium adds; nothing says the unbadged rows are on Professional. The family medicine condition templates are shown as Premium (specialty EMR templates and your own clinical forms in plans.yaml); if they are on Professional, drop the badge. Whether SMS and email delivery of prescriptions and receipts is on Professional is also unconfirmed (plans.yaml names only SMS and email reminders).'

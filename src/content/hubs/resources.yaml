@@ -11,14 +11,14 @@ secondaryKeywords:
   - Easy Clinic pages by country
 title: 'Easy Clinic Resources: Pages by Country and Specialty'
 metaDescription: >-
-  Easy Clinic resources: pages for clinics in India, Kenya, the UAE and Nigeria, 14 specialties, clinic types
+  Easy Clinic resources: pages for clinics in India, Kenya, the UAE and Nigeria, 34 specialties, clinic types
   from solo to hospital OPD, and setup guides.
 h1: Find the Easy Clinic pages for your clinic
 linkLabel: Resources
 eyebrow: Resources
 openingAnswer: >-
   Start from your country or your specialty: India, Kenya, the UAE and Nigeria have Easy Clinic pages of their
-  own, and so do 14 specialties from ayurveda to physiotherapy. Or start from the kind of clinic you run, from a
+  own, and so do 34 specialties from aesthetic medicine to urology. Or start from the kind of clinic you run, from a
   one-doctor clinic to a hospital OPD, and if you are opening one, four start-a-clinic guides follow.
 summary: >-
   Easy Clinic pages sorted by country and specialty and by the kind of clinic you run, with four start-a-clinic
@@ -106,34 +106,54 @@ sections:
       columns: 4
       groups:
         - items:
+            - href: /aesthetic-emr-software/
+            - href: /allergy-emr-software/
+            - href: /alternative-medicine/
             - href: /ayurveda-clinic-management-software/
               description: The Panchakarma course and the prescription on one treatment plan.
             - href: /cardiology-emr/
               description: ECG and echo reports beside the blood pressure chart.
+            - href: /cosmetology-emr-software/
             - href: /dental-emr-software/
               description: A chart of each tooth, and treatment plans over several visits.
             - href: /dermatology-emr-software/
               description: Before-and-after photographs and procedure sessions.
+            - href: /diabetology-emr-software/
+            - href: /endocrinology-emr-software/
             - href: /ent-emr-software/
               description: The ear examination and the hearing test on one record.
+            - href: /family-physician-emr/
+            - href: /gastroenterology-emr/
             - href: /general-practitioner-emr/
               description: The whole history on one facesheet, with vitals charted over the years.
+            - href: /hematology-emr/
+            - href: /immunology-emr/
             - href: /ivf-emr/
               description: Each cycle from stimulation to embryo transfer, billed as one package.
             - href: /mental-health/
               description: Session notes and psychotropic dose changes.
+            - href: /nephrology-emr/
             - href: /neurology-emr/
               description: EEG and MRI reports kept beside every visit.
             - href: /obgyn-emr-software/
               description: Each pregnancy from gestational age to the due date.
+            - href: /oncology-emr/
             - href: /ophthalmology-emr/
               description: Vision tests and eye examinations with the OCT and fundus reports.
             - href: /orthopedic-emr/
               description: X-rays and MRI scans on the record beside every visit.
             - href: /pediatric-emr/
               description: Growth against growth standards, and a vaccine schedule set by age.
+            - href: /pathology-emr/
             - href: /physiotherapy-clinic-management-software/
               description: Session-wise treatment plans and progress against goals.
+            - href: /pulmonology-emr/
+            - href: /radiology-emr/
+            - href: /rheumatology-emr/
+            - href: /sexology-emr/
+            - href: /general-surgery-emr/
+            - href: /trichology-emr/
+            - href: /urology-emr/
             - href: /specialties/
               label: All specialties
               description: Every specialty page, and a demo form if yours is not listed.
@@ -286,6 +306,7 @@ notes:
   - 'Country groups list every page in src/content that carries that country''s `country` field (country page, pricing page, demo page, listicle, and for India and Kenya the head-to-head and alternatives pages), plus /easyclinic-vs-healthplix/ and /compare/healthplix-alternatives/ (India-only products and prices in rupees, no `country` field) and each country''s privacy page. Drafts are listed on purpose: HubGrid drops a card whose target is not rendered in production (registry.urlFor), and shows it in preview. Drafts on 2026-09-26: all four country pages, /pricing/kenya/, /pricing/uae/, /pricing/nigeria/, /uaedemo/, /nigeriademo/, all four country privacy pages, /solutions/ngo-clinics/, /integrations/, /trust/, /partner-with-ec/. In production today the UAE and Nigeria groups show only their listicle. Start-a-clinic guides are not repeated in the country groups; /start-a-clinic/ groups them by country and is linked. Blog posts are reached through /blog/.'
   - 'Card descriptions paraphrase each target page''s own summary, checked 2026-09-26, and keep to two or four items where the summary lists more. Draft targets carry no description, so their cards follow their own summary when they publish. If a target''s summary changes, re-check its description here or delete it (HubGrid falls back to item.description ?? target.data.summary). Labels are each page''s linkLabel except /countries/ ("All countries"), /specialties/ ("All specialties") and /solutions/ ("All clinic types").'
   - 'Country intro: "{fact:countries} countries" is facts.yaml, as on /countries/. "Prices are published in rupees for India and in US dollars, and no other local-currency price is published yet" matches the brief (KES, AED and NGN prices are unknown) and the draft status of /pricing/kenya/, /pricing/uae/ and /pricing/nigeria/. Rewrite that sentence when a local-currency price is published. "Book a demo from the countries page": /countries/ has a demoForm headed "Your country is not listed".'
+  - 'Update 2026-11-05: 20 specialty pages added (aesthetic to urology), so the group has 34 pages; the new cards fall back to each page''s summary.'
   - 'Specialty group: all 14 pages in src/content/specialties (all published), in alphabetical order by label, plus /specialties/. The opening answer counts them ("14 specialties from ayurveda to physiotherapy"); recount if a specialty page is added or dropped. Hrefs match /specialties/ and nav.yaml. The intro price sentence is the one on /solutions/; "each tooth in a dental chart" and "each IVF cycle" come from the dental and IVF summaries.'
   - 'Clinic-type group: the five solution pages and /solutions/. The intro plan sentence follows the /solutions/ opening answer and plan table. The hospital OPD card keeps the page''s own limit ("Inpatient wards are out of scope"). The NGO card is a draft and drops out in production, so the opening answer says "from a one-doctor clinic to a hospital OPD" and counts no clinic types.'
   - 'The rest of the site: the brief asked for /features/, /pricing/, /compare/, /blog/, /start-a-clinic/, /glossary/, /customers/ and /about-us/. /ai/, /curapilot/, /switch/, /contact-us/, /careers/ and the drafts /integrations/, /trust/ and /partner-with-ec/ were added so the sitemap reaches every top-level section in spec 3.1. Not linked: /doctors/ and /clinics/ (owner decision, never linked), /kitchen-sink/, and the privacy and terms pages, which sit in the footer legal row on every page (the intro says so). /pricing/ description follows the /pricing/ summary (prices as tokens); /customers/ description follows its summary.'

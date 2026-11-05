@@ -12,14 +12,10 @@ title: 'Neurology EMR Software: Easy Clinic'
 metaDescription: >-
   Neurology EMR software: epilepsy and migraine templates, and EEG and MRI reports in the patient's
   file. Premium is {price:inr.premium.annual} a doctor a month, billed yearly.
-h1: "EMR for neurology clinics, from epilepsy to Parkinson's"
+h1: "Streamlining Neurology Care with Easy Clinic"
 linkLabel: Neurology
 eyebrow: For neurology clinics
-openingAnswer: >-
-  A neurology clinic needs examination templates for conditions it follows for years, such as epilepsy and
-  Parkinson's disease, and EEG and MRI reports in the same file as the visits. Easy Clinic's Premium plan
-  has both, at {price:inr.premium.annual} per doctor per month billed annually in India or
-  {price:usd.premium.annual}, with the reception login included.
+openingAnswer: "Easy Clinic simplifies neurology practice management, from patient intake to neurological assessments. Our EMR software enhances diagnosis tracking, improves documentation, and ensures seamless communication, enabling neurologists to deliver precise, patient-centered care with greater efficiency and accuracy."
 summary: >-
   Neurological examination templates on Premium, and EEG and MRI reports kept in the patient's file
   beside every visit.
@@ -27,8 +23,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/Examination-3-1.png'
-  alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -45,8 +41,8 @@ sections:
       id: where-it-slips
       heading: Where a neurology clinic loses track
       intro: >-
-        A neurologist often sees the same patient for years, every few months, and most of what goes
-        missing is the history between one visit and the next.
+        A neurologist often sees the same patient for years, every few months, and<br class="hidden md:inline">
+        most of what goes missing is the history between one visit and the next.
       items:
         - heading: The MRI arrives in a carry bag
           body: >-
@@ -57,8 +53,6 @@ sections:
             EEG, MRI, CT and other diagnostic reports are uploaded to the patient's file once, and past
             records open side by side with today's visit, so next year's consult starts from the file
             rather than from the bag.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: Years of dose changes, one prescription at a time
           body: >-
             A patient with Parkinson's disease has been seen every three months for five years, and the
@@ -78,8 +72,6 @@ sections:
             On Premium, predefined neurological examination templates, for conditions from migraine to
             neuropathy, give the examination the same structure at every visit. A paper examination form the clinic
             already uses can be rebuilt as a digital one.
-          href: /pricing/
-          linkLabel: See what Premium includes
         - heading: The follow-up that nobody chases
           body: >-
             A patient on an anti-seizure medicine is due back in three months for a dose review and does not
@@ -88,8 +80,6 @@ sections:
           fix: >-
             The follow-up is set in the note, and the patient gets an automated reminder before the date.
             SMS and email reminders come with every plan, and Premium adds WhatsApp.
-          href: /features/whatsapp/
-          linkLabel: Read how WhatsApp reminders work
 
   - discriminant: featureRows
     value:
@@ -97,68 +87,484 @@ sections:
       heading: Built around the neurology record
       intro: >-
         A neurology patient is usually followed for years, so the record is built to be read over time.
-        Premium, the plan for specialists, includes every row below, and the rows marked Premium are not on
-        Professional.
+        Premium, the plan for specialists, includes everything below, and examination templates and video
+        follow-ups are not on Professional.
+      layout: grid
       items:
         - heading: Neurological examination templates
-          plan: premium
+          icon: brain
           body: >-
             Premium comes with predefined neurological examination templates for common conditions, among
             them migraine, epilepsy, Parkinson's disease, multiple sclerosis and neuropathy. The table
             further down lists them with the forms and layouts your clinic can add of its own.
+          bullets:
+            - Predefined examination templates on Premium
+            - Migraine, epilepsy, Parkinson's disease and neuropathy
         - heading: Scan and EEG reports in the patient's file
+          icon: scan-line
           body: >-
             EEG, MRI, CT and other diagnostic reports are stored in the patient's file, with images and
             documents uploaded to the same record as the visits. Past records open side by side with
             today's, and an auto-generated summary and facesheet set out the case history for review.
+          bullets:
+            - EEG, MRI and CT reports stored in the patient's file
+            - Past records open side by side with today's
         - heading: Years of follow-up on one screen
+          icon: history
           body: >-
             Long-term conditions such as epilepsy and Parkinson's disease are tracked across visits, and the
             patient's visits sit on a single screen as a longitudinal view. Medicines and treatment plans
             are recorded and tracked at each visit, and vitals and lab values can be charted over time.
+          bullets:
+            - Epilepsy and Parkinson's disease tracked across visits
+            - Vitals and lab values charted over time
         - heading: History taken before the consult
+          icon: clipboard-plus
           body: >-
             The intake form can be set up to take a detailed or a short history, covering chronic
             illnesses, family and social history, substance use, alternative therapies and immunisations,
             and the answers go onto the facesheet. A clinical assistant or nurse can take the intake before
             the neurologist sees the patient, and case notes are shared across the care team.
           bullets:
-            - Each person logs in as themselves, and the role on that login decides what they can open
-            - The reception login in the price cannot open the EMR or issue a prescription
+            - Detailed or short history taken on the intake form
+            - A nurse or assistant can take the intake first
         - heading: A prescription the family can read
+          icon: pill
           body: >-
             Prescriptions can be issued in more than one language, so the family member who gives the
             medicines can read them. They are printed or sent by SMS, email or, on Premium, WhatsApp. A
             drug interaction check is part of the EMR.
-          link:
-            label: Read how the prescription works
-            href: /features/emr/
+          bullets:
+            - Prescriptions issued in more than one language
+            - Sent by SMS or email, and on Premium by WhatsApp
         - heading: Video follow-ups
-          plan: premium
+          icon: video
           body: >-
             On Premium, a follow-up can be booked as a video consultation through the appointment screen,
             with the fee collected online. The neurologist and the patient join from a web browser on a
             computer or a phone, with nothing to install, and the prescription that follows says the
             consultation was remote.
-          link:
-            label: Read how video consultations work
-            href: /features/telehealth/
+          bullets:
+            - Booked as a video consultation, fee collected online
+            - Joined from a web browser with nothing to install
         - heading: Tests booked with the machine they need
+          icon: calendar
           body: >-
             Equipment or an assistant can be booked inside the appointment slot, so a test that needs a
             machine and a technician is booked with the patient's visit. The desk bills the consult and the
             test from the clinic's own service list, with part payments and advances recorded against the
             bill.
+          bullets:
+            - Equipment or an assistant booked in the appointment slot
+            - Consult and test billed from your own service list
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the neurologist to review.
+          bullets:
+            - Cura AI comes with every plan
+            - The neurologist reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: the-review
+      heading: A neurology review, from the desk to the bill
+      intro: >-
+        What happens around the consult, in the order the day runs. Where a row needs a particular plan, it
+        says so.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: Booked reviews and walk-ins on one calendar
+          icon: calendar-clock
+          body: >-
+            Fixed-time appointments and walk-ins sit on one calendar, so the desk sees the booked reviews and
+            the patients who came in without one on the same list.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The desk checks the patient in
+          icon: users
+          body: >-
+            Each person logs in as themselves, and the role on that login decides which screens they can open.
+            The reception login included in the price cannot open the EMR or issue a prescription.
+        - heading: The next review set in the note, with a reminder
+          icon: bell-ring
+          body: >-
+            The neurologist sets the follow-up in the note, and the patient gets an automated reminder before
+            the date. SMS and email reminders come with every plan, and Premium adds WhatsApp.
+        - heading: Medicines from the clinic's own pharmacy
+          icon: package
+          body: >-
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and
+            Premium, the pharmacist dispenses from the doctor's prescription and tracks each batch to its
+            expiry date. Premium alone does not include it.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+        - heading: Refunds and receipts at the desk
+          icon: wallet
+          body: >-
+            A refund or a voided invoice goes through only with authorisation. The receipt goes to the
+            patient by SMS or email, or on WhatsApp with Premium.
           link:
             label: Read how billing works
             href: /features/billing/
-        - heading: Cura AI drafts the note
-          plan: professional
-          body: >-
-            Cura AI (documentation) comes with every plan. It drafts the note for the neurologist to review.
-          link:
-            label: Read what Cura AI does
-            href: /ai/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions
+        Generate detailed prescriptions in 30 seconds and deliver them instantly in any language via print, WhatsApp, SMS, or email.
+
+        ### Specialized Neurology EMR
+        Custom-designed to align with neurologists specialties, workflows, and preferences, providing a personalized and efficient experience.
+
+        ### AI-Enhanced Prescription Management
+        Complete prescriptions in just three clicks with the help of an AI assistant, streamlining your documentation process and saving valuable time.
+
+        ### Neurological Examination Templates
+        Predefined templates for common conditions like migraines, epilepsy, Parkinson’s disease, multiple sclerosis, and neuropathy.
+
+        ### Health Trend Visualization
+        Present specific vitals, lab reports, and clinical parameters as charts and graphs, offering an intuitive view of patient health trends.
+
+        ### Streamlined Patient Summaries
+        Instantly access auto-generated patient summaries and facesheets for a thorough review of case histories, saving time and presenting key data clearly and efficiently.
+
+        ### Intuitive Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more with a simple point-and-click UI. Features custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines. Enjoy the flexibility to access specific controls without the need to navigate through long screens.
+
+        ### Complete Medical History Record
+        Customize your Neurology patient intake forms to capture detailed or concise medical histories, including chronic illnesses, family, social and obstetric-gynecological history, substance use, alternative therapies, COVID history, and immunizations. These details are integrated into the patient’s face sheet, streamlining follow-up visits and saving valuable time.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design
+        Customized for Neurologists, super-specialists, and Neurology clinic chains, catering to a wide range of healthcare needs.
+
+        ### AI-Powered Diagnostic Assistance
+        Use intelligent AI for differential diagnoses and alerts for potential adverse drug events, essential for Neurology patients with complex, chronic conditions.
+
+        ### Flexible Form and Template Customization
+        Easily convert paper forms to digital templates with our adaptable builder for a smooth transition.
+
+        ### Unified Patient Data Visualization
+        Access longitudinal patient visit data on a single screen, improving the efficiency of Neurology patient care.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools, including guidelines, checklists, and reminders, for improved efficiency.
+
+        ### Effortless Care Team Collaboration
+        Enhances communication and coordination between Neurologists, nurses, and other caregivers, ensuring integrated and effective patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+        - Click on image to view more
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations of patients.
+
+        ### No Need for Third-Party Software
+        Both Neurologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Neurology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Neurologists and receptionists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving Neurology patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Neurology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Neurology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Neurology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Neurology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with Neurology patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Neurology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
 
   - discriminant: dataTable
     value:
@@ -189,122 +595,60 @@ sections:
         Professional includes the EMR and e-prescriptions, without the specialty templates or your own forms
         and print layouts.
 
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        We do not yet have a neurologist's own words to put on this page. These are Easy Clinic's public
-        ratings on Capterra and Google.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: stepList
-    value:
-      id: training
-      heading: How long does it take to learn Easy Clinic?
-      intro: >-
-        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
-        session is 20 to 40 minutes, short enough to fit between the morning and evening clinics, so the
-        clinic keeps seeing patients while the team learns.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
-          body: >-
-            The screens the front desk and the doctors use every day. Bring your receptionist, whose login
-            is part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
-          body: >-
-            You work through the chart and the prescription on the kinds of case your clinic sees, from a
-            first consult to a follow-up.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: You work through exercises on your own, then bring back the questions that came up.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note quicker, once the basics have become habit.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
-
-faqHeading: Questions neurologists ask
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: Which Easy Clinic plan does a neurology clinic need, and what does it cost?
-    answer: >-
-      Premium, because the neurological examination templates are specialty EMR templates and those start
-      on Premium: {price:inr.premium.annual} per doctor per month billed annually in India or
-      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
-      {price:usd.premium.quarterly} in US dollars. Professional, at {price:inr.professional.annual} or
-      {price:usd.professional.annual}, has the EMR and billing without the specialty templates. Both include
-      a reception login at no extra cost. Neither has a setup fee or a binding contract.
-  - question: Which neurology templates are ready, and can I add my own?
-    answer: >-
-      Premium comes with predefined examination templates for common neurological conditions, among them
-      migraine, epilepsy, Parkinson's disease, multiple sclerosis and neuropathy. For a condition without a
-      ready template, Premium's form builder turns a paper examination form your clinic already uses into a
-      digital one, and the customisation comes without charges.
-  - question: Can I keep EEG, MRI and CT reports on the patient's record?
-    answer: >-
-      Yes, EEG, MRI, CT and other diagnostic reports are stored in the patient's file, uploaded as images or
-      documents beside the visits. Past records open side by side with today's visit.
-  - question: Can Easy Clinic connect to our EEG machine or the imaging centre's system?
-    answer: >-
-      Not out of the box: no plan comes with a ready connection to an EEG machine or an imaging system, so
-      EEG and scan reports go into the patient's file as uploaded images or documents. Connecting a device
-      or another system is custom integration work, included in Enterprise or added to Professional and
-      Premium, and scoped per project.
-  - question: Can I follow a patient with epilepsy or Parkinson's disease over several years?
-    answer: >-
-      Yes, the record tracks long-term conditions across visits, with the patient's visits on one screen and
-      the medicines and treatment plan recorded at each one. Vitals and lab values can be charted over time,
-      and on Premium lab reports come into the chart.
-  - question: Can I see follow-up patients by video?
-    answer: >-
-      Yes, on Premium, which includes video consultations booked through the appointment screen with the
-      fee collected online. You and the patient join from a web browser on a computer or a phone with
-      nothing to install, and the prescription sent afterwards on WhatsApp or by email says the
-      consultation was remote.
-  - question: Can a nurse take the history before I see the patient?
-    answer: >-
-      Yes, a clinical assistant or nurse can do the intake before the consult, and the history taken on the
-      intake form goes onto the patient's facesheet. Each person logs in as themselves and the role on the login decides what
-      they can open; the reception login included in the price cannot open the EMR or issue a prescription.
-  - question: Does Easy Clinic work without an internet connection?
-    answer: >-
-      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
-      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
-      system runs on the clinic's own server rather than in Easy Clinic's cloud.
+  - question: "What is the best EMR software for neurology clinics?"
+    answer: "The best EMR software for neurology clinics should support diagnostic reports, treatment tracking, and long-term patient care. Easy Clinic is designed to manage the complete workflow of neurology clinics."
+  - question: "Does Easy Clinic support AI EMR for neurology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic store neurological diagnostic reports?"
+    answer: "Yes. Easy Clinic allows clinics to store EEG, MRI, CT scans, and other diagnostic records in patient files."
+  - question: "Does Easy Clinic support chronic neurological condition tracking?"
+    answer: "Yes. Easy Clinic supports long-term tracking for conditions like epilepsy, stroke recovery, and Parkinson’s disease."
+  - question: "Can Easy Clinic manage treatment and medication plans?"
+    answer: "Yes. Clinics can record and track medications and treatment plans."
+  - question: "Does Easy Clinic support procedure documentation?"
+    answer: "Yes. Clinics can document neurological assessments and procedures."
+  - question: "Does Easy Clinic support billing for neurology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Can multiple neurologists use Easy Clinic?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, treatments, and revenue."
 
 links:
   hub: /specialties/
-  relatedHeading: Where neurologists go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/polyclinic/
-      label: Polyclinic software
-      description: >-
-        For a neurologist in a multi-specialty centre: one patient record for every specialist, and roles
-        that decide who sees what.
-    - href: /solutions/hospital-opd/
-      label: Hospital OPD software
-      description: For a neurology OPD in a hospital or nursing home, from the queue to the pharmacy.
-    - href: /emr-software-in-india/
-      label: Clinic management software in India
-      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
-    - href: /emr-software-in-kenya/
-      label: Clinic software in Kenya
-      description: How a clinic in Kenya runs on Easy Clinic, with M-Pesa at the desk.
-    - href: /features/emr/
-      label: The EMR and e-prescriptions
-      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
-    - href: /pricing/
-      label: Easy Clinic pricing
-      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
-
+    - href: /mental-health/
+      label: Mental health EMR
+      description: For psychiatrists and psychologists, with session notes and dose changes.
+      icon: brain
+    - href: /physiotherapy-clinic-management-software/
+      label: Physiotherapy clinic software
+      description: For the physiotherapy clinic with session plans and progress against goals.
+      icon: route
+    - href: /orthopedic-emr/
+      label: Orthopaedic EMR
+      description: For the orthopaedic clinic with X-rays and MRI scans beside every visit.
+      icon: bone
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+    - href: /ent-emr-software/
+      label: ENT EMR
+      description: For the ENT clinic with the ear examination and hearing test on one record.
+      icon: stethoscope
+    - href: /ophthalmology-emr/
+      label: Ophthalmology EMR
+      description: For the eye clinic with vision tests, examinations and OCT reports.
+      icon: eye
 closing:
   heading: See a neurology follow-up on Easy Clinic
   body: >-
@@ -331,6 +675,18 @@ editorialPass:
     cognitive scale, nerve conduction report format or template count, because none is confirmed.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Grounding: examination templates for common conditions "like" migraine, epilepsy, Parkinson''s disease, multiple sclerosis and neuropathy; storage of EEG, MRI, CT and other diagnostic records in patient files; long-term tracking of epilepsy, stroke recovery and Parkinson''s disease; medication and treatment plan tracking; longitudinal visit data on one screen; side-by-side past records; image and document upload; auto-generated summaries and facesheets; customisable intake forms (history fields as listed); clinical assistant or nurse intake (the page does not say what the intake covers, so vitals are not claimed); collaborative case notes; multilingual prescriptions sent by print, WhatsApp, SMS or email; drug interaction check (listed by name only, so the page says no more than that); vitals and lab charts; video consultations in the browser with online fees and a remote-consult disclaimer on the prescription; resource booking (equipment or assistants) inside the appointment slot; service list billing with part and advance payments; automated follow-up reminders; role-based access. All stated plainly on the live /neurology-emr/ page (retrieved 2026-09-26). Plan placement follows plans.yaml (specialty templates, own forms and print layouts, video, WhatsApp and lab reports on Premium; integrations on Enterprise or as an add-on).'
   - 'Recruit a named neurology testimonial (spec 5.15 item 9): a named neurologist or neurology clinic on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no neurologist quote exists yet. Review counts are null in facts.yaml, so the badges show no count. The four testimonials on the live page (two psychiatrists, a general physician, an ophthalmologist) are not neurology quotes and are assigned to other pages.'
   - 'Spec 5.15 has no must-have row for neurology, so the company to-do follows the template items: (3) a screenshot of each chart object; (4) a timed walkthrough of the most common neurology visit; (5) the full list of neurology examination templates, named and counted, with the fields in each (the live page names five as examples, "like migraines, epilepsy...", so the page gives no count); (6) integrations and devices: whether EEG, EMG or nerve conduction machines connect, and whether MRI and CT are stored as file uploads only or can be viewed as DICOM (the page says "uploaded" and "stored in the patient''s file" only); (7) any neurology billing packages (the live page mentions package amortisation only in general terms, so the page has no package row); (8) which neurology note types Cura AI drafts, with one example note; (9) the testimonial above.'
@@ -341,3 +697,4 @@ notes:
   - 'Title 34 characters; meta description 154 characters with the token resolved (₹1,999). The brief''s H1 "EMR for neurology clinics" is used rather than the spec 5.15 item 1 form, as on the IVF and physiotherapy pages. /clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts; the related links resolve once they publish.'
   - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits in the device-connection and offline FAQs) until the testimonial arrives.
   - 'Fact-check pass 2026-09-26 (live page re-fetched): the "five conditions" count was removed everywhere, because the live page lists the templates as examples ("like migraines, epilepsy..."); the drug interaction row no longer claims a warning while writing; nurse intake no longer claims vitals; the facesheet no longer claims "one screen"; the EEG-connection FAQ now says no plan comes with a ready device connection, so reports are uploaded, and any connection is custom integration work (plans.yaml puts integrations in Enterprise or the scoped add-on); "an MRI on a disc" became MRI reports so nothing implies disc or DICOM import; groups of three were split in the pain, prescription, follow-up and FAQ copy; the meta description now says the price is billed yearly.'
+  - 'Section the-review (A neurology review, from the desk to the bill) added 2026-11-05 after the Built around section. Grounding: fixed-time appointments and walk-ins on one calendar from /features/appointment-scheduling/ and the published allergy page; logins by role and the reception login rule from this page''s nurse FAQ; follow-up set in the note with an automated reminder, SMS and email on every plan and WhatsApp on Premium, from this page''s fourth pain fix; pharmacy and inventory on Enterprise or as a module, worded as the published mental health and OB-GYN pharmacy FAQs; refunds and voided invoices with authorisation and receipts by SMS or email or on WhatsApp with Premium from the published cardiology and OB-GYN pages and /features/billing/. Part payments and test booking are not repeated from the Built around rows.'

@@ -14,6 +14,8 @@ export interface FamilyRules {
   author: boolean;
   proof: boolean;
   editorialPass: boolean;
+  /** Fewest words in an FAQ answer; defaults to LIMITS.faqAnswerWords. */
+  faqAnswerWords?: number;
 }
 
 const LANDING: FamilyRules = { faq: [5, 8], author: true, proof: true, editorialPass: true };
@@ -30,7 +32,11 @@ export const FAMILY_RULES: Record<string, FamilyRules> = {
   integrations: { ...LANDING, proof: false },
   switch: LANDING,
   customers: LANDING,
-  specialty: LANDING,
+  // Owner decision 2026-11-05: specialty pages drop the ratings proof block ("How clinics rate Easy Clinic");
+  // the four with a specialist testimonial keep it.
+  // Owner decision 2026-11-05: specialty pages carry the FAQs from the live page, up to 12.
+  // Owner decision 2026-11-05: the live page's short FAQ answers are kept, so a specialty answer needs six words, not twelve.
+  specialty: { ...LANDING, proof: false, faq: [5, 12], faqAnswerWords: 6 },
   pricing: LANDING,
   // Spec 5.13: country pages carry 8 to 10 FAQs in the country's own terms.
   country: { ...LANDING, faq: [8, 10] },
@@ -135,7 +141,7 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
       }
     }
     faq.forEach((item, i) => {
-      if (wordCount(item.answer) < LIMITS.faqAnswerWords) {
+      if (wordCount(item.answer) < (rules.faqAnswerWords ?? LIMITS.faqAnswerWords)) {
         err('faq', `faq[${i}].answer`, 'Answer in at least one full sentence (spec 2.5); one-word answers are not allowed');
       }
       if (!item.question.trim().endsWith('?')) warn('faq', `faq[${i}].question`, 'FAQ questions end with a question mark');
@@ -145,7 +151,8 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
   // Owner decision 2026-10-27: /countries/ drops its ratings proof block; the page ends on the contact form.
   // Owner decision 2026-10-30: /features/, /features/patient-engagement/, /features/reports-and-dashboards/ and /features/insurance-claims/ drop their ratings proof blocks.
   // Owner decision 2026-10-31: /features/revenue-management/ /features/appointment-scheduling/, /features/billing/, /features/lab/, /features/multi-location/ and /features/pharmacy-and-inventory/ drop their ratings proof blocks.
-  const proofExempt = new Set(['/countries/', '/features/', '/features/patient-engagement/', '/features/reports-and-dashboards/', '/features/insurance-claims/', '/features/revenue-management/', '/features/appointment-scheduling/', '/features/billing/', '/features/lab/', '/features/multi-location/', '/features/pharmacy-and-inventory/']);
+  // Owner decision 2026-11-04: /features/telemedicine/ and /features/whatsapp/ drop their ratings proof blocks.
+  const proofExempt = new Set(['/countries/', '/features/', '/features/patient-engagement/', '/features/reports-and-dashboards/', '/features/insurance-claims/', '/features/revenue-management/', '/features/appointment-scheduling/', '/features/billing/', '/features/lab/', '/features/multi-location/', '/features/pharmacy-and-inventory/', '/features/telemedicine/', '/features/whatsapp/']);
   if (rules.proof && !proofExempt.has(data.path as string)) {
     const hasProof = (data.sections ?? []).some((s) => PROOF_BLOCKS.has(s.discriminant));
     if (!hasProof) err('proof', 'sections', 'Every page carries one proof block that belongs to it (spec 2.4)');

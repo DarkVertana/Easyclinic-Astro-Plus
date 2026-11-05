@@ -1,0 +1,653 @@
+# /diabetology-emr-software/ (spec 5.15 SpecialtyPage template; no spec 5.15 must-have row for diabetology).
+# Slug kept from the live site; it redirected to /endocrinology-emr-software/ until the owner asked for every
+# footer specialty to have its own page (2026-11-05). Grounding: capability statements the live
+# /diabetology-emr-software/ page makes plainly (retrieved 2026-11-05), plans.yaml, and what published pages
+# (/cardiology-emr/, /features/lab/, /general-practitioner-emr/) already state. No device, CGM or glucometer
+# connection, no template count, no outcome numbers.
+status: published
+headKeyword: diabetology EMR software
+secondaryKeywords:
+  - diabetes clinic software
+  - EMR for diabetologists
+title: 'Diabetology EMR Software: Easy Clinic'
+metaDescription: >-
+  Diabetology EMR software: sugar readings, HbA1c and foot and eye checks charted across visits, with
+  insulin plans on the record, on Premium at {price:usd.premium.annual}.
+h1: "Empowering Diabetology Care with Easy Clinic"
+linkLabel: Diabetology
+eyebrow: For diabetes clinics
+openingAnswer: "Tailored solutions for managing diabetes care, from patient records to treatment plans. Our EMR software streamlines workflows, improves patient monitoring, and enhances decision-making for Diabetologists, ensuring thorough, efficient, and personalized care."
+summary: >-
+  Sugar readings and lab values charted across visits, foot and eye examinations on your own form, and
+  insulin and diet plans on the record, on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a diabetes clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic diabetology page and would like to book a demo for our diabetes clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-diabetes-clinic-loses-track
+      heading: Where a diabetes clinic loses track
+      intro: >-
+        A patient with diabetes is seen every few months for the rest of their life, and what goes missing is rarely today's<br class="hidden min-[90rem]:inline">
+        reading. It is the run of readings, examinations and dose changes since the last time anyone looked at all of them together.
+      items:
+        - heading: The sugar diary and three lab reports, read one at a time
+          body: >-
+            A patient on insulin brings a notebook of fasting readings and HbA1c reports from two labs. To
+            decide whether to raise the dose, you turn pages and hold six months of numbers in your head
+            while the patient waits.
+          fix: >-
+            Blood glucose readings recorded at each visit are kept in the patient's case history and drawn
+            as charts over time. On Premium, lab reports come into the chart, so HbA1c and other lab values
+            are charted beside the vitals on one screen.
+        - heading: Last year's foot examination is a tick on an old note
+          body: >-
+            The monofilament test was done last spring and the eye check the year before, each written as
+            a line in that visit's note. Whether sensation in the left foot has changed since then is
+            anyone's guess.
+          fix: >-
+            Foot examination and eye examination findings are recorded at each visit and shown as trends,
+            and on Premium the clinic's own diabetes examination form is built with a few clicks, so every
+            doctor records the same fields.
+        - heading: The insulin plan lives on the last prescription
+          body: >-
+            The basal dose was changed twice since the patient's first visit, and the diet advice was given
+            out loud. When the patient sees a colleague at the next review, the reasons for each change are
+            not on the screen.
+          fix: >-
+            Medication and insulin plans are recorded and tracked on the patient's record, with every
+            change kept against the visit it was made in, and the diet plan and lifestyle advice are
+            written into the same record.
+        - heading: The quarterly review the patient forgot
+          body: >-
+            "Review in three months, with fasting and HbA1c" is written at the foot of the prescription.
+            The patient feels well, forgets the date and comes back eight months later.
+          fix: >-
+            The follow-up is set in the note before the patient leaves, and the patient gets an automated
+            reminder: by SMS and email on every plan, and on WhatsApp on Premium.
+
+  - discriminant: featureRows
+    value:
+      id: diabetes-chart
+      heading: Built around the diabetes chart
+      intro: >-
+        What a diabetologist reopens at every review, kept on one patient record. Premium, the plan for
+        specialists, includes everything below.
+      layout: grid
+      items:
+        - heading: Sugar readings and lab values as trend charts
+          icon: chart-line
+          body: >-
+            Vitals, lab results and clinical parameters are shown as charts and graphs, so a patient's
+            blood glucose reads as one line across visits instead of a list of numbers in separate notes.
+            On Premium, lab reports come into the chart and values such as HbA1c are charted beside the
+            vitals. A report from an outside lab can be uploaded to the patient's file.
+          bullets:
+            - Blood glucose read as one line across visits
+            - HbA1c charted beside the vitals on Premium
+        - heading: Foot and eye examinations as trends
+          icon: eye
+          body: >-
+            Diabetes care has its own examinations, and Easy Clinic keeps them as a trend. Foot examination
+            and eye examination findings are charted across visits, so a change since last year is visible
+            at the review.
+          bullets:
+            - Foot examination trends
+            - Eye examination trends
+        - heading: Your own diabetes examination form
+          icon: notebook-pen
+          body: >-
+            On Premium the clinic builds its own diabetes examination form with a few clicks, or turns its
+            paper sheet into a digital form with the form builder. Customising forms carries no charge.
+          bullets:
+            - Your paper sheet turned into a digital form on Premium
+            - No charge for customising forms
+        - heading: Insulin, medication and diet plans on the record
+          icon: pill
+          body: >-
+            Medication and insulin plans are recorded and tracked over time, so each change in treatment
+            sits against the visit it was made in. Diet plans and lifestyle recommendations are documented
+            in the same record, and the prescription carries a drug interaction check.
+          bullets:
+            - Insulin and medication plans tracked over time
+            - Diet plans and lifestyle advice on the same record
+        - heading: The history and complications on the facesheet
+          icon: clipboard-plus
+          body: >-
+            The intake form records chronic illnesses, family history, social history and substance use,
+            with as much detail as the clinic wants. What it records is shown on the patient's facesheet,
+            and an auto-generated summary puts the key data on one screen before each review.
+          bullets:
+            - Family history, social history and substance use recorded
+            - An auto-generated summary before each review
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the diabetologist to
+            review.
+          bullets:
+            - Cura AI is included in every plan
+            - The diabetologist reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: review-visit
+      heading: A diabetes review, from the nurse's desk to the bill
+      intro: >-
+        How a review visit runs on Easy Clinic. We have not timed these steps in a diabetes clinic, so the
+        page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The nurse records the readings first
+          icon: activity
+          body: >-
+            A nurse or clinical assistant does the intake before the consult, entering the vitals and the
+            sugar readings by point and click. Each person logs in as themselves, and the role on that login
+            decides which screens they can open; the reception login included in the price cannot open the
+            EMR or issue a prescription.
+        - heading: The consult, by point and click
+          icon: notebook-pen
+          body: >-
+            The diabetologist opens the record with the readings already charted. Complaints, diagnosis,
+            medications, investigations, referrals and follow-ups are picked with auto-complete, and on
+            Premium the foot and eye findings go on the clinic's own examination form.
+        - heading: The prescription and the advice go home
+          icon: pill
+          body: >-
+            The prescription is printed for the patient or sent by WhatsApp on Premium, and it can carry
+            patient guidelines such as the diet advice. Easy Clinic also carries patient education material
+            with lifestyle tips and condition-specific guidance.
+        - heading: Check-up packages paid in parts
+          icon: receipt
+          plan: premium
+          body: >-
+            On Premium, a diabetes check-up package with its visits scheduled in advance is billed as one
+            package treatment and paid in parts. Each advance and part payment is recorded against it, and a
+            refund or a voided invoice goes through only with authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Reviews by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a review can be a video consult, booked through the appointment screen with the fee
+            paid online. The patient joins from a web browser on a phone or a computer, and the
+            prescription says the consult was held remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescription in 30 Seconds
+        Effortlessly create detailed prescriptions within 30 seconds, harnessing the expertise of diabetes specialists, and deliver them instantly in any language via print, WhatsApp, SMS, or email.
+
+        ### Diabetology-Specific EMR
+        A fully tailored EMR designed to align with the unique needs of diabetes care, workflows, and preferences. Effortlessly create custom diabetes examination forms and capture details with a few simple clicks.
+
+        ### AI-Powered Support
+        Use an AI assistant to complete prescriptions in just three clicks, streamlining documentation and saving valuable time for diabetes care providers.
+
+        ### Health Trend Visualisation
+        Present vitals, lab results, and clinical parameters as intuitive charts and graphs for a clear and easy understanding of diabetic patients' health trends like foot examination, eye examination, etc.
+
+        ### Effortless Blood Glucose Monitoring with Easy Clinic
+        Track and manage blood glucose levels seamlessly with Easy Clinic's intuitive software. Enable real-time logging, trend analysis, and personalized insights to optimize diabetes care. Stay informed and in control with every reading.
+
+        ### Diabetic Health Check Up Packages
+        Manage your diabetes with ease through our tailored Amortization Plans and Multi-Visit Schedules. Spread your treatment costs over manageable installments while ensuring timely, complete care with pre-scheduled visits.
+
+        ### Empower Patients with Easy Clinic’s Education Tools
+        Enhance patient understanding with Easy Clinic’s interactive education modules. Provide tailored resources, lifestyle tips, and condition-specific guidance to support informed decision-making and better health outcomes.
+
+        ### Streamlined Patient Summaries
+        Gain quick access to auto-generated patient summaries and facesheets, enabling efficient case history reviews, saving time, and presenting critical data intelligently.
+
+        ### Intuitive Point-and-Click Input
+        Features a user-friendly point-and-click interface tailored for diabetes care providers to efficiently record chief complaints, medical history, vitals, and more. Includes custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines. Provides the flexibility to access specific controls without the need to navigate complex or lengthy screens.
+
+        ### Complete Medical History Record
+        Capture the full medical history of a diabetic patient using a customizable intake form, with the flexibility to include as much or as little detail as needed. Record information on chronic illnesses, family history, social and obstetric-gynecological history, substance use, alternative therapies, COVID history, and immunizations. These details are then incorporated into the patient's facesheet, streamlining future visits and saving valuable time.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for Diabetologists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specifically Designed for Diabetologists
+        Designed specifically for diabetologists, super-specialists, and diabetes management clinics, catering to a wide range of healthcare needs.
+
+        ### AI-Powered Diagnostic Support
+        Smart AI assistance for differential diagnosis, helping to identify potential adverse drug events, essential for patients with multiple chronic conditions.
+
+        ### Customizable Template and Form Builder
+        Effortlessly convert any paper forms into digital formats with our flexible template builder, ensuring a seamless transition to digital records for your clinic.
+
+        ### Complete Patient Data Visualization
+        Access longitudinal patient visit data on a single screen, improving the efficiency of patient care.
+
+        ### Streamlined Access to Key Resources
+        Instant access to commonly used medications, investigations, and clinical tools, including diabetes treatment guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Enhances communication and coordination among nurses, diabetologists, and other caregivers, ensuring integrated and complete care for patients
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+        - Click on image to view more
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Telemedicine for Diabetes Management
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience for patients with diabetes.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for telehealth consultations.
+
+        ### No Need for Third-Party Software in Teleconsultation
+        Both diabetologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery in Teleconsultation
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Patient invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options in Billing
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible Pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management in Billing
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes for your clinic.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration for Payment Receipts
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to diabetes patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing diabetologists and receptionists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables diabetes patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any diabetes clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines diabetic patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for diabetology clinics?"
+    answer: "The best EMR software for diabetology clinics should support glucose tracking, lab reports, medication plans, and long-term follow-up care. Easy Clinic is designed to manage the complete workflow of diabetology clinics."
+  - question: "Does Easy Clinic support AI EMR for diabetology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic track blood glucose and lab reports?"
+    answer: "Yes. Easy Clinic allows clinics to store and monitor blood sugar levels and lab reports in patient records."
+  - question: "Does Easy Clinic support chronic patient follow-up tracking?"
+    answer: "Yes. Diabetes management requires ongoing monitoring, and Easy Clinic supports detailed follow-up tracking."
+  - question: "Can Easy Clinic manage medication and insulin plans?"
+    answer: "Yes. Clinics can record and track medication and insulin treatment plans."
+  - question: "Does Easy Clinic support diet and lifestyle tracking?"
+    answer: "Yes. Doctors can record diet plans and lifestyle recommendations for patients."
+  - question: "Does Easy Clinic support billing for diabetology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Can multiple doctors use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, outcomes, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /endocrinology-emr-software/
+      label: Endocrinology EMR
+      description: For the endocrinologist who follows thyroid, PCOS and bone patients.
+      icon: chart-line
+    - href: /cardiology-emr/
+      label: Cardiology EMR
+      description: For the cardiology clinic that follows ECG reports and blood pressure trends.
+      icon: heart
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+    - href: /ophthalmology-emr/
+      label: Ophthalmology EMR
+      description: For the eye clinic with vision tests, examinations and OCT reports.
+      icon: eye
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: 'For the family doctor who keeps each family member''s care on their own record.'
+      icon: heart-handshake
+closing:
+  heading: See a diabetes review on Easy Clinic
+  body: >-
+    Book a demo and ask to see a patient's sugar and HbA1c charted across visits and a foot examination
+    recorded on a clinic's own form, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a diabetes clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The foot and eye examination trends, insulin and diet plans on the record and check-up packages with
+    pre-scheduled visits come from Easy Clinic's own diabetology page, and the plan split a diabetes clinic
+    meets is stated as plans.yaml has it: lab charts, forms and packages on Premium, the pharmacy on
+    Enterprise or as a module.
+  readsMachineWritten: >-
+    The pains are composites rather than a named clinic's day, the page has no diabetologist's words and
+    no timed visit, and it names no diabetes template, so a diabetologist may find the feature rows general.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: stated plainly on the live /diabetology-emr-software/ page (retrieved 2026-11-05): custom diabetes examination forms "with a few simple clicks", vitals, lab results and clinical parameters as charts including foot examination and eye examination trends, glucose monitoring history as part of the continuous case history (FAQ), blood glucose and lab tracking stored in patient records (FAQ), medication and insulin plans recorded and tracked (FAQ), diet plans and recommendations recorded (FAQ), health check-up packages with amortisation plans and multi-visit schedules, patient education modules with lifestyle tips and condition-specific guidance, auto-generated summaries and facesheets, point-and-click entry with patient guidelines, the intake form (chronic illness, family, social, substance use history), drug interaction check, nurse and care team communication, part and advance payments, refunds and voiding with authorisation, payment amortisation for packages, video consults in the browser with online fees and the remote-consult line, reminders by WhatsApp, SMS and email. HbA1c is not named on the live page; "values such as HbA1c are charted" follows the published /cardiology-emr/ and /features/lab/ wording for lab values charted on Premium. Plan placement follows plans.yaml (lab reports in the chart, own forms, package treatments, WhatsApp and video consults on Premium; pharmacy on Enterprise or a module; integrations on Enterprise or an add-on). The offline answer and "customising forms carries no charge" follow /cardiology-emr/.'
+  - 'Dropped from the live page: glucose monitoring with "real-time logging" and "personalized insights" (implies device feeds or AI analysis; the page claims only readings recorded and charted), "diabetes treatment guidelines" quick access (unspecified), "Instant Prescription in 30 Seconds", "three clicks", "invoices ready in less than 10 seconds", "over 100 graphical dashboards", AI differential diagnosis and ADR alerts (CuraPilot claims), both "Easy Clinic vs Other/Generic EMR" comparison tables (unsourced competitor cells), "Inventory ... Built-in" and the inventory FAQ (plans.yaml: Enterprise or a module), prescriptions "in any language" (only English and Swahili for Kenya are confirmed), "Reduces no-shows" (noShowReduction is null), AI wait-time alerts, patient self check-in, Power BI and data warehouse, the data security FAQ (no certification named; /trust/ owns it), the "Join 5000+ Doctors" line (left to the site-wide facts), and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial).'
+  - 'Facts needed (company to-do): which plan carries the foot and eye examination trend charts, the insulin and diet plan tracking and the intake form (the rows carry no plan tag and the featureRows intro says only that Premium includes every row); whether there are named diabetes templates, and how many (no dataTable until they are named); whether a glucometer or CGM can be connected (the FAQ states only the plans.yaml integration route); whether recall campaigns by condition (the /features/patient-engagement/ diabetes example) are available and on which plan, which would answer the recall question better than a reminder; which diabetes note types Cura AI drafts, with an example; a timed walkthrough of a review visit; whether nurse logins are paid licences.'
+  - 'Recruit a named diabetologist testimonial (spec 5.15 item 9). The live page carries the shared testimonials (two psychiatrists, a general physician, an ophthalmologist), none from a diabetologist, and each is already placed on another page. Until then the proof block is the Capterra and Google badges.'
+  - 'Hero: 1_EMR.png (the EMR screen with a fasting blood sugar trend chart), alt text reused from the published solution pages. The screenshot shows a urinary tract infection visit, not a diabetes review; the alt does not say otherwise. Replace with a diabetes review capture from the seeded demo tenant when it exists. The pains are illustrative situations, not customers; "two labs", "three months" and "eight months" are examples.'
+  - 'Distinct from /endocrinology-emr-software/: this page owns diabetes (sugar and HbA1c charts, foot and eye examinations, insulin and diet plans); the endocrinology page owns thyroid, PCOS, bone and the rest of the endocrine work and links here for diabetes. Related posts on diabetology (/ai-clinic-management-systems-for-diabetologists/) are drafts and are not linked.'

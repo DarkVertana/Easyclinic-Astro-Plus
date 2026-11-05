@@ -12,4 +12,7 @@ export const schema = () =>
     /** Up to two more cards after left and right; with four, the cards sit two by two. */
     more: z.array(side).max(2).default([]),
     note: md.optional(),
+    /** cards: a card per side. versus: two open columns split by a "vs" rule, numbered points, no boxes; left and right only
+        (the /features/whatsapp/ API-or-phone section). */
+    layout: z.enum(['cards', 'versus']).default('cards'),
   });

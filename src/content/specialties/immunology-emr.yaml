@@ -1,0 +1,696 @@
+# /immunology-emr/ (spec 5.15 SpecialtyPage template). Slug kept from the live site. No spec 4.3 keyword row
+# and no spec 5.15 must-have row exist for immunology. Kept apart from /allergy-emr-software/ (skin tests and
+# immunotherapy): this page is about autoimmune disease and immunodeficiency. Grounding: capability statements
+# the live /immunology-emr/ page makes plainly (retrieved 2026-11-05) and plans.yaml. No template counts,
+# biologic or infusion modules, device integrations or outcomes.
+status: published
+headKeyword: immunology EMR software
+secondaryKeywords:
+  - immunology clinic software
+  - EMR for immunologists
+  - autoimmune clinic EMR
+title: 'Immunology EMR Software: Easy Clinic'
+metaDescription: >-
+  Immunology EMR software: autoimmune disease activity templates, lab trends and the vaccination history
+  on one record, on Premium at {price:inr.premium.annual} a month.
+h1: "Transform Your Immunology Practice with Easy Clinic"
+linkLabel: Immunology
+eyebrow: For immunology clinics
+openingAnswer: "Simplify patient management, streamline appointments, and optimize billing with our all-in-one EMR software. Tailored for immunology practices, Easy Clinic ensures enhanced care delivery and improved operational efficiency."
+summary: >-
+  Autoimmune templates for symptoms, triggers and disease activity, lab results charted across visits, and
+  the vaccination history on one record, on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book an immunology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic immunology page and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-immunology-clinic-loses-track
+      heading: Where an immunology clinic loses track
+      intro: >-
+        Autoimmune disease flares and settles over years, and the question at each review is whether<br class="hidden lg:inline">
+        it is better or worse than last time. Most of what goes missing is the record that answers it.
+      items:
+        - heading: Last year's flare was written up in a different way
+          body: >-
+            A patient with lupus comes for a review. The notes from the last flare describe the joints,
+            the rash and the fatigue in free text, in another doctor's words, so you cannot tell at a glance
+            whether this is worse.
+          fix: >-
+            On Premium, autoimmune conditions are recorded on templates for symptoms, triggers and disease
+            activity, lupus and Sjögren's syndrome among them, so every visit is written the same way and
+            past visits open side by side.
+        - heading: The inflammatory markers are on separate reports
+          body: >-
+            To see whether the new medicine is working, you read the inflammatory markers and the blood
+            count off a stack of reports from several labs, one visit at a time.
+          fix: >-
+            Vitals, lab results and clinical parameters are drawn as charts across visits. On Premium, lab
+            reports come into the chart, and an outside lab's report is uploaded to the same record.
+        - heading: Nobody is sure which vaccines the patient has had
+          body: >-
+            Before starting an immunosuppressant, you need the patient's vaccination history. It is on a
+            card the patient left at home, and the next dose is due on a date nobody wrote down.
+          fix: >-
+            The vaccination history is kept on the patient's record, and immunisations can be scheduled for
+            patients with an immunodeficiency or an autoimmune disorder, with an automated reminder before
+            the date.
+        - heading: The reaction to last year's drug is in an old file
+          body: >-
+            A patient reacted badly to a medicine two years ago, and the note of it sits in a paper file
+            that did not come to clinic today.
+          fix: >-
+            Allergens, sensitivity levels and reactions are recorded on the patient's record and show on the
+            facesheet, and the EMR includes a drug interaction check on the prescription.
+
+  - discriminant: featureRows
+    value:
+      id: immunology-chart
+      heading: Built around the immunology chart
+      intro: >-
+        What an immunologist reopens at every review, kept on one patient record. Premium, the plan for
+        specialists, includes everything below.
+      layout: grid
+      items:
+        - heading: Autoimmune templates for disease activity
+          icon: clipboard-list
+          body: >-
+            Customisable templates record the symptoms, the triggers and the disease activity of an
+            autoimmune condition, lupus, Sjögren's syndrome and multiple sclerosis among them, so a review
+            is compared with the last on the same fields.
+          bullets:
+            - Symptoms, triggers and disease activity on one template
+            - Each review compared with the last on the same fields
+        - heading: Lab results charted across visits
+          icon: chart-line
+          body: >-
+            Vitals, lab results and clinical parameters are shown as charts and graphs, so a marker reads as
+            one line across visits. On Premium, lab reports come into the chart, and reports from outside
+            labs are uploaded to the patient's file as documents or images.
+          bullets:
+            - Lab results and vitals shown as charts across visits
+            - Outside lab reports uploaded as documents or images
+        - heading: Vaccinations and immunisation schedules
+          icon: calendar-clock
+          body: >-
+            The vaccination history is kept on the record, and immunisations can be scheduled for patients
+            with an immunodeficiency or an autoimmune disorder. The intake form records immunisations and
+            COVID history along with chronic illnesses, family history, social history and substance use.
+          bullets:
+            - Vaccination history kept on the patient's record
+            - Immunisation schedules for immunodeficiency patients
+        - heading: Allergies, sensitivities and reactions
+          icon: file-heart
+          body: >-
+            Allergens, sensitivity levels and reactions are tracked on the patient's record and shown on the
+            facesheet, and the prescription carries a drug interaction check. Skin testing and immunotherapy
+            schedules are covered on the allergy page.
+          bullets:
+            - Allergens, sensitivity levels and reactions tracked
+            - A drug interaction check on the prescription
+        - heading: Confidential and shared notes
+          icon: lock
+          body: >-
+            Case notes are shared across the care team, nurses and immunologists alike, and the EMR also
+            keeps confidential notes. Each person logs in as themselves, and the role on that login decides
+            which screens they can open.
+          bullets:
+            - Case notes shared by nurses and immunologists
+            - Confidential notes and a role on every login
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the immunologist to
+            review.
+          bullets:
+            - Cura AI is included in every plan
+            - The immunologist reviews every draft note
+
+  - discriminant: dataTable
+    value:
+      id: immunology-templates
+      heading: Immunology templates and forms
+      intro: >-
+        The live immunology page names the autoimmune conditions below as examples of the templates, so the
+        table lists only those and is not a full count. Specialty templates and your own clinical forms come
+        with Premium, and customising them carries no charge.
+      caption: Named immunology templates and forms, with the plan each needs
+      columns:
+        - Template or form
+        - What it holds
+        - Plan
+      rows:
+        - - Lupus
+          - Symptoms, triggers and disease activity
+          - Premium
+        - - Sjögren's syndrome
+          - Symptoms, triggers and disease activity
+          - Premium
+        - - Multiple sclerosis
+          - Symptoms, triggers and disease activity
+          - Premium
+        - - Your own forms
+          - A paper form your clinic uses today, rebuilt with the form builder
+          - Premium
+      note: >-
+        Professional includes the EMR and e-prescriptions, without the specialty templates or your own forms
+        and print layouts.
+
+  - discriminant: featureRows
+    value:
+      id: review-visit
+      heading: An immunology review, from the nurse's desk to the bill
+      intro: >-
+        How a review visit runs on Easy Clinic. We have not timed these steps in an immunology clinic, so
+        the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The nurse does the intake
+          icon: activity
+          body: >-
+            A nurse or clinical assistant does the intake before the consult, so the consult starts with the
+            day's details already on the record. The reception login included in the price cannot open the
+            EMR or issue a prescription.
+        - heading: The consult, by point and click
+          icon: notebook-pen
+          body: >-
+            The immunologist opens the record with the last visit's disease activity and the lab charts on
+            one screen. Notes, diagnosis, medications, investigations, referrals and follow-ups are picked
+            with auto-complete instead of typed out.
+        - heading: The prescription and the education material
+          icon: pill
+          body: >-
+            The prescription is printed or, on Premium, sent on WhatsApp, and it can be written in the
+            patient's language. Easy Clinic also carries patient education material for the patient to take
+            home.
+        - heading: A course of treatment billed as a package
+          icon: receipt
+          plan: premium
+          body: >-
+            On Premium, a course of care the clinic sells as a package is billed as one package treatment
+            and paid in parts. Each advance and part payment is recorded against it, and a refund or a
+            voided invoice goes through only with authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Reviews by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a stable patient's review can be a video consult, booked through the appointment
+            screen with the fee paid online. The patient joins from a browser, and the prescription carries a
+            line saying the consult was held remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Generate and Share in 30 Seconds
+        Create detailed prescriptions in just 30 seconds and share them instantly via print, WhatsApp, SMS, or email in any language.
+
+        ### Custom-Tailored Immunology EMR
+        Crafted to match your specialty, workflow, and preferences, providing a seamless experience for immunologists.
+
+        ### AI-Driven Efficiency
+        Simplify your documentation and save time with an AI-powered assistant, making prescription creation faster and more efficient.
+
+        ### Allergy and Sensitivity Management
+        Detailed tracking of allergens, sensitivity levels, and reactions.
+
+        ### Immunization Tracking
+        Monitor vaccination history and schedule immunizations for patients with immunodeficiencies or autoimmune disorders.
+
+        ### Autoimmune Disease Monitoring
+        Customizable templates to document symptoms, triggers, and disease activity for conditions like lupus, Sjögren’s syndrome, or multiple sclerosis.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab results, and clinical parameters through intuitive charts and graphs, enhancing patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets, offering intelligently organized key patient data for quick reference and efficient care.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more with a user-friendly interface. Features include custom examination forms, auto-complete notes, diagnoses, medications, investigations, referrals, follow-ups, and patient guidelines, all accessible with a few clicks, without the hassle of lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Immunology Patients
+        Capture detailed or concise medical histories tailored to your practice, including chronic illnesses, family and social history, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Immunologists
+        Custom-built to meet the unique needs of immunologists, super-specialists, and immunology clinic chains, ensuring optimal practice management.
+
+        ### AI-Powered Diagnostic Support
+        Use intelligent AI for accurate differential diagnoses and real-time alerts on adverse drug events, tailored specifically for patients with chronic conditions
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Easily convert your paper forms into digital templates with our flexible, user-friendly builder, streamlining your practice’s documentation process.
+
+        ### Complete Patient Data at a Glance
+        Access the complete patient visit history on a single screen, enhancing efficiency and streamlining care for better outcomes.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used immunology medications, investigations, and clinical tools like guidelines, checklists, and reminders to enhance care efficiency.
+
+        ### Effortless Care Team Collaboration
+        Enhance communication and coordination among nurses, immunologists, and healthcare providers to deliver complete, integrated care for patients.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Immunologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Immunology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Immunologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Immunology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Immunology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Immunology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Immunology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Immunology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Immunology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: Which Easy Clinic plan does an immunology clinic need, and what does it cost?
+    answer: >-
+      Premium, because the autoimmune templates and lab reports in the chart come with it:
+      {price:inr.premium.annual} per doctor per month billed annually in India or
+      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
+      {price:usd.premium.quarterly} in US dollars. Professional, at {price:inr.professional.annual} or
+      {price:usd.professional.annual}, has the EMR and billing but not the specialty templates. Both include
+      a reception login, with no setup fee and no binding contract.
+  - question: How is this different from the Easy Clinic allergy page?
+    answer: >-
+      This page is for clinics that follow autoimmune disease and immunodeficiency: disease activity
+      templates, lab trends and vaccinations. A clinic that mainly runs skin tests and immunotherapy courses
+      will find those on the allergy clinic page, and both run on the same patient record.
+  - question: Can I compare disease activity between visits?
+    answer: >-
+      Yes, on Premium: the autoimmune templates record symptoms, triggers and disease activity on the same
+      fields at each visit, and past visits open side by side with today's. Lab results and vitals are
+      charted across visits beside them.
+  - question: Can Easy Clinic keep the vaccination history and schedule the next dose?
+    answer: >-
+      Yes, the vaccination history is kept on the patient's record, and immunisations can be scheduled for
+      patients with an immunodeficiency or an autoimmune disorder. The patient gets an automated reminder by
+      SMS and email on every plan, or by WhatsApp on Premium.
+  - question: Can our lab results come straight into the chart?
+    answer: >-
+      On Premium, lab reports come into the chart and are charted across visits, and a report from an
+      outside lab can be uploaded as a file. Running your own lab, with orders from the chart and sample
+      tracking, is lab management, which comes with Enterprise or as an add-on on Professional and Premium.
+  - question: Does Easy Clinic run the pharmacy at our clinic?
+    answer: >-
+      Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
+      Professional and Premium as a module. With the module, the pharmacist dispenses from the doctor's
+      prescription and tracks each batch to its expiry date.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
+      system runs on the clinic's own server rather than in Easy Clinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /allergy-emr-software/
+      label: Allergy EMR
+      description: For the allergy clinic that records skin tests and immunotherapy shots.
+      icon: flask-conical
+    - href: /rheumatology-emr/
+      label: Rheumatology EMR
+      description: For the rheumatology clinic with long-term reviews and lab trends.
+      icon: history
+    - href: /hematology-emr/
+      label: Haematology EMR
+      description: For the haematology clinic that charts blood counts visit by visit.
+      icon: file-chart-column
+    - href: /dermatology-emr-software/
+      label: Dermatology EMR
+      description: For the skin clinic with before-and-after photographs and procedure sessions.
+      icon: scan-eye
+    - href: /pulmonology-emr/
+      label: Pulmonology EMR
+      description: For the chest clinic that follows asthma, COPD and spirometry reports.
+      icon: activity
+    - href: /ent-emr-software/
+      label: ENT EMR
+      description: For the ENT clinic with the ear examination and hearing test on one record.
+      icon: stethoscope
+closing:
+  heading: See an immunology review on Easy Clinic
+  body: >-
+    Book a demo and ask to see an autoimmune template beside the lab charts and the vaccination history, or
+    compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book an immunology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The named autoimmune templates (lupus, Sjögren's syndrome, multiple sclerosis) on symptoms, triggers
+    and disease activity, and immunisation scheduling for immunodeficient patients, come from Easy Clinic's
+    own immunology page, with plan placement from plans.yaml; the only local fact is the rupee price.
+  readsMachineWritten: >-
+    The four pains are composites rather than a named clinic's day, and the page has no immunologist's
+    words, no screenshot of an autoimmune template and no timed visit, so an immunologist will notice that
+    biologic therapy, infusion records and named activity scores are not described.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers". The live page has no FAQs to copy, so the FAQs written for this page stay.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: the live /immunology-emr/ page (fetched 2026-11-05) states plainly: allergens, sensitivity levels and reactions tracked; vaccination history monitored and immunisations scheduled for patients with immunodeficiencies or autoimmune disorders; autoimmune monitoring with customisable templates for symptoms, triggers and disease activity, naming lupus, Sjögren''s syndrome and multiple sclerosis; vitals, lab results and clinical parameters charted; auto-generated summaries and facesheets; point-and-click entry (complaints, history, vitals, notes, diagnoses, medications, investigations, referrals, follow-ups, guidelines); the customisable intake form (chronic illness, family and social history, substance use, alternative therapies, COVID history, immunisations); multilingual prescriptions, image and document upload, automated follow-up, drug interaction check, confidential notes, patient education, collaborative case notes; template and form builder; full visit history on one screen and side-by-side past records; nurse intake and care-team collaboration; teleconsultation in the browser with online fee payment and the remote-consult disclaimer; part and advance payments, authorised refunds and voids, and payment amortisation for package treatments; role-based access. Plan placement follows plans.yaml (specialty templates, own forms, lab reports in the chart, package treatments, video, WhatsApp on Premium; lab management, pharmacy and inventory on Enterprise or as add-ons). The offline answer is worded as on the cardiology and EMR pages.'
+  - 'Allergy split: /allergy-emr-software/ (written in parallel) owns skin tests and immunotherapy. This page leads on autoimmune disease and immunodeficiency, keeps allergies to one row (the live immunology page''s allergen tracking) and links across in that row, an FAQ and links.related. The old redirect /immunology-emr/ to /allergy-emr-software/ was removed before this page was written.'
+  - 'Dropped from the live page: "Generate and Share in 30 Seconds" (unmeasured); AI-powered differential diagnosis and real-time adverse drug event alerts (CuraPilot claims, not confirmed for this page); medical calculators, tabular Rx, triage, growth and progress charts (listed without detail); "invoices ready in less than 10 seconds"; "over 100 graphical dashboards", data warehouse, Power BI and Azure Data Factory; AI wait-time alerts and AI two-way messaging; patient self-service booking and check-in (plan unclear); "automated reminders to reduce no-shows" as an outcome (noShowReduction is null); prescriptions "in any language" (only the multilingual feature is claimed, no language list); the generic HR, roster, commission and communication sections; the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "absolutely free - no strings attached" lines (owner decision: no free trial). The four live testimonials (two psychiatrists, a general physician, an ophthalmologist) are not immunology quotes and are placed elsewhere.'
+  - 'Facts needed (company to-do for spec 5.15): (1) a named immunologist testimonial with consent, placed only here; (2) the full list of immunology templates, named and counted, with their fields (the live page names three conditions as examples, so the table says it is not a full count); (3) whether disease activity scores (for example SLEDAI) are built in, and whether biologic or infusion courses are tracked as structured data; (4) which plan carries vaccination scheduling, the intake form and the drug interaction check (rows without a plan tag; the featureRows intro says only that Premium includes every row); (5) whether the vaccination scheduling is the same reminder system as appointments; (6) which immunology note types Cura AI drafts, with an example; (7) a timed walkthrough of a review visit; (8) whether nurses need a paid login under per-doctor pricing.'
+  - 'Hero: Examination-3-1.png, with the alt text already used on /specialties/ and /neurology-emr/; it shows an examination template with its own sections, not an immunology template, and the alt says no more than that. When the seeded demo tenant exists, capture a lupus template with disease activity beside the lab chart as hero. The four pains are illustrative situations, not customers; "two years" is an example.'
+  - 'Related links: the draft post /immunology-clinic-management-software/ is left out of links.related because a draft link renders as plain text in production; add it when it publishes. Title 36 characters; meta description under 155 characters with the token resolved.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number.
+

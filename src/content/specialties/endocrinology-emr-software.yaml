@@ -1,0 +1,666 @@
+# /endocrinology-emr-software/ (spec 5.15 SpecialtyPage template; no spec 5.15 must-have row for endocrinology).
+# Slug kept from the live site; it redirected to /specialties/ ("Hold") until the owner asked for every footer
+# specialty to have its own page (2026-11-05). Grounding: capability statements the live
+# /endocrinology-emr-software/ page makes plainly (retrieved 2026-11-05, on the second attempt), plans.yaml, and
+# what published pages (/features/lab/, /cardiology-emr/, the endocrinology post) already state. Diabetes is
+# owned by /diabetology-emr-software/; this page covers thyroid, PCOS, bone and the rest of endocrine work.
+status: published
+headKeyword: endocrinology EMR software
+secondaryKeywords:
+  - endocrinologist EMR
+  - thyroid clinic software
+title: 'Endocrinology EMR Software: Easy Clinic'
+metaDescription: >-
+  Endocrinology EMR software: thyroid, PCOS and bone patients followed for years, with hormone and lab
+  values charted across visits, on Premium at {price:usd.premium.annual}.
+h1: "Simplify Endocrinology Practice Management with Easy Clinic"
+linkLabel: Endocrinology
+eyebrow: For endocrinology clinics
+openingAnswer: "Manage complex patient needs with ease. Easy Clinic offers seamless scheduling, lab integrations, and detailed patient tracking designed for endocrinology clinics. Streamline your workflow and focus on delivering personalized care to every patient."
+summary: >-
+  Hormone and lab values charted across visits, the family history of endocrine disorders on the
+  facesheet, and your own thyroid or PCOS forms on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book an endocrinology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic endocrinology page and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-endocrinology-clinic-loses-track
+      heading: Where an endocrinology clinic loses track
+      intro: >-
+        Endocrine care is slow. A thyroxine dose is adjusted over months and bone density is<br class="hidden md:inline">
+        compared year on year, so what goes missing is the line that joins one result to the next.
+      items:
+        - heading: The TSH results are on four different lab letterheads
+          body: >-
+            A woman on thyroxine brings TSH reports from three labs and a fourth from her gynaecologist. To
+            see whether the last dose change worked, you lay them out on the desk in date order and match
+            each one to the dose on that visit's prescription.
+          fix: >-
+            On Premium, lab reports come into the patient's chart and their values are charted across
+            visits beside the vitals, so the TSH trend since the dose change is one graph. A report from an
+            outside lab can be uploaded to the same record as a file.
+        - heading: The PCOS history is taken again at every visit
+          body: >-
+            A young woman with PCOS is seen by two doctors in the practice. Her cycle history, her mother's
+            diabetes and her sister's thyroid disease are asked for again each time, because the first
+            history is on a paper sheet in the file room.
+          fix: >-
+            The intake form records chronic illnesses, family history, obs-gynae details and social
+            history once, and the family history can name hereditary endocrine disorders such as diabetes,
+            thyroid disease or PCOS. What it records is shown on the patient's facesheet at every visit.
+        - heading: The bone scan report from two years ago
+          body: >-
+            A patient with osteoporosis comes for her yearly review with today's bone density report. The
+            one you want to compare it with was handed back to her two years ago and is somewhere at home.
+          fix: >-
+            Diagnostic reports are uploaded to the patient's record as documents or images and stay there,
+            so last year's report sits beside this year's, and past visits open side by side with the
+            current one.
+        - heading: Every doctor writes the thyroid review differently
+          body: >-
+            The clinic has a printed sheet for thyroid reviews, but each consultant fills it in their own
+            way, and the junior doctor skips half of it. Comparing one patient's reviews across doctors
+            means reading three styles of note.
+          fix: >-
+            On Premium, the form builder turns the clinic's paper sheet into a digital form, so every doctor
+            records the same fields in the same order, and customising forms carries no charge.
+
+  - discriminant: featureRows
+    value:
+      id: endocrinology-chart
+      heading: Built around the endocrinology chart
+      intro: >-
+        What an endocrinologist reopens at every review, kept on one patient record. Premium, the plan for
+        specialists, includes everything below.
+      layout: grid
+      items:
+        - heading: Hormone and lab values as trend charts
+          icon: chart-line
+          body: >-
+            On Premium, lab reports come into the chart and values such as TSH are charted visit by visit,
+            beside vitals such as weight and blood pressure, so a dose change can be read against the
+            trend. Full lab management, with orders from the chart and sample tracking, comes with
+            Enterprise or as a module added to Professional or Premium.
+          bullets:
+            - TSH charted visit by visit on Premium
+            - Full lab management with Enterprise or as a module
+        - heading: Long-term conditions followed over years
+          icon: history
+          body: >-
+            Easy Clinic tracks long-term endocrine conditions, hypothyroidism and osteoporosis among them,
+            over the years a patient is seen. Every past visit stays on the same record, and past records
+            open side by side with today's.
+          bullets:
+            - Thyroid disorders and osteoporosis followed over the long term
+            - Past visits side by side with today's
+        - heading: The family history of endocrine disease
+          icon: clipboard-plus
+          body: >-
+            The intake form records hereditary endocrine disorders in the family history, such as diabetes,
+            thyroid conditions or PCOS, with obs-gynae details, social history and chronic illnesses. What
+            it records is shown on the patient's facesheet, and an auto-generated summary puts the key data
+            on one screen before each review.
+          bullets:
+            - Diabetes, thyroid conditions or PCOS in the family
+            - An auto-generated summary before each review
+        - heading: Your own thyroid and PCOS forms
+          icon: notebook-pen
+          body: >-
+            On Premium the clinic turns its own review sheets into digital forms with the form builder, and
+            custom examination forms keep each doctor's notes in the same shape. Customising forms carries
+            no charge.
+          bullets:
+            - Review sheets turned into digital forms on Premium
+            - No charge for customising forms
+        - heading: A drug interaction check when you prescribe
+          icon: shield-check
+          body: >-
+            An endocrine patient is often on several long-term medicines from more than one specialist.
+            Easy Clinic's EMR includes a drug interaction check on the prescription.
+          bullets:
+            - For patients on medicines from more than one specialist
+            - Interactions checked on the prescription
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the endocrinologist
+            to review.
+          bullets:
+            - Cura AI is included in every plan
+            - The endocrinologist reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: review-visit
+      heading: An endocrinology review, from the nurse's desk to the bill
+      intro: >-
+        How a review visit runs on Easy Clinic. We have not timed these steps in an endocrinology clinic,
+        so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The nurse records the vitals first
+          icon: activity
+          body: >-
+            A nurse or clinical assistant does the intake before the consult, entering weight, height and
+            blood pressure by point and click, so a child seen for growth or an adult on a weight programme
+            has the measurement charted before the doctor opens the record. Each person logs in as
+            themselves, and the role on that login decides which screens they can open.
+        - heading: The consult, by point and click
+          icon: notebook-pen
+          body: >-
+            The endocrinologist opens the record with the vitals and the latest lab values on it.
+            Complaints, diagnosis, medications, investigations, referrals and follow-ups are picked with
+            auto-complete, and on Premium the visit can be written on the clinic's own review form.
+        - heading: The prescription and the education material
+          icon: pill
+          body: >-
+            The prescription is printed for the patient or, on Premium, sent on WhatsApp. Easy Clinic also
+            carries patient education material, so a patient starting thyroxine or a PCOS programme goes
+            home with more than a slip.
+        - heading: Programmes paid in parts
+          icon: hand-coins
+          plan: premium
+          body: >-
+            On Premium, a course of care the clinic sells as a package, a PCOS or thyroid programme for
+            example, is billed as one package treatment and paid in parts. Each advance and part payment is
+            recorded against it, and a refund goes through only with authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Reviews by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a stable patient's review can be a video consult, booked through the appointment
+            screen with the fee paid online. The patient joins from a web browser on a phone or a
+            computer, and the prescription says the consult was held remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Create and Share in 30 Seconds
+        Generate detailed prescriptions in just 30 seconds and instantly share them via print, WhatsApp, SMS, or email in any language for seamless communication.
+
+        ### Custom-Tailored Endocrinology EMR
+        Built to suit the unique needs of endocrinologists, with personalized workflows and features for a seamless and efficient experience.
+
+        ### AI-Driven Efficiency
+        Streamline your workflow and save time with an AI-powered assistant that enables you to create prescriptions in just three clicks.
+
+        ### Chronic Disease Monitoring
+        Tools for tracking long-term conditions like diabetes, hypothyroidism, or osteoporosis.
+
+        ### Family History Tracking
+        Record hereditary endocrine disorders like diabetes, thyroid conditions, or polycystic ovarian syndrome (PCOS).
+
+        ### Visual Health Insights
+        Easily track specific vitals, lab reports, and clinical parameters through interactive visuals to enhance patient care and decision-making.
+
+        ### Streamlined Patient Summaries: Instant Access to Complete Case Histories
+        Save time with auto-generated summaries and facesheets that intelligently present key patient data for efficient care.
+
+        ### Simplified Point-and-Click Interface
+        Effortlessly document chief complaints, medical history, vitals, and more with a user-friendly interface. Access custom examination forms, auto-complete notes, diagnoses, medications, investigations, referrals, follow-ups, and patient guidelines, all optimized for quick and seamless navigation.
+
+        ### Complete Medical History: Customizable Intake Forms for Endocrinology Patients
+        Capture detailed or concise medical histories tailored to your needs, covering chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All data integrates seamlessly into the patient’s face sheet for quick and easy follow-up access.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Endocrinologists
+        Customized to address the unique requirements of specialists, super-specialists, and endocrinology clinic chains for optimized care delivery.
+
+        ### AI-Powered Diagnostic Support
+        Harness intelligent AI for differential diagnoses and alerts on adverse drug events, specifically tailored for endocrinology patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Effortlessly Digitize Paper Forms
+        Quickly transform your paper forms into digital templates with our flexible, user-friendly builder, making documentation faster and more efficient.
+
+        ### Complete Patient Data at a Glance
+        Access the full patient visit history on a single screen to enhance the efficiency of endocrinology care and improve decision-making.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders to optimize care and efficiency
+
+        ### Effortless Care Team Collaboration
+        Enhance communication and coordination among nurses, endocrinologists, and other healthcare providers, ensuring seamless and complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Endocrinologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Endocrinology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Endocrinologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Endocrinology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Endocrinology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Endocrinology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Endocrinology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Endocrinology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Endocrinology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: Which Easy Clinic plan does an endocrinology clinic need, and what does it cost?
+    answer: >-
+      Premium, because lab reports in the chart, your own clinical forms and package treatments come with
+      it: {price:inr.premium.annual} per doctor per month billed annually in India or
+      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
+      {price:usd.premium.quarterly} in US dollars. Professional, at {price:inr.professional.annual} or
+      {price:usd.professional.annual}, has the EMR and billing but not those three. Both include a reception
+      login, with no setup fee and no binding contract.
+  - question: Can I see a patient's TSH or other hormone results as a trend?
+    answer: >-
+      Yes, on Premium: lab reports come into the chart and their values are charted visit by visit beside
+      the vitals, so the result since the last dose change reads as one line. A report from an outside lab
+      can also be uploaded to the patient's file.
+  - question: Does Easy Clinic have endocrinology templates?
+    answer: >-
+      We do not publish a list of endocrinology templates. On Premium the form builder turns the clinic's own
+      thyroid, PCOS or bone review sheet into a digital form, and custom examination forms keep every
+      doctor's notes in the same fields.
+  - question: Is this the same page as diabetology?
+    answer: >-
+      No, diabetes care has its own page, with sugar and HbA1c trends and foot and eye examinations. This
+      page is for the rest of endocrine practice, and both run on the same Easy Clinic record, so a patient
+      with diabetes and hypothyroidism has one chart.
+  - question: Can several doctors and a nurse work on the same patient's record?
+    answer: >-
+      Yes, every doctor in the clinic writes on the same patient record, and a nurse or clinical assistant
+      can record the intake, vitals included, before the consult. Each person logs in as themselves and the
+      role on that login decides which screens they can open; the reception login included in the price
+      cannot open the EMR or issue a prescription.
+  - question: Can bone density and scan reports go on the record?
+    answer: >-
+      Yes, as files: bone density, ultrasound and other diagnostic reports are uploaded to the patient's
+      record as documents or images, beside the visits. A direct connection to a scanner would be custom
+      integration work, which comes with Enterprise or is added to Professional and Premium.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /diabetology-emr-software/
+      label: Diabetology EMR
+      description: For the diabetes clinic that follows sugar trends and foot and eye checks.
+      icon: chart-pie
+    - href: /obgyn-emr-software/
+      label: OB-GYN EMR
+      description: For the obstetric clinic that follows each pregnancy to the due date.
+      icon: calendar
+    - href: /ivf-emr/
+      label: IVF clinic software
+      description: For the fertility clinic that tracks each cycle from stimulation to transfer.
+      icon: calendar-clock
+    - href: /cardiology-emr/
+      label: Cardiology EMR
+      description: For the cardiology clinic that follows ECG reports and blood pressure trends.
+      icon: heart
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+    - href: /pediatric-emr/
+      label: Paediatric EMR
+      description: 'For the children''s clinic with growth charts and a vaccine schedule by age.'
+      icon: baby
+closing:
+  heading: See an endocrinology review on Easy Clinic
+  body: >-
+    Book a demo and ask to see a patient's hormone results charted across visits and a family history of
+    thyroid disease on the facesheet, or compare what Premium includes on the pricing page.
+  primary:
+    label: Book an endocrinology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The hereditary endocrine history on the intake form and long-term tracking of hypothyroidism and
+    osteoporosis come from Easy Clinic's own endocrinology page, and the plan split is stated as
+    plans.yaml has it: lab charts, forms and packages on Premium, lab management on Enterprise or as a
+    module.
+  readsMachineWritten: >-
+    The pains are composites rather than a named clinic's day, and the page names no endocrinology
+    template, no growth standard and no adrenal or pituitary workflow, so an endocrinologist will find the
+    chart rows general beyond thyroid, PCOS and bone.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers". The live page has no FAQs to copy, so the FAQs written for this page stay.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Live page: the first fetch of https://www.easyclinic.io/endocrinology-emr-software/ on 2026-11-05 failed mid-response (the URL has looped before); the second fetch returned the page. Grounding: stated plainly on it: "Tools for tracking long-term conditions like diabetes, hypothyroidism, or osteoporosis" (chronic disease monitoring); "Record hereditary endocrine disorders like diabetes, thyroid conditions, or polycystic ovarian syndrome (PCOS)" (family history); the intake form (chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, immunisations); vitals, lab reports and clinical parameters as charts; the template and form builder for paper forms; custom examination forms; side-by-side past records; clinical assistant or nurse intake; drug interaction check; patient education. Plan placement follows plans.yaml (lab reports in the chart, own forms, package treatments, WhatsApp and video consults on Premium; lab management on Enterprise or a module; integrations on Enterprise or an add-on). "TSH" as an example lab value and thyroid and PCOS programmes as packages follow the published /clinic-management-system-for-endocrinologists/ post. Video consults are not mentioned on the live endocrinology page; the row rests on /features/telemedicine/ and plans.yaml. Auto-generated summaries and role logins rest on the published specialty pages.'
+  - 'Dropped from the live page: "lab integrations" in the introduction (integrations are custom work on Enterprise or an add-on, and no lab is named), AI-powered diagnostic support "specifically tailored for endocrinology patients" with differential diagnoses and ADR alerts (CuraPilot claims), "Growth & Progress charts" and "Medical calculators" (listed in the Advanced EMR list with no plan and no standard named; the page says only that weight and height are charted as vitals and links nothing on growth standards), "Generate detailed prescriptions in just 30 seconds", "three clicks", "invoices ready in less than 10 seconds", "over 100 graphical dashboards", the "Join 5000+ Doctors" line, and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial). The live page has no FAQ and no comparison table.'
+  - 'Facts needed (company to-do): named endocrinology templates and their count (the FAQ says plainly that none is published); adrenal, pituitary and growth workflows, for example dynamic test protocols, growth charts against a named standard for paediatric endocrinology, or a bone density log; which plan carries the long-term condition tracking, the intake form and vitals charts (rows without a plan tag rest on the featureRows intro, which says only that Premium includes every row); whether recall campaigns by condition are available and on which plan; which endocrine note types Cura AI drafts, with an example; a timed walkthrough of a thyroid review; a named endocrinologist testimonial (none on the live page; it carries the shared psychiatry, general physician and ophthalmology quotes, each placed elsewhere).'
+  - 'Hero: 12_Investigation_2.png with the alt text the published /features/ hub uses. The screenshot shows investigation results (its test list includes aldosterone and DHEAS), a result entry form and lab workflow settings; result entry and workflow settings belong to lab management (Enterprise or a module), which the first chart row says. Replace with a thyroid review and TSH trend from the seeded demo tenant when it exists. The pains are illustrative, not customers.'
+  - 'Distinct from /diabetology-emr-software/, which owns diabetes; this page links there and says so in the FAQ. Head keyword "endocrinology EMR software" is distinct from the post''s "endocrinology clinic management software", which this page links as a related read.'

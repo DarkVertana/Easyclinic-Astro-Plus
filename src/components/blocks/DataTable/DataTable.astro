@@ -41,6 +41,8 @@ function ownerCell(text: string | null) {
   if (/^the branch$/i.test(t)) return { kind: 'branch', label: 'The branch', icon: 'map-pin', note: '' };
   return null;
 }
+// Questions variant: the clean table, each row a question and its answer.
+const questions = variant === 'questions';
 // Tiers variant: which column is the price (shown large), and an icon for each tier in order.
 const priceCol = columns.findIndex((col) => /price/i.test(col));
 const TIER_ICONS = ['user-round', 'building-2', 'network', 'crown'];
@@ -100,7 +102,7 @@ function planCell(text: string | null) {
   <>
   {/* Explicit roles keep table semantics when the cells are display:block below 640px (Safari drops them). */}
   <table
-    class:list={variant === 'figures' ? ['dt-figures'] : variant === 'plans' ? ['dt-plans'] : ['dt', columns.length >= 5 && 'dt-dense', variant === 'clean' && 'dt-clean']}
+    class:list={variant === 'figures' ? ['dt-figures'] : variant === 'plans' ? ['dt-plans'] : ['dt', columns.length >= 5 && 'dt-dense', (variant === 'clean' || questions) && 'dt-clean', questions && 'dt-questions']}
     role="table"
     aria-labelledby={labelledBy}
     aria-label={label}
@@ -797,6 +799,40 @@ function planCell(text: string | null) {
     }
   }
 
+  /* Questions variant: the clean table with a wider question column and the answer in body text. */
+  .dt-questions tbody th {
+    font-size: 1.0625rem;
+    line-height: 1.45;
+  }
+
+  .dt-questions tbody td,
+  .dt-questions tbody td:nth-child(2) {
+    width: auto;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    color: var(--ink);
+  }
+
+  @media (width >= 64rem) {
+    .dt-questions thead th:first-child,
+    .dt-questions tbody th {
+      width: 30%;
+    }
+
+    .dt-questions tbody th,
+    .dt-questions tbody td {
+      padding: 1.5rem 2rem;
+    }
+
+    .dt-questions tbody tr {
+      transition: background-color 150ms;
+    }
+
+    .dt-questions tbody tr:hover > * {
+      background: var(--color-blue-50);
+    }
+  }
+
   /* Clean variant: who sets a rule, as a chip. */
   .owner-cell {
     display: inline-flex;
@@ -954,17 +990,9 @@ function planCell(text: string | null) {
 </style>
 
 <style is:global>
-  /* A highlighted phrase in a table cell: yellow with a red dashed outline, the row's key finding. */
+  /* A marked phrase in a table cell: plain text (yellow tag removed 2026-11-05). */
   .dt mark {
-    /* Moves to the next line as a whole; wraps inside only when longer than the cell. */
-    display: inline-block;
-    max-width: 100%;
-    background: #fff3b0;
-    color: var(--ink-heading);
-    padding: 0.05em 0.35em;
-    border: 1.5px dashed #d93025;
-    border-radius: 0.3em;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    background: none;
+    color: inherit;
   }
 </style>

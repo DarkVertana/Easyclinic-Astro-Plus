@@ -10,14 +10,10 @@ title: 'Cardiology EMR Software: Easy Clinic'
 metaDescription: >-
   Cardiology EMR software: ECG and echo reports on the patient's record with blood pressure and lab trend
   charts, on Premium at {price:usd.premium.annual} per doctor a month.
-h1: Cardiology EMR with ECG reports and BP trends
+h1: "Transforming Cardiology Care with Easy Clinic"
 linkLabel: Cardiology
 eyebrow: For cardiology clinics
-openingAnswer: >-
-  A cardiology clinic sees the same patients for years, so it needs ECG and echo reports beside the notes,
-  and blood pressure and lab results charted across visits. Easy Clinic's Premium plan keeps both on one
-  record and adds cardiology templates, at {price:inr.premium.annual} per doctor per month in India or
-  {price:usd.premium.annual}, billed annually.
+openingAnswer: "Easy Clinic streamlines cardiology workflows, from patient intake to ongoing monitoring. Our software supports precise diagnostics, personalized treatment plans, and seamless communication, empowering cardiologists to provide superior care and optimize patient outcomes."
 summary: >-
   ECG and echo reports and the blood pressure chart on one patient record, with lab trends and cardiology
   templates on the Premium plan.
@@ -25,8 +21,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/14_Dashboard (1).jpg'
-  alt: 'Easy Clinic dashboard charts showing patients by specialisation and by week, the top four diagnoses, today''s earnings and invoices by status'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -43,9 +39,8 @@ sections:
       id: where-a-cardiology-clinic-loses-track
       heading: Where a cardiology clinic loses track
       intro: >-
-        Cardiac patients come back for years, and most of what goes missing is the record of the visits in
-        between: last year's echo report, or the run of blood pressure readings since the last change of
-        medicine.
+        Cardiac patients come back for years, and most of what goes missing is the record of the visits in<br class="hidden lg:inline">
+        between: last year's echo report, or the run of blood pressure readings since the last change of medicine.
       items:
         - heading: The echo report is in the patient's bag
           body: >-
@@ -56,8 +51,6 @@ sections:
             ECG and echo reports are uploaded to the patient's file as documents or images, so last
             spring's report sits on the same record as today's note, and past visits open side by side
             with the current one.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: Six visits of readings, opened one at a time
           body: >-
             To see whether the new antihypertensive is working, you open each visit in turn and read the
@@ -67,8 +60,6 @@ sections:
             Vitals recorded at each visit, blood pressure included, are drawn as charts over time. On
             Premium, lab reports come into the chart, so the lipid and HbA1c values sit beside the vitals
             on one screen.
-          href: /features/lab/
-          linkLabel: Read how lab results reach the chart
         - heading: The review date is on the prescription and nowhere else
           body: >-
             "Review in three months" is written at the foot of the prescription. The patient feels well and
@@ -76,8 +67,6 @@ sections:
           fix: >-
             The follow-up is set in the note before the patient leaves, and the patient gets an automated
             reminder: by SMS and email on every plan, and on WhatsApp on Premium.
-          href: /features/appointment-scheduling/
-          linkLabel: Read how reminders work
         - heading: The treadmill is booked twice at 11am
           body: >-
             Two cardiologists each send a patient for a stress test at the same hour, and the clinic has one
@@ -93,8 +82,10 @@ sections:
       intro: >-
         What a cardiologist reopens at every review, kept on one patient record. Premium, the plan for
         specialists, includes everything below.
+      layout: grid
       items:
         - heading: ECG and echo reports on the record
+          icon: file-heart
           body: >-
             ECGs, echo reports, lab reports and other diagnostic records are stored in the patient's file,
             uploaded as documents or images. Procedures and tests, an echo or a stress test for example, are
@@ -104,35 +95,49 @@ sections:
             - Diagnostic reports kept in the patient's file
             - Procedures and tests recorded with the treatment notes
         - heading: Blood pressure and lab values as trend charts
+          icon: chart-line
           body: >-
             Vitals and clinical measurements are shown as charts and graphs, so a patient's blood pressure
             reads as one line across visits instead of a list of numbers in separate notes. On Premium, lab
             reports come into the chart, and values such as LDL cholesterol and HbA1c are charted beside
             the vitals. Every past visit is on the same screen.
+          bullets:
+            - Blood pressure read as one line across visits
+            - LDL cholesterol and HbA1c charted beside vitals on Premium
         - heading: The history and risk factors on the facesheet
+          icon: clipboard-plus
           body: >-
             The intake form records chronic illnesses, family history, social history and substance use,
             with as much or as little detail as the clinic wants. What it records is shown on the patient's
             facesheet, and an auto-generated summary puts the key data on one screen before each review.
+          bullets:
+            - Family history, social history and substance use recorded
+            - An auto-generated summary before each review
         - heading: A drug interaction check when you prescribe
+          icon: shield-check
           body: >-
             A cardiology patient is often on several long-term medicines, and a new one gets added at almost
             every review. Easy Clinic's EMR includes a drug interaction check on the prescription.
+          bullets:
+            - For patients on several long-term medicines
+            - A new medicine checked on the prescription
         - heading: Follow-ups set in the note, with reminders
+          icon: bell-ring
           body: >-
             Patients with heart failure or hypertension come back for years, so the follow-up is recorded
             in the note at the end of every consult. The reminder goes to the patient automatically, by SMS
             and email on every plan and by WhatsApp on Premium.
-          link:
-            label: Read how reminders work
-            href: /features/appointment-scheduling/
+          bullets:
+            - The follow-up recorded at the end of every consult
+            - Reminders by SMS and email, and by WhatsApp on Premium
         - heading: Cura AI drafts the note
+          icon: sparkles
           body: >-
             Cura AI (documentation) is included in every plan. It drafts the note for the cardiologist to
             review.
-          link:
-            label: Read what Cura AI does
-            href: /ai/
+          bullets:
+            - Cura AI is included in every plan
+            - The cardiologist reviews every draft note
 
   - discriminant: dataTable
     value:
@@ -171,19 +176,25 @@ sections:
       intro: >-
         How a review visit runs on Easy Clinic in a polyclinic or a hospital OPD. We have not timed these
         steps in a cardiology clinic, so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
       items:
         - heading: The nurse records the vitals first
+          icon: activity
           body: >-
             A nurse or clinical assistant does the intake before the consult, entering the vitals and any
             change in the history by point and click. Each person logs in as themselves, and the role on
             that login decides which screens they can open; the reception login included in the price cannot
             open the EMR or issue a prescription.
         - heading: The consult, by point and click
+          icon: notebook-pen
           body: >-
             The cardiologist opens the record with the vitals already on it. Notes, diagnosis, medications,
             investigations, referrals and follow-ups are picked with auto-complete instead of typed out, and
             on Premium the visit can be written on a cardiology template, heart failure for example.
         - heading: The echo or the treadmill booked in the slot
+          icon: calendar-clock
           body: >-
             If the review needs a test, the equipment and the assistant who runs it are booked inside the
             appointment slot, and the result is recorded on the same patient record.
@@ -191,11 +202,13 @@ sections:
             label: Read how booking works
             href: /features/appointment-scheduling/
         - heading: The prescription goes home on paper or on WhatsApp
+          icon: pill
           body: >-
             The prescription is printed for the patient or, on Premium, sent on WhatsApp. Easy Clinic also
             carries patient education material, in videos and brochures, on heart disease and on
             rehabilitation.
         - heading: Packages paid in parts
+          icon: receipt
           plan: premium
           body: >-
             On Premium, a course of care the clinic sells as a package, cardiac rehabilitation sessions for
@@ -205,6 +218,7 @@ sections:
             label: Read how billing works
             href: /features/billing/
         - heading: Follow-ups by video
+          icon: video
           plan: premium
           body: >-
             On Premium, a review can be a video consult, booked through the appointment screen with the fee
@@ -215,123 +229,416 @@ sections:
             label: Read how video consults work
             href: /features/telehealth/
 
-  - discriminant: proofBlock
+  - discriminant: splitContent
     value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        We do not yet have a cardiologist's own words to put on this page. These are Easy Clinic's public
-        ratings, from clinics of every specialty.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescription in 30 Seconds
+        Create detailed prescriptions in just 30 seconds and deliver them instantly in any language via print, WhatsApp, SMS, or email.
 
-  - discriminant: stepList
+        ### Tailored Cardiology EMR
+        An EMR specifically designed to align with cardiology specialties, workflows, and preferences, providing a personalized experience for heart health services.
+
+        ### AI-Driven Assistance
+        Utilize an AI assistant to complete prescriptions in just three clicks, streamlining your clinical documentation and saving valuable time.
+
+        ### Cardiac Health Trend Visualization
+        Present heart health metrics, lab results, and clinical parameters as charts and graphs for clear and easy visualization of a patient’s health trends.
+
+        ### Cardiology-Specific Templates
+        Cardiology specific templates for heart failure, arrhythmias, coronary artery disease and other conditions.
+
+        ### Patient Education
+        Condition specific resources such as videos and brochures on heart disease, lifestyle changes, and rehabilitation.
+
+        ### Streamlined Patient Summaries
+        Instant access to auto-generated patient summaries and facesheets for a thorough review of case histories, saving time and presenting key data in an organized and efficient manner.
+
+        ### Effortless Point-and-Click Input
+        Use an intuitive point-and-click interface to record cardiology patient data, medical history, vitals, and more. Features include custom examination forms like CVS Examination, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines. Enjoy the flexibility to select specific controls without the need for lengthy screen navigation.
+
+        ### Complete Medical History Record
+        Capture a cardiac patient's medical history using a customizable intake form, with the option to include as much or as little detail as needed. Record information on chronic illnesses, family history, social and obstetric-gynecological history, substance use, alternative therapies, COVID history, and immunizations. These details are then displayed in the patient’s facesheet, streamlining future visits and saving valuable time.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: training
-      heading: How long does it take to learn Easy Clinic?
-      intro: >-
-        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
-        session is 20 to 40 minutes, short enough to fit between OPD sessions, so the clinic keeps seeing
-        patients while the team learns.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
-          body: >-
-            The screens the front desk and the clinical team use every day. Bring your receptionist, whose
-            login is part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
-          body: >-
-            You work through the chart and the prescription on the kinds of case your clinic sees.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: Exercises to practise on, so the first real patient is not your first attempt.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note quicker, once the basics have become habit.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+      id: advanced-emr
+      heading: Advanced EMR for Cardiologists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialized EMR Design for Cardiologists
+        Custom-built for cardiologists, super-specialists, and clinic networks, catering to a wide range of healthcare needs.
 
-faqHeading: Questions cardiology clinic owners ask
+        ### AI-Powered Diagnostic Tools
+        Smart AI support for differential diagnosis and alerts for adverse drug events, essential for heart disease specialists managing patients with multiple chronic conditions.
+
+        ### Customizable Template and Form Builder
+        Effortlessly convert paper forms into digital formats with our versatile template builder, ensuring a seamless transition for cardiology practices.
+
+        ### Complete Data Visualization
+        Access longitudinal patient visit data on a single screen, improving the efficiency of patient care in a cardiovascular care center.
+
+        ### Streamlined Access to Key Resources
+        Instant access to commonly used treatment protocols, medications, investigations, and clinical tools, including guidelines, checklists, and reminders.
+
+        ### Effortless Team Collaboration
+        Enhances communication and coordination among nurses, cardiologists, and other caregivers, ensuring integrated patient care at a heart disease center.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Telemedicine for Cardiology specialty consultations
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telecardiology Services
+        Utilises Easy Clinic's in-built video consultation features to provide virtual cardiology consultations, offering a seamless remote patient consultation experience for heart disease experts.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online cardiology consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software for Cardiology Consultations
+        Both cardiologists and heart patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the cardiac teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options for bills
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Dynamic Service Pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes for cardiology services.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your cardiology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling for Cardiologists
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing clinic staff to effortlessly schedule and manage appointments, enhancing daily practice efficiency for heart disease treatment.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving cardiac patient attendance and clinic efficiency for heart health services.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of virtual cardiology consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables cardiac patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any cardiac clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing cardiac patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Detailed Reporting and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Data Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs in cardiology practices.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse
+        For large cardiology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication for Cardiology Clinics - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful cardiology workflow builder for heart health services.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling cardiology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for cardiac clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: Which Easy Clinic plan does a cardiology clinic need, and what does it cost?
-    answer: >-
-      Premium, because the cardiology templates come with it: {price:inr.premium.annual} per doctor per
-      month billed annually in India or {price:inr.premium.quarterly} billed quarterly, and
-      {price:usd.premium.annual} or {price:usd.premium.quarterly} in US dollars. Professional, at
-      {price:inr.professional.annual} or {price:usd.professional.annual}, has the EMR and billing but not the
-      specialty templates. Both include a reception login, with no setup fee and no binding contract.
-  - question: Can Easy Clinic store ECGs and echo reports, and can it connect to the machines?
-    answer: >-
-      It stores them as files, and a direct machine connection would be custom work. ECG and echo reports,
-      like any other diagnostic record, are kept in the patient's file as uploaded documents or images. A
-      direct connection to an ECG or echo machine would be custom integration work, which comes with
-      Enterprise or is added to Professional and Premium and is scoped per project.
-  - question: Can I see a patient's blood pressure and cholesterol trend across visits?
-    answer: >-
-      Yes, vitals such as blood pressure are shown as charts over time, so the trend reads as one line
-      across visits. On Premium, lab reports come into the chart and values such as LDL cholesterol and
-      HbA1c are charted beside the vitals. A report from an outside lab can also be uploaded to the
-      patient's file.
-  - question: How do patients on long-term follow-up get reminded to come back?
-    answer: >-
-      The cardiologist sets the follow-up in the note, and the patient gets an automated reminder by SMS
-      and email on every plan, or by WhatsApp on Premium. Every visit stays on the same record, so at the
-      review the history since the first consult is on one screen.
-  - question: Can several cardiologists and a nurse work on the same patient's record?
-    answer: >-
-      Yes, every doctor in the clinic writes on the same patient record, and a nurse or clinical assistant
-      can record the intake, vitals included, before the consult. Each person logs in as themselves and
-      the role on that login decides which screens they can open; the reception login included in the price
-      cannot open the EMR or issue a prescription. Running a second location on the same records needs
-      Premium.
-  - question: Can I see follow-up patients by video?
-    answer: >-
-      Yes, on Premium, which includes video consultations: the consult is booked through the appointment
-      screen with the fee paid online, and the patient joins from a web browser on a phone or a computer,
-      with nothing to install. The prescription can go to the patient on WhatsApp or by email, and it says
-      the consult was held remotely.
-  - question: Does Easy Clinic run the pharmacy at our cardiac centre?
-    answer: >-
-      Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
-      Professional and Premium as a module. With the module, the pharmacist dispenses from the doctor's
-      prescription and tracks each batch to its expiry date.
-  - question: Does Easy Clinic work without an internet connection?
-    answer: >-
-      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
-      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
-      system runs on the clinic's own server rather than in Easy Clinic's cloud.
+  - question: "What is the best EMR software for cardiology clinics?"
+    answer: "The best EMR software for cardiology clinics should support diagnostic reports, ECG records, procedure notes, and long-term patient tracking. Easy Clinic is designed to manage the complete workflow of cardiology clinics."
+  - question: "Does Easy Clinic support AI EMR for cardiology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic store ECG and diagnostic reports?"
+    answer: "Yes. Easy Clinic allows clinics to store ECG, echo, lab reports, and other diagnostic records in patient files."
+  - question: "Does Easy Clinic support chronic patient follow-up tracking?"
+    answer: "Yes. Cardiology patients often require regular follow-ups, and Easy Clinic allows detailed history tracking."
+  - question: "Can Easy Clinic manage procedure documentation?"
+    answer: "Yes. Clinics can record procedures, tests, and treatment notes in patient records."
+  - question: "Does Easy Clinic support billing for cardiology procedures?"
+    answer: "Yes. Easy Clinic includes billing, invoicing, and payment tracking."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Is Easy Clinic suitable for small cardiology clinics?"
+    answer: "Yes. Easy Clinic works for single-doctor clinics as well as multi-doctor centres."
+  - question: "Can multiple cardiologists use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides advanced analytics to track patient visits, procedures, and revenue."
 
 links:
   hub: /specialties/
-  relatedHeading: Where cardiology clinic owners go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/polyclinic/
-      label: Polyclinic software
-      description: >-
-        For a heart clinic inside a multi-specialty centre: one patient record for every specialist, and
-        roles that decide who sees what.
-    - href: /solutions/hospital-opd/
-      label: Hospital OPD software
-      description: For a cardiology OPD in a hospital or nursing home, with the registration queue and the pharmacy on one record.
-    - href: /emr-software-in-india/
-      label: Clinic management software in India
-      description: What Easy Clinic costs in rupees, and how it fits a clinic in India.
-    - href: /emr-software-in-kenya/
-      label: Clinic software in Kenya
-      description: Easy Clinic for clinics in Kenya, with prescriptions in English and Swahili.
-    - href: /features/emr/
-      label: The EMR and e-prescriptions
-      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
-    - href: /pricing/
-      label: Easy Clinic pricing
-      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
-
+    - href: /diabetology-emr-software/
+      label: Diabetology EMR
+      description: For the diabetes clinic that follows sugar trends and foot and eye checks.
+      icon: chart-pie
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+    - href: /endocrinology-emr-software/
+      label: Endocrinology EMR
+      description: For the endocrinologist who follows thyroid, PCOS and bone patients.
+      icon: chart-line
+    - href: /pulmonology-emr/
+      label: Pulmonology EMR
+      description: For the chest clinic that follows asthma, COPD and spirometry reports.
+      icon: activity
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: 'For the family doctor who keeps each family member''s care on their own record.'
+      icon: heart-handshake
 closing:
   heading: See a cardiology review on Easy Clinic
   body: >-
@@ -357,6 +664,18 @@ editorialPass:
     that follow-up stops at a reminder to the patient.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right (the live page has no such section, so it uses the allergy page''s wording).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Recruit a named cardiology testimonial (spec 5.15 item 9): a named cardiologist or cardiology clinic owner on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. The live page carries four testimonials (two psychiatrists, a general physician, an ophthalmologist), none from a cardiologist. Until then the proof block is the Capterra and Google badges, and its intro says no cardiologist quote exists yet. Review counts are null in facts.yaml, so the badges show no count.'
   - 'Grounding: every capability is stated plainly on the live /cardiology-emr/ page (retrieved 2026-09-26): ECG, echo, lab reports and other diagnostic records stored in patient files (FAQ), image and document upload, procedures and tests recorded in patient records (FAQ; the echo and stress test examples are from its own table row), cardiac health trend visualisation and "Vitals & Lab charts", longitudinal visit data on one screen and side-by-side past records, cardiology templates for heart failure, arrhythmias and coronary artery disease, the CVS Examination form, the customizable intake form (chronic illnesses, family history, social history, substance use) shown on the facesheet, auto-generated patient summaries, point-and-click input with auto-complete notes, diagnosis, medications, investigations, referrals and follow-ups, drug interaction check (listed with no detail, so the page claims only that the check exists, not how or when it warns), clinical assistant or nurse intake, role-based access, automated follow up and automated reminders, resource booking (equipment or assistants) inside the appointment slot and a multi-resource calendar, patient education videos and brochures, part and advance payments and payment amortisation for package treatments, refunds and invoice voiding with authorisation, telecardiology from a browser with online fee payment and the remote-consult line on the prescription, multi-doctor and multi-branch use, and cloud access. Plan placement follows plans.yaml (specialty templates, own forms, package treatments, lab reports in the chart, video consults, online payments, WhatsApp and more than one location on Premium; pharmacy and inventory on Enterprise or as a module; integrations on Enterprise or as an add-on). The offline answer and "customisation without charges" come from migration/research/facts.md, worded as on the physiotherapy and EMR pages.'
   - 'Spec 5.15 must-haves left out (company to-do): (1) anticoagulation tracking: the live page never mentions it; confirm whether there is an INR log with target range, dose changes against each INR and the next test date, and on which plan. (2) Device follow-up: not on the live page; confirm whether pacemaker, ICD or CRT device details and check dates can be recorded and recalled. (3) Chronic-care recall as a list: the live page says only "chronic patient follow-up tracking", "Automated follow up" and automated reminders, so the page claims a follow-up set in the note with an automated reminder and nothing more; confirm whether the clinic can pull a list of patients overdue by condition (for example a heart failure register) and on which plan (/features/patient-engagement/ describes recall campaigns by condition from the spec, with no plan). ECG and echo attachments, BP trend charts and the FAQ at 8 are included; lipid and HbA1c charts are written as lab values charted on Premium, as on /features/lab/.'

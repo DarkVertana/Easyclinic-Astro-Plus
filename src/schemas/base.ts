@@ -109,10 +109,12 @@ export const pageBase = (ctx: SchemaContext) =>
       /** Parent hub; drives breadcrumbs and BreadcrumbList. */
       hub: internalPath.optional(),
       related: z
-        .array(z.object({ href: internalPath, label: z.string().optional(), description: z.string().optional() }))
-        .max(9)
+        .array(z.object({ href: internalPath, label: z.string().optional(), description: z.string().optional(), icon: z.string().optional() }))
+        .max(12)
         .default([]),
       relatedHeading: z.string().default('Where to go next'),
+      /** Show the arrow after each card's label. Off on the specialty pages (owner request 2026-11-05). */
+      relatedArrows: z.boolean().default(true),
     }),
     /** A numbered list of problems shown under the related links: heading on the left, items on the right. */
     problems: optionalGroup(

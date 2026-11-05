@@ -1,0 +1,622 @@
+# /general-surgery-emr/ (spec 5.15 SpecialtyPage; footer specialty list, label "Surgery"). Live slug kept; the
+# redirect that sent this URL elsewhere was removed when the footer specialties got their own pages (2026-11-05).
+# Grounding: capability statements the live /general-surgery-emr/ page makes plainly (retrieved 2026-11-05),
+# plans.yaml, and the hospital OPD page's scope (theatres and wards out of scope). No theatre scheduling, device
+# integrations, template counts, timings or outcomes.
+status: published
+headKeyword: general surgery EMR software
+secondaryKeywords:
+  - surgery clinic management software
+  - surgeon EMR
+title: 'General Surgery EMR Software: Easy Clinic'
+metaDescription: >-
+  General surgery EMR software: the pre-operative work-up, procedure notes and post-operative reviews on one
+  record, with surgery packages on Premium.
+h1: "Efficiently Manage Your General Surgery Practice with Easy Clinic"
+linkLabel: Surgery
+eyebrow: For general surgery clinics
+openingAnswer: "Streamline patient scheduling, surgical documentation, and billing with Easy Clinic’s intuitive software. Our platform is designed to simplify clinic operations, so you can focus on delivering exceptional care. Enhance efficiency, improve patient outcomes, and grow your surgical practice with ease."
+summary: >-
+  The pre-operative assessment, the procedure note and each post-operative review on one record, with
+  surgery packages paid in parts on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a surgery clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for surgery clinics and would like to book a demo for our practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-surgery-clinics-lose-track
+      heading: Where a surgery clinic loses track
+      intro: >-
+        A surgical patient is seen before the operation, on the day and for weeks after it,<br class="hidden md:inline">
+        and most of what goes missing falls between the outpatient clinic and the theatre.
+      items:
+        - heading: The pre-operative reports arrive in a plastic folder
+          body: >-
+            Before a gallbladder operation the patient is sent for blood tests, an ECG and a scan. The reports
+            come back on paper from three places, and on the morning of surgery someone is looking for the
+            fitness letter.
+          fix: >-
+            The investigations are ordered from the chart, and the reports are uploaded to the patient's record
+            beside the pre-operative assessment, so the work-up is on one screen before the patient is listed.
+        - heading: The discharge advice is a photocopied sheet
+          body: >-
+            The patient goes home with a printed sheet about wound care and is told to come back for the
+            dressing. At night they call the surgeon's personal number to ask whether the swelling is normal.
+          fix: >-
+            Post-operative care instructions are written on the record, and the prescription with its
+            guidelines goes to the patient by email, or on WhatsApp on Premium, so the advice is on the phone
+            they call from.
+        - heading: The stitch removal nobody booked
+          body: >-
+            The patient is told to come back in ten days, a date written only on the discharge sheet. The desk
+            has no list of who is due, and the patient arrives on day fifteen or not at all.
+          fix: >-
+            The follow-up is set from the chart before the patient leaves, and an automated reminder goes out
+            before the date. SMS and email reminders come with every plan, and Premium adds WhatsApp.
+        - heading: The hernia package is tracked in a register
+          body: >-
+            A hernia repair is quoted as one package. The patient pays an advance when the date is fixed and the
+            balance after the operation, and when the surgery is postponed nobody is sure what was paid.
+          fix: >-
+            On Premium the surgery is billed as one package treatment, with each advance and part payment
+            recorded against it, and a refund goes through only with authorisation.
+
+  - discriminant: featureRows
+    value:
+      id: surgical-record
+      heading: Built around the surgical record
+      intro: >-
+        Surgical templates and package billing come with Premium, the plan most specialists choose. Easy
+        Clinic runs the surgeon's outpatient side: the operating theatre's scheduling and records, and the
+        wards, stay on the hospital's system.
+      layout: grid
+      items:
+        - heading: Procedure documentation
+          icon: clipboard-list
+          body: >-
+            Procedure documentation covers the pre-operative assessment, the consent form and the
+            post-operative care instructions, and anaesthesia and procedure notes are recorded on the same
+            patient record. The operation and every review after it are in one place.
+          bullets:
+            - Pre-operative assessment and consent form on the record
+            - Anaesthesia notes and post-operative care instructions
+        - heading: Surgical templates and your own forms
+          icon: layout-template
+          body: >-
+            Premium includes Easy Clinic's specialty templates, and a paper pre-operative checklist or
+            consultation sheet your clinic already uses can be rebuilt in the form builder. Your prescription
+            and case sheet print in your own layout, with no charge for the customisation.
+          bullets:
+            - Easy Clinic's specialty templates included on Premium
+            - Your paper pre-operative checklist rebuilt as a form
+        - heading: Reports and images on the record
+          icon: file-text
+          body: >-
+            Lab reports, ECGs, scan reports and wound photographs are uploaded to the patient's record as images
+            and documents, and past records open side by side with today's visit.
+          bullets:
+            - Lab reports, ECGs, scans and wound photographs uploaded
+            - Past records open side by side with today's visit
+        - heading: Post-operative follow-up
+          icon: calendar-clock
+          body: >-
+            The follow-up is set from the chart and tracked through recovery, with an automated reminder before
+            each review. Referrals to another doctor are written from the chart and stay on the record.
+          bullets:
+            - Follow-up set from the chart and tracked through recovery
+            - Referrals to another doctor stay on the record
+        - heading: Surgery packages, paid in parts
+          icon: wallet
+          body: >-
+            On Premium an operation is billed as one package treatment, and the payment can be spread over the
+            course of treatment. Advances and part payments are recorded against the package, and a refund or a
+            voided invoice goes through only with authorisation.
+          bullets:
+            - Advances and part payments recorded against the package
+            - Refunds and voided invoices only with authorisation
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the doctor to review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: post-operative-review
+      heading: A post-operative review, from the desk to the bill
+      intro: >-
+        The review after surgery is the visit a surgery clinic repeats most. We have not timed these steps in
+        a surgery clinic, so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: At the desk
+          icon: calendar-clock
+          body: >-
+            The patient checks in, booked or walked in, and gets a token number for the queue. If the review
+            needs a dressing room or an assistant, they are booked inside the appointment slot.
+        - heading: In the consulting room
+          icon: notebook-pen
+          body: >-
+            The surgeon opens the record with the procedure note and the pre-operative work-up already on it,
+            writes the review by point and click, and uploads a photograph of the wound if one is needed. The
+            prescription screen warns of a drug interaction as it is written.
+        - heading: The next review
+          icon: history
+          body: >-
+            The next follow-up date is set before the patient leaves, and the reminder goes to the patient
+            automatically before it.
+        - heading: At the bill
+          icon: receipt
+          body: >-
+            The review is billed in one click, or recorded against the surgery package on Premium. Either way
+            the balance shows straight away, and the receipt goes out by email, or on WhatsApp on Premium.
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Generate and Share in 30 Seconds
+        Create complete prescriptions in just 30 seconds and share them instantly via print, WhatsApp, SMS, or email in any language.
+
+        ### Custom-Tailored EMR for General Surgeons
+        Designed to fit your specialty, workflow, and preferences for a seamless experience.
+
+        ### AI-Driven Efficiency
+        Streamline your documentation process and save time with an AI-powered assistant.
+
+        ### Procedure Documentation
+        Document details of surgical procedures, including pre-operative assessments, consent forms, and post-operative care instructions.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters for better patient care.
+
+        ### Streamlined Patient Summaries: Instant Access to Complete Case Histories
+        Save time with auto-generated summaries and facesheets, intelligently presenting key patient data.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more using a user-friendly interface. Features custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for General Surgery Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Built for General Surgeons
+        Customized to meet the unique needs of specialists, super-specialists, and General Surgery clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Use intelligent AI for differential diagnoses and alerts on adverse drug events, tailored for patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, General Surgeons, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your General Surgery practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing General Surgeons to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables General Surgery patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple General Surgery clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large General Surgery clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling General Surgery clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for surgery clinics?"
+    answer: "The best EMR software for surgery clinics should support pre-operative assessments, surgical documentation, and post-operative care tracking. Easy Clinic is designed to manage the complete workflow of surgical practices."
+  - question: "Does Easy Clinic support AI EMR for surgery clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors document consultations and procedures faster."
+  - question: "Can Easy Clinic track pre-operative assessments?"
+    answer: "Yes. Clinics can manage patient evaluations and preparation before surgery."
+  - question: "Does Easy Clinic support surgical procedure documentation?"
+    answer: "Yes. Surgeons can record procedures, notes, and outcomes in patient records."
+  - question: "Can Easy Clinic manage post-operative care and follow-ups?"
+    answer: "Yes. Easy Clinic supports tracking recovery progress and follow-up visits."
+  - question: "Does Easy Clinic support anaesthesia and procedure notes?"
+    answer: "Yes. Clinics can document anaesthesia details and procedure-specific notes."
+  - question: "Does Easy Clinic support billing for surgical procedures?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage surgical inventory and supplies?"
+    answer: "Yes. Inventory management is included for surgical tools and supplies."
+  - question: "Can multiple surgeons use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track procedures, patient outcomes, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /orthopedic-emr/
+      label: Orthopaedic EMR
+      description: For the orthopaedic clinic with X-rays and MRI scans beside every visit.
+      icon: bone
+    - href: /urology-emr/
+      label: Urology EMR
+      description: For the urology clinic with procedure logs and imaging reports.
+      icon: database
+    - href: /gastroenterology-emr/
+      label: Gastroenterology EMR
+      description: For the GI clinic with endoscopy reports beside each review.
+      icon: file-text
+    - href: /oncology-emr/
+      label: Oncology EMR
+      description: For the oncology clinic that records treatment cycles and blood counts.
+      icon: file-heart
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+    - href: /physiotherapy-clinic-management-software/
+      label: Physiotherapy clinic software
+      description: For the physiotherapy clinic with session plans and progress against goals.
+      icon: route
+closing:
+  heading: See a surgical record on Easy Clinic, from the work-up to the package bill
+  body: >-
+    Book a demo and ask to see a pre-operative assessment, a procedure note and a surgery package paid in
+    parts, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a surgery clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The work-up in a plastic folder and the stitch removal nobody booked are surgical problems, and every
+    capability that answers them comes from Easy Clinic's live surgery page or plans.yaml, with the theatre
+    and ward limit taken from the published hospital OPD scope.
+  readsMachineWritten: >-
+    The page has no named surgeon and no measured number, the review walkthrough carries no timings, and a
+    surgeon will notice that theatre lists, implant and consumable tracking and named surgical templates are
+    not mentioned.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: procedure documentation "including pre-operative assessments, consent forms, and post-operative care instructions", anaesthesia and procedure notes (FAQ), post-operative care and follow-up tracking (FAQ), image and document upload, referral management, automated follow-up and reminders, drug interaction check, side-by-side past records, patient education, the template and form builder, personalised print formats and case sheets, token numbers, resource booking of equipment or assistants within appointments, one-click billing, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments, taxable item handling and receipts by WhatsApp or email are stated on the live /general-surgery-emr/ page (retrieved 2026-11-05). Plan placement follows plans.yaml: specialty templates, own forms and print layouts, package treatments and WhatsApp on Premium; pharmacy and inventory on Enterprise or as a module. The theatre and ward limit comes from the published /solutions/hospital-opd/ scope, as on /orthopedic-emr/.'
+  - 'Consent: the live page lists consent forms inside procedure documentation, so the page says the consent form is recorded on the record and nothing more. Company to confirm whether consent can be signed on screen or is a scanned upload, and in which languages.'
+  - 'Dropped from the live page: both "Easy Clinic vs Other EMR" comparison tables (unsourced competitor cells, including "Advacnce" post-operative follow-up), the FAQ "Surgical inventory: Yes, for tools and supplies" and the inventory table rows (plans.yaml puts inventory on Enterprise or a module), "performance reports covering outcomes" (no outcome report confirmed), "prescriptions in 30 seconds", "three clicks" and "invoices ready in less than 10 seconds" (unmeasured), "over 100 graphical dashboards", AI differential diagnosis and adverse drug event alerts (CuraPilot claims), AI wait-time alerts and AI two-way messaging, patient self check-in on the phone (plan unclear), prescriptions "in multiple languages", the data warehouse, Power BI and Azure Data Factory, the Trustindex "Top Rated Service 2026" badge, and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" line (owner decision: no free trial). OT or theatre scheduling is not on the live page and is not claimed.'
+  - 'Facts needed for the full spec 5.15 template: surgical templates by name and count (item 5; the live table says "Surgical consultation templates: Built-in" with no names, so the row names none and carries the Premium badge as the conservative reading of "Specialty EMR templates"); a timed walkthrough of a post-operative review (item 4); devices and integrations (item 6, none stated); which surgical note types Cura AI drafts, with an example (item 8; the live FAQ says the AI EMR helps "document consultations and procedures faster", not confirmed for Cura AI); a named surgeon testimonial (item 9; none on file, so the proof block is the Capterra and Google badges with no review counts); whether implants and consumables used in an operation can be recorded against the patient; how a package works when the surgery happens in a hospital on another system.'
+  - 'heroMedia reuses Invoice_Feature_01.png with the alt text already used on the features hub. It shows billing in general, not a surgery package; replace it with a surgery package bill with an advance and a part payment when the seeded demo tenant exists. The four pains are illustrative, not customers; the gallbladder and hernia operations, "ten days" and "day fifteen" are examples.'
+  - 'Related post /ai-surgery-clinic-software/ is a draft and is not linked; add it once it publishes. /whatsapp-post-surgery-care/ is published. Title 41 characters; meta description 140 characters.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits on theatres, wards, the pharmacy and offline use).

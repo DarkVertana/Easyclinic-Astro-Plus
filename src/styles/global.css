@@ -464,26 +464,10 @@
   [data-tone='inverse'] .prose-md a {
     color: var(--ink-inverse);
   }
-  /* ==text== in markdown: a yellow tag with a dashed amber outline. */
+  /* ==text==, ::text:: and ^^text^^ in markdown: plain text (yellow tags and red dashes removed 2026-11-05). */
   .prose-md mark {
-    background: #fff3b0;
-    color: var(--ink-heading);
-    padding: 0.05em 0.35em;
-    border: 1.5px dashed #b07d00;
-    border-radius: 0.3em;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
-  /* ::text:: in markdown: the same yellow tag with a red dashed outline. */
-  .prose-md mark.mark-red {
-    border-color: #d93025;
-  }
-  /* ^^text^^ in markdown: a red dashed underline for a cost or catch. */
-  .prose-md .flag {
-    color: var(--ink-heading);
-    text-decoration: underline dashed #d93025;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.25em;
+    background: none;
+    color: inherit;
   }
   .prose-md h3,
   .prose-md h4 {
@@ -505,24 +489,10 @@
     border-radius: 4px;
   }
 
-  /* The platform name in the hero's rating pills: a yellow tag with a dashed outline. Styled like the preview
-     placeholder highlight below, but a plain span, so it is never counted as a missing fact. */
-  .rating-platform {
-    background: #ffe066;
-    color: #3d2a00;
-    outline: 2px dashed #b88600;
-    outline-offset: 1px;
-    border-radius: 2px;
-    padding-inline: 0.2em;
-  }
-
-  /* Placeholder highlight in preview builds (see PreviewToolbar). */
-  mark[data-placeholder] {
-    background: #ffe066;
-    color: #3d2a00;
-    outline: 2px dashed #b88600;
-    outline-offset: 1px;
-    border-radius: 2px;
-    padding-inline: 0.15em;
+  /* No highlighted text anywhere on the site (owner request 2026-11-05): every <mark>, including the preview
+     placeholder marks, reads as plain text. PreviewToolbar still counts the placeholders. */
+  mark {
+    background: none;
+    color: inherit;
   }
 }

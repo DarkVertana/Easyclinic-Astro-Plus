@@ -1,0 +1,617 @@
+# /allergy-emr-software/ (spec 5.15 SpecialtyPage). Footer specialty page, written 2026-11-05; the URL
+# previously redirected elsewhere and now has its own page.
+# Grounding: capability statements the live /allergy-emr-software/ page makes plainly (retrieved 2026-11-05),
+# plans.yaml, and what the published specialty and feature pages already state. No template counts, device
+# integrations or outcomes.
+status: published
+headKeyword: allergy EMR software
+secondaryKeywords:
+  - allergy clinic software
+  - immunotherapy tracking software
+  - allergy clinic management software
+title: 'Allergy EMR Software: Easy Clinic'
+metaDescription: >-
+  Allergy EMR software that keeps skin test results and every immunotherapy shot, with its reaction and
+  dose change, on the patient's record.
+h1: 'Streamline Your Allergy Clinic with Easy Clinic’s EMR'
+linkLabel: Allergy
+eyebrow: For allergy clinics
+openingAnswer: >-
+  Simplify operations and deliver top-notch care with Easy Clinic, designed specifically for allergy specialty
+  clinics. From appointment scheduling and patient records to allergy test tracking and personalized treatment
+  plans, our Allergy EMR for Specialists ensures seamless workflows and improved patient outcomes. Focus on
+  care—leave the admin to us.
+summary: >-
+  Skin test results and immunotherapy shot records, with reactions and dose adjustments, on one patient
+  record, with test templates on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book an allergy clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for allergy clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-allergy-clinic-loses-track
+      heading: Where an allergy clinic loses track
+      intro: >-
+        Allergy care is a test followed by months of shots, and what goes missing is usually<br class="hidden md:inline">
+        a result or a reaction from an earlier visit that decides what is given today.
+      items:
+        - heading: The prick test sheet is in a folder
+          body: >-
+            In January the patient had a skin prick test against a panel of allergens, and the nurse wrote the
+            wheal sizes on a printed sheet that went into a folder. At the review in April the doctor is
+            choosing the extract for immunotherapy, and the sheet is somewhere in the January pile.
+          fix: >-
+            Allergy test results are stored on the patient's record in Easy Clinic, so the doctor opens them
+            at the review. On Premium the clinic records prick, scratch and intradermal results on test
+            templates instead of a printed sheet.
+        - heading: Last week's reaction is in another nurse's notebook
+          body: >-
+            During the build-up phase the patient comes in every week for a shot at a slightly higher dose. Last
+            Tuesday she had a large swelling at the injection site, and the nurse on duty wrote it in her own
+            notebook. This Tuesday a different nurse is on, and she draws up the next step on the schedule.
+          fix: >-
+            Each immunotherapy shot is recorded on the patient's record with any reaction and the adjustment
+            made to the dose, so the nurse giving today's shot opens the record and sees last week's swelling
+            and the dose it led to.
+        - heading: The patient on maintenance stops coming
+          body: >-
+            Once the shots move to the maintenance phase the visits are weeks apart, and nobody notices that a
+            patient has missed two in a row until he walks in with his symptoms back.
+          fix: >-
+            The doctor sets the next follow-up in the note, and Easy Clinic sends the patient an automated
+            reminder by SMS and email on every plan, with WhatsApp added on Premium. The schedule of recurring
+            shots is kept on the record, so the date of the last one given is there when he does come back.
+        - heading: The drug allergy is in a different doctor's note
+          body: >-
+            A patient told the clinic's other doctor two years ago that penicillin gave her hives. It sits in
+            that consultation note, and today's doctor, writing a prescription for a chest infection, has not
+            read back that far.
+          fix: >-
+            Allergies are recorded on the patient's facesheet, which opens with the record at every visit, so
+            the penicillin allergy is in front of whichever doctor sees her. The prescription screen also has a
+            drug interaction check.
+
+  - discriminant: featureRows
+    value:
+      id: the-allergy-record
+      heading: Built around the allergy record
+      intro: >-
+        Skin test templates come with Premium, Easy Clinic's plan for specialists. Vaccine and medicine
+        stock comes with Enterprise or as a module.
+      layout: grid
+      items:
+        - heading: Skin and patch test templates
+          icon: flask-conical
+          body: >-
+            On Premium the chart comes with templates for recording skin test results, such as prick, scratch
+            or intradermal testing, and the form builder turns a paper test sheet the clinic already uses into
+            a digital form. Results are stored on the patient's record beside the consultation.
+          bullets:
+            - Prick, scratch and intradermal results on templates
+            - Your paper test sheet turned into a digital form
+        - heading: Immunotherapy shot records
+          icon: calendar-clock
+          body: >-
+            Each shot is recorded on the patient's record with any reaction and any adjustment to the dose, and
+            recurring shots, follow-ups and the treatment schedule are kept on the same record. A patient on
+            immunotherapy for years has one history, from the first test to the latest shot.
+          bullets:
+            - Each shot recorded with its reaction and dose adjustment
+            - Recurring shots and follow-ups on the patient's record
+        - heading: Allergies on the facesheet
+          icon: file-heart
+          body: >-
+            The intake form takes the medical history in detail or briefly, including chronic illnesses, family
+            and social history and immunisations, and it feeds the facesheet, which shows the patient's
+            allergies beside conditions and past procedures. The complete visit history is on one screen, and
+            vitals and lab values can be charted over time.
+          bullets:
+            - Allergies and conditions on the facesheet
+            - A drug interaction check on the prescription
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the consultation note for the doctor to
+            review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: shot-days-and-stock
+      heading: Shot days, video follow-ups and vaccine stock
+      intro: >-
+        Much of an allergy clinic's week is short visits for a shot, and follow-ups that do not need the
+        patient in the room.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: Shot visits on the same calendar as consultations
+          icon: calendar-clock
+          body: >-
+            Fixed-time appointments and walk-ins sit on one calendar, and the sessions of a course can be
+            booked together. The equipment or the assistant a procedure needs is booked inside the appointment
+            slot.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: Video follow-ups
+          icon: video
+          plan: premium
+          body: >-
+            On Premium a review can be a video consultation booked through the appointment screen, with the fee
+            collected online at booking. The doctor and the patient join from a web browser on a computer or a
+            phone, and the prescription reaches the patient by WhatsApp, SMS or email with a note that the
+            consultation was remote.
+          link:
+            label: Read how teleconsultations work
+            href: /features/telemedicine/
+        - heading: Vaccines and medicines in stock
+          icon: package
+          plan: enterprise
+          body: >-
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and
+            Premium, the clinic keeps its vaccines, medicines and supplies in stock, and each batch is tracked
+            to its expiry date.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+
+  - discriminant: splitContent
+    value:
+      id: allergy-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Quick Prescriptions: Create and Share in 30 Seconds
+        Effortlessly generate detailed prescriptions in just 30 seconds and share them instantly through print, WhatsApp, SMS, or email, available in any language.
+
+        ### Personalized Allergy EMR for Specialists
+        Specifically crafted to match your specialty, workflow, and preferences, ensuring a seamless and efficient experience.
+
+        ### AI-Powered Efficiency
+        Simplify your documentation and save time with an AI-driven assistant, enabling you to complete prescriptions in just three clicks.
+
+        ### Skin and Patch Testing
+        Templates for recording skin test results like prick, scratch, or intradermal testing.
+
+        ### Immunotherapy Module
+        Tracking of shot records, reactions, and adjustments.
+
+        ### Visual Health Insights
+        Easily track specific vitals, lab results, and clinical parameters through intuitive charts and graphs to enhance patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently highlight key patient information.
+
+        ### Simplified Point-and-Click Interface
+        Easily document chief complaints, medical history, vitals, and more with a user-friendly interface. Enjoy features like custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all accessible without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Allergy Intake Forms
+        Collect detailed or concise medical histories tailored to your requirements, including chronic illnesses, family and social history, obstetrics-gynecology details, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient's face sheet for easy access during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-10.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Purpose-Built Design: Tailored for Allergy Clinics
+        Specifically crafted to address the distinct needs of specialists, super-specialists, and allergy clinic chains.
+
+        ### AI-Driven Diagnostic Support
+        Harness advanced AI for accurate differential diagnoses and real-time alerts on adverse drug events, designed specifically for allergy patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Get a clear, longitudinal view of complete patient visit history on a single screen, enhancing efficiency and optimizing care delivery.
+
+        ### Instant Access to Essential Resources
+        Quickly retrieve commonly used allergy medications, investigations, and clinical tools such as guidelines, checklists, and reminders to enhance care efficiency.
+
+        ### Seamless Care Team Collaboration
+        Facilitates smooth communication and coordination among nurses, allergists, and healthcare providers, ensuring complete and efficient patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Allergy_EXM.png
+        alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Allergists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Allergy practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Allergists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Allergy patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Allergy clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Allergy clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Allergy clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Allergy clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Allergy clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for allergy clinics?"
+    answer: "The best EMR software for allergy clinics should support allergy test records, immunotherapy tracking, follow-ups, and billing. Easy Clinic is designed to manage complete allergy clinic workflows."
+  - question: "Does Easy Clinic support AI EMR for allergy clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic track allergy test results?"
+    answer: "Yes. Easy Clinic allows doctors to store and manage allergy test results in patient records."
+  - question: "Does Easy Clinic support immunotherapy schedule tracking?"
+    answer: "Yes. Easy Clinic helps clinics manage recurring allergy shots, follow-ups, and treatment schedules."
+  - question: "Can Easy Clinic manage long-term allergy patients?"
+    answer: "Yes. Easy Clinic supports detailed patient history, follow-up tracking, and chronic care management."
+  - question: "Does Easy Clinic include billing for allergy tests and procedures?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine and vaccine inventory?"
+    answer: "Yes. Inventory management is included for medicines, vaccines, and clinic supplies."
+  - question: "Is Easy Clinic suitable for small allergy clinics?"
+    answer: "Yes. Easy Clinic works for single-doctor clinics as well as multi-speciality centres."
+  - question: "Can multiple doctors use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides advanced reports to track revenue, treatments, and patient visits."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /immunology-emr/
+      label: Immunology EMR
+      description: For the immunologist who follows autoimmune disease beside allergy care.
+      icon: shield-check
+    - href: /ent-emr-software/
+      label: ENT EMR
+      description: For the ENT clinic that sees allergic rhinitis and sinus patients alongside the allergist.
+      icon: stethoscope
+    - href: /dermatology-emr-software/
+      label: Dermatology EMR
+      description: For the skin clinic that treats eczema, hives and contact dermatitis with an allergy link.
+      icon: scan-eye
+    - href: /pulmonology-emr/
+      label: Pulmonology EMR
+      description: For the chest clinic that follows allergic asthma with the allergist.
+      icon: activity
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who refers patients for allergy testing and follows them up afterwards.
+      icon: clipboard-plus
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: For the family doctor who keeps each family member's allergies on their own record.
+      icon: heart-handshake
+closing:
+  heading: See a skin test and an immunotherapy record on Easy Clinic
+  body: >-
+    Book a demo and ask to see a patient's test results and shot record with a reaction noted, or compare what
+    Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book an allergy clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The reaction written in one nurse's notebook while another draws up the next build-up dose is an allergy
+    clinic problem, and the fix is the shot record the live allergy page states, with plans named only where
+    plans.yaml names them.
+  readsMachineWritten: >-
+    The page has no named allergist and no measured number, and it names no allergen panel, extract or
+    build-up schedule field because none is confirmed, so an allergist may find the immunotherapy row thin.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the eleven FAQs are the live /allergy-emr-software/ page''s, word for word. Two answers go further than the rest of the page: inventory is said to be included (it is Enterprise or a module), and the clinic is said to be fully cloud-based.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding (live /allergy-emr-software/ retrieved 2026-11-05, HTTP 200, no redirect): "Skin and Patch Testing: Templates for recording skin test results like prick, scratch, or intradermal testing"; "Immunotherapy Module: Tracking of shot records, reactions, and adjustments"; FAQs "store and manage allergy test results in patient records" and "manage recurring allergy shots, follow-ups, and treatment schedules"; customisable intake forms (chronic illnesses, family and social history, immunizations) feeding the facesheet; drug interaction check (tag only, so the page claims only that it exists); vitals and lab charts; visit history on one screen; collaborative case notes; form builder for paper forms; automated follow up and automated reminders; fixed-time appointments, walk-ins, multi-session booking and resource booking inside the slot; teleconsultation in a browser with online fee and the remote-consult line on the prescription; role-based access and audit logs; inventory for vaccines and medicines (FAQ). Allergies on the facesheet: the hero screenshot and the published dermatology page. Plan placement follows plans.yaml (test templates read as specialty templates, so Premium; own forms, video consultations and WhatsApp on Premium; pharmacy and inventory on Enterprise or a module). Reception login, no binding contract and the offline answer follow the other specialty pages and facts.md.'
+  - 'Dropped from the live page: both comparison tables (unsourced "Other EMR" and "Generic EMR" cells, inventory "Built-in" which conflicts with plans.yaml, "Advanced BI"); "prescriptions in 30 seconds", "three clicks" and "invoices ready in less than 10 seconds"; "over 100 graphical dashboards"; "Reduces no-shows" and "improved patient outcomes" (unmeasured); AI diagnostic support and ADR alerts (CuraPilot claims), AI two-way messaging and AI wait-time alerts; "available in any language" (only English and Swahili confirmed elsewhere); patient self-service booking, check-in and phone intake (patient portal is Enterprise); data warehouse, Power BI, HR, roster and incentive sections; "fully cloud-based and accessible from anywhere"; the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial); "Join 5000+ Doctors" and "5000+ Doctors across 200 cities"; the four testimonials (psychiatrists, a general physician and an ophthalmologist, none from an allergy clinic).'
+  - 'Facts needed (company to-do): which plan carries the immunotherapy shot record (the live page calls it a module and ties it to no plan, so the row has no plan tag); whether shot records have structured fields for extract, vial, concentration and volume, and whether the build-up schedule is generated or typed; whether there is a list of patients overdue for a shot; whether a recorded allergy warns at prescribing (the page says only that allergies are on the facesheet and that an interaction check exists); named and countable allergy templates; devices and integrations; which allergy note types Cura AI drafts, with an example; whether nurses need a paid licence under per-doctor pricing.'
+  - 'Recruit a named allergy testimonial (spec 5.15 item 9): no testimonial on file is from an allergy clinic, so the proof block is the Capterra and Google badges and its intro says so. The /ai-allergy-clinic-software/ and /immunology-clinic-management-software/ posts are drafts, so they are not linked; link them once published.'
+  - 'Hero is the existing patient profile screenshot (facesheet with an allergy recorded), described as other pages describe it. The four pains are illustrative allergy clinic situations, not customers; January, April, Tuesday and two years are examples. Title 33 characters; meta description 134 characters.'
+  - The editorial pass recorded here is an AI review. A human editor, ideally one who knows an allergy clinic, still needs to read the page aloud and answer the two spec 6.5 questions; with no named person and no measured number it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits in the stock, reminder and offline FAQs).

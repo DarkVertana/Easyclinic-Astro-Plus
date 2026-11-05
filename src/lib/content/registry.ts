@@ -202,7 +202,9 @@ async function build(): Promise<Registry> {
   // (owner decision 2026-10-22), and the /features/ testimonial slider, the same three as /pricing/ (owner decision 2026-10-30).
   // Testimonials the owner has cleared for more than one page: tl-prabhu on /solutions/solo-clinic/ and
   // /solutions/ngo-clinics/ (owner decision 2026-10-26).
-  const sharedTestimonials = new Set(['tl-prabhu']);
+  // Owner decision 2026-11-05: the /pricing/ carousel trio (manish-bhatia, premanand-raya, nrp-chandra-balaji) is
+  // also shown as the same carousel on the specialty pages.
+  const sharedTestimonials = new Set(['tl-prabhu', 'manish-bhatia', 'premanand-raya', 'nrp-chandra-balaji']);
   const testimonialPages = new Map<string, PageRecord[]>();
   for (const record of records) {
     if (record.path === '/customers/' || record.path === '/' || record.path === '/pricing/' || record.path === '/features/' || record.family === 'kitchenSink') continue;

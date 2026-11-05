@@ -1,0 +1,635 @@
+# /aesthetic-emr-software/ (spec 5.15 SpecialtyPage). Footer specialty page, written 2026-11-05; the URL
+# previously redirected to /dermatology-emr-software/ and now has its own page. Angle: injectables-led aesthetic
+# practice (toxin and filler sessions, touch-up follow-ups, consumables, more than one branch), kept distinct from
+# the dermatology page (medical skin, laser packages) and the cosmetology page (service menu and product sales).
+# Grounding: capability statements the live /aesthetic-emr-software/ and /cosmetology-emr-software/ pages make
+# plainly (retrieved 2026-11-05), plans.yaml, and the published dermatology, pharmacy and multi-location pages.
+status: published
+headKeyword: aesthetic EMR software
+secondaryKeywords:
+  - aesthetic clinic software
+  - aesthetic clinic management software
+  - medical aesthetics EMR
+title: 'Aesthetic EMR Software: Easy Clinic'
+metaDescription: >-
+  Aesthetic EMR software for injectable and filler clinics: each session's notes and photos on the record,
+  and an automated reminder for the touch-up.
+h1: "Advancing Aesthetic Care with Easy Clinic's EMR"
+linkLabel: Aesthetic
+eyebrow: For aesthetic and medical aesthetics clinics
+openingAnswer: "Easy Clinic simplifies aesthetic practice management, from patient consultations to treatment tracking. Our advanced EMR software enhances workflow efficiency, ensures seamless documentation, and supports personalized care, empowering specialists to deliver exceptional outcomes."
+summary: >-
+  Each injectable and filler session on the client's record with before-and-after photographs, touch-up
+  reminders, and consumables taken off stock with the service.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book an aesthetic clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for aesthetic clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-aesthetic-clinic-loses-track
+      heading: Where an aesthetic clinic loses track
+      intro: >-
+        Aesthetic work is repeat work. A client comes back for a top-up months later, often to a<br class="hidden md:inline">
+        different injector or a different branch, and the visit depends on what was done last time.
+      items:
+        - heading: Last session's notes are on a face chart in a drawer
+          body: >-
+            In June the doctor treated the client's frown lines and crow's feet and marked the points on a paper
+            face chart. In October the client is back for a top-up with the clinic's other injector, who asks
+            her what was done, because the chart is in the first doctor's drawer.
+          fix: >-
+            Every Botox, filler, peel or laser session is recorded on the client's record, with the
+            before-and-after photographs beside it, so whoever sees her next opens what was done and how she
+            looked before and after.
+        - heading: The touch-up is never booked
+          body: >-
+            The doctor tells the client to come back in about four months for a top-up, and the client means to
+            call. Nobody at the desk writes it down, and she next appears a year later, after the result has
+            long faded.
+          fix: >-
+            The doctor sets the follow-up in the note, and Easy Clinic sends the client an automated reminder by
+            SMS and email on every plan, with WhatsApp added on Premium, so the top-up is asked for rather than
+            remembered.
+        - heading: The vials in the fridge do not match the book
+          body: >-
+            Toxin, fillers and the cannulas that go with them are expensive, and the clinic counts them by hand
+            at the end of the month. The count never matches the procedures in the appointment book, and nobody
+            can say which sessions used what.
+          fix: >-
+            With the pharmacy and inventory module, a consumable that is part of a service or a package comes
+            off the stock count when that service is billed, and each batch is tracked to its expiry date. The
+            module comes with Enterprise, or is added to Professional or Premium.
+        - heading: The client is treated at the other branch
+          body: >-
+            The clinic has two branches across the city. A client treated at one walks into the other for her
+            top-up, and the second branch has no record of her, her photographs or her signed consent.
+          fix: >-
+            On Premium, Easy Clinic runs more than one location on one system, with appointments scheduled
+            centrally and the same client record open at every branch.
+
+  - discriminant: featureRows
+    value:
+      id: the-aesthetic-record
+      heading: Built around the aesthetic client's record
+      intro: >-
+        Procedure templates and your own forms come with Premium, Easy Clinic's plan for
+        specialists, and are not on Professional. Stock of injectables comes with Enterprise or as a
+        module.
+      layout: grid
+      items:
+        - heading: Before-and-after photographs on each session
+          icon: scan-eye
+          body: >-
+            Capture and store before-and-after images of each aesthetic treatment on the client's record, and
+            compare them at the follow-up to see how the client has responded. Documents and scanned reports
+            are uploaded to the same record.
+          bullets:
+            - Before-and-after images stored on the client's record
+            - Earlier photographs opened for comparison at the next visit
+        - heading: Every procedure, session by session
+          icon: history
+          body: >-
+            Track past and ongoing procedures, such as Botox, fillers, chemical peels and laser treatments,
+            across the sessions and follow-ups they take. The client's profile holds skin type, allergies,
+            medical history and past treatments, so an earlier procedure or an allergy is in view before the
+            next one is planned.
+          bullets:
+            - Botox, fillers, peels and laser sessions tracked
+            - Skin type, allergies and past treatments on the profile
+        - heading: Consent on the client's record
+          icon: file-check
+          body: >-
+            Consent documentation for a procedure is stored in the client's record, and a form signed on paper
+            can be scanned and uploaded there as a document.
+          bullets:
+            - Procedure consent stored on the client's record
+            - A form signed on paper scanned and uploaded
+        - heading: Aesthetic procedure templates and your own forms
+          icon: layout-template
+          body: >-
+            On Premium the chart comes with specialty templates, and the form builder turns a paper procedure
+            sheet you already use into a digital form filled in at each session, with your own print layout.
+          bullets:
+            - Specialty templates on the chart with Premium
+            - Your paper procedure sheet turned into a digital form
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the session note for the doctor to review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft session note
+
+  - discriminant: featureRows
+    value:
+      id: procedures-packages-and-branches
+      heading: Procedure days, packages and branches
+      intro: >-
+        An aesthetic clinic sells courses and runs machines that more than one doctor uses, often across more
+        than one branch.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The machine and the assistant booked with the client
+          icon: calendar-clock
+          body: >-
+            Equipment and the assistant who runs it are booked inside the appointment slot, and the sessions of
+            a course can be booked together. Booked appointments and walk-ins sit on the same calendar.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: Treatment packages paid over the course
+          icon: receipt
+          plan: premium
+          body: >-
+            On Premium a course of sessions is billed as one package treatment, with the payment spread over
+            the course and every advance or part payment recorded against it. Refunds and discounts go through
+            only with authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: More than one branch
+          icon: layers
+          plan: premium
+          body: >-
+            On Premium the clinic runs more than one location on one system, with central scheduling and the
+            same client record at each branch.
+          link:
+            label: Read how more than one location works
+            href: /features/multi-location/
+        - heading: Injectables and consumables in stock
+          icon: package
+          plan: enterprise
+          body: >-
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and
+            Premium, the clinic keeps injectables, skincare products and supplies in stock. Each batch is
+            tracked to its expiry date, and a consumable used in a service comes off the stock count with it.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Before & After Image Management
+        Easily capture and store before-and-after images of aesthetic treatments, allowing for quick comparison and tracking of patient progress. Our software ensures secure, organized image management, enhancing patient engagement and providing clear visual evidence of treatment outcomes.
+
+        ### Fast and Instant Prescriptions
+        Generate detailed prescriptions in 30 seconds and share them immediately via print, WhatsApp, SMS, or email in any language.
+
+        ### Personalized Aesthetic EMR
+        Custom-built for Aesthetic specialists, tailored to your unique specialty, workflow, and preferences for a seamless and efficient experience.
+
+        ### AI-Powered Efficiency
+        Create prescriptions in just three clicks with the help of an AI assistant, simplifying your workflow and saving time.
+
+        ### Visual Health Insights
+        Monitor Aesthetic patient trends with ease using charts and graphs to visualize specific vitals, lab reports, and clinical parameters for improved care.
+
+        ### Complete Patient Summaries
+        Instantly access auto-generated case histories and facesheets, intelligently organized to save time and enhance patient care.
+
+        ### User-Friendly Point-and-Click Interface
+        Simplify documentation for Aesthetic specialists with an intuitive interface to record chief complaints, medical history, vitals, and more. Includes custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all easily accessible without the need to navigate through lengthy screens.
+
+        ### Detailed Medical History Records
+        Customize intake forms for patients to capture complete or concise medical histories, including chronic illnesses, family and social history, obstetric-gynecological details, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient’s facesheet for quick and easy follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Tailored for Aesthetic Specialists
+        Specifically designed for Aesthetic professionals and clinic chains, catering to the unique needs of specialists and super-specialists.
+
+        ### AI-Driven Diagnostic Support
+        Enhance care for complex Aesthetic cases with intelligent AI that aids in differential diagnoses and provides alerts for potential adverse drug events, specially tailored for patients with chronic conditions.
+
+        ### Flexible Template & Form Builder
+        Effortlessly digitize paper forms with our customizable, user-friendly builder, ensuring a smooth transition to digital workflows.
+
+        ### Complete Patient Data at a Glance
+        View a complete longitudinal history of patient visits on a single screen, streamlining care and enhancing efficiency.
+
+        ### Instant Access to Key Resources
+        Streamline Aesthetic care with quick access to frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders. .
+
+        ### Seamless Care Team Collaboration
+        Enhance communication and coordination among nurses, Aesthetic specialists, and healthcare providers, ensuring integrated and complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for Aesthetic teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the Aesthetic teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks.Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to Aesthetic patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Aesthetic practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing doctors to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, Aesthetic teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Aesthetic patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Aesthetic clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Aesthetic clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Aesthetic clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines Aesthetic patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Aesthetic clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for aesthetic clinics?"
+    answer: "The best EMR software for aesthetic clinics should support procedure notes, image records, billing packages, and follow-up tracking. Easy Clinic is designed to handle complete aesthetic clinic workflows."
+  - question: "Does Easy Clinic support AI EMR for aesthetic clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation during consultations."
+  - question: "Can Easy Clinic store before-and-after photos of patients?"
+    answer: "Yes. Easy Clinic allows clinics to store images securely in patient records, which is useful for cosmetic and dermatology procedures."
+  - question: "Does Easy Clinic support package billing for aesthetic treatments?"
+    answer: "Yes. Aesthetic clinics often sell treatment packages, and Easy Clinic allows billing, tracking, and managing these plans easily."
+  - question: "Can Easy Clinic manage consent forms for cosmetic procedures?"
+    answer: "Yes. Consent form storage and documentation are supported, which is important for aesthetic and laser procedures."
+  - question: "Is Easy Clinic suitable for small aesthetic clinics?"
+    answer: "Yes. Easy Clinic works for single-doctor clinics as well as large aesthetic centres."
+  - question: "Can multiple doctors use Easy Clinic in one clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Does Easy Clinic support inventory for fillers, Botox, and consumables?"
+    answer: "Yes. Easy Clinic includes inventory management for medicines, injectables, and clinic supplies."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based, so clinics can access data from anywhere."
+  - question: "Does Easy Clinic provide reports for revenue and procedures?"
+    answer: "Yes. Easy Clinic provides advanced reporting and analytics to track clinic performance."
+  - question: "Can Easy Clinic be used in multi-branch aesthetic clinics?"
+    answer: "Yes. Easy Clinic supports multi-location clinics with centralised data access."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /dermatology-emr-software/
+      label: Dermatology EMR
+      description: For the skin clinic with before-and-after photographs and procedure sessions.
+      icon: scan-eye
+    - href: /cosmetology-emr-software/
+      label: Cosmetology clinic software
+      description: For the cosmetology clinic that sells services and products at the desk.
+      icon: sparkles
+    - href: /trichology-emr/
+      label: Trichology EMR
+      description: For the hair and scalp clinic that compares reviews over months.
+      icon: zoom-in
+    - href: /general-surgery-emr/
+      label: General surgery EMR
+      description: 'For the surgeon''s outpatient side, from the work-up to the post-operative review.'
+      icon: list-checks
+    - href: /allergy-emr-software/
+      label: Allergy EMR
+      description: For the allergy clinic that records skin tests and immunotherapy shots.
+      icon: flask-conical
+    - href: /alternative-medicine/
+      label: Alternative medicine EMR
+      description: For homoeopathy, Unani and naturopathy clinics on a long course of treatment.
+      icon: pill
+closing:
+  heading: See an aesthetic client's record on Easy Clinic
+  body: >-
+    Book a demo and ask to see a session record with before-and-after photographs and a top-up reminder, or
+    compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book an aesthetic clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The face chart in another injector's drawer, the top-up that is never booked and the client who walks into
+    the other branch are aesthetic clinic problems, and each fix is a capability the live aesthetic and
+    cosmetology pages state, with the plan named where plans.yaml names one.
+  readsMachineWritten: >-
+    The page has no named aesthetic doctor and no measured number, and it names no injection-point face map,
+    units field or batch-to-client trace, which an injector will look for first, because none is confirmed.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding (live /aesthetic-emr-software/ and /cosmetology-emr-software/ retrieved 2026-11-05, both HTTP 200, no redirect): before-and-after image capture, storage and comparison to track progress (aesthetic); store images securely in patient records (aesthetic FAQ); package billing for aesthetic treatments (aesthetic FAQ, "Package & treatment plan billing"); consent form storage and documentation (aesthetic FAQ); inventory for fillers, Botox and consumables (aesthetic FAQ; plan per plans.yaml); multi-location clinics with centralised data access and centralised multi-location scheduling (aesthetic FAQ and scheduling section); skin type, medical history, allergies, past treatments and lifestyle habits in the profile, and tracking of past and ongoing procedures such as Botox, fillers, chemical peels and laser treatments (cosmetology); automated follow up and automated reminders; resource booking (equipment or assistants) inside the appointment slot; multi-session booking; walk-ins; part and advance payments, refunds with authorisation, payment amortisation for package treatments, discount authorisation; role, department and level access with access rights and audit logs. Consumables in a service or package deducted automatically: live /features/ as cited on the published dermatology and pharmacy pages. Plan placement follows plans.yaml (Premium: specialty templates, own forms and print layouts, package treatments, WhatsApp, more than one location; Enterprise or a module: pharmacy and inventory).'
+  - 'Distinct from /dermatology-emr-software/ (laser packages, medical skin conditions, one laser booked twice) and /cosmetology-emr-software/ (service menu, product sales at the desk, client profile): this page takes the injectables angle (session notes for the next injector, top-up reminders, consumable stock, more than one branch). The dermatology page still covers aesthetic clinics in a short prose section; the owner may want to trim it now this page exists.'
+  - 'Dropped from the live page: both comparison tables (unsourced "Other EMR" and "Generic EMR" cells, inventory "Built-in"); "Elevating Aesthetic Care" and "empowering specialists to deliver exceptional outcomes" (banned wording and unmeasured outcomes); "prescriptions in 30 seconds", "three clicks" and "invoices ready in less than 10 seconds"; "over 100 graphical dashboards"; "Reduces no-shows"; AI diagnostic support and ADR alerts (CuraPilot claims), AI two-way messaging and AI wait-time alerts; "available in any language"; patient self-service booking and check-in (patient portal is Enterprise); data warehouse, Power BI, HR, roster and incentive sections; "fully cloud-based"; the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial); "Join 5000+ Doctors" and "5000+ Doctors across 200 cities"; the four testimonials (none from an aesthetic clinic).'
+  - 'Facts needed (company to-do): whether a face or body diagram exists for marking injection points, with units per point, and on which plan; whether the batch or lot of a toxin or filler is recorded against the client who received it (the page says only that consumables come off stock with the service); whether consent can be signed on screen and whether per-procedure consent templates exist; named and countable aesthetic templates (the live table says only "Aesthetic procedure templates"); which plan carries photograph storage, procedure tracking and resource booking (rows carry no plan tag); which aesthetic note types Cura AI drafts; devices and integrations (clinic camera, photo capture from a phone).'
+  - 'Recruit a named aesthetic testimonial (spec 5.15 item 9). No testimonial on file is from an aesthetic clinic, so the proof block is the Capterra and Google badges and its intro says so. The UAE country page is linked because aesthetic clinics are a large market there; swap it if the owner prefers India.'
+  - 'Hero: the existing skin physical examination screenshot (a copy of the image the dermatology page uses), described as what it shows; replace with a session record and before-and-after photographs when the seeded demo tenant exists. The four pains are illustrative situations, not customers; June, October, four months and two branches are examples. Title 35 characters; meta description 145 characters.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; with no named person and no measured number it meets only two of the four spec 6.5 pass marks until a testimonial arrives.

@@ -154,22 +154,10 @@ const many = slides.length > 1;
   .quote-slides::-webkit-scrollbar {
     display: none;
   }
-  /* The key sentence as the site's yellow tag with a dashed amber outline (as ==text== in markdown). */
+  /* The key sentence: plain text (yellow tag removed 2026-11-05). */
   .quote-mark {
-    background: #fff3b0;
-    color: var(--ink-heading);
-    padding: 0.05em 0.3em;
-    border: 1.5px dashed #b07d00;
-    border-radius: 0.3em;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
-  /* Red dashes under the phrases the doctor stresses. */
-  .quote-flag {
-    color: var(--ink-heading);
-    text-decoration: underline dashed #d93025;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.25em;
+    background: none;
+    color: inherit;
   }
   .quote-arrow {
     display: inline-flex;

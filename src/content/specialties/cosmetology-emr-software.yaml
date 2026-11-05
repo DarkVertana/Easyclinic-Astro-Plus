@@ -1,0 +1,633 @@
+# /cosmetology-emr-software/ (spec 5.15 SpecialtyPage). Footer specialty page, written 2026-11-05; the URL
+# previously redirected to /dermatology-emr-software/ and now has its own page. Angle: the cosmetology clinic as
+# a client-facing service business (the client's profile, a priced menu of services, products sold at the desk,
+# reminders and receipts), kept distinct from the dermatology page (medical skin, laser packages) and the
+# aesthetic page (injectables, touch-ups, branches).
+# Grounding: capability statements the live /cosmetology-emr-software/ page makes plainly (retrieved
+# 2026-11-05), plans.yaml, and the published dermatology, billing and pharmacy pages.
+status: published
+headKeyword: cosmetology EMR software
+secondaryKeywords:
+  - cosmetology clinic software
+  - cosmetology clinic management software
+  - skin and beauty clinic software
+title: 'Cosmetology EMR Software: Easy Clinic'
+metaDescription: >-
+  Cosmetology EMR software: each client's skin type, allergies and past treatments on one profile, and
+  every service billed from one price list.
+h1: "Transform Your Cosmetology Clinic with Easy Clinic EMR"
+linkLabel: Cosmetology
+eyebrow: For cosmetology and skin care clinics
+openingAnswer: "Simplify operations, enhance client experiences, and grow your clinic effortlessly with Easy Clinic EMR. Easy Clinic streamlines appointment scheduling, inventory tracking, and client management, allowing you to focus on delivering flawless results. Tailored specifically for cosmetology clinics, it’s your trusted EMR—empowering both beauty professionals and business growth with ease and efficiency."
+summary: >-
+  The client's profile and treatment history on one record, every service billed from one price list, and
+  products at the desk kept in stock with the inventory module.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a cosmetology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for cosmetology clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-cosmetology-clinic-loses-track
+      heading: Where a cosmetology clinic loses track
+      intro: >-
+        A cosmetology clinic sees many clients for short services, with a doctor, therapists and a<br class="hidden lg:inline">
+        busy desk, and what goes missing is usually something one of them knew and the others did not.
+      items:
+        - heading: The new therapist does not know about the last peel
+          body: >-
+            Last summer a client's skin reacted badly to a glycolic peel, and the doctor who saw her noted it in
+            a paper file. This month she books a facial with a therapist who joined in the spring, and nothing at
+            the station tells her what happened.
+          fix: >-
+            The client's profile holds skin type, allergies, medical history, past treatments and lifestyle
+            habits, and every treatment she has had is tracked on the same record, so the reaction is on the
+            screen the staff you allow to see it open before the next service.
+        - heading: Three people quote three prices
+          body: >-
+            The price of a hydrafacial is on a laminated card at the desk, a different one on the clinic's
+            Instagram, and the therapist gives a regular client a friendly discount nobody approved. At the end of
+            the month the owner cannot tell what each service actually sold for.
+          fix: >-
+            Every service is billed from the clinic's own service list, with a price list per level where the
+            clinic needs one, and a discount goes through only with authorisation. Prices can be changed without
+            reissuing the bills already made.
+        - heading: The sunscreen sold at the desk is not in the count
+          body: >-
+            The desk sells sunscreens, serums and the creams the doctor recommends, and the sales go into a
+            notebook beside the till. The shelf runs out of the best seller on a Saturday, and the notebook says
+            there should be twelve.
+          fix: >-
+            With the pharmacy and inventory module, products are added to the bill at the desk and come off the
+            stock count, with each batch tracked to its expiry date and a low-stock flag on the stock list. The
+            module comes with Enterprise, or is added to Professional or Premium.
+        - heading: The client forgets her appointment
+          body: >-
+            Clients book a session two weeks ahead and forget, and the receptionist spends the morning phoning
+            the day's list to confirm while the walk-ins wait.
+          fix: >-
+            Automated reminders go to the client by SMS and email on every plan, and by WhatsApp on Premium,
+            where receipts and invoices can also be sent on WhatsApp after the visit.
+
+  - discriminant: featureRows
+    value:
+      id: the-client-record
+      heading: Built around the cosmetology client
+      intro: >-
+        Your own consultation and service forms come with Premium, Easy Clinic's plan for
+        specialists, and are not on Professional. Product stock comes with Enterprise or as a
+        module.
+      layout: grid
+      items:
+        - heading: A profile that travels with the client
+          icon: user-round
+          body: >-
+            Keep each client's skin type, allergies, medical history, past treatments and lifestyle habits on
+            her profile, and track past and ongoing procedures, such as chemical peels, laser treatments, Botox
+            and fillers, on the same record. Every visit, treatment and follow-up is recorded in one continuous
+            client history.
+          bullets:
+            - Skin type, allergies and lifestyle habits on the profile
+            - Every visit and treatment in one history
+        - heading: Before-and-after photographs
+          icon: scan-eye
+          body: >-
+            Capture and store before-and-after images as part of each client's treatment record, and compare
+            them at the follow-up. Consent documentation for a procedure is stored in the same record.
+          bullets:
+            - Before-and-after images on each treatment record
+            - Procedure consent stored on the same record
+        - heading: Your own consultation and service forms
+          icon: layout-template
+          body: >-
+            On Premium the chart comes with specialty templates, and the form builder turns a paper skin
+            analysis or consultation sheet you already use into a digital form, with your own print layout.
+          bullets:
+            - Specialty templates on the chart with Premium
+            - Your skin analysis sheet turned into a digital form
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the consultation note for the doctor to
+            review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: the-desk
+      heading: The desk, the service menu and the shelf
+      intro: >-
+        Most of a cosmetology clinic's takings go through the front desk, as services, packages and products.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: One service list, one set of prices
+          icon: receipt
+          body: >-
+            Bill every service from the clinic's own service list, with a multi-level price list where prices
+            differ, and taxable and non-taxable items handled by the tax you define. Part payments, advance
+            payments and refunds are handled at the desk, with refunds and discounts only with authorisation.
+          bullets:
+            - Prices adjusted without reissuing earlier bills
+            - Discounts only with authorisation
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Packages of sessions
+          icon: clipboard-list
+          plan: premium
+          body: >-
+            On Premium a course of sessions is billed as one package treatment, with the payment spread over the
+            course and each advance recorded against it.
+        - heading: Products on the shelf, in stock
+          icon: package
+          plan: enterprise
+          body: >-
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and Premium,
+            the clinic keeps its creams, skincare products and supplies in stock. Over-the-counter products are
+            added to the bill when they are sold, each batch is tracked to its expiry date, and a consumable used
+            in a service comes off the count with that service.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+        - heading: Reports on what the clinic sells
+          icon: chart-column
+          body: >-
+            Reports and dashboards on every plan show the clinic's client visits, treatments and revenue, and
+            they export to Excel or PDF. Each report is visible only to the users allowed to see it.
+          link:
+            label: Read how reports work
+            href: /features/reports-and-dashboards/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Before & After Image Management
+        Easily capture and store before-and-after images of Cosmetology treatments, allowing for quick comparison and tracking of patient progress. Our software ensures secure, organized image management, enhancing patient engagement and providing clear visual evidence of treatment outcomes
+
+        ### Effortless Prescriptions: Create and Share in 30 Seconds
+        Generate detailed prescriptions in just 30 seconds and instantly share them through print, WhatsApp, SMS, or email in any language.
+
+        ### Personalized Cosmetology EMR for Specialists
+        Tailored to your specialty, workflow, and preferences, delivering a seamless and efficient experience.
+
+        ### AI-Powered Efficiency
+        Simplify your documentation process and save valuable time with an intelligent AI assistant.
+
+        ### Complete Patient Profiles
+        Maintain detailed records of skin type, medical history, allergies, past treatments, and lifestyle habits.
+
+        ### Treatment History Tracking
+        Track all past and ongoing cosmetic procedures, such as Botox, fillers, chemical peels, laser treatments, etc.
+
+        ### Visual Health Insights
+        Easily track specific vitals, lab reports, and clinical parameters to enhance patient care.
+
+        ### Streamlined Patient Summaries: Instant Access to Detailed Case Histories
+        Save time with auto-generated summaries and facesheets that intelligently highlight key patient information.
+
+        ### Simplified Point-and-Click Interface
+        Effortlessly document chief complaints, medical history, vitals, and more with an intuitive interface. Access custom examination forms, auto-complete notes, diagnoses, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for fast, seamless navigation.
+
+        ### Complete Medical History: Tailored Intake Forms for Cosmetology Patients
+        Collect detailed or concise medical histories customized to your needs, covering chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All data integrates seamlessly into the patient’s face sheet for quick and easy follow-up reference.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Cosmetologists
+        Designed to address the specific needs of specialists, super-specialists, and cosmetology clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Utilize advanced AI for differential diagnoses and alerts on adverse drug events, specifically designed for cosmetology patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Effortlessly Digitize Paper Forms
+        Easily transform your paper forms into digital templates with our flexible, user-friendly builder.
+
+        ### Complete Patient Data at a Glance
+        View the complete patient visit history on a single screen to enhance care coordination and boost efficiency in cosmetology treatments.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders to streamline care.
+
+        ### Effortless Care Team Collaboration
+        Facilitates efficient communication and coordination among nurses, cosmetologists, and other healthcare providers to ensure complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Cosmetologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Cosmetology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Cosmetologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Cosmetology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Cosmetology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Cosmetology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Cosmetology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Cosmetology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Cosmetology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for cosmetology clinics?"
+    answer: "The best EMR software for cosmetology clinics should support cosmetic procedure notes, image records, package billing, and follow-up tracking. Easy Clinic is designed to manage the complete workflow of cosmetology clinics."
+  - question: "Does Easy Clinic support AI EMR for cosmetology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic store before and after photos of patients?"
+    answer: "Yes. Easy Clinic allows clinics to store images securely in patient records, which is important for cosmetic treatments."
+  - question: "Does Easy Clinic support treatment package billing?"
+    answer: "Yes. Cosmetology clinics often sell packages, and Easy Clinic allows billing, tracking, and managing sessions."
+  - question: "Can Easy Clinic manage consent forms for cosmetic procedures?"
+    answer: "Yes. Consent documentation can be stored in patient records."
+  - question: "Does Easy Clinic support follow-up and session tracking?"
+    answer: "Yes. Many cosmetic treatments require multiple sessions, and Easy Clinic allows full tracking."
+  - question: "Can Easy Clinic manage inventory for injectables and products?"
+    answer: "Yes. Inventory management is included for creams, injectables, medicines, and clinic supplies."
+  - question: "Is Easy Clinic suitable for small cosmetology clinics?"
+    answer: "Yes. Easy Clinic works for single-doctor clinics as well as large cosmetic centres."
+  - question: "Can multiple doctors use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track revenue, treatments, and patient visits."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /aesthetic-emr-software/
+      label: Aesthetic clinic EMR
+      description: For the aesthetic clinic running injectable and filler sessions.
+      icon: gem
+    - href: /dermatology-emr-software/
+      label: Dermatology EMR
+      description: For the skin clinic with before-and-after photographs and procedure sessions.
+      icon: scan-eye
+    - href: /trichology-emr/
+      label: Trichology EMR
+      description: For the hair and scalp clinic that compares reviews over months.
+      icon: zoom-in
+    - href: /ayurveda-clinic-management-software/
+      label: Ayurveda clinic software
+      description: For Ayurveda clinics and Panchakarma centres, with courses billed as packages.
+      icon: boxes
+    - href: /allergy-emr-software/
+      label: Allergy EMR
+      description: For the allergy clinic that records skin tests and immunotherapy shots.
+      icon: flask-conical
+    - href: /alternative-medicine/
+      label: Alternative medicine EMR
+      description: For homoeopathy, Unani and naturopathy clinics on a long course of treatment.
+      icon: pill
+closing:
+  heading: See a cosmetology client's profile and bill on Easy Clinic
+  body: >-
+    Book a demo and ask to see a client's profile with her past treatments and a bill made from your own
+    service list, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a cosmetology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The new therapist who does not know about last summer's peel reaction and the three prices for one facial
+    are cosmetology clinic problems, and each fix is a capability the live cosmetology page or the billing
+    section states, with the plan named where plans.yaml names one.
+  readsMachineWritten: >-
+    The page has no named cosmetologist and no measured number, and it does not say how a product sold without
+    a consultation is billed, because that is not confirmed.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding (live /cosmetology-emr-software/ retrieved 2026-11-05, HTTP 200, no redirect): skin type, medical history, allergies, past treatments and lifestyle habits in the patient profile; tracking of past and ongoing procedures such as Botox, fillers, chemical peels and laser treatments; before-and-after images "as part of each client''s treatment record"; consent documentation in patient records (FAQ); "every visit, treatment, and follow-up is recorded in one continuous client history" (FAQ); package and session billing (FAQ, plan per plans.yaml); inventory for creams, injectables, medicines and supplies (FAQ, plan per plans.yaml); reports on client visits, revenue and clinic performance (FAQ); automated reminders "via WhatsApp, SMS, and email" (FAQ, WhatsApp on Premium per plans.yaml); single-practitioner studios and multi-location chains (FAQ); billing section: service list with flexible pricing "without the need to regenerate entire billing records", multi-level price list, discount authorisation, part and advance payments, refunds and invoice voiding with authorisation, taxable and non-taxable items, receipts and invoices on WhatsApp, export to Excel and PDF, access-controlled reports; form builder for paper forms; role, department and level access. Over-the-counter products added at dispensing and consumables deducted with a service: live /features/ as cited on the published dermatology and pharmacy pages; the low-stock flag is visible in the hero screenshot. Plan placement follows plans.yaml.'
+  - 'Distinct from /dermatology-emr-software/ (medical skin, laser packages, one laser booked twice) and /aesthetic-emr-software/ (injectables, top-ups, branches): this page takes the client-service angle (the profile shared across staff, one price list, products at the desk, reminders). The page uses "client", as the live cosmetology page does.'
+  - 'Dropped from the live page: both comparison tables (unsourced cells, inventory "Built-in"); the "Problems We Solve" block ("leads to stockouts", "double-bookings") and "Why Paper-Based Cosmetology Clinics Are Losing Clients" (unsourced); "brings modern digital efficiency", "flawless results" and "empowering" (banned or promotional wording); "secure, cloud-based platform" and "fully cloud-based"; "prescriptions in 30 seconds", "invoices ready in less than 10 seconds" and "over 100 graphical dashboards"; "Reduces no-shows"; AI diagnostic support and ADR alerts (CuraPilot), AI two-way messaging and AI wait-time alerts; "auto-generate treatment notes, summarize client visits" (beyond "drafts the note for the doctor to review"); patient self-service booking and check-in (patient portal is Enterprise); "centralised visibility into every client" (central control is Enterprise; Premium more than one location is not used on this page); data warehouse, Power BI, HR, roster and incentive sections; the "14-Day Free Trial" and "try Easy Clinic absolutely free" lines (owner decision: no free trial); "Join 5000+ Doctors"; the four testimonials (none from a cosmetology clinic).'
+  - 'Facts needed (company to-do): how a product sold without a consultation is billed at the desk (the page says only that over-the-counter products are added at dispensing); whether therapists need a paid licence under per-doctor pricing; whether memberships or prepaid wallets exist beyond package treatments; named and countable cosmetic procedure templates (the live table says only "Cosmetic procedure templates"); which plan carries photograph storage and procedure tracking (rows carry no plan tag); whether service-level revenue reports exist by name.'
+  - 'Recruit a named cosmetology testimonial (spec 5.15 item 9). No testimonial on file is from a cosmetology clinic, so the proof block is the Capterra and Google badges and its intro says so.'
+  - 'Hero: the existing products-and-services and stock screenshot, described as what it shows; stock is a module, which the featureRows intro and the stock row say. The four pains are illustrative situations, not customers; last summer, the spring, Saturday and twelve are examples. Title 37 characters.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; with no named person and no measured number it meets only two of the four spec 6.5 pass marks until a testimonial arrives.

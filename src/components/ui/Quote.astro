@@ -12,7 +12,7 @@ interface Props {
   size?: 'card' | 'large';
   /** Card only: show at most this many lines of the quote, with every card the same height of text. */
   lines?: number;
-  /** Large only: show the specialty as the yellow tag with a red dashed outline (owner request 2026-10-31: /features/emr/). */
+  /** Large only: formerly tagged the specialty; kept so existing callers still type-check (tags removed 2026-11-05). */
   tagSpecialty?: boolean;
 }
 
@@ -75,7 +75,7 @@ const hasRoleLine = Boolean(rolePrefix || roleTag);
           <span class="block font-display text-lg leading-snug font-semibold text-ink-heading">{t.name}</span>
           {hasRoleLine && (
             <span class="mt-1 block text-sm leading-relaxed text-ink-muted">
-              {rolePrefix}{rolePrefix && roleTag && ', '}{roleTag && <span class="byline-tag">{roleTag}</span>}{roleSuffix && `, ${roleSuffix}`}
+              {rolePrefix}{rolePrefix && roleTag && ', '}{roleTag}{roleSuffix && `, ${roleSuffix}`}
             </span>
           )}
           {t.customerSince && <span class="mt-1 block text-sm text-ink-muted">Using Easy Clinic since {t.customerSince}</span>}
@@ -91,8 +91,8 @@ const hasRoleLine = Boolean(rolePrefix || roleTag);
       </blockquote>
       <figcaption class="mt-6 text-sm">
         <span class="block font-semibold text-ink-heading">{t.name}</span>
-        <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) && (<>, {tagSpecialty ? <span class="byline-tag">{t.specialty}</span> : t.specialty}</>)}</span>
-        {place && <span class="mt-1 block text-ink-muted"><span class="byline-tag">{place}</span></span>}
+        <span class="block text-ink-muted">{t.role}{t.specialty && t.role !== t.specialty && !t.role.includes(t.specialty) && (<>, {t.specialty}</>)}</span>
+        {place && <span class="mt-1 block text-ink-muted">{place}</span>}
         {t.customerSince && <span class="block text-ink-muted">Using Easy Clinic since {t.customerSince}</span>}
         {consent && <span class="mt-1 block text-xs">{consent}</span>}
       </figcaption>
@@ -101,17 +101,6 @@ const hasRoleLine = Boolean(rolePrefix || roleTag);
 }
 
 <style>
-  /* The clinic in the byline: a yellow tag with a red dashed outline. */
-  .byline-tag {
-    background: #ffe066;
-    color: #3d2a00;
-    outline: 1.5px dashed #d92d20;
-    outline-offset: 1px;
-    border-radius: 2px;
-    padding-inline: 0.2em;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
   .quote-card {
     border-color: #c7c7c7;
     transition: border-color 150ms ease;

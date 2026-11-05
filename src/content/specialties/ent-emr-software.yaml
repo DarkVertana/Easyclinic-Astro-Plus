@@ -12,14 +12,10 @@ title: 'ENT EMR Software: Easy Clinic'
 metaDescription: >-
   ENT EMR software with an ear examination form, and hearing tests and endoscopy records kept on the
   patient's record. Premium is {price:usd.premium.annual} per doctor a month.
-h1: ENT EMR for ear exams and hearing tests
+h1: "Enhancing ENT Care with Easy Clinic"
 linkLabel: ENT
 eyebrow: For ENT clinics
-openingAnswer: >-
-  ENT EMR software has to hold the ear examination, the hearing test, the endoscopy and minor procedures
-  done in the clinic. Easy Clinic keeps all four on the patient's record, and Premium adds ENT consultation
-  templates at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual},
-  billed annually.
+openingAnswer: "Easy Clinic simplifies ENT practice management, from patient intake to treatment follow-up. Our EMR software streamlines documentation, diagnosis tracking, and communication, enabling ENT specialists to deliver efficient, personalized care and enhance patient outcomes at every stage of treatment."
 summary: >-
   The ear examination and the hearing test on one patient record, with ENT consultation templates on the
   Premium plan at {price:usd.premium.annual} per doctor per month.
@@ -27,8 +23,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/18_User.png'
-  alt: 'Easy Clinic user settings: staff with their roles and specialties, a doctor''s profile, role permissions and the weekly roster for a location'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -45,8 +41,8 @@ sections:
       id: where-an-ent-clinic-loses-track
       heading: Where an ENT clinic loses track
       intro: >-
-        An ENT visit often produces a hearing test or a scope picture as well as the note, and those are
-        the records that end up somewhere other than the chart.
+        An ENT visit often produces a hearing test or a scope picture as well as the<br class="hidden md:inline">
+        note, and those are the records that end up somewhere other than the chart.
       items:
         - heading: Last year's audiogram is in the patient's plastic bag
           body: >-
@@ -56,8 +52,6 @@ sections:
           fix: >-
             The scanned hearing test report uploads to the patient's record, beside the visits written
             there, so last year's result is already on the record when this year's is added.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: The scope pictures stay on the endoscopy computer
           body: >-
             A diagnostic nasal endoscopy is saved on the computer beside the scope, or printed and handed
@@ -74,8 +68,6 @@ sections:
           fix: >-
             Minor surgeries and ENT procedures are recorded in the patient's record, and the desk bills
             each one as an item from the clinic's service list.
-          href: /features/billing/
-          linkLabel: Read how billing works
         - heading: The ear that keeps discharging
           body: >-
             Chronic ear discharge and sinusitis come back, and the patient returns every few months with no
@@ -91,9 +83,11 @@ sections:
       heading: Built around the ENT chart
       intro: >-
         What the doctor records in the consulting room and the procedure room. Premium, the plan for
-        specialists, includes every row below, and the row marked Premium is not on Professional.
+        specialists, includes all of it, and the ENT templates are not on Professional.
+      layout: grid
       items:
         - heading: The consultation, by point and click
+          icon: stethoscope
           body: >-
             Chief complaint, history, vitals, diagnosis, medicines, investigations, referrals, patient
             guidelines and the follow-up date are recorded by point and click, with auto-complete, without
@@ -102,19 +96,18 @@ sections:
           bullets:
             - A tabular prescription, printed or sent to the patient
             - A facesheet with the patient's key history on one screen
-            - Past records opened side by side with today's visit
-            - History and vitals taken by an assistant or nurse before the doctor
         - heading: ENT templates, with the ear examination form
-          plan: premium
+          icon: layout-template
           body: >-
             On Premium the chart comes with the ENT consultation templates and custom examination forms,
             such as the ear examination form. If you examine the nose and throat on a paper form of your
             own, the form builder turns it into a digital form, and you set your own print layout for the
             prescription and the case sheet.
-          link:
-            label: Compare what each plan includes
-            href: /pricing/
+          bullets:
+            - The ear examination form on Premium
+            - Your own print layout for prescription and case sheet
         - heading: Hearing tests and endoscopy records
+          icon: activity
           body: >-
             Hearing test results and endoscopy records are stored in Easy Clinic. Scanned reports and images
             upload to the patient's record, so the audiogram and the scope pictures sit beside the visits
@@ -123,21 +116,23 @@ sections:
           bullets:
             - Audiograms and other hearing test reports on the record
             - Endoscopy images and reports on the same record
-            - Reports the patient brings, scanned and attached
-            - Vitals charted visit by visit
         - heading: Procedures and minor surgery on the record
+          icon: calendar-clock
           body: >-
             Minor surgeries and ENT procedures done in the clinic are recorded in the patient's record.
             When a procedure is booked ahead, the equipment or the assistant it needs is booked inside the
             same appointment slot, and the multi-resource calendar shows the desk what is already taken.
+          bullets:
+            - Minor surgery and ENT procedures recorded
+            - Equipment or assistant booked inside the slot
         - heading: Cura AI drafts the note
-          plan: professional
+          icon: sparkles
           body: >-
             Cura AI, the documentation assistant, comes with every plan. It drafts the note, and the draft
             stays a suggestion until the doctor corrects and confirms it.
-          link:
-            label: Read what Cura AI does
-            href: /ai/
+          bullets:
+            - Cura AI comes with every plan
+            - A draft until the doctor corrects and confirms it
 
   - discriminant: featureRows
     value:
@@ -145,8 +140,12 @@ sections:
       heading: An ENT visit, from the front desk to the follow-up
       intro: >-
         What happens around the consultation, in a clinic with one doctor and a receptionist.
+      tone: plain
+      layout: list
+      linkArrow: false
       items:
         - heading: Booked patients and walk-ins at the same desk
+          icon: calendar-clock
           body: >-
             The desk books fixed-time appointments and takes walk-ins first come, first served, and a
             priority appointment can go to the patient who needs one. The waiting room view shows the queue
@@ -158,6 +157,7 @@ sections:
             label: Read how booking works
             href: /features/appointment-scheduling/
         - heading: The bill for the consultation and the procedure
+          icon: receipt
           body: >-
             The receptionist bills the consultation and any procedure from the clinic's service list, and
             each payment is recorded against the bill, with the balance on screen. Part payments and
@@ -172,11 +172,13 @@ sections:
             label: Read how billing works
             href: /features/billing/
         - heading: Treatment billed as a package
+          icon: clipboard-list
           plan: premium
           body: >-
             On Premium a treatment sold as a package is billed as one package treatment, and the payment
             can be spread over the course of the treatment, with each part payment recorded against it.
         - heading: Reminders for the follow-up visit
+          icon: bell-ring
           body: >-
             The follow-up date goes in the note, and the patient gets an automated reminder for it, by SMS
             or email on every plan and by WhatsApp on Premium.
@@ -184,6 +186,7 @@ sections:
             label: Read how WhatsApp reminders work
             href: /features/whatsapp/
         - heading: Video follow-ups
+          icon: video
           plan: premium
           body: >-
             On Premium, a video consultation is booked through the appointment screen and the fee can be
@@ -195,107 +198,410 @@ sections:
             label: Read how video consultations work
             href: /features/telehealth/
 
-  - discriminant: proofBlock
+  - discriminant: splitContent
     value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        We do not yet have an ENT specialist's own words to put on this page. These are Easy Clinic's public
-        ratings, from clinics of every kind.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Generate and Share in 30 Seconds
+        Create complete prescriptions in just 30 seconds and share them instantly via print, WhatsApp, SMS, or email in any language.
 
-  - discriminant: stepList
+        ### Custom-Tailored EMR for ENT Specialists
+        Designed to fit your specialty, workflow, and preferences for a seamless experience.
+
+        ### AI-Driven Efficiency
+        Streamline your documentation process and save time with an AI-powered assistant.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters for better patient care.
+
+        ### Streamlined Patient Summaries: Instant Access to Complete Case Histories
+        Save time with auto-generated summaries and facesheets, intelligently presenting key patient data.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more using a user-friendly interface. Features custom examination forms like Ear Examination, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for ENT Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
     value:
-      id: training
-      heading: '{fact:trainingDays} days of training, about two hours in all'
-      intro: >-
-        Training is included in every plan, in sessions of 20 to 40 minutes spread over
-        {fact:trainingDays} days, short enough to fit between the morning and evening OPD, so the clinic
-        keeps seeing patients while you learn.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
-          body: >-
-            The screens the front desk and the doctor use every day. Bring your receptionist, whose login is
-            part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
-          body: >-
-            You work through the chart and the prescription on the kinds of case your clinic sees.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note quicker, once the basics have become habit.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Built for ENT Clinics
+        Customized to meet the unique needs of specialists, super-specialists, and ENT clinic chains.
 
-faqHeading: Questions ENT clinic owners ask
+        ### AI-Powered Diagnostic Support
+        Use intelligent AI for differential diagnoses and alerts on adverse drug events, tailored for patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, ENT specialists, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your ENT practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing ENT specialists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables ENT patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any ENT clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple ENT clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large ENT clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling ENT clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for ENT clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: Which Easy Clinic plan does an ENT clinic need, and what does it cost?
-    answer: >-
-      Premium, if you want the ENT consultation templates and your own examination forms: it costs
-      {price:inr.premium.annual} per doctor per month billed annually in India, or
-      {price:usd.premium.annual} in US dollars. Professional, at {price:inr.professional.annual} or
-      {price:usd.professional.annual}, has the EMR and the billing but not the specialty templates. Both
-      include a reception login, with no setup fee and no binding contract.
-  - question: Can I keep audiograms and endoscopy pictures on the patient's record?
-    answer: >-
-      Yes, hearing test results and endoscopy records are stored in Easy Clinic, and scanned reports and
-      images upload to the patient's record. When the patient comes back for a repeat audiogram, last
-      year's report is on the same record as this year's.
-  - question: Can I record the minor procedures I do in the clinic?
-    answer: >-
-      Yes, minor surgeries and ENT procedures are recorded in the patient's record, and each one is billed
-      from the clinic's service list. If a procedure needs a piece of equipment or an assistant, book it
-      inside the appointment slot so the desk can see it is taken.
-  - question: Is Easy Clinic too much for a one-doctor ENT clinic?
-    answer: >-
-      No, it works for single-doctor clinics as well as multi-doctor centres, and Professional is the plan
-      for a doctor running their own clinic with a receptionist. Move to Premium when you want the ENT
-      templates and your own forms. Training takes about two hours over {fact:trainingDays} days.
-  - question: Can I turn my own paper examination form into a digital one?
-    answer: >-
-      Yes, on Premium, which includes your own clinical forms and print layouts: the form builder turns a
-      paper form, such as your nose and throat examination sheet, into a digital form on the chart. We do
-      not charge for the customisation itself.
-  - question: Can my receptionist read the ENT notes?
-    answer: >-
-      No, the reception login included in the price is not allowed into the EMR and cannot issue
-      prescriptions. Access is set by role for every login, and user activity is kept in audit logs.
-  - question: Does Easy Clinic manage the clinic's medicine stock?
-    answer: >-
-      Not on Professional or Premium alone: pharmacy and inventory are included in Enterprise, or added to
-      Professional and Premium as a module. With the module, the pharmacy dispenses from the doctor's
-      prescription and tracks each batch to its expiry date.
-  - question: Does Easy Clinic work without an internet connection?
-    answer: >-
-      No, Easy Clinic does not run fully offline today, so plan on a working internet connection in the
-      consulting room and at the desk. A self-hosted option also exists, where the system runs on the clinic's own server
-      rather than in Easy Clinic's cloud.
+  - question: "What is the best EMR software for ENT clinics?"
+    answer: "The best EMR software for ENT clinics should support procedure documentation, diagnostic records, and follow-up tracking. Easy Clinic is designed to manage the complete workflow of ENT clinics."
+  - question: "Does Easy Clinic support AI EMR for ENT clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic store diagnostic records like hearing tests?"
+    answer: "Yes. Easy Clinic allows clinics to store hearing test results, endoscopy records, and other diagnostic data."
+  - question: "Does Easy Clinic support procedure documentation?"
+    answer: "Yes. Clinics can record minor surgeries and ENT procedures in patient records."
+  - question: "Can Easy Clinic track follow-ups for chronic ENT conditions?"
+    answer: "Yes. Easy Clinic allows detailed follow-up tracking for recurring ENT conditions."
+  - question: "Does Easy Clinic support billing for ENT services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Is Easy Clinic suitable for small ENT clinics?"
+    answer: "Yes. Easy Clinic works for single-doctor clinics as well as multi-doctor centres."
+  - question: "Can multiple ENT specialists use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, procedures, and revenue."
 
 links:
   hub: /specialties/
-  relatedHeading: Where ENT clinic owners go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/solo-clinic/
-      description: For an ENT specialist running their own clinic with a receptionist and no IT staff.
-    - href: /emr-software-in-india/
-      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
-    - href: /emr-software-in-kenya/
-      description: Easy Clinic for clinics in Kenya, with prescriptions in English and Swahili.
-    - href: /features/emr/
-      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
-    - href: /pricing/
-      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
-
+    - href: /allergy-emr-software/
+      label: Allergy EMR
+      description: For the allergy clinic that records skin tests and immunotherapy shots.
+      icon: flask-conical
+    - href: /pulmonology-emr/
+      label: Pulmonology EMR
+      description: For the chest clinic that follows asthma, COPD and spirometry reports.
+      icon: activity
+    - href: /dental-emr-software/
+      label: Dental EMR
+      description: For the dental clinic with tooth charts and treatment plans over several visits.
+      icon: clipboard-list
+    - href: /pediatric-emr/
+      label: Paediatric EMR
+      description: 'For the children''s clinic with growth charts and a vaccine schedule by age.'
+      icon: baby
+    - href: /neurology-emr/
+      label: Neurology EMR
+      description: For the neurology clinic with EEG and MRI reports beside every visit.
+      icon: brain-circuit
+    - href: /general-surgery-emr/
+      label: General surgery EMR
+      description: 'For the surgeon''s outpatient side, from the work-up to the post-operative review.'
+      icon: list-checks
 closing:
   heading: See an ENT patient's record before you decide
   body: >-
@@ -322,6 +628,18 @@ editorialPass:
     audiometer or an endoscope, or about charting an audiogram.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Recruit a named ENT testimonial (spec 5.15 item 9): a named ENT specialist or ENT clinic owner on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no ENT quote exists yet. Capterra and Google review counts are null in facts.yaml, so the badges show no count. The four testimonials on the live ENT page (two psychiatrists, a general physician, an ophthalmologist) are not ENT and are placed on other pages.'
   - 'Grounding: stated plainly on the live /ent-emr-software/ page (retrieved 2026-09-26): ENT consultation templates; custom examination forms "like Ear Examination"; point-and-click recording of chief complaints, history, vitals, diagnosis, medications, investigations, referrals, follow-ups and patient guidelines with auto-complete; customisable intake forms feeding the facesheet; storage of "hearing test results, endoscopy records, and other diagnostic data" (FAQ); image and document upload; recording "minor surgeries and ENT procedures in patient records" (FAQ); "detailed follow-up tracking for recurring ENT conditions" (FAQ); automated follow up; drug interaction check; tabular Rx; side-by-side past records; clinical assistant or nurse intake; vitals and lab charts; form builder for paper forms; teleconsultation in a browser with online fee and a remote-consult line on the prescription; walk-ins, first-come-first-served, tokens, priority patients and waiting room status; resource booking (equipment or assistants) inside the appointment slot; multi-session booking; service list billing, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments, discount authorisation, taxable items, financial reports and Excel or PDF export; single-doctor and multi-doctor use (FAQ); cloud-based (FAQ). Plan placement follows plans.yaml.'
   - 'Plan tags: the live page ties nothing to a plan. The ENT templates row is tagged Premium because plans.yaml puts specialty EMR templates and your own clinical forms on Premium; package treatments, WhatsApp and video consultations are Premium per plans.yaml. Storage and upload of hearing tests and endoscopy records, procedure recording and follow-up tracking carry no plan tag, and the featureRows intro says only that Premium includes every row.'

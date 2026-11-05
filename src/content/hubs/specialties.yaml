@@ -3,7 +3,7 @@ path: /specialties/
 headKeyword: specialty EMR software
 secondaryKeywords: [EMR by specialty, specialty clinic software]
 title: 'Specialty EMR Software for Clinics: Easy Clinic'
-metaDescription: 'Easy Clinic by specialty: templates, packages and records for IVF, physiotherapy, dental, dermatology, paediatric, ENT and other clinics.'
+metaDescription: 'Easy Clinic by specialty: templates, packages and records for 34 specialties, from IVF, dental and dermatology to oncology, radiology and urology.'
 h1: Specialty EMR software for every kind of clinic
 linkLabel: Specialties
 openingAnswer: >-
@@ -50,6 +50,26 @@ sections:
             - { href: /general-practitioner-emr/, label: General practice, icon: stethoscope }
             - { href: /ent-emr-software/, label: ENT, icon: stethoscope }
             - { href: /neurology-emr/, label: Neurology, icon: brain }
+            - { href: /allergy-emr-software/, label: Allergy, icon: sparkles }
+            - { href: /aesthetic-emr-software/, label: Aesthetic, icon: gem }
+            - { href: /alternative-medicine/, label: Alternative medicine, icon: pill }
+            - { href: /cosmetology-emr-software/, label: Cosmetology, icon: sparkles }
+            - { href: /trichology-emr/, label: Trichology, icon: scan-eye }
+            - { href: /diabetology-emr-software/, label: Diabetology, icon: activity }
+            - { href: /endocrinology-emr-software/, label: Endocrinology, icon: flask-conical }
+            - { href: /family-physician-emr/, label: Family physician, icon: users }
+            - { href: /gastroenterology-emr/, label: Gastroenterology, icon: stethoscope }
+            - { href: /nephrology-emr/, label: Nephrology, icon: flask-conical }
+            - { href: /hematology-emr/, label: Haematology, icon: flask-conical }
+            - { href: /immunology-emr/, label: Immunology, icon: shield-check }
+            - { href: /oncology-emr/, label: Oncology, icon: file-heart }
+            - { href: /pathology-emr/, label: Pathology, icon: flask-conical }
+            - { href: /pulmonology-emr/, label: Pulmonology, icon: activity }
+            - { href: /radiology-emr/, label: Radiology, icon: scan-line }
+            - { href: /rheumatology-emr/, label: Rheumatology, icon: bone }
+            - { href: /sexology-emr/, label: Sexology, icon: lock }
+            - { href: /general-surgery-emr/, label: Surgery, icon: clipboard-plus }
+            - { href: /urology-emr/, label: Urology, icon: stethoscope }
   - discriminant: proofBlock
     value:
       heading: Rated by the doctors who use it
@@ -79,5 +99,6 @@ editorialPass:
   onlyUsCouldWrite: 'The page ties specialty work to what Premium actually includes: templates, custom forms and package treatments.'
   readsMachineWritten: 'The FAQ answers are plan-level; each specialty page carries the specifics.'
 notes:
+  - 'Update 2026-11-05: added the 20 specialty pages built from the live footer list (allergy to urology); the grid now has 34 cards.'
   - 'Audit 2026-09-27: the Capterra and Google badge ratings were plain text (4.9, 4.8); they are now {fact:capterraRating} and {fact:googleRating}, so they follow facts.yaml as on every specialty page.'
   - 'Audit 2026-09-27: added the published posts this page owns to links.related, with each post''s own label and summary as anchor text and description. /clinic-management-system-for-endocrinologists/ had no inbound link but /blog/.'

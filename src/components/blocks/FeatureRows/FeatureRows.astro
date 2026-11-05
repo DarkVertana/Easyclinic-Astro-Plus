@@ -12,7 +12,7 @@ import Screenshot from '../../ui/Screenshot.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'featureRows'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, items, layout = 'auto', wideIntro = false, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, items, layout = 'auto', wideIntro = false, linkArrow = true, ctx } = Astro.props;
 const sectionTone = toneFor(tone, ctx.index);
 const inverse = sectionTone === 'inverse';
 
@@ -104,7 +104,7 @@ const sharedTag = rows.length > 1 && rows.every((row) => row.tag && row.tag === 
                 {/* Inline, so a label that wraps keeps its arrow after the last word. */}
                 <a href={row.linkHref} class:list={['group text-[0.9375rem] font-semibold no-underline hover:underline', inverse && '!text-white']} data-track="cta_click" data-label={row.link.label}>
                   {row.link.label}
-                  <Icon name="arrow-right" size={14} class="ml-1 inline align-[-2px] transition-transform group-hover:translate-x-0.5" />
+                  {linkArrow && <Icon name="arrow-right" size={14} class="ml-1 inline align-[-2px] transition-transform group-hover:translate-x-0.5" />}
                 </a>
               </p>
             )}
@@ -145,7 +145,7 @@ const sharedTag = rows.length > 1 && rows.every((row) => row.tag && row.tag === 
           {row.showLink && row.link && (
             <a href={row.linkHref} class:list={['group mt-auto inline-flex items-center gap-1 pt-6 text-sm font-semibold no-underline hover:underline', inverse && '!text-white']} data-track="cta_click" data-label={row.link.label}>
               {row.link.label}
-              <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />
+              {linkArrow && <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />}
             </a>
           )}
         </li>
@@ -197,7 +197,7 @@ const sharedTag = rows.length > 1 && rows.every((row) => row.tag && row.tag === 
             <p class="mt-auto pt-5">
               <a href={row.linkHref} class:list={['group text-[0.9375rem] font-semibold no-underline hover:underline', inverse && '!text-white']} data-track="cta_click" data-label={row.link.label}>
                 {row.link.label}
-                <Icon name="arrow-right" size={14} class="ml-1 inline align-[-2px] transition-transform group-hover:translate-x-0.5" />
+                {linkArrow && <Icon name="arrow-right" size={14} class="ml-1 inline align-[-2px] transition-transform group-hover:translate-x-0.5" />}
               </a>
             </p>
           )}
@@ -245,7 +245,7 @@ const sharedTag = rows.length > 1 && rows.every((row) => row.tag && row.tag === 
               <p class="mt-auto pt-5">
                 <a href={row.linkHref} class:list={['text-[0.9375rem] font-semibold no-underline hover:underline', inverse && '!text-white']} data-track="cta_click" data-label={row.link.label}>
                   {row.link.label}
-                  <Icon name="arrow-right" size={14} class="ml-1 inline align-[-2px]" />
+                  {linkArrow && <Icon name="arrow-right" size={14} class="ml-1 inline align-[-2px]" />}
                 </a>
               </p>
             )}
@@ -293,7 +293,7 @@ const sharedTag = rows.length > 1 && rows.every((row) => row.tag && row.tag === 
                   {row.showLink && row.link && (
                     <a href={row.linkHref} class:list={['group inline-flex items-center gap-1 font-semibold no-underline hover:underline', inverse && '!text-white']} data-track="cta_click" data-label={row.link.label}>
                       {row.link.label}
-                      <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />
+                      {linkArrow && <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />}
                     </a>
                   )}
                 </div>

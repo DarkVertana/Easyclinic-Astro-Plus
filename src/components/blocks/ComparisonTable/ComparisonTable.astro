@@ -430,14 +430,9 @@ const body = rows.map((row) => ({
 </style>
 
 <style is:global>
-  /* A highlighted phrase in a comparison cell: yellow with a red dashed outline, kept whole on one line where it fits. */
+  /* A marked phrase in a comparison cell: plain text (yellow tag removed 2026-11-05). */
   .ct mark {
-    display: inline-block;
-    max-width: 100%;
-    background: #fff3b0;
-    color: var(--ink-heading);
-    padding: 0.05em 0.35em;
-    border: 1.5px dashed #d93025;
-    border-radius: 0.3em;
+    background: none;
+    color: inherit;
   }
 </style>

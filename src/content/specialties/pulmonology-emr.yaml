@@ -1,0 +1,676 @@
+# /pulmonology-emr/ (spec 5.15 SpecialtyPage template). Slug kept from the live site. No spec 4.3 keyword row
+# and no spec 5.15 must-have row exist for pulmonology. Grounding: capability statements the live
+# /pulmonology-emr/ page makes plainly (retrieved 2026-11-05) and plans.yaml. No spirometer or PFT machine
+# connection, template counts, inhaler or exacerbation modules, or outcomes.
+status: published
+headKeyword: pulmonology EMR software
+secondaryKeywords:
+  - pulmonology clinic software
+  - EMR for pulmonologists
+  - chest clinic EMR
+title: 'Pulmonology EMR Software: Easy Clinic'
+metaDescription: >-
+  Pulmonology EMR software: asthma and COPD templates, with spirometry and chest imaging reports on one
+  record. Premium is {price:inr.premium.annual} a doctor a month.
+h1: "Revolutionize Your Pulmonology Practice with Easy Clinic’s EMR"
+linkLabel: Pulmonology
+eyebrow: For pulmonology and chest clinics
+openingAnswer: "Optimize patient care, improve appointment scheduling, and manage respiratory health data effortlessly with our EMR. Empower your team with a seamless, efficient solution designed for better outcomes in your Pulmonology Practice."
+summary: >-
+  Templates for asthma, COPD and pulmonary fibrosis, and spirometry and chest imaging reports on the
+  patient's record, on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a pulmonology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic pulmonology page and would like to book a demo for our chest clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-chest-clinic-loses-track
+      heading: Where a chest clinic loses track
+      intro: >-
+        Asthma and COPD patients come back for years, and the question at each review is<br class="hidden md:inline">
+        whether the lungs are holding. Most of what goes missing is the record that answers it.
+      items:
+        - heading: Three years of spirometry, on thermal paper
+          body: >-
+            A patient with COPD brings a bundle of spirometry printouts, some faded past reading. To see
+            whether the FEV1 has fallen since the inhaler was changed, you hold them up to the light one by
+            one.
+          fix: >-
+            Spirometry and other test reports are stored on the patient's record, uploaded as documents or
+            images, so earlier results open beside today's visit and past visits sit side by side.
+        - heading: The chest X-ray is in the patient's bag
+          body: >-
+            The X-ray and the CT report from the last admission are at home, or at the hospital where the
+            scan was done. The review goes ahead on the patient's memory of what the radiologist said.
+          fix: >-
+            X-rays, CT reports and other imaging are uploaded to the patient's file as images or documents,
+            and stay on the record for every review after.
+        - heading: Every asthma review is written up differently
+          body: >-
+            One doctor notes night symptoms and reliever use, another writes only "better". At the next
+            review there is nothing to compare against.
+          fix: >-
+            On Premium, asthma, COPD and other respiratory conditions are recorded on templates, so each
+            review is written on the same fields, and the treatment plan is adjusted on the record.
+        - heading: The PFT machine is booked twice at 10am
+          body: >-
+            Two pulmonologists each send a patient for a lung function test at the same hour, and the clinic
+            has one machine and one technician. The clash shows up at the door of the PFT room.
+          fix: >-
+            Equipment and assistants are booked inside the appointment slot, and the multi-resource calendar
+            shows the desk that the machine is already taken at 10am.
+
+  - discriminant: featureRows
+    value:
+      id: pulmonology-chart
+      heading: Built around the pulmonology chart
+      intro: >-
+        What a pulmonologist reopens at every review, kept on one patient record. Premium, the plan for
+        specialists, includes everything below.
+      layout: grid
+      items:
+        - heading: Respiratory templates
+          icon: layout-template
+          body: >-
+            Specialty documentation templates cover asthma, COPD, pulmonary fibrosis, pneumonia and lung
+            cancer, so a review is written on the same fields as the last one.
+          bullets:
+            - Asthma and COPD reviews on the same fields each time
+            - Templates for pulmonary fibrosis, pneumonia and lung cancer
+        - heading: Treatment plans for asthma and COPD
+          icon: clipboard-list
+          body: >-
+            Customisable treatment plans for asthma and COPD sit on the patient's record, and the medicines
+            and the plan are tracked across visits, so a step up or a step down is recorded where the next
+            doctor will see it.
+          bullets:
+            - Medicines and the plan tracked across visits
+            - A step up or step down recorded for the next doctor
+        - heading: Spirometry and imaging reports on the record
+          icon: file-chart-column
+          body: >-
+            Spirometry results, chest X-rays, CT reports and other diagnostic records are stored on the
+            patient's record, uploaded as documents or images, and kept beside the visits for the years of
+            follow-up.
+          bullets:
+            - Chest X-rays and CT reports uploaded as documents or images
+            - Kept beside the visits for the years of follow-up
+        - heading: Vitals and lab values as charts
+          icon: chart-line
+          body: >-
+            Vitals and clinical parameters are shown as charts across visits. On Premium, lab reports come
+            into the chart and are charted beside them.
+          bullets:
+            - Vitals and clinical parameters charted across visits
+            - Lab reports come into the chart on Premium
+        - heading: The history on the facesheet
+          icon: file-heart
+          body: >-
+            The intake form records chronic illnesses, family history, social history and substance use,
+            smoking included, along with immunisations and COVID history. It shows on the facesheet, and an
+            auto-generated summary puts the last visit on one screen.
+          bullets:
+            - Smoking and substance use recorded on the intake form
+            - An auto-generated summary of the last visit on one screen
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the pulmonologist to
+            review.
+          bullets:
+            - Cura AI is included in every plan
+            - The pulmonologist reviews every draft note
+
+  - discriminant: dataTable
+    value:
+      id: pulmonology-templates
+      heading: Pulmonology templates and forms
+      intro: >-
+        The live pulmonology page names the conditions below for its templates. The table lists only the
+        ones we name, so it is not a full count. Specialty templates and your own clinical forms come with
+        Premium, and customising them carries no charge.
+      caption: Named pulmonology templates and forms, with the plan each needs
+      columns:
+        - Template or form
+        - Type
+        - Plan
+      rows:
+        - - Asthma
+          - Condition template, with a customisable treatment plan
+          - Premium
+        - - COPD
+          - Condition template, with a customisable treatment plan
+          - Premium
+        - - Pulmonary fibrosis
+          - Condition template
+          - Premium
+        - - Pneumonia
+          - Condition template
+          - Premium
+        - - Lung cancer
+          - Condition template
+          - Premium
+        - - Your own forms
+          - A paper sheet your clinic uses today, rebuilt with the form builder
+          - Premium
+      note: >-
+        Professional includes the EMR and e-prescriptions, without the specialty templates or your own forms
+        and print layouts.
+
+  - discriminant: featureRows
+    value:
+      id: review-visit
+      heading: A chest clinic review, from the PFT room to the bill
+      intro: >-
+        How a review visit runs on Easy Clinic. We have not timed these steps in a chest clinic, so the page
+        gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The lung function test, booked in the slot
+          icon: flask-conical
+          body: >-
+            If the review needs spirometry, the machine and the technician who runs it are booked inside the
+            appointment slot, and the report is uploaded to the same record.
+        - heading: The nurse does the intake
+          icon: activity
+          body: >-
+            A nurse or clinical assistant does the intake before the consult. Each person logs in as
+            themselves, and the reception login included in the price cannot open the EMR or issue a
+            prescription.
+        - heading: The consult, by point and click
+          icon: notebook-pen
+          body: >-
+            Notes, diagnosis, medications, investigations, referrals and follow-ups are picked with
+            auto-complete instead of typed out, with a drug interaction check on the prescription and, on
+            Premium, the asthma or COPD template open.
+        - heading: The prescription goes home on paper or on WhatsApp
+          icon: pill
+          body: >-
+            The prescription is printed or, on Premium, sent on WhatsApp, and it can be written in the
+            patient's language. Patient education material goes home with it.
+        - heading: Follow-ups with reminders
+          icon: history
+          body: >-
+            The follow-up is set in the note, and the patient gets an automated reminder by SMS and email on
+            every plan, and on WhatsApp on Premium.
+        - heading: Reviews by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a stable patient's review can be a video consult, booked through the appointment
+            screen with the fee paid online. The prescription carries a line saying the consult was held
+            remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Generate and Share in 30 Seconds
+        Quickly create detailed prescriptions and share them instantly via print, WhatsApp, SMS, or email in any language.
+
+        ### Custom-Tailored Pulmonology EMR
+        Designed to align with your specialty, workflow, and preferences, ensuring a seamless and efficient experience.
+
+        ### AI-Driven Efficiency
+        Streamline your documentation and save time with an AI-powered assistant for quick and accurate prescriptions.
+
+        ### Specialty-Specific Documentation
+        Templates for common respiratory conditions like Asthma, COPD, pulmonary fibrosis, pneumonia, and lung cancer.
+
+        ### Treatment Planning
+        Customizable treatment plans for Asthma and COPD management.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters through charts and graphs to enhance patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently highlight key patient data for quick and easy reference.
+
+        ### Simplified Point-and-Click Interface
+        Quickly record chief complaints, medical history, vitals, and more with an intuitive, user-friendly interface. Access custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for swift access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Pulmonology Patients
+        Capture detailed or concise medical histories, including chronic illnesses, family and social history, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick access during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Crafted for Pulmonologists
+        Tailored to meet the unique needs of specialists, super-specialists, and pulmonology clinic chains for optimized care and efficiency.
+
+        ### AI-Powered Diagnostic Support
+        Utilize intelligent AI for differential diagnoses and receive alerts on adverse drug events, specifically designed for pulmonology patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Quickly access the complete patient visit history on a single screen, streamlining care and enhancing overall efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used medications, investigations, and clinical tools such as guidelines, checklists, and reminders to enhance care efficiency.
+
+        ### Effortless Care Team Collaboration
+        Facilitates efficient communication and coordination among pulmonologists, nurses, and healthcare providers to deliver complete, patient-centered care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Pulmonologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks.Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Pulmonology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Pulmonologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Pulmonology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Pulmonology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Pulmonology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Pulmonology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Pulmonology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Pulmonology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for pulmonology clinics?"
+    answer: "The best EMR software for pulmonology clinics should support lung function tests, diagnostic records, treatment plans, and long-term patient care. Easy Clinic is designed to manage the complete workflow of pulmonology clinics."
+  - question: "Does Easy Clinic support AI EMR for pulmonology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic track lung function tests like spirometry?"
+    answer: "Yes. Easy Clinic allows clinics to store and monitor lung function test results."
+  - question: "Does Easy Clinic support chronic respiratory condition tracking?"
+    answer: "Yes. Easy Clinic supports long-term tracking for conditions like asthma and COPD."
+  - question: "Can Easy Clinic store diagnostic and imaging reports?"
+    answer: "Yes. Clinics can store X-rays, CT scans, and other diagnostic reports in patient records."
+  - question: "Does Easy Clinic support treatment and medication tracking?"
+    answer: "Yes. Doctors can manage prescriptions and treatment plans easily."
+  - question: "Does Easy Clinic support billing for pulmonology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine and supply inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Can multiple doctors use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, treatments, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /allergy-emr-software/
+      label: Allergy EMR
+      description: For the allergy clinic that records skin tests and immunotherapy shots.
+      icon: flask-conical
+    - href: /cardiology-emr/
+      label: Cardiology EMR
+      description: For the cardiology clinic that follows ECG reports and blood pressure trends.
+      icon: heart
+    - href: /ent-emr-software/
+      label: ENT EMR
+      description: For the ENT clinic with the ear examination and hearing test on one record.
+      icon: stethoscope
+    - href: /immunology-emr/
+      label: Immunology EMR
+      description: For the immunologist who follows autoimmune disease and immunodeficiency.
+      icon: shield-check
+    - href: /oncology-emr/
+      label: Oncology EMR
+      description: For the oncology clinic that records treatment cycles and blood counts.
+      icon: file-heart
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+closing:
+  heading: See a chest clinic review on Easy Clinic
+  body: >-
+    Book a demo and ask to see a COPD template beside the spirometry reports on the patient's record, or
+    compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a pulmonology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    A pulmonologist's own words on Easy Clinic's prescription shortcuts, the five respiratory templates
+    named on Easy Clinic's own pulmonology page, and the plan split from plans.yaml; the only local fact is
+    the rupee price.
+  readsMachineWritten: >-
+    The four pains are composites rather than a named clinic's day, and the page has no timed visit and
+    no screenshot of a respiratory template, so a pulmonologist will notice that spirometry values are kept
+    as reports rather than charted, and that inhaler technique and exacerbation counts are not described.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section; it replaces the single specialist testimonial that was here, to keep within three testimonials a page.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: the live /pulmonology-emr/ page (fetched 2026-11-05) states plainly: specialty documentation templates for asthma, COPD, pulmonary fibrosis, pneumonia and lung cancer; customisable treatment plans for asthma and COPD; FAQ spirometry "storing and monitoring results" (written as reports stored on the record; no charting of spirometry values is claimed); FAQ imaging storage (X-rays, CT); chronic condition tracking and treatment and medication tracking; multiple doctors and branches; charts for vitals, lab reports and clinical parameters; auto-generated summaries and facesheets; point-and-click entry; the intake form (chronic illness, family and social history, substance use, alternative therapies, COVID history, immunisations; "smoking" is written as part of substance use and the facesheet in 2_EMR.png shows a smoking field); multilingual prescriptions, image and document upload, automated follow-up, drug interaction check, patient education; template and form builder; side-by-side past records, nurse intake; teleconsultation in the browser with online fees and the remote-consult disclaimer; resource booking (equipment, assistants) in the slot and the multi-resource calendar; role-based access. Plan placement follows plans.yaml (specialty templates, own forms, lab reports in the chart, video, WhatsApp and more than one location on Premium; integrations on Enterprise or as an add-on).'
+  - 'Testimonial premanand-raya (role Pulmonologist) is also in the /pricing/ and /features/ testimonial sliders, which the registry exempts from the one-page rule, and on no other landing page, so this is his only specialty placement. His quote is shown in full; it is about prescription shortcuts and support, not a pulmonology feature. The live pulmonology page gives his city as Tirupati, but city is null in testimonial data, so the page gives no city; add it to src/data/testimonials/premanand-raya.yaml if confirmed. The "Premanand" vs "Premananda" spelling is unresolved (facts.md section 2; the photo file says Premananda).'
+  - 'Dropped from the live page: both "Easy Clinic vs other/generic EMR" comparison tables (unsourced competitor cells, including "PFT and spirometry tracking" as a built-in feature); the 30-second prescription as a product claim (it appears only inside the verbatim testimonial); AI-powered differential diagnosis and adverse drug event alerts (CuraPilot claims, not confirmed for this page); "invoices in less than 10 seconds"; "over 100 graphical dashboards", data warehouse, Power BI and Azure Data Factory; the FAQ "Inventory management? Yes" as an every-plan claim (plans.yaml: Enterprise or a module); the FAQ "performance reports" (generic); AI wait-time alerts and two-way messaging; patient self-service (plan unclear); medical calculators, tabular Rx, triage and growth charts (listed without detail); "super easy fast flexible"; the "14-Day Free Trial, plus a 30-day money-back guarantee" line (owner decision: no free trial).'
+  - 'Facts needed (company to-do for spec 5.15): (1) whether spirometry and PFT values can be entered as structured data and charted (FEV1, FVC, FEV1/FVC), or are stored as reports only; (2) spirometer, PFT and pulse oximeter connections with status; (3) the full list of pulmonology templates with their fields; (4) the plan for the asthma and COPD treatment plans, the intake form, resource booking and the drug interaction check (rows without a plan tag; the featureRows intro says only that Premium includes every row); (5) which pulmonology note types Cura AI drafts, with an example; (6) a timed walkthrough of a COPD review; (7) whether a PFT technician needs a paid login under per-doctor pricing.'
+  - 'Hero: 1_EMR.png with the alt text already used on the features hub; it shows a general visit with a fasting blood sugar chart, not a respiratory template, and the alt says no more than that. When the seeded demo tenant exists, capture a COPD review on its template with the spirometry report in the file. The four pains are illustrative situations, not customers; "three years" and "10am" are examples.'
+  - 'Related links: the draft post /pulmonology-ai-clinic-software/ (owner /ai/) is left out because a draft link renders as plain text in production. /solutions/solo-clinic/ and /solutions/polyclinic/ fit the usual practice size (spec 2.9). /emr-software-in-kenya/ is a draft, so only the India country page is linked; add Kenya when it publishes. Title 37 characters; meta description under 155 characters with the token resolved.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has a named pulmonologist but no measured number of its own.

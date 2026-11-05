@@ -24,4 +24,6 @@ export const schema = (ctx: SchemaContext) =>
     layout: z.enum(['auto', 'list', 'bento', 'grid']).default('auto'),
     /** The heading and intro run the full container width instead of the reading measure. */
     wideIntro: z.boolean().default(false),
+    /** Show the arrow after each item's link text. Off on the specialty pages' shot-days section (owner request 2026-11-05). */
+    linkArrow: z.boolean().default(true),
   });

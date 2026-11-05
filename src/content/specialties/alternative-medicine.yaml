@@ -1,0 +1,655 @@
+# /alternative-medicine/ (spec 5.15 SpecialtyPage). Footer specialty page, written 2026-11-05; the URL
+# previously redirected to /ayurveda-clinic-management-software/ and now has its own page for homoeopathy,
+# Unani, naturopathy, acupuncture and chiropractic practices. Ayurveda keeps its own page, linked from here.
+# Grounding: capability statements the live /alternative-medicine/ page makes plainly (retrieved 2026-11-05),
+# plans.yaml, and what the published Ayurveda and other specialty pages already state.
+status: published
+headKeyword: alternative medicine EMR
+secondaryKeywords:
+  - homoeopathy clinic software
+  - alternative medicine clinic management software
+  - naturopathy clinic software
+title: 'Alternative Medicine EMR: Easy Clinic'
+metaDescription: >-
+  EMR software for homoeopathy, Unani, naturopathy and other alternative medicine clinics, with
+  prescription formats set up for your remedies.
+h1: "Revolutionize Your Alternative Medicine Practice with Easy Clinic’s EMR"
+linkLabel: Alternative medicine
+eyebrow: For homoeopathy, Unani, naturopathy and integrative clinics
+openingAnswer: "Simplify patient management, scheduling, and billing in one platform designed for whole-person care. Alternative Medicine EMR enhances your practice’s efficiency and growth—focus on healing, and we’ll handle the rest at your clinic."
+summary: >-
+  Prescription formats set up for homoeopathic, Unani and other remedies, and a treatment history that holds
+  remedies, therapies, diet and lifestyle advice on one record.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a demo for your clinic
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for alternative medicine clinics and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-alternative-medicine-clinic-loses-track
+      heading: Where an alternative medicine clinic loses track
+      intro: >-
+        Treatment in homoeopathy, Unani or naturopathy runs for months or years, and<br class="hidden md:inline">
+        what goes missing is usually the earlier visit the doctor is building on today.
+      items:
+        - heading: The first case-taking is eight pages in a file
+          body: >-
+            A homoeopath's first consultation with a patient takes an hour and fills pages: the complaint, the
+            history, the patient's habits, sleep and temperament. Three months later, at a follow-up, the doctor
+            needs that case and the remedy given since, and the file is in a cupboard at the other end of the
+            clinic.
+          fix: >-
+            The intake form takes the medical history in as much or as little detail as the doctor wants,
+            including chronic illnesses, family and social history and other therapies tried, and it feeds the
+            facesheet. Each visit's treatment is kept on the same record, so the case and every remedy since
+            open together.
+        - heading: The software expects a tablet in milligrams
+          body: >-
+            Clinic software built for allopathic prescriptions asks for a tablet, a strength in milligrams and
+            a dose three times a day. A homoeopathic remedy with its potency, or a Unani compound, does not fit
+            those boxes, so the doctor writes it by hand and the record stays on paper.
+          fix: >-
+            The prescription format in Easy Clinic can be set up for homoeopathy, Unani and other alternative
+            treatments, and the remedies you use often are at hand as you write. On Premium it prints in your
+            clinic's own layout.
+        - heading: Four practitioners, one diary
+          body: >-
+            An integrative centre has a homoeopath, a naturopath, an acupuncturist and a chiropractor, and one
+            paper diary at the desk. Two of them want the same treatment room at four o'clock, and the desk only
+            finds out when both patients arrive.
+          fix: >-
+            Different kinds of treatment are managed on one system, with several practitioners scheduled at the
+            same time, and the equipment or assistant a session needs is booked inside the appointment slot.
+        - heading: The diet chart goes home and is lost
+          body: >-
+            The naturopath writes a diet plan and a daily routine on a printed sheet. Six weeks later the patient
+            is back, the sheet is lost, and nobody can say what was advised.
+          fix: >-
+            Diet plans, lifestyle advice and treatment notes are recorded on the patient's record, so the advice
+            given six weeks ago is there at the next visit.
+
+  - discriminant: featureRows
+    value:
+      id: the-treatment-record
+      heading: Built around a long course of treatment
+      intro: >-
+        Your own case sheet and video follow-ups come with Premium, Easy Clinic's plan for
+        specialists, and are not on Professional. Medicine and herbal stock comes with Enterprise or
+        as a module.
+      layout: grid
+      items:
+        - heading: Prescriptions set up for your remedies
+          icon: pill
+          body: >-
+            The prescription format can be set up for homoeopathy, Unani and other alternative treatments, with
+            commonly used medicines at hand as you write. The patient gets the prescription printed, by SMS or by
+            email, or by WhatsApp on Premium.
+          bullets:
+            - Prescription format set up for homoeopathy and Unani
+            - Sent printed, by SMS or email, or by WhatsApp on Premium
+        - heading: A treatment history that runs for years
+          icon: history
+          body: >-
+            Keep a detailed history of each patient's treatments, consultations and progress, including the
+            herbs, supplements, therapies and other treatments used. The facesheet puts the patient's key data on
+            one screen, and past records open side by side with today's.
+          bullets:
+            - Remedies, therapies and supplements in one history
+            - Diet plans and lifestyle advice on the record
+        - heading: Your own case sheet
+          icon: notebook-pen
+          body: >-
+            On Premium, the form builder turns the paper case sheet you already use into a digital form filled
+            in at each visit, laid out the way you take a case, and the prescription prints in your own layout.
+          bullets:
+            - Your paper case sheet as a digital form on Premium
+            - The prescription printed in your own layout
+        - heading: Several practitioners on one calendar
+          icon: users
+          body: >-
+            Manage different kinds of treatment, such as acupuncture, chiropractic and naturopathy, on one
+            system, with several practitioners scheduled at the same time. Equipment and assistants are booked
+            inside the appointment slot, and case notes are shared across the care team.
+          bullets:
+            - Acupuncture, chiropractic and naturopathy on one system
+            - Equipment and assistants booked inside the slot
+        - heading: Medicine and herbal stock
+          icon: package
+          body: >-
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and Premium,
+            the clinic keeps its medicines, herbs and supplies in stock, and each batch is tracked to its expiry
+            date.
+          bullets:
+            - Medicines, herbs and supplies kept in stock
+            - Each batch tracked to its expiry date
+        - heading: Video follow-ups
+          icon: video
+          body: >-
+            On Premium a follow-up can be a video consultation booked through the appointment screen, with the
+            fee collected online at booking. The prescription reaches the patient by WhatsApp, SMS or email with
+            a note that the consultation was remote.
+          bullets:
+            - Video follow-ups booked from the appointment screen
+            - The fee collected online at booking
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the consultation note for the doctor to
+            review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: a-course-of-visits
+      heading: A course of visits, from the desk to the next appointment
+      intro: >-
+        Treatment here runs as a series of visits over months, so much of the clinic's work happens at
+        the desk: booking the next session, taking the payment and reminding the patient to come back.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: Booked patients and walk-ins at the same desk
+          icon: calendar-clock
+          body: >-
+            Fixed-time appointments and walk-ins sit on one calendar, and the sessions of a course, such as
+            acupuncture or chiropractic, can be booked together. The waiting room view shows the queue and
+            how long each patient has waited.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The bill for the consultation and the therapy
+          icon: receipt
+          body: >-
+            The receptionist bills the consultation and any therapy from the clinic's service list, and each
+            payment is recorded against the bill, with the balance on screen. A refund or a voided invoice
+            goes through only with authorisation, and the receipt goes to the patient by SMS or email, or on
+            WhatsApp with Premium.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: A course of treatment billed as a package
+          icon: hand-coins
+          body: >-
+            On Premium a course of treatment the clinic sells as a package is billed as one package
+            treatment, and the payment can be spread over the course. Advances and part payments are
+            recorded against the package, so the desk sees the balance on the bill.
+        - heading: Reminders for the follow-up visit
+          icon: bell-ring
+          body: >-
+            The follow-up date goes in the note, and the patient gets an automated reminder for it, by SMS or
+            email on every plan and by WhatsApp on Premium. Reminders go out automatically, days or hours
+            before the visit, at the times the clinic sets.
+          link:
+            label: Read how WhatsApp reminders work
+            href: /features/whatsapp/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Quick Prescriptions: Ready in 30 Seconds
+        Generate detailed prescriptions in under 30 seconds and instantly share them via print, WhatsApp, SMS, or email in any language.
+
+        ### Bespoke Alternative Medicine EMR: Tailored for Your Specialty
+        Crafted to align with your unique specialty, workflow, and preferences, providing a seamless and efficient experience for alternative medicine specialists.
+
+        ### AI-Enhanced Efficiency
+        Simplify your documentation and save time with an AI-powered assistant that streamlines prescription creation in just three clicks.
+
+        ### Patient Records and Treatment History
+        Keep a detailed history of treatments, consultations, and progress for each patient. This can include information on herbs, supplements, therapies, and any other alternative treatments used.
+
+        ### Multidisciplinary Treatment Management
+        Support for managing different types of treatments (acupuncture, chiropractic, naturopathy, etc.) and the ability to schedule multiple practitioners simultaneously.
+
+        ### Visual Health Insights
+        Easily visualize specific vitals, lab reports, and clinical parameters through intuitive charts and graphs, enhancing patient care and decision-making.
+
+        ### Streamlined Patient Summaries: Quick Access to Complete Case Histories
+        Save time with auto-generated summaries and facesheets that intelligently present key patient data for efficient and effective care.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more using a user-friendly interface. Features custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Alternative Medicine Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Alternative Medicine Specialists and Clinics
+        Custom-built to meet the unique needs of alternative medicine specialists, super-specialists, and multi-location clinic chains, ensuring a seamless and efficient practice management experience.
+
+        ### AI-Driven Diagnostic Support
+        Utilize advanced AI for accurate differential diagnoses and real-time alerts on adverse drug events, specifically designed for alternative medicine patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Instant Access to Essential Resources
+        Quickly retrieve frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders to streamline care and improve efficiency.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, Alternative Medicine specialists, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Alternative Medicine practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Alternative Medicine specialists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Alternative Medicine patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Alternative Medicine clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Alternative Medicine clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Alternative Medicine clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Alternative Medicine clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for alternative medicine clinics?"
+    answer: "The best EMR software for alternative medicine clinics should support custom prescriptions, long-term treatment tracking, and lifestyle plan documentation. Easy Clinic is designed to manage the complete workflow of alternative medicine practices."
+  - question: "Does Easy Clinic support AI EMR for alternative medicine clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic handle Ayurvedic, Homoeopathy, and Naturopathy prescriptions?"
+    answer: "Yes. Easy Clinic supports custom prescription formats, which can be used for Ayurveda, Homoeopathy, Unani, and other alternative treatments."
+  - question: "Does Easy Clinic support long-term patient tracking?"
+    answer: "Yes. Alternative medicine often requires multiple visits, and Easy Clinic allows detailed follow-up tracking."
+  - question: "Can Easy Clinic store diet and lifestyle recommendations?"
+    answer: "Yes. Doctors can record diet plans, lifestyle advice, and treatment notes in patient records."
+  - question: "Does Easy Clinic support billing and payment tracking?"
+    answer: "Yes. Easy Clinic includes billing, invoicing, and payment management."
+  - question: "Can Easy Clinic manage medicine and herbal inventory?"
+    answer: "Yes. Inventory management is included for medicines, herbs, and clinic supplies."
+  - question: "Is Easy Clinic suitable for small alternative medicine clinics?"
+    answer: "Yes. Easy Clinic works for single-doctor clinics as well as large wellness centres."
+  - question: "Can multiple practitioners use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides advanced analytics to track patient visits, treatments, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /ayurveda-clinic-management-software/
+      label: Ayurveda clinic software
+      description: For Ayurveda clinics and Panchakarma centres, with courses billed as packages.
+      icon: boxes
+    - href: /physiotherapy-clinic-management-software/
+      label: Physiotherapy clinic software
+      description: For the physiotherapy clinic with session plans and progress against goals.
+      icon: route
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: 'For the family doctor who keeps each family member''s care on their own record.'
+      icon: heart-handshake
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+    - href: /mental-health/
+      label: Mental health EMR
+      description: For psychiatrists and psychologists, with session notes and dose changes.
+      icon: brain
+    - href: /dermatology-emr-software/
+      label: Dermatology EMR
+      description: For the skin clinic with before-and-after photographs and procedure sessions.
+      icon: scan-eye
+closing:
+  heading: See a homoeopathic case and prescription on Easy Clinic
+  body: >-
+    Book a demo and ask to see a long case on the facesheet and a prescription set up for your remedies, or
+    compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a demo for your clinic
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    Dr Manish Bhatia's homoeopathy clinic in Jaipur, on Easy Clinic for more than ten years, and the
+    prescription screen that expects a tablet in milligrams, which is the reason a homoeopath stays on paper,
+    with each fix a capability the live alternative medicine page states.
+  readsMachineWritten: >-
+    The four pains are composites rather than a named clinic's day, and the page names no homoeopathic or Unani
+    template, so a homoeopath may find the case-taking answer (build your own case sheet on Premium) thin.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the short cross-link section ("Ayurveda clinics") was removed; the related links still point to that page.'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section; it replaces the single specialist testimonial that was here, to keep within three testimonials a page.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding (live /alternative-medicine/ retrieved 2026-11-05, HTTP 200, no redirect): "Patient Records and Treatment History: ... information on herbs, supplements, therapies, and any other alternative treatments used"; "Multidisciplinary Treatment Management: Support for managing different types of treatments (acupuncture, chiropractic, naturopathy, etc.) and the ability to schedule multiple practitioners simultaneously"; FAQs "custom prescription formats, which can be used for Ayurveda, Homoeopathy, Unani, and other alternative treatments", "allows detailed follow-up tracking", "record diet plans, lifestyle advice, and treatment notes in patient records", inventory for "medicines, herbs, and clinic supplies" (plan per plans.yaml), single-doctor clinics and multi-doctor use; customisable intake forms (chronic illnesses, family and social history, alternative therapies) feeding the facesheet; "Instant Access to Essential Resources: Quickly retrieve frequently used medications"; side-by-side past records; collaborative case notes; form builder for paper forms; personalised print formats; automated follow up; resource booking inside the slot; teleconsultation with online fee and the remote-consult line on the prescription. Prescriptions shared by print, SMS, email or WhatsApp: live page, with WhatsApp on Premium per plans.yaml. Plan placement follows plans.yaml (own forms and print layouts, video consultations and WhatsApp on Premium; pharmacy and inventory on Enterprise or a module). Reception login, no binding contract: facts.md as on the other pages.'
+  - 'Testimonial: manish-bhatia (Homeopathy, Asha Homeopathy Medical Center, Jaipur, consent on file, "more than 10 years") is the one homoeopathy record on file and the only one that fits this page. It is also used on the home page, /features/ and /pricing/; the Ayurveda page notes called it "assigned elsewhere", but no rule limits a testimonial to one page and here it belongs to the specialty. His quote praises paperless records, accounting and support rather than a homoeopathy feature; recruit a second quote about the case record or the prescription if one exists.'
+  - 'Dropped from the live page: both comparison tables (unsourced cells, inventory "Built-in", and a "Needed for allergy shots & supplies" cell copied from the allergy page); "Revolutionize", "holistic care" and "Holistic Practices" (banned or promotional wording); "prescriptions in 30 seconds", "three clicks" and "invoices ready in less than 10 seconds"; "over 100 graphical dashboards"; "Reduces no-shows"; AI diagnostic support and ADR alerts (CuraPilot), AI two-way messaging and AI wait-time alerts; "in any language" (only English and Swahili confirmed elsewhere); patient self-service booking and check-in (patient portal is Enterprise); data warehouse, Power BI, HR, roster and incentive sections; "fully cloud-based"; "large wellness centres" and multi-branch (not specific here); the "14-Day Free Trial" and "try Easy Clinic absolutely free" lines (owner decision: no free trial); "Join 5000+ Doctors"; the four live testimonials (none from an alternative medicine clinic). Siddha is not named on the live page, so the page does not name it.'
+  - 'Facts needed (company to-do): whether any ready homoeopathy or Unani template or remedy list ships (the live page says only that formats can be customised and frequent medicines are at hand); whether potency and dosing fields are structured or free text; whether a materia medica or repertory integration exists (the page does not mention one either way); whether the prescription format needs Premium (plans.yaml puts own print layouts there, which the page says); which plan carries multi-practitioner scheduling and resource booking; AYUSH record formats or NAMASTE codes for homoeopathy and Unani (none stated; no regulator block until confirmed); which note types Cura AI drafts.'
+  - 'Hero: the existing prescription screenshot (a dermatologist''s prescription in the demo data), described only as a prescription laid out for print with its sharing buttons, because the medicines shown are not homoeopathic; replace with a homoeopathic prescription when the seeded demo tenant exists. The language menu in the image is not mentioned, as only English and Swahili are confirmed. The /alternative-medicine-clinic-management-software/ post is a draft, so it is not linked. The four pains are illustrative, not customers; eight pages, three months, four o''clock and six weeks are examples. Title 37 characters.'
+  - The editorial pass recorded here is an AI review. A human editor, ideally a homoeopath, still needs to read the page aloud and answer the two spec 6.5 questions; with a named customer but no measured number it meets three of the four spec 6.5 pass marks.
+  - 'Section a-course-of-visits added 2026-11-05. Grounding: fixed-time appointments and walk-ins on one calendar, the sessions of a course booked together and the waiting room view (/ent-emr-software/, /allergy-emr-software/, /ayurveda-clinic-management-software/, /features/appointment-scheduling/); billing from the service list with each payment and the balance on the bill, refunds and voided invoices only with authorisation, receipts by SMS or email or on WhatsApp with Premium (/ent-emr-software/, /features/billing/); package treatments on Premium with the payment spread over the course and advances and part payments recorded against the package (/ayurveda-clinic-management-software/, /dermatology-emr-software/, plans.yaml); automated follow-up reminders by SMS and email on every plan and by WhatsApp on Premium ("automated follow up" on the live page per the first note, the plan FAQ here, /ent-emr-software/, with the reminder timing from /features/appointment-scheduling/). Equipment booking, stock and video follow-ups are left out because the "Built around" section already covers them.'

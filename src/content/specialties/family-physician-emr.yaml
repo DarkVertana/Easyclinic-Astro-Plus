@@ -1,0 +1,669 @@
+# /family-physician-emr/ (spec 5.15 SpecialtyPage template; no spec 4.3 keyword row and no spec 5.15 must-have
+# row for family medicine). Slug kept from the live site; it redirected to /general-practitioner-emr/ until the
+# owner asked for every footer specialty to have its own page (2026-11-05). To stay distinct from
+# /general-practitioner-emr/ (the walk-in visit, the token queue, the referral slip and BP charts), this page
+# takes the family doctor's angle: several members of one family, and the same patients across decades.
+# Grounding: capability statements the live /family-physician-emr/ page makes plainly (retrieved 2026-11-05),
+# plans.yaml, and what published pages already state. The live page says nothing about linking family members
+# or households, so the page claims no household linkage: each family member has their own record.
+status: published
+headKeyword: family physician EMR software
+secondaryKeywords:
+  - EMR for family doctors
+  - family medicine software
+title: 'Family Physician EMR Software: Easy Clinic'
+metaDescription: >-
+  Family physician EMR: each family member's history on their own facesheet, with check-up, vaccine
+  and screening alerts, from {price:usd.professional.annual} a doctor a month.
+h1: "Effortless Family Medicine Management with Easy Clinic’s EMR"
+linkLabel: Family physician
+eyebrow: For family physicians
+openingAnswer: "Easily track patient records, schedule appointments, and manage prescriptions with Easy Clinic’s intuitive EMR. Streamline your daily operations, enhance patient care, and ensure seamless communication across all family medicine management services."
+summary: >-
+  Each family member's history on their own facesheet, family history recorded once, and alerts for
+  check-ups, vaccinations and screenings, with the EMR on every plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Professional pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for family physicians and would like to book a demo for my practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-family-practice-loses-track
+      heading: Where a family practice loses track
+      intro: >-
+        A family doctor knows a household by heart, until a locum is on duty, or the son comes in twenty years<br class="hidden lg:inline">
+        after his father's heart attack. What goes missing is the family's history, not today's complaint.
+      items:
+        - heading: The father's heart attack is in the father's file
+          body: >-
+            A man of forty comes in with a raised blood pressure. You treated his father's heart attack
+            years ago and his mother's diabetes still, but none of that is written in his own file, and the
+            locum who sees him on Saturday has no way to know.
+          fix: >-
+            Family history is recorded on each person's intake form, as detailed as you want it, and it
+            shows on their own facesheet with their chronic conditions and social history. Anyone in the
+            practice who opens his record sees it.
+        - heading: Three generations, three kinds of preventive care
+          body: >-
+            In one family the baby is due a vaccine, the mother a screening test and the grandfather his
+            annual check-up. Each depends on someone remembering, and the family usually remembers only the
+            one that hurts.
+          fix: >-
+            The EMR sends alerts when an annual check-up, a vaccination or a screening is due, and each
+            person's immunisations are kept in their own history. Appointment reminders go by SMS and email
+            on every plan, and by WhatsApp on Premium.
+        - heading: The grandmother's tablets come from four doctors
+          body: >-
+            She sees a cardiologist, an eye surgeon and an orthopaedic surgeon, and you are the one who sees
+            all the prescriptions. Adding a painkiller means checking the whole list by memory.
+          fix: >-
+            Her chronic conditions and the alternative therapies she uses sit on her facesheet, reports from
+            her specialists are uploaded to her record, and the EMR's drug interaction check covers the
+            prescription you write.
+        - heading: Twenty years of cards in a cupboard
+          body: >-
+            The practice has seen this family since before the children were born. Their history is in
+            card files, some in your handwriting and some in your predecessor's, and the old cards do not
+            follow anyone into the consulting room.
+          fix: >-
+            Scanned pages of the old cards are uploaded to each person's record as documents, beside the new
+            visits, and from then on every visit by every doctor in the practice is written on the same
+            record.
+
+  - discriminant: featureRows
+    value:
+      id: built-around-the-family-chart
+      heading: Built around the family physician's chart
+      intro: >-
+        The EMR and e-prescriptions come with every plan, starting with Professional. Templates for the
+        conditions you see most and lab reports in the chart come with Premium, at
+        {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual}, billed
+        annually.
+      layout: grid
+      items:
+        - heading: One record for each family member
+          icon: users
+          body: >-
+            Each person, from the newborn to the grandparent, has their own record, with every visit, note
+            and prescription on it over the years. Every doctor in the practice writes on the same record, so
+            the history survives a locum, a new partner or a change of hands.
+          bullets:
+            - From the newborn to the grandparent, a record each
+            - Every doctor in the practice writes on the same record
+        - heading: The history, taken once and kept
+          icon: clipboard-plus
+          body: >-
+            The intake form captures what a family doctor needs, and what it records lands on the patient's
+            facesheet with an auto-generated summary.
+          bullets:
+            - Chronic conditions, with family and social history
+            - Immunisations and COVID history
+        - heading: Preventive care alerts
+          icon: bell-ring
+          body: >-
+            The EMR sends alerts for annual check-ups, vaccinations and screenings, and a follow-up set in
+            the consult brings the patient an automated reminder before it is due.
+          bullets:
+            - Alerts for annual check-ups, vaccinations and screenings
+            - An automated reminder before a follow-up is due
+        - heading: Vitals and lab values charted over the years
+          icon: chart-line
+          body: >-
+            Vitals, lab reports and clinical parameters are shown as charts, so the slow rise in a patient's
+            weight or blood pressure over a decade is one line. On Premium, lab reports come into the chart
+            and their values are charted beside the vitals.
+          bullets:
+            - A slow rise in weight or blood pressure as one line
+            - Lab values charted beside the vitals on Premium
+        - heading: Templates for family medicine's regular conditions
+          icon: layout-template
+          body: >-
+            On Premium you can have a template for each condition you see most, such as diabetes,
+            hypertension or a respiratory infection, and turn your paper forms into digital ones with the
+            form builder.
+          bullets:
+            - A template for each condition you see most on Premium
+            - Your paper forms turned into digital ones
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the visit note for you to review, and
+            a doctor who prefers to write every note writes it in the same chart.
+          bullets:
+            - Cura AI comes with every plan
+            - You review every draft visit note
+
+  - discriminant: featureRows
+    value:
+      id: a-family-visit
+      heading: When the whole family comes in
+      intro: >-
+        A family doctor often sees two or three members of one family in a single sitting. Each visit is
+        still its own record, and the appointment book and billing come with every plan.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: 'At the desk: one booking for each person'
+          icon: calendar-clock
+          body: >-
+            Booked patients and walk-ins sit on one calendar, so the mother and the child each have their
+            own slot or token, and a patient who needs to be seen sooner can be moved up as a priority.
+          link:
+            label: Read how the appointment book works
+            href: /features/appointment-scheduling/
+        - heading: 'In the consult: each person''s own facesheet'
+          icon: notebook-pen
+          body: >-
+            You open the child's record, then the mother's, each with its own history, vitals and
+            immunisations. Complaints, diagnoses, investigations, referrals and follow-ups are recorded by
+            point and click, with auto-complete.
+        - heading: Prescriptions the family can read
+          icon: pill
+          body: >-
+            Each prescription is printed or sent by SMS or email and, on Premium, by WhatsApp, and it can
+            carry advice for the patient. It can be bilingual, such as English and Swahili for clinics in
+            Kenya.
+        - heading: 'Back at the desk: the bill'
+          icon: receipt
+          body: >-
+            The receptionist raises each bill in one click from the clinic's service list. Part payments are
+            recorded against the bill, and a refund or a discount goes through only with authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Follow-ups by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a follow-up can be a video consult, so an elderly parent need not travel for a
+            routine review. The patient joins from a web browser, the fee is paid online, and the
+            prescription says the consult was held remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Create and Share in 30 Seconds
+        Generate detailed prescriptions in just 30 seconds and instantly share them via print, WhatsApp, SMS, or email, available in any language.
+
+        ### Personalized Family Physician EMR
+        Tailored to your specialty, workflow, and preferences, ensuring a smooth and efficient experience.
+
+        ### AI-Powered Efficiency
+        Simplify your documentation and save time with an AI-driven assistant for quick and accurate prescriptions.
+
+        ### Customizable Templates
+        Customizable templates for common conditions treated in family medicine, such as diabetes, hypertension, or respiratory infections.
+
+        ### Preventive Care Reminders
+        Send alerts for annual check-ups, vaccinations, and screenings.
+
+        ### Visual Health Insights
+        Easily visualize specific vitals, lab reports, and clinical parameters through intuitive charts and graphs to enhance patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently display key patient data for quick and easy reference.
+
+        ### Simplified Point-and-Click Interface
+        Easily document chief complaints, medical history, vitals, and more with a user-friendly interface. Features include custom exam forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, designed for quick access without the need to navigate lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Family Physician Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic conditions, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient’s face sheet for easy access during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Family Physician Specialists
+        Custom-built to address the unique needs of specialists, super-specialists, and Family Physician clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Utilize intelligent AI for differential diagnoses and real-time alerts on adverse drug events, specifically designed for Family Physician patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Effortlessly Digitize Paper Forms
+        Easily convert your paper forms into digital templates using our flexible, user-friendly builder.
+
+        ### Complete Patient Data at a Glance
+        Quickly access the complete patient visit history on a single screen, enhancing efficiency and streamlining Family Physician care.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders to streamline care.
+
+        ### Effortless Care Team Collaboration
+        Facilitates efficient communication and coordination among nurses, Family Physician specialists, and other healthcare providers to ensure complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Family Physicians and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Family Physician practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Family Physicians to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Family Physician patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Family Physician clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Family Physician clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Family Physician clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Family Physician clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Family Physician clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: Which Easy Clinic plan does a family practice need, and what does it cost?
+    answer: >-
+      Professional costs {price:inr.professional.annual} per doctor per month billed annually in India or
+      {price:inr.professional.quarterly} billed quarterly, and {price:usd.professional.annual} or
+      {price:usd.professional.quarterly} in US dollars. It includes the EMR, e-prescriptions, Cura AI,
+      billing and the appointment book, with a reception login and no setup fee or binding contract.
+      Premium, at {price:inr.premium.annual} or {price:usd.premium.annual} billed annually, adds condition
+      templates, lab reports in the chart, WhatsApp messages and video consultations.
+  - question: Can I link the members of one family in Easy Clinic?
+    answer: >-
+      We do not state a household link today: each family member has their own patient record, with their
+      own history and visits. The family history recorded on each person's intake form is what carries a
+      parent's diabetes or heart disease onto a child's facesheet. Whether family members can be grouped
+      has not been confirmed as of November 2026.
+  - question: Does Easy Clinic remind patients about check-ups, vaccinations and screenings?
+    answer: >-
+      Yes, the EMR sends alerts for annual check-ups, vaccinations and screenings, and a follow-up set in
+      the consult brings the patient an automated reminder. Reminders go by SMS and email on every plan, and
+      by WhatsApp on Premium.
+  - question: Can a locum or a new partner see the family's history?
+    answer: >-
+      Yes, every doctor in the practice writes on the same patient record, and the facesheet and the
+      auto-generated summary put each patient's history in front of whoever opens it. Each person logs in as
+      themselves, and the role on that login decides which screens they can open.
+  - question: I have years of family card files. Can they go into Easy Clinic?
+    answer: >-
+      Yes, as scans: documents and images can be uploaded to each patient's record, so pages from the old
+      card sit beside the new visits. The history you want on the facesheet goes in through the intake
+      form, which you can fill in at each person's next visit.
+  - question: How is this different from the general practitioner page?
+    answer: >-
+      Both run on the same EMR. The general practitioner page follows a single walk-in visit from the token
+      to the bill; this page is about looking after several members of a family over many years, with each
+      person's history and preventive care kept on their own record.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No, Easy Clinic is cloud software and does not run fully offline today, so plan for a working
+      connection in the consulting room. If the line at your clinic drops often, keep a backup connection,
+      such as a mobile hotspot.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+    - href: /pediatric-emr/
+      label: Paediatric EMR
+      description: 'For the children''s clinic with growth charts and a vaccine schedule by age.'
+      icon: baby
+    - href: /obgyn-emr-software/
+      label: OB-GYN EMR
+      description: For the obstetric clinic that follows each pregnancy to the due date.
+      icon: calendar
+    - href: /diabetology-emr-software/
+      label: Diabetology EMR
+      description: For the diabetes clinic that follows sugar trends and foot and eye checks.
+      icon: chart-pie
+    - href: /cardiology-emr/
+      label: Cardiology EMR
+      description: For the cardiology clinic that follows ECG reports and blood pressure trends.
+      icon: heart
+    - href: /mental-health/
+      label: Mental health EMR
+      description: For psychiatrists and psychologists, with session notes and dose changes.
+      icon: brain
+closing:
+  heading: See a family's records on Easy Clinic
+  body: >-
+    In 20 minutes we open a parent's and a child's records side by side, with the family history on each
+    facesheet and the check-up and vaccination alerts that are due. If a call is too much today, send us a
+    WhatsApp message from this page instead.
+  primary:
+    label: Book a 20-minute demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Professional pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The preventive alerts for check-ups, vaccinations and screenings and the family medicine templates come
+    from Easy Clinic's own family physician page, and the household question is answered as it stands: each
+    person has their own record, and no family link is claimed.
+  readsMachineWritten: >-
+    The four pains are composites rather than a named practice's day, there is no family physician quoted
+    and no visit timed, and a family doctor may notice that the page cannot group a household, which is the
+    feature the title invites them to expect.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers". The live page has no FAQs to copy, so the FAQs written for this page stay.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: stated plainly on the live /family-physician-emr/ page (retrieved 2026-11-05): templates for common family medicine conditions (diabetes, hypertension, respiratory infections); intake forms covering chronic conditions, family and social history, obs-gynae details, substance use, alternative therapies, COVID history and immunisations, linked to the face sheet; auto-generated summaries and facesheets; charts of vitals and lab reports; point-and-click entry of complaints, vitals, diagnosis, medications, investigations, referrals, follow-ups and patient guidelines; "Send alerts for annual check-ups, vaccinations, and screenings"; image and document upload; drug interaction check; care-team coordination; fixed-time, walk-in, first-come-first-serve and priority appointments with token numbers; one-click billing, part payments, refunds and voiding with authorisation; video consults in the browser with online fees and the remote-consult disclaimer; multilingual prescriptions (only English and Swahili for Kenya are confirmed, as on /general-practitioner-emr/). Plan placement follows plans.yaml and the GP page (EMR on Professional; templates, lab reports in the chart, WhatsApp and video on Premium).'
+  - 'Household linkage: the live page makes no mention of linking family members, households, family accounts or generations (checked 2026-11-05). The page therefore says each family member has their own record and answers the linkage question in the FAQ with "We do not state a household link today". Company to confirm whether patients can be grouped by family or household (shared address, guardian, family billing), and on which plan; if so, add a row and rewrite the FAQ.'
+  - 'Dropped from the live page: "Generate detailed prescriptions in just 30 seconds" and "invoices ready in less than 10 seconds" (unmeasured), "available in any language", AI differential diagnoses and ADR alerts (CuraPilot claims), the Advanced EMR list (tabular Rx, medical calculators, side-by-side past records, nurse intake, growth and progress charts, personalised case sheets; not tied to a plan, as on /general-practitioner-emr/; growth charts are left to the linked /pediatric-emr/ page), "Automated reminders to reduce no-shows" (noShowReduction is null), patient self-booking, self check-in and phone intake (portal and app on Enterprise; plan unclear), AI wait-time alerts and two-way AI messaging, "over 100 graphical dashboards", Power BI and the data warehouse, roster and commission plans, the "Join 5000+ Doctors" line, the shared testimonials, and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial). The live page has no FAQ and no comparison table.'
+  - 'Overlap with /general-practitioner-emr/ (company and editor to settle): that page''s header comment still says /family-physician-emr/ merges into it, and its secondaryKeywords include "family physician EMR" and "family medicine EMR software", which now compete with this page. This page''s head keyword ("family physician EMR software") is unique, but the GP page''s secondaries and comment should be updated by whoever owns that file; this agent did not edit it. The two pages share the intake, preventive alert and billing facts by necessity; this page avoids the GP page''s token-queue walk-through, BP-reading pain and referral-slip pain.'
+  - 'Facts needed (company to-do): household or family grouping (above); whether preventive alerts follow a national schedule or are set per patient, and by which channel; whether the intake form, facesheet, vitals charts, preventive alerts and drug interaction check are on Professional (rows carry no plan tag, as on the GP page); which note types Cura AI drafts for a family visit; a timed walkthrough; a named family physician testimonial (sanjay-teotia is placed on /pricing/india/ and tl-prabhu is cleared only for /solutions/solo-clinic/ and /solutions/ngo-clinics/, so neither is used).'
+  - 'Hero: 2_EMR-853x1024.png with the alt text the published /features/ hub uses; it shows the facesheet with medical history, lifestyle and COVID-19 vaccination status, which fits the history-on-the-facesheet angle. The four pains are illustrative family practice situations, not customers; "forty", "twenty years" and "four doctors" are examples.'

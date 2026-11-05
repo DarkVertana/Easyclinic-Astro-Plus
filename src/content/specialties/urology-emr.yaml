@@ -1,0 +1,634 @@
+# /urology-emr/ (spec 5.15 SpecialtyPage; footer specialty list). Live slug kept; the redirect that sent this URL
+# elsewhere was removed when the footer specialties got their own pages (2026-11-05).
+# Grounding: capability statements the live /urology-emr/ page makes plainly (retrieved 2026-11-05), plans.yaml,
+# and the hospital OPD page's scope. No device integrations (uroflowmetry, lithotripter), template counts, timings
+# or outcomes.
+status: published
+headKeyword: urology EMR software
+secondaryKeywords:
+  - urology clinic software
+  - urology practice management software
+title: 'Urology EMR Software: Easy Clinic'
+metaDescription: >-
+  Urology EMR software: cystoscopy, lithotripsy and biopsy logs, ultrasound and CT reports on the record,
+  and procedure packages on Premium.
+h1: "Simplifying Urology Practice with Easy Clinic"
+linkLabel: Urology
+eyebrow: For urology clinics
+openingAnswer: "Easy Clinic streamlines urology workflows, from patient history to treatment planning. Our EMR software ensures efficient documentation, accurate diagnostics, and seamless coordination, empowering urologists to deliver personalized, high-quality care."
+summary: >-
+  Cystoscopies, lithotripsy and prostate biopsies logged on the patient's record, with ultrasound and CT
+  reports beside them and procedure packages on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a urology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for urology clinics and would like to book a demo for our practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-urology-clinics-lose-track
+      heading: Where a urology clinic loses track
+      intro: >-
+        A urology patient often comes back for years, with a stone that recurs or a prostate<br class="hidden md:inline">
+        that is watched, and most of what goes missing falls between one visit and the next.
+      items:
+        - heading: The CT report from the last stone is at home
+          body: >-
+            The patient is back with pain on the same side as two years ago. The CT report from then is in a
+            drawer at home, and the doctor has to decide on today's scan without knowing where the last stone
+            sat.
+          fix: >-
+            Ultrasound and CT reports are uploaded to the patient's record and stay there, and past records
+            open side by side with today's visit, so the earlier report is on the screen without the patient
+            bringing it.
+        - heading: The procedure register sits in the day-care room
+          body: >-
+            Cystoscopies and lithotripsy sessions are written in a register beside the procedure table. When
+            the patient comes back for a stent removal, the outpatient doctor cannot see which stent went in or
+            when.
+          fix: >-
+            Procedures such as cystoscopies, lithotripsy and prostate biopsies are logged on the patient's
+            record, so the procedure and every review after it are in one place.
+        - heading: The PSA results in a folder of printouts
+          body: >-
+            A man under watch for his prostate has a PSA test before each review, done at whichever lab was
+            nearest. The doctor reads four printouts in different layouts to decide whether the value is rising.
+          fix: >-
+            Lab reports are stored on the patient's record, and on Premium they come into the chart, where each
+            value can be charted visit by visit.
+        - heading: The six-month review that never happened
+          body: >-
+            After a stone is cleared the patient is told to come back in six months for a scan. The date is on
+            the discharge paper, and the next time the clinic hears from them is the next episode of pain.
+          fix: >-
+            The follow-up is set from the chart before the patient leaves, and an automated reminder goes out
+            before the date. SMS and email reminders come with every plan, and Premium adds WhatsApp.
+
+  - discriminant: featureRows
+    value:
+      id: urology-record
+      heading: Built around the urology record
+      intro: >-
+        Urology templates, lab reports in the chart and package billing need Easy Clinic's Premium plan, the
+        plan most specialists choose. Professional does not include them.
+      layout: grid
+      items:
+        - heading: Procedure logs
+          icon: clipboard-plus
+          body: >-
+            Procedures are logged on the patient's record, with urological procedures such as cystoscopies,
+            lithotripsy and prostate biopsies among them. Easy Clinic runs the outpatient side: the operating
+            theatre's own scheduling and records, and the wards, stay on the hospital's system.
+          bullets:
+            - Cystoscopies, lithotripsy and prostate biopsies logged
+            - Theatre scheduling and wards stay on the hospital's system
+        - heading: Ultrasound and CT reports on the record
+          icon: scan-line
+          body: >-
+            Imaging records such as ultrasound and CT reports, and lab and diagnostic reports, are stored on the
+            patient's record as uploaded images and documents. Past records open side by side with today's
+            visit.
+          bullets:
+            - Lab and diagnostic reports uploaded to the same record
+            - Past records open side by side with today's visit
+        - heading: Urology templates
+          icon: layout-template
+          body: >-
+            Premium includes Easy Clinic's specialty templates, with urology consultation templates built
+            around a urologist's workflow. A paper form your clinic already uses can be rebuilt in the form
+            builder, and your prescription and case sheet print in your own layout, with no charge for the
+            customisation.
+          bullets:
+            - Consultation templates built around a urologist's workflow
+            - Your paper form rebuilt in the form builder at no charge
+        - heading: Lab values as trend charts
+          icon: chart-line
+          body: >-
+            Vitals and clinical parameters are shown as charts and graphs, and on Premium lab reports come into
+            the chart, so a value such as PSA or creatinine reads as a line across visits.
+          bullets:
+            - PSA or creatinine read as a line across visits
+            - Lab reports come into the chart on Premium
+        - heading: Long-term follow-up
+          icon: calendar-clock
+          body: >-
+            Chronic conditions are followed up visit by visit, the follow-up is set from the chart with an
+            automated reminder, and the drug interaction check warns of an interaction as each prescription is
+            written.
+          bullets:
+            - Follow-up set from the chart with an automated reminder
+            - A drug interaction check on each prescription
+        - heading: Procedure packages, paid in parts
+          icon: wallet
+          body: >-
+            On Premium a procedure or a course of treatment is billed as one package treatment, and the patient
+            can pay in parts. Advances and part payments are recorded against the package, and a refund or a
+            voided invoice goes through only with authorisation.
+          bullets:
+            - Advances and part payments recorded against the package
+            - Refunds and voided invoices only with authorisation
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the doctor to review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: stone-review
+      heading: A stone review, from the desk to the bill
+      intro: >-
+        A patient back with a new scan after a kidney stone is one of the visits a urology clinic repeats most.
+        We have not timed these steps in a urology clinic, so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: At the desk
+          icon: calendar-clock
+          body: >-
+            The patient checks in, booked or walked in, and gets a token number for the queue. The new
+            ultrasound or CT report is uploaded to the record, and a nurse or clinical assistant takes the
+            vitals before the consult.
+        - heading: In the consulting room
+          icon: notebook-pen
+          body: >-
+            The urologist has the earlier report and the procedure log open beside today's visit, and writes the
+            note by point and click, or from a urology template on Premium. The prescription screen warns of a
+            drug interaction as it is written.
+        - heading: The procedure, if one is needed
+          icon: clipboard-list
+          body: >-
+            If the stone needs lithotripsy, the procedure is logged on the same record, and on Premium it is
+            billed as a package with the advance recorded against it.
+        - heading: The next review and the bill
+          icon: receipt
+          body: >-
+            The next scan and review are set before the patient leaves, with a reminder before the date. The
+            visit is billed in one click, and the receipt goes out by email, or on WhatsApp on Premium.
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### 30-Second Prescription
+        Generate detailed prescriptions in just 30 seconds and deliver them instantly in any language via print, WhatsApp, SMS, or email.
+
+        ### Specialized Urology EMR
+        Custom-designed to align with Urologists workflows, preferences, and expertise, ensuring a personalized and efficient experience.
+
+        ### AI-Driven Prescription Support
+        Complete prescriptions in just three clicks with the help of an AI assistant, streamlining your documentation process and saving valuable time.
+
+        ### Health Trend Visualization
+        Display specific vitals, lab reports, and clinical parameters as charts and graphs for easy visualization of patient health trends.
+
+        ### Procedure Tracking
+        Procedure Logs are essential for tracking and managing urological procedures such as cystoscopies, lithotripsy, and prostate biopsies.
+
+        ### Instant Patient Summaries
+        Quickly access auto-generated summaries and facesheets for a complete review of case histories, saving time and presenting important data effectively.
+
+        ### User-Friendly Interface
+        Easily record chief complaints, medical history, vitals, and more with a simple point-and-click UI, offering custom forms, auto-complete notes, diagnosis, medications, investigations, and patient guidelines, all with streamlined navigation.
+
+        ### Complete Medical History Recording
+        Customize your Urology patient intake form to capture as much or as little detail as needed, including chronic illnesses, family and social history, obstetric-gynecological history, substance use, alternative therapies, COVID history, and immunizations. These details are integrated into the patient’s face sheet, saving valuable time during follow-up visits.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design
+        Crafted specifically for Urologists, super-specialists, and clinic chains, catering to a wide range of healthcare needs.
+
+        ### AI-Powered Diagnostic Assistance
+        Utilize intelligent AI for differential diagnosis and alerts on potential adverse drug events, especially crucial for Urology patients with multiple chronic conditions.
+
+        ### Flexible Template and Form Builder
+        Effortlessly convert paper forms into digital templates with our customizable builder, ensuring a seamless transition to digital workflows.
+
+        ### Unified Patient Data Visualization
+        Access longitudinal patient visit data on a single screen, improving efficiency and enhancing the quality of patient care.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders, streamlining Urology care.
+
+        ### Streamlined Care Team Collaboration
+        Facilitates smooth communication and coordination between Urologists, nurses, and other caregivers for complete, integrated patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Urology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing doctors to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Urology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Urology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Urology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Urology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with Urology patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Urology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for urology clinics?"
+    answer: "The best EMR software for urology clinics should support diagnostic reports, procedure documentation, imaging records, and long-term follow-up care. Easy Clinic is designed to manage the complete workflow of urology clinics."
+  - question: "Does Easy Clinic support AI EMR for urology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic store diagnostic and lab reports?"
+    answer: "Yes. Easy Clinic allows clinics to store lab reports and diagnostic data in patient records."
+  - question: "Does Easy Clinic support procedure and surgery documentation?"
+    answer: "Yes. Clinics can document urological procedures and surgeries in patient files."
+  - question: "Can Easy Clinic store imaging records?"
+    answer: "Yes. Clinics can store ultrasound, CT scans, and other imaging reports."
+  - question: "Does Easy Clinic support follow-up tracking for chronic conditions?"
+    answer: "Yes. Easy Clinic supports long-term tracking for urological conditions."
+  - question: "Does Easy Clinic support billing for urology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Can multiple urologists use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, treatments, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+    - href: /general-surgery-emr/
+      label: General surgery EMR
+      description: 'For the surgeon''s outpatient side, from the work-up to the post-operative review.'
+      icon: list-checks
+    - href: /sexology-emr/
+      label: Sexology EMR
+      description: For the sexology clinic with private consultations and session notes.
+      icon: lock
+    - href: /oncology-emr/
+      label: Oncology EMR
+      description: For the oncology clinic that records treatment cycles and blood counts.
+      icon: file-heart
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+    - href: /ivf-emr/
+      label: IVF clinic software
+      description: For the fertility clinic that tracks each cycle from stimulation to transfer.
+      icon: calendar-clock
+closing:
+  heading: See a urology record on Easy Clinic, from the CT report to the procedure package
+  body: >-
+    Book a demo and ask to see a procedure log beside the imaging reports and a lithotripsy package paid in
+    parts, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a urology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    Dr J. J. Thakkar's Laser Stone and Endoscopy Centre in Nairobi, and a procedure log that names
+    cystoscopy, lithotripsy and prostate biopsy as Easy Clinic's live urology page does, with a plain answer
+    that no urology device connection is promised.
+  readsMachineWritten: >-
+    The four pains are composites rather than a named clinic's day, Dr Thakkar's quote praises support
+    rather than a urology feature, the stone review carries no timings, and a urologist will notice that no
+    urology template is named.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section; it replaces the single specialist testimonial that was here, to keep within three testimonials a page.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: specialised urology EMR templates built around urologists'' workflows, procedure tracking ("Procedure logs for urological procedures such as cystoscopies, lithotripsy, and prostate biopsies"), imaging record storage (ultrasound and CT reports, FAQ), lab and diagnostic report storage, health trend visualisation of vitals, lab reports and clinical parameters, chronic condition follow-up (FAQ), image and document upload, referral management, automated follow-up, drug interaction check, side-by-side past records, nurse intake, the form builder, personalised print formats and case sheets, token numbers, one-click billing, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments and taxable item handling are stated on the live /urology-emr/ page (retrieved 2026-11-05). Plan placement follows plans.yaml: specialty templates, own forms and print layouts, lab reports in the chart, package treatments and WhatsApp on Premium; pharmacy and inventory on Enterprise or as a module. The theatre and ward limit comes from the published /solutions/hospital-opd/ scope, as on /orthopedic-emr/. PSA and creatinine are examples of lab values a urologist charts, not named product features.'
+  - 'Testimonial: jj-thakkar (Urology, Laser Stone and Endoscopy Centre, Nairobi, consentOnFile true) is the only urology testimonial on file. The draft /emr-software-in-kenya/ note says it is "placed on this page only", but it is also on the home page wall; it is placed here as well because it is the one named urologist (spec 5.15 item 9), and the Kenya page is still a draft. Owner to confirm the reuse. The quote praises support after installation rather than a urology feature; recruit a second urology quote about procedure logs or packages if one exists. The intro avoids "since" because customerSince is not set.'
+  - 'Dropped from the live page: both "Easy Clinic vs Other EMR" comparison tables (unsourced competitor cells, "Fast" setup), the FAQ "Inventory: Yes, for medicines and supplies" and the "Built-in" inventory cell (plans.yaml puts inventory on Enterprise or a module), "30-Second Prescription" and "three clicks", "invoices ready in less than 10 seconds", "over 100 graphical dashboards", AI-powered diagnostic assistance and adverse drug event alerts (CuraPilot claims), AI wait-time alerts and AI two-way messaging, patient self-service booking and check-in (plan unclear), prescriptions "in any language", the data warehouse, Power BI and Azure Data Factory, the testimonial line "for the last 10 years" (not this page''s testimonial), and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" line (owner decision: no free trial). Uroflowmetry and urology devices are not on the live page and are not claimed.'
+  - 'Facts needed for the full spec 5.15 template: urology templates by name and count (item 5; none named, so no dataTable, and the Premium badge is the conservative reading of "Specialty EMR templates"); whether the procedure log records stent insertion and removal dates (the stent pain fix says only that the procedure is logged); a timed walkthrough of a stone review (item 4); devices and integrations with status, such as uroflowmetry import (item 6); which urology note types Cura AI drafts, with an example (item 8); how a package works when the procedure happens in a hospital on another system.'
+  - 'heroMedia reuses 1_EMR.png, a visit record whose diagnosis is a urinary tract infection with urinalysis and urine culture ordered. It is a general visit screen rather than a urology template, and it also shows a language picker; replace it with a urology record showing the procedure log when the seeded demo tenant exists. The four pains are illustrative, not customers; "two years", "four printouts" and "six months" are examples.'
+  - '/emr-software-in-kenya/ is a draft and is not linked; add it to links.related when it publishes, since the testimonial is from Nairobi. No urology post exists in src/content/posts; /whatsapp-post-surgery-care/ is the nearest published post. Title 33 characters; meta description 135 characters.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has a named urologist but no measured number, so it meets three of the four spec 6.5 pass marks (a named person, a local fact in the rupee price, and admissions of limits on devices, theatres, the pharmacy and offline use).

@@ -13,14 +13,10 @@ title: 'Physiotherapy Practice Management Software: Easy Clinic'
 metaDescription: >-
   Physiotherapy practice management software with session-wise treatment plans, and courses billed as
   packages on Premium from {price:usd.premium.annual} per doctor a month.
-h1: Software for physiotherapy clinics
+h1: "Optimize Your Physiotherapy Clinic with Easy Clinic's EMR"
 linkLabel: Physiotherapy
 eyebrow: For physiotherapy clinics
-openingAnswer: >-
-  Easy Clinic is physiotherapy practice management software that keeps each patient's session-wise
-  treatment plan and progress against goals on one record. Premium bills a whole course of sessions as one
-  package, at {price:usd.premium.annual} per doctor per month billed annually ({price:inr.premium.annual}
-  in India), with no setup fee.
+openingAnswer: "Simplify appointment scheduling, track patient progress, and manage treatment plans with ease using our EMR. Easy Clinic offers an all-in-one EMR for Physiotherapists, enhancing clinic operations and improving patient care efficiency."
 summary: >-
   Session-wise treatment plans and progress against goals on one record, with courses of sessions billed
   as packages on the Premium plan at {price:usd.premium.annual} per doctor per month.
@@ -28,8 +24,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/18_User.png'
-  alt: 'Easy Clinic user settings: staff with their roles and specialties, a doctor''s profile, role permissions and the weekly roster for a location'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -46,8 +42,8 @@ sections:
       id: where-it-slips
       heading: Where a physiotherapy clinic loses track
       intro: >-
-        Physiotherapy is often paid for as a course and delivered in sessions, and most of what goes
-        missing falls between one session and the next.
+        Physiotherapy is often paid for as a course and delivered in sessions,<br class="hidden md:inline">
+        and most of what goes missing falls between one session and the next.
       items:
         - heading: The package card at the front desk
           body: >-
@@ -58,8 +54,6 @@ sections:
             On Premium the course is billed as one package treatment, with the advance and any part payment
             recorded against it, and each visit is written against the patient's session-wise treatment
             plan.
-          href: /features/billing/
-          linkLabel: Read how billing works
         - heading: The exercise sheet goes home and does not come back
           body: >-
             The home programme is written on a sheet the patient folds into a pocket. When a colleague
@@ -68,8 +62,6 @@ sections:
           fix: >-
             The exercise plan is created and stored on the patient's record, so whoever sees the patient
             next opens the whole visit history, exercises included, on one screen.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: The patient who stops after session four
           body: >-
             The pain eases after the fourth session and the patient stops coming, halfway through the plan.
@@ -79,8 +71,6 @@ sections:
             Book the rest of the course as recurring sessions at the first visit, and each booked session
             gets an automated reminder. SMS and email reminders come with every plan, and Premium adds
             WhatsApp.
-          href: /features/whatsapp/
-          linkLabel: Read how WhatsApp reminders work
         - heading: Two therapists, one machine at 11am
           body: >-
             Two therapists book patients who both need the same piece of equipment at 11am. The clash shows
@@ -89,8 +79,6 @@ sections:
             Equipment and assistants are booked inside the appointment slot, and the calendar shows each
             resource's bookings, so the desk sees the machine is taken at 11am before it offers that time
             to a second patient.
-          href: /features/appointment-scheduling/
-          linkLabel: Read how booking works
 
   - discriminant: featureRows
     value:
@@ -98,147 +86,532 @@ sections:
       heading: Built around the course of treatment
       intro: >-
         A course of physiotherapy runs over weeks, so the record follows the course and each session is
-        written against it. Premium, the plan for specialists, includes every row below, and the rows
-        marked Premium are not on Professional.
+        written against it. Premium, the plan for specialists, includes everything below, and Professional
+        does not include package billing or video sessions.
+      layout: grid
       items:
         - heading: Session-wise treatment plans
+          icon: clipboard-list
           body: >-
             Set up a therapy programme for the condition in front of you, such as rehabilitation after
             surgery or a sports injury, and manage it session by session, with the patient's progress
             through the course on the same record.
+          bullets:
+            - A therapy programme set up for the condition in front of you
+            - Progress through the course on the same record
         - heading: Goals and progress over time
+          icon: activity
           body: >-
             Record the patient's goals, such as less pain or better mobility, and monitor their progress
             against those goals over time. If you score pain or function on a paper form today, Premium
             lets you rebuild that form as a digital one with the form builder, and the therapist fills it
             in on the record at each session.
+          bullets:
+            - Goals such as less pain or better mobility recorded
+            - Your paper pain or function form rebuilt on Premium
         - heading: Exercise plans on the record
+          icon: list-checks
           body: >-
             Therapists create and store a structured exercise plan for each patient, on the same record as
             the session notes. A colleague covering your list opens the record and sees the exercises the
             patient was given.
+          bullets:
+            - A structured exercise plan stored for each patient
+            - A covering colleague sees the exercises the patient was given
         - heading: Packages for a course of sessions
-          plan: premium
+          icon: receipt
           body: >-
             Package treatments are part of Premium. The course is billed as one package, and an advance or
             a part payment is recorded against the bill it belongs to, so the desk sees the balance
             straight away. Receipts and invoices can go to the patient on WhatsApp.
-          link:
-            label: Read how billing works
-            href: /features/billing/
+          bullets:
+            - Advances and part payments recorded against the bill
+            - Receipts and invoices sent to the patient on WhatsApp
         - heading: Recurring sessions and reminders
+          icon: calendar
           body: >-
             Book the recurring sessions of a course in one go, alongside fixed-time appointments and
             walk-ins. Each session gets an automated reminder, and Premium adds WhatsApp to the SMS and
             email reminders every plan has.
-          link:
-            label: Read how booking works
-            href: /features/appointment-scheduling/
+          bullets:
+            - The recurring sessions of a course booked in one go
+            - WhatsApp reminders on Premium, SMS and email on every plan
         - heading: Video sessions for patients who cannot travel
-          plan: premium
+          icon: video
           body: >-
             On Premium, a video session is booked through the appointment screen and the fee can be
             collected online at booking. The therapist and the patient both join from a web browser on a
             computer or a phone, with no other software to install.
+          bullets:
+            - The fee collected online at booking on Premium
+            - Both join from a web browser with no software to install
         - heading: Cura AI drafts the session note
+          icon: sparkles
           body: >-
             Cura AI (documentation) is included in every plan. It drafts the session note for the
             therapist to review and sign.
+          bullets:
+            - Cura AI is included in every plan
+            - The therapist reviews and signs each session note
+
+  - discriminant: featureRows
+    value:
+      id: session-days
+      heading: Session days, from the machine to the bill
+      intro: >-
+        Much of a physiotherapy clinic's day is sessions that each need a machine, a bill and a prescription
+        that goes home with the patient.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The machine booked with the session
+          icon: calendar-clock
+          body: >-
+            Equipment and assistants are booked inside the appointment slot, and the calendar shows each
+            resource's bookings, so the desk sees a machine is taken before it offers that time to a second
+            patient. Booked sessions and walk-ins sit on the same calendar.
           link:
-            label: Read how Cura AI works
-            href: /ai/
-
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        We do not yet have a physiotherapist's own words to put on this page. These are Easy Clinic's
-        public ratings, from clinics of every kind.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: stepList
-    value:
-      id: training
-      heading: How long does it take to learn Easy Clinic?
-      intro: >-
-        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
-        session is 20 to 40 minutes, short enough to fit between the morning and evening lists, so the
-        clinic keeps treating patients while the team learns.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: Check-in and the bill
+          icon: receipt
           body: >-
-            The screens the front desk and the therapists use every day. Bring your receptionist, whose
-            login is part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
+            The appointment screen shows each patient's status through the visit, from check-in until they
+            leave, and the bill is raised from that same screen in one click. An advance or a part payment is
+            recorded against the bill, so the desk sees the balance straight away.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: The prescription after the session
+          icon: file-text
           body: >-
-            You work through the chart on the kinds of case your clinic sees, from a first assessment to a
-            follow-up session.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: You work through exercises on your own, then bring back the questions that came up.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note quicker, once the basics have become habit.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+            The prescription can be printed or shared with the patient by WhatsApp, SMS or email, and WhatsApp
+            messages come with Premium. After a video session on Premium, the prescription reaches the patient
+            with a note that the consultation was remote.
+          link:
+            label: Read how teleconsultations work
+            href: /features/telemedicine/
+        - heading: Supplies in stock
+          icon: package
+          body: >-
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and
+            Premium, the clinic keeps its supplies in stock. A consumable that is part of a service or a
+            package comes off the stock count with that service.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
 
-faqHeading: Questions physiotherapy clinic owners ask
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Create and Share in 30 Seconds
+        Quickly generate detailed prescriptions in just 30 seconds and instantly share them via print, WhatsApp, SMS, or email in any language.
+
+        ### Tailored EMR for Physiotherapists
+        Designed to fit your specialty, workflow, and preferences for a seamless experience.
+
+        ### AI-Driven Efficiency
+        Streamline your documentation process and save time with an AI-powered assistant.
+
+        ### Goal Setting and Progress Tracking
+        Track patient goals (e.g., pain reduction, mobility improvement) and monitor their progress over time.
+
+        ### Customizable Treatment Plans
+        Create tailored therapy programs for specific conditions like back pain, post-surgery rehab, or sports injuries.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters for better patient care.
+
+        ### Streamlined Patient Summaries: Instant Access to Complete Case Histories
+        Save time with auto-generated summaries and facesheets, intelligently presenting key patient data.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more using a user-friendly interface. Features custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Physiotherapy Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Built for Physiotherapy Clinics
+        Customized to meet the unique needs of specialists, super-specialists, and Physiotherapy clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Use intelligent AI for differential diagnoses and alerts on adverse drug events, tailored for Physiotherapy patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, Physiotherapists, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Physiotherapists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Physiotherapy practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Physiotherapists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Physiotherapy patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Physiotherapy clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Physiotherapy clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Physiotherapy clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Physiotherapy clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Physiotherapy clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: What does Easy Clinic cost for a physiotherapy clinic?
-    answer: >-
-      Premium, the plan with package treatments and specialty templates, costs {price:inr.premium.annual}
-      per doctor per month billed annually in India, or {price:usd.premium.annual} in US dollars.
-      Professional, at {price:inr.professional.annual} or {price:usd.professional.annual}, has the chart
-      and billing but no package treatments and no WhatsApp messages. Both include a reception login, and
-      there is no binding contract on either.
-  - question: Can I sell a package of sessions and see what the patient has paid?
-    answer: >-
-      Yes, on Premium, where package treatments are part of the plan: the course is billed as one
-      package, and an advance or a part payment is recorded against that bill, so the balance shows at
-      the desk. Professional does not include package treatments.
-  - question: Can I track a patient's progress against their goals?
-    answer: >-
-      Yes, you record goals such as pain reduction or mobility improvement and monitor the patient's
-      progress against them over time, on the same record as the treatment plan. If you already use a
-      scoring form on paper, Premium lets you rebuild it as a digital form in your clinic's own layout.
-  - question: Can I book a patient's whole course of sessions in advance?
-    answer: >-
-      Yes, the recurring sessions of a course can be booked together, with the equipment or assistant
-      each one needs booked inside the same slot. Each session gets an automated reminder by SMS and
-      email, and by WhatsApp on Premium.
-  - question: Can I see patients by video?
-    answer: >-
-      Yes, on Premium, which includes video consultations: the therapist and the patient join from a web
-      browser on a computer or a phone, with nothing to install. The fee can be collected online when the
-      session is booked.
-  - question: Does Easy Clinic work without an internet connection?
-    answer: >-
-      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
-      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
-      system runs on the clinic's own server rather than in Easy Clinic's cloud.
+  - question: "What is the best EMR software for physiotherapy clinics?"
+    answer: "The best EMR software for physiotherapy clinics should support session tracking, rehabilitation monitoring, and long-term patient care. Easy Clinic is designed to manage the complete workflow of physiotherapy clinics."
+  - question: "Does Easy Clinic support AI EMR for physiotherapy clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps therapists document sessions faster and reduce manual work."
+  - question: "Can Easy Clinic track therapy sessions and treatment plans?"
+    answer: "Yes. Easy Clinic allows clinics to manage session-wise treatment plans and therapy progress."
+  - question: "Does Easy Clinic support rehabilitation and progress tracking?"
+    answer: "Yes. Clinics can monitor patient recovery and improvement over time."
+  - question: "Can Easy Clinic document exercise plans?"
+    answer: "Yes. Therapists can create and store structured exercise plans for patients."
+  - question: "Does Easy Clinic support appointment scheduling for recurring sessions?"
+    answer: "Yes. Easy Clinic allows clinics to manage recurring therapy sessions easily."
+  - question: "Does Easy Clinic support billing for physiotherapy services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage equipment and supply inventory?"
+    answer: "Yes. Inventory management is included for clinic equipment and supplies."
+  - question: "Can multiple therapists use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-therapist and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track sessions, treatments, and revenue."
 
 links:
   hub: /specialties/
-  relatedHeading: Where physiotherapy clinic owners go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/solo-clinic/
-      description: For a therapist running their own clinic with a receptionist.
-    - href: /solutions/clinic-chain/
-      description: For physiotherapy groups with several branches, run from one centre.
-    - href: /features/appointment-scheduling/
-      description: Recurring sessions and the equipment they need, on one calendar.
-    - href: /pricing/
-      description: The price per doctor per month, and what Premium adds for specialists.
-
+    - href: /orthopedic-emr/
+      label: Orthopaedic EMR
+      description: For the orthopaedic clinic with X-rays and MRI scans beside every visit.
+      icon: bone
+    - href: /neurology-emr/
+      label: Neurology EMR
+      description: For the neurology clinic with EEG and MRI reports beside every visit.
+      icon: brain-circuit
+    - href: /rheumatology-emr/
+      label: Rheumatology EMR
+      description: For the rheumatology clinic with long-term reviews and lab trends.
+      icon: history
+    - href: /general-surgery-emr/
+      label: General surgery EMR
+      description: 'For the surgeon''s outpatient side, from the work-up to the post-operative review.'
+      icon: list-checks
+    - href: /ayurveda-clinic-management-software/
+      label: Ayurveda clinic software
+      description: For Ayurveda clinics and Panchakarma centres, with courses billed as packages.
+      icon: boxes
+    - href: /alternative-medicine/
+      label: Alternative medicine EMR
+      description: For homoeopathy, Unani and naturopathy clinics on a long course of treatment.
+      icon: pill
 closing:
   heading: See a course of sessions on Easy Clinic
   body: >-
@@ -265,6 +638,18 @@ editorialPass:
     outcome measure is named and that sending home exercises to the patient on WhatsApp is not mentioned.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Recruit a physiotherapist testimonial (spec 2.4 and 5.15 item 9): a named physiotherapist or physiotherapy clinic owner on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no physiotherapist quote exists yet. Capterra and Google review counts are null in facts.yaml, so the badges show no count.'
   - 'Spec 5.15 must-have "home-exercise sharing on WhatsApp" is left out: neither live physiotherapy page says the exercise plan can be sent to the patient on WhatsApp (the live EMR page says only that prescriptions can be shared by print, WhatsApp, SMS or email, and that therapists can create and store exercise plans). Company to confirm whether the exercise plan goes to the patient on WhatsApp, with pictures or videos or as text only, and on which plan (WhatsApp messages are Premium in plans.yaml). Then add a feature row and a FAQ.'
   - 'Spec 5.15 must-have "outcome scores": the live page says only "Track patient goals (e.g., pain reduction, mobility improvement) and monitor their progress over time". Company to confirm which named outcome measures (for example VAS or NPRS for pain, ODI, NDI, LEFS) exist as ready physiotherapy templates, and whether a score is charted as a trend across sessions (the live page lists "Growth & Progress charts" without detail). The spec 12 screenshot "Physiotherapy session plan with outcome score" (six sessions, one score) depends on it. Until then the goals row offers only the Premium form builder for a clinic''s own paper scoring form.'
@@ -274,3 +659,4 @@ notes:
   - 'No heroMedia and no media: screenshots do not exist yet. Hero when captured: the session-wise treatment plan with a score over six sessions (spec 12 list). The four pains are illustrative physiotherapy clinic situations, not customers, and "ten sessions" and "11am" are examples.'
   - 'Title 54 characters; meta description 148 characters with the token resolved. The spec 4.3 H1 "Software for physiotherapy clinics" is used rather than the spec 5.15 template form. Spec 5.15 item 11 asks for links to the two most relevant country pages as well; links.related follows the brief (solo clinic, clinic chain, scheduling, pricing). Add /clinic-management-software-india/ when the physiotherapy customer base by country is known.'
   - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits in the offline and package FAQs) until the testimonial arrives.
+  - 'Section session-days (Session days, from the machine to the bill) added 2026-11-05 after the Built around section. Grounding: the machine row repeats this page''s 11am pain fix and booking FAQ (equipment and assistants booked inside the appointment slot, each resource''s bookings on the calendar) and /features/appointment-scheduling/ (walk-ins on the same calendar); the bill row uses /features/appointment-scheduling/ and /features/billing/ (status from check-in until they leave, the bill raised in one click, advance and part payments with the balance at once); the prescription row uses the live EMR page wording in the notes above (prescriptions shared by print, WhatsApp, SMS or email, WhatsApp messages on Premium per plans.yaml) and /features/telemedicine/ (the prescription notes the consultation was remote); the supplies row uses /features/pharmacy-and-inventory/ and the dermatology page (consumables deducted with the service), with Enterprise or a module per plans.yaml, not the live page''s built-in inventory claim. No plan fields; plans are stated in the bodies.'

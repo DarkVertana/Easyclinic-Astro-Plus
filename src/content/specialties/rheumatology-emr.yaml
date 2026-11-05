@@ -1,0 +1,650 @@
+# /rheumatology-emr/ (spec 5.15 SpecialtyPage; footer specialty list). Live slug kept; the redirect that sent this
+# URL elsewhere was removed when the footer specialties got their own pages (2026-11-05).
+# Grounding: the live /rheumatology-emr/ page could not be read (it loops on redirects, 2026-11-05), so every
+# capability here is one that Easy Clinic's published feature and specialty pages and plans.yaml already state.
+# Nothing rheumatology-specific is claimed beyond what those general capabilities cover.
+status: published
+headKeyword: rheumatology EMR software
+secondaryKeywords:
+  - rheumatology clinic software
+  - rheumatology practice management software
+title: 'Rheumatology EMR Software: Easy Clinic'
+metaDescription: >-
+  Rheumatology EMR software: lab values charted across years of reviews, an interaction check on every
+  prescription, and video follow-ups on Premium.
+h1: "Simplify Your Rheumatology Practice with Easy Clinic’s EMR"
+linkLabel: Rheumatology
+eyebrow: For rheumatology clinics
+openingAnswer: "Manage long-term reviews, lab trends and treatment plans in one platform with Easy Clinic, designed for rheumatology clinics. From appointment scheduling and patient records to examination notes and medication changes, our Rheumatology EMR keeps every follow-up on one record, so you can focus on your patients."
+summary: >-
+  Years of reviews on one record, with lab values charted visit by visit, a drug interaction check on each
+  prescription, and video follow-ups on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a rheumatology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for rheumatology clinics and would like to book a demo for our practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-rheumatology-clinics-lose-track
+      heading: Where a rheumatology clinic loses track
+      intro: >-
+        Arthritis, lupus and the other conditions a rheumatologist treats run for years, with a<br class="hidden md:inline">
+        review every few weeks or months, and most of what goes missing falls between those reviews.
+      items:
+        - heading: The blood results arrive as a stack of printouts
+          body: >-
+            The patient brings ESR and CRP reports from three different labs, folded into the old
+            prescription. The rheumatologist lays them out on the desk to see whether the inflammation is
+            settling, and one month is always missing.
+          fix: >-
+            Lab reports are uploaded to the patient's record, and on Premium they come into the chart, where
+            each value can be charted visit by visit. The trend reads as one line instead of a pile of paper.
+        - heading: The monitoring blood test nobody chased
+          body: >-
+            A patient on a long-term medicine needs a blood test before every review. The test is mentioned at
+            the end of the consult, written nowhere the desk can see, and the patient arrives for the review
+            without it.
+          fix: >-
+            The investigations and the follow-up date are set in the note before the patient leaves, and an
+            automated reminder goes out before the review. SMS and email reminders come with every plan, and
+            Premium adds WhatsApp.
+        - heading: Five medicines, prescribed by three doctors
+          body: >-
+            The patient is on a disease-modifying drug from you, a blood pressure tablet from the physician and
+            a painkiller bought over the counter. When you add a steroid, nobody has checked the whole list
+            together.
+          fix: >-
+            The drug interaction check runs as the prescription is written and warns of an interaction, and
+            the patient's past prescriptions open side by side with today's visit.
+        - heading: A three-hour journey for a ten-minute review
+          body: >-
+            A patient whose joints are stable travels from another district for a review that changes nothing
+            on the prescription. In a bad week, the same journey keeps them away altogether.
+          fix: >-
+            On Premium the review can be a video consultation, booked from the appointment screen with the fee
+            paid online. The patient joins from a web browser on a phone or a computer, and the prescription
+            goes to them on WhatsApp or by email.
+
+  - discriminant: featureRows
+    value:
+      id: rheumatology-record
+      heading: Built around the long-term rheumatology record
+      intro: >-
+        Lab reports in the chart, your own clinical forms and video reviews need Easy Clinic's Premium plan,
+        the plan most specialists choose. Professional does not include them.
+      layout: grid
+      items:
+        - heading: The history, taken once and kept
+          icon: history
+          body: >-
+            The intake form records chronic illnesses, family and social history and earlier treatments, with
+            as much or as little detail as the clinic wants. What it records is shown on the patient's
+            facesheet, and an auto-generated summary puts the key data on one screen before each review.
+          bullets:
+            - Chronic illnesses and earlier treatments on the facesheet
+            - A summary of the key data on one screen before each review
+        - heading: Lab values as trend charts
+          icon: chart-line
+          body: >-
+            On Premium, lab reports come into the patient's chart and each value can be charted across visits,
+            so ESR, CRP or a blood count reads as a line over the years. Full lab management, with orders from
+            the chart and sample tracking for an in-house lab, comes with Enterprise or as a module added to
+            Professional or Premium.
+          bullets:
+            - ESR, CRP or a blood count charted over the years
+            - Full lab management with Enterprise or as a module
+        - heading: Every prescription on one record
+          icon: pill
+          body: >-
+            Each prescription is kept on the patient's record, and past records open side by side with today's
+            visit, so the course of each medicine and every change to it can be read in order. The drug
+            interaction check warns of an interaction while the prescription is written.
+          bullets:
+            - The course of each medicine read in order
+            - A drug interaction check as the prescription is written
+        - heading: X-rays and scan reports on the record
+          icon: scan-line
+          body: >-
+            X-rays, scan reports and photographs are uploaded to the patient's record as images and documents,
+            beside the visit they belong to.
+          bullets:
+            - X-rays, scan reports and photographs uploaded as files
+            - Each upload kept beside the visit it belongs to
+        - heading: Your own assessment forms
+          icon: layout-template
+          body: >-
+            Premium includes Easy Clinic's specialty templates, and a paper joint assessment or questionnaire
+            your clinic already uses can be rebuilt in the form builder and filled in on the record. Your
+            prescription and case sheet print in your own layout, with no charge for the customisation.
+          bullets:
+            - A paper joint assessment rebuilt in the form builder
+            - Prescription and case sheet in your layout at no charge
+        - heading: Video reviews
+          icon: video
+          body: >-
+            On Premium a review can be a video consultation, booked beside visits in person, with the fee paid
+            online at booking. The prescription goes to the patient on WhatsApp or by email, marked as issued
+            after a remote consultation.
+          bullets:
+            - The fee paid online at booking on Premium
+            - The prescription sent on WhatsApp or by email
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the doctor to review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: follow-up-review
+      heading: A rheumatology review, from the desk to the bill
+      intro: >-
+        The review is the visit a rheumatology clinic repeats most. We have not timed these steps in a
+        rheumatology clinic, so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: At the desk
+          icon: calendar-clock
+          body: >-
+            The patient checks in, booked or walked in, and gets a token number for the queue. Any lab report
+            they bring is uploaded to the record, and a nurse or clinical assistant takes the vitals before the
+            consult.
+        - heading: In the consulting room
+          icon: notebook-pen
+          body: >-
+            The rheumatologist opens the record with the summary of the last visit, the facesheet and, on
+            Premium, the lab trend on the same screen. The note and the prescription are written by point and
+            click, with the interaction check running as each medicine is added.
+        - heading: The next review
+          icon: history
+          body: >-
+            The blood tests for next time and the follow-up date are set before the patient leaves, and the
+            reminder goes out automatically before the review.
+        - heading: At the bill
+          icon: receipt
+          body: >-
+            The visit is billed in one click at the desk, and the receipt goes to the patient by email, or on
+            WhatsApp on Premium.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Quick Prescriptions: Create and Share in 30 Seconds
+        Effortlessly generate detailed prescriptions in just 30 seconds and share them instantly through print, WhatsApp, SMS, or email, available in any language.
+
+        ### Personalized Rheumatology EMR for Specialists
+        Specifically crafted to match your specialty, workflow, and preferences, ensuring a seamless and efficient experience.
+
+        ### AI-Powered Efficiency
+        Simplify your documentation and save time with an AI-driven assistant, enabling you to complete prescriptions in just three clicks.
+
+        ### Visual Health Insights
+        Easily track specific vitals, lab results, and clinical parameters through intuitive charts and graphs to enhance patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently highlight key patient information.
+
+        ### Simplified Point-and-Click Interface
+        Easily document chief complaints, medical history, vitals, and more with a user-friendly interface. Enjoy features like custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all accessible without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Rheumatology Intake Forms
+        Collect detailed or concise medical histories tailored to your requirements, including chronic illnesses, family and social history, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient's face sheet for easy access during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Purpose-Built Design: Tailored for Rheumatology Clinics
+        Specifically crafted to address the distinct needs of specialists, super-specialists, and rheumatology clinic chains.
+
+        ### AI-Driven Diagnostic Support
+        Harness advanced AI for accurate differential diagnoses and real-time alerts on adverse drug events, designed specifically for rheumatology patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Get a clear, longitudinal view of complete patient visit history on a single screen, enhancing efficiency and optimizing care delivery.
+
+        ### Instant Access to Essential Resources
+        Quickly retrieve commonly used rheumatology medications, investigations, and clinical tools such as guidelines, checklists, and reminders to enhance care efficiency.
+
+        ### Seamless Care Team Collaboration
+        Facilitates smooth communication and coordination among nurses, rheumatologists, and healthcare providers, ensuring complete and efficient patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Rheumatologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Rheumatology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Rheumatologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Rheumatology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Rheumatology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Rheumatology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Rheumatology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Rheumatology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Rheumatology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: Which Easy Clinic plan does a rheumatology clinic need, and what does it cost?
+    answer: >-
+      Premium, the plan most specialists choose, because lab reports in the chart, your own forms and video
+      reviews start on it: {price:inr.premium.annual} per doctor per month billed annually in India or
+      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
+      {price:usd.premium.quarterly} in US dollars. Professional, at {price:inr.professional.annual} or
+      {price:usd.professional.annual} billed annually, has the record, the prescription and billing. Both
+      include a reception login, with no setup fee and no binding contract.
+  - question: Can I see a patient's ESR and CRP as a trend over the years?
+    answer: >-
+      Yes, on Premium, where lab reports come into the chart and each value can be charted visit by visit.
+      On Professional the lab reports are uploaded to the record as files, beside the visit they belong to.
+  - question: Does Easy Clinic have disease activity scores such as DAS28?
+    answer: >-
+      Not as a named, ready-made score on this page: we have not confirmed a built-in DAS28, CDAI or HAQ form.
+      On Premium a paper assessment your clinic already uses can be rebuilt in the form builder and filled in
+      on the patient's record.
+  - question: Will Easy Clinic warn me about a drug interaction?
+    answer: >-
+      Yes, the drug interaction check runs while the prescription is written and warns of an interaction,
+      and the patient's past prescriptions open side by side with today's visit.
+  - question: Can I review stable patients by video?
+    answer: >-
+      Yes, on Premium, which includes video consultations booked through the appointment screen, with the
+      fee paid online. The patient joins from a web browser on a computer or a phone, and the prescription
+      goes out on WhatsApp or by email, marked as issued after a remote consultation.
+  - question: Does Easy Clinic run the clinic pharmacy and the in-house lab?
+    answer: >-
+      Yes, but not on Premium alone: pharmacy and inventory, and lab management, come with Enterprise or as
+      modules added to Professional or Premium. With the pharmacy module, the pharmacist dispenses from the
+      doctor's prescription and tracks each batch to its expiry date.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients. Larger clinics and groups that want their data
+      on their own infrastructure can choose a self-hosted deployment instead of Easy Clinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /orthopedic-emr/
+      label: Orthopaedic EMR
+      description: For the orthopaedic clinic with X-rays and MRI scans beside every visit.
+      icon: bone
+    - href: /immunology-emr/
+      label: Immunology EMR
+      description: For the immunologist who follows autoimmune disease and immunodeficiency.
+      icon: shield-check
+    - href: /physiotherapy-clinic-management-software/
+      label: Physiotherapy clinic software
+      description: For the physiotherapy clinic with session plans and progress against goals.
+      icon: route
+    - href: /hematology-emr/
+      label: Haematology EMR
+      description: For the haematology clinic that charts blood counts visit by visit.
+      icon: file-chart-column
+    - href: /dermatology-emr-software/
+      label: Dermatology EMR
+      description: For the skin clinic with before-and-after photographs and procedure sessions.
+      icon: scan-eye
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+closing:
+  heading: See a rheumatology review on Easy Clinic, with the lab trend on screen
+  body: >-
+    Book a demo and ask to see a patient's lab values charted across visits and a prescription written with
+    the interaction check, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a rheumatology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The ESR printouts from three labs and the monitoring test nobody chased are rheumatology problems, and
+    every answer is a capability Easy Clinic's published pages and plans.yaml already state, with lab
+    charting placed on Premium and a plain answer that no DAS28 form is confirmed.
+  readsMachineWritten: >-
+    The live rheumatology page could not be read, so nothing here is specific to rheumatology software; the
+    page has no named rheumatologist, no named template and no measured number, and a rheumatologist will
+    notice that DMARD monitoring schedules and biologic infusions are not mentioned.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers". The live page has no FAQs to copy (it loops on redirects), so the FAQs written for this page stay.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section (the live page loops, so the points follow the allergy page''s wording); AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section (the live page loops, so the points follow the allergy page''s wording); over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right (the live page loops, so it uses the allergy page''s wording).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section (the live page loops, so the points follow the allergy page''s wording); AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section (the live page loops, so the points follow the allergy page''s wording); the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section (the live page loops, so the points follow the allergy page''s wording); video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section (the live page loops, so the points follow the allergy page''s wording); the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section (the live page loops, so the points follow the allergy page''s wording); claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Live page problem: https://www.easyclinic.io/rheumatology-emr/ loops on redirects ("too many redirects", 2026-11-05), so nothing on it could be read or used. Fix the loop on the live site before this page replaces it, and send the live copy so its rheumatology claims can be checked and added.'
+  - 'Grounding (repo only): the customisable intake form (chronic illnesses, family and social history) shown on the facesheet, auto-generated summaries, side-by-side past records, vitals and lab charts, image and document upload, drug interaction check, automated follow-up with reminders, nurse or clinical assistant intake, token numbers, one-click billing, the form builder and own print layouts, and video consultations with online fees and the remote-consult line on the prescription are stated on the published /features/emr/, /features/lab/, /features/telemedicine/, /features/appointment-scheduling/, /cardiology-emr/ and /orthopedic-emr/ pages, which take them from the same feature lists every live specialty page carries. Plan placement follows plans.yaml: lab reports in the chart, specialty templates, own forms and print layouts, video consultations and WhatsApp on Premium; lab management and pharmacy on Enterprise or as modules. ESR, CRP, the steroid and the disease-modifying drug are examples of what a rheumatologist records, not named product features.'
+  - 'Facts needed for the full spec 5.15 template (company to confirm): rheumatology templates by name and count, if any (item 5); disease activity scores (DAS28, CDAI, SDAI, HAQ, BASDAI) as ready forms, whether scored automatically and charted; a joint count or homunculus diagram; DMARD and biologic monitoring (a blood-test schedule tied to the medicine, with reminders); infusion or injection courses billed as packages; a timed walkthrough of a review visit (item 4); devices and integrations (item 6, likely none); which rheumatology note types Cura AI drafts, with an example (item 8); a named rheumatologist testimonial (item 9; none on file, so the proof block is the Capterra and Google badges with no review counts).'
+  - 'Dropped: nothing from the live page (it could not be read). The usual live-page claims the other specialty pages drop are left out here too: free trial and money-back guarantee, "30 seconds" and "three clicks", "less than 10 seconds" invoices, "over 100 dashboards", AI diagnostic support and ADR alerts, AI wait-time alerts and two-way messaging, "any language" prescriptions, patient self check-in, built-in inventory, and the comparison tables.'
+  - 'heroMedia reuses 2_EMR.png (a printed prescription for a general physician, the last-visit summary, the facesheet and a complete blood count with a haemoglobin trend). It shows a lab trend, which is the point of the page, but not a rheumatology record; replace it when the seeded demo tenant exists. The four pains are illustrative, not customers; "three labs", "five medicines" and "three-hour journey" are examples.'
+  - 'Related post /clinic-management-software-for-rheumatology/ is a draft and is not linked; add it once it publishes. Title 38 characters; meta description 146 characters.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits on disease activity scores, the pharmacy, the lab and offline use).

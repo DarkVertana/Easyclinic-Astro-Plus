@@ -25,7 +25,6 @@
 - { from: /cfo-landing-page/, to: /features/reports-and-dashboards/ }
 - { from: /ceo-landing-page/, to: /features/reports-and-dashboards/ }
 - { from: /emr-landing-page/, to: /features/emr/ }
-- { from: /pathology-emr/, to: /features/lab/, note: audit merge }
 
 # --- AI ---
 - { from: /curapilot-ai/, to: /curapilot/ }
@@ -50,40 +49,20 @@
 
 # --- Specialties: merges (audit) and slug decisions (keep the URL with more GSC clicks; confirm) ---
 - { from: /ayurveda-emr-software/, to: /ayurveda-clinic-management-software/ }
-- { from: /alternative-medicine/, to: /ayurveda-clinic-management-software/ }
 - { from: /physiotherapy-emr-software/, to: /physiotherapy-clinic-management-software/ }
 - { from: /physiotherapy-emr/, to: /physiotherapy-clinic-management-software/ }
-- { from: /aesthetic-emr-software/, to: /dermatology-emr-software/ }
-- { from: /cosmetology-emr-software/, to: /dermatology-emr-software/ }
-- { from: /trichology-emr-software/, to: /dermatology-emr-software/ }
-- { from: /trichology-emr/, to: /dermatology-emr-software/ }
-- { from: /trichology/, to: /dermatology-emr-software/ }
-- { from: /family-physician-emr/, to: /general-practitioner-emr/ }
+- { from: /trichology-emr-software/, to: /trichology-emr/ }
+- { from: /trichology/, to: /trichology-emr/ }
 - { from: /psychiatry-emr/, to: /mental-health/ }
 - { from: /psychiatry-emr-software/, to: /mental-health/ }
 - { from: /psychology-emr/, to: /mental-health/ }
 - { from: /pediatric/, to: /pediatric-emr/ }
 - { from: /ent/, to: /ent-emr-software/ }
-- { from: /diabetology-emr-software/, to: /endocrinology-emr-software/ }
-- { from: /immunology-emr/, to: /allergy-emr-software/ }
-# Held specialties (audit "Hold"): redirect to the hub until the specialty template can be filled.
-# Three of these loop on the live site today (rheumatology, hematology, endocrinology).
-- { from: /allergy-emr-software/, to: /specialties/ }
-- { from: /endocrinology-emr-software/, to: /specialties/ }
-- { from: /endocrinology/, to: /specialties/ }
-- { from: /gastroenterology-emr/, to: /specialties/ }
-- { from: /gastroenterology/, to: /specialties/ }
-- { from: /general-surgery-emr/, to: /specialties/ }
-- { from: /hematology-emr/, to: /specialties/ }
-- { from: /hematology/, to: /specialties/ }
-- { from: /nephrology-emr/, to: /specialties/ }
-- { from: /oncology-emr/, to: /specialties/ }
-- { from: /pulmonology-emr/, to: /specialties/ }
-- { from: /radiology-emr/, to: /specialties/ }
-- { from: /rheumatology-emr/, to: /specialties/ }
-- { from: /rheumatology/, to: /specialties/ }
-- { from: /sexology-emr/, to: /specialties/ }
-- { from: /urology-emr/, to: /specialties/ }
+# Specialty short slugs: point at the specialty pages built 2026-11-05 (owner request: every footer specialty gets its own page).
+- { from: /endocrinology/, to: /endocrinology-emr-software/ }
+- { from: /gastroenterology/, to: /gastroenterology-emr/ }
+- { from: /hematology/, to: /hematology-emr/ }
+- { from: /rheumatology/, to: /rheumatology-emr/ }
 
 # --- Company, legal, resources ---
 - { from: /privacy-policy/, to: /privacy/ }

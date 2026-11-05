@@ -1,5 +1,6 @@
 # Telehealth feature page (spec 5.11 "/features/telehealth", keyword row in 4.1, cannibalisation rules 4.5.2 and 4.5.3).
 status: published
+path: /features/telemedicine/
 headKeyword: telemedicine software for doctors
 secondaryKeywords:
   - teleconsultation software
@@ -38,10 +39,10 @@ sections:
   - discriminant: painBlocks
     value:
       id: where-phone-consults-go-wrong
-      heading: Where a video consult on your own phone goes wrong
-      intro: >-
-        A video call on the doctor's own phone works until the clinic needs a record of it or a fee for
-        it. These are the places it breaks.
+      heading: "Where a video consult on your\nown phone goes wrong"
+      intro: |-
+        A video call on the doctor's own phone works until the clinic needs a record of it or a fee for it.\
+        These are the places it breaks.
       items:
         - heading: The call leaves nothing on the record
           body: >-
@@ -66,8 +67,6 @@ sections:
           fix: >-
             The prescription is typed on the patient's record, the same way as in the clinic, and sent from
             Easy Clinic with a line saying the consult was held remotely.
-          href: /features/emr/
-          linkLabel: How the prescription screen works
         - heading: The follow-up never gets booked
           body: >-
             You ask the patient to check in again in a week. Nobody writes it down, the patient forgets,
@@ -103,65 +102,70 @@ sections:
     value:
       id: how-it-works
       heading: What each part of a video consult needs
-      intro: >-
-        The EMR and the prescription come with every plan, and seeing the patient by video starts on
-        Premium. Where a part needs the Premium plan, the row says so.
+      intro: |-
+        The EMR and the prescription come with every plan, and a video consult uses the same ones.\
+        Video consults, online payments and WhatsApp messages come with the Premium plan.
+      layout: bento
+      wideIntro: true
       items:
-        - heading: Video consults on the clinic calendar
+        - heading: On the clinic calendar
+          icon: video
           body: >-
-            A video consult is booked through the appointment module like any other appointment, so the
-            day's list shows the clinic patients and the video patients together. The call itself runs on
-            Easy Clinic's built-in video and chat.
-          plan: premium
+            A video consult is booked like any other appointment, so the day's list shows clinic and video
+            patients together. The call runs on Easy Clinic's built-in video and chat.
           link:
             label: Read how the appointment calendar works
             href: /features/appointment-scheduling/
-        - heading: The fee, payable before the call
+        - heading: Fee paid before the call
+          icon: wallet
           body: >-
-            Premium includes online payments, so the clinic can offer online payment of the consult fee
-            when the video consult is booked, and the fee can be settled before the call. Billing for a
-            video consult starts from the appointment, as it does for a clinic visit.
-          plan: premium
+            The consult fee can be paid online when the video consult is booked, so it is settled before the
+            call. Billing starts from the appointment, as for a clinic visit.
           link:
             label: Read how clinic billing works
             href: /features/billing/
-        - heading: Nothing for the patient to install
+        - heading: Nothing to install
+          icon: globe
           body: >-
-            The patient opens the consult in a web browser on a phone or a computer, and so does the
-            doctor, so neither needs a separate video app. Easy Clinic's patient portal and app come with the
-            Enterprise plan, and a video consult does not need them.
-        - heading: The prescription goes on the same record
+            Doctor and patient each join from a web browser on a phone or a computer, with nothing to
+            download, so neither needs a separate video app or a portal login.
+          link:
+            label: Compare what each plan includes
+            href: /pricing/
+        - heading: Prescription on the record
+          icon: file-text
           body: >-
-            The prescription from a video consult is written on the patient's record, the same way as a
-            clinic prescription. It carries a line saying the consult was held remotely, and it stays on the
-            record beside every clinic visit.
+            The prescription is written on the patient's record as in the clinic, with a line saying the
+            consult was held remotely, and it stays on the record beside every clinic visit.
           link:
             label: Read how the EMR and prescriptions work
             href: /features/emr/
-        - heading: Sent on WhatsApp at the end of the call
+        - heading: Sent on WhatsApp
+          icon: brand-whatsapp
           body: >-
-            Premium includes WhatsApp messages, so the prescription can go to the patient's WhatsApp as soon
-            as the consult ends, and SMS or email can carry it instead. The pharmacist reads a typed
-            prescription rather than a photo of the pad.
-          plan: premium
+            The prescription goes to the patient's WhatsApp as the consult ends, or by SMS or email, so the
+            pharmacist reads it typed, not as a photo of the pad.
           link:
             label: Read how WhatsApp messages work
             href: /features/whatsapp/
-        - heading: The follow-up on the same calendar
+        - heading: Follow-up on the calendar
+          icon: calendar-clock
           body: >-
-            The next visit is booked on the same calendar, as a clinic visit or another video consult. The
-            reminder before it goes by SMS and email on every plan, and on WhatsApp on Premium. In India the
-            follow-up also changes what can be prescribed remotely, as the next section explains.
+            The next visit goes on the same calendar, in the clinic or by video, and the patient gets a
+            reminder before it by SMS and email, or on WhatsApp on the Premium plan.
+          link:
+            label: Read how appointment reminders work
+            href: /features/patient-engagement/
 
   - discriminant: dataTable
     value:
       id: nmc-guidelines
       heading: What India's telemedicine guidelines ask of a doctor
-      intro: >-
-        In India, video consults are governed by the Telemedicine Practice Guidelines, issued in 2020 and
-        now under the [National Medical Commission](https://www.nmc.org.in/) (NMC). This is what they ask
-        of the doctor, in general terms.
-      caption: What the NMC Telemedicine Practice Guidelines ask of the doctor
+      intro: |-
+        In India, video consults are governed by the Telemedicine Practice Guidelines, issued in 2020 and now under\
+        the [National Medical Commission](https://www.nmc.org.in/) (NMC). This is what they ask of the doctor, in general terms.
+      wideIntro: true
+      variant: questions
       columns:
         - The question
         - What the guidelines ask
@@ -196,44 +200,6 @@ sections:
       note: >-
         This table describes the guidelines only and makes no claim about Easy Clinic's status under them.
         Following the medicine lists is the doctor's responsibility. The table covers India only.
-
-  - discriminant: scopeBox
-    value:
-      id: limits
-      heading: Before you plan video consults on Easy Clinic
-      variant: limits
-      items:
-        - >-
-          Video consultations and online payments start on Premium. On Professional, the calendar and the
-          EMR work for clinic visits, without video.
-        - >-
-          A video consult needs an internet connection at both ends. Easy Clinic is cloud software and does
-          not run fully offline today.
-
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: Easy Clinic's ratings on Capterra and Google
-      intro: >-
-        We have no customer quote about video consults yet, so these are Easy Clinic's overall public
-        ratings. The Capterra link opens the reviews themselves.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: contentCards
-    value:
-      id: further-reading
-      heading: Further reading
-      items:
-        - href: /features-that-your-telemedicine-software-should-have/
-        - href: /telemedicine-in-india/
-        - href: /telemedicine-in-kenya-2025/
-        - href: /healthcare-in-uganda/
 
 faqHeading: Questions doctors ask about video consults
 faq:

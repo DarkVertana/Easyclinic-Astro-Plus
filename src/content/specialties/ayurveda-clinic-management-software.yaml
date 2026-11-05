@@ -15,14 +15,10 @@ title: 'Ayurveda Clinic Management Software: Easy Clinic'
 metaDescription: >-
   Ayurveda clinic management software that tracks each Panchakarma course by session and bills it as
   one package on Premium, at {price:inr.premium.annual} a doctor a month.
-h1: Ayurveda clinic software for Panchakarma courses
+h1: "Streamline Your Ayurveda Practice with Easy Clinic’s EMR"
 linkLabel: Ayurveda
 eyebrow: For Ayurveda clinics and Panchakarma centres
-openingAnswer: >-
-  An Ayurveda clinic needs a plan that holds a Panchakarma course session by session, and prescriptions in
-  Ayurvedic medicines with diet and routine. Easy Clinic's Premium plan, at {price:inr.premium.annual} per
-  doctor per month billed annually in India, adds your own case-sheet forms and bills a course as one
-  package.
+openingAnswer: "From patient records to herbal inventory, Easy Clinic simplifies your EMR management. Boost efficiency, ensure compliance, and focus on whole-person healing with our user-friendly software designed for Ayurveda clinic specialists."
 summary: >-
   The Panchakarma course and the Ayurvedic prescription on one treatment plan, with the course billed as
   one package paid in parts on the Premium plan.
@@ -30,8 +26,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/Examination-3-1.png'
-  alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -48,8 +44,8 @@ sections:
       id: where-ayurveda-clinics-lose-track
       heading: Where an Ayurveda clinic loses track
       intro: >-
-        Ayurvedic treatment runs as a course, over days in the therapy room and months of follow-up, and
-        most of what goes missing falls between the consulting room and the therapy room.
+        Ayurvedic treatment runs as a course, over days in the therapy room and months of follow-up,<br class="hidden md:inline">
+        and most of what goes missing falls between the consulting room and the therapy room.
       items:
         - heading: The therapy sheet pinned up in the therapy room
           body: >-
@@ -62,8 +58,6 @@ sections:
             session and therapy is recorded within the same case history. The change the doctor makes on
             day four goes onto the record the next session is written in, and the care team's shared case
             notes sit there too.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: Two Shirodhara bookings, one Shirodhara table
           body: >-
             Two doctors each book a patient for Shirodhara at 10am, and the clinic has one table and one
@@ -72,8 +66,6 @@ sections:
             The equipment and the assistant a therapy needs are booked inside the appointment slot, and the
             calendar shows each resource's bookings, so the desk sees the table is taken at 10am before it
             offers that time. The sessions of a course can be booked together at the first visit.
-          href: /features/appointment-scheduling/
-          linkLabel: Read how booking works
         - heading: The prescription and the diet list, written out again
           body: >-
             An Ayurvedic prescription is long: a churna with its anupana, a kashaya before food, an arishta
@@ -85,8 +77,6 @@ sections:
             Ayurvedic medicines at hand as you write. Diet and lifestyle advice and the daily routine are
             recorded as part of the treatment plan, so at the next visit they open in the patient's history
             beside the past prescriptions.
-          href: /features/emr/
-          linkLabel: Read how prescriptions work
         - heading: The course paid in parts, tracked in the receipt book
           body: >-
             A Panchakarma course is often sold at one price, with an advance at the start and the balance
@@ -96,19 +86,19 @@ sections:
             On Premium the course is billed as one package treatment, and every advance and part payment is
             recorded against it, so the desk sees the balance on the bill. A refund goes through only with
             authorisation.
-          href: /pricing/
-          linkLabel: See what Premium includes
 
   - discriminant: featureRows
     value:
       id: built-around-the-treatment-plan
       heading: Built around the Ayurvedic treatment plan
       intro: >-
-        Premium, Easy Clinic's plan for specialists, includes every row below except medicine stock, which
-        comes with Enterprise or as a module added to Professional or Premium. The rows marked Premium are
-        not on Professional.
+        Premium, Easy Clinic's plan for specialists, includes everything here except medicine stock,
+        which comes with Enterprise or as a module added to Professional or Premium. Your own case
+        sheet and Panchakarma package billing are not on Professional.
+      layout: grid
       items:
         - heading: Treatment plans that hold the Panchakarma schedule
+          icon: clipboard-list
           body: >-
             Plan a patient's treatment in detail on their record: the Panchakarma therapy schedule, the
             herbal medicines, the diet and the daily routine. A multi-day course is planned and tracked
@@ -117,42 +107,47 @@ sections:
           bullets:
             - Panchakarma therapy schedule on the treatment plan
             - Each session and therapy recorded in the case history
-            - Diet and lifestyle advice kept with the plan
-            - Follow-up after the course on the same record
         - heading: Therapy sessions booked with what they need
+          icon: calendar
           body: >-
             Book the sessions of a course together, alongside fixed-time appointments and walk-ins. The
             equipment and assistants a therapy needs are booked inside the appointment slot, and the
             calendar shows each resource's bookings. Booked sessions get automated reminders by SMS and
             email on every plan, and by WhatsApp on Premium.
-          link:
-            label: Read how booking works
-            href: /features/appointment-scheduling/
+          bullets:
+            - Course sessions booked together with walk-ins
+            - Equipment and assistants booked inside the slot
         - heading: Prescriptions written for Ayurvedic medicines
+          icon: pill
           body: >-
             The prescription can be set up for Ayurvedic medicines and herbal treatments, with commonly used
             Ayurvedic medicines at hand as you write. The patient gets it printed, by SMS, by email or, on
             Premium, by WhatsApp, and Premium also prints it in your clinic's own layout.
+          bullets:
+            - Commonly used Ayurvedic medicines at hand as you write
+            - Sent printed, by SMS or email, or by WhatsApp on Premium
         - heading: Your own case sheet for Prakriti and Nadi Pariksha
-          plan: premium
+          icon: notebook-pen
           body: >-
             On Premium, the form builder turns the paper case sheet you use today, with your Prakriti
             assessment and Nadi Pariksha findings, into a digital examination form filled in at each visit.
             You lay the form out yourself. Intake forms capture the medical history in as much or as little
             detail as you want, including chronic illnesses and the other therapies the patient has tried,
             and it all goes onto the facesheet.
+          bullets:
+            - Prakriti and Nadi Pariksha findings on a digital form
+            - Intake history in as much detail as you want
         - heading: The whole course of care in one history
+          icon: chart-line
           body: >-
             Ayurvedic care runs over months, so every visit and every therapy is recorded in one continuous
             patient history. The facesheet puts the patient's key data on one screen, and past records open
             side by side with today's.
           bullets:
-            - Automated follow-up reminders
             - Vitals and lab values charted over time
-            - Reports and documents uploaded to the record
             - Case notes shared across the care team
         - heading: Panchakarma courses billed as packages
-          plan: premium
+          icon: receipt
           body: >-
             On Premium a Panchakarma course is billed as one package treatment, and the payment can be
             spread over the course. Advances and part payments are recorded against the package, and a
@@ -160,144 +155,480 @@ sections:
           bullets:
             - Advances and part payments recorded against the package
             - Receipts and invoices sent to the patient on WhatsApp
-          link:
-            label: Read how billing works
-            href: /features/billing/
         - heading: Oils and churnas in stock, tracked to expiry
-          plan: enterprise
+          icon: package
           body: >-
             Stock of Ayurvedic medicines such as churnas, kashayas (decoctions), oils and supplements is
             tracked with Enterprise, or with the pharmacy and inventory module added to Professional or
             Premium. With it, the clinic knows what is in stock before the doctor prescribes, and each batch
             is tracked to its expiry date.
-          link:
-            label: Read how pharmacy and inventory work
-            href: /features/pharmacy-and-inventory/
+          bullets:
+            - Churnas, kashayas and oils tracked in stock
+            - Each batch tracked to its expiry date
         - heading: Cura AI drafts the note
-          plan: professional
+          icon: sparkles
           body: >-
             Cura AI (documentation) comes with every plan. It drafts the consultation note for the doctor to
             review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: the-desk-and-the-dispensary
+      heading: The desk, the dispensary and the follow-up
+      intro: >-
+        Around the treatment plan sits the rest of the clinic's day: the bill at the desk, the medicines
+        handed over and the follow-up once the course ends.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The bill for the consultation and the therapy
+          icon: receipt
+          body: >-
+            The receptionist bills the consultation and each therapy from the clinic's service list, so the
+            desk picks a line instead of typing an amount. A discount goes through only with authorisation,
+            and the receipt goes to the patient by SMS or email, or on WhatsApp with Premium.
           link:
-            label: Read what Cura AI does
-            href: /ai/
-
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        No Ayurveda doctor has yet given us a quote for this page. These are Easy Clinic's public ratings,
-        from clinics of every specialty.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: stepList
-    value:
-      id: training
-      heading: How long does it take to learn Easy Clinic?
-      intro: >-
-        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
-        session is 20 to 40 minutes, short enough to fit between the morning consultations and the evening
-        list, so the clinic keeps seeing patients while the team learns.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Medicines dispensed from the prescription
+          icon: pill
           body: >-
-            The screens the front desk and the doctors use every day: the appointment book and the bill at
-            the desk, the chart and the prescription in the consulting room. Bring your receptionist, whose
-            login is part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and
+            Premium, the pharmacist dispenses from the doctor's prescription on screen. A patient collecting
+            a refill does not wait in the appointment queue.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+        - heading: Video follow-ups after the course
+          icon: video
           body: >-
-            You work through the chart and the prescription on the kinds of cases your clinic sees.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note and prescription quicker, once the basics have become habit.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
+            On Premium a follow-up can be a video consultation booked through the appointment screen, with
+            the fee collected online at booking. The doctor and the patient join from a web browser on a
+            computer or a phone, and the prescription reaches the patient by WhatsApp, SMS or email with a
+            note that the consultation was remote.
+          link:
+            label: Read how teleconsultations work
+            href: /features/telemedicine/
+        - heading: The day's takings in a report
+          icon: chart-column
+          body: >-
+            Financial reports are ready for daily, weekly, monthly and quarterly book balancing. They export
+            to Excel and PDF for the accountant.
 
-faqHeading: Questions Ayurveda clinic owners ask
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Quick Prescriptions: Create and Share in 30 Seconds
+        Effortlessly generate detailed prescriptions in 30 seconds and instantly share them through print, WhatsApp, SMS, or email, available in any language.
+
+        ### Personalized Ayurveda EMR for Specialists
+        Tailored to match your specialty, workflow, and preferences, ensuring a seamless and intuitive experience.
+
+        ### AI-Powered Efficiency
+        Simplify your documentation and save time with the help of an AI-driven assistant.
+
+        ### Ayurvedic Treatment Plans
+        Allow for detailed treatment planning, including Panchakarma therapy schedules, herbal medication prescriptions, dietary recommendations, and daily routines.
+
+        ### Herbal Medicine Inventory Management
+        Track Ayurvedic medicines like churnas, decoctions, oils, and supplements.
+
+        ### Visual Health Insights
+        Effortlessly track specific vitals, lab reports, and clinical parameters using intuitive charts and graphs for enhanced patient care.
+
+        ### Streamlined Patient Summaries: Instant Access to Complete Case Histories
+        Save time with auto-generated summaries and facesheets, intelligently presenting key patient data.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more using a user-friendly interface. Features custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Ayurveda Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Ayurveda Specialists and Clinics
+        Designed to address the unique needs of specialists, super-specialists, and Ayurveda clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Utilize advanced AI for differential diagnoses and alerts on adverse drug events, specifically designed for Ayurveda patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used Ayurveda medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, Ayurveda specialists, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Ayurveda practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Ayurveda specialists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Ayurveda patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Ayurveda clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Ayurveda clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Ayurveda clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Ayurveda clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Ayurveda clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: Which Easy Clinic plan does an Ayurveda clinic need, and what does it cost?
-    answer: >-
-      Premium, if you sell Panchakarma courses as packages or want your own case sheet as a digital form:
-      {price:inr.premium.annual} per doctor per month billed annually in India or
-      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
-      {price:usd.premium.quarterly} in US dollars. Professional, at {price:inr.professional.annual} billed
-      annually, has the chart and billing but not the specialty templates, your own forms, package
-      treatments or WhatsApp messages that Premium adds. Both include a login for your receptionist, and
-      neither has a setup fee or a binding contract.
-  - question: How does a Panchakarma course run on Easy Clinic?
-    answer: >-
-      The course is planned on the patient's treatment plan, which holds the Panchakarma therapy schedule,
-      and its sessions are booked together, each with the equipment or assistant the therapy needs inside
-      the same appointment slot. Each session and therapy is then recorded within the case history, and the
-      follow-up after the course is planned and tracked on the same record.
-  - question: Can I record Prakriti assessment and Nadi Pariksha findings?
-    answer: >-
-      Yes, on a form you set up yourself: on Premium the form builder turns your paper case sheet into a
-      digital examination form, filled in at each visit and kept on the patient's record. The findings then
-      sit in one history beside the prescriptions and the therapies given.
-  - question: Can a Panchakarma course be billed as a package and paid in instalments?
-    answer: >-
-      Yes, on Premium: the course is billed as one package treatment, and each advance or part payment is
-      recorded against it, so the desk sees the balance. The payment can be spread over the course, and if
-      the patient stops partway, a refund goes through only with authorisation. Professional does not
-      include package treatments.
-  - question: Does Easy Clinic track our stock of oils and churnas?
-    answer: >-
-      Yes, but not on Professional or Premium alone: pharmacy and inventory come with Enterprise, or as a
-      module added to either plan. With the module, the clinic knows what is in stock before the doctor
-      prescribes, and each batch is tracked to its expiry date.
-  - question: Can Easy Clinic run an Ayurveda hospital where patients stay for Panchakarma?
-    answer: >-
-      It can run the outpatient side, but not the wards: Easy Clinic runs clinics and hospital OPDs and does
-      not run inpatient wards, so a hospital that admits patients for a residential Panchakarma course runs
-      Easy Clinic in the OPD beside a separate inpatient system. Patients who come in each day for their
-      therapies are booked and recorded in Easy Clinic as usual.
-  - question: Does Easy Clinic work without an internet connection?
-    answer: >-
-      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
-      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
-      system runs on the clinic's own server rather than in Easy Clinic's cloud.
+  - question: "What is the best EMR software for Ayurveda clinics?"
+    answer: "The best EMR software for Ayurveda clinics should support herbal prescriptions, Panchakarma tracking, diet plans, and long-term patient follow-ups. Easy Clinic is designed to manage the complete workflow of Ayurveda clinics."
+  - question: "Does Easy Clinic support AI EMR for Ayurveda clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic create Ayurvedic prescriptions?"
+    answer: "Yes. Easy Clinic allows custom prescription formats that can be used for Ayurvedic medicines and herbal treatments."
+  - question: "Does Easy Clinic support Panchakarma treatment tracking?"
+    answer: "Yes. Clinics can record therapy sessions, procedures, and follow-ups for Panchakarma and other Ayurvedic treatments."
+  - question: "Can Easy Clinic store diet and lifestyle recommendations?"
+    answer: "Yes. Ayurveda treatment often includes diet and lifestyle plans, which can be recorded in patient notes."
+  - question: "Does Easy Clinic support long-term patient tracking?"
+    answer: "Yes. Easy Clinic allows clinics to manage repeated visits, follow-ups, and ongoing treatments."
+  - question: "Can Easy Clinic manage Ayurvedic medicine inventory?"
+    answer: "Yes. Inventory management is included for herbs, medicines, and clinic supplies."
+  - question: "Is Easy Clinic suitable for small Ayurveda clinics?"
+    answer: "Yes. Easy Clinic works for single-doctor clinics as well as large wellness centres."
+  - question: "Can multiple doctors use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, treatments, and revenue."
 
 links:
   hub: /specialties/
-  relatedHeading: Where Ayurveda clinic owners go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/solo-clinic/
-      label: Solo doctor clinic
-      description: For a vaidya running their own clinic with a receptionist.
-    - href: /solutions/polyclinic/
-      label: Polyclinic software
-      description: >-
-        For an Ayurveda centre with several doctors: one patient record for every doctor, and shared rooms
-        on one calendar.
-    - href: /emr-software-in-india/
-      label: Clinic management software in India
-      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
-    - href: /emr-software-in-kenya/
-      label: Clinic software in Kenya
-      description: Easy Clinic for clinics in Kenya, where Penda Health has used it as its EMR since 2017.
-    - href: /features/emr/
-      label: The EMR and e-prescriptions
-      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
-    - href: /features/pharmacy-and-inventory/
-      label: Pharmacy and inventory
-      description: Stock of medicines and supplies, each batch tracked to its expiry date.
-    - href: /pricing/
-      label: Easy Clinic pricing
-      description: Premium at {price:inr.premium.annual} per doctor per month, and what each plan includes.
-
+    - href: /alternative-medicine/
+      label: Alternative medicine EMR
+      description: For homoeopathy, Unani and naturopathy clinics on a long course of treatment.
+      icon: pill
+    - href: /physiotherapy-clinic-management-software/
+      label: Physiotherapy clinic software
+      description: For the physiotherapy clinic with session plans and progress against goals.
+      icon: route
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: 'For the family doctor who keeps each family member''s care on their own record.'
+      icon: heart-handshake
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+    - href: /dermatology-emr-software/
+      label: Dermatology EMR
+      description: For the skin clinic with before-and-after photographs and procedure sessions.
+      icon: scan-eye
+    - href: /gastroenterology-emr/
+      label: Gastroenterology EMR
+      description: For the GI clinic with endoscopy reports beside each review.
+      icon: file-text
 closing:
   heading: See a Panchakarma course on Easy Clinic
   body: >-
@@ -324,6 +655,18 @@ editorialPass:
     rows general and the Prakriti answer (lay out your own form on Premium) thin.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Grounding: treatment plans including Panchakarma therapy schedules, herbal medication prescriptions, dietary recommendations and daily routines; multi-day Panchakarma courses planned, tracked and followed up, with each session and therapy recorded within the case history; therapy sessions, procedures and follow-ups recorded for Panchakarma; diet and lifestyle recommendations created and shared as part of the treatment plan; custom prescription formats for Ayurvedic medicines and herbal treatments; quick access to commonly used Ayurveda medications; prescriptions shared by print, WhatsApp, SMS or email; herbal medicine inventory for churnas, decoctions, oils and supplements, so clinics know what is available before prescribing; custom examination forms and the form builder for paper forms; customisable intake forms (chronic illnesses, family and social history, alternative therapies and more) feeding the facesheet; visit history on a single screen, side-by-side past records, facesheets, vitals and lab charts, image and document upload, collaborative case notes; multi-session booking, fixed-time appointments and walk-ins, resource booking (equipment or assistants) within the appointment slot, multi-resource calendar, automated reminders and follow-up; part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments, multi-level price list, discount authorisation, receipts on WhatsApp; one continuous patient history for long-term tracking. All stated plainly on the live /ayurveda-emr-software/ page (retrieved 2026-09-26). Plan placement follows plans.yaml (WhatsApp, package treatments, own forms and print layouts, specialty templates on Premium; pharmacy and inventory on Enterprise or as a module). Reception login, no binding contract and the offline answer follow facts.md; the inpatient answer follows the published home page FAQ ("does not run inpatient wards or operating theatres"). Penda Health on Easy Clinic since 2017 is from the verified study facts.'
   - 'Recruit a named Ayurveda testimonial (spec 5.15 item 9): a named Ayurveda doctor (vaidya) or Ayurveda clinic or Panchakarma centre owner on Easy Clinic, with city, clinic and consent on file, added to src/data/testimonials/ and placed only on this page as a customer proofBlock or a single testimonialRow. Until then the proof block is the Capterra and Google badges, and its intro says no Ayurveda doctor quote exists yet. Review counts are null in facts.yaml, so the badges show no count. The four testimonials on the live /ayurveda-emr-software/ page (two psychiatrists, a general physician, an ophthalmologist) are not about Ayurveda and are not used. Dr Manish Bhatia (Asha Homeopathy, Jaipur) is the nearest fit for the merged /alternative-medicine/ audience, but his record is assigned elsewhere.'
   - 'Spec 5.15 ayurveda must-haves, company to-do. (1) Panchakarma scheduling: INCLUDED only as far as the live page states it (the Panchakarma therapy schedule on the treatment plan, multi-day courses tracked session by session, multi-session booking, equipment and assistants booked inside the slot, a calendar per resource). Not stated, so left out: therapy rooms set up as named resources (the Shirodhara table pain uses equipment and an assistant, the live wording); therapist rosters by therapy or by the patient''s gender; the Purvakarma, Pradhana karma and Paschat karma stages as structured steps; the oil or medicine quantity used per session drawn from stock; a therapist''s daily therapy list. Confirm each, with plan. (2) Classical formulations: LEFT OUT. The live page says only that prescription formats can be customised for Ayurvedic medicines and that commonly used Ayurveda medications are at hand; it does not say a library of classical formulations ships ready (for example from the Ayurvedic Formulary of India), with dosage forms (churna, kashaya, arishta, asava, taila, ghrita, vati), anupana and timing relative to food as fields. Confirm whether such a list exists, its size, and whether the clinic adds its own proprietary formulations. (3) AYUSH documentation: LEFT OUT. The live pages state no AYUSH case-sheet format, no NAMASTE (National AYUSH Morbidity and Standardized Terminologies) codes and no National AYUSH Grid or ABDM connection; the live post''s "ensures Ayurveda clinics can easily meet compliance expectations" is a compliance claim with unknown status. Confirm status and date for each before any line goes on the page (no regulatorStrip or regulatorTable until then).'
@@ -333,3 +676,4 @@ notes:
   - 'H1: the page uses the spec 5.15 item 1 form (as the dental and dermatology pages do) rather than the spec 4.3 H1 ("Software for ayurveda clinics and hospitals"); "hospitals" is left out of the H1 because an Ayurveda hospital usually admits patients for Panchakarma and Easy Clinic does not run inpatient wards, which the hospital FAQ says. Switch to the 4.3 H1 if the owner prefers the keyword-map wording. Spec 5.15 item 2 asks for three needs; the opening answer names two to avoid a group of three. Title 47 characters; meta description 150 characters with the token resolved (151 as the linter counts an unresolved token). /clinic-management-software-india/ and /emr-software-in-kenya/ are still drafts; the related links resolve once they publish.'
   - The editorial pass recorded here is an AI review. A human editor, ideally one who knows an Ayurveda clinic, still needs to read the page aloud and check the Ayurvedic terms (Abhyanga, Shirodhara, churna, kashaya, arishta, taila, anupana, Prakriti, Nadi Pariksha, vaidya) and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price and the Penda Health link, and admissions of limits in the stock, inpatient and offline FAQs) until the testimonial arrives.
   - 'Editorial review 2026-09-26 (AI fact check against the live /ayurveda-clinic-management-software/, /ayurveda-emr-software/ and /alternative-medicine/ pages, re-fetched that day): every capability line was re-checked against the live wording; nothing new was found on /alternative-medicine/ beyond what /ayurveda-emr-software/ states. Changes: the featureRows intro now says Premium includes every row (except stock, Enterprise or a module) and the Premium-marked rows are not on Professional, instead of implying the unmarked rows are on Professional, because plans.yaml puts specialty templates and your own forms on Premium and the plan for the Ayurvedic prescription format and the Panchakarma treatment plan is unconfirmed; the plan FAQ now names specialty templates and your own forms among what Professional lacks; the day-four fix says the change goes onto the record the next session is written in (the live page says sessions are recorded in the case history, not against the plan); "each booked session gets a reminder" became "booked sessions get automated reminders"; groups of three removed (print, SMS, email; Prakriti, Vikriti, Nadi Pariksha; oils, churnas and other medicines; reception login, setup fee, contract); the Panchakarma FAQ was reworded from a yes-we-do-that question to how a course runs; the multi-level price list and discount authorisation bullets were cut from the Premium-marked package row, since they are general billing and the new intro would have read them as Premium-only.'
+  - 'Section the-desk-and-the-dispensary added 2026-11-05. Grounding: billing from the service list so the desk picks a line, discount authorisation and receipts by SMS or email or on WhatsApp with Premium (the live page per the first note, /features/billing/, /ent-emr-software/); dispensing from the doctor''s prescription and refills collected without the appointment queue, with pharmacy and inventory on Enterprise or as a module (/features/pharmacy-and-inventory/, the /ivf-emr/ pharmacy FAQ, plans.yaml); video follow-ups on Premium with the fee collected online and the remote-consultation note (/alternative-medicine/, /allergy-emr-software/, /features/telemedicine/), with the follow-up after the course from this page''s treatment plan row; daily to quarterly financial reports exported to Excel and PDF (/features/billing/). Session booking, reminders, package billing and stock are left out because the "Built around" section already covers them, and the oil used per session drawn from stock stays out, as the third note asks.'

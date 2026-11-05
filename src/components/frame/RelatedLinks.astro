@@ -5,14 +5,17 @@ import Flag from '../ui/Flag.astro';
 
 interface Props {
   heading: string;
-  links: Array<{ href: string; label?: string; description?: string }>;
+  links: Array<{ href: string; label?: string; description?: string; icon?: string }>;
+  /** The arrow after each card's label (off on the specialty pages, owner request 2026-11-05). With the arrows off,
+      descriptions show in full instead of being cut at two lines. */
+  arrows?: boolean;
   /** Show country pages as a row of flag pills above the cards (the home page) instead of as cards. */
   countryPills?: boolean;
   /** The light-blue section background instead of white (/about-us/). */
   tinted?: boolean;
 }
 
-const { heading, links, countryPills = false, tinted = false } = Astro.props;
+const { heading, links, countryPills = false, tinted = false, arrows = true } = Astro.props;
 const registry = await getRegistry();
 // A country page shows its flag; other targets get an icon for what they are.
 const ICONS: [string, string][] = [
@@ -54,7 +57,7 @@ const items = links
     const href = registry.urlFor(l.href);
     const country = (target?.data as { country?: { id: string } } | undefined)?.country?.id;
     return href
-      ? { href, label: l.label ?? target?.label ?? l.href, description: l.description ?? target?.data.summary, missing: !target, country, icon: iconFor(l.href) }
+      ? { href, label: l.label ?? target?.label ?? l.href, description: l.description ?? target?.data.summary, missing: !target, country, icon: l.icon ?? iconFor(l.href) }
       : null;
   })
   .filter((l): l is NonNullable<typeof l> => l !== null);
@@ -108,7 +111,7 @@ const cards = countryPills ? items.filter((i) => !i.country) : items;
           </ul>
         )}
         {cards.length > 0 && (
-        <ul class:list={['grid gap-4 sm:grid-cols-2', pills.length > 0 ? 'mt-6' : 'mt-8', cards.length % 4 === 0 ? 'lg:grid-cols-4' : 'lg:grid-cols-3']}>
+        <ul class:list={['grid gap-4 sm:grid-cols-2', pills.length > 0 ? 'mt-6' : 'mt-8', cards.length === 4 || cards.length === 8 ? 'lg:grid-cols-4' : 'lg:grid-cols-3']}>
           {cards.map((item) => (
             <li>
               <a
@@ -125,10 +128,10 @@ const cards = countryPills ? items.filter((i) => !i.country) : items;
                 <span class="min-w-0 flex-1">
                   <span class="flex items-center justify-between gap-2 font-semibold text-ink-heading group-hover:text-blue-700">
                     {item.label}
-                    <Icon name="arrow-right" size={16} class="shrink-0 text-ink-muted transition-[translate,color] duration-150 group-hover:translate-x-1 group-hover:text-blue-700" />
+                    {arrows && <Icon name="arrow-right" size={16} class="shrink-0 text-ink-muted transition-[translate,color] duration-150 group-hover:translate-x-1 group-hover:text-blue-700" />}
                   </span>
                   {item.description && (
-                    <span class="mt-1 line-clamp-2 text-sm leading-[1.55] text-ink-muted">{item.description}</span>
+                    <span class:list={['mt-1 text-sm leading-[1.55] text-ink-muted', arrows && 'line-clamp-2']}>{item.description}</span>
                   )}
                 </span>
               </a>

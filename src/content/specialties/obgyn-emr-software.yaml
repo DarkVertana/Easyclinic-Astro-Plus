@@ -13,14 +13,10 @@ title: 'OB-GYN and Gynaecology EMR Software: Easy Clinic'
 metaDescription: >-
   OB-GYN EMR software: each pregnancy tracked to the due date on one record, and antenatal care billed as a
   package on Premium at {price:inr.premium.annual} a doctor a month.
-h1: OB-GYN EMR for antenatal visits and scans
+h1: "Streamlining Obstetrics & Gynecology Care with Easy Clinic"
 linkLabel: OB-GYN and gynaecology
 eyebrow: For obstetricians and gynaecologists
-openingAnswer: >-
-  An OB-GYN clinic needs a pregnancy record that carries gestational age and due date across visits, and
-  gynaecology templates such as a Pap smear. Premium adds the templates and bills antenatal care as one
-  package, at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual},
-  billed annually.
+openingAnswer: "Easy Clinic simplifies Obstetrics & Gynecology practice management, from patient intake to prenatal and postnatal care. Our EMR software enhances workflow efficiency, improves documentation accuracy, and ensures seamless coordination, empowering specialists to provide personalized and high-quality care for women’s health."
 summary: >-
   Each pregnancy on one record, from gestational age to the due date, with antenatal care billed as one
   package paid in parts on the Premium plan.
@@ -28,8 +24,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/Prescription-3-2.png'
-  alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -46,8 +42,8 @@ sections:
       id: where-an-obgyn-clinic-loses-track
       heading: Where an OB-GYN clinic loses track
       intro: >-
-        An antenatal patient comes back every few weeks for nine months, and most of what goes missing falls
-        between one visit and the next.
+        An antenatal patient comes back every few weeks for nine months,<br class="hidden md:inline">
+        and most of what goes missing falls between one visit and the next.
       items:
         - heading: The antenatal card stays at home
           body: >-
@@ -57,8 +53,6 @@ sections:
           fix: >-
             Gestational age and the due date are tracked on the patient's record, with every antenatal visit
             beside them, so the doctor reads them on screen before the patient sits down.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: Scan reports pile up in the paper file
           body: >-
             The anomaly scan was done at a diagnostic centre across town, and the printout goes into the
@@ -77,8 +71,6 @@ sections:
             On Premium, antenatal care is billed as one package treatment, and every advance and part payment
             is recorded against it. The front desk sees the balance on the bill, and a refund goes through only
             with authorisation.
-          href: /pricing/
-          linkLabel: See what Premium includes
         - heading: The smear result that nobody followed up
           body: >-
             A Pap smear goes to the lab and the result comes back two weeks later. The follow-up visit was
@@ -87,8 +79,6 @@ sections:
           fix: >-
             Book the follow-up before she leaves, and she gets an automated reminder by SMS and email, or by
             WhatsApp on Premium. On Premium the lab report also comes into her chart.
-          href: /features/whatsapp/
-          linkLabel: Read how WhatsApp reminders work
 
   - discriminant: featureRows
     value:
@@ -96,69 +86,477 @@ sections:
       heading: Built around the pregnancy record
       intro: >-
         An antenatal patient is seen many times over one pregnancy, so the record follows the pregnancy and
-        each visit is written against it. Rows marked Premium come with Easy Clinic's plan for specialists.
+        each visit is written against it. Lab reports in the chart, package billing and video follow-ups
+        come with Premium, Easy Clinic's plan for specialists.
+      layout: grid
       items:
         - heading: The pregnancy record, visit by visit
+          icon: baby
           body: >-
             Track gestational age and trimester progress through the pregnancy, with fetal growth parameters
             and the due date on the same record. The antenatal visits and the follow-ups between them sit there
             too, so a second obstetrician in the clinic opens the same history as the first.
           bullets:
             - Gestational age and trimester progress
-            - Fetal growth parameters over the pregnancy
-            - The due date on the record
-            - Antenatal visits and follow-ups in one place
+            - Fetal growth parameters and the due date on the record
         - heading: Obstetric and menstrual history on the facesheet
+          icon: file-heart
           body: >-
             The intake form records the patient's obstetric and gynaecological history, including her menstrual
             cycles and hormonal treatments, with family and social history beside it. It feeds the facesheet, so
             at each follow-up the doctor reads the history on one screen.
           bullets:
-            - Obstetric and gynaecological history
-            - Menstrual cycles and hormonal treatments
-            - Case history and facesheet built from the record
-            - Past visits side by side
+            - Obstetric and gynaecological history at intake
+            - Menstrual cycles and hormonal treatments recorded
         - heading: Ultrasound reports in the file, vitals on a chart
+          icon: scan-line
           body: >-
             Ultrasound reports and other diagnostic records are stored in the patient's file, uploaded as
             documents or images. Vitals such as blood pressure and weight can be charted visit by visit, so a
             rising trend shows on one screen.
+          bullets:
+            - Ultrasound reports stored in the patient's file
+            - Blood pressure and weight charted visit by visit
         - heading: Lab reports in the chart
-          plan: premium
+          icon: chart-line
           body: >-
             On Premium, lab reports come into the patient's chart, and the values can be charted over time
             beside the vitals. Full lab management, with orders from the chart and sample tracking, comes with
             Enterprise or as a module added to Professional or Premium.
+          bullets:
+            - On Premium, lab values charted beside the vitals
+            - Full lab management with Enterprise or as a module
         - heading: Antenatal care billed as one package
-          plan: premium
+          icon: wallet
           body: >-
             On Premium, antenatal care is billed as one package treatment and the payment is spread over the
             pregnancy, so the front desk sees what is paid and what is due before taking the next instalment.
           bullets:
-            - Advances and part payments recorded against the package
-            - Refunds and voided invoices only with authorisation
-            - Taxable and non-taxable items kept apart on the bill
-            - Receipts and invoices sent to the patient on WhatsApp
-          link:
-            label: Read how billing works
-            href: /features/billing/
+            - Payment spread over the pregnancy on Premium
+            - The desk sees what is paid and due before each instalment
         - heading: Video follow-ups
-          plan: premium
+          icon: video
           body: >-
             For a follow-up that needs no examination, such as going over a report, book a video consultation
             through the appointment screen and collect the fee online at booking. The patient joins from a web
             browser on her phone, and the prescription is sent to her on WhatsApp or by SMS, marked as written
             after a remote consultation.
-          link:
-            label: Read how video consultations work
-            href: /features/telehealth/
+          bullets:
+            - Booked from the appointment screen, fee paid at booking
+            - Prescription sent on WhatsApp or by SMS after the call
         - heading: Cura AI drafts the note
+          icon: sparkles
           body: >-
             Cura AI (documentation) comes with every plan, Professional included. It drafts the consult note in
             the patient's chart, and the doctor corrects it and confirms it.
+          bullets:
+            - Comes with every plan, Professional included
+            - The doctor corrects and confirms the draft note
+
+  - discriminant: featureRows
+    value:
+      id: the-antenatal-visit
+      heading: An antenatal visit, from the desk to the bill
+      intro: >-
+        What happens around the consult, in the order the day runs. Where a row needs a particular plan, it
+        says so.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: Antenatal visits on one calendar
+          icon: calendar-clock
+          body: >-
+            Fixed-time appointments and walk-ins sit on one calendar, and the next antenatal visit is booked
+            before the patient leaves.
           link:
-            label: Read what Cura AI does
-            href: /ai/
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The intake before the consult
+          icon: activity
+          body: >-
+            A nurse or clinical assistant can take the intake before the consult, logged in as themselves.
+            The reception login included in the price cannot open the EMR or issue a prescription, so the
+            front desk books and bills without reading clinical notes.
+        - heading: A reminder before the next visit
+          icon: bell-ring
+          body: >-
+            When the follow-up is booked, she gets an automated reminder by SMS and email, or by WhatsApp on
+            Premium.
+        - heading: Supplements from the clinic's own pharmacy
+          icon: package
+          body: >-
+            With the pharmacy and inventory module, which is included in Enterprise or added to Professional
+            and Premium, the pharmacist dispenses from the doctor's prescription and tracks each batch to its
+            expiry date. Premium alone does not include it.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+        - heading: The bill for a single visit
+          icon: receipt
+          body: >-
+            The desk bills the visit, with part and advance payments recorded against the bill, and a refund
+            or a voided invoice goes through only with authorisation. The receipt and the invoice can go to
+            her by SMS or email, or on WhatsApp with Premium.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Quick Prescriptions
+        Create complete prescriptions in just 30 seconds and instantly share them via print, WhatsApp, SMS, or email in any language.
+
+        ### Custom-Tailored Obstetrics and Gynecology EMR
+        Designed specifically for Obstetrics & Gynecology specialists, tailored to fit your unique specialty, workflow, and preferences for a seamless experience.
+
+        ### AI-Powered Efficiency
+        Complete prescriptions in just three clicks, streamlining your documentation process and saving time with an AI-driven assistant.
+
+        ### Pregnancy Tracking
+        Tools to track gestational age, trimester progress, fetal growth parameters, and due dates.
+
+        ### Gynecological Charting
+        Custom templates for documenting PAP smears, pelvic exams, breast exams, and related findings.
+
+        ### Health Trend Visualization
+        Easily track specific vitals, lab reports, and clinical parameters using charts and graphs for enhanced patient care and insights.
+
+        ### Effortless Patient Summaries
+        Instantly access auto-generated case histories and facesheets, saving time by presenting key patient data in an organized, easy-to-review format.
+
+        ### User-Friendly Point-and-Click Interface
+        Simplify documentation with an intuitive interface for recording chief complaints, medical history, vitals, and more. Includes custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without the need for lengthy navigation.
+
+        ### Complete Medical History Records
+        Customize intake forms for patients to capture detailed or concise medical histories, including chronic illnesses, family and social history, obstetric-gynecological details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for easy reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Tailored for Obstetrics & Gynecology Specialists
+        Designed specifically for Obstetrics & Gynecology specialists, super-specialists, and clinic chains, catering to their unique needs and providing specialized solutions for optimal care.
+
+        ### AI-Driven Diagnostic Assistance
+        Enhance care for complex cases with intelligent AI, providing differential diagnoses and alerts for potential adverse drug events, especially for patients with chronic conditions.
+
+        ### Flexible Template & Form Builder
+        Easily digitize paper forms with our customizable, user-friendly builder, ensuring a smooth transition to digital workflows.
+
+        ### Complete Patient Data at a Glance
+        View a complete longitudinal history of patient visits on a single screen, enhancing efficiency and streamlining patient care.
+
+        ### Effortless Access to Essential Resources
+        Streamline care with instant access to frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders.
+
+        ### Seamless Care Team Collaboration
+        Enhance communication and coordination among nurses, Obstetrics & Gynecology specialists, and healthcare providers, ensuring integrated and complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing doctors to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
 
   - discriminant: dataTable
     value:
@@ -178,126 +576,60 @@ sections:
         - [Your own form, 'The fields on your paper antenatal card or history sheet, rebuilt with the form builder']
         - [Your own print layout, "The prescription and the case sheet, printed in your clinic's layout"]
 
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        We do not yet have an obstetrician's or gynaecologist's own words to put on this page. These are
-        Easy Clinic's public ratings, which cover the product as a whole.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: stepList
-    value:
-      id: training
-      heading: How long does it take to learn Easy Clinic?
-      intro: >-
-        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
-        session is 20 to 40 minutes, short enough to fit between the morning and evening OPD, so the clinic
-        keeps seeing patients while the team learns.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
-          body: >-
-            The screens the front desk and the doctors use every day. Bring your receptionist, whose login is
-            part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
-          body: >-
-            You work through the chart and the prescription on the kinds of case your clinic sees.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: Practice exercises on the screens from the first two days.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note quicker, once the basics have become habit.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days.
-
-faqHeading: Questions OB-GYN clinic owners ask
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: Which Easy Clinic plan does an OB-GYN clinic need, and what does it cost?
-    answer: >-
-      Premium, the plan for specialists, because the gynaecology templates and package treatments start on
-      it: {price:inr.premium.annual} per doctor per month billed annually in India or
-      {price:inr.premium.quarterly} billed quarterly, and {price:usd.premium.annual} or
-      {price:usd.premium.quarterly} in US dollars. It also brings lab reports into the chart and adds video
-      consultations. The price includes a reception login. There is no setup fee and no binding contract.
-  - question: Can Easy Clinic track a pregnancy from one antenatal visit to the next?
-    answer: >-
-      Yes, gestational age, trimester progress, fetal growth parameters and the due date are tracked on the
-      patient's record, with each antenatal visit and follow-up on the same record. On Premium you can also
-      rebuild your paper antenatal card as a digital form with the form builder, so the fields your doctors
-      already use carry over.
-  - question: How do ultrasound reports get into the record, and does Easy Clinic connect to our scan machine?
-    answer: >-
-      By upload: the ultrasound report and any images are stored in the patient's file as documents or
-      images, where the doctor opens them at the next visit. No plan lists a connection to an ultrasound
-      machine. Custom integrations, such as connections to lab machines or an existing HIS, are scoped per
-      project and come with Enterprise or as an add-on to Professional and Premium.
-  - question: Does Easy Clinic cover the delivery and the delivery package?
-    answer: >-
-      No, the delivery is inpatient care, and Easy Clinic does not run inpatient wards or operating theatres,
-      so the admission and the bill for the stay belong on the inpatient system of the hospital or nursing
-      home where she delivers. Easy Clinic runs the antenatal and postnatal visits in the OPD, and on Premium
-      the antenatal care you sell as a package is billed as one package treatment, with the advance and each
-      part payment recorded against it.
-  - question: Who in the clinic can read a patient's gynaecological history?
-    answer: >-
-      Only the people whose role allows it: each person logs in as themselves, and the role on that login
-      decides which screens they can open. The reception login, included in the price, cannot open the EMR or
-      issue a prescription, so the front desk books and bills without reading clinical notes. The EMR also
-      has confidential notes, and user activity is kept in audit logs.
-  - question: Can Easy Clinic run the pharmacy that dispenses our antenatal supplements?
-    answer: >-
-      Yes, with the pharmacy and inventory module, which is included in Enterprise or added to Professional
-      and Premium; Premium alone does not include it. With the module, the pharmacist dispenses from the
-      doctor's prescription and tracks each batch to its expiry date.
-  - question: Does Easy Clinic work without an internet connection?
-    answer: >-
-      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so the
-      clinic needs a working line while it sees patients. A self-hosted option also exists, where the system
-      runs on the clinic's own server rather than in Easy Clinic's cloud.
-  - question: Is there a free trial?
-    answer: >-
-      No, Easy Clinic does not offer a free trial. You can book a demo where we show the system on your own
-      clinic's patient flow, and if you want to test it on real patients, pay for one quarter; there is no
-      contract to break if you stop.
+  - question: "What is the best EMR software for gynaecology clinics?"
+    answer: "The best EMR software for gynaecology clinics should support pregnancy tracking, ultrasound reports, hormonal history, and long-term patient care. Easy Clinic is designed to manage the complete workflow of gynaecology clinics."
+  - question: "Does Easy Clinic support AI EMR for gynaecology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic track pregnancy and antenatal care?"
+    answer: "Yes. Easy Clinic allows clinics to manage pregnancy records, antenatal visits, and follow-ups."
+  - question: "Does Easy Clinic store ultrasound and diagnostic reports?"
+    answer: "Yes. Clinics can store ultrasound reports and other diagnostic records in patient files."
+  - question: "Can Easy Clinic track menstrual and hormonal history?"
+    answer: "Yes. Easy Clinic supports detailed patient history, including menstrual cycles and hormonal treatments."
+  - question: "Does Easy Clinic support fertility and treatment tracking?"
+    answer: "Yes. Clinics can manage fertility treatments and follow-up plans."
+  - question: "Does Easy Clinic support billing for gynaecology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Can multiple gynaecologists use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, treatments, and revenue."
 
 links:
   hub: /specialties/
-  relatedHeading: Where OB-GYN clinic owners go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/polyclinic/
-      label: Polyclinic software
-      description: >-
-        For a women's clinic with several doctors: one patient record for every specialist, and one calendar
-        for doctors and shared rooms.
     - href: /ivf-emr/
-      label: IVF and fertility clinics
-      description: For a clinic that also runs IVF cycles, with each cycle on one record from stimulation to embryo transfer.
-    - href: /solutions/hospital-opd/
-      label: Hospital OPD and nursing homes
-      description: For a maternity nursing home that runs Easy Clinic in the OPD, beside the inpatient system on the ward.
-    - href: /emr-software-in-india/
-      label: Clinic management software in India
-      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
-    - href: /emr-software-in-kenya/
-      label: Clinic software in Kenya
-      description: Easy Clinic for clinics in Kenya, where Penda Health's EMR has been Easy Clinic since 2017.
-    - href: /features/emr/
-      label: The EMR and e-prescriptions
-      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
-    - href: /pricing/
-      label: Easy Clinic pricing
-      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
-
+      label: IVF clinic software
+      description: For the fertility clinic that tracks each cycle from stimulation to transfer.
+      icon: calendar-clock
+    - href: /pediatric-emr/
+      label: Paediatric EMR
+      description: 'For the children''s clinic with growth charts and a vaccine schedule by age.'
+      icon: baby
+    - href: /endocrinology-emr-software/
+      label: Endocrinology EMR
+      description: For the endocrinologist who follows thyroid, PCOS and bone patients.
+      icon: chart-line
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+    - href: /pathology-emr/
+      label: Pathology EMR
+      description: For the pathology lab, from the test order to the report on the chart.
+      icon: file-check
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: 'For the family doctor who keeps each family member''s care on their own record.'
+      icon: heart-handshake
 closing:
   heading: See a pregnancy record and an antenatal package on Easy Clinic
   body: >-
@@ -325,6 +657,18 @@ editorialPass:
     dating scan.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - >-
     Grounding: pregnancy tracking (gestational age, trimester progress, fetal growth parameters and due
     dates); gynaecological charting templates for Pap smears, pelvic exams and breast exams; menstrual cycles
@@ -432,3 +776,4 @@ notes:
     clinics of every kind" (unsourced); the Cura AI row follows the /ai/ wording (drafts the note in the
     chart, the doctor corrects and confirms it); the day 3 training step no longer describes a format the
     source does not give.
+  - 'Section the-antenatal-visit (An antenatal visit, from the desk to the bill) added 2026-11-05 after the Built around section. Grounding: fixed-time appointments and walk-ins on one calendar from /features/appointment-scheduling/ and the published allergy page, and booking the follow-up before she leaves from this page''s fourth pain fix; nurse or clinical assistant intake from the published neurology and paediatric pages, with the reception login rule from this page''s access FAQ; automated reminders by SMS and email or WhatsApp on Premium from the fourth pain fix; pharmacy and inventory module from this page''s pharmacy FAQ; part and advance payments, refunds and invoice voiding with authorisation and receipts and invoices on WhatsApp from this page''s grounding note, with plan placement as on /features/billing/. The delivery is not mentioned, as the delivery FAQ keeps it on the inpatient system.'

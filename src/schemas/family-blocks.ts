@@ -79,7 +79,8 @@ const SOLUTION: Blocks = [...CORE, 'dayTimeline', 'rolesMatrix', 'regulatorStrip
 const HUB: Blocks = ['hubGrid', 'demoForm', 'journeyDiagram', 'moduleGrid', 'prose', 'proofBlock', 'testimonialRow', 'planMatrix', 'dataTable', 'personaRouter', 'featureRows', 'inlineCta', 'postIndex', 'splitContent'];
 const AI: Blocks = [...CORE, 'studyCard', 'regulatorStrip', 'splitContent', 'capabilityList'];
 const TRUST: Blocks = [...CORE, 'regulatorTable', 'regulatorStrip', 'studyCard', 'integrationDirectory', 'demoForm'];
-const SPECIALTY: Blocks = [...CORE, 'dayTimeline'];
+// splitContent: the EMR feature section from /features/ (owner request 2026-11-05, specialty pages).
+const SPECIALTY: Blocks = [...CORE, 'dayTimeline', 'splitContent'];
 const COMPARISON: Blocks = ['comparisonTable', 'decisionMatrix', 'vendorList', 'sourceList', 'prose', 'painBlocks', 'stepList', 'dataTable', 'scopeBox', 'proofBlock', 'testimonialRow', 'inlineCta', 'featureRows'];
 const CUSTOMERS: Blocks = ['testimonialGrid', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'contentCards'];
 /** MDX families: no block with media, because a relative image path would differ from the YAML pages'. */

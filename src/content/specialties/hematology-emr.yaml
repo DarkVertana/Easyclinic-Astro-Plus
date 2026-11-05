@@ -1,0 +1,663 @@
+# /hematology-emr/ (spec 5.15 SpecialtyPage template). Slug kept from the live site; copy uses the British
+# "haematology". No spec 4.3 keyword row and no spec 5.15 must-have row exist for haematology. The live page
+# redirects in a loop (checked 2026-11-05), so grounding is the repo only: plans.yaml, facts.yaml, the
+# published /features/lab/, /features/emr/ and /features/telemedicine/ pages, the capabilities every published
+# specialty page states, and the CBC screenshot already used on the solution pages. No haematology template
+# names, analyser connections, transfusion or chelation modules, or outcomes.
+status: published
+headKeyword: haematology EMR software
+secondaryKeywords:
+  - hematology EMR
+  - haematology clinic software
+  - EMR for haematologists
+title: 'Haematology EMR Software: Easy Clinic'
+metaDescription: >-
+  Haematology EMR software: blood counts charted visit by visit, and outside lab reports on the same
+  record. Premium is {price:inr.premium.annual} a doctor a month.
+h1: "Streamline Your Haematology Practice with Easy Clinic’s EMR"
+linkLabel: Haematology
+eyebrow: For haematology clinics
+openingAnswer: "Keep blood counts, lab reports and treatment plans on one record with Easy Clinic, designed for haematology clinics. From appointment scheduling and patient records to blood count trends and follow-up reviews, our Haematology EMR keeps every visit organised, so you can focus on your patients."
+summary: >-
+  Blood count values charted across visits on the patient's record, outside lab reports in the same file,
+  and follow-ups with reminders, on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a haematology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic haematology page and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-haematology-clinic-loses-track
+      heading: Where a haematology clinic loses track
+      intro: >-
+        Haematology patients come back for years, often every few weeks, and almost every visit<br class="hidden md:inline">
+        turns on a number. Most of what goes missing is the run of those numbers between visits.
+      items:
+        - heading: Eight blood counts, on eight sheets of paper
+          body: >-
+            A patient with thalassaemia brings a file of blood counts from three labs. To see whether the
+            haemoglobin has held since the last change, you lay the sheets out on the desk and read the
+            values across them while the patient waits.
+          fix: >-
+            On Premium, lab reports come into the chart and the values are drawn as a trend across visits,
+            so the haemoglobin reads as one line. A report from an outside lab is uploaded to the same
+            record as a file.
+        - heading: The abnormal value is on page two
+          body: >-
+            The platelet count that needs a call today sits halfway down a printed report, among values
+            that are normal. It is found at the follow-up, not on the day the result came back.
+          fix: >-
+            When the result comes into the patient's record, abnormal values are flagged on the chart the
+            doctor already has open, as the lab page describes.
+        - heading: The next count is due, and nobody has booked it
+          body: >-
+            "Repeat CBC in four weeks" is written at the foot of the prescription. The patient feels well,
+            forgets the date, and comes back pale two months later.
+          fix: >-
+            The follow-up is set in the note before the patient leaves, and the patient gets an automated
+            reminder: by SMS and email on every plan, and on WhatsApp on Premium.
+        - heading: The day-care chair is booked twice
+          body: >-
+            Two haematologists each send a patient for an infusion at the same hour, and the clinic has one
+            day-care chair and one nurse to run it. The clash shows up when both patients arrive.
+          fix: >-
+            Equipment and assistants are booked inside the appointment slot, and the multi-resource
+            calendar shows the desk that the chair is already taken at that hour.
+
+  - discriminant: featureRows
+    value:
+      id: haematology-chart
+      heading: Built around the haematology chart
+      intro: >-
+        What a haematologist reopens at every review, kept on one patient record. Premium, the plan for
+        specialists, includes everything below.
+      layout: grid
+      items:
+        - heading: Blood counts as trend charts
+          icon: chart-line
+          body: >-
+            On Premium, lab reports come into the patient's chart, and each value of a Complete Blood
+            Count, haemoglobin, red cell count, MCV and the rest, can be drawn as a chart across the
+            results on file. The trend is one look instead of a pile of reports.
+          bullets:
+            - On Premium, lab reports come into the patient's chart
+            - Haemoglobin, red cell count and MCV charted across results
+        - heading: Outside lab reports in the same file
+          icon: file-text
+          body: >-
+            Many patients have their counts done at a lab near home. Those reports, and bone marrow,
+            imaging and other diagnostic reports, are uploaded to the patient's record as documents or
+            images, so they sit beside the visits and the results from your own lab.
+          bullets:
+            - Counts from a lab near home uploaded to the record
+            - Bone marrow and imaging reports beside your own results
+        - heading: The history on the facesheet
+          icon: file-heart
+          body: >-
+            The intake form records chronic illnesses, family history, social history and substance use,
+            with as much detail as the clinic wants. What it records shows on the patient's facesheet, with
+            the allergies and past procedures, and an auto-generated summary of the last visit puts the key
+            data on one screen before each review.
+          bullets:
+            - Allergies and past procedures shown on the facesheet
+            - A last visit summary on one screen before each review
+        - heading: A drug interaction check when you prescribe
+          icon: pill
+          body: >-
+            A haematology patient is often on several long-term medicines, and the dose changes at many
+            reviews. Easy Clinic's EMR includes a drug interaction check on the prescription.
+          bullets:
+            - A drug interaction check on the prescription
+            - Several long-term medicines, with doses changed at reviews
+        - heading: Your own forms for the sheets you keep on paper
+          icon: layout-template
+          body: >-
+            If the clinic keeps a paper sheet for a long-running course, a transfusion record for example,
+            the form builder on Premium turns it into a digital form in your own layout, and the
+            customisation carries no charge.
+          bullets:
+            - A paper transfusion record turned into a digital form
+            - Form builder on Premium, with no charge to customise
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the haematologist to
+            review.
+          bullets:
+            - Cura AI is included in every plan
+            - The haematologist reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: review-visit
+      heading: A haematology review, from the sample to the bill
+      intro: >-
+        How a review visit runs on Easy Clinic in a clinic or a hospital OPD. We have not timed these steps
+        in a haematology clinic, so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The sample, in your own lab or an outside one
+          icon: flask-conical
+          body: >-
+            If the clinic runs its own lab, the test is ordered from the chart and the sample is tracked by
+            barcode or QR code to the result. That is lab management, which comes with Enterprise or as an
+            add-on on Professional and Premium. A count from an outside lab is uploaded to the record.
+          link:
+            label: Read how lab management works
+            href: /features/lab/
+        - heading: The nurse records the vitals first
+          icon: activity
+          body: >-
+            A nurse or clinical assistant does the intake before the consult. Each person logs in as
+            themselves, and the role on that login decides which screens they can open; the reception
+            login included in the price cannot open the EMR or issue a prescription.
+        - heading: The consult, by point and click
+          icon: notebook-pen
+          body: >-
+            The haematologist opens the record with the latest count already charted. Notes, diagnosis,
+            medications, investigations, referrals and follow-ups are picked with auto-complete instead of
+            typed out, and the follow-up date is set before the patient leaves.
+        - heading: The prescription goes home on paper or on WhatsApp
+          icon: pill
+          body: >-
+            The prescription is printed for the patient or, on Premium, sent on WhatsApp, and on Premium
+            the lab report can go to the patient's phone the same way.
+        - heading: A course of treatment billed as a package
+          icon: receipt
+          plan: premium
+          body: >-
+            On Premium, a course of care the clinic sells as a package is billed as one package treatment
+            and paid in parts. Each advance and part payment is recorded against it, and a refund or a
+            voided invoice goes through only with authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Reviews by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a review where the patient has had the count done near home can be a video consult,
+            booked through the appointment screen with the fee paid online. The prescription carries a line
+            saying the consult was held remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Quick Prescriptions: Create and Share in 30 Seconds
+        Effortlessly generate detailed prescriptions in just 30 seconds and share them instantly through print, WhatsApp, SMS, or email, available in any language.
+
+        ### Personalized Haematology EMR for Specialists
+        Specifically crafted to match your specialty, workflow, and preferences, ensuring a seamless and efficient experience.
+
+        ### AI-Powered Efficiency
+        Simplify your documentation and save time with an AI-driven assistant, enabling you to complete prescriptions in just three clicks.
+
+        ### Visual Health Insights
+        Easily track specific vitals, lab results, and clinical parameters through intuitive charts and graphs to enhance patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently highlight key patient information.
+
+        ### Simplified Point-and-Click Interface
+        Easily document chief complaints, medical history, vitals, and more with a user-friendly interface. Enjoy features like custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all accessible without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Haematology Intake Forms
+        Collect detailed or concise medical histories tailored to your requirements, including chronic illnesses, family and social history, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient's face sheet for easy access during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Purpose-Built Design: Tailored for Haematology Clinics
+        Specifically crafted to address the distinct needs of specialists, super-specialists, and haematology clinic chains.
+
+        ### AI-Driven Diagnostic Support
+        Harness advanced AI for accurate differential diagnoses and real-time alerts on adverse drug events, designed specifically for haematology patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Get a clear, longitudinal view of complete patient visit history on a single screen, enhancing efficiency and optimizing care delivery.
+
+        ### Instant Access to Essential Resources
+        Quickly retrieve commonly used haematology medications, investigations, and clinical tools such as guidelines, checklists, and reminders to enhance care efficiency.
+
+        ### Seamless Care Team Collaboration
+        Facilitates smooth communication and coordination among nurses, haematologists, and healthcare providers, ensuring complete and efficient patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Haematologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Haematology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Haematologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Haematology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Haematology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Haematology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Haematology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Haematology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Haematology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: Which Easy Clinic plan does a haematology clinic need, and what does it cost?
+    answer: >-
+      Premium, because lab reports in the chart come with it: {price:inr.premium.annual} per doctor per month
+      billed annually in India or {price:inr.premium.quarterly} billed quarterly, and
+      {price:usd.premium.annual} or {price:usd.premium.quarterly} in US dollars. Professional, at
+      {price:inr.professional.annual} or {price:usd.professional.annual}, has the EMR and billing but not lab
+      reports in the chart. Both include a reception login, with no setup fee and no binding contract.
+  - question: Can I see a patient's haemoglobin across visits on one chart?
+    answer: >-
+      Yes, on Premium: lab reports come into the chart, and each value of a blood count can be drawn as a
+      trend across the results on file, with abnormal values flagged. A report from an outside lab can be
+      uploaded to the patient's file as well.
+  - question: We run our own lab. Does Easy Clinic manage it?
+    answer: >-
+      Yes, with lab management: tests are ordered from the chart, samples are tracked by barcode or QR code,
+      and the result comes back into the patient's record. Lab management comes with Enterprise or as an
+      add-on on Professional and Premium.
+  - question: Can Easy Clinic connect to our haematology analyser?
+    answer: >-
+      Not out of the box: a connection to a lab analyser is integration work, scoped for your machines as a
+      project. It comes with Enterprise or as an add-on on Professional and Premium, and which analysers can
+      be connected is worked out in that scoping.
+  - question: How do patients on long-term follow-up get reminded to come back?
+    answer: >-
+      The haematologist sets the follow-up in the note, and the patient gets an automated reminder by SMS
+      and email on every plan, or by WhatsApp on Premium. Every visit and every result stays on the same
+      record, so the history since the first consult is on one screen.
+  - question: Does Easy Clinic run the pharmacy and the stock at our centre?
+    answer: >-
+      Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
+      Professional and Premium as a module. With the module, the pharmacist dispenses from the doctor's
+      prescription and tracks each batch to its expiry date.
+  - question: Does Easy Clinic work without an internet connection?
+    answer: >-
+      No, Easy Clinic does not run fully offline today: the cloud version needs an internet connection, so
+      the clinic needs a working line while it sees patients. A self-hosted option also exists, where the
+      system runs on the clinic's own server rather than in Easy Clinic's cloud.
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /oncology-emr/
+      label: Oncology EMR
+      description: For the oncology clinic that records treatment cycles and blood counts.
+      icon: file-heart
+    - href: /pathology-emr/
+      label: Pathology EMR
+      description: For the pathology lab, from the test order to the report on the chart.
+      icon: file-check
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+    - href: /immunology-emr/
+      label: Immunology EMR
+      description: For the immunologist who follows autoimmune disease and immunodeficiency.
+      icon: shield-check
+    - href: /rheumatology-emr/
+      label: Rheumatology EMR
+      description: For the rheumatology clinic with long-term reviews and lab trends.
+      icon: history
+    - href: /gastroenterology-emr/
+      label: Gastroenterology EMR
+      description: For the GI clinic with endoscopy reports beside each review.
+      icon: file-text
+closing:
+  heading: See a haematology review on Easy Clinic
+  body: >-
+    Book a demo and ask to see a blood count charted across visits and an outside lab report on the same
+    record, or compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a haematology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    A haematologist customer since 2008, the CBC trend from Easy Clinic's own screens, and
+    the plan split a haematology centre actually meets (lab reports in the chart on Premium, its own lab and
+    pharmacy on Enterprise or as modules) come from Easy Clinic's data, not from a generic EMR page.
+  readsMachineWritten: >-
+    The four pains are composites rather than a named clinic's day, the page names no haematology template
+    because the live page could not be read, and a haematologist will notice that transfusion records,
+    chelation and anticoagulation tracking are not described as built-in screens.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers". The live page has no FAQs to copy (it loops on redirects), so the FAQs written for this page stay.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section (the live page loops, so the points follow the allergy page''s wording); AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section (the live page loops, so the points follow the allergy page''s wording); over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right (the live page loops, so it uses the allergy page''s wording).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section (the live page loops, so the points follow the allergy page''s wording); AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section (the live page loops, so the points follow the allergy page''s wording); the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section (the live page loops, so the points follow the allergy page''s wording); video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section (the live page loops, so the points follow the allergy page''s wording); the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section (the live page loops, so the points follow the allergy page''s wording); claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: the live /hematology-emr/ redirects in a loop (fetched 2026-11-05: "too many redirects"; the old redirects.yaml also noted it), so no capability is taken from it. Every statement comes from the repo: plans.yaml (lab reports in the chart, specialty templates, own forms, package treatments, video, online payments and WhatsApp on Premium; lab management, pharmacy and inventory, and integrations on Enterprise or as add-ons); /features/lab/ (results into the record with abnormal values flagged, lab values charted, outside reports uploaded as files, barcode or QR sample tracking, analyser connections only as scoped integration work); and the capabilities every published specialty page states from its own live page (image and document upload, intake form and facesheet, auto-generated summary, drug interaction check, point-and-click entry with auto-complete, nurse intake, role-based access, automated follow-up reminders, resource booking in the slot and the multi-resource calendar, package amortisation with authorised refunds, telemedicine with the remote-consult line). The per-value CBC chart is what the hero screenshot (12_Investigation_2.png) and 2_EMR.png show, with the alt text already used on the features hub.'
+  - 'Testimonial: prantar-chakrabarti (role Haematologist) is the only haematologist in src/data/testimonials, but it is placed on /solutions/hospital-opd/ (spec 5.8 item 7), and the registry''s testimonial-reuse rule fails a second published page that carries it. So the proof block is the Capterra and Google badges, and its intro paraphrases his pullQuote without the name and links to /solutions/hospital-opd/, as /features/reports-and-dashboards/ does for the same quote. If the owner clears him for two pages (add the id to sharedTestimonials in src/lib/content/registry.ts, as for tl-prabhu), replace the badges with a single testimonialRow. Review counts are null in facts.yaml, so the badges show no count.'
+  - 'Dropped: everything on the looping live page, unread. Not claimed for lack of a source: haematology templates by name or count, a transfusion log or chelation tracker as a built-in screen (the transfusion record is offered only as an example of a clinic''s own form on the Premium form builder), anticoagulation or INR tracking, bone marrow report formats, analyser makes or protocols, a timed visit, and any outcome or time saving. The day-care chair pain uses the generic resource booking stated on every live specialty page.'
+  - 'Facts needed (company to-do for spec 5.15): (1) restore or rebuild the live haematology page source so the page can be grounded on Easy Clinic''s own haematology statements; (2) haematology templates and forms, named and counted, and on which plan; (3) whether transfusion episodes, chelation therapy or INR results can be recorded as structured data and charted; (4) analyser and LIS connections with status; (5) which haematology note types Cura AI drafts, with an example; (6) a timed walkthrough of a thalassaemia or anaemia review; (7) whether nurses and lab technicians need a paid login under per-doctor pricing; (8) the plan placement of vitals charts, intake form, resource booking and the drug interaction check (rows without a plan tag; the featureRows intro says only that Premium includes every row).'
+  - 'Related links: the draft post /haematology-clinic-management-software/ is left out of links.related because a draft link renders as plain text in production; add it when it publishes. /solutions/hospital-opd/ and /solutions/polyclinic/ fit the usual practice size (spec 2.9); only one country page is linked, because a second country page with a confirmed haematology client is not known.'
+  - 'Title 37 characters. Meta description about 150 characters with the token resolved. H1 uses the spec 5.15 item 1 pattern with one named object. The four pains are illustrative situations, not customers; "eight", "three labs", "four weeks" and "two months" are examples.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person on it and no measured number.

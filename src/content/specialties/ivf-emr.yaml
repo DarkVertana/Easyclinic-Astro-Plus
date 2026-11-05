@@ -10,14 +10,10 @@ title: 'IVF Clinic Management Software: Easy Clinic'
 metaDescription: >-
   IVF clinic management software: each cycle tracked from stimulation to embryo transfer and billed as one
   package, on Premium at {price:inr.premium.annual} per doctor a month.
-h1: Software for IVF and fertility clinics
+h1: "Simplified IVF Management with Easy Clinic"
 linkLabel: IVF and fertility
 eyebrow: For IVF and fertility clinics
-openingAnswer: >-
-  Easy Clinic keeps an IVF patient's cycle on one record, from the stimulation protocol to embryo transfer,
-  with every dose adjustment recorded against the medication. Premium bills the cycle as one package paid
-  in parts, at {price:inr.premium.annual} per doctor per month in India or {price:usd.premium.annual},
-  billed annually.
+openingAnswer: "Effortlessly manage patient data, treatment cycles, and progress with Easy Clinic’s intuitive IVF EMR Software. Streamline workflows, enhance patient care, and ensure seamless coordination across your clinic with customizable tools designed to meet your specific needs."
 summary: >-
   Each IVF cycle on one record, from stimulation to embryo transfer, and the treatment billed as one
   package paid in parts on the Premium plan.
@@ -28,8 +24,8 @@ heroStrip:
   study: false
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/pipeline.webp'
-  alt: 'A lead pipeline board for a fertility clinic, with enquiries moving from consult and assessment to proposal, won or lost'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -46,8 +42,8 @@ sections:
       id: where-ivf-clinics-lose-time
       heading: Where an IVF clinic loses track
       intro: >-
-        A fertility centre runs on dates, and most of what goes wrong happens between visits, when the
-        record of one cycle is split between the nurses' station and the lab.
+        A fertility centre runs on dates, and most of what goes wrong happens between visits,<br class="hidden md:inline">
+        when the record of one cycle is split between the nurses' station and the lab.
       items:
         - heading: The stimulation sheet lives on paper
           body: >-
@@ -59,8 +55,6 @@ sections:
             The stimulation protocol and each follicle-tracking visit sit on the patient's record, with every
             dose change beside them, through to egg retrieval and embryo transfer. The doctor opens one screen
             before the patient sits down.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: The embryology lab keeps its own book
           body: >-
             The embryologist writes up the retrieval and what became of each egg in the lab's register.
@@ -79,8 +73,6 @@ sections:
             On Premium the cycle is billed as one package treatment, and every part payment and advance is
             recorded against it. The front desk sees the balance on the bill, and a refund goes through only
             with authorisation.
-          href: /pricing/
-          linkLabel: See what Premium includes
 
   - discriminant: featureRows
     value:
@@ -88,8 +80,10 @@ sections:
       heading: Built around the IVF cycle
       intro: >-
         Package billing and lab reports in the chart come with Premium, Easy Clinic's plan for specialists.
+      layout: grid
       items:
         - heading: Cycle tracking, from stimulation to embryo transfer
+          icon: activity
           body: >-
             Record the stimulation protocol and track follicular development visit by visit, up to the
             milestones of egg retrieval and embryo transfer on the same record. Medications such as
@@ -98,9 +92,8 @@ sections:
           bullets:
             - Stimulation protocol and follicle tracking
             - Egg retrieval and embryo transfer as milestones
-            - Each dose adjustment recorded with the medication
-            - Hormone levels kept on the record beside each dose change
         - heading: Embryology and lab records in Easy Clinic
+          icon: flask-conical
           body: >-
             Embryo-related data and the lab's records are stored and managed in Easy Clinic, the system the
             doctor writes the chart in, so the embryology work is there when the couple come back for their
@@ -109,129 +102,499 @@ sections:
           bullets:
             - Embryo-related data and lab records in one system
             - Ultrasound and diagnostic reports uploaded to the record
-            - Case notes shared across the care team
-            - A role on every login that decides who sees what
         - heading: Package billing, paid in parts
-          plan: premium
+          icon: wallet
           body: >-
             On Premium an IVF cycle is billed as one package treatment, and the payment is spread over the
             course of the treatment. Part payments and advances are recorded against the package, and a
             refund or a voided invoice goes through only with authorisation.
           bullets:
             - Part payments and advances recorded against the package
-            - Refunds and discounts only with authorisation
-            - Taxable and non-taxable items kept apart on the bill
-            - Receipts and invoices sent to the patient on WhatsApp
+            - Refunds and voided invoices only with authorisation
         - heading: Lab reports in the chart
-          plan: premium
+          icon: chart-line
           body: >-
             On Premium, lab reports come into the patient's chart and the values can be charted visit by
             visit, so the hormone trend is on one screen when the doctor changes a dose. Full lab management,
             with orders from the chart and sample tracking, comes with Enterprise or as a module added to
             Professional or Premium.
+          bullets:
+            - Hormone values charted visit by visit on Premium
+            - Full lab management with Enterprise or as a module
         - heading: Cura AI drafts the note
-          plan: professional
+          icon: sparkles
           body: >-
             Cura AI (documentation) comes with every plan. It drafts the note for the doctor to review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: between-the-scans
+      heading: An IVF cycle, from the booking to the dispensary
+      intro: >-
+        Through a cycle the patient comes back every few days, so much of the clinic's work is booking the
+        next visit and keeping the patient to the dates.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: Scan visits on the same calendar as consultations
+          icon: calendar-clock
+          body: >-
+            Fixed-time appointments and walk-ins sit on one calendar, and several visits can be booked in one
+            go. The waiting room view shows the queue and how long each patient has waited.
           link:
-            label: Read what Cura AI does
-            href: /ai/
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: A reminder before the next visit
+          icon: bell-ring
+          body: >-
+            The next visit date goes in the note, and the patient gets an automated reminder for it, by SMS
+            or email on every plan and by WhatsApp on Premium. Reminders go out automatically, days or hours
+            before the visit, at the times the clinic sets.
+          link:
+            label: Read how WhatsApp reminders work
+            href: /features/whatsapp/
+        - heading: Consultations billed at the desk
+          icon: receipt
+          body: >-
+            A consultation or a test that is not part of a package is billed at the desk from the clinic's
+            service list, with taxable and non-taxable items kept apart. A discount goes through only with
+            authorisation, and the receipt goes to the patient by SMS or email, or on WhatsApp with Premium.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Video reviews
+          icon: video
+          body: >-
+            On Premium a review can be a video consultation booked through the appointment screen, with the
+            fee collected online at booking. It suits a review of a report, and the prescription reaches the
+            patient by WhatsApp, SMS or email with a note that the consultation was remote.
+          link:
+            label: Read how teleconsultations work
+            href: /features/telemedicine/
+        - heading: Medicines dispensed from the prescription
+          icon: pill
+          body: >-
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and
+            Premium, the pharmacist dispenses from the doctor's prescription. Each batch is tracked to its
+            expiry date.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Create and Share in 30 Seconds
+        Generate detailed prescriptions in just 30 seconds and instantly share them via print, WhatsApp, SMS, or email, available in any language for seamless communication.
+
+        ### Custom-Tailored IVF EMR for Specialists
+        Designed to match the unique needs of IVF specialists, with flexible workflows and personalized features to ensure a smooth, efficient experience.
+
+        ### AI-Driven Efficiency
+        Simplify your documentation process and save time with an AI-powered assistant that generates prescriptions in just three clicks.
+
+        ### Cycle Management
+        Monitor stimulation protocols, track follicular development, and manage key milestones like egg retrieval and embryo transfer.
+
+        ### Hormonal Treatment Tracking
+        Record medications like gonadotropins, agonists, or antagonists, with dose adjustments.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters for better patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets, intelligently presenting key patient data.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more using a user-friendly interface. Features custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for IVF Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Built for IVF Specialists
+        Customized to meet the unique needs of specialists, super-specialists, and IVF clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Use intelligent AI for differential diagnoses and alerts on adverse drug events, tailored for patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, IVF specialists, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
 
   - discriminant: testimonialRow
     value:
-      id: fertility-clinic-hyderabad
-      heading: A fertility clinic in Hyderabad, on Easy Clinic since 2012
-      intro: >-
-        Dr Seetha Lakshmi Kolanakuduru is a doctor at Aditya Women and Infertility Clinic in Hyderabad, an
-        obstetrics and fertility clinic that has used Easy Clinic since 2012.
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
       items:
-        - seetha-lakshmi-kolanakuduru
-      layout: single
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
 
-  - discriminant: stepList
+  - discriminant: splitContent
     value:
-      id: learning-path
-      heading: '{fact:trainingDays} days of training, about two hours in all'
-      intro: >-
-        Training is a personalised programme for the doctors and the clinic staff who will use Easy Clinic,
-        in short sessions spread over {fact:trainingDays} days, so the clinic keeps seeing patients while
-        you learn.
-      steps:
-        - title: Basic training
-          meta: Day 1, 40 minutes
-          body: >-
-            Doctors and the front desk learn the screens they each use every day: the appointment book and
-            the bill at the desk, the chart and the prescription in the consulting room.
-        - title: EMR scenario training
-          meta: Day 2, 40 minutes
-          body: >-
-            You work through the chart and the prescription on the kinds of cases your clinic sees.
-        - title: Practice exercises
-          meta: Day 3, 20 minutes
-          body: You repeat what the first two sessions covered, so the first real patient is not your first attempt.
-        - title: Road to expertise
-          meta: Day 4, 20 minutes
-          body: The last session moves you from the basics to the shortcuts that make the daily work quicker.
-      note: >-
-        From the demo, a clinic can be live in as little as {fact:goLiveDays} days. That is the quickest
-        case, and yours may take longer.
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
 
-faqHeading: Questions IVF clinic owners ask
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your IVF practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing doctors to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables IVF patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any IVF clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple IVF clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large IVF clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling IVF clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for IVF clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
 faq:
-  - question: Which Easy Clinic plan does an IVF clinic need, and what does it cost?
-    answer: >-
-      Premium, the plan for specialists, because package treatments start on it: {price:inr.premium.annual}
-      per doctor per month billed annually in India or {price:inr.premium.quarterly} billed quarterly, and
-      {price:usd.premium.annual} or {price:usd.premium.quarterly} in US dollars. It also includes the specialty EMR templates and lab
-      reports in the chart. The price includes a reception
-      login, and there is no setup fee.
-  - question: Can Easy Clinic track each stage of an IVF cycle?
-    answer: >-
-      Yes, the cycle sits on the patient's record from the stimulation protocol and follicle tracking
-      through to egg retrieval and embryo transfer, with each dose adjustment recorded against the
-      medication. Hormone levels are kept in the same record, and on Premium you can turn your own paper
-      cycle sheet into a form with the form builder.
-  - question: Where do the embryology records go, and who can see them?
-    answer: >-
-      Embryo-related data and lab records are stored and managed in Easy Clinic, the same system as the
-      doctor's chart, so nobody has to fetch a register from the lab. Each person logs in as themselves and the role on
-      their login decides which screens they can open; the reception login, included in the price, cannot
-      open the EMR or issue a prescription.
-  - question: How are IVF packages billed when the patient pays in instalments?
-    answer: >-
-      On Premium the cycle is billed as one package treatment, and each part payment or advance is recorded
-      against it, so the front desk sees the balance before taking the next payment. The payment can be
-      spread over the course of treatment, and a refund for a cycle cancelled partway goes through only with
-      authorisation.
-  - question: How do scan and lab reports get into the patient's record?
-    answer: >-
-      Ultrasound and other diagnostic reports are uploaded to the patient's record as files, and on Premium
-      lab reports come into the chart. A direct connection to a lab machine is custom integration work: it is
-      included in Enterprise or added to Professional and Premium, and it is scoped per project.
-  - question: Does Easy Clinic run the clinic pharmacy and the stock of lab supplies?
-    answer: >-
-      Yes, but not on Premium alone: pharmacy and inventory are included in Enterprise, or added to
-      Professional and Premium as a module. With the module, the pharmacist dispenses from the doctor's
-      prescription and tracks each batch to its expiry date.
+  - question: "What is the best EMR software for IVF clinics?"
+    answer: "The best EMR software for IVF clinics should support cycle tracking, hormonal monitoring, embryo records, and patient journey management. Easy Clinic is designed to manage the complete workflow of IVF clinics."
+  - question: "Does Easy Clinic support AI EMR for IVF clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic track IVF cycles?"
+    answer: "Yes. Easy Clinic allows clinics to manage and track each stage of the IVF cycle."
+  - question: "Does Easy Clinic support hormonal and fertility tracking?"
+    answer: "Yes. Clinics can monitor hormonal levels and fertility data in patient records."
+  - question: "Can Easy Clinic manage embryo and lab records?"
+    answer: "Yes. Easy Clinic supports storage and management of embryo-related data and lab records."
+  - question: "Does Easy Clinic support patient journey tracking?"
+    answer: "Yes. IVF treatment involves multiple visits, and Easy Clinic allows full tracking of the patient journey."
+  - question: "Does Easy Clinic support billing and package management?"
+    answer: "Yes. Billing, invoicing, and package tracking are included."
+  - question: "Can Easy Clinic manage inventory for medicines and lab supplies?"
+    answer: "Yes. Inventory management is included for medicines and clinic/lab supplies."
+  - question: "Can multiple doctors and staff use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-user access."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient outcomes, procedures, and revenue."
 
 links:
   hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/polyclinic/
-      label: Polyclinic software
-      description: >-
-        For a fertility centre with several doctors: one patient record for every specialist, and one
-        calendar for doctors and shared rooms.
-    - href: /emr-software-in-india/
-      label: Clinic management software in India
-      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
-    - href: /features/emr/
-      label: The EMR and e-prescriptions
-      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
-    - href: /pricing/
-      label: Easy Clinic pricing
-      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
-
+    - href: /obgyn-emr-software/
+      label: OB-GYN EMR
+      description: For the obstetric clinic that follows each pregnancy to the due date.
+      icon: calendar
+    - href: /endocrinology-emr-software/
+      label: Endocrinology EMR
+      description: For the endocrinologist who follows thyroid, PCOS and bone patients.
+      icon: chart-line
+    - href: /urology-emr/
+      label: Urology EMR
+      description: For the urology clinic with procedure logs and imaging reports.
+      icon: database
+    - href: /pathology-emr/
+      label: Pathology EMR
+      description: For the pathology lab, from the test order to the report on the chart.
+      icon: file-check
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+    - href: /sexology-emr/
+      label: Sexology EMR
+      description: For the sexology clinic with private consultations and session notes.
+      icon: lock
 closing:
   heading: See an IVF cycle on Easy Clinic, from stimulation to embryo transfer
   body: >-
@@ -257,6 +620,18 @@ editorialPass:
     general.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section; it replaces the single specialist testimonial that was here, to keep within three testimonials a page.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Grounding: cycle management (stimulation protocols, follicular development, egg retrieval and embryo transfer milestones), hormonal treatment tracking with dose adjustments, embryo and lab record storage, ultrasound and diagnostic report storage, facesheets, vitals and lab charts, role-based access, part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments, discount authorisation and taxable item handling are all stated plainly on the live /ivf-emr/ page (retrieved 2026-09-26). Plan placement follows plans.yaml.'
   - 'Dropped from the live page: the "Easy Clinic vs Other EMR" comparison tables (unsourced competitor cells), "over 100 graphical dashboards", "invoices ready in less than 10 seconds", "prescriptions in 30 seconds" and "three clicks" (unmeasured here), "track success rates", AI diagnostic support and ADR alerts (CuraPilot claims), consent form management, resource booking inside the appointment slot, patient self check-in (plan unclear), and the "14-Day Free Trial, 30-Day Money Back Guarantee" line, which conflicts with /indiademo/ ("Easy Clinic does not offer a free trial"). Settle the trial question.'
   - 'Facts needed for the full spec 5.15 template: which plan carries the IVF cycle and embryology screens (the live page does not tie them to a plan, so the cycle and embryology rows carry no plan tag and the plan FAQ recommends Premium for package treatments only); the IVF templates and forms by name and count; embryology fields (oocyte and embryo grading, cryostorage inventory, witnessing, donor and surrogate records); a timed walkthrough of the most common IVF visit; ultrasound and lab device integrations with status; which IVF note types Cura AI drafts, with an example; consent form handling; whether embryologists and nurses need a paid licence; ART Act 2021 and National ART and Surrogacy Registry reporting (describe only, no status claims until confirmed).'
@@ -266,3 +641,4 @@ notes:
   - '/clinic-management-software-india/ is still a draft; the related link will resolve once it publishes. Spec 2.9 asks for two country pages; add /clinic-management-software-kenya/ or another when a fertility client there is confirmed.'
   - 'Audit 2026-09-27: the cycle-tracking row (no plan tag) had the bullet "Hormone and other lab values charted over time", which implied lab charting on every plan while the Premium row and the section intro tie lab reports in the chart to Premium. The bullet now reads "Hormone levels kept on the record beside each dose change", matching the row body; charting stays only in the Premium "Lab reports in the chart" row.'
   - 'Audit 2026-09-27: the training step note no longer says moving old records from another system adds time to go-live. No source says what slows go-live (the same line was cut on /switch/, /kenyademo/, /indiademo/ and home), and it implied records beyond the patient list are moved; it now uses the /switch/ wording.'
+  - 'Section between-the-scans added 2026-11-05. Grounding: fixed-time appointments and walk-ins on one calendar, several visits booked in one go and the waiting room view (/ent-emr-software/, /allergy-emr-software/, /features/appointment-scheduling/); automated reminders by SMS and email on every plan and by WhatsApp on Premium (/ent-emr-software/, /dermatology-emr-software/, plans.yaml, with the reminder timing from /features/appointment-scheduling/); billing from the service list, taxable item handling and discount authorisation (the live page per the first note, /features/billing/), receipts by SMS or email or on WhatsApp with Premium (/features/billing/); video consultations on Premium with the fee collected online and the remote-consultation note, suited to a review of a report (/allergy-emr-software/, /ent-emr-software/, /features/telemedicine/); dispensing from the prescription with each batch tracked to expiry on Enterprise or as a module (this page''s pharmacy FAQ, /features/pharmacy-and-inventory/). Resource booking inside the slot stays out, as the second note records it was dropped here; package billing and lab reports are left out because the "Built around" section covers them.'

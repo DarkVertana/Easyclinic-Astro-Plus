@@ -1,0 +1,646 @@
+# /sexology-emr/ (spec 5.15 SpecialtyPage; footer specialty list). Live slug kept; the redirect that sent this URL
+# elsewhere was removed when the footer specialties got their own pages (2026-11-05).
+# Grounding: capability statements the live /sexology-emr/ page makes plainly (retrieved 2026-11-05), facts on the
+# reception login, and plans.yaml. Confidentiality wording follows /mental-health/: only what the live pages state,
+# no law or compliance claim.
+status: published
+headKeyword: sexology EMR software
+secondaryKeywords:
+  - sexual health clinic software
+  - sexologist clinic management software
+title: 'Sexology EMR Software: Easy Clinic'
+metaDescription: >-
+  Sexology EMR software: role-based access that keeps the front desk out of the notes, session records, and
+  private video consultations on Premium.
+h1: "Empower Your Sexology Practice with Easy Clinic’s EMR"
+linkLabel: Sexology
+eyebrow: For sexology and sexual health clinics
+openingAnswer: "Efficiently manage patient records, appointments, and billing in one intuitive platform with our EMR. Tailored for sensitive care, Easy Clinic enhances your practice’s productivity and growth—focus on your patients’ well-being, and we’ll simplify your Sexology Practice management."
+summary: >-
+  Clinical notes kept from the reception login, counselling sessions recorded against a treatment plan, and
+  video consultations on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a sexology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic page for sexology clinics and would like to book a demo for our practice.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-sexology-clinics-lose-trust
+      heading: Where a sexology clinic loses a patient's trust
+      intro: >-
+        Many patients take months to book a first appointment with a sexologist, and a single moment that feels exposed can<br class="hidden lg:inline">
+        be the reason they do not come back. These are the moments that happen between the desk and the consulting room.
+      items:
+        - heading: The reason for the visit is written on the file at the desk
+          body: >-
+            The patient's file waits on the reception desk until the doctor calls them in, with the last
+            consultation's notes inside it. Anyone who works the desk, or stands at it, can read why they came.
+          fix: >-
+            Each person logs in as themselves, and the role on that login decides which screens they can open.
+            The reception login included in the price is not allowed into the EMR and cannot issue
+            prescriptions, and audit logs keep a record of what each user did.
+        - heading: The counselling sessions live in a notebook
+          body: >-
+            The doctor prescribes and the counsellor sees the couple every two weeks, writing in her own
+            notebook. At the review, the doctor cannot see what the sessions covered or whether the exercises
+            are helping.
+          fix: >-
+            Session notes and progress go on the patient's record against a treatment plan, and collaborative
+            case notes let the doctor and the counsellor work from the same record.
+        - heading: The patient who will not sit in a waiting room
+          body: >-
+            A patient from a small town will not be seen walking into a sexology clinic, so the follow-up
+            happens on the doctor's personal phone, and the prescription is a photo of the pad.
+          fix: >-
+            On Premium a video consultation is booked from the appointment screen, with the fee paid online at
+            booking. The patient joins from a web browser on a phone or a computer, and the prescription goes
+            to them on WhatsApp or by email, marked as issued after a remote consultation.
+        - heading: A course of sessions paid in cash, tracked from memory
+          body: >-
+            Therapy is agreed as a course of sessions, and the patient pays something at each visit. By the
+            sixth session neither the patient nor the desk is sure what is still owed.
+          fix: >-
+            On Premium the course is billed as one package treatment, and every advance and part payment is
+            recorded against it, so the balance is on the bill before the next session.
+
+  - discriminant: featureRows
+    value:
+      id: sexology-record
+      heading: Built around a private sexology record
+      intro: >-
+        Sexology templates, private video consultations and package billing need Easy Clinic's Premium plan,
+        the plan most specialists choose. Who can open the record is set on every plan.
+      layout: grid
+      items:
+        - heading: Who can open the record
+          icon: lock
+          body: >-
+            Access is set by role and by department, so the front desk and the clinicians each open only the
+            screens their role allows. The reception login is not allowed into the EMR and cannot issue
+            prescriptions, and audit logs and usage history keep a record of what each user did. The EMR also
+            has confidential notes, and the scheduler has confidential appointments.
+          bullets:
+            - Confidential notes and confidential appointments
+            - Audit logs and usage history for each user
+        - heading: Sexology templates
+          icon: layout-template
+          body: >-
+            Premium includes Easy Clinic's specialty templates, with templates for sexual dysfunctions such as
+            erectile dysfunction and vaginismus. A paper intake form or questionnaire your clinic already uses
+            can be rebuilt in the form builder, and your prescription prints in your own layout.
+          bullets:
+            - Templates for erectile dysfunction and vaginismus
+            - Your own paper forms, rebuilt with the form builder
+        - heading: The history, taken once
+          icon: file-heart
+          body: >-
+            The intake form records chronic illnesses, family and social history, substance use and earlier
+            treatments, with as much or as little detail as the clinic wants. What it records goes onto the
+            patient's facesheet, so the patient is not asked the same questions at every visit.
+          bullets:
+            - Substance use and earlier treatments on the facesheet
+            - The patient is not asked the same questions each visit
+        - heading: Counselling sessions and the treatment plan
+          icon: heart-handshake
+          body: >-
+            Each therapy or counselling session is recorded on the patient's record, with progress tracked
+            against the treatment plan, and collaborative case notes let the doctor, the counsellor and the
+            nurse work from the same record. Several sessions can be booked at once.
+          bullets:
+            - Progress tracked against the treatment plan
+            - Doctor, counsellor and nurse work from the same record
+        - heading: Medicines, with an interaction check
+          icon: pill
+          body: >-
+            Prescriptions and the treatment plan are tracked on the record, past records open side by side with
+            today's visit, and the drug interaction check warns of an interaction while the prescription is
+            written.
+          bullets:
+            - Prescriptions tracked with the treatment plan
+            - Past records open side by side with today's visit
+        - heading: Private video consultations
+          icon: video
+          body: >-
+            On Premium a video consultation is booked from the appointment screen beside visits in person, and
+            the fee can be paid online at booking. Easy Clinic has video and chat built in, so the patient joins
+            from a web browser with nothing to install.
+          bullets:
+            - The fee can be paid online at booking on Premium
+            - The patient joins from a web browser with nothing to install
+        - heading: A course of sessions, billed as one package
+          icon: wallet
+          body: >-
+            On Premium a course of therapy is billed as one package treatment, with the payment spread over the
+            course and each advance and part payment recorded against it.
+          bullets:
+            - Payment spread over the course of therapy
+            - Each advance and part payment recorded against it
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) comes with every plan. It drafts the note for the doctor to review.
+          bullets:
+            - Cura AI comes with every plan
+            - The doctor reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: first-consultation
+      heading: A first consultation, from the booking to the bill
+      intro: >-
+        How a first visit runs on Easy Clinic, with the reception kept to the booking and the bill. We have not
+        timed these steps in a sexology clinic, so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The booking
+          icon: calendar-clock
+          body: >-
+            The patient books by phone or walks in, and the receptionist sees the appointment and the bill on a
+            login that cannot open the medical record. Automated reminders go by SMS and email on every plan,
+            and by WhatsApp on Premium.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The history
+          icon: notebook-pen
+          body: >-
+            The doctor takes the history on the intake form in the consulting room, and what it records goes
+            onto the facesheet for the next visit.
+        - heading: The consultation and the plan
+          icon: file-text
+          body: >-
+            The note, the diagnosis and the prescription are written by point and click, or from a sexology
+            template on Premium, and counselling sessions are booked against the treatment plan.
+        - heading: The bill
+          icon: receipt
+          body: >-
+            The visit is billed in one click, or recorded against the course of sessions on Premium, and the
+            receipt goes to the patient by email, or on WhatsApp on Premium.
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Ready in 30 Seconds
+        Quickly generate detailed prescriptions in under 30 seconds and share them instantly via print, WhatsApp, SMS, or email in any language.
+
+        ### Bespoke Sexology EMR
+        Crafted to align with your specific specialty, workflow, and preferences, offering a seamless and efficient experience for sexologists.
+
+        ### AI-Enhanced Efficiency
+        Streamline your documentation and save time with an AI-powered assistant, allowing you to complete prescriptions in just three clicks.
+
+        ### Clinical Documentation
+        Specialty-specific templates for sexual dysfunctions (e.g., erectile dysfunction, vaginismus).
+
+        ### Visual Health Insights
+        Easily visualize specific vitals, lab reports, and clinical parameters through intuitive charts and graphs, enhancing patient care and decision-making.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently organize and present key patient data for efficient care in sexology.
+
+        ### Simplified Point-and-Click Interface
+        Quickly record chief complaints, medical history, vitals, and more with an intuitive, user-friendly interface. Access custom examination forms, auto-complete notes, diagnoses, medications, investigations, referrals, follow-ups, and patient guidelines, designed for fast, easy access without the hassle of lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Sexology Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obstetric-gynecological details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient's face sheet for easy reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Sexologists
+        Custom-built to meet the unique needs of sexologists, super-specialists, and multi-location sexology clinic chains, ensuring a seamless and efficient practice management experience.
+
+        ### AI-Driven Diagnostic Support
+        Utilize advanced AI for accurate differential diagnoses and real-time alerts on adverse drug events, specifically designed for patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Digitize Paper Forms with Ease
+        Effortlessly transform your paper forms into digital templates using our flexible and user-friendly builder, designed to streamline your workflow.
+
+        ### Complete Patient Data at a Glance
+        Access a complete patient visit history on a single screen, enhancing efficiency and simplifying care for sexologists.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders to streamline patient care.
+
+        ### Effortless Care Team Collaboration
+        Enhance coordination and communication among nurses, sexologists, and other healthcare providers to deliver whole-person and complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Sexologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks.Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Sexology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Sexologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Sexology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Sexology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Sexology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Sexology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Sexology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Sexology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for sexology clinics?"
+    answer: "The best EMR software for sexology clinics should support confidential records, therapy tracking, and long-term patient care. Easy Clinic is designed to manage the complete workflow of sexology clinics."
+  - question: "Does Easy Clinic support AI EMR for sexology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors document consultations faster and reduce manual work."
+  - question: "Is patient data secure in Easy Clinic?"
+    answer: "Yes. Easy Clinic ensures secure handling of sensitive and confidential patient records."
+  - question: "Can Easy Clinic track therapy and counselling sessions?"
+    answer: "Yes. Clinics can maintain detailed session records and patient progress."
+  - question: "Does Easy Clinic support medication tracking?"
+    answer: "Yes. Doctors can manage prescriptions and treatment plans easily."
+  - question: "Does Easy Clinic support teleconsultation for private consultations?"
+    answer: "Yes. Easy Clinic includes teleconsultation features for confidential remote sessions."
+  - question: "Does Easy Clinic support appointment scheduling?"
+    answer: "Yes. Clinics can manage patient appointments and therapy sessions efficiently."
+  - question: "Does Easy Clinic support billing for sexology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can multiple specialists use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, treatments, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /urology-emr/
+      label: Urology EMR
+      description: For the urology clinic with procedure logs and imaging reports.
+      icon: database
+    - href: /mental-health/
+      label: Mental health EMR
+      description: For psychiatrists and psychologists, with session notes and dose changes.
+      icon: brain
+    - href: /obgyn-emr-software/
+      label: OB-GYN EMR
+      description: For the obstetric clinic that follows each pregnancy to the due date.
+      icon: calendar
+    - href: /ivf-emr/
+      label: IVF clinic software
+      description: For the fertility clinic that tracks each cycle from stimulation to transfer.
+      icon: calendar-clock
+    - href: /endocrinology-emr-software/
+      label: Endocrinology EMR
+      description: For the endocrinologist who follows thyroid, PCOS and bone patients.
+      icon: chart-line
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+closing:
+  heading: See what the front desk can and cannot open on Easy Clinic
+  body: >-
+    Book a demo and ask to see the reception view of a patient beside the clinician's view, and a video
+    consultation booked with the fee paid online. Or compare what Premium includes, plan by plan, on the
+    pricing page.
+  primary:
+    label: Book a sexology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See what Premium includes
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The file on the reception desk and the patient who will not sit in a waiting room are the moments a
+    sexology clinic loses patients, and every answer comes from Easy Clinic's live sexology page, the
+    reception login rule and plans.yaml, with a plain admission that what confidential notes hide is not yet
+    published.
+  readsMachineWritten: >-
+    The four pain scenes are composites rather than a named clinic, the page has no named sexologist and no
+    measured number, and a sexologist will notice that the templates are named only by condition.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: specialty templates "for sexual dysfunctions (e.g., erectile dysfunction, vaginismus)", the customisable intake form (chronic illness, family and social history, substance use, alternative therapies) feeding the facesheet, side-by-side past records, collaborative case notes, confidential notes, drug interaction check, the form builder, therapy and counselling tracking with session records and progress (FAQ), medication tracking with prescriptions and treatment plans (FAQ), multi-session booking, confidential appointments, data access control for reception, access by role, department and hierarchy, audit logs and usage history, built-in video and chat in a browser, video consults booked through the appointment module with online fees, teleconsult prescriptions by WhatsApp or email with the remote-consultation disclaimer, part and advance payments and payment amortisation for package treatments are stated on the live /sexology-emr/ page (retrieved 2026-11-05). The reception login rule is from facts.md, as on /mental-health/. Plan placement follows plans.yaml: specialty templates, own forms and print layouts, video consultations, package treatments and WhatsApp on Premium.'
+  - 'Confidentiality: the page states only what the live pages state (role-based access, the reception login rule, audit logs, and the names "confidential notes" and "confidential appointments"). It claims no compliance with any law (India DPDP Act, Kenya Data Protection Act or any other) and names none. The live FAQ answer "Easy Clinic ensures secure handling of sensitive and confidential patient records" is not repeated, because "ensures" is a guarantee no source backs. Company to confirm: who can read a confidential note (the author only, prescribers, the care team), what a confidential appointment hides at the desk and in reports, and whether the patient name can be masked on reminders, invoices and WhatsApp messages. Then replace the confidential-notes FAQ with a direct answer and add a row.'
+  - 'Tone: the page names conditions only as the live page does (erectile dysfunction, vaginismus), describes no examination, and writes the pains around privacy, counselling and access rather than symptoms. "Couple" and "small town" are illustrative.'
+  - 'Dropped from the live page: both "Easy Clinic vs Other/Generic EMR" comparison tables (unsourced competitor cells; the second also carries "Rheumatology patients require long-term care", a copy error), confidentiality rated "Advance" against "Basic", "Built-in" inventory (plans.yaml: Enterprise or a module), "prescriptions in under 30 seconds" and "three clicks", "invoices in less than 10 seconds", "over 100 graphical dashboards", "reduce no-shows" (no measured figure), AI differential diagnosis and adverse drug event alerts (CuraPilot claims), AI wait-time alerts and AI two-way messaging, patient self-service booking and check-in on the phone (plan unclear), prescriptions "in multiple languages", the data warehouse, Power BI and Azure Data Factory, the Trustindex "Top Rated Service 2026" badge, and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" line (owner decision: no free trial).'
+  - 'Facts needed for the full spec 5.15 template: the sexology templates by full name and count (item 5; two named, so feature-row bullets rather than a dataTable); whether the templates need Premium (the live page ties them to no plan; the Premium badge is the conservative reading of "Specialty EMR templates"); a timed walkthrough of a first consultation (item 4); devices and integrations (item 6, likely none, section left out); which note types Cura AI drafts, with an example (item 8); a named sexologist testimonial (item 9; none on file, so the proof block is the Capterra and Google badges with no review counts); whether counsellors who do not prescribe need a paid per-doctor licence.'
+  - 'heroMedia reuses 3_Video_consultent.png with the alt text already used on /features/appointment-scheduling/. It is a general teleconsultation, not a sexology visit; replace it when the seeded demo tenant exists. No sexology post exists in src/content/posts. Title 34 characters; meta description 141 characters.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number, so it meets only two of the four spec 6.5 pass marks (a local fact in the rupee price, and admissions of limits on confidential notes and offline use).

@@ -14,14 +14,10 @@ title: 'Mental Health and Psychiatry EHR Software: Easy Clinic'
 metaDescription: >-
   Mental health EHR software: session notes and psychotropic dose changes on one record, and video
   sessions on Premium at {price:usd.premium.annual} per doctor per month.
-h1: EHR for mental health and psychiatry practices
+h1: "Enhance Your Mental Health Practice with Easy Clinic’s EMR"
 linkLabel: Mental health
 eyebrow: For psychiatry and psychology practices
-openingAnswer: >-
-  A mental health practice needs session notes and psychometric results beside the prescription, and
-  role-based access so the front desk can book without opening notes. Easy Clinic keeps both, and Premium
-  adds video sessions and your own forms at {price:inr.premium.annual} per doctor per month in India or
-  {price:usd.premium.annual}, billed annually.
+openingAnswer: "Simplify patient management, enhance treatment tracking, and improve administrative efficiency with our EMR. Focus on providing exceptional care with a solution tailored for your practice and Mental Health Clinic."
 summary: >-
   Session notes and psychotropic dose changes on one record, and video sessions on the Premium plan at
   {price:usd.premium.annual} per doctor per month.
@@ -29,8 +25,8 @@ author: subhashish-saha
 lastUpdated: 2026-09-26
 heroMedia:
   kind: screenshot
-  src: '../../assets/images/solutions/16_Portal.png'
-  alt: 'Easy Clinic''s patient portal and app: upcoming appointments, booking an online or in-clinic visit, and a doctor''s available slots on a phone'
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
   frame: none
 ctas:
   primary:
@@ -47,8 +43,8 @@ sections:
       id: where-it-slips
       heading: Where a mental health practice loses track
       intro: >-
-        Mental health care runs over months, and a patient's story is told across many sessions, often to
-        more than one clinician. The four slips below happen between those sessions.
+        Mental health care runs over months, and a patient's story is told across many sessions,<br class="hidden md:inline">
+        often to more than one clinician. The four slips below happen between those sessions.
       items:
         - heading: The therapy notebook and the prescription pad
           body: >-
@@ -59,8 +55,6 @@ sections:
             Session notes and observations go on the patient's record in Easy Clinic, and progress notes
             follow the symptoms and the effect of each medication from visit to visit. Collaborative case
             notes let the psychiatrist and the psychologist work from the same record.
-          href: /features/emr/
-          linkLabel: Read how the chart works
         - heading: The patient's file waits at the front desk
           body: >-
             In a small practice the file sits on the reception desk until the doctor calls the patient in,
@@ -87,8 +81,6 @@ sections:
             On Premium a video session is booked from the appointment screen, and the fee can be paid online
             at booking. The patient joins from a web browser on a computer or a phone, and the prescription
             goes to them on WhatsApp or by email with a note that the consultation was held remotely.
-          href: /features/telehealth/
-          linkLabel: Read how video consultations work
 
   - discriminant: featureRows
     value:
@@ -96,10 +88,12 @@ sections:
       heading: Built around the mental health record
       intro: >-
         Each session is written against the same record, so the course of care reads from intake to the
-        latest visit. Premium is the plan most specialists choose, and the rows marked Premium are not on
-        Professional.
+        latest visit. Video sessions and package billing come with Premium, the plan most specialists
+        choose, and are not on Professional.
+      layout: grid
       items:
         - heading: Mental health history, taken once
+          icon: brain
           body: >-
             The record holds the mental health evaluation and the diagnostic criteria you worked from, with
             the family and social history and the substance use history taken at intake. Intake forms can
@@ -108,117 +102,477 @@ sections:
           bullets:
             - Mental health evaluation and diagnostic criteria
             - Family and social history taken at intake
-            - Substance use history
-            - Key data on the patient's facesheet
         - heading: Session notes and treatment plans
+          icon: notebook-pen
           body: >-
             The therapist records the session's notes and observations, with any assessment made, on the
             patient's record. A treatment plan holds the therapy goals and the milestones towards them, and
             the whole visit history opens on one screen, with past records side by side.
           bullets:
             - Therapy goals and milestones in the treatment plan
-            - Progress notes from visit to visit
-            - Past records side by side
-            - Case notes shared with the care team
+            - Session notes and observations on the patient's record
         - heading: Psychometric test results on the record
+          icon: list-checks
           body: >-
             Results from standardised tests, such as the Beck Depression Inventory or the MMPI, are stored
             on the patient's record, so the result from intake is there when you repeat the test months
             later. If you use a paper questionnaire today, Premium lets you rebuild it as a digital form with
             the form builder, and the clinician fills it in on the record.
+          bullets:
+            - Beck Depression Inventory and MMPI results on the record
+            - Paper questionnaires rebuilt as forms on Premium
         - heading: Psychotropic medication, dose by dose
+          icon: pill
           body: >-
             Psychotropic prescriptions are tracked with each dosage adjustment and refill reminders, and the
             drug interaction check alerts you to potential interactions or contraindications. The
             prescription is printed or sent by SMS or email, and on Premium by WhatsApp as well.
           bullets:
             - Each dosage adjustment recorded with the prescription
-            - Refill reminders
+            - Refill reminders and a drug interaction check
         - heading: Who can open the record
+          icon: lock
           body: >-
             Access is set by role and by department, so the front desk and the clinicians each open only the
             screens their role allows. The reception login included in the price is not allowed into the EMR
             and cannot issue prescriptions, and audit logs keep a record of what each user did. The EMR also
             has confidential notes, and the scheduler has confidential appointments.
           bullets:
-            - Access by role and by department
-            - No EMR access on the reception login
-            - Confidential notes and confidential appointments
-            - Audit logs and usage history for each user
+            - The reception login cannot open the EMR or prescribe
+            - Audit logs keep a record of what each user did
         - heading: Video sessions from a web browser
-          plan: premium
+          icon: video
           body: >-
             On Premium, a video session is booked from the appointment screen beside visits in person, and
             the fee can be paid online when the session is booked. Easy Clinic has video and chat built in,
             so you and the patient join from a web browser on a computer or a phone, with no other software
             to install. The prescription from the session goes to the patient on WhatsApp or by email, and
             says the consultation was held remotely.
-          link:
-            label: Read how video consultations work
-            href: /features/telehealth/
+          bullets:
+            - Booked from the appointment screen, paid online
+            - You and the patient join from a web browser
         - heading: A course of therapy, billed as one package
-          plan: premium
+          icon: receipt
           body: >-
             On Premium a course of therapy can be billed as one package treatment, with the payment spread
             over the course. Each advance or part payment is recorded against the bill, so the desk can see
             what is still owed before the next session.
-          link:
-            label: Read how billing works
-            href: /features/billing/
+          bullets:
+            - A course of therapy billed as one package on Premium
+            - The desk sees what is owed before the next session
         - heading: Cura AI drafts the note
-          plan: professional
+          icon: sparkles
           body: >-
             Cura AI (documentation) comes with every plan. It drafts the note and the prescription in the
             patient's chart, and the draft stays a suggestion until the clinician corrects and confirms it.
+          bullets:
+            - Drafts the note and the prescription in the chart
+            - The draft stays a suggestion until the clinician confirms
+
+  - discriminant: featureRows
+    value:
+      id: the-session
+      heading: A therapy session, from the booking to the bill
+      intro: >-
+        What happens around the session, in the order the day runs. Where a row needs a particular plan, it
+        says so.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: Sessions booked on one calendar
+          icon: calendar-clock
+          body: >-
+            Fixed-time appointments and walk-ins sit on one calendar, and the sessions of a course of therapy
+            can be booked together. The desk books from that calendar without opening the EMR.
           link:
-            label: Read what Cura AI does
-            href: /ai/
-
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        These are Easy Clinic's public ratings, from clinics of every kind. A psychiatrist who wrote, after
-        ten years on Easy Clinic, that it took his practice from pen and paper to a digital record is quoted
-        on [the EMR page](/features/emr/).
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-  - discriminant: stepList
-    value:
-      id: training
-      heading: How long does it take to learn Easy Clinic?
-      intro: >-
-        About two hours, spread over {fact:trainingDays} days, and training is included in every plan. Each
-        session is 20 to 40 minutes, short enough to fit between appointments, so the practice keeps seeing
-        patients while the team learns.
-      steps:
-        - title: 'Day 1: basic training'
-          meta: 40 minutes
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The next session set in the note, with a reminder
+          icon: bell-ring
           body: >-
-            The screens the front desk and the clinicians use every day. Bring your receptionist, whose
-            login is part of the plan.
-        - title: 'Day 2: EMR scenario training'
-          meta: 40 minutes
+            The clinician sets the follow-up in the note at the end of the session, and Easy Clinic sends the
+            patient an automated reminder. Reminders go by SMS and email on every plan, and by WhatsApp on
+            Premium.
+        - heading: Medicines from the practice's own pharmacy
+          icon: package
           body: >-
-            You work through the chart and the prescription on the kinds of case your practice sees, from a
-            first assessment to a follow-up.
-        - title: 'Day 3: practice exercises'
-          meta: 20 minutes
-          body: You work through exercises on your own, then bring back the questions that came up.
-        - title: 'Day 4: road to expertise'
-          meta: 20 minutes
-          body: The shortcuts that make each note quicker, once the basics have become habit.
-      note: >-
-        From the demo, a practice can be live in as little as {fact:goLiveDays} days.
+            With pharmacy and inventory, which comes with Enterprise or as a module on Professional and
+            Premium, the pharmacist dispenses from the doctor's prescription and tracks each batch to its
+            expiry date. Premium alone does not include it.
+          link:
+            label: Read how pharmacy and inventory work
+            href: /features/pharmacy-and-inventory/
+        - heading: The bill at the desk
+          icon: wallet
+          body: >-
+            The desk takes full or part payment for the session, and a refund or a voided invoice goes through
+            only with authorisation. The receipt goes to the patient by SMS or email, or on WhatsApp with
+            Premium.
+          link:
+            label: Read how billing works
+            href: /features/billing/
 
-faqHeading: Questions mental health practice owners ask
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Generate and Share in 30 Seconds
+        Quickly create detailed prescriptions and share them instantly via print, WhatsApp, SMS, or email in any language.
+
+        ### Custom-Tailored Mental Health EMR
+        Designed to align with your specialty, workflow, and preferences, ensuring a seamless and efficient experience.
+
+        ### AI-Driven Efficiency
+        Streamline your documentation and save time with an AI-powered assistant for quick and accurate prescriptions.
+
+        ### Complete Mental Health Records
+        Include mental health evaluations, family history, substance use history, and diagnostic criteria.
+
+        ### Progress Notes
+        For tracking symptoms, therapy progress, and medication effects.
+
+        ### Drug Interaction Checks
+        Alerts for potential interactions or contraindications.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters through charts and graphs to enhance patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with auto-generated summaries and facesheets that intelligently highlight key patient data for quick and efficient reference.
+
+        ### Simplified Point-and-Click Interface
+        Easily document chief complaints, medical history, vitals, and more with an intuitive interface. Access custom examination forms, auto-complete notes, diagnoses, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without lengthy navigation.
+
+        ### Complete Medical History: Customizable Intake Forms for Mental Health Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Built for Mental Health Specialists
+        Customized to meet the unique needs of specialists, super-specialists, and Mental Health clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Use intelligent AI for differential diagnoses and alerts on adverse drug events, tailored for Mental Health patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used Mental Health medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, Mental Health specialists, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Mental Health doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Mental Health practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Mental Health specialists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Mental Health patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Mental Health clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Mental Health clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Mental Health clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Mental Health clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Mental Health clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
 faq:
   - question: What does Easy Clinic cost for a psychiatry or psychology practice?
     answer: >-
@@ -266,27 +620,33 @@ faq:
 
 links:
   hub: /specialties/
-  relatedHeading: Where mental health practice owners go next
+  relatedHeading: Where to go next
+  relatedArrows: false
   related:
-    - href: /solutions/solo-clinic/
-      label: Software for a solo practice
-      description: For a psychiatrist or psychologist running their own practice with a receptionist.
-    - href: /features/telehealth/
-      label: Video consultations
-      description: Video sessions booked beside visits in person, with the fee paid online at booking.
-    - href: /features/emr/
-      label: The EMR and e-prescriptions
-      description: The chart and the prescription every specialty writes in, with Cura AI drafting the note.
-    - href: /emr-software-in-india/
-      label: Clinic management software in India
-      description: What Easy Clinic costs in rupees, and how an Indian clinic's day runs on it.
-    - href: /emr-software-in-kenya/
-      label: Clinic software in Kenya
-      description: Easy Clinic for clinics in Kenya, with prescriptions in English and Swahili.
-    - href: /pricing/
-      label: Easy Clinic pricing
-      description: Premium at {price:usd.premium.annual} per doctor per month, and what each plan includes.
-
+    - href: /neurology-emr/
+      label: Neurology EMR
+      description: For the neurology clinic with EEG and MRI reports beside every visit.
+      icon: brain-circuit
+    - href: /sexology-emr/
+      label: Sexology EMR
+      description: For the sexology clinic with private consultations and session notes.
+      icon: lock
+    - href: /family-physician-emr/
+      label: Family physician EMR
+      description: 'For the family doctor who keeps each family member''s care on their own record.'
+      icon: heart-handshake
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+    - href: /pediatric-emr/
+      label: Paediatric EMR
+      description: 'For the children''s clinic with growth charts and a vaccine schedule by age.'
+      icon: baby
+    - href: /alternative-medicine/
+      label: Alternative medicine EMR
+      description: For homoeopathy, Unani and naturopathy clinics on a long course of treatment.
+      icon: pill
 closing:
   heading: See a mental health record on Easy Clinic
   body: >-
@@ -312,6 +672,18 @@ editorialPass:
     clinicians.
 
 notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers". The live page has no FAQs to copy, so the FAQs written for this page stay.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
   - 'Recruit a named mental health testimonial (spec 5.15 item 9): a named psychiatrist, psychologist or mental health practice owner on Easy Clinic, with city, practice and consent on file, added to src/data/testimonials/ and placed only on this page. The two psychiatrist testimonials that exist are already placed: nrp-chandra-balaji on /features/emr/ and srinivasa-teja on /indiademo/ (both have city null). If one is reassigned here, remove it from its current page. Until then the proof is the Capterra and Google badges, and the intro only points to the EMR page quote (no testimonial id is placed here). Review counts are null in facts.yaml, so the badges show no count.'
   - 'Grounding (live pages retrieved 2026-09-26). /mental-health/: mental health evaluations, family history, substance use history and diagnostic criteria; progress notes for symptoms, therapy progress and medication effects; drug interaction checks (alerts for potential interactions or contraindications); customisable intake forms, detailed or concise, feeding the facesheet; form builder for paper forms; visit history on one screen; side-by-side past records; confidential notes, collaborative case notes (EMR list); in-built video and chat, video consults created through the appointment module with online fee payment, browser on computer or phone, teleconsult prescriptions by WhatsApp, SMS or email with a disclaimer that the consult was remote; part and advance payments, refunds and invoice voiding with authorisation, payment amortisation for package treatments; multi session booking, data access control for reception, confidential appointment (scheduling list); access rights and audit logs, access by roles, departments and hierarchical levels, usage history, role based access. /psychiatry-emr/: customisable treatment plans with therapy goals, progress tracking and milestones; medication management (psychotropic prescriptions, dosage adjustments, refill reminders). /psychology-emr/: session notes, observations and assessments; psychometric test management (results from standardised tests such as MMPI, Beck Depression Inventory or IQ tests). Reception login rule from facts.md. Plans from plans.yaml (video consultations, own clinical forms, package treatments and WhatsApp messages on Premium; pharmacy and inventory on Enterprise or as a module). WhatsApp prescription sending is tied to Premium to match /features/emr/.'
   - 'Spec 5.15 must-haves left out (company to-do). (1) Session notes separate from the shared chart: the live pages list "Confidential notes" and "Confidential Appointment" as feature names but do not say what either hides or from which roles; company to describe who can read a confidential note (the author only, prescribers, the care team) and what a confidential appointment hides at the desk, then add a row and a FAQ ("Are therapy notes kept apart from the rest of the chart?"). (2) Outcome scales PHQ-9 and GAD-7: not named on any live page; company to confirm whether they exist as ready templates, whether the total is scored automatically and whether the score is charted as a trend across sessions (the live pages list "Growth & Progress charts" without detail). Until then the page offers the stored psychometric results named on /psychology-emr/ and the Premium form builder, and does not name PHQ-9 or GAD-7 as a capability. (3) Medication audit: the page states dose-by-dose tracking and user audit logs, both grounded, but not a medication audit trail; company to confirm whether each prescription change is logged with the user and time, and whether a report of psychotropic or controlled prescribing exists. (4) Consent language per country: nothing on the live pages; company to confirm whether consent forms (treatment, teletherapy, information sharing) can be captured and stored, and in which countries'' wording. Teletherapy is included (video consultations are Premium in plans.yaml).'
@@ -321,3 +693,4 @@ notes:
   - 'Title 53 characters (spec 4.3 wording); meta description 145 characters with the token resolved. H1 is the spec 4.3 row wording, as the page brief asks. WhatsApp, SMS and email lists were cut to two channels in running text (spec 6.2, no groups of three); the teleconsult prescription can also go by SMS. The four pains are illustrative situations, not customers. No heroMedia or media: screenshots do not exist yet. When the seeded demo tenant exists: a psychiatry follow-up with the dose history beside the progress note as hero, and the reception view of the same patient without EMR access.'
   - '/clinic-management-software-india/ and /emr-software-in-kenya/ are drafts; the related links resolve once they publish. /psychiatry-emr/, /psychiatry-emr-software/ and /psychology-emr/ already redirect here in src/data/redirects.yaml, so the page sets no redirectFrom.'
   - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person on it and no measured number, so it meets two of the four pass marks (a local fact in the rupee price, and admissions of limits in the pharmacy and offline FAQs) until a testimonial arrives.
+  - 'Section the-session (A therapy session, from the booking to the bill) added 2026-11-05 after the Built around section. Grounding: fixed-time appointments and walk-ins on one calendar from /features/appointment-scheduling/ and the published allergy page; sessions of a course booked together from multi-session booking on the live scheduling list (no plan, so none is claimed); the desk not opening the EMR from the reception login rule on this page; follow-up set in the note with automated reminders by SMS and email on every plan and WhatsApp on Premium as on the published cardiology, allergy and aesthetic pages; pharmacy and inventory on Enterprise or as a module, worded as this page''s pharmacy FAQ; full or part payment at the desk, voided invoices and refunds with authorisation, and receipts by SMS or email or on WhatsApp with Premium from this page''s grounding note and /features/billing/. No new confidentiality claim; confidential appointments are not repeated from the Built around row.'

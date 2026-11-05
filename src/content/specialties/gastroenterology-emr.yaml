@@ -1,0 +1,672 @@
+# /gastroenterology-emr/ (spec 5.15 SpecialtyPage template; no spec 5.15 must-have row for gastroenterology).
+# Slug kept from the live site; it redirected to /specialties/ ("Hold") until the owner asked for every footer
+# specialty to have its own page (2026-11-05). Grounding: capability statements the live /gastroenterology-emr/
+# page makes plainly (retrieved 2026-11-05), plans.yaml, and what published pages (/features/lab/,
+# /cardiology-emr/) already state. No endoscope or video-processor connection, no DICOM, no template count.
+status: published
+headKeyword: gastroenterology EMR software
+secondaryKeywords:
+  - GI clinic software
+  - EMR for gastroenterologists
+title: 'Gastroenterology EMR Software: Easy Clinic'
+metaDescription: >-
+  Gastroenterology EMR software: endoscopy reports and images on the record, IBS, GERD, IBD and liver
+  templates and lab charts, on Premium at {price:usd.premium.annual}.
+h1: "Optimizing Gastroenterology Care with Easy Clinic"
+linkLabel: Gastroenterology
+eyebrow: For gastroenterology clinics
+openingAnswer: "Easy Clinic enhances gastroenterology workflows, ensuring efficient patient management and accurate diagnostics. Our software offers seamless documentation, personalized treatment tracking, and improved collaboration, enabling gastroenterologists to provide top-tier, patient-centered care."
+summary: >-
+  Endoscopy reports and images on the patient's record, templates for IBS, GERD, IBD and liver disease,
+  and your own procedure forms on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a gastroenterology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic gastroenterology page and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-gastroenterology-clinic-loses-track
+      heading: Where a gastroenterology clinic loses track
+      intro: >-
+        A GI patient moves between the consulting room, the endoscopy suite and the lab, and comes back<br class="hidden lg:inline">
+        for years. What goes missing is the procedure report and the run of results between visits.
+      items:
+        - heading: The colonoscopy report went home with the patient
+          body: >-
+            A patient with ulcerative colitis comes for review with a plastic folder: two colonoscopy
+            reports, a biopsy result and printouts of the images. The surveillance decision waits while you
+            find last year's report and compare the extent of disease.
+          fix: >-
+            Endoscopy reports, images and other diagnostic reports are stored in the patient's file,
+            uploaded as documents or images, so last year's report sits on the same record as today's note,
+            and past visits open side by side with the current one.
+        - heading: Liver function tests on six visits, read one at a time
+          body: >-
+            A patient with fatty liver disease has had liver function tests every few months. To see whether
+            the enzymes are coming down, you open each report in turn and work out the trend in your head.
+          fix: >-
+            Vitals and clinical parameters are drawn as charts over time. On Premium, lab reports come into
+            the chart and their values are charted beside the vitals, so the trend since the last change is
+            one graph.
+        - heading: The procedure note is on a separate sheet
+          body: >-
+            Each endoscopist writes the procedure on the unit's own printed sheet, and the findings never
+            reach the consult notes, so the doctor who sees the patient next reads the sheet, if it can be
+            found.
+          fix: >-
+            On Premium, custom examination and procedure forms are built for the clinic's gastroenterology
+            workflow, and the procedure is recorded on the patient's record with the treatment notes.
+        - heading: The IBD patient who missed the review
+          body: >-
+            "Review in six weeks with stool tests" is written on the prescription. The patient feels better
+            on the new medicine and does not come back until the next flare.
+          fix: >-
+            The follow-up is set in the note before the patient leaves, and the patient gets an automated
+            reminder: by SMS and email on every plan, and on WhatsApp on Premium.
+
+  - discriminant: featureRows
+    value:
+      id: gastroenterology-chart
+      heading: Built around the gastroenterology chart
+      intro: >-
+        What a gastroenterologist reopens at every review, kept on one patient record. Premium, the plan
+        for specialists, includes everything below.
+      layout: grid
+      items:
+        - heading: Endoscopy and diagnostic reports on the record
+          icon: scan-line
+          body: >-
+            Endoscopy reports, lab results and other diagnostic reports are stored in the patient's file,
+            uploaded as documents or images. Procedures are documented on the patient's record with the
+            treatment notes, and the full visit history is on one screen.
+          bullets:
+            - Endoscopy reports and images kept in the patient's file
+            - GI procedures documented with the treatment notes
+        - heading: Lab values as trend charts
+          icon: chart-line
+          body: >-
+            On Premium, lab reports come into the chart and values such as liver enzymes are charted visit
+            by visit beside the vitals. Full lab management, with orders from the chart and sample tracking,
+            comes with Enterprise or as a module added to Professional or Premium.
+          bullets:
+            - On Premium, lab reports come into the chart
+            - Liver enzymes charted visit by visit beside the vitals
+        - heading: Medication and treatment plans over the long term
+          icon: pill
+          body: >-
+            GI conditions often need long-term care. Medication and treatment plans are recorded and tracked
+            on the patient's record, chronic patients are followed up over the years, and the prescription
+            carries a drug interaction check.
+          bullets:
+            - Medication and treatment plans tracked on the record
+            - A drug interaction check on the prescription
+        - heading: Your own procedure forms
+          icon: layout-template
+          body: >-
+            On Premium the form builder turns the clinic's paper procedure or examination sheet into a
+            digital form in its own layout, so every endoscopist records the same fields. Customising forms
+            carries no charge.
+          bullets:
+            - Your paper procedure sheet turned into a digital form
+            - Every endoscopist records the same fields
+        - heading: The history on the facesheet
+          icon: file-heart
+          body: >-
+            The intake form records chronic illnesses, family history, social history and substance use,
+            alcohol included, with as much detail as the clinic wants. What it records is shown on the
+            patient's facesheet with an auto-generated summary.
+          bullets:
+            - Chronic illness, family and social history at intake
+            - An auto-generated summary on the facesheet
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the
+            gastroenterologist to review.
+          bullets:
+            - Cura AI is included in every plan
+            - The gastroenterologist reviews every draft note
+
+  - discriminant: dataTable
+    value:
+      id: gastroenterology-templates
+      heading: Gastroenterology templates
+      intro: >-
+        We have gastroenterology templates for the conditions below. The table lists only the ones we name,
+        so it is not a full count. Specialty templates and your own clinical forms come with Premium.
+      caption: Named gastroenterology templates, with the plan each needs
+      columns:
+        - Template
+        - Type
+        - Plan
+      rows:
+        - - Irritable bowel syndrome (IBS)
+          - Condition template
+          - Premium
+        - - Gastro-oesophageal reflux disease (GERD)
+          - Condition template
+          - Premium
+        - - Inflammatory bowel disease (IBD)
+          - Condition template
+          - Premium
+        - - Liver diseases
+          - Condition template
+          - Premium
+      note: >-
+        If your clinic uses a paper procedure or consultation sheet that is not in this list, the form
+        builder on Premium turns it into a digital form in your own layout.
+
+  - discriminant: featureRows
+    value:
+      id: review-visit
+      heading: A GI review, from the desk to the bill
+      intro: >-
+        How a review visit runs on Easy Clinic. We have not timed these steps in a gastroenterology clinic,
+        so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The intake before the consult
+          icon: activity
+          body: >-
+            A nurse or clinical assistant records the vitals and any change in the history before the
+            consult. Each person logs in as themselves, and the role on that login decides which screens
+            they can open; the reception login included in the price cannot open the EMR or issue a
+            prescription.
+        - heading: The consult, by point and click
+          icon: notebook-pen
+          body: >-
+            The gastroenterologist opens the record with the last endoscopy report on it. Complaints,
+            diagnosis, medications, investigations, referrals and follow-ups are picked with auto-complete,
+            and on Premium the visit can be written on a template, IBD for example.
+        - heading: The prescription goes home on paper or on WhatsApp
+          icon: pill
+          body: >-
+            The prescription is printed for the patient or, on Premium, sent on WhatsApp, with the diet and
+            preparation advice written as patient guidelines.
+        - heading: The bill at the desk
+          icon: receipt
+          body: >-
+            Consultation and procedure charges go on the bill from the clinic's service list. Part and advance
+            payments are recorded against it, and a refund or a voided invoice goes through only with
+            authorisation.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Follow-ups by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a review can be a video consult, booked through the appointment screen with the fee
+            paid online. The patient joins from a web browser on a phone or a computer, and the
+            prescription says the consult was held remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Prescription Can Be Generated in Just 30 Seconds
+        Create detailed prescriptions in just 30 seconds and deliver them instantly in any language via print, WhatsApp, SMS, or email.
+
+        ### Personalized EMR for Gastroenterology
+        An EMR customized to match the specialty, workflow, and preferences of GI doctors, delivering a tailored and seamless experience.
+
+        ### AI-Driven Assistance
+        Utilize an AI assistant to complete prescriptions in just three clicks, streamlining documentation and saving valuable time.
+
+        ### GI Health Trend Visualization
+        Present vitals, lab reports, and clinical parameters as intuitive charts and graphs for clear and easy tracking of a patient’s health trends.
+
+        ### Specialty-Specific Templates
+        Specialty specific templates for gastroenterological conditions like IBS, GERD, IBD, and liver diseases.
+
+        ### Medication Management
+        Complete medication management which includes Drug interaction checks, prescription tracking, and prior authorization.
+
+        ### Effortless Patient Summaries
+        Instant access to auto-generated patient summaries and facesheets, providing a complete review of case histories while saving time and presenting key data effectively.
+
+        ### Intuitive Point-and-Click Input
+        Features an easy-to-use point-and-click interface for recording chief complaints, medical history, vitals, and more. Includes custom examination forms, auto-complete notes, diagnoses, medications, investigations, referrals, follow-ups, and GI patient guidelines. Provides the flexibility to access specific controls without navigating complex or lengthy screens.
+
+        ### Detailed Medical History Record
+        Capture the medical history of a GI patient using customizable intake forms tailored to your needs, whether detailed or concise. Record information such as chronic illnesses, family and social history, obstetric-gynecological details, substance use, alternative therapies, COVID history, and immunizations. These details are seamlessly displayed in the patient’s facesheet, streamlining future visits and saving valuable time.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specifically Designed for Gastroenterology
+        Custom-built for GI specialists, super-specialists, and gastroenterology clinic chains, catering to a wide range of healthcare needs.
+
+        ### AI-Powered Diagnostic Support
+        Advanced AI assistance for differential diagnosis and alerts on adverse drug events, essential for managing GI patients with multiple chronic conditions.
+
+        ### Flexible Template and Form Builder
+        Seamlessly replicate any paper forms with our customizable template builder, ensuring an effortless transition to digital workflows.
+
+        ### Complete Patient Data Visualization
+        Access longitudinal patient visit data on a single screen, improving the efficiency of patient care.
+
+        ### Streamlined Access to Key Resources
+        Instant access to commonly used medications, investigations, and clinical tools, including gastroenterology guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Enhances communication and coordination among nurses, gastroenterologists, and other caregivers, ensuring integrated patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your GI practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing GI Specialists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables GI patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Gastroenterology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with GI patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Gastroenterology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for gastroenterology clinics?"
+    answer: "The best EMR software for gastroenterology clinics should support endoscopy documentation, diagnostic reports, treatment plans, and long-term follow-up care. Easy Clinic is designed to manage the complete workflow of gastroenterology clinics."
+  - question: "Does Easy Clinic support AI EMR for gastroenterology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic store endoscopes and diagnostic reports?"
+    answer: "Yes. Easy Clinic allows clinics to store endoscopy reports, lab results, and other diagnostic data in patient records."
+  - question: "Does Easy Clinic support procedure documentation?"
+    answer: "Yes. Clinics can record GI procedures and treatment notes in patient files."
+  - question: "Can Easy Clinic track chronic gastrointestinal conditions?"
+    answer: "Yes. Easy Clinic supports long-term follow-up tracking for chronic digestive disorders."
+  - question: "Does Easy Clinic support billing for gastroenterology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage medicine inventory?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Can multiple doctors use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-doctor and multi-branch clinics."
+  - question: "Is Easy Clinic suitable for both clinics and diagnostic centres?"
+    answer: "Yes. Easy Clinic works for standalone gastro clinics as well as multi-speciality setups."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient visits, procedures, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /general-surgery-emr/
+      label: General surgery EMR
+      description: 'For the surgeon''s outpatient side, from the work-up to the post-operative review.'
+      icon: list-checks
+    - href: /oncology-emr/
+      label: Oncology EMR
+      description: For the oncology clinic that records treatment cycles and blood counts.
+      icon: file-heart
+    - href: /hematology-emr/
+      label: Haematology EMR
+      description: For the haematology clinic that charts blood counts visit by visit.
+      icon: file-chart-column
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+    - href: /pathology-emr/
+      label: Pathology EMR
+      description: For the pathology lab, from the test order to the report on the chart.
+      icon: file-check
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+closing:
+  heading: See a GI review on Easy Clinic
+  body: >-
+    Book a demo and ask to see an endoscopy report on the patient's record and an IBD template in use, or
+    compare what Premium includes, plan by plan, on the pricing page.
+  primary:
+    label: Book a gastroenterology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The four named templates (IBS, GERD, IBD and liver disease) and the endoscopy report storage come from
+    Easy Clinic's own gastroenterology page, and the plan split is stated as plans.yaml has it: templates,
+    forms and lab charts on Premium, lab management and the pharmacy on Enterprise or as a module.
+  readsMachineWritten: >-
+    The pains are composites rather than a named clinic's day, and the page has no gastroenterologist's
+    words, no timed visit and no endoscopy suite integration, so a gastroenterologist will find the
+    procedure rows thinner than the template table.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: stated plainly on the live /gastroenterology-emr/ page (retrieved 2026-11-05): specialty templates for "IBS, GERD, IBD, and liver diseases"; "custom examination and procedure documentation tailored to gastroenterology workflows" (FAQ) and the form builder for paper forms; storage of endoscopy and diagnostic reports with lab results (FAQ "Can Easy Clinic store endoscopes and diagnostic reports?"); procedure documentation for GI procedures and treatment notes (FAQ); image and document upload; chronic follow-up tracking ("GI conditions often require long-term care"); medication and treatment plan tracking; drug interaction check; vitals, lab reports and clinical parameters as charts; the intake form; auto-generated summaries and facesheets; longitudinal visit data on one screen and side-by-side past records; multi-doctor and multi-branch use; automated reminders by WhatsApp, SMS and email; video consults with the remote-consult disclaimer. Plan placement follows plans.yaml (specialty templates, own forms, lab reports in the chart, WhatsApp, video consults and more than one location on Premium; lab management and pharmacy on Enterprise or a module; integrations on Enterprise or an add-on). "Values such as liver enzymes" is an example of lab values charted on Premium, as on /features/lab/; the live page does not name liver function tests.'
+  - 'Dropped from the live page: both "Easy Clinic vs Others/Generic EMR" comparison tables (unsourced competitor cells, including "Advanced BI ... Track success rates & revenue"), "Prescriptions in about 30 seconds", "three clicks", "invoices ready in less than 10 seconds", "over 100 graphical dashboards", AI differential diagnosis, ADR alerts and AI two-way messaging (CuraPilot and unconfirmed claims), "prior authorization" (insurance claims are Enterprise in plans.yaml and the live page gives no detail), "gastroenterology guidelines, checklists, and reminders" (unspecified), growth and progress charts and medical calculators (Advanced EMR list, no plan), "Inventory ... Built-in" and the inventory FAQ (plans.yaml: Enterprise or a module), "suitable for both clinics and diagnostic centres" (no detail), prescriptions in any regional language (only English and Swahili for Kenya are confirmed), the data security FAQ (no certification named; /trust/ owns it), the "Join 5000+ Doctors" line, and the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "try Easy Clinic absolutely free" lines (owner decision: no free trial).'
+  - 'Facts needed (company to-do): which plan carries procedure documentation, chronic follow-up tracking and the intake form (rows without a tag rest on the featureRows intro); whether endoscopy suite and scope booking is possible inside the appointment slot (the resource booking stated on /cardiology-emr/ is not stated on the gastroenterology page, so it is left out); endoscopy image capture or video processor connection, with status; the full count of GI templates; whether procedure packages are sold and billed as package treatments; which GI note types Cura AI drafts, with an example; a timed walkthrough; a named gastroenterologist testimonial (none on the live page).'
+  - 'Hero: 12_Investigation_1.png with the alt text the published /features/ hub uses; it shows a liver function test and an abdominal ultrasound in the test picker. Ordering from the chart with specimen and lab is lab management (Enterprise or a module), which the lab chart row says. Replace with an endoscopy report on the patient record from the seeded demo tenant when it exists. The pains are illustrative, not customers; "six weeks" and "six visits" are examples.'
+  - 'Related post /clinic-management-for-gastroenterologists/ is a draft and is not linked.'

@@ -1,0 +1,644 @@
+# /oncology-emr/ (spec 5.15 SpecialtyPage template). Slug kept from the live site. No spec 4.3 keyword row and
+# no spec 5.15 must-have row exist for oncology. Grounding: capability statements the live /oncology-emr/ page
+# makes plainly (retrieved 2026-11-05) and plans.yaml. No regimen library, dose calculation, protocol engine,
+# template counts, device integrations or outcomes.
+status: published
+headKeyword: oncology EMR software
+secondaryKeywords:
+  - oncology clinic software
+  - EMR for oncologists
+  - cancer clinic EMR
+title: 'Oncology EMR Software: Easy Clinic'
+metaDescription: >-
+  Oncology EMR software: the chemotherapy plan and each cycle on one record, blood counts charted, and
+  the course billed as a package on Premium.
+h1: "Streamline Your Oncology Practice with Easy Clinic’s EMR"
+linkLabel: Oncology
+eyebrow: For oncology clinics
+openingAnswer: "Manage patient records, treatment plans, and appointments seamlessly in one platform with our EMR. Designed for precision and care, Easy Clinic boosts efficiency, supports better outcomes, and lets you focus on saving lives in your Oncology Practice."
+summary: >-
+  The chemotherapy plan and each cycle on one patient record, blood counts charted across cycles, and the
+  course billed as a package paid in parts, on the Premium plan.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book an oncology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic oncology page and would like to book a demo for our clinic.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-an-oncology-clinic-loses-track
+      heading: Where an oncology clinic loses track
+      intro: >-
+        A cancer patient's treatment runs in cycles over months, and the follow-up<br class="hidden md:inline">
+        runs for years after. Most of what goes missing sits between the cycles.
+      items:
+        - heading: Which cycle is this?
+          body: >-
+            A patient on her fourth cycle arrives with a caregiver and a carry bag of papers. The plan was
+            written at the first visit, a dose was changed after the second, and the notes of both are in
+            different files.
+          fix: >-
+            The chemotherapy plan sits on the patient's record, and each cycle is recorded against it with
+            the notes of that visit, so the history of the treatment opens on one screen.
+        - heading: The count before the cycle is on a lab printout
+          body: >-
+            Before each cycle the blood count decides whether the patient goes ahead today. The report is
+            from a lab near the patient's home, and the last three counts are on three printouts.
+          fix: >-
+            On Premium, lab reports come into the chart and each value is drawn as a trend, so the
+            neutrophils and the haemoglobin read as one line across cycles. An outside lab's report is
+            uploaded to the same record.
+        - heading: The PET-CT report from another city
+          body: >-
+            Staging scans and the biopsy report were done at a hospital the family travelled to. Months
+            later, at a review, nobody can find the original report.
+          fix: >-
+            Imaging reports, pathology reports and other diagnostic records are uploaded to the patient's
+            file as documents or images, and stay beside the visits for the years of follow-up.
+        - heading: The course is paid in parts, and the balance lives in a notebook
+          body: >-
+            A course of chemotherapy is quoted as one package and paid as the cycles go. The accounts desk
+            keeps the balance by hand, and when a cycle is postponed nobody is sure what is owed.
+          fix: >-
+            On Premium the course is billed as one package treatment, and each advance and part payment is
+            recorded against it. A refund or a voided invoice goes through only with authorisation.
+
+  - discriminant: featureRows
+    value:
+      id: oncology-chart
+      heading: Built around the oncology chart
+      intro: >-
+        What an oncologist reopens at every cycle and every review, kept on one patient record. Premium, the
+        plan for specialists, includes everything below.
+      layout: grid
+      items:
+        - heading: The treatment plan and its cycles
+          icon: clipboard-list
+          body: >-
+            The chemotherapy regimen and the treatment plan are recorded on the patient's record, and each
+            cycle is recorded against them with that day's notes, medicines and investigations. Past visits
+            open side by side with today's.
+          bullets:
+            - Chemotherapy regimen and treatment plan on the record
+            - Each cycle recorded with that day's notes and medicines
+        - heading: Blood counts and other labs as trends
+          icon: chart-line
+          body: >-
+            On Premium, lab reports come into the chart with abnormal values flagged, and each value can be
+            charted across the results on file, so the count before this cycle sits beside the last ones.
+          bullets:
+            - Lab reports in the chart with abnormal values flagged
+            - This cycle's count charted beside the last ones
+        - heading: Scans and pathology reports in the file
+          icon: scan-line
+          body: >-
+            Lab results, imaging reports and other diagnostic records are stored in the patient's file,
+            uploaded as documents or images, so a staging scan from another hospital stays with the record.
+          bullets:
+            - Lab results and imaging reports stored in the file
+            - A staging scan from another hospital stays on record
+        - heading: The history on the facesheet
+          icon: file-heart
+          body: >-
+            The intake form records chronic conditions, family history, social history, obstetric and
+            gynaecological history and substance use. It shows on the facesheet, and an auto-generated
+            summary puts the last visit on one screen.
+          bullets:
+            - Chronic conditions, family and social history at intake
+            - An auto-generated summary puts the last visit on one screen
+        - heading: Several doctors, one record
+          icon: users
+          body: >-
+            The medical oncologist, the surgeon and the nurses work on the same patient record, with
+            collaborative case notes. Each person logs in as themselves, and the role on that login decides
+            which screens they can open.
+          bullets:
+            - Oncologist, surgeon and nurses on the same record
+            - A role on each login decides which screens open
+        - heading: Cura AI drafts the note
+          icon: sparkles
+          body: >-
+            Cura AI (documentation) is included in every plan. It drafts the note for the oncologist to
+            review.
+          bullets:
+            - Cura AI is included in every plan
+            - The oncologist reviews every draft note
+
+  - discriminant: featureRows
+    value:
+      id: cycle-visit
+      heading: A chemotherapy cycle, from the count to the bill
+      intro: >-
+        How a cycle visit runs on Easy Clinic in a clinic or a hospital OPD. We have not timed these steps
+        in an oncology clinic, so the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: The count is on the chart before the patient sits down
+          icon: flask-conical
+          body: >-
+            The blood count done for this cycle is in the chart on Premium, or uploaded from an outside lab.
+            If the clinic runs its own lab, the test is ordered from the chart and the sample tracked by
+            barcode, which is lab management: Enterprise, or an add-on on Professional and Premium.
+          link:
+            label: Read how lab management works
+            href: /features/lab/
+        - heading: The nurse does the intake
+          icon: activity
+          body: >-
+            A nurse or clinical assistant does the intake before the consult. The reception login included
+            in the price cannot open the EMR or issue a prescription.
+        - heading: The day-care chair is booked in the slot
+          icon: calendar-clock
+          body: >-
+            The chair and the nurse who runs the infusion are booked inside the appointment slot, and the
+            multi-resource calendar shows the desk which chairs are free at each hour.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The consult and the prescription
+          icon: pill
+          body: >-
+            Notes, diagnosis, medications, investigations, referrals and follow-ups are picked with
+            auto-complete, with a drug interaction check on the prescription. It is printed or, on Premium,
+            sent on WhatsApp, with patient education material for the family to take home.
+        - heading: The cycle goes on the package bill
+          icon: receipt
+          plan: premium
+          body: >-
+            On Premium, the cycle is recorded on the package treatment, the payment made today goes against
+            it, and the desk sees the balance before taking the next one.
+        - heading: Reviews by video
+          icon: video
+          plan: premium
+          body: >-
+            On Premium, a follow-up review can be a video consult, booked through the appointment screen with
+            the fee paid online, so a family that lives far away does not travel for it. The prescription
+            carries a line saying the consult was held remotely.
+          link:
+            label: Read how video consults work
+            href: /features/telemedicine/
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Ready in 30 Seconds
+        Quickly generate detailed prescriptions in under 30 seconds and share them instantly via print, WhatsApp, SMS, or email in any language.
+
+        ### Custom-Tailored Oncology EMR
+        Specifically crafted to align with your specialty, workflow, and preferences, delivering a seamless and efficient experience for oncologists.
+
+        ### Streamlined AI Efficiency
+        Simplify your documentation process and save valuable time with the power of AI assistance.
+
+        ### Treatment Planning
+        Chemotherapy regimen management.
+
+        ### Visual Health Insights
+        Seamlessly explore vitals, lab reports, and clinical parameters to enhance patient care.
+
+        ### Streamlined Patient Summaries
+        Save time with AI-generated summaries and facesheets, intelligently highlighting essential patient information.
+
+        ### Simplified Point-and-Click Interface
+        Efficiently capture chief complaints, medical history, vitals, and more through an intuitive interface. Enjoy features like custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, accessible instantly without navigating complex screens.
+
+        ### Complete Medical History: Tailored Intake Forms for Oncology Patients
+        Easily capture detailed or concise medical histories, including chronic conditions, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All data is seamlessly integrated into the patient’s face sheet for quick and easy follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Oncologists
+        Specifically crafted to address the unique requirements of specialists, super-specialists, and oncology-focused clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Utilize advanced AI to assist with differential diagnoses and receive alerts on adverse drug events, specifically designed for oncology patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        View the complete patient visit history on a single screen, enabling streamlined care and enhanced efficiency for oncologists.
+
+        ### Quick Access to Essential Resources
+        Instantly access frequently used medications, investigations, and clinical tools such as guidelines, checklists, and reminders for efficient care delivery.
+
+        ### Effortless Care Team Collaboration
+        Enhance coordination and communication among oncologists, nurses, and other healthcare providers to deliver whole-person, patient-centered care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both Oncologists and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks.Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Oncology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Oncologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Oncology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Oncology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Oncology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Oncology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Oncology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Oncology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for oncology clinics?"
+    answer: "The best EMR software for oncology clinics should support chemotherapy tracking, diagnostic reports, treatment protocols, and long-term patient care. Easy Clinic is designed to manage the complete workflow of oncology clinics."
+  - question: "Does Easy Clinic support AI EMR for oncology clinics?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps doctors write notes faster and reduces manual documentation."
+  - question: "Can Easy Clinic track chemotherapy and treatment protocols?"
+    answer: "Yes. Easy Clinic allows clinics to manage chemotherapy cycles and treatment plans."
+  - question: "Does Easy Clinic store diagnostic and lab reports?"
+    answer: "Yes. Clinics can store lab results, imaging reports, and other diagnostic data in patient records."
+  - question: "Can Easy Clinic support long-term cancer patient tracking?"
+    answer: "Yes. Easy Clinic supports continuous monitoring and follow-up tracking for cancer patients."
+  - question: "Does Easy Clinic support multi-doctor coordination?"
+    answer: "Yes. Oncology care often involves multiple specialists, and Easy Clinic supports collaborative workflows."
+  - question: "Does Easy Clinic support billing for oncology services?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage inventory for oncology medicines?"
+    answer: "Yes. Inventory management is included for medicines and clinic supplies."
+  - question: "Is Easy Clinic suitable for both small and large oncology clinics?"
+    answer: "Yes. Easy Clinic works for standalone clinics as well as multi-speciality centres."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic provides analytics to track patient outcomes, treatments, and revenue."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /hematology-emr/
+      label: Haematology EMR
+      description: For the haematology clinic that charts blood counts visit by visit.
+      icon: file-chart-column
+    - href: /pathology-emr/
+      label: Pathology EMR
+      description: For the pathology lab, from the test order to the report on the chart.
+      icon: file-check
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+    - href: /general-surgery-emr/
+      label: General surgery EMR
+      description: 'For the surgeon''s outpatient side, from the work-up to the post-operative review.'
+      icon: list-checks
+    - href: /gastroenterology-emr/
+      label: Gastroenterology EMR
+      description: For the GI clinic with endoscopy reports beside each review.
+      icon: file-text
+    - href: /pulmonology-emr/
+      label: Pulmonology EMR
+      description: For the chest clinic that follows asthma, COPD and spirometry reports.
+      icon: activity
+closing:
+  heading: See a chemotherapy cycle on Easy Clinic
+  body: >-
+    Book a demo and ask to see a treatment plan with its cycles, the blood count charted across them and a
+    package bill paid in parts, or compare what Premium includes on the pricing page.
+  primary:
+    label: Book an oncology clinic demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: See Premium pricing
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The plan split an oncology centre actually meets (package treatments and lab reports in the chart on
+    Premium, its own lab and pharmacy on Enterprise or as modules) and the regimen and cycle records come
+    from Easy Clinic's own oncology page and plans.yaml; the only local fact is the rupee price.
+  readsMachineWritten: >-
+    The four pains are composites rather than a named clinic's day, and the page has no oncologist's
+    words, no screenshot of a cycle record and no timed visit, so an oncologist will notice that there is no
+    regimen library, dose calculation, staging form or tumour board described.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: the live /oncology-emr/ page (fetched 2026-11-05) states plainly: "Treatment Planning: chemotherapy regimen management"; FAQ "Can it track chemotherapy and treatment protocols? Yes, manages cycles and treatment plans" (written here as the regimen, the plan and each cycle recorded, with no protocol engine); FAQ storage of lab results, imaging reports and other diagnostic data; long-term follow-up tracking; multi-doctor coordination and care-team collaboration; vitals and lab charts; AI-generated summaries and facesheets (written as auto-generated summaries); point-and-click entry; the intake form (chronic conditions, family and social history, obstetric-gynaecology details, substance use, alternative therapies, COVID history, immunisations); image and document upload, drug interaction check, patient education, collaborative case notes, nurse intake, side-by-side past records; teleconsultation in the browser with online fees and the remote-consult disclaimer; part and advance payments, authorised refunds and voids, payment amortisation for package treatments; resource booking (equipment, assistants) in the slot and the multi-resource calendar; role-based access. Plan placement follows plans.yaml.'
+  - 'Dropped from the live page: both "Easy Clinic vs Other/Generic EMR" comparison tables (unsourced competitor cells, including "chemotherapy and protocol tracking: built-in" and "oncology consultation templates"); "Ready in 30 Seconds" (unmeasured); AI-powered differential diagnosis and adverse drug event alerts (CuraPilot claims, not confirmed for this page); "invoices in less than 10 seconds"; "over 100 graphical dashboards", data warehouse, Power BI and Azure Data Factory; the FAQ "Inventory for oncology medicines? Yes" as an every-plan claim (plans.yaml: Enterprise or a module); the FAQ "performance reports on outcomes" (no outcome reporting confirmed); prescriptions "in any language"; AI wait-time alerts and AI two-way messaging; patient self-service booking (plan unclear); medical calculators, tabular Rx, triage and growth charts (listed without detail); the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "absolutely free - no strings attached" lines (owner decision: no free trial). The live testimonials (two psychiatrists, a general physician, an ophthalmologist) are not oncology quotes.'
+  - 'Facts needed (company to-do for spec 5.15): (1) a named oncologist testimonial with consent, placed only here; (2) what "chemotherapy regimen management" covers: a regimen library, body-surface-area dose calculation, cycle scheduling or toxicity grading, and on which plan (the plan and cycle rows carry no plan tag); (3) oncology templates and forms, named and counted (the comparison table claims "oncology consultation templates" but names none); (4) staging, performance status and tumour board records; (5) the day-care chair booking is the generic resource booking stated on the live page, not an oncology day-care module; confirm; (6) which oncology note types Cura AI drafts, with an example; (7) a timed walkthrough of a cycle visit; (8) whether nurses need a paid login under per-doctor pricing.'
+  - 'Hero: 2_EMR.png, with the alt text already used on the solution pages; the screenshot is a general physician''s visit with a Complete Blood Count trend chart, and the alt says no more than that. When the seeded demo tenant exists, capture a treatment plan with its cycles and the count charted beside it. The four pains are illustrative situations, not customers; "fourth cycle" and "three printouts" are examples.'
+  - 'Related links: the draft post /oncology-clinic-management-software/ is left out of links.related because a draft link renders as plain text in production; add it when it publishes. /solutions/hospital-opd/ and /solutions/polyclinic/ fit the usual practice size (spec 2.9). Title 34 characters; meta description under 155 characters with the token resolved.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number.

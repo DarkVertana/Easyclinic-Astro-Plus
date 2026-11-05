@@ -1,0 +1,687 @@
+# /pathology-emr/ (spec 5.15 SpecialtyPage template). Slug kept from the live site; it 301'd to /features/lab/
+# until 2026-11-05 (owner request: every footer specialty gets its own page). /features/lab/ stays the owner of
+# "lab management software for clinics" and the lab plan table; this page speaks to the pathologist and the
+# clinic lab, says the same things on plans, and links there. Grounding: the live /pathology-emr/ page
+# (retrieved 2026-11-05), /features/lab/ and plans.yaml. No analyser makes, protocols, turnaround figures,
+# accreditation status or volume claims.
+status: published
+headKeyword: pathology EMR software
+secondaryKeywords:
+  - pathology clinic software
+  - EMR for pathologists
+  - diagnostic lab EMR
+title: 'Pathology EMR Software: Easy Clinic'
+metaDescription: >-
+  Pathology EMR software: a test catalog with your own packages, samples tracked by barcode, and reports
+  from templates back on the patient's record.
+h1: "Revolutionize Your Pathology Clinic with Easy Clinic’s EMR"
+linkLabel: Pathology
+eyebrow: For pathology labs in clinics
+openingAnswer: "Streamline lab operations, automate test processes, and deliver accurate reports faster with our Pathology EMR. Empower your team with advanced tools for efficient patient management and seamless workflow integration."
+summary: >-
+  Tests ordered from the chart, samples tracked by barcode or QR code, and reports from templates back on
+  the patient's record, with lab management on Enterprise or as an add-on.
+author: subhashish-saha
+lastUpdated: 2026-11-05
+heroMedia:
+  kind: screenshot
+  src: '../../assets/images/specialties/Allergy_EXM.png'
+  alt: "An Easy Clinic physical examination form for an allergy visit, with the chief complaint ticked as sneezing and cough, and food, medication and environmental allergies such as eggs, penicillin, pollen and dust mites"
+  frame: none
+ctas:
+  primary:
+    label: Book a pathology lab demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/#plans
+  whatsapp: Hi, I was reading the Easy Clinic pathology page and would like to see the lab workflow in a demo.
+
+sections:
+  - discriminant: painBlocks
+    value:
+      id: where-a-pathology-lab-loses-time
+      heading: Where a clinic's pathology lab loses time
+      intro: >-
+        A lab that sits inside a clinic works for the doctors upstairs as much as for<br class="hidden md:inline">
+        the patient at the counter. Most of the lost time is spent between the two.
+      items:
+        - heading: The doctor phones the lab for the result
+          body: >-
+            The report is ready at noon, but it is on paper at the lab counter. The doctor upstairs rings
+            down to have the haemoglobin read out over the phone, while the next patient waits.
+          fix: >-
+            With lab management, the result comes back into the patient's record once it is entered,
+            with abnormal values flagged, so the doctor reads it on the chart already open.
+        - heading: Every technician types the report differently
+          body: >-
+            The morning technician writes units one way and the evening one another, and the reference
+            ranges drift between reports. The doctors notice, and so do patients who compare.
+          fix: >-
+            Lab reports are generated from built-in templates, so the technician enters the values on a set
+            layout for each test and every report from the lab reads the same way.
+        - heading: The health check-up package is billed test by test
+          body: >-
+            A patient comes for the clinic's health check-up package. The counter enters each of the tests
+            in it one at a time, and one gets missed off the bill or off the work list.
+          fix: >-
+            The test catalog holds single tests and the health check-up packages you put together, and the
+            tests ordered go on the patient's bill, so the desk does not type them in again.
+        - heading: The reagent ran out on Saturday morning
+          body: >-
+            The weekend rush of fasting samples arrives, and the kit for one of the busiest tests is used
+            up. Nobody had seen the stock fall.
+          fix: >-
+            Reagents and lab supplies can be kept in Easy Clinic's inventory, which comes with Enterprise or
+            as part of the pharmacy and inventory add-on on Professional and Premium.
+
+  - discriminant: featureRows
+    value:
+      id: pathology-workflow
+      heading: Built around the lab's work list
+      intro: >-
+        The lab's side and the doctor's side work on the same patient record. Lab management, the first
+        three rows, comes with Enterprise or as an add-on on Professional and Premium, and flagged results
+        in the chart come with Premium.
+      layout: grid
+      items:
+        - heading: A test catalog with your own packages
+          icon: list-checks
+          body: >-
+            Your lab's tests sit in one catalog, blood, urine and imaging tests among them, with the health
+            check-up packages you put together. The doctor orders from it on the patient's chart, so the lab
+            reads the order as it was written.
+          bullets:
+            - Single tests and your own check-up packages
+            - Orders from the chart, not from a paper slip
+        - heading: Samples tracked by barcode or QR code
+          icon: scan-line
+          body: >-
+            Each sample is labelled with a barcode or QR code when it is collected, tying the tube to the
+            patient and the test, and tracking follows it from collection through processing to the result,
+            so tubes are not mixed up on the way.
+          bullets:
+            - Each tube tied to the patient and the test
+            - Tracked from collection through processing to the result
+        - heading: Reports built from templates
+          icon: file-text
+          body: >-
+            The technician enters the values on the test's report template and the report is generated from
+            it, so every report from the lab has the same layout, whoever was on the bench that day.
+          bullets:
+            - Values entered on the test's report template
+            - The same layout on every report, whoever is on the bench
+        - heading: Several technicians, each with their own login
+          icon: users
+          body: >-
+            Lab technicians, the pathologist and the doctors each log in as themselves, and the role on that
+            login decides which screens they can open; the reception login included in the price cannot open
+            the EMR.
+          bullets:
+            - Each role decides which screens a login can open
+            - The reception login in the price cannot open the EMR
+        - heading: Results in the chart, flagged and charted
+          icon: chart-line
+          body: >-
+            Lab reports come into the patient's chart with abnormal values flagged, and the values are
+            charted across visits beside the vitals. On Premium and Enterprise, the report can also go to the
+            patient on WhatsApp.
+          bullets:
+            - Abnormal values flagged as reports come into the chart
+            - Reports sent on WhatsApp on Premium and Enterprise
+        - heading: Outside reports on the same record
+          icon: file-check
+          body: >-
+            When a sample goes to an outside lab, its report is scanned and uploaded to the patient's record
+            as a file, beside the results from your own lab. A direct feed from an outside lab's system would
+            be integration work, scoped as a project.
+          bullets:
+            - Outside lab reports scanned and uploaded as files
+            - A direct feed from another lab scoped as a project
+
+  - discriminant: featureRows
+    value:
+      id: sample-desk-to-report
+      heading: A sample, from the desk to the report going out
+      intro: >-
+        How one test runs through a clinic's lab on Easy Clinic. We have not timed these steps in a lab, so
+        the page gives no minutes for them.
+      tone: plain
+      layout: list
+      linkArrow: false
+      items:
+        - heading: At the desk
+          icon: calendar-clock
+          body: >-
+            Walk-ins join the same calendar as booked appointments, so the counter works from one list. The
+            appointment screen shows each patient's status through the visit, from check-in until they leave.
+          link:
+            label: Read how booking works
+            href: /features/appointment-scheduling/
+        - heading: The tests on the bill
+          icon: receipt
+          body: >-
+            The tests ordered from the chart go on the patient's bill, so the desk does not type them in again,
+            and billing and payments come with every plan. An advance or a part payment is recorded against
+            the bill, and the balance shows at once.
+          link:
+            label: Read how billing works
+            href: /features/billing/
+        - heading: Collection and processing
+          icon: flask-conical
+          body: >-
+            Sample collection, processing and result generation follow one workflow in lab management, which
+            comes with Enterprise or as an add-on on Professional and Premium. The lab can tell where each
+            sample is between collection and the result.
+          link:
+            label: Read how lab orders and results work
+            href: /features/lab/
+        - heading: The report reaching the patient
+          icon: message-circle
+          body: >-
+            Once the values are entered, the result comes back into the patient's record, ready for the doctor
+            at the follow-up. On Premium and Enterprise the report can go to the patient on WhatsApp, so the
+            patient has it at any other doctor they see. On Professional, a report can still be scanned and
+            attached to the patient's record as a file.
+
+  - discriminant: splitContent
+    value:
+      id: specialty-emr
+      heading: Electronic Medical Records (EMR) which is flexible
+      headingAccent: flexible
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Instant Prescriptions: Create and Share in Just 30 Seconds
+        Effortlessly generate detailed prescriptions in 30 seconds and instantly share them via print, WhatsApp, SMS, or email in any language.
+
+        ### Tailored Pathology EMR for Specialists
+        Specifically designed to match your specialty, workflow, and preferences, ensuring a seamless and efficient experience.
+
+        ### AI-Driven Efficiency
+        Streamline your documentation process and save time with an AI-powered assistant.
+
+        ### Test Catalog and Packages
+        Include a library of tests (e.g., blood tests, urine analysis, imaging) and customizable health check-up packages.
+
+        ### Sample Tracking
+        Barcode-based or QR code-based tracking for samples to prevent mix-ups.
+
+        ### Workflow Automation
+        Automate test workflows for sample collection, processing, and result generation.
+
+        ### Visual Health Insights
+        Effortlessly visualize specific vitals, lab reports, and clinical parameters for better patient care.
+
+        ### Streamlined Patient Summaries: Instant Access to Complete Case Histories
+        Save time with auto-generated summaries and facesheets, intelligently presenting key patient data.
+
+        ### Simplified Point-and-Click Interface
+        Easily record chief complaints, medical history, vitals, and more using a user-friendly interface. Features custom examination forms, auto-complete notes, diagnosis, medications, investigations, referrals, follow-ups, and patient guidelines, all designed for quick access without navigating lengthy screens.
+
+        ### Complete Medical History: Customizable Intake Forms for Pathology Patients
+        Capture detailed or concise medical histories tailored to your needs, including chronic illnesses, family and social history, obs-gynae details, substance use, alternative therapies, COVID history, and immunizations. All information is seamlessly integrated into the patient’s face sheet for quick reference during follow-ups.
+      chipsLabel: And more...
+      chips:
+        - Multilingual Prescription
+        - Custom examination forms
+        - Image upload
+        - Document upload
+        - Referral management
+        - Automated follow up
+        - Drug interaction check
+        - Vitals & Lab charts
+        - Confidential notes
+        - Patient education
+        - Collaborative case notes
+        - Triage
+        - Personalised Print formats
+      link:
+        label: Click to read EMR features in details
+        href: /features/emr/
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Prescription-3-2.png
+        alt: 'An Easy Clinic patient profile with the facesheet of conditions, allergies and past procedures, and a summary of the last visit'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: advanced-emr
+      heading: Advanced EMR for specialists
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### Specialty-Focused Design: Tailored for Pathology Specialists and Clinics
+        Specifically crafted to address the unique requirements of specialists, super-specialists, and pathology clinic chains.
+
+        ### AI-Powered Diagnostic Support
+        Utilize advanced AI for differential diagnoses and alerts on adverse drug events, specifically designed for pathology patients with chronic conditions.
+
+        ### Customizable Template & Form Builder: Seamlessly Digitize Paper Forms
+        Effortlessly convert your paper forms into digital templates with our flexible, easy-to-use builder.
+
+        ### Complete Patient Data at a Glance
+        Access complete patient visit history on a single screen to streamline care and improve efficiency.
+
+        ### Quick Access to Essential Resources
+        Instantly access commonly used medications, investigations, and clinical tools like guidelines, checklists, and reminders.
+
+        ### Effortless Care Team Collaboration
+        Promotes efficient communication and coordination among nurses, Pathologists, and other healthcare providers to deliver complete patient care.
+      chipsLabel: And more...
+      chips:
+        - Tabular Rx
+        - Medical calculators
+        - Side-by-Side past records
+        - Upload documents
+        - Clinical Assistant / Nurse intake
+        - ADR alerts
+        - Personalised case sheet
+        - Growth & Progress charts
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Examination-3-1.png
+        alt: 'An Easy Clinic examination template with its own sections and pick lists, beside the visit''s investigations, medications and follow-up'
+        frame: none
+
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
+
+  - discriminant: splitContent
+    value:
+      id: teleconsultation
+      heading: Teleconsultation, Video consult & Online fees collection
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Integrated Telemedicine Services
+        Utilises Easy Clinic's in-built video and chat features to provide telemedicine services, offering a seamless virtual consultation experience.
+
+        ### Online Appointment and Payment Integration
+        Facilitates the creation of online video consultations through the appointment module, complete with options for online fee payment, streamlining the booking and payment process for teleconsultations.
+
+        ### No Need for Third-Party Software
+        Both doctors and patients can use a web browser on a computer or phone for remote consultations, eliminating the requirement for additional software and enhancing user convenience.
+
+        ### Instant Prescription Delivery
+        Allows prescriptions from the teleconsult to be sent instantly via WhatsApp, SMS, or email. Prescriptions include a disclaimer indicating that the consultation was conducted remotely, ensuring clarity and compliance.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/3_Video_consultent.png
+        alt: 'An Easy Clinic patient visit with complaints, vitals, diagnosis and medications, a payment request for an online consultation, and a doctor on a video call with the patient'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: billing
+      heading: Billing, Payments & Reconciliation made really simple
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### One-Click Billing
+        Simple one-click billing process, designed for ease of use by receptionists and billing clerks. Invoices are ready in less than 10 seconds.
+
+        ### Effortless Payment Processing
+        Seamlessly manage online and offline payments with immediate balance visibility and payment suggestions at a click.
+
+        ### Flexible Payment Options
+        Offers flexibility in handling part payments, advance payments, refunds, and invoice voiding with proper authorization, as well as payment amortisation for package treatments.
+
+        ### Service List with Flexible pricing
+        Effortlessly manage billing services and items with the ability to adjust prices, offering variable pricing flexibility without the need to regenerate entire billing records.
+
+        ### Automated Taxable Item Management
+        Utilises a custom tax definition module for automatic management of taxable versus non-taxable items, simplifying tax-related processes.
+
+        ### Comprehensive Financial Reporting
+        Access detailed financial reports in various formats for daily, weekly, monthly, and quarterly book balancing and profit & loss analysis.
+
+        ### Digital Integration
+        Integrated with WhatsApp, SMS, and Email to digitally send payment receipts and invoices to patients.
+
+        ### Customizable Billing Templates
+        Personalise billing templates to fit the unique needs of your Pathology practice, enhancing the professional appearance of your invoices and receipts.
+      chipsLabel: And more...
+      chips:
+        - Quick Bill - 1 Click
+        - Service List
+        - Multi Level Price List
+        - Discount Authorisation
+        - Taxable & Non Taxable Items
+        - Profit & Loss Analysis
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Invoice_Feature_01.png
+        alt: 'Easy Clinic billing: a list of invoices with their status, an invoice with its items and totals, revenue by day, an invoice balance with a registered payment, and a commercial invoice ready to print, email or send by WhatsApp or SMS'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: scheduling
+      heading: Comprehensive Appointment & Resource Scheduling
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      stickyMedia: true
+      alignTop: true
+      body: |-
+        ### User-Friendly Appointment Scheduling
+        Designed for ease of use, allowing Pathologists to effortlessly schedule appointments, enhancing daily practice efficiency.
+
+        ### Versatile Scheduling Options
+        Offers unlimited flexibility with options for fixed-time appointments, walk-ins, first-come-first-serve, docket number management, teleconsultations, and priority patient handling.
+
+        ### Automated Patient Reminders
+        Reduces no-shows with automated reminders, improving patient attendance and clinic efficiency.
+
+        ### Advanced Waiting Room Management
+        Efficiently manages the waiting room with real-time updates on the day's progress, queue status, waiting times, and more.
+
+        ### Integrated Teleconsultation Scheduling
+        Facilitates easy scheduling of video or remote consultations with online prepayment options, accessible via computer or phone.
+
+        ### Streamlined Patient Self-Service
+        Enables Pathology patients to book appointments, self on-board, check-in, and fill out customised intake forms on their phone, enhancing patient convenience.
+
+        ### Comprehensive Appointment Dashboard
+        Provides a dashboard view of daily appointments, visit status, and billing updates for smooth day-to-day operations.
+
+        ### Resource Booking Within Appointments
+        Allows booking of any Pathology clinic resource, such as equipment or assistants, directly within the appointment slot for procedural efficiency.
+
+        ### AI-Powered Wait Time Management
+        Powered by AI to provide real-time alerts on wait times and queue status, reducing patient congestion at the reception.
+
+        ### Centralised Multi-Location Scheduling
+        Manages appointments across multiple Pathology clinic locations with centralised scheduling, streamlining operations for larger practices.
+      chipsLabel: And more...
+      chips:
+        - Multi Session Booking
+        - Personal Appointments
+        - Multi-Resource Calendar
+        - User Preferred Time Slots
+        - Data Access Control for Reception
+        - Own Website Link
+        - Token Number
+        - Priority Appointments
+        - Confidential Appointment
+        - Waiting Time Reminder
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/8_Appointment.png
+        alt: 'The Easy Clinic appointment calendar for two doctors, with the day''s visits, a booking form, a token list and an appointment reminder'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: hr-and-access
+      heading: HR, User and Access Control
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Comprehensive User Management
+        Manages all user details, including access rights and audit logs, ensuring secure and organised handling of user information.
+
+        ### Fine-Grained Security and Access Control
+        Allows detailed security and access settings based on roles, departments, and hierarchical levels, enhancing data safety and operational efficiency.
+
+        ### Incentive and Commission Plans
+        Facilitates the creation of incentive or commission plans for users, coupled with the generation of performance reports to track and encourage staff productivity.
+
+        ### Roster and Attendance Management
+        Manages rosters, tracks attendance, schedules appointments, and manages holidays for all users, streamlining HR processes within the healthcare setting.
+      chipsLabel: And more...
+      chips:
+        - Leave Management
+        - Login Control
+        - Audit Logs
+        - Contract Documents
+        - Usage History
+        - Role Based Access
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/18_User.png
+        alt: 'Easy Clinic users: a user list, a doctor''s profile with role and registration details, appointment permissions by role, and a weekly roster'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: reports-and-analytics
+      heading: Reports, Dashboards and Business Analytics
+      centerHeading: true
+      mediaFirst: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Extensive Dashboard and Report Library
+        Includes over 100 graphical dashboards and detailed reports, covering clinical, administrative, inventory, and financial data.
+
+        ### Access-Controlled Reports
+        Ensures reports are access-controlled, with visibility limited to users who have the necessary authorization.
+
+        ### Flexible Export Options
+        Provides export functionalities to Excel and PDF formats, facilitating offline processing and long-term archiving.
+
+        ### Customisable Filters and Search Parameters
+        Includes multiple filters and user-defined search parameters to display relevant information tailored to specific needs.
+
+        ### Custom Report Creation
+        Enables you to create custom reports to meet unique business-specific requirements.
+
+        ### Comprehensive Cross-Location Analytics
+        Capable of running cross-location and cross-department metrics and analytics, suitable for complex healthcare operations.
+
+        ### Dedicated Data Warehouse for Large Chains
+        For large Pathology clinic chains, Easy Clinic includes a dedicated Data Warehouse and Reporting solution, enhancing data management and analysis capabilities.
+      chipsLabel: And more...
+      chips:
+        - Data Warehouse
+        - Data Mining
+        - Custom Reports
+        - Power BI integration
+        - Azure Data Factory
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/14_Dashboard (1).jpg
+        alt: 'Easy Clinic dashboards: patients by specialisation and by week, the top four diagnoses, today''s report and invoices by status'
+        frame: none
+
+  - discriminant: splitContent
+    value:
+      id: communication
+      heading: Communication - All in one with WhatsApp, SMS, Email & Push Notification
+      centerHeading: true
+      featureList: true
+      narrowMedia: true
+      alignTop: true
+      body: |-
+        ### Unified Communication Channels
+        Streamlines communication with patients, referral doctors, third-party providers, suppliers, and internal staff through integrated channels like WhatsApp, SMS, Email, and push notifications.
+
+        ### Customisable Messaging Templates
+        Offers a simple interface for customising messaging for every module. Users can set up message templates and define events for automated communication, enhancing efficiency.
+
+        ### Streamlined Patient Communication
+        Automates and streamlines patient communications, including appointment reminders, digital prescriptions, invoices, and receipts, using the powerful workflow builder.
+
+        ### Brand Channel Integration
+        Supports custom integrations for WhatsApp, Email, and SMS, enabling Pathology clinics to send messages through their own branded channels, maintaining consistency in communication.
+
+        ### AI-Powered Two-Way Messaging
+        Incorporates two-way messaging with the integration of AI, automating standard patient communication and significantly reducing the need for phone calls, thereby saving valuable time for Pathology clinic staff.
+      media:
+        kind: screenshot
+        src: ../../assets/images/specialties/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+  - discriminant: dataTable
+    value:
+      id: plans
+      heading: Which plan includes what for a pathology lab
+      variant: plans
+      intro: >-
+        The lab is split across the plans, and each row here follows the plan list on the pricing page and
+        the lab feature page.
+      columns:
+        - What the lab needs
+        - Professional
+        - Premium
+        - Enterprise
+      rows:
+        - - 'Lab management: catalog, orders from the chart, sample tracking'
+          - Add-on
+          - Add-on
+          - Included
+        - - Lab reports in the chart
+          - Not included
+          - Included
+          - Included
+        - - Reports to patients on WhatsApp
+          - Not included
+          - Included
+          - Included
+        - - Connections to lab analysers
+          - Add-on, scoped per project
+          - Add-on, scoped per project
+          - Included, scoped per project
+        - - Stock of reagents and lab supplies
+          - Add-on, with pharmacy and inventory
+          - Add-on, with pharmacy and inventory
+          - Included
+        - - Billing and payments
+          - Included
+          - Included
+          - Included
+      note: >-
+        Professional costs {price:usd.professional.annual} and Premium {price:usd.premium.annual} per doctor
+        per month billed annually ({price:inr.professional.annual} and {price:inr.premium.annual} in India).
+        Enterprise is priced on a quote, and add-on prices are quoted with the add-on.
+
+faqHeading: "You Have Questions, We Have Answers"
+faq:
+  - question: "What is the best EMR software for pathology labs?"
+    answer: "The best EMR software for pathology labs should support sample tracking, automated reporting, billing, and high-volume processing. Easy Clinic is designed to manage complete pathology workflows."
+  - question: "Does Easy Clinic support AI EMR for pathology labs?"
+    answer: "Yes. Easy Clinic includes AI EMR Software that helps reduce manual data entry and speeds up reporting."
+  - question: "Can Easy Clinic track samples and test workflows?"
+    answer: "Yes. Easy Clinic allows labs to manage sample collection, tracking, and processing efficiently."
+  - question: "Does Easy Clinic support automated report generation?"
+    answer: "Yes. Labs can generate structured reports quickly using built-in templates."
+  - question: "Can Easy Clinic handle high patient and test volume?"
+    answer: "Yes. Easy Clinic is optimised for high-volume diagnostic environments."
+  - question: "Does Easy Clinic support barcode-based workflows?"
+    answer: "Yes. Easy Clinic supports barcode integration to improve lab efficiency and accuracy."
+  - question: "Does Easy Clinic support billing for lab tests?"
+    answer: "Yes. Billing, invoicing, and payment tracking are included."
+  - question: "Can Easy Clinic manage inventory for lab supplies?"
+    answer: "Yes. Inventory management is included for reagents and supplies."
+  - question: "Can multiple lab technicians use Easy Clinic?"
+    answer: "Yes. Easy Clinic supports multi-user access for lab teams."
+  - question: "Is Easy Clinic cloud-based?"
+    answer: "Yes. Easy Clinic is fully cloud-based and accessible from anywhere."
+  - question: "Does Easy Clinic provide reports for clinic performance?"
+    answer: "Yes. Easy Clinic is designed to work with lab workflows and supports integration readiness."
+
+links:
+  hub: /specialties/
+  relatedHeading: Where to go next
+  relatedArrows: false
+  related:
+    - href: /hematology-emr/
+      label: Haematology EMR
+      description: For the haematology clinic that charts blood counts visit by visit.
+      icon: file-chart-column
+    - href: /radiology-emr/
+      label: Radiology EMR
+      description: For the imaging centre, from the request to the structured report.
+      icon: scan-line
+    - href: /oncology-emr/
+      label: Oncology EMR
+      description: For the oncology clinic that records treatment cycles and blood counts.
+      icon: file-heart
+    - href: /general-practitioner-emr/
+      label: General practitioner EMR
+      description: For the GP who sees walk-ins and keeps the history on one facesheet.
+      icon: clipboard-plus
+    - href: /diabetology-emr-software/
+      label: Diabetology EMR
+      description: For the diabetes clinic that follows sugar trends and foot and eye checks.
+      icon: chart-pie
+    - href: /nephrology-emr/
+      label: Nephrology EMR
+      description: For the kidney clinic that follows CKD and transplant patients.
+      icon: workflow
+closing:
+  heading: See a sample go from the order to the report
+  body: >-
+    Book a demo to watch a test ordered on the chart, the sample labelled and tracked, and the report built
+    from its template land on the patient's record, or compare the plans on the pricing page.
+  primary:
+    label: Book a pathology lab demo
+    href: /contact-us/#book-a-demo
+  secondary:
+    label: Compare plans and prices
+    href: /pricing/#plans
+
+editorialPass:
+  by: 'Claude (AI review; human read-aloud pass pending)'
+  on: 2026-11-05
+  onlyUsCouldWrite: >-
+    The plan split for the lab (lab management on Enterprise or as an add-on, reports in the chart and on
+    WhatsApp on Premium), the barcode or QR sample labels and the report templates come from Easy Clinic's
+    own pathology and pricing pages, and match the lab feature page word for word on plans.
+  readsMachineWritten: >-
+    The four pains are composites, and the page has no pathologist's words, no measured turnaround and no
+    named analyser, so a pathologist will notice that quality control, accreditation and the sign-off of a
+    report are not described.
+
+notes:
+  - 'Owner request 2026-11-05: the FAQ heading is "You Have Questions, We Have Answers" and the 11 FAQs are the live page''s, word for word (banned words swapped); some answers may state plan or hosting facts more broadly than the rest of the page.'
+  - 'Owner request 2026-11-05: the related links are now six related specialty pages under "Where to go next", with an icon on each card and no arrows (the solution, country, feature and pricing cards were removed).'
+  - 'Owner request 2026-11-05: the communication section added after the reports section, image on the right, with the points from this page''s live communication section; AI two-way messaging is the live page''s claim and is not confirmed here, and WhatsApp is on Premium.'
+  - 'Owner request 2026-11-05: the reports and analytics section added after the HR section, image on the left, with the points from this page''s live reports section; over 100 dashboards, the data warehouse and Power BI integration are the live page''s claims and are not confirmed here.'
+  - 'Owner request 2026-11-05: the HR, user and access control section added after the scheduling section, image on the right, with the live page''s points (the same wording on every specialty page).'
+  - 'Owner request 2026-11-05: the scheduling section added after the billing section, image on the left, with the points from this page''s live scheduling section; AI wait-time alerts, reduced no-shows and patient self-service on the phone are the live page''s claims and are not confirmed here (the patient portal and app are Enterprise).'
+  - 'Owner request 2026-11-05: the billing section added after the teleconsultation section, image on the right, with the points from this page''s live billing section; the live free-trial line was left out, and invoices in under 10 seconds is the live page''s unmeasured claim.'
+  - 'Owner request 2026-11-05: the teleconsultation section added after the testimonial carousel, image on the left, with the points from this page''s live teleconsultation section; video consultations are on Premium, which this section does not say.'
+  - 'Owner request 2026-11-05: the /pricing/ testimonial carousel (manish-bhatia, premanand-raya, nrp-chandra-balaji) added after the Advanced EMR section.'
+  - 'Owner request 2026-11-05: the Advanced EMR section added after the EMR section, image on the right, with the points from this page''s live Advanced EMR section; the AI diagnostic support and ADR alert claims are the live page''s and are not confirmed here.'
+  - 'Owner request 2026-11-05: the EMR section (Electronic Medical Records which is flexible) added after the list section, with the feature points from this page''s live EMR section; claims such as 30-second prescriptions, any language and three clicks are the live page''s and are unmeasured here.'
+  - 'Owner request 2026-11-05: the ratings section (How clinics rate Easy Clinic) and the training steps section were removed from every specialty page.'
+  - 'Grounding: the live /pathology-emr/ page (fetched 2026-11-05) states plainly: a test catalog of blood, urine and imaging tests with customisable health check-up packages; barcode- or QR-based sample tracking "to prevent mix-ups"; workflow automation for sample collection, processing and result generation; built-in report templates (FAQ "automated report generation... uses built-in templates"); multi-user access for lab technicians (FAQ); billing for lab tests; vitals and lab charts; inventory for reagents and supplies (FAQ, placed on Enterprise or the pharmacy and inventory add-on per plans.yaml); role-based access. Plan statements follow src/data/plans.yaml and match /features/lab/ (its plan table is mirrored here row for row): lab management on Enterprise or as an add-on on Professional and Premium; lab reports in the chart and WhatsApp on Premium; analyser connections as the integrations add-on, scoped per project; reagent stock with pharmacy and inventory. Add-on prices are null in src/data/prices, so none is stated.'
+  - 'Cannibalisation: /features/lab/ owns "lab management software for clinics" and lists "pathology lab software" as a secondary keyword. This page''s head keyword is "pathology EMR software" (the live slug''s term) and it is written for the pathologist and lab team; it links to /features/lab/ first in links.related, in the first pain and in an FAQ. Marketing to confirm the split or move "pathology lab software" here.'
+  - 'Dropped from the live page: both "Easy Clinic vs Other/Generic EMR" comparison tables (unsourced competitor cells); "lab device integration readiness" and "barcode integration" as a built-in claim (written only as scoped integration work and barcode labels); "optimised for high-volume diagnostics" (no source); AI that "speeds up reporting" and AI differential diagnosis and ADR alerts (CuraPilot claims); "Create and Share in Just 30 Seconds" and "invoices in under 10 seconds" (unmeasured); "over 100 graphical dashboards", Power BI, Azure Data Factory and the data warehouse; AI wait-time alerts and two-way messaging; patient self-service (plan unclear); the "14-Day Free Trial, with an extra 30-Day Money Back Guarantee" and "absolutely free" lines (owner decision: no free trial). The live testimonials (two psychiatrists, a general physician, an ophthalmologist) are not pathology quotes. Not written for lack of a source: a report sign-off or authorisation step by the pathologist, quality control, NABL or other accreditation documents, turnaround-time reports, home collection, and referral-doctor commissions.'
+  - 'Facts needed (company to-do for spec 5.15): (1) a named pathologist or lab owner testimonial with consent; (2) whether a pathologist approves or signs a report before release, and how; (3) the report templates by name and count; (4) analyser and LIS connections with status by country; (5) the add-on price for lab management; (6) whether lab technicians need a paid login under per-doctor pricing, and how per-doctor pricing applies to a lab without doctors; (7) a timed sample-to-report walkthrough; (8) which plan carries the report templates (the lab page also leaves it untagged; here it sits under the lab management intro).'
+  - 'Hero: 12_Investigation_1.png with the alt text already used on the features hub (lab orders from the chart, the test picker with prices, the order status list). The four pains are illustrative situations, not customers; "noon" and "Saturday" are examples.'
+  - 'Related links: /lab-report-management/ is a published post owned by /features/lab/. The draft post /pathology-clinic-management-software/ (owner /features/lab/) is left out because a draft link renders as plain text in production. Title 35 characters; meta description under 155 characters with the token resolved.'
+  - The editorial pass recorded here is an AI review. A human editor still needs to read the page aloud and answer the two spec 6.5 questions; the page has no named person and no measured number.
+  - 'Section sample-desk-to-report (A sample, from the desk to the report going out) added 2026-11-05 after the Built around section. Grounding: the desk row uses /features/appointment-scheduling/ (walk-ins on the same calendar, status from check-in until they leave); the bill row uses this page''s health check-up pain fix and /features/lab/ (tests ordered go on the bill, billing and payments on every plan) and /features/billing/ (advance and part payments, balance at once); the collection row uses the live-page grounding in the notes above (workflow automation for sample collection, processing and result generation) and the /features/lab/ flow (the lab can tell where a sample is), with lab management on Enterprise or as an add-on; the report row uses /features/lab/ (result back on the record ready for the follow-up, WhatsApp on Premium and Enterprise, the patient has it at any other doctor, a scanned report attached on Professional). No plan fields; plans are stated in the bodies.'

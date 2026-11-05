@@ -17,8 +17,9 @@ export const schema = () =>
         no-show table). plans: a plan matrix; a cell starting Included, Add-on or Not included shows as a status chip,
         with the rest of the cell as a note under it (the /features/lab/ plan table). tiers: each row a plan column side by
         side: the first cell its name, a column headed "price" shown large, the last cell as its description
-        (the /features/multi-location/ price table). */
-    variant: z.enum(['default', 'clean', 'figures', 'plans', 'tiers']).default('default'),
+        (the /features/multi-location/ price table). questions: the clean table for a question and its answer, with a
+        wider question column (the /features/telemedicine/ NMC table). */
+    variant: z.enum(['default', 'clean', 'figures', 'plans', 'tiers', 'questions']).default('default'),
   }).refine((b) => b.value.rows.every((row) => row.length === b.value.columns.length), {
     error: 'Every dataTable row needs one cell per column',
     path: ['value', 'rows'],

@@ -110,16 +110,17 @@ const heroPanel = d.heroPanel;
     {heroContact && <div slot="aside" class="mt-6"><ContactCard country={d.country!} showClients={false} ctx={{ ...ctx, index: -1 }} /></div>}
   </Hero>
   {d.trustSection && <TrustSection {...d.trustSection} />}
+  {/* The DHA certification section sits directly below the trust section on the Kenya listicle. */}
+  {record.path === '/best-clinic-management-software-kenya/' && <Certification />}
   {d.readinessSection && <ReadinessSection {...d.readinessSection} />}
   {d.platformSection && <PlatformSection {...d.platformSection} />}
   {record.path === '/' && <AwardRecognition />}
   {record.path === '/' && <FeatureChips />}
-  {record.path === '/' && <Certification />}
   {record.path === '/' && <ClientLogos />}
   {record.path === '/' && <WhatIsEasyClinic />}
   <Sections sections={d.sections} ctx={ctx} />
   {/* Related links come before the FAQ, so the FAQ sits directly above the closing CTA band. */}
-  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} countryPills={record.path === '/'} tinted={record.path === '/about-us/'} />
+  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} arrows={d.links.relatedArrows} countryPills={record.path === '/'} tinted={record.path === '/about-us/'} />
   {d.helpBand && <HelpBand {...d.helpBand} />}
   {
     d.nearbySection && (
