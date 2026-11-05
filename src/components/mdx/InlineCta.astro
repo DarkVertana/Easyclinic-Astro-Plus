@@ -20,7 +20,7 @@ interface Props {
 const { heading, href, label, secondaryHref, secondaryLabel } = Astro.props;
 ---
 
-<aside class="not-prose my-10 rounded-card border border-line border-l-4 border-l-teal-500 bg-surface-alt p-6" aria-label={heading}>
+<aside class="not-prose my-10 rounded-card border border-line bg-surface-alt p-6" aria-label={heading}>
   <p class="font-display text-xl font-semibold text-ink-heading">{heading}</p>
   <div class="mt-2 text-ink"><slot /></div>
   <div class="mt-4 flex flex-col gap-3 sm:flex-row">

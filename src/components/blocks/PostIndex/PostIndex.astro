@@ -1,17 +1,17 @@
 ---
 import type { SectionValue } from '../../../schemas/sections';
-import { POST_TOPIC_LABELS } from '../../../schemas/constants';
+import { POST_TOPICS, POST_TOPIC_LABELS, type PostTopic } from '../../../schemas/constants';
 import { getRegistry } from '../../../lib/content/registry';
-import { groupByTopic, toIndexItem, type IndexItem, type Listable } from '../../../lib/content/posts';
-import { formatDate, isoDate } from '../../../lib/format/date';
+import { groupByTopic, newestFirst, toIndexItem, type IndexItem, type Listable } from '../../../lib/content/posts';
 import Section from '../../ui/Section.astro';
 import Md from '../../ui/Md.astro';
-import { toneFor, type BlockContext } from '../types';
+import Icon from '../../ui/Icon.astro';
+import PostCard from './PostCard.astro';
+import { TOPIC_ICONS } from './topic-icons';
+import { type BlockContext } from '../types';
 
 type Props = SectionValue<'postIndex'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, topics, jumpLinksFrom, ctx } = Astro.props;
-const sectionTone = toneFor(tone, ctx.index);
-const inverse = sectionTone === 'inverse';
+const { id, eyebrow, heading, intro, topics, jumpLinksFrom } = Astro.props;
 
 // Spec 5.19: every post and start-a-clinic guide rendered in this stage (production: published only),
 // grouped by topic, newest first. The registry is the source, so the page never lists a hidden page.
@@ -29,83 +29,376 @@ const groups = groupByTopic(
   label: copy.get(group.topic)?.heading ?? POST_TOPIC_LABELS[group.topic],
   intro: copy.get(group.topic)?.intro,
 }));
+const labelOf = new Map(groups.map((g) => [g.topic, g.label]));
+const hrefOf = (item: IndexItem) => registry.urlFor(item.path) ?? item.path;
 
-// Headings stay in order: topic headings sit one level under the block heading (h3, or h2 when the
-// block has none), and entry titles one level under their topic.
-const TopicHeading = (heading ? 'h3' : 'h2') as 'h2' | 'h3';
-const EntryHeading = (heading ? 'h4' : 'h3') as 'h3' | 'h4';
+/** Topics with a show/hide rule in the <style> block below; add a rule there with any new topic. */
+const STYLED_TOPICS: PostTopic[] = ['switching-to-emr', 'running-a-chain', 'compliance-by-country', 'cura-ai', 'billing-and-claims', 'patient-engagement', 'start-a-clinic', 'running-a-clinic'];
+const unstyled = POST_TOPICS.filter((t) => !STYLED_TOPICS.includes(t));
+if (unstyled.length) throw new Error(`postIndex: add a :has() rule for ${unstyled.join(', ')} in PostIndex.astro`);
+
+// The newest guide leads the hero (BlogLead.astro); the next three open the page. Topic tiles and the topic filter
+// appear once there are `jumpLinksFrom` topic groups, and search once a list is too long to scan by eye. A page
+// with a handful of entries gets the plain list, where the rest would only be noise.
+const latest = items.length >= 4 ? [...items].sort(newestFirst).slice(1, 4) : [];
+const filtering = groups.length >= jumpLinksFrom;
+const SEARCH_FROM = 12;
+const searching = items.length >= SEARCH_FROM;
+
 const prefix = id ?? 'topic';
 const anchor = (topic: string) => `${prefix}-${topic}`;
-const STATUS_NOTE: Record<string, string> = { draft: 'Draft', review: 'In review' };
-const muted = inverse ? 'text-ink-inverse-muted' : 'text-ink-muted';
+const noun = (n: number) => (n === 1 ? 'guide' : 'guides');
+// The library heading is h2; topic headings h3 and card titles h4 under it.
 ---
 
 {
-  groups.length > 0 && (
-    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
-      {groups.length >= jumpLinksFrom && (
-        <nav aria-label="Jump to a topic" class="mb-10">
-          <ul class="flex flex-wrap gap-2">
-            {groups.map((group) => (
-              <li>
-                <a
-                  href={`#${anchor(group.topic)}`}
-                  class:list={[
-                    'inline-flex min-h-11 items-center rounded-control border px-4 text-sm font-medium no-underline',
-                    inverse ? 'border-white/40 text-white hover:bg-white/10' : 'border-line bg-surface text-ink hover:border-blue-500',
-                  ]}
-                >
-                  {group.label}
-                  <span class:list={['ml-2', muted]}>
-                    {group.items.length}
-                    <span class="sr-only">{group.items.length === 1 ? 'article' : 'articles'}</span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
-      <div class="grid gap-12 md:gap-16">
-        {groups.map((group) => (
-          <div class="grid gap-6 md:grid-cols-[15rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[18rem_minmax(0,1fr)]">
-            <div>
-              <TopicHeading id={anchor(group.topic)} class:list={['text-2xl leading-tight', inverse && 'text-white']}>
-                {group.label}
-              </TopicHeading>
-              {group.intro && <Md text={group.intro} class:list={['mt-3', muted]} />}
-            </div>
-            <ul class="divide-y divide-line border-y border-line" aria-labelledby={anchor(group.topic)}>
-              {group.items.map((item) => {
-                const href = registry.urlFor(item.path) ?? item.path;
-                return (
-                  <li class="group relative py-5">
-                    <EntryHeading class="font-sans text-lg font-semibold leading-snug">
-                      {/* The link's ::after covers the row, so the whole entry is one tap target. */}
-                      <a href={href} class:list={['link-plain after:absolute after:inset-0 group-hover:underline', inverse && 'text-white']}>
-                        {item.title}
-                      </a>
-                    </EntryHeading>
-                    <p class:list={['mt-1.5', muted]}>{item.summary}</p>
-                    <p class:list={['mt-2 flex flex-wrap items-center gap-x-2 text-sm', muted]}>
-                      {item.date && (
-                        <span>
-                          Updated <time datetime={isoDate(item.date)}>{formatDate(item.date)}</time>
-                        </span>
-                      )}
-                      {item.date && <span aria-hidden="true">·</span>}
-                      <span>{item.minutes} minute read</span>
-                      {STATUS_NOTE[item.status] && (
-                        <span class="rounded-full border border-line-strong px-2 text-xs font-semibold text-ink">{STATUS_NOTE[item.status]}</span>
-                      )}
-                    </p>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+  latest.length > 0 && (
+    <Section id={`${prefix}-latest`} heading="Latest guides" tone="plain">
+      <ul class="grid gap-5 md:grid-cols-3">
+        {latest.map((item) => (
+          <li>
+            <PostCard item={item} href={hrefOf(item)} topicLabel={labelOf.get(item.topic) ?? POST_TOPIC_LABELS[item.topic]} headingLevel={3} />
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   )
 }
+
+{
+  filtering && (
+    <Section id={`${prefix}-browse`} heading="Browse by topic" intro={`${groups.length} topics, from opening a clinic to getting a claim paid.`} tone="wash">
+      {/* Phones get two compact tiles a row (icon, name, count); the one-line description joins them from 640px. */}
+      <ul class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        {groups.map((group) => (
+          <li>
+            <div class="card-link relative flex h-full flex-col rounded-card border border-line bg-surface p-4 sm:p-5">
+              <div class="flex items-start justify-between gap-3">
+                <span class="inline-flex size-11 items-center justify-center rounded-control bg-surface-alt text-blue-700 dark:text-link">
+                  <Icon name={TOPIC_ICONS[group.topic]} size={22} />
+                </span>
+                <span class="card-link-arrow text-ink-muted">
+                  <Icon name="arrow-right" size={18} />
+                </span>
+              </div>
+              <h3 class="mt-4 text-base leading-snug sm:text-lg">
+                {/* Without the script this jumps to the topic in the list below; with it, it also filters the list. */}
+                <a href={`#${anchor(group.topic)}`} class="card-link-title link-plain after:absolute after:inset-0 after:rounded-card" data-pi-topic-link={group.topic}>
+                  {group.label}
+                </a>
+              </h3>
+              <p class="mt-1 text-sm font-medium text-ink-muted">
+                {group.items.length} {noun(group.items.length)}
+              </p>
+              {group.intro && <Md text={group.intro} class="mt-3 hidden text-[0.9375rem] leading-relaxed text-ink-muted sm:block" />}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </Section>
+  )
+}
+
+<Section
+  id={prefix}
+  eyebrow={eyebrow}
+  heading={heading ?? 'All guides'}
+  intro={intro ?? (searching ? 'Search by country, module or question, or choose a topic.' : undefined)}
+  tone="plain"
+>
+  <div class:list={['pi', filtering && 'pi-filtering']} data-post-index={searching ? '' : undefined}>
+    {
+      (filtering || searching) && (
+        <div class="pi-controls rounded-card border border-line bg-surface-muted p-4 sm:p-6">
+          {searching && (
+            // Search needs the script; without it the field stays hidden and the topic filter still works.
+            <div class="pi-search" data-pi-search hidden>
+              <label for={`${prefix}-search`} class="block">
+                Search the guides
+              </label>
+              <div class="relative mt-2">
+                <span class="pointer-events-none absolute inset-y-0 left-3.5 flex items-center text-ink-muted">
+                  <Icon name="search" size={20} />
+                </span>
+                <input
+                  id={`${prefix}-search`}
+                  type="search"
+                  class="pi-search-input"
+                  placeholder="Try ABDM, Kenya or claims"
+                  autocomplete="off"
+                  spellcheck="false"
+                  enterkeyhint="search"
+                  aria-describedby={`${prefix}-status`}
+                  data-pi-input
+                />
+                <button type="button" class="pi-clear" data-pi-clear hidden>
+                  <Icon name="x" size={20} label="Clear the search" />
+                </button>
+              </div>
+            </div>
+          )}
+          {filtering && (
+            <fieldset class="pi-topics min-w-0">
+              <legend class="text-sm font-semibold text-ink-heading">Topic</legend>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <label class="relative">
+                  <input type="radio" class="sr-only" name={`${prefix}-topic`} value="all" data-topic-input="all" checked />
+                  <span class="pi-chip">
+                    <span class="pi-chip-check">
+                      <Icon name="check" size={16} />
+                    </span>
+                    <span>All topics</span>
+                    <span class="pi-chip-count" data-pi-count="all">
+                      {items.length}
+                    </span>
+                  </span>
+                </label>
+                {groups.map((group) => (
+                  <label class="relative">
+                    <input type="radio" class="sr-only" name={`${prefix}-topic`} value={group.topic} data-topic-input={group.topic} data-label={group.label} />
+                    <span class="pi-chip">
+                      <span class="pi-chip-check">
+                        <Icon name="check" size={16} />
+                      </span>
+                      <span>{group.label}</span>
+                      <span class="pi-chip-count" data-pi-count={group.topic}>
+                        {group.items.length}
+                      </span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          )}
+        </div>
+      )
+    }
+
+    <div class="pi-groups grid gap-14 md:gap-16">
+      {
+        groups.map((group) => (
+          <div class="pi-group" data-topic={group.topic} data-pi-group>
+            <div class="flex items-start gap-4 border-b border-line pb-5">
+              <span class="hidden size-12 shrink-0 items-center justify-center rounded-control bg-surface-alt text-blue-700 sm:inline-flex dark:text-link">
+                <Icon name={TOPIC_ICONS[group.topic]} size={24} />
+              </span>
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 id={anchor(group.topic)} class="text-2xl leading-tight">
+                    {group.label}
+                  </h3>
+                  <p class="text-sm font-medium text-ink-muted">
+                    <span data-pi-group-count>{group.items.length}</span> <span data-pi-group-noun>{noun(group.items.length)}</span>
+                  </p>
+                </div>
+                {group.intro && <Md text={group.intro} class="mt-1.5 max-w-[60ch] text-ink-muted" />}
+              </div>
+            </div>
+            <ul class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-labelledby={anchor(group.topic)}>
+              {group.items.map((item, i) => (
+                <li class="pi-row" data-pi-row>
+                  <PostCard item={item} href={hrefOf(item)} topicLabel={group.label} headingLevel={4} showTopic={false} index={i} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    {
+      (filtering || searching) && (
+        // After the list in the source, where the CSS counter of showing rows is complete; shown above it. The
+        // script writes a full sentence here and announces it. With neither, the status stays hidden.
+        <p id={`${prefix}-status`} class="pi-status text-sm font-medium text-ink-muted" role="status" data-pi-status>
+          <span class="pi-status-css">
+            Showing <span class="pi-shown" /> of {items.length} {noun(items.length)}
+          </span>
+        </p>
+      )
+    }
+
+    {
+      searching && (
+        <div class="pi-empty rounded-card border border-dashed border-line-strong p-8 text-center md:p-12" data-pi-empty hidden>
+          <span class="mx-auto inline-flex size-12 items-center justify-center rounded-full bg-surface-alt text-blue-700 dark:text-link">
+            <Icon name="search" size={22} />
+          </span>
+          {/* The script writes the message, the hint and the button label for the search that emptied the list. */}
+          <p class="mt-4 font-sans text-lg font-semibold text-ink-heading" data-pi-empty-text>
+            No guides match that search
+          </p>
+          <p class="mt-1.5 text-ink-muted" data-pi-empty-hint>
+            Check the spelling, or try one word, such as a country or a module.
+          </p>
+          <button type="button" class="btn btn-outline mt-6" data-pi-clear-all>
+            Clear the search
+          </button>
+        </div>
+      )
+    }
+  </div>
+</Section>
+
+{searching && <script>import '../../../scripts/post-index';</script>}
+
+<style>
+  /* Topic chips: the same radio chips as the testimonial filter, so a filter looks the same everywhere. */
+  .pi-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+  .pi-chip:hover {
+    border-color: var(--color-blue-700);
+  }
+  .pi-chip-count {
+    font-weight: 400;
+    color: var(--ink-muted);
+  }
+  .pi-chip-check {
+    display: none;
+  }
+  /* Phones: tighter chips, so nine topics take four rows rather than seven. The tap height stays 44px. */
+  @media (width < 40rem) {
+    .pi-chip {
+      gap: 0.25rem;
+      padding-inline: 0.75rem;
+      font-size: var(--text-sm);
+    }
+  }
+  input:checked + .pi-chip {
+    background: var(--btn-bg);
+    border-color: var(--btn-bg);
+    color: var(--btn-ink);
+  }
+  input:checked + .pi-chip .pi-chip-count {
+    color: inherit;
+  }
+  input:checked + .pi-chip .pi-chip-check {
+    display: inline-flex;
+  }
+  input:focus-visible + .pi-chip {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+  /* A topic the search has emptied stays choosable, but reads as having nothing in it. */
+  .pi-chip[data-empty] {
+    border-style: dashed;
+  }
+
+  .pi-search {
+    max-width: 36rem;
+  }
+  .pi-search-input {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.625rem 3rem 0.625rem 2.875rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-control);
+    background: var(--surface);
+    font-size: var(--text-body);
+  }
+  .pi-search-input:hover {
+    border-color: var(--color-blue-700);
+  }
+  .pi-search-input:focus-visible {
+    border-color: var(--focus);
+  }
+  /* The browser's own clear control would duplicate the labelled button. */
+  .pi-search-input::-webkit-search-cancel-button {
+    appearance: none;
+  }
+  .pi-clear {
+    position: absolute;
+    inset-block: 0;
+    right: 0.125rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    color: var(--ink-muted);
+    border-radius: var(--radius-control);
+    cursor: pointer;
+  }
+  .pi-clear:hover {
+    color: var(--ink-heading);
+  }
+  .pi-clear[hidden] {
+    display: none;
+  }
+
+  .pi {
+    display: flex;
+    flex-direction: column;
+    counter-reset: pi-shown;
+  }
+  .pi-controls {
+    display: grid;
+    gap: 1.5rem;
+    order: 1;
+  }
+  .pi-status {
+    order: 2;
+    margin-top: 1.5rem;
+  }
+  .pi-groups {
+    order: 3;
+    margin-top: 2.5rem;
+  }
+  .pi-empty {
+    order: 4;
+  }
+  .pi-empty[hidden] {
+    display: none;
+  }
+  /* Rows and topics hidden by the search. */
+  .pi-row[hidden],
+  .pi-group[hidden] {
+    display: none;
+  }
+  .pi-row {
+    counter-increment: pi-shown;
+  }
+  .pi-shown::before {
+    content: counter(pi-shown);
+  }
+
+  /*
+   * The topic filter is CSS only (spec 7.1: every entry is in the HTML). Without :has() the chips and the
+   * count stay hidden and every topic shows.
+   */
+  .pi-topics,
+  .pi-status-css {
+    display: none;
+  }
+  @supports selector(:has(*)) {
+    .pi-topics,
+    .pi-status-css {
+      display: block;
+    }
+    .pi:has([data-topic-input='switching-to-emr']:checked) .pi-group:not([data-topic='switching-to-emr']),
+    .pi:has([data-topic-input='running-a-chain']:checked) .pi-group:not([data-topic='running-a-chain']),
+    .pi:has([data-topic-input='compliance-by-country']:checked) .pi-group:not([data-topic='compliance-by-country']),
+    .pi:has([data-topic-input='cura-ai']:checked) .pi-group:not([data-topic='cura-ai']),
+    .pi:has([data-topic-input='billing-and-claims']:checked) .pi-group:not([data-topic='billing-and-claims']),
+    .pi:has([data-topic-input='patient-engagement']:checked) .pi-group:not([data-topic='patient-engagement']),
+    .pi:has([data-topic-input='start-a-clinic']:checked) .pi-group:not([data-topic='start-a-clinic']),
+    .pi:has([data-topic-input='running-a-clinic']:checked) .pi-group:not([data-topic='running-a-clinic']) {
+      display: none;
+    }
+  }
+  /* With the script running, its sentence replaces the CSS count. */
+  .pi[data-enhanced] .pi-status-css {
+    display: none;
+  }
+</style>

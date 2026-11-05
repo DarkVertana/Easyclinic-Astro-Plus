@@ -15,8 +15,10 @@ import PostTable from '../components/mdx/PostTable.astro';
 import { getRegistry, type PageRecord } from '../lib/content/registry';
 import { breadcrumbTrail } from '../lib/seo/breadcrumbs';
 import { pageGraph } from '../lib/seo/page-graph';
-import { formatDate } from '../lib/format/date';
-import { readingMinutes, summaryRepeatsOpening, type PostExtras } from '../lib/content/posts';
+import { formatDate, isoDate } from '../lib/format/date';
+import { newestFirst, readingMinutes, summaryRepeatsOpening, toIndexItem, type IndexItem, type Listable, type PostExtras } from '../lib/content/posts';
+import { coverFor } from '../components/blocks/PostIndex/covers';
+import PostCover from '../components/blocks/PostIndex/PostCover.astro';
 import { POST_TOPIC_LABELS } from '../schemas/constants';
 
 /**
@@ -49,6 +51,20 @@ const summary = post && d.summary && !summaryRepeatsOpening(d.summary, d.opening
 // The owning landing page, linked only when it is rendered in this stage (production: published).
 const ownerRecord = post ? registry.get(post.owner.split('#')[0]) : undefined;
 const ownerHref = post && ownerRecord ? registry.urlFor(post.owner) : null;
+
+// Posts and guides read as an article in the header's 1440px frame: title, cover and text in the main column, with
+// the contents and the newest guides in a sticky sidebar from 1200px. Legal pages stay one centred column.
+const hasToc = toc.length > 2;
+const self = record.family === 'legal' ? null : toIndexItem(record as unknown as Listable);
+const cover = self ? coverFor(self) : null;
+const recent = self
+  ? registry.visible
+      .map((r) => toIndexItem(r as unknown as Listable))
+      .filter((item): item is IndexItem => item !== null && item.path !== record.path)
+      .sort(newestFirst)
+      .slice(0, 4)
+  : [];
+const sidebar = record.family !== 'legal' && (hasToc || recent.length > 0);
 ---
 
 <BaseLayout
@@ -66,62 +82,53 @@ const ownerHref = post && ownerRecord ? registry.urlFor(post.owner) : null;
   preview={{ status: record.status, issues: record.issues }}
 >
   <Breadcrumbs trail={trail} />
-  <article>
-    <header class="bg-[var(--hero-bg)]">
-      <div class="container-measure py-10 md:py-14">
+  <div class:list={['py-8 md:py-12', sidebar ? 'container-page lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16' : 'container-measure']}>
+    <article class="min-w-0">
+      <header>
         {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
-        <h1>{d.h1}</h1>
-        <Md text={d.openingAnswer} class="lede mt-5" />
+        <h1 class="[text-wrap:balance]">{d.h1}</h1>
         {
           record.family === 'legal' ? (
-            <p class="mt-6 text-sm text-ink-muted">
+            <p class="mt-4 text-sm text-ink-muted">
               Last reviewed <time datetime={d.lastUpdated?.toISOString().slice(0, 10)}>{d.lastUpdated && formatDate(d.lastUpdated)}</time>
             </p>
-          ) : post ? (
-            <>
-              <div class="mt-6 flex flex-wrap items-baseline gap-x-1.5 text-sm text-ink-muted">
-                <AuthorByline author={d.author} reviewedBy={d.reviewedBy} lastUpdated={d.lastUpdated} />
-                <p>
-                  <span aria-hidden="true">·</span> {minutes} minute read
-                </p>
-              </div>
-              <div class="mt-6"><Button {...d.ctas.primary} variant="cta" /></div>
-            </>
           ) : (
-            <>
-              <AuthorByline author={d.author} reviewedBy={d.reviewedBy} lastUpdated={d.lastUpdated} class="mt-6" />
-              <p class="mt-1 text-sm text-ink-muted">{minutes} minute read</p>
-              <div class="mt-6"><Button {...d.ctas.primary} variant="cta" /></div>
-            </>
+            <div class="mt-4 text-sm text-ink-muted sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-1.5">
+              <AuthorByline author={d.author} reviewedBy={d.reviewedBy} lastUpdated={d.lastUpdated} />
+              <p>
+                <span aria-hidden="true" class="hidden sm:inline">·</span> {minutes} minute read
+              </p>
+            </div>
           )
         }
-      </div>
-    </header>
+        {cover && <PostCover cover={cover} sizes="(min-width: 75rem) 760px, 100vw" priority class="mt-8 rounded-card" />}
+        <Md text={d.openingAnswer} class="lede mt-8" />
+        {record.family !== 'legal' && <div class="mt-6"><Button {...d.ctas.primary} variant="cta" /></div>}
+      </header>
 
-    <div class="container-measure py-10 md:py-14">
       {
         summary && (
-          <aside aria-labelledby="summary-heading" class="card mb-10 bg-surface-alt p-5">
+          <aside aria-labelledby="summary-heading" class="mt-10 rounded-card bg-surface-alt p-5 md:p-6">
             <h2 id="summary-heading" class="font-sans text-base font-semibold">In short</h2>
             <p class="mt-2">{summary}</p>
           </aside>
         )
       }
       {
-        toc.length > 2 && (
-          <nav aria-labelledby="toc-heading" class="card mb-10 p-5">
-            <h2 id="toc-heading" class="font-sans text-base font-semibold">On this page</h2>
-            <ol class="mt-3 list-decimal space-y-1.5 pl-5 text-sm">
+        hasToc && (
+          <nav aria-labelledby="toc-heading-inline" class:list={['mt-10 rounded-card border border-line p-5', sidebar && 'lg:hidden']}>
+            <h2 id="toc-heading-inline" class="font-sans text-base font-semibold">On this page</h2>
+            <ol class="mt-2 list-decimal pl-5">
               {toc.map((h) => (
                 <li>
-                  <a href={`#${h.slug}`}>{h.text}</a>
+                  <a href={`#${h.slug}`} class="link-plain inline-flex min-h-11 items-center py-1">{h.text}</a>
                 </li>
               ))}
             </ol>
           </nav>
         )
       }
-      <div class:list={['guide-body prose-md text-lg leading-relaxed', post && 'post-body']}>
+      <div class:list={['guide-body prose-md mt-10 text-lg leading-relaxed', post && 'post-body']}>
         <Content components={{ InlineCta, a: Link, table: PostTable }} />
       </div>
       {
@@ -135,12 +142,59 @@ const ownerHref = post && ownerRecord ? registry.urlFor(post.owner) : null;
           </aside>
         )
       }
-    </div>
-  </article>
-  <Sections sections={d.sections} ctx={{ path: record.path, family: record.family, status: record.status, country: countryId, pageLabel: record.label, whatsappHref }} />
-  <FAQ heading={d.faqHeading} items={d.faq} tone="wash" />
-  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} />
-  {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}
+    </article>
+
+    {
+      sidebar && (
+        <aside aria-label="More from the blog" class="hidden lg:block">
+          <div class="sticky top-24 space-y-10">
+            {hasToc && (
+              <nav aria-labelledby="toc-heading">
+                <h2 id="toc-heading" class="font-sans text-base font-semibold">On this page</h2>
+                <ol class="mt-3 space-y-1 text-sm">
+                {toc.map((h) => (
+                  <li>
+                    <a href={`#${h.slug}`} class="link-plain block py-1.5 leading-snug text-ink-muted">{h.text}</a>
+                  </li>
+                ))}
+              </ol>
+              </nav>
+            )}
+            {recent.length > 0 && (
+              <section aria-labelledby="recent-heading">
+                <h2 id="recent-heading" class="font-sans text-base font-semibold">Recent guides</h2>
+                <ul class="mt-4 space-y-5">
+                  {recent.map((item) => (
+                    <li class="card-link relative flex gap-3">
+                      <PostCover cover={coverFor(item)} sizes="96px" class="w-24 shrink-0 rounded-control" />
+                      <div class="min-w-0">
+                        <a href={registry.urlFor(item.path) ?? item.path} class="card-link-title link-plain line-clamp-3 text-sm font-semibold leading-snug text-ink-heading after:absolute after:inset-0">
+                          {item.title}
+                        </a>
+                        {item.date && <time datetime={isoDate(item.date)} class="mt-1 block text-xs text-ink-muted">{formatDate(item.date)}</time>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <a href="/blog/" class="mt-5 inline-flex min-h-11 items-center text-sm font-semibold">See all guides</a>
+              </section>
+            )}
+          </div>
+        </aside>
+      )
+    }
+  </div>
+  {
+    /* Posts end with the article and its sidebar; guides and legal pages keep their sections, FAQ and links. */
+    !post && (
+      <>
+        <Sections sections={d.sections} ctx={{ path: record.path, family: record.family, status: record.status, country: countryId, pageLabel: record.label, whatsappHref }} />
+        <FAQ heading={d.faqHeading} items={d.faq} tone="wash" />
+        <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} />
+        {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}
+      </>
+    )
+  }
 </BaseLayout>
 
 <style>

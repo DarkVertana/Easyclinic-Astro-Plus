@@ -56,12 +56,24 @@ sources at the foot of the page. `testimonialGrid` filters by clinic type and co
 `:has()`), so every card stays in the HTML.
 
 `postIndex` (hub family; used on `/blog/`) takes no list of links: it reads the registry and lists every post and
-start-a-clinic guide rendered in the stage, grouped by topic and newest first, with title, summary, last-updated date
-and reading time (helpers in `src/lib/content/posts.ts`). Content sets only an optional heading and intro per topic
-(`topics[]`) and `jumpLinksFrom`, the number of topic groups at which a row of "jump to a topic" links appears.
-Topics with nothing to show are left out, so in production it shows only what is published. Topic headings are h2
-(h3 when the block has its own heading) and entry titles one level below; each row is one tap target through the
-title link's `::after`. No JavaScript. Drafts in preview carry a "Draft" or "In review" label.
+start-a-clinic guide rendered in the stage, grouped by topic and newest first, as cards (`PostCard.astro`) with topic,
+title, summary, last-updated date and reading time (helpers in `src/lib/content/posts.ts`). On `/blog/` the newest
+guide is the hero's lead card (`BlogLead.astro`, passed as the Hero's `media` slot by `LandingPage.astro`); from four
+entries the block opens with the next three as "Latest guides", and once the topic filter shows, a "Browse by topic"
+row of tiles (icons in `topic-icons.ts`) that link to, and with the script also filter to, each topic. Every card has
+a 16:9 cover (`covers.ts`, `PostCover.astro`): the guide's own photo when `src/assets/images/blog/<slug>.<ext>` exists
+(slug = the last segment of its path; 42 taken from the live easyclinic.io posts' featured images on 2026-10-28),
+otherwise an Easy Clinic product screenshot from its topic's list, alternating between neighbours. To give a guide its
+own cover, add the file under that name. Content sets
+only an optional heading and intro per topic (`topics[]`) and `jumpLinksFrom`, the number of topic groups at which the
+topic tiles and the topic filter appear: radio chips ("All
+topics" plus one per topic, with counts) that filter with CSS only (`:has()`, as `testimonialGrid` does), so they
+work without JavaScript. From 12 entries a search field appears too: `src/scripts/post-index.ts` (progressive
+enhancement; the field stays hidden without it) filters rows by title, summary and topic as people type, updates
+the chip counts, announces the result in the status line and offers a next step when nothing matches. Topics with
+nothing to show are left out, so in production it shows only what is published. Topic headings are h2 (h3 when the
+block has its own heading) and entry titles one level below; each row is one tap target through the title link's
+`::after`. Drafts in preview carry a "Draft" or "In review" label.
 
 **Optional versus required facts.** `need()` is for a fact the page cannot honestly go without (a price, a regulator
 status): it blocks publishing. `optional()` is for a detail that can be left out (a testimonial's city, a review

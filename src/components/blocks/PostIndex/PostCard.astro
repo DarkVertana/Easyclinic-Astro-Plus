@@ -1,0 +1,60 @@
+---
+import type { IndexItem } from '../../../lib/content/posts';
+import { formatDate, isoDate } from '../../../lib/format/date';
+import Icon from '../../ui/Icon.astro';
+import { TOPIC_ICONS } from './topic-icons';
+import { coverFor } from './covers';
+import PostCover from './PostCover.astro';
+
+/**
+ * One guide on the /blog/ index: topic, title, summary, date and reading time. The title link's ::after covers
+ * the card (.card-link in global.css), so the whole card is one tap target with one link in the tab order.
+ */
+interface Props {
+  item: IndexItem;
+  href: string;
+  topicLabel: string;
+  headingLevel: 3 | 4;
+  /** Hide the topic line where the card already sits under its topic heading. */
+  showTopic?: boolean;
+  /** The card's place among its neighbours, so topic screenshots alternate (covers.ts). */
+  index?: number;
+  /** Image sizes for the grid the card sits in. */
+  sizes?: string;
+}
+const { item, href, topicLabel, headingLevel, showTopic = true, index, sizes = '(min-width: 75rem) 440px, (min-width: 40rem) 50vw, 100vw' } = Astro.props;
+const H = `h${headingLevel}` as 'h3' | 'h4';
+const STATUS_NOTE: Record<string, string> = { draft: 'Draft', review: 'In review' };
+---
+
+<article class="card-link relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface">
+  <PostCover cover={coverFor(item, index)} sizes={sizes} class="border-b border-line" />
+  <div class="flex flex-1 flex-col p-6">
+  {
+    showTopic && (
+      <p class="mb-4 flex items-center gap-2.5 text-sm font-semibold text-blue-700 dark:text-link">
+        <span class="inline-flex size-8 items-center justify-center rounded-control bg-surface-alt">
+          <Icon name={TOPIC_ICONS[item.topic]} size={16} />
+        </span>
+        {topicLabel}
+      </p>
+    )
+  }
+  <H class="text-[1.1875rem] leading-snug [text-wrap:pretty]">
+    <a href={href} class="card-link-title link-plain after:absolute after:inset-0 after:rounded-card">{item.title}</a>
+  </H>
+  {/* Three lines in the grid; the full summary opens with the guide. */}
+  <p class="mt-3 line-clamp-3 text-[0.9375rem] leading-relaxed text-ink-muted">{item.summary}</p>
+  <div class="mt-auto flex items-center justify-between gap-3 pt-5">
+    <p class="flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
+      {item.date && <time datetime={isoDate(item.date)}>{formatDate(item.date)}</time>}
+      {item.date && <span aria-hidden="true">·</span>}
+      <span>{item.minutes} min read</span>
+      {STATUS_NOTE[item.status] && <span class="rounded-full border border-line-strong px-2 text-xs font-semibold text-ink">{STATUS_NOTE[item.status]}</span>}
+    </p>
+    <span class="card-link-arrow text-ink-muted">
+      <Icon name="arrow-right" size={18} />
+    </span>
+  </div>
+  </div>
+</article>
