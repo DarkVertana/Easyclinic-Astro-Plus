@@ -1,0 +1,69 @@
+---
+import AdminShell from '../../../components/admin/AdminShell.astro';
+import { EditorPage } from '../../../components/admin/app/EditorPage';
+import { MessagePage } from '../../../components/admin/app/MessagePage';
+import { conflictFor, latestNote, pageUser, postRows, revisionsFor, runChecks, storeOrNull } from '../../../components/admin/data';
+import { compareData, editorData, frameData, rowData } from '../../../components/admin/frame';
+import { parsePost } from '../../../lib/admin/mdx-file';
+import { renderPreview } from '../../../lib/admin/preview';
+import { getRepo } from '../../../lib/admin/repo';
+import type { Job, Revision, Submission } from '../../../lib/admin/types';
+
+export const prerender = false;
+
+const auth = await pageUser(Astro);
+if (auth instanceof Response) return auth;
+const user = auth;
+const frame = await frameData(Astro.url, user, 'posts');
+const id = Astro.params.id!;
+
+const { store, storeError } = storeOrNull();
+let submission: Submission | null = null;
+let job: Job | null = null;
+let revisions: Revision[] = [];
+let loadError = storeError;
+try {
+  submission = store ? await store.getSubmission(id) : null;
+  if (submission?.jobId && store) job = await store.getJob(submission.jobId);
+  if (submission) revisions = await revisionsFor(submission.id);
+} catch {
+  loadError = 'The post could not be loaded because the workflow store did not respond. Nothing has changed. Reload to try again.';
+}
+if (!submission && !loadError) Astro.response.status = 404;
+
+const row = submission ? ((await postRows(await store!.listSubmissions(), user)).find((r) => r.slug === submission!.slug) ?? null) : null;
+const checks = submission ? await runChecks(submission) : null;
+const isOpenCopy = Boolean(submission && row?.submissionId === submission.id);
+const conflict = submission && isOpenCopy && row?.actions.includes('save') ? await conflictFor(submission) : null;
+const fm = submission?.content.frontmatter ?? {};
+
+const compareParam = Astro.url.searchParams.get('compare');
+let compare = null;
+let compareError: string | null = null;
+if (submission && compareParam) {
+  const after = { label: 'This version', frontmatter: fm, body: submission.content.body };
+  try {
+    if (compareParam === 'live') {
+      const file = await getRepo().readPost(submission.slug);
+      if (file) compare = compareData({ label: 'Live', ...parsePost(file.raw) }, after);
+      else compareError = 'There is no live version to compare with.';
+    } else {
+      const revision = revisions.find((r) => r.id === compareParam);
+      if (revision) compare = compareData({ label: 'Earlier version', frontmatter: revision.content.frontmatter, body: revision.content.body }, after);
+      else compareError = 'That saved version is no longer available.';
+    }
+  } catch {
+    compareError = 'The other version could not be read. Reload to try again.';
+  }
+}
+const data = submission ? await editorData(submission.content, submission.slug) : null;
+const preview = submission && Astro.url.searchParams.get('view') === 'preview' ? renderPreview(submission.content.body) : undefined;
+---
+
+<AdminShell title={submission ? String(fm.h1 || fm.title || submission.slug) : 'Post not found'}>
+  {submission && data ? (
+    <EditorPage client:load {frame} slug={submission.slug} {...data} row={row && rowData(row)} submission={{ id: submission.id, state: submission.state, updatedAt: submission.updatedAt, history: submission.history }} {isOpenCopy} baseSha={null} {checks} note={latestNote(submission)} revisions={revisions.map((r) => ({ id: r.id, updatedAt: r.updatedAt, by: r.by }))} {compare} {compareError} {conflict} jobId={job?.id ?? null} previewHtml={preview} />
+  ) : (
+    <MessagePage client:load {frame} title={loadError ? 'Post unavailable' : 'Post not found'} back={{ href: '/admin/posts/', label: 'Posts' }} error={loadError} text="It may have been removed." link={{ href: '/admin/posts/', label: 'Go back to posts' }} />
+  )}
+</AdminShell>

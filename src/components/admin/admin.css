@@ -1,0 +1,118 @@
+/* The admin's stylesheet. Its own Tailwind build, loaded only by /admin/ pages. It maps shadcn's variables to the site's tokens (src/styles/global.css). */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "tw-animate-css";
+
+@source "./app";
+@source "./ui";
+@source "../../pages/admin";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  color-scheme: light;
+  --radius: var(--radius-control);
+  --background: var(--surface);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--btn-bg);
+  --primary-foreground: var(--btn-ink);
+  --secondary: var(--surface-muted);
+  --secondary-foreground: var(--ink-heading);
+  --muted: var(--surface-muted);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--surface-alt);
+  --accent-foreground: var(--ink-heading);
+  --destructive: var(--danger);
+  /* The site's --border is a darker line, and shadcn's name collides with it: hairlines use this one. Value of --color-grey-200. */
+  --adm-border: #e5e7eb;
+  --input: var(--border-strong);
+  --ring: var(--focus);
+  /* Navigation recedes on the muted surface; the work sits on the plain one. */
+  --sidebar: var(--surface-muted);
+  --sidebar-foreground: var(--ink-muted);
+  --sidebar-primary: var(--btn-bg);
+  --sidebar-primary-foreground: var(--btn-ink);
+  --sidebar-accent: var(--color-grey-100);
+  --sidebar-accent-foreground: var(--ink-heading);
+  --sidebar-border: var(--adm-border);
+  --sidebar-ring: var(--focus);
+}
+[data-theme='dark'] {
+  color-scheme: dark;
+  --adm-border: var(--border);
+  --sidebar-accent: var(--border);
+}
+
+@theme inline {
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--adm-border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-link: var(--link);
+  --color-heading: var(--ink-heading);
+}
+
+/* global.css styles bare elements for marketing pages (large Varela Round headings, label colours). The admin sets its own scale. */
+@layer base {
+  * { border-color: var(--adm-border); }
+  body { background: var(--sidebar); font-size: var(--text-sm); line-height: 1.45; }
+  h1, h2, h3, h4 { font-family: var(--font-sans); font-size: inherit; line-height: 1.4; text-wrap: wrap; }
+  h1 { font-size: var(--text-lg); line-height: 1.3; }
+  h2 { font-size: var(--text-base); }
+  label { font-size: inherit; color: inherit; font-weight: 500; }
+  input, select, textarea { font-size: inherit; color: inherit; }
+  a, a:hover { color: inherit; }
+  strong, b { color: inherit; }
+  ::placeholder { color: var(--ink-muted); }
+  ::selection { background: var(--accent); color: var(--ink-heading); }
+}
+
+/* Rendered article text (reading, preview, review). */
+.adm-prose { font-size: var(--text-body); line-height: 1.7; overflow-wrap: anywhere; }
+.adm-prose h2 { font-size: var(--text-lg); margin-top: 1.75rem; }
+.adm-prose h3 { font-size: var(--text-base); margin-top: 1.25rem; }
+.adm-prose > * + * { margin-top: 0.875rem; }
+.adm-prose a { color: var(--link); text-decoration: underline; }
+.adm-prose ul { list-style: disc; padding-left: 1.25rem; }
+.adm-prose ol { list-style: decimal; padding-left: 1.25rem; }
+.adm-prose th, .adm-prose td { border: 1px solid var(--adm-border); padding: 0.375rem 0.5rem; text-align: left; }

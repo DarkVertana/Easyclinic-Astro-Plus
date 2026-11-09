@@ -41,8 +41,9 @@ for (const column of ['path', 'proposed_decision', 'target', 'confirmed']) {
 
 const yamlList = <T>(file: string) => ((existsSync(file) ? parseYaml(readFileSync(file, 'utf8')) : []) ?? []) as T[];
 const result = generatePostRules(records as unknown as ManifestRow[], {
-  redirects: yamlList<RedirectRule>('src/data/redirects.yaml'),
-  gone: yamlList<GoneRule>('src/data/gone.yaml'),
+  // The admin's rows count as existing too: the loader refuses one source in two files.
+  redirects: [...yamlList<RedirectRule>('src/data/redirects.yaml'), ...yamlList<RedirectRule>('src/data/redirects-admin.yaml')],
+  gone: [...yamlList<GoneRule>('src/data/gone.yaml'), ...yamlList<GoneRule>('src/data/gone-admin.yaml')],
 });
 
 const confirmed = records.filter((r) => r.confirmed.trim().toLowerCase() === 'yes').length;

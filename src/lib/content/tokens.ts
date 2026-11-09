@@ -3,7 +3,7 @@
  *   {price:inr.professional.annual}  ->  ₹1,499
  *   {fact:doctors}                   ->  5,000+
  *   {fig:diagnostic-errors}          ->  16%
- *   {contact:ke.phone}               ->  +254 750 184 357
+ *   {contact:ke.phone}               ->  +254 762 907 500
  * A token whose fact is unknown renders a placeholder; one whose fact is not yet confirmed renders the
  * value wrapped in sentinels. Both are publish blockers. An unknown token name is a build error.
  */

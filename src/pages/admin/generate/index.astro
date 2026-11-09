@@ -1,0 +1,21 @@
+---
+import AdminShell from '../../../components/admin/AdminShell.astro';
+import { GeneratePage } from '../../../components/admin/app/OtherPages';
+import { aiConfigured, loadWorkflow, ownerOptions, pageUser } from '../../../components/admin/data';
+import { frameData } from '../../../components/admin/frame';
+import { POST_TOPICS, POST_TOPIC_LABELS } from '../../../schemas/constants';
+
+export const prerender = false;
+
+const auth = await pageUser(Astro);
+if (auth instanceof Response) return auth;
+const frame = await frameData(Astro.url, auth, 'generate');
+const { jobs, storeError } = await loadWorkflow();
+const owners = (await ownerOptions()).map((o) => ({ value: o.path, label: o.label }));
+const topics = POST_TOPICS.map((t) => ({ value: t as string, label: POST_TOPIC_LABELS[t] }));
+const past = [...jobs].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).map((j) => ({ id: j.id, idea: j.brief.topicIdea, stage: j.stage, createdAt: j.createdAt, cost: j.usage.costUsd }));
+---
+
+<AdminShell title="Generate">
+  <GeneratePage client:load {frame} now={new Date().toISOString()} ready={aiConfigured()} {storeError} {topics} {owners} {past} />
+</AdminShell>

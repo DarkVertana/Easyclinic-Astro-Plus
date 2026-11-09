@@ -5,13 +5,17 @@ import keystatic from '@keystatic/astro';
 import type { AstroIntegration } from 'astro';
 import { keystaticDecision, rewriteKeystaticDevUrl } from './keystatic-core.ts';
 
+/** The only files the React renderer may touch in a build without Keystatic: the blog admin's islands. */
+const ADMIN_REACT = { include: ['**/src/components/admin/**/*.tsx'] };
+
 /**
  * Adds the Keystatic editing screen (/keystatic/) and its React renderer, but never to production.
  *
  * - `astro dev`: on, local storage (edits the files in this checkout). Open http://127.0.0.1:4321/keystatic/.
  * - A build with KEYSTATIC_STORAGE=github and KEYSTATIC_GITHUB_REPO=owner/name (a preview deployment): on, GitHub
- *   storage. Any other build, the production stage, a Vercel production deployment and Vitest: off. Neither
- *   integration is added, so no React renderer, /keystatic/ route or admin middleware exists in the www build.
+ *   storage. Any other build, the production stage, a Vercel production deployment and Vitest: off. Keystatic
+ *   is not added, so no /keystatic/ route or its middleware exists in the www build. The React renderer is added to
+ *   every build, scoped to the blog admin's islands; public pages have no React component, so they get no React code.
  *   (Both packages are imported statically: the config's Vite module runner is closed by the time hooks run, so a
  *   dynamic import here fails. Importing them only defines the integration functions.)
  *
@@ -26,6 +30,7 @@ export default function keystaticGate(): AstroIntegration {
         const env = { ...loadDotEnv(config.root, command === 'dev' ? 'development' : 'production'), ...process.env };
         const decision = keystaticDecision(env, command);
         if (!decision.enabled) {
+          updateConfig({ integrations: [react(ADMIN_REACT)] });
           logger.debug(`Keystatic off: ${decision.reason}`);
           return;
         }

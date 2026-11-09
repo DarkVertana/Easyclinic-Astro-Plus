@@ -92,7 +92,7 @@ const integrations = defineCollection({ loader: data('*.yaml', 'integrations'), 
 const matchMode = z.enum(['exact', 'prefix', 'children']);
 
 const redirects = defineCollection({
-  loader: routingLists('from', ['src/data/redirects.yaml', 'src/data/redirects-posts.yaml']),
+  loader: routingLists('from', ['src/data/redirects.yaml', 'src/data/redirects-posts.yaml', 'src/data/redirects-admin.yaml']),
   schema: z.strictObject({
     id: z.string().optional(),
     from: z.string().startsWith('/'),
@@ -105,7 +105,7 @@ const redirects = defineCollection({
 });
 
 const gone = defineCollection({
-  loader: routingLists('path', ['src/data/gone.yaml', 'src/data/gone-posts.yaml']),
+  loader: routingLists('path', ['src/data/gone.yaml', 'src/data/gone-posts.yaml', 'src/data/gone-admin.yaml']),
   schema: z.strictObject({
     id: z.string().optional(),
     path: z.string().startsWith('/'),

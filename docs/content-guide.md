@@ -200,3 +200,4 @@ yet)": Keystatic keeps those sections exactly as they are, and you edit them in 
 | `pnpm facts:report` | Lists every missing fact, grouped by who must supply it |
 | `pnpm build` | Full preview build with the post-build checks |
 | `pnpm build:prod` | Production build: published pages only, every rule strict |
+| `/admin/` (with `pnpm dev`, open `/admin/login/`) | The blog admin: write or generate a post, check it, submit it, approve it. See [the admin guide](admin-guide.md) |

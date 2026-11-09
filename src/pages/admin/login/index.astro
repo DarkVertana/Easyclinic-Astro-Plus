@@ -1,0 +1,17 @@
+---
+import AdminShell from '../../../components/admin/AdminShell.astro';
+import { LoginPage } from '../../../components/admin/app/OtherPages';
+import { authSetupProblem, currentUser } from '../../../lib/admin/auth';
+import { devSignInEnabled } from '../../../lib/admin/dev-guard';
+import { readFlash, safeBack } from '../../../lib/admin/http';
+
+export const prerender = false;
+
+const flash = readFlash(Astro.url);
+const back = safeBack(Astro.url.searchParams.get('back'));
+if (await currentUser(Astro)) return Astro.redirect(back);
+---
+
+<AdminShell title="Sign in">
+  <LoginPage client:load {flash} setupProblem={authSetupProblem() ?? null} expired={Astro.url.searchParams.has('back')} dev={devSignInEnabled()} {back} />
+</AdminShell>

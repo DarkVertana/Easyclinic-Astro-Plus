@@ -142,7 +142,7 @@ function routingRules(): Array<{ source: string; match: MatchMode; file: string 
       file,
     }));
   };
-  return [...rows('redirects.yaml', 'from'), ...rows('redirects-posts.yaml', 'from'), ...rows('gone.yaml', 'path'), ...rows('gone-posts.yaml', 'path')];
+  return [...rows('redirects.yaml', 'from'), ...rows('redirects-posts.yaml', 'from'), ...rows('redirects-admin.yaml', 'from'), ...rows('gone.yaml', 'path'), ...rows('gone-posts.yaml', 'path'), ...rows('gone-admin.yaml', 'path')];
 }
 
 /* ---------- WordPress ---------- */

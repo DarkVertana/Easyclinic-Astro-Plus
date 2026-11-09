@@ -1,0 +1,26 @@
+---
+import '../../styles/global.css';
+import './admin.css';
+import { Font } from 'astro:assets';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <Font cssVariable="--font-poppins" preload={[{ subset: 'latin', weight: '400' }]} />
+    <Font cssVariable="--font-varela-round" />
+    <title>{title} | Easy Clinic admin</title>
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

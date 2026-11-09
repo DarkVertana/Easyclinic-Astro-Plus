@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import AdminShell from '../../../components/admin/AdminShell.astro';
+import { InsightsPage } from '../../../components/admin/app/OtherPages';
+import { formatDate } from '../../../components/admin/app/format';
+import { frameData } from '../../../components/admin/frame';
+import { requireUser } from '../../../lib/admin/auth';
+import { getInsightsData, isConfigured, mergeInsights, missingSettings, type InsightRow, type Windows } from '../../../lib/admin/insights';
+import { refreshQueue, type RefreshKind } from '../../../lib/admin/refresh';
+import type { AdminUser } from '../../../lib/admin/types';
+
+export const prerender = false;
+
+// requireUser throws its redirect as a Response; an uncaught one renders as a 500.
+let user: AdminUser;
+try {
+  user = await requireUser(Astro);
+} catch (refusal) {
+  if (refusal instanceof Response) return refusal;
+  throw refusal;
+}
+const frame = await frameData(Astro.url, user, 'insights');
+
+const entries = await getCollection('posts');
+const pathOf = (entry: (typeof entries)[number]) => (entry.data as { path?: string }).path ?? `/${entry.id}/`;
+const published = entries
+  .filter((e) => e.data.status === 'published')
+  .map((e) => ({ slug: e.id, path: pathOf(e), title: e.data.title }));
+
+const configured = isConfigured();
+const missing = missingSettings();
+const data = configured ? await getInsightsData() : null;
+const rows: InsightRow[] = data ? mergeInsights({ posts: published, ga: data.ga, search: data.search }) : [];
+const hasNumbers = Boolean(data?.ga || data?.search);
+
+const queue = refreshQueue(
+  entries.map((e) => ({
+    slug: e.id,
+    title: e.data.title,
+    status: e.data.status,
+    lastUpdated: e.data.lastUpdated,
+    owner: (e.data as { owner?: string }).owner,
+    notes: e.data.notes,
+  })),
+  data?.search ? { rows } : null,
+  new Date(),
+);
+
+const GROUPS: Array<{ kind: RefreshKind; label: string }> = [
+  { kind: 'losing_clicks', label: 'Losing search clicks' },
+  { kind: 'no_owner', label: 'No landing page' },
+  { kind: 'stale', label: 'Out of date' },
+  { kind: 'in_review', label: 'In review' },
+  { kind: 'draft_not_rewritten', label: 'Drafts not yet rewritten' },
+  { kind: 'draft_held', label: 'Drafts on hold' },
+  { kind: 'draft_other', label: 'Other drafts' },
+];
+const grouped = GROUPS.map((g) => ({
+  ...g,
+  items: queue.flatMap((item) => {
+    const finding = item.findings.find((f) => f.kind === g.kind);
+    return finding ? [{ slug: item.slug, title: item.title, reason: finding.reason }] : [];
+  }),
+})).filter((g) => g.items.length > 0);
+
+const NONE = '–';
+const num = (value: number | null) => (value === null ? NONE : value.toLocaleString('en-IN'));
+const position = (value: number | null) => (value === null ? NONE : value.toFixed(1));
+/** `previous` null: source unavailable. 0: nothing to compare with, so the post reads as new. */
+const change = (percent: number | null, current: number | null, previous: number | null) => {
+  if (current === null || previous === null) return NONE;
+  if (percent !== null) return percent > 0 ? `+${percent}%` : percent < 0 ? `−${Math.abs(percent)}%` : 'No change';
+  return current > 0 ? 'New' : NONE;
+};
+const clickTotal = (row: InsightRow) => (row.ctaClicks === null ? null : row.ctaClicks + (row.whatsappClicks ?? 0));
+const span = (w: Windows | null) => (w ? `${formatDate(w.current.startDate)} to ${formatDate(w.current.endDate)}` : null);
+const approver = user.role === 'approver';
+const notices: Array<{ tone: string; text: string }> = [];
+if (!configured) notices.push({ tone: 'info', text: approver ? `Analytics is not connected, so there are no numbers yet. Set ${missing.join(', ')} in the deployment settings, then redeploy. The admin guide shows where each comes from.` : 'Analytics is not connected yet, so there are no numbers. Ask an admin to connect it. The refresh queue below works without it.' });
+if (configured && missing.length > 0) notices.push({ tone: 'info', text: approver ? `Partly connected. Still to set: ${missing.join(', ')}.` : 'Analytics is partly connected, so some figures are missing.' });
+for (const warning of data?.warnings ?? []) notices.push({ tone: 'warning', text: warning });
+const windows = [span(data?.gaWindows ?? null) && `Analytics: ${span(data!.gaWindows)}`, span(data?.searchWindows ?? null) && `Search Console, which runs a few days behind: ${span(data!.searchWindows)}`].filter((w): w is string => Boolean(w));
+const shown = rows.map((row) => ({ title: row.title, path: row.path, demo: num(row.demoRequests), views: num(row.views), viewsChange: change(row.viewsChange, row.views, row.viewsPrevious), clicks: num(row.clicks), clicksChange: change(row.clicksChange, row.clicks, row.clicksPrevious), position: position(row.position), buttons: num(clickTotal(row)) }));
+---
+
+<AdminShell title="Insights">
+  <InsightsPage client:load {frame} {notices} {windows} rows={shown} {hasNumbers} hasSearch={Boolean(data?.search)} queueCount={queue.length} groups={grouped} />
+</AdminShell>

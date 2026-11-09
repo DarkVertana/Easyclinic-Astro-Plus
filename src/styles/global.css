@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* The admin has its own Tailwind build (components/admin/admin.css); its classes must not add weight to public pages. */
+@source not "../components/admin";
+@source not "../pages/admin";
 
 /*
  * Easy Clinic design tokens (spec 7.5, section 11).

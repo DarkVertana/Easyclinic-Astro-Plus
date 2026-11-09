@@ -53,9 +53,10 @@ export default defineConfig({
   // Inline the (small, purged) CSS: one fewer render-blocking request on slow mobile data, which is
   // what most visitors land on from search (spec 7.1: LCP under 2.0 s).
   build: { inlineStylesheets: 'always' },
-  adapter: vercel(),
+  // 300 s: one AI engine stage per request, with a 240 s deadline shared by its model calls (src/lib/admin/claude.ts).
+  adapter: vercel({ maxDuration: 300 }),
   // Redirects are not configured here: see integrations/vercel-routes.ts (withastro/astro#18073).
-  // keystaticGate adds React and the Keystatic admin (/keystatic/) outside production only; see the file.
+  // keystaticGate adds the Keystatic admin (/keystatic/) outside production only, and React (scoped to the blog admin) always; see the file.
   integrations: [mdx(), keystaticGate(), vercelRoutes()],
   // Shiki writes inline style attributes that the CSP below blocks, and no content has code blocks.
   markdown: { syntaxHighlight: false },
@@ -121,6 +122,26 @@ export default defineConfig({
       CRM_WEBHOOK_URL: envField.string({ context: 'server', access: 'secret', optional: true }),
       CRM_WEBHOOK_TOKEN: envField.string({ context: 'server', access: 'secret', optional: true }),
       DEMO_REF_SECRET: envField.string({ context: 'server', access: 'secret', optional: true }),
+      // Blog admin (/admin/): docs/admin-guide.md lists what each one does.
+      ADMIN_SESSION_SECRET: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_APPROVERS: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_EDITORS: envField.string({ context: 'server', access: 'secret', optional: true }),
+      GOOGLE_CLIENT_ID: envField.string({ context: 'server', access: 'secret', optional: true }),
+      GOOGLE_CLIENT_SECRET: envField.string({ context: 'server', access: 'secret', optional: true }),
+      DATABASE_URL: envField.string({ context: 'server', access: 'secret', optional: true }),
+      GITHUB_TOKEN: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_GITHUB_REPO: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_PREVIEW_URL_TEMPLATE: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ANTHROPIC_API_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_WEEKLY_AI_LIMIT: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_JOB_MAX_USD: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_WEEKLY_MAX_USD: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_DEV_ALLOW_REAL: envField.string({ context: 'server', access: 'secret', optional: true }),
+      GOOGLE_SERVICE_ACCOUNT_JSON: envField.string({ context: 'server', access: 'secret', optional: true }),
+      GA4_PROPERTY_ID: envField.string({ context: 'server', access: 'secret', optional: true }),
+      SEARCH_CONSOLE_SITE: envField.string({ context: 'server', access: 'secret', optional: true }),
+      CRON_SECRET: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_SCHEDULE_PRECISION: envField.string({ context: 'server', access: 'secret', optional: true }),
     },
   },
 });

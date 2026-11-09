@@ -1,0 +1,23 @@
+---
+import AdminShell from '../../../components/admin/AdminShell.astro';
+import { PostsPage } from '../../../components/admin/app/PostsPage';
+import { authorOptions, loadWorkflow, pageUser, postRows, STALE_DAYS } from '../../../components/admin/data';
+import { frameData, rowData } from '../../../components/admin/frame';
+import { POST_TOPICS, POST_TOPIC_LABELS } from '../../../schemas/constants';
+
+export const prerender = false;
+
+const auth = await pageUser(Astro);
+if (auth instanceof Response) return auth;
+const user = auth;
+const frame = await frameData(Astro.url, user, 'posts');
+const { submissions, storeError } = await loadWorkflow();
+const rows = (await postRows(submissions, user)).map(rowData);
+const authors = (await authorOptions()).map((a) => ({ value: a.id, label: a.name }));
+const topics = POST_TOPICS.map((t) => ({ value: t as string, label: POST_TOPIC_LABELS[t] }));
+const initial = Object.fromEntries([...Astro.url.searchParams].filter(([key]) => !['flash', 'flashKind', 'undo'].includes(key)));
+---
+
+<AdminShell title="Posts">
+  <PostsPage client:load {frame} {rows} {topics} {authors} {initial} now={new Date().toISOString()} staleDays={STALE_DAYS} {storeError} />
+</AdminShell>

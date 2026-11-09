@@ -368,7 +368,7 @@ are current and say what applies to the other countries.
 | M4 | Issue 4: remove free-trial offers from the live site | Live WordPress pages | Consistent answer before launch |
 | M5 | Issues 9 and 5: screenshots and the six-minute tour; remove Dental Council of India wording from live material | Files to the web team | Product pictures; tour links |
 | M6 | Photos: a real photograph of Girish Mohata (spec 12 says the founder block does not run without one) and of each leader on /about-us/ | `photo` in `src/data/authors/<id>.yaml` | Founder block on home, /about-us/ |
-| M7 | Authors: Akshay Chandel's role; a short bio and LinkedIn address for all six authors | `src/data/authors/*.yaml` | Bylines, /about-us/, author details shown to search engines |
+| M7 | Authors: a short bio and LinkedIn address for all five authors | `src/data/authors/*.yaml` | Bylines, /about-us/, author details shown to search engines |
 | M8 | Testimonials: a measured result the doctor stands behind, or none, for all 16 quotes; the city for 11 of them (Chao Rochek Buragohain, Foster Akaketwa, Hisham Ismail, NRP Chandra Balaji, Prantar Chakrabarti, Premanand Raya, Sanjay Teotia, Siddhartha Ghosh, Srinivasa Teja, Tarun Mishra, TL Prabhu) | `city`, `outcome` in `src/data/testimonials/<id>.yaml` | Testimonial cards |
 | M9 | New named testimonials, with consent on file, for the specialty pages without one (ayurveda, cardiology, dental, dermatology, ENT, GP, mental health, neurology, OB-GYN, ophthalmology, orthopaedics, paediatrics, physiotherapy) and for /solutions/polyclinic/ | New files in `src/data/testimonials/` | Those pages |
 | M10 | Confirm the demo is 20 minutes (issue 10) | Tell the web team | Demo pages |

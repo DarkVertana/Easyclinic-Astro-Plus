@@ -1,0 +1,33 @@
+---
+import AdminShell from '../../../components/admin/AdminShell.astro';
+import { JobPage } from '../../../components/admin/app/OtherPages';
+import { pageUser, storeOrNull } from '../../../components/admin/data';
+import { evidenceData, frameData } from '../../../components/admin/frame';
+import { autoRunAllowed, retryBlocked } from '../../../lib/admin/engine';
+import { MAX_REVISIONS, type Job } from '../../../lib/admin/types';
+
+export const prerender = false;
+
+const auth = await pageUser(Astro);
+if (auth instanceof Response) return auth;
+const frame = await frameData(Astro.url, auth, 'generate');
+const { store, storeError } = storeOrNull();
+let job: Job | null = null;
+let loadError = storeError;
+try {
+  job = store ? await store.getJob(Astro.params.id!) : null;
+} catch {
+  loadError = 'This job could not be loaded because the workflow store did not respond. Reload to try again.';
+}
+if (!job && !loadError) Astro.response.status = 404;
+const running = Boolean(job) && job!.stage !== 'failed' && !['awaiting_outline', 'done'].includes(job!.stage);
+const jobProps = job && {
+  id: job.id, idea: job.brief.topicIdea, audience: job.brief.audience, stage: job.stage, failedStage: job.failedStage ?? null, error: job.error ?? null, revisions: job.revisions, maxRevisions: MAX_REVISIONS, cost: job.usage.costUsd, submissionId: job.submissionId,
+  outline: job.outline && { title: job.outline.title, headKeyword: job.outline.headKeyword, angle: job.outline.angle, gaps: job.outline.gaps, sections: job.outline.sections.map((s) => ({ heading: s.heading, points: s.points, claimCount: s.claimIds.length })) },
+  evidence: evidenceData(job),
+};
+---
+
+<AdminShell title={job?.brief.topicIdea ?? 'AI job'}>
+  <JobPage client:load {frame} {loadError} job={jobProps} autoRun={running && autoRunAllowed(job!, new Date())} retryStop={job ? retryBlocked(job) : null} />
+</AdminShell>

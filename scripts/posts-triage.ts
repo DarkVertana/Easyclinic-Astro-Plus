@@ -236,8 +236,9 @@ export function loadSite(root = '.'): { site: Site; warnings: string[] } {
   const redirects: SiteRedirect[] = [
     ...yamlList<SiteRedirect>(join(root, 'src/data/redirects.yaml')),
     ...yamlList<SiteRedirect>(join(root, 'src/data/redirects-posts.yaml')),
+    ...yamlList<SiteRedirect>(join(root, 'src/data/redirects-admin.yaml')),
   ];
-  const gone = [...yamlList<Site['gone'][number]>(join(root, 'src/data/gone.yaml')), ...yamlList<Site['gone'][number]>(join(root, 'src/data/gone-posts.yaml'))];
+  const gone = [...yamlList<Site['gone'][number]>(join(root, 'src/data/gone.yaml')), ...yamlList<Site['gone'][number]>(join(root, 'src/data/gone-posts.yaml')), ...yamlList<Site['gone'][number]>(join(root, 'src/data/gone-admin.yaml'))];
   const warnings: string[] = [];
 
   for (const file of files(contentDir)) {
