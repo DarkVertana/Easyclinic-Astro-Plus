@@ -7,6 +7,7 @@ export function storeExtras(all: () => Promise<Submission[]>, remove: (id: strin
   const flags = new Map<string, PostFlag>();
   const revisions = new Map<string, Revision>();
   const runs: ScheduleRun[] = [];
+  const docs = new Map<string, unknown>();
   return {
     flags, revisions, runs,
     deleteSubmission: async (id: string) => remove(id),
@@ -20,6 +21,11 @@ export function storeExtras(all: () => Promise<Submission[]>, remove: (id: strin
     deleteRevision: async (id: string) => void revisions.delete(id),
     putScheduleRun: async (value: ScheduleRun) => void runs.unshift(value),
     listScheduleRuns: async (limit: number) => runs.slice(0, limit),
+    docs,
+    getDoc: async <T,>(kind: string, id: string) => (docs.get(`${kind}:${id}`) as T | undefined) ?? null,
+    listDocs: async <T,>(kind: string) => [...docs.entries()].filter(([k]) => k.startsWith(`${kind}:`)).map(([, v]) => v as T),
+    putDoc: async (kind: string, value: { id: string }) => void docs.set(`${kind}:${value.id}`, value),
+    deleteDoc: async (kind: string, id: string) => void docs.delete(`${kind}:${id}`),
   } satisfies Partial<Store> & Record<string, unknown>;
 }
 
@@ -36,7 +42,7 @@ export function fakeRepo(tree: Record<string, { raw: string; sha: string | null 
       }
     }
     for (const path of plan.deletes) delete tree[path];
-    for (const write of plan.writes) tree[write.path] = { raw: write.content, sha: `blob-${++serial}` };
+    for (const write of plan.writes) tree[write.path] = { raw: write.content, sha: `blob-${++serial}`, ...(write.encoding ? { encoding: write.encoding } : {}) };
     return `commit-${serial}`;
   });
   const repo: ContentRepo & { commit: typeof commit } = {
@@ -46,6 +52,11 @@ export function fakeRepo(tree: Record<string, { raw: string; sha: string | null 
       return tree[`src/content/posts/${slug}/index.mdx`] ?? null;
     },
     readFile: async (path) => tree[path] ?? null,
+    readBytes: async (path) => {
+      const file = tree[path] as { raw: string; encoding?: string } | undefined;
+      if (!file) return null;
+      return new Uint8Array(Buffer.from(file.raw, file.encoding === 'base64' ? 'base64' : 'utf8'));
+    },
     listFolder: async (slug) => Object.keys(tree).filter((p) => p.startsWith(`src/content/posts/${slug}/`)),
     writePreview: vi.fn(async (slug: string) => `content/${slug}`),
     commit,

@@ -1,19 +1,16 @@
 import * as React from 'react';
-import { Bot, ChartLine, ClipboardList, FileText, LayoutDashboard, LogOut, Search, X } from 'lucide-react';
+import { FileText, LogOut, X } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/admin/ui/avatar';
 import { Button } from '@/components/admin/ui/button';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarInput, SidebarInset, SidebarMenu, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from '@/components/admin/ui/sidebar';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarInset, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from '@/components/admin/ui/sidebar';
 import { TooltipProvider } from '@/components/admin/ui/tooltip';
 import { goWith, send } from './api';
 import { Notice } from './common';
 import type { FrameData } from './types';
 
+// Generate and Insights are set aside for now: reachable by address, not listed.
 const NAV = [
-  { id: 'dashboard', label: 'Dashboard', href: '/admin/', icon: LayoutDashboard },
   { id: 'posts', label: 'Posts', href: '/admin/posts/', icon: FileText },
-  { id: 'approvals', label: 'Review', href: '/admin/approvals/', icon: ClipboardList },
-  { id: 'generate', label: 'Generate', href: '/admin/generate/', icon: Bot },
-  { id: 'insights', label: 'Insights', href: '/admin/insights/', icon: ChartLine },
 ] as const;
 
 export function Brand() {
@@ -55,11 +52,6 @@ export function AppFrame({ frame, title, meta, actions, back, children }: { fram
           <SidebarContent>
             <SidebarGroup>
               <SidebarGroupContent>
-                <form method="get" action="/admin/posts/" role="search" className="relative mb-2">
-                  <Search className="pointer-events-none absolute top-2 left-2 size-4 text-muted-foreground" aria-hidden="true" />
-                  <label htmlFor="rail-search" className="sr-only">Search posts</label>
-                  <SidebarInput id="rail-search" name="q" type="search" defaultValue={frame.q} placeholder="Search posts" className="pl-8" />
-                </form>
                 <nav aria-label="Admin">
                   <SidebarMenu>
                     {NAV.map((item) => (
@@ -67,7 +59,6 @@ export function AppFrame({ frame, title, meta, actions, back, children }: { fram
                         <SidebarMenuButton asChild isActive={item.id === frame.current}>
                           <a href={item.href} aria-current={item.id === frame.current ? 'page' : undefined} className="h-9"><item.icon aria-hidden="true" /><span>{item.label}</span></a>
                         </SidebarMenuButton>
-                        {item.id === 'approvals' && frame.waiting > 0 && <SidebarMenuBadge><span className="sr-only">Waiting: </span>{frame.waiting}</SidebarMenuBadge>}
                       </SidebarMenuItem>
                     ))}
                   </SidebarMenu>

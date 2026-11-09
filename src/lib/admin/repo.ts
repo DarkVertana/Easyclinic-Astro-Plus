@@ -42,7 +42,7 @@ export function previewBranchName(slug: string, submissionId: string): string {
 export const postPath = (slug: string) => `src/content/posts/${slug}/index.mdx`;
 
 /** A plan may only touch content folders and the admin's own rule files. Enforced again here, under the commit. */
-const ALLOWED_WRITE = /^(src\/content\/posts\/[a-z0-9-]+\/[A-Za-z0-9._/-]+|src\/data\/(redirects|gone)-admin\.yaml)$/;
+const ALLOWED_WRITE = /^(src\/content\/posts\/[a-z0-9-]+\/[A-Za-z0-9._/-]+|src\/assets\/images\/blog\/[a-z0-9-]+\.(jpg|jpeg|png|webp)|src\/data\/(redirects|gone)-admin\.yaml)$/;
 
 function assertRepoPath(path: string): void {
   if (!path || path.startsWith('/') || path.includes('..') || path.includes('\\')) throw new Error('Invalid repository path.');
@@ -150,6 +150,16 @@ export function createGithubRepo(options: { token: string; repo: string; fetchFn
       return branch;
     },
     readFile: (path) => readPathAt(path, MAIN),
+    async readBytes(path) {
+      assertRepoPath(path);
+      const encoded = path.split('/').map(encodeURIComponent).join('/');
+      const result = await call('GET', `/contents/${encoded}?ref=${MAIN}`, 'read a file', undefined, [404]);
+      if (result.status === 404) return null;
+      if (result.data?.encoding === 'base64' && result.data.content) return new Uint8Array(Buffer.from(result.data.content, 'base64'));
+      // Over 1 MB the contents API leaves content empty: fetch the blob instead.
+      const blob = await call('GET', `/git/blobs/${result.data.sha}`, 'read a large file');
+      return new Uint8Array(Buffer.from(blob.data.content, 'base64'));
+    },
     async listFolder(slug) {
       assertSlug(slug);
       const walk = async (dir: string): Promise<string[]> => {
@@ -174,10 +184,15 @@ export function createGithubRepo(options: { token: string; repo: string; fetchFn
           if ((current?.sha ?? null) !== expected.sha) throw new RepoConflictError();
         }
         const parent = await call('GET', `/git/commits/${head}`, 'read the head commit');
+        const entries = await Promise.all(plan.writes.map(async (w) => {
+          if (w.encoding !== 'base64') return { path: w.path, mode: '100644', type: 'blob', content: w.content };
+          const blob = await call('POST', '/git/blobs', 'upload an image', { content: w.content, encoding: 'base64' });
+          return { path: w.path, mode: '100644', type: 'blob', sha: blob.data.sha as string };
+        }));
         const tree = await call('POST', '/git/trees', 'build the commit', {
           base_tree: parent.data.tree.sha,
           tree: [
-            ...plan.writes.map((w) => ({ path: w.path, mode: '100644', type: 'blob', content: w.content })),
+            ...entries,
             ...plan.deletes.map((path) => ({ path, mode: '100644', type: 'blob', sha: null })),
           ],
         });
@@ -222,6 +237,15 @@ export function createLocalRepo(root: string): ContentRepo {
         throw error;
       }
     },
+    async readBytes(path) {
+      assertRepoPath(path);
+      try {
+        return new Uint8Array(await readFile(join(root, path)));
+      } catch (error) {
+        if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null;
+        throw error;
+      }
+    },
     async listFolder(slug) {
       assertSlug(slug);
       const folder = join(root, 'src', 'content', 'posts', slug);
@@ -231,11 +255,11 @@ export function createLocalRepo(root: string): ContentRepo {
     /** Dev only, so there are no shas to check. Writes first, so a failure part way never loses a post. */
     async commit(plan) {
       assertPlanPaths(plan);
-      for (const { path, content } of plan.writes) {
+      for (const { path, content, encoding } of plan.writes) {
         const target = join(root, path);
         await mkdir(dirname(target), { recursive: true });
         const temp = `${target}.${process.pid}.tmp`;
-        await writeFile(temp, content);
+        await writeFile(temp, encoding === 'base64' ? Buffer.from(content, 'base64') : content);
         await rename(temp, target);
       }
       for (const path of plan.deletes) await rm(join(root, path), { force: true });

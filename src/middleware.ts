@@ -4,8 +4,8 @@ import { isProduction } from './lib/content/stage.ts';
 
 /** Astro's policy with style-src swapped. A hash in style-src would switch 'unsafe-inline' off, so they all go. */
 function adminPanelCsp(astroPolicy: string): string {
-  const kept = astroPolicy.split(';').map((d) => d.trim()).filter((d) => d && !/^(style-src|frame-ancestors)\s/i.test(d));
-  return [...kept, "style-src 'self' 'unsafe-inline'", "frame-ancestors 'none'"].join('; ');
+  const kept = astroPolicy.split(';').map((d) => d.trim()).filter((d) => d && !/^(style-src|img-src|frame-ancestors)\s/i.test(d));
+  return [...kept, "style-src 'self' 'unsafe-inline'", "img-src 'self' data: blob:", "frame-ancestors 'none'"].join('; ');
 }
 
 export const onRequest = defineMiddleware(async (context, next) => {

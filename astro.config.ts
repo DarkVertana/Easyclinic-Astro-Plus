@@ -124,6 +124,8 @@ export default defineConfig({
       DEMO_REF_SECRET: envField.string({ context: 'server', access: 'secret', optional: true }),
       // Blog admin (/admin/): docs/admin-guide.md lists what each one does.
       ADMIN_SESSION_SECRET: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
+      ADMIN_PASSWORD: envField.string({ context: 'server', access: 'secret', optional: true }),
       ADMIN_APPROVERS: envField.string({ context: 'server', access: 'secret', optional: true }),
       ADMIN_EDITORS: envField.string({ context: 'server', access: 'secret', optional: true }),
       GOOGLE_CLIENT_ID: envField.string({ context: 'server', access: 'secret', optional: true }),

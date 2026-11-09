@@ -132,6 +132,10 @@ export function createPostgresStore(query: SqlQuery): Store {
     },
     deleteRevision: (id) => remove('revision', id),
     putScheduleRun: (value) => upsert('run', value),
+    getDoc: (kind, id) => get(kind, id),
+    listDocs: (kind) => all(kind),
+    putDoc: (kind, value) => upsert(kind, value),
+    deleteDoc: (kind, id) => remove(kind, id),
     async listScheduleRuns(limit) {
       await ensure();
       const rows = await query("SELECT data FROM admin_docs WHERE kind = 'run' ORDER BY updated_at DESC LIMIT $1", [limit]);
@@ -208,6 +212,10 @@ export function createFileStore(root: string): Store {
     listRevisions: async (submissionId) => (await all<Revision>('revision')).filter((r) => r.submissionId === submissionId),
     deleteRevision: (id) => serial(() => remove('revision', id)),
     putScheduleRun: (value) => serial(() => write('run', value)),
+    getDoc: (kind, id) => get(kind, id),
+    listDocs: (kind) => all(kind),
+    putDoc: (kind, value) => serial(() => write(kind, value)),
+    deleteDoc: (kind, id) => serial(() => remove(kind, id)),
     listScheduleRuns: async (limit) => (await all<ScheduleRun>('run')).slice(0, limit),
   };
 }

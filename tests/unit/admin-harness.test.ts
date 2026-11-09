@@ -71,6 +71,12 @@ describe('MDX safety', () => {
   it('allows the InlineCta, escapes, tables and normal links', () => {
     expect(checkMdxSafety(`${body}\nA literal \\{x\\} and \\< sign, [a](https://who.int/x), [b](mailto:a@b.co).\n\n| A | B |\n| - | - |\n| 1 | 2 |\n`)).toEqual([]);
   });
+  it('allows an image uploaded into the post folder, with alt text; refuses outside images and missing alt text', () => {
+    expect(checkMdxSafety(`${body}\n![A chart of wait times](./wait-times-ab12cd.webp)\n`)).toEqual([]);
+    for (const image of ['![A chart](https://cdn.example/x.png)', '![A chart](../other/x.png)', '![](./x.png)', '![Describe the image](./x.png)', '![A file](./x.svg)']) {
+      expect(checkMdxSafety(`${body}\n${image}\n`).some((c) => c.rule === 'mdx-image' || c.rule === 'mdx-link'), image).toBe(true);
+    }
+  });
   it('a post without a named author cannot go to review, and a blank author in the form is stored as unknown', () => {
     expect(rules(checkPost(good({ status: 'review', author: null })), 'error')).toContain('author');
     expect(rules(checkPost(good({ status: 'draft', author: null })), 'error')).not.toContain('author');

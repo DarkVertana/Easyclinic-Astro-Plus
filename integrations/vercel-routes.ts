@@ -64,8 +64,10 @@ export default function vercelRoutes(): AstroIntegration {
 
         const vercelConfig = JSON.parse(await readFile(configFile, 'utf8'));
         vercelConfig.routes = injectRoutes(vercelConfig.routes, routes);
-        // Daily, because Hobby refuses anything more frequent. The trailing slash matters: cron does not follow redirects.
-        vercelConfig.crons = [{ path: '/admin/api/cron/run-schedules/', schedule: '0 3 * * *' }];
+        // Daily by default, because Hobby refuses anything more frequent; on Pro set ADMIN_CRON_SCHEDULE (e.g. "*/15 * * * *")
+        // so scheduled posts go out close to their time. The trailing slash matters: cron does not follow redirects.
+        const schedule = process.env.ADMIN_CRON_SCHEDULE?.trim() || '0 3 * * *';
+        vercelConfig.crons = [{ path: '/admin/api/cron/run-schedules/', schedule }];
         await writeFile(configFile, `${JSON.stringify(vercelConfig, null, '\t')}\n`);
 
         // The manifest is build metadata, not a public file: move it out of the static root so

@@ -150,6 +150,8 @@ function words(text: string): string[] {
 
 const CTA_OPEN = /<InlineCta((?:\s+[A-Za-z]+="[^"<>{}]*")+)\s*>/g;
 const SAFE_LINK = /^(?:https:\/\/|mailto:|tel:|#)/;
+/** An image uploaded through the editor sits in the post's own folder; Astro builds and optimises it. */
+const LOCAL_IMAGE = /^\.\/[a-z0-9][a-z0-9._-]{0,80}\.(?:jpe?g|png|webp|gif)$/i;
 
 interface AstNode {
   type: string;
@@ -231,7 +233,10 @@ export function checkMdxSafety(body: string): Check[] {
   }
   for (const m of scrubbed.matchAll(/^\s*(import|export)\b.*$/gm)) add('mdx-esm', m.index, `A line starting "${m[1]}" is compiled as code. Reword the sentence`, m[0].slice(0, 80));
   for (const m of scrubbed.matchAll(/^\s*(?:```|~~~)/gm)) add('mdx-fence', m.index, 'Code blocks do not belong in a post');
-  for (const m of scrubbed.matchAll(/!\[[^\]]*\]\(/g)) add('mdx-image', m.index, 'No images in generated bodies: screenshots do not exist yet');
+  for (const m of scrubbed.matchAll(/!\[([^\]]*)\]\(([^)\s]*)/g)) {
+    if (!LOCAL_IMAGE.test(m[2])) add('mdx-image', m.index, 'Images must be uploaded with the editor; links to images elsewhere are refused', m[0].slice(0, 80));
+    else if (!m[1].trim() || m[1].trim() === 'Describe the image') add('mdx-image', m.index, 'Describe the image in its alt text, between the square brackets', m[0].slice(0, 80));
+  }
   try {
     mdxToJs(body);
   } catch (error) {
@@ -243,7 +248,7 @@ export function checkMdxSafety(body: string): Check[] {
       out.push({ rule: 'mdx-jsx', severity: 'error', path: `body:${node.position?.start?.line ?? 1}`, message: 'An InlineCta cannot sit inside another InlineCta' });
     }
   });
-  for (const { target, line } of linkTargets(body, true)) checkLinkTarget(target, `body:${line}`, out);
+  for (const { target, line } of linkTargets(body, true)) if (!LOCAL_IMAGE.test(target)) checkLinkTarget(target, `body:${line}`, out);
   return out;
 }
 

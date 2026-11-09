@@ -52,6 +52,8 @@ function inlineCta(raw: string): string | null {
   );
 }
 
+let previewSlug: string | null = null;
+
 const marked = new Marked({
   gfm: true,
   async: false,
@@ -74,7 +76,13 @@ const marked = new Marked({
       const titled = title ? ` title="${escapeHtml(title)}"` : '';
       return `<a href="${escapeHtml(safe)}"${titled} rel="noopener noreferrer"${external ? ' target="_blank"' : ''}>${inner}</a>`;
     },
-    image({ text }) {
+    image({ href, text }) {
+      // Images from the post's own folder load through the admin; anything else is named, never fetched.
+      const name = /^\.\/([a-z0-9][a-z0-9._-]{0,80}\.(?:jpe?g|png|webp|gif))$/i.exec(href ?? '')?.[1];
+      if (name && previewSlug) {
+        const src = `/admin/api/media/?slug=${encodeURIComponent(previewSlug)}&name=${encodeURIComponent(name)}`;
+        return `<img src="${escapeHtml(src)}" alt="${escapeHtml(text)}" loading="lazy">`;
+      }
       return `<span class="text-sm text-ink-muted">[Image: ${escapeHtml(text || 'no description')}]</span>`;
     },
   },
@@ -92,6 +100,12 @@ function stripMdxStatements(body: string): string {
     .join('\n');
 }
 
-export function renderPreview(body: string): string {
-  return marked.parse(stripMdxStatements(body), { async: false });
+/** With `slug`, images in the post's folder (`./name.webp`) are shown. Synchronous, so the slug cannot leak between calls. */
+export function renderPreview(body: string, slug: string | null = null): string {
+  previewSlug = slug && /^[a-z0-9-]{1,120}$/.test(slug) ? slug : null;
+  try {
+    return marked.parse(stripMdxStatements(body), { async: false });
+  } finally {
+    previewSlug = null;
+  }
 }

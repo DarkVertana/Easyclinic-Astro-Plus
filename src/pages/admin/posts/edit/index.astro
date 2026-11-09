@@ -1,0 +1,47 @@
+---
+import AdminShell from '../../../../components/admin/AdminShell.astro';
+import { Editor } from '../../../../components/admin/blog/Editor';
+import { editorOptions } from '../../../../components/admin/blog-data';
+import { pageUser, schedulePrecision } from '../../../../components/admin/data';
+import { openPost } from '../../../../lib/admin/blog';
+
+export const prerender = false;
+
+const auth = await pageUser(Astro);
+if (auth instanceof Response) return auth;
+const slug = Astro.url.searchParams.get('slug') ?? '';
+let post = null;
+try {
+  post = await openPost(slug);
+} catch {
+  post = null;
+}
+if (!post) return Astro.redirect(`/admin/posts/?done=${encodeURIComponent('That post was not found.')}`);
+const { authors, topics, owners } = await editorOptions();
+const owner = typeof post.content.frontmatter.owner === 'string' ? post.content.frontmatter.owner : '';
+const ownerList = owner && !owners.some((o) => o.value === owner) ? [{ value: owner, label: owner }, ...owners] : owners;
+// Dates become strings so the island gets plain JSON.
+const frontmatter = JSON.parse(JSON.stringify(post.content.frontmatter));
+const title = typeof frontmatter.h1 === 'string' && frontmatter.h1 ? frontmatter.h1 : 'Edit post';
+---
+
+<AdminShell title={title}>
+  <Editor
+    client:load
+    slug={post.slug}
+    frontmatter={frontmatter}
+    body={post.content.body}
+    status={post.status}
+    live={post.live}
+    changes={post.changes}
+    isNew={post.isNew}
+    scheduledAt={post.scheduledAt}
+    updatedAt={post.updatedAt}
+    coverUrl={post.coverUrl ?? ''}
+    {authors}
+    {topics}
+    owners={ownerList}
+    editorName={auth.name || auth.email}
+    precision={schedulePrecision()}
+  />
+</AdminShell>

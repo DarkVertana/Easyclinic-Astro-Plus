@@ -50,7 +50,8 @@ export interface PostContent {
  * blob as it must be at the head the commit builds on (null: must not exist).
  */
 export interface CommitPlan {
-  writes: Array<{ path: string; content: string }>;
+  /** `encoding: 'base64'` marks binary content such as an image. */
+  writes: Array<{ path: string; content: string; encoding?: 'base64' }>;
   deletes: string[];
   expect: Array<{ path: string; sha: string | null }>;
   message: string;
@@ -289,6 +290,11 @@ export interface Store {
   listRevisions(submissionId: string): Promise<Revision[]>;
   deleteRevision(id: string): Promise<void>;
   putScheduleRun(value: ScheduleRun): Promise<void>;
+  /** Plain documents for the blog editor (kinds 'draft' and 'media'). */
+  getDoc<T extends { id: string; updatedAt: string }>(kind: DocKind, id: string): Promise<T | null>;
+  listDocs<T extends { id: string; updatedAt: string }>(kind: DocKind): Promise<T[]>;
+  putDoc<T extends { id: string; updatedAt: string }>(kind: DocKind, value: T): Promise<void>;
+  deleteDoc(kind: DocKind, id: string): Promise<void>;
   /** Newest first. */
   listScheduleRuns(limit: number): Promise<ScheduleRun[]>;
 }
@@ -307,7 +313,48 @@ export interface ContentRepo {
   commit(plan: CommitPlan): Promise<string>;
   /** Any file on main by repository path; null if absent. */
   readFile(path: string): Promise<{ raw: string; sha: string | null } | null>;
+  /** Raw bytes of any file on main; null if absent. */
+  readBytes(path: string): Promise<Uint8Array | null>;
   /** Repository paths of every file in the post's folder on main. */
   listFolder(slug: string): Promise<string[]>;
   deletePreview(branch: string): Promise<void>;
+}
+
+/* ---------- Blog editor ---------- */
+
+export type DocKind = 'draft' | 'media' | 'recent';
+
+/**
+ * Unsaved-to-the-site work on one post, kept in the store until it is published. One per slug (id = slug).
+ * A published post with a draft has changes that are not live yet.
+ */
+export interface BlogDraft {
+  id: string;
+  slug: string;
+  content: PostContent;
+  /** True until the post first reaches the repository. */
+  isNew: boolean;
+  /** When set, the schedule runner publishes this draft at that time (ISO). */
+  scheduledAt?: string | null;
+  updatedAt: string;
+  updatedBy: string;
+}
+
+/** An uploaded image waiting to be published with its post. Base64, capped in size by the upload route. */
+export interface BlogMedia {
+  id: string;
+  slug: string;
+  /** File name in the post folder, or 'cover.<ext>' for the featured image. */
+  name: string;
+  type: string;
+  data: string;
+  updatedAt: string;
+}
+
+/** What the admin last did to the site for a slug, so the list is right before the next deployment catches up. */
+export interface BlogRecent {
+  id: string;
+  title: string;
+  state: 'published' | 'draft' | 'deleted';
+  updatedAt: string;
 }

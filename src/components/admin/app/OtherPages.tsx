@@ -303,7 +303,7 @@ export function InsightsPage({ frame, notices, windows, rows, hasNumbers, hasSea
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul className="divide-y pb-2 pl-6">
-                    {g.items.map((item) => <li key={item.slug} className="py-2"><a className="font-medium text-heading underline-offset-2 hover:underline" href={`/admin/posts/view/?slug=${encodeURIComponent(item.slug)}`}>{item.title}</a><Muted className="break-words">{item.reason}</Muted></li>)}
+                    {g.items.map((item) => <li key={item.slug} className="py-2"><a className="font-medium text-heading underline-offset-2 hover:underline" href={`/admin/posts/edit/?slug=${encodeURIComponent(item.slug)}`}>{item.title}</a><Muted className="break-words">{item.reason}</Muted></li>)}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -312,61 +312,5 @@ export function InsightsPage({ frame, notices, windows, rows, hasNumbers, hasSea
         </Card>
       </div>
     </AppFrame>
-  );
-}
-
-export interface LoginProps {
-  flash: { message: string; kind: string } | null;
-  setupProblem: string | null;
-  expired: boolean;
-  dev: boolean;
-  back: string;
-}
-
-export function LoginPage({ flash, setupProblem, expired, dev, back }: LoginProps) {
-  const [role, setRole] = React.useState('approver');
-  return (
-    <main className="flex min-h-dvh flex-col bg-background p-6 sm:p-8">
-      <Brand />
-      <div className="flex flex-1 items-center justify-center py-10">
-        <div className="grid w-full max-w-sm gap-6">
-          <div className="grid gap-2">
-            <h1 className="text-[length:var(--text-xl)] leading-tight font-semibold tracking-tight text-heading">Sign in to the admin</h1>
-            <Muted>For Easy Clinic editors and approvers. Use the Google account your admin added.</Muted>
-          </div>
-          {flash?.message && <Notice tone="error" live>{flash.message}</Notice>}
-          {setupProblem && <Notice tone="error">{setupProblem} Set these, then reload.</Notice>}
-          {expired && !flash && <Notice>Sign in to continue. Text you were typing is kept in this browser and offered back when you return.</Notice>}
-          <Button asChild variant="outline" className="h-11 w-full text-heading">
-            <a href={`/admin/auth/google/?back=${encodeURIComponent(back)}`}>
-              {/* Google's mark keeps its own colours under its brand rules, so these are not site tokens. */}
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="size-[18px]">
-                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z" />
-                <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z" />
-                <path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1z" />
-                <path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z" />
-              </svg>
-              Sign in with Google
-            </a>
-          </Button>
-          {dev && (
-            <details className="border-t pt-4">
-              <summary className="cursor-pointer text-muted-foreground">Development sign-in</summary>
-            <form method="post" action="/admin/auth/dev/" className="mt-3 grid gap-3">
-              <input type="hidden" name="back" value={back} />
-              <Muted>Only available in local development.</Muted>
-              <div className="grid gap-1.5"><Label htmlFor="dev-email">Email</Label><Input id="dev-email" name="email" type="email" required defaultValue="dev@easyclinic.io" autoComplete="email" /></div>
-              <div className="grid gap-1.5">
-                <Label id="dev-role-l">Role</Label>
-                <input type="hidden" name="role" value={role} />
-                <Select value={role} onValueChange={setRole}><SelectTrigger aria-labelledby="dev-role-l" className="w-full" id="dev-role"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="approver">Approver</SelectItem><SelectItem value="editor">Editor</SelectItem></SelectContent></Select>
-              </div>
-              <Button type="submit" variant="outline" className="w-full">Sign in for development</Button>
-            </form>
-            </details>
-          )}
-        </div>
-      </div>
-    </main>
   );
 }

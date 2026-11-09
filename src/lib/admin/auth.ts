@@ -1,17 +1,12 @@
-import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+import { createHmac, timingSafeEqual } from 'node:crypto';
 import type { APIContext } from 'astro';
 import { devSignInEnabled } from './dev-guard.ts';
 import { env } from './env.ts';
 import type { AdminUser, Role } from './types.ts';
 
 export const SESSION_COOKIE = 'ec_admin_session';
-export const OAUTH_COOKIE = 'ec_admin_oauth';
 const SESSION_SECONDS = 12 * 60 * 60;
-const OAUTH_SECONDS = 10 * 60;
 const MIN_SECRET = 32;
-const AUTHORIZE_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
-const TOKEN_URL = 'https://oauth2.googleapis.com/token';
-const ISSUERS = ['https://accounts.google.com', 'accounts.google.com'];
 
 type Ctx = Pick<APIContext, 'request' | 'cookies' | 'url'>;
 
@@ -44,11 +39,52 @@ function list(value: string | undefined): string[] {
   return (value ?? '').split(',').map((email) => email.trim().toLowerCase()).filter(Boolean);
 }
 
-/** Read from the lists on every call. Being on both lists means approver. */
+/**
+ * One admin account for now: ADMIN_EMAIL and ADMIN_PASSWORD. Addresses in ADMIN_APPROVERS and ADMIN_EDITORS are
+ * kept for later accounts; whoever is signed in can do everything.
+ */
 export function roleFor(email: string): Role | null {
   const key = email.trim().toLowerCase();
-  if (list(env('ADMIN_APPROVERS')).includes(key)) return 'approver';
-  return list(env('ADMIN_EDITORS')).includes(key) ? 'editor' : null;
+  if (key === adminEmail()) return 'approver';
+  return [...list(env('ADMIN_APPROVERS')), ...list(env('ADMIN_EDITORS'))].includes(key) ? 'approver' : null;
+}
+
+export function adminEmail(): string {
+  return (env('ADMIN_EMAIL') ?? (devSignInEnabled() ? 'admin@easyclinic.local' : '')).trim().toLowerCase();
+}
+
+function adminPassword(): string | null {
+  return env('ADMIN_PASSWORD') ?? (devSignInEnabled() ? 'admin' : null);
+}
+
+const digest = (value: string) => createHmac('sha256', 'ec-admin-password').update(value).digest();
+
+/** Constant-time comparison of both fields; true when they match the admin account. */
+export function checkPassword(email: string, password: string): boolean {
+  const wantedEmail = adminEmail();
+  const wantedPassword = adminPassword();
+  if (!wantedEmail || !wantedPassword) return false;
+  const emailOk = timingSafeEqual(digest(email.trim().toLowerCase()), digest(wantedEmail));
+  const passwordOk = timingSafeEqual(digest(password), digest(wantedPassword));
+  return emailOk && passwordOk;
+}
+
+const attempts = new Map<string, { count: number; until: number }>();
+
+/** At most 8 failed sign-ins per address per 15 minutes, per server instance. */
+export function signInBlocked(key: string, now = Date.now()): boolean {
+  const entry = attempts.get(key);
+  return Boolean(entry && entry.until > now && entry.count >= 8);
+}
+
+export function noteFailedSignIn(key: string, now = Date.now()): void {
+  const entry = attempts.get(key);
+  if (!entry || entry.until <= now) attempts.set(key, { count: 1, until: now + 15 * 60_000 });
+  else entry.count += 1;
+}
+
+export function clearFailedSignIns(key: string): void {
+  attempts.delete(key);
 }
 
 function isDev(): boolean {
@@ -63,12 +99,10 @@ function sessionSecret(): string | null {
 
 /** What is missing on a deployment. Names only, never values. Null when sign-in can work. */
 export function authSetupProblem(): string | null {
-  if (devSignInEnabled()) return null;
   const missing: string[] = [];
   if (!sessionSecret()) missing.push(`ADMIN_SESSION_SECRET (at least ${MIN_SECRET} characters)`);
-  if (!env('GOOGLE_CLIENT_ID')) missing.push('GOOGLE_CLIENT_ID');
-  if (!env('GOOGLE_CLIENT_SECRET')) missing.push('GOOGLE_CLIENT_SECRET');
-  if (!list(env('ADMIN_APPROVERS')).length) missing.push('ADMIN_APPROVERS');
+  if (!adminEmail()) missing.push('ADMIN_EMAIL');
+  if (!adminPassword()) missing.push('ADMIN_PASSWORD');
   return missing.length ? `Admin sign-in is not set up. Missing: ${missing.join(', ')}.` : null;
 }
 
@@ -137,87 +171,4 @@ export async function requireApprover(context: Ctx): Promise<AdminUser> {
   const user = await requireUser(context);
   if (user.role === 'approver') return user;
   throw Response.json({ ok: false, message: 'Only an approver can do this.' }, { status: 403 });
-}
-
-/* ---------- Google sign-in ---------- */
-
-interface OAuthValue {
-  state: string;
-  nonce: string;
-  back: string;
-  exp: number;
-}
-
-export function redirectUri(url: URL): string {
-  return `${url.origin}/admin/auth/callback/`;
-}
-
-/** Sets the signed state cookie and returns the Google URL. */
-export function beginGoogle(context: Ctx, back: string): string {
-  const secret = sessionSecret();
-  const clientId = env('GOOGLE_CLIENT_ID');
-  if (!secret || !clientId) throw new Error('Sign-in is not set up');
-  const state = randomBytes(24).toString('base64url');
-  const nonce = randomBytes(24).toString('base64url');
-  const value: OAuthValue = { state, nonce, back, exp: Math.floor(Date.now() / 1000) + OAUTH_SECONDS };
-  context.cookies.set(OAUTH_COOKIE, signValue('oauth', value, secret), {
-    path: '/admin/auth/',
-    httpOnly: true,
-    secure: !isDev(),
-    sameSite: 'lax',
-    maxAge: OAUTH_SECONDS,
-  });
-  const params = new URLSearchParams({ client_id: clientId, response_type: 'code', scope: 'openid email profile', redirect_uri: redirectUri(context.url), state, nonce });
-  return `${AUTHORIZE_URL}?${params}`;
-}
-
-/** One use: the cookie is cleared whatever the result. Null when missing, expired, forged or the state differs. */
-export function consumeOAuthState(context: Ctx, state: string | null): OAuthValue | null {
-  const secret = sessionSecret();
-  const raw = context.cookies.get(OAUTH_COOKIE)?.value;
-  context.cookies.delete(OAUTH_COOKIE, { path: '/admin/auth/' });
-  if (!secret || !state) return null;
-  const value = verifyValue<OAuthValue>('oauth', raw, secret);
-  if (!value) return null;
-  const a = Buffer.from(value.state);
-  const b = Buffer.from(state);
-  return a.length === b.length && timingSafeEqual(a, b) ? value : null;
-}
-
-/**
- * Checks the claims of an id_token read straight from Google's token endpoint over TLS, where Google's guide says
- * the signature check is not needed. Never call this with a token from any other route.
- */
-export function validateClaims(idToken: string, expected: { clientId: string; nonce: string }, nowSeconds = Date.now() / 1000): { email: string; name: string } | null {
-  const part = idToken.split('.')[1];
-  if (!part) return null;
-  let claims: Record<string, unknown>;
-  try {
-    claims = JSON.parse(Buffer.from(part, 'base64url').toString('utf8'));
-  } catch {
-    return null;
-  }
-  if (typeof claims.iss !== 'string' || !ISSUERS.includes(claims.iss)) return null;
-  if (claims.aud !== expected.clientId) return null;
-  if (typeof claims.exp !== 'number' || claims.exp <= nowSeconds) return null;
-  if (claims.nonce !== expected.nonce) return null;
-  if (claims.email_verified !== true) return null;
-  if (typeof claims.email !== 'string' || !claims.email.includes('@')) return null;
-  const name = typeof claims.name === 'string' ? claims.name.replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0, 100).trim() : '';
-  return { email: claims.email.trim().toLowerCase(), name: name || claims.email };
-}
-
-export async function exchangeCode(code: string, url: URL, nonce: string, fetchFn: typeof fetch = fetch): Promise<{ email: string; name: string } | null> {
-  const clientId = env('GOOGLE_CLIENT_ID');
-  const clientSecret = env('GOOGLE_CLIENT_SECRET');
-  if (!clientId || !clientSecret) return null;
-  const response = await fetchFn(TOKEN_URL, {
-    method: 'POST',
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ code, client_id: clientId, client_secret: clientSecret, redirect_uri: redirectUri(url), grant_type: 'authorization_code' }),
-    signal: AbortSignal.timeout(10_000),
-  });
-  if (!response.ok) return null;
-  const data = (await response.json()) as { id_token?: unknown };
-  return typeof data.id_token === 'string' ? validateClaims(data.id_token, { clientId, nonce }) : null;
 }

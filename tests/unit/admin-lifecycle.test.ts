@@ -2,7 +2,7 @@
  * The owner's complaint and the lifecycle built to fix it. GitHub and the store are in-memory fakes with the real
  * contract (expected shas, atomic plans, stale writes); routing rules, the loader and resolveRules are the real code.
  */
-import { mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -143,9 +143,8 @@ describe('the owner complaint: opening a published post', () => {
     const back = await wf.saveEdit(sub.id, parsePost(live()), editor, sub.updatedAt, deps);
     await expect(wf.submitForApproval(back.id, editor, deps)).rejects.toThrow('Nothing has changed');
   });
-  it('old open route no longer writes', () => {
-    const src = readFileSync(join(process.cwd(), 'src/pages/admin/api/posts/open.ts'), 'utf8');
-    expect(src).not.toMatch(/workflow|getStore|putSubmission/);
+  it('the old approval routes are gone', () => {
+    for (const path of ['src/pages/admin/api/posts', 'src/pages/admin/approvals']) expect(existsSync(join(process.cwd(), path)), path).toBe(false);
   });
 });
 
@@ -276,10 +275,13 @@ describe('the single gate to main', () => {
     walk(join(process.cwd(), 'scripts'));
     return out;
   };
-  it('repo.commit has exactly one caller, commitPlan in workflow.ts', () => {
+  it('repo.commit has two callers: commitPlan in workflow.ts and publishTarget in blog.ts', () => {
     const hits = sources().flatMap((f) => (f.text.match(/\.commit\s*\(/g) ?? []).map(() => f.path));
-    expect(hits).toHaveLength(1);
-    expect(hits[0]).toMatch(/src\/lib\/admin\/workflow\.ts$/);
+    expect(hits).toHaveLength(2);
+    expect(hits.some((h) => /src\/lib\/admin\/workflow\.ts$/.test(h))).toBe(true);
+    const blogText = sources().find((f) => f.path.endsWith('lib/admin/blog.ts'))!.text;
+    const beforeBlog = blogText.slice(0, blogText.indexOf('deps.repo.commit('));
+    expect(beforeBlog.lastIndexOf('async function ')).toBe(beforeBlog.lastIndexOf('async function publishTarget'));
     const wfText = sources().find((f) => f.path.endsWith('lib/admin/workflow.ts'))!.text;
     expect(wfText.slice(wfText.indexOf('.commit('), wfText.indexOf('.commit(') + 10)).toContain('commit');
     const before = wfText.slice(0, wfText.indexOf('deps.repo.commit('));
@@ -298,11 +300,9 @@ describe('the single gate to main', () => {
     const explained = [...wfText.matchAll(/await commitOrExplain\(deps/g)].map((m) => /(?:async )?function (\w+)[^\n]*\n(?:(?!\n(?:export )?(?:async )?function )[\s\S])*$/.exec(wfText.slice(0, m.index))?.[1]);
     expect(explained.sort()).toEqual(['deleteConfirmed', 'unpublish']);
   });
-  it('the engine and the bulk route have no way in', () => {
+  it('the AI engine has no way in', () => {
     const engine = sources().find((f) => f.path.endsWith('lib/admin/engine.ts'))!.text;
-    expect(engine).not.toMatch(/commitPlan|approve\(|publishNow/);
-    const route = sources().find((f) => f.path.endsWith('api/posts/bulk.ts'))!.text;
-    expect(route).not.toMatch(/approve|publish/i);
+    expect(engine).not.toMatch(/commitPlan|approve\(|publishNow|publishPost|blog\.ts/);
   });
 });
 

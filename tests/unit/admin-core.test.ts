@@ -30,7 +30,7 @@ function fakeContext(path = '/admin/', cookies: Record<string, string> = {}) {
 
 beforeEach(() => {
   for (const key of Object.keys(secrets)) delete secrets[key];
-  Object.assign(secrets, { ADMIN_SESSION_SECRET: SECRET, ADMIN_APPROVERS: 'Boss@x.com', ADMIN_EDITORS: 'ed@x.com, both@x.com', GOOGLE_CLIENT_ID: 'cid', GOOGLE_CLIENT_SECRET: 'sec' });
+  Object.assign(secrets, { ADMIN_SESSION_SECRET: SECRET, ADMIN_APPROVERS: 'Boss@x.com', ADMIN_EDITORS: 'ed@x.com, both@x.com', ADMIN_EMAIL: 'Admin@x.com', ADMIN_PASSWORD: 'correct horse' });
 });
 afterEach(() => vi.unstubAllEnvs());
 
@@ -75,21 +75,20 @@ describe('session', () => {
     vi.stubEnv('DEV', false);
     const context = fakeContext();
     auth.startSession(context, { email: 'ed@x.com', name: 'Ed' });
-    expect((await auth.currentUser(context))?.role).toBe('editor');
+    expect((await auth.currentUser(context))?.role).toBe('approver');
     secrets.ADMIN_EDITORS = 'other@x.com';
     expect(await auth.currentUser(context)).toBeNull();
   });
-  it('demotion takes effect at once; emails compare without case; both lists means approver', async () => {
-    expect(auth.roleFor('boss@X.com')).toBe('approver');
-    secrets.ADMIN_APPROVERS = 'both@x.com';
-    expect(auth.roleFor('both@x.com')).toBe('approver');
-    expect(auth.roleFor('boss@x.com')).toBeNull();
+  it('the admin and every listed address may do everything; emails compare without case', async () => {
+    expect(auth.roleFor('ADMIN@x.com')).toBe('approver');
+    expect(auth.roleFor('ed@X.com')).toBe('approver');
+    expect(auth.roleFor('stranger@x.com')).toBeNull();
   });
   it('a dev role in a cookie means nothing in production', async () => {
     vi.stubEnv('DEV', false);
     const context = fakeContext();
-    auth.startSession(context, { email: 'ed@x.com', name: 'Ed', devRole: 'approver' });
-    expect((await auth.currentUser(context))?.role).toBe('editor');
+    auth.startSession(context, { email: 'stranger@x.com', name: 'S', devRole: 'approver' });
+    expect(await auth.currentUser(context)).toBeNull();
   });
   it('fails closed when deployed without settings, and names only the missing keys', async () => {
     vi.stubEnv('DEV', false);
@@ -112,53 +111,30 @@ describe('session', () => {
     jsonContext.request.headers.set('accept', 'application/json');
     const api = await auth.requireUser(jsonContext).catch((r) => r);
     expect(api.status).toBe(401);
-    const context = fakeContext('/admin/api/posts/1/approve/');
-    auth.startSession(context, { email: 'ed@x.com', name: 'Ed' });
-    expect((await auth.requireApprover(context).catch((r) => r)).status).toBe(403);
   });
 });
 
-describe('Google sign-in', () => {
-  const b64 = (v: object) => Buffer.from(JSON.stringify(v)).toString('base64url');
-  const good = { iss: 'https://accounts.google.com', aud: 'cid', exp: 2000, nonce: 'n', email: 'Boss@x.com', email_verified: true, name: 'Boss' };
-  const token = (over: object) => `h.${b64({ ...good, ...over })}.s`;
-  const expected = { clientId: 'cid', nonce: 'n' };
-  it('accepts good claims and both Google issuers', () => {
-    expect(auth.validateClaims(token({}), expected, 1000)?.email).toBe('boss@x.com');
-    expect(auth.validateClaims(token({ iss: 'accounts.google.com' }), expected, 1000)).toBeTruthy();
+describe('password sign-in', () => {
+  it('accepts the admin email in any case with the exact password', () => {
+    expect(auth.checkPassword('admin@X.com', 'correct horse')).toBe(true);
+    expect(auth.checkPassword(' admin@x.com ', 'correct horse')).toBe(true);
   });
-  it.each([
-    ['iss', { iss: 'https://evil.test' }],
-    ['aud', { aud: 'other' }],
-    ['aud list', { aud: ['cid', 'other'] }],
-    ['exp', { exp: 500 }],
-    ['nonce', { nonce: 'other' }],
-    ['email_verified', { email_verified: false }],
-    ['email_verified text', { email_verified: 'true' }],
-    ['email', { email: undefined }],
-  ])('rejects a bad %s', (_name, over) => {
-    expect(auth.validateClaims(token(over), expected, 1000)).toBeNull();
+  it('refuses a wrong password, a wrong email and a missing setting', () => {
+    expect(auth.checkPassword('admin@x.com', 'Correct horse')).toBe(false);
+    expect(auth.checkPassword('ed@x.com', 'correct horse')).toBe(false);
+    expect(auth.checkPassword('admin@x.com', '')).toBe(false);
+    vi.stubEnv('DEV', false);
+    delete secrets.ADMIN_PASSWORD;
+    expect(auth.checkPassword('admin@x.com', 'correct horse')).toBe(false);
+    expect(auth.authSetupProblem()).toContain('ADMIN_PASSWORD');
   });
-  it('rejects junk tokens', () => {
-    expect(auth.validateClaims('junk', expected, 1000)).toBeNull();
-    expect(auth.validateClaims('a.%%%.c', expected, 1000)).toBeNull();
-  });
-  it('state: right once, then gone; wrong state, missing cookie and expired cookie refused', () => {
-    const context = fakeContext('/admin/auth/google/');
-    const state = new URL(auth.beginGoogle(context, '/admin/')).searchParams.get('state');
-    expect(auth.consumeOAuthState(context, state)?.back).toBe('/admin/');
-    expect(auth.consumeOAuthState(context, state)).toBeNull();
-
-    const wrong = fakeContext('/admin/auth/google/');
-    auth.beginGoogle(wrong, '/admin/');
-    expect(auth.consumeOAuthState(wrong, 'other')).toBeNull();
-
-    const expired = fakeContext('/x', { [auth.OAUTH_COOKIE]: auth.signValue('oauth', { state: 's', nonce: 'n', back: '/admin/', exp: 1 }, SECRET) });
-    expect(auth.consumeOAuthState(expired, 's')).toBeNull();
-  });
-  it('a refused code exchange signs nobody in', async () => {
-    const fetchFn = vi.fn(async () => new Response('{"error":"invalid_grant"}', { status: 400 }));
-    expect(await auth.exchangeCode('c', new URL('https://site.test/'), 'n', fetchFn as any)).toBeNull();
+  it('blocks a key after eight failures for fifteen minutes', () => {
+    const key = `ip|${Math.random()}`;
+    for (let i = 0; i < 8; i++) auth.noteFailedSignIn(key, 1000);
+    expect(auth.signInBlocked(key, 2000)).toBe(true);
+    expect(auth.signInBlocked(key, 1000 + 15 * 60_000 + 1)).toBe(false);
+    auth.clearFailedSignIns(key);
+    expect(auth.signInBlocked(key, 2000)).toBe(false);
   });
 });
 
