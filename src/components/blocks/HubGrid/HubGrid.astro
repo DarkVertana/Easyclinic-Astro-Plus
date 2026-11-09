@@ -70,12 +70,69 @@ const ACCENTS = [
   { tint: 'bg-green-50', chip: 'bg-white text-green-700', ink: 'text-green-700' },
 ];
 const pad = (n: number) => String(n).padStart(2, '0');
+
+// Tiles layout: groups alternate blue and green, like panels.
+const TILE_ACCENTS = [
+  { bar: 'bg-blue-500', tint: 'bg-blue-50', ink: 'text-blue-700', hoverBorder: 'hover:border-blue-200 focus-within:border-blue-200', hoverInk: 'group-hover:text-blue-700' },
+  { bar: 'bg-teal-500', tint: 'bg-green-50', ink: 'text-green-700', hoverBorder: 'hover:border-teal-500/40 focus-within:border-teal-500/40', hoverInk: 'group-hover:text-green-700' },
+];
 ---
 
 {
   visibleGroups.length > 0 && (
-    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
-      {layout === 'panels' ? (
+    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} wideHeader={layout === 'tiles'}>
+      {layout === 'tiles' ? (
+        <div class="grid gap-10 md:gap-14">
+          {visibleGroups.map(({ title, titleId, CardHeading, cards }, g) => {
+            const accent = TILE_ACCENTS[g % TILE_ACCENTS.length];
+            return (
+              <div>
+                {title && (
+                  <GroupHeading id={titleId} class:list={['mb-5 text-lg leading-tight sm:text-xl md:mb-6', sectionTone === 'inverse' && 'text-white']}>
+                    {title}
+                  </GroupHeading>
+                )}
+                <ul class:list={['grid gap-4 sm:gap-5', GRID]} aria-labelledby={title ? titleId : undefined}>
+                  {cards.map((card) => (
+                    <li
+                      class:list={[
+                        'group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-surface p-5 text-ink shadow-sm transition duration-200 sm:p-6',
+                        'hover:-translate-y-0.5 hover:shadow-lg focus-within:-translate-y-0.5 focus-within:shadow-lg motion-reduce:transform-none',
+                        card.missing ? 'border-dashed border-line-strong' : ['border-line', accent.hoverBorder],
+                      ]}
+                    >
+                      {/* Accent strip along the top edge, full strength on hover. */}
+                      <span class:list={['absolute inset-x-0 top-0 h-1 opacity-60 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100', accent.bar]} aria-hidden="true" />
+                      {card.icon && (
+                        <span class:list={['mb-4 flex size-11 items-center justify-center rounded-control', accent.tint, accent.ink]}>
+                          <Icon name={card.icon} size={22} />
+                        </span>
+                      )}
+                      <CardHeading class="font-sans text-base font-semibold leading-snug text-ink-heading sm:text-lg">
+                        {/* The link's ::after covers the card, so the whole card is one tap target. */}
+                        <a
+                          href={card.href}
+                          class:list={['link-plain transition-colors after:absolute after:inset-0 after:rounded-2xl hover:no-underline', accent.hoverInk]}
+                          aria-describedby={card.noteId}
+                        >
+                          {card.label}
+                        </a>
+                      </CardHeading>
+                      {card.description && <p class="mt-2 line-clamp-3 text-[0.9375rem] leading-relaxed text-ink-muted" title={card.description}>{card.description}</p>}
+                      {card.missing && (
+                        <p id={card.noteId} class="mt-auto flex items-center gap-1.5 pt-4 text-sm font-medium text-warning">
+                          <Icon name="circle-dashed" size={16} />
+                          <span>Not built yet</span>
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      ) : layout === 'panels' ? (
         <div class="grid gap-5 md:gap-6">
           {visibleGroups.map(({ title, titleId, CardHeading, cards }, g) => {
             const accent = ACCENTS[g % ACCENTS.length];

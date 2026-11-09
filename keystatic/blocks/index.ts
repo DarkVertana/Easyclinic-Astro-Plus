@@ -60,6 +60,7 @@ import { teamGrid } from './teamGrid.ts';
 import { spotlight } from './spotlight.ts';
 import { photoGallery } from './photoGallery.ts';
 import { officeCards } from './officeCards.ts';
+import { videoGrid } from './videoGrid.ts';
 
 export const KS_BLOCKS = {
   addOns,
@@ -115,4 +116,5 @@ export const KS_BLOCKS = {
   spotlight,
   photoGallery,
   officeCards,
+  videoGrid,
 } satisfies Record<BlockName, KsBlock>;

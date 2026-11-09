@@ -152,7 +152,8 @@ export function auditEntry(data: Entryish, family: string): Issue[] {
   // Owner decision 2026-10-30: /features/, /features/patient-engagement/, /features/reports-and-dashboards/ and /features/insurance-claims/ drop their ratings proof blocks.
   // Owner decision 2026-10-31: /features/revenue-management/ /features/appointment-scheduling/, /features/billing/, /features/lab/, /features/multi-location/ and /features/pharmacy-and-inventory/ drop their ratings proof blocks.
   // Owner decision 2026-11-04: /features/telemedicine/ and /features/whatsapp/ drop their ratings proof blocks.
-  const proofExempt = new Set(['/countries/', '/features/', '/features/patient-engagement/', '/features/reports-and-dashboards/', '/features/insurance-claims/', '/features/revenue-management/', '/features/appointment-scheduling/', '/features/billing/', '/features/lab/', '/features/multi-location/', '/features/pharmacy-and-inventory/', '/features/telemedicine/', '/features/whatsapp/']);
+  // Owner decision 2026-11-09: /compare/ drops its ratings proof block.
+  const proofExempt = new Set(['/countries/', '/compare/','/features/', '/features/patient-engagement/', '/features/reports-and-dashboards/', '/features/insurance-claims/', '/features/revenue-management/', '/features/appointment-scheduling/', '/features/billing/', '/features/lab/', '/features/multi-location/', '/features/pharmacy-and-inventory/', '/features/telemedicine/', '/features/whatsapp/']);
   if (rules.proof && !proofExempt.has(data.path as string)) {
     const hasProof = (data.sections ?? []).some((s) => PROOF_BLOCKS.has(s.discriminant));
     if (!hasProof) err('proof', 'sections', 'Every page carries one proof block that belongs to it (spec 2.4)');

@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets';
+import type { SectionValue } from '../../../schemas/sections';
+import Section from '../../ui/Section.astro';
+import Button from '../../ui/Button.astro';
+import logo from '../../../assets/logo/easyclinic-logo.png';
+import { toneFor, type BlockContext } from '../types';
+
+type Props = SectionValue<'videoGrid'> & { ctx: BlockContext };
+const { id, eyebrow, heading, intro, tone, videos, link, ctx } = Astro.props;
+const sectionTone = toneFor(tone, ctx.index);
+
+// One column on phones, two from 640px, three from 1024px; a lone video or a pair stays centred.
+const GRID = videos.length === 1 ? 'mx-auto max-w-3xl' : videos.length === 2 ? 'sm:grid-cols-2 lg:mx-auto lg:max-w-5xl' : 'sm:grid-cols-2 lg:grid-cols-3';
+---
+
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} wideHeader>
+  <ul class:list={['grid gap-5 sm:gap-6', GRID]}>
+    {
+      videos.map((v) => (
+        <li class="min-w-0">
+          {/* Styled like YouTube's own embed. The link opens YouTube without JavaScript; with it, a click swaps in
+              the player in place. 4:3 thumbnails with letterbox bars crop to the 16:9 picture under object-cover. */}
+          <a
+            href={`https://www.youtube.com/watch?v=${v.youtubeId}`}
+            class="vg-card group relative block aspect-video overflow-hidden bg-black"
+            data-video={v.youtubeId}
+            data-video-title={v.title}
+            data-track="video_play"
+            data-label={v.title}
+            rel="noopener"
+            aria-label={`Play video: ${v.title}${v.duration ? ` (${v.duration})` : ''}`}
+          >
+            <Image
+              src={v.thumbnail}
+              alt=""
+              widths={[480, 640]}
+              sizes="(min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw"
+              loading="lazy"
+              class="size-full object-cover object-center"
+            />
+            {/* Top shade with the channel avatar, title and channel name. */}
+            <span class="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/60 to-transparent" aria-hidden="true" />
+            <span class="absolute inset-x-0 top-0 flex items-center gap-2.5 p-3 sm:gap-3 sm:p-4" aria-hidden="true">
+              <span class="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1 sm:size-11">
+                <Image src={logo} alt="" width={64} class="h-auto w-full" />
+              </span>
+              <span class="min-w-0 leading-tight text-white [text-shadow:0_1px_2px_rgb(0_0_0/0.5)]">
+                <span class="block truncate text-base font-semibold sm:text-lg">{v.title}</span>
+                <span class="block truncate text-xs opacity-90 sm:text-sm">Easy Clinic</span>
+              </span>
+            </span>
+            {/* YouTube's red play button. */}
+            <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform group-hover:scale-110 group-focus-visible:scale-110 motion-reduce:transform-none" aria-hidden="true">
+              <svg viewBox="0 0 68 48" class="h-10 w-[3.6rem] sm:h-12 sm:w-[4.25rem]">
+                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26Z" fill="#f00" />
+                <path d="M45 24 27 14v20" fill="#fff" />
+              </svg>
+            </span>
+            {/* "Watch on YouTube" pill, bottom left as on the embed. */}
+            <span class="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-black/80 px-3 py-1.5 text-sm font-medium text-white sm:bottom-4 sm:left-4 sm:px-4 sm:py-2 sm:text-base" aria-hidden="true">
+              Watch on
+              <span class="flex items-center gap-1 font-semibold tracking-tight">
+                <svg viewBox="0 0 68 48" class="h-3.5 w-5 sm:h-4 sm:w-6"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26Z" fill="#fff" /><path d="M45 24 27 14v20" fill="#000" /></svg>
+                YouTube
+              </span>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  {
+    link && (
+      <div class="mt-8 flex justify-center md:mt-10">
+        <Button {...link} variant="outline" icon="brand-youtube" />
+      </div>
+    )
+  }
+</Section>
+
+<script>
+  // Swap the thumbnail for the player on click. youtube-nocookie.com is the one video host frame-src allows.
+  for (const link of document.querySelectorAll<HTMLAnchorElement>('a[data-video]')) {
+    link.addEventListener('click', (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+      event.preventDefault();
+      const frame = document.createElement('iframe');
+      frame.src = `https://www.youtube-nocookie.com/embed/${link.dataset.video}?autoplay=1&rel=0`;
+      frame.title = link.dataset.videoTitle ?? 'Video';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      frame.allowFullscreen = true;
+      frame.className = 'absolute inset-0 size-full border-0';
+      const box = document.createElement('div');
+      box.className = 'relative aspect-video overflow-hidden bg-black';
+      box.append(frame);
+      link.replaceWith(box);
+      frame.focus();
+    });
+  }
+</script>

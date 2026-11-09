@@ -22,5 +22,5 @@ export const hubGrid = defineBlock('hubGrid', 'Hub grid', {
     { label: 'Groups', min: 1, itemLabel: (props) => props.fields.title.value || 'Group' },
   ),
   columns: int('Columns', { min: 2, max: 4, zodDefault: 3, description: 'Cards per row on wide screens (2 to 4). Empty: 3.' }),
-  layout: choice('Layout', ['cards', 'panels'] as const, { zodDefault: 'cards' }, { description: 'Cards: a grid under each group title. Panels: one panel per group, its title beside a list of rows (the features hub).' }),
+  layout: choice('Layout', ['cards', 'panels', 'tiles'] as const, { zodDefault: 'cards' }, { description: 'Cards: a grid under each group title. Panels: one panel per group, its title beside a list of rows (the features hub). Tiles: a full-width intro and accented cards with a page count per group (the compare hub).' }),
 });

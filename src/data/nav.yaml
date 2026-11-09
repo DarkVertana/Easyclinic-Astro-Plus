@@ -42,8 +42,6 @@ primary:
         links:
           - { label: Compare, href: /compare/, description: 'Easy Clinic against the software you are considering', icon: layers }
           - { label: Customers, href: /customers/, description: 'Clinics running on Easy Clinic', icon: users }
-          - { label: Start a clinic, href: /start-a-clinic/, description: 'Licences, costs and setup by country', icon: building-2 }
-          - { label: Switch to Easy Clinic, href: /switch/, description: 'What we import and how long it takes', icon: repeat }
           - { label: Blog, href: /blog/, description: 'Guides for clinic owners', icon: file-text }
   - label: Contact us
     href: /contact-us/

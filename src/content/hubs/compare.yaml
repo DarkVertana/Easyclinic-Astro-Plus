@@ -46,9 +46,9 @@ sections:
       intro: >-
         Start with the page that matches your decision. A clinic weighing Easy Clinic against one named
         product reads the head-to-head page, and a clinic leaving Practo Ray or HealthPlix reads the
-        alternatives page for it. A clinic starting from a longer list reads the page for its country, and a
-        clinic on paper or another system can see what the switch involves.
+        alternatives page for it, and a clinic starting from a longer list reads the page for its country.
       columns: 3
+      layout: tiles
       groups:
         - title: Easy Clinic against one other product
           items:
@@ -71,6 +71,11 @@ sections:
               href: /compare/practo-ray-alternatives/
             - label: HealthPlix alternatives
               href: /compare/healthplix-alternatives/
+            - label: Easy Clinic pricing in India
+              href: /pricing/india/
+              description: >-
+                Easy Clinic's price in rupees per doctor per month, with worked monthly totals for Indian clinics
+                and what GST means for a clinic.
         - title: Clinic software by country
           items:
             - label: Best clinic software in India
@@ -154,15 +159,6 @@ sections:
               href: /best-clinic-management-software-uganda/
               description: >-
                 Three clinic systems ranked for a clinic in Uganda, plus Easy Clinic unranked, with which take MTN or Airtel Money.
-        - title: Moving off paper or another system
-          items:
-            - label: EMR vs paper records
-              href: /easyclinic-emr-vs-traditional-emr/
-            - label: Switching to Easy Clinic
-              href: /switch/
-              description: >-
-                The four steps from the demo to your first day, with about two hours of training spread over
-                four days.
 
   - discriminant: prose
     value:
@@ -178,24 +174,12 @@ sections:
         **The verdicts pick Easy Clinic for some clinics too.** The India page names it our pick for a clinic of two or more doctors, saying plainly that the choice comes from the company that makes it, and the two alternatives pages say which clinics we would move to Easy Clinic, in the same plain terms. The head-to-head pages name the kinds of clinic it suits, and the country pages that leave it unranked still say which clinics it fits, with what to get in writing before you sign.
 
         **What the pages do not tell you.** None of them scores how fast or easy a product is to use, because the facts about other products come from what is published, and speed and ease show only on a working day. Instead the head-to-head and country pages give four or five tests to run on every product you are considering. Run them on a real clinic day, with your receptionist at the desk. None of the pages states Easy Clinic's own standing with a regulator or a national health system, such as ABDM in India or SHA in Kenya, so ask every vendor for that in writing, us included. None gives the number of reviews behind Easy Clinic's rating, and the pages for clinics outside India give Easy Clinic's price only in US dollars, because no price in the local currency is published yet. The country pages compare a shortlist, not every system on sale in the country.
-      width: measure
+      width: wide
+      link:
+        label: Check the sources on Easy Clinic vs Practo Ray
+        href: /easyclinic-vs-practo/
 
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      heading: How clinics rate Easy Clinic
-      intro: >-
-        The Capterra link opens the reviews behind the score, so you can read what clinics wrote rather than
-        rely on the number.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
-
-faqHeading: Questions clinics ask when comparing software
+faqHeading: "You Have Questions, We Have Answers"
 faq:
   - question: Why should I trust a comparison that Easy Clinic publishes?
     answer: >-
@@ -239,16 +223,32 @@ faq:
       the [switching page](/switch/) sets out our steps.
 
 links:
+  relatedArrows: false
   related:
     - href: /pricing/
       label: Pricing
       description: Prices per doctor per month, and what a 5-doctor polyclinic pays.
+      icon: wallet
     - href: /solutions/
       label: Solutions
       description: The plan each kind of practice usually needs, by clinic type and by specialty.
+      icon: layers
     - href: /contact-us/
       label: Contact us
       description: Call or WhatsApp our team, or book a 20-minute demo.
+      icon: phone
+    - href: /switch/
+      label: Switching to Easy Clinic
+      description: The four steps from the demo to your first day, with about two hours of training over four days.
+      icon: route
+    - href: /features/
+      label: Features
+      description: Twelve modules in the order a patient moves through the clinic, from the booking to the owner's report.
+      icon: layout-dashboard
+    - href: /countries/
+      label: Countries
+      description: Demo pages for clinics in India and Kenya, and a demo form for clinics in other countries.
+      icon: globe
 
 closing:
   heading: Run the tests on a clinic set up like yours

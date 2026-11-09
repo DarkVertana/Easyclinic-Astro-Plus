@@ -8,6 +8,7 @@ import ProblemList from '../components/frame/ProblemList.astro';
 import CTABand from '../components/frame/CTABand.astro';
 import HelpBand from '../components/frame/HelpBand.astro';
 import AwardRecognition from '../components/frame/AwardRecognition.astro';
+import ReviewBadges from '../components/frame/ReviewBadges.astro';
 import FeatureChips from '../components/frame/FeatureChips.astro';
 import Certification from '../components/frame/Certification.astro';
 import ClientLogos from '../components/frame/ClientLogos.astro';
@@ -124,6 +125,8 @@ const heroPanel = d.heroPanel;
   <Sections sections={d.sections} ctx={ctx} />
   {/* Related links come before the FAQ, so the FAQ sits directly above the closing CTA band. */}
   <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} arrows={d.links.relatedArrows} countryPills={record.path === '/'} tinted={record.path === '/about-us/'} />
+  {/* Review-site badges slider, directly below "Where to go next" on /customers/ (owner request 2026-11-09). */}
+  {record.path === '/customers/' && <ReviewBadges />}
   {d.helpBand && <HelpBand {...d.helpBand} />}
   {
     d.nearbySection && (

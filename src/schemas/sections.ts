@@ -43,6 +43,7 @@ import { schema as teamGrid } from '../components/blocks/TeamGrid/schema';
 import { schema as spotlight } from '../components/blocks/Spotlight/schema';
 import { schema as photoGallery } from '../components/blocks/PhotoGallery/schema';
 import { schema as officeCards } from '../components/blocks/OfficeCards/schema';
+import { schema as videoGrid } from '../components/blocks/VideoGrid/schema';
 import { schema as featureBand } from '../components/blocks/FeatureBand/schema';
 import { schema as migrationPlan } from '../components/blocks/MigrationPlan/schema';
 import { schema as specialtyGrid } from '../components/blocks/SpecialtyGrid/schema';
@@ -110,6 +111,7 @@ export const BLOCK_SCHEMAS = {
   spotlight,
   photoGallery,
   officeCards,
+  videoGrid,
 } as const;
 
 export type BlockName = keyof typeof BLOCK_SCHEMAS;

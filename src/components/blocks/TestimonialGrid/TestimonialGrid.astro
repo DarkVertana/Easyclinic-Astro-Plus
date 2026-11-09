@@ -94,7 +94,7 @@ const empties =
 const none = items.length === 0 ? need(Astro, 'testimonials for this grid', null) : null;
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone}>
+<Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={sectionTone} wideHeader>
   <div class:list={['tg', filtering && 'tg-filtering']}>
     {
       filtering && (

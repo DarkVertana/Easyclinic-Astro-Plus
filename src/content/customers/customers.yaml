@@ -36,21 +36,26 @@ ctas:
   whatsapp: Hi, I was reading the customer reviews on the Easy Clinic website and would like to book a 20-minute demo.
 
 sections:
-  - discriminant: proofBlock
+  - discriminant: videoGrid
     value:
-      id: ratings
-      heading: Ratings on Capterra and Google
+      id: videos
+      heading: Watch clinics talk about Easy Clinic
       intro: >-
-        The Capterra link opens the reviews behind the score, so you can read what each reviewer wrote
-        before you rely on the number. The Google figure is the one on our Trustindex badge, which is
-        based on reviews collected on Google over the past 12 months.
-      variant: badges
-      badges:
-        - label: Capterra
-          rating: '{fact:capterraRating}'
-          href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
-        - label: Google
-          rating: '{fact:googleRating}'
+        Three of our customers talk about Easy Clinic in short videos, each between one and two minutes long.
+        None of the three has a written quote on this page, so they do not appear in the grid below.
+      videos:
+        - title: Dr Piya Ray
+          youtubeId: EhGn45zbOoU
+          thumbnail: ../../assets/images/testimonials/priya.jpg
+          duration: '1:14'
+        - title: Dr Abhijit Bhattacharya
+          youtubeId: c2trQPH9rcM
+          thumbnail: ../../assets/images/testimonials/abhijeet.jpg
+          duration: '1:01'
+        - title: Dr Amit Kumar Agarwal
+          youtubeId: l4Y5DT20F6M
+          thumbnail: ../../assets/images/testimonials/amit.jpg
+          duration: '1:47'
 
   - discriminant: testimonialGrid
     value:
@@ -59,34 +64,10 @@ sections:
       intro: >-
         Each quote is printed as the customer wrote it, with their consent. They range from a psychiatrist
         and a pulmonologist writing about how they prescribe to the group CIOs of Qualitas Health in
-        Malaysia and CIMAS Health in Zimbabwe. Filter by clinic type or country to find a clinic like yours.
-      filters: true
+        Malaysia and CIMAS Health in Zimbabwe.
+      filters: false
 
-  - discriminant: prose
-    value:
-      id: videos
-      heading: Watch clinics talk about Easy Clinic
-      body: |-
-        Three of our customers talk about Easy Clinic in short videos on our YouTube channel, each between one and two minutes long.
-
-        - [Dr Piya Ray](https://youtu.be/EhGn45zbOoU)
-        - [Dr Abhijit Bhattacharya](https://youtu.be/c2trQPH9rcM)
-        - [Dr Amit Kumar Agarwal](https://youtu.be/l4Y5DT20F6M)
-        - [Every video on the Easy Clinic YouTube channel](https://www.youtube.com/@EasyClinicSoftware)
-
-        None of the three has a written quote on this page, so they do not appear in the grid above.
-
-  - discriminant: prose
-    value:
-      id: measured
-      heading: What customers have put a number on
-      body: |-
-        Two of the customers quoted here give a figure. Dr T. L. Prabhu took Prashanthi Clinic from paper records to a completely paperless setup in about six months. Dr Premanand Raya, a pulmonologist, types a whole prescription within half a minute, using shortcuts that suit the way he prescribes.
-
-        The largest measurement comes from Penda Health in Nairobi, which has run on Easy Clinic since 2017. In a 2025 preprint by Penda Health and OpenAI covering {fig:visits} visits at 15 Penda clinics, clinicians who had AI Consult, a copilot inside Penda's Easy Clinic record, made {fig:diagnostic-errors} fewer diagnostic errors, as rated by independent physicians. [Read how the Penda Health study was run](/curapilot/#study).
-
-        We have not yet written a case study that sets one clinic's numbers before Easy Clinic against its numbers after, so this page makes no before-and-after claims.
-
+faqHeading: "You Have Questions, We Have Answers"
 faq:
   - question: How many clinics use Easy Clinic?
     answer: >-
@@ -115,16 +96,32 @@ faq:
       two words.
 
 links:
+  relatedArrows: false
   related:
     - href: /about-us/
       label: About Easy Clinic
       description: Running clinics since {fact:founded}, and the people behind the software.
+      icon: building-2
     - href: /pricing/
       label: Pricing
       description: What each plan costs per doctor per month, with no setup fee and no contract.
+      icon: wallet
     - href: /contact-us/
       label: Contact us
       description: Book a demo, or call or write to the team in Kolkata.
+      icon: phone
+    - href: /curapilot/
+      label: CuraPilot
+      description: Our AI copilot for doctors, and what the Penda Health study in Nairobi did and did not measure.
+      icon: brain-circuit
+    - href: /solutions/
+      label: Solutions
+      description: Easy Clinic by clinic type and by specialty, with the plan each kind of practice usually needs.
+      icon: layers
+    - href: /switch/
+      label: Switching to Easy Clinic
+      description: The four steps from the demo to your first day, with about two hours of training over four days.
+      icon: route
 
 closing:
   heading: See the software these clinics run on

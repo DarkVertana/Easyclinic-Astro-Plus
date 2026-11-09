@@ -62,6 +62,7 @@ export const BLOCK_NAMES = [
   'spotlight',
   'photoGallery',
   'officeCards',
+  'videoGrid',
 ] as const;
 export type BlockName = (typeof BLOCK_NAMES)[number];
 
@@ -82,7 +83,7 @@ const TRUST: Blocks = [...CORE, 'regulatorTable', 'regulatorStrip', 'studyCard',
 // splitContent: the EMR feature section from /features/ (owner request 2026-11-05, specialty pages).
 const SPECIALTY: Blocks = [...CORE, 'dayTimeline', 'splitContent'];
 const COMPARISON: Blocks = ['comparisonTable', 'decisionMatrix', 'vendorList', 'sourceList', 'prose', 'painBlocks', 'stepList', 'dataTable', 'scopeBox', 'proofBlock', 'testimonialRow', 'inlineCta', 'featureRows'];
-const CUSTOMERS: Blocks = ['testimonialGrid', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'contentCards'];
+const CUSTOMERS: Blocks = ['testimonialGrid', 'proofBlock', 'prose', 'dataTable', 'featureRows', 'contentCards', 'videoGrid'];
 /** MDX families: no block with media, because a relative image path would differ from the YAML pages'. */
 const GUIDE: Blocks = ['inlineCta', 'dataTable', 'stepList', 'prose'];
 

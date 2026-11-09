@@ -41,6 +41,7 @@ import TeamGrid from './TeamGrid/TeamGrid.astro';
 import Spotlight from './Spotlight/Spotlight.astro';
 import PhotoGallery from './PhotoGallery/PhotoGallery.astro';
 import OfficeCards from './OfficeCards/OfficeCards.astro';
+import VideoGrid from './VideoGrid/VideoGrid.astro';
 import FeatureBand from './FeatureBand/FeatureBand.astro';
 import MigrationPlan from './MigrationPlan/MigrationPlan.astro';
 import SpecialtyGrid from './SpecialtyGrid/SpecialtyGrid.astro';
@@ -108,4 +109,5 @@ export const BLOCKS = {
   spotlight: Spotlight,
   photoGallery: PhotoGallery,
   officeCards: OfficeCards,
+  videoGrid: VideoGrid,
 } satisfies Record<BlockName, unknown>;
