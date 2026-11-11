@@ -10,6 +10,8 @@ interface Props {
   closing: { heading: string; body?: string; primary: { label: string; href: string; event?: string }; secondary?: { label: string; href: string; event?: string } };
   /** No longer shown in the band (the floating WhatsApp button covers it); kept so callers need not change. */
   whatsappHref?: string;
+  /** Alt text for the photo; left out, the photo is decorative. */
+  imageAlt?: string;
 }
 const [home] = await getCollection('home');
 const closing = home?.data.closing ?? Astro.props.closing;
@@ -30,7 +32,7 @@ const benefits = [
   {/* Full-bleed front-desk photo under a black overlay so white text reads over it. */}
   <Image
     src={frontDesk}
-    alt=""
+    alt={Astro.props.imageAlt ?? ''}
     widths={[960, 1480, 1920]}
     sizes="100vw"
     layout="none"

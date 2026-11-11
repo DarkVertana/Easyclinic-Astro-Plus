@@ -97,7 +97,7 @@ const heroPanel = d.heroPanel;
             ['200+', 'cities'],
             ['5000+', 'doctors'],
             ['18+', 'countries'],
-            ['10+ years', heroPanel.yearsIn],
+            heroPanel.since ? [heroPanel.since, ''] : ['10+ years', heroPanel.yearsIn],
           ].map(([n, label], i) => (
             // Two columns (the last item on its own row) on phones; one line with separators from 720px, except beside
             // the image on tablets (md), where the last item takes its own line.
@@ -136,6 +136,6 @@ const heroPanel = d.heroPanel;
     )
   }
   {d.problems && d.problems.items.length > 0 && <ProblemList {...d.problems} />}
-  <FAQ heading={d.faqHeading} items={d.faq} tone="plain" whatsappHref={whatsappHref} />
-  {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} />}
+  <FAQ heading={d.faqHeading} items={d.faq} tone="plain" whatsappHref={whatsappHref} helpText={d.faqHelp} />
+  {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} imageAlt={d.closingImageAlt} />}
 </BaseLayout>

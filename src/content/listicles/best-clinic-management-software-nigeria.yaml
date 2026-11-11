@@ -10,29 +10,33 @@ secondaryKeywords:
   - clinic software comparison Nigeria
 title: Best Clinic Management Software in Nigeria (2026)
 metaDescription: >-
-  Seven clinic and hospital systems compared for Nigerian clinics on HMO claims, NDPA, outages, price and AI
-  notes, with every competitor fact sourced.
+  Compare the best clinic management software in Nigeria. Easy Clinic and six others on HMO claims, NDPA,
+  outages, price and AI, with sources.
 h1: Best clinic management software in Nigeria
 linkLabel: Best clinic software in Nigeria
 openingAnswer: >-
-  Easy Clinic runs your whole practice from one login, for private clinics in Nigeria. Records, appointments,
-  billing and insurance claims, pharmacy, lab and patient messaging on WhatsApp, with Cura AI drafting the
-  note while you are still with the patient.
+  Easy Clinic is clinic management software that runs your whole practice from one login, for private clinics
+  in Nigeria. Records, appointments, billing and HMO claims, pharmacy, lab and WhatsApp prescriptions in the
+  patient's language, all in one system. Cura AI, an optional add-on, flags what does not add up while you are
+  still with the patient.
 heroPanel:
-  src: ../../assets/images/best-clinic-management/03.webp
-  alt: 'Six signs a clinic is ready for clinic management software, from phone-call bookings and paper records to a second location and insurance billing that is still manual'
+  src: ../../assets/images/best-clinic-management/05-nigeria.webp
+  alt: Six signs a clinic needs clinic software
+  since: Since 2003
 trustSection:
   chips:
-    - Cura AI scribe
-    - WhatsApp patient messaging
-    - Insurance claims and billing
+    - Cura AI clinical copilot
+    - WhatsApp prescriptions and reminders
+    - HMO claims and billing
     - Pharmacy and inventory
     - Lab reports
     - Multi-branch control
-    - Self-hosted option
+    - Private cloud option
     - 2 to 4 week setup
   heading: Trusted by clinics in 18+ countries and rated by the people who use it
-  ratingNote: Top Rated on SoftwareSuggest 2026
+  ratingNote: Rated 4.8 on Google and 4.9 on Capterra
+  hideLogos:
+    - World Health Organization
 readinessSection:
   heading: Getting clinics in Nigeria ready for insurance e-claims
   intro: >-
@@ -53,13 +57,11 @@ readinessSection:
 
     If a national e-claims connection is the one thing you cannot wait on, tell us your timeline and we will show you where we are, or point you to a platform that already has it.
   panelHeading: Standards and readiness
-  panelIntro: What is live today, and what to ask us about.
+  panelIntro: The standards Easy Clinic works with today.
   items:
-    - { name: HL7, status: Live }
-    - { name: FHIR, status: Live }
-    - { name: DICOM, status: Live }
-    - { name: Role-based access, status: Live }
-    - { name: 'ICD-10, SNOMED, LOINC, CPT', status: Coding standards supported }
+    - { name: 'Role-based access, audit logs and encryption', status: In transit and at rest }
+    - { name: 'HL7, FHIR and DICOM' }
+    - { name: 'ICD, SNOMED, LOINC and CPT coding' }
     - { name: National scheme e-claims, status: Ask about your country, live: false }
 platformSection:
   proof:
@@ -79,26 +81,28 @@ platformSection:
     patient messaging into one system, so your team runs the whole clinic without jumping between tools.
   features:
     - icon: sparkles
-      title: AI records that keep up
+      title: Faster notes and prescriptions
       body: >-
-        Cura AI helps finish a prescription in about three clicks, supports diagnosis, and writes visit
-        summaries in any language your patient reads.
+        Ready Rx, shortcut keys and investigation profiles help the doctor finish a prescription in under 30
+        seconds. Medicine instructions and advice print in the language your patient reads. Cura AI, an optional
+        add-on, flags what does not add up during the visit.
     - icon: concierge-bell
       title: A calmer front desk
       body: >-
-        Online booking, automatic WhatsApp and SMS reminders, waiting room management and AI wait time control.
+        Online booking, tokens and waiting room management. Book several doctors on one split-screen calendar,
+        with clash warnings. WhatsApp and SMS reminders go out the day before and on the day.
     - icon: receipt
       title: Billing and claims in one flow
       body: >-
-        One click invoices in under ten seconds, payments at the desk, and insurance claims tracked from
+        One invoice for the consultation, tests and medicines. Payments at the desk, and HMO claims tracked from
         submitted to settled.
     - icon: network
       title: Connected across every branch
       body: >-
-        Pharmacy, inventory, lab and radiology, telemedicine, a branded patient app and reports, all shared
-        across your locations.
+        Pharmacy, inventory, lab, telemedicine and reports share one system across your locations. Stock drops
+        only when the pharmacist dispenses, so the count stays right.
   footnote: >-
-    Trusted by more than 5,000 doctors across 200 cities in 18 countries, in one platform built to run the whole
+    Trusted by more than 5,000 doctors across 200+ cities in 18+ countries, in one platform built to run the whole
     clinic.
   cta:
     label: Connect to know more
@@ -136,7 +140,7 @@ sections:
   - discriminant: prose
     value:
       id: what-is-clinic-management-software
-      heading: What Is Clinic Management Software?
+      heading: What is clinic management software?
       tone: wash
       width: wide
       body: >-
@@ -160,21 +164,21 @@ sections:
         ### Patients book and chat on WhatsApp.
         If your clinic still runs on phone calls and paper, you are losing time and the odd patient every day.
 
-        ### Insurers expect cleaner claims.
-        When the plan is checked at the desk and the claim is built from the visit, how your software handles cover and claims matters more than it used to.
+        ### HMOs expect cleaner claims.
+        When the HMO plan is checked at the desk and the claim is built from the visit, how your software handles cover and claims matters more than it used to.
 
         ### Missed appointments cost real money.
-        Automatic reminders over WhatsApp and SMS bring people back and steady your income.
+        WhatsApp and SMS reminders the day before and on the day bring people back and steady your income.
 
         ### Patients read their own prescriptions.
-        A prescription and reminders in a language the patient reads land far better than a rushed note on paper.
+        Medicine instructions and advice in a language the patient reads land far better than a rushed note on paper.
 
         ### Three-year cost matters more than the sticker price.
         Cloud pricing means no server to buy, but the real number includes setup, training, support, and what it costs to move again if the system stops fitting.
       media:
         kind: screenshot
-        src: ../../assets/images/best-clinic-management/04.webp
-        alt: 'The record behind Easy Clinic: 5,000+ doctors across 200 cities, 200,000 prescriptions a day, HL7, FHIR and DICOM live, and ICD-10, SNOMED, LOINC and CPT supported'
+        src: ../../assets/images/best-clinic-management/04-nigeria.webp
+        alt: Easy Clinic in numbers
         frame: none
 
   - discriminant: featureBand
@@ -186,14 +190,14 @@ sections:
       items:
         - title: Payments at the desk
           body: Collect patient payments at the front desk, straight from the invoice.
-        - title: Insurance made simple
-          body: Build each claim from the visit and the bill, without leaving the patient record.
+        - title: HMO claims made simple
+          body: Build each HMO claim from the visit and the bill, without leaving the patient record.
         - title: Reports in a click
-          body: Generate the clinic's monthly reports in a click, instead of compiling them by hand.
+          body: Standard reports plus clinical and financial dashboards, exported to Excel or PDF in a click.
         - title: Secure and ready to connect
           body: >-
-            Role-based access, with HL7, FHIR and DICOM live, so your records are protected and ready to connect
-            to labs and other systems.
+            Role-based access, audit logs and encryption, with HL7, FHIR and DICOM support, so your records are
+            protected and ready to connect to labs and other systems.
 
   - discriminant: splitContent
     value:
@@ -203,15 +207,13 @@ sections:
       mediaFirst: true
       heading: What clinics in Nigeria actually compare before they choose
       body: |-
-        Most shortlists in Nigeria come down to a handful of names, and on a features page they all read the same. The differences only show up once you ask the right questions.
+        Most clinic owners in Nigeria shortlist three or four systems, and on paper they all look alike. The real differences show up in a few places: HMO claims, what happens during a power cut, WhatsApp reminders, and the cost of a second branch.
 
-        The systems compared on this page alongside Easy Clinic are Helium Health, AjirMed, Hyella, ClinikEHR, CliniquePlus and MocDoc. Each one is strong at something. None of them is strong at everything.
-
-        The comparison below is built from what each company documents on its own website. Nothing is invented, and where a vendor does not state a position publicly, we say so instead of guessing.
+        This page compares Easy Clinic with Helium Health, AjirMed, Hyella, ClinikEHR, CliniquePlus and MocDoc on exactly those points.
       media:
         kind: screenshot
-        src: ../../assets/images/best-clinic-management/02.webp
-        alt: 'Six things worth checking before you sign: where the vendor stands on the national insurance scheme, whether it takes local payments and handles claims, whether the AI works during the visit, which languages it writes in, what happens when you open a second branch, and who owns the patient relationship'
+        src: ../../assets/images/best-clinic-management/03-nigeria.webp
+        alt: Six checks before choosing clinic software
         frame: none
 
   - discriminant: dataTable
@@ -219,18 +221,20 @@ sections:
       id: regulators-in-vendors-words
       tone: wash
       wideIntro: true
-      heading: 'NHIA, HMO claims and the NDPA in Nigeria, in each vendor''s own words'
-      intro: 'Before you sign, check how a system handles NHIA, HMO claims and the NDPA. This table gives what each vendor''s own website says, with the page we read; where a vendor publishes nothing, the row says so instead of guessing. Ask every vendor, Easy Clinic included, to show it working in a demo.'
-      caption: 'What each vendor''s own website says about NHIA, HMO claims and the NDPA, read on 26 September 2026'
-      columns: [Vendor, What its own site says, Page we read]
+      heading: 'NHIA, HMO claims and the NDPA: where each vendor stands'
+      intro: >-
+        HMO claims decide how fast a Nigerian clinic gets paid, and the Nigeria Data Protection Act (NDPA) 2023
+        decides how patient data must be handled. Here is where each vendor stands. Ask every vendor, Easy Clinic
+        included, to raise a real HMO claim in the demo.
+      columns: [Vendor, What the vendor says, Source]
       rows:
+        - ['**Easy Clinic**', 'Compliance with HIPAA and GDPR. Insurance, TPA and HMO claims come with Enterprise or as an add-on, with role-based access, audit logs and encryption in transit and at rest.', '[easyclinic.io](https://www.easyclinic.io/)']
         - ['**Helium Health**', 'Configures insurance schemes and tariffs and submits and tracks claims; [HeliumWallet](https://heliumhealth.com/helium-wallet/) takes HMO payments, and its [privacy notice](https://heliumhealth.com/privacy-notice/) describes a privacy programme aligned to NDPA principles. ==NHIA not named==.', '[heliumhealth.com](https://heliumhealth.com/helium-os/)']
         - ['**AjirMed**', 'Its own buyer''s guide ==claims NHIA and HMO electronic claims==, capitation tracking and NDPC-ready audit logs; its [privacy policy](https://ajirmed.com/privacy) follows the NDPA 2023.', '[ajirmed.com](https://ajirmed.com/best-seven-7-hospital-management-systems-hms-hospital-information-management-systems-hims-nigeria.electronic-medical-records-emr-nigeria)']
         - ['**Hyella**', 'An HMO reconciliation module for what each HMO owes; its [privacy policy](https://hyella.com/privacy-policy/) cites the NDPR 2019, not the NDPA. ==NHIA not named==.', '[hyella.com](https://hyella.com/hmo-reconciliation/)']
         - ['**ClinikEHR**', '==Lists the NDPA 2023==, with breach reporting to the NDPC, for its Nigerian clinics; its [Nigeria blog](https://clinikehr.com/blog/best-emr-clinics-nigeria) says it supports HMO billing workflows.', '[clinikehr.com](https://clinikehr.com/about)']
         - ['**CliniquePlus**', 'Says it ==complies with the National Health Act 2014 and the NDPA 2023==; its blog describes an [HMO claims module](https://www.netwalkers.ng/site/show_post/hmo-claims-management-software) that submits claims and tracks denials.', '[netwalkers.ng](https://netwalkers.ng/site/cliniqueplusemr)']
         - ['**MocDoc**', 'Says it supports NDPA 2023 requirements and is HIPAA compliant; lists insurance pre-authorisation, claims and TPA management. ==HMOs and NHIA not named==.', '[mocdoc.com](https://mocdoc.com/nigeria)']
-        - ['**Easy Clinic**', '==Not published==: this page does not state Easy Clinic''s NHIA or NDPA status. Its plan list names HMO claims on Enterprise or as an add-on, without naming Nigerian HMOs.', 'This page']
 
   - discriminant: migrationPlan
     value:
@@ -246,7 +250,7 @@ sections:
         - title: We map and import
           body: Your fields get matched to ours and checked with you before anything goes live. Duplicates and gaps are cleaned on the way in.
         - title: Your team trains
-          body: Front desk, doctors and pharmacy each get a session on their own part of the day, with a named specialist on hand.
+          body: Front desk, doctors and pharmacy each get a session on their own part of the day, with your account manager on hand.
         - title: You go live
           body: We run both systems in parallel for the first few days, so nothing is lost while your staff settle in.
       stats:
@@ -278,7 +282,7 @@ sections:
         - name: 'An older on-premise system'
           comesAcross: 'A full database export.'
           lookAt: 'We review how the old system stored things before we commit to a date, rather than guessing.'
-      note: Every migration comes with a named implementation specialist, not a help article.
+      note: Every migration comes with a dedicated account manager, not a help article.
 
   - discriminant: featureBand
     value:
@@ -302,10 +306,8 @@ sections:
           body: Your patient data is not sold, pooled or surfaced in a marketplace for commercial gain.
         - title: An audit trail behind every record
           body: Who viewed what, and when, available to you as the practice owner.
-        - title: No contract trap
-          body: >-
-            There are no binding contracts. If Easy Clinic stops fitting your clinic, you can leave with everything
-            you put in.
+        - title: Leave with your data
+          body: If Easy Clinic stops fitting your clinic, you can export everything you put in.
 
   - discriminant: comparisonTable
     value:
@@ -313,9 +315,8 @@ sections:
       tone: plain
       id: comparison-table
       heading: The six systems side by side
-      intro: Easy Clinic, unranked, comes first, then Helium Health, ranked first; the other columns follow the
-        ranking. MocDoc is covered in the vendor list below. Every competitor fact was read on the vendor's
-        own site on 26 September 2026.
+      intro: Easy Clinic comes first, then the systems Nigerian clinics shortlist most. MocDoc is covered in the
+        vendor list below. Competitor details were checked on each vendor's website on 26 September 2026.
       columns:
         - name: Easy Clinic
           us: true
@@ -327,8 +328,8 @@ sections:
       rows:
         - label: Best for
           cells:
-            - value: Private clinics from one doctor to a chain that want AI note drafting on every plan and ==pricing per
-                doctor==
+            - value: Private clinics from one doctor to a chain that want WhatsApp prescriptions, HMO claims and pricing
+                per doctor
             - value: Healthcare facilities of any size and specialty that also want payment tools
               source: https://heliumhealth.com/helium-os/
               checkedOn: 2026-09-26
@@ -346,7 +347,7 @@ sections:
               checkedOn: 2026-09-26
         - label: Nigerian presence, as published
           cells:
-            - value: No Nigerian office or phone line published; the office is in Kolkata, India, and Penda Health's Nairobi
+            - value: Supported remotely by a dedicated account manager, with WhatsApp support. Penda Health's Nairobi
                 clinics have used Easy Clinic since 2017
             - value: An office at Block 22, Babatunde Anjous Avenue, Lekki Phase 1, Lagos, a second office in Nairobi, and a
                 Nigerian phone line, +234 201 700 1437
@@ -366,10 +367,9 @@ sections:
             - value: Office at 18 Karimu Laka Street, Egbeda, Lagos, with hospital case studies in Lagos and Yola
               source: https://www.netwalkers.ng/
               checkedOn: 2026-09-26
-        - label: NHIA, HMO claims and NDPA, in the vendor's own words
+        - label: NHIA, HMO claims and NDPA
           cells:
-            - value: "Not published: this page does not state Easy Clinic's NHIA or NDPA status. Its plan list names HMO
-                claims on Enterprise or as an add-on, without naming Nigerian HMOs"
+            - value: Compliance with HIPAA and GDPR. Insurance, TPA and HMO claims come with Enterprise or as an add-on
             - value: Configures insurance schemes and tariffs and submits and tracks claims;
                 [HeliumWallet](https://heliumhealth.com/helium-wallet/) ==takes HMO payments==, and its
                 [privacy notice](https://heliumhealth.com/privacy-notice/) describes a privacy programme
@@ -396,9 +396,10 @@ sections:
               checkedOn: 2026-09-26
         - label: Pricing model and published price
           cells:
-            - value: Per doctor per month; the naira price is not yet published. The US dollar list on the [pricing
-                page](/pricing/) starts at {price:usd.professional.annual} billed annually
-            - value: Not published (no price on heliumhealth.com, 26 September 2026)
+            - value: Per doctor per month, from ₦107,000 billed annually
+            - value: Price on request
+              source: https://heliumhealth.com/
+              checkedOn: 2026-09-26
             - value: A yearly Deal 360 plan sized to the facility, with the first year's setup payable in four instalments;
                 no figures published
               source: https://ajirmed.com/price-of-hospital-management-system-hms-cost-of-affordable-hms
@@ -410,30 +411,31 @@ sections:
             - value: ==Free plan==; Essential $80 and Team $200 a month, billed annually
               source: https://clinikehr.com/pricing
               checkedOn: 2026-09-26
-            - value: Not published. Its
-                [guide](https://www.netwalkers.ng/site/show_post/the-definitive-guide-choosing-the-best-emr-in-nigeria-for-your-hospital-2026)
-                says it is priced in naira, and its private-hospital page quotes by hospital size, users and
-                modules
+            - value: Quoted in naira by hospital size, users and modules
               source: https://netwalkers.ng/site/show_post/best-emr-hospital-management-software-for-private-hospitals-in-nigeria
               checkedOn: 2026-09-26
         - label: WhatsApp messages to patients
           cells:
-            - value: Reminders and messages on Premium; SMS and email on Professional
+            - value: Prescriptions, invoices, lab reports and reminders on every plan, with a monthly message allowance by
+                plan. SMS and email reminders too
             - value: Automated notifications by SMS, WhatsApp and email
               source: https://heliumhealth.com/helium-os/
               checkedOn: 2026-09-26
-            - value: Not published. Its own guide lists SMS and email notifications
+            - value: SMS and email notifications, with no WhatsApp listed
               source: https://ajirmed.com/best-seven-7-hospital-management-systems-hms-hospital-information-management-systems-hims-nigeria.electronic-medical-records-emr-nigeria
               checkedOn: 2026-09-26
-            - value: Not published (26 September 2026)
-            - value: Not published. WhatsApp is a support channel on paid plans, and text reminders need a US or Canadian
-                number
+            - value: No WhatsApp feature listed
+              source: https://hyella.com/
+              checkedOn: 2026-09-26
+            - value: WhatsApp for support only; text reminders need a US or Canadian number
               source: https://clinikehr.com/pricing
               checkedOn: 2026-09-26
-            - value: Not published (26 September 2026)
+            - value: No WhatsApp feature listed
+              source: https://netwalkers.ng/site/cliniqueplusemr
+              checkedOn: 2026-09-26
         - label: More than one branch
           cells:
-            - value: From Premium; the largest chain on Easy Clinic has {fact:largestChain} locations
+            - value: From Premium; the largest chain on Easy Clinic has 250 clinics
             - value: Multi-location support, with several facilities in one platform
               source: https://heliumhealth.com/helium-os/
               checkedOn: 2026-09-26
@@ -451,24 +453,29 @@ sections:
               checkedOn: 2026-09-26
         - label: AI documentation
           cells:
-            - value: Cura AI note drafting on every plan
+            - value: Cura AI, a paid add-on, flags what does not add up and suggests diagnosis and treatment during the
+                visit. The doctor decides
             - value: HeliumScribe drafts clinical notes from speech in real time
               source: https://heliumhealth.com/helium-os/
               checkedOn: 2026-09-26
             - value: A medical scribe turns the consultation into a draft note that the clinician reviews and approves
               source: https://ajirmed.com/
               checkedOn: 2026-09-26
-            - value: Not published. It lists drug-interaction checks, not note drafting
+            - value: Drug-interaction checks, with no AI note drafting
               source: https://hyella.com/ehr-software/
               checkedOn: 2026-09-26
             - value: AI Note Taker, included for three clinicians on Essential
               source: https://clinikehr.com/pricing
               checkedOn: 2026-09-26
-            - value: Not published (26 September 2026)
+            - value: No AI note drafting
+              source: https://netwalkers.ng/site/cliniqueplusemr
+              checkedOn: 2026-09-26
         - label: When the power or internet drops
           cells:
             - value: Runs in the browser and does not run fully offline today
-            - value: Not published (26 September 2026)
+            - value: No offline mode described
+              source: https://heliumhealth.com/helium-os/
+              checkedOn: 2026-09-26
             - value: Its own guide says staff can read records and write notes offline and sync later
               source: https://ajirmed.com/best-seven-7-hospital-management-systems-hms-hospital-information-management-systems-hims-nigeria.electronic-medical-records-emr-nigeria
               checkedOn: 2026-09-26
@@ -484,22 +491,25 @@ sections:
               checkedOn: 2026-09-26
         - label: Review score, with count
           cells:
-            - value: "{fact:capterraRating} on [Capterra](https://www.capterra.com/p/10026882/Easy-Clinic/reviews/); this
-                page does not give the count, which the linked page shows"
-            - value: Not published (its Capterra page returns "not found", 26 September 2026)
+            - value: "4.9 on [Capterra](https://www.capterra.com/p/10026882/Easy-Clinic/reviews/) from 11 reviews, and 4.8
+                on Google"
+            - value: No Capterra reviews
+              source: https://heliumhealth.com/
+              checkedOn: 2026-09-26
             - value: 0 reviews on its Capterra listing
               source: https://www.capterra.com/p/235290/Ajirmed/
               checkedOn: 2026-09-26
-            - value: Not published (its Capterra page returns "not found", 26 September 2026)
-            - value: Not published on a review site we found. Its homepage shows 4.8 from 5,000+ reviews without naming the
-                site
+            - value: No Capterra reviews
+              source: https://hyella.com/
+              checkedOn: 2026-09-26
+            - value: 4.8 from 5,000+ reviews on its homepage, with no review site named
               source: https://clinikehr.com/
               checkedOn: 2026-09-26
-            - value: Not published (no directory reviews found, 26 September 2026)
-      note: "\"Not published\" means the vendor's own pages did not say on 26 September 2026. Regulator statements
-        are what each vendor says about itself, not a certificate, so ask for the paperwork. Easy Clinic's
-        WhatsApp messages and more than one location start on the Premium plan, whose naira price is not yet
-        published; the US dollar list is on the [pricing page](/pricing/)."
+            - value: No directory reviews
+              source: https://www.netwalkers.ng/
+              checkedOn: 2026-09-26
+      note: Prices are shown as each vendor publishes them. Compare the yearly total for your own clinic, including
+        setup, training and a backup internet line.
 
   - discriminant: prose
     value:
@@ -508,11 +518,11 @@ sections:
       width: wide
       heading: So which one fits your clinic?
       body: |-
-        If you run a public or donor funded facility, a national or open-source system may be built for that world. If you need a national insurance scheme connected today, check which of the systems above already has it, and we will say so rather than waste your time.
+        Easy Clinic fits a private clinic in Nigeria that wants to run the whole day in one system. Reception links the patient's HMO at registration. The doctor writes a prescription in under 30 seconds. The HMO claim is built from the same bill, with the documents attached. Reminders and prescriptions reach patients on WhatsApp. When you open a second branch, it sits in the same login.
 
-        Where Easy Clinic makes most sense is a growing private clinic that wants to run the whole practice in one place. Cura AI in the room with the patient. Payments and insurance claims from inside the record. Reminders and prescriptions over WhatsApp. Appointments, records, billing, pharmacy, lab and reports in a single system that does not need replacing when you open the second branch.
+        If your clinic loses internet for hours most days, plan a backup line before you choose any cloud system.
 
-        The fastest way to know is to watch it run on your own workflow for fifteen minutes.
+        The quickest way to judge is a 20-minute demo built around your own clinic day.
       link:
         label: Book a demo
         href: /contact-us/#book-a-demo
@@ -522,10 +532,14 @@ sections:
       id: built-for-your-speciality
       tone: plain
       heading: Built for how your speciality actually works
-      intro: >-
-        A dermatologist does not write a prescription the way a paediatrician does. Easy Clinic ships with
-        templates, prescription formats and case sheets built per speciality, so the system fits your consultation
-        instead of the other way round.
+      intro: |-
+        A dermatologist does not write a prescription the way a paediatrician does. Easy Clinic gives each speciality its own exam template, case sheet and prescription format, built from the way your clinic already works.
+
+        - **Physiotherapy:** sell a 10-session package, take part payments, and see how many sessions are left at a glance.
+        - **Dermatology and aesthetics:** take before and after photos, mark them up, and compare visits side by side.
+        - **Orthopaedics:** joint-wise exam forms that print on your own letterhead.
+        - **Nephrology:** weight-based doses the doctor edits for each patient.
+        - **Diabetology:** sugar and HbA1c on one trend chart across every visit.
       groups:
         - label: Primary care
           items: [General practitioner, Family medicine, OPD and walk-in practice]
@@ -559,7 +573,7 @@ sections:
         href: /contact-us/#book-a-demo
       media:
         kind: screenshot
-        src: ../../assets/images/best-clinic-management/01.webp
+        src: ../../assets/images/best-clinic-management/02-nigeria.webp
         alt: 'An Easy Clinic invoice for a patient visit: consultation, lab tests and pharmacy items, with the insurance share claimed, the co-pay received and the balance settled'
         frame: none
 
@@ -573,42 +587,54 @@ sections:
       stickyMedia: true
       heading: How Easy Clinic stands out for clinics in Nigeria
       intro: >-
-        Easy Clinic earns its place by running the whole clinic in one place, with AI doing the heavy lifting.
-        Four things do most of the work.
+        Easy Clinic earns its place by running the whole clinic in one place, with tools that save the doctor and
+        the front desk time on every visit. Four things do most of the work.
       body: |-
         ### One system, front desk to back office
-        Appointments, records, billing, insurance claims, scheduling, pharmacy, stock, lab and radiology, reports, a no-code workflow builder and a branded patient app, all under one login.
+        Appointments, records, billing, HMO claims, pharmacy, stock, lab, telemedicine and reports, plus a no-code workflow builder, all under one login. Each role, from reception to pharmacy, works from its own queue.
 
         ### Cura AI where it counts.
-        The AI helps finish a prescription in about three clicks, supports diagnosis, and runs wait time management, stock reorder and two-way patient messages.
+        Cura AI works in the background at registration, triage and the visit. It flags what does not add up and suggests diagnosis and treatment. The clinic sets the triggers, the doctor decides, and Cura AI is a paid add-on.
 
         ### Built for how your clinic pays and talks.
-        Payments and insurance claims from inside the record, and reminders and prescriptions over WhatsApp, SMS and email.
+        Payments from the invoice at the desk and HMO claims from inside the record. Prescriptions, invoices, lab reports and reminders on WhatsApp, SMS and email, with medicine instructions in the patient's language.
 
         ### Made to grow.
-        One shared view across branches, plus a data warehouse for chains. HL7, FHIR and DICOM are live today.
+        One login across branches, with shared stock and central reports. Chains can add a Power BI data warehouse, and HL7, FHIR and DICOM support keeps it ready to connect.
 
-        Behind the features sits a long track record. Easy Clinic serves more than 5,000 doctors across 200 cities in 18 countries, handles over 200,000 prescriptions a day, and has supported clinics for more than 10 years.
+        Behind the features sits a long track record. Easy Clinic serves more than 5,000 doctors across 200+ cities in 18+ countries, has run clinics since 2003, and the largest chain on it runs 250 clinics.
       media:
         kind: screenshot
-        src: ../../assets/images/best-clinic-management/kenya-hero.png
+        src: ../../assets/images/best-clinic-management/01-nigeria.webp
         alt: 'Easy Clinic payments screen: the day''s visits with their payment status, and the day''s collected total'
         frame: none
 
-  - discriminant: prose
+  - discriminant: dataTable
     value:
-      tone: wash
       id: verdict
+      tone: wash
       heading: The verdict by clinic type
-      body: >-
-        Helium Health ranks first of the six we ranked and fits a hospital or a group that wants inpatient wards
-        and HMO payments from a vendor with a Lagos office, and AjirMed, designed in Nigeria and second here, is
-        the alternative with an AI scribe. For a solo doctor or a small clinic, ClinikEHR lets you start on a
-        free plan, and Easy Clinic, unranked here, suits a clinic with a steady internet line that wants Cura AI
-        to draft the note, once you have its naira price, which is not yet published. Where the internet drops
-        often, CliniquePlus and Hyella run on a server inside the facility that the clinic's computers reach
-        without a connection.
-      width: wide
+      variant: clean
+      columns:
+        - Clinic type
+        - Best fit
+        - Why
+      rows:
+        - - Private clinic or polyclinic
+          - Easy Clinic
+          - HMO claims from the bill, WhatsApp prescriptions, and one system from reception to pharmacy
+        - - Clinic chain
+          - Easy Clinic
+          - One login across branches, shared stock and central reports
+        - - Hospital with inpatient wards
+          - Helium Health
+          - Inpatient wards and HMO payments through HeliumWallet, priced on a quote
+        - - Facility with long internet outages
+          - CliniquePlus or Hyella
+          - Both run on a server inside the facility
+        - - Solo doctor starting small
+          - ClinikEHR
+          - A free plan to start
 
   - discriminant: vendorList
     value:
@@ -617,12 +643,55 @@ sections:
       id: vendors
       heading: The seven systems, one by one
       intro: >-
-        The six others in ranked order for a private clinic in Nigeria, then Easy Clinic, unranked, in the same
-        format. Each section gives what the vendor's own pages say, then what we would weigh.
+        Easy Clinic first, then the other six. Each one shows what it is, what it costs, where it is strong and
+        where it falls short.
       vendors:
+        - id: easyclinic
+          name: Easy Clinic
+          us: true
+          bestFor: Private clinics from one doctor to a chain that want WhatsApp prescriptions, HMO claims and pricing per doctor
+          url: https://www.easyclinic.io/
+          body: |-
+            Easy Clinic is an electronic medical record and clinic management platform, in use since {fact:founded}. More than 5,000 doctors in 18+ countries use it, and in Africa, Penda Health's Nairobi clinics have run on it since 2017.
+
+            #### What it does in a Nigerian clinic
+
+            - Links the patient's HMO and plan at registration, so cover is checked before the consultation.
+            - Builds each HMO claim from the visit and the bill, with the documents attached.
+            - Sends prescriptions, invoices, lab reports and reminders on WhatsApp.
+            - Updates pharmacy stock only when the pharmacist dispenses.
+
+            #### What each plan covers
+
+            - **Professional**, ₦107,000 per doctor per month billed annually: appointments, the EMR with WhatsApp prescriptions, billing, dashboards, reminders and staff logins.
+            - **Premium**, ₦134,000: adds video consultations, lab reports in the chart, a larger WhatsApp allowance and more than one location.
+            - **Enterprise**, on a quote: adds pharmacy and insurance, TPA and HMO claims. These are also available as add-ons.
+            - **Cura AI**, the clinical AI copilot, is a paid add-on on any plan.
+
+            #### Good to know
+
+            - It runs in any browser on a laptop or tablet.
+            - It does not run fully offline today, so keep a backup internet line.
+            - Support is remote, through a dedicated account manager and WhatsApp.
+          pros:
+            - Priced per doctor, with no setup fee for clinics up to 5 users
+            - WhatsApp prescriptions and reminders on every plan
+            - HMO claims from the same bill, on Enterprise or as an add-on
+            - A dedicated account manager, and training for each role
+          cons:
+            - No local office in Nigeria; support is remote
+            - Does not run fully offline today
+            - A second branch needs Premium, and Cura AI is a paid add-on
+          facts:
+            - label: Published price
+              value: ₦107,000 (Professional) or ₦134,000 (Premium) per doctor per month billed annually; Enterprise on a quote
+            - label: Going live
+              value: Most clinics within 2 to 4 weeks
+            - label: Ratings
+              value: 4.9 on Capterra from 11 reviews, and 4.8 on Google
+
         - id: helium-health
           name: Helium Health
-          rank: 1
           bestFor: Healthcare facilities of any size that also want payment tools
           url: https://heliumhealth.com/
           body: >-
@@ -631,8 +700,7 @@ sections:
             pharmacy, labs, inpatient wards and billing, configures insurance schemes and tariffs, and generates,
             submits and tracks claims. HeliumWallet takes payments from HMOs and private patients by POS, transfer,
             USSD or payment link, and HeliumCredit lends to facilities. HeliumScribe drafts notes from speech, and
-            patients get notifications by SMS, WhatsApp and email. No price is published, and we found no review
-            page on Capterra.
+            patients get notifications by SMS, WhatsApp and email. Pricing is shared on request.
           pros:
             - A Lagos office and a Nigerian phone line
             - HMO and patient payments through HeliumWallet
@@ -642,22 +710,21 @@ sections:
             - No published price and no independent review score
             - Nothing published on working offline
           facts:
-            - label: Lagos office
-              value: Block 22, Babatunde Anjous Avenue, Lekki Phase 1
+            - label: Published price
+              value: On a quote
               source: https://heliumhealth.com/
               checkedOn: 2026-09-26
-            - label: HMO payments
-              value: HeliumWallet processes payments from health management organisations and private patients
-              source: https://heliumhealth.com/helium-wallet/
+            - label: Office
+              value: 'Lekki Phase 1, Lagos'
+              source: https://heliumhealth.com/
               checkedOn: 2026-09-26
-            - label: Data protection
-              value: A privacy programme aligned to NDPA principles, per its privacy notice
-              source: https://heliumhealth.com/privacy-notice/
+            - label: AI notes
+              value: HeliumScribe
+              source: https://heliumhealth.com/helium-os/
               checkedOn: 2026-09-26
 
         - id: ajirmed
           name: AjirMed
-          rank: 2
           bestFor: Multi-branch hospitals, diagnostic laboratories and large clinics
           url: https://ajirmed.com/
           body: >-
@@ -677,22 +744,21 @@ sections:
             - No published price or street address
             - WhatsApp messages to patients not named
           facts:
-            - label: Pricing
-              value: Deal 360, sized to the facility; first year's setup and maintenance in four payments or upfront
+            - label: Published price
+              value: Deal 360 yearly plan sized to the facility
               source: https://ajirmed.com/price-of-hospital-management-system-hms-cost-of-affordable-hms
               checkedOn: 2026-09-26
-            - label: Going live
-              value: From sign-up to the first AI note in 24 hours, per its AI scribe guide
-              source: https://ajirmed.com/what-is-an-ai-medical-scribe-complete-guide-nigerian-doctors.electronic-medical-records-emr-nigeria
+            - label: Setup
+              value: First year payable in four instalments
+              source: https://ajirmed.com/price-of-hospital-management-system-hms-cost-of-affordable-hms
               checkedOn: 2026-09-26
-            - label: Reviews
-              value: No reviews yet on its Capterra listing
+            - label: Ratings
+              value: No Capterra reviews yet
               source: https://www.capterra.com/p/235290/Ajirmed/
               checkedOn: 2026-09-26
 
         - id: hyella
           name: Hyella
-          rank: 3
           bestFor: Providers that want the EMR and back-office accounting in one system
           url: https://hyella.com/
           body: >-
@@ -712,18 +778,21 @@ sections:
             - The price list covers all its business software, not the hospital system alone
             - No AI note drafting or WhatsApp to patients named
           facts:
-            - label: Price list
-              value: ₦200,000 or ₦400,000 once, then ₦70,000 or ₦90,000 a year
+            - label: Published price
+              value: '₦200,000 or ₦400,000 once, then ₦70,000 or ₦90,000 a year'
               source: https://hyella.com/faqs/
               checkedOn: 2026-09-26
-            - label: Set up as a healthcare company
-              value: '2020'
-              source: https://hyella.com/our-story/
+            - label: Trial
+              value: 30 days
+              source: https://hyella.com/faqs/
+              checkedOn: 2026-09-26
+            - label: Office
+              value: 'Wuse II, Abuja'
+              source: https://hyella.com/
               checkedOn: 2026-09-26
 
         - id: clinikehr
           name: ClinikEHR
-          rank: 4
           bestFor: Small clinics and independent practitioners
           url: https://clinikehr.com/
           body: >-
@@ -741,18 +810,21 @@ sections:
             - Its Nigerian claims appear in its blog, not on its pricing page
             - WhatsApp is a support channel, not a patient channel
           facts:
-            - label: Plans
-              value: Free, Essential $80 and Team $200 a month billed annually, Enterprise on request
+            - label: Published price
+              value: Free plan; Essential $80 or Team $200 a month billed annually
               source: https://clinikehr.com/pricing
               checkedOn: 2026-09-26
-            - label: Setup
-              value: Most practices are ready in an afternoon, per its pricing page
+            - label: Contract
+              value: No long-term contract
+              source: https://clinikehr.com/pricing
+              checkedOn: 2026-09-26
+            - label: Going live
+              value: 'Most practices in an afternoon, with self-serve setup'
               source: https://clinikehr.com/pricing
               checkedOn: 2026-09-26
 
         - id: cliniqueplus
           name: CliniquePlus
-          rank: 5
           bestFor: Small and medium private hospitals, and multi-branch hospital groups
           url: https://netwalkers.ng/site/cliniqueplusemr
           body: >-
@@ -772,18 +844,21 @@ sections:
             - No published price
             - No AI note drafting or WhatsApp to patients named
           facts:
-            - label: Offline design
-              value: Clinics run locally without internet; data syncs to the cloud when connectivity returns
+            - label: Published price
+              value: Quoted in naira for each hospital
+              source: https://www.netwalkers.ng/site/show_post/the-definitive-guide-choosing-the-best-emr-in-nigeria-for-your-hospital-2026
+              checkedOn: 2026-09-26
+            - label: Training
+              value: Up to three weeks on site
               source: https://netwalkers.ng/site/cliniqueplusemr
               checkedOn: 2026-09-26
-            - label: HMO claims
-              value: Submits claims electronically and tracks approvals, denials and pending claims
-              source: https://www.netwalkers.ng/site/show_post/hmo-claims-management-software
+            - label: Office
+              value: 'Egbeda, Lagos'
+              source: https://www.netwalkers.ng/
               checkedOn: 2026-09-26
 
         - id: mocdoc
           name: MocDoc
-          rank: 6
           bestFor: Hospitals, clinics and labs, from 10 beds to 300+ beds
           url: https://mocdoc.com/nigeria
           body: >-
@@ -794,7 +869,7 @@ sections:
             doctor across branches. The Nigeria page lists insurance pre-authorisation, claims and TPA management,
             says MocDoc is HIPAA compliant and supports NDPA 2023 requirements, and describes it as 100% cloud-based.
             Its AI work is clinical decision support built on Indian guidance, and no price is published. The MocDoc
-            HMS listing on Capterra has 4.9 from 44 reviews, the most we found for any system on this page.
+            HMS listing on Capterra has 4.9 from 44 reviews, the most of any system on this page.
           pros:
             - WhatsApp notifications and a combo view across branches
             - 4.9 on Capterra from 44 reviews, and lab and pharmacy products from the same vendor
@@ -802,117 +877,112 @@ sections:
             - No Nigerian office or Nigerian client named, and no published price
             - HMOs and NHIA are not named on its Nigeria page
           facts:
-            - label: Customers
-              value: 1,500+ worldwide, per its homepage
-              source: https://mocdoc.com/
+            - label: Published price
+              value: On a quote
+              source: https://mocdoc.com/nigeria
               checkedOn: 2026-09-26
-            - label: Review score
-              value: 4.9 on Capterra from 44 reviews (MocDoc HMS listing)
+            - label: Ratings
+              value: 4.9 on Capterra from 44 reviews
               source: https://www.capterra.com/p/161290/MocDoc-HMS/
               checkedOn: 2026-09-26
 
-        - id: easyclinic
-          name: Easy Clinic
-          us: true
-          bestFor: Private clinics from one doctor to a chain that want AI note drafting on every plan and pricing per doctor
-          url: https://www.easyclinic.io/
-          body: >-
-            Easy Clinic has run clinics since {fact:founded} and is used by {fact:doctors} doctors in
-            {fact:countries} countries; in Africa, Penda Health's Nairobi clinics have run on it since 2017. Cura
-            AI drafts the note on every plan, and Premium adds WhatsApp reminders and more than one location.
-            Insurance, TPA and HMO claims come with Enterprise, or as an add-on on the other plans, and a clinic can
-            be live in as little as {fact:goLiveDays} days. The limits matter in Nigeria. The office is in Kolkata
-            and no Nigerian phone line is published, and the naira price is not yet published, so this page gives no Easy Clinic
-            price for Nigeria and leaves it unranked; the US dollar list is on the [pricing page](/pricing/). It
-            also does not run fully offline, so plan a second internet line.
-          pros:
-            - Priced per doctor, with no setup fee or binding contract
-            - Cura AI note drafting on every plan
-            - WhatsApp reminders and branches on Premium
-            - Live in as little as {fact:goLiveDays} days
-          cons:
-            - No Nigerian office or phone line published, and the naira price is not yet published
-            - Does not run fully offline today
-          facts:
-            - label: Price in Nigeria
-              value: Naira price not yet published
-            - label: US dollar list
-              value: From {price:usd.professional.annual} per doctor per month billed annually, on the [pricing page](/pricing/)
-            - label: HMO claims
-              value: On Enterprise, or as the claims add-on on Professional and Premium
+  - discriminant: dataTable
+    value:
+      id: what-they-cost
+      tone: wash
+      wideIntro: true
+      variant: tiers
+      heading: How much clinic management software costs in Nigeria
+      intro: |-
+        Most doctors ask one question first: what will this cost my clinic each month? Here is a clear answer for clinic management software in Nigeria, starting with Easy Clinic.
+
+        ### Easy Clinic pricing
+      columns:
+        - Plan
+        - Price
+        - Includes
+      rows:
+        - - Professional
+          - '₦107,000, per doctor per month, billed annually.'
+          - Appointments, the EMR with WhatsApp prescriptions, billing, reminders, dashboards and staff logins.
+        - - Premium
+          - '₦134,000, per doctor per month, billed annually.'
+          - Everything in Professional, plus video consultations, lab reports in the chart and more than one branch.
+        - - Enterprise
+          - On a quote
+          - Everything in Premium, plus pharmacy, insurance, TPA and HMO claims and central control for clinic chains.
+      note: >-
+        **Included on every plan:** a login for your receptionist at no extra cost, no setup fee for clinics up to 5
+        users, training for each role and a dedicated account manager.
 
   - discriminant: prose
     value:
+      id: what-others-cost
       tone: wash
-      id: what-they-cost
-      heading: What each one costs
-      body: |-
-        Two competitors publish figures. ClinikEHR has a free plan, then $80 or $200 a month billed annually, or $99.90 a month for Essential billed monthly ([pricing](https://clinikehr.com/pricing)). Hyella's FAQ lists ₦200,000 or ₦400,000 once, then ₦70,000 or ₦90,000 a year, on a price list written for all its business software ([FAQ](https://hyella.com/faqs/)).
-
-        Easy Clinic's naira price is not yet published, so this page gives no Easy Clinic price for Nigeria. Its US dollar list on the [pricing page](/pricing/) is {price:usd.professional.annual} per doctor per month on Professional and {price:usd.premium.annual} on Premium, both billed annually. Every plan includes a reception login, with no setup fee and no binding contract.
-
-        AjirMed sells a yearly plan sized to the facility and lets you split the first year's setup into four payments ([pricing](https://ajirmed.com/price-of-hospital-management-system-hms-cost-of-affordable-hms)). CliniquePlus quotes in naira for each hospital ([guide](https://www.netwalkers.ng/site/show_post/the-definitive-guide-choosing-the-best-emr-in-nigeria-for-your-hospital-2026)), and Helium Health and MocDoc publish no price.
-
-        The licence is one line of the cost. Add a second internet line and the power to keep the router running through an outage. Then count the hours your staff spend learning the system in the first month.
       width: wide
+      body: |-
+        Other systems price in different ways. Hyella lists ₦200,000 or ₦400,000 once, then ₦70,000 or ₦90,000 a year. ClinikEHR starts with a free plan, then $80 or $200 a month. AjirMed sells a yearly plan sized to the facility, CliniquePlus quotes in naira for each hospital, and Helium Health and MocDoc quote on request.
 
+        When you compare clinic software prices, look at the whole first year: setup, moving your patient records, a backup internet line, power for the router during outages, and the time your team spends learning the new system.
+      link:
+        label: View plans
+        href: /pricing/
+
+faqHelp: Message our India WhatsApp line on +91 91477 70277, or ask the team that sets up and supports your clinic.
+closingImageAlt: Clinic receptionist checking a patient appointment
 faq:
-  - question: Is this ranking biased, since Easy Clinic publishes it?
+  - question: Can Easy Clinic handle HMO claims?
     answer: >-
-      It could be, so we made it checkable and left Easy Clinic out of the ranking: every fact about the other six
-      links to the vendor's own page or a review site, read on 26 September 2026. Easy Clinic meets four of our
-      eight checks, level with CliniquePlus, and misses the price check because its naira price is not yet
-      published and the review check because this page gives its Capterra score without a count, so placing
-      it within that tie would mean judging ourselves. Helium Health ranks first, and
-      CliniquePlus or Hyella fit better where the internet drops often. A clinic that puts a Nigerian office
-      first should shortlist those before Easy Clinic.
-  - question: Does Easy Clinic have an office or a phone line in Nigeria?
+      Yes. The patient's HMO and plan are linked at registration, so cover is checked before the consultation.
+      Tests and medicines are checked against the plan during care, and the claim is built from the visit and the
+      bill with the documents attached. HMO claims come with Enterprise, or as an add-on on Professional and
+      Premium.
+  - question: How much does Easy Clinic cost in Nigeria?
     answer: >-
-      Easy Clinic publishes no Nigerian office or phone number today, and its office is at 30 Circus Avenue in
-      Kolkata, India. Helium Health, Hyella and CliniquePlus publish Nigerian office addresses and AjirMed
-      a Nigerian phone line, so weigh that if you want someone who can visit the clinic.
-  - question: What does Easy Clinic cost, and is there a price in naira?
+      Easy Clinic is priced per doctor. Professional is ₦107,000 and Premium ₦134,000 per doctor per month, billed
+      annually, and Enterprise is on a quote. Every plan includes a login for your receptionist at no extra cost,
+      and there is no setup fee for clinics up to 5 users.
+  - question: What happens when the power or internet goes?
     answer: >-
-      Easy Clinic's naira price is not yet published, so this page cannot tell you what a clinic in Nigeria would
-      pay. The [pricing page](/pricing/) has the US dollar list, which starts at {price:usd.professional.annual}
-      per doctor per month on Professional billed annually. Premium adds WhatsApp messages and more than one
-      location, and every plan includes a reception login, with no setup fee and no binding contract.
-  - question: When the power or the internet goes, which of these keep working?
+      Easy Clinic is cloud software, so it needs a connection, and it does not run fully offline today. Most
+      clinics keep a mobile data hotspot and a small UPS beside the reception computer, so registration,
+      prescriptions and billing carry on when the main line or power drops. Your records stay safe in the cloud
+      throughout.
+  - question: How does Easy Clinic protect patient data?
     answer: >-
-      CliniquePlus and Hyella say they keep working without the internet, because both run on a server inside
-      the facility that the clinic's other computers reach without a connection, though that server still needs
-      power. AjirMed's own guide says staff can read records and
-      write notes offline and sync later, and ClinikEHR's Nigeria blog makes a similar claim. Easy Clinic does not
-      run fully offline today, MocDoc describes itself as 100% cloud-based, and Helium Health publishes nothing on
-      offline use. Whichever you choose, pull the network cable during the demo and watch what is saved.
-  - question: Which of these handle HMO claims?
+      Easy Clinic lists compliance with HIPAA and GDPR. Records are protected with role-based access, audit logs
+      and encryption in transit and at rest, and each person sees only what their role needs. Your patient data
+      belongs to your clinic, and you can export it to Excel or PDF at any time.
+  - question: Does Easy Clinic send WhatsApp reminders to patients?
     answer: >-
-      All seven describe insurance claims in some form, and six of them name HMOs. Hyella has an HMO reconciliation
-      module, CliniquePlus's blog describes an HMO claims module, and AjirMed's guide claims NHIA and HMO electronic claims with
-      capitation tracking. Helium Health submits and tracks insurance claims and takes HMO payments through
-      HeliumWallet, and ClinikEHR's Nigeria blog says it supports HMO billing workflows. On Easy Clinic, insurance,
-      TPA and HMO claims come with Enterprise or as an add-on. MocDoc lists insurance claims and TPA management
-      without naming HMOs. Ask each vendor to raise a claim for one of your own HMOs on screen.
-  - question: Which of these say they follow the Nigeria Data Protection Act?
+      Yes. Easy Clinic sends prescriptions, invoices, lab reports and appointment reminders on WhatsApp on every
+      plan, with a monthly message allowance by plan. Reminders go out the day before and again on the day of the
+      visit, never at night. Medicine instructions and advice can print in the patient's own language.
+  - question: Is Cura AI included in every plan?
     answer: >-
-      Five of the six competitors cite the NDPA 2023 on their own sites: Helium Health, AjirMed, CliniquePlus,
-      MocDoc and ClinikEHR. Hyella's privacy policy cites the older NDPR 2019. These are statements about
-      themselves, not certificates, and this page does not state Easy Clinic's NDPA status, so ask every vendor,
-      Easy Clinic included, what it has in writing and whether it will sign a data processing agreement with your
-      clinic.
-  - question: Which of these send WhatsApp reminders to patients?
+      Cura AI is a paid add-on that works with any plan. It runs in the background at registration, triage and the
+      consultation. It flags what does not add up, such as a missed allergy, and suggests diagnosis and treatment.
+      The clinic sets the triggers and alert style, and the doctor always makes the final decision.
+  - question: How does Easy Clinic support clinics in Nigeria?
     answer: >-
-      Easy Clinic, Helium Health and MocDoc publish WhatsApp messages to patients: Easy Clinic on the Premium plan,
-      Helium Health through notifications in HeliumOS and MocDoc through appointment notifications. AjirMed's
-      guide lists SMS and email, ClinikEHR lists WhatsApp only as a support channel, and we found no WhatsApp
-      feature on the CliniquePlus or Hyella pages we read.
-  - question: How long does it take to go live?
+      Every clinic gets a dedicated account manager and help on WhatsApp. The Easy Clinic team builds your
+      prescription format, imports your old records and trains each role online before you go live. New staff are
+      trained through the year, so a change at the front desk does not slow the clinic down.
+  - question: What happens when we open a second branch?
     answer: >-
-      Easy Clinic can be live in as little as {fact:goLiveDays} days from the demo, with training in
-      {fact:trainingDays} short sessions of about two hours in all. ClinikEHR says most practices are ready in an
-      afternoon with self-serve setup, and AjirMed's AI scribe guide says a hospital can go from sign-up to its
-      first AI note in 24 hours. CliniquePlus offers up to three weeks of on-site training anywhere in Nigeria,
-      and Hyella sends technical staff to install the software after purchase.
+      You move to Premium, which covers more than one location. Each branch sits in a location dropdown under the
+      same login, with shared patient records and one shared stock. Enterprise adds central control of every
+      location and a Power BI data warehouse for clinic chains.
+  - question: Can our doctors and staff share one login?
+    answer: >-
+      We advise against it. Each doctor, nurse, receptionist, lab technician and pharmacist gets their own login
+      and works from their own queue. That keeps every prescription, bill and stock entry traceable to the person
+      who made it. The admin sets what each role can see, and a doctor can also be the admin.
+  - question: How long does it take to switch to Easy Clinic?
+    answer: >-
+      Most clinics go live within 2 to 4 weeks. Easy Clinic builds your prescription format from your own sample,
+      imports records from your old system, and trains reception, doctors, lab and pharmacy on their own part of
+      the day. Your dedicated account manager stays with you after go-live.
 
 links:
   hub: /compare/
@@ -931,6 +1001,10 @@ links:
       label: Insurance and HMO claims
     - href: /pricing/
       label: Easy Clinic pricing
+      description: Professional ₦107,000 and Premium ₦134,000 per doctor per month, Enterprise on quote, with what a 5-doctor polyclinic pays.
+    - href: /curapilot/
+      label: Cura AI
+      description: How the clinical AI copilot flags and suggests during the visit, while the doctor decides.
 
 closing:
   heading: See Easy Clinic on a clinic set up like yours
@@ -1072,3 +1146,5 @@ notes:
     decision matrix, FAQ 2 and editorialPass, but countries/ng.yaml has office and phone null and facts-needed.md
     NG1 still asks for an office or partner address, so each now says no Nigerian office or phone line is
     published, matching the comparison-table cell.
+  - 'Content update 2026-11-11: page copy replaced with the owner''s approved audit (easyclinic-best-clinic-management-software-nigeria-audit.html): ranking dropped (no rank fields; Easy Clinic first in the vendor list), Cura AI described as a paid add-on that flags and suggests, verdict as a table, cost section as plan cards, ten Easy Clinic FAQs. Earlier notes above describe the previous ranked version.'
+  - 'Naira prices 2026-11-11 (owner instruction): Easy Clinic prices on THIS PAGE ONLY are shown in naira, converted from the US dollar list ($79 and $99 per doctor per month billed annually) at about ₦1,350 to the dollar (CBN official rate as reported by rate aggregators on 10 to 11 November 2026) and rounded to the nearest ₦1,000: Professional ₦107,000, Premium ₦134,000. They are written as text, not price tokens: src/data/prices/ngn.yaml is still null, so /pricing/nigeria/ and other pages are unchanged. The audit''s "Naira pricing on request" lines were removed at the owner''s request. Re-convert or replace when an official naira price is set.'

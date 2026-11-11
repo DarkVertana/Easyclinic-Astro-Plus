@@ -39,6 +39,8 @@ export const pageBase = (ctx: SchemaContext) =>
         alt: z.string().min(1),
         /** Ends the reach line after "10+ years". */
         yearsIn: z.string().default('in clinic software'),
+        /** Replaces the whole "10+ years …" item of the reach line, e.g. "Since 2003". */
+        since: z.string().optional(),
       })
       .optional(),
     /** The section straight after the hero: feature chips, reach numbers, client logos and three quotes. */
@@ -47,6 +49,8 @@ export const pageBase = (ctx: SchemaContext) =>
         chips: z.array(z.string().min(2)).min(1).max(12),
         heading: z.string().min(10),
         ratingNote: z.string().optional(),
+        /** Client logos left out of the strip on this page, by their alt text. */
+        hideLogos: z.array(z.string()).default([]),
       })
       .optional(),
     /** After the trust section: a claims path as steps, an honest note on what is live, and a standards panel. */
@@ -61,7 +65,7 @@ export const pageBase = (ctx: SchemaContext) =>
         image: z.object({ src: ctx.image(), alt: z.string().min(1) }).optional(),
         panelHeading: z.string().min(5).optional(),
         panelIntro: z.string().optional(),
-        items: z.array(z.object({ name: z.string().min(2), status: z.string().min(2), live: z.boolean().default(true) })).max(10).default([]),
+        items: z.array(z.object({ name: z.string().min(2), status: z.string().min(2).optional(), live: z.boolean().default(true) })).max(10).default([]),
         badges: z.array(z.object({ name: z.string().min(2), status: z.string().min(2) })).max(4).default([]),
       })
       .optional(),
@@ -104,6 +108,10 @@ export const pageBase = (ctx: SchemaContext) =>
       whatsapp: z.string().optional(),
     }),
     faqHeading: z.string().default('Questions clinic owners ask'),
+    /** The line under "Still have a question?" in the FAQ box; left out, the standard line shows. */
+    faqHelp: z.string().optional(),
+    /** Alt text for the closing band's photo on this page; left out, the photo is decorative. */
+    closingImageAlt: z.string().optional(),
     faq: z.array(faqItem).default([]),
     links: z.object({
       /** Parent hub; drives breadcrumbs and BreadcrumbList. */

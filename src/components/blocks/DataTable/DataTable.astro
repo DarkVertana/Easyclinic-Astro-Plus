@@ -47,7 +47,8 @@ const questions = variant === 'questions';
 const priceCol = columns.findIndex((col) => /price/i.test(col));
 const TIER_ICONS = ['user-round', 'building-2', 'network', 'crown'];
 function splitPrice(text: string) {
-  const i = text.indexOf(',');
+  // Split at the first comma followed by a space, so a comma inside the amount (₦107,000) stays in it.
+  const i = text.indexOf(', ');
   return i < 0 ? { main: text, rest: '' } : { main: text.slice(0, i), rest: text.slice(i + 1).trim() };
 }
 function planCell(text: string | null) {

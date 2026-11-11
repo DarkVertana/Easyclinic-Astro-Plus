@@ -43,7 +43,8 @@ export const FAMILY_RULES: Record<string, FamilyRules> = {
   countryDemo: { ...LANDING, faq: [5, 8] },
   // Owner decision 2026-10-16: listicles drop the ratings proof block; their proof is the trust section's
   // testimonials and the platform section's AI pilot card, which sit outside `sections`.
-  listicle: { ...LANDING, proof: false },
+  // Up to ten FAQs: the Kenya listicle carries ten (owner's content audit, 2026-11-11).
+  listicle: { ...LANDING, proof: false, faq: [5, 10] },
   comparison: { ...LANDING, faq: [5, 8] },
   company: { faq: [5, 8], author: true, proof: false, editorialPass: true },
   legal: { faq: null, author: false, proof: false, editorialPass: false },

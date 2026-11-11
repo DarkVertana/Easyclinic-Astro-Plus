@@ -349,6 +349,15 @@
   }
 }
 
+/* Country listicle pricing: the paragraphs under the plan cards are their own section with the same background,
+   so the two section paddings would stack into a large gap. Close it. */
+section:has(+ #what-others-cost) {
+  padding-bottom: 0;
+}
+#what-others-cost {
+  padding-top: 2rem;
+}
+
 @layer components {
   .btn {
     display: inline-flex;

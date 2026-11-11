@@ -19,8 +19,7 @@ import badgeR4 from '../../assets/images/R4.png';
  * scope badge. Certificate facts checked against service.dha.go.ke/api/public/verify on 2026-10-29.
  */
 const certificateNumber = 'CERT-2026-MHA2Q9YM';
-const certificateAlt =
-  'Digital Health System Certification issued by the Digital Health Agency, Kenya, to Easy Clinic of Novel Software Solutions Private Ltd, certified 17 October 2026, expiry 16 October 2028, digitally signed';
+const certificateAlt = 'Easy Clinic DHA certificate';
 const full = await getImage({ src: certificate, format: 'webp', quality: 90 });
 
 const scopes: { badge: ImageMetadata; code: string; title: string; items: string[] }[] = [
@@ -88,7 +87,7 @@ const scopes: { badge: ImageMetadata; code: string; title: string; items: string
     code: 'SEC',
     title: 'Terminology, security & assurance',
     items: [
-      'ICD-11, SNOMED CT and LOINC coded exchange',
+      'ICD, SNOMED CT and LOINC coded exchange',
       'HPT-aligned medication workflows',
       'MFA, RBAC and automatic session timeout',
       'Immutable audit history and data-integrity controls',
@@ -105,7 +104,7 @@ const scopes: { badge: ImageMetadata; code: string; title: string; items: string
       <aside class="cert__card" aria-labelledby="certification-card-heading">
         <div class="cert__marks">
           <Image src={dhaLogo} alt="Digital Health Agency, Kenya" width={256} class="cert__mark" loading="lazy" />
-          <Image src={shaIntegrated} alt="SHA Integrated: Social Health Authority, Kenya" width={272} class="cert__mark cert__mark--sha" loading="lazy" />
+          <Image src={shaIntegrated} alt="Social Health Authority, Kenya" width={272} class="cert__mark cert__mark--sha" loading="lazy" />
         </div>
 
         <p class="cert__kicker">Digital Health System Certification</p>
@@ -133,10 +132,10 @@ const scopes: { badge: ImageMetadata; code: string; title: string; items: string
 
       {/* ---- Right: the heading and the six scope cards. ---- */}
       <div class="cert__main">
-        <p class="cert__eyebrow">DHA certified · SHA compliant · FHIR R4</p>
+        <p class="cert__eyebrow">DHA certified · SHA e-claims in development · FHIR R4</p>
         <h2 id="certification-heading" class="cert__heading">Built for Kenya's connected digital health ecosystem</h2>
         <p class="cert__intro">
-          The latest Limsoft healthcare platform brings DHA/AfyaConnect interoperability, SHA workflows, Kenya Core-aligned FHIR R4 exchange, national terminology support, public-health reporting and strengthened security controls into the day-to-day hospital workflow.
+          Easy Clinic is built to the Digital Health Agency's integration requirements. It brings DHA and AfyaConnect interoperability, SHA workflows, Kenya Core-aligned FHIR R4 exchange, national terminology, public health reporting and strong security controls into the clinic's day-to-day work. SHA e-claims are in development, with early access open to existing clients.
         </p>
 
         <ul class="cert__grid">

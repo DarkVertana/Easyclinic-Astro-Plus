@@ -18,7 +18,7 @@ interface Props {
   image?: { src: ImageMetadata; alt: string };
   panelHeading?: string;
   panelIntro?: string;
-  items: { name: string; status: string; live: boolean }[];
+  items: { name: string; status?: string; live: boolean }[];
   badges: { name: string; status: string }[];
 }
 
@@ -86,7 +86,7 @@ const { heading, intro, steps, noteHeading, note, image, panelHeading, panelIntr
                     <Icon name={item.live ? 'circle-check' : 'circle-dashed'} size={16} class={item.live ? 'text-[#00a046]' : 'text-ink-muted'} />
                     {item.name}
                   </span>
-                  <span class="mt-1 block pl-6 text-[0.8125rem] text-ink-muted">{item.status}</span>
+                  {item.status && <span class="mt-1 block pl-6 text-[0.8125rem] text-ink-muted">{item.status}</span>}
                 </li>
               ))
             }

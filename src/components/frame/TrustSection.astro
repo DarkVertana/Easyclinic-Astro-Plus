@@ -22,9 +22,11 @@ interface Props {
   chips: string[];
   heading: string;
   ratingNote?: string;
+  /** Logos left out of the strip on this page, by their alt text. */
+  hideLogos?: string[];
 }
 
-const { chips, heading, ratingNote } = Astro.props;
+const { chips, heading, ratingNote, hideLogos = [] } = Astro.props;
 
 const stats = [
   { value: '5,000+', label: 'Doctors' },
@@ -45,7 +47,7 @@ const logos = [
   { src: germanOsteo, alt: 'German Osteo Care' },
   { src: sethGsKem, alt: 'Seth GS Medical College and KEM Hospital' },
   { src: daleView, alt: 'The Dale View, Punalal' },
-];
+].filter((logo) => !hideLogos.includes(logo.alt));
 
 const picks = [
   { id: 'tarun-mishra', sentences: 2, mark: 'is very easy, user friendly with world class technology' },

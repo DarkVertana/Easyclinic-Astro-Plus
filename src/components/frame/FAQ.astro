@@ -9,9 +9,11 @@ interface Props {
   tone?: 'plain' | 'wash';
   /** Click-to-chat link for the "still have a question" box; left out, the box offers the contact page only. */
   whatsappHref?: string;
+  /** The line under "Still have a question?"; left out, the standard line shows. */
+  helpText?: string;
 }
 
-const { heading, items, tone = 'plain', whatsappHref } = Astro.props;
+const { heading, items, tone = 'plain', whatsappHref, helpText = 'Ask the team that sets up and supports your clinic.' } = Astro.props;
 const registry = await getRegistry();
 const contactHref = registry.urlFor('/contact-us/');
 ---
@@ -35,7 +37,7 @@ const contactHref = registry.urlFor('/contact-us/');
                 <Icon name="message-circle" size={20} />
               </span>
               <p class="mt-4 font-display text-lg font-semibold text-ink-heading">Still have a question?</p>
-              <p class="mt-1 text-sm leading-relaxed text-ink-muted">Ask the team that sets up and supports your clinic.</p>
+              <p class="mt-1 text-sm leading-relaxed text-ink-muted">{helpText}</p>
               <div class="mt-5 flex flex-wrap gap-3">
                 {whatsappHref && (
                   <a
