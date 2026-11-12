@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/frame/Breadcrumbs.astro';
 import Hero from '../components/frame/Hero.astro';
+import CountryHero from '../components/frame/CountryHero.astro';
 import FAQ from '../components/frame/FAQ.astro';
 import RelatedLinks from '../components/frame/RelatedLinks.astro';
 import ProblemList from '../components/frame/ProblemList.astro';
@@ -58,6 +59,16 @@ const ctx: Omit<BlockContext, 'index'> = {
 const heroContact = (record.family === 'country' || record.family === 'countryDemo') && d.country;
 // A hero panel (the country listicles) puts an image card beside the text and a reach line under the CTAs.
 const heroPanel = d.heroPanel;
+// The redesigned country hero (owner request 2026-11-12): every country page.
+const countryHero = record.family === 'country' && Boolean(d.country);
+const relatedAboveFaq = record.family === 'country';
+// Country pages: the customer quotes carousel (the section with id "customers") is shown directly above the FAQ,
+// after the related links, not in its place in the sections list (owner request 2026-11-13).
+// The Ghana page is the exception: its carousel stays where the sections list puts it, above the compliance section.
+const quotesInPlace = record.path === '/emr-software-in-ghana/';
+const isQuotes = (s: (typeof d.sections)[number]) => relatedAboveFaq && !quotesInPlace && s.discriminant === 'testimonialRow' && s.value.id === 'customers';
+const quotesSection = d.sections.filter(isQuotes);
+const mainSections = d.sections.filter((s) => !isQuotes(s));
 ---
 
 <BaseLayout
@@ -74,6 +85,20 @@ const heroPanel = d.heroPanel;
   preview={{ status: record.status, issues: record.issues }}
 >
   <Breadcrumbs trail={trail} />
+  {
+    countryHero && (
+      <CountryHero
+        h1={d.h1}
+        openingAnswer={d.openingAnswer}
+        ctas={d.ctas}
+        heroStrip={d.heroStrip}
+        byline={{ author: d.author, reviewedBy: d.reviewedBy, lastUpdated: d.lastUpdated }}
+      >
+        <ContactCard slot="aside" country={d.country!} showClients={false} ctx={{ ...ctx, index: -1 }} />
+      </CountryHero>
+    )
+  }
+  {!countryHero && (
   <Hero
     eyebrow={d.eyebrow}
     h1={d.h1}
@@ -113,6 +138,7 @@ const heroPanel = d.heroPanel;
     }
     {heroContact && <div slot="aside" class="mt-6"><ContactCard country={d.country!} showClients={false} ctx={{ ...ctx, index: -1 }} /></div>}
   </Hero>
+  )}
   {d.trustSection && <TrustSection {...d.trustSection} />}
   {/* The DHA certification section sits directly below the trust section on the Kenya listicle. */}
   {record.path === '/best-clinic-management-software-kenya/' && <Certification />}
@@ -122,9 +148,9 @@ const heroPanel = d.heroPanel;
   {record.path === '/' && <FeatureChips />}
   {record.path === '/' && <ClientLogos />}
   {record.path === '/' && <WhatIsEasyClinic />}
-  <Sections sections={d.sections} ctx={ctx} />
+  <Sections sections={mainSections} ctx={ctx} />
   {/* Related links come before the FAQ, so the FAQ sits directly above the closing CTA band. */}
-  <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} arrows={d.links.relatedArrows} countryPills={record.path === '/'} tinted={record.path === '/about-us/'} />
+  {!relatedAboveFaq && <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} arrows={d.links.relatedArrows} countryPills={record.path === '/'} tinted={record.path === '/about-us/'} />}
   {/* Review-site badges slider, directly below "Where to go next" on /customers/ (owner request 2026-11-09). */}
   {record.path === '/customers/' && <ReviewBadges />}
   {d.helpBand && <HelpBand {...d.helpBand} />}
@@ -136,6 +162,9 @@ const heroPanel = d.heroPanel;
     )
   }
   {d.problems && d.problems.items.length > 0 && <ProblemList {...d.problems} />}
+  {/* Country pages: the related links sit directly above the FAQ, after the problem list (owner request 2026-11-12). */}
+  {relatedAboveFaq && <RelatedLinks heading={d.links.relatedHeading} links={d.links.related} arrows={d.links.relatedArrows} />}
+  {quotesSection.length > 0 && <Sections sections={quotesSection} ctx={ctx} />}
   <FAQ heading={d.faqHeading} items={d.faq} tone="plain" whatsappHref={whatsappHref} helpText={d.faqHelp} />
   {d.closing && <CTABand closing={d.closing} whatsappHref={whatsappHref} imageAlt={d.closingImageAlt} />}
 </BaseLayout>

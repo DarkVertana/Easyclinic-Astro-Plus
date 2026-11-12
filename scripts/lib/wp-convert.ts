@@ -233,7 +233,7 @@ export const TOPIC_BY_OWNER: Array<[RegExp, PostTopic]> = [
   [/^\/(?:ai|curapilot)\/$/, 'cura-ai'],
   [/^\/features\/(?:billing|insurance-claims|revenue-management)\/$/, 'billing-and-claims'],
   [/^\/features\/(?:whatsapp|patient-engagement|appointment-scheduling|telehealth)\/$/, 'patient-engagement'],
-  [/^\/start-a-clinic\/$|^\/(?:clinic-management-software-[a-z-]+|emr-software-in-kenya|hospital-management-software-nigeria)\/$/, 'start-a-clinic'],
+  [/^\/start-a-clinic\/$|^\/(?:emr-software-in-[a-z-]+)\/$/, 'start-a-clinic'],
 ];
 
 export function topicForOwner(owner: string): PostTopic {

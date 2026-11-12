@@ -48,7 +48,7 @@ faq:
       No, Easy Clinic is cloud software that runs in a web browser, so there is nothing to install: your
       clinic needs a browser and an internet connection. It does not run fully offline today, and what a
       power cut or a dropped line does in the middle of a consult is on the [Nigeria
-      page](/hospital-management-software-nigeria/#power-internet-whatsapp).
+      page](/emr-software-in-nigeria/#teleconsultation-and-ai).
   - question: What will Easy Clinic cost after the demo?
     answer: >-
       Professional costs {price:ngn.professional.annual} per doctor per month billed annually, and every
@@ -379,7 +379,7 @@ sections:
       intro: >-
         Each row gives Easy Clinic's status in Nigeria and the date it was last checked. What each law and
         payer asks of your clinic is explained on the [Nigeria
-        page](/hospital-management-software-nigeria/#compliance-in-nigeria).
+        page](/emr-software-in-nigeria/#rules-in-nigeria).
       countries:
         - ng
       showClinicMustDo: true
@@ -398,6 +398,7 @@ sections:
           href: https://www.capterra.com/p/10026882/Easy-Clinic/reviews/
         - label: Google
           rating: '{fact:googleRating}'
+          href: 'https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJz2Q8OeB2AjoRmQ3oO1rIu-M'
   - discriminant: stepList
     value:
       heading: From demo to live in as little as {fact:goLiveDays} days

@@ -58,9 +58,9 @@ const OWNERS: Array<[string[], string]> = [
   [['compliance', 'abdm', 'ndhm', 'privacy', 'legal', 'hipaa', 'dpdp', 'pdpa'], '/trust/'],
   [['emr', 'paperless', 'records', 'prescription'], '/features/emr/'],
   [['kenya', 'nairobi', 'kmpdc', 'sha'], '/emr-software-in-kenya/'],
-  [['nigeria', 'lagos'], '/hospital-management-software-nigeria/'],
-  [['dubai', 'uae'], '/clinic-management-software-uae/'],
-  [['india', 'mumbai', 'delhi', 'tier'], '/clinic-management-software-india/'],
+  [['nigeria', 'lagos'], '/emr-software-in-nigeria/'],
+  [['dubai', 'uae'], '/emr-software-in-uae/'],
+  [['india', 'mumbai', 'delhi', 'tier'], '/emr-software-in-india/'],
   [['setup', 'start', 'profitable', 'opening', 'launch'], '/start-a-clinic/'],
   [['ai', 'artificial'], '/ai/'],
 ];

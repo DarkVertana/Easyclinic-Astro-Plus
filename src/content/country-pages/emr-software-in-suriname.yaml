@@ -41,18 +41,7 @@ ctas:
   whatsapp: Hi, I was reading the Easy Clinic page on EMR software in Suriname and would like a demo for my clinic.
 
 sections:
-  - discriminant: contactCard
-    value:
-      id: suriname-team
-      heading: Easy Clinic in Suriname, and how to reach the team
-      intro: >-
-        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you book
-        one. From clinics in Paramaribo to regional healthcare facilities, Easy Clinic provides one EMR software platform, with onboarding, training and ongoing support.
-      tone: plain
-      country: sr
-      showClients: false
-
-  # Kenya: regulators. The live page names no Suriname rule or status, so this slot carries its comparison.
+  # Definition and comparison: the compare table.
   - discriminant: dataTable
     value:
       id: emr-vs-ehr
@@ -62,7 +51,9 @@ sections:
         AI EMR software in Suriname goes beyond traditional EHR software and standalone clinic management software.
         While conventional EHR software focuses on storing patient records digitally, **AI EMR software integrates
         clinical workflows, billing, analytics and communication tools into one system.**
-      tone: wash
+      tone: plain
+      wideIntro: true
+      variant: compare
       caption: EHR software vs clinic management software vs AI EMR software in Suriname
       columns: [Feature, Traditional EHR software, Basic clinic management software, AI EMR software (Easy Clinic)]
       rows:
@@ -74,6 +65,305 @@ sections:
         - [Analytics, Basic report, Limited insights, '**Advanced dashboards and insights**']
         - [Communication, Not integrated, Limited, '**SMS, WhatsApp, email and teleconsultation**']
         - [Scalability, Low, Moderate, '**High for clinics and hospitals**']
+
+  # Clinic types: the home page's persona cards (owner request 2026-11-12).
+  - discriminant: personaRouter
+    value:
+      id: clinic-types
+      eyebrow: Pick your clinic
+      heading: "Choose your Clinic Type for\nFeatures that suit you"
+      intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
+      tone: mist
+      items:
+        - persona: solo
+          title: Solo Practice
+          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist, all on one simple system.
+          href: /solutions/solo-clinic/
+        - persona: polyclinic
+          title: Specialist Polyclinic
+          body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
+          href: /solutions/polyclinic/
+        - persona: chain
+          title: Clinic Chains
+          body: Suitable for clinic chains across multiple locations that need centralised management and custom business processes.
+          href: /solutions/clinic-chain/
+        - persona: ngo
+          title: NGO Clinic
+          body: Suitable for non-profit and mission-driven healthcare organisations that operate one or more clinic sites, with records and stock reports.
+          href: /solutions/ngo-clinics/
+
+  # Proof: the home page's Penda Health study section (owner request 2026-11-12).
+  - discriminant: proofBlock
+    value:
+      id: study
+      eyebrow: The Penda Health study
+      heading: What changed when clinicians had AI inside the record
+      tone: plain
+      variant: study
+      figures:
+        - visits
+        - diagnostic-errors
+        - treatment-errors
+        - history-errors
+      body: |
+        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on Easy Clinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's Easy Clinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
+
+        The results are published as a preprint on arXiv, not in a journal.
+      link:
+        label: Read how the study was run
+        href: /curapilot/
+
+  # The five modules: the home page's stacked feature cards (owner request 2026-11-12).
+  - discriminant: featureTabs
+    value:
+      id: features
+      eyebrow: Features
+      heading: Clinic Management Software Features That Drive Smarter Care
+      tone: wash
+      tabs:
+        - label: Clinic Management
+          icon: hospital
+          body: From solo practices to clinic chains, Easy Clinic simplifies operations, speeds up patient flow, and gives you complete visibility, while improving the patient experience.
+          capabilities:
+            - label: Smart Appointment Scheduling
+              icon: calendar-clock
+            - label: Billing, Payments & Financial Transactions
+              icon: receipt
+            - label: Multi-Layered Access Control
+              icon: shield-check
+            - label: Patient Engagement from Booking to Follow-up
+              icon: message-circle-heart
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic appointment calendar for two doctors with day visits, an appointment card, a token list and a reminder
+            frame: none
+          link:
+            label: Learn more
+            href: /features/appointment-scheduling/
+        - label: EMR
+          icon: file-heart
+          body: Easy Clinic's EMR combines the simplicity of paper with smart digital tools. It is fast, easy to learn, and customisable for each speciality.
+          capabilities:
+            - label: Customised EMR Templates
+              icon: layout-template
+            - label: AI-Powered Documentation Assistance
+              icon: sparkles
+            - label: 30-Second Prescriptions
+              icon: timer
+            - label: Complete Medical History Record
+              icon: history
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic visit record with chief complaints, vitals, diagnosis, medications with dosage options, a language picker for printing and a blood sugar chart
+            frame: none
+          link:
+            label: Learn more
+            href: /features/emr/
+        - label: Inventory & Pharmacy
+          icon: pill
+          body: Easy Clinic's Inventory and Pharmacy module manages everything from procurement to dispensing, with stock tracked at every step. It helps you keep stock accurate and costs in check.
+          capabilities:
+            - label: Full Inventory Management
+              icon: boxes
+            - label: AI-Assisted Reorder Management
+              icon: refresh-cw
+            - label: Barcode Support
+              icon: shield-alert
+            - label: Real-Time Tracking & Alerts
+              icon: bell-ring
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic inventory screens with products and services, stock levels with low-stock and reorder flags, units of measure and an order versus consumption chart
+            frame: none
+          link:
+            label: Learn more
+            href: /features/pharmacy-and-inventory/
+        - label: AI & Automation
+          icon: brain-circuit
+          body: Easy Clinic uses AI and automation to simplify workflows and keep every location working the same way. Repetitive work moves off your team, and the doctor stays in charge of every decision.
+          capabilities:
+            - label: Cura AI Documentation Assistant
+              icon: brain
+            - label: AI-Assisted Stock Reorder
+              icon: clipboard-plus
+            - label: SOP & Patient Safety Monitoring
+              icon: list-checks
+            - label: No-Code Workflow Automation
+              icon: scan-eye
+          media:
+            src: ../../assets/images/tabs/18_User.png
+            alt: Easy Clinic user management with roles, appointment permissions by role and a weekly doctor roster
+            frame: none
+          link:
+            label: Learn more
+            href: /curapilot/
+        - label: BI & Reporting
+          icon: chart-pie
+          body: Easy Clinic's Reports and Dashboard module organises your data and delivers automated reports, so you can make better decisions at any scale.
+          capabilities:
+            - label: Customisable Dashboards & Reports
+              icon: layout-dashboard
+            - label: Power BI Integration
+              icon: sparkles
+            - label: Enterprise-Scale Data Integration
+              icon: database
+            - label: Automated Reporting
+              icon: file-chart-column
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic dashboards with patients by specialisation, top diagnoses, patients by week, invoices by status and today's report
+            frame: none
+          link:
+            label: Learn more
+            href: /features/reports-and-dashboards/
+
+  # Daily practice: a numbered timeline, no cards (owner request 2026-11-12).
+  - discriminant: stepList
+    value:
+      id: daily-practice
+      layout: timeline
+      eyebrow: How it works
+      heading: How clinic management and EMR software works in daily practice in Suriname
+      intro: >-
+        Easy Clinic integrates AI EMR software, clinic management software and EHR software into one platform
+        designed for healthcare providers across Suriname.
+      tone: plain
+      steps:
+        - title: Patient history at the consult
+          body: Doctors access patient histories instantly through AI EMR software during consultations.
+        - title: Appointments with reminders
+          body: Appointment scheduling is automated with reminders to reduce missed visits.
+        - title: Billing at the desk
+          body: Billing and invoicing are generated instantly using clinic management software.
+        - title: Stock in real time
+          body: Inventory is tracked in real time with automated alerts.
+        - title: Performance dashboards
+          body: Analytics dashboards provide insights into clinic performance and patient trends.
+        - title: Care at a distance
+          body: Teleconsultation enables remote care for patients who cannot reach the clinic.
+      note: This workflow helps clinics in Suriname operate more efficiently while improving patient outcomes.
+
+  # Why clinics are moving, with when to switch and the signs in the aside.
+  - discriminant: prose
+    value:
+      id: why-adopt
+      heading: Why clinics in Suriname are moving to clinic management software
+      tone: wash
+      body: |
+        The healthcare sector in Suriname is evolving quickly, with increasing demand for efficient, technology-driven systems that improve both patient care and operational workflows.
+
+        - Paper-based systems are difficult to manage across multiple healthcare facilities
+        - Traditional EHR software lacks automation and remote accessibility
+        - Manual billing and reporting processes lead to inefficiencies
+        - Clinics need scalable clinic management software for coordinated operations
+        - Patients expect faster service and digital communication
+        - Role-based access control keeps patient data secure
+      aside: |
+        **When should clinics in Suriname switch to AI EMR software?**
+
+        Many clinics continue using manual systems until inefficiencies begin to affect operations and patient experience. Early adoption of AI EMR software supports long-term growth and efficiency.
+
+        **Signs your clinic needs clinic management and EMR software**
+
+        - Patient records are still managed using paper files or spreadsheets
+        - Appointment scheduling leads to delays or coordination issues
+        - Billing errors or payment tracking issues are frequent
+        - Inventory management lacks real-time visibility
+        - You are managing multiple facilities or expanding services
+        - You want to offer telemedicine and digital patient engagement
+      width: wide
+      checklist: true
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/8_Appointment.png
+        alt: Easy Clinic appointment calendar for two doctors, with day visits, a booking card, a token list and a reminder
+        frame: none
+
+  # Key benefits: an icon card grid.
+  - discriminant: moduleGrid
+    value:
+      id: benefits
+      eyebrow: Benefits
+      heading: Key benefits of using EMR software in Suriname
+      tone: plain
+      columns: 3
+      variant: accent
+      items:
+        - title: Digital patient records with AI EMR software
+          icon: file-text
+          outcome: >-
+            Store complete patient histories digitally, including consultations, prescriptions, lab reports and
+            follow-ups. Doctors access accurate data instantly, improving care continuity.
+        - title: Smarter appointment scheduling and patient flow
+          icon: calendar-clock
+          outcome: >-
+            Automated booking, queue tracking and reminders help clinics in Suriname reduce
+            missed appointments and improve patient satisfaction.
+        - title: Simplified billing and structured workflows
+          icon: receipt
+          outcome: >-
+            Generate invoices instantly and track payments with clarity, with structured billing processes that
+            improve financial transparency for clinics in Suriname.
+        - title: Inventory and pharmacy control
+          icon: pill
+          outcome: >-
+            Track medicines and medical supplies in real time with automated low stock alerts, essential for
+            clinics with in-house pharmacies.
+        - title: Actionable insights through analytics and reporting
+          icon: chart-column
+          outcome: >-
+            Built-in analytics show patient visits, revenue trends and staff productivity, so clinics make
+            informed decisions.
+        - title: Teleconsultation and patient communication
+          icon: message-circle-heart
+          outcome: >-
+            Offer teleconsultation to patients who cannot reach the clinic, and keep every patient informed
+            with SMS, WhatsApp and email reminders from the same system.
+
+  # Problems solved: four problem panels.
+  - discriminant: painBlocks
+    value:
+      id: problems-we-solve
+      eyebrow: Problems we solve
+      heading: The problems Easy Clinic solves for clinics in Suriname
+      tone: wash
+      variant: checklist
+      items:
+        - heading: Clinic operations
+          body: |
+            - Inefficient appointment scheduling across doctors, specialties and rooms
+            - Long patient wait times and overcrowded reception areas
+            - Lack of coordination between front desk, nursing and doctors
+            - Difficulty enforcing clinical protocols and SOPs across teams
+        - heading: Finance and inventory
+          body: |
+            - Missed billing for services, consumables or lab work due to manual processes
+            - Pricing inconsistencies across clinics or patient types
+            - Stockouts, expiries or pilferage due to poor inventory tracking
+            - Delayed or inaccurate reconciliation of payments and claims
+        - heading: Patient management and EMR
+          body: |
+            - Scattered or incomplete patient records across visits and branches
+            - Doctors waste time rewriting notes or navigating poorly designed EMRs
+            - Missed follow-ups and poor chronic care tracking
+            - Poor patient engagement, resulting in low retention and fewer repeat visits
+        - heading: Centralised control
+          body: |
+            - No real-time visibility into performance across multiple locations
+            - Inconsistent workflows and patient experience between branches
+            - Fragmented data across systems with no unified reporting
+            - Inability to enforce centralised approvals, pricing or access control
+
+  - discriminant: contactCard
+    value:
+      id: suriname-team
+      heading: Easy Clinic in Suriname, and how to reach the team
+      intro: >-
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you book
+        one. From clinics in Paramaribo to regional healthcare facilities, Easy Clinic provides one EMR software platform, with onboarding, training and ongoing support.
+      tone: plain
+      country: sr
+      showClients: false
 
   - discriminant: moduleGrid
     value:
@@ -122,55 +412,19 @@ sections:
         If your clinic loses its connection for long periods, tell us before you buy.
       width: measure
 
-  - discriminant: clinicTypes
+  # Customer quotes: the pricing page's carousel; the template shows it directly above the FAQ (owner request 2026-11-13).
+  - discriminant: testimonialRow
     value:
-      id: clinic-types
-      heading: Clinics to clinic groups in Suriname
-      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
-      tone: plain
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
       items:
-        - persona: solo
-          title: Solo practice
-          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist.
-          href: /solutions/solo-clinic/
-        - persona: polyclinic
-          title: Specialist polyclinic
-          body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
-          href: /solutions/polyclinic/
-        - persona: chain
-          title: Clinic chains
-          body: Suitable for clinic groups across Paramaribo and regional towns that need centralised management and custom business processes.
-          href: /solutions/clinic-chain/
-        - persona: ngo
-          title: NGO clinic
-          body: Suitable for non-profit and mission-driven healthcare organisations that operate fixed or mobile clinics.
-          href: /features/
-
-  - discriminant: proofBlock
-    value:
-      id: ratings
-      eyebrow: Reviews
-      heading: Clinics trust us. The industry awards us.
-      tone: wash
-      variant: badges
-      badges:
-        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
-        - { label: Google, rating: '{fact:googleRating}' }
-
-  - discriminant: proofBlock
-    value:
-      id: ai-clinical-pilot
-      eyebrow: AI clinical pilot
-      heading: We built the platform behind the world's largest AI clinical pilot
-      tone: plain
-      variant: study
-      figures: [visits, diagnostic-errors]
-      body: >-
-        From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot used with OpenAI across
-        {fig:visits} patient visits at Penda Health's clinics in Nairobi. This is just the beginning.
-      link:
-        label: Read the article by OpenAI
-        href: https://openai.com/index/ai-clinical-copilot-penda-health/
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
 
 faqHeading: Questions clinic owners in Suriname ask
 faq:
@@ -220,6 +474,30 @@ links:
     - href: /pricing/
       label: Easy Clinic pricing
       description: See our plans and pick what fits your clinic.
+
+problems:
+  eyebrow: How Easy Clinic fits in Suriname
+  heading: Ready to digitise
+  headingAccent: your clinic in Suriname
+  intro: >-
+    Move from manual workflows to digital records with clinic management software. Easy Clinic supports
+    private clinics, diagnostic centres and healthcare groups across Suriname.
+  items:
+    - title: Why paper-based clinics are falling behind in Suriname
+      icon: file-text
+      body: >-
+        Manual record keeping slows down service and increases errors. Clinics that move to clinic management
+        software in Suriname run faster consultations and build stronger patient trust.
+    - title: The EMR systems growing clinics in Suriname upgrade to
+      icon: trending-up
+      body: >-
+        As clinics expand, spreadsheets and registers become unreliable. Easy Clinic is the natural upgrade for
+        scalable and dependable EMR systems.
+    - title: One EMR software that grows with the healthcare sector in Suriname
+      icon: network
+      body: >-
+        From solo practitioners to multi-branch healthcare groups, Easy Clinic adapts as patient demand
+        increases. This EMR software supports long-term clinic growth.
 
 closing:
   heading: See Easy Clinic run a day at your clinic

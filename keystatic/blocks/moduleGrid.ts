@@ -1,4 +1,4 @@
-import { defineBlock, group, int, list, media, path, text } from '../fields.ts';
+import { choice, defineBlock, group, int, list, media, path, text } from '../fields.ts';
 
 /**
  * `moduleGrid` section (Zod: src/components/blocks/ModuleGrid/schema.ts): module cards with the same parts in the
@@ -7,6 +7,7 @@ import { defineBlock, group, int, list, media, path, text } from '../fields.ts';
  */
 export const moduleGrid = defineBlock('moduleGrid', 'Module grid', {
   columns: int('Columns', { min: 2, max: 4, zodDefault: 3, description: 'Cards per row on wide screens (2 to 4). Empty: 3.' }),
+  variant: choice('Card style', ['default', 'accent', 'rows'] as const, { zodDefault: 'default' }, { description: 'Accent: a softer card with a solid blue icon tile and its number in the corner. Rows: no cards, each item a full-width row split by thin lines.' }),
   items: list(
     group('Module', {
       title: text('Title', { required: true }),

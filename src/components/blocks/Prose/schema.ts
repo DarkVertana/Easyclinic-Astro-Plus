@@ -14,4 +14,10 @@ export const schema = (ctx: SchemaContext) =>
     secondary: optionalCta,
     /** An image on the right on wide screens, with the aside as a summary card under the text. */
     media: optionalMedia(ctx),
+    /** With an image: the body and aside stay as running text beside it, every bullet a green tick
+        (the /emr-software-in-ghana/ why-adopt section), instead of the labelled rows and key-fact cells. */
+    checklist: z.boolean().default(false),
+    /** Text only (no image): the section has no bottom padding, so the next section's top padding is the only gap
+        (the /emr-software-in-uae/ "how to reach the team" section). */
+    flush: z.boolean().default(false),
   });

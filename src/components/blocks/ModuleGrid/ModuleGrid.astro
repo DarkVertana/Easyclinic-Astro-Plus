@@ -7,7 +7,9 @@ import Screenshot from '../../ui/Screenshot.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'moduleGrid'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, columns, items, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, columns, items, variant = 'default', ctx } = Astro.props;
+const accent = variant === 'accent';
+const rows = variant === 'rows';
 
 const registry = await getRegistry();
 
@@ -40,20 +42,64 @@ const GRID = {
   intro={intro}
   tone={toneFor(tone, ctx.index)}
   class={ctx.path === '/' && id === 'modules' ? 'modules-home' : undefined}
+  wideHeader={rows}
 >
+  {
+    rows && (
+      // No cards: each item is a row the full width of the page, split by hairlines. On phones the icon sits beside
+      // the title with the outcome under it; from md the title and outcome take a column each.
+      <ul class="border-y border-line">
+        {cards.map((card) => (
+          <li class="module-row group relative grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 border-b border-line py-6 last:border-b-0 sm:gap-x-5 md:grid-cols-[auto_minmax(0,1fr)_minmax(0,1.6fr)_auto] md:items-center md:gap-x-8 md:py-7">
+            <span class="module-row__icon row-span-2 flex size-12 items-center justify-center self-start rounded-control bg-blue-50 text-blue-700 md:row-span-1 md:size-14 md:self-center">
+              <Icon name={card.icon ?? 'circle-check'} size={24} />
+            </span>
+            <h3 class="self-center font-display text-[21px] leading-snug font-semibold text-ink-heading">
+              {card.url ? (
+                <a href={card.url} class="link-plain !no-underline after:absolute after:inset-0">
+                  {card.title}
+                </a>
+              ) : (
+                card.title
+              )}
+            </h3>
+            <p class="col-start-2 text-[1.0625rem] leading-[1.65] text-ink md:col-start-3">{card.outcome}</p>
+            {card.url && (
+              <span class="module-row__arrow hidden size-10 items-center justify-center rounded-full border border-line text-link md:flex" aria-hidden="true">
+                <Icon name="arrow-right" size={18} />
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  {!rows && (
   <ul class:list={['grid gap-5', GRID.cols]}>
     {
-      cards.map((card) => (
+      cards.map((card, i) => (
         <li
           class:list={[
-            'module-card card group/card relative flex h-full flex-col p-6 text-ink md:p-7',
+            'group/card relative flex h-full flex-col text-ink',
+            accent ? 'accent-card p-6 sm:p-7' : 'module-card card p-6 md:p-7',
             card.wholeCard && 'group',
           ]}
         >
-          {card.icon && (
-            <span class="module-card__icon mb-5 flex size-12 items-center justify-center rounded-control bg-blue-50 text-blue-700">
-              <Icon name={card.icon} size={24} />
-            </span>
+          {accent ? (
+            <div class="mb-6 flex items-start justify-between gap-4">
+              <span class="accent-card__icon flex size-14 shrink-0 items-center justify-center rounded-2xl">
+                <Icon name={card.icon ?? 'circle-check'} size={26} />
+              </span>
+              <span class="accent-card__num font-display text-[2.5rem] leading-none font-semibold tabular-nums" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+          ) : (
+            card.icon && (
+              <span class="module-card__icon mb-5 flex size-12 items-center justify-center rounded-control bg-blue-50 text-blue-700">
+                <Icon name={card.icon} size={24} />
+              </span>
+            )
           )}
           <h3 class="font-display text-[21px] leading-snug font-semibold">
             {card.url ? (
@@ -71,7 +117,7 @@ const GRID = {
               card.title
             )}
           </h3>
-          <p class="mt-2 min-h-[calc(1.65em*3)] leading-[1.65] text-ink-muted">{card.outcome}</p>
+          <p class:list={['leading-[1.65] text-ink-muted', accent ? 'mt-3' : 'mt-2 min-h-[calc(1.65em*3)]']}>{card.outcome}</p>
           {card.links.length > 0 && (
             <ul class="mt-5 border-t border-line">
               {card.links.map((link) => (
@@ -100,11 +146,85 @@ const GRID = {
       ))
     }
   </ul>
+  )}
 </Section>
 
 <style>
   :global(:root:not([data-theme='dark']) .modules-home) {
     background: #f0f5fa;
+  }
+
+  /* Accent cards: a pale blue wash fading to white, a solid blue icon tile, the card's number faint in the corner;
+     the card lifts a little on hover. */
+  .accent-card {
+    overflow: hidden;
+    border: 1px solid #dfe8f5;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #f3f8ff 0%, var(--surface) 55%);
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 16px 36px -28px rgb(16 42 84 / 0.3);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      translate 180ms ease;
+  }
+  .accent-card:hover,
+  .accent-card:focus-within {
+    border-color: var(--color-blue-200);
+    box-shadow: 0 2px 4px rgb(16 42 84 / 0.05), 0 26px 48px -28px rgb(16 42 84 / 0.42);
+    translate: 0 -4px;
+  }
+  .accent-card__icon {
+    background: var(--cta-bg);
+    color: var(--color-white);
+    box-shadow: 0 10px 20px -10px rgb(0 117 226 / 0.7);
+  }
+  .accent-card__num {
+    color: color-mix(in srgb, var(--color-blue-500) 22%, transparent);
+  }
+  :global([data-theme='dark']) .accent-card {
+    border-color: var(--border);
+    background: var(--surface-muted);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .accent-card {
+      transition: none;
+    }
+    .accent-card:hover,
+    .accent-card:focus-within {
+      translate: none;
+    }
+  }
+
+  /* Rows: the icon tile and the arrow fill with blue when the row is hovered or its link focused. */
+  .module-row__icon,
+  .module-row__arrow {
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease,
+      translate 150ms ease;
+  }
+  .module-row:hover .module-row__icon,
+  .module-row:focus-within .module-row__icon,
+  .module-row:hover .module-row__arrow,
+  .module-row:focus-within .module-row__arrow {
+    border-color: var(--color-blue-500);
+    background: var(--color-blue-500);
+    color: var(--color-white);
+  }
+  .module-row:hover .module-row__arrow,
+  .module-row:focus-within .module-row__arrow {
+    translate: 4px 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .module-row__icon,
+    .module-row__arrow {
+      transition: none;
+    }
+    .module-row:hover .module-row__arrow,
+    .module-row:focus-within .module-row__arrow {
+      translate: none;
+    }
   }
 
   .module-card {

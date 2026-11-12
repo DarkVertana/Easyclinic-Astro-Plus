@@ -8,7 +8,8 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'painBlocks'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, items, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, items, variant = 'default', ctx } = Astro.props;
+const checklist = variant === 'checklist';
 
 const registry = await getRegistry();
 const blocks = items.map((item) => {
@@ -25,7 +26,31 @@ const columns = blocks.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
 ---
 
 <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} wideHeader>
-  <!-- Each card spans two rows of a subgrid, so the "What changes" panels start at the same height. -->
+  {checklist ? (
+    // Checklist variant: a panel per group with its heading over a rule, then its points as ticked lines
+    // in body-size text. Two across from 768px, one column below.
+    <ul role="list" class:list={['grid gap-5 lg:gap-6', columns]}>
+      {blocks.map((block) => (
+        <li class="pain-check flex flex-col">
+          <div class="px-6 pt-6 pb-5 sm:px-8 sm:pt-7">
+            {block.kicker && <p class="mb-1 text-xs font-semibold uppercase tracking-[0.08em] text-blue-700">{block.kicker}</p>}
+            <h3 class="font-display text-[1.375rem] leading-tight font-semibold sm:text-[1.5rem]">{block.title}</h3>
+          </div>
+          <div class="pain-check__body flex-1 px-6 pt-5 pb-6 sm:px-8 sm:pb-8">
+            <Md text={block.body} />
+            {block.fix && <Md text={block.fix} class="mt-5 font-medium text-ink-heading" />}
+            {block.url && (
+              <a href={block.url} class="mt-4 inline-flex min-h-11 items-center gap-1.5 font-semibold">
+                <span>{block.linkLabel}</span>
+                <Icon name="arrow-right" size={18} />
+              </a>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  ) : (
+  // Each card spans two rows of a subgrid, so the "What changes" panels start at the same height.
   <ul class:list={['grid gap-5', columns]}>
     {
       blocks.map((block) => (
@@ -58,4 +83,61 @@ const columns = blocks.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
       ))
     }
   </ul>
+  )}
 </Section>
+
+<style>
+  .pain-check {
+    overflow: hidden;
+    border: 1px solid #dfe8f5;
+    border-radius: 18px;
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: 0 1px 2px rgb(16 42 84 / 0.04), 0 16px 36px -28px rgb(16 42 84 / 0.3);
+  }
+  .pain-check__body {
+    border-top: 1px solid #e3eaf5;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  .pain-check__body :global(ul) {
+    display: grid;
+    gap: 0.875rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .pain-check__body :global(li) {
+    position: relative;
+    margin: 0;
+    padding-left: 2.25rem;
+    color: var(--ink);
+  }
+  /* The same tick as the ticked text section: a white tick on a #00c554 disc, drawn without an image. */
+  .pain-check__body :global(li)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.12em;
+    width: 1.375rem;
+    height: 1.375rem;
+    border-radius: 9999px;
+    background: #00c554;
+  }
+  .pain-check__body :global(li)::after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: calc(0.12em + 0.3rem);
+    width: 0.375rem;
+    height: 0.6875rem;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  @media (width < 40rem) {
+    .pain-check__body {
+      font-size: 1rem;
+    }
+  }
+</style>

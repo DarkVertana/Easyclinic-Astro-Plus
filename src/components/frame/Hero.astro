@@ -1,14 +1,11 @@
 ---
-import { getEntries, getEntry, type ReferenceDataEntry } from 'astro:content';
+import type { ReferenceDataEntry } from 'astro:content';
 import type { MediaProps } from '../ui/Screenshot.astro';
-import { getRegistry } from '../../lib/content/registry';
-import { need, unconfirmed } from '../../lib/content/need';
 import Button from '../ui/Button.astro';
 import Md from '../ui/Md.astro';
 import Screenshot from '../ui/Screenshot.astro';
-import StatusChip from '../ui/StatusChip.astro';
-import Icon from '../ui/Icon.astro';
 import AuthorByline from './AuthorByline.astro';
+import HeroStrip from './HeroStrip.astro';
 
 interface Props {
   eyebrow?: string;
@@ -33,31 +30,6 @@ interface Props {
 }
 
 const { eyebrow, h1, openingAnswer, ctas, heroMedia, heroStrip, largeHeading = false, narrowLede = false, byline, noColumnGap = false, fullWidthText = false, plainImage = false, compactImage = false } = Astro.props;
-const registry = await getRegistry();
-const regulators = heroStrip?.regulators.length ? await getEntries(heroStrip.regulators) : [];
-const facts = heroStrip?.ratings ? (await getEntry('facts', 'facts'))!.data.facts : null;
-const study = heroStrip?.study ? (await getEntry('study', 'study'))!.data : null;
-
-// The rating and the platform ("4.9 on Capterra"); review counts are not shown in the hero.
-function rating(ratingId: string, platform: string) {
-  const r = facts![ratingId];
-  const value = need(Astro, `${platform} rating`, r?.value);
-  return { value: unconfirmed(Astro, `${platform} rating as-of date`, value, Boolean(r?.asOf)), platform };
-}
-const ratings = facts ? [rating('capterraRating', 'Capterra'), rating('googleRating', 'Google')] : [];
-
-let studyLine: string | null = null;
-if (study) {
-  const visits = study.figures.find((f) => f.id === 'visits');
-  const publication = study.publications.find((p) => p.id === visits?.source);
-  if (visits && publication) {
-    // Names the studied tool (AI Consult), never CuraPilot or Cura AI (page-writing-rules; audit 2026-09-27).
-    studyLine = `AI Consult ${unconfirmed(Astro, 'study citation verification', `studied on ${visits.value} visits in an Easy Clinic record`, Boolean(publication.verifiedOn))}`;
-  }
-}
-const trustHref = registry.urlFor('/trust/');
-// The /curapilot/ studyCard (id: study) says the paper names AI Consult, not CuraPilot.
-const studyHref = registry.urlFor('/curapilot/#study');
 // A hero with media sets its whole text column (heading, answer, CTAs, contact card, ratings strip, byline) beside the
 // image, which is centred against it. (The template always passes the aside slot, sometimes empty, so check what it renders.)
 const aside = Astro.slots.has('aside') ? (await Astro.slots.render('aside')).trim() : '';
@@ -92,38 +64,7 @@ const stats = Astro.slots.has('stats') ? (await Astro.slots.render('stats')).tri
     <div class:list={['-mt-10 max-w-[44rem] lg:col-start-1 lg:mt-0', fullWidthText && 'lg:max-w-none', media ? 'md:col-start-1 md:row-start-3 md:mt-0' : 'lg:row-start-2 lg:self-start']}>
       {aside && <Fragment set:html={aside} />}
 
-      {
-        (regulators.length > 0 || ratings.length > 0 || studyLine) && (
-          <ul class="mt-7 flex flex-wrap items-center gap-2" aria-label="Compliance status and ratings">
-            {regulators.map((r) => (
-              <li>
-                <StatusChip
-                  state={r.data.state}
-                  asOf={r.data.asOf}
-                  expected={r.data.expected}
-                  subject={r.data.name}
-                  href={trustHref ? `${trustHref}#${r.id}` : undefined}
-                />
-              </li>
-            ))}
-            {ratings.map((r) => (
-              <li class="inline-flex items-center gap-1.5 rounded-full border border-[#c7c7c7] bg-surface px-2.5 py-1 text-sm">
-                <Icon name="star" size={16} class="fill-star text-star" />
-                <span class="font-semibold text-ink-heading">{r.value}</span>
-                <span class="text-ink-muted">
-                  on <span class="rating-platform">{r.platform}</span>
-                </span>
-              </li>
-            ))}
-            {studyLine && (
-              <li class="inline-flex items-center gap-1.5 rounded-full border border-[#c7c7c7] bg-surface px-2.5 py-1 text-sm">
-                <Icon name="stethoscope" size={16} class="text-teal-700" />
-                {studyHref ? <a href={studyHref}>{studyLine}</a> : <span>{studyLine}</span>}
-              </li>
-            )}
-          </ul>
-        )
-      }
+      <HeroStrip heroStrip={heroStrip} />
 
       {byline && <AuthorByline {...byline} class={media ? 'mt-6 border-t border-line pt-5' : 'mt-6'} />}
     </div>

@@ -12,7 +12,8 @@ export interface BlockContext {
   index: number;
 }
 
-export type Tone = 'plain' | 'wash' | 'inverse';
+/** mist: a pale grey-blue (#f0f5fa), set by hand on a section; it is never part of the automatic alternation. */
+export type Tone = 'plain' | 'wash' | 'mist' | 'inverse';
 
 /** Sections alternate white and a light wash (section 11) unless the content sets a tone. */
 export function toneFor(tone: Tone | undefined, index: number): Tone {

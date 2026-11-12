@@ -56,6 +56,11 @@ const demoPath = country.pages.demo;
 const demoHref = demoPath && demoPath !== ctx.path ? registry.urlFor(demoPath) : null;
 const demoLabel = firstName ? `Book a demo with ${firstName}` : `Book a demo in ${country.name}`;
 const callWho = firstName ? `Or call ${firstName} directly:` : 'Or call us directly:';
+// The hero card only: a country's own wording before the phone number, and a sentence in place of the "Cities" row.
+const heroCallWho = contact.callLine ?? callWho;
+const citiesLine = country.citiesLine;
+const heroCities = citiesLine ? null : cities;
+const heroDetails = Boolean(hours || office || heroCities || (showClients && clients.length > 0));
 ---
 
 {
@@ -153,7 +158,7 @@ const callWho = firstName ? `Or call ${firstName} directly:` : 'Or call us direc
         </div>
       </div>
       <p class="mt-3">
-        {callWho}{' '}
+        {heroCallWho}{' '}
         {telHref ? (
           <a href={telHref} class="inline-flex min-h-11 items-center whitespace-nowrap font-semibold" data-track="cta_click" data-label="contact card phone">
             {phone}
@@ -178,6 +183,7 @@ const callWho = firstName ? `Or call ${firstName} directly:` : 'Or call us direc
           )}
         </div>
       )}
+      {heroDetails && (
       <dl class="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 border-t border-line pt-3 text-sm">
         {hours && (
           <>
@@ -194,10 +200,10 @@ const callWho = firstName ? `Or call ${firstName} directly:` : 'Or call us direc
             <dd class="text-ink-muted">{office}</dd>
           </>
         )}
-        {cities && (
+        {heroCities && (
           <>
             <dt class="font-semibold text-ink-heading">Cities</dt>
-            <dd class="text-ink-muted">{cities}</dd>
+            <dd class="text-ink-muted">{heroCities}</dd>
           </>
         )}
         {showClients && clients.length > 0 && (
@@ -207,6 +213,8 @@ const callWho = firstName ? `Or call ${firstName} directly:` : 'Or call us direc
           </>
         )}
       </dl>
+      )}
+      {citiesLine && <p class:list={['text-sm text-ink-muted', heroDetails ? 'mt-1.5' : 'mt-3 border-t border-line pt-3']}>{citiesLine}</p>}
       {demoHref && (
         <p class="mt-2">
           <a href={demoHref} class="inline-flex min-h-11 items-center gap-1.5 font-semibold" data-track="cta_click" data-label="contact card demo">

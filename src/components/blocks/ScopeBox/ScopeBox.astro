@@ -15,9 +15,11 @@ const DEFAULT_HEADING = {
   limits: 'What it does not do yet',
 } as const;
 const exclusion = variant !== 'limits';
+// Country pages run the heading, intro and closing note the full width of the page (owner request 2026-11-12).
+const wide = ctx.family === 'country';
 ---
 
-<Section id={id} eyebrow={eyebrow} heading={heading || DEFAULT_HEADING[variant]} intro={intro} tone={toneFor(tone, ctx.index)}>
+<Section id={id} eyebrow={eyebrow} heading={heading || DEFAULT_HEADING[variant]} intro={intro} tone={toneFor(tone, ctx.index)} wideHeader={wide}>
   <div
     class:list={[
       'rounded-card border p-6 text-ink md:p-8',
@@ -38,7 +40,7 @@ const exclusion = variant !== 'limits';
       note && (
         <Md
           text={note}
-          class:list={['mt-6 max-w-[46rem] border-t pt-5 text-sm text-ink-muted', exclusion ? 'border-warning/30' : 'border-line']}
+          class:list={['mt-6 border-t pt-5 text-sm text-ink-muted', !wide && 'max-w-[46rem]', exclusion ? 'border-warning/30' : 'border-line']}
         />
       )
     }

@@ -19,7 +19,7 @@ export const REGULATOR_KINDS = ['integration', 'law', 'guideline', 'certificatio
 export const AUTHOR_KINDS = ['clinician', 'product', 'country-lead', 'founder', 'editor'] as const;
 
 /** Section background: sections alternate white and a light wash (section 11). */
-export const TONES = ['plain', 'wash', 'inverse'] as const;
+export const TONES = ['plain', 'wash', 'mist', 'inverse'] as const;
 export const MEDIA_KINDS = ['screenshot', 'photo', 'video', 'illustration'] as const;
 export const MEDIA_FRAMES = ['browser', 'phone', 'none'] as const;
 export const PROOF_VARIANTS = ['study', 'customer', 'badges', 'screenshot'] as const;

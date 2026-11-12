@@ -6,7 +6,8 @@ import Icon from '../../ui/Icon.astro';
 import { toneFor, type BlockContext } from '../types';
 
 type Props = SectionValue<'stepList'> & { ctx: BlockContext };
-const { id, eyebrow, heading, intro, tone, steps, note, ctx } = Astro.props;
+const { id, eyebrow, heading, intro, tone, steps, note, layout = 'cards', ctx } = Astro.props;
+const timeline = layout === 'timeline';
 ---
 
 {/*
@@ -21,7 +22,31 @@ const { id, eyebrow, heading, intro, tone, steps, note, ctx } = Astro.props;
   intro={intro}
   tone={toneFor(tone, ctx.index)}
   class={ctx.path === '/' && id === 'training' ? 'training-home' : undefined}
+  wideHeader={timeline}
 >
+  {timeline ? (
+    // No cards: each step is a numbered marker on a line, with its title and text beside or under it. One column
+    // with a vertical line on phones, two columns from 640px, three from 1024px with the line running across.
+    <>
+      <ol role="list" class="tl">
+        {steps.map((step, i) => (
+          <li class="tl__step">
+            <div class="tl__rail" aria-hidden="true">
+              <span class="tl__num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="tl__line" />
+            </div>
+            <div class="tl__body">
+              <h3 class="font-display text-[1.3125rem] leading-snug font-semibold">{step.title}</h3>
+              {step.meta && <p class="mt-1 text-sm font-medium text-teal-700">{step.meta}</p>}
+              <Md text={step.body} class="mt-2 leading-relaxed text-ink-muted" />
+            </div>
+          </li>
+        ))}
+      </ol>
+      {note && <div class="tl__note"><Md text={note} /></div>}
+    </>
+  ) : (
+  <>
   <ol class:list={['grid gap-5', steps.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : steps.length === 3 ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-3']}>
     {
       steps.map((step, i) => (
@@ -54,11 +79,113 @@ const { id, eyebrow, heading, intro, tone, steps, note, ctx } = Astro.props;
       </div>
     )
   }
+  </>
+  )}
 </Section>
 
 <style>
   :global(:root:not([data-theme='dark']) .training-home) {
     background: #f0f5fa;
+  }
+  /* Timeline layout. Phones: the number sits in a left rail with a line running down to the next step. */
+  .tl {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tl__step {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 1rem;
+  }
+  .tl__rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tl__num {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    background: var(--cta-bg);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-blue-500) 14%, transparent);
+  }
+  .tl__line {
+    flex: 1;
+    width: 2px;
+    min-height: 1rem;
+    margin-block: 0.625rem;
+    background: color-mix(in srgb, var(--color-blue-500) 28%, transparent);
+  }
+  .tl__step:last-child .tl__line {
+    visibility: hidden;
+  }
+  .tl__body {
+    padding-top: 0.5rem;
+    padding-bottom: 1.75rem;
+  }
+  .tl__step:last-child .tl__body {
+    padding-bottom: 0;
+  }
+  .tl__note {
+    margin-top: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--cta-bg);
+    font-weight: 500;
+    color: var(--ink-heading);
+  }
+  /* From 640px: columns, the number on top and the line running across to the next step. */
+  @media (width >= 40rem) {
+    .tl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 2.75rem;
+    }
+    .tl__step {
+      display: block;
+    }
+    .tl__rail {
+      flex-direction: row;
+    }
+    .tl__line {
+      width: auto;
+      height: 2px;
+      min-height: 0;
+      margin-block: 0;
+      margin-inline: 0.625rem 0;
+    }
+    /* The line stops at the end of each row. */
+    .tl__step:last-child .tl__line,
+    .tl__step:nth-child(2n) .tl__line {
+      visibility: hidden;
+    }
+    .tl__body,
+    .tl__step:last-child .tl__body {
+      padding: 1.25rem 2rem 0 0;
+    }
+    .tl__note {
+      margin-top: 2.75rem;
+    }
+  }
+  @media (width >= 64rem) {
+    .tl {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .tl__step:nth-child(2n) .tl__line {
+      visibility: visible;
+    }
+    .tl__step:last-child .tl__line,
+    .tl__step:nth-child(3n) .tl__line {
+      visibility: hidden;
+    }
   }
   .step-card {
     border-color: #c7c7c7;

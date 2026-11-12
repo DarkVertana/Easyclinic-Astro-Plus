@@ -104,6 +104,7 @@ export const dataCollections = {
         email: unknown(email('Email')),
         hours: unknown(text('Hours')),
         callbackWindow: unknown(text('Callback window')),
+        callLine: text('Call line', { description: 'The words before the phone number on the hero contact card. Left out, "Or call us directly:" shows.' }),
       }),
       office: unknown(text('Office', { multiline: true })),
       pages: group('Pages', {
@@ -116,6 +117,7 @@ export const dataCollections = {
         startAClinic: path('Start-a-clinic guide'),
       }),
       cities: stringList('Cities', 'City'),
+      citiesLine: text('Cities line', { description: 'A sentence shown on the hero contact card in place of the "Cities" row.' }),
       clients: stringList('Clients', 'Client'),
       payments: list(
         group('Payment rail', {

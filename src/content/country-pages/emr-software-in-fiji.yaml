@@ -10,16 +10,16 @@ secondaryKeywords:
   - EHR software Fiji
 title: AI EMR Software in Fiji | Easy Clinic
 metaDescription: >-
-  Secure cloud-based AI EMR software for private clinics, speciality centres and hospitals in Suva, Nadi,
-  Lautoka, Labasa and island communities.
+  Easy Clinic is EMR software in Fiji for clinics in Suva, Nadi, Lautoka and the islands. Prescriptions,
+  billing, pharmacy and reports in one login.
 h1: Advanced AI EMR software in Fiji for clinics and hospitals
 linkLabel: EMR software in Fiji
-eyebrow: Best EMR software in Fiji 2026
+eyebrow: AI EMR software in Fiji
 openingAnswer: >-
-  Easy Clinic provides secure cloud-based AI EMR software in Fiji designed for private clinics, speciality
-  centres, hospitals and healthcare providers across Suva, Nadi, Lautoka, Labasa and other island
-  communities. It combines automation, structured documentation, analytics and workflow management into one
-  EMR software platform.
+  Easy Clinic is EMR software in Fiji that runs the whole clinic from one login. Private clinics, specialty
+  centres and hospital OPDs in Suva, Nadi, Lautoka, Labasa and the outer islands use one system for records,
+  appointments, billing, pharmacy and reports. Prescriptions take under 30 seconds and reach patients on
+  WhatsApp.
 summary: >-
   Secure cloud-based AI EMR software for private clinics, speciality centres and hospitals across Suva,
   Nadi, Lautoka, Labasa and island communities.
@@ -43,72 +43,40 @@ ctas:
   whatsapp: Hi, I was reading the Easy Clinic page on EMR software in Fiji and would like a demo for my clinic.
 
 sections:
-  # 1. Definition and comparison: a responsive table (cards on phones).
+  # Definition and comparison: a responsive table (cards on phones).
   - discriminant: dataTable
     value:
       id: what-is-ai-emr
       eyebrow: AI EMR and clinic software
       heading: What is AI EMR software and clinic management software in Fiji?
-      intro: |
-        AI EMR software in Fiji changes how clinics, hospitals and health centres manage patient care, workflows and communication across island-based healthcare systems. It goes beyond traditional EHR software and standalone clinic management software by combining automation, intelligence and real-time data access into one unified platform.
-
-        While conventional EHR software focuses on storing patient records digitally, **AI EMR software in Fiji integrates clinical workflows, billing systems, analytics and communication tools into a single intelligent system.**
+      intro: >-
+        EMR (electronic medical record) software is the digital record a clinic keeps for each patient. Clinic
+        management software runs the day around it: appointments, billing, pharmacy, lab and reports. Easy
+        Clinic does both in one system, and Cura AI, an optional add-on, helps the doctor during the visit.
       tone: plain
-      caption: EHR software vs clinic management software vs AI EMR software in Fiji
-      columns: [Feature, Traditional EHR software, Basic clinic management software, AI EMR software (Easy Clinic)]
+      wideIntro: true
+      variant: compare
+      caption: Paper or basic records vs basic clinic software vs AI EMR software in Fiji
+      columns: [Features, Paper or basic records, Basic clinic software, AI EMR software (Easy Clinic)]
       rows:
-        - [Patient records, Digital storage only, Limited integration, '**Fully integrated AI EMR system**']
-        - [Automation, Minimal, Partial, '**Advanced AI automation**']
-        - [Billing and payments, Manual or semi-digital, Moderate, '**Fully automated and accurate**']
-        - [Inventory management, Not included, Basic tracking, '**Real-time monitoring with alerts**']
-        - [Multi-location support, Difficult, Partial, '**Fully centralised control**']
-        - [Analytics, Basic report, Limited insights, '**Advanced dashboards and insights**']
-        - [Communication, Not integrated, Limited, '**SMS, WhatsApp, email and teleconsultation**']
-        - [Scalability, Low, Moderate, '**High for clinics and hospitals**']
+        - [Patient records, Files and registers, Records only, '**Full history, every visit by every doctor, and documents kept for life**']
+        - [Prescriptions, Handwritten, Typed from scratch, '**Under 30 seconds with Ready Rx and shortcut keys, printed or sent on WhatsApp**']
+        - [Billing and payments, Manual receipts, Basic invoices, '**One invoice for consultation, tests and medicines, with part payments and refunds**']
+        - [Inventory management, Stock registers, Basic tracking, '**Batches and expiry dates, with stock that drops only when medicine is dispensed**']
+        - [Multi-location support, Separate files per site, Limited, '**One login with a location dropdown and shared stock**']
+        - [Analytics, Counted by hand, A few reports, '**Clinical and financial dashboards and about 25 standard reports**']
+        - [Communication, Phone calls, SMS, '**WhatsApp, SMS, email and video consultations**']
+        - [Clinical AI, None, None, '**Cura AI, a paid add-on that flags and suggests while the doctor decides**']
+        - [Scalability, One room, Small clinics, '**A solo clinic to a 250-clinic chain**']
 
-  # 2. Key benefits: an icon card grid.
-  - discriminant: moduleGrid
-    value:
-      id: benefits
-      eyebrow: Benefits
-      heading: Key benefits of using EMR software in Fiji
-      tone: wash
-      columns: 3
-      items:
-        - title: Digital patient records with AI EMR software
-          icon: file-text
-          outcome: >-
-            Store complete patient histories digitally, including consultations, prescriptions, lab reports and
-            follow-ups. Doctors open patient information instantly, improving consultation accuracy and speed.
-        - title: Smart appointment scheduling for clinics in Fiji
-          icon: calendar-clock
-          outcome: >-
-            Automated booking and digital reminders help clinics in Suva, Nadi and Lautoka manage patient
-            visits efficiently, reducing waiting times and improving clinic productivity.
-        - title: Simplified billing and revenue management
-          icon: receipt
-          outcome: >-
-            Generate invoices instantly and track payments clearly, so clinics keep accurate financial records
-            and better revenue visibility.
-        - title: Inventory and pharmacy control
-          icon: pill
-          outcome: >-
-            Track medicines and medical supplies in real time with low stock alerts and expiry monitoring, for
-            reliable inventory management.
-        - title: Data-driven insights through analytics
-          icon: chart-column
-          outcome: >-
-            Built-in analytics show patient visits, clinic performance and revenue trends, so clinics make
-            informed decisions.
-
-  # 3. Clinic types: persona cards.
-  - discriminant: clinicTypes
+  # Clinic types: the home page's persona cards (owner request 2026-11-12).
+  - discriminant: personaRouter
     value:
       id: clinic-types
       eyebrow: Pick your clinic
       heading: Choose your clinic type for features that suit you best
       intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
-      tone: plain
+      tone: mist
       items:
         - persona: solo
           title: Solo practice
@@ -125,116 +93,19 @@ sections:
         - persona: ngo
           title: NGO clinic
           body: Suitable for non-profit and mission-driven healthcare organisations that operate fixed or mobile clinics.
-          href: /features/
+          href: /solutions/ngo-clinics/
 
-  # 4. The five modules: alternating screenshot rows.
-  - discriminant: featureRows
-    value:
-      id: features
-      eyebrow: Features
-      heading: Clinic management software features that drive smarter care
-      tone: wash
-      items:
-        - heading: Clinic management
-          icon: calendar-clock
-          body: >-
-            From solo practices to clinic chains, Easy Clinic simplifies operations, keeps patient flow moving
-            and delivers complete visibility, while improving the patient experience.
-          bullets:
-            - Smart appointment scheduling
-            - Billing, payments and financial transactions
-            - Dynamic pricing engine
-            - Multi-layered access control
-            - Patient engagement from booking to follow-up
-          media:
-            src: ../../assets/images/tabs/Clinic-Management.png
-            alt: Easy Clinic appointment calendar for two doctors with day visits, an appointment card, a token list and a reminder
-            frame: none
-          link:
-            label: See appointment scheduling
-            href: /features/appointment-scheduling/
-        - heading: EMR
-          icon: notebook-pen
-          body: >-
-            Easy Clinic's EMR combines the simplicity of paper with the power of intelligent digital tools. It is
-            fast, intuitive and fully customisable across specialties.
-          bullets:
-            - Customised EMR templates
-            - Patient data visualisation
-            - AI-powered documentation assistance
-            - 30-second prescriptions
-            - Full medical history record
-          media:
-            src: ../../assets/images/tabs/1_EMR-1.png
-            alt: Easy Clinic visit record with chief complaints, vitals, clinical notes, diagnosis, medications with dosage options, a language picker and a blood sugar chart
-            frame: none
-          link:
-            label: See the EMR in detail
-            href: /features/emr/
-        - heading: Inventory and pharmacy
-          icon: pill
-          body: >-
-            Easy Clinic's inventory and pharmacy module manages everything from procurement to dispensing, with
-            full traceability, automation and control. It keeps stock accurate, cost-efficient and transparent.
-          bullets:
-            - Inventory management
-            - Complete logistics workflow
-            - EMR integration
-            - AI-assisted reorder management
-            - Pilferage prevention and internal controls
-            - Real-time tracking and alerts
-          media:
-            src: ../../assets/images/tabs/9_01_Inventory_Pharmacy-2.png
-            alt: Easy Clinic pharmacy screen with a dispense list, a dispensing invoice, a medicine label, an expiring stock list and monthly progress charts
-            frame: none
-          link:
-            label: See pharmacy and inventory
-            href: /features/pharmacy-and-inventory/
-        - heading: AI and automation
-          icon: sparkles
-          body: >-
-            Easy Clinic uses AI and automation to reduce errors and keep work consistent across locations,
-            improving decision-making, compliance and efficiency at scale.
-          bullets:
-            - AI as a clinical decision-making partner
-            - AI-assisted patient intake and triage
-            - Compliance and SOP monitoring
-            - Smart billing automation
-            - Fraud prevention and pilferage control
-          media:
-            src: ../../assets/images/tabs/18_User.png
-            alt: Easy Clinic user management with roles, appointment permissions by role and a weekly doctor roster
-            frame: none
-          link:
-            label: See Easy Clinic's AI features
-            href: /ai/
-        - heading: BI and reporting
-          icon: chart-column
-          body: >-
-            Easy Clinic's reports and dashboard module blends efficiency with insight, organising data and
-            delivering automated reports that support better decisions at any scale.
-          bullets:
-            - Customisable dashboards and reports
-            - AI-powered analysis
-            - Enterprise-scale data integration
-            - Automated reporting
-          media:
-            src: ../../assets/images/tabs/14_Dashboard.jpg
-            alt: Easy Clinic dashboards with patients by specialisation, top diagnoses, patients by week, invoices by status and today's report
-            frame: none
-          link:
-            label: See reports and dashboards
-            href: /features/reports-and-dashboards/
-
-  # 5. Proof: the AI clinical pilot, with the study figures from study.yaml.
+  # Proof: the AI clinical pilot, with the study figures from study.yaml.
   - discriminant: proofBlock
     value:
-      id: ai-clinical-pilot
+      id: study
       eyebrow: AI clinical pilot
       heading: We built the platform behind the world's largest AI clinical pilot
       tone: plain
       variant: study
-      figures: [visits, diagnostic-errors]
+      figures:
+        - visits
+        - diagnostic-errors
       body: >-
         From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot changing care at
         Penda Health's clinics in Nairobi, across {fig:visits} patient visits. This is just the beginning.
@@ -242,43 +113,158 @@ sections:
         label: Read the article by OpenAI
         href: https://openai.com/index/ai-clinical-copilot-penda-health/
 
-  # 6. Daily practice: a numbered step sequence.
+  # The five modules: the home page's stacked feature cards (owner request 2026-11-12).
+  - discriminant: featureTabs
+    value:
+      id: features
+      eyebrow: Features
+      heading: Clinic management software features that drive smarter care
+      tone: wash
+      tabs:
+        - label: Clinic management
+          icon: hospital
+          body: From solo practices to clinic chains, Easy Clinic simplifies operations, keeps patient flow moving and delivers complete visibility, while improving the patient experience.
+          capabilities:
+            - label: Smart appointment scheduling
+              icon: calendar-clock
+            - label: Billing, payments and financial transactions
+              icon: receipt
+            - label: Multi-level price lists
+              icon: tags
+            - label: Role-based access control
+              icon: shield-check
+            - label: Patient engagement from booking to follow-up
+              icon: message-circle-heart
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic appointment calendar for two doctors with day visits, an appointment card, a token list and a reminder
+            frame: none
+          link:
+            label: See appointment scheduling
+            href: /features/appointment-scheduling/
+        - label: EMR
+          icon: file-heart
+          body: Easy Clinic's EMR combines the simplicity of paper with the power of intelligent digital tools. It is fast, intuitive and fully customisable across specialties.
+          capabilities:
+            - label: Customised EMR templates
+              icon: layout-template
+            - label: Trend charts for readings over time
+              icon: chart-line
+            - label: Shortcut keys and Ready Rx for fast notes
+              icon: clipboard-list
+            - label: 30-second prescriptions
+              icon: timer
+            - label: Full medical history record
+              icon: history
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic visit record with chief complaints, vitals, diagnosis, medications with dosage options, a language picker for printing and a blood sugar chart
+            frame: none
+          link:
+            label: See the EMR in detail
+            href: /features/emr/
+        - label: Inventory and pharmacy
+          icon: pill
+          body: Easy Clinic's inventory and pharmacy module manages everything from procurement to dispensing, with full traceability, automation and control. It keeps stock accurate, cost-efficient and transparent.
+          capabilities:
+            - label: Inventory management
+              icon: boxes
+            - label: Complete logistics workflow
+              icon: truck
+            - label: EMR integration
+              icon: link
+            - label: AI-assisted reorder management
+              icon: refresh-cw
+            - label: Pilferage prevention and internal controls
+              icon: shield-alert
+            - label: Real-time tracking and alerts
+              icon: bell-ring
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic inventory screens with products and services, stock levels with low-stock and reorder flags, units of measure and an order versus consumption chart
+            frame: none
+          link:
+            label: See pharmacy and inventory
+            href: /features/pharmacy-and-inventory/
+        - label: AI and automation
+          icon: brain-circuit
+          body: Easy Clinic uses AI and automation to keep work consistent across every room and location. The clinic sets the rules, and the doctor stays in charge of every clinical decision.
+          capabilities:
+            - label: Cura AI flags details that do not add up during the visit (paid add-on)
+              icon: brain
+            - label: Diagnosis and treatment suggestions the doctor can accept or ignore
+              icon: lightbulb
+            - label: Compliance and SOP monitoring
+              icon: list-checks
+            - label: Billing triggers that add linked charges automatically
+              icon: receipt
+            - label: Pilferage control, with stock that drops only on dispense
+              icon: scan-eye
+          media:
+            src: ../../assets/images/tabs/18_User.png
+            alt: Easy Clinic user management with roles, appointment permissions by role and a weekly doctor roster
+            frame: none
+          link:
+            label: See Easy Clinic's AI features
+            href: /curapilot/
+        - label: BI and reporting
+          icon: chart-pie
+          body: Easy Clinic's reports and dashboard module blends efficiency with insight, organising data and delivering automated reports that support better decisions at any scale.
+          capabilities:
+            - label: Customisable dashboards and reports
+              icon: layout-dashboard
+            - label: Clinical and financial dashboards
+              icon: chart-column
+            - label: Power BI data warehouse for clinic chains
+              icon: database
+            - label: Automated reporting
+              icon: file-chart-column
+          media:
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic dashboards with patients by specialisation, top diagnoses, patients by week, invoices by status and today's report
+            frame: none
+          link:
+            label: See reports and dashboards
+            href: /features/reports-and-dashboards/
+
+  # Daily practice: a numbered timeline, no cards (owner request 2026-11-12).
   - discriminant: stepList
     value:
       id: daily-practice
+      layout: timeline
       eyebrow: How it works
       heading: How AI EMR software works in daily practice in Fiji
       intro: >-
-        Easy Clinic integrates AI EMR software, clinic management software and EHR software into one unified
-        platform designed for healthcare providers across Fiji.
-      tone: wash
+        Easy Clinic runs the same way for a clinic in Suva and a health centre on an outer island. Here is a
+        typical day.
+      tone: plain
       steps:
         - title: Patient history at the consult
-          body: Doctors access patient histories instantly through AI EMR software during consultations.
+          body: The patient reaches the doctor's queue with triage details and the full history already on screen.
         - title: Appointments with reminders
-          body: Appointment scheduling is automated with reminders to reduce missed visits.
+          body: Bookings go on one calendar, and WhatsApp reminders go out the day before and on the day.
         - title: Billing at the desk
-          body: Billing and invoicing are generated instantly using clinic management software.
+          body: One invoice covers the consultation, tests and medicines, with linked charges added automatically.
         - title: Stock in real time
-          body: Inventory is tracked in real time with automated alerts.
+          body: Stock drops when the pharmacist dispenses, with expiry-first batches and reorder alerts.
         - title: Performance dashboards
           body: Analytics dashboards provide insights into clinic performance and patient trends.
         - title: Care across islands
           body: Teleconsultation enables remote care across islands and rural communities.
       note: This workflow helps clinics in Fiji operate efficiently while maintaining continuity of care across locations.
 
-  # 7. Why clinics adopt, with when to switch and the signs in the aside.
+  # Why clinics adopt, with when to switch and the signs in the aside.
   - discriminant: prose
     value:
       id: why-adopt
       eyebrow: Why now
-      heading: Why clinics in Fiji are adopting AI EMR software and EHR software
-      tone: plain
+      heading: Why clinics in Fiji are adopting AI EMR software
+      tone: wash
       body: |
         Fiji's healthcare system serves both urban centres and remote islands, requiring efficient and connected solutions for coordinated care delivery.
 
         - Paper-based systems are difficult to manage across multiple islands
-        - Traditional EHR software lacks automation and remote accessibility
+        - Records kept on paper or in separate systems cannot follow the patient between sites
         - Manual billing and reporting processes create inefficiencies
         - Clinics require scalable clinic management software to support expansion
         - Patients expect faster service and digital communication
@@ -288,9 +274,9 @@ sections:
       aside: |
         **When should clinics in Fiji switch to AI EMR software?**
 
-        In a geographically distributed healthcare system like Fiji, early adoption of AI EMR software means better coordination, efficiency and patient outcomes.
+        In a healthcare system spread across islands, moving early to EMR software means better coordination between sites, less paperwork and faster service for patients.
 
-        **Signs your clinic needs AI EMR software or EHR software**
+        **Signs your clinic needs EMR software**
 
         - Patient records are still managed using paper files or spreadsheets
         - Appointment scheduling leads to delays or coordination issues
@@ -299,14 +285,58 @@ sections:
         - You manage multiple clinics or health centres across islands
         - You want to offer telemedicine and digital patient engagement
       width: wide
+      checklist: true
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/8_Appointment.png
+        alt: Easy Clinic appointment calendar for two doctors, with day visits, a booking card, a token list and a reminder
+        frame: none
 
-  # 8. Problems solved: four problem panels.
+  # Key benefits: an icon card grid.
+  - discriminant: moduleGrid
+    value:
+      id: benefits
+      eyebrow: Benefits
+      heading: Key benefits of using EMR software in Fiji
+      tone: plain
+      columns: 3
+      variant: accent
+      items:
+        - title: Digital patient records with AI EMR software
+          icon: file-text
+          outcome: >-
+            Every consultation, prescription, lab report and follow-up sits on one patient profile. Doctors see
+            the last visit at a glance and every past visit by every doctor.
+        - title: Smart appointment scheduling for clinics in Fiji
+          icon: calendar-clock
+          outcome: >-
+            Clinics in Suva, Nadi and Lautoka book several doctors on one calendar, with tokens and clash
+            warnings. WhatsApp and SMS reminders go out the day before and on the day, so fewer patients miss
+            visits.
+        - title: Simplified billing and revenue management
+          icon: receipt
+          outcome: >-
+            One invoice covers the consultation, tests and medicines. Billing triggers add linked charges
+            automatically, and part payments, advances and refunds sit on the same bill.
+        - title: Inventory and pharmacy control
+          icon: pill
+          outcome: >-
+            The pharmacy sees the prescription before the patient reaches the counter. Batches that expire
+            first show on top, and stock drops only when medicine is dispensed.
+        - title: Data-driven insights through analytics
+          icon: chart-column
+          outcome: >-
+            Dashboards show top diagnoses, busiest days, revenue by user and stock by location. Export any
+            report to Excel or PDF.
+
+  # Problems solved: four problem panels.
   - discriminant: painBlocks
     value:
       id: problems-we-solve
       eyebrow: Problems we solve
       heading: The problems Easy Clinic solves for clinics in Fiji
       tone: wash
+      variant: checklist
       items:
         - heading: Clinic operations
           body: |
@@ -333,52 +363,91 @@ sections:
             - Fragmented data across systems with no unified reporting
             - Inability to enforce centralised approvals, pricing or access control
 
-  # 9. Data ownership: the promise, as an exclusion list.
+  # Data ownership: the promise, as an exclusion list.
   - discriminant: scopeBox
     value:
       id: your-data
       eyebrow: Your data
       heading: Your data is secure and belongs only to you
       intro: >-
-        Ministry of Health reporting and patient confidentiality standards apply across the islands. Easy
-        Clinic gives island healthcare centralised EMR systems, with remote care and continuity across
-        multiple locations.
-      tone: wash
+        Patient confidentiality and Ministry of Health reporting matter on every island. Easy Clinic keeps
+        every record structured and protected, with role-based access, audit logs and encryption in transit
+        and at rest. Easy Clinic lists compliance with HIPAA and GDPR, and one record follows the patient
+        across every site.
+      tone: plain
       variant: isNot
       items:
-        - '**A seller of your data.** We do not misuse, sell or pry on your patient, clinical, financial or administrative data.'
-        - '**An owner of your records.** All the data and records belong only to you.'
+        - '**Never sold.** We do not misuse, sell or pry on your patient, clinical, financial or administrative data.'
+        - '**Always yours.** All the data and records belong only to you.'
+
+  # Customer quotes: the pricing page's carousel; the template shows it directly above the FAQ (owner request 2026-11-13).
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
 
 faqHeading: FAQs about AI EMR software in Fiji
+faqHelp: Message our India WhatsApp line on +91 91477 70277, or ask the team that sets up and supports your clinic.
 faq:
   - question: Is Easy Clinic suitable for clinics in Suva and other cities?
-    answer: Yes. Easy Clinic works for clinics in Suva, Nadi, Lautoka, Labasa and healthcare facilities across Fiji.
+    answer: >-
+      Yes. Easy Clinic runs solo clinics, polyclinics, health centres and clinic chains in Suva, Nadi,
+      Lautoka, Labasa and across the islands. One login covers every specialty, and each role works from its
+      own queue. It runs in any browser on a laptop or tablet, so there is nothing to install at the clinic.
   - question: Can Easy Clinic manage clinics across multiple islands?
-    answer: Yes. Clinics operating in different towns or islands can manage operations through one central EMR software dashboard.
-  - question: Is patient data secure on Easy Clinic EMR systems?
-    answer: Yes. Easy Clinic uses secure cloud infrastructure and role-based access control to protect patient data.
+    answer: >-
+      Yes. Each site sits in a location dropdown under the same login, with shared patient records and one
+      shared stock. A patient seen in Suva can be seen in Labasa with the full history on screen. Enterprise
+      adds central control of every location and a Power BI data warehouse for chains.
+  - question: How much does Easy Clinic cost in Fiji?
+    answer: >-
+      Easy Clinic is priced per doctor. Professional is $79 and Premium $99 per doctor per month, billed
+      annually, and Enterprise is on a quote. Every plan includes a login for your receptionist at no extra
+      cost, and there is no setup fee for clinics up to 5 users. Ask us for Fiji dollar pricing.
+  - question: Is patient data secure on Easy Clinic?
+    answer: >-
+      Yes. Easy Clinic lists compliance with HIPAA and GDPR. Records are protected with role-based access,
+      audit logs and encryption in transit and at rest, and each person sees only what their role needs. Your
+      patient data belongs to your clinic. We never sell it, and you can export it at any time.
   - question: Does Easy Clinic support telemedicine in Fiji?
     answer: >-
-      Yes. Clinics can offer remote consultations and follow-ups using AI EMR software in Fiji, which is ideal
-      for island healthcare networks.
-  - question: Can Easy Clinic integrate SMS and WhatsApp communication?
-    answer: Yes. Clinics can send reminders and patient updates through built-in communication tools.
+      Yes. Premium and Enterprise include built-in video consultations, booked from the same calendar as
+      in-person visits. That helps island clinics follow up with patients who cannot travel, and every video
+      visit stays on the same patient record. Prescriptions from a video visit go to the patient on WhatsApp.
+  - question: Can Easy Clinic send WhatsApp and SMS reminders?
+    answer: >-
+      Yes. Appointment and follow-up reminders go out on WhatsApp, SMS or email, the day before and again on
+      the day of the visit, never at night. Prescriptions, invoices and lab reports can go on WhatsApp too,
+      with a monthly message allowance by plan.
   - question: Does Easy Clinic support pharmacy and inventory management?
-    answer: Yes. Clinics can track medicine stock and receive alerts using AI-powered EMR systems.
-  - question: How can clinics in Fiji get started with Easy Clinic?
-    answer: Clinics can book a free demo to see how AI EMR software in Fiji fits their workflow.
-  - question: What is the difference between AI EMR software and EHR software in Fiji?
     answer: >-
-      AI EMR software in Fiji includes automation, analytics and intelligent workflows, while EHR software
-      mainly focuses on storing patient records.
-  - question: Is AI EMR software suitable for rural clinics in Fiji?
+      Yes. The pharmacy queue shows each prescription before the patient arrives. Batches that expire first
+      show on top, the pharmacist can adjust quantity before dispensing, and stock drops only when medicine is
+      dispensed. Purchase orders, goods receipt, transfers and stock take are built in, and one stock list can
+      serve every site.
+  - question: Is Cura AI included in every plan?
     answer: >-
-      Yes. AI EMR software is designed to support both urban and rural healthcare environments, including
-      island-based clinics.
-  - question: Can clinics in Fiji transition easily from manual systems to AI EMR software?
+      Cura AI is a paid add-on that works with any plan. It runs in the background at registration, triage
+      and the consultation. It flags what does not add up, such as a missed allergy, and suggests diagnosis
+      and treatment. The clinic sets the triggers and alert style, and the doctor always decides.
+  - question: Does Easy Clinic work for rural and island clinics?
     answer: >-
-      Yes. Easy Clinic provides onboarding, training and ongoing support to ensure a smooth transition to
-      digital healthcare platforms.
+      Yes, as long as the clinic has an internet connection. Easy Clinic runs in the browser and does not run
+      fully offline today. Island clinics usually keep a mobile data hotspot beside the reception computer as
+      a backup line, so registration, prescriptions and billing carry on if the main line drops.
+  - question: How do clinics in Fiji move from paper to Easy Clinic?
+    answer: >-
+      Most clinics go live within 2 to 4 weeks. Easy Clinic builds your prescription format from your own
+      sample, imports records from your old system, and trains reception, doctors, lab and pharmacy on their
+      own part of the day. Your dedicated account manager stays with you after go-live.
 
 links:
   hub: /countries/
@@ -386,10 +455,10 @@ links:
   related:
     - href: /best-clinic-management-software-fiji/
       label: Best clinic software in Fiji
-      description: Three clinic systems ranked for a clinic in Fiji, plus Easy Clinic unranked, from FRCS VAT billing to pay-once on your own server.
+      description: Easy Clinic and other clinic software in Fiji, compared side by side.
     - href: /countries/
       label: Book a demo from Fiji
-      description: Clinics outside India and Kenya book a demo from the countries page.
+      description: A 20-minute demo built around your own clinic day.
     - href: /pricing/
       label: Easy Clinic pricing
       description: See our plans and pick what fits your clinic.
@@ -411,11 +480,13 @@ problems:
     - title: Why clinics in Fiji are moving to AI EMR software
       icon: file-text
       body: >-
-        Paper-based systems slow healthcare delivery and increase errors. Clinics adopting AI EMR software in
-        Fiji benefit from faster workflows, better documentation and improved patient communication.
+        Paper records slow down every visit and get lost between sites. Clinics moving to EMR software in Fiji
+        get faster prescriptions, complete records and reminders that reach patients on WhatsApp.
     - title: EMR systems that support growing healthcare facilities
       icon: trending-up
-      body: As healthcare services grow across Fiji, scalable EMR systems become essential for managing clinics efficiently.
+      body: >-
+        As a clinic adds doctors or branches, Easy Clinic grows with it: one login, a location dropdown, shared
+        stock and central reports, from a solo clinic to a chain of 250 clinics.
     - title: One platform from Suva to the outer islands
       icon: globe
       body: >-
@@ -446,6 +517,7 @@ editorialPass:
     clinic detail.
 
 notes:
+  - 'Content update 2026-11-13: copy replaced from the owner''s content document (easyclinic-emr-software-in-fiji-audit.html): the hero eyebrow and opening answer, the comparison table, clinic-type cards, study section, features, daily-practice steps, adoption section, benefits (now five cards), data section, FAQ (ten questions, with pricing, Cura AI and go-live answers), related-link descriptions, the "One EMR software platform" panels and the meta description. Images and their alt text are unchanged, and the sections keep their existing order on the page. The earlier notes below describe the 2026-10-14 version.'
   - 'Source: the live https://www.easyclinic.io/emr-software-in-fiji/ (fetched 2026-10-14). Sections and wording are the live page''s, in a new order, one block type per section.'
   - 'Edits the publish rules required: banned words removed ("seamless", "streamline", "comprehensive", "end-to-end", "robust", "modern clinics", "for modern healthcare"); "EasyClinic" written as "Easy Clinic"; em dashes in headings replaced; headings in sentence case and FAQ questions ending in a question mark; "proven results" cut (claims rule); "Learn More" buttons given descriptive labels.'
   - 'FAQ: country pages carry 8 to 10 questions; the live page has 13. Left out: "Does Easy Clinic provide AI EMR software in Fiji" (repeats the opener), "Can clinic management software replace AI EMR software" and "How does AI EMR software improve patient care" (both repeat other answers).'

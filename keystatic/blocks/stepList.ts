@@ -1,4 +1,4 @@
-import { defineBlock, group, list, md, text } from '../fields.ts';
+import { choice, defineBlock, group, list, md, text } from '../fields.ts';
 
 /** `stepList` section (Zod: src/components/blocks/StepList/schema.ts): numbered steps, such as the onboarding plan. */
 export const stepList = defineBlock('stepList', 'Steps', {
@@ -11,4 +11,5 @@ export const stepList = defineBlock('stepList', 'Steps', {
     { label: 'Steps', min: 2, max: 10, itemLabel: (props) => props.fields.title.value || 'Step' },
   ),
   note: md('Note', { description: 'Shown under the steps.' }),
+  layout: choice('Layout', ['cards', 'timeline'] as const, { zodDefault: 'cards' }, { description: 'Cards: one bordered card per step. Timeline: no cards; numbered steps joined by a line.' }),
 });

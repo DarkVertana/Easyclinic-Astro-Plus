@@ -1,0 +1,50 @@
+---
+/**
+ * The country-page hero (owner request 2026-11-12: /emr-software-in-ghana/). No eyebrow and no image. The heading, the answer, the CTAs, the ratings and the byline sit beside the local contact card
+ * (the `aside` slot), whose top edge is level with the heading; below 1200px the card drops under them.
+ */
+import type { ReferenceDataEntry } from 'astro:content';
+import Button from '../ui/Button.astro';
+import Md from '../ui/Md.astro';
+import AuthorByline from './AuthorByline.astro';
+import HeroStrip from './HeroStrip.astro';
+
+interface Props {
+  h1: string;
+  openingAnswer: string;
+  ctas: { primary: { label: string; href: string; event?: string }; secondary?: { label: string; href: string; event?: string } };
+  heroStrip?: { regulators: ReferenceDataEntry<'regulators'>[]; ratings: boolean; study: boolean };
+  byline?: { author: ReferenceDataEntry<'authors'> | null; reviewedBy?: ReferenceDataEntry<'authors'>; lastUpdated: Date | null };
+}
+
+const { h1, openingAnswer, ctas, heroStrip, byline } = Astro.props;
+const aside = Astro.slots.has('aside') ? (await Astro.slots.render('aside')).trim() : '';
+---
+
+<section class="overflow-x-clip rounded-t-[30px] bg-[var(--hero-bg)]">
+  <div class="container-page py-20">
+    <div class:list={['grid items-start gap-x-12 gap-y-8 xl:gap-x-16', aside && 'lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]']}>
+      <div class="max-w-[44rem]">
+        {/* The same size as the section headings below (the h2 scale in global.css) at every width. */}
+        <h1 class="text-balance text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.15]">
+          {h1}
+        </h1>
+        <Md text={openingAnswer} class="lede mt-5 text-ink" />
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button {...ctas.primary} variant="cta" />
+          {ctas.secondary && <Button {...ctas.secondary} variant="outline" />}
+        </div>
+        <HeroStrip heroStrip={heroStrip} class="mt-6" />
+        {byline && <AuthorByline {...byline} class="mt-5 border-t border-line pt-4" />}
+      </div>
+
+      {
+        aside && (
+          <div class="w-full max-w-[44rem] lg:mt-2 lg:max-w-none [&_.card]:rounded-[18px] [&_.card]:p-[30px] [&_.card]:border-line [&_.card]:shadow-[0_18px_40px_-18px_rgb(10_37_64/0.3)]">
+            <Fragment set:html={aside} />
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

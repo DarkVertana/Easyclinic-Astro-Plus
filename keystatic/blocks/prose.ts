@@ -1,5 +1,5 @@
 import { PROSE_WIDTHS } from '../../src/schemas/constants.ts';
-import { choice, cta, defineBlock, md, media } from '../fields.ts';
+import { choice, cta, defineBlock, flag, md, media } from '../fields.ts';
 
 /** A few words of a Markdown string for the sections list. */
 function preview(value: string): string {
@@ -21,6 +21,8 @@ export const prose = defineBlock(
     link: cta('Main button', { optional: true }),
     secondary: cta('Second button', { optional: true }),
     media: media('Image', { optional: true }),
+    checklist: flag('Ticked bullets beside the image', { zodDefault: false }),
+    flush: flag('No bottom padding (text-only sections)', { zodDefault: false }),
   },
   (props) => `Prose: ${props.fields.heading.value || preview(props.fields.body.value) || 'empty'}`,
 );

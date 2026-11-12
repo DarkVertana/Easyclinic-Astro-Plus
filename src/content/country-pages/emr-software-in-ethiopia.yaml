@@ -10,16 +10,16 @@ secondaryKeywords:
   - EHR software Ethiopia
 title: AI EMR Software in Ethiopia | Easy Clinic
 metaDescription: >-
-  AI EMR and clinic management software for clinics, health centres and hospitals in Ethiopia, from Addis
-  Ababa to rural regions.
+  Easy Clinic is EMR software in Ethiopia for clinics, health centres and clinic chains. Prescriptions,
+  billing, pharmacy and reports in one login.
 h1: AI EMR software for clinics in Ethiopia
 linkLabel: EMR software in Ethiopia
-eyebrow: Best EMR software in Ethiopia 2026
+eyebrow: AI EMR software in Ethiopia
 openingAnswer: >-
-  AI EMR software in Ethiopia is a cloud platform that records, stores and analyses patient data, with AI
-  handling documentation, scheduling, billing and follow-up. For Ethiopian clinics the real test is reach:
-  the same record has to work for a specialist in Addis Ababa and a health worker in a rural region, often
-  on a phone.
+  Easy Clinic is EMR software in Ethiopia that runs the whole clinic from one login. Reception, doctors, lab,
+  pharmacy and billing each work from their own queue, and the patient record moves with the patient. It
+  works the same for a specialist in Addis Ababa and an outreach team in a rural region, on a laptop or a
+  tablet.
 summary: >-
   AI EMR and clinic management software for clinics, health centres and hospitals in Ethiopia, from Addis
   Ababa to rural regions.
@@ -43,38 +43,40 @@ ctas:
   whatsapp: Hi, I was reading the Easy Clinic page on EMR software in Ethiopia and would like a demo for my clinic.
 
 sections:
-  # 1. Definition and comparison: a responsive table (cards on phones).
+  # Definition and comparison: a responsive table (cards on phones).
   - discriminant: dataTable
     value:
       id: what-is-ai-emr
       eyebrow: AI EMR and clinic software
       heading: What is AI EMR software and clinic management software in Ethiopia?
       intro: >-
-        One platform covers the record and the clinic around it: **centralised patient records**, automated
-        scheduling and billing, integrated clinic management software, and real-time analytics and insights.
-        Compare our features, ease of use and pricing with other clinic management platforms to see the
-        difference.
+        EMR (electronic medical record) software is the digital record a clinic keeps for each patient. Clinic
+        management software runs the day around it: appointments, billing, pharmacy, lab and reports. Easy
+        Clinic does both in one system, and Cura AI, an optional add-on, helps the doctor during the visit.
       tone: plain
-      caption: EHR software vs clinic management software vs AI EMR software in Ethiopia
-      columns: [Features, Traditional EHR software, Basic clinic management, AI EMR software (Easy Clinic)]
+      wideIntro: true
+      variant: compare
+      caption: Paper or basic records vs basic clinic software vs AI EMR software in Ethiopia
+      columns: [Features, Paper or basic records, Basic clinic software, AI EMR software (Easy Clinic)]
       rows:
-        - [Patient records, Digital storage only, Limited integration, '**Fully integrated AI EMR system**']
-        - [Automation, Minimal, Partial, '**Advanced AI automation**']
-        - [Billing and payments, Not included, Moderate, '**Fully automated and accurate**']
-        - [Inventory management, Not included, Basic tracking, '**Real-time monitoring**']
-        - [Multi-location support, Difficult, Partial, '**Fully centralised control**']
-        - [Analytics, Basic report, Limited insights, '**Advanced dashboards**']
-        - [Communication, Not integrated, Limited, '**SMS, WhatsApp and email**']
-        - [Scalability, Low, Moderate, '**High for clinics and hospitals**']
+        - [Patient records, Files and registers, Records only, '**Full history, every visit by every doctor, and documents kept for life**']
+        - [Prescriptions, Handwritten, Typed from scratch, '**Under 30 seconds with Ready Rx and shortcut keys, printed or sent on WhatsApp**']
+        - [Billing and payments, Manual receipts, Basic invoices, '**One invoice for consultation, tests and medicines, with part payments and refunds**']
+        - [Inventory management, Stock registers, Basic tracking, '**Batches and expiry dates, with stock that drops only when medicine is dispensed**']
+        - [Multi-location support, Separate files per site, Limited, '**One login with a location dropdown and shared stock**']
+        - [Analytics, Counted by hand, A few reports, '**Clinical and financial dashboards and about 25 standard reports**']
+        - [Communication, Phone calls, SMS, '**WhatsApp, SMS, email and video consultations**']
+        - [Clinical AI, None, None, '**Cura AI, a paid add-on that flags and suggests while the doctor decides**']
+        - [Scalability, One room, Small clinics, '**A solo clinic to a 250-clinic chain**']
 
-  # 2. Clinic types: persona cards.
-  - discriminant: clinicTypes
+  # Clinic types: the home page's persona cards (owner request 2026-11-12).
+  - discriminant: personaRouter
     value:
       id: clinic-types
       eyebrow: Pick your clinic
       heading: Choose your clinic type for the features in Ethiopia
       intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
-      tone: wash
+      tone: mist
       items:
         - persona: solo
           title: Solo practice
@@ -91,142 +93,159 @@ sections:
         - persona: ngo
           title: NGO clinic
           body: For non-profit and mission-driven clinics, fixed or mobile, that need affordable digital records.
-          href: /features/
+          href: /solutions/ngo-clinics/
 
-  # 3. Proof: the AI clinical pilot, with the study figures from study.yaml.
+  # Proof: the AI clinical pilot, with the study figures from study.yaml.
   - discriminant: proofBlock
     value:
-      id: ai-clinical-pilot
+      id: study
       eyebrow: AI clinical pilot
       heading: We built the platform behind the world's largest AI clinical pilot
       tone: plain
       variant: study
-      figures: [visits, diagnostic-errors]
+      figures:
+        - visits
+        - diagnostic-errors
       body: >-
         Join the clinics and hospitals that trust Easy Clinic to run daily care. From prompt engineering to
-        frontline integration, Easy Clinic powered the AI Copilot used with OpenAI across {fig:visits}
-        patient visits at Penda Health's clinics in Nairobi. This is just the beginning.
+        frontline integration, Easy Clinic powered the AI Copilot used with OpenAI across {fig:visits} patient
+        visits at Penda Health's clinics in Nairobi. This is just the beginning.
       link:
         label: Read the article by OpenAI
         href: https://openai.com/index/ai-clinical-copilot-penda-health/
 
-  # 4. The five modules: alternating screenshot rows.
-  - discriminant: featureRows
+  # The five modules: the home page's stacked feature cards (owner request 2026-11-12).
+  - discriminant: featureTabs
     value:
       id: features
       eyebrow: Features
       heading: Clinic management software features that drive smarter care
       tone: wash
-      items:
-        - heading: Clinic management
-          icon: calendar-clock
-          body: >-
-            From solo practices to clinic chains, Easy Clinic simplifies operations, keeps patient flow moving
-            and delivers complete visibility, while improving the patient experience.
-          bullets:
-            - Smart appointment scheduling
-            - Billing, payments and financial transactions
-            - Dynamic pricing engine
-            - Multi-layered access control
-            - Patient engagement from booking to follow-up
+      tabs:
+        - label: Clinic management
+          icon: hospital
+          body: From solo practices to clinic chains, Easy Clinic simplifies operations, keeps patient flow moving and delivers complete visibility, while improving the patient experience.
+          capabilities:
+            - label: Smart appointment scheduling
+              icon: calendar-clock
+            - label: Billing, payments and financial transactions
+              icon: receipt
+            - label: Multi-level price lists
+              icon: tags
+            - label: Role-based access control
+              icon: shield-check
+            - label: Patient engagement from booking to follow-up
+              icon: message-circle-heart
           media:
-            src: ../../assets/images/tabs/Clinic-Management.png
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
             alt: Easy Clinic appointment calendar for two doctors with day visits, an appointment card, a token list and a reminder
             frame: none
           link:
             label: See appointment scheduling
             href: /features/appointment-scheduling/
-        - heading: EMR
-          icon: notebook-pen
-          body: >-
-            Easy Clinic's EMR combines the simplicity of paper with the power of intelligent digital tools. It is
-            fast, intuitive and fully customisable across specialties.
-          bullets:
-            - Customised EMR templates
-            - Patient data visualisation
-            - AI-powered documentation assistance
-            - 30-second prescriptions
-            - Full medical history record
+        - label: EMR
+          icon: file-heart
+          body: Easy Clinic's EMR combines the simplicity of paper with the power of intelligent digital tools. It is fast, intuitive and fully customisable across specialties.
+          capabilities:
+            - label: Customised EMR templates
+              icon: layout-template
+            - label: Trend charts for readings over time
+              icon: chart-line
+            - label: Shortcut keys and Ready Rx for fast notes
+              icon: clipboard-list
+            - label: 30-second prescriptions
+              icon: timer
+            - label: Full medical history record
+              icon: history
           media:
-            src: ../../assets/images/tabs/1_EMR-1.png
-            alt: Easy Clinic visit record with chief complaints, vitals, clinical notes, diagnosis, medications with dosage options, a language picker and a blood sugar chart
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic visit record with chief complaints, vitals, diagnosis, medications with dosage options, a language picker for printing and a blood sugar chart
             frame: none
           link:
             label: See the EMR in detail
             href: /features/emr/
-        - heading: Inventory and pharmacy
+        - label: Inventory and pharmacy
           icon: pill
-          body: >-
-            Easy Clinic's inventory and pharmacy module manages everything from procurement to dispensing, with
-            full traceability, automation and control. It keeps stock accurate, cost-efficient and transparent.
-          bullets:
-            - Inventory management
-            - Complete logistics workflow
-            - EMR integration
-            - AI-assisted reorder management
-            - Pilferage prevention and internal controls
-            - Real-time tracking and alerts
+          body: Easy Clinic's inventory and pharmacy module manages everything from procurement to dispensing, with full traceability, automation and control. It keeps stock accurate, cost-efficient and transparent.
+          capabilities:
+            - label: Inventory management
+              icon: boxes
+            - label: Complete logistics workflow
+              icon: truck
+            - label: EMR integration
+              icon: link
+            - label: AI-assisted reorder management
+              icon: refresh-cw
+            - label: Pilferage prevention and internal controls
+              icon: shield-alert
+            - label: Real-time tracking and alerts
+              icon: bell-ring
           media:
-            src: ../../assets/images/tabs/9_01_Inventory_Pharmacy-2.png
-            alt: Easy Clinic pharmacy screen with a dispense list, a dispensing invoice, a medicine label, an expiring stock list and monthly progress charts
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic inventory screens with products and services, stock levels with low-stock and reorder flags, units of measure and an order versus consumption chart
             frame: none
           link:
             label: See pharmacy and inventory
             href: /features/pharmacy-and-inventory/
-        - heading: AI and automation
-          icon: sparkles
-          body: >-
-            Easy Clinic uses AI and automation to reduce errors and keep work consistent across locations,
-            improving decision-making, compliance and efficiency at scale.
-          bullets:
-            - AI as a clinical decision-making partner
-            - AI-assisted patient intake and triage
-            - Compliance and SOP monitoring
-            - Smart billing automation
-            - Fraud prevention and pilferage control
+        - label: AI and automation
+          icon: brain-circuit
+          body: Easy Clinic uses AI and automation to keep work consistent across every room and location. The clinic sets the rules, and the doctor stays in charge of every clinical decision.
+          capabilities:
+            - label: Cura AI flags details that do not add up during the visit (paid add-on)
+              icon: brain
+            - label: Diagnosis and treatment suggestions the doctor can accept or ignore
+              icon: lightbulb
+            - label: Compliance and SOP monitoring
+              icon: list-checks
+            - label: Billing triggers that add linked charges automatically
+              icon: receipt
+            - label: Pilferage control, with stock that drops only on dispense
+              icon: scan-eye
           media:
             src: ../../assets/images/tabs/18_User.png
             alt: Easy Clinic user management with roles, appointment permissions by role and a weekly doctor roster
             frame: none
           link:
             label: See Easy Clinic's AI features
-            href: /ai/
-        - heading: BI and reporting
-          icon: chart-column
-          body: >-
-            Easy Clinic's reports and dashboard module blends efficiency with insight, organising data and
-            delivering automated reports that support better decisions at any scale.
-          bullets:
-            - Customisable dashboards and reports
-            - AI-powered analysis
-            - Enterprise-scale data integration
-            - Automated reporting
+            href: /curapilot/
+        - label: BI and reporting
+          icon: chart-pie
+          body: Easy Clinic's reports and dashboard module blends efficiency with insight, organising data and delivering automated reports that support better decisions at any scale.
+          capabilities:
+            - label: Customisable dashboards and reports
+              icon: layout-dashboard
+            - label: Clinical and financial dashboards
+              icon: chart-column
+            - label: Power BI data warehouse for clinic chains
+              icon: database
+            - label: Automated reporting
+              icon: file-chart-column
           media:
-            src: ../../assets/images/tabs/14_Dashboard.jpg
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
             alt: Easy Clinic dashboards with patients by specialisation, top diagnoses, patients by week, invoices by status and today's report
             frame: none
           link:
             label: See reports and dashboards
             href: /features/reports-and-dashboards/
 
-  # 5. Daily practice: a numbered step sequence.
+  # Daily practice: a numbered timeline, no cards (owner request 2026-11-12).
   - discriminant: stepList
     value:
       id: daily-practice
+      layout: timeline
       eyebrow: How it works
       heading: How AI EMR software works in daily practice in Ethiopia
       intro: >-
-        Easy Clinic ties AI EMR, clinic management software and EHR software into one platform for Ethiopian
-        providers, from a solo practice in Addis Ababa to outreach teams and health centres reaching rural
-        regions.
+        Easy Clinic runs the same way for a solo practice in Addis Ababa and an outreach team reaching rural
+        regions. Here is a typical day.
       tone: plain
       steps:
         - title: Records at the consult
           body: Doctors and health workers open patient records.
         - title: Bills and receipts
-          body: Bills and receipts are generated automatically.
+          body: One invoice covers the consultation, tests and medicines, with linked charges added automatically.
         - title: Notes and prescriptions
-          body: AI drafts notes and prescriptions.
+          body: Ready Rx and shortcut keys finish notes and prescriptions in under 30 seconds.
         - title: Pharmacy stock
           body: Pharmacy stock is tracked in real time, with automatic reorder alerts.
         - title: Owner's view
@@ -234,7 +253,7 @@ sections:
         - title: Teleconsultation
           body: Teleconsultation reaches patients in regions far from the nearest clinic.
 
-  # 6. Why clinics adopt, with when to switch and the signs in the aside.
+  # Why clinics adopt, with when to switch and the signs in the aside.
   - discriminant: prose
     value:
       id: why-adopt
@@ -246,21 +265,27 @@ sections:
 
         - Secure records, required by law
         - AI EMR software for digital health
-        - EHR software over paper
+        - Digital records over paper
         - AI EMR cuts the documentation load
       aside: |
         **When should clinics in Ethiopia switch to AI EMR software?**
 
         Switch when paper slows care, errors creep in, or proving data-protection compliance gets hard. Early movers gain a clear edge in efficiency and patient experience.
 
-        **Signs your clinic needs AI EMR or EHR software**
+        **Signs your clinic needs EMR software**
 
         - Paper files and manual registers are creating daily bottlenecks
         - You run separate tools for records, pharmacy and billing
         - No-shows and missed follow-ups are rising
       width: wide
+      checklist: true
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/8_Appointment.png
+        alt: Easy Clinic appointment calendar for two doctors, with day visits, a booking card, a token list and a reminder
+        frame: none
 
-  # 7. Key benefits: an icon card grid.
+  # Key benefits: an icon card grid.
   - discriminant: moduleGrid
     value:
       id: benefits
@@ -268,6 +293,7 @@ sections:
       heading: Key benefits of using EMR software in Ethiopia
       tone: plain
       columns: 3
+      variant: accent
       items:
         - title: Digital patient records with AI EMR software
           icon: file-text
@@ -275,17 +301,20 @@ sections:
         - title: Cloud access and teleconsultation
           icon: globe
           outcome: Cloud access for clinics in Addis Ababa, Dire Dawa and Hawassa, with teleconsultation for rural patients.
-        - title: AI that saves time
+        - title: Tools that save time
           icon: sparkles
-          outcome: Automatic notes, reminders and visit summaries from the AI EMR engine.
+          outcome: >-
+            Ready Rx, shortcut keys and investigation profiles cut typing, and WhatsApp reminders go out
+            automatically the day before and on the day.
 
-  # 8. Problems solved: four problem panels.
+  # Problems solved: four problem panels.
   - discriminant: painBlocks
     value:
       id: problems-we-solve
       eyebrow: Problems we solve
       heading: The problems Easy Clinic solves for clinics in Ethiopia
       tone: wash
+      variant: checklist
       items:
         - heading: Clinic operations
           body: |
@@ -310,62 +339,93 @@ sections:
             For clinics running multiple doctors or locations across Ethiopia, Easy Clinic gives owners
             centralised visibility into every patient, prescription and treatment plan across the practice.
 
-  # 9. Customer feedback: two cards in a row.
-  - discriminant: testimonialRow
-    value:
-      id: customer-feedback
-      heading: Easy Clinic reviews and customer feedback
-      tone: plain
-      items: [v-ramanathan, sb-bhattacharyya]
-      layout: row
-      usePullQuote: false
-
-  # 10. Data ownership: the promise, as an exclusion list.
+  # Data ownership: the promise, as an exclusion list.
   - discriminant: scopeBox
     value:
       id: your-data
       eyebrow: Your data
       heading: Your data is secure and belongs only to you
       intro: >-
-        The Ministry of Health eHealth strategy mandates structured records, secure storage and reporting
-        compliance. Easy Clinic delivers structured reporting and donor-friendly scalability for urban and
-        rural clinics moving from paper systems.
-      tone: wash
+        Ethiopia's digital health strategy calls for structured, secure patient records. Easy Clinic keeps
+        every record structured and protected, with role-based access, audit logs and encryption in transit
+        and at rest. Easy Clinic lists compliance with HIPAA and GDPR, and it scales from a single urban
+        clinic to donor-funded programmes moving off paper.
+      tone: plain
       variant: isNot
       items:
-        - '**A seller of your data.** We do not misuse, sell or pry on your patient, clinical, financial or administrative data.'
-        - '**An owner of your records.** All the data and records belong only to you.'
+        - '**Never sold.** We do not misuse, sell or pry on your patient, clinical, financial or administrative data.'
+        - '**Always yours.** All the data and records belong only to you.'
+
+  # Customer quotes: the pricing page's carousel; the template shows it directly above the FAQ (owner request 2026-11-13).
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
 
 faqHeading: You have questions, we have answers
+faqHelp: Message our India WhatsApp line on +91 91477 70277, or ask the team that sets up and supports your clinic.
 faq:
   - question: Is Easy Clinic suitable for clinics in Addis Ababa and across Ethiopia?
     answer: >-
-      Yes. Easy Clinic works for clinics, health centres and hospitals in Addis Ababa, Dire Dawa, Bahir Dar,
-      Hawassa and rural regions.
-  - question: Is Easy Clinic suitable for clinics in Mekelle and Adama?
+      Yes. Easy Clinic runs solo clinics, polyclinics, health centres and clinic chains in Addis Ababa, Dire
+      Dawa, Bahir Dar, Hawassa, Mekelle, Adama and beyond. One login covers every specialty, and each role
+      works from its own queue. It runs in any browser on a laptop or tablet, so there is nothing to install
+      at the clinic.
+  - question: How much does Easy Clinic cost in Ethiopia?
     answer: >-
-      Yes, Easy Clinic works for clinics, health centres and hospitals across Ethiopian cities including
-      Mekelle, Adama, Gondar and Jimma, as well as Addis Ababa.
-  - question: Is Easy Clinic suitable for a single-doctor clinic in Ethiopia?
-    answer: Yes, Easy Clinic works for solo practitioners as well as large multi-location hospital groups.
-  - question: Does Easy Clinic support pharmacy and inventory management?
-    answer: Yes, Easy Clinic includes pharmacy and inventory tracking as part of its clinic management features.
-  - question: Can patients book teleconsultations through Easy Clinic?
-    answer: >-
-      Yes, Easy Clinic supports teleconsultation alongside in-person appointment scheduling, so it reaches
-      patients in regions far from the nearest clinic.
-  - question: Does Easy Clinic send automated patient reminders?
-    answer: Yes, appointment and follow-up reminders are sent automatically via WhatsApp, SMS and email.
-  - question: Can Easy Clinic generate reports on clinic performance?
-    answer: >-
-      Yes, Easy Clinic provides reports on patient visits, revenue and clinic performance, so owners see
-      revenue, patient footfall and clinical trends.
+      Easy Clinic is priced per doctor. Professional is $79 and Premium $99 per doctor per month, billed
+      annually, and Enterprise is on a quote. Every plan includes a login for your receptionist at no extra
+      cost, and there is no setup fee for clinics up to 5 users. Ask us for birr pricing.
   - question: Is patient data secure on Easy Clinic?
     answer: >-
-      Yes, Easy Clinic is a secure, cloud-based platform designed to protect sensitive patient health
-      information.
+      Yes. Easy Clinic lists compliance with HIPAA and GDPR. Records are protected with role-based access,
+      audit logs and encryption in transit and at rest, and each person sees only what their role needs. Your
+      patient data belongs to your clinic. We never sell it, and you can export it at any time.
+  - question: Does Easy Clinic support pharmacy and inventory management?
+    answer: >-
+      Yes. The pharmacy queue shows each prescription before the patient arrives. Batches that expire first
+      show on top, the pharmacist can adjust quantity before dispensing, and stock drops only when medicine is
+      dispensed. Purchase orders, goods receipt, transfers and stock take are built in, and one stock list can
+      serve every site.
+  - question: Can patients book teleconsultations through Easy Clinic?
+    answer: >-
+      Yes. Premium and Enterprise include built-in video consultations, booked from the same calendar as
+      in-person visits. That helps clinics reach patients in regions far from the nearest clinic, and
+      follow-ups stay on the same patient record. Prescriptions from a video visit go to the patient on
+      WhatsApp.
+  - question: Does Easy Clinic send automated patient reminders?
+    answer: >-
+      Yes. Appointment and follow-up reminders go out on WhatsApp, SMS or email, the day before and again on
+      the day of the visit, never at night. Prescriptions, invoices and lab reports can go on WhatsApp too,
+      with a monthly message allowance by plan.
+  - question: Can Easy Clinic generate reports on clinic performance?
+    answer: >-
+      Yes. Owners see revenue, patient footfall, top diagnoses, busiest days and revenue by user on clinical
+      and financial dashboards. About 25 standard reports cover clinical, admin and inventory work, and every
+      report exports to Excel or PDF. Clinic chains can add a Power BI data warehouse.
   - question: Can Easy Clinic generate prescriptions quickly?
-    answer: Yes, Easy Clinic generates and shares prescriptions in under 30 seconds via print, WhatsApp, SMS or email.
+    answer: >-
+      Yes. With Ready Rx, shortcut keys and investigation profiles, a doctor finishes a prescription in under
+      30 seconds. It prints on your own letterhead or goes to the patient on WhatsApp or email. Medicine
+      instructions and advice can print in the language the patient reads.
+  - question: Is Cura AI included in every plan?
+    answer: >-
+      Cura AI is a paid add-on that works with any plan. It runs in the background at registration, triage
+      and the consultation. It flags what does not add up, such as a missed allergy, and suggests diagnosis
+      and treatment. The clinic sets the triggers and alert style, and the doctor always decides.
+  - question: Does Easy Clinic work with a weak internet connection?
+    answer: >-
+      Easy Clinic is cloud software that runs in the browser, so it needs a connection, and it does not run
+      fully offline today. Most clinics keep a mobile data hotspot beside the reception computer as a backup
+      line, so registration, prescriptions and billing carry on if the main line drops.
 
 links:
   hub: /countries/
@@ -373,10 +433,10 @@ links:
   related:
     - href: /best-clinic-management-software-ethiopia/
       label: Best clinic software in Ethiopia
-      description: Three clinic systems ranked for a clinic in Ethiopia, plus Easy Clinic unranked, every fact sourced.
+      description: Easy Clinic and other clinic software in Ethiopia, compared side by side.
     - href: /countries/
       label: Book a demo from Ethiopia
-      description: Clinics outside India and Kenya book a demo from the countries page.
+      description: A 20-minute demo built around your own clinic day.
     - href: /pricing/
       label: Easy Clinic pricing
       description: See our plans and pick what fits your clinic.
@@ -398,9 +458,9 @@ problems:
     - title: Why paper-based clinics are losing patients in Ethiopia
       icon: file-text
       body: >-
-        Patients today expect fast prescriptions, SMS reminders and instant access to their treatment
-        history. Paper registers can't deliver that at scale, and clinics still relying on them risk losing
-        patients to practices that feel more organised and professional.
+        Patients today expect fast prescriptions, reminders on their phone and instant access to their
+        treatment history. Paper registers cannot deliver that at scale, and clinics still relying on them
+        risk losing patients to practices that feel more organised.
     - title: The EMR software Ethiopian clinics switch to after outgrowing Excel
       icon: layers
       body: >-
@@ -410,9 +470,8 @@ problems:
     - title: 'From small clinics to hospital chains: one EMR that scales'
       icon: network
       body: >-
-        Whether you're a single clinic in Addis Ababa or running a multi-location hospital chain across
-        Ethiopia, Easy Clinic scales with your practice. The same platform supports a solo consultation room
-        and a multi-branch hospital group.
+        Whether you run a single clinic in Addis Ababa or a multi-location group across Ethiopia, the same
+        platform supports a solo consultation room and a chain of 250 clinics.
 
 closing:
   eyebrow: Ready to transform your practice?
@@ -439,6 +498,7 @@ editorialPass:
     add Ethiopian clinic detail.
 
 notes:
+  - 'Content update 2026-11-13: copy replaced from the owner''s content document (easyclinic-emr-software-in-ethiopia-audit.html): the hero eyebrow and opening answer, the comparison table, clinic-type cards, study section, features, daily-practice steps, benefits (now three cards), data section, FAQ (now ten questions, with pricing, Cura AI and weak-internet answers), related-link descriptions, the "Built for Ethiopia" panels and the meta description. Images and their alt text are unchanged. The customer quotes carousel (owner request 2026-11-13) stays in place of the document''s older two-quote reviews section. The earlier notes below describe the 2026-10-14 version.'
   - 'Source: the live https://www.easyclinic.io/emr-software-in-ethiopia/ (fetched 2026-10-14). Sections and wording are the live page''s, in a new order, one block type per section.'
   - 'Owner decision 2026-10-14: unconfirmed claims are removed, not copied. Cut: "Works offline" (H1), offline and mobile mode, sync when back online, offline-first design (migration/research/facts.md: Easy Clinic does not run fully offline today); Telebirr, CBE Birr and ETB billing; the Amharic and English interface and bilingual prescriptions; compliance with the Personal Data Protection Proclamation 2024 (the law itself is described, no compliance is claimed); "low-bandwidth performance". The FAQs on those topics are left out, which also brings the FAQ to the 8 to 10 that country pages carry (the live page has 15).'
   - 'Edits the publish rules required: banned words removed ("seamless", "streamline", "comprehensive", "end-to-end", "robust"); "EasyClinic" written as "Easy Clinic"; em dashes in headings replaced; headings in sentence case; "proven results" cut (claims rule); "Learn More" buttons given descriptive labels; the teleconsultation and reports FAQ answers extended with the live page''s own lines so each is a full sentence of at least 12 words.'

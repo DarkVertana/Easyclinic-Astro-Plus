@@ -43,7 +43,7 @@ ctas:
   whatsapp: Hi, I was reading the Easy Clinic page on EMR software in India and would like a demo for my clinic.
 
 sections:
-  # 1. Definition and comparison: a responsive table (cards on phones).
+  # Definition and comparison: the compare table.
   - discriminant: dataTable
     value:
       id: emr-vs-ehr
@@ -55,6 +55,8 @@ sections:
         prescriptions, pharmacy, inventory and reporting. An EMR is the doctor's digital chart for one clinic.
         An EHR is a portable record that travels with the patient across providers. **Easy Clinic combines all
         three on one platform**, so you don't have to choose between a doctor-facing tool and a front-desk tool.
+      wideIntro: true
+      variant: compare
       caption: EHR software vs clinic management software vs EMR software in India
       columns: [Feature, Traditional EHR software, Basic clinic management software, AI EMR software (Easy Clinic)]
       rows:
@@ -67,142 +69,163 @@ sections:
         - [Communication, Not integrated, Limited, '**SMS, WhatsApp, email and teleconsultation**']
         - [Scalability, Low, Moderate, '**High for clinics and hospitals**']
 
-  # 2. Clinic types: persona cards.
-  - discriminant: clinicTypes
+  # Clinic types: the home page's persona cards (owner request 2026-11-12).
+  - discriminant: personaRouter
     value:
       id: clinic-types
-      tone: wash
       eyebrow: Pick your clinic
-      heading: Choose your clinic type for the features in India
+      heading: "Choose your Clinic Type for\nFeatures that suit you"
       intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
+      tone: mist
       items:
         - persona: solo
-          title: Solo practice
-          body: >-
-            For physicians and specialists running a single clinic, with or without front-desk support. Get an
-            EMR, appointments, billing and patient reminders in one simple platform.
+          title: Solo Practice
+          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist, all on one simple system.
           href: /solutions/solo-clinic/
         - persona: polyclinic
-          title: Specialist polyclinic
-          body: For OPD practices and polyclinics with multiple doctors and specialists, with optional pharmacy and lab modules.
+          title: Specialist Polyclinic
+          body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
           href: /solutions/polyclinic/
         - persona: chain
-          title: Clinic chains
-          body: >-
-            For groups running multiple clinics or a small hospital. Centralised patient records, multi-location
-            reporting, role-based access and consolidated billing across branches.
+          title: Clinic Chains
+          body: Suitable for clinic chains across multiple locations that need centralised management and custom business processes.
           href: /solutions/clinic-chain/
         - persona: ngo
-          title: NGO clinic
-          body: >-
-            For non-profit clinics and mobile outreach programmes that need a low-cost, mobile-first way to
-            maintain patient records and basic clinical workflows.
-          href: /features/
+          title: NGO Clinic
+          body: Suitable for non-profit and mission-driven healthcare organisations that operate one or more clinic sites, with records and stock reports.
+          href: /solutions/ngo-clinics/
 
-  # 3. The five modules: alternating screenshot rows.
-  - discriminant: featureRows
+  # Proof: the home page's Penda Health study section (owner request 2026-11-12).
+  - discriminant: proofBlock
+    value:
+      id: study
+      eyebrow: The Penda Health study
+      heading: What changed when clinicians had AI inside the record
+      tone: plain
+      variant: study
+      figures:
+        - visits
+        - diagnostic-errors
+        - treatment-errors
+        - history-errors
+      body: |
+        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on Easy Clinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's Easy Clinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
+
+        The results are published as a preprint on arXiv, not in a journal.
+      link:
+        label: Read how the study was run
+        href: /curapilot/
+
+  # The five modules: the home page's stacked feature cards (owner request 2026-11-12).
+  - discriminant: featureTabs
     value:
       id: features
-      tone: plain
       eyebrow: Features
-      heading: Clinic management software features that drive smarter care
-      items:
-        - heading: Clinic management
-          icon: calendar-clock
-          body: >-
-            From solo practices to clinic chains, Easy Clinic simplifies operations, keeps patient flow moving
-            and delivers complete visibility, while improving the patient experience.
-          bullets:
-            - Smart appointment scheduling
-            - Billing, payments and financial transactions
-            - Dynamic pricing engine
-            - Multi-layered access control
-            - Patient engagement from booking to follow-up
+      heading: Clinic Management Software Features That Drive Smarter Care
+      tone: wash
+      tabs:
+        - label: Clinic Management
+          icon: hospital
+          body: From solo practices to clinic chains, Easy Clinic simplifies operations, speeds up patient flow, and gives you complete visibility, while improving the patient experience.
+          capabilities:
+            - label: Smart Appointment Scheduling
+              icon: calendar-clock
+            - label: Billing, Payments & Financial Transactions
+              icon: receipt
+            - label: Multi-Layered Access Control
+              icon: shield-check
+            - label: Patient Engagement from Booking to Follow-up
+              icon: message-circle-heart
           media:
-            src: ../../assets/images/tabs/Clinic-Management.png
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
             alt: Easy Clinic appointment calendar for two doctors with day visits, an appointment card, a token list and a reminder
             frame: none
           link:
-            label: See appointment scheduling
+            label: Learn more
             href: /features/appointment-scheduling/
-        - heading: EMR
-          icon: notebook-pen
-          body: >-
-            Easy Clinic's EMR combines the simplicity of paper with the power of intelligent digital tools. It is
-            fast, intuitive and fully customisable across specialties.
-          bullets:
-            - Customised EMR templates
-            - Patient data visualisation
-            - AI-powered documentation assistance
-            - 30-second prescriptions
-            - Full medical history record
+        - label: EMR
+          icon: file-heart
+          body: Easy Clinic's EMR combines the simplicity of paper with smart digital tools. It is fast, easy to learn, and customisable for each speciality.
+          capabilities:
+            - label: Customised EMR Templates
+              icon: layout-template
+            - label: AI-Powered Documentation Assistance
+              icon: sparkles
+            - label: 30-Second Prescriptions
+              icon: timer
+            - label: Complete Medical History Record
+              icon: history
           media:
-            src: ../../assets/images/tabs/1_EMR-1.png
-            alt: Easy Clinic visit record with chief complaints, vitals, clinical notes, diagnosis, medications with dosage options, a language picker and a blood sugar chart
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic visit record with chief complaints, vitals, diagnosis, medications with dosage options, a language picker for printing and a blood sugar chart
             frame: none
           link:
-            label: See the EMR in detail
+            label: Learn more
             href: /features/emr/
-        - heading: Inventory and pharmacy
+        - label: Inventory & Pharmacy
           icon: pill
-          body: >-
-            Easy Clinic's inventory and pharmacy module manages everything from procurement to dispensing, with
-            full traceability, automation and control. It keeps stock accurate, cost-efficient and transparent.
-          bullets:
-            - Inventory management
-            - Complete logistics workflow
-            - EMR integration
-            - AI-assisted reorder management
-            - Pilferage prevention and internal controls
-            - Real-time tracking and alerts
+          body: Easy Clinic's Inventory and Pharmacy module manages everything from procurement to dispensing, with stock tracked at every step. It helps you keep stock accurate and costs in check.
+          capabilities:
+            - label: Full Inventory Management
+              icon: boxes
+            - label: AI-Assisted Reorder Management
+              icon: refresh-cw
+            - label: Barcode Support
+              icon: shield-alert
+            - label: Real-Time Tracking & Alerts
+              icon: bell-ring
           media:
-            src: ../../assets/images/tabs/9_01_Inventory_Pharmacy-2.png
-            alt: Easy Clinic pharmacy screen with a dispense list, a dispensing invoice, a medicine label, an expiring stock list and monthly progress charts
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
+            alt: Easy Clinic inventory screens with products and services, stock levels with low-stock and reorder flags, units of measure and an order versus consumption chart
             frame: none
           link:
-            label: See pharmacy and inventory
+            label: Learn more
             href: /features/pharmacy-and-inventory/
-        - heading: AI and automation
-          icon: sparkles
-          body: >-
-            Easy Clinic uses AI and automation to reduce errors and keep work consistent across locations,
-            improving decision-making, compliance and efficiency at scale.
-          bullets:
-            - AI as a clinical decision-making partner
-            - AI-assisted patient intake and triage
-            - Compliance and SOP monitoring
-            - Smart billing automation
-            - Fraud prevention and pilferage control
+        - label: AI & Automation
+          icon: brain-circuit
+          body: Easy Clinic uses AI and automation to simplify workflows and keep every location working the same way. Repetitive work moves off your team, and the doctor stays in charge of every decision.
+          capabilities:
+            - label: Cura AI Documentation Assistant
+              icon: brain
+            - label: AI-Assisted Stock Reorder
+              icon: clipboard-plus
+            - label: SOP & Patient Safety Monitoring
+              icon: list-checks
+            - label: No-Code Workflow Automation
+              icon: scan-eye
           media:
             src: ../../assets/images/tabs/18_User.png
             alt: Easy Clinic user management with roles, appointment permissions by role and a weekly doctor roster
             frame: none
           link:
-            label: See Easy Clinic's AI features
-            href: /ai/
-        - heading: BI and reporting
-          icon: chart-column
-          body: >-
-            Easy Clinic's reports and dashboard module blends efficiency with insight, organising data and
-            delivering automated reports that support better decisions at any scale.
-          bullets:
-            - Customisable dashboards and reports
-            - AI-powered analysis
-            - Enterprise-scale data integration
-            - Automated reporting
+            label: Learn more
+            href: /curapilot/
+        - label: BI & Reporting
+          icon: chart-pie
+          body: Easy Clinic's Reports and Dashboard module organises your data and delivers automated reports, so you can make better decisions at any scale.
+          capabilities:
+            - label: Customisable Dashboards & Reports
+              icon: layout-dashboard
+            - label: Power BI Integration
+              icon: sparkles
+            - label: Enterprise-Scale Data Integration
+              icon: database
+            - label: Automated Reporting
+              icon: file-chart-column
           media:
-            src: ../../assets/images/tabs/14_Dashboard.jpg
+            src: ../../assets/images/tabs/9_01_Inventory-1-1.png
             alt: Easy Clinic dashboards with patients by specialisation, top diagnoses, patients by week, invoices by status and today's report
             frame: none
           link:
-            label: See reports and dashboards
+            label: Learn more
             href: /features/reports-and-dashboards/
 
-  # 4. Daily practice: a numbered step sequence.
+  # Daily practice: a numbered timeline, no cards (owner request 2026-11-12).
   - discriminant: stepList
     value:
       id: daily-practice
-      tone: wash
+      layout: timeline
+      tone: plain
       eyebrow: How it works
       heading: How clinic management and EMR software works in daily practice
       intro: >-
@@ -223,12 +246,11 @@ sections:
           body: Teleconsultation enables remote care for patients who cannot reach the clinic.
       note: This workflow helps clinics in India operate efficiently while improving patient care and satisfaction.
 
-  # 5. Why clinics adopt, with the signs it is time to switch in the aside.
+  # Why clinics adopt, with the signs it is time to switch in the aside.
   - discriminant: prose
     value:
       id: why-adopt
-      tone: plain
-      eyebrow: Why now
+      tone: wash
       heading: Why clinics in India are adopting AI EMR software and EHR software
       body: |
         India's healthcare system is digitising quickly, driven by increasing patient demand, regulatory frameworks, and the need for efficiency in both urban and rural settings.
@@ -253,15 +275,22 @@ sections:
 
         If your clinic faces these challenges, moving to clinic management software is the practical next step for scaling efficiently.
       width: wide
+      checklist: true
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/8_Appointment.png
+        alt: Easy Clinic appointment calendar for two doctors, with day visits, a booking card, a token list and a reminder
+        frame: none
 
-  # 6. Key benefits: an icon card grid.
+  # Key benefits: an icon card grid.
   - discriminant: moduleGrid
     value:
       id: benefits
-      tone: wash
+      tone: plain
       eyebrow: Benefits
       heading: Key benefits of using EMR software in India
       columns: 3
+      variant: accent
       items:
         - title: Digital patient records with AI EMR software
           icon: file-text
@@ -282,14 +311,20 @@ sections:
           outcome: >-
             Built-in analytics, supported by AI, show patient visits, revenue trends and staff productivity you
             can act on.
+        - title: Teleconsultation and patient communication
+          icon: message-circle-heart
+          outcome: >-
+            Offer teleconsultation to patients who cannot reach the clinic, and keep every patient informed
+            with SMS, WhatsApp and email reminders from the same system.
 
-  # 7. Problems solved: four problem panels.
+  # Problems solved: four problem panels.
   - discriminant: painBlocks
     value:
       id: problems-we-solve
-      tone: plain
+      tone: wash
       eyebrow: Problems we solve
       heading: The problems Easy Clinic solves for clinics in India
+      variant: checklist
       items:
         - heading: Clinic operations
           body: |
@@ -316,37 +351,11 @@ sections:
             - Fragmented data across systems with no unified reporting
             - Inability to enforce centralised approvals, pricing or access control
 
-  # 8. Proof: the AI clinical pilot, with the study figures from study.yaml.
-  - discriminant: proofBlock
-    value:
-      id: ai-clinical-pilot
-      tone: wash
-      eyebrow: AI clinical pilot
-      heading: We built the platform behind the world's largest AI clinical pilot
-      variant: study
-      figures: [visits, diagnostic-errors]
-      body: >-
-        From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot changing care at
-        Penda Health's clinics in Nairobi, across {fig:visits} patient visits. This is just the beginning.
-      link:
-        label: Read the article by OpenAI
-        href: https://openai.com/index/ai-clinical-copilot-penda-health/
-
-  # 9. One Indian customer, as a single large quote.
-  - discriminant: testimonialRow
-    value:
-      id: customer-feedback
-      tone: plain
-      heading: Easy Clinic reviews and customer feedback
-      items: [tarun-mishra]
-      layout: single
-      usePullQuote: false
-
-  # 10. Compliance: honest scope of what is still being rolled out.
+  # Compliance: honest scope of what is still being rolled out.
   - discriminant: scopeBox
     value:
       id: data-and-compliance
-      tone: wash
+      tone: plain
       eyebrow: Indian compliance
       heading: Your data is secure and belongs only to you
       intro: >-
@@ -363,6 +372,20 @@ sections:
         Items are rolled out on an ongoing basis. Ask the Easy Clinic team for the current status of any
         specific regulation, and they will share exactly what is live, what is being built and what is
         planned for your plan and clinic shape.
+
+  # Customer quotes: the pricing page's carousel; the template shows it directly above the FAQ (owner request 2026-11-13).
+  - discriminant: testimonialRow
+    value:
+      id: customers
+      heading: Used by {fact:doctors} doctors across {fact:cities} cities
+      intro: Three doctors in India on why they stayed, in their own words.
+      items:
+        - manish-bhatia
+        - premanand-raya
+        - nrp-chandra-balaji
+      layout: carousel
+      usePullQuote: false
+      underlines: false
 
 faqHeading: FAQs about AI EMR software in India
 faq:
@@ -418,6 +441,30 @@ links:
     - href: /features/
       label: All features
       description: Every module, from appointments to BI and reporting.
+
+problems:
+  eyebrow: How Easy Clinic fits in India
+  heading: Ready to digitise
+  headingAccent: your clinic in India
+  intro: >-
+    Move from manual workflows to digital records with clinic management software. Easy Clinic supports
+    private clinics, diagnostic centres and healthcare groups across India.
+  items:
+    - title: Why paper-based clinics are falling behind in India
+      icon: file-text
+      body: >-
+        Manual record keeping slows down service and increases errors. Clinics that move to clinic management
+        software in India run faster consultations and build stronger patient trust.
+    - title: The EMR systems growing clinics in India upgrade to
+      icon: trending-up
+      body: >-
+        As clinics expand, spreadsheets and registers become unreliable. Easy Clinic is the natural upgrade for
+        scalable and dependable EMR systems.
+    - title: One EMR software that grows with the healthcare sector in India
+      icon: network
+      body: >-
+        From solo practitioners to multi-branch healthcare groups, Easy Clinic adapts as patient demand
+        increases. This EMR software supports long-term clinic growth.
 
 closing:
   eyebrow: Ready to digitise your clinic

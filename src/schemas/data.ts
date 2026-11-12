@@ -178,6 +178,8 @@ export const countrySchema = z.object({
     email: unknown(z.email()),
     hours: unknown(z.string()),
     callbackWindow: unknown(z.string()),
+    /** The words before the phone number on the hero contact card; left out, "Or call us directly:" shows. */
+    callLine: z.string().optional(),
   }),
   office: unknown(z.string()),
   pages: z.object({
@@ -190,6 +192,8 @@ export const countrySchema = z.object({
     startAClinic: internalPath.optional(),
   }),
   cities: z.array(z.string()).default([]),
+  /** A sentence shown on the hero contact card in place of the "Cities" row, e.g. "Serving clinics in Accra and Kumasi". */
+  citiesLine: z.string().optional(),
   clients: z.array(z.string()).default([]),
   payments: z.array(statusedItem).default([]),
   insurers: z.array(z.string()).default([]),

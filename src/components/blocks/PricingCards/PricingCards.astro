@@ -2,8 +2,7 @@
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import type { SectionValue } from '../../../schemas/sections';
 import { BILLING_PERIODS, CURRENCIES, type BillingPeriod, type PlanId } from '../../../schemas/constants';
-import { need, optional, unconfirmed } from '../../../lib/content/need';
-import { isProduction } from '../../../lib/content/stage';
+import { need, unconfirmed } from '../../../lib/content/need';
 import { annualSaving, formatMoney } from '../../../lib/format/money';
 import Section from '../../ui/Section.astro';
 import Button from '../../ui/Button.astro';
@@ -27,13 +26,13 @@ const muted = inverse ? 'text-ink-inverse-muted' : 'text-ink-muted';
 const uid = id ?? `pricing-${ctx.index}`;
 
 // The main pricing page carries every currency behind a CSS switcher; country pages show one (spec 7.3).
-// In production the switcher offers only currencies whose prices are confirmed, so /pricing/ can launch
-// before every local price is decided; preview shows all of them with placeholders.
+// The switcher offers only currencies whose prices are confirmed (today USD and INR), so /pricing/ never
+// shows a pill for a currency with no prices; a currency appears once its price file is filled.
 const confirmed = (p: Price) => Boolean(p.asOf) && p.plans.professional.annual !== null && p.plans.premium.annual !== null;
 const currencies: Price[] = switcher
   ? (await getCollection('prices'))
       .map((e) => e.data)
-      .filter((p) => !isProduction || p.currency === base.currency || confirmed(p))
+      .filter((p) => p.currency === base.currency || confirmed(p))
       .sort((a, b) => CURRENCIES.indexOf(a.currency) - CURRENCIES.indexOf(b.currency))
   : [base];
 
@@ -82,7 +81,8 @@ const cards = plans.plans.map((plan) => {
 const taxNotes = currencies.map((p) => ({
   currency: p.currency,
   isDefault: p.currency === base.currency,
-  text: optional(`${p.currency} tax note`, p.taxNote),
+  // No preview placeholder for an unknown tax note: the line is simply left out until the price file has one.
+  text: p.taxNote || null,
 }));
 
 // The square icon badge before each plan name.

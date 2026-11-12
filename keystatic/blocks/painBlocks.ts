@@ -1,4 +1,4 @@
-import { defineBlock, group, list, md, path, text } from '../fields.ts';
+import { choice, defineBlock, group, list, md, path, text } from '../fields.ts';
 
 /**
  * `painBlocks` section (Zod: src/components/blocks/PainBlocks/schema.ts): two to four pain points, each with an
@@ -15,4 +15,5 @@ export const painBlocks = defineBlock('painBlocks', 'Pain points', {
     }),
     { label: 'Pain points', min: 2, max: 4, itemLabel: (props) => props.fields.heading.value || 'Pain point' },
   ),
+  variant: choice('Style', ['default', 'checklist'] as const, { zodDefault: 'default' }, { description: 'Checklist: a larger heading over a rule and a green tick on every bullet.' }),
 });

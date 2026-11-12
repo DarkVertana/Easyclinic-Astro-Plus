@@ -18,8 +18,10 @@ export const schema = () =>
         with the rest of the cell as a note under it (the /features/lab/ plan table). tiers: each row a plan column side by
         side: the first cell its name, a column headed "price" shown large, the last cell as its description
         (the /features/multi-location/ price table). questions: the clean table for a question and its answer, with a
-        wider question column (the /features/telemedicine/ NMC table). */
-    variant: z.enum(['default', 'clean', 'figures', 'plans', 'tiers', 'questions']).default('default'),
+        wider question column (the /features/telemedicine/ NMC table). compare: a comparison of options, one per
+        column, with the last column (Easy Clinic) highlighted and ticked; one card per row below 768px
+        (the /emr-software-in-ghana/ EMR, EHR and clinic software table). */
+    variant: z.enum(['default', 'clean', 'figures', 'plans', 'tiers', 'questions', 'compare']).default('default'),
   }).refine((b) => b.value.rows.every((row) => row.length === b.value.columns.length), {
     error: 'Every dataTable row needs one cell per column',
     path: ['value', 'rows'],

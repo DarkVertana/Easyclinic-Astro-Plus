@@ -124,7 +124,7 @@ describe('WordPress import: owner and topic', () => {
     expect(topicForOwner('/features/insurance-claims/')).toBe('billing-and-claims');
     expect(topicForOwner('/features/whatsapp/')).toBe('patient-engagement');
     expect(topicForOwner('/emr-software-in-kenya/')).toBe('start-a-clinic');
-    expect(topicForOwner('/clinic-management-software-india/')).toBe('start-a-clinic');
+    expect(topicForOwner('/emr-software-in-india/')).toBe('start-a-clinic');
     expect(topicForOwner('/features/lab/')).toBe('running-a-clinic');
     expect(topicForOwner('/blog/')).toBe('running-a-clinic');
     for (const owner of ['/features/pharmacy-and-inventory/', '/start-a-clinic/']) expect(POST_TOPICS).toContain(topicForOwner(owner));

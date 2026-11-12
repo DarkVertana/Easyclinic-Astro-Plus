@@ -76,7 +76,7 @@ sections:
       variant: badges
       badges:
         - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
-        - { label: Google, rating: '{fact:googleRating}' }
+        - { label: Google, rating: '{fact:googleRating}', href: 'https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJz2Q8OeB2AjoRmQ3oO1rIu-M' }
   - discriminant: demoForm
     value:
       id: book-a-demo
