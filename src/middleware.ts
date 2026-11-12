@@ -2,9 +2,12 @@ import { defineMiddleware } from 'astro:middleware';
 import { markPlaceholders } from './lib/content/placeholders.ts';
 import { isProduction } from './lib/content/stage.ts';
 
-/** Astro's policy with style-src swapped. A hash in style-src would switch 'unsafe-inline' off, so they all go. */
+/**
+ * Astro's policy with style-src swapped. A hash in style-src would switch 'unsafe-inline' off, so they all go.
+ * style-src-attr and style-src-elem go too: either one overrides style-src for its half and would block again.
+ */
 function adminPanelCsp(astroPolicy: string): string {
-  const kept = astroPolicy.split(';').map((d) => d.trim()).filter((d) => d && !/^(style-src|img-src|frame-ancestors)\s/i.test(d));
+  const kept = astroPolicy.split(';').map((d) => d.trim()).filter((d) => d && !/^(style-src(-attr|-elem)?|img-src|frame-ancestors)\s/i.test(d));
   return [...kept, "style-src 'self' 'unsafe-inline'", "img-src 'self' data: blob:", "frame-ancestors 'none'"].join('; ');
 }
 

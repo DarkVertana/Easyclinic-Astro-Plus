@@ -137,3 +137,17 @@
 .adm-toast { animation: adm-toast-in 160ms ease-out; }
 @keyframes adm-toast-in { from { opacity: 0; transform: translateY(6px); } }
 @media (prefers-reduced-motion: reduce) { .adm-toast { animation: none; } }
+
+/* The visual editor's canvas: the article rhythm, plus editing affordances. */
+.adm-editor { font-size: 1.0625rem; }
+.adm-editor :where(p.is-editor-empty:first-child)::before { content: attr(data-placeholder); float: left; height: 0; pointer-events: none; color: var(--ink-muted); opacity: 0.7; }
+.adm-editor img { cursor: pointer; transition: box-shadow 120ms; }
+.adm-editor img.ProseMirror-selectednode { box-shadow: 0 0 0 3px var(--focus); }
+.adm-editor table { table-layout: fixed; }
+.adm-editor td, .adm-editor th { position: relative; min-width: 4rem; }
+.adm-editor td > p, .adm-editor th > p { margin: 0; }
+.adm-editor .selectedCell::after { content: ''; position: absolute; inset: 0; background: color-mix(in oklab, var(--focus) 14%, transparent); pointer-events: none; }
+.adm-editor hr { border: 0; border-top: 1px solid var(--adm-border); margin-block: 2em; }
+.adm-editor hr.ProseMirror-selectednode { border-top-color: var(--focus); }
+.adm-editor ::selection { background: color-mix(in oklab, var(--focus) 25%, transparent); }
+.adm-editor .ProseMirror-gapcursor::after { border-top-color: var(--ink); }

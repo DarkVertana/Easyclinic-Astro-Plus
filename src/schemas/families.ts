@@ -26,6 +26,8 @@ export const postSchema = definePage('post', B.post, () => ({
   topic: z.enum(POST_TOPICS),
   owner: internalPath,
   originallyPublished: isoDate.optional(),
+  /** Free categories chosen in the blog admin (several per post). The fixed `topic` still drives labels and covers. */
+  categories: z.array(z.string().trim().min(1).max(60)).max(12).default([]),
 }));
 export const comparisonSchema = definePage('comparison', B.comparison);
 export const listicleSchema = definePage('listicle', B.listicle);

@@ -1,7 +1,9 @@
 import { mkdir, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { neon } from '@neondatabase/serverless';
+import type { SupabaseClient } from '@supabase/supabase-js';
 import { realBackendsAllowed } from './dev-guard.ts';
+import { supabaseAdmin, supabaseConfigured } from './supabase.ts';
 import { env } from './env.ts';
 import { ACTIVE_STATES } from './lifecycle.ts';
 import type { Job, PostFlag, Revision, ScheduleRun, Store, Submission } from './types.ts';
@@ -220,10 +222,94 @@ export function createFileStore(root: string): Store {
   };
 }
 
+/**
+ * The same table and rules as createPostgresStore, over Supabase's HTTP API: no database driver or connection pool in
+ * a serverless function, and each read is one request. The conditional writes keep their single-statement guarantee:
+ * PostgREST turns the filters into the WHERE clause of one UPDATE.
+ */
+export function createSupabaseStore(client: SupabaseClient): Store {
+  const table = () => client.from('admin_docs');
+  const fail = (error: { code?: string; message: string } | null) => {
+    if (!error) return;
+    if (error.code === UNIQUE_VIOLATION) throw new ActiveSlugError();
+    throw new Error(`Store: ${error.message}`);
+  };
+  const get = async <T>(kind: string, id: string) => {
+    assertId(id);
+    const { data, error } = await table().select('data').eq('kind', kind).eq('id', id).maybeSingle();
+    fail(error);
+    return data ? unpack<T>(data.data) : null;
+  };
+  const all = async <T>(kind: string, limit?: number) => {
+    let q = table().select('data').eq('kind', kind).order('updated_at', { ascending: false });
+    if (limit) q = q.limit(limit);
+    const { data, error } = await q;
+    fail(error);
+    return (data ?? []).map((row) => unpack<T>(row.data));
+  };
+  const upsert = async (kind: string, value: { id: string; updatedAt: string }) => {
+    assertId(value.id);
+    const { error } = await table().upsert({ kind, id: value.id, data: JSON.parse(pack(value)), updated_at: new Date().toISOString() });
+    fail(error);
+  };
+  const conditional = async (kind: string, value: { id: string; updatedAt: string }, expected: string) => {
+    assertId(value.id);
+    const { data, error } = await table()
+      .update({ data: JSON.parse(pack(value)), updated_at: new Date().toISOString() })
+      .eq('kind', kind)
+      .eq('id', value.id)
+      .eq('data->>updatedAt', expected)
+      .select('id');
+    fail(error);
+    return (data ?? []).length > 0;
+  };
+  const remove = async (kind: string, id: string) => {
+    assertId(id);
+    const { error } = await table().delete().eq('kind', kind).eq('id', id);
+    fail(error);
+  };
+  return {
+    getSubmission: (id) => get<Submission>('submission', id),
+    listSubmissions: () => all<Submission>('submission'),
+    async putSubmission(value, expectedUpdatedAt) {
+      if (expectedUpdatedAt === undefined) return upsert('submission', value);
+      if (!(await conditional('submission', value, expectedUpdatedAt))) throw new StaleWriteError();
+    },
+    getJob: (id) => get<Job>('job', id),
+    listJobs: () => all<Job>('job'),
+    putJob: (value) => upsert('job', value),
+    claimJob: (value, expectedUpdatedAt) => conditional('job', value, expectedUpdatedAt),
+    deleteSubmission: (id) => remove('submission', id),
+    listDue: async (now) => dueFrom(await all<Submission>('submission'), now),
+    getFlag: (slug) => get<PostFlag>('flag', slug),
+    listFlags: () => all<PostFlag>('flag'),
+    putFlag: (value) => upsert('flag', value),
+    deleteFlag: (slug) => remove('flag', slug),
+    putRevision: (value) => upsert('revision', value),
+    async listRevisions(submissionId) {
+      assertId(submissionId);
+      const { data, error } = await table().select('data').eq('kind', 'revision').like('id', `${submissionId}-%`).order('updated_at', { ascending: false });
+      fail(error);
+      return (data ?? []).map((row) => unpack<Revision>(row.data)).filter((r) => r.submissionId === submissionId);
+    },
+    deleteRevision: (id) => remove('revision', id),
+    putScheduleRun: (value) => upsert('run', value),
+    getDoc: (kind, id) => get(kind, id),
+    listDocs: (kind) => all(kind),
+    putDoc: (kind, value) => upsert(kind, value),
+    deleteDoc: (kind, id) => remove(kind, id),
+    listScheduleRuns: (limit) => all<ScheduleRun>('run', limit),
+  };
+}
+
 let cached: Store | null = null;
 
 export function getStore(): Store {
   if (cached) return cached;
+  if (supabaseConfigured() && realBackendsAllowed()) {
+    cached = createSupabaseStore(supabaseAdmin());
+    return cached;
+  }
   const url = env('DATABASE_URL');
   if (url && realBackendsAllowed()) {
     const sql = neon(url);
@@ -231,7 +317,7 @@ export function getStore(): Store {
   } else if (import.meta.env.DEV) {
     cached = createFileStore(join(process.cwd(), '.admin-data'));
   } else {
-    throw new Error('DATABASE_URL is not set, so the admin has nowhere to keep its work.');
+    throw new Error('Supabase is not set up (SUPABASE_URL, SUPABASE_SECRET_KEY), so the admin has nowhere to keep its work.');
   }
   return cached;
 }

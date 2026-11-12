@@ -7,19 +7,20 @@
  * goes through `publishTarget` below, so a later move to a database changes one place.
  */
 import { createHash } from 'node:crypto';
+import { env } from './env.ts';
 import { checkForBuild } from './harness.ts';
 import { parsePost, serializePost } from './mdx-file.ts';
 import { assertSlug, postPath } from './repo.ts';
 import { PublicError } from './http.ts';
 import { defaultDeps, keywordConflict, slugConflict, withPostDefaults, type RouteRules } from './workflow.ts';
-import type { AdminUser, BlogDraft, BlogMedia, BlogRecent, Check, CommitPlan, ContentRepo, PostContent, Store } from './types.ts';
+import type { AdminUser, BlogCategory, BlogDraft, BlogMedia, BlogRecent, Check, CommitPlan, ContentRepo, PostContent, Store } from './types.ts';
 
 export const MAX_IMAGE_BYTES = 4 * 1024 * 1024;
 export const IMAGE_TYPES: Record<string, string> = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' };
 const COVER_EXTS = ['jpg', 'jpeg', 'png', 'webp'];
 const MAX_RAW_BYTES = 900_000;
 
-export type BlogStatus = 'draft' | 'scheduled' | 'published';
+export type BlogStatus = 'draft' | 'scheduled' | 'published' | 'trash';
 
 export interface BlogDeps {
   store: Store;
@@ -64,7 +65,8 @@ export interface OpenPost {
   coverUrl: string | null;
 }
 
-export function statusOf(draft: Pick<BlogDraft, 'scheduledAt'> | null, live: boolean): BlogStatus {
+export function statusOf(draft: Pick<BlogDraft, 'scheduledAt' | 'trashedAt'> | null, live: boolean): BlogStatus {
+  if (draft?.trashedAt && !live) return 'trash';
   if (draft?.scheduledAt) return 'scheduled';
   return live ? 'published' : 'draft';
 }
@@ -142,6 +144,7 @@ export async function saveDraft(slugInput: string, content: PostContent, user: A
   let slug = checkedSlug(slugInput);
   if (Buffer.byteLength(serializePost(content)) > MAX_RAW_BYTES) throw new PublicError('This post is too long to save.', 413);
   const [existing, file] = await Promise.all([deps.store.getDoc<BlogDraft>('draft', slug), deps.repo.readPost(slug)]);
+  refuseIfTrashed(existing);
   const now = deps.now();
   const frontmatter = { ...content.frontmatter };
   if (frontmatter.author === '') frontmatter.author = null;
@@ -280,6 +283,7 @@ export async function publishPost(slugInput: string, user: AdminUser, deps: Blog
   const [draft, file] = await Promise.all([deps.store.getDoc<BlogDraft>('draft', slug), deps.repo.readPost(slug)]);
   const media = (await deps.store.listDocs<BlogMedia>('media')).filter((m) => m.slug === slug);
   if (!draft && !file) throw new PublicError('That post does not exist.', 404);
+  refuseIfTrashed(draft);
   const source = draft?.content ?? parsePost(file!.raw);
   const onMain = file ? parsePost(file.raw).frontmatter : null;
   const isNew = !onMain || (onMain.status !== 'published' && !onMain.originallyPublished);
@@ -303,7 +307,9 @@ export async function publishPost(slugInput: string, user: AdminUser, deps: Blog
   await deps.store.deleteDoc('draft', slug);
   for (const item of media) await deps.store.deleteDoc('media', item.id);
   await noteRecent(deps, slug, ready.frontmatter.title, 'published');
-  return { message: isNew ? 'Published. The site updates in a minute or two.' : 'Changes published. The site updates in a minute or two.' };
+  // With a deploy hook the commit starts a rebuild; without one, the post goes out with the next deploy.
+  const when = deps.repo.mode === 'supabase' && !env('VERCEL_DEPLOY_HOOK_URL') ? 'It goes live on the site with the next deploy.' : 'The site updates in a minute or two.';
+  return { message: `${isNew ? 'Published.' : 'Changes published.'} ${when}` };
 }
 
 /** Publishes at `at`. The checks run now, so a scheduled post does not fail later for something visible today. */
@@ -317,6 +323,7 @@ export async function schedulePost(slugInput: string, at: string, user: AdminUse
   const [draft, file] = await Promise.all([deps.store.getDoc<BlogDraft>('draft', slug), deps.repo.readPost(slug)]);
   const content = draft?.content ?? (file ? parsePost(file.raw) : null);
   if (!content) throw new PublicError('That post does not exist.', 404);
+  refuseIfTrashed(draft);
   const isNew = !file;
   const errors = (await publishChecks(slug, content, isNew, deps)).filter((c) => c.severity === 'error');
   if (errors.length) throw new PublicError(`Fix ${errors.length === 1 ? 'one thing' : `${errors.length} things`} before scheduling: ${errors.map((e) => e.message).join(' · ')}`, 422);
@@ -343,11 +350,39 @@ export async function unpublishPost(slugInput: string, user: AdminUser, deps: Bl
   return { message: 'Unpublished. It stays here as a draft.' };
 }
 
-/** Deletes a post that is not live: its draft, its images, and its files if it ever reached the repository. */
+function refuseIfTrashed(draft: BlogDraft | null): void {
+  if (draft?.trashedAt) throw new PublicError('This post is in the trash. Restore it first.', 409);
+}
+
+/** Moves a post that is not live to the trash. Nothing is removed: it can be restored, or deleted for good from there. */
+export async function trashPost(slugInput: string, user: AdminUser, deps: BlogDeps = blogDeps()): Promise<{ message: string }> {
+  const slug = checkedSlug(slugInput);
+  const [draft, file] = await Promise.all([deps.store.getDoc<BlogDraft>('draft', slug), deps.repo.readPost(slug)]);
+  if (!draft && !file) throw new PublicError('That post does not exist.', 404);
+  const onSite = file ? parsePost(file.raw) : null;
+  if (onSite?.frontmatter.status === 'published') throw new PublicError('Unpublish this post before moving it to the trash.', 409);
+  if (draft?.trashedAt) return { message: 'Already in the trash.' };
+  const now = deps.now().toISOString();
+  const base: BlogDraft = draft ?? { id: slug, slug, content: onSite!, isNew: !file, scheduledAt: null, updatedAt: now, updatedBy: user.email };
+  await deps.store.putDoc('draft', { ...base, scheduledAt: null, trashedAt: now, trashedBy: user.email } satisfies BlogDraft);
+  return { message: 'Moved to the trash.' };
+}
+
+/** Takes a post out of the trash. It comes back as a draft. */
+export async function restorePost(slugInput: string, deps: BlogDeps = blogDeps()): Promise<{ message: string }> {
+  const slug = checkedSlug(slugInput);
+  const draft = await deps.store.getDoc<BlogDraft>('draft', slug);
+  if (!draft?.trashedAt) throw new PublicError('This post is not in the trash.', 409);
+  await deps.store.putDoc('draft', { ...draft, trashedAt: null, trashedBy: null } satisfies BlogDraft);
+  return { message: 'Restored. It is a draft again.' };
+}
+
+/** Deletes a post in the trash for good: its draft, its images, and its files if it ever reached the repository. */
 export async function deletePost(slugInput: string, user: AdminUser, deps: BlogDeps = blogDeps()): Promise<{ message: string }> {
   const slug = checkedSlug(slugInput);
   const file = await deps.repo.readPost(slug);
   if (file && parsePost(file.raw).frontmatter.status === 'published') throw new PublicError('Unpublish this post before deleting it.', 409);
+  if (!(await deps.store.getDoc<BlogDraft>('draft', slug))?.trashedAt) throw new PublicError('Move this post to the trash first. Posts are deleted for good from the trash.', 409);
   if (file) {
     const deletes = await deps.repo.listFolder(slug);
     for (const ext of COVER_EXTS) if (await deps.repo.readBytes(coverPath(slug, ext))) deletes.push(coverPath(slug, ext));
@@ -356,7 +391,7 @@ export async function deletePost(slugInput: string, user: AdminUser, deps: BlogD
   await deps.store.deleteDoc('draft', slug);
   for (const media of (await deps.store.listDocs<BlogMedia>('media')).filter((m) => m.slug === slug)) await deps.store.deleteDoc('media', media.id);
   if (file) await noteRecent(deps, slug, parsePost(file.raw).frontmatter.title, 'deleted');
-  return { message: 'Deleted.' };
+  return { message: 'Deleted for good.' };
 }
 
 /** Publishes every scheduled post whose time has come. Called by the cron route. */
@@ -373,4 +408,22 @@ export async function runDueSchedules(deps: BlogDeps = blogDeps()): Promise<Arra
     }
   }
   return results;
+}
+
+/* ---------- Categories ---------- */
+
+export function categoryId(name: string): string {
+  return name.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
+}
+
+/** Adds a category to the list offered in the editor. Returns the name as stored. */
+export async function addCategory(input: string, deps: BlogDeps = blogDeps()): Promise<string> {
+  const name = input.replace(/\s+/g, ' ').trim();
+  if (name.length < 2 || name.length > 60) throw new PublicError('Category names are 2 to 60 characters.', 400);
+  const id = categoryId(name);
+  if (!id) throw new PublicError('Use letters or numbers in the name.', 400);
+  const existing = await deps.store.getDoc<BlogCategory>('category', id);
+  if (existing) return existing.name;
+  await deps.store.putDoc('category', { id, name, updatedAt: deps.now().toISOString() } satisfies BlogCategory);
+  return name;
 }

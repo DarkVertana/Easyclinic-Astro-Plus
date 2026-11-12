@@ -3,7 +3,7 @@
  * Colours, radii and type come from the site's tokens through admin.css; nothing here defines its own.
  */
 import * as React from 'react';
-import { CheckCircle2, CircleAlert, FileText, LogOut, Menu, Plus, X } from 'lucide-react';
+import { CheckCircle2, CircleAlert, FileText, LogOut, Menu, Plus, Waypoints, X } from 'lucide-react';
 import { Button } from '@/components/admin/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/admin/ui/dialog';
 import { cn } from '@/components/admin/lib/utils';
@@ -109,21 +109,23 @@ export function useConfirm(): [React.ReactNode, (options: ConfirmOptions) => voi
 
 /* ---------- Status ---------- */
 
-export type BlogStatus = 'draft' | 'scheduled' | 'published';
+export type BlogStatus = 'draft' | 'scheduled' | 'published' | 'trash';
 
 const STATUS_STYLE: Record<BlogStatus, { label: string; dot: string; chip: string }> = {
+  trash: { label: 'In trash', dot: 'bg-danger', chip: 'bg-danger-bg text-danger' },
   published: { label: 'Published', dot: 'bg-success', chip: 'bg-success-bg text-success' },
   scheduled: { label: 'Scheduled', dot: 'bg-info', chip: 'bg-info-bg text-info' },
   draft: { label: 'Draft', dot: 'bg-muted-foreground', chip: 'bg-muted text-muted-foreground' },
 };
 
 export function StatusPill({ status, changes, className }: { status: BlogStatus; changes?: boolean; className?: string }) {
-  const style = STATUS_STYLE[status];
+  // A live post with saved edits that are not live yet reads "Modified" (Strapi's word for it).
+  const modified = status === 'published' && changes;
+  const style = modified ? { label: 'Modified', dot: 'bg-warning', chip: 'bg-warning-bg text-warning' } : STATUS_STYLE[status];
   return (
-    <span className={cn('inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap', style.chip, className)}>
+    <span title={modified ? 'Published, with changes that are not live yet' : undefined} className={cn('inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap', style.chip, className)}>
       <span className={cn('size-1.5 rounded-full', style.dot)} aria-hidden="true" />
       {style.label}
-      {changes && <span className="font-normal opacity-80">· unpublished changes</span>}
     </span>
   );
 }
@@ -166,13 +168,21 @@ function SignOut({ className }: { className?: string }) {
 }
 
 /** The list's frame: a slim sidebar on wide screens, a top bar on narrow ones. */
-export function AppFrame({ email, children, onNew }: { email: string; children: React.ReactNode; onNew: () => void }) {
+const NAV = [
+  { href: '/admin/posts/', label: 'Posts', icon: FileText },
+  { href: '/admin/redirects/', label: 'Redirects', icon: Waypoints },
+] as const;
+
+export function AppFrame({ email, children, current = '/admin/posts/' }: { email: string; children: React.ReactNode; onNew?: () => void; current?: string }) {
   const [menu, setMenu] = React.useState(false);
   const nav = (
     <nav aria-label="Admin" className="grid gap-1">
-      <a href="/admin/posts/" aria-current="page" className="flex h-9 items-center gap-2.5 rounded-md bg-card px-2.5 font-medium text-heading shadow-xs ring-1 ring-border">
-        <FileText className="size-4" aria-hidden="true" />Posts
-      </a>
+      {NAV.map(({ href, label, icon: Icon }) => (
+        <a key={href} href={href} aria-current={current === href ? 'page' : undefined}
+          className={cn('flex h-9 items-center gap-2.5 rounded-md px-2.5', current === href ? 'bg-card font-medium text-heading shadow-xs ring-1 ring-border' : 'text-muted-foreground hover:bg-card/60 hover:text-foreground')}>
+          <Icon className="size-4" aria-hidden="true" />{label}
+        </a>
+      ))}
     </nav>
   );
   return (
@@ -180,7 +190,6 @@ export function AppFrame({ email, children, onNew }: { email: string; children: 
       <div className="min-h-dvh bg-[var(--sidebar)] md:grid md:grid-cols-[15rem_minmax(0,1fr)]">
         <aside className="sticky top-0 hidden h-dvh flex-col gap-6 px-4 py-5 md:flex">
           <Brand />
-          <Button onClick={onNew} className="w-full"><Plus aria-hidden="true" />New post</Button>
           {nav}
           <div className="mt-auto border-t pt-3">
             <p className="truncate px-2.5 pb-1 text-xs text-muted-foreground" title={email}>{email}</p>

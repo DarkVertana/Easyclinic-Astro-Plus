@@ -73,7 +73,19 @@ Set these in the Vercel project under Settings, then Environment Variables, and 
 - [ ] **`ADMIN_EDITORS`.** Email addresses of people who may write and submit, separated by commas.
 - [ ] **`ADMIN_SESSION_SECRET`.** Signs the sign-in cookie. Create one with `openssl rand -base64 32`. Changing it signs everyone out.
 
-### Storage and publishing
+### Supabase (storage, publishing and sign-in)
+
+When `SUPABASE_URL` and `SUPABASE_SECRET_KEY` are set, Supabase replaces Neon, GitHub and the env account:
+
+- **Work in progress** (drafts, schedules, AI jobs) is in the `admin_docs` table.
+- **Published content** is in the private Storage bucket `content`, at the same paths as in the repository. `pnpm build` runs `node scripts/content-sync.ts pull` first, which mirrors the bucket into the working tree, so blog pages stay static. Publishing uploads to the bucket and calls `VERCEL_DEPLOY_HOOK_URL`; the post is live when that build finishes.
+- **Sign-in** checks Supabase Auth. Add or remove people in the Supabase dashboard under Authentication, then Users. A removed user's open session lasts until it expires (12 hours) or `ADMIN_SESSION_SECRET` changes.
+- **Schema** is in `supabase/migrations/`. Apply it with `npx supabase db push --db-url "<connection string>"`.
+- **First copy** of the posts: `node scripts/content-sync.ts push` uploads the files in Git. After that, Supabase is the source of truth and the files in Git are only a fallback when Supabase is not set up.
+
+Set in Vercel: `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `SUPABASE_PUBLISHABLE_KEY`, `VERCEL_DEPLOY_HOOK_URL`, `ADMIN_SESSION_SECRET`. These are needed at build time too, for the pull.
+
+### Storage and publishing without Supabase (legacy)
 
 - [ ] **`DATABASE_URL`.** The connection string from your Neon project's dashboard. Holds drafts, approvals and AI jobs.
 - [ ] **`GITHUB_TOKEN`.** On GitHub, create a fine-grained personal access token. Choose this repository only, and give it Contents: read and write, nothing else. Note its expiry date: when it expires, publishing stops until you replace it.

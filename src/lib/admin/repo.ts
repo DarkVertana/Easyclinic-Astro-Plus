@@ -1,7 +1,9 @@
 import { mkdir, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
+import type { SupabaseClient } from '@supabase/supabase-js';
 import { realBackendsAllowed } from './dev-guard.ts';
 import { env } from './env.ts';
+import { CONTENT_BUCKET, supabaseAdmin, supabaseConfigured } from './supabase.ts';
 import type { CommitPlan, ContentRepo } from './types.ts';
 
 const SLUG = /^[a-z0-9-]+$/;
@@ -272,7 +274,84 @@ export function createLocalRepo(root: string): ContentRepo {
   };
 }
 
+/**
+ * Published content in the Supabase Storage bucket `content`, one object per repository path. The build downloads the
+ * bucket into the working tree before `astro build` (scripts/content-sync.ts), so pages stay static. A commit uploads,
+ * deletes, then asks Vercel to rebuild through VERCEL_DEPLOY_HOOK_URL.
+ */
+export function createSupabaseRepo(client: SupabaseClient, options: { deployHook?: string; fetchFn?: typeof fetch } = {}): ContentRepo {
+  const bucket = () => client.storage.from(CONTENT_BUCKET);
+  const download = async (path: string): Promise<Uint8Array | null> => {
+    assertRepoPath(path);
+    if (!ALLOWED_WRITE.test(path)) return null; // Only content lives in the bucket; code files are not readable here.
+    const { data, error } = await bucket().download(path);
+    if (error || !data) {
+      const status = (error as { status?: number; statusCode?: string } | null)?.status ?? Number((error as { statusCode?: string } | null)?.statusCode);
+      if (!error || status === 400 || status === 404 || /not.?found/i.test(error.message)) return null;
+      throw new Error(`Storage refused to read ${path}.`);
+    }
+    return new Uint8Array(await data.arrayBuffer());
+  };
+  return {
+    mode: 'supabase',
+    async readPost(slug) {
+      assertSlug(slug);
+      const bytes = await download(postPath(slug));
+      return bytes ? { raw: new TextDecoder().decode(bytes), sha: null } : null;
+    },
+    async writePreview(slug) {
+      assertSlug(slug);
+      return null;
+    },
+    async readFile(path) {
+      const bytes = await download(path);
+      return bytes ? { raw: new TextDecoder().decode(bytes), sha: null } : null;
+    },
+    readBytes: download,
+    async listFolder(slug) {
+      assertSlug(slug);
+      const prefix = `src/content/posts/${slug}`;
+      const out: string[] = [];
+      const walk = async (dir: string) => {
+        const { data, error } = await bucket().list(dir, { limit: 1000 });
+        if (error) throw new Error('Storage refused to list a post folder.');
+        for (const item of data ?? []) {
+          if (item.id === null) await walk(`${dir}/${item.name}`); // A folder.
+          else out.push(`${dir}/${item.name}`);
+        }
+      };
+      await walk(prefix);
+      return out;
+    },
+    async commit(plan) {
+      assertPlanPaths(plan);
+      // Uploads first, so a failure part way never loses a post; then deletes.
+      await Promise.all(
+        plan.writes.map(async ({ path, content, encoding }) => {
+          const body = encoding === 'base64' ? Buffer.from(content, 'base64') : Buffer.from(content, 'utf8');
+          const { error } = await bucket().upload(path, body, { upsert: true, contentType: contentTypeOf(path), cacheControl: '0' });
+          if (error) throw new Error(`Storage refused to save ${path}.`);
+        }),
+      );
+      if (plan.deletes.length) {
+        const { error } = await bucket().remove(plan.deletes);
+        if (error) throw new Error('Storage refused to delete old files.');
+      }
+      if (options.deployHook) {
+        const response = await (options.fetchFn ?? fetch)(options.deployHook, { method: 'POST' }).catch(() => null);
+        if (!response?.ok) console.warn('[admin] Saved to Supabase, but the Vercel deploy hook did not answer; the site updates on the next deploy.');
+      }
+      return 'supabase';
+    },
+    async deletePreview() {},
+  };
+}
+
+const TYPES: Record<string, string> = { mdx: 'text/markdown', yaml: 'text/yaml', jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif', svg: 'image/svg+xml' };
+const contentTypeOf = (path: string) => TYPES[path.split('.').pop()!.toLowerCase()] ?? 'application/octet-stream';
+
 export function getRepo(): ContentRepo {
+  if (supabaseConfigured() && realBackendsAllowed()) return createSupabaseRepo(supabaseAdmin(), { deployHook: env('VERCEL_DEPLOY_HOOK_URL') });
   const token = env('GITHUB_TOKEN');
   const repo = env('ADMIN_GITHUB_REPO');
   if (token && repo && realBackendsAllowed()) return createGithubRepo({ token, repo });

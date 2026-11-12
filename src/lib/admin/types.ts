@@ -301,7 +301,7 @@ export interface Store {
 
 /** src/lib/admin/repo.ts: `getRepo()` is GitHub when GITHUB_TOKEN and ADMIN_GITHUB_REPO are set, else local files in dev. */
 export interface ContentRepo {
-  readonly mode: 'github' | 'local';
+  readonly mode: 'github' | 'local' | 'supabase';
   /** Raw MDX and blob sha from the main branch; null if absent. */
   readPost(slug: string): Promise<{ raw: string; sha: string | null } | null>;
   /** Writes the file to the submission's preview branch content/<slug>-<shortid> (github) and returns it; null in local mode. */
@@ -322,7 +322,7 @@ export interface ContentRepo {
 
 /* ---------- Blog editor ---------- */
 
-export type DocKind = 'draft' | 'media' | 'recent';
+export type DocKind = 'draft' | 'media' | 'recent' | 'category';
 
 /**
  * Unsaved-to-the-site work on one post, kept in the store until it is published. One per slug (id = slug).
@@ -336,6 +336,9 @@ export interface BlogDraft {
   isNew: boolean;
   /** When set, the schedule runner publishes this draft at that time (ISO). */
   scheduledAt?: string | null;
+  /** Set while the post sits in the trash (ISO). It can be restored or deleted for good from there. */
+  trashedAt?: string | null;
+  trashedBy?: string | null;
   updatedAt: string;
   updatedBy: string;
 }
@@ -356,5 +359,12 @@ export interface BlogRecent {
   id: string;
   title: string;
   state: 'published' | 'draft' | 'deleted';
+  updatedAt: string;
+}
+
+/** A category added in the admin before any published post uses it. */
+export interface BlogCategory {
+  id: string;
+  name: string;
   updatedAt: string;
 }

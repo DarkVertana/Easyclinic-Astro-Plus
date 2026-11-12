@@ -7,7 +7,7 @@ import { coverFor } from '../blocks/PostIndex/covers';
 import { mediaUrl, statusOf, type BlogStatus } from '../../lib/admin/blog';
 import { getStore } from '../../lib/admin/store';
 import { POST_TOPICS, POST_TOPIC_LABELS, type PostTopic } from '../../schemas/constants';
-import type { BlogDraft, BlogMedia, BlogRecent } from '../../lib/admin/types';
+import type { BlogCategory, BlogDraft, BlogMedia, BlogRecent } from '../../lib/admin/types';
 import { authorOptions, ownerOptions } from './data';
 
 export interface BlogRow {
@@ -42,8 +42,9 @@ export async function blogRows(): Promise<{ rows: BlogRow[]; storeError: string 
   try {
     const store = getStore();
     [drafts, media, recent] = await Promise.all([store.listDocs<BlogDraft>('draft'), store.listDocs<BlogMedia>('media'), store.listDocs<BlogRecent>('recent')]);
-  } catch {
-    storeError = 'Drafts could not be loaded: the database is not reachable. Published posts are still listed. Check DATABASE_URL, then reload.';
+  } catch (error) {
+    console.error('[admin] draft store failed:', error);
+    storeError = 'Drafts could not be loaded: the draft store is not reachable. Published posts are still listed. Check SUPABASE_URL and SUPABASE_SECRET_KEY, then reload.';
   }
   const now = Date.now();
   const recentBySlug = new Map(recent.filter((r) => now - new Date(r.updatedAt).getTime() < RECENT_MS).map((r) => [r.id, r]));
@@ -91,9 +92,38 @@ export async function blogRows(): Promise<{ rows: BlogRow[]; storeError: string 
   return { rows: list, storeError };
 }
 
-export async function editorOptions(): Promise<{ authors: Option[]; topics: Option[]; owners: Option[] }> {
-  const [authors, owners] = await Promise.all([authorOptions(), ownerOptions()]);
+export interface CategoryOption {
+  name: string;
+  /** Posts using it, for "Most used". */
+  count: number;
+}
+
+/** Categories from every post on this deployment and every draft, plus ones added in the admin. */
+export async function categoryOptions(): Promise<CategoryOption[]> {
+  const counts = new Map<string, { name: string; count: number }>();
+  const add = (name: unknown, used: boolean) => {
+    if (typeof name !== 'string' || !name.trim()) return;
+    const key = name.trim().toLowerCase();
+    const seen = counts.get(key) ?? { name: name.trim(), count: 0 };
+    if (used) seen.count += 1;
+    counts.set(key, seen);
+  };
+  for (const entry of await getCollection('posts')) for (const c of (entry.data as { categories?: string[] }).categories ?? []) add(c, true);
+  try {
+    const store = getStore();
+    const [drafts, added] = await Promise.all([store.listDocs<BlogDraft>('draft'), store.listDocs<BlogCategory>('category')]);
+    for (const d of drafts) for (const c of (Array.isArray(d.content.frontmatter.categories) ? d.content.frontmatter.categories : [])) add(c, false);
+    for (const c of added) add(c.name, false);
+  } catch {
+    // Without the store, the published posts' categories are still offered.
+  }
+  return [...counts.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function editorOptions(): Promise<{ authors: Option[]; topics: Option[]; owners: Option[]; categories: CategoryOption[] }> {
+  const [authors, owners, categories] = await Promise.all([authorOptions(), ownerOptions(), categoryOptions()]);
   return {
+    categories,
     authors: authors.map((a) => ({ value: a.id, label: a.name })),
     topics: POST_TOPICS.map((t) => ({ value: t as string, label: POST_TOPIC_LABELS[t] })),
     owners: owners.map((o) => ({ value: o.path, label: `${o.label} (${o.path})` })),

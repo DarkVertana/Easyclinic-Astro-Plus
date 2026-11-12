@@ -1,11 +1,12 @@
 import type { APIContext } from 'astro';
 import { requireUser } from '../../../../lib/admin/auth.ts';
 import {
-  createPost, deletePost, discardChanges, MAX_IMAGE_BYTES, openPost, publishChecks, publishPost, removeCover, saveDraft, schedulePost,
-  unpublishPost, unschedulePost, uploadImage,
+  addCategory, blogDeps, createPost, deletePost, discardChanges, MAX_IMAGE_BYTES, openPost, publishChecks, publishPost, removeCover, restorePost, saveDraft, schedulePost,
+  trashPost, unpublishPost, unschedulePost, uploadImage,
 } from '../../../../lib/admin/blog.ts';
 import { assertSameOrigin, formText, guarded, PublicError } from '../../../../lib/admin/http.ts';
 import { renderPreview } from '../../../../lib/admin/preview.ts';
+import { addRedirect, removeRedirect } from '../../../../lib/admin/redirects.ts';
 import type { PostContent } from '../../../../lib/admin/types.ts';
 
 export const prerender = false;
@@ -58,6 +59,14 @@ export const POST = guarded(() => '/admin/posts/', async (context: APIContext) =
     case 'discard':
       await discardChanges(slug);
       return Response.json({ ok: true, message: 'Changes discarded.' });
+    case 'redirect-add':
+      return Response.json({ ok: true, ...(await addRedirect({ from: formText(form, 'from'), to: formText(form, 'to'), status: Number(formText(form, 'status') || 301) }, user, blogDeps())) });
+    case 'redirect-remove':
+      return Response.json({ ok: true, ...(await removeRedirect(formText(form, 'from'), user, blogDeps())) });
+    case 'trash':
+      return Response.json({ ok: true, ...(await trashPost(slug, user)) });
+    case 'restore':
+      return Response.json({ ok: true, ...(await restorePost(slug)) });
     case 'delete':
       return Response.json({ ok: true, ...(await deletePost(slug, user)) });
     case 'upload': {
@@ -66,6 +75,10 @@ export const POST = guarded(() => '/admin/posts/', async (context: APIContext) =
       const bytes = new Uint8Array(await file.arrayBuffer());
       const result = await uploadImage(slug, { name: file.name, type: file.type, bytes }, formText(form, 'cover') === '1');
       return Response.json({ ok: true, message: 'Image added.', ...result });
+    }
+    case 'add-category': {
+      const name = await addCategory(formText(form, 'name'));
+      return Response.json({ ok: true, message: `Category “${name}” added.`, name });
     }
     case 'remove-cover':
       await removeCover(slug);

@@ -17,9 +17,21 @@ try {
   post = null;
 }
 if (!post) return Astro.redirect(`/admin/posts/?done=${encodeURIComponent('That post was not found.')}`);
-const { authors, topics, owners } = await editorOptions();
+if (post.status === 'trash') return Astro.redirect(`/admin/posts/?done=${encodeURIComponent('That post is in the trash. Restore it from the Trash tab to edit it.')}`);
+const { authors, topics, owners, categories } = await editorOptions();
 const owner = typeof post.content.frontmatter.owner === 'string' ? post.content.frontmatter.owner : '';
 const ownerList = owner && !owners.some((o) => o.value === owner) ? [{ value: owner, label: owner }, ...owners] : owners;
+// Main keywords other published pages already hold, for the SEO checklist. Optional: the checklist skips the check without it.
+let usedKeywords: Array<{ keyword: string; path: string }> = [];
+try {
+  const { getRegistry } = await import('../../../../lib/content/registry.ts');
+  const registry = await getRegistry();
+  usedKeywords = registry.pages
+    .filter((p) => p.status === 'published' && !(p.collection === 'posts' && p.id === post.slug) && typeof p.data.headKeyword === 'string' && p.data.headKeyword.trim())
+    .map((p) => ({ keyword: p.data.headKeyword, path: p.path }));
+} catch {
+  usedKeywords = [];
+}
 // Dates become strings so the island gets plain JSON.
 const frontmatter = JSON.parse(JSON.stringify(post.content.frontmatter));
 const title = typeof frontmatter.h1 === 'string' && frontmatter.h1 ? frontmatter.h1 : 'Edit post';
@@ -40,7 +52,9 @@ const title = typeof frontmatter.h1 === 'string' && frontmatter.h1 ? frontmatter
     coverUrl={post.coverUrl ?? ''}
     {authors}
     {topics}
+    {categories}
     owners={ownerList}
+    usedKeywords={usedKeywords}
     editorName={auth.name || auth.email}
     precision={schedulePrecision()}
   />

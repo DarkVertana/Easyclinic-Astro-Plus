@@ -2,6 +2,7 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 import type { APIContext } from 'astro';
 import { devSignInEnabled } from './dev-guard.ts';
 import { env } from './env.ts';
+import { supabaseConfigured } from './supabase.ts';
 import type { AdminUser, Role } from './types.ts';
 
 export const SESSION_COOKIE = 'ec_admin_session';
@@ -101,20 +102,30 @@ function sessionSecret(): string | null {
 export function authSetupProblem(): string | null {
   const missing: string[] = [];
   if (!sessionSecret()) missing.push(`ADMIN_SESSION_SECRET (at least ${MIN_SECRET} characters)`);
-  if (!adminEmail()) missing.push('ADMIN_EMAIL');
-  if (!adminPassword()) missing.push('ADMIN_PASSWORD');
+  // With Supabase, accounts live in Supabase Auth, so the single env account is optional.
+  if (!usesSupabaseAuth()) {
+    if (!adminEmail()) missing.push('ADMIN_EMAIL');
+    if (!adminPassword()) missing.push('ADMIN_PASSWORD');
+  }
   return missing.length ? `Admin sign-in is not set up. Missing: ${missing.join(', ')}.` : null;
+}
+
+/** Accounts come from Supabase Auth when Supabase is set up, except in dev with the passwordless sign-in. */
+export function usesSupabaseAuth(): boolean {
+  return supabaseConfigured() && !devSignInEnabled();
 }
 
 interface SessionValue {
   email: string;
   name: string;
   exp: number;
+  /** Set at sign-in after Supabase Auth checked the password. The cookie is signed, so it cannot be forged. */
+  role?: Role;
   /** Honoured only in dev. */
   devRole?: Role;
 }
 
-export function startSession(context: Ctx, user: { email: string; name: string; devRole?: Role }): void {
+export function startSession(context: Ctx, user: { email: string; name: string; devRole?: Role; role?: Role }): void {
   const secret = sessionSecret();
   if (!secret) throw new Error('No session secret');
   const value: SessionValue = { ...user, exp: Math.floor(Date.now() / 1000) + SESSION_SECONDS };
@@ -137,7 +148,7 @@ export async function currentUser(context: Ctx): Promise<AdminUser | null> {
   if (!secret) return null;
   const session = verifyValue<SessionValue>('session', context.cookies.get(SESSION_COOKIE)?.value, secret);
   if (!session || typeof session.email !== 'string') return null;
-  const role = devSignInEnabled() && session.devRole ? session.devRole : roleFor(session.email);
+  const role = devSignInEnabled() && session.devRole ? session.devRole : (session.role ?? roleFor(session.email));
   return role ? { email: session.email, name: session.name || session.email, role } : null;
 }
 

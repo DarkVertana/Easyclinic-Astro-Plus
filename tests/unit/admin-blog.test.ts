@@ -127,11 +127,34 @@ describe('publishing', () => {
     await expect(blog.deletePost('live', me, deps)).rejects.toThrow(/Unpublish/);
     await blog.unpublishPost('live', me, deps);
     expect(parsePost(tree['src/content/posts/live/index.mdx'].raw).frontmatter.status).toBe('draft');
+    await expect(blog.deletePost('live', me, deps)).rejects.toThrow(/trash first/);
+    await blog.trashPost('live', me, deps);
     await blog.deletePost('live', me, deps);
     expect(Object.keys(tree)).toEqual([]);
     expect(await deps.store.getDoc('recent', 'live')).toMatchObject({ state: 'deleted' });
   });
 });
+
+describe('trash', () => {
+  it('moves a draft to the trash, blocks editing it there, and restores it', async () => {
+    const { deps } = setup();
+    await blog.createPost({ title: 'A post', slug: 'post' }, me, deps);
+    expect((await blog.trashPost('post', me, deps)).message).toMatch(/trash/);
+    expect((await blog.openPost('post', deps))?.status).toBe('trash');
+    await expect(blog.saveDraft('post', blankPostFor('post'), me, {}, deps)).rejects.toThrow(/Restore it first/);
+    await expect(blog.publishPost('post', me, deps)).rejects.toThrow(/Restore it first/);
+    await blog.restorePost('post', deps);
+    expect((await blog.openPost('post', deps))?.status).toBe('draft');
+    await expect(blog.restorePost('post', deps)).rejects.toThrow(/not in the trash/);
+  });
+
+  it('refuses to trash a live post', async () => {
+    const { deps } = setup({ 'src/content/posts/live/index.mdx': { raw: livePost(), sha: 'a' } });
+    await expect(blog.trashPost('live', me, deps)).rejects.toThrow(/Unpublish/);
+  });
+});
+
+const blankPostFor = (title: string) => blog.blankPost(title, new Date('2026-11-11T00:00:00Z'));
 
 describe('scheduling', () => {
   it('refuses past times and failing checks; publishes when due', async () => {

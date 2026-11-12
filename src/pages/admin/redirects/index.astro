@@ -1,0 +1,34 @@
+---
+import AdminShell from '../../../components/admin/AdminShell.astro';
+import { Redirects } from '../../../components/admin/blog/Redirects';
+import { pageUser } from '../../../components/admin/data';
+import { blogDeps } from '../../../lib/admin/blog';
+import { listRedirects, type RedirectRow, type RedirectSuggestion } from '../../../lib/admin/redirects';
+
+export const prerender = false;
+
+const auth = await pageUser(Astro);
+if (auth instanceof Response) return auth;
+
+let rows: RedirectRow[] = [];
+let suggestions: RedirectSuggestion[] = [];
+let error: string | null = null;
+try {
+  ({ rows, suggestions } = await listRedirects(blogDeps()));
+} catch (e) {
+  console.error('[admin] redirects not loaded:', e);
+  error = 'The redirects could not be loaded. Reload the page; if it keeps happening, check the content store settings.';
+}
+// Pages that exist, offered as targets while typing.
+let targets: string[] = [];
+try {
+  const { getRegistry } = await import('../../../lib/content/registry.ts');
+  targets = (await getRegistry()).pages.filter((p) => p.status === 'published').map((p) => p.path).sort();
+} catch {
+  targets = [];
+}
+---
+
+<AdminShell title="Redirects">
+  <Redirects client:load {rows} {suggestions} {targets} {error} email={auth.email} />
+</AdminShell>
