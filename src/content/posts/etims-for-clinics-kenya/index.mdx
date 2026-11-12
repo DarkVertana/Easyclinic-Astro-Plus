@@ -1,0 +1,184 @@
+---
+status: published
+headKeyword: etims for clinics in kenya
+title: "eTIMS for Clinics in Kenya: How to Issue KRA Invoices"
+metaDescription: eTIMS for clinics in Kenya is not optional. The Kenya Revenue Authority’s guidance on who must onboard names VAT-exempt suppliers “such as hospitals”…
+h1: "eTIMS for Clinics in Kenya: How to Issue KRA Invoices"
+linkLabel: eTIMS for Clinics in Kenya
+openingAnswer: eTIMS for clinics in Kenya is not optional. The Kenya Revenue Authority’s guidance on who must onboard names VAT-exempt suppliers “such as hospitals” among the businesses that must register on the electronic Tax Invoice Management System and issue every invoice through it, whether or not they are registered for VAT.
+summary: eTIMS for clinics in Kenya is not optional. The Kenya Revenue Authority’s guidance on who must onboard names VAT-exempt suppliers “such as hospitals” among the businesses that must register on the electronic Tax…
+author: subhashish-saha
+lastUpdated: 2026-10-15
+originallyPublished: 2026-10-16
+topic: running-a-clinic
+owner: /features/
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /kenyademo/
+links:
+  hub: /blog/
+  related: []
+notes:
+  - Imported from https://www.easyclinic.io/etims-for-clinics-kenya/ (published 2026-10-16, modified 2026-10-15). Needs the spec 5.18/5.19 refresh before publishing.
+  - Owner /blog/ from migration/posts-manifest.csv (KEEP-new, proposed decision "keep"); marketing confirmed the decision. /blog/ cannot own a post, so the topic running-a-clinic was chosen from the slug and title (TOPIC_BY_KEYWORD in scripts/lib/wp-convert.ts) and is provisional until a landing page owns the post.
+editorialPass:
+  by: 'Imported unchanged from easyclinic.io on request (no editorial review yet)'
+  on: 2026-11-12
+  onlyUsCouldWrite: 'Not reviewed. Published as it appeared on easyclinic.io so the old address keeps working.'
+  readsMachineWritten: 'Not reviewed. Needs the spec 6.5 two-question pass by an editor.'
+---
+
+eTIMS for clinics in Kenya is not optional. The Kenya Revenue Authority’s [guidance on who must onboard](https://www.kra.go.ke/business/etims-electronic-tax-invoice-management-system/learn-about-etims/what-is-etims) names VAT-exempt suppliers “such as hospitals” among the businesses that must register on the electronic Tax Invoice Management System and issue every invoice through it, whether or not they are registered for VAT. Medical services are exempt from VAT, so most private clinics never charge it, but the invoice itself still has to be generated on eTIMS.
+
+The reason is on the other side of the invoice. Since 1 January 2024, a business expense is only deductible for income tax if an electronic tax invoice supports it, and from 1 January 2026 the KRA [validates the income and expenses in every tax return](https://www.kra.go.ke/news-center/public-notices/2323-validation-of-income-and-expenses-in-the-income-tax-returns) against eTIMS data. An insurer, employer or company that pays your clinic needs your eTIMS invoice to claim the cost, and the KRA can now see whether your declared income matches what you invoiced.
+
+This guide covers the legal basis, which eTIMS option fits a clinic, how to onboard in an afternoon, what an invoice must show, the penalties, and the other registrations and taxes a clinic carries. It assumes your facility is already licensed; if not, start with [KMPDC approval](/how-do-i-get-approval-from-the-kmpdc-in-kenya/). For how the invoice data feeds your billing and claims, see what [clinic software in Kenya](/emr-software-in-kenya/) should handle.
+
+## eTIMS for clinics at a glance
+
+| **Item** | **Detail** |
+| --- | --- |
+| Law | Tax Procedures Act, section 23A (inserted by the Finance Act 2023, in force 1 September 2023); Tax Procedures (Electronic Tax Invoice) Regulations, 2024 |
+| Who must comply | Every person carrying on business, including VAT-exempt suppliers such as hospitals and clinics |
+| Deductibility rule | Business expenses not supported by an electronic tax invoice are not deductible from 1 January 2024 |
+| Return validation | From 1 January 2026, KRA checks declared income and expenses against eTIMS data |
+| Options for a non-VAT clinic | eTIMS Lite on eCitizen (web), USSD \*222#, the eTIMS Non VAT mobile app, the eTIMS Online Portal, or integration of your clinic software through OSCU or VSCU |
+| Cost | KRA eTIMS solutions are free; a third-party integrator may charge for integration |
+| Penalty | Twice the tax due for failing to comply, per the Regulations and law firm summaries |
+| Small suppliers | A buyer may issue the invoice for a supplier with turnover of KES 5 million or less through buyer-initiated invoicing |
+
+## Do private clinics pay VAT in Kenya?
+
+No, not on medical services. The [VAT Act 2013, First Schedule, Part II](https://new.kenyalaw.org/akn/ke/act/2013/35/eng@2024-12-27) lists “medical, veterinary, dental, ambulance and nursing services” as exempt. KRA’s [VAT guidance](https://www.kra.go.ke/individual/filing-paying/types-of-taxes/value-added-tax) adds that exempt supplies are not taxable supplies, input tax on them cannot be reclaimed, and a supplier making only exempt supplies does not register for VAT. A clinic that sells taxable goods, for example a pharmacy counter selling items that are not exempt, must count those sales towards the KES 5 million registration threshold in section 34 of the Act, and only a person making taxable supplies may register voluntarily.
+
+Exemption from VAT is not exemption from eTIMS. KRA’s [FAQ](https://www.kra.go.ke/helping-tax-payers/faqs/learn-about-etims) answers “Do I need to onboard if I’m not VAT-registered?” with “Yes,” and names hospitals, schools and NGOs in business as examples. The [Finance Act 2026](https://assets.kpmg.com/content/dam/kpmgsites/ke/pdf/thought_leaderships/tax/2026/Finance-Act-2026_KPMG-Analysis.pdf), effective 1 July 2026, amended the VAT Act so that VAT tax invoices relate to taxable supplies; the separate duty in the Tax Procedures Act for every business to issue electronic tax invoices was not changed by that amendment, and KRA’s guidance to exempt suppliers still reads “onboard.” If your adviser reads the 2026 change differently for an exempt-only clinic, get that view in writing before you stop invoicing through eTIMS.
+
+## E-invoicing rules for clinics in Kenya: what the law requires
+
+[Section 23A of the Tax Procedures Act](https://new.kenyalaw.org/akn/ke/act/2015/29/eng@2024-12-27) says a person who carries on business “shall issue an electronic tax invoice through the system” KRA establishes, and lists what the invoice must contain: the words “TAX INVOICE”, the supplier’s name, address and PIN, the purchaser’s name, address and PIN if any, a serial number, the date and time, a description of the service, any discount, the consideration, and the tax rate and amount where applicable. The [2024 Regulations](https://new.kenyalaw.org/akn/ke/act/ln/2024/64/eng@2024-03-28/publication) add the buyer’s PIN “if the buyer intends to claim the expense or input tax”, an item code, a unique system identifier, a unique invoice identifier and a QR code. Anyone can verify an invoice by scanning the code or using the invoice number checker on iTax.
+
+Three further eTIMS for clinics rules matter day to day. Credit notes must reference the original invoice number and, as KRA’s [solutions page](https://www.kra.go.ke/business/etims-electronic-tax-invoice-management-system/learn-about-etims/types-of-etims-solutions) notes, can only be raised on the solution that issued the invoice. If the system goes down, Regulation 5 requires you to notify the Commissioner in writing within 24 hours, record sales by other means and enter them when the system returns. And from September 2026 KRA has started [consultations on stock management](https://www.kra.go.ke/news-center/public-notices/2390-implementation-of-the-stock-management-functionality-for-electronic-invoicing) within eTIMS, which will matter for clinics that dispense; service-only providers are not required to keep stock records in the system.
+
+## Which eTIMS option fits a clinic
+
+eTIMS for clinics comes in five forms. KRA’s [list of eTIMS solutions](https://www.kra.go.ke/business/etims-electronic-tax-invoice-management-system/learn-about-etims/types-of-etims-solutions) gives a non-VAT clinic five choices. The right one depends on volume and on whether the invoice should come out of your clinic software.
+
+| **Option** | **Built for** | **Fits a clinic when** | **Limits** |
+| --- | --- | --- | --- |
+| eTIMS Lite on eCitizen | Small and micro taxpayers not registered for VAT | A solo practice with a few invoices a day | Needs internet; invoices typed by hand |
+| USSD \*222# | Individuals and sole proprietors | A clinic with no computer at the desk, or as a backup | One item at a time; SMS link to the invoice |
+| eTIMS Non VAT mobile app | Non-VAT taxpayers on a phone | A mobile clinic or home-visit practice | Phone-based entry |
+| eTIMS Online Portal | Service providers | A clinic that invoices services only and wants customer records | Needs internet; services only |
+| OSCU or VSCU integration | Businesses invoicing from their own system | A clinic whose billing runs in its clinic management software | Self-integrate or use a KRA-verified integrator; VSCU keeps working offline |
+
+For most clinics with a front desk, the last row is the goal. KRA’s [integration page](https://www.kra.go.ke/business/etims-electronic-tax-invoice-management-system/learn-about-etims/etims-system-to-system-integration) describes OSCU for systems that are always online and VSCU for systems that must invoice through outages, with a sandbox for testing and a published list of verified integrators. The invoice then leaves the same screen as the patient’s bill, with the buyer’s PIN captured once, and the clinic never retypes a sale.
+
+## How to onboard a clinic on eTIMS
+
+Setting up eTIMS for clinics is self-service, with no KRA approval step. The [onboarding page](https://www.kra.go.ke/business/etims-electronic-tax-invoice-management-system/learn-about-etims/how-to-onboard-on-etims) states that taxpayers can “self-on-board on eTIMS by eliminating the requirement for intervention from KRA,” and that registration comes before installing any solution. The clinic’s KRA PIN and the mobile number registered on iTax are the two things you need.
+
+### Step 1: Check the PIN and the iTax mobile number
+
+The one-time password goes to the mobile number on the iTax profile. If that number belongs to a former accountant or director, update it on iTax first; the KRA FAQ lists a wrong number as the usual reason the OTP never arrives.
+
+### Step 2: Register for eTIMS
+
+For the Online Portal, eTIMS Client or integration, follow the [registration guide](https://www.kra.go.ke/images/publications/User-Guide-for-eTIMS-Registration.pdf): sign up at etims.kra.go.ke with the clinic’s PIN, create a password, enter the OTP, log in, open Service request, add the director’s PIN and OTP, and choose the solution type. For eTIMS Lite, the [eCitizen guide](https://www.kra.go.ke/images/publications/eTIMS-Userguide-on-eCitizen.pdf) is shorter: sign in at ecitizen.kra.go.ke, open “Invoicing (eTIMS)”, tick the two boxes and click “Activate E-Invoicing”. For USSD, the [2026 USSD guide](https://www.kra.go.ke/images/publications/USSD-User-Guide---2026.pdf) walks through \*222#, KRA Services, eTIMS, ID number and year of birth, and a confirmation SMS.
+
+### Step 3: Set up customers and services
+
+Create the services you bill most often as items with a description and unit price. Add your regular business customers, insurers and corporate clients with their PINs and validate each PIN once; the eCitizen solution also lets you add customers without a PIN for walk-in patients paying from their own pocket.
+
+### Step 4: Issue the first invoice
+
+On eCitizen the flow is Create Sales Invoice, choose or add the buyer, add the item, create and download. On USSD it is option 1, Sales Invoice, then customer, product, quantity and price, with the invoice link sent by SMS. Scan the QR code on your own first invoice to confirm it validates.
+
+### Step 5: Capture the backlog, then file
+
+If the clinic invoiced manually before onboarding, KRA’s [December 2023 notice](https://www.kra.go.ke/news-center/public-notices/2077-electronic-tax-invoicing-for-non-vat-registered-persons) asked non-VAT taxpayers to capture those invoices progressively into the system. From then on, your eTIMS sales schedule is what the KRA compares with your annual return, so reconcile monthly rather than at filing time.
+
+## Invoicing patients, insurers and SHA
+
+With eTIMS for clinics, the buyer’s PIN is the detail that decides whether your customer can claim the cost. A patient paying personally can be invoiced without a PIN. An insurer, an employer with a corporate scheme, or any company paying for staff treatment should be invoiced with its PIN, because the Regulations tie the PIN to the right to claim the expense, and the 2026 validation notice says invoices must carry the buyer’s PIN “where applicable”. For SHA, the claim goes through the SHA system, but the clinic’s own invoice record should still be issued on eTIMS; our guide to [SHA registration for clinics](/sha-registration-for-clinics-in-kenya/) covers the claims side.
+
+KRA’s [buyer-initiated invoicing guidance](https://www.kra.go.ke/business/etims-electronic-tax-invoice-management-system/learn-about-etims/buyer-initiated-invoicing) is the one eTIMS rule that works in reverse. Where a supplier’s annual turnover is KES 5 million or less, the buyer may raise the invoice on eCitizen and the supplier accepts it by USSD or eCitizen within 30 days. A small clinic that supplies a corporate client may find the client raising the invoice this way; a clinic buying from a small supplier may need to do the same. [Bowmans’ note on the guidelines](https://bowmanslaw.com/insights/kenya-the-revenue-authority-publishes-the-reverse-invoicing-guidelines/) explains the mechanics.
+
+## Penalties and what non-compliance costs your customers
+
+Regulation 12 of the [2024 Regulations](https://new.kenyalaw.org/akn/ke/act/ln/2024/64/eng@2024-03-28/publication) makes failing to comply, tampering with the system, uninstalling it or changing the device without notice an offence carrying the penalty in section 86 of the Tax Procedures Act; [EY’s summary](https://www.ey.com/en_gl/technical/tax-alerts/kenya-gazettes-tax-procedures-electronic-tax-invoice-regulations-2024) puts that penalty at twice the tax due. Section 59A of the Act adds a penalty of up to KES 100,000 a month for failing to integrate a system with KRA’s reporting system after a notice to do so. The commercial cost is larger: a customer who cannot deduct your invoice will find a clinic that issues one, and from 2026 the KRA will compare the income you declare with the invoices you issued and, per [EY’s reading of the notice](https://www.ey.com/en_gl/technical/tax-alerts/kenya-requires-non-vat-registered-taxpayers-to-onboard-on-e-tims), take the higher figure.
+
+## How to register a clinic as a business in Kenya
+
+Business registration for clinics in Kenya runs through the Business Registration Service on eCitizen, and it comes before the KRA PIN and before the KMPDC licence. The [BRS](https://brs.go.ke/) now merges name reservation and registration into one application with up to three preferred names. Its [fee schedule](https://brs.go.ke/fee-schedule-companies-registry/) lists a business name at KES 950, issued in a day, and a private limited company at KES 10,650 with a certificate in three to five days. A business name is not a separate legal entity; a company is, which is what most clinics with more than one owner, or with bank borrowing, will want.
+
+| **Step** | **Where** | **What you get** |
+| --- | --- | --- |
+| Register the business name or company | BRS on eCitizen | Certificate of registration or incorporation; CR12 for a company |
+| Get the business KRA PIN | iTax, non-individual registration | PIN certificate; directors must already hold PINs |
+| Onboard eTIMS | etims.kra.go.ke or eCitizen | Ability to issue electronic tax invoices |
+| County single business permit | Your county’s licensing office or portal | Annual trade permit; requirements and fees vary by county |
+| Facility licence | KMPDC | Registration and annual licence for the clinic; separate licences for lab, pharmacy or radiology |
+
+KRA’s [company PIN page](https://www.kra.go.ke/business/companies-partnerships/companies-partnerships-pin-taxes/companies-partnerships-pin-registration) asks for the registration certificate details and the directors’ PINs and IDs. The KMPDC’s [requirements for opening a medical institution](https://kmpdc.go.ke/resources/Requirements_for_Opening_a_Medical_Institution_Revised_Aug_2017.pdf) list the business registration certificate among the documents for a facility application, which is why registration comes first. The full sequence, from premises to first patient, is in our [guide to starting a clinic in Kenya](/the-ultimate-guide-to-starting-a-clinic-in-kenya/).
+
+## Clinic tax in Kenya: the obligations beyond eTIMS
+
+eTIMS is the invoicing layer of clinic tax in Kenya. Clinic tax in Kenya also includes income tax on profits, payroll deductions and statutory levies. Rates below are as at 15 October 2026; confirm each with KRA before relying on it.
+
+| **Obligation** | **Rate or rule** | **Source** |
+| --- | --- | --- |
+| Corporate income tax | 30% for resident companies ([PwC](https://taxsummaries.pwc.com/kenya/corporate/taxes-on-corporate-income)) | Income Tax Act |
+| Individual rates (sole proprietor) | 10% on the first KES 288,000 a year, rising to 35% above KES 9.6 million; personal relief KES 28,800 ([KRA](https://www.kra.go.ke/individual/filing-paying/types-of-taxes/paye)) | Income Tax Act, Third Schedule |
+| Turnover Tax | Applies to turnover between KES 1 million and 25 million; KRA’s [TOT page](https://www.kra.go.ke/individual/filing-paying/types-of-taxes/turnover-tax-tot) quotes 1.5% and excludes professional fees, so confirm whether a clinic’s income qualifies | Income Tax Act, section 12C |
+| PAYE | Employee tax deducted and remitted by the 9th of the following month ([KRA](https://www.kra.go.ke/individual/filing-paying/types-of-taxes/paye)) | Income Tax Act |
+| Withholding tax | 5% on professional and management fees paid to residents above KES 24,000 a month; remit within five working days ([KRA](https://www.kra.go.ke/individual/filing-paying/types-of-taxes/individual-withholding-tax)) | Income Tax Act |
+| NSSF | 6% employee and 6% employer; from February 2026 the upper earnings limit is KES 108,000, a maximum of KES 6,480 each ([PwC](https://taxsummaries.pwc.com/kenya/corporate/other-taxes)) | NSSF Act 2013 |
+| SHIF | 2.75% of gross salary, deducted and remitted by the employer ([PwC](https://taxsummaries.pwc.com/kenya/corporate/other-taxes)) | Social Health Insurance Act 2023 |
+| Affordable Housing Levy | 1.5% from the employee and 1.5% from the employer, remitted by the ninth working day after month end ([KRA notice](https://www.kra.go.ke/news-center/public-notices/2099-collection-of-the-affordable-housing-levy-by-kenya-revenue-authority)) | Affordable Housing Act 2024 |
+
+Two of these are easy to miss. Withholding tax applies when the clinic pays a visiting consultant or a locum as a professional fee, not only when the clinic is paid. And the SHIF and housing levy deductions sit on the same PAYE return, under their own sheets. Some reliefs do exist for new medical businesses; our post on [tax benefits for medical startups in Kenya](/tax-benefits-for-medical-startups-in-kenya/) covers them.
+
+## Where clinic software fits
+
+The clinic that struggles with eTIMS for clinics is the one that invoices in two places: a receipt book or billing screen for the patient, and a separate KRA portal for the tax invoice. Integration removes the second place. A clinic management system connected to eTIMS through OSCU or VSCU issues the KRA invoice with the QR code at the moment the bill is raised, stores the buyer’s PIN against the insurer or company account so it is never retyped, keeps credit notes tied to the original invoice, and gives you a sales schedule that matches what KRA holds. Easy Clinic’s [EMR software in Kenya](/emr-software-in-kenya/) is built around that billing flow, and its [features page](/features/) lists the invoicing and claims documentation it handles. Ask any vendor whether its eTIMS integration is live in Kenya, which control unit it uses, and how it behaves when the internet drops.
+
+## Frequently asked questions about eTIMS for clinics
+
+### Do private clinics pay VAT in Kenya?
+
+Not on medical, dental, nursing and ambulance services, which the VAT Act exempts. A clinic that sells taxable goods must count those sales towards the KES 5 million VAT registration threshold.
+
+### Does a VAT-exempt clinic still need eTIMS for clinics?
+
+Yes. KRA names hospitals among the VAT-exempt suppliers that must onboard and issue electronic tax invoices. Confirm with your adviser how the Finance Act 2026 VAT invoice amendment applies to an exempt-only practice.
+
+### Which eTIMS option should a small clinic use?
+
+eTIMS Lite on eCitizen or USSD \*222# for a solo practice with few invoices; the Online Portal for a service-only clinic that wants customer records; OSCU or VSCU integration once billing runs in clinic software.
+
+### Does eTIMS cost anything?
+
+KRA’s solutions are free. A third-party integrator may charge to connect your software.
+
+### Do I need the patient’s KRA PIN on every invoice?
+
+No. The PIN is required where the buyer intends to claim the expense. Walk-in patients paying personally can be invoiced without one; insurers and companies should be invoiced with theirs.
+
+### What happens if the internet is down?
+
+VSCU and the eTIMS Client keep invoicing offline and transmit later; USSD needs no internet. The Regulations require written notice to the Commissioner within 24 hours of a system failure and entry of the sales once restored.
+
+### What is the penalty for not issuing eTIMS invoices?
+
+The Regulations apply the penalty in section 86 of the Tax Procedures Act, which law firm summaries put at twice the tax due. Expenses your customers cannot support with an eTIMS invoice are not deductible for them.
+
+### How do I register a clinic as a business in Kenya?
+
+Register a business name (KES 950) or a private limited company (KES 10,650) with the Business Registration Service on eCitizen, obtain the business KRA PIN on iTax, onboard eTIMS, get the county permit, then apply to KMPDC for the facility licence.
+
+## Conclusion
+
+eTIMS for clinics in Kenya comes down to one rule with wide consequences: every business issues its invoices through KRA’s system, and VAT exemption does not change that. Onboarding takes an afternoon, the solutions are free, and the buyer’s PIN on each insurer and corporate invoice is what keeps your customers’ expenses deductible and your own return clean when KRA validates it. Business registration for clinics in Kenya, the KRA PIN and the KMPDC licence come first; eTIMS is the layer that makes the clinic’s income visible and defensible from the first patient.
+
+To see how a Kenyan clinic can raise the patient bill, the eTIMS invoice and the insurance claim from one screen, explore [Easy Clinic](/) or book a short walkthrough from the [pricing page](/pricing/).

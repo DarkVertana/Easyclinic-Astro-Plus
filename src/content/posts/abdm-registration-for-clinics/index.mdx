@@ -1,0 +1,170 @@
+---
+status: published
+headKeyword: abdm registration for clinics
+title: "ABDM Registration for Clinics: HFR, HPR and ABHA Steps"
+metaDescription: ABDM registration for a private clinic is three registrations, done in a fixed order.
+h1: "ABDM Registration for Clinics: HFR, HPR and ABHA Steps"
+linkLabel: ABDM Registration for Clinics
+openingAnswer: ABDM registration for a private clinic is three registrations, done in a fixed order. The doctor or owner first gets a Healthcare Professional ID on the Healthcare Professionals Registry (HPR).
+summary: ABDM registration for a private clinic is three registrations, done in a fixed order. The doctor or owner first gets a Healthcare Professional ID on the Healthcare Professionals Registry (HPR).
+author: subhashish-saha
+lastUpdated: 2026-10-15
+originallyPublished: 2026-10-15
+topic: running-a-clinic
+owner: /features/
+ctas:
+  primary:
+    label: Book a 20-minute demo
+    href: /indiademo/
+links:
+  hub: /blog/
+  related: []
+notes:
+  - Imported from https://www.easyclinic.io/abdm-registration-for-clinics/ (published 2026-10-15, modified 2026-10-15). Needs the spec 5.18/5.19 refresh before publishing.
+  - Owner /blog/ from migration/posts-manifest.csv (KEEP-new, proposed decision "keep"); marketing confirmed the decision. /blog/ cannot own a post, so the topic running-a-clinic was chosen from the slug and title (TOPIC_BY_KEYWORD in scripts/lib/wp-convert.ts) and is provisional until a landing page owns the post.
+editorialPass:
+  by: 'Imported unchanged from easyclinic.io on request (no editorial review yet)'
+  on: 2026-11-12
+  onlyUsCouldWrite: 'Not reviewed. Published as it appeared on easyclinic.io so the old address keeps working.'
+  readsMachineWritten: 'Not reviewed. Needs the spec 6.5 two-question pass by an editor.'
+---
+
+ABDM registration for a private clinic is three registrations, done in a fixed order. The doctor or owner first gets a Healthcare Professional ID on the Healthcare Professionals Registry (HPR). That ID is the login for the Health Facility Registry (HFR), where the clinic itself is registered and verified by the district. Once both exist, the clinic can create and link Ayushman Bharat Health Accounts (ABHA) for its patients through ABDM-enabled software. None of the three carries a fee.
+
+The numbers show why this matters now. As of 12 August 2026, the [Press Information Bureau reports](https://www.pib.gov.in/FactsheetDetails.aspx?id=150834&ModuleId=16&reg=48&lang=1) 96.43 crore ABHA numbers created, over 110 crore health records linked, more than 5.47 lakh facilities on the HFR and over 10.50 lakh professionals on the HPR. Patients increasingly arrive with an ABHA and expect the clinic to use it. Facilities that link records can also claim payments under the Digital Health Incentive Scheme, which ran in its latest form to September 2026.
+
+This guide explains what HPR and HFR are, who can register, the exact information each form asks for, how verification works, how long it takes, and what changes for the front desk once ABHA is in use. If you want to see how a clinic system handles the ABHA and record-linking side, our [ABDM compliance page](/abdm-compliance/) sets out the milestones a software product has to pass.
+
+## ABDM registration at a glance
+
+| **Item** | **Detail** |
+| --- | --- |
+| Programme | Ayushman Bharat Digital Mission (ABDM), run by the National Health Authority under the Ministry of Health and Family Welfare |
+| Three registries | HPR for professionals (14-digit HP ID), HFR for facilities (12-digit Facility ID), ABHA for patients (14-digit number plus an ABHA address) |
+| Order | HPR ID first, then HFR, then ABHA creation and record linking through ABDM-enabled software |
+| Portals | hprid.abdm.gov.in and hpr.abdm.gov.in for professionals; facility.abdm.gov.in for facilities; abha.abdm.gov.in for patients |
+| Who verifies | HPR: the State Medical, Dental or Nursing Council. HFR: District Verifiers appointed by the State or UT |
+| Time | About 20 to 30 minutes to fill each form; verifiers are asked to decide HFR applications within 30 days |
+| Fee | None for HPR or HFR. Software certification through the ABDM sandbox is a separate process for vendors |
+| Status | Voluntary for private facilities under NHA guidance; required for the Digital Health Incentive Scheme and Scan and Share |
+
+## What is HPR and HFR in ABDM?
+
+HPR and HFR are the two provider-side registries of ABDM. The [NHA’s building blocks guide](https://abdm.gov.in:8081/uploads/ABDM_Building_Blocks_v8_3_External_Version_eabbc5c0f3_4_a96f40c645.pdf) describes the Healthcare Professionals Registry as a single national register of doctors, nurses and other practitioners, and the Health Facility Registry as the register of every hospital, clinic, lab and pharmacy, public and private. The July 2026 [Ministry backgrounder](https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jul/doc202676912801.pdf) puts it simply: the HFR is “a national registry of health facilities, hospitals, clinics, labs, pharmacies, public and private, all in one place,” and the HPR covers “all healthcare professionals, from doctors to AYUSH practitioners, verified and digitally connected.”
+
+Two points confuse new applicants. First, HPR registration does not replace your council registration. The NHA guide states that council registration “is legally mandatory, while HPR participation is voluntary.” Second, HPR verification is done by your council, not by the NHA. The [HPR FAQ](https://doctorsbx.abdm.gov.in/faq) says doctors are verified by the State Medical Council, dentists by the State Dental Council and nurses by the State Nursing Council, and that “NHA only provides the technology platform.”
+
+## ABDM registration process for private clinics: who registers what
+
+| **Registration** | **Who does it** | **What you need** | **Who verifies** |
+| --- | --- | --- | --- |
+| HPR (HP ID) | Each doctor or practitioner, and the person who will act as facility manager | Aadhaar linked to a mobile number, council registration number, degree certificate | State council for your profession |
+| HFR (Facility ID) | The facility manager, logged in with an HP ID | Facility name, address, geo-location, two photographs (building and signboard), ownership and service details | District Verifier appointed by the State or UT |
+| ABHA (patients) | The patient, or the front desk on the patient’s behalf | Patient’s Aadhaar or driving licence and mobile number | Automated through Aadhaar or DL verification |
+
+The [HFR registration guide](https://abdm.gov.in:8081/uploads/HFR_Pathways_cbd50f5183.pdf) is explicit that the facility manager logs in with a Healthcare Professional ID. If the owner is not a clinician, a doctor at the clinic can hold the HP ID and act as facility manager, or the owner can create an HP ID in the relevant non-clinical category offered on the portal. Confirm the category before you start, because the [HPR FAQ](https://doctorsbx.abdm.gov.in/faq) notes that a wrong category can only be changed before the application is submitted.
+
+## HPR registration: getting the Healthcare Professional ID
+
+HPR registration is the first step of ABDM registration because the HP ID opens the facility portal. The [NHA’s HPR pathways guide](https://abdm.gov.in:8081/uploads/HPR_Pathways_a9031eb744.pdf) gives two routes.
+
+1. **Council search route.** On the HPR portal, select your registration council, enter your registration number, choose your category and sub-category, confirm the details the portal returns, then verify with Aadhaar OTP. After Aadhaar verification you land on your profile.
+2. **HP ID first route.** On hprid.abdm.gov.in, generate the HP ID using Aadhaar OTP or a driving licence. If you use a driving licence, the guide says you must visit your council in person for verification, so Aadhaar is the practical choice. Then log in to the HPR with the HP ID and password, or Aadhaar or mobile OTP.
+
+Either way, you then complete four sections: personal details, registration and academic details, work details, and a preview, followed by e-sign and submit. The guide says registration takes 20 to 30 minutes with your registration certificate and degree ready, and that “there is no fee for registration in the Healthcare Professionals Registry.” You receive a 14-digit HP ID. Your application sits as a provisional ID until the council verifies it; the FAQ warns that any discrepancy between your council record and your application delays activation, and that name changes need council approval first.
+
+Doctors can declare one or more facilities where they work from their HPR profile, and the facility manager confirms them from the HFR side. This two-way link is what lets ABDM show a verified doctor at a verified clinic.
+
+## How to register a clinic on the ABDM Health Facility Registry
+
+HFR registration is done by the facility manager at facility.abdm.gov.in. The [NHA registration poster](https://abdm.gov.in:8081/uploads/7_Poster_HFR_Steps_to_Register_and_its_Benefits_8386c65be2.pdf) and the [HFR pathways guide](https://abdm.gov.in:8081/uploads/HFR_Pathways_cbd50f5183.pdf) describe the same flow. Have everything in the table below ready and the form takes 20 to 30 minutes.
+
+### Step 1: Log in with your HP ID
+
+Open facility.abdm.gov.in and sign in with your HP ID and password, or with mobile or Aadhaar OTP. Select the “Facility Manager” role on the dashboard. If the clinic already appears in a government list, you can search by name or by an existing identifier such as an AB PM-JAY or NIN number and claim it rather than creating a duplicate; the verifiers will not approve two records for one facility.
+
+### Step 2: Enter the facility details
+
+The [HFR verification SOP](https://abdm.gov.in/strapicms/uploads/HFR_SOP_for_verifiers_2697480f8a_2_fc7c967615_4_51f1289d5c.pdf) lists the fields a District Verifier checks: facility name, ownership (government, private or PPP), system of medicine, facility type and subtype, full address with state, district, sub-district and pin code, geographic location, and the two uploads. Facility types include “Clinic/Dispensary”, “Dental Clinic”, “Physiotherapy Clinic”, “Diagnostic Laboratory” and “Pharmacy”, with AYUSH types for Ayurveda, Unani, Siddha, Sowa-Rigpa and Homeopathy. Pin the geo-location on the map while standing at the clinic; the SOP says the address and the geo-location must match.
+
+### Step 3: Complete the self-declared sections
+
+A second set of fields is self-certified and not checked by the verifier: speciality type, whether you offer OPD, IPD or day care, operating days and hours, contact details, website and appointment booking link, bed counts if any, services such as X-ray or ultrasound, and whether the facility uses ABDM-compliant software. Fill these accurately because they appear in the public facility directory and in patient-facing apps.
+
+### Step 4: Upload the photographs and submit
+
+Upload one photograph of the building and one of the signboard, review the summary, and submit for verification. Your record now shows as “Submitted”.
+
+### Step 5: Respond to any query and collect the Facility ID
+
+The SOP asks each State and UT to appoint at least two District Verifiers and one District Nodal Officer per district, tells verifiers not to skip private facilities, and asks them to decide within 30 days; the NHA follows up with verifiers who take longer. A verifier can raise a query instead of rejecting, so watch the portal and your registered mobile. Once approved, the clinic receives a 12-digit Facility ID. An older NHA guide quotes up to 15 working days for verification, so expect anything from two to five weeks. If you are stuck, the ABDM helpline is 1800-11-4477 and the [grievance portal](https://grievance.abdm.gov.in/old/faq.php) works without a login with a 30-day resolution target.
+
+## ABHA for patients: what the front desk does
+
+Once the clinic is on the HFR and its doctors are on the HPR, ABHA is the patient side of ABDM registration. ABHA is a 14-digit number plus an ABHA address, which looks like name@abdm. The [PIB’s September 2025 guide](https://newindiasamachar.pib.gov.in/WriteReadData/flipbook/2025/Sep/2nd/English/files/basic-html/page23.html) describes the citizen flow: open the ABHA portal, choose Aadhaar or driving licence, enter the Aadhaar number and OTP, and the ABHA card is ready. Clinics can do assisted creation at the counter for patients without a smartphone.
+
+Linking records is where the clinic earns its place in the network. Under the [NHA’s HIP and HIU guidelines](https://abdm.gov.in:8081/uploads/HIP_HIU_Guidelines_f85df336ec.pdf), a clinic that creates or stores health records is a Health Information Provider. It links a “care context” for each visit to the patient’s ABHA, and no other facility can see those records without the patient’s consent through the consent manager. The patient can revoke consent at any time. Scan and Share, described in the [NHA onboarding manual](https://abdm.gov.in/strapicms/uploads/ABDM_Scan_and_Share_Onboarding_Manual_18_01_2023_1_0600fe7747.pdf), lets a patient scan the clinic’s QR code with the ABHA app and receive an OPD token with their profile already filled, which removes the registration queue. The manual lists three prerequisites: HFR registration, professionals on the HPR, and an ABDM-enabled system installed.
+
+## What “ABDM-enabled software” means and why it matters for incentives
+
+Your clinic software, not the clinic, is what integrates with ABDM. The HIP and HIU guidelines define three milestones: M1 for ABHA creation and verification at registration, M2 for sharing records as a Health Information Provider, and M3 for viewing a patient’s history as a Health Information User with consent. A product is tested in the ABDM sandbox and then certified; the [PIB reported](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2264241&reg=3&lang=1) more than 450 public and private solutions integrated as of May 2026. Ask any vendor which milestones its product is certified for and whether it is on the current ABDM v3 APIs.
+
+Milestones matter for money. The [Digital Health Incentive Scheme corrigendum of 9 April 2026](https://rajswasthya.rajasthan.gov.in/admin/upload/letter/2026/05/40%20Dt.05.05.2026%20NHM%20CSR%20NDHM%20\(ABDM)\-01779-PART-14.pdf) ran the scheme from April to September 2026, subject to funds, and paid facilities Rs 10 for each linked diagnostic report or discharge summary and Rs 5 for each linked prescription or OPD consultation, with a minimum of 100 eligible transactions a month, a cap of one transaction a day and five a month per ABHA, and only KYC-verified ABHA addresses counting. Facilities had to use software integrated up to M3. The corrigendum removed the earlier Rs 2,500 accumulation threshold. Whether the scheme has been extended beyond September 2026 was not confirmed at the time of writing; check the NHA notices before you budget for it.
+
+## Common reasons ABDM registration stalls
+
+- **Applying for HFR before the HP ID is active.** The facility portal needs an HP ID to log in. Get the professional registration done first.
+- **Council record does not match the application.** A different spelling of your name, or an old registration number, holds the HPR application until the council resolves it.
+- **Using a driving licence for the HP ID.** It forces an in-person council visit. Use Aadhaar OTP where you can.
+- **Address and map pin disagree.** The verifier SOP treats this as a reason to query or reject.
+- **Duplicate facility records.** Search before you create. Verifiers do not approve duplicates.
+- **Photographs that do not show the signboard.** The signboard photo is how the verifier matches the facility name.
+- **Leaving the query unanswered.** A query is not a rejection. Reply on the portal and the clock restarts.
+
+## Is ABDM registration mandatory for a private clinic?
+
+No NHA document we opened makes HFR or HPR registration compulsory for private clinics. The [NHA guide](https://abdm.gov.in:8081/uploads/ABDM_Building_Blocks_v8_3_External_Version_eabbc5c0f3_4_a96f40c645.pdf) calls HFR enrolment voluntary, and the [verifier SOP](https://abdm.gov.in/strapicms/uploads/HFR_SOP_for_verifiers_2697480f8a_2_fc7c967615_4_51f1289d5c.pdf) states that verification “is not mandated to regulate or set standards for the facilities,” pointing to the Clinical Establishments Act as the separate licensing law. In practice, registration is a condition of the incentive scheme, of Scan and Share, and of any record exchange with hospitals and labs, so most clinics that use digital records will want it. Registration is also separate from the licences your state requires to open and run the clinic, which our guide on [how to open a clinic in India](/clinic-in-india/) covers.
+
+## Where clinic software fits
+
+ABDM registration of the clinic and its doctors is paperwork you do once. ABHA creation, record linking and consent handling happen on every visit, and they live in your clinic software. A system that holds ABDM certification creates or fetches the ABHA at registration, links each consultation, prescription and report to it, and issues [digital prescriptions](/multilingual-digital-prescriptions/) the patient can open from the ABHA app. Easy Clinic’s [EMR software in India](/emr-software-in-india/) is built around that flow, and the [features page](/features/) lists what it records at each step. Before you choose any product, ask for its ABDM milestone certificates and check that your HFR record lists it as the software in use.
+
+## Frequently asked questions
+
+### What is the difference between HPR and HFR in ABDM?
+
+HPR registers the professional and gives a 14-digit HP ID verified by the person’s council. HFR registers the facility and gives a 12-digit Facility ID verified by the district. The HP ID is also the login for the HFR portal.
+
+### Can a clinic owner who is not a doctor do the HFR registration?
+
+The facility manager needs an HP ID. A doctor at the clinic can act as facility manager, or the owner can create an HP ID in a non-clinical category if the portal offers one for their role. Confirm the category before applying.
+
+### Is there a fee for ABDM registration?
+
+The NHA states there is no fee for HPR registration, and none of its HFR guides mention a fee. Software certification is a separate process handled by vendors.
+
+### How long does HFR verification take?
+
+Verifiers are asked to decide within 30 days; an older NHA guide quotes up to 15 working days. Allow two to five weeks and respond to any query quickly.
+
+### Does ABDM registration replace my Clinical Establishments Act licence?
+
+No. The NHA says HFR verification is not a regulatory check. Your state licence and other permits remain separate requirements.
+
+### Can patients without Aadhaar get an ABHA?
+
+Yes. ABHA can be created with a driving licence, and assisted creation at the clinic is available for patients without a smartphone.
+
+### Do I need ABDM-enabled software to register?
+
+Not to register on the HFR. You need it to create ABHAs, link records, use Scan and Share and claim incentives.
+
+### Who do I contact if my application is stuck?
+
+Call 1800-11-4477 or raise a ticket on grievance.abdm.gov.in, which has a 30-day resolution target.
+
+## Conclusion
+
+ABDM registration for a private clinic is three free registrations in a fixed order: HPR for the doctor, HFR for the facility, ABHA for the patient. The forms take under an hour between them; the waiting is on council and district verification, which goes faster when your details match your council record and your map pin matches your address. With more than 96 crore ABHA numbers in use, hfr registration and hpr registration are becoming the baseline for a clinic that wants to exchange records, use Scan and Share and claim digital health incentives.
+
+To see how a clinic handles ABHA creation, record linking and consent on every visit, explore [Easy Clinic](/) or book a short walkthrough from the [pricing page](/pricing/).
