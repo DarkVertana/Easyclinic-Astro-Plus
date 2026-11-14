@@ -179,7 +179,7 @@ function planCell(text: string | null) {
   </table>
   </>
   )}
-  {note && <Md text={note} class:list={['mt-4 text-sm', variant !== 'default' ? 'mt-6 max-w-none' : 'max-w-[46rem]', sectionTone === 'inverse' ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
+  {note && <Md text={note} class:list={['mt-4 text-sm', variant !== 'default' ? 'mt-6 max-w-none' : wideIntro ? 'max-w-none' : 'max-w-[46rem]', sectionTone === 'inverse' ? 'text-ink-inverse-muted' : 'text-ink-muted']} />}
 </Section>
 
 <style>

@@ -10,14 +10,16 @@ secondaryKeywords:
   - clinic software Kampala
 title: AI EMR Software in Uganda | Easy Clinic
 metaDescription: >-
-  AI EMR and clinic management software for clinics, hospitals and diagnostic centres in Kampala, Entebbe, Gulu, Mbarara and across Uganda.
+  Easy Clinic is EMR software in Uganda for clinics in Kampala, Entebbe, Gulu and Mbarara. Prescriptions,
+  billing, pharmacy and reports in one login.
 h1: Smart AI EMR software for clinics and hospitals in Uganda
 linkLabel: EMR software in Uganda
-eyebrow: Best EMR software in Uganda 2026
+eyebrow: AI EMR software in Uganda
 openingAnswer: >-
-  Easy Clinic is AI EMR software designed to help clinics, hospitals and diagnostic centres in Uganda move away
-  from paper records and manual workflows. From private clinics in Kampala to regional healthcare facilities in
-  Gulu, Mbale and Mbarara, it brings clinical, administrative and operational work into one platform.
+  Easy Clinic is EMR software in Uganda that helps clinics, hospital OPDs and diagnostic centres move away
+  from paper records and manual workflows. From private clinics in Kampala to regional facilities in Gulu,
+  Mbale and Mbarara, reception, doctors, lab, pharmacy and billing each work from their own queue in one
+  login. Prescriptions take under 30 seconds and reach patients on WhatsApp.
 summary: >-
   How Easy Clinic runs a clinic in Uganda, how it compares with EHR and basic clinic software, multi-branch clinics,
   teleconsultation, and who to contact.
@@ -48,70 +50,69 @@ sections:
       eyebrow: AI EMR and clinic software
       heading: What is AI EMR software, and how is it different from EHR software?
       intro: >-
-        AI EMR software in Uganda goes beyond traditional EHR software and standalone clinic management software.
-        While conventional EHR software focuses on storing patient records digitally, **AI EMR software integrates
-        clinical workflows, billing, analytics and communication tools into one system.**
+        An EMR (electronic medical record) is the digital record a clinic keeps for each patient. An EHR
+        (electronic health record) is built to share that record across hospitals and providers. AI EMR
+        software goes one step further. It runs the clinic day as well: appointments, billing, pharmacy,
+        reports and patient messages, with AI that helps the doctor during the visit.
       tone: plain
       wideIntro: true
       variant: compare
-      caption: EHR software vs clinic management software vs AI EMR software in Uganda
-      columns: [Feature, Traditional EHR software, Basic clinic management software, AI EMR software (Easy Clinic)]
+      caption: Paper or basic records vs basic clinic software vs AI EMR software in Uganda
+      columns: [Feature, Paper or basic records, Basic clinic software, AI EMR software (Easy Clinic)]
       rows:
-        - [Patient records, Digital storage only, Limited integration, '**Fully integrated AI EMR system**']
-        - [Automation, Minimal, Partial, '**Advanced AI automation**']
-        - [Billing and payments, Manual or semi-digital, Moderate, '**Fully automated and accurate**']
-        - [Inventory management, Not included, Basic tracking, '**Real-time monitoring with alerts**']
-        - [Multi-location support, Difficult, Partial, '**Fully centralised control**']
-        - [Analytics, Basic report, Limited insights, '**Advanced dashboards and insights**']
-        - [Communication, Not integrated, Limited, '**SMS, WhatsApp, email and teleconsultation**']
-        - [Scalability, Low, Moderate, '**High for clinics and hospitals**']
+        - [Patient records, Files and folders, Records only, '**Full history, every visit by every doctor, and documents kept for life**']
+        - [Prescriptions, Handwritten, Typed from scratch, '**Under 30 seconds with Ready Rx and shortcut keys, sent on WhatsApp**']
+        - [Billing and payments, Manual, Basic invoices, '**One invoice for consultation, tests and medicines, with part payments and refunds**']
+        - [Inventory management, Stock registers, Basic tracking, '**Batches and expiry dates, with stock that drops only when the pharmacist dispenses**']
+        - [Multi-location support, Separate files per branch, Limited, '**One login with a location dropdown and shared stock**']
+        - [Analytics, Counted by hand, A few reports, '**Clinical and financial dashboards and about 25 standard reports**']
+        - [Communication, Phone calls, SMS, '**WhatsApp, SMS, email and video consultations**']
+        - [Clinical AI, None, None, '**Cura AI, a paid add-on that flags and suggests while the doctor decides**']
+        - [Scalability, One room, Small clinics, '**A solo clinic to a 250-clinic chain**']
 
   # Clinic types: the home page's persona cards (owner request 2026-11-12).
   - discriminant: personaRouter
     value:
       id: clinic-types
       eyebrow: Pick your clinic
-      heading: "Choose your Clinic Type for\nFeatures that suit you"
-      intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
+      heading: Clinics to hospital groups in Uganda
+      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
       tone: mist
       items:
         - persona: solo
-          title: Solo Practice
-          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist, all on one simple system.
+          title: Solo practice
+          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist.
           href: /solutions/solo-clinic/
         - persona: polyclinic
-          title: Specialist Polyclinic
+          title: Specialist polyclinic
           body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
           href: /solutions/polyclinic/
         - persona: chain
-          title: Clinic Chains
-          body: Suitable for clinic chains across multiple locations that need centralised management and custom business processes.
+          title: Clinic chains
+          body: Suitable for clinic groups across Kampala, Entebbe and regional towns that need centralised management and custom business processes.
           href: /solutions/clinic-chain/
         - persona: ngo
-          title: NGO Clinic
-          body: Suitable for non-profit and mission-driven healthcare organisations that operate one or more clinic sites, with records and stock reports.
+          title: NGO clinic
+          body: Suitable for non-profit and mission-driven healthcare organisations that operate fixed or mobile clinics.
           href: /solutions/ngo-clinics/
 
-  # Proof: the home page's Penda Health study section (owner request 2026-11-12).
+  # Proof: the AI clinical pilot, with the study figures from study.yaml.
   - discriminant: proofBlock
     value:
       id: study
-      eyebrow: The Penda Health study
-      heading: What changed when clinicians had AI inside the record
+      eyebrow: AI clinical pilot
+      heading: We built the platform behind the world's largest AI clinical pilot
       tone: plain
       variant: study
       figures:
         - visits
         - diagnostic-errors
-        - treatment-errors
-        - history-errors
-      body: |
-        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on Easy Clinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's Easy Clinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
-
-        The results are published as a preprint on arXiv, not in a journal.
+      body: >-
+        From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot used with OpenAI
+        across {fig:visits} patient visits at Penda Health's clinics in Nairobi. This is just the beginning.
       link:
-        label: Read how the study was run
-        href: /curapilot/
+        label: Read the article by OpenAI
+        href: https://openai.com/index/ai-clinical-copilot-penda-health/
 
   # The five modules: the home page's stacked feature cards (owner request 2026-11-12).
   - discriminant: featureTabs
@@ -354,17 +355,21 @@ sections:
             - Fragmented data across systems with no unified reporting
             - Inability to enforce centralised approvals, pricing or access control
 
-  - discriminant: contactCard
+  # How to reach the team: full-width text only, as on /emr-software-in-uae/. The contact card itself is in the hero,
+  # so this section carries no hours, office and cities box, and no bottom padding.
+  - discriminant: prose
     value:
       id: uganda-team
       heading: Easy Clinic in Uganda, and how to reach the team
-      intro: >-
-        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you book
-        one. From private clinics in Kampala to regional healthcare facilities in Gulu, Mbale and Mbarara, Easy Clinic supports clinics as they grow, with onboarding, training and ongoing support for clinic teams across Uganda.
       tone: plain
-      country: ug
-      showClients: false
+      body: |
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or to ask a question first. Every clinic gets a dedicated account manager. We build your prescription format, import your records and train each role before you go live. New staff are trained through the year at no extra cost.
 
+        **Cities:** Kampala, Entebbe, Mukono, Mbarara, Gulu, Mbale, Jinja
+      width: wide
+      flush: true
+
+  # Billing and records, as full-width rows (no cards), as on /emr-software-in-uae/.
   - discriminant: moduleGrid
     value:
       id: billing-and-records
@@ -374,43 +379,79 @@ sections:
         Clinics in Uganda manage growing patient volumes, limited administrative staff and heavy reliance on manual processes, in a growing digital health framework with reporting requirements. Every plan is priced per doctor per month; see the [pricing page](/pricing/) for current plans.
       tone: plain
       columns: 2
+      variant: rows
       items:
         - title: Digital patient records with AI EMR software
           icon: file-text
           outcome: >-
-            Store complete patient histories digitally, including consultations, prescriptions and reports, and open
-            accurate information instantly for continuity of care.
+            Every consultation, prescription and report sits on one patient profile. Doctors see the last visit
+            at a glance and every past visit by every doctor.
           href: /features/emr/
         - title: Simplified billing
           icon: receipt
-          outcome: Generate invoices instantly and track payments clearly, reducing billing errors.
+          outcome: >-
+            One invoice covers the consultation, tests and medicines. Billing triggers add linked charges
+            automatically, so nothing is missed at the desk.
           href: /features/billing/
         - title: Inventory and pharmacy
           icon: pill
-          outcome: Track medicines and medical supplies in real time, with alerts for low stock and expiries.
+          outcome: >-
+            The pharmacy sees the prescription before the patient reaches the counter. Batches that expire
+            first show on top, and stock drops only when medicine is dispensed.
           href: /features/pharmacy-and-inventory/
         - title: Insights through analytics
           icon: chart-column
-          outcome: Built-in analytics show patient visits, revenue trends and staff productivity for informed decisions.
+          outcome: >-
+            Dashboards show top diagnoses, busiest days, revenue by user and stock by location. Export any
+            report to Excel or PDF.
           href: /features/reports-and-dashboards/
 
+  # Daily care and connectivity, in the why-adopt section's layout as on /emr-software-in-uae/: headed paragraphs on
+  # the left with the note under a rule, beside an image.
   - discriminant: prose
     value:
       id: teleconsultation-and-branches
       heading: Teleconsultation, reminders and multi-branch clinics
       tone: wash
       body: |
-        **Teleconsultation.** Teleconsultation and remote follow-ups reach patients in Kampala, Gulu and regional areas.
+        **Teleconsultation**
 
-        **Reminders.** Appointment scheduling is automated, with SMS and WhatsApp reminders that reduce missed visits, because patients expect faster service and digital communication.
+        Teleconsultation and remote follow-ups reach patients in Kampala, Gulu and regional areas.
 
-        **Multi-branch clinics.** Clinics with branches in Kampala, Entebbe and regional towns manage all locations from one central dashboard, with custom EMR templates for common specialities.
+        **Reminders**
 
-        **Patient histories.** Doctors access patient histories instantly through AI EMR software during consultations, and role-based access control keeps patient data secure.
-      aside: >-
-        **Where it stops.** Easy Clinic runs in the browser over the internet and does not run fully offline today.
-        If your clinic loses its connection for long periods, tell us before you buy.
-      width: measure
+        Patients get WhatsApp and SMS reminders the day before and again on the day of the visit, never at night. That means fewer missed appointments.
+
+        **Multi-branch clinics**
+
+        Clinics with branches in Kampala, Entebbe and regional towns work from one login, with a location dropdown, shared patient records and one shared stock.
+
+        **Patient histories**
+
+        Doctors access patient histories instantly through AI EMR software during consultations, and role-based access control keeps patient data secure.
+      aside: |
+        **Good to know**
+
+        Easy Clinic is cloud-based software, so it needs an internet connection to run. For uninterrupted service at the front desk, we recommend keeping a backup connection, such as a mobile data hotspot.
+      width: wide
+      checklist: true
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+  # Ratings: review badges.
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      eyebrow: Reviews
+      heading: Clinics trust us, and say so in their reviews.
+      tone: plain
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}', href: 'https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJz2Q8OeB2AjoRmQ3oO1rIu-M' }
 
   # Customer quotes: the pricing page's carousel; the template shows it directly above the FAQ (owner request 2026-11-13).
   - discriminant: testimonialRow
@@ -427,33 +468,60 @@ sections:
       underlines: false
 
 faqHeading: Questions clinic owners in Uganda ask
+faqHelp: Message our India WhatsApp line on +91 91477 70277, or ask the team that sets up and supports your clinic.
 faq:
-  - question: 'Is Easy Clinic suitable for small clinics in Kampala and other Ugandan cities?'
-    answer: 'Yes. Easy Clinic works for small clinics in Kampala, Entebbe, Mukono, Mbarara, Gulu, Mbale and Jinja, as well as large hospitals across Uganda.'
-  - question: 'Can Easy Clinic manage multi-location clinics across Uganda?'
-    answer: 'Yes. Clinics with branches in Kampala, Entebbe and regional towns can manage all locations from one central EMR software dashboard.'
-  - question: Is patient data secure on Easy Clinic EMR systems?
+  - question: Is Easy Clinic suitable for small clinics in Kampala and other Ugandan cities?
     answer: >-
-      Yes. Easy Clinic uses secure cloud infrastructure and role-based access to protect patient data. We do not
-      misuse, sell or pry on your data, and all records belong only to you.
+      Yes. Easy Clinic runs small clinics, polyclinics, diagnostic centres and hospital OPDs in Kampala,
+      Entebbe, Mukono, Mbarara, Gulu, Mbale and Jinja. One login covers every specialty, and each role works
+      from its own queue. It runs in any browser on a laptop or tablet, so there is nothing to install at the
+      clinic.
+  - question: Can Easy Clinic manage multi-location clinics across Uganda?
+    answer: >-
+      Yes. Each branch sits in a location dropdown under the same login, with shared patient records and one
+      shared stock. A patient seen in Kampala can be seen in Entebbe with the full history on screen.
+      Enterprise adds central control of every location and a Power BI data warehouse for clinic groups.
+  - question: How much does Easy Clinic cost in Uganda?
+    answer: >-
+      Easy Clinic is priced per doctor. Professional is $79 and Premium $99 per doctor per month, billed
+      annually, and Enterprise is on a quote. Every plan includes a login for your receptionist at no extra
+      cost, and there is no setup fee for clinics up to 5 users. Ask us for shilling pricing.
+  - question: Can Easy Clinic record mobile money payments?
+    answer: >-
+      Yes. The front desk records each payment against the patient's bill with its payment mode, so mobile
+      money, cash and card collections all show on one invoice and in the daily cash report. Part payments,
+      advances and refunds sit on the same bill, and the receipt can go to the patient on WhatsApp.
+  - question: Is patient data secure on Easy Clinic?
+    answer: >-
+      Yes. Easy Clinic lists compliance with HIPAA and GDPR. Records are protected with role-based access,
+      audit logs and encryption in transit and at rest, and each person sees only what their role needs. Your
+      patient data belongs to your clinic. We never sell it, and you can export it at any time.
   - question: Does Easy Clinic support telemedicine in Uganda?
-    answer: Yes. Clinics can offer teleconsultations and remote follow-ups for patients who cannot reach the clinic.
-  - question: Can Easy Clinic integrate SMS and WhatsApp communication?
-    answer: Yes. Clinics can send appointment reminders and patient updates through integrated messaging tools.
-  - question: Does Easy Clinic support inventory and pharmacy management?
-    answer: Yes. Clinics can manage medicine stock and receive alerts for low stock and expiries, reducing wastage.
-  - question: What is the difference between AI EMR software and EHR software?
     answer: >-
-      AI EMR software includes automation, analytics and intelligent workflows, while EHR software mainly focuses
-      on storing patient records.
+      Yes. Premium and Enterprise include built-in video consultations, booked from the same calendar as
+      in-person visits. Doctors in Kampala can follow up with patients in Gulu and regional areas, and every
+      video visit stays on the same patient record. Prescriptions from a video visit go out on WhatsApp.
+  - question: Can Easy Clinic send WhatsApp and SMS reminders?
+    answer: >-
+      Yes. Appointment and follow-up reminders go out on WhatsApp, SMS or email, the day before and again on
+      the day of the visit, never at night. Prescriptions, invoices and lab reports can go on WhatsApp too,
+      with a monthly message allowance by plan.
+  - question: Does Easy Clinic support inventory and pharmacy management?
+    answer: >-
+      Yes. The pharmacy queue shows each prescription before the patient arrives. Batches that expire first
+      show on top, the pharmacist can adjust quantity before dispensing, and stock drops only when medicine is
+      dispensed. Purchase orders, goods receipt, transfers and stock take are built in, and one stock list can
+      serve every branch.
   - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No. Easy Clinic runs in the browser over the internet and does not run fully offline today, so each clinic
-      needs a working connection.
-  - question: Can clinics in Uganda transition easily from paper systems to AI EMR software?
+      Easy Clinic is cloud-based software, so it needs an internet connection to run, and it does not work
+      fully offline today. For uninterrupted service, most clinics keep a mobile data hotspot as a backup
+      line, so registration, prescriptions and billing carry on if the main connection drops.
+  - question: How do clinics in Uganda move from paper to Easy Clinic?
     answer: >-
-      Yes. Easy Clinic provides onboarding, training and ongoing support to ensure a smooth transition from manual
-      systems to digital healthcare platforms.
+      Book a 20-minute demo built around your own clinic day. Most clinics go live within 2 to 4 weeks. Easy
+      Clinic builds your prescription format from your own sample, imports your old records and trains each
+      role, and your dedicated account manager stays with you after go-live.
 
 links:
   hub: /countries/
@@ -461,10 +529,10 @@ links:
   related:
     - href: /best-clinic-management-software-uganda/
       label: Best clinic software in Uganda
-      description: Three clinic systems ranked for a clinic in Uganda, plus Easy Clinic unranked, with which take MTN or Airtel Money.
+      description: Easy Clinic and other clinic software in Uganda, compared side by side.
     - href: /countries/
       label: Book a demo from Uganda
-      description: Clinics outside India and Kenya book a demo from the countries page.
+      description: A 20-minute demo built around your own clinic day.
     - href: /features/emr/
       label: EMR features in detail
       description: Templates, 30-second prescriptions and the full medical history record.
@@ -474,6 +542,9 @@ links:
     - href: /pricing/
       label: Easy Clinic pricing
       description: See our plans and pick what fits your clinic.
+    - href: /curapilot/
+      label: Cura AI
+      description: How the clinical AI copilot flags and suggests during the visit, while the doctor decides.
 
 problems:
   eyebrow: How Easy Clinic fits in Uganda
@@ -522,6 +593,7 @@ editorialPass:
     clinic deals with).
 
 notes:
+  - 'Content update 2026-11-14: copy replaced from the owner''s content document (easyclinic-emr-software-in-uganda-audit.html): the hero eyebrow and opening answer, the comparison table, clinic-type cards, study section, the contact section intro, the four records cards, the reminders and multi-branch rows with the "Good to know" note, FAQ (ten questions, with pricing, mobile money and go-live answers), related-link descriptions, a new Cura AI related link and the meta description. The review badges section is back with the document''s heading. The template sections the document does not carry (features, daily practice, adoption, benefits, problem panels, the closing panels and the customer carousel) are unchanged. Images and their alt text are unchanged. The earlier notes below describe the 2026-10-14 version.'
   - 'Structure follows /emr-software-in-qatar/ (Kenya structure). The rules slot carries the live page''s comparison table because the live page names no Uganda regulator or payer and no ug-* regulator files exist. Rating badges take the testimonial slot (every testimonial on the live page is placed elsewhere, spec 2.4).'
   - 'Edits the publish rules required: banned words removed ("seamless", "streamline", "comprehensive", "end-to-end", "robust", "revolutionise", "world-class", "modern clinics"); "EasyClinic" written as "Easy Clinic"; "proven results" cut (claims rule); FAQ questions end with a question mark. Added from the repo: "does not run fully offline today" (migration/research/facts.md). Cut: "strong mobile integrations and low-cost deployment" and "mobile-friendly interface" (unconfirmed), and the "one of the best" FAQ (unsourced superlative).'
   - 'FAQ: 8 of the live page''s questions plus an offline answer; left out the ones that repeat another answer.'

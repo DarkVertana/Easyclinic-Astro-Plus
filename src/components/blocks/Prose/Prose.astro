@@ -96,7 +96,7 @@ const facts = factLines.every((l) => /^- .+ \*\*.+\*\*$/.test(l.trim()))
       </div>
     </Section>
   ) : (
-    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width={width === 'measure' && !aside ? 'measure' : 'page'} class={flush ? '!pb-0' : undefined} wideHeader={flush && width === 'wide'}>
+    <Section id={id} eyebrow={eyebrow} heading={heading} intro={intro} tone={toneFor(tone, ctx.index)} width={width === 'measure' && !aside ? 'measure' : 'page'} class={flush ? 'prose-flush' : undefined} wideHeader={flush && width === 'wide'}>
       <div class:list={[aside ? 'grid gap-8 lg:grid-cols-[1.6fr_1fr]' : '']}>
         <div>
           {/* A wide section without an aside runs the body the full page width; otherwise it keeps a reading measure. */}
@@ -254,5 +254,15 @@ const facts = factLines.every((l) => /^- .+ \*\*.+\*\*$/.test(l.trim()))
     color: var(--ink-heading);
     font-size: 1rem;
     font-weight: 600;
+  }
+</style>
+
+<style is:global>
+  /* A flush text section drops its bottom padding only when the next section shares its background: that section's own top
+     padding is then the gap. Before a section of another tone it keeps the standard padding. */
+  .prose-flush[data-tone='plain']:has(+ section.section-y[data-tone='plain']),
+  .prose-flush[data-tone='wash']:has(+ section.section-y[data-tone='wash']),
+  .prose-flush[data-tone='mist']:has(+ section.section-y[data-tone='mist']) {
+    padding-bottom: 0;
   }
 </style>

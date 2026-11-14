@@ -10,16 +10,16 @@ secondaryKeywords:
   - clinic software Kuala Lumpur
 title: AI EMR Software in Malaysia | Easy Clinic
 metaDescription: >-
-  AI EMR and clinic management software for GP practices, polyclinics and clinic chains in Kuala Lumpur,
-  Penang, Johor Bahru and across Malaysia.
+  Easy Clinic is EMR software in Malaysia for GP clinics, polyclinics and clinic chains. Insurance claims,
+  billing, pharmacy and reports in one login.
 h1: AI EMR software for clinics in Malaysia
 linkLabel: EMR software in Malaysia
-eyebrow: Best EMR software in Malaysia 2026
+eyebrow: AI EMR software in Malaysia
 openingAnswer: >-
-  AI EMR software in Malaysia is a cloud-based clinical platform that records, stores and analyses patient
-  data, using automation and AI to handle documentation, scheduling, billing and follow-up. Qualitas Health
-  runs its clinics in Malaysia on Easy Clinic, and the same platform scales from a solo clinic in Kuala
-  Lumpur to a multi-location group across the country.
+  Easy Clinic is EMR software in Malaysia that runs the whole clinic from one login. Reception, doctors, lab,
+  pharmacy and billing each work from their own queue, prescriptions take under 30 seconds, and insurance
+  claims are built from the same bill. Qualitas Health runs its clinics in Malaysia on Easy Clinic, and the
+  same platform scales from a solo clinic in Kuala Lumpur to a multi-location group across the country.
 summary: >-
   How Easy Clinic runs a Malaysian clinic, what the PDPA asks of your clinic, insurance and payor claims,
   teleconsultation, and who to contact.
@@ -73,47 +73,44 @@ sections:
     value:
       id: clinic-types
       eyebrow: Pick your clinic
-      heading: "Choose your Clinic Type for\nFeatures that suit you"
-      intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
+      heading: Solo clinics to clinic chains in Malaysia
+      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
       tone: mist
       items:
         - persona: solo
-          title: Solo Practice
-          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist, all on one simple system.
+          title: Solo practice
+          body: For physicians running their own clinic, with or without a receptionist. Simple EMR, scheduling and billing in one place.
           href: /solutions/solo-clinic/
         - persona: polyclinic
-          title: Specialist Polyclinic
-          body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
+          title: Specialist polyclinic
+          body: For OPD practices and polyclinics with several doctors. Add pharmacy and lab modules as you grow.
           href: /solutions/polyclinic/
         - persona: chain
-          title: Clinic Chains
-          body: Suitable for clinic chains across multiple locations that need centralised management and custom business processes.
+          title: Clinic chains
+          body: "For clinic groups across Kuala Lumpur, Penang, Johor Bahru, Kota Kinabalu and beyond that need central management and custom workflows, with centralised visibility into every patient, prescription and treatment plan. Local example: Qualitas Health runs its clinics in Malaysia on Easy Clinic."
           href: /solutions/clinic-chain/
         - persona: ngo
-          title: NGO Clinic
-          body: Suitable for non-profit and mission-driven healthcare organisations that operate one or more clinic sites, with records and stock reports.
+          title: NGO clinic
+          body: For non-profit and mission-driven clinics, fixed or mobile, that need affordable digital records.
           href: /solutions/ngo-clinics/
 
-  # Proof: the home page's Penda Health study section (owner request 2026-11-12).
+  # Proof: the AI clinical pilot, with the study figures from study.yaml.
   - discriminant: proofBlock
     value:
       id: study
-      eyebrow: The Penda Health study
-      heading: What changed when clinicians had AI inside the record
+      eyebrow: AI clinical pilot
+      heading: We built the platform behind the world's largest AI clinical pilot
       tone: plain
       variant: study
       figures:
         - visits
         - diagnostic-errors
-        - treatment-errors
-        - history-errors
-      body: |
-        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on Easy Clinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's Easy Clinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
-
-        The results are published as a preprint on arXiv, not in a journal.
+      body: >-
+        From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot used with OpenAI
+        across {fig:visits} patient visits at Penda Health's clinics in Nairobi. This is just the beginning.
       link:
-        label: Read how the study was run
-        href: /curapilot/
+        label: Read the article by OpenAI
+        href: https://openai.com/index/ai-clinical-copilot-penda-health/
 
   # The five modules: the home page's stacked feature cards (owner request 2026-11-12).
   - discriminant: featureTabs
@@ -356,19 +353,21 @@ sections:
             - Fragmented data across systems with no unified reporting
             - Inability to enforce centralised approvals, pricing or access control
 
-  # Block 2: local proof strip. The template also puts the bare contact card in the hero; this section renders
-  # the rest (cities and named clients) from src/data/countries/my.yaml.
-  - discriminant: contactCard
+  # How to reach the team: full-width text only, as on /emr-software-in-mauritius/. The contact card itself is in the
+  # hero, so this section carries no hours, office and cities box; the cities and the named client are lines of text.
+  - discriminant: prose
     value:
       id: malaysia-team
-      tone: plain
       heading: Easy Clinic in Malaysia, and how to reach the team
-      intro: >-
-        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you
-        book one. Whether you run a solo clinic in Kuala Lumpur or a multi-location group across the country,
-        Easy Clinic scales with you, and onboarding is guided from paper to digital.
-      country: my
-      showClients: true
+      tone: plain
+      body: |
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or to ask a question first. Every clinic gets a dedicated account manager. We build your prescription format, import your records and train each role before you go live, and new staff are trained through the year at no extra cost.
+
+        **Cities:** Kuala Lumpur, Petaling Jaya, Johor Bahru, Penang, Ipoh, Kota Kinabalu, Kuching
+
+        **Clients include:** Qualitas Health
+      width: wide
+      flush: true
 
   # Block 3: rules. A plain table of what each rule asks of the clinic; no Easy Clinic status is claimed
   # because none is on record (no my-* files in src/data/regulators/).
@@ -382,14 +381,17 @@ sections:
         Regulation, patient expectations and competition are all rising at the same time for Malaysian clinics.
         A clinic in Malaysia should switch when paper or basic systems start slowing down care, increasing
         errors, or making it harder to prove data-protection compliance.
+      # Full-width heading, intro and note above and below the plain table (owner request 2026-11-14).
+      wideIntro: true
       columns: [Rule, What it asks of your clinic]
       rows:
         - ['**Personal Data Protection Act 2010 (PDPA)**', 'Strict patient data protection and privacy, which makes secure digital records essential.']
         - ['**PDPA amendments, 2024 to 2025**', 'Breach notification and Data Protection Officer duties for the clinic that holds patient data.']
         - ['**National EMR programme**', 'A push toward secure, auditable digital records as patients increasingly expect them.']
       note: >-
-        Easy Clinic's own compliance status for each rule is not stated on this page. Ask the team before you
-        buy, and plan your clinic's PDPA duties whatever software you use.
+        Easy Clinic protects records with role-based access, audit logs and encryption in transit and at rest,
+        and lists compliance with HIPAA and GDPR. Your clinic still owns its PDPA duties, such as naming a Data
+        Protection Officer, and Easy Clinic gives you the secure, auditable records to meet them.
 
   # Block 4: billing and claims, as a card grid (no prices: no ringgit price list exists and the USD price is
   # not confirmed for Malaysia).
@@ -403,53 +405,76 @@ sections:
         Every plan is priced per doctor per month; see the [pricing page](/pricing/) for current plans. These
         are the parts of Easy Clinic a Malaysian clinic uses every day.
       columns: 2
+      # Full-width rows (no cards), as on /emr-software-in-mauritius/.
+      variant: rows
       items:
         - title: Insurance and payor claims
           icon: shield-check
           outcome: >-
-            Insurance and payor claims management is part of Easy Clinic's clinic management features, so slow,
-            manual or error-prone claims move to the same bill the front desk raised.
+            The patient's insurer or panel is linked at registration, cover is checked during the visit, and the
+            claim is built from the same bill the front desk raised. Claims come with Enterprise, or as an add-on
+            on Professional and Premium.
           href: /features/insurance-claims/
         - title: Digital patient records with AI EMR software
           icon: file-text
-          outcome: Store full histories, prescriptions and lab reports, and open any patient file instantly during a consultation.
+          outcome: >-
+            Every consultation, prescription and lab report sits on one patient profile. Doctors see the last
+            visit at a glance and every past visit by every doctor.
           href: /features/emr/
         - title: Bills, invoices and receipts
           icon: receipt
-          outcome: Bills, invoices and receipts are generated automatically, and inventory and pharmacy stock are tracked in real time.
+          outcome: >-
+            One invoice covers the consultation, tests and medicines. Billing triggers add linked charges
+            automatically, and stock drops only when the pharmacist dispenses.
           href: /features/billing/
         - title: Works across clinics and chains
           icon: network
           outcome: >-
-            Cloud access for clinics and chains in Kuala Lumpur, Penang and Johor Bahru, with dashboards showing
-            revenue, patient footfall and clinical trends at a glance.
+            Clinics in Kuala Lumpur, Penang and Johor Bahru share one login, one stock list and central
+            dashboards showing revenue, patient footfall and clinical trends.
           href: /solutions/clinic-chain/
 
-  # Block 5: connectivity and communication, with the honest limit in the aside.
+  # Connectivity and communication, in the why-adopt section's layout as on /emr-software-in-mauritius/: headed
+  # paragraphs on the left with the note under a rule, beside an image.
   - discriminant: prose
     value:
       id: teleconsultation-and-reminders
       tone: wash
       heading: Teleconsultation, reminders and AI documentation
       body: |
-        **Teleconsultation.** Teleconsultation extends care to patients beyond the clinic walls, alongside in-person appointment scheduling.
+        **Teleconsultation**
 
-        **Reminders.** Patients today expect fast prescriptions, WhatsApp reminders and instant access to their treatment history. Appointment and follow-up reminders are sent automatically via WhatsApp, SMS and email, and prescriptions are shared in seconds via print, WhatsApp, SMS or email.
+        Teleconsultation extends care to patients beyond the clinic walls, alongside in-person appointment scheduling.
 
-        **AI documentation.** AI assists clinical documentation and prescriptions, cutting the time doctors spend on admin instead of caring for patients, with automatic notes, reminders and visit summaries.
+        **Reminders**
 
-        **Outgrowing Excel.** Spreadsheets work for a handful of patients, but tracking records, insurance claims and follow-up schedules across hundreds of patients in Excel becomes unmanageable. Easy Clinic gives Malaysian clinics a single system built for exactly this complexity.
-      aside: >-
-        **Where it stops.** Easy Clinic runs in the browser over the internet and does not run fully offline
-        today. If your clinic loses its connection for long periods, tell us before you buy.
-      width: measure
+        Patients get WhatsApp, SMS or email reminders the day before and again on the day of the visit, never at night. Prescriptions go out in seconds, printed on your letterhead or sent on WhatsApp or email.
+
+        **AI documentation**
+
+        Ready Rx, shortcut keys and investigation profiles help the doctor finish notes and prescriptions in under 30 seconds. Cura AI, an optional paid add-on, flags what does not add up during the visit and suggests diagnosis and treatment, while the doctor decides.
+
+        **Outgrowing Excel**
+
+        Spreadsheets work for a handful of patients, but tracking records, insurance claims and follow-up schedules across hundreds of patients in Excel becomes unmanageable. Easy Clinic gives Malaysian clinics a single system built for exactly this complexity.
+      aside: |
+        **Good to know**
+
+        Easy Clinic is cloud-based software, so it needs an internet connection to run. For uninterrupted service at the front desk, we recommend keeping a backup connection, such as a mobile data hotspot.
+      width: wide
+      checklist: true
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
 
   # Block 7: local testimonial (assigned to this page only).
   - discriminant: testimonialRow
     value:
       id: qualitas-health
-      tone: wash
-      heading: A Malaysian clinic group on running care on Easy Clinic
+      tone: plain
+      heading: A Malaysian clinic group running care on Easy Clinic
       items: [hisham-ismail]
       layout: single
       usePullQuote: false
@@ -470,37 +495,38 @@ sections:
       underlines: false
 
 faqHeading: Questions Malaysian clinic owners ask
+faqHelp: Message our India WhatsApp line on +91 91477 70277, or ask the team that sets up and supports your clinic.
 faq:
   - question: Is Easy Clinic suitable for clinics in Kuala Lumpur and across Malaysia?
     answer: >-
-      Yes. Easy Clinic works for clinics, GP practices, polyclinics and hospitals in Kuala Lumpur, Petaling
-      Jaya, Johor Bahru, Penang, Ipoh, Kota Kinabalu, Kuching and across Malaysia.
+      Yes. Easy Clinic runs solo GP clinics, polyclinics and clinic chains in Kuala Lumpur, Petaling Jaya, Johor Bahru, Penang, Ipoh, Kota Kinabalu and Kuching. One login covers every specialty, and each role works from its own queue. It runs in any browser on a laptop or tablet, so there is nothing to install.
   - question: Does Easy Clinic work for multi-location clinic chains in Malaysia?
     answer: >-
-      Yes. The clinic management software centralises records, billing and reporting across every branch,
-      giving owners one real-time view of all locations.
+      Yes. Each branch sits in a location dropdown under the same login, with shared patient records and one shared stock. Qualitas Health runs its Malaysian clinics on Easy Clinic. Enterprise adds central control of every location and a Power BI data warehouse, and the largest chain on Easy Clinic runs 250 clinics.
+  - question: How much does Easy Clinic cost in Malaysia?
+    answer: >-
+      Easy Clinic is priced per doctor. Professional is $79 and Premium $99 per doctor per month, billed annually, and Enterprise is on a quote. Every plan includes a login for your receptionist at no extra cost, and there is no setup fee for clinics up to 5 users. Ask us for ringgit pricing.
   - question: Does Easy Clinic support insurance and payor claims in Malaysia?
-    answer: Yes, Easy Clinic includes insurance and payor claims management as part of its clinic management features.
-  - question: Can patients book teleconsultations through Easy Clinic?
     answer: >-
-      Yes, Easy Clinic supports teleconsultation alongside in-person appointment scheduling, extending care to
-      patients beyond the clinic walls.
-  - question: Is Easy Clinic suitable for a single-doctor clinic in Malaysia?
-    answer: Yes, Easy Clinic works for solo practitioners as well as large multi-location hospital groups.
-  - question: Does Easy Clinic support pharmacy and inventory management?
-    answer: Yes, Easy Clinic includes pharmacy, inventory and logistics tracking as part of its clinic management features.
-  - question: Does Easy Clinic send automated patient reminders?
-    answer: Yes, appointment and follow-up reminders are sent automatically via WhatsApp, SMS and email.
-  - question: Can Easy Clinic generate reports on clinic performance?
-    answer: >-
-      Yes, Easy Clinic provides reports on patient visits, revenue and clinic performance, with dashboards
-      showing patient footfall and clinical trends.
+      Yes. The patient's insurer or panel is linked at registration, cover is checked during the visit, and the claim is built from the bill with the documents attached. Claims are tracked from submitted to settled. Insurance claims come with Enterprise, or as an add-on on Professional and Premium.
   - question: Is patient data secure on Easy Clinic?
     answer: >-
-      Yes, Easy Clinic is a secure, cloud-based platform designed to protect sensitive patient health
-      information. We do not misuse, sell or pry on your data, and all records belong only to you.
-  - question: How can clinics get started with AI EMR software in Malaysia?
-    answer: Book a free demo to see it in daily practice, with guided onboarding from paper to digital.
+      Yes. Records are protected with role-based access, audit logs and encryption in transit and at rest, and Easy Clinic lists compliance with HIPAA and GDPR. Your patient data belongs to your clinic and is never sold. These controls give you the secure, auditable records your PDPA duties call for.
+  - question: Does Easy Clinic support pharmacy and inventory management?
+    answer: >-
+      Yes. The pharmacy queue shows each prescription before the patient arrives. Batches that expire first show on top, the pharmacist can adjust quantity before dispensing, and stock drops only when medicine is dispensed. Purchase orders, goods receipt, transfers and stock take are built in, and one stock list can serve every branch.
+  - question: Does Easy Clinic send automated patient reminders?
+    answer: >-
+      Yes. Appointment and follow-up reminders go out on WhatsApp, SMS or email, the day before and again on the day of the visit, never at night. Prescriptions, invoices and lab reports can go on WhatsApp too, with a monthly message allowance by plan.
+  - question: Can patients book teleconsultations through Easy Clinic?
+    answer: >-
+      Yes. Premium and Enterprise include built-in video consultations, booked from the same calendar as in-person visits. Patients who cannot travel can still see their doctor, and every video visit stays on the same patient record. Prescriptions from a video visit go to the patient on WhatsApp.
+  - question: Is Cura AI included in every plan?
+    answer: >-
+      Cura AI is a paid add-on that works with any plan. It runs in the background at registration, triage and the consultation. It flags what does not add up, such as a missed allergy, and suggests diagnosis and treatment. The clinic sets the triggers and alert style, and the doctor always decides.
+  - question: How can clinics get started with Easy Clinic in Malaysia?
+    answer: >-
+      Book a 20-minute demo first, built around your own clinic day. Most clinics go live within 2 to 4 weeks. Easy Clinic builds your prescription format from your own sample, imports your old records and trains each role, and your dedicated account manager stays with you after go-live.
 
 links:
   hub: /countries/
@@ -508,7 +534,7 @@ links:
   related:
     - href: /best-clinic-management-software-malaysia/
       label: Best clinic software in Malaysia
-      description: Three Malaysian clinic systems ranked, plus Easy Clinic unranked, with prices in ringgit and MyInvois e-invoicing.
+      description: Easy Clinic and other clinic software in Malaysia, compared side by side, with prices in ringgit and MyInvois e-invoicing.
     - href: /clinic-in-malaysia/
       description: Licences, costs and setup for opening a clinic in Malaysia.
     - href: /features/insurance-claims/
@@ -570,6 +596,7 @@ editorialPass:
     looks like.
 
 notes:
+  - 'Content update 2026-11-14: copy replaced from the owner''s content document (easyclinic-emr-software-in-malaysia-audit.html): the hero eyebrow and opening answer, clinic-type cards (the Qualitas Health local example is written into the clinic chains card text, since the card has no separate example field), study section, the contact section intro, the note under the rules table (it now states HIPAA and GDPR as listed, per the document), four billing cards, the reminders and AI documentation rows with the "Good to know" note, the local testimonial heading, FAQ (ten questions), the listicle related-link description and the meta description. The document has no review badges section for Malaysia, so none is added. Sections the document does not carry (features, daily practice, adoption, benefits, problem panels, the closing panels and the customer carousel) are unchanged. Images and their alt text are unchanged. The earlier notes below describe the 2026-10-14 version.'
   - 'Structure follows /emr-software-in-kenya/: hero with contact card, local proof strip (contactCard), rules (Kenya: regulatorTable), money (Kenya: countryMoney), connectivity prose with a "where it stops" aside, clinic types, a single local testimonial, the study, FAQ, related links, closing. Two substitutions: rules are a dataTable because no my-* regulator files exist (a regulatorTable would render unknown statuses, which fail a published build), and money is a moduleGrid of billing and claims because no MYR price list exists and the USD price is not confirmed for Malaysia.'
   - 'Owner decision 2026-10-14 (as for Ethiopia and Ghana): unconfirmed claims are removed. Cut: PDPA compliance ("ensures PDPA compliance", "aligned with the PDPA", the PDPA FAQ answer "Yes"); Malay, English, Mandarin and Tamil support and the multilingual FAQ; MYR billing, FPX and DuitNow; "plans are priced in Malaysian ringgit". The PDPA and its amendments are described as rules for the clinic, with no Easy Clinic status claimed.'
   - 'Added from the repo, not the live page: "does not run fully offline today" (migration/research/facts.md), in the Kenya-style "Where it stops" aside; Qualitas Health as the named client (testimonials/hisham-ismail.yaml).'

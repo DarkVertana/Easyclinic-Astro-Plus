@@ -10,14 +10,15 @@ secondaryKeywords:
   - clinic software Paramaribo
 title: AI EMR Software in Suriname | Easy Clinic
 metaDescription: >-
-  AI EMR and clinic management software for clinics, hospitals and diagnostic centres in Paramaribo, Lelydorp, Nieuw Nickerie and across Suriname.
+  Easy Clinic is EMR software in Suriname for clinics in Paramaribo and regional towns. Prescriptions,
+  billing, pharmacy and reports in one login.
 h1: Advanced AI EMR software in Suriname for clinics and hospitals
 linkLabel: EMR software in Suriname
-eyebrow: Best EMR software in Suriname 2026
+eyebrow: AI EMR software in Suriname
 openingAnswer: >-
-  Easy Clinic is AI EMR software for clinics, hospitals and diagnostic centres in Suriname. It combines
-  automation, structured medical records, analytics and workflow management into one EMR software platform, from
-  clinics in Paramaribo to regional healthcare facilities.
+  Easy Clinic is EMR software in Suriname for clinics, hospital OPDs and diagnostic centres, from clinics in
+  Paramaribo to regional healthcare facilities. Reception, doctors, lab, pharmacy and billing each work from
+  their own queue in one login. Prescriptions take under 30 seconds and reach patients on WhatsApp.
 summary: >-
   How Easy Clinic runs a clinic in Suriname, how it compares with EHR and basic clinic software, multi-branch clinics,
   teleconsultation, and who to contact.
@@ -48,70 +49,69 @@ sections:
       eyebrow: AI EMR and clinic software
       heading: What is AI EMR software, and how is it different from EHR software?
       intro: >-
-        AI EMR software in Suriname goes beyond traditional EHR software and standalone clinic management software.
-        While conventional EHR software focuses on storing patient records digitally, **AI EMR software integrates
-        clinical workflows, billing, analytics and communication tools into one system.**
+        An EMR (electronic medical record) is the digital record a clinic keeps for each patient. An EHR
+        (electronic health record) is built to share that record across hospitals and providers. AI EMR
+        software goes one step further. It runs the clinic day as well: appointments, billing, pharmacy,
+        reports and patient messages, with AI that helps the doctor during the visit.
       tone: plain
       wideIntro: true
       variant: compare
-      caption: EHR software vs clinic management software vs AI EMR software in Suriname
-      columns: [Feature, Traditional EHR software, Basic clinic management software, AI EMR software (Easy Clinic)]
+      caption: Paper or basic records vs basic clinic software vs AI EMR software in Suriname
+      columns: [Feature, Paper or basic records, Basic clinic software, AI EMR software (Easy Clinic)]
       rows:
-        - [Patient records, Digital storage only, Limited integration, '**Fully integrated AI EMR system**']
-        - [Automation, Minimal, Partial, '**Advanced AI automation**']
-        - [Billing and payments, Manual or semi-digital, Moderate, '**Fully automated and accurate**']
-        - [Inventory management, Not included, Basic tracking, '**Real-time monitoring with alerts**']
-        - [Multi-location support, Difficult, Partial, '**Fully centralised control**']
-        - [Analytics, Basic report, Limited insights, '**Advanced dashboards and insights**']
-        - [Communication, Not integrated, Limited, '**SMS, WhatsApp, email and teleconsultation**']
-        - [Scalability, Low, Moderate, '**High for clinics and hospitals**']
+        - [Patient records, Files and folders, Records only, '**Full history, every visit by every doctor, and documents kept for life**']
+        - [Prescriptions, Handwritten, Typed from scratch, '**Under 30 seconds with Ready Rx and shortcut keys, sent on WhatsApp**']
+        - [Billing and payments, Manual, Basic invoices, '**One invoice for consultation, tests and medicines, with part payments and refunds**']
+        - [Inventory management, Stock registers, Basic tracking, '**Batches and expiry dates, with stock that drops only when the pharmacist dispenses**']
+        - [Multi-location support, Separate files per branch, Limited, '**One login with a location dropdown and shared stock**']
+        - [Analytics, Counted by hand, A few reports, '**Clinical and financial dashboards and about 25 standard reports**']
+        - [Communication, Phone calls, SMS, '**WhatsApp, SMS, email and video consultations**']
+        - [Clinical AI, None, None, '**Cura AI, a paid add-on that flags and suggests while the doctor decides**']
+        - [Scalability, One room, Small clinics, '**A solo clinic to a 250-clinic chain**']
 
   # Clinic types: the home page's persona cards (owner request 2026-11-12).
   - discriminant: personaRouter
     value:
       id: clinic-types
       eyebrow: Pick your clinic
-      heading: "Choose your Clinic Type for\nFeatures that suit you"
-      intro: Easy Clinic adapts to how you work. Pick your setup to see the EMR and clinic management features built for it.
+      heading: Clinics to clinic groups in Suriname
+      intro: Easy Clinic adapts to how you work. Pick the one closest to yours; each card links to the page written for that kind of clinic.
       tone: mist
       items:
         - persona: solo
-          title: Solo Practice
-          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist, all on one simple system.
+          title: Solo practice
+          body: Suitable for physicians and specialists who operate their own clinic with or without an assistant and receptionist.
           href: /solutions/solo-clinic/
         - persona: polyclinic
-          title: Specialist Polyclinic
+          title: Specialist polyclinic
           body: Suitable for OPD practices or polyclinics with multiple doctors and specialists, with optional offerings such as pharmacy and lab.
           href: /solutions/polyclinic/
         - persona: chain
-          title: Clinic Chains
-          body: Suitable for clinic chains across multiple locations that need centralised management and custom business processes.
+          title: Clinic chains
+          body: Suitable for clinic groups across Paramaribo and regional towns that need centralised management and custom business processes.
           href: /solutions/clinic-chain/
         - persona: ngo
-          title: NGO Clinic
-          body: Suitable for non-profit and mission-driven healthcare organisations that operate one or more clinic sites, with records and stock reports.
+          title: NGO clinic
+          body: Suitable for non-profit and mission-driven healthcare organisations that operate fixed or mobile clinics.
           href: /solutions/ngo-clinics/
 
-  # Proof: the home page's Penda Health study section (owner request 2026-11-12).
+  # Proof: the AI clinical pilot, with the study figures from study.yaml.
   - discriminant: proofBlock
     value:
       id: study
-      eyebrow: The Penda Health study
-      heading: What changed when clinicians had AI inside the record
+      eyebrow: AI clinical pilot
+      heading: We built the platform behind the world's largest AI clinical pilot
       tone: plain
       variant: study
       figures:
         - visits
         - diagnostic-errors
-        - treatment-errors
-        - history-errors
-      body: |
-        In 2025, Penda Health and OpenAI studied {fig:visits} patient visits at 15 Penda clinics in Nairobi. Penda Health has run on Easy Clinic since 2017, and the tool studied was AI Consult, an AI copilot embedded in Penda's Easy Clinic record. Independent physicians rated a random sample of the visit records, and visits where the clinician had the copilot scored better on each of the error measures above.
-
-        The results are published as a preprint on arXiv, not in a journal.
+      body: >-
+        From prompt engineering to frontline integration, Easy Clinic powered the AI Copilot used with OpenAI
+        across {fig:visits} patient visits at Penda Health's clinics in Nairobi. This is just the beginning.
       link:
-        label: Read how the study was run
-        href: /curapilot/
+        label: Read the article by OpenAI
+        href: https://openai.com/index/ai-clinical-copilot-penda-health/
 
   # The five modules: the home page's stacked feature cards (owner request 2026-11-12).
   - discriminant: featureTabs
@@ -354,17 +354,21 @@ sections:
             - Fragmented data across systems with no unified reporting
             - Inability to enforce centralised approvals, pricing or access control
 
-  - discriminant: contactCard
+  # How to reach the team: full-width text only, as on /emr-software-in-tanzania/. The contact card itself is in the
+  # hero, so this section carries no hours, office and cities box, and no bottom padding.
+  - discriminant: prose
     value:
       id: suriname-team
       heading: Easy Clinic in Suriname, and how to reach the team
-      intro: >-
-        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or with a question before you book
-        one. From clinics in Paramaribo to regional healthcare facilities, Easy Clinic provides one EMR software platform, with onboarding, training and ongoing support.
       tone: plain
-      country: sr
-      showClients: false
+      body: |
+        Write to hello@easyclinic.io or call the Easy Clinic team to book a demo, or to ask a question first. Every clinic gets a dedicated account manager. We build your prescription format, import your records and train each role before you go live. New staff are trained through the year at no extra cost.
 
+        **Cities:** Paramaribo, Lelydorp, Nieuw Nickerie, Moengo
+      width: wide
+      flush: true
+
+  # Billing and records, as full-width rows (no cards), as on /emr-software-in-tanzania/.
   - discriminant: moduleGrid
     value:
       id: billing-and-records
@@ -374,43 +378,79 @@ sections:
         Suriname's healthcare system is evolving, with increasing demand for efficient systems that support both urban clinics and regional healthcare facilities as it moves toward structured digital records. Every plan is priced per doctor per month; see the [pricing page](/pricing/) for current plans.
       tone: plain
       columns: 2
+      variant: rows
       items:
         - title: Digital patient records with AI EMR software
           icon: file-text
           outcome: >-
-            Store complete patient histories digitally, including consultations, prescriptions and reports, and open
-            accurate information instantly for continuity of care.
+            Every consultation, prescription and report sits on one patient profile. Doctors see the last visit
+            at a glance and every past visit by every doctor.
           href: /features/emr/
         - title: Simplified billing
           icon: receipt
-          outcome: Generate invoices instantly and track payments clearly, reducing billing errors.
+          outcome: >-
+            One invoice covers the consultation, tests and medicines. Billing triggers add linked charges
+            automatically, so nothing is missed at the desk.
           href: /features/billing/
         - title: Inventory and pharmacy
           icon: pill
-          outcome: Track medicines and medical supplies in real time, with alerts for low stock and expiries.
+          outcome: >-
+            The pharmacy sees the prescription before the patient reaches the counter. Batches that expire
+            first show on top, and stock drops only when medicine is dispensed.
           href: /features/pharmacy-and-inventory/
         - title: Insights through analytics
           icon: chart-column
-          outcome: Built-in analytics show patient visits, revenue trends and staff productivity for informed decisions.
+          outcome: >-
+            Dashboards show top diagnoses, busiest days, revenue by user and stock by location. Export any
+            report to Excel or PDF.
           href: /features/reports-and-dashboards/
 
+  # Daily care and connectivity, in the why-adopt section's layout as on /emr-software-in-tanzania/: headed paragraphs
+  # on the left with the note under a rule, beside an image.
   - discriminant: prose
     value:
       id: teleconsultation-and-branches
       heading: Teleconsultation, reminders and multi-branch clinics
       tone: wash
       body: |
-        **Teleconsultation.** Teleconsultation enables clinics to reach patients in both urban and remote areas, with remote follow-ups after the visit.
+        **Teleconsultation**
 
-        **Reminders.** Appointment scheduling is automated, with SMS and WhatsApp reminders that reduce missed visits, because patients expect faster service and digital communication.
+        Teleconsultation enables care for patients in both urban and remote areas, with remote follow-ups after the visit.
 
-        **Multi-branch clinics.** Clinics operating in multiple locations manage operations through one central dashboard.
+        **Reminders**
 
-        **Patient histories.** Doctors access patient histories instantly through AI EMR software during consultations, and role-based access control keeps patient data secure.
-      aside: >-
-        **Where it stops.** Easy Clinic runs in the browser over the internet and does not run fully offline today.
-        If your clinic loses its connection for long periods, tell us before you buy.
-      width: measure
+        Patients get WhatsApp and SMS reminders the day before and again on the day of the visit, never at night. That means fewer missed appointments.
+
+        **Multi-branch clinics**
+
+        Clinics operating in multiple locations work from one login, with a location dropdown, shared patient records and one shared stock.
+
+        **Patient histories**
+
+        Doctors access patient histories instantly through AI EMR software during consultations, and role-based access control keeps patient data secure.
+      aside: |
+        **Good to know**
+
+        Easy Clinic is cloud-based software, so it needs an internet connection to run. For uninterrupted service at the front desk, we recommend keeping a backup connection, such as a mobile data hotspot.
+      width: wide
+      checklist: true
+      media:
+        kind: screenshot
+        src: ../../assets/images/solutions/Multilocation-telecom.png
+        alt: 'Easy Clinic communication: a video consultation, email, WhatsApp and SMS channels, a WhatsApp communication report, an SMS template editor and message templates by module'
+        frame: none
+
+  # Ratings: review badges.
+  - discriminant: proofBlock
+    value:
+      id: ratings
+      eyebrow: Reviews
+      heading: Clinics trust us, and say so in their reviews.
+      tone: plain
+      variant: badges
+      badges:
+        - { label: Capterra, rating: '{fact:capterraRating}', href: 'https://www.capterra.com/p/10026882/Easy-Clinic/reviews/' }
+        - { label: Google, rating: '{fact:googleRating}', href: 'https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJz2Q8OeB2AjoRmQ3oO1rIu-M' }
 
   # Customer quotes: the pricing page's carousel; the template shows it directly above the FAQ (owner request 2026-11-13).
   - discriminant: testimonialRow
@@ -427,33 +467,59 @@ sections:
       underlines: false
 
 faqHeading: Questions clinic owners in Suriname ask
+faqHelp: Message our India WhatsApp line on +91 91477 70277, or ask the team that sets up and supports your clinic.
 faq:
-  - question: 'Is Easy Clinic suitable for clinics in Paramaribo and across Suriname?'
-    answer: 'Yes. Easy Clinic works for clinics in Paramaribo, Lelydorp, Nieuw Nickerie, Moengo and healthcare facilities across Suriname.'
-  - question: 'Can Easy Clinic manage clinics in multiple locations in Suriname?'
-    answer: 'Yes. Clinics operating in multiple locations can manage operations through one central EMR software dashboard.'
-  - question: Is patient data secure on Easy Clinic EMR systems?
+  - question: Is Easy Clinic suitable for clinics in Paramaribo and across Suriname?
     answer: >-
-      Yes. Easy Clinic uses secure cloud infrastructure and role-based access to protect patient data. We do not
-      misuse, sell or pry on your data, and all records belong only to you.
+      Yes. Easy Clinic runs clinics, polyclinics, diagnostic centres and hospital OPDs in Paramaribo, Lelydorp,
+      Nieuw Nickerie, Moengo and regional towns. One login covers every specialty, and each role works from its
+      own queue. It runs in any browser on a laptop or tablet, so there is nothing to install at the clinic.
+  - question: Can Easy Clinic manage clinics in multiple locations?
+    answer: >-
+      Yes. Each branch sits in a location dropdown under the same login, with shared patient records and one
+      shared stock. A patient seen in Paramaribo can be seen in Nieuw Nickerie with the full history on screen.
+      Enterprise adds central control of every location and a Power BI data warehouse for clinic groups.
+  - question: How much does Easy Clinic cost in Suriname?
+    answer: >-
+      Easy Clinic is priced per doctor. Professional is $79 and Premium $99 per doctor per month, billed
+      annually, and Enterprise is on a quote. Every plan includes a login for your receptionist at no extra
+      cost, and there is no setup fee for clinics up to 5 users. Ask the team for a quote for your clinic.
+  - question: Is patient data secure on Easy Clinic?
+    answer: >-
+      Yes. Easy Clinic lists compliance with HIPAA and GDPR. Records are protected with role-based access,
+      audit logs and encryption in transit and at rest, and each person sees only what their role needs. Your
+      patient data belongs to your clinic. We never sell it, and you can export it at any time.
   - question: Does Easy Clinic support telemedicine in Suriname?
-    answer: Yes. Clinics can offer teleconsultations and remote follow-ups for patients who cannot reach the clinic.
-  - question: Can Easy Clinic integrate SMS and WhatsApp communication?
-    answer: Yes. Clinics can send appointment reminders and patient updates through integrated messaging tools.
-  - question: Does Easy Clinic support inventory and pharmacy management?
-    answer: Yes. Clinics can manage medicine stock and receive alerts for low stock and expiries, reducing wastage.
-  - question: What is the difference between AI EMR software and EHR software?
     answer: >-
-      AI EMR software includes automation, analytics and intelligent workflows, while EHR software mainly focuses
-      on storing patient records.
+      Yes. Premium and Enterprise include built-in video consultations, booked from the same calendar as
+      in-person visits. Clinics can follow up with patients in remote areas, and every video visit stays on
+      the same patient record. Prescriptions from a video visit go to the patient on WhatsApp.
+  - question: Can Easy Clinic send WhatsApp and SMS reminders?
+    answer: >-
+      Yes. Appointment and follow-up reminders go out on WhatsApp, SMS or email, the day before and again on
+      the day of the visit, never at night. Medicine instructions can print in the language the patient reads,
+      such as Dutch, and prescriptions, invoices and lab reports can go on WhatsApp too.
+  - question: Does Easy Clinic support inventory and pharmacy management?
+    answer: >-
+      Yes. The pharmacy queue shows each prescription before the patient arrives. Batches that expire first
+      show on top, the pharmacist can adjust quantity before dispensing, and stock drops only when medicine is
+      dispensed. Purchase orders, goods receipt, transfers and stock take are built in, and one stock list can
+      serve every branch.
+  - question: Is Cura AI included in every plan?
+    answer: >-
+      Cura AI is a paid add-on that works with any plan. It runs in the background at registration, triage
+      and the consultation. It flags what does not add up, such as a missed allergy, and suggests diagnosis
+      and treatment. The clinic sets the triggers and alert style, and the doctor always decides.
   - question: Does Easy Clinic work without an internet connection?
     answer: >-
-      No. Easy Clinic runs in the browser over the internet and does not run fully offline today, so each clinic
-      needs a working connection.
-  - question: Can clinics in Suriname transition easily from paper systems to AI EMR software?
+      Easy Clinic is cloud-based software, so it needs an internet connection to run, and it does not work
+      fully offline today. For uninterrupted service, most clinics keep a mobile data hotspot as a backup
+      line, so registration, prescriptions and billing carry on if the main connection drops.
+  - question: How do clinics in Suriname move from paper to Easy Clinic?
     answer: >-
-      Yes. Easy Clinic provides onboarding, training and ongoing support to ensure a smooth transition from manual
-      systems to digital healthcare platforms.
+      Book a 20-minute demo built around your own clinic day. Most clinics go live within 2 to 4 weeks. Easy
+      Clinic builds your prescription format from your own sample, imports your old records and trains each
+      role, and your dedicated account manager stays with you after go-live.
 
 links:
   hub: /countries/
@@ -461,10 +527,10 @@ links:
   related:
     - href: /best-clinic-management-software-suriname/
       label: Best clinic software in Suriname
-      description: Three clinic systems ranked for a clinic in Suriname, plus Easy Clinic unranked, including the GNU Health public system.
+      description: Easy Clinic and other clinic software in Suriname, compared side by side.
     - href: /countries/
       label: Book a demo from Suriname
-      description: Clinics outside India and Kenya book a demo from the countries page.
+      description: A 20-minute demo built around your own clinic day.
     - href: /features/emr/
       label: EMR features in detail
       description: Templates, 30-second prescriptions and the full medical history record.
@@ -474,6 +540,9 @@ links:
     - href: /pricing/
       label: Easy Clinic pricing
       description: See our plans and pick what fits your clinic.
+    - href: /curapilot/
+      label: Cura AI
+      description: How the clinical AI copilot flags and suggests during the visit, while the doctor decides.
 
 problems:
   eyebrow: How Easy Clinic fits in Suriname
@@ -522,6 +591,7 @@ editorialPass:
     clinic deals with).
 
 notes:
+  - 'Content update 2026-11-14: copy replaced from the owner''s content document (easyclinic-emr-software-in-suriname-audit.html): the hero eyebrow and opening answer, the comparison table, clinic-type cards, study section, the contact section intro, the four records cards, the reminders and multi-branch rows with the "Good to know" note, FAQ (ten questions, with pricing, Cura AI and go-live answers), related-link descriptions, a new Cura AI related link and the meta description. The review badges section is back with the document''s heading. The template sections the document does not carry (features, daily practice, adoption, benefits, problem panels, the closing panels and the customer carousel) are unchanged. Images and their alt text are unchanged. The earlier notes below describe the 2026-10-14 version.'
   - 'Structure follows /emr-software-in-qatar/ (Kenya structure). The rules slot carries the live page''s comparison table because the live page names no Suriname regulator or payer and no sr-* regulator files exist. Rating badges take the testimonial slot (every testimonial on the live page is placed elsewhere, spec 2.4).'
   - 'Edits the publish rules required: banned words removed ("seamless", "streamline", "comprehensive", "end-to-end", "robust", "revolutionise", "world-class", "modern clinics"); "EasyClinic" written as "Easy Clinic"; "proven results" cut (claims rule); FAQ questions end with a question mark. Added from the repo: "does not run fully offline today" (migration/research/facts.md). '
   - 'FAQ: 8 of the live page''s questions plus an offline answer; left out the ones that repeat another answer.'
